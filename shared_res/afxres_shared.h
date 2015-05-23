@@ -1,0 +1,100 @@
+//{{NO_DEPENDENCIES}}
+// Microsoft Developer Studio generated include file.
+// Used by shared_res.rc
+//
+
+#define AFX_IDS_OPENFILE                0xF000
+#define AFX_IDS_SAVEFILE                0xF001
+#define AFX_IDS_ALLFILTER               0xF002
+#define AFX_IDS_UNTITLED                0xF003
+#define AFX_IDS_UNNAMED_FILE            0xF006
+#define AFX_IDS_HIDE                    0xF011
+#define AFX_IDP_NO_ERROR_AVAILABLE      0xF020
+#define AFX_IDS_NOT_SUPPORTED_EXCEPTION 0xF021
+#define AFX_IDS_RESOURCE_EXCEPTION      0xF022
+#define AFX_IDS_MEMORY_EXCEPTION        0xF023
+#define AFX_IDS_USER_EXCEPTION          0xF024
+#define AFX_IDS_PASTELINKEDTYPE         0xF094
+#define AFX_IDS_UNKNOWNTYPE             0xF095
+#define AFX_IDP_INVALID_FILENAME        0xF100
+#define AFX_IDP_FAILED_TO_OPEN_DOC      0xF101
+#define AFX_IDP_FAILED_TO_SAVE_DOC      0xF102
+#define AFX_IDP_ASK_TO_SAVE             0xF103
+#define AFX_IDP_FAILED_TO_CREATE_DOC    0xF104
+#define AFX_IDP_FILE_TOO_LARGE          0xF105
+#define AFX_IDP_FAILED_TO_START_PRINT   0xF106
+#define AFX_IDP_FAILED_TO_LAUNCH_HELP   0xF107
+#define AFX_IDP_INTERNAL_FAILURE        0xF108
+#define AFX_IDP_COMMAND_FAILURE         0xF109
+#define AFX_IDP_FAILED_MEMORY_ALLOC     0xF10A
+#define AFX_IDP_UNREG_DONE              0xF10B
+#define AFX_IDP_UNREG_FAILURE           0xF10C
+#define AFX_IDP_DLL_LOAD_FAILED         0xF10D
+#define AFX_IDP_DLL_BAD_VERSION         0xF10E
+#define AFX_IDP_PARSE_INT               0xF110
+#define AFX_IDP_PARSE_REAL              0xF111
+#define AFX_IDP_PARSE_INT_RANGE         0xF112
+#define AFX_IDP_PARSE_REAL_RANGE        0xF113
+#define AFX_IDP_PARSE_STRING_SIZE       0xF114
+#define AFX_IDP_PARSE_RADIO_BUTTON      0xF115
+#define AFX_IDP_PARSE_BYTE              0xF116
+#define AFX_IDP_PARSE_UINT              0xF117
+#define AFX_IDP_PARSE_DATETIME          0xF118
+#define AFX_IDP_PARSE_CURRENCY          0xF119
+#define AFX_IDP_PARSE_GUID              0xF11A
+#define AFX_IDP_PARSE_TIME              0xF11B
+#define AFX_IDP_PARSE_DATE              0xF11C
+#define AFX_IDP_FAILED_INVALID_FORMAT   0xF120
+#define AFX_IDP_FAILED_INVALID_PATH     0xF121
+#define AFX_IDP_FAILED_DISK_FULL        0xF122
+#define AFX_IDP_FAILED_ACCESS_READ      0xF123
+#define AFX_IDP_FAILED_ACCESS_WRITE     0xF124
+#define AFX_IDP_FAILED_IO_ERROR_READ    0xF125
+#define AFX_IDP_FAILED_IO_ERROR_WRITE   0xF126
+#define AFX_IDP_SCRIPT_ERROR            0xF130
+#define AFX_IDP_SCRIPT_DISPATCH_EXCEPTION 0xF131
+#define AFX_IDS_NOT_DOCOBJECT           0xF184
+#define AFX_IDP_FAILED_TO_NOTIFY        0xF185
+#define AFX_IDP_GET_NOT_SUPPORTED       0xF18C
+#define AFX_IDP_SET_NOT_SUPPORTED       0xF18D
+#define AFX_IDP_FAILED_MAPI_LOAD        0xF190
+#define AFX_IDP_INVALID_MAPI_DLL        0xF191
+#define AFX_IDP_FAILED_MAPI_SEND        0xF192
+#define AFX_IDP_FILE_NONE               0xF1A0
+#define AFX_IDP_FILE_GENERIC            0xF1A1
+#define AFX_IDP_FILE_NOT_FOUND          0xF1A2
+#define AFX_IDP_FILE_BAD_PATH           0xF1A3
+#define AFX_IDP_FILE_TOO_MANY_OPEN      0xF1A4
+#define AFX_IDP_FILE_ACCESS_DENIED      0xF1A5
+#define AFX_IDP_FILE_INVALID_FILE       0xF1A6
+#define AFX_IDP_FILE_REMOVE_CURRENT     0xF1A7
+#define AFX_IDP_FILE_DIR_FULL           0xF1A8
+#define AFX_IDP_FILE_BAD_SEEK           0xF1A9
+#define AFX_IDP_FILE_HARD_IO            0xF1AA
+#define AFX_IDP_FILE_SHARING            0xF1AB
+#define AFX_IDP_FILE_LOCKING            0xF1AC
+#define AFX_IDP_FILE_DISKFULL           0xF1AD
+#define AFX_IDP_FILE_EOF                0xF1AE
+#define AFX_IDP_ARCH_NONE               0xF1B0
+#define AFX_IDP_ARCH_GENERIC            0xF1B1
+#define AFX_IDP_ARCH_READONLY           0xF1B2
+#define AFX_IDP_ARCH_ENDOFFILE          0xF1B3
+#define AFX_IDP_ARCH_WRITEONLY          0xF1B4
+#define AFX_IDP_ARCH_BADINDEX           0xF1B5
+#define AFX_IDP_ARCH_BADCLASS           0xF1B6
+#define AFX_IDP_ARCH_BADSCHEMA          0xF1B7
+#define AFX_IDS_OCC_SCALEUNITS_PIXELS   0xF1C0
+#define AFX_IDS_CHECKLISTBOX_UNCHECK    0xF2E1
+#define AFX_IDS_CHECKLISTBOX_CHECK      0xF2E2
+#define AFX_IDS_CHECKLISTBOX_MIXED      0xF2E3
+
+// Next default values for new objects
+// 
+#ifdef APSTUDIO_INVOKED
+#ifndef APSTUDIO_READONLY_SYMBOLS
+#define _APS_NEXT_RESOURCE_VALUE        101
+#define _APS_NEXT_COMMAND_VALUE         40001
+#define _APS_NEXT_CONTROL_VALUE         1000
+#define _APS_NEXT_SYMED_VALUE           101
+#endif
+#endif

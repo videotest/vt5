@@ -1,0 +1,107 @@
+#define com_call HRESULT
+
+[	
+	uuid(9739F7F6-D5AE-414e-9526-DB971AE61A8E),
+	version(1.0),
+	helpstring("VT5 Storage Object Library")
+	
+]
+library StorageObjectLib
+{	
+	importlib("stdole2.tlb");
+
+	//Object & ifaces
+	/*[
+		object,
+		uuid(963FA653-90A9-44e3-989C-5607FCEEAA1D),
+		dual,		
+		pointer_default(unique),		
+	]	
+	interface IStorageObjectDisp : IDispatch
+	{
+		HRESULT GetWidth( [out, retval]VARIANT* pv_width );
+	}  */
+
+	enum AdditionalSettings
+	{
+		asAbortObjectCountCalculation = 1 << 0,
+	};
+					
+
+	[	
+		object,
+		uuid(3EE8C5C0-4144-4dbf-9AEF-12D97135FCE4),
+		dual,
+		pointer_default(unique)
+	]
+	interface IStorageObject : IDispatch
+	{
+		// создание нового хранилища
+		[id(0), helpstring("method InitNew")] HRESULT InitNew( [in] BSTR bstr_file_name, [in] VARIANT_BOOL bCreateTemp );
+		// загрузка хранилища из файла
+		[id(1), helpstring("method LoadFile")] HRESULT LoadFile( [in] BSTR bstr_file_name );
+		
+		// добавление новой записи в хранилище
+		[id(2), helpstring("method InsertRecord")] HRESULT InsertRecord();
+		// удаление записи из хранилища
+		[id(3), helpstring("method DeleteRecord")] HRESULT DeleteRecord( [in] long lrecord );
+
+		// Текущая запись
+		[id(4), helpstring("method GetCurrentRecord")] HRESULT GetCurrentRecord( [out, retval] long* plrecord );
+		[id(5), helpstring("method SetCurrentRecord")] HRESULT SetCurrentRecord( [in] long lrecord, [in] DWORD dwFlags );
+		// получение количества записей в хранилище
+		[id(6), helpstring("method GetRecordCount")] HRESULT GetRecordCount( [out, retval] long* plcount );
+
+		// добавление объекта в запись
+		[id(7), helpstring("method AddObject")] HRESULT AddObject( /*[in] long plrecord,*/ [in] IDispatch* pdisp_object );
+		// получение объекта из записи по типу объекта
+		[id(8), helpstring("method GetObject")] HRESULT GetObject( /*[in] long plrecord,*/ [in] BSTR bstr_type, [out, retval] IDispatch** pdisp_object );
+		// получение имени объекта в записи	по типу объекта
+		[id(9), helpstring("method GetObjectName")] HRESULT GetObjectName( /*[in] long plrecord,*/ [in] BSTR bstr_type, [out, retval] BSTR* pbstr_name );
+		// получение количества объектов в записе
+		[id(10), helpstring("method GetObjectCount")] HRESULT GetObjectCount( /*[in] long plrecord,*/ [out, retval] long* plcount );
+		// получение типа объекта по индексу
+		[id(11), helpstring("method GetObjectType")] HRESULT GetObjectType( /*[in] long plrecord,*/ [in] long lidx, [out, retval] BSTR* bstr_type );
+		// удаление объекта из записи
+		[id(12), helpstring("method DeleteObject")] HRESULT DeleteObject( /*[in] long plrecord,*/ [in] BSTR bstr_type );
+
+		// экспорт объектов записи в документ
+		[id(13), helpstring("method ExportRecord")] HRESULT ExportRecord( /*[in] long lrecord,*/ [in] IDispatch* pdisp_data );
+		// импорт объектов записи из документа
+		[id(14), helpstring("method ImportRecord")] HRESULT ImportRecord( /*[in] long lrecord,*/ [in] IDispatch* pdisp_data );		//lookup by object name
+		// удаление объектов записи из документа
+		[id(15), helpstring("method ClearDocument")] HRESULT ClearDocument( /*[in] long lrecord,*/ [in] IDispatch* pdisp_data );
+
+		// номер последней экспортированной записи
+		[id(17), helpstring("method GetExportRecord")] HRESULT GetExportRecord( [out, retval] long* plrecord );
+
+
+		// Имя объекта
+		[propget, id(16), helpstring("property Name")] HRESULT Name([out, retval] BSTR* pVal);
+		[propput, id(16), helpstring("property Name")] HRESULT Name([in] BSTR newVal);
+
+		// Сохранение/загрузка содержимого
+		[propget, id(18), helpstring("property SerializeContent")] HRESULT SerializeContent([out, retval] VARIANT_BOOL *pvbVal);
+		[propput, id(18), helpstring("property SerializeContent")] HRESULT SerializeContent([in] VARIANT_BOOL vbNewVal);
+	};
+
+	[uuid(02E437D0-88E3-41b1-BDDF-76493BC6848E)]
+	interface IStorageObjectMisc : IUnknown
+	{
+		//thumbnail, based on image
+		com_call GetRecordDib( /*[in] long pl_record,*/ [out] BYTE** ppbi, [out] DWORD* pdwSize ) = 0;
+		com_call GetObjectPropBag( [in] BSTR bstr_type,  [out] IUnknown **ppunkPropBag ) = 0;
+	};
+
+	//CoClass
+	[
+		uuid(772EFE3C-15DD-4a54-92C5-8476E5870428),
+		helpstring("VT5 Storage Object Class")
+	]
+	coclass StorageObject
+	{
+		[default]	interface IStorageObject;
+					interface IStorageObjectMisc;
+	};
+
+}

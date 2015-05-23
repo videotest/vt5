@@ -1,0 +1,16 @@
+// Cromos.odl : type library source for Cromos.dll
+
+// This file will be processed by the MIDL compiler to produce the
+// type library (Cromos.tlb).
+
+[ uuid(05EF5A89-7DD7-11D4-8336-85DC8E570373), version(1.0) ]
+library Cromos
+{
+	importlib("stdole32.tlb");
+	importlib("stdole2.tlb");
+
+
+
+	//{{AFX_APPEND_ODL}}
+	//}}AFX_APPEND_ODL}}
+};

@@ -1,0 +1,392 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// Chinese (P.R.C.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)
+#ifdef _WIN32
+LANGUAGE LANG_CHINESE, SUBLANG_CHINESE_SIMPLIFIED
+#pragma code_page(936)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_COMBINE_IMAGES DIALOGEX 0, 0, 218, 100
+STYLE DS_SETFONT | DS_MODALFRAME | DS_CENTER | WS_POPUP | WS_CAPTION | 
+    WS_SYSMENU
+CAPTION "НјПсФЛЛг"
+FONT 8, "MS Sans Serif", 0, 0, 0x1
+BEGIN
+    GROUPBOX        "ПµКэ",IDC_STATIC,6,6,149,68
+    LTEXT           "A, -100%-100%",IDC_STATIC,24,20,63,9
+    EDITTEXT        IDC_A,97,17,40,14,ES_AUTOHSCROLL
+    CONTROL         "Spin2",IDC_A_SPIN,"msctls_updown32",UDS_SETBUDDYINT | 
+                    UDS_ALIGNRIGHT | UDS_AUTOBUDDY | UDS_ARROWKEYS,142,17,9,
+                    15
+    LTEXT           "B, -100%-100%",IDC_STATIC,24,38,63,9
+    EDITTEXT        IDC_B,97,36,40,14,ES_AUTOHSCROLL
+    CONTROL         "Spin2",IDC_B_SPIN,"msctls_updown32",UDS_SETBUDDYINT | 
+                    UDS_ALIGNRIGHT | UDS_AUTOBUDDY | UDS_ARROWKEYS,141,37,11,
+                    15
+    LTEXT           "C, 0-255",IDC_STATIC,24,57,63,9
+    EDITTEXT        IDC_C,97,54,40,14,ES_AUTOHSCROLL
+    CONTROL         "Spin2",IDC_C_SPIN,"msctls_updown32",UDS_SETBUDDYINT | 
+                    UDS_ALIGNRIGHT | UDS_AUTOBUDDY | UDS_ARROWKEYS,139,55,11,
+                    15
+    CTEXT           "Ѕб№ы = Image1 * A + Image2 * B + C",IDC_STATIC,7,81,148,
+                    13,SS_CENTERIMAGE,WS_EX_STATICEDGE
+    DEFPUSHBUTTON   "И·¶Ё",IDOK,161,9,50,14
+    PUSHBUTTON      "ИЎПы",IDCANCEL,161,26,50,14
+    PUSHBUTTON      "°пЦъ",IDHELP,161,43,50,14
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO 
+BEGIN
+    IDD_COMBINE_IMAGES, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 211
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 93
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDR_TOOLBAR1            BITMAP                  "toolbar1.bmp"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Toolbar
+//
+
+IDR_TOOLBAR1 TOOLBAR  16, 15
+BEGIN
+    BUTTON      ID_ACTION_AUTOBC
+    BUTTON      ID_ACTION_SELECT_COLOR
+    BUTTON      ID_ACTION_IMAGEADD
+    BUTTON      ID_ACTION_IMAGESUB
+    BUTTON      ID_ACTION_IMAGESUB_LIGHT
+    BUTTON      ID_ACTION_IMAGEDIFF
+    BUTTON      ID_ACTION_IMAGECOMBINE
+    BUTTON      ID_ACTION_IMAGEMUL
+    BUTTON      ID_ACTION_IMAGEDIV
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE 
+BEGIN
+    ID_ACTION_AUTOBC        "AutoBC\nЧФ¶Ї¶Ф±И\nДЪІїІЩЧч\nЧФ¶Ї¶Ф±ИНјПсВЛѕµ\nЧФ¶Ї¶Ф±И"
+    ID_ACTION_SELECT_COLOR  "SelectColor\nСЎФсСХЙ«\nВЛѕµ\nСЎФсСХЙ«\nСЎФсСХЙ«"
+END
+
+STRINGTABLE 
+BEGIN
+    ID_ACTION_APPLY_LOOKUP  "ApplyLookup\nЅ«Ій±нУ¦УГУЪНјПс\nДЪІїІЩЧч\nЅ«Ій±нУ¦УГУЪНјПс\nЅ«Ій±нУ¦УГУЪНјПс"
+    ID_ACTION_IMAGEADD      "ImageAdd\nМнјУНјПс\nВЛѕµ\nЅ«Т»ёцНјПсМнјУµЅБнТ»ёцНјПс\nМнјУНјПс"
+    ID_ACTION_IMAGESUB      "ImageSub\nИҐіэНјПс\nВЛѕµ\nґУТ»ёцНјПсЦРИҐіэБнТ»ёцНјПс\nИҐіэНјПс"
+    ID_ACTION_IMAGEDIFF     "ImageDiff\nІоТмНјПс\nВЛѕµ\nґґЅЁІоТмНјПс\nІоТмНјПс"
+    ID_ACTION_IMAGECOMBINE  "ImageCombine\nєПІўНјПс\nВЛѕµ\nєПІўБЅёцНјПс\nєПІўНјПс"
+    ID_ACTION_IMAGESUB_LIGHT 
+                            "ImageSubLight\n±іѕ°ИҐіэ\nФцЗї\nИҐіэ±іѕ°НјПс\n±іѕ°ИҐіэ"
+    ID_ACTION_IMAGESUB_EX   "ImageSubEx\nSub Image\nFilters\nSubtract one image from another\nSub Image"
+    ID_ACTION_IMAGEMUL      "ImageMul\n°ґ±ИАэ·ЕґуНјПс\nВЛѕµ\n°ґ±ИАэ·ЕґуНјПс\n°ґ±ИАэ·ЕґуНјПс"
+    ID_ACTION_IMAGEDIV      "ImageDiv\n·ЦёоНјПс\nВЛѕµ\n·ЦёоНјПс\n·ЦёоНјПс"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_DIFFERENT_MODEL     "НјПсµДСХЙ«ДЈРНІ»Н¬Ј¬ОЮ·ЁЦґРРІЩЧчЎЈ"
+END
+
+#endif    // Chinese (P.R.C.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+/////////////////////////////////////////////////////////////////////////////
+// Russian resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_RUS)
+#ifdef _WIN32
+LANGUAGE LANG_RUSSIAN, SUBLANG_DEFAULT
+#pragma code_page(1251)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_COMBINE_IMAGES DIALOGEX 0, 0, 218, 98
+STYLE DS_SETFONT | DS_MODALFRAME | DS_CENTER | WS_POPUP | WS_CAPTION | 
+    WS_SYSMENU
+CAPTION "Image Ariphmetic"
+FONT 8, "MS Sans Serif", 0, 0, 0x1
+BEGIN
+    GROUPBOX        "Coefficients",IDC_STATIC,6,6,149,68
+    LTEXT           "A, -100%-100%",IDC_STATIC,24,20,63,9
+    EDITTEXT        IDC_A,97,17,40,14,ES_AUTOHSCROLL
+    CONTROL         "Spin2",IDC_A_SPIN,"msctls_updown32",UDS_SETBUDDYINT | 
+                    UDS_ALIGNRIGHT | UDS_AUTOBUDDY | UDS_ARROWKEYS,142,17,9,
+                    15
+    LTEXT           "B, -100%-100%",IDC_STATIC,24,38,63,9
+    EDITTEXT        IDC_B,97,36,40,14,ES_AUTOHSCROLL
+    CONTROL         "Spin2",IDC_B_SPIN,"msctls_updown32",UDS_SETBUDDYINT | 
+                    UDS_ALIGNRIGHT | UDS_AUTOBUDDY | UDS_ARROWKEYS,141,37,11,
+                    15
+    LTEXT           "C, 0-255",IDC_STATIC,24,57,63,9
+    EDITTEXT        IDC_C,97,54,40,14,ES_AUTOHSCROLL
+    CONTROL         "Spin2",IDC_C_SPIN,"msctls_updown32",UDS_SETBUDDYINT | 
+                    UDS_ALIGNRIGHT | UDS_AUTOBUDDY | UDS_ARROWKEYS,139,55,11,
+                    15
+    CTEXT           "Result = Image1 * A + Image2 * B + C",IDC_STATIC,7,81,
+                    148,13,SS_CENTERIMAGE,WS_EX_STATICEDGE
+    DEFPUSHBUTTON   "OK",IDOK,162,9,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,162,26,50,14
+    PUSHBUTTON      "Help",IDHELP,162,42,50,14
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO 
+BEGIN
+    IDD_COMBINE_IMAGES, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 211
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 91
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "#include ""res\\imagefilters.rc2""\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE 
+BEGIN
+    ID_ACTION_AUTOBC        "AutoBC\nАвтоконтраст\nПреобразования\nАвтоматическое контрастирование изображения\nАвтоконтраст"
+    ID_ACTION_SELECT_COLOR  "SelectColor\nВыбор цвета\nFilters\nВыбор цвета\nВыбор цвета"
+END
+
+STRINGTABLE 
+BEGIN
+    ID_ACTION_APPLY_LOOKUP  "ApplyLookup\nПрименить таблицу преобразования цветов к изображению\nInternal Actions\nПрименить таблицу преобразования цветов к изображению\nПрименить таблицу преобразования цветов к изображению"
+    ID_ACTION_IMAGEADD      "ImageAdd\nСложение изображений\nПреобразования\nСложение изображений\nСложение изображений"
+    ID_ACTION_IMAGESUB      "ImageSub\nВычитание изображений\nПреобразования\nВычитание изображений\nВычитание изображений"
+    ID_ACTION_IMAGEDIFF     "ImageDiff\nРазность изображений\nПреобразования\nРазность изображений\nРазность изображений"
+    ID_ACTION_IMAGECOMBINE  "ImageCombine\nКомбинировать изображения\nFilters\nКомбинировать два изображения\nКомбинировать изображения"
+    ID_ACTION_IMAGESUB_LIGHT 
+                            "ImageSubLight\nВычитание фона\nПреобразования\nУстранение неровностей фона на изображении\nВычитание фона"
+    ID_ACTION_IMAGESUB_EX   "ImageSubEx\nВычитание изображений\nПреобразования\nВычитание изображений\nВычитание изображений"
+    ID_ACTION_IMAGEMUL      "ImageMul\nУмножение изображений\nПреобразования\nУмножение изображений\nУмножение изображений"
+    ID_ACTION_IMAGEDIV      "ImageDiv\nДеление изображений\nПреобразования\nДеление изображений\nДеление изображений"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_DIFFERENT_MODEL     "Цветовые модели изображений различны. Операция не может быть произведена."
+END
+
+#endif    // Russian resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.S.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_COMBINE_IMAGES DIALOGEX 0, 0, 218, 100
+STYLE DS_SETFONT | DS_MODALFRAME | DS_CENTER | WS_POPUP | WS_CAPTION | 
+    WS_SYSMENU
+CAPTION "Image Arithmetic"
+FONT 8, "MS Sans Serif", 0, 0, 0x1
+BEGIN
+    GROUPBOX        "Coefficients",IDC_STATIC,6,6,149,68
+    LTEXT           "A, -100%-100%",IDC_STATIC,24,20,63,9
+    EDITTEXT        IDC_A,97,17,40,14,ES_AUTOHSCROLL
+    CONTROL         "Spin2",IDC_A_SPIN,"msctls_updown32",UDS_SETBUDDYINT | 
+                    UDS_ALIGNRIGHT | UDS_AUTOBUDDY | UDS_ARROWKEYS,142,17,9,
+                    15
+    LTEXT           "B, -100%-100%",IDC_STATIC,24,38,63,9
+    EDITTEXT        IDC_B,97,36,40,14,ES_AUTOHSCROLL
+    CONTROL         "Spin2",IDC_B_SPIN,"msctls_updown32",UDS_SETBUDDYINT | 
+                    UDS_ALIGNRIGHT | UDS_AUTOBUDDY | UDS_ARROWKEYS,141,37,11,
+                    15
+    LTEXT           "C, 0-255",IDC_STATIC,24,57,63,9
+    EDITTEXT        IDC_C,97,54,40,14,ES_AUTOHSCROLL
+    CONTROL         "Spin2",IDC_C_SPIN,"msctls_updown32",UDS_SETBUDDYINT | 
+                    UDS_ALIGNRIGHT | UDS_AUTOBUDDY | UDS_ARROWKEYS,139,55,11,
+                    15
+    CTEXT           "Result = Image1 * A + Image2 * B + C",IDC_STATIC,7,81,
+                    148,13,SS_CENTERIMAGE,WS_EX_STATICEDGE
+    DEFPUSHBUTTON   "OK",IDOK,161,9,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,161,26,50,14
+    PUSHBUTTON      "Help",IDHELP,161,43,50,14
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO 
+BEGIN
+    IDD_COMBINE_IMAGES, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 211
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 93
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDR_TOOLBAR1            BITMAP                  "toolbar1.bmp"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Toolbar
+//
+
+IDR_TOOLBAR1 TOOLBAR  16, 15
+BEGIN
+    BUTTON      ID_ACTION_AUTOBC
+    BUTTON      ID_ACTION_SELECT_COLOR
+    BUTTON      ID_ACTION_IMAGEADD
+    BUTTON      ID_ACTION_IMAGESUB
+    BUTTON      ID_ACTION_IMAGESUB_LIGHT
+    BUTTON      ID_ACTION_IMAGEDIFF
+    BUTTON      ID_ACTION_IMAGECOMBINE
+    BUTTON      ID_ACTION_IMAGEMUL
+    BUTTON      ID_ACTION_IMAGEDIV
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE 
+BEGIN
+    ID_ACTION_AUTOBC        "AutoBC\nAuto Contrast\nEnhance\nAuto contrast image filter\nAuto Contrast"
+    ID_ACTION_SELECT_COLOR  "SelectColor\nSelect Color\nFilters\nSelect color\nSelect Color"
+END
+
+STRINGTABLE 
+BEGIN
+    ID_ACTION_APPLY_LOOKUP  "ApplyLookup\nApply Lookup Table to Image\nInternal Actions\nApply the lookup table to image\nApply Lookup Table to Image"
+    ID_ACTION_IMAGEADD      "ImageAdd\nAdd Image\nFilters\nAdd one image to another\nAdd Image"
+    ID_ACTION_IMAGESUB      "ImageSub\nSub Image\nFilters\nSubtract one image from another\nSub Image"
+    ID_ACTION_IMAGEDIFF     "ImageDiff\nDifference Image\nFilters\nCreate difference image\nDifference Image"
+    ID_ACTION_IMAGECOMBINE  "ImageCombine\nCombine Images\nFilters\nCombine two images\nCombine Images"
+    ID_ACTION_IMAGESUB_LIGHT 
+                            "ImageSubLight\nBackground Subtraction\nEnhance\nSubtract background image\nBackground Subtraction"
+    ID_ACTION_IMAGESUB_EX   "ImageSubEx\nSub Image\nFilters\nSubtract one image from another\nSub Image"
+    ID_ACTION_IMAGEMUL      "ImageMul\nMulply Images\nFilters\nMultiply images\nMultiply Images"
+    ID_ACTION_IMAGEDIV      "ImageDiv\nDivide Images\nFilters\nDivide Images\nDivide Images"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_DIFFERENT_MODEL     "The color models of the images are different. The operation can not be performed."
+END
+
+#endif    // English (U.S.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#include "res\imagefilters.rc2"
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

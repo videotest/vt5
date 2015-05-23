@@ -1,0 +1,120 @@
+#ifndef __Params_h__
+#define __Params_h__
+
+#ifndef USERKEY	
+#define USERKEY	0xF000
+#endif //USERKEY	
+
+
+#define KEY_AREA			0
+#define KEY_INT_AREA		1
+#define KEY_PERIMETER 		2
+#define KEY_INT_PERIMETER	3
+#define KEY_PCONCAVE		4
+#define KEY_PCONVEX			5
+
+#define KEY_FEREMIN			6
+#define KEY_FEREMAX			7
+#define KEY_FEREAVRG		8
+#define KEY_ELPSMAX			9
+#define KEY_ELPSMIN			10
+#define KEY_DECV			11
+
+#define KEY_LENGTH			12
+#define KEY_WIDTH			13
+#define KEY_XLEN			14
+#define KEY_YLEN			15
+#define KEY_AVRCHORD		16
+#define KEY_LINEL			17
+#define KEY_LINEW			18
+#define KEY_RIBBONL			19
+#define KEY_RIBBONW			20
+#define KEY_NOUN			21
+#define KEY_DIM				22
+
+#define KEY_XCOORD			23
+#define KEY_YCOORD			24
+							 
+#define KEY_CIRCLE			25
+#define KEY_ELLIPSE			26
+#define KEY_ROUNDISH		27
+#define KEY_ANGLE			28
+
+#define KEY_BRIAVR			29
+#define KEY_BRIDEV			30
+#define KEY_BRIMIN			31
+#define KEY_BRIMAX			32
+#define KEY_BRIINT			33
+#define KEY_BRIINTEGRAL		34
+
+#define KEY_RED				35
+#define KEY_GREEN			36
+#define KEY_BLUE			37
+#define KEY_HUE				38
+
+#define KEY_SPEED			41
+#define KEY_OBJID			43
+#define KEY_TIME			42
+
+#define KEY_MANUAL_LENGTH	47
+#define KEY_MANUAL_RADIUS	48
+#define KEY_MANUAL_ANGLE	49
+#define KEY_MANUAL_FREE_LENGTH	52
+
+#define KEY_OPTICAL_DENS    50
+#define KEY_INT_OD          51
+
+#define KEY_BASE_CHROMOS		100
+#define KEY_BASE_MULTIOBJ		120
+#define KEY_BASE_SPEED			130
+#define KEY_BASE_OPTICAL		140
+#define KEY_BASE_USER			5000
+
+#define KEY_MEAN	(USERKEY+10)
+#define KEY_DEV		(USERKEY+11)
+#define KEY_VAR		(USERKEY+12)
+#define KEY_ERROR	(USERKEY+13)
+#define KEY_MIN		(USERKEY+14)
+#define KEY_MAX		(USERKEY+15)
+#define KEY_RA		(USERKEY+16)
+#define KEY_REA		(USERKEY+17)
+#define KEY_RN		(USERKEY+18)
+#define KEY_REN		(USERKEY+19)
+#define KEY_NUM		(USERKEY+20)
+#define KEY_MEANOBJ		(USERKEY+21)
+#define KEY_PERCENT		(USERKEY+22)
+#define KEY_MEDIAN      (USERKEY+23)
+#define KEY_ASSYMETR    (USERKEY+24)
+#define KEY_EXCESS      (USERKEY+25)
+
+
+#define KEY_AREASUM (USERKEY+100)
+#define KEY_VOLUMEPART (USERKEY+101)
+#define KEY_SURFAREA (USERKEY+102)
+#define KEY_UDELSURF (USERKEY+103)
+#define KEY_AVERCHORD (USERKEY+104)
+#define KEY_AVERDIST (USERKEY+105)
+#define KEY_MODA (USERKEY+106)
+#define KEY_UDEL_NUM (USERKEY+107)
+#define KEY_ERR_AREAPERC (USERKEY+108)
+#define KEY_NUM_CLASS (USERKEY+109)
+#define KEY_STEP (USERKEY+110)
+#define KEY_TOTAL_AREA (USERKEY+111)
+#define KEY_AVER_DIFF_STD (USERKEY+150)
+#define KEY_PERC_AVER_DIFF_STD (USERKEY+151)
+#define KEY_DISP_DIFF_STD (USERKEY+152)
+#define KEY_PERC_DISP_DIFF_STD (USERKEY+153)
+#define KEY_AVER_DIFF_TBL (USERKEY+154)
+#define KEY_PERC_AVER_DIFF_TBL (USERKEY+155)
+#define KEY_DISP_DIFF_TBL (USERKEY+156)
+#define KEY_PERC_DISP_DIFF_TBL (USERKEY+157)
+#define KEY_SIGMA (USERKEY+158)
+
+#define KEY_EXTERNAL_STAT (USERKEY+200)
+
+ 
+
+#define MIN_FLOAT_VAL	1e-10
+#define MAX_FLOAT_VAL	1e+10
+
+#endif //__Params_h__

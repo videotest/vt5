@@ -1,0 +1,143 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// Russian resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_RUS)
+#ifdef _WIN32
+LANGUAGE LANG_RUSSIAN, SUBLANG_DEFAULT
+#pragma code_page(1251)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)\r\n"
+    "#ifdef _WIN32\r\n"
+    "LANGUAGE 9, 1\r\n"
+    "#pragma code_page(1252)\r\n"
+    "#endif //_WIN32\r\n"
+    "#include ""res\\Collect.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "#include ""afxres.rc""         // Standard components\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE 
+BEGIN
+    IDS_ACTION_COLLECT_BY_POINTS 
+                            "CollectByPoints\nРасширенный фокус  по точкам\nInternal Actions\nСоздать результирующее изображение по точкам\nРасширенный фокус  по точкам"
+    IDS_ACTION_COLLECT_BY_MASKS 
+                            "CollectByMasks\nРасширенный фокус по маскам\nInternal Actions\nСоздать результирующее изображение по маскам\nРасширенный фокус по маскам"
+    IDS_ACTION_COLLECT_BY_DISP 
+                            "CollectByDisp\nРасширенный фокус по Disp\nInternal Actions\nСоздать результирующее изображение по Disp\nРасширенный фокус по Disp"
+    IDS_ACTION_ALIGN_IMAGES "AlignImages\nВыравнивание изображений\nInternal Actions\nВыровнять изображения по совпадающим частям\nВыравнивание изображений"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_DIFFERENT_MODEL     "Цветовые модели изображений различны. Операция не может быть произведена."
+END
+
+#endif    // Russian resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.S.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE 
+BEGIN
+    IDS_ACTION_COLLECT_BY_POINTS 
+                            "CollectByPoints\nFocus Enhancement by Points\nInternal Actions\nCollect result image by points\nCollect by Points"
+    IDS_ACTION_COLLECT_BY_MASKS 
+                            "CollectByMasks\nFocus Enhancement by Masks\nInternal Actions\nCollect resulting  image by masks\nCollect by Masks"
+    IDS_ACTION_COLLECT_BY_DISP 
+                            "CollectByDisp\nFocus Enhancement by Disp\nInternal Actions\nCollect result image by Disp\nCollect by Disp"
+    IDS_ACTION_ALIGN_IMAGES "AlignImages\nAligning images\nInternal Actions\nAlign images by matching areas\nAlign images "
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_DIFFERENT_MODEL     "The color models of the images are different. The operation can not be performed."
+END
+
+#endif    // English (U.S.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE 9, 1
+#pragma code_page(1252)
+#endif //_WIN32
+#include "res\Collect.rc2"  // non-Microsoft Visual C++ edited resources
+#include "afxres.rc"         // Standard components
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

@@ -1,0 +1,44 @@
+// Classes.odl : type library source for Classes.dll
+
+// This file will be processed by the MIDL compiler to produce the
+// type library (Classes.tlb).
+
+[ uuid(C87FE69E-FA95-425E-B42D-465A9EA45F2F), version(1.0) ]
+library Classes
+{
+	importlib("stdole32.tlb");
+	importlib("stdole2.tlb");
+
+
+	//  Primary dispatch interface for CStatGroupMgr
+	[ uuid(941D678C-6F39-4e4f-81FA-D22E89C97FB4) ]
+	dispinterface IStatGroupMgrDisp
+	{
+		properties:
+			// NOTE - ClassWizard will maintain property information here.
+			//    Use extreme caution when editing this section.
+			//{{AFX_ODL_PROP(CParamGroupManBase)
+			//}}AFX_ODL_PROP
+			
+		methods:
+			// NOTE - ClassWizard will maintain method information here.
+			//    Use extreme caution when editing this section.
+			//{{AFX_ODL_METHOD(CParamGroupManBase)
+			[id(1)] void LoadState();
+			[id(2)] void SaveState();
+			//}}AFX_ODL_METHOD
+
+	};
+
+	//  Class information for CStatGroupMgr
+	[ uuid(CE4AA513-3A74-4b10-AD36-A0D9678F1EB1) ]
+	coclass StatGroupMgr
+	{
+		[default] dispinterface IStatGroupMgrDisp;
+	};
+
+
+	//{{AFX_APPEND_ODL}}
+	//}}AFX_APPEND_ODL}}
+
+};

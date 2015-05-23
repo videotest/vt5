@@ -1,0 +1,142 @@
+[
+	uuid(3207ECD7-AE71-4813-B481-55672F40AB4D),
+	version(1.0),
+	helpstring("VT5 Avi Type Library")
+	
+]
+library AviLib
+{	
+
+	importlib("stdole2.tlb");
+
+	enum AviLocation
+	{
+		alFile = 0,
+		alDocument = 1,
+	};
+
+	const char szTypeAviImage	= "AviImage";
+
+
+	[uuid(3EE8C5C0-4144-4dbf-9AEF-12D97135FCE4)]
+	interface IAviObject : IUnknown
+	{
+		HRESULT CreateLinkToFile( BSTR bstrPath );
+	};
+
+	[uuid(238609AA-9345-463b-BB13-77B3E858A7AC)]
+	interface IAviObject2 : IAviObject
+	{
+		HRESULT GetAviFileName( BSTR *pbstrPath );
+	};
+
+
+	[uuid(E20D3187-D2E6-458a-8BAB-AF5F61241B58)]
+	interface IAviDibImage : IUnknown
+	{
+		HRESULT GetBitmapInfoHeader( long lFrame, long* plSize, BYTE* pBuf );
+		HRESULT GetDibBitsSize( BYTE* pbi, long* plSize );
+		HRESULT GetDibBits( long lFrame, BYTE* pDibBits, long* plPrevKeyFrame, long* plPrevFrame );
+		HRESULT GetNearestKeyFrame( long lFrame, long* plKeyFrame );
+	};
+
+	[
+		object,
+		uuid(D6EA332A-BC7A-422b-A73C-5C8D7CF51626),
+		dual,		
+		pointer_default(unique),		
+	]	
+	interface IAviImage : IDispatch
+	{
+		//Image disp:
+
+		HRESULT GetWidth( [out, retval]VARIANT* pv_width );
+		HRESULT GetHeight( [out, retval]VARIANT* pv_height );
+		HRESULT CreateNew( [in]long cx, [in]long cy, [in]BSTR bstr_color_system );
+		HRESULT GetPosX( [out, retval]VARIANT* pv_x );
+		HRESULT GetPosY( [out, retval]VARIANT* pv_y );
+		HRESULT SetOffset( [in]long cx, [in]long cy, [in]VARIANT_BOOL bMove);
+		HRESULT GetColorSystem( [out, retval]VARIANT* pv_color_system );
+		HRESULT GetColorsCount( [out, retval]VARIANT* pv_count );
+		HRESULT GetCalibration( [out,ref]VARIANT* varCalibr, [out,ref]VARIANT* varGUID );
+		
+		//Avi disp:
+		[propget] HRESULT TotalFrames( [out, retval]VARIANT* pv_count );//long
+		[propget] HRESULT CurFrame( [out, retval]VARIANT* pv_frame );//long
+		HRESULT MoveTo( [in]long lframe, [in]long lflags );
+		[propget] HRESULT FramePerSecond( [out, retval]VARIANT* pv_frames ); //msec
+
+		[propget] HRESULT DoubleBuffering( [out, retval]VARIANT* pv_double_buf );//BOOL
+		[propput] HRESULT DoubleBuffering( [in]VARIANT_BOOL bDoubleBuffering );
+		
+		[propget] HRESULT EvenThenOdd( [out, retval]VARIANT* pv_EvenThenOdd );//BOOL
+		[propput] HRESULT EvenThenOdd( [in]VARIANT_BOOL bEvenThenOdd);
+
+		[propget] HRESULT EvenStageRowOffset( [out, retval]VARIANT* pv_offset );//long
+		[propput] HRESULT EvenStageRowOffset( [in]long loffset );
+		
+		[propget] HRESULT OddStageRowOffset( [out, retval]VARIANT* pv_offset );//long
+		[propput] HRESULT OddStageRowOffset( [in]long loffset );				
+
+		// VT5Object's common dispatch:
+		[propget] HRESULT Name([out, retval]BSTR* pVal);
+		[propput] HRESULT Name([in]BSTR newVal);
+        
+		HRESULT GetType( [out, retval] BSTR *pbstrType );
+        HRESULT	GetPrivateNamedData( [out, retval] IDispatch **ppDisp );
+		HRESULT IsVirtual( [out, retval] VARIANT_BOOL *pvbIsVirtual );
+		HRESULT StoreData( [in] long dwDirection );
+		HRESULT GetParent( [out, retval] IDispatch **ppDisp );
+        HRESULT	GetChildsCount( [out, retval] long *plCount );
+		HRESULT GetFirstChildPos( [in, out] VARIANT *pvarPos );
+		HRESULT GetLastChildPos( [in, out] VARIANT *pvarPos );
+        HRESULT GetNextChild( [in, out] VARIANT *pvarPos, [out, retval] IDispatch **ppDisp );
+		HRESULT GetPrevChild( [in, out] VARIANT *pvarPos, [out, retval] IDispatch **ppDisp );
+		HRESULT IsEmpty( [out, retval] VARIANT_BOOL *pvbIsEmpty );
+		HRESULT IsPrivateNamedDataExist( [out, retval] VARIANT_BOOL *pvbExist );
+
+		HRESULT	ReloadSettings();
+	};
+
+	[
+		uuid(9590F8A9-C444-4f85-B85F-D6B88C42231F),
+		helpstring("VT5 AviImage Class")
+	]
+	coclass AviImage
+	{
+		[default] interface IAviImage;
+		
+	};
+	
+
+	[uuid(488B155A-0AF8-45c1-914E-822470502CE9)]
+	interface IAviPlayPropPage : IUnknown
+	{
+		HRESULT AttachAction( IUnknown* punk );
+		HRESULT UpdatePosition( long lFrame, long lFrameCount, double fFramesPerSecond );
+		HRESULT UpdateCtrls( );
+	};
+
+
+	[uuid(B2339221-D99B-4681-A9AD-ADED32C84F11)]
+	interface IInteractiveAviPlayAction : IUnknown
+	{
+		HRESULT Play();
+		HRESULT Pause();
+		HRESULT Stop();
+		HRESULT SetCurrentFrame( long lFrame );
+		HRESULT GetCurrentFrame( long* plFrame );
+		HRESULT IsPlay( BOOL* pbPlay );
+		HRESULT GetAviImage( IUnknown** punkAvi );
+		HRESULT SetZoom( double fZoom );
+	};
+
+
+	[uuid(020513FF-DB67-4106-9131-0592EEAE164F)]
+	interface IAviGalleryPropPage : IUnknown
+	{
+		HRESULT ReadInfo( IUnknown* punkAvi );
+	};
+
+
+}

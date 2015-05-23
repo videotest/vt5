@@ -1,0 +1,9 @@
+[
+	uuid(B0C91D25-C76F-4761-BD7E-AB581E87ED95),
+	version(1.0)
+]
+library DefsTypeLib
+{
+	#define com_call HRESULT
+	typedef DWORD OLE_COLOR;
+}

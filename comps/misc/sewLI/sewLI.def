@@ -1,0 +1,6 @@
+; sewLI.def : Declares the module parameters for the DLL.
+
+LIBRARY      "sewLI"
+
+EXPORTS
+    ; Explicit exports can go here

@@ -1,0 +1,297 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// Chinese (P.R.C.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)
+#ifdef _WIN32
+LANGUAGE LANG_CHINESE, SUBLANG_CHINESE_SIMPLIFIED
+#pragma code_page(936)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Toolbar
+//
+
+IDR_TOOLBAR1 TOOLBAR  16, 15
+BEGIN
+    BUTTON      ID_ACTION_OPEN_BY_RECONSTRUCTION
+    BUTTON      ID_ACTION_CLOSE_BY_RECONSTRUCTION
+    BUTTON      ID_ACTION_ASF1
+    BUTTON      ID_ACTION_COLOR_BALANCE
+    BUTTON      ID_ACTION_AUTO_CONTRAST
+    BUTTON      ID_ACTION_MEAN_EV
+    BUTTON      ID_ACTION_MEAN_KNV
+    BUTTON      ID_ACTION_GRADIENT
+    BUTTON      ID_ACTION_VARIANCE
+    BUTTON      ID_ACTION_DOUBLEEDGE
+    BUTTON      ID_ACTION_OPEN_BY_RECONSTRUCTION_AAM
+    BUTTON      ID_ACTION_CLOSE_BY_RECONSTRUCTION_AAM
+    BUTTON      ID_ACTION_FINDCELLS
+    BUTTON      ID_ACTION_TOPHAT
+    BUTTON      ID_ACTION_WATERMARK
+    BUTTON      ID_ACTION_SIGNATURE
+    BUTTON      ID_ACTION_SHARPNESS
+    BUTTON      ID_ACTION_SHARPNESS
+    BUTTON      ID_ACTION_CLEANFRAME
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDR_TOOLBAR1            BITMAP                  "toolbar1.bmp"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE 
+BEGIN
+    ID_ACTION_OPEN_BY_RECONSTRUCTION 
+                            "OpenByReconstruction\nНЁ№эЦШЅЁґтїЄ\nВЛѕµ\nНЁ№эЦШЅЁґтїЄ\nНЁ№эЦШЅЁґтїЄ"
+    ID_ACTION_CLOSE_BY_RECONSTRUCTION 
+                            "CloseByReconstruction\nНЁ№эЦШЅЁ№Ш±Х\nВЛѕµ\nНЁ№эЦШЅЁ№Ш±Х\nНЁ№эЦШЅЁ№Ш±Х"
+    ID_ACTION_ASF1          "ASF1\nВЦ»»РтБРВЛІЁ1\nВЛѕµ\nВЦ»»РтБРВЛІЁ1\nВЦ»»РтБРВЛІЁ1"
+    ID_ACTION_COLOR_BALANCE "ColorBalance\nЙ«ІКЖЅєв\nВЛѕµ\nЙ«ІКЖЅєв\nЙ«ІКЖЅєв"
+    ID_ACTION_AUTO_CONTRAST "AutoContrast\nЧФ¶Ї¶Ф±И\nВЛѕµ\nЧФ¶Ї¶Ф±И\nЧФ¶Ї¶Ф±И"
+    ID_ACTION_MEAN_EV       "MeanEV\nMeanEV\nВЛѕµ\nMeanEV\nMeanEV"
+    ID_ACTION_MEAN_KNV      "MeanKNV\nMeanKNV\nВЛѕµ\nMeanKNV\nMeanKNV"
+    ID_ACTION_GRADIENT      "Gradient\nЅҐ±д\nВЛѕµ\nЅҐ±д\nЅҐ±д"
+    ID_ACTION_VARIANCE      "Variance\nІоТм\nВЛѕµ\nІоТм\nІоТм"
+    ID_ACTION_OPEN_BY_RECONSTRUCTION_AAM 
+                            "OpenByReconstructionAAM\nНЁ№эЦШЅЁ AAM ґтїЄ\nВЛѕµ\nНЁ№эЦШЅЁ AAM ґтїЄ\nНЁ№эЦШЅЁ AAM ґтїЄ"
+    ID_ACTION_DOUBLEEDGE    "DoubleEdge\nЛ«±ЯјмІв\nВЛѕµ\nЛ«±ЯјмІв\nЛ«±ЯјмІв"
+    ID_ACTION_CLOSE_BY_RECONSTRUCTION_AAM 
+                            "OpenByReconstructionAAM\nНЁ№эЦШЅЁ AAM ґтїЄ\nВЛѕµ\nНЁ№эЦШЅЁ AAM ґтїЄ\nНЁ№эЦШЅЁ AAM ґтїЄ"
+    ID_ACTION_EVEN          "EvenAAM\n±іѕ°ёьХэ\nВЛѕµ\n±іѕ°ёьХэ\n±іѕ°ёьХэ"
+    ID_ACTION_COLOR_SEG     "ColorSeg\nСХЙ«·Цёо\nВЛѕµ\nСХЙ«·Цёо\nСХЙ«·Цёо"
+    ID_ACTION_AREA_SEG      "AreaSeg\nЗшУт·Цёо\nВЛѕµ\nЗшУт·Цёо\nЗшУт·Цёо"
+END
+
+STRINGTABLE 
+BEGIN
+    ID_ACTION_NUCLEUS       "FindNuclei\nІйХТПё°ыєЛ\nВЛѕµ\nІйХТПё°ыєЛ\nІйХТПё°ыєЛ"
+    ID_ACTION_FINDCELLS     "FindCells\nІйХТµҐФЄёс\nВЛѕµ\nІйХТµҐФЄёс\nІйХТµҐФЄёс"
+    ID_ACTION_TOPHAT        "TopHat\n¶Ґ»·\nВЛѕµ\n¶Ґ»·\n¶Ґ»·"
+    ID_ACTION_WATERMARK     "Watermark\nЛ®УЎ\n°ІИ«\nЛ®УЎ\nЛ®УЎ"
+    ID_ACTION_SIGNATURE     "Signature\nЗ©Гы\n°ІИ«\nЗ©Гы\nЗ©Гы"
+    ID_ACTION_DILATEONIMAGE "DilateOnImage\nDilateOnImage\nFilters\nDilateOnImage\nDilateOnImage"
+    ID_ACTION_CLEANFRAME    "CleanFrame\nCleanFrame\nFilters\nCleanFrame\nCleanFrame"
+END
+
+STRINGTABLE 
+BEGIN
+    ID_ACTION_SHARPNESS     "Sharpness\nSharpness\nFilters\nSharpness\nSharpness"
+END
+
+#endif    // Chinese (P.R.C.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+/////////////////////////////////////////////////////////////////////////////
+// Russian resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_RUS)
+#ifdef _WIN32
+LANGUAGE LANG_RUSSIAN, SUBLANG_DEFAULT
+#pragma code_page(1251)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "#include ""res\\imagefilters2.rc2""\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE 
+BEGIN
+    ID_ACTION_OPEN_BY_RECONSTRUCTION 
+                            "OpenByReconstruction\nOpen by Reconstruction\nFilters\nOpen by reconstruction\nOpen by Reconstruction"
+    ID_ACTION_CLOSE_BY_RECONSTRUCTION 
+                            "CloseByReconstruction\nClose by Reconstruction\nFilters\nClose by reconstruction\nClose by Reconstruction"
+    ID_ACTION_ASF1          "ASF1\nAlternating Sequential Filtering1\nFilters\nAlternating sequential filtering1\nAlternating Sequential Filtering1"
+    ID_ACTION_COLOR_BALANCE "ColorBalance\nЦветовой баланс\nFilters\nКоррекция цвета изображения\nЦветовой баланс"
+    ID_ACTION_AUTO_CONTRAST "AutoContrast\nАвтоконтраст\nFilters\nАвтоконтраст\nАвтоконтраст"
+    ID_ACTION_MEAN_EV       "MeanEV\nСглаживание по яркости\nFilters\nСглаживание по яркости\nСглаживание по яркости"
+    ID_ACTION_MEAN_KNV      "MeanKNV\nСглаживание по размеру\nFilters\nСглаживание по размеру\nСглаживание по размеру"
+    ID_ACTION_GRADIENT      "Gradient\nГрадиент\nFilters\nГрадиент\nГрадиент"
+    ID_ACTION_VARIANCE      "Variance\nВариации\nFilters\nВариации\nВариации"
+    ID_ACTION_OPEN_BY_RECONSTRUCTION_AAM 
+                            "OpenByReconstructionAAM\nОткрытие с реконструкцией\nПреобразования\nОткрытие с реконструкцией\nОткрытие с реконструкцией"
+    ID_ACTION_DOUBLEEDGE    "DoubleEdge\nDoubleEdge thresholding\nFilters\nDoubleEdge thresholding\nDoubleEdge thresholding"
+    ID_ACTION_CLOSE_BY_RECONSTRUCTION_AAM 
+                            "CloseByReconstructionAAM\nЗакрытие с реконструкцией\nПреобразования\nЗакрытие с реконструкцией\nЗакрытие с реконструкцией"
+    ID_ACTION_EVEN          "EvenAAM\nВыравнивание фона\nПреобразования\nВыравнивание фона\nВыравнивание фона"
+    ID_ACTION_COLOR_SEG     "ColorSeg\nColorSeg\nFilters\nColor Segmentation\nColor Segmentation"
+    ID_ACTION_AREA_SEG      "AreaSeg\nAreaSeg\nFilters\nArea Segmentation\nArea Segmentation"
+END
+
+STRINGTABLE 
+BEGIN
+    ID_ACTION_NUCLEUS       "FindNuclei\nFindNuclei\nFilters\nFind Nuclei\nFind Nuclei"
+    ID_ACTION_FINDCELLS     "FindCells\nFindCells\nFilters\nFind Cells\nFind Cells"
+    ID_ACTION_TOPHAT        "TopHat\nTopHat\nFilters\nTopHat\nTopHat"
+    ID_ACTION_WATERMARK     "Watermark\nWatermark\nSecurity\nWatermark\nWatermark"
+    ID_ACTION_EVENV         "EvenV\nВыравнивание фона\nПреобразования\nВыравнивание фона\nВыравнивание фона"
+    ID_ACTION_BCKGRNDV      "BckgrndV\nЦвет фона\nFilters\nЦвет фона\nЦвет фона"
+    ID_ACTION_SIGNATURE     "Signature\nSignature\nSecurity\nSignature\nSignature"
+    ID_ACTION_DILATEONIMAGE "DilateOnImage\nDilateOnImage\nFilters\nDilateOnImage\nDilateOnImage"
+    ID_ACTION_MEAN_EVV      "MeanEVV\nСглаживание\nПреобразования\nСглаживание\nСглаживание"
+    ID_ACTION_CLEANFRAME    "CleanFrame\nCleanFrame\nFilters\nCleanFrame\nCleanFrame"
+END
+
+STRINGTABLE 
+BEGIN
+    ID_ACTION_SHARPNESS     "Sharpness\nSharpness\nФильтры\nSharpness\nSharpness"
+END
+
+#endif    // Russian resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.S.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Toolbar
+//
+
+IDR_TOOLBAR1 TOOLBAR  16, 15
+BEGIN
+    BUTTON      ID_ACTION_OPEN_BY_RECONSTRUCTION
+    BUTTON      ID_ACTION_CLOSE_BY_RECONSTRUCTION
+    BUTTON      ID_ACTION_ASF1
+    BUTTON      ID_ACTION_COLOR_BALANCE
+    BUTTON      ID_ACTION_AUTO_CONTRAST
+    BUTTON      ID_ACTION_MEAN_EV
+    BUTTON      ID_ACTION_MEAN_KNV
+    BUTTON      ID_ACTION_GRADIENT
+    BUTTON      ID_ACTION_VARIANCE
+    BUTTON      ID_ACTION_DOUBLEEDGE
+    BUTTON      ID_ACTION_OPEN_BY_RECONSTRUCTION_AAM
+    BUTTON      ID_ACTION_CLOSE_BY_RECONSTRUCTION_AAM
+    BUTTON      ID_ACTION_FINDCELLS
+    BUTTON      ID_ACTION_TOPHAT
+    BUTTON      ID_ACTION_WATERMARK
+    BUTTON      ID_ACTION_SIGNATURE
+    BUTTON      ID_ACTION_DILATEONIMAGE
+    BUTTON      ID_ACTION_SHARPNESS
+    BUTTON      ID_ACTION_CLEANFRAME
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDR_TOOLBAR1            BITMAP                  "toolbar1.bmp"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE 
+BEGIN
+    ID_ACTION_OPEN_BY_RECONSTRUCTION 
+                            "OpenByReconstruction\nOpen by Reconstruction\nFilters\nOpen by reconstruction\nOpen by Reconstruction"
+    ID_ACTION_CLOSE_BY_RECONSTRUCTION 
+                            "CloseByReconstruction\nClose by Reconstruction\nFilters\nClose by reconstruction\nClose by Reconstruction"
+    ID_ACTION_ASF1          "ASF1\nAlternating Sequential Filtering1\nFilters\nAlternating sequential filtering1\nAlternating Sequential Filtering1"
+    ID_ACTION_COLOR_BALANCE "ColorBalance\nColor Balance\nFilters\nColor Balance\nColor Balance"
+    ID_ACTION_AUTO_CONTRAST "AutoContrast\nAuto Contrast\nFilters\nAuto Contrast\nAuto Contrast"
+    ID_ACTION_MEAN_EV       "MeanEV\nMeanEV\nFilters\nMeanEV\nMeanEV"
+    ID_ACTION_MEAN_KNV      "MeanKNV\nMeanKNV\nFilters\nMeanKNV\nMeanKNV"
+    ID_ACTION_GRADIENT      "Gradient\nGradient\nFilters\nGradient\nGradient"
+    ID_ACTION_VARIANCE      "Variance\nVariance\nFilters\nVariance\nVariance"
+    ID_ACTION_OPEN_BY_RECONSTRUCTION_AAM 
+                            "OpenByReconstructionAAM\nOpen by Reconstruction\nFilters\nOpen by reconstruction\nOpen by Reconstruction"
+    ID_ACTION_DOUBLEEDGE    "DoubleEdge\nDouble Edge Thresholding\nFilters\nDouble edge thresholding\nDouble Edge Thresholding"
+    ID_ACTION_CLOSE_BY_RECONSTRUCTION_AAM 
+                            "CloseByReconstructionAAM\nClose by Reconstruction\nFilters\nClose by reconstruction\nClose by Reconstruction"
+    ID_ACTION_EVEN          "EvenAAM\nBackground Correction\nFilters\nBackground correction\nBackground Correction"
+    ID_ACTION_COLOR_SEG     "ColorSeg\nColor Segmentation\nFilters\nColor segmentation\nColor Segmentation"
+    ID_ACTION_AREA_SEG      "AreaSeg\nAreaSegmentation\nFilters\nArea segmentation\nArea Segmentation"
+END
+
+STRINGTABLE 
+BEGIN
+    ID_ACTION_NUCLEUS       "FindNuclei\nFind Nuclei\nFilters\nFind nuclei\nFind Nuclei"
+    ID_ACTION_FINDCELLS     "FindCells\nFindCells\nFilters\nFind cells\nFind Cells"
+    ID_ACTION_TOPHAT        "TopHat\nTopHat\nFilters\nTopHat\nTopHat"
+    ID_ACTION_WATERMARK     "Watermark\nWatermark\nSecurity\nWatermark\nWatermark"
+    ID_ACTION_EVENV         "EvenV\nBackground Correction\nFilters\nBackground Correction\nBackground Correction"
+    ID_ACTION_SIGNATURE     "Signature\nSignature\nSecurity\nSignature\nSignature"
+    ID_ACTION_DILATEONIMAGE "DilateOnImage\nDilateOnImage\nFilters\nDilateOnImage\nDilateOnImage"
+    ID_ACTION_MEAN_EVV      "MeanEVV\nSmooth\nFilters\nSmooth\nSmooth"
+    ID_ACTION_CLEANFRAME    "CleanFrame\nCleanFrame\nFilters\nCleanFrame\nCleanFrame"
+END
+
+STRINGTABLE 
+BEGIN
+    ID_ACTION_SHARPNESS     "Sharpness\nSharpness\nFilters\nSharpness\nSharpness"
+END
+
+#endif    // English (U.S.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#include "res\imagefilters2.rc2"
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

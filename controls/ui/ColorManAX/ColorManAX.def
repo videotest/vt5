@@ -1,0 +1,10 @@
+; ColorManAX.def : Declares the module parameters.
+
+LIBRARY      "COLORMANAX.OCX"
+
+EXPORTS
+	DllCanUnloadNow     PRIVATE
+	DllGetClassObject   PRIVATE
+	DllRegisterServer   PRIVATE
+	DllUnregisterServer PRIVATE
+	_DllGetClassObject	PRIVATE

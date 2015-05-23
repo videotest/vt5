@@ -1,0 +1,82 @@
+// Palette.odl : type library source for ActiveX Control project.
+
+// This file will be processed by the Make Type Library (mktyplib) tool to
+// produce the type library (Palette.tlb) that will become a resource in
+// Palette.ocx.
+
+
+[ uuid(57C4CB45-9E87-11D3-A537-0000B493A187), version(1.0),
+  helpfile("Palette.hlp"),
+  helpstring("Palette ActiveX Control module"),
+  control ]
+library PALETTELib
+{
+#include <olectl.h>
+#include <idispids.h>
+	importlib(STDOLE_TLB);
+	importlib(STDTYPE_TLB);
+
+	//  Primary dispatch interface for CPaletteCtrl
+
+	[ uuid(57C4CB46-9E87-11D3-A537-0000B493A187),
+	  helpstring("Dispatch interface for Palette Control"), hidden ]
+	dispinterface _DPalette
+	{
+		properties:
+			// NOTE - ClassWizard will maintain property information here.
+			//    Use extreme caution when editing this section.
+			//{{AFX_ODL_PROP(CPaletteCtrl)
+			[id(1)] short Cols;
+			[id(2)] short Rows;
+			[id(3)] short CellWidth;
+			[id(4)] short CellHeight;
+			[id(5)] short IntercellSpace;
+			[id(6)] boolean InnerSunken;
+			[id(7)] boolean OuterRaised;
+			[id(8)] boolean OuterSunken;
+			[id(9)] short BorderSize;
+			[id(10)] boolean InnerRaised;
+			//}}AFX_ODL_PROP
+
+		methods:
+			// NOTE - ClassWizard will maintain method information here.
+			//    Use extreme caution when editing this section.
+			//{{AFX_ODL_METHOD(CPaletteCtrl)
+			[id(11)] void SetDefaultColors();
+			//}}AFX_ODL_METHOD
+
+			[id(DISPID_ABOUTBOX)] void AboutBox();
+	};
+
+	//  Event dispatch interface for CPaletteCtrl
+
+	[ uuid(57C4CB47-9E87-11D3-A537-0000B493A187),
+	  helpstring("Event interface for Palette Control") ]
+	dispinterface _DPaletteEvents
+	{
+		properties:
+			//  Event interface has no properties
+
+		methods:
+			// NOTE - ClassWizard will maintain event information here.
+			//    Use extreme caution when editing this section.
+			//{{AFX_ODL_EVENT(CPaletteCtrl)
+			[id(1)] void LeftClick(OLE_COLOR Color);
+			[id(2)] void RightClick(OLE_COLOR Color);
+			//}}AFX_ODL_EVENT
+	};
+
+	//  Class information for CPaletteCtrl
+
+	[ uuid(57C4CB48-9E87-11D3-A537-0000B493A187),
+	  helpstring("Palette Control"), control ]
+	coclass Palette
+	{
+		[default] dispinterface _DPalette;
+		[default, source] dispinterface _DPaletteEvents;
+	};
+
+
+	//{{AFX_APPEND_ODL}}
+	//}}AFX_APPEND_ODL}}
+};

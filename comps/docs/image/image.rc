@@ -1,0 +1,244 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// Chinese (P.R.C.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)
+#ifdef _WIN32
+LANGUAGE LANG_CHINESE, SUBLANG_CHINESE_SIMPLIFIED
+#pragma code_page(936)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDI_BINIMAGE            ICON                    "binimage.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE 
+BEGIN
+    IDS_ACTION_TEST         "TestAction\nІвКФІЩЧч\nІвКФ\nІвКФ\n "
+END
+
+STRINGTABLE 
+BEGIN
+    ID_ACTION_BIN_ERODE     "BinErode\n¶юЦµ°µ»Ї\n¶юЦµ\n°µ»Ї¶юЦµНјПс\n¶юЦµ°µ»Ї"
+    ID_ACTION_BIN_DILATE    "BinDilate\n¶юЦµББ»Ї\n¶юЦµ\n¶юЦµНјПсµДББ»Ї\n¶юЦµББ»Ї"
+    ID_ACTION_BIN_OPEN      "BinOpen\n¶юЦµґтїЄ\n¶юЦµ\nґтїЄ¶юЦµНјПс\n¶юЦµґтїЄ"
+    ID_ACTION_BIN_CLOSE     "BinErode\n¶юЦµ№Ш±Х\n¶юЦµ\n№Ш±Х¶юЦµНјПс\n¶юЦµ№Ш±Х"
+    ID_ACTION_BIN_NOT       "BinNot\n¶юЦµ·З\n¶юЦµ\n¶юЦµНјПсµДЎ°·ЗЎ±ВЯј­ФЛЛг\n¶юЦµ·З"
+    ID_ACTION_BIN_OR        "BinOr\n¶юЦµ»т\n¶юЦµ\n¶юЦµНјПсµДЎ°»тЎ±ВЯј­ФЛЛг\n¶юЦµ»т"
+    ID_ACTION_BIN_AND       "BinAnd\n¶юЦµУл\n¶юЦµ\n¶юЦµНјПсµДЎ°УлЎ±ВЯј­ФЛЛг\n¶юЦµУл"
+    ID_ACTION_BIN_XOR       "BinXor\n¶юЦµТм»т\nВЛѕµ\n¶юЦµНјПсµДЎ°Тм»тЎ±ВЯј­ФЛЛг\n¶юЦµТм»т"
+    ID_ACTION_BIN_MOVE      "BinMove\n¶юЦµТЖ¶Ї\n¶юЦµ\nТЖ¶Ї¶юЦµНјПс\n¶юЦµТЖ¶Ї"
+    ID_ACTION_BIN_SMOOTH    "BinSmooth\n¶юЦµЖЅ»¬\nВЛѕµ\nЖЅ»¬¶юЦµНјПс\n¶юЦµЖЅ»¬"
+    ID_ACTION_BIN_MEDIAN    "BinMedian\n¶юЦµЦРЦµ\n¶юЦµ\n¶юЦµНјПсµДЦРЦµ\n¶юЦµЦРЦµ"
+    ID_ACTION_BIN_DILATE_OBJECTS 
+                            "BinDilateObjects\n¶юЦµББ»Ї¶ФПу\n¶юЦµ\nББ»Ї¶юЦµНјПс¶шІ»єПІў¶ФПу\nББ»Ї¶юЦµНјПс¶шІ»єПІў¶ФПу"
+    ID_ACTION_BIN_RECONSTRUCT_FORE 
+                            "BinReconstructFore\nBinReconstructFore\n¶юЦµ\nBinReconstructFore\nBinReconstructFore"
+    ID_ACTION_BIN_RECONSTRUCT_BACK 
+                            "BinReconstructBack\nBinReconstructBack\n¶юЦµ\nBinReconstructBack\nBinReconstructBack"
+    ID_ACTION_BIN_DELETE_SMALL_OBJECTS 
+                            "BinDeleteSmallObjects\nBinDeleteSmallObjects\n¶юЦµ\nBinDeleteSmallObjects\nBinDeleteSmallObjects"
+    ID_ACTION_BIN_MORPH_DIVISION 
+                            "BinMorphDivision\nBinary Division\nBinary\nDivision of the binary image\nBinary Division"
+END
+
+STRINGTABLE 
+BEGIN
+    ID_ACTION_BIN_CLEAN_V4  "BinCleanV4\nBinCleanV4\nBinary\nBinCleanV4\nBinCleanV4"
+    ID_ACTION_BIN_MORPH_DIVISION2 
+                            "BinMorphDivision2\nBinary Division\nBinary\nDivision of the binary image\nBinary Division"
+    ID_ACTION_SMOOTH_CONTOUR 
+                            "SmoothContour\nSmooth Masks Contours\nFilters\nSmooth Masks Contours\nSmooth Masks Contours"
+END
+
+#endif    // Chinese (P.R.C.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+/////////////////////////////////////////////////////////////////////////////
+// Russian resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_RUS)
+#ifdef _WIN32
+LANGUAGE LANG_RUSSIAN, SUBLANG_DEFAULT
+#pragma code_page(1251)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "#include ""res\\image.rc2""\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE 
+BEGIN
+    IDS_ACTION_TEST         "TestAction\nTest Action\nTest\nTest\n "
+END
+
+STRINGTABLE 
+BEGIN
+    ID_ACTION_BIN_ERODE     "BinErode\nЭрозия масок\nBinary\nЭрозия масок\nЭрозия масок"
+    ID_ACTION_BIN_DILATE    "BinDilate\nДилатация масок\nBinary\nДилатация масок\nДилатация масок"
+    ID_ACTION_BIN_OPEN      "BinOpen\nОткрытие масок\nBinary\nОткрытие масок\nОткрытие масок"
+    ID_ACTION_BIN_CLOSE     "BinClose\nЗакрытие масок\nBinary\nЗакрытие масок\nЗакрытие масок"
+    ID_ACTION_BIN_NOT       "BinNot\nИнвертировать маски\nМаски объектов\nИнвертировать маски объектов\nИнвертировать маски"
+    ID_ACTION_BIN_OR        "BinOr\nОбъединение масок\nМаски объектов\nОбъединение масок\nОбъединение масок"
+    ID_ACTION_BIN_AND       "BinAnd\nПересечение масок\nМаски объектов\nПересечение масок\nПересечение масок"
+    ID_ACTION_BIN_XOR       "BinXor\nОбъединение масок без пересечения\nМаски объектов\nОбъединение масок без пересечения\nОбъединение масок без пересечения"
+    ID_ACTION_BIN_MOVE      "BinMove\nПереместить маски\nBinary\nПереместить маски\nПереместить маски"
+    ID_ACTION_BIN_SMOOTH    "BinSmooth\nСглаживание масок\nFilters\nСглаживание масок\nСглаживание масок "
+    ID_ACTION_BIN_MEDIAN    "BinMedian\nМедиана масок\nBinary\nМедиана масок\nМедиана масок"
+    ID_ACTION_BIN_DILATE_OBJECTS 
+                            "BinDilateObjects\nДилатация масок без слияния объектов\nBinary\nДилатация масок без слияния объектов\nДилатация масок без слияния объектов"
+    ID_ACTION_BIN_RECONSTRUCT_FORE 
+                            "BinReconstructFore\nBinReconstructFore\nBinary\nBinReconstructFore\nBinReconstructFore"
+    ID_ACTION_BIN_RECONSTRUCT_BACK 
+                            "BinReconstructBack\nBinReconstructBack\nBinary\nBinReconstructBack\nBinReconstructBack"
+    ID_ACTION_BIN_DELETE_SMALL_OBJECTS 
+                            "BinDeleteSmallObjects\nУдаление мелких масок объектов\nBinary\nУдаление мелких масок объектов\nУдаление мелких масок объектов"
+    ID_ACTION_BIN_MORPH_DIVISION 
+                            "BinMorphDivision\nРазделение масок\nBinary\nРазделение масок\nРазделение масок"
+END
+
+STRINGTABLE 
+BEGIN
+    ID_ACTION_BIN_CUSTOM_LOGIC 
+                            "BinCustomLogic\nBinCustomLogic\nBinary\nBinCustomLogic\nBinCustomLogic"
+    ID_ACTION_RESIZE_BIN    "ResizeBin\nResizeBin\nBinary\nResizeBin\nResizeBin"
+    ID_ACTION_BIN_CLEAN_V4  "BinCleanV4\nBinCleanV4\nBinary\nBinCleanV4\nBinCleanV4"
+    ID_ACTION_BIN_MORPH_DIVISION2 
+                            "BinMorphDivision2\nBinary Division\nBinary\nDivision of the binary image\nBinary Division"
+    ID_ACTION_SMOOTH_CONTOUR 
+                            "SmoothContour\nСглаживание контуров масок\nFilters\nСглаживание контуров масок\nСглаживание  контуров масок "
+END
+
+#endif    // Russian resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.S.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDI_BINIMAGE            ICON                    "binimage.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE 
+BEGIN
+    IDS_ACTION_TEST         "TestAction\nTest Action\nTest\nTest\n "
+END
+
+STRINGTABLE 
+BEGIN
+    ID_ACTION_BIN_ERODE     "BinErode\nErode Masks\nBinary\nErode Masks\nErode Masks"
+    ID_ACTION_BIN_DILATE    "BinDilate\nDilate Masks\nBinary\nDilate Masks\nDilate Masks"
+    ID_ACTION_BIN_OPEN      "BinOpen\nOpen Masks\nBinary\nOpen Masks\nOpen Masks"
+    ID_ACTION_BIN_CLOSE     "BinClose\nClose Masks\nBinary\nClose Masks\nClose Masks"
+    ID_ACTION_BIN_NOT       "BinNot\nInvert Masks\nObjects Masks\nInvert objects masks\nInvert Masks"
+    ID_ACTION_BIN_OR        "BinOr\nMerge Masks\nObjects Masks\nMerge masks\nMerge Masks"
+    ID_ACTION_BIN_AND       "BinAnd\nMasks Intersection\nObjects Masks\nMasks intersection\nMasks Intersection"
+    ID_ACTION_BIN_XOR       "BinXor\nMerge Masks Excluding Intersection\nObjects Masks\nMerge masks excluding intersection\nMerge Masks Excluding Intersection"
+    ID_ACTION_BIN_MOVE      "BinMove\nMove Masks\nBinary\nMove Masks\nMove Masks"
+    ID_ACTION_BIN_SMOOTH    "BinSmooth\nSmooth Masks\nFilters\nSmooth Masks\nSmooth Masks"
+    ID_ACTION_BIN_MEDIAN    "BinMedian\nMedian Masks\nBinary\nMedian Masks\nMedian Masks"
+    ID_ACTION_BIN_DILATE_OBJECTS 
+                            "BinDilateObjects\nDilate Objects Masks\nBinary\nDilate Objects Masks\nDilate Objects Masks"
+    ID_ACTION_BIN_RECONSTRUCT_FORE 
+                            "BinReconstructFore\nBinReconstructFore\nBinary\nBinReconstructFore\nBinReconstructFore"
+    ID_ACTION_BIN_RECONSTRUCT_BACK 
+                            "BinReconstructBack\nBinReconstructBack\nBinary\nBinReconstructBack\nBinReconstructBack"
+    ID_ACTION_BIN_DELETE_SMALL_OBJECTS 
+                            "BinDeleteSmallObjects\nDelete Small Objects Masks\nBinary\nDelete Small Objects Masks\nDelete Small Objects Masks"
+    ID_ACTION_BIN_MORPH_DIVISION 
+                            "BinMorphDivision\nDivision Masks\nBinary\nDivision Masks\nDivision Masks"
+END
+
+STRINGTABLE 
+BEGIN
+    ID_ACTION_BIN_CUSTOM_LOGIC 
+                            "BinCustomLogic\nBinCustomLogic\nBinary\nBinCustomLogic\nBinCustomLogic"
+    ID_ACTION_RESIZE_BIN    "ResizeBin\nResizeBin\nBinary\nResizeBin\nResizeBin"
+    ID_ACTION_BIN_CLEAN_V4  "BinCleanV4\nBinCleanV4\nBinary\nBinCleanV4\nBinCleanV4"
+    ID_ACTION_BIN_MORPH_DIVISION2 
+                            "BinMorphDivision2\nDivision Masks\nBinary\nDivision Masks\nDivision Masks"
+    ID_ACTION_SMOOTH_CONTOUR 
+                            "SmoothContour\nSmooth Masks Contours\nFilters\nSmooth Masks Contours\nSmooth Masks Contours"
+END
+
+#endif    // English (U.S.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#include "res\image.rc2"
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

@@ -1,0 +1,901 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include "resource.h"
+
+// Generated Help ID header file
+#define APSTUDIO_HIDDEN_SYMBOLS
+#include "resource.hm"
+#undef APSTUDIO_HIDDEN_SYMBOLS
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// Russian resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_RUS)
+#ifdef _WIN32
+LANGUAGE LANG_RUSSIAN, SUBLANG_DEFAULT
+#pragma code_page(1251)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)\r\n"
+    "#ifdef _WIN32\r\n"
+    "LANGUAGE 9, 1\r\n"
+    "#pragma code_page(1252)\r\n"
+    "#endif //_WIN32\r\n"
+    "#include ""res\\Pixera.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "#include ""afxres.rc""         // Standard components\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_BLACK_BALANCE DIALOGEX 0, 0, 170, 57
+STYLE DS_SETFONT | DS_NOIDLEMSG | WS_CHILD | WS_CLIPSIBLINGS | 
+    WS_CLIPCHILDREN | WS_BORDER
+EXSTYLE WS_EX_CLIENTEDGE
+FONT 8, "MS Sans Serif", 0, 0, 0x1
+BEGIN
+    CONTROL         "Авто",IDC_CHECK_BB,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,8,9,70,14
+    CONTROL         "Рамка",IDC_SHOW_BB_RECT,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,8,29,69,10
+    PUSHBUTTON      "По умолчанию",IDC_DEFAULT,88,18,55,14
+END
+
+IDD_COLOR_BALANCE DIALOGEX 0, 0, 169, 134
+STYLE DS_SETFONT | DS_NOIDLEMSG | WS_CHILD | WS_CLIPSIBLINGS | 
+    WS_CLIPCHILDREN | WS_BORDER
+EXSTYLE WS_EX_CLIENTEDGE
+FONT 8, "MS Sans Serif", 0, 0, 0x1
+BEGIN
+    CONTROL         "Нет баланса",IDC_WB_OFF,"Button",BS_AUTORADIOBUTTON | 
+                    WS_GROUP | WS_TABSTOP,5,1,58,14
+    CONTROL         "Авто",IDC_WB_AUTO,"Button",BS_AUTORADIOBUTTON,5,13,31,
+                    14
+    CONTROL         "По команде",IDC_WB_ONE_PUSH,"Button",BS_AUTORADIOBUTTON,
+                    5,26,56,14
+    CONTROL         "Вручную",IDC_WB_MANUAL,"Button",BS_AUTORADIOBUTTON,5,42,
+                    41,14
+    CONTROL         "Рамка",IDC_SHOW_WB_RECT,"Button",BS_AUTOCHECKBOX | 
+                    WS_GROUP | WS_TABSTOP,63,15,69,10
+    LTEXT           "Красный:",IDC_STATIC,3,60,35,10
+    LTEXT           "Зеленый:",IDC_STATIC,3,80,34,11
+    LTEXT           "Синий:",IDC_STATIC,3,101,30,8
+    EDITTEXT        IDC_EDIT_WB_RED,39,58,36,15,ES_AUTOHSCROLL
+    CONTROL         "Spin1",IDC_SPIN_WB_RED,"msctls_updown32",UDS_ALIGNRIGHT | 
+                    UDS_AUTOBUDDY | UDS_ARROWKEYS,65,55,11,14
+    CONTROL         "Slider1",IDC_SLIDER_WB_RED,"msctls_trackbar32",
+                    TBS_AUTOTICKS | TBS_TOP | WS_TABSTOP,79,52,89,23
+    EDITTEXT        IDC_EDIT_WB_GREEN,39,79,36,15,ES_AUTOHSCROLL
+    CONTROL         "Spin1",IDC_SPIN_WB_GREEN,"msctls_updown32",
+                    UDS_ALIGNRIGHT | UDS_AUTOBUDDY | UDS_ARROWKEYS,65,76,11,
+                    14
+    CONTROL         "Slider1",IDC_SLIDER_WB_GREEN,"msctls_trackbar32",
+                    TBS_AUTOTICKS | TBS_TOP | WS_TABSTOP,79,76,89,23
+    EDITTEXT        IDC_EDIT_WB_BLUE,39,100,36,15,ES_AUTOHSCROLL
+    CONTROL         "Spin1",IDC_SPIN_WB_BLUE,"msctls_updown32",
+                    UDS_ALIGNRIGHT | UDS_AUTOBUDDY | UDS_ARROWKEYS,65,100,11,
+                    14
+    CONTROL         "Slider1",IDC_SLIDER_WB_BLUE,"msctls_trackbar32",
+                    TBS_AUTOTICKS | TBS_TOP | WS_TABSTOP,79,95,89,23
+    PUSHBUTTON      "Построить",IDC_WB_BUILD,65,31,43,16
+    PUSHBUTTON      "По умолчанию",IDC_DEFAULT,51,118,55,14
+END
+
+IDD_HISTO DIALOGEX 0, 0, 201, 85
+STYLE DS_SETFONT | DS_CONTROL | WS_CHILD | WS_VISIBLE
+FONT 8, "MS Sans Serif", 0, 0, 0x1
+BEGIN
+    CONTROL         "",IDC_HISTO,"Static",SS_BLACKRECT,13,0,121,67
+    CONTROL         "Сер.",IDC_GRAY,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,
+                    139,2,34,11,0,HIDC_GRAY
+    CONTROL         "Кр.",IDC_RED,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,139,
+                    16,34,11,0,HIDC_RED
+    CONTROL         "Зел.",IDC_GREEN,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,
+                    139,30,34,11,0,HIDC_GREEN
+    CONTROL         "Син.",IDC_BLUE,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,
+                    139,44,34,11,0,HIDC_BLUE
+    LTEXT           "Миним. - %d, Максим. - %d, Сред. - %d",IDC_STATIC_MSG,
+                    12,71,133,9
+    LTEXT           "0",IDC_STATIC_0,1,64,8,11
+    RTEXT           "s",IDC_STATIC_MAX_COLOR,139,57,17,10
+    LTEXT           "Static",IDC_STATIC_MAX_POINTS,1,14,8,11,NOT WS_VISIBLE
+    LTEXT           "10 кадр./сек",IDC_STATIC_PERIOD1,148,70,46,8
+END
+
+IDD_IMAGE DIALOGEX 0, 0, 178, 142
+STYLE DS_SETFONT | DS_NOIDLEMSG | WS_CHILD | WS_CLIPSIBLINGS | WS_BORDER
+EXSTYLE WS_EX_CLIENTEDGE
+FONT 8, "MS Sans Serif", 0, 0, 0x1
+BEGIN
+    GROUPBOX        "Отражение",IDC_STATIC,7,4,76,36
+    CONTROL         "Вертикальное",IDC_CHECK_FLIP_VERT,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,12,12,69,13
+    CONTROL         "Горизонтальное",IDC_CHECK_FLIP_HORZ,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,12,26,69,13
+    CONTROL         "Полутоновое",IDC_CHECK_GRAYSCALE,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,106,92,58,11
+    LTEXT           "Просмотр:",IDC_STATIC,86,11,37,13
+    COMBOBOX        IDC_COMBO_PREVIEW,126,9,49,48,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    LTEXT           "Захват:",IDC_STATIC,86,29,30,12
+    COMBOBOX        IDC_COMBO_CAPTURE,118,27,57,49,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    CONTROL         "Фокус",IDC_CHECK_FOCUS,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,7,48,38,11
+    LTEXT           "",IDC_STATIC_FOCUS_CURRENT,49,50,38,11
+    CONTROL         "Рамка фокуса",IDC_SHOW_FOCUS_RECT,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,7,65,63,11
+    GROUPBOX        "Микроскоп",IDC_STATIC,7,82,76,36
+    CONTROL         "На просвет",IDC_MICRO_BRIGHT,"Button",
+                    BS_AUTORADIOBUTTON | WS_GROUP | WS_TABSTOP,11,92,58,11
+    CONTROL         "Флуоресценция",IDC_MICRO_FLUORESCENT,"Button",
+                    BS_AUTORADIOBUTTON,11,103,67,11
+    LTEXT           "",IDC_STATIC_FOCUS_PEAK,103,50,26,11
+    CONTROL         "Гистограмма",IDC_HISTOGRAM,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,106,103,58,11
+    PUSHBUTTON      "По умолчанию",IDC_DEFAULT,57,122,55,14
+    GROUPBOX        "Изображение",IDC_STATIC,99,82,76,36
+END
+
+IDD_LEVEL_ADJUSTMENT DIALOGEX 0, 0, 188, 134
+STYLE DS_SETFONT | DS_NOIDLEMSG | WS_CHILD | WS_CLIPSIBLINGS | 
+    WS_CLIPCHILDREN | WS_BORDER
+EXSTYLE WS_EX_CLIENTEDGE
+FONT 8, "MS Sans Serif", 0, 0, 0x1
+BEGIN
+    LTEXT           "Канал:",-1,4,8,33,12
+    COMBOBOX        IDC_COMBO_CHANNEL,42,6,57,60,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    LTEXT           "Черное:",-1,3,31,31,13
+    EDITTEXT        IDC_EDIT_SHADOW,46,28,37,14,ES_AUTOHSCROLL
+    CONTROL         "Spin1",IDC_SPIN_SHADOW,"msctls_updown32",
+                    UDS_SETBUDDYINT | UDS_ALIGNRIGHT | UDS_AUTOBUDDY | 
+                    UDS_ARROWKEYS,71,25,11,15
+    CONTROL         "Slider1",IDC_SLIDER_SHADOW,"msctls_trackbar32",
+                    TBS_AUTOTICKS | TBS_TOP | WS_TABSTOP,84,23,101,19
+    LTEXT           "Гамма:",-1,3,51,31,13
+    EDITTEXT        IDC_EDIT_GAMMA,46,49,37,14,ES_AUTOHSCROLL
+    CONTROL         "Spin1",IDC_SPIN_GAMMA,"msctls_updown32",UDS_ALIGNRIGHT | 
+                    UDS_AUTOBUDDY | UDS_ARROWKEYS,69,44,11,15
+    CONTROL         "Slider1",IDC_SLIDER_GAMMA,"msctls_trackbar32",
+                    TBS_AUTOTICKS | TBS_TOP | WS_TABSTOP,84,44,101,20
+    LTEXT           "Белое:",-1,3,75,30,14
+    EDITTEXT        IDC_EDIT_HIGHLIGHT,46,73,37,14,ES_AUTOHSCROLL
+    CONTROL         "Spin1",IDC_SPIN_HIGHLIGHT,"msctls_updown32",
+                    UDS_SETBUDDYINT | UDS_ALIGNRIGHT | UDS_AUTOBUDDY | 
+                    UDS_ARROWKEYS,69,68,11,15
+    CONTROL         "Slider1",IDC_SLIDER_HIGHLIGHT,"msctls_trackbar32",
+                    TBS_AUTOTICKS | TBS_TOP | WS_TABSTOP,84,68,101,19
+    LTEXT           "Кол.кадров:",IDC_STATIC_ACCUMULATION,3,100,43,20
+    EDITTEXT        IDC_EDIT_ACCUMULATION_TIMES,50,99,33,13,ES_AUTOHSCROLL
+    CONTROL         "Spin1",IDC_SPIN_ACCUMULATION_TIMES,"msctls_updown32",
+                    UDS_SETBUDDYINT | UDS_ALIGNRIGHT | UDS_AUTOBUDDY | 
+                    UDS_ARROWKEYS,67,93,11,14
+    COMBOBOX        IDC_COMBO_ACCUMULATION,100,99,85,67,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    PUSHBUTTON      "По умолчанию",IDC_DEFAULT,61,117,55,14
+END
+
+IDD_PREVIEW DIALOGEX 70, 38, 530, 390
+STYLE DS_SETFONT | DS_MODALFRAME | WS_VISIBLE | WS_CLIPSIBLINGS | 
+    WS_CLIPCHILDREN | WS_CAPTION | WS_SYSMENU
+CAPTION "Pixera"
+FONT 8, "MS Sans Serif", 0, 0, 0x0
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,7,7,50,14
+    PUSHBUTTON      "Отмена",IDCANCEL,80,7,50,14
+    PUSHBUTTON      "Справка",ID_HELP,153,7,50,14
+    LTEXT           "Яркость:",IDC_STATIC_TIMEADJ,7,50,31,10
+    EDITTEXT        IDC_EDIT_EXP_TIME,40,46,38,17,ES_AUTOHSCROLL
+    CONTROL         "Spin1",IDC_SPIN_EXP_TIME,"msctls_updown32",
+                    UDS_ALIGNRIGHT | UDS_ARROWKEYS,78,47,11,17
+    CONTROL         "Slider1",IDC_SLIDER_TIME,"msctls_trackbar32",
+                    TBS_AUTOTICKS | TBS_TOP | WS_TABSTOP,89,44,106,20
+    LTEXT           "Чувствительность:",IDC_STATIC_SENSITIVITY,8,72,74,12
+    COMBOBOX        IDC_COMBO_SENSITIVITY,93,71,43,86,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    RADIOBUTTON     "Настройка уровня",IDC_LEVEL,7,89,101,18,BS_PUSHLIKE | 
+                    WS_GROUP | WS_TABSTOP
+    RADIOBUTTON     "Баланс белого",IDC_COLOR_BALANCE,7,141,100,17,
+                    BS_PUSHLIKE | BS_NOTIFY
+    RADIOBUTTON     "Изображение",IDC_IMAGE_PAGE,7,116,100,16,BS_PUSHLIKE
+    RADIOBUTTON     "Баланс черного",IDC_BLACK_BALANCE,7,168,100,17,
+                    BS_PUSHLIKE
+    CONTROL         "",IDC_DLG_POS,"Static",SS_BLACKRECT | NOT WS_VISIBLE,7,
+                    218,193,91
+    CONTROL         "",IDC_IMAGE,"Static",SS_BLACKRECT,206,7,279,207
+    RADIOBUTTON     "Настройки",IDC_SETTING1,107,193,100,17,BS_PUSHLIKE | 
+                    NOT WS_VISIBLE
+    RADIOBUTTON     "Список настроек",IDC_SETTING11,7,194,100,17,BS_PUSHLIKE
+END
+
+IDD_WAIT DIALOGEX 0, 0, 213, 74
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | 
+    WS_SYSMENU
+CAPTION "Pixera"
+FONT 8, "MS Sans Serif", 0, 0, 0x0
+BEGIN
+    LTEXT           "Подождите...",IDC_STATIC,66,43,54,11
+    LTEXT           "Захват изображения!",IDC_STATIC,63,17,83,15
+END
+
+IDD_SETTING DIALOGEX 0, 0, 178, 108
+STYLE DS_SETFONT | DS_NOIDLEMSG | DS_FIXEDSYS | WS_CHILD | WS_CLIPSIBLINGS | 
+    WS_BORDER
+EXSTYLE WS_EX_CLIENTEDGE
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    PUSHBUTTON      "Сохранить",IDC_BUTTON_NEW_SETTINGS,104,32,67,14,
+                    WS_GROUP
+    LISTBOX         IDC_LIST1,7,15,91,86,LBS_SORT | LBS_NOINTEGRALHEIGHT | 
+                    WS_VSCROLL | WS_TABSTOP
+    PUSHBUTTON      "Удалить",IDC_BUTTON_DELETE_SETTINGS,104,50,67,14,
+                    WS_GROUP
+    PUSHBUTTON      "Открыть",IDC_BUTTON_SAVE_SETTINGS,104,68,67,14,NOT 
+                    WS_VISIBLE
+    PUSHBUTTON      "Default",IDC_DEFAULT,104,87,67,14,NOT WS_VISIBLE
+    EDITTEXT        IDC_EDIT1,105,15,66,14,ES_AUTOHSCROLL
+    LTEXT           "Имя файла",IDC_STATIC,125,4,46,8
+END
+
+IDD_SETTING11 DIALOGEX 0, 0, 163, 108
+STYLE DS_SETFONT | DS_NOIDLEMSG | DS_FIXEDSYS | WS_CHILD | WS_CLIPSIBLINGS | 
+    WS_BORDER
+EXSTYLE WS_EX_CLIENTEDGE
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    PUSHBUTTON      "Новая",IDC_BUTTON_NEW_SETTINGS11,89,17,67,14,WS_GROUP
+    LISTBOX         IDC_LIST11,7,4,75,80,LBS_NOINTEGRALHEIGHT | WS_VSCROLL | 
+                    WS_GROUP | WS_TABSTOP
+    PUSHBUTTON      "Удалить",IDC_BUTTON_DELETE_SETTINGS11,89,58,67,14,
+                    WS_GROUP
+    PUSHBUTTON      "Default",IDC_DEFAULT,57,87,67,14,NOT WS_VISIBLE
+END
+
+IDD_DIALOG_SETTING_NAME11 DIALOGEX 0, 0, 186, 75
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | 
+    WS_SYSMENU
+CAPTION "Имя конфигурации"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,7,54,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,129,54,50,14
+    EDITTEXT        IDC_EDIT11,7,25,172,19,ES_AUTOHSCROLL
+    LTEXT           "Введите имя конфигурации",IDC_STATIC,44,7,109,8
+END
+
+IDD_DIALOG_SETTING_NAME12 DIALOGEX 0, 0, 162, 52
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | 
+    WS_SYSMENU
+CAPTION "Профиль"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "Да",IDOK,7,31,50,14
+    PUSHBUTTON      "Нет",IDCANCEL,105,31,50,14
+    LTEXT           "Сохранить изменения активного профиля?",IDC_STATIC,7,14,
+                    146,14
+END
+
+IDD_DIALOG_SETTING_NAME13 DIALOGEX 0, 0, 162, 52
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | 
+    WS_SYSMENU
+CAPTION "Профиль"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "Да",IDOK,7,31,50,14
+    PUSHBUTTON      "Нет",IDCANCEL,105,31,50,14
+    LTEXT           "Сменить профиль?",IDC_STATIC,43,15,72,14
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog Info
+//
+
+IDD_IMAGE DLGINIT
+BEGIN
+    IDC_COMBO_PREVIEW, 0x403, 8, 0
+0xfbc1, 0xf2f1, 0xfbf0, 0x00e9, 
+    IDC_COMBO_PREVIEW, 0x403, 7, 0
+0xeecf, 0xedeb, 0xe9fb, "\000" 
+    IDC_COMBO_CAPTURE, 0x403, 10, 0
+0x3732, 0x3637, 0x3278, 0x3730, 0x0034, 
+    IDC_COMBO_CAPTURE, 0x403, 10, 0
+0x3331, 0x3239, 0x3178, 0x3430, 0x0030, 
+    IDC_COMBO_CAPTURE, 0x403, 8, 0
+0x3436, 0x7830, 0x3834, 0x0030, 
+    0
+END
+
+IDD_LEVEL_ADJUSTMENT DLGINIT
+BEGIN
+    IDC_COMBO_CHANNEL, 0x403, 8, 0
+0xf0df, 0xeeea, 0xf2f1, 0x00fc, 
+    IDC_COMBO_CHANNEL, 0x403, 8, 0
+0xf0ca, 0xf1e0, 0xfbed, 0x00e9, 
+    IDC_COMBO_CHANNEL, 0x403, 8, 0
+0xe5c7, 0xe5eb, 0xfbed, 0x00e9, 
+    IDC_COMBO_CHANNEL, 0x403, 6, 0
+0xe8d1, 0xe8ed, 0x00e9, 
+    IDC_COMBO_ACCUMULATION, 0x403, 4, 0
+0xe5cd, 0x00f2, 
+    IDC_COMBO_ACCUMULATION, 0x403, 9, 0
+0xebd1, 0xe6ee, 0xede5, 0xe5e8, "\000" 
+    IDC_COMBO_ACCUMULATION, 0x403, 11, 0
+0xf1d3, 0xe5f0, 0xede4, 0xede5, 0xe5e8, "\000" 
+    0
+END
+
+IDD_PREVIEW DLGINIT
+BEGIN
+    IDC_COMBO_SENSITIVITY, 0x403, 3, 0
+0x3035, "\000" 
+    IDC_COMBO_SENSITIVITY, 0x403, 4, 0
+0x3031, 0x0030, 
+    IDC_COMBO_SENSITIVITY, 0x403, 4, 0
+0x3032, 0x0030, 
+    IDC_COMBO_SENSITIVITY, 0x403, 4, 0
+0x3034, 0x0030, 
+    0
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO 
+BEGIN
+    IDD_BLACK_BALANCE, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 163
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 49
+    END
+
+    IDD_COLOR_BALANCE, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 162
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 127
+    END
+
+    IDD_HISTO, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 194
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 78
+    END
+
+    IDD_IMAGE, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 171
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 135
+    END
+
+    IDD_LEVEL_ADJUSTMENT, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 181
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 127
+    END
+
+    IDD_PREVIEW, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 523
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 383
+    END
+
+    IDD_WAIT, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 206
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 67
+    END
+
+    IDD_SETTING, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 171
+        TOPMARGIN, 4
+        BOTTOMMARGIN, 101
+    END
+
+    IDD_SETTING11, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 156
+        TOPMARGIN, 4
+        BOTTOMMARGIN, 101
+    END
+
+    IDD_DIALOG_SETTING_NAME11, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 179
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 68
+    END
+
+    IDD_DIALOG_SETTING_NAME12, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 155
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 45
+    END
+
+    IDD_DIALOG_SETTING_NAME13, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 155
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 45
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE 
+BEGIN
+    IDS_PIXERA              "Pixera"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_INPUT               "Захват изображения"
+    IDS_AE_STATE_UNDER      "Under"
+    IDS_AE_STATE_OVER       "Over"
+    IDS_AE_STATE_NORMAL     "Normal"
+    IDS_AE_STATE_NOTFUNCTIONAL " "
+    IDS_MS                  "мс"
+    IDS_MKS                 "мкс"
+    IDS_TIME                "Время:"
+    IDS_ADJUST              "Яркость:"
+    IDS_SEC                 "с"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_NEW_METHODIC        "Мои настройки"
+END
+
+#endif    // Russian resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.S.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_PREVIEW DIALOGEX 0, 0, 530, 390
+STYLE DS_SETFONT | DS_MODALFRAME | WS_VISIBLE | WS_CLIPSIBLINGS | 
+    WS_CLIPCHILDREN | WS_CAPTION | WS_SYSMENU
+CAPTION "Pixera"
+FONT 8, "MS Sans Serif", 0, 0, 0x0
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,7,7,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,80,7,50,14
+    PUSHBUTTON      "Help",ID_HELP,153,7,50,14
+    LTEXT           "Time:",IDC_STATIC_TIMEADJ,7,50,24,10
+    EDITTEXT        IDC_EDIT_EXP_TIME,38,46,37,17,ES_AUTOHSCROLL
+    CONTROL         "Spin1",IDC_SPIN_EXP_TIME,"msctls_updown32",
+                    UDS_ALIGNRIGHT | UDS_ARROWKEYS,75,46,11,17
+    CONTROL         "Slider1",IDC_SLIDER_TIME,"msctls_trackbar32",
+                    TBS_AUTOTICKS | TBS_TOP | WS_TABSTOP,89,44,106,20
+    LTEXT           "Sensitivity:",IDC_STATIC_SENSITIVITY,8,72,35,12
+    COMBOBOX        IDC_COMBO_SENSITIVITY,47,70,43,86,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    RADIOBUTTON     "Level Adjustment",IDC_LEVEL,7,89,101,18,BS_PUSHLIKE | 
+                    WS_GROUP | WS_TABSTOP
+    RADIOBUTTON     "Color Balance",IDC_COLOR_BALANCE,7,141,100,17,
+                    BS_PUSHLIKE
+    RADIOBUTTON     "Image Settings",IDC_IMAGE_PAGE,7,117,100,16,BS_PUSHLIKE
+    RADIOBUTTON     "Black Balance",IDC_BLACK_BALANCE,7,168,100,17,
+                    BS_PUSHLIKE
+    CONTROL         "",IDC_DLG_POS,"Static",SS_BLACKRECT | NOT WS_VISIBLE,7,
+                    192,193,91
+    CONTROL         "",IDC_IMAGE,"Static",SS_BLACKRECT,205,7,280,207
+END
+
+IDD_LEVEL_ADJUSTMENT DIALOGEX 0, 0, 188, 134
+STYLE DS_SETFONT | DS_NOIDLEMSG | WS_CHILD | WS_CLIPSIBLINGS | 
+    WS_CLIPCHILDREN | WS_BORDER
+EXSTYLE WS_EX_CLIENTEDGE
+FONT 8, "MS Sans Serif", 0, 0, 0x1
+BEGIN
+    LTEXT           "Channel:",IDC_STATIC,5,7,34,12
+    COMBOBOX        IDC_COMBO_CHANNEL,37,6,57,60,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    LTEXT           "Black:",IDC_STATIC,5,31,32,13
+    EDITTEXT        IDC_EDIT_SHADOW,37,28,39,14,ES_AUTOHSCROLL
+    CONTROL         "Spin1",IDC_SPIN_SHADOW,"msctls_updown32",
+                    UDS_SETBUDDYINT | UDS_ALIGNRIGHT | UDS_AUTOBUDDY | 
+                    UDS_ARROWKEYS,66,25,11,15
+    CONTROL         "Slider1",IDC_SLIDER_SHADOW,"msctls_trackbar32",
+                    TBS_AUTOTICKS | TBS_TOP | WS_TABSTOP,77,23,108,19
+    LTEXT           "Gamma:",IDC_STATIC,5,52,32,13
+    EDITTEXT        IDC_EDIT_GAMMA,37,49,39,14,ES_AUTOHSCROLL
+    CONTROL         "Spin1",IDC_SPIN_GAMMA,"msctls_updown32",UDS_ALIGNRIGHT | 
+                    UDS_AUTOBUDDY | UDS_ARROWKEYS,64,44,11,15
+    CONTROL         "Slider1",IDC_SLIDER_GAMMA,"msctls_trackbar32",
+                    TBS_AUTOTICKS | TBS_TOP | WS_TABSTOP,77,44,108,20
+    LTEXT           "White:",IDC_STATIC,5,75,32,13
+    EDITTEXT        IDC_EDIT_HIGHLIGHT,37,73,39,14,ES_AUTOHSCROLL
+    CONTROL         "Spin1",IDC_SPIN_HIGHLIGHT,"msctls_updown32",
+                    UDS_SETBUDDYINT | UDS_ALIGNRIGHT | UDS_AUTOBUDDY | 
+                    UDS_ARROWKEYS,64,68,11,15
+    CONTROL         "Slider1",IDC_SLIDER_HIGHLIGHT,"msctls_trackbar32",
+                    TBS_AUTOTICKS | TBS_TOP | WS_TABSTOP,77,68,108,19
+    LTEXT           "Accumulation :",IDC_STATIC_ACCUMULATION,5,100,47,27
+    EDITTEXT        IDC_EDIT_ACCUMULATION_TIMES,55,99,30,13,ES_AUTOHSCROLL
+    CONTROL         "Spin1",IDC_SPIN_ACCUMULATION_TIMES,"msctls_updown32",
+                    UDS_SETBUDDYINT | UDS_ALIGNRIGHT | UDS_AUTOBUDDY | 
+                    UDS_ARROWKEYS,73,93,11,14
+    COMBOBOX        IDC_COMBO_ACCUMULATION,91,99,93,67,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    PUSHBUTTON      "Default",IDC_DEFAULT,68,117,52,14
+END
+
+IDD_IMAGE DIALOGEX 0, 0, 167, 137
+STYLE DS_SETFONT | DS_NOIDLEMSG | WS_CHILD | WS_CLIPSIBLINGS | WS_BORDER
+EXSTYLE WS_EX_CLIENTEDGE
+FONT 8, "MS Sans Serif", 0, 0, 0x1
+BEGIN
+    GROUPBOX        "Flip",IDC_STATIC,2,4,61,38
+    CONTROL         "Vertical",IDC_CHECK_FLIP_VERT,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,7,13,43,16
+    CONTROL         "Horizontal",IDC_CHECK_FLIP_HORZ,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,7,26,49,15
+    CONTROL         "Grayscale",IDC_CHECK_GRAYSCALE,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,97,89,65,8
+    LTEXT           "Preview:",IDC_STATIC,74,13,34,13
+    COMBOBOX        IDC_COMBO_PREVIEW,113,12,49,48,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    LTEXT           "Capture:",IDC_STATIC,74,32,30,12
+    COMBOBOX        IDC_COMBO_CAPTURE,113,30,49,49,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    CONTROL         "Focus",IDC_CHECK_FOCUS,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,7,47,34,11
+    LTEXT           "",IDC_STATIC_FOCUS_CURRENT,47,49,26,11
+    CONTROL         "Focus rectangle",IDC_SHOW_FOCUS_RECT,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,7,63,64,10
+    GROUPBOX        "Microscope",IDC_STATIC,7,78,73,38
+    CONTROL         "Transmitted light",IDC_MICRO_BRIGHT,"Button",
+                    BS_AUTORADIOBUTTON | WS_GROUP | WS_TABSTOP,10,89,65,8
+    CONTROL         "Fluorescence",IDC_MICRO_FLUORESCENT,"Button",
+                    BS_AUTORADIOBUTTON,11,103,65,8
+    LTEXT           "",IDC_STATIC_FOCUS_PEAK,108,50,26,11
+    CONTROL         "Histogram",IDC_HISTOGRAM,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,97,103,65,8
+    PUSHBUTTON      "Default",IDC_DEFAULT,54,120,52,14
+    GROUPBOX        "Image",IDC_STATIC,89,78,73,38
+END
+
+IDD_COLOR_BALANCE DIALOGEX 0, 0, 169, 140
+STYLE DS_SETFONT | DS_NOIDLEMSG | WS_CHILD | WS_CLIPSIBLINGS | 
+    WS_CLIPCHILDREN | WS_BORDER
+EXSTYLE WS_EX_CLIENTEDGE
+FONT 8, "MS Sans Serif", 0, 0, 0x1
+BEGIN
+    CONTROL         "Off",IDC_WB_OFF,"Button",BS_AUTORADIOBUTTON | WS_GROUP | 
+                    WS_TABSTOP,6,6,31,14
+    CONTROL         "Auto",IDC_WB_AUTO,"Button",BS_AUTORADIOBUTTON,6,18,31,
+                    14
+    CONTROL         "One push",IDC_WB_ONE_PUSH,"Button",BS_AUTORADIOBUTTON,6,
+                    31,50,14
+    CONTROL         "Manual",IDC_WB_MANUAL,"Button",BS_AUTORADIOBUTTON,6,47,
+                    41,14
+    CONTROL         "Show rectangle",IDC_SHOW_WB_RECT,"Button",
+                    BS_AUTOCHECKBOX | WS_GROUP | WS_TABSTOP,64,20,65,10
+    LTEXT           "Red:",IDC_STATIC,3,65,18,10
+    LTEXT           "Green:",IDC_STATIC,3,85,23,11
+    LTEXT           "Blue:",IDC_STATIC,3,106,21,8
+    EDITTEXT        IDC_EDIT_WB_RED,31,63,36,15,ES_AUTOHSCROLL
+    CONTROL         "Spin1",IDC_SPIN_WB_RED,"msctls_updown32",UDS_ALIGNRIGHT | 
+                    UDS_AUTOBUDDY | UDS_ARROWKEYS,57,60,11,14
+    CONTROL         "Slider1",IDC_SLIDER_WB_RED,"msctls_trackbar32",
+                    TBS_AUTOTICKS | TBS_TOP | WS_TABSTOP,72,57,96,23
+    EDITTEXT        IDC_EDIT_WB_GREEN,31,84,36,15,ES_AUTOHSCROLL
+    CONTROL         "Spin1",IDC_SPIN_WB_GREEN,"msctls_updown32",
+                    UDS_ALIGNRIGHT | UDS_AUTOBUDDY | UDS_ARROWKEYS,57,81,11,
+                    14
+    CONTROL         "Slider1",IDC_SLIDER_WB_GREEN,"msctls_trackbar32",
+                    TBS_AUTOTICKS | TBS_TOP | WS_TABSTOP,71,81,96,23
+    EDITTEXT        IDC_EDIT_WB_BLUE,31,105,36,15,ES_AUTOHSCROLL
+    CONTROL         "Spin1",IDC_SPIN_WB_BLUE,"msctls_updown32",
+                    UDS_ALIGNRIGHT | UDS_AUTOBUDDY | UDS_ARROWKEYS,58,105,11,
+                    14
+    CONTROL         "Slider1",IDC_SLIDER_WB_BLUE,"msctls_trackbar32",
+                    TBS_AUTOTICKS | TBS_TOP | WS_TABSTOP,71,100,96,23
+    PUSHBUTTON      "Build",IDC_WB_BUILD,65,35,28,16
+    PUSHBUTTON      "Default",IDC_DEFAULT,45,124,52,14
+END
+
+IDD_BLACK_BALANCE DIALOGEX 0, 0, 170, 57
+STYLE DS_SETFONT | DS_NOIDLEMSG | WS_CHILD | WS_CLIPSIBLINGS | 
+    WS_CLIPCHILDREN | WS_BORDER
+EXSTYLE WS_EX_CLIENTEDGE
+FONT 8, "MS Sans Serif", 0, 0, 0x1
+BEGIN
+    CONTROL         "Auto",IDC_CHECK_BB,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,8,14,70,14
+    CONTROL         "Show rectangle",IDC_SHOW_BB_RECT,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,8,34,65,10
+    PUSHBUTTON      "Default",IDC_DEFAULT,83,23,52,14
+END
+
+IDD_HISTO DIALOGEX 0, 0, 199, 85
+STYLE DS_SETFONT | DS_CONTROL | WS_CHILD | WS_VISIBLE
+FONT 8, "MS Sans Serif", 0, 0, 0x1
+BEGIN
+    CONTROL         "",IDC_HISTO,"Static",SS_BLACKRECT,12,1,121,67
+    CONTROL         "Gray",IDC_GRAY,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,
+                    137,14,34,11,0,HIDC_GRAY
+    CONTROL         "Red",IDC_RED,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,137,
+                    28,34,11,0,HIDC_RED
+    CONTROL         "Green",IDC_GREEN,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,
+                    137,42,34,11,0,HIDC_GREEN
+    CONTROL         "Blue",IDC_BLUE,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,
+                    137,56,34,11,0,HIDC_BLUE
+    LTEXT           "Min - %d, Max - %d, Avr - %d",IDC_STATIC_MSG,21,71,106,
+                    9
+    LTEXT           "0",IDC_STATIC_0,0,67,8,11
+    RTEXT           "s",IDC_STATIC_MAX_COLOR,132,68,17,10
+    LTEXT           "Static",IDC_STATIC_MAX_POINTS,1,14,8,11,NOT WS_VISIBLE
+    LTEXT           "10 fps",IDC_STATIC_PERIOD1,157,70,31,8
+END
+
+IDD_WAIT DIALOGEX 0, 0, 213, 74
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | 
+    WS_SYSMENU
+CAPTION "Pixera"
+FONT 8, "MS Sans Serif", 0, 0, 0x0
+BEGIN
+    LTEXT           "Please, wait...",IDC_STATIC,66,43,54,11
+    LTEXT           "Capturing image!",IDC_STATIC,63,17,57,15
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog Info
+//
+
+IDD_LEVEL_ADJUSTMENT DLGINIT
+BEGIN
+    IDC_COMBO_CHANNEL, 0x403, 10, 0
+0x754c, 0x696d, 0x616e, 0x636e, 0x0065, 
+    IDC_COMBO_CHANNEL, 0x403, 4, 0
+0x6552, 0x0064, 
+    IDC_COMBO_CHANNEL, 0x403, 6, 0
+0x7247, 0x6565, 0x006e, 
+    IDC_COMBO_CHANNEL, 0x403, 5, 0
+0x6c42, 0x6575, "\000" 
+    IDC_COMBO_ACCUMULATION, 0x403, 5, 0
+0x6f4e, 0x656e, "\000" 
+    IDC_COMBO_ACCUMULATION, 0x403, 9, 0
+0x6441, 0x6964, 0x6974, 0x6e6f, "\000" 
+    IDC_COMBO_ACCUMULATION, 0x403, 23, 0
+0x6441, 0x2064, 0x2026, 0x7473, 0x706f, 0x6f20, 0x206e, 0x766f, 0x7265, 
+0x6c66, 0x776f, "\000" 
+    IDC_COMBO_ACCUMULATION, 0x403, 8, 0
+0x7641, 0x7265, 0x6761, 0x0065, 
+    0
+END
+
+IDD_IMAGE DLGINIT
+BEGIN
+    IDC_COMBO_PREVIEW, 0x403, 5, 0
+0x6146, 0x7473, "\000" 
+    IDC_COMBO_PREVIEW, 0x403, 5, 0
+0x7546, 0x6c6c, "\000" 
+    IDC_COMBO_CAPTURE, 0x403, 10, 0
+0x3732, 0x3637, 0x3278, 0x3730, 0x0034, 
+    IDC_COMBO_CAPTURE, 0x403, 10, 0
+0x3331, 0x3239, 0x3178, 0x3430, 0x0030, 
+    IDC_COMBO_CAPTURE, 0x403, 8, 0
+0x3436, 0x7830, 0x3834, 0x0030, 
+    0
+END
+
+IDD_PREVIEW DLGINIT
+BEGIN
+    IDC_COMBO_SENSITIVITY, 0x403, 3, 0
+0x3035, "\000" 
+    IDC_COMBO_SENSITIVITY, 0x403, 4, 0
+0x3031, 0x0030, 
+    IDC_COMBO_SENSITIVITY, 0x403, 4, 0
+0x3032, 0x0030, 
+    IDC_COMBO_SENSITIVITY, 0x403, 4, 0
+0x3034, 0x0030, 
+    0
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO 
+BEGIN
+    IDD_PREVIEW, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 523
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 383
+    END
+
+    IDD_LEVEL_ADJUSTMENT, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 181
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 127
+    END
+
+    IDD_IMAGE, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 160
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 130
+    END
+
+    IDD_COLOR_BALANCE, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 162
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 133
+    END
+
+    IDD_BLACK_BALANCE, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 162
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 49
+    END
+
+    IDD_HISTO, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 192
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 78
+    END
+
+    IDD_WAIT, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 206
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 67
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE 
+BEGIN
+    IDS_PIXERA              "Pixera"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_INPUT               "Acquire image"
+    IDS_AE_STATE_UNDER      "Under"
+    IDS_AE_STATE_OVER       "Over"
+    IDS_AE_STATE_NORMAL     "Normal"
+    IDS_AE_STATE_NOTFUNCTIONAL " "
+    IDS_MS                  "ms"
+    IDS_MKS                 "mks"
+    IDS_TIME                "Time"
+    IDS_ADJUST              "Adjust"
+    IDS_SEC                 "s"
+END
+
+#endif    // English (U.S.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE 9, 1
+#pragma code_page(1252)
+#endif //_WIN32
+#include "res\Pixera.rc2"  // non-Microsoft Visual C++ edited resources
+#include "afxres.rc"         // Standard components
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

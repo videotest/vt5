@@ -1,0 +1,16 @@
+// syncview.odl : type library source for syncview.dll
+
+// This file will be processed by the MIDL compiler to produce the
+// type library (syncview.tlb).
+
+[ uuid(9651A3C5-E84C-40BD-BBDF-83E2F07A36AB), version(1.0) ]
+library Syncview
+{
+	importlib("stdole32.tlb");
+	importlib("stdole2.tlb");
+
+
+
+	//{{AFX_APPEND_ODL}}
+	//}}AFX_APPEND_ODL}}
+};

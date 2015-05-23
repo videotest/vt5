@@ -1,0 +1,16 @@
+// EditorView.odl : type library source for EditorView.dll
+
+// This file will be processed by the MIDL compiler to produce the
+// type library (EditorView.tlb).
+
+[ uuid(C9380A13-E13D-4231-A7D6-F3DEABFF84DE), version(1.0) ]
+library EditorView
+{
+	importlib("stdole32.tlb");
+	importlib("stdole2.tlb");
+
+
+
+	//{{AFX_APPEND_ODL}}
+	//}}AFX_APPEND_ODL}}
+};

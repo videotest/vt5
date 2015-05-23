@@ -1,0 +1,94 @@
+// HistAX.odl : type library source for ActiveX Control project.
+
+// This file will be processed by the Make Type Library (mktyplib) tool to
+// produce the type library (HistAX.tlb) that will become a resource in
+// HistAX.ocx.
+
+
+[ uuid(06FDDE55-F981-11D3-A0C1-0000B493A187), version(1.0),
+  helpfile("HistAX.hlp"),
+  helpstring("HistAX ActiveX Control module"),
+  control ]
+library HISTAXLib
+{
+#include <olectl.h>
+#include <idispids.h>
+	importlib(STDOLE_TLB);
+	importlib(STDTYPE_TLB);
+
+	//  Primary dispatch interface for CHistAXCtrl
+
+	[ uuid(06FDDE56-F981-11D3-A0C1-0000B493A187),
+	  helpstring("Dispatch interface for HistAX Control"), hidden ]
+	dispinterface _DHistAX
+	{
+		properties:
+			// NOTE - ClassWizard will maintain property information here.
+			//    Use extreme caution when editing this section.
+			//{{AFX_ODL_PROP(CHistAXCtrl)
+			[id(1)] boolean InnerRaised;
+			[id(2)] boolean OuterRaised;
+			[id(3)] boolean InnerSunken;
+			[id(4)] boolean OuterSunken;
+			[id(DISPID_BACKCOLOR), bindable, requestedit] OLE_COLOR BackColor;
+			[id(DISPID_FORECOLOR), bindable, requestedit] OLE_COLOR ForeColor;
+			[id(5)] short PaintPanes;
+			[id(6)] long LowThreshold;
+			[id(7)] long HighThreshold;
+			[id(8)] double YZoom;
+			//}}AFX_ODL_PROP
+
+		methods:
+			// NOTE - ClassWizard will maintain method information here.
+			//    Use extreme caution when editing this section.
+			//{{AFX_ODL_METHOD(CHistAXCtrl)
+			[id(9)] BSTR GetCnvName();
+			[id(10)] short GetPanesCount();
+			[id(11)] void SetPane(short nPane);
+			[id(12)] BSTR GetPaneName(short nPane);
+			[id(13)] OLE_COLOR GetPaneColor(short nPane);
+			[id(14)] void AddPane(short nPane);
+			[id(15)] void RemovePane(short nPane);
+			[id(16)] void ZoomIn(double nStep);
+			[id(17)] void ZoomOut(double nStep);
+			[id(18)] boolean Lock(boolean bLock);
+			[id(19)] void SetTarget(IDispatch* pdispTarget);
+			[id(20)] void SetNumPhases(long nPhases);
+			[id(21)] void SetPhaseLowThreshold(long nPhase, long fThreshold);
+			[id(22)] void SetPhaseHighThreshold(long nPhase, long fThreshold);
+			[id(23)] void SetPhaseColor(long nPhase, OLE_COLOR clPhase);
+			//}}AFX_ODL_METHOD
+	};
+
+	//  Event dispatch interface for CHistAXCtrl
+
+	[ uuid(06FDDE57-F981-11D3-A0C1-0000B493A187),
+	  helpstring("Event interface for HistAX Control") ]
+	dispinterface _DHistAXEvents
+	{
+		properties:
+			//  Event interface has no properties
+
+		methods:
+			// NOTE - ClassWizard will maintain event information here.
+			//    Use extreme caution when editing this section.
+			//{{AFX_ODL_EVENT(CHistAXCtrl)
+			[id(1)] void OnNewCalc();
+			[id(2)] void OnPhaseClick(long nPhase);
+			//}}AFX_ODL_EVENT
+	};
+
+	//  Class information for CHistAXCtrl
+
+	[ uuid(65BD787C-FDC7-4f83-A788-13E6266835E9),
+	  helpstring("HistAX Control"), control ]
+	coclass HistAX
+	{
+		[default] dispinterface _DHistAX;
+		[default, source] dispinterface _DHistAXEvents;
+	};
+
+
+	//{{AFX_APPEND_ODL}}
+	//}}AFX_APPEND_ODL}}
+};

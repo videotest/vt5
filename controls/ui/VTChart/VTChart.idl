@@ -1,0 +1,20 @@
+// VTChart.idl : IDL source for VTChart.dll
+//
+
+// This file will be processed by the MIDL tool to
+// produce the type library (VTChart.tlb) and marshalling code.
+
+import "oaidl.idl";
+import "ocidl.idl";
+
+[
+	uuid(B92E1024-1F09-456B-AEE3-4C699FEC7B7D),
+	version(1.0),
+	helpstring("VTChart 1.0 Type Library")
+]
+library VTCHARTLib
+{
+	importlib("stdole32.tlb");
+	importlib("stdole2.tlb");
+
+};

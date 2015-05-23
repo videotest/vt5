@@ -1,0 +1,351 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// Russian resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_RUS)
+#ifdef _WIN32
+LANGUAGE LANG_RUSSIAN, SUBLANG_DEFAULT
+#pragma code_page(1251)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)\r\n"
+    "LANGUAGE 9, 1\r\n"
+    "#pragma code_page(1252)\r\n"
+    "#include ""res\\sewLI.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "#include ""afxres.rc""     // Standard components\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO 
+BEGIN
+    IDD_SEWSAVEIMAGE_ZOOM, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 180
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 75
+    END
+
+    IDD_SEWLI_PAGE, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 188
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 69
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_SEWSAVEIMAGE_ZOOM DIALOGEX 0, 0, 187, 82
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | DS_CENTER | WS_POPUP | 
+    WS_CAPTION | WS_SYSMENU
+CAPTION "Выберите формат"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,19,48,50,14
+    PUSHBUTTON      "Выход",IDCANCEL,104,48,50,14
+    LTEXT           "Формат:",IDC_STATIC,13,15,29,11
+    COMBOBOX        IDC_COMBO_FORMAT,52,14,64,61,CBS_DROPDOWN | WS_VSCROLL | 
+                    WS_TABSTOP
+    LTEXT           "?",IDC_STATIC_SIZE,124,14,48,13
+END
+
+IDD_SEWLI_PAGE DIALOGEX 0, 0, 195, 76
+STYLE DS_SETFONT | WS_CHILD | WS_VISIBLE | WS_DISABLED
+FONT 8, "MS Sans Serif", 400, 0, 0xCC
+BEGIN
+    LTEXT           "TODO: layout property page",IDC_STATIC,53,59,90,8
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE 
+BEGIN
+    ID_ACTION_SEWLI         "SewLI\nCшивка\nИзображение\nПеремещение: Shift+стрелки курсора. Быстрое перемещение: Сtrl + стрелки курсора. Выход: Esc.\nCшивка"
+    IDS_SEWLI_TYPE_NAME     "Sew Large Images"
+    ID_ACTION_SEWLI_OBJECT  """SewLIObject\nSewLIObject\nSew\nSewLIObject\nSewLIObject"""
+    IDS_SEWLI_NOOBJECTS     "Нет объектов данного класса"
+    IDS_SEWLI_CLASS_NAME    "Класс"
+    IDS_SEWLI_NUMBER_OF_OBJECTS "Число объектов"
+    IDS_SEWLI_PERCENT_OF_TOTAL "Процент от общего"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_SEWLI_VIEW_NAME     "Sew Large Images View"
+    ID_ACTION_SEWIMPORT     "SewImport\nВставит изображение в сшивку\nСшивка\nВставит изображение в сшивку\nВставит изображение в сшивку"
+    IDS_BROWSE_FOR_BASE_FOLDER 
+                            "Выберите, пожалуйста, каталог для хранения изображений и их уменьшенных копий."
+    IDS_DIR_NOT_CREATED     "Каталог %s не существует и не может быть создан"
+    IDS_DIR_NOT_EMPTY       "Каталог %s не пуст. Удалить содержимое?"
+    IDS_FILE_NOT_REMOVED    "%s не может быть удален."
+    ID_ACTION_SEWEXPORT     "SewExport\nПослать изображение из сшивки в документ\nСшивка\nПослать изображение из сшивки в документ\nПослать изображение из сшивки в документ"
+    ID_ACTION_SEWMOVEFRAGMENT 
+                            "SewMoveFragment\nПередвинуть фрагмент\nСшивка\nПередвинуть фрагмент\nПередвинуть фрагмент"
+    ID_ACTION_SEWDELETEFRAGMENT 
+                            "SewDeleteFragment\nУдалить фрагмент\nСшивку\nУдалить фрагмент\nУдалить фрагмент"
+    IDS_SHOW_SEW_LI         "ShowSewLIView\nСшивка\nВид\nСшивка\nСшивка"
+    ID_ACTION_SAVE_SEW_IMAGE 
+                            "SaveSewImage\nСохранить сшивку как единое изображение\nСшивка\nСохранить сшивку как единое изображение\nСохранить сшивку как единое изображение"
+    IDS_DIR_NOT_EMPTY_NOT_SLI 
+                            "Каталог %s не пуст и его содержимое не может быть удалено"
+    IDS_FILE_NOT_CREATED    "Файл %s не может быть создан"
+END
+
+#endif    // Russian resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.S.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDI_SEWLI               ICON                    "sewLI.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Toolbar
+//
+
+IDR_TOOLBAR1 TOOLBAR  16, 15
+BEGIN
+    BUTTON      ID_ACTION_SEWLI_OBJECT
+    BUTTON      ID_ACTION_SEWIMPORT
+    BUTTON      ID_ACTION_SEWMOVEFRAGMENT
+    BUTTON      ID_ACTION_SEWDELETEFRAGMENT
+    BUTTON      IDS_SHOW_SEW_LI
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDR_TOOLBAR1            BITMAP                  "toolbar1.bmp"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 1,0,0,1
+ PRODUCTVERSION 1,0,0,1
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x2L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "040904B0"
+        BEGIN
+            VALUE "CompanyName", "TODO: <Company name>"
+            VALUE "FileDescription", "TODO: <File description>"
+            VALUE "FileVersion", "1.0.0.1"
+            VALUE "InternalName", "sewLI.dll"
+            VALUE "LegalCopyright", "TODO: (c) <Company name>.  All rights reserved."
+            VALUE "OriginalFilename", "sewLI.dll"
+            VALUE "ProductName", "TODO: <Product name>"
+            VALUE "ProductVersion", "1.0.0.1"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x409, 1200
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO 
+BEGIN
+    IDD_SEWLI_PAGE, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 188
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 69
+    END
+
+    IDD_SEWSAVEIMAGE_ZOOM, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 180
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 75
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_SEWLI_PAGE DIALOGEX 0, 0, 195, 76
+STYLE DS_SETFONT | WS_CHILD | WS_VISIBLE | WS_DISABLED
+FONT 8, "MS Sans Serif", 400, 0, 0xCC
+BEGIN
+    LTEXT           "TODO: layout property page",IDC_STATIC,53,59,90,8
+END
+
+IDD_SEWSAVEIMAGE_ZOOM DIALOGEX 0, 0, 187, 82
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | DS_CENTER | WS_POPUP | 
+    WS_CAPTION | WS_SYSMENU
+CAPTION "Select format"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,19,47,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,104,46,50,14
+    LTEXT           "Format:",IDC_STATIC,13,15,29,11
+    COMBOBOX        IDC_COMBO_FORMAT,52,14,64,61,CBS_DROPDOWN | WS_VSCROLL | 
+                    WS_TABSTOP
+    LTEXT           "?",IDC_STATIC_SIZE,124,14,48,13
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE 
+BEGIN
+    ID_ACTION_SEWLI         "SewLI\nC?????\n???????????\n???????????: Shift+??????? ???????. ??????? ???????????: ?trl + ??????? ???????. ?????: Esc.\nC?????"
+    IDS_SEWLI_TYPE_NAME     "Sew Large Images"
+    ID_ACTION_SEWLI_OBJECT  """SewLIObject\nSewLIObject\nSew\nSewLIObject\nSewLIObject"""
+    IDS_SEWLI_NOOBJECTS     "No objects of this class"
+    IDS_SEWLI_CLASS_NAME    "Class name"
+    IDS_SEWLI_NUMBER_OF_OBJECTS "Number of objects"
+    IDS_SEWLI_PERCENT_OF_TOTAL "Percent of total"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_SEWLI_VIEW_NAME     "Sew Large Images View"
+    ID_ACTION_SEWIMPORT     "SewImport\nInsert image to images list\nSew\nInsert image to images list\nInsert image to images list"
+    IDS_BROWSE_FOR_BASE_FOLDER 
+                            "Please, select folder for fragments and previews."
+    IDS_DIR_NOT_CREATED     "Directory %s does not exist and couldn't be created"
+    IDS_DIR_NOT_EMPTY       "Directory %s not empty. Remove content?"
+    IDS_FILE_NOT_REMOVED    "%s can not be removed."
+    ID_ACTION_SEWEXPORT     "SewExport\nSend image from images list to document\nSew\nSend image from images list to document\nSend image from images list to document"
+    ID_ACTION_SEWMOVEFRAGMENT 
+                            "SewMoveFragment\nMove current fragment\nSew\nMove current fragment\nMove current fragment"
+    ID_ACTION_SEWDELETEFRAGMENT 
+                            "SewDeleteFragment\nDelete active fragment\nSew\nDelete active fragment\nDelete active fragment"
+    IDS_SHOW_SEW_LI         "ShowSewLIView\nSew large image view\nView\nShow sew large image view\nSew large image view"
+    ID_ACTION_SAVE_SEW_IMAGE 
+                            "SaveSewImage\nSave sew image as single image\nSew\nSave sew image as single image\nSave sew image as single image"
+    IDS_DIR_NOT_EMPTY_NOT_SLI 
+                            "Directory %s not empty and its content can not be removed"
+    IDS_FILE_NOT_CREATED    "File %s can not be created"
+END
+
+#endif    // English (U.S.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+LANGUAGE 9, 1
+#pragma code_page(1252)
+#include "res\sewLI.rc2"  // non-Microsoft Visual C++ edited resources
+#include "afxres.rc"     // Standard components
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

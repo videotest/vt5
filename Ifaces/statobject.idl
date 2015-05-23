@@ -1,0 +1,87 @@
+import "oaidl.idl";
+import "ocidl.idl";
+
+[
+	uuid(854257C1-9122-4c82-B89E-4286B6230F3A),
+	version(1.0),
+	helpstring("Stat object Type Library")
+	
+]
+library StatObjectLib
+{	
+	importlib("stdole2.tlb");
+
+	[
+		object,
+		uuid(477B5F5D-D84C-4139-A1CD-79432A5DA9C8),
+		helpstring("IStatObjectDisp Interface"),
+		dual,
+		pointer_default(unique)
+	]
+	interface IStatObjectDisp : IDispatch
+	{
+		// Получить значение стат параметра для класса
+		[id(0), helpstring("method GetValue")] HRESULT GetValue( [in] long lClass, [in] long lKey, [out, retval] VARIANT *pvarValue);
+
+		// Получить значение стат параметра строки всего
+		[id(1), helpstring("method GetValueGlobal")] HRESULT GetValueGlobal( [in] long lKey, [out, retval] VARIANT *pvarValue );
+
+		// Получить кол-во классов
+		[id(3), helpstring("method GetClassCount")] HRESULT GetClassCount( [out, retval] long *plSz );
+		
+		// Получить номер класса по его индексу
+		[id(4), helpstring("method GetClassValue")] HRESULT GetClassValue( [in] long lClassID, [out, retval] long *plClassValue );
+
+		// Получить кол-во параметров
+		[id(5), helpstring("method GetKeyCount")] HRESULT GetKeyCount( [out, retval] long *plSz );
+		
+		// Получить номер параметров
+		[id(6), helpstring("method GetKeyValue")] HRESULT GetKeyValue( [in] long lKeyIndex, [out, retval] long *plKeyValue );
+
+		// Имя объекта
+		[propget, id(7), helpstring("property Name")] HRESULT Name([out, retval] BSTR* pVal);
+		[propput, id(7), helpstring("property Name")] HRESULT Name([in] BSTR newVal);
+
+		[id(8), helpstring("method GetValueInUnit")] HRESULT GetValueInUnit( [in] long lClass, [in] long lKey, [out, retval] VARIANT *pvarValue );
+
+		// Получить значение стат параметра строки всего
+		[id(9), helpstring("method GetValueGlobalInUnit")] HRESULT GetValueGlobalInUnit( [in] long lKey, [out, retval] VARIANT *pvarValue );
+		
+		[id(10), helpstring("method LoadSettingsFromSD")] HRESULT LoadSettingsFromSD( [in] BSTR bstrSection );
+		[id(11), helpstring("method StoreSettingsToSD")] HRESULT StoreSettingsToSD( [in] BSTR bstrSection );
+
+		[id(12), helpstring("method GetPrivateNamedData")] HRESULT GetPrivateNamedData( [out,retval] IDispatch **ppDisp );
+		[id(13), helpstring("method isEmpty")] HRESULT isEmpty( [out,retval] boolean *pbRes );
+
+		[id(14), helpstring("method SetProperty")] HRESULT SetBagProperty( [in] BSTR bstrName, [in] VARIANT var );
+		[id(15), helpstring("method GetProperty")] HRESULT GetBagProperty( [in] BSTR bstrName, [out, retval] VARIANT *var );
+
+		// Получить значение стат параметра для класса
+		[id(16), helpstring("method GetValue2")] HRESULT GetValue2( [in] long lClass, [in] long lKey, [out, retval] double *pvarValue);
+		// Получить значение стат параметра строки всего
+		[id(17), helpstring("method GetValueGlobal2")] HRESULT GetValueGlobal2( [in] long lKey, [out, retval] double *pvarValue );
+		[id(18), helpstring("method GetValueInUnit2")] HRESULT GetValueInUnit2( [in] long lClass, [in] long lKey, [out, retval] double *pvarValue );
+
+		// Получить значение стат параметра строки всего
+		[id(19), helpstring("method GetValueGlobalInUnit2")] HRESULT GetValueGlobalInUnit2( [in] long lKey, [out, retval] double *pvarValue );
+	
+		[id(20), helpstring("Get statistic parameter name")] HRESULT GetStatParamInfo( [in] long lKey, [out, retval] VARIANT *pParamInfo );
+		[id(21), helpstring("Calculate statistic parameters")] HRESULT Calculate2([in] IUnknown *punkO, [in] long lClassDivision, [in] DWORD dwFlags );
+		[id(22), helpstring("method UpdateClassNames")] HRESULT UpdateClassNames(void);
+	};
+	[
+		object,
+		uuid(F4B2EF4D-AA00-4992-8EB8-2C9FD6E7CA93),
+		helpstring("ICmpStatObjectDisp Interface"),
+		dual,
+		pointer_default(unique)
+	]
+	interface ICmpStatObjectDisp : IDispatch
+	{
+		[propget, id(1), helpstring("property Statuses")] HRESULT Statuses([out, retval] VARIANT* pVal);
+		[propput, id(1), helpstring("property Statuses")] HRESULT Statuses([in] VARIANT newVal);
+		[id(2), helpstring("method Compare")] HRESULT Compare([out,retval] LONG* rc);
+		[id(3), helpstring("method GetPrivateNamedData")] HRESULT GetPrivateNamedData([out,retval] IDispatch **ppDisp );
+	};
+
+}

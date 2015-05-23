@@ -1,0 +1,44 @@
+// macros.odl : type library source for macros.dll
+
+// This file will be processed by the MIDL compiler to produce the
+// type library (macros.tlb).
+
+[ uuid(8E8E8339-6B33-11D3-A652-0090275995FE), version(1.0) ]
+library Macros
+{
+	importlib("stdole32.tlb");
+	importlib("stdole2.tlb");
+
+
+
+
+	//  Primary dispatch interface for CMacroRecorder
+	
+	[ uuid(8E8E8346-6B33-11D3-A652-0090275995FE) ]
+	dispinterface IMacroRecorder
+	{
+		properties:
+			// NOTE - ClassWizard will maintain property information here.
+			//    Use extreme caution when editing this section.
+			//{{AFX_ODL_PROP(CMacroRecorder)
+			//}}AFX_ODL_PROP
+			
+		methods:
+			// NOTE - ClassWizard will maintain method information here.
+			//    Use extreme caution when editing this section.
+			//{{AFX_ODL_METHOD(CMacroRecorder)
+			//}}AFX_ODL_METHOD
+
+	};
+
+	//  Class information for CMacroRecorder
+
+	[ uuid(8E8E8347-6B33-11D3-A652-0090275995FE) ]
+	coclass MacroRecorder
+	{
+		[default] dispinterface IMacroRecorder;
+	};
+
+	//{{AFX_APPEND_ODL}}
+	//}}AFX_APPEND_ODL}}
+};

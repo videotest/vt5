@@ -1,0 +1,1079 @@
+//Microsoft Developer Studio generated resource script.
+//
+#include "resource.h"
+
+// Generated Help ID header file
+#define APSTUDIO_HIDDEN_SYMBOLS
+#undef APSTUDIO_HIDDEN_SYMBOLS
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// Russian resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_RUS)
+#ifdef _WIN32
+LANGUAGE LANG_RUSSIAN, SUBLANG_DEFAULT
+#pragma code_page(1251)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)\r\n"
+    "#ifdef _WIN32\r\n"
+    "LANGUAGE 9, 1\r\n"
+    "#pragma code_page(1252)\r\n"
+    "#endif //_WIN32\r\n"
+    "#include ""res\\MV5Drv.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "#include ""afxres.rc""         // Standard components\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_SOURCE1 DIALOGEX 0, 0, 336, 208
+STYLE DS_MODALFRAME | WS_VISIBLE | WS_CLIPSIBLINGS | WS_CAPTION | WS_SYSMENU
+CAPTION "Источник"
+FONT 8, "MS Sans Serif"
+BEGIN
+    GROUPBOX        "Канал",IDC_STATIC,172,6,73,82
+    CONTROL         "Красный",IDC_RED,"Button",BS_AUTORADIOBUTTON | WS_GROUP,
+                    176,16,43,14
+    CONTROL         "Зеленый",IDC_GREEN,"Button",BS_AUTORADIOBUTTON,176,30,
+                    42,14
+    CONTROL         "Синий",IDC_BLUE,"Button",BS_AUTORADIOBUTTON,176,44,37,
+                    14
+    CONTROL         "S-Video",IDC_SVIDEO,"Button",BS_AUTORADIOBUTTON,176,58,
+                    41,14
+    CONTROL         "1й S-Video",IDC_1STSVIDEO,"Button",BS_AUTORADIOBUTTON | 
+                    NOT WS_VISIBLE | WS_GROUP,176,16,49,14
+    CONTROL         "2й S-Video",IDC_2NDSVIDEO,"Button",BS_AUTORADIOBUTTON | 
+                    NOT WS_VISIBLE,176,30,54,14
+    CONTROL         "",IDC_ANALOG,"Button",BS_AUTORADIOBUTTON | NOT 
+                    WS_VISIBLE,193,42,44,15
+    CONTROL         "2 S-Video входа",IDC_2SVIDEO,"Button",BS_AUTOCHECKBOX | 
+                    WS_GROUP | WS_TABSTOP,176,72,65,14
+    CONTROL         "Видеомагнитофон",IDC_VCR,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,247,16,77,14
+    CONTROL         "Автоусиление",IDC_AGC,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,247,31,65,14
+    GROUPBOX        "Настройка",IDC_STATIC,9,91,159,110
+    LTEXT           "Яркость",IDC_STATIC,16,105,36,14
+    EDITTEXT        IDC_E_BRIGHTNESS,72,103,17,14,ES_AUTOHSCROLL
+    CONTROL         "Slider1",IDC_S_BRIGHTNESS,"msctls_trackbar32",
+                    TBS_AUTOTICKS | TBS_TOP | TBS_NOTICKS | WS_TABSTOP,91,
+                    103,74,18
+    LTEXT           "Контраст",IDC_STATIC,16,123,33,14
+    EDITTEXT        IDC_E_CONTRAST,72,121,17,14,ES_AUTOHSCROLL
+    CONTROL         "Slider2",IDC_S_CONTRAST,"msctls_trackbar32",
+                    TBS_AUTOTICKS | TBS_TOP | TBS_NOTICKS | WS_TABSTOP,91,
+                    121,74,18
+    LTEXT           "Оттенок",IDC_STATIC,16,141,28,14
+    EDITTEXT        IDC_E_HUE,72,139,17,14,ES_AUTOHSCROLL
+    CONTROL         "Slider3",IDC_S_HUE,"msctls_trackbar32",TBS_AUTOTICKS | 
+                    TBS_TOP | TBS_NOTICKS | WS_TABSTOP,91,139,74,18
+    LTEXT           "Насыщенность",IDC_STATIC,16,159,53,14
+    EDITTEXT        IDC_E_SATURATION,72,157,17,14,ES_AUTOHSCROLL
+    CONTROL         "Slider4",IDC_S_SATURATION,"msctls_trackbar32",
+                    TBS_AUTOTICKS | TBS_TOP | TBS_NOTICKS | WS_TABSTOP,91,
+                    157,74,18
+    GROUPBOX        "Окно захвата",IDC_STATIC,172,91,156,86
+    LTEXT           "Начало по X",IDC_STATIC,178,105,45,14
+    EDITTEXT        IDC_E_GWX,226,103,21,14,ES_AUTOHSCROLL
+    CONTROL         "Slider1",IDC_S_GWX,"msctls_trackbar32",TBS_AUTOTICKS | 
+                    TBS_TOP | TBS_NOTICKS | WS_TABSTOP,250,103,74,18
+    LTEXT           "Начало по Y",IDC_STATIC,178,123,43,14
+    EDITTEXT        IDC_E_GWY,226,121,21,14,ES_AUTOHSCROLL
+    CONTROL         "Slider2",IDC_S_GWY,"msctls_trackbar32",TBS_AUTOTICKS | 
+                    TBS_TOP | TBS_NOTICKS | WS_TABSTOP,250,121,74,18
+    LTEXT           "Размер по X",IDC_STATIC,178,141,44,14
+    EDITTEXT        IDC_E_GWDX,226,139,21,14,ES_AUTOHSCROLL
+    CONTROL         "Slider3",IDC_S_GWDX,"msctls_trackbar32",TBS_AUTOTICKS | 
+                    TBS_TOP | TBS_NOTICKS | WS_TABSTOP,250,139,74,18
+    LTEXT           "Размер по Y",IDC_STATIC,178,159,46,14
+    EDITTEXT        IDC_E_GWDY,226,157,21,14,ES_AUTOHSCROLL
+    CONTROL         "Slider4",IDC_S_GWDY,"msctls_trackbar32",TBS_AUTOTICKS | 
+                    TBS_TOP | TBS_NOTICKS | WS_TABSTOP,250,157,74,18
+    DEFPUSHBUTTON   "OK",IDOK,173,182,50,14
+    PUSHBUTTON      "По умолчанию",IDC_DEFAULT,96,182,65,14
+    GROUPBOX        "Система",IDC_STATIC,9,6,159,82
+    CONTROL         "NTSC",IDC_STANDARD_NTSC,"Button",BS_AUTORADIOBUTTON | 
+                    WS_GROUP,23,16,36,14
+    CONTROL         "PAL",IDC_STANDARD_PAL,"Button",BS_AUTORADIOBUTTON,23,30,
+                    31,14
+    CONTROL         "SECAM",IDC_STANDARD_SECAM,"Button",BS_AUTORADIOBUTTON,
+                    23,44,45,14
+    CONTROL         "NTSC44",IDC_STANDARD_NTSC44,"Button",BS_AUTORADIOBUTTON,
+                    23,58,45,14
+    CONTROL         "PALm",IDC_STANDARD_PALM,"Button",BS_AUTORADIOBUTTON,23,
+                    72,60,14
+    CONTROL         "PALn",IDC_STANDARD_PALN,"Button",BS_AUTORADIOBUTTON,91,
+                    16,37,14
+    CONTROL         "PAL60",IDC_STANDARD_PAL60,"Button",BS_AUTORADIOBUTTON,
+                    91,30,42,14
+    CONTROL         "NTSCcomb",IDC_STANDARD_NTSCCOMB,"Button",
+                    BS_AUTORADIOBUTTON,91,44,54,14
+    CONTROL         "SECAMmono",IDC_STANDARD_SECAMMONO,"Button",
+                    BS_AUTORADIOBUTTON,91,58,58,14
+    CONTROL         "NTSCmono",IDC_STANDARD_NTSCMONO,"Button",
+                    BS_AUTORADIOBUTTON,91,72,64,14
+    PUSHBUTTON      "Отмена",IDCANCEL,226,182,50,14
+    PUSHBUTTON      "Справка",IDHELP,279,182,50,14,0,0
+END
+
+IDD_SOURCE DIALOGEX 0, 0, 314, 209
+STYLE DS_MODALFRAME | WS_VISIBLE | WS_CLIPSIBLINGS | WS_CAPTION | WS_SYSMENU
+CAPTION "Источник"
+FONT 8, "MS Sans Serif"
+BEGIN
+    GROUPBOX        "Канал",IDC_STATIC,190,6,113,82
+    CONTROL         "Красный",IDC_RED,"Button",BS_AUTORADIOBUTTON | WS_GROUP,
+                    206,16,43,12
+    CONTROL         "Зеленый",IDC_GREEN,"Button",BS_AUTORADIOBUTTON,206,29,
+                    42,12
+    CONTROL         "Синий",IDC_BLUE,"Button",BS_AUTORADIOBUTTON,206,42,37,
+                    12
+    CONTROL         "S-Video",IDC_SVIDEO,"Button",BS_AUTORADIOBUTTON,206,55,
+                    41,12
+    CONTROL         "1й S-Video",IDC_1STSVIDEO,"Button",BS_AUTORADIOBUTTON | 
+                    NOT WS_VISIBLE | WS_GROUP,223,16,49,12
+    CONTROL         "2й S-Video",IDC_2NDSVIDEO,"Button",BS_AUTORADIOBUTTON | 
+                    NOT WS_VISIBLE,223,29,54,12
+    CONTROL         "Синий",IDC_ANALOG,"Button",BS_AUTORADIOBUTTON | NOT 
+                    WS_VISIBLE,223,42,54,12
+    CONTROL         "2 S-Video входа",IDC_2SVIDEO,"Button",BS_AUTOCHECKBOX | 
+                    WS_GROUP | WS_TABSTOP,207,68,70,12
+    CONTROL         "Видеомагнитофон",IDC_VCR,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,207,96,77,12
+    CONTROL         "Автоусиление",IDC_AGC,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,207,111,65,12
+    GROUPBOX        "Настройка",IDC_STATIC,9,94,165,109
+    LTEXT           "Яркость",IDC_STATIC,15,112,36,14
+    EDITTEXT        IDC_E_BRIGHTNESS,74,110,17,14,ES_AUTOHSCROLL
+    CONTROL         "Slider1",IDC_S_BRIGHTNESS,"msctls_trackbar32",
+                    TBS_AUTOTICKS | TBS_TOP | TBS_NOTICKS | WS_TABSTOP,95,
+                    110,74,14
+    LTEXT           "Контраст",IDC_STATIC,15,130,33,14
+    EDITTEXT        IDC_E_CONTRAST,74,128,17,14,ES_AUTOHSCROLL
+    CONTROL         "Slider2",IDC_S_CONTRAST,"msctls_trackbar32",
+                    TBS_AUTOTICKS | TBS_TOP | TBS_NOTICKS | WS_TABSTOP,95,
+                    128,74,14
+    LTEXT           "Оттенок",IDC_STATIC,15,148,28,14
+    EDITTEXT        IDC_E_HUE,74,146,17,14,ES_AUTOHSCROLL
+    CONTROL         "Slider3",IDC_S_HUE,"msctls_trackbar32",TBS_AUTOTICKS | 
+                    TBS_TOP | TBS_NOTICKS | WS_TABSTOP,95,146,74,14
+    LTEXT           "Насыщенность",IDC_STATIC,15,166,52,14
+    EDITTEXT        IDC_E_SATURATION,74,164,17,14,ES_AUTOHSCROLL
+    CONTROL         "Slider4",IDC_S_SATURATION,"msctls_trackbar32",
+                    TBS_AUTOTICKS | TBS_TOP | TBS_NOTICKS | WS_TABSTOP,95,
+                    164,74,14
+    GROUPBOX        "Окно захвата",IDC_STATIC,189,94,59,81,NOT WS_VISIBLE
+    LTEXT           "Начало по X",IDC_STATIC,193,108,45,11,NOT WS_VISIBLE
+    EDITTEXT        IDC_E_GWX,215,105,21,13,ES_AUTOHSCROLL | NOT WS_VISIBLE
+    CONTROL         "Slider1",IDC_S_GWX,"msctls_trackbar32",TBS_AUTOTICKS | 
+                    TBS_TOP | NOT WS_VISIBLE | WS_TABSTOP,227,104,20,16
+    LTEXT           "Начало по Y",IDC_STATIC,193,125,43,11,NOT WS_VISIBLE
+    EDITTEXT        IDC_E_GWY,215,122,21,13,ES_AUTOHSCROLL | NOT WS_VISIBLE
+    CONTROL         "Slider2",IDC_S_GWY,"msctls_trackbar32",TBS_AUTOTICKS | 
+                    TBS_TOP | NOT WS_VISIBLE | WS_TABSTOP,227,121,18,16
+    LTEXT           "Размер по X",IDC_STATIC,193,144,43,12,NOT WS_VISIBLE
+    EDITTEXT        IDC_E_GWDX,215,141,21,13,ES_AUTOHSCROLL | NOT WS_VISIBLE
+    CONTROL         "Slider3",IDC_S_GWDX,"msctls_trackbar32",TBS_AUTOTICKS | 
+                    TBS_TOP | NOT WS_VISIBLE | WS_TABSTOP,227,138,19,16
+    LTEXT           "Размер по Y",IDC_STATIC,194,162,17,9,NOT WS_VISIBLE
+    EDITTEXT        IDC_E_GWDY,215,160,8,13,ES_AUTOHSCROLL | NOT WS_VISIBLE
+    CONTROL         "Slider4",IDC_S_GWDY,"msctls_trackbar32",TBS_AUTOTICKS | 
+                    TBS_TOP | NOT WS_VISIBLE | WS_TABSTOP,225,157,22,23
+    DEFPUSHBUTTON   "OK",IDOK,179,183,40,14
+    PUSHBUTTON      "По умолчанию",IDC_DEFAULT,100,183,63,14
+    GROUPBOX        "Система",IDC_STATIC,8,6,165,82
+    CONTROL         "NTSC",IDC_STANDARD_NTSC,"Button",BS_AUTORADIOBUTTON | 
+                    WS_GROUP,22,19,36,12
+    CONTROL         "PAL",IDC_STANDARD_PAL,"Button",BS_AUTORADIOBUTTON,22,32,
+                    31,12
+    CONTROL         "SECAM",IDC_STANDARD_SECAM,"Button",BS_AUTORADIOBUTTON,
+                    22,45,45,12
+    CONTROL         "NTSC44",IDC_STANDARD_NTSC44,"Button",BS_AUTORADIOBUTTON,
+                    22,58,45,12
+    CONTROL         "PALm",IDC_STANDARD_PALM,"Button",BS_AUTORADIOBUTTON,22,
+                    71,60,12
+    CONTROL         "PALn",IDC_STANDARD_PALN,"Button",BS_AUTORADIOBUTTON,91,
+                    19,37,12
+    CONTROL         "PAL60",IDC_STANDARD_PAL60,"Button",BS_AUTORADIOBUTTON,
+                    91,32,42,12
+    CONTROL         "NTSCcomb",IDC_STANDARD_NTSCCOMB,"Button",
+                    BS_AUTORADIOBUTTON,91,45,54,12
+    CONTROL         "SECAMmono",IDC_STANDARD_SECAMMONO,"Button",
+                    BS_AUTORADIOBUTTON,91,58,58,12
+    CONTROL         "NTSCmono",IDC_STANDARD_NTSCMONO,"Button",
+                    BS_AUTORADIOBUTTON,91,71,68,12
+    PUSHBUTTON      "Отмена",IDCANCEL,221,183,40,14
+    PUSHBUTTON      "Справка",IDHELP,263,183,40,14,0,0
+END
+
+IDD_PREVIEW DIALOG DISCARDABLE  0, 0, 589, 358
+STYLE WS_VISIBLE | WS_CLIPSIBLINGS | WS_CLIPCHILDREN | WS_CAPTION | 
+    WS_SYSMENU
+CAPTION "Ввод"
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,525,7,56,16
+    CONTROL         "",IDC_PREVIEW,"Static",SS_BLACKRECT,0,0,517,321
+    PUSHBUTTON      "Формат",IDC_FORMAT,525,55,56,16
+    PUSHBUTTON      "Источник",IDC_SOURCE,525,79,56,16
+    PUSHBUTTON      "Установки AVI",IDC_CAPTURE_VIDEO,525,103,56,16
+    LTEXT           "",IDC_MESSAGE,6,341,62,11
+    CONTROL         "Progress1",IDC_PROGRESS_CONV,"msctls_progress32",NOT 
+                    WS_VISIBLE | WS_BORDER,75,336,256,20
+    LTEXT           "",IDC_FRAMES,343,334,59,19
+    PUSHBUTTON      "Отмена",IDCANCEL,525,31,56,16
+END
+
+IDD_FORMAT DIALOGEX 0, 0, 176, 114
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+CAPTION "Формат"
+FONT 8, "MS Sans Serif"
+BEGIN
+    CONTROL         "Повернуть изображение вертикально",IDC_VERTICAL_MIRROR,
+                    "Button",BS_AUTOCHECKBOX | WS_TABSTOP,13,28,152,17
+    CONTROL         "Черно-белое изображение",IDC_GRAY_SCALE,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,13,66,112,19
+    DEFPUSHBUTTON   "OK",IDOK,13,92,40,14
+    PUSHBUTTON      "Отмена",IDCANCEL,68,92,40,14
+    LTEXT           "Масштаб:",IDC_STATIC,13,10,35,10
+    COMBOBOX        IDC_FORMAT,55,8,108,79,CBS_DROPDOWNLIST | WS_VSCROLL | 
+                    WS_TABSTOP
+    CONTROL         "Повернуть изображение горизонтально",
+                    IDC_HORIZONTAL_MIRROR,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,12,47,156,17
+    PUSHBUTTON      "Справка",IDHELP,123,92,40,14,0,0
+END
+
+IDD_VIDEO_CAP DIALOGEX 0, 0, 225, 149
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Захват видео"
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,5,126,53,14
+    PUSHBUTTON      "Отмена",IDCANCEL,59,126,53,14
+    LTEXT           "&Скорость захвата:",IDC_STATIC,8,7,66,11
+    EDITTEXT        IDC_FPS,77,5,31,12,ES_AUTOHSCROLL
+    LTEXT           "&Время (в сек)",IDC_TIME,8,48,56,10
+    EDITTEXT        IDC_TIME_LIM,77,45,31,12,ES_AUTOHSCROLL
+    LTEXT           "Файл",IDC_STATIC,8,68,20,8
+    RTEXT           "Static",IDC_FILE,43,68,121,8
+    PUSHBUTTON      "...",IDC_BROWSE,171,65,35,14
+    COMBOBOX        IDC_CAPTURE_RATE_SCALE,115,5,40,62,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    LTEXT           "Скорость проигрывания:",IDC_STATIC,8,24,59,18
+    EDITTEXT        IDC_PLAYBACK_FPS,77,25,31,12,ES_AUTOHSCROLL
+    COMBOBOX        IDC_PLAYBACK_RATE_SCALE,115,25,40,52,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_CAPTURE_MEMORY,155,45,52,51,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    LTEXT           "Захват в",IDC_STATIC,120,48,31,10
+    CONTROL         "Черно- белый режим",IDC_GRAYSCALE,"Button",
+                    BS_AUTOCHECKBOX | BS_MULTILINE | WS_TABSTOP,8,85,92,14
+    PUSHBUTTON      "По умолчанию",IDC_DEFAULT,113,126,53,14
+    LTEXT           "Размер кадра",IDC_STATIC_FRAME_SIZE,8,102,60,14
+    EDITTEXT        IDC_E_FRAME_SIZE,77,100,31,14,ES_AUTOHSCROLL
+    CONTROL         "Slider1",IDC_S_FRAME_SIZE,"msctls_trackbar32",TBS_TOP | 
+                    TBS_NOTICKS | WS_TABSTOP,111,100,85,14
+    LTEXT           "%",IDC_STATIC_PROCENT,201,103,8,14
+    LTEXT           "",IDC_FPS_MESSAGE,157,4,68,39
+    PUSHBUTTON      "Справка",IDHELP,168,126,50,14,0,0
+END
+
+IDD_SOURCE2 DIALOGEX 0, 0, 334, 205
+STYLE DS_MODALFRAME | WS_VISIBLE | WS_CLIPSIBLINGS | WS_CAPTION | WS_SYSMENU
+CAPTION "Источник"
+FONT 8, "MS Sans Serif"
+BEGIN
+    GROUPBOX        "Видеостандарт",IDC_STATIC,8,6,122,82
+    CONTROL         "NTSC",IDC_STANDARD_NTSC,"Button",BS_AUTORADIOBUTTON | 
+                    WS_GROUP | WS_TABSTOP,17,16,36,14
+    CONTROL         "PAL",IDC_STANDARD_PAL,"Button",BS_AUTORADIOBUTTON,17,30,
+                    31,14
+    CONTROL         "SECAM",IDC_STANDARD_SECAM,"Button",BS_AUTORADIOBUTTON,
+                    17,44,45,14
+    CONTROL         "NTSC44",IDC_STANDARD_NTSC44,"Button",BS_AUTORADIOBUTTON,
+                    17,58,45,14
+    CONTROL         "PALm",IDC_STANDARD_PALM,"Button",BS_AUTORADIOBUTTON,17,
+                    72,44,14
+    CONTROL         "PALn",IDC_STANDARD_PALN,"Button",BS_AUTORADIOBUTTON,66,
+                    16,37,14
+    CONTROL         "PAL60",IDC_STANDARD_PAL60,"Button",BS_AUTORADIOBUTTON,
+                    66,30,42,14
+    CONTROL         "NTSCcomb",IDC_STANDARD_NTSCCOMB,"Button",
+                    BS_AUTORADIOBUTTON,66,44,54,14
+    CONTROL         "SECAMmono",IDC_STANDARD_SECAMMONO,"Button",
+                    BS_AUTORADIOBUTTON,66,58,58,14
+    CONTROL         "NTSCmono",IDC_STANDARD_NTSCMONO,"Button",
+                    BS_AUTORADIOBUTTON,66,72,57,14
+    GROUPBOX        "Камера 1",IDC_STATIC,139,6,83,82
+    CONTROL         "Красный",IDC_RED,"Button",BS_AUTORADIOBUTTON | WS_GROUP,
+                    144,16,43,14
+    CONTROL         "Зеленый",IDC_GREEN,"Button",BS_AUTORADIOBUTTON,144,30,
+                    42,14
+    CONTROL         "Синий",IDC_BLUE,"Button",BS_AUTORADIOBUTTON,144,44,37,
+                    14
+    CONTROL         "S-Video",IDC_SVIDEO,"Button",BS_AUTORADIOBUTTON,144,58,
+                    41,14
+    CONTROL         "1й S-Video",IDC_1STSVIDEO,"Button",BS_AUTORADIOBUTTON | 
+                    NOT WS_VISIBLE | WS_GROUP,161,16,49,14
+    CONTROL         "2й S-Video",IDC_2NDSVIDEO,"Button",BS_AUTORADIOBUTTON | 
+                    NOT WS_VISIBLE,161,30,54,14
+    CONTROL         "",IDC_ANALOG,"Button",BS_AUTORADIOBUTTON | NOT 
+                    WS_VISIBLE,161,42,54,14
+    CONTROL         "2 S-Video входа",IDC_2SVIDEO,"Button",BS_AUTOCHECKBOX | 
+                    WS_DISABLED | WS_GROUP | WS_TABSTOP,144,72,70,14
+    GROUPBOX        "Камера 2",IDC_STATIC,231,6,94,52
+    CONTROL         "Красный",IDC_RED2,"Button",BS_AUTORADIOBUTTON | 
+                    WS_GROUP,246,16,43,14
+    CONTROL         "Зеленый",IDC_GREEN2,"Button",BS_AUTORADIOBUTTON,246,30,
+                    42,14
+    CONTROL         "Синий",IDC_BLUE2,"Button",BS_AUTORADIOBUTTON,246,46,37,
+                    11
+    CONTROL         "Автоусиление",IDC_AGC,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,246,59,65,13
+    CONTROL         "Видеомагнитофон",IDC_VCR,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,246,72,77,14
+    GROUPBOX        "Настройка",IDC_STATIC,9,94,161,106
+    LTEXT           "Яркость",IDC_STATIC,14,107,36,14
+    EDITTEXT        IDC_E_BRIGHTNESS,74,106,17,14,ES_AUTOHSCROLL
+    CONTROL         "Slider1",IDC_S_BRIGHTNESS,"msctls_trackbar32",
+                    TBS_AUTOTICKS | TBS_TOP | TBS_NOTICKS | WS_TABSTOP,92,
+                    106,74,14
+    LTEXT           "Контраст",IDC_STATIC,14,124,33,14
+    EDITTEXT        IDC_E_CONTRAST,74,124,17,14,ES_AUTOHSCROLL
+    CONTROL         "Slider2",IDC_S_CONTRAST,"msctls_trackbar32",
+                    TBS_AUTOTICKS | TBS_TOP | TBS_NOTICKS | WS_TABSTOP,92,
+                    124,74,14
+    LTEXT           "Оттенок",IDC_STATIC,14,144,28,14
+    EDITTEXT        IDC_E_HUE,74,141,17,14,ES_AUTOHSCROLL
+    CONTROL         "Slider3",IDC_S_HUE,"msctls_trackbar32",TBS_AUTOTICKS | 
+                    TBS_TOP | TBS_NOTICKS | WS_TABSTOP,92,141,74,14
+    LTEXT           "Насыщенность",IDC_STATIC,14,161,53,14
+    EDITTEXT        IDC_E_SATURATION,74,159,17,14,ES_AUTOHSCROLL
+    CONTROL         "Slider4",IDC_S_SATURATION,"msctls_trackbar32",
+                    TBS_AUTOTICKS | TBS_TOP | TBS_NOTICKS | WS_TABSTOP,92,
+                    159,74,14
+    PUSHBUTTON      "По умолчанию",IDC_DEFAULT,97,182,63,14
+    GROUPBOX        "Окно захвата",IDC_STATIC,174,94,153,83
+    LTEXT           "Начало по X",IDC_STATIC,179,107,45,14
+    EDITTEXT        IDC_E_GWX,227,107,21,13,ES_AUTOHSCROLL
+    CONTROL         "Slider1",IDC_S_GWX,"msctls_trackbar32",TBS_AUTOTICKS | 
+                    TBS_TOP | TBS_NOTICKS | WS_TABSTOP,252,106,74,14
+    LTEXT           "Начало по Y",IDC_STATIC,179,124,43,14
+    EDITTEXT        IDC_E_GWY,227,125,21,13,ES_AUTOHSCROLL
+    CONTROL         "Slider2",IDC_S_GWY,"msctls_trackbar32",TBS_AUTOTICKS | 
+                    TBS_TOP | TBS_NOTICKS | WS_TABSTOP,252,124,74,14
+    LTEXT           "Размер по X",IDC_STATIC,179,144,44,14
+    EDITTEXT        IDC_E_GWDX,227,142,21,13,ES_AUTOHSCROLL
+    CONTROL         "Slider3",IDC_S_GWDX,"msctls_trackbar32",TBS_AUTOTICKS | 
+                    TBS_TOP | TBS_NOTICKS | WS_TABSTOP,252,141,74,14
+    LTEXT           "Размер по Y",IDC_STATIC,180,161,46,14
+    EDITTEXT        IDC_E_GWDY,227,160,21,13,ES_AUTOHSCROLL
+    CONTROL         "Slider4",IDC_S_GWDY,"msctls_trackbar32",TBS_AUTOTICKS | 
+                    TBS_TOP | TBS_NOTICKS | WS_TABSTOP,252,159,74,14
+    DEFPUSHBUTTON   "OK",IDOK,174,182,43,14
+    PUSHBUTTON      "Отмена",IDCANCEL,222,182,50,14
+    PUSHBUTTON      "Справка",IDHELP,276,182,50,14,0,0
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog Info
+//
+
+IDD_FORMAT DLGINIT
+BEGIN
+    IDC_FORMAT, 0x403, 14, 0
+0xeecf, 0xedeb, 0xe9fb, 0xf020, 0xe7e0, 0xe5ec, 0x00f0, 
+    IDC_FORMAT, 0x403, 4, 0
+0x2f31, 0x0032, 
+    0
+END
+
+IDD_VIDEO_CAP DLGINIT
+BEGIN
+    IDC_CAPTURE_RATE_SCALE, 0x403, 4, 0
+0x7066, 0x0073, 
+    IDC_CAPTURE_RATE_SCALE, 0x403, 4, 0
+0x7066, 0x006d, 
+    IDC_CAPTURE_RATE_SCALE, 0x403, 4, 0
+0x7066, 0x0068, 
+    IDC_CAPTURE_RATE_SCALE, 0x403, 4, 0
+0x7066, 0x0064, 
+    IDC_PLAYBACK_RATE_SCALE, 0x403, 4, 0
+0x7066, 0x0073, 
+    IDC_PLAYBACK_RATE_SCALE, 0x403, 4, 0
+0x7066, 0x006d, 
+    IDC_PLAYBACK_RATE_SCALE, 0x403, 4, 0
+0x7066, 0x0068, 
+    IDC_PLAYBACK_RATE_SCALE, 0x403, 4, 0
+0x7066, 0x0064, 
+    IDC_CAPTURE_MEMORY, 0x403, 7, 0
+0xe0cf, 0xffec, 0xfcf2, "\000" 
+    IDC_CAPTURE_MEMORY, 0x403, 5, 0
+0xe8c4, 0xeaf1, "\000" 
+    0
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO DISCARDABLE 
+BEGIN
+    IDD_SOURCE1, DIALOG
+    BEGIN
+        LEFTMARGIN, 8
+        RIGHTMARGIN, 329
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 201
+    END
+
+    IDD_SOURCE, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 303
+        TOPMARGIN, 6
+        BOTTOMMARGIN, 202
+    END
+
+    IDD_PREVIEW, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 582
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 351
+    END
+
+    IDD_FORMAT, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 169
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 107
+    END
+
+    IDD_VIDEO_CAP, DIALOG
+    BEGIN
+        BOTTOMMARGIN, 148
+    END
+
+    IDD_SOURCE2, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 327
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 198
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_VERSION_INFO        "Апрель, 2000"
+    IDS_MANUFACTURER        "Видеотест"
+    IDS_PRODFAMILY          "Twain"
+    IDS_PRODNAME            "Mutech MV-500"
+    IDS_NO_MEMORY_FOR_VCAP  "Недостаточно памяти для захвата AVI. Свободно только %dK (для %d кадров)."
+    IDS_AVI_PLACED          "AVI файл захвачен и записан как %s. %d кадров записано, %d кадров пропущено. Общая длинна %.1f секунд."
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_TIME_IN_SECONDS     "&Время (в секундах)"
+    IDS_TIME_IN_MINUTES     "&Время (в минутах)"
+    IDS_TIME_IN_HOURS       "&Время (в часах)"
+    IDS_ERROR_DURING_DECOMPRESSION 
+                            "Ошибка при декомпрессии из формата 16 бит YUV (%s) в формат 24 бит RGB (%s). Код ошибки %d (HRESULT %x)."
+    IDS_NOT_ENOUGH_SPACE    "В каталоге %s недостаточно дискового постранства. Доступно только %d MB в то время, как необходимо %d MB."
+    IDS_FILE_MORE_2GB       "AVI файлы размером более, чем 2GB, сейчас не поддерживаются."
+    IDS_RESET               "Сброс установок"
+    IDS_RESET_Q             "Все изменения, которые Вы сделали в установках драйвера будут утеряны. Продолжить?"
+    IDS_FILE_NOT_OPENED     "Файл %s не создается. Проверьте, пожалуйста, наличие и доступность диска и каталога и наличие свободного места на диске."
+    IDS_PARTITION_NOT_FREE  "Диск %C: должен быть очищен для надежной записи видео файлов."
+    IDS_CANNOT_FREE_PARTITION "Невозможно освободить диск %C:."
+    IDS_FPS_MESSAGE_PAL     "Если скорость захвата будет больше, чем 25 кадров в секунду, то она будет 50 кадров в секунду."
+    IDS_FPS_MESSAGE_NTSC    "Если скорость захвата будет больше, чем 30 кадров в секунду, то она будет 60 кадров в секунду."
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_INPUT               "Захват изображения"
+    IDS_FRAMERATE           "Скорость"
+END
+
+#endif    // Russian resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.S.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_SOURCE1 DIALOGEX 0, 0, 314, 231
+STYLE DS_MODALFRAME | WS_VISIBLE | WS_CLIPSIBLINGS | WS_CAPTION | WS_SYSMENU
+CAPTION "Source"
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,168,185,42,14
+    GROUPBOX        "Video Channel",IDC_STATIC,168,4,85,82
+    CONTROL         "Red",IDC_RED,"Button",BS_AUTORADIOBUTTON | WS_GROUP,179,
+                    15,35,14
+    CONTROL         "Green",IDC_GREEN,"Button",BS_AUTORADIOBUTTON,179,29,40,
+                    14
+    CONTROL         "Blue",IDC_BLUE,"Button",BS_AUTORADIOBUTTON,179,43,41,14
+    CONTROL         "S-Video",IDC_SVIDEO,"Button",BS_AUTORADIOBUTTON,179,57,
+                    54,14
+    CONTROL         "1st S-Video",IDC_1STSVIDEO,"Button",BS_AUTORADIOBUTTON | 
+                    WS_GROUP,179,15,49,14
+    CONTROL         "2nd S-Video",IDC_2NDSVIDEO,"Button",BS_AUTORADIOBUTTON,
+                    179,29,57,14
+    CONTROL         "Analog (Blue)",IDC_ANALOG,"Button",BS_AUTORADIOBUTTON,
+                    179,43,62,14
+    CONTROL         "2 S-Video",IDC_2SVIDEO,"Button",BS_AUTOCHECKBOX | 
+                    WS_GROUP | WS_TABSTOP,179,71,46,14
+    CONTROL         "VCR",IDC_VCR,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,257,
+                    14,37,15
+    CONTROL         "AGC",IDC_AGC,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,257,
+                    27,33,16
+    LTEXT           "Brightness",IDC_STATIC,12,110,36,14
+    EDITTEXT        IDC_E_BRIGHTNESS,51,108,17,14,ES_AUTOHSCROLL
+    CONTROL         "Slider1",IDC_S_BRIGHTNESS,"msctls_trackbar32",
+                    TBS_AUTOTICKS | TBS_TOP | TBS_NOTICKS | WS_TABSTOP,72,
+                    108,74,14
+    LTEXT           "Contrast",IDC_STATIC,12,127,33,14
+    EDITTEXT        IDC_E_CONTRAST,51,125,17,14,ES_AUTOHSCROLL
+    CONTROL         "Slider2",IDC_S_CONTRAST,"msctls_trackbar32",
+                    TBS_AUTOTICKS | TBS_TOP | TBS_NOTICKS | WS_TABSTOP,72,
+                    125,74,14
+    LTEXT           "Hue",IDC_STATIC,12,146,28,14
+    EDITTEXT        IDC_E_HUE,51,144,17,14,ES_AUTOHSCROLL
+    CONTROL         "Slider3",IDC_S_HUE,"msctls_trackbar32",TBS_AUTOTICKS | 
+                    TBS_TOP | TBS_NOTICKS | WS_TABSTOP,72,144,74,14
+    LTEXT           "Saturation",IDC_STATIC,12,165,35,14
+    EDITTEXT        IDC_E_SATURATION,51,163,17,14,ES_AUTOHSCROLL
+    CONTROL         "Slider4",IDC_S_SATURATION,"msctls_trackbar32",
+                    TBS_AUTOTICKS | TBS_TOP | TBS_NOTICKS | WS_TABSTOP,72,
+                    163,74,14
+    PUSHBUTTON      "Default",IDC_DEFAULT,78,185,64,14
+    GROUPBOX        "Adjustment",IDC_STATIC,6,93,157,112
+    GROUPBOX        "Grab Window",IDC_STATIC,168,93,134,89
+    LTEXT           "Start X",IDC_STATIC,173,110,23,14
+    EDITTEXT        IDC_E_GWX,200,109,18,13,ES_AUTOHSCROLL
+    CONTROL         "Slider1",IDC_S_GWX,"msctls_trackbar32",TBS_AUTOTICKS | 
+                    TBS_TOP | TBS_NOTICKS | WS_TABSTOP,221,108,74,14
+    LTEXT           "Start Y",IDC_STATIC,173,127,25,14
+    EDITTEXT        IDC_E_GWY,200,126,18,13,ES_AUTOHSCROLL
+    CONTROL         "Slider2",IDC_S_GWY,"msctls_trackbar32",TBS_AUTOTICKS | 
+                    TBS_TOP | TBS_NOTICKS | WS_TABSTOP,221,125,74,14
+    LTEXT           "Size X",IDC_STATIC,173,146,26,14
+    EDITTEXT        IDC_E_GWDX,200,145,18,13,ES_AUTOHSCROLL
+    CONTROL         "Slider3",IDC_S_GWDX,"msctls_trackbar32",TBS_AUTOTICKS | 
+                    TBS_TOP | TBS_NOTICKS | WS_TABSTOP,221,144,74,14
+    LTEXT           "Size Y",IDC_STATIC,174,165,24,14
+    EDITTEXT        IDC_E_GWDY,200,164,18,13,ES_AUTOHSCROLL
+    CONTROL         "Slider4",IDC_S_GWDY,"msctls_trackbar32",TBS_AUTOTICKS | 
+                    TBS_TOP | TBS_NOTICKS | WS_TABSTOP,221,163,74,14
+    GROUPBOX        "Video Standard",IDC_STATIC,6,5,157,82
+    CONTROL         "NTSC",IDC_STANDARD_NTSC,"Button",BS_AUTORADIOBUTTON | 
+                    WS_GROUP,23,15,36,14
+    CONTROL         "PAL",IDC_STANDARD_PAL,"Button",BS_AUTORADIOBUTTON,23,29,
+                    31,14
+    CONTROL         "SECAM",IDC_STANDARD_SECAM,"Button",BS_AUTORADIOBUTTON,
+                    23,43,45,14
+    CONTROL         "NTSC44",IDC_STANDARD_NTSC44,"Button",BS_AUTORADIOBUTTON,
+                    23,57,45,14
+    CONTROL         "PALm",IDC_STANDARD_PALM,"Button",BS_AUTORADIOBUTTON,23,
+                    71,42,14
+    CONTROL         "PALn",IDC_STANDARD_PALN,"Button",BS_AUTORADIOBUTTON,86,
+                    15,37,14
+    CONTROL         "PAL60",IDC_STANDARD,"Button",BS_AUTORADIOBUTTON,86,29,
+                    42,14
+    CONTROL         "NTSCcomb",IDC_STANDARD_NTSCCOMB,"Button",
+                    BS_AUTORADIOBUTTON,86,43,54,14
+    CONTROL         "SECAMmono",IDC_RADIO9,"Button",BS_AUTORADIOBUTTON,86,57,
+                    58,14
+    CONTROL         "NTSCmono",IDC_STANDARD_NTSCMONO,"Button",
+                    BS_AUTORADIOBUTTON,86,71,68,14
+    PUSHBUTTON      "Cancel",IDCANCEL,214,185,42,14
+    PUSHBUTTON      "Help",IDHELP,260,185,42,14,0,0
+END
+
+IDD_SOURCE DIALOGEX 0, 0, 288, 210
+STYLE DS_MODALFRAME | WS_VISIBLE | WS_CLIPSIBLINGS | WS_CAPTION | WS_SYSMENU
+CAPTION "Source"
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,155,183,40,14
+    GROUPBOX        "Video Channel",IDC_STATIC,171,5,104,82
+    CONTROL         "Red",IDC_RED,"Button",BS_AUTORADIOBUTTON | WS_GROUP,193,
+                    15,49,13
+    CONTROL         "Green",IDC_GREEN,"Button",BS_AUTORADIOBUTTON,194,29,40,
+                    14
+    CONTROL         "Blue",IDC_BLUE,"Button",BS_AUTORADIOBUTTON,193,41,49,15
+    CONTROL         "S-Video",IDC_SVIDEO,"Button",BS_AUTORADIOBUTTON,194,57,
+                    54,14
+    CONTROL         "1st S-Video",IDC_1STSVIDEO,"Button",BS_AUTORADIOBUTTON | 
+                    WS_GROUP,193,15,54,13
+    CONTROL         "2nd S-Video",IDC_2NDSVIDEO,"Button",BS_AUTORADIOBUTTON,
+                    194,29,57,14
+    CONTROL         "Analog (Blue)",IDC_ANALOG,"Button",BS_AUTORADIOBUTTON,
+                    193,41,62,15
+    CONTROL         "2 S-Video",IDC_2SVIDEO,"Button",BS_AUTOCHECKBOX | 
+                    WS_GROUP | WS_TABSTOP,195,71,46,14
+    CONTROL         "VCR",IDC_VCR,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,195,
+                    103,52,14
+    CONTROL         "AGC",IDC_AGC,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,195,
+                    120,33,14
+    LTEXT           "Brightness",IDC_STATIC,12,107,36,14
+    EDITTEXT        IDC_E_BRIGHTNESS,51,105,17,14,ES_AUTOHSCROLL
+    CONTROL         "Slider1",IDC_S_BRIGHTNESS,"msctls_trackbar32",
+                    TBS_AUTOTICKS | TBS_TOP | TBS_NOTICKS | WS_TABSTOP,74,
+                    106,74,14
+    LTEXT           "Contrast",IDC_STATIC,12,127,33,14
+    EDITTEXT        IDC_E_CONTRAST,51,125,17,14,ES_AUTOHSCROLL
+    CONTROL         "Slider2",IDC_S_CONTRAST,"msctls_trackbar32",
+                    TBS_AUTOTICKS | TBS_TOP | TBS_NOTICKS | WS_TABSTOP,74,
+                    125,74,14
+    LTEXT           "Hue",IDC_STATIC,12,147,28,14
+    EDITTEXT        IDC_E_HUE,51,145,17,14,ES_AUTOHSCROLL
+    CONTROL         "Slider3",IDC_S_HUE,"msctls_trackbar32",TBS_AUTOTICKS | 
+                    TBS_TOP | TBS_NOTICKS | WS_TABSTOP,74,145,74,14
+    LTEXT           "Saturation",IDC_STATIC,12,167,35,14
+    EDITTEXT        IDC_E_SATURATION,51,165,17,14,ES_AUTOHSCROLL
+    CONTROL         "Slider4",IDC_S_SATURATION,"msctls_trackbar32",
+                    TBS_AUTOTICKS | TBS_TOP | TBS_NOTICKS | WS_TABSTOP,74,
+                    163,74,14
+    PUSHBUTTON      "Default",IDC_DEFAULT,80,182,64,14
+    GROUPBOX        "Adjustment",IDC_STATIC,6,91,145,110
+    GROUPBOX        "Grab Window",IDC_STATIC,173,90,56,87,NOT WS_VISIBLE
+    LTEXT           "Start X",IDC_STATIC,178,101,23,11,NOT WS_VISIBLE
+    EDITTEXT        IDC_E_GWX,185,100,18,13,ES_AUTOHSCROLL | NOT WS_VISIBLE
+    CONTROL         "Slider1",IDC_S_GWX,"msctls_trackbar32",TBS_AUTOTICKS | 
+                    TBS_TOP | NOT WS_VISIBLE | WS_TABSTOP,203,95,22,16
+    LTEXT           "Start Y",IDC_STATIC,178,118,25,11,NOT WS_VISIBLE
+    EDITTEXT        IDC_E_GWY,185,116,18,13,ES_AUTOHSCROLL | NOT WS_VISIBLE
+    CONTROL         "Slider2",IDC_S_GWY,"msctls_trackbar32",TBS_AUTOTICKS | 
+                    TBS_TOP | NOT WS_VISIBLE | WS_TABSTOP,203,112,18,16
+    LTEXT           "Size X",IDC_STATIC,178,137,26,12,NOT WS_VISIBLE
+    EDITTEXT        IDC_E_GWDX,185,135,18,13,ES_AUTOHSCROLL | NOT WS_VISIBLE
+    CONTROL         "Slider3",IDC_S_GWDX,"msctls_trackbar32",TBS_AUTOTICKS | 
+                    TBS_TOP | NOT WS_VISIBLE | WS_TABSTOP,203,130,17,16
+    LTEXT           "Size Y",IDC_STATIC,179,155,24,9,NOT WS_VISIBLE
+    EDITTEXT        IDC_E_GWDY,185,155,18,13,ES_AUTOHSCROLL | NOT WS_VISIBLE
+    CONTROL         "Slider4",IDC_S_GWDY,"msctls_trackbar32",TBS_AUTOTICKS | 
+                    TBS_TOP | NOT WS_VISIBLE | WS_TABSTOP,203,149,15,23
+    GROUPBOX        "Video Standard",IDC_STATIC,6,5,148,82
+    CONTROL         "NTSC",IDC_STANDARD_NTSC,"Button",BS_AUTORADIOBUTTON | 
+                    WS_GROUP,17,15,36,14
+    CONTROL         "PAL",IDC_STANDARD_PAL,"Button",BS_AUTORADIOBUTTON,17,29,
+                    31,14
+    CONTROL         "SECAM",IDC_STANDARD_SECAM,"Button",BS_AUTORADIOBUTTON,
+                    17,43,45,14
+    CONTROL         "NTSC44",IDC_STANDARD_NTSC44,"Button",BS_AUTORADIOBUTTON,
+                    17,57,45,14
+    CONTROL         "PALm",IDC_STANDARD_PALM,"Button",BS_AUTORADIOBUTTON,17,
+                    71,60,14
+    CONTROL         "PALn",IDC_STANDARD_PALN,"Button",BS_AUTORADIOBUTTON,82,
+                    15,37,14
+    CONTROL         "PAL60",IDC_STANDARD,"Button",BS_AUTORADIOBUTTON,82,29,
+                    42,14
+    CONTROL         "NTSCcomb",IDC_STANDARD_NTSCCOMB,"Button",
+                    BS_AUTORADIOBUTTON,82,43,54,14
+    CONTROL         "SECAMmono",IDC_RADIO9,"Button",BS_AUTORADIOBUTTON,82,57,
+                    58,14
+    CONTROL         "NTSCmono",IDC_STANDARD_NTSCMONO,"Button",
+                    BS_AUTORADIOBUTTON,82,71,68,14
+    PUSHBUTTON      "Cancel",IDCANCEL,198,183,40,14
+    PUSHBUTTON      "Help",IDHELP,241,183,40,14,0,0
+END
+
+IDD_PREVIEW DIALOG DISCARDABLE  0, 0, 589, 358
+STYLE WS_VISIBLE | WS_CLIPSIBLINGS | WS_CLIPCHILDREN | WS_CAPTION | 
+    WS_SYSMENU
+CAPTION "Preview"
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,524,7,54,14
+    CONTROL         "",IDC_PREVIEW,"Static",SS_BLACKRECT,0,0,517,321
+    PUSHBUTTON      "Format",IDC_FORMAT,524,55,54,14
+    PUSHBUTTON      "Source",IDC_SOURCE,524,79,54,14
+    PUSHBUTTON      "AVI Settings",IDC_CAPTURE_VIDEO,524,103,54,14
+    PUSHBUTTON      "Cancel",IDCANCEL,524,31,54,14
+    LTEXT           "",IDC_MESSAGE,6,341,62,11
+    CONTROL         "Progress1",IDC_PROGRESS_CONV,"msctls_progress32",NOT 
+                    WS_VISIBLE | WS_BORDER,75,336,256,20
+    LTEXT           "",IDC_FRAMES,343,334,59,19
+END
+
+IDD_FORMAT DIALOGEX 0, 0, 143, 119
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+CAPTION "Format"
+FONT 8, "MS Sans Serif"
+BEGIN
+    LTEXT           "Scale:",IDC_STATIC,9,10,25,10
+    COMBOBOX        IDC_FORMAT,37,8,98,79,CBS_DROPDOWNLIST | WS_VSCROLL | 
+                    WS_TABSTOP
+    CONTROL         "Mirror vertically",IDC_VERTICAL_MIRROR,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,37,27,91,17
+    CONTROL         "Mirror horizontally",IDC_HORIZONTAL_MIRROR,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,37,46,68,17
+    CONTROL         "Gray scale",IDC_GRAY_SCALE,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,37,65,52,19
+    DEFPUSHBUTTON   "OK",IDOK,8,97,40,14
+    PUSHBUTTON      "Cancel",IDCANCEL,51,97,40,14
+    PUSHBUTTON      "Help",IDHELP,94,97,40,14,0,0
+END
+
+IDD_VIDEO_CAP DIALOGEX 0, 0, 224, 156
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Capture Video"
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,5,131,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,58,131,50,14
+    LTEXT           "&Capture rate:",IDC_STATIC,8,10,43,11
+    EDITTEXT        IDC_FPS,73,8,31,12,ES_AUTOHSCROLL
+    LTEXT           "&Time (in seconds)",IDC_TIME,8,50,56,10
+    EDITTEXT        IDC_TIME_LIM,73,48,31,12,ES_AUTOHSCROLL
+    LTEXT           "AVI file name",IDC_STATIC,8,72,42,8
+    RTEXT           "Static",IDC_FILE,60,72,106,8
+    PUSHBUTTON      "...",IDC_BROWSE,179,68,35,14
+    COMBOBOX        IDC_CAPTURE_RATE_SCALE,114,8,40,62,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    LTEXT           "Playback rate:",IDC_STATIC,8,29,46,13
+    EDITTEXT        IDC_PLAYBACK_FPS,73,28,31,12,ES_AUTOHSCROLL
+    COMBOBOX        IDC_PLAYBACK_RATE_SCALE,114,28,40,52,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_CAPTURE_MEMORY,160,49,55,51,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    LTEXT           "Capture to",IDC_STATIC,117,50,37,10
+    CONTROL         "Gray scale",IDC_GRAYSCALE,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,8,88,51,15
+    PUSHBUTTON      "Default",IDC_DEFAULT,111,131,50,14
+    LTEXT           "Frame size",IDC_STATIC_FRAME_SIZE,8,109,57,11
+    EDITTEXT        IDC_E_FRAME_SIZE,73,107,31,13,ES_AUTOHSCROLL
+    CONTROL         "Slider1",IDC_S_FRAME_SIZE,"msctls_trackbar32",
+                    TBS_AUTOTICKS | TBS_TOP | TBS_NOTICKS | WS_TABSTOP,107,
+                    107,90,14
+    LTEXT           "%",IDC_STATIC_PROCENT,202,109,8,11
+    LTEXT           "",IDC_FPS_MESSAGE,157,10,66,35
+    PUSHBUTTON      "Help",IDHELP,164,131,50,14,0,0
+END
+
+IDD_SOURCE2 DIALOGEX 0, 0, 302, 214
+STYLE DS_MODALFRAME | WS_VISIBLE | WS_CLIPSIBLINGS | WS_CAPTION | WS_SYSMENU
+CAPTION "Source"
+FONT 8, "MS Sans Serif"
+BEGIN
+    GROUPBOX        "Video Standard",IDC_STATIC,6,5,146,82
+    CONTROL         "NTSC",IDC_STANDARD_NTSC,"Button",BS_AUTORADIOBUTTON | 
+                    WS_GROUP | WS_TABSTOP,23,15,36,14
+    CONTROL         "PAL",IDC_STANDARD_PAL,"Button",BS_AUTORADIOBUTTON,23,29,
+                    31,14
+    CONTROL         "SECAM",IDC_STANDARD_SECAM,"Button",BS_AUTORADIOBUTTON,
+                    23,43,45,14
+    CONTROL         "NTSC44",IDC_STANDARD_NTSC44,"Button",BS_AUTORADIOBUTTON,
+                    23,57,45,14
+    CONTROL         "PALm",IDC_STANDARD_PALM,"Button",BS_AUTORADIOBUTTON,23,
+                    71,60,14
+    CONTROL         "PALn",IDC_STANDARD_PALN,"Button",BS_AUTORADIOBUTTON,88,
+                    15,37,14
+    CONTROL         "PAL60",IDC_STANDARD,"Button",BS_AUTORADIOBUTTON,88,29,
+                    42,14
+    CONTROL         "NTSCcomb",IDC_STANDARD_NTSCCOMB,"Button",
+                    BS_AUTORADIOBUTTON,88,43,54,14
+    CONTROL         "SECAMmono",IDC_RADIO9,"Button",BS_AUTORADIOBUTTON,88,57,
+                    58,14
+    CONTROL         "NTSCmono",IDC_STANDARD_NTSCMONO,"Button",
+                    BS_AUTORADIOBUTTON,88,71,58,14
+    GROUPBOX        "Camera 1",IDC_STATIC,159,4,73,82
+    CONTROL         "Red",IDC_RED,"Button",BS_AUTORADIOBUTTON | WS_GROUP | 
+                    WS_TABSTOP,165,15,37,14
+    CONTROL         "Green",IDC_GREEN,"Button",BS_AUTORADIOBUTTON,165,29,40,
+                    14
+    CONTROL         "Blue",IDC_BLUE,"Button",BS_AUTORADIOBUTTON,165,43,49,14
+    CONTROL         "S-Video",IDC_SVIDEO,"Button",BS_AUTORADIOBUTTON,165,57,
+                    54,14
+    CONTROL         "2 S-Video",IDC_2SVIDEO,"Button",BS_AUTOCHECKBOX | 
+                    WS_DISABLED | WS_GROUP | WS_TABSTOP,165,71,46,14
+    CONTROL         "1st S-Video",IDC_1STSVIDEO,"Button",BS_AUTORADIOBUTTON | 
+                    WS_GROUP,188,15,49,14
+    CONTROL         "2nd S-Video",IDC_2NDSVIDEO,"Button",BS_AUTORADIOBUTTON,
+                    186,30,57,14
+    CONTROL         "Analog (Blue)",IDC_ANALOG,"Button",BS_AUTORADIOBUTTON,
+                    179,42,62,14
+    GROUPBOX        "Camera 2",IDC_STATIC,240,4,55,54
+    CONTROL         "Red",IDC_RED2,"Button",BS_AUTORADIOBUTTON | WS_GROUP | 
+                    WS_TABSTOP,247,14,39,15
+    CONTROL         "Green",IDC_GREEN2,"Button",BS_AUTORADIOBUTTON,247,28,40,
+                    15
+    CONTROL         "Blue",IDC_BLUE3,"Button",BS_AUTORADIOBUTTON,247,44,38,
+                    12
+    CONTROL         "VCR",IDC_VCR,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,247,
+                    60,31,11
+    CONTROL         "AGC",IDC_AGC,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,247,
+                    74,33,10
+    GROUPBOX        "Adjustment",IDC_STATIC,6,93,146,114
+    LTEXT           "Brightness",IDC_STATIC,12,111,36,11
+    LTEXT           "Contrast",IDC_STATIC,12,128,33,11
+    LTEXT           "Hue",IDC_STATIC,12,147,28,13
+    LTEXT           "Saturation",IDC_STATIC,12,164,35,11
+    EDITTEXT        IDC_E_BRIGHTNESS,51,108,17,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_E_CONTRAST,51,126,17,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_E_HUE,51,144,17,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_E_SATURATION,51,162,17,14,ES_AUTOHSCROLL
+    CONTROL         "Slider1",IDC_S_BRIGHTNESS,"msctls_trackbar32",
+                    TBS_AUTOTICKS | TBS_TOP | TBS_NOTICKS | WS_TABSTOP,72,
+                    106,74,18
+    CONTROL         "Slider2",IDC_S_CONTRAST,"msctls_trackbar32",
+                    TBS_AUTOTICKS | TBS_TOP | TBS_NOTICKS | WS_TABSTOP,72,
+                    125,74,18
+    CONTROL         "Slider3",IDC_S_HUE,"msctls_trackbar32",TBS_AUTOTICKS | 
+                    TBS_TOP | TBS_NOTICKS | WS_TABSTOP,72,144,74,18
+    CONTROL         "Slider4",IDC_S_SATURATION,"msctls_trackbar32",
+                    TBS_AUTOTICKS | TBS_TOP | TBS_NOTICKS | WS_TABSTOP,72,
+                    163,74,18
+    PUSHBUTTON      "Default",IDC_DEFAULT,78,185,65,14
+    GROUPBOX        "Grab Window",IDC_STATIC,159,93,136,90
+    LTEXT           "Start X",IDC_STATIC,164,110,23,11
+    LTEXT           "Start Y",IDC_STATIC,164,127,25,11
+    LTEXT           "Size X",IDC_STATIC,164,146,26,12
+    LTEXT           "Size Y",IDC_STATIC,165,164,24,9
+    EDITTEXT        IDC_E_GWX,191,108,18,13,ES_AUTOHSCROLL
+    EDITTEXT        IDC_E_GWY,191,125,18,13,ES_AUTOHSCROLL
+    EDITTEXT        IDC_E_GWDX,191,144,18,13,ES_AUTOHSCROLL
+    EDITTEXT        IDC_E_GWDY,191,163,18,13,ES_AUTOHSCROLL
+    CONTROL         "Slider1",IDC_S_GWX,"msctls_trackbar32",TBS_AUTOTICKS | 
+                    TBS_TOP | TBS_NOTICKS | WS_TABSTOP,215,106,74,18
+    CONTROL         "Slider2",IDC_S_GWY,"msctls_trackbar32",TBS_AUTOTICKS | 
+                    TBS_TOP | TBS_NOTICKS | WS_TABSTOP,215,125,74,18
+    CONTROL         "Slider3",IDC_S_GWDX,"msctls_trackbar32",TBS_AUTOTICKS | 
+                    TBS_TOP | TBS_NOTICKS | WS_TABSTOP,215,144,74,18
+    CONTROL         "Slider4",IDC_S_GWDY,"msctls_trackbar32",TBS_AUTOTICKS | 
+                    TBS_TOP | TBS_NOTICKS | WS_TABSTOP,215,163,74,18
+    DEFPUSHBUTTON   "OK",IDOK,156,185,41,14
+    PUSHBUTTON      "Cancel",IDCANCEL,204,185,41,14
+    PUSHBUTTON      "Help",IDHELP,252,185,41,14,0,0
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog Info
+//
+
+IDD_FORMAT DLGINIT
+BEGIN
+    IDC_FORMAT, 0x403, 10, 0
+0x7546, 0x6c6c, 0x7320, 0x7a69, 0x0065, 
+    IDC_FORMAT, 0x403, 4, 0
+0x2f31, 0x0032, 
+    0
+END
+
+IDD_VIDEO_CAP DLGINIT
+BEGIN
+    IDC_CAPTURE_RATE_SCALE, 0x403, 4, 0
+0x7066, 0x0073, 
+    IDC_CAPTURE_RATE_SCALE, 0x403, 4, 0
+0x7066, 0x006d, 
+    IDC_CAPTURE_RATE_SCALE, 0x403, 4, 0
+0x7066, 0x0068, 
+    IDC_CAPTURE_RATE_SCALE, 0x403, 4, 0
+0x7066, 0x0064, 
+    IDC_PLAYBACK_RATE_SCALE, 0x403, 4, 0
+0x7066, 0x0073, 
+    IDC_PLAYBACK_RATE_SCALE, 0x403, 4, 0
+0x7066, 0x006d, 
+    IDC_PLAYBACK_RATE_SCALE, 0x403, 4, 0
+0x7066, 0x0068, 
+    IDC_PLAYBACK_RATE_SCALE, 0x403, 4, 0
+0x7066, 0x0064, 
+    IDC_CAPTURE_MEMORY, 0x403, 7, 0
+0x654d, 0x6f6d, 0x7972, "\000" 
+    IDC_CAPTURE_MEMORY, 0x403, 5, 0
+0x6944, 0x6b73, "\000" 
+    0
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO DISCARDABLE 
+BEGIN
+    IDD_SOURCE1, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 307
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 224
+    END
+
+    IDD_SOURCE, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 281
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 202
+    END
+
+    IDD_PREVIEW, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 582
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 351
+    END
+
+    IDD_FORMAT, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 136
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 112
+    END
+
+    IDD_SOURCE2, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 295
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 207
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_VERSION_INFO        "May, 1999"
+    IDS_MANUFACTURER        "VideoTest"
+    IDS_PRODFAMILY          "Twain"
+    IDS_PRODNAME            "Mutech MV-1000"
+    IDS_NO_MEMORY_FOR_VCAP  "No memory for AVI capture. Only %dK free (for %d frames)."
+    IDS_AVI_PLACED          "AVI placed to file %s. %d frames written, %d frames skipped. Total length %.1f secs."
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_TIME_IN_SECONDS     "&Time (in seconds)"
+    IDS_TIME_IN_MINUTES     "&Time (in minutes)"
+    IDS_TIME_IN_HOURS       "&Time (in hours)"
+    IDS_ERROR_DURING_DECOMPRESSION 
+                            "Couldn't decompress from 16 bit YUV format (%s) into 24 bit RGB format (%s). Error %d (HRESULT %x)."
+    IDS_NOT_ENOUGH_SPACE    "Not enogh space in directory %s. Only %d MB available, %d MB needed."
+    IDS_FILE_MORE_2GB       "AVI files more then 2GB are not supported."
+    IDS_RESET               "Reset settings"
+    IDS_RESET_Q             "All your changes in driver settings will be lost. Continue?"
+    IDS_FILE_NOT_OPENED     "File %s can not be created. Check, please,  path and disk space."
+    IDS_PARTITION_NOT_FREE  "Disk %C: must be free for reliable recording of video files."
+    IDS_CANNOT_FREE_PARTITION "Can not free disk %C:."
+    IDS_FPS_MESSAGE_PAL     "If frame rate is more than 25 fps, it will be changed to 50 fps."
+    IDS_FPS_MESSAGE_NTSC    "If frame rate is more than 30 fps, it will be changed 60 fps"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_INPUT               "Acquire image"
+    IDS_FRAMERATE           "Frame rate"
+END
+
+#endif    // English (U.S.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE 9, 1
+#pragma code_page(1252)
+#endif //_WIN32
+#include "res\MV5Drv.rc2"  // non-Microsoft Visual C++ edited resources
+#include "afxres.rc"         // Standard components
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

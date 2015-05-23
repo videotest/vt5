@@ -1,0 +1,11 @@
+поместить файлы <$\gost\masm>\ml.exe & <$\gost\masm>\ml.err в каталог <VisualStudio>\VC98\Bin
+
+в файле <$\gost>\make.bat изменить path с "D:\Visual~1\Common\MSDev98\Bin" на 
+"<VisualStudio>\Common\MSDev98\Bin" в DOS формате.
+
+запустить <$\gost>\make.bat 
+
+результатом работы будет файл "xgost32s.lib" в каталоге проекта.
+Это статическая библиотека.
+Использование - через заголовочный файл <$\gost>\gost.h
+

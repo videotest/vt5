@@ -1,0 +1,112 @@
+// PrintFieldAX.odl : type library source for ActiveX Control project.
+
+// This file will be processed by the Make Type Library (mktyplib) tool to
+// produce the type library (PrintFieldAX.tlb) that will become a resource in
+// PrintFieldAX.ocx.
+
+[ uuid(E72BB405-D5B6-4CA6-9071-56ABC5E1DB40), version(1.0),
+  helpfile("PrintFieldAX.hlp"),
+  helpstring("PrintFieldAX ActiveX Control module"),
+  control ]
+library PRINTFIELDAXLib
+{
+#include <olectl.h>
+#include <idispids.h>
+	importlib(STDOLE_TLB);
+	importlib(STDTYPE_TLB);
+
+	//  Primary dispatch interface for CPrintFieldAXCtrl
+
+	[ uuid(3851E866-C6D3-46C4-BD74-EB3B16E60692),
+	  helpstring("Dispatch interface for PrintFieldAX Control"), hidden ]
+	dispinterface _DPrintFieldAX
+	{
+		properties:
+			// NOTE - ClassWizard will maintain property information here.
+			//    Use extreme caution when editing this section.
+			//{{AFX_ODL_PROP(CPrintFieldAXCtrl)
+			[id(DISPID_TEXT), bindable, requestedit] BSTR Text;
+			[id(1)] BSTR Group;
+			[id(2)] long EditControlStyle;
+			[id(3)] long CaptionWidth;
+			[id(5)] BSTR Caption;
+			[id(6)] BSTR KeyToRead;
+			[id(7)] boolean UseKeyToRead;
+			[id(DISPID_FONT), bindable] IFontDisp* Font;
+			[id(8)] long CaptionAlignment;
+			[id(9)] OLE_COLOR TextColor;
+			//}}AFX_ODL_PROP
+
+		methods:
+			// NOTE - ClassWizard will maintain method information here.
+			//    Use extreme caution when editing this section.
+			//{{AFX_ODL_METHOD(CPrintFieldAXCtrl)
+			//}}AFX_ODL_METHOD
+	};
+
+	//  Event dispatch interface for CPrintFieldAXCtrl
+
+	[ uuid(453AD094-D102-42CD-866D-EF4E80DAA243),
+	  helpstring("Event interface for PrintFieldAX Control") ]
+	dispinterface _DPrintFieldAXEvents
+	{
+		properties:
+			//  Event interface has no properties
+
+		methods:
+			// NOTE - ClassWizard will maintain event information here.
+			//    Use extreme caution when editing this section.
+			//{{AFX_ODL_EVENT(CPrintFieldAXCtrl)
+			//}}AFX_ODL_EVENT
+	};
+
+	//  Class information for CPrintFieldAXCtrl
+
+	[ uuid(38E8C2F4-E97A-44C9-B0AC-E959E805F53D),
+	  helpstring("PrintFieldAX Control"), control ]
+	coclass PrintFieldAX
+	{
+		[default] dispinterface _DPrintFieldAX;
+		[default, source] dispinterface _DPrintFieldAXEvents;
+	};
+
+	//  Primary dispatch interface for CViewLoaderCtrl
+
+	[ uuid(08305E68-A9B4-4069-96D4-ECBAF593CE5C),
+		helpstring("Dispatch interface for ViewLoader Control")]
+	dispinterface _DViewLoader
+	{
+	properties:
+		[id(3), helpstring("property TemplateAlgorithm")] SHORT TemplateAlgorithm;
+
+
+	methods:
+		[id(1)] boolean GetPropertyAXStatus();
+		[id(2)] void SetPropertyAXStatus(boolean val);
+	};
+
+	//  Event dispatch interface for CViewLoaderCtrl
+
+	[ uuid(8360C193-90B2-4972-A2A0-C51C20DDCBE6),
+	  helpstring("Event interface for ViewLoader Control") ]
+	dispinterface _DViewLoaderEvents
+	{
+		properties:
+			//  Event interface has no properties
+
+		methods:
+	};
+
+	//  Class information for CViewLoaderCtrl
+
+	[ uuid(67DF5557-7009-432C-8C3C-1E564C074811),
+	  helpstring("ViewLoader Control"), control ]
+	coclass ViewLoader
+	{
+		[default] dispinterface _DViewLoader;
+		[default, source] dispinterface _DViewLoaderEvents;
+	};
+
+	//{{AFX_APPEND_ODL}}
+	//}}AFX_APPEND_ODL}}
+};

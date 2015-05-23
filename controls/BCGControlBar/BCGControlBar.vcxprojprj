@@ -1,0 +1,444 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{DA9FD2CC-4075-4CDB-B395-ED524323D5AB}</ProjectGuid>
+    <RootNamespace>BCGControlBar</RootNamespace>
+    <Keyword>MFCProj</Keyword>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseOfMfc>Dynamic</UseOfMfc>
+    <PlatformToolset>v120</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseOfMfc>Dynamic</UseOfMfc>
+    <PlatformToolset>v120</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseOfMfc>Dynamic</UseOfMfc>
+    <PlatformToolset>v120</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseOfMfc>Dynamic</UseOfMfc>
+    <PlatformToolset>v120</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC71.props" />
+    <Import Project="..\..\props\common.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC71.props" />
+    <Import Project="..\..\props\common.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC71.props" />
+    <Import Project="..\..\props\common.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC71.props" />
+    <Import Project="..\..\props\common.props" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.30319.1</_ProjectFileVersion>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</LinkIncremental>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</LinkIncremental>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</LinkIncremental>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkIncremental>
+    <CodeAnalysisRuleSet Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRules Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" />
+    <CodeAnalysisRuleAssemblies Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" />
+    <CodeAnalysisRuleSet Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRules Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" />
+    <CodeAnalysisRuleAssemblies Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" />
+    <CodeAnalysisRuleSet Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRules Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" />
+    <CodeAnalysisRuleAssemblies Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" />
+    <CodeAnalysisRuleSet Condition="'$(Configuration)|$(Platform)'=='Release|x64'">AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRules Condition="'$(Configuration)|$(Platform)'=='Release|x64'" />
+    <CodeAnalysisRuleAssemblies Condition="'$(Configuration)|$(Platform)'=='Release|x64'" />
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <OutDir>$(SolutionDir)vt5\$(PlatformName)\$(Configuration)\</OutDir>
+    <TargetName>BCGCB464D</TargetName>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <OutDir>$(SolutionDir)vt5\$(PlatformName)\$(Configuration)\</OutDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <OutDir>$(SolutionDir)vt5\$(PlatformName)\$(Configuration)\</OutDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <OutDir>$(SolutionDir)vt5\$(PlatformName)\$(Configuration)\</OutDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Midl>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MkTypLibCompatible>true</MkTypLibCompatible>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <TargetEnvironment>Win32</TargetEnvironment>
+      <TypeLibraryName>\vt5\common\Debug/BCGControlBar.tlb</TypeLibraryName>
+    </Midl>
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>_DEBUG;WIN32;_WINDOWS;_AFXEXT;_BCGCONTROLBAR_;_AFX_SECURE_NO_DEPRECATE;_CRT_SECURE_NO_DEPRECATE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <ForceConformanceInForLoopScope>false</ForceConformanceInForLoopScope>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>stdafx.h</PrecompiledHeaderFile>
+      <BrowseInformation>true</BrowseInformation>
+      <WarningLevel>Level3</WarningLevel>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>_AFXDLL;_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <Culture>0x0409</Culture>
+    </ResourceCompile>
+    <Link>
+      <AdditionalOptions>/MACHINE:I386 %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalDependencies>winmm.lib;GdiPlus.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <SubSystem>Windows</SubSystem>
+      <RandomizedBaseAddress>false</RandomizedBaseAddress>
+      <DataExecutionPrevention>
+      </DataExecutionPrevention>
+      <OutputFile>$(SolutionDir)vt5\$(PlatformName)\$(Configuration)\BCGCB464D$(TargetExt)</OutputFile>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Midl>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MkTypLibCompatible>true</MkTypLibCompatible>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <TargetEnvironment>Win32</TargetEnvironment>
+      <TypeLibraryName>\vt5\common\Release/BCGControlBar.tlb</TypeLibraryName>
+    </Midl>
+    <ClCompile>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <PreprocessorDefinitions>NDEBUG;_BCGCONTROLBAR_;WIN32;_WINDOWS;_AFXEXT;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <StringPooling>true</StringPooling>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <ForceConformanceInForLoopScope>false</ForceConformanceInForLoopScope>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>stdafx.h</PrecompiledHeaderFile>
+      <WarningLevel>Level3</WarningLevel>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>_AFXDLL;NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <Culture>0x0409</Culture>
+    </ResourceCompile>
+    <Link>
+      <AdditionalOptions>/MACHINE:I386 %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalDependencies>winmm.lib;GdiPlus.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <SubSystem>Windows</SubSystem>
+      <RandomizedBaseAddress>false</RandomizedBaseAddress>
+      <DataExecutionPrevention>
+      </DataExecutionPrevention>
+      <OutputFile>$(SolutionDir)vt5\$(PlatformName)\$(Configuration)\BCGCB464D$(TargetExt)</OutputFile>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Midl>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MkTypLibCompatible>true</MkTypLibCompatible>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <TargetEnvironment>X64</TargetEnvironment>
+      <TypeLibraryName>\vt5\common\Debug/BCGControlBar.tlb</TypeLibraryName>
+    </Midl>
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>_DEBUG;_WINDOWS;_AFXEXT;_BCGCONTROLBAR_;_WIN64;_M_X64;_AFX_SECURE_NO_DEPRECATE;_CRT_SECURE_NO_DEPRECATE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <TreatWChar_tAsBuiltInType>false</TreatWChar_tAsBuiltInType>
+      <ForceConformanceInForLoopScope>false</ForceConformanceInForLoopScope>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>stdafx.h</PrecompiledHeaderFile>
+      <BrowseInformation>true</BrowseInformation>
+      <WarningLevel>Level3</WarningLevel>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>_AFXDLL;_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <Culture>0x0409</Culture>
+    </ResourceCompile>
+    <Link>
+      <AdditionalDependencies>winmm.lib;GdiPlus.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <SubSystem>Windows</SubSystem>
+      <TargetMachine>MachineX64</TargetMachine>
+      <OutputFile>$(SolutionDir)vt5\$(PlatformName)\$(Configuration)\BCGCB464D$(TargetExt)</OutputFile>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Midl>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MkTypLibCompatible>true</MkTypLibCompatible>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <TargetEnvironment>X64</TargetEnvironment>
+      <TypeLibraryName>\vt5\common\Release/BCGControlBar.tlb</TypeLibraryName>
+    </Midl>
+    <ClCompile>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <PreprocessorDefinitions>NDEBUG;_BCGCONTROLBAR_;_WIN64;_M_X64;_AFX_SECURE_NO_DEPRECATE;_CRT_SECURE_NO_DEPRECATE;_WINDOWS;_AFXEXT;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <StringPooling>true</StringPooling>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <TreatWChar_tAsBuiltInType>false</TreatWChar_tAsBuiltInType>
+      <ForceConformanceInForLoopScope>false</ForceConformanceInForLoopScope>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>stdafx.h</PrecompiledHeaderFile>
+      <WarningLevel>Level3</WarningLevel>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>_AFXDLL;NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <Culture>0x0409</Culture>
+    </ResourceCompile>
+    <Link>
+      <AdditionalDependencies>winmm.lib;GdiPlus.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <SubSystem>Windows</SubSystem>
+      <TargetMachine>MachineX64</TargetMachine>
+      <OutputFile>$(SolutionDir)vt5\$(PlatformName)\$(Configuration)\BCGCB464D$(TargetExt)</OutputFile>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="BCGButton.cpp" />
+    <ClCompile Include="BCGCommandManager.cpp" />
+    <ClCompile Include="BCGContextMenuManager.cpp" />
+    <ClCompile Include="BCGControlBar.cpp" />
+    <ClCompile Include="BCGControlBarImpl.cpp" />
+    <ClCompile Include="BCGDialogBar.cpp" />
+    <ClCompile Include="BCGDockContext.cpp" />
+    <ClCompile Include="BCGDropDown.cpp" />
+    <ClCompile Include="BCGEditListBox.cpp" />
+    <ClCompile Include="BCGExCheckList.cpp" />
+    <ClCompile Include="BCGFileDialog.cpp" />
+    <ClCompile Include="BCGFrameImpl.cpp" />
+    <ClCompile Include="BCGFrameWnd.cpp" />
+    <ClCompile Include="BCGKeyboardManager.cpp" />
+    <ClCompile Include="BCGMainClientAreaWnd.cpp" />
+    <ClCompile Include="BCGMDIChildWnd.cpp" />
+    <ClCompile Include="BCGMDIFrameWnd.cpp" />
+    <ClCompile Include="BCGMenuBar.cpp" />
+    <ClCompile Include="BCGMenuButton.cpp" />
+    <ClCompile Include="BCGMouseManager.cpp" />
+    <ClCompile Include="BCGOleIPFrameWnd.cpp" />
+    <ClCompile Include="bcgoutlookbar.cpp" />
+    <ClCompile Include="BCGOutlookButton.cpp" />
+    <ClCompile Include="BCGPopupMenu.cpp" />
+    <ClCompile Include="BCGPopupMenuBar.cpp" />
+    <ClCompile Include="BCGPrintPreviewView.cpp" />
+    <ClCompile Include="BCGRegistry.cpp" />
+    <ClCompile Include="BCGShowAllButton.cpp" />
+    <ClCompile Include="BCGSizingControlBar.cpp" />
+    <ClCompile Include="bcgsound.cpp" />
+    <ClCompile Include="bcgtabwnd.cpp" />
+    <ClCompile Include="BCGToolBar.cpp" />
+    <ClCompile Include="BCGToolbarButton.cpp" />
+    <ClCompile Include="BCGToolbarComboBoxButton.cpp" />
+    <ClCompile Include="BCGToolbarDropSource.cpp" />
+    <ClCompile Include="BCGToolbarDropTarget.cpp" />
+    <ClCompile Include="BCGToolbarEditBoxButton.cpp" />
+    <ClCompile Include="BCGToolBarImages.cpp" />
+    <ClCompile Include="BCGToolbarMenuButton.cpp" />
+    <ClCompile Include="BCGToolbarMenuButtonsButton.cpp" />
+    <ClCompile Include="BCGToolbarRegularMenuButton.cpp" />
+    <ClCompile Include="BCGToolbarSystemMenuButton.cpp" />
+    <ClCompile Include="BCGToolsPage.cpp" />
+    <ClCompile Include="BCGURLLinkButton.cpp" />
+    <ClCompile Include="BCGUserTool.cpp" />
+    <ClCompile Include="BCGUserToolsManager.cpp" />
+    <ClCompile Include="BCGWindowsManagerDlg.cpp" />
+    <ClCompile Include="BCGWorkspace.cpp" />
+    <ClCompile Include="ButtonAppearanceDlg.cpp" />
+    <ClCompile Include="ButtonsList.cpp" />
+    <ClCompile Include="ButtonsTextList.cpp" />
+    <ClCompile Include="CBCGToolbarCustomize.cpp" />
+    <ClCompile Include="CBCGToolbarCustomizePages.cpp" />
+    <ClCompile Include="CmdUsageCount.cpp" />
+    <ClCompile Include="ColorSelector.cpp" />
+    <ClCompile Include="CustomizeButton.cpp" />
+    <ClCompile Include="GLOBALS.CPP" />
+    <ClCompile Include="ImageEditDlg.cpp" />
+    <ClCompile Include="ImageHash.cpp" />
+    <ClCompile Include="ImagePaintArea.cpp" />
+    <ClCompile Include="KeyAssign.cpp" />
+    <ClCompile Include="KeyboardPage.cpp" />
+    <ClCompile Include="KeyHelper.cpp" />
+    <ClCompile Include="MenuHash.cpp" />
+    <ClCompile Include="MenuImages.cpp" />
+    <ClCompile Include="MenuPage.cpp" />
+    <ClCompile Include="MousePage.cpp" />
+    <ClCompile Include="OptionsPage.cpp" />
+    <ClCompile Include="PaletteCommandFrameWnd.cpp" />
+    <ClCompile Include="RebarState.cpp" />
+    <ClCompile Include="RegPath.cpp" />
+    <ClCompile Include="StdAfx.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="ToolbarNameDlg.cpp" />
+    <ClCompile Include="TrackMouse.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="BCGControlBar.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="BCGButton.h" />
+    <ClInclude Include="BCGCB.h" />
+    <ClInclude Include="BCGCommandManager.h" />
+    <ClInclude Include="BCGContextMenuManager.h" />
+    <ClInclude Include="BCGControlBar.h" />
+    <ClInclude Include="BCGControlBarImpl.h" />
+    <ClInclude Include="BCGDialogBar.h" />
+    <ClInclude Include="BCGDockBar.h" />
+    <ClInclude Include="BCGDockContext.h" />
+    <ClInclude Include="BCGDropDown.h" />
+    <ClInclude Include="BCGEditListBox.h" />
+    <ClInclude Include="BCGExCheckList.h" />
+    <ClInclude Include="BCGFileDialog.h" />
+    <ClInclude Include="BCGFrameImpl.h" />
+    <ClInclude Include="BCGFrameWnd.h" />
+    <ClInclude Include="bcghelpids.h" />
+    <ClInclude Include="BCGKeyboardManager.h" />
+    <ClInclude Include="bcglocalres.h" />
+    <ClInclude Include="BCGMainClientAreaWnd.h" />
+    <ClInclude Include="BCGMDIChildWnd.h" />
+    <ClInclude Include="BCGMDIFrameWnd.h" />
+    <ClInclude Include="BCGMenuBar.h" />
+    <ClInclude Include="BCGMenuButton.h" />
+    <ClInclude Include="BCGMouseManager.h" />
+    <ClInclude Include="BCGOleIPFrameWnd.h" />
+    <ClInclude Include="bcgoutlookbar.h" />
+    <ClInclude Include="BCGOutlookButton.h" />
+    <ClInclude Include="BCGPopupMenu.h" />
+    <ClInclude Include="BCGPopupMenuBar.h" />
+    <ClInclude Include="BCGPrintPreviewView.h" />
+    <ClInclude Include="BCGRegistry.h" />
+    <ClInclude Include="BCGShowAllButton.h" />
+    <ClInclude Include="BCGSizingControlBar.h" />
+    <ClInclude Include="bcgsound.h" />
+    <ClInclude Include="bcgtabwnd.h" />
+    <ClInclude Include="BCGToolBar.h" />
+    <ClInclude Include="BCGToolbarButton.h" />
+    <ClInclude Include="BCGToolbarComboBoxButton.h" />
+    <ClInclude Include="BCGToolbarDropSource.h" />
+    <ClInclude Include="BCGToolbarDropTarget.h" />
+    <ClInclude Include="BCGToolbarEditBoxButton.h" />
+    <ClInclude Include="BCGToolBarImages.h" />
+    <ClInclude Include="BCGToolbarMenuButton.h" />
+    <ClInclude Include="BCGToolbarMenuButtonsButton.h" />
+    <ClInclude Include="BCGToolbarRegularMenuButton.h" />
+    <ClInclude Include="BCGToolbarSystemMenuButton.h" />
+    <ClInclude Include="BCGToolsPage.h" />
+    <ClInclude Include="BCGURLLinkButton.h" />
+    <ClInclude Include="BCGUserTool.h" />
+    <ClInclude Include="BCGUserToolsManager.h" />
+    <ClInclude Include="BCGWindowsManagerDlg.h" />
+    <ClInclude Include="BCGWorkspace.h" />
+    <ClInclude Include="ButtonAppearanceDlg.h" />
+    <ClInclude Include="ButtonsList.h" />
+    <ClInclude Include="ButtonsTextList.h" />
+    <ClInclude Include="CBCGToolbarCustomize.h" />
+    <ClInclude Include="CBCGToolbarCustomizePages.h" />
+    <ClInclude Include="CmdUsageCount.h" />
+    <ClInclude Include="ColorSelector.h" />
+    <ClInclude Include="CustomizeButton.h" />
+    <ClInclude Include="GLOBALS.H" />
+    <ClInclude Include="ImageEditDlg.h" />
+    <ClInclude Include="ImageHash.h" />
+    <ClInclude Include="ImagePaintArea.h" />
+    <ClInclude Include="KeyAssign.h" />
+    <ClInclude Include="KeyboardPage.h" />
+    <ClInclude Include="KeyHelper.h" />
+    <ClInclude Include="MenuHash.h" />
+    <ClInclude Include="MenuImages.h" />
+    <ClInclude Include="MenuPage.h" />
+    <ClInclude Include="mfc_defs.h" />
+    <ClInclude Include="MousePage.h" />
+    <ClInclude Include="OptionsPage.h" />
+    <ClInclude Include="PaletteCommandFrameWnd.h" />
+    <ClInclude Include="RebarState.h" />
+    <ClInclude Include="RegPath.h" />
+    <ClInclude Include="StdAfx.h" />
+    <ClInclude Include="ToolbarNameDlg.h" />
+    <ClInclude Include="TrackMouse.h" />
+    <ClInclude Include="bcgbarres.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\arrows.bmp" />
+    <None Include="res\BCGControlBar.rc2" />
+    <None Include="res\color.cur" />
+    <None Include="res\copy.cur" />
+    <None Include="res\delete.bmp" />
+    <None Include="res\delete.cur" />
+    <None Include="res\down.bmp" />
+    <None Include="res\ellipse.cur" />
+    <None Include="res\fill.cur" />
+    <None Include="res\hand.cur" />
+    <None Include="res\help.bmp" />
+    <None Include="res\line.cur" />
+    <None Include="res\menuimg.bmp" />
+    <None Include="res\move.cur" />
+    <None Include="res\new.bmp" />
+    <None Include="res\palette.bmp" />
+    <None Include="res\pen.cur" />
+    <None Include="res\PrintPreview.bmp" />
+    <None Include="res\rect.cur" />
+    <None Include="res\tool.ico" />
+    <None Include="res\up.bmp" />
+    <None Include="ReadMe.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\comps\misc\glib\glib.vcxproj">
+      <Project>{4004cbe6-9a3f-4497-a8d8-b579c75d3ded}</Project>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

@@ -1,0 +1,16 @@
+// ThumbMan.odl : type library source for ThumbMan.dll
+
+// This file will be processed by the MIDL compiler to produce the
+// type library (ThumbMan.tlb).
+
+[ uuid(A03645E8-3D69-4435-8CA7-E5A91C3A2282), version(1.0) ]
+library ThumbMan
+{
+	importlib("stdole32.tlb");
+	importlib("stdole2.tlb");
+
+
+
+	//{{AFX_APPEND_ODL}}
+	//}}AFX_APPEND_ODL}}
+};

@@ -1,0 +1,17 @@
+// Editor.odl : type library source for Editor.dll
+
+// This file will be processed by the MIDL compiler to produce the
+// type library (Editor.tlb).
+
+[ uuid(CC948DE2-80B6-11D3-A513-0000B493A187), version(1.0) ]
+library Editor
+{
+	importlib("stdole32.tlb");
+	importlib("stdole2.tlb");
+
+
+
+
+	//{{AFX_APPEND_ODL}}
+	//}}AFX_APPEND_ODL}}
+};

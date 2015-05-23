@@ -1,0 +1,761 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// Russian resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_RUS)
+#ifdef _WIN32
+LANGUAGE LANG_RUSSIAN, SUBLANG_DEFAULT
+#pragma code_page(1251)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)\r\n"
+    "LANGUAGE 9, 1\r\n"
+    "#pragma code_page(1252)\r\n"
+    "#include ""res\\TestUI.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "#include ""afxres.rc""     // Standard components\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDB_DELETE              BITMAP                  "bmp00006.bmp"
+IDB_COPY                BITMAP                  "bitmap2.bmp"
+IDB_PASTE               BITMAP                  "bmp00007.bmp"
+IDB_TESTS               BITMAP                  "tests.bmp"
+IDB_RENAME              BITMAP                  "bmp_rename.bmp"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_DIALOG_TESTING_RESULTS DIALOGEX 0, 0, 421, 212
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | 
+    WS_SYSMENU
+CAPTION "Результаты тестирования"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,364,191,50,14
+    LTEXT           "Фильтрация результатов:",IDC_STATIC,7,7,92,11
+    COMBOBOX        IDC_COMBO_FILTRATION,107,7,91,78,CBS_DROPDOWN | 
+                    WS_VSCROLL | WS_TABSTOP
+    CONTROL         "",IDC_LIST_TESTS_RESULTS,"SysListView32",LVS_REPORT | 
+                    LVS_OWNERDRAWFIXED | LVS_ALIGNLEFT | WS_BORDER | 
+                    WS_TABSTOP,7,28,407,157
+END
+
+IDD_RUN_TESTS DIALOGEX 0, 0, 453, 215
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | 
+    WS_SYSMENU
+CAPTION "Запуск тестов"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    PUSHBUTTON      "Протестировать систему",IDC_BUTTON_TEST_SYSTEM,169,192,
+                    129,16
+    PUSHBUTTON      "Сохранить результаты тестирования",IDC_BUTTON_SAVE_TEST,
+                    317,192,129,16
+    CONTROL         "",IDC_LIST_TESTS,"SysListView32",LVS_REPORT | 
+                    LVS_OWNERDRAWFIXED | LVS_ALIGNLEFT | WS_BORDER | 
+                    WS_TABSTOP,7,7,439,175
+END
+
+IDD_TESTING_PROCESS DIALOGEX 0, 0, 336, 82
+STYLE DS_SETFONT | DS_MODALFRAME | DS_CONTROL | WS_CHILD | WS_VISIBLE
+EXSTYLE WS_EX_APPWINDOW
+FONT 8, "MS Sans Serif", 0, 0, 0x1
+BEGIN
+    CONTROL         "",IDC_LIST_TEST_PROCESS,"SysListView32",LVS_REPORT | 
+                    LVS_OWNERDRAWFIXED | LVS_ALIGNLEFT | WS_BORDER | 
+                    WS_TABSTOP,7,7,305,57
+    PUSHBUTTON      "Button1",IDC_BUTTON_STOP,315,7,15,14,BS_BITMAP
+    PUSHBUTTON      "Button2",IDC_BUTTON_VIEW_RESULTS,316,50,14,12,BS_BITMAP
+    LTEXT           "",IDC_STATISTICS,70,68,168,7
+    PUSHBUTTON      "Button1",IDC_BUTTON_PAUSE,315,21,15,14,BS_BITMAP
+END
+
+IDD_COMPAREIMAGES DIALOGEX 0, 0, 358, 208
+STYLE DS_SETFONT | WS_MAXIMIZEBOX | WS_POPUP | WS_CAPTION | WS_SYSMENU | 
+    WS_THICKFRAME
+CAPTION "Сравнить с эталоном"
+FONT 8, "Tahoma", 400, 0, 0xCC
+BEGIN
+    CTEXT           "View here",IDC_VIEW_HERE,5,16,165,178,WS_BORDER
+    SCROLLBAR       IDC_SCROLLBAR1,343,16,10,176,SBS_VERT
+    SCROLLBAR       IDC_SCROLLBAR2,5,197,335,9
+    CTEXT           "View here",IDC_VIEW_HERE2,175,16,165,178,WS_BORDER
+    PUSHBUTTON      "<<<",IDC_BUTTON1,294,3,21,11
+    PUSHBUTTON      ">>>",IDC_BUTTON2,318,3,22,11
+    PUSHBUTTON      "+",IDC_BUTTON3,136,4,13,9
+    PUSHBUTTON      "-",IDC_BUTTON4,151,4,13,9
+    LTEXT           "Результат:",IDC_STATIC_MAIN,7,6,39,8
+    LTEXT           "Эталон:",IDC_STATIC_RES,176,6,28,8
+END
+
+IDD_COMPARE_VALUES DIALOGEX 0, 0, 437, 209
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | DS_CENTER | WS_POPUP | 
+    WS_CAPTION | WS_SYSMENU
+CAPTION "Сравнение числовых данных"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    COMBOBOX        IDC_COMBO_ARRAYS,67,8,164,92,CBS_DROPDOWNLIST | CBS_SORT | 
+                    WS_VSCROLL | WS_TABSTOP
+    CONTROL         "",IDC_LIST1,"SysListView32",LVS_REPORT | LVS_SINGLESEL | 
+                    LVS_ALIGNLEFT | WS_BORDER | WS_TABSTOP,7,26,423,156
+    DEFPUSHBUTTON   "Закрыть",IDOK,380,188,50,14
+    LTEXT           "Data test array:",IDC_STATIC,9,10,56,8
+END
+
+IDD_INPUT_PATH DIALOGEX 0, 0, 234, 81
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | 
+    WS_SYSMENU
+CAPTION "Ввод начального условия для объекта"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "Готово",IDOK,177,60,50,14
+    EDITTEXT        IDC_EDIT_PATH,37,23,190,14,ES_AUTOHSCROLL
+    COMBOBOX        IDC_COMBO_TYPES,37,40,190,68,CBS_DROPDOWNLIST | CBS_SORT | 
+                    WS_VSCROLL | WS_TABSTOP
+    LTEXT           "Путь:",IDC_STATIC,7,26,20,8
+    LTEXT           "Тип:",IDC_STATIC,7,42,16,8
+    LTEXT           "Объект:",IDC_STATIC,7,8,30,8
+    EDITTEXT        IDC_EDIT_OBJ_NAME,37,8,190,12,ES_AUTOHSCROLL | 
+                    ES_READONLY | NOT WS_BORDER
+END
+
+IDD_EDIT_TEST_DB DIALOGEX 0, 0, 524, 454
+STYLE DS_SETFONT | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU | 
+    WS_THICKFRAME
+CAPTION "База тестов"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    CONTROL         "",IDC_TREE1,"SysTreeView32",TVS_HASBUTTONS | 
+                    TVS_HASLINES | TVS_LINESATROOT | TVS_EDITLABELS | 
+                    TVS_DISABLEDRAGDROP | TVS_SHOWSELALWAYS | WS_BORDER | 
+                    WS_TABSTOP | 0x800,7,8,185,439
+    GROUPBOX        "Содержимое теста",IDC_STATIC_GR1,199,6,307,10
+    LTEXT           "Начальные условия:",IDC_STATIC_T2,203,84,92,8,NOT 
+                    WS_VISIBLE
+    EDITTEXT        IDC_EDIT_START_CONDITIONS,203,93,307,42,ES_MULTILINE | 
+                    ES_AUTOHSCROLL | ES_WANTRETURN | WS_VSCROLL | WS_HSCROLL
+    PUSHBUTTON      "Button3",IDC_BUTTON_START_CONDITIONS,490,80,20,12,
+                    BS_BITMAP
+    EDITTEXT        IDC_EDIT_TEST_SEQUENCE,203,152,307,76,ES_MULTILINE | 
+                    ES_AUTOHSCROLL | ES_WANTRETURN | WS_VSCROLL | WS_HSCROLL | 
+                    WS_GROUP
+    PUSHBUTTON      "       ",IDC_BUTTON_TEST_SEQUENCE,490,139,20,12,
+                    BS_BITMAP
+    LTEXT           "Начальная тестовая последовательность: ",IDC_STATIC_T3,
+                    203,144,161,8,NOT WS_VISIBLE
+    LTEXT           "Конечная тестовая последовательность: ",IDC_STATIC_T4,
+                    203,237,146,8,NOT WS_VISIBLE
+    EDITTEXT        IDC_EDIT_FINAL_TEST_SEQUENCE,203,246,307,72,ES_MULTILINE | 
+                    ES_AUTOHSCROLL | ES_WANTRETURN | WS_VSCROLL | WS_HSCROLL
+    PUSHBUTTON      "Button5",IDC_BUTTON_FINAL_TEST_SEQUENCE,490,233,20,12,
+                    BS_BITMAP
+    EDITTEXT        IDC_EDIT_INFO,203,381,307,37,ES_MULTILINE | 
+                    ES_AUTOHSCROLL | WS_VSCROLL | WS_HSCROLL
+    LTEXT           "Дополнительная информация: ",IDC_STATIC_T5,204,373,112,
+                    8,NOT WS_VISIBLE
+    CONTROL         "Загрузка состояния панелей и меню",IDC_CHECK_LOAD_STATE,
+                    "Button",BS_AUTOCHECKBOX | BS_FLAT | WS_TABSTOP,211,359,
+                    139,10
+    PUSHBUTTON      "       ",IDC_BUTTON_EDIT_TEST_SEQUENCE,439,139,20,12,
+                    BS_BITMAP
+    PUSHBUTTON      "Button5",IDC_BUTTON_EDIT_FINAL_TEST_SEQUENCE,436,233,20,
+                    12,BS_BITMAP
+    LTEXT           "1\n2\n3",IDC_STATIC_CMB,204,422,307,25,SS_SUNKEN
+    GROUPBOX        "Окружение теста",IDC_STATIC_GR2,203,322,307,10
+    CONTROL         "Environment\ninformation",IDC_STATIC_ENV_INFO,"Static",
+                    SS_LEFTNOWORDWRAP | WS_GROUP,327,338,177,16
+    PUSHBUTTON      "Сохранить текущее окружение",IDC_BUTTON_SAVE_ENV,211,
+                    338,111,14
+    CONTROL         "Загрузка shelldata и классификаторов",
+                    IDC_CHECK_LOAD_SDC,"Button",BS_AUTOCHECKBOX | BS_FLAT | 
+                    WS_TABSTOP,355,359,143,10
+    EDITTEXT        IDC_EDIT_EXEC_COND,203,34,307,42,ES_MULTILINE | 
+                    ES_WANTRETURN | WS_VSCROLL | WS_HSCROLL
+    PUSHBUTTON      "Button3",IDC_BUTTON_EXEC_COND,490,21,20,12,BS_BITMAP
+    LTEXT           "Условия запуска:",IDC_STATIC_T1,203,26,92,8,NOT 
+                    WS_VISIBLE
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO 
+BEGIN
+    IDD_DIALOG_TESTING_RESULTS, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 414
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 205
+    END
+
+    IDD_RUN_TESTS, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 446
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 208
+    END
+
+    IDD_TESTING_PROCESS, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 330
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 75
+    END
+
+    IDD_COMPARE_VALUES, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 430
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 202
+    END
+
+    IDD_INPUT_PATH, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 227
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 74
+    END
+
+    IDD_EDIT_TEST_DB, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 517
+        TOPMARGIN, 6
+        BOTTOMMARGIN, 447
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Menu
+//
+
+IDR_MENU_TESTING_RESULTS MENU 
+BEGIN
+    POPUP "menu"
+    BEGIN
+        MENUITEM "&Экспорт",                    ID_EXPORT_TEST
+        MENUITEM "Сравнить с э&талоном",        ID_COMPARE_WITH_SAMPLE
+        MENUITEM "Сравнить &результаты",        ID_COMPARE_VALUES
+    END
+END
+
+IDR_MENU_EDIT_TEST_DB MENU 
+BEGIN
+    POPUP "_POPUP_"
+    BEGIN
+        MENUITEM " &Добавить",                  ID_ADD_TEST
+        MENUITEM " &Удалить",                   ID_DELETE
+        MENUITEM SEPARATOR
+        MENUITEM " &Переименовать",             1032
+        MENUITEM " &Копировать",                ID_COPY
+        MENUITEM " &Вставить",                  ID_PASTE
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog Info
+//
+
+IDD_DIALOG_TESTING_RESULTS DLGINIT
+BEGIN
+    IDC_COMBO_FILTRATION, 0x403, 12, 0
+0xe5cd, 0x20f2, 0xe8f4, 0xfceb, 0xf0f2, 0x00e0, 
+    IDC_COMBO_FILTRATION, 0x403, 10, 0
+0xf0cf, 0xe2ee, 0xebe0, 0xede5, 0x00fb, 
+    IDC_COMBO_FILTRATION, 0x403, 14, 0
+0x20d1, 0xefee, 0xf0e5, 0xe6e5, 0xede5, 0xe5e8, 0x00ec, 
+    IDC_COMBO_FILTRATION, 0x403, 14, 0
+0x20d1, 0xf2ee, 0xf2f1, 0xe2e0, 0xede0, 0xe5e8, 0x00ec, 
+    0
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE 
+BEGIN
+    ID_ACTION_EDITTESTDB    "EditTestDB\nEditTestDB\nTests\nedit tests database\nEditTestDB"
+    ID_ACTION_RUNTESTWINDOW "RunTestWindow\nRunTestWindow\nTests\nrun test window\nRunTestWindow"
+    IDS_TEST_NAME           "Название"
+    IDS_TEST_SAVING_DATE    "Дата сохранения"
+    IDS_TESTING_PANEL       "Панель тестирования"
+    IDS_TESTING_STATE       "Состояние"
+    IDS_TESTING_DEVIATION   "Отклонение"
+    IDS_SELECTDIRFOREXPORT  "Выберите каталог для экспорта теста"
+    IDS_NEW_TEST_NAME       "Новый тест"
+    IDS_STATISTICS          "Успешно пройдено %d, провалено %d тестов"
+    IDS_ON_DELETE_TEST      "Вы действительно хотите удалить выбранный тест?"
+    IDS_ON_DELETE_GROUP     "Вы действительно хотите удалить выбранную группу тестов?"
+    IDS_ON_START_RUN_TESTS_BRANCH "Запустить все родительские тесты?"
+    IDS_ON_END_RUN_TESTS_BRANCH "Выполнение тестов завершено. "
+    IDS_RECORD_STARTING     "Начинается запись..."
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_RUN_CURR_START_TEST "Запускать начальную тестовую последовательность текущего теста?"
+    IDS_FILE_EXIST          "Файл %s существует. Перезаписать?"
+    IDS_RUN_TEST_SEQUENCE_TITLE "Запуск тестовой последовательности"
+    IDS_RENAME_TEST_TITLE   "Переименование теста"
+    IDS_ON_RENAME_TEST_ERROR "Ошибка переименования теста"
+    IDS_DELETE_TEST         "Удаление теста или группы тестов"
+    IDS_ON_END_RUN_FINAL_TESTS_BRANCH 
+                            "Произвести запуск финальных тестовых последовательностей?"
+    IDS_VAR_NAME            "Имя переменной"
+    IDS_VAR_VALUE_SAMPLE    "Значение в эталоне"
+    IDS_VAR_VALUE_CURR_TEST "Значение в текущем тесте"
+    IDS_TEST_LAST_RUN_DATE  "Дата последнего запуска"
+    IDS_COMMENTARY          "Комментарий"
+    IDS_TEST_MODIFIED       "Тест %s был изменен. Сбросить состояние для дочерних тестов? "
+    IDS_ATTENTION           "Внимание"
+    IDS_COMB                "Количество комбинаций:"
+    IDS_COMB_TEST           "Количество виртуальных тестов:"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_COMB_TEST_REAL      "Количество реальных тестов:"
+    IDS_ENV_INFO_STRING     "Состояние сохранено: %s.\nРаскладка клавиатуры: %s."
+    IDS_NO_STRING           "нет"
+END
+
+#endif    // Russian resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.S.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDR_ALLRES              BITMAP                  "toolbar1.bmp"
+OBM_BUTTON_START_CONDITIONS BITMAP                  "bitmap1.bmp"
+IDB_TEST_SEQUENCE       BITMAP                  "variant_.bmp"
+IDB_ADD_TEST            BITMAP                  "bmp00005.bmp"
+IDB_EXPORT              BITMAP                  "export.bmp"
+IDB_COMPARE_WITH_SAMPLE BITMAP                  "compare_.bmp"
+IDB_COMPARE_VALUES      BITMAP                  "bmp00008.bmp"
+IDB_BITMAP_VIEW_RESULTS BITMAP                  "bitmap_v.bmp"
+IDB_BITMAP_STOP         BITMAP                  "bitmap_s.bmp"
+IDB_BITMAP_RUN          BITMAP                  "run.bmp"
+IDB_TESTS               BITMAP                  "folders1.bmp"
+IDB_FOLDERS_RUNTESTS    BITMAP                  "fld_rtd.bmp"
+IDB_EDIT_TEST_SEQUENCE  BITMAP                  "e_test_seq.bmp"
+IDB_BITMAP_PAUSE        BITMAP                  "bmp00001.bmp"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_RUN_TESTS DIALOGEX 0, 0, 453, 215
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | 
+    WS_SYSMENU
+CAPTION "Run tests"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    PUSHBUTTON      "Test system",IDC_BUTTON_TEST_SYSTEM,287,191,62,17
+    PUSHBUTTON      "Save test",IDC_BUTTON_SAVE_TEST,377,192,69,16
+    CONTROL         "",IDC_LIST_TESTS,"SysListView32",LVS_REPORT | 
+                    LVS_OWNERDRAWFIXED | LVS_ALIGNLEFT | WS_BORDER | 
+                    WS_TABSTOP,7,7,439,175
+END
+
+IDD_EDIT_TEST_DB DIALOGEX 0, 0, 524, 449
+STYLE DS_SETFONT | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU | 
+    WS_THICKFRAME
+CAPTION "Database of tests"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    CONTROL         "",IDC_TREE1,"SysTreeView32",TVS_HASBUTTONS | 
+                    TVS_HASLINES | TVS_LINESATROOT | TVS_EDITLABELS | 
+                    TVS_DISABLEDRAGDROP | TVS_SHOWSELALWAYS | WS_BORDER | 
+                    WS_TABSTOP | 0x800,7,10,185,432
+    GROUPBOX        "Test containment",IDC_STATIC_GR1,198,6,307,10
+    LTEXT           "Starting conditions:",IDC_STATIC,203,83,92,8
+    EDITTEXT        IDC_EDIT_START_CONDITIONS,203,91,307,42,ES_MULTILINE | 
+                    ES_AUTOHSCROLL | ES_WANTRETURN | WS_VSCROLL | WS_HSCROLL
+    PUSHBUTTON      "Button3",IDC_BUTTON_START_CONDITIONS,490,78,20,12,
+                    BS_BITMAP
+    EDITTEXT        IDC_EDIT_TEST_SEQUENCE,203,150,307,76,ES_MULTILINE | 
+                    ES_AUTOHSCROLL | ES_WANTRETURN | WS_VSCROLL | WS_HSCROLL
+    PUSHBUTTON      "       ",IDC_BUTTON_TEST_SEQUENCE,490,137,20,12,
+                    BS_BITMAP
+    LTEXT           "Starting test sequence: ",IDC_STATIC,203,142,81,8
+    LTEXT           "Final test sequence: ",IDC_STATIC_T4,203,235,68,8
+    EDITTEXT        IDC_EDIT_FINAL_TEST_SEQUENCE,203,244,307,72,ES_MULTILINE | 
+                    ES_AUTOHSCROLL | ES_WANTRETURN | WS_VSCROLL | WS_HSCROLL
+    PUSHBUTTON      "Button5",IDC_BUTTON_FINAL_TEST_SEQUENCE,490,231,20,12,
+                    BS_BITMAP
+    EDITTEXT        IDC_EDIT_INFO,203,378,307,37,ES_MULTILINE | 
+                    ES_AUTOHSCROLL | WS_VSCROLL | WS_HSCROLL
+    LTEXT           "Additional info: ",IDC_STATIC_T5,204,370,112,8
+    CONTROL         "Load saved state",IDC_CHECK_LOAD_STATE,"Button",
+                    BS_AUTOCHECKBOX | BS_FLAT | WS_TABSTOP,211,357,71,10
+    PUSHBUTTON      "       ",IDC_BUTTON_EDIT_TEST_SEQUENCE,436,137,20,12,
+                    BS_BITMAP
+    PUSHBUTTON      "Button5",IDC_BUTTON_EDIT_FINAL_TEST_SEQUENCE,436,231,20,
+                    12,BS_BITMAP
+    GROUPBOX        "Test environment",IDC_STATIC_GR2,203,322,307,10
+    CONTROL         "Environment\ninformation",IDC_STATIC_ENV_INFO,"Static",
+                    SS_LEFTNOWORDWRAP | WS_GROUP,316,336,188,16
+    PUSHBUTTON      "Save current environment",IDC_BUTTON_SAVE_ENV,211,336,
+                    93,14
+    CONTROL         "Load saved shelldata and classes",IDC_CHECK_LOAD_SDC,
+                    "Button",BS_AUTOCHECKBOX | BS_FLAT | WS_TABSTOP,316,357,
+                    122,10
+    EDITTEXT        IDC_EDIT_EXEC_COND,203,32,307,42,ES_MULTILINE | 
+                    ES_WANTRETURN | WS_VSCROLL | WS_HSCROLL
+    PUSHBUTTON      "Button3",IDC_BUTTON_EXEC_COND,490,19,20,12,BS_BITMAP
+    LTEXT           "Executing conditions:",IDC_STATIC,203,22,92,8
+    LTEXT           "1\n2\n3",IDC_STATIC_CMB,203,417,307,25,SS_SUNKEN
+END
+
+IDD_TESTING_PROCESS DIALOGEX 0, 0, 336, 82
+STYLE DS_SETFONT | DS_MODALFRAME | DS_CONTROL | WS_CHILD | WS_VISIBLE
+EXSTYLE WS_EX_APPWINDOW
+FONT 8, "MS Sans Serif", 0, 0, 0x1
+BEGIN
+    CONTROL         "",IDC_LIST_TEST_PROCESS,"SysListView32",LVS_REPORT | 
+                    LVS_OWNERDRAWFIXED | LVS_ALIGNLEFT | WS_BORDER | 
+                    WS_TABSTOP,7,7,305,56
+    PUSHBUTTON      "Button1",IDC_BUTTON_STOP,315,8,15,14,BS_BITMAP
+    PUSHBUTTON      "Button2",IDC_BUTTON_VIEW_RESULTS,316,50,14,12,BS_BITMAP
+    LTEXT           "",IDC_STATISTICS,70,68,168,7
+    PUSHBUTTON      "Button1",IDC_BUTTON_PAUSE,315,23,15,14,BS_BITMAP
+END
+
+IDD_DIALOG_TESTING_RESULTS DIALOGEX 0, 0, 421, 212
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | 
+    WS_SYSMENU
+CAPTION "Results of testing"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,364,191,50,14
+    LTEXT           "Filtration of results:",IDC_STATIC,7,7,68,11
+    COMBOBOX        IDC_COMBO_FILTRATION,82,7,91,78,CBS_DROPDOWN | 
+                    WS_VSCROLL | WS_TABSTOP
+    CONTROL         "",IDC_LIST_TESTS_RESULTS,"SysListView32",LVS_REPORT | 
+                    LVS_OWNERDRAWFIXED | LVS_ALIGNLEFT | WS_BORDER | 
+                    WS_TABSTOP,7,28,407,157
+END
+
+IDD_COMPARE_VALUES DIALOGEX 0, 0, 437, 209
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | DS_CENTER | WS_POPUP | 
+    WS_CAPTION | WS_SYSMENU
+CAPTION "Compare values"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    COMBOBOX        IDC_COMBO_ARRAYS,67,8,164,61,CBS_DROPDOWNLIST | CBS_SORT | 
+                    WS_VSCROLL | WS_TABSTOP
+    CONTROL         "",IDC_LIST1,"SysListView32",LVS_REPORT | LVS_SINGLESEL | 
+                    LVS_ALIGNLEFT | WS_BORDER | WS_TABSTOP,7,26,423,156
+    DEFPUSHBUTTON   "Close",IDOK,380,188,50,14
+    LTEXT           "Data test array:",IDC_STATIC,9,10,56,8
+END
+
+IDD_COMPAREIMAGES DIALOGEX 0, 0, 358, 208
+STYLE DS_SETFONT | WS_MAXIMIZEBOX | WS_POPUP | WS_CAPTION | WS_SYSMENU | 
+    WS_THICKFRAME
+CAPTION "Compare images"
+FONT 8, "Tahoma", 400, 0, 0xCC
+BEGIN
+    CTEXT           "View here",IDC_VIEW_HERE,5,16,165,178,WS_BORDER
+    SCROLLBAR       IDC_SCROLLBAR1,343,16,10,176,SBS_VERT
+    SCROLLBAR       IDC_SCROLLBAR2,5,197,335,9
+    CTEXT           "View here",IDC_VIEW_HERE2,175,16,165,178,WS_BORDER
+    PUSHBUTTON      "<<<",IDC_BUTTON1,294,3,21,11
+    PUSHBUTTON      ">>>",IDC_BUTTON2,318,3,22,11
+    LTEXT           "Result:",IDC_STATIC_MAIN,7,6,39,8
+    LTEXT           "Template:",IDC_STATIC_RES,176,6,36,8
+    PUSHBUTTON      "+",IDC_BUTTON3,136,4,13,9
+    PUSHBUTTON      "-",IDC_BUTTON4,151,4,13,9
+END
+
+IDD_INPUT_PATH DIALOGEX 0, 0, 234, 81
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | 
+    WS_SYSMENU
+CAPTION "Input condition in object's named data"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,177,60,50,14
+    EDITTEXT        IDC_EDIT_PATH,32,23,195,14,ES_AUTOHSCROLL
+    COMBOBOX        IDC_COMBO_TYPES,32,40,195,68,CBS_DROPDOWNLIST | CBS_SORT | 
+                    WS_VSCROLL | WS_TABSTOP
+    LTEXT           "Path:",IDC_STATIC,7,26,20,8
+    LTEXT           "Type:",IDC_STATIC,7,42,20,8
+    LTEXT           "Object:",IDC_STATIC,7,8,25,8
+    EDITTEXT        IDC_EDIT_OBJ_NAME,32,8,195,12,ES_AUTOHSCROLL | 
+                    ES_READONLY | NOT WS_BORDER
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO 
+BEGIN
+    IDD_RUN_TESTS, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 446
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 208
+    END
+
+    IDD_EDIT_TEST_DB, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 517
+        TOPMARGIN, 6
+        BOTTOMMARGIN, 442
+    END
+
+    IDD_TESTING_PROCESS, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 330
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 75
+    END
+
+    IDD_DIALOG_TESTING_RESULTS, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 414
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 205
+    END
+
+    IDD_COMPARE_VALUES, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 430
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 202
+    END
+
+    IDD_INPUT_PATH, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 227
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 74
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Menu
+//
+
+IDR_MENU_EDIT_TEST_DB MENU 
+BEGIN
+    POPUP "_POPUP_"
+    BEGIN
+        MENUITEM " &Add",                       ID_ADD_TEST
+        MENUITEM " &Delete",                    ID_DELETE
+        MENUITEM SEPARATOR
+        MENUITEM " &Rename",                    ID__RENAME
+        MENUITEM " &Copy",                      ID_COPY
+        MENUITEM " &Paste",                     ID_PASTE
+    END
+END
+
+IDR_MENU_TESTING_RESULTS MENU 
+BEGIN
+    POPUP "menu"
+    BEGIN
+        MENUITEM "&Export test",                ID_EXPORT_TEST
+        MENUITEM "Compare with &sample",        ID_COMPARE_WITH_SAMPLE
+        MENUITEM "Compare &values",             ID_COMPARE_VALUES
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog Info
+//
+
+IDD_DIALOG_TESTING_RESULTS DLGINIT
+BEGIN
+    IDC_COMBO_FILTRATION, 0x403, 10, 0
+0x6f4e, 0x6620, 0x6c69, 0x6574, 0x0072, 
+    IDC_COMBO_FILTRATION, 0x403, 8, 0
+0x6146, 0x6c69, 0x7275, 0x0065, 
+    IDC_COMBO_FILTRATION, 0x403, 12, 0
+0x754f, 0x7374, 0x7274, 0x7069, 0x6570, 0x0064, 
+    IDC_COMBO_FILTRATION, 0x403, 8, 0
+0x6544, 0x616c, 0x6579, 0x0064, 
+    0
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Toolbar
+//
+
+IDR_ALLRES TOOLBAR  16, 15
+BEGIN
+    BUTTON      ID_ACTION_EDITTESTDB
+    BUTTON      ID_ACTION_RUNTESTWINDOW
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE 
+BEGIN
+    ID_ACTION_EDITTESTDB    "EditTestDB\nEditTestDB\nTests\nedit tests database\nEditTestDB"
+    ID_ACTION_RUNTESTWINDOW "RunTestWindow\nRunTestWindow\nTests\nrun test window\nRunTestWindow"
+    IDS_TEST_NAME           "Name"
+    IDS_TEST_SAVING_DATE    "Saving date"
+    IDS_TESTING_PANEL       "Testing panel"
+    IDS_TESTING_STATE       "Testing state"
+    IDS_TESTING_DEVIATION   "Deviation"
+    IDS_SELECTDIRFOREXPORT  "Please select folder for test export"
+    IDS_NEW_TEST_NAME       "New test"
+    IDS_STATISTICS          "Succeeded %d, failed %d"
+    IDS_ON_DELETE_TEST      "Do you want to remove the chosen test?"
+    IDS_ON_DELETE_GROUP     "Do you want to delete the chosen group of tests? "
+    IDS_ON_START_RUN_TESTS_BRANCH "Run all parent's tests?"
+    IDS_ON_END_RUN_TESTS_BRANCH 
+                            "All parent's start test sequences are completed."
+    IDS_RECORD_STARTING     "Record starting..."
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_RUN_CURR_START_TEST "Run current starting test?"
+    IDS_FILE_EXIST          "File %s already exists. Overwrite?"
+    IDS_RUN_TEST_SEQUENCE_TITLE "Run testing sequence"
+    IDS_RENAME_TEST_TITLE   "Rename test"
+    IDS_ON_RENAME_TEST_ERROR "Cannot rename test"
+    IDS_DELETE_TEST         "Delete test or group of tests"
+    IDS_ON_END_RUN_FINAL_TESTS_BRANCH "Run final tests?"
+    IDS_VAR_NAME            "Variable name"
+    IDS_VAR_VALUE_SAMPLE    "Value in sample"
+    IDS_VAR_VALUE_CURR_TEST "Value in current test"
+    IDS_TEST_LAST_RUN_DATE  "Last running date"
+    IDS_COMMENTARY          "Commentary"
+    IDS_TEST_MODIFIED       "Test %s has modified. Check childs tests? "
+    IDS_ATTENTION           "Attention"
+    IDS_COMB                "Combination count:"
+    IDS_COMB_TEST           "Virtual test count:"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_COMB_TEST_REAL      "Real test count:"
+    IDS_ENV_INFO_STRING     "Environment saved: %s.\nKeyboard layout: %s."
+    IDS_NO_STRING           "no"
+END
+
+#endif    // English (U.S.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+LANGUAGE 9, 1
+#pragma code_page(1252)
+#include "res\TestUI.rc2"  // non-Microsoft Visual C++ edited resources
+#include "afxres.rc"     // Standard components
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

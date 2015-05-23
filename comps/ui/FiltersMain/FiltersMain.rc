@@ -1,0 +1,472 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// Chinese (P.R.C.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)
+#ifdef _WIN32
+LANGUAGE LANG_CHINESE, SUBLANG_CHINESE_SIMPLIFIED
+#pragma code_page(936)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Toolbar
+//
+
+IDR_TOOLBAR1 TOOLBAR  16, 15
+BEGIN
+    BUTTON      65535
+    BUTTON      65535
+    SEPARATOR
+    BUTTON      ID_BUTTON32775
+    BUTTON      IDS_ACTION_NEGATIVE
+    BUTTON      IDS_ACTION_EMBOSS
+    BUTTON      IDS_ACTION_BRI_CONTRAST
+    SEPARATOR
+    BUTTON      IDS_ACTION_CREATE_SELECTION_BY_BINARY
+    BUTTON      IDS_ACTION_CREATE_BINARY_BY_SELECTION
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDR_TOOLBAR1            BITMAP                  "toolbar1.bmp"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Cursor
+//
+
+IDC_ADD_COLOR           CURSOR                  "res\\ed_pickc.cur"
+IDC_ADDREMOVE_INTERVAL  CURSOR                  "res\\freeline.cur"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE 
+BEGIN
+    IDS_ACTION_NEGATIVE     "Negative\nёєЖ¬\nФцЗї\n·ґЧЄ»о¶ЇНјПсµДСХЙ«\nёєЖ¬"
+    IDS_ACTION_EMBOSS       "Emboss\nёЎµс\nДЪІїІЩЧч\nК№»о¶ЇНјПсПФКѕёЎµсР§№ы\nёЎµс"
+    IDS_ACTION_BRI_CONTRAST "BrightContrast\nББ¶ИєН¶Ф±И¶И\nДЪІїІЩЧч\nµчХы»о¶ЇНјПсµДББ¶ИєН¶Ф±И¶И\nББ¶ИєН¶Ф±И¶И"
+    IDS_ACTION_GRAY_THRESHOLDING 
+                            "GrayThresholding\nУ¦УГ»Т¶ИјмІвВЛѕµ\nВЛѕµ\n»Т¶ИјмІв\n»Т¶ИјмІв"
+    IDS_ACTION_LOCAL_EQUALIZE 
+                            "LocalEqualize\nѕЦІїЅЧµчµчХы\nВЛѕµ\nК№УГѕЦІїВЛѕµµчХыµ±З°НјПсµДЅЧµч\nѕЦІїЅЧµчµчХы"
+    IDS_ACTION_EQUALIZE     "Equalize\nЅЧµчµчХы\nДЪІїІЩЧч\nѕщєв»о¶ЇНјПсµДЅЧµч\nЅЧµчµчХы"
+    IDS_ACTION_LAPLAS       "Laplas\nА­ЖХА­Л№\nВЛѕµ\n¶Фµ±З°НјПсУ¦УГА­ЖХА­Л№ВЛѕµ\nА­ЖХА­Л№"
+    IDS_ACTION_AVERAGE      "Average\nЖЅѕщ\nДЪІїІЩЧч\n¶Фµ±З°НјПсУ¦УГЖЅѕщВЛѕµ\nЖЅѕщ"
+    IDS_ACTION_MEDIAN       "Median\nЦРЦµ\nВЛѕµ\n¶Фµ±З°НјПсУ¦УГЦРЦµВЛѕµ\nЦРЦµ"
+    IDS_ACTION_SHARPING     "Sharping\nИс»Ї\nВЛѕµ\nИс»Їµ±З°НјПс\nИс»Ї"
+    IDS_ACTION_ERODE        "Erode\n°µ»Ї\nДЪІїІЩЧч\n¶Фµ±З°НјПсУ¦УГ°µ»ЇВЛѕµ\n°µ»Ї"
+    IDS_ACTION_DILATE       "Dilate\nББ»Ї\nДЪІїІЩЧч\n¶Фµ±З°НјПсУ¦УГББ»ЇВЛѕµ\nББ»Ї"
+    IDS_ACTION_OPEN         "Open\nґтїЄ\nВЛѕµ\n¶Фµ±З°НјПсУ¦УГґтїЄВЛѕµ\nґтїЄ"
+    IDS_ACTION_CLOSE        "Close\n№Ш±Х\nДЪІїІЩЧч\n¶Ф»о¶ЇНјПсУ¦УГ№Ш±ХВЛѕµ\n№Ш±Х"
+    IDS_ACTION_BOUNDARY     "Boundary\n±ЯЅз\nДЪІїІЩЧч\n¶Фµ±З°НјПсУ¦УГ±ЯЅзВЛѕµ\n±ЯЅз"
+    IDS_ACTION_KIRCSH       "Kirsch\nУЈМТѕЖ\nВЛѕµ\n¶Фµ±З°НјПсУ¦УГУЈМТѕЖВЛѕµ\nУЈМТѕЖ"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_ACTION_ADD_COLOR    "AddRemoveColor\nМнјУ/ЙѕіэСХЙ«\nДЪІїІЩЧч\nМнјУ»тЙѕіэСХЙ«\nМнјУ»тЙѕіэСХЙ«"
+    IDS_ACTION_ADD_COLORINTERVAL 
+                            "AddRemoveColorInterval\nМнјУ/ЙѕіэСХЙ«јдёф\nДЪІїІЩЧч\nМнјУ»тЙѕіэСХЙ«јдёф\nМнјУ»тЙѕіэСХЙ«јдёф"
+    IDS_ACTION_EXTRACT_PHASE 
+                            "ExtractPhase\nМбИЎµҐПа\nДЪІїІЩЧч\nМбИЎµҐПа\nМбИЎµҐПа"
+    IDS_ACTION_EXTRACT_PHASES 
+                            "ExtractPhases\nМбИЎ¶аПа\nДЪІїІЩЧч\nМбИЎ¶аПа\nМбИЎ¶аПа"
+    IDS_ACTION_UNSHARPENMASK 
+                            "UnsharpenMask\n·ЗИс»ЇГЙ°е\nВЛѕµ\n¶Фµ±З°НјПсУ¦УГ·ЗИс»ЇГЙ°еВЛѕµ\n·ЗИс»ЇГЙ°е"
+    IDS_ACTION_EQUALHISTS   "EqualHists\nµИёЯЦщЧґНј\nФцЗї\nК№БЅёцНјПсµДЦщЧґНјёЯ¶ИПаН¬\nµИёЯЦщЧґНј"
+    IDS_ACTION_FASTAVERAGE  "FastAverage\nїмЛЩЖЅѕщ»Ї\nДЪІїІЩЧч\n¶ФНјПсЅшРРЖЅѕщ»Їґ¦Ан\nїмЛЩЖЅѕщ»Ї"
+    IDS_ACTION_FASTUNSHARPENMASK 
+                            "FastUnsharpenMask\nїмЛЩ·ЗИс»ЇГЙ°е\nВЛѕµ\n¶Фµ±З°НјПсУ¦УГ·ЗИс»ЇГЙ°еВЛѕµ\n·ЗИс»ЇГЙ°е"
+    IDS_ACTION_EQUALCONTRAST 
+                            "EqualContrasts\n¶Ф±И¶ИПаН¬\nФцЗї\nК№БЅёцНјПсµД¶Ф±И¶ИПаН¬\n¶Ф±И¶ИПаН¬"
+    IDS_ACTION_GRAY_THRESHOLDING_BIN 
+                            "GrayThresholdingBin\n»Т¶ИјмІв¶юЦµ»Ї\nВЛѕµ\n»Т¶ИјмІв¶юЦµ»Ї\n»Т¶ИјмІв¶юЦµ»Ї"
+    IDS_ACTION_FASTGRADIENT "FastGradient\nїмЛЩЅҐ±д\nВЛѕµ\n¶Фµ±З°НјПсУ¦УГїмЛЩЅҐ±дВЛѕµ\nїмЛЩЅҐ±д"
+    IDS_ACTION_MEASURE_BIN  "MeasureBin\nІвБї¶юЦµ»Ї\nВЛѕµ\nІвБї¶юЦµ»Ї\nІвБї¶юЦµ»Ї"
+    IDS_ACTION_BINARY_EXTRACT_PHASES 
+                            "BinaryExtractPhases\n¶юЦµМбИЎПа\nДЪІїІЩЧч\n¶юЦµМбИЎПа\n¶юЦµМбИЎПа"
+    IDS_ACTION_CREATE_SELECTION_BY_BINARY 
+                            "CreateSelectionByBinary\n°ґ¶юЦµґґЅЁСЎЗш\n¶юЦµ\n°ґ¶юЦµґґЅЁСЎЗш\n°ґ¶юЦµґґЅЁСЎЗш"
+    IDS_ACTION_CREATE_BINARY_BY_SELECTION 
+                            "CreateBinaryBySelection\n°ґСЎЗшґґЅЁ¶юЦµ\n¶юЦµ\n°ґСЎЗшґґЅЁ¶юЦµ\n°ґСЎЗшґґЅЁ¶юЦµ"
+    IDS_ACTION_FILL_HOLES_BIN 
+                            "FillHolesBin\nМоід¶юЦµЦРµДїЧ¶ґ\n¶юЦµ\nМоід¶юЦµЦРµДїЧ¶ґ\nМоід¶юЦµЦРµДїЧ¶ґ"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_MENU_FILTERS        "Image\\±ај­\\ВЛѕµ"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_TB_MAIN             "ВЛѕµ"
+    IDS_DIFFERENT_MODEL     "НјПсµДСХЙ«ДЈРНІ»Н¬Ј¬ОЮ·ЁЦґРРёГІЩЧчЎЈ"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_ACTION_MORPH_DIVIDE_EX 
+                            "MorphDivideExBin\n¶юЦµНјПсЙПµДА©Х№РОМ¬·Цёо\n¶юЦµ\n¶юЦµНјПсЙПµДА©Х№РОМ¬·Цёо\n¶юЦµНјПсЙПµДА©Х№РОМ¬·Цёо"
+    IDS_ACTION_MEASURE_PHASES 
+                            "MeasurePhases\nІвБїЛщУРПа\nВЛѕµ\nІвБї¶юЦµНјПсЙПµДЛщУРПа\nІвБї¶юЦµНјПсЙПµДЛщУРПа"
+    IDS_ACTION_MEASURE_PHASES_LIGHT 
+                            "MeasurePhasesLight\n°ґГїПаТ»ёц¶ФПуІвБїЛщУРПа\nВЛѕµ\n°ґГїПаТ»ёц¶ФПуЈ¬ІвБї¶юЦµНјПсЙПµДЛщУРПа\n°ґГїПаТ»ёц¶ФПуЈ¬ІвБї¶юЦµНјПсЙПµДЛщУРПа"
+    IDS_ACTION_ULTIMATEEROSION 
+                            "UltimateErosion\nБЩЅзЗЦКґ\n¶юЦµ\nБЩЅзЗЦКґ\nБЩЅзЗЦКґ"
+    IDS_ACTION_GRAY_THRESHOLDING_BIN_AUTO 
+                            "GrayThresholdingBinAuto\nAuto Masks Gray Thresholding\nFilters\nAuto Masks Gray Thresholding\nAuto Masks Gray Thresholding"
+    IDS_ACTION_GRAY_THRESHOLDING_MUTE 
+                            "GrayThresholdingBinAutoMute\nMasks Gray Thresholding\nFilters\nMasks Gray Thresholding\nMasks Gray Thresholding"
+    IDS_ACTION_SMOOTH_CONTOUR_BIN 
+                            "SmoothMasks\nSmoothing masks contours\nFilters\nSmooth masks contours\nMasks smoothing"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_ACTION_DOC_BY_SEL   "CutDocBySel\nCrop the document data by selection\nImage\nCrop the document data by selection\nCrop the document data by selection"
+END
+
+#endif    // Chinese (P.R.C.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+/////////////////////////////////////////////////////////////////////////////
+// Russian resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_RUS)
+#ifdef _WIN32
+LANGUAGE LANG_RUSSIAN, SUBLANG_DEFAULT
+#pragma code_page(1251)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)\r\n"
+    "#ifdef _WIN32\r\n"
+    "LANGUAGE 9, 1\r\n"
+    "#pragma code_page(1252)\r\n"
+    "#endif //_WIN32\r\n"
+    "#include ""res\\FiltersMain.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "#include ""afxres.rc""         // Standard components\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE 
+BEGIN
+    IDS_ACTION_NEGATIVE     "Negative\nНегатив\nПреобразования\nПреобразовать активное изображение в негатив\nНегатив"
+    IDS_ACTION_EMBOSS       "Emboss\nРельеф\nInternal Actions\nСоздать рельефное изображение\nРельеф"
+    IDS_ACTION_BRI_CONTRAST "BrightContrast\nЯркость&Контраст\nInternal Actions\nИзменить яркость и контраст активного изображения\nЯркость&Контраст"
+    IDS_ACTION_GRAY_THRESHOLDING 
+                            "GrayThresholding\nВыделение масок на полутоновом\nФильтры\nВыделение масок на полутоновом\nВыделение масок на полутоновом"
+    IDS_ACTION_LOCAL_EQUALIZE 
+                            "LocalEqualize\nЛокальное выравнивание\nФильтры\nВыровнять активное изображение с использованием локального фильтра\nЛокальное выравнивание"
+    IDS_ACTION_EQUALIZE     "Equalize\nВыравнивание\nInternal Actions\nВыровнять активное изображение\nВыравнивание"
+    IDS_ACTION_LAPLAS       "Laplas\nЛаплас\nФильтры\nПрименить фильтрацию методом Лапласа к активному изображению\nЛаплас"
+    IDS_ACTION_AVERAGE      "Average\nСглаживание с усреднением\nInternal Actions\nПрименить сглаживание с усреднением к активному изображению\nСглаживание с усреднением"
+    IDS_ACTION_MEDIAN       "Median\nСглаживание по медиане\nФильтры\nПрименить сглаживание по медиане к активному изображению\nСглаживание по медиане"
+    IDS_ACTION_SHARPING     "Sharping\nРезкость\nФильтры\nПрименить фильтр Резкость к активному изображению\nРезкость"
+    IDS_ACTION_ERODE        "Erode\nЭрозия\nInternal Actions\nПрименить фильтр Эрозия к активному изображению\nЭрозия"
+    IDS_ACTION_DILATE       "Dilate\nДилатация\nInternal Actions\nПрименить фильтр Дилатация к активному изображению\nДилатация"
+    IDS_ACTION_OPEN         "Open\nОткрытие\nФильтры\nПрименить фильтр Открытие к активному изображению\nОткрытие"
+    IDS_ACTION_CLOSE        "Close\nЗакрытие\nInternal Actions\nПрименить фильтр Закрытие к активному изображению\nЗакрытие"
+    IDS_ACTION_BOUNDARY     "Boundary\nГраницы\nInternal Actions\nПрименить фильтр Усиление Границ к текущему изображению\nГраницы"
+    IDS_ACTION_KIRCSH       "Kirsch\nКирш\nФильтры\nПрименить фильтрацию по методу Кирша к активному изображению\nКирш"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_ACTION_ADD_COLOR    "AddRemoveColor\nДобавить/удалить цвет\nInternal Actions\nДобавить/удалить цвет\nДобавить/удалить цвет"
+    IDS_ACTION_ADD_COLORINTERVAL 
+                            "AddRemoveColorInterval\nДобавить/удалить цветовой интервал\nInternal Actions\nДобавить или удалить цветовой интервал\nДобавить/удалить цветовой интервал"
+    IDS_ACTION_EXTRACT_PHASE 
+                            "ExtractPhase\nВыделить фазу\nInternal Actions\nВыделить фазу\nВыделить фазу"
+    IDS_ACTION_EXTRACT_PHASES 
+                            "ExtractPhases\nВыделить фазы\nInternal Actions\nВыделить фазы\nВыделить фазы"
+    IDS_ACTION_UNSHARPENMASK 
+                            "UnsharpenMask\nУсиление резкости\nФильтры\nУсиление общей резкости изображения\nУсиление резкости"
+    IDS_ACTION_EQUALHISTS   "EqualHists\nВыравнивание гистограмм\nПреобразования\nВыравнивание гистограммы двух изображений\nВыравнивание гистограмм"
+    IDS_ACTION_FASTAVERAGE  "FastAverage\nБыстрое сглаживание с усреднением\nInternal Actions\nПрименить быстрое сглаживание с усреднением к изображению\nБыстрое сглаживание с усреднением"
+    IDS_ACTION_FASTUNSHARPENMASK 
+                            "FastUnsharpenMask\nБыстрое усиление резкости\nФильтры\nПрименить быстрое усиления резкости к активному изображению\nБыстрое усиление резкости"
+    IDS_ACTION_EQUALCONTRAST 
+                            "EqualContrasts\nВыравнивание контраста\nПреобразования\nВыравнивание контраста двух изображений\nВыравнивание контраста"
+    IDS_ACTION_GRAY_THRESHOLDING_BIN 
+                            "GrayThresholdingBin\nВыделить маски на полутоновом\nФильтры\nВыделить маски на полутоновом\nВыделить маски на полутоновом"
+    IDS_ACTION_FASTGRADIENT "FastGradient\nБыстрый градиент\nФильтры\nПрименить фильтр Быстрый градиент к активному изображению\nБыстрый градиент"
+    IDS_ACTION_MEASURE_BIN  "MeasureBin\nИзмерить маски\nФильтры\nИзмерить маски\nИзмерить маски"
+    IDS_ACTION_BINARY_EXTRACT_PHASES 
+                            "BinaryExtractPhases\nВыделить маски фаз\nInternal Actions\nВыделить маски фаз\nВыделить маски фаз"
+    IDS_ACTION_CREATE_SELECTION_BY_BINARY 
+                            "CreateSelectionByBinary\nСоздать рамку по маскам\nBinary\nСоздать рамку по маскам\nСоздать рамку по маскам"
+    IDS_ACTION_CREATE_BINARY_BY_SELECTION 
+                            "CreateBinaryBySelection\nСоздать маски по рамке\nBinary\nСоздать маски по рамке\nСоздать маски по рамке"
+    IDS_ACTION_FILL_HOLES_BIN 
+                            "FillHolesBin\nЗаполнение пустот в масках объектов\nBinary\nЗаполнение пустот в масках объектов\nЗаполнение пустот в масках объектов"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_MENU_FILTERS        "Image\\Edit\\Filters"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_TB_MAIN             "Filters"
+    IDS_DIFFERENT_MODEL     "Цветовые модели изображений различны. Операция не может быть произведена."
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_ACTION_MORPH_DIVIDE_EX 
+                            "MorphDivideExBin\nРасширенное морфологическое разделение масок\nBinary\nРасширенное морфологическое разделение масок\nРасширенное морфологическое разделение масок"
+    IDS_ACTION_MEASURE_PHASES 
+                            "MeasurePhases\nИзмерить фазы по маскам\nФильтры\nИзмерить фазы по маскам\nИзмерить фазы по маскам"
+    IDS_ACTION_MEASURE_PHASES_LIGHT 
+                            "MeasurePhasesLight\nИзмерить фазы по маскам\nФильтры\nИзмерить фазы по маскам\nИзмерить фазы по маскам"
+    IDS_ACTION_ULTIMATEEROSION 
+                            "UltimateErosion\nUltimateErosion\nBinary\nUltimateErosion\nUltimateErosion"
+    IDS_ACTION_GRAY_THRESHOLDING_BIN_AUTO 
+                            "GrayThresholdingBinAuto\nВыделить маски на полутоновом\nФильтры\nВыделить маски на полутоновом\nВыделить маски на полутоновом"
+    IDS_ACTION_GRAY_THRESHOLDING_MUTE 
+                            "GrayThresholdingBinAutoMute\nВыделить маски на полутоновом\nФильтры\nВыделить маски на полутоновом\nВыделить маски на полутоновом"
+    IDS_ACTION_SMOOTH_CONTOUR_BIN 
+                            "SmoothMasks\nСглаживание контуров масок\nФильтры\nСгладить контуры масок объектов\nСглаживание масок"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_ACTION_DOC_BY_SEL   "CutDocBySel\nОбрезать данные в документе по рамке\nИзображение\nОбрезать данные в документе по рамке\nОбрезать данные в документе по рамке"
+END
+
+#endif    // Russian resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.S.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Toolbar
+//
+
+IDR_TOOLBAR1 TOOLBAR  16, 15
+BEGIN
+    BUTTON      65535
+    BUTTON      65535
+    SEPARATOR
+    BUTTON      ID_BUTTON32775
+    BUTTON      IDS_ACTION_NEGATIVE
+    BUTTON      IDS_ACTION_EMBOSS
+    BUTTON      IDS_ACTION_BRI_CONTRAST
+    SEPARATOR
+    BUTTON      IDS_ACTION_CREATE_SELECTION_BY_BINARY
+    BUTTON      IDS_ACTION_CREATE_BINARY_BY_SELECTION
+    BUTTON      IDS_ACTION_RESIZE_BIN
+    BUTTON      IDS_ACTION_BRANCH_SPLIT
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDR_TOOLBAR1            BITMAP                  "toolbar1.bmp"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Cursor
+//
+
+IDC_ADD_COLOR           CURSOR                  "res\\ed_pickc.cur"
+IDC_ADDREMOVE_INTERVAL  CURSOR                  "res\\freeline.cur"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE 
+BEGIN
+    IDS_ACTION_NEGATIVE     "Negative\nNegative\nEnhance\nReverse the colors of the active image\nNegative"
+    IDS_ACTION_EMBOSS       "Emboss\nEmboss\nInternal Actions\nEmboss the active image\nEmboss"
+    IDS_ACTION_BRI_CONTRAST "BrightContrast\nBrightness and Contrast\nInternal Actions\nAjust the brightness and contrast of the active image\nBrightness and Contrast"
+    IDS_ACTION_GRAY_THRESHOLDING 
+                            "GrayThresholding\nApply the Gray Thresholding filter\nFilters\nThe gray thresholding\nGray Thresholding"
+    IDS_ACTION_LOCAL_EQUALIZE 
+                            "LocalEqualize\nLocal Equalize\nFilters\nEqualize the current image using local filter\nLocal Equalize"
+    IDS_ACTION_EQUALIZE     "Equalize\nEqualize\nInternal Actions\nEqualize the active image\nEqualize"
+    IDS_ACTION_LAPLAS       "Laplas\nLaplace\nFilters\nApply the Laplacian filter to the current image\nLaplace"
+    IDS_ACTION_AVERAGE      "Average\nAverage\nInternal Actions\nApply the Average filter to the current image\nAverage"
+    IDS_ACTION_MEDIAN       "Median\nMedian\nFilters\nApply the Median filter to the current image\nMedian"
+    IDS_ACTION_SHARPING     "Sharping\nSharpen\nFilters\nSharpen the current image\nSharpen"
+    IDS_ACTION_ERODE        "Erode\nErode\nInternal Actions\nApply the eroding filter to the active image\nErode"
+    IDS_ACTION_DILATE       "Dilate\nDilate\nInternal Actions\nApply the dilating filter to the active image\nDilate"
+    IDS_ACTION_OPEN         "Open\nOpen\nFilters\nApply the opening filter to the current image\nOpen"
+    IDS_ACTION_CLOSE        "Close\nClose\nInternal Actions\nApply the closing filter to the active image\nClose"
+    IDS_ACTION_BOUNDARY     "Boundary\nBoundary\nInternal Actions\nApply the Boundary filter to the current image\nBoundary"
+    IDS_ACTION_KIRCSH       "Kirsch\nKirsch\nFilters\nApply the Kirsch filter to the current image\nKirsch"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_ACTION_ADD_COLOR    "AddRemoveColor\nAdd/Remove Color\nInternal Actions\nAdd or remove color\nAdd or Remove Color"
+    IDS_ACTION_ADD_COLORINTERVAL 
+                            "AddRemoveColorInterval\nAdd/Remove Color Interval\nInternal Actions\nAdd or remove color interval\nAdd or Remove Color Interval"
+    IDS_ACTION_EXTRACT_PHASE 
+                            "ExtractPhase\nExtract Phase\nInternal Actions\nExtract phase\nExtract Phase"
+    IDS_ACTION_EXTRACT_PHASES 
+                            "ExtractPhases\nExtract Phases\nInternal Actions\nExtract phases\nExtract Phases"
+    IDS_ACTION_UNSHARPENMASK 
+                            "UnsharpenMask\nUnsharpen Mask\nFilters\nApply the Unsharpen Mask filter to the current image\nUnsharpen Mask"
+    IDS_ACTION_EQUALHISTS   "EqualHists\nEqual Histograms\nEnhance\nMake the histograms of two images equal\nEqual Histograms"
+    IDS_ACTION_FASTAVERAGE  "FastAverage\nFast Average\nInternal Actions\nAverage the images\nFast Average"
+    IDS_ACTION_FASTUNSHARPENMASK 
+                            "FastUnsharpenMask\nFast Unsharpen Mask\nFilters\nApply the Unsharpen Mask filter to the current image\nUnsharpen Mask"
+    IDS_ACTION_EQUALCONTRAST 
+                            "EqualContrasts\nEqual Contrast\nEnhance\nMake the contrast of two images equal\nEqual Contrast"
+    IDS_ACTION_GRAY_THRESHOLDING_BIN 
+                            "GrayThresholdingBin\nMasks Gray Thresholding\nFilters\nMasks Gray Thresholding\nMasks Gray Thresholding"
+    IDS_ACTION_FASTGRADIENT "FastGradient\nFast Gradient\nFilters\nApply the Fast Gradient filter to the current image\nFast Gradient"
+    IDS_ACTION_MEASURE_BIN  "MeasureBin\nMeasure Masks\nFilters\nMeasure Masks\nMeasure Masks"
+    IDS_ACTION_BINARY_EXTRACT_PHASES 
+                            "BinaryExtractPhases\nExtract Phases Masks\nInternal Actions\nExtract Phases Masks\nExtract Phases Masks"
+    IDS_ACTION_CREATE_SELECTION_BY_BINARY 
+                            "CreateSelectionByBinary\nCreate Selection by Masks\nBinary\nCreate selection by masks\nCreate Selection by Masks"
+    IDS_ACTION_CREATE_BINARY_BY_SELECTION 
+                            "CreateBinaryBySelection\nCreate Masks by Selection\nBinary\nCreate masks by selection\nCreate Masks by Selection"
+    IDS_ACTION_FILL_HOLES_BIN 
+                            "FillHolesBin\nFill Holes in Masks\nBinary\nFill Holes in Masks\nFill Holes in Masks"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_MENU_FILTERS        "Image\\Edit\\Filters"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_TB_MAIN             "Filters"
+    IDS_DIFFERENT_MODEL     "The color models of the images are different. The operation can not be performed."
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_ACTION_MORPH_DIVIDE_EX 
+                            "MorphDivideExBin\nExtended morphological mask separation\nBinary\nExtended morphological mask separation\nExtended morphological mask separation"
+    IDS_ACTION_MEASURE_PHASES 
+                            "MeasurePhases\nMeasure all phases\nFilters\nMeasure all phases\nMeasure all phases"
+    IDS_ACTION_MEASURE_PHASES_LIGHT 
+                            "MeasurePhasesLight\nMeasure all phases as one object per phase\nFilters\nMeasure all phases as one object per phase\nMeasure all phases as one object per phase"
+    IDS_ACTION_ULTIMATEEROSION 
+                            "UltimateErosion\nUltimateErosion\nBinary\nUltimateErosion\nUltimateErosion"
+    IDS_ACTION_GRAY_THRESHOLDING_BIN_AUTO 
+                            "GrayThresholdingBinAuto\nAuto Masks Gray Thresholding\nFilters\nAuto Masks Gray Thresholding\nAuto Masks Gray Thresholding"
+    IDS_ACTION_GRAY_THRESHOLDING_MUTE 
+                            "GrayThresholdingBinAutoMute\nMasks Gray Thresholding\nFilters\nMasks Gray Thresholding\nMasks Gray Thresholding"
+    IDS_ACTION_SMOOTH_CONTOUR_BIN 
+                            "SmoothMasks\nSmoothing masks contours\nFilters\nSmooth masks contours\nMasks smoothing"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_ACTION_DOC_BY_SEL   "CutDocBySel\nCrop the document data by selection\nImage\nCrop the document data by selection\nCrop the document data by selection"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_ACTION_RESIZE_BIN   "ResizeBin\nResizeBin\nBinary\nResizeBin\nResizeBin"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_ACTION_BRANCH_SPLIT "BranchSplit\nBranchSplit\nFilters\nBranchSplit\nBranchSplit"
+END
+
+#endif    // English (U.S.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE 9, 1
+#pragma code_page(1252)
+#endif //_WIN32
+#include "res\FiltersMain.rc2"  // non-Microsoft Visual C++ edited resources
+#include "afxres.rc"         // Standard components
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

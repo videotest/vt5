@@ -1,0 +1,34 @@
+import "oaidl.idl";
+import "ocidl.idl";
+
+[
+	object,
+	uuid(375B1D64-25A6-484b-894B-BA37F17BADD0),
+	helpstring("IOleItemDataDisp Interface"),
+	pointer_default(unique)
+]
+interface IOleItemDataDisp : IDispatch
+{
+	[id(0), helpstring("method IsEmpty")] HRESULT IsEmpty( [out, retval] VARIANT_BOOL *plPos );
+};
+
+
+//////////////////////////////////////////////////////////////////////////
+[
+	uuid(CD5C4271-3F29-4011-877C-94FEAB00926A),
+	version(1.0),
+	helpstring("OleClientLib 1.0 Type Library")
+]
+library OleClientLib
+{
+	importlib("stdole2.tlb");
+	[
+		uuid(42F0E2B8-A151-45aa-891A-3A6E05981226),
+		helpstring("OleClient Class")
+	]
+	coclass CoOleItemData
+
+	{
+		[default] interface IOleItemDataDisp;
+	};
+}; 

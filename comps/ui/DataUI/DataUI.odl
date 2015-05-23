@@ -1,0 +1,79 @@
+// DataUI.odl : type library source for DataUI.dll
+
+// This file will be processed by the MIDL compiler to produce the
+// type library (DataUI.tlb).
+
+#include "olectl.h"
+[ uuid(FF424E72-6659-4201-8448-01F590E06287), version(1.0) ]
+library DataUI
+{
+	importlib("stdole32.tlb");
+	importlib("stdole2.tlb");
+
+
+
+
+	//  Primary dispatch interface for data_context_ctrl
+	
+	[ uuid(0A93A964-CCFE-4E2D-8E6A-45FDB93E18A6) ]
+	dispinterface Idata_context_ctrl
+	{
+		properties:
+			// NOTE - ClassWizard will maintain property information here.
+			//    Use extreme caution when editing this section.
+			//{{AFX_ODL_PROP(data_context_ctrl)
+			//}}AFX_ODL_PROP
+			
+		methods:
+			// NOTE - ClassWizard will maintain method information here.
+			//    Use extreme caution when editing this section.
+			//{{AFX_ODL_METHOD(data_context_ctrl)
+			[id(1)] long GetItemCount();
+			[id(2)] BSTR GetItemString(long idx);
+			[id(3)] long GetItemData(long idx);
+			[id(4)] boolean DeleteItem(long idx);
+			[id(5)] long AddItem(BSTR str_item, long data, long idx);
+			[id(6)] long GetCurSel();
+			[id(7)] boolean SetCurSel(long idx);
+			[id(8)] boolean ResetContent();
+			[id(9)] void SetEnable(boolean benable);
+			//}}AFX_ODL_METHOD
+
+	};
+
+	//  Class information for data_context_ctrl
+
+	[ uuid(D50FBA6E-4709-4F1C-866E-0597E6D7621A) ]
+	coclass qq
+	{
+		[default] dispinterface Idata_context_ctrl;
+	};
+
+	//{{AFX_APPEND_ODL}}
+	//}}AFX_APPEND_ODL}}
+	//  Primary dispatch interface for image_bar
+		
+	[ uuid(BBFE74A9-1C9A-4AC6-8794-2D4D7DF0254C) ]
+	dispinterface Iimage_bar
+	{
+		properties:
+		[id(1)] boolean ChangeContext;
+		[id(3)] BSTR NameFilter;
+		[id(5)] long ActiveItem;
+		[id(8)] boolean LockSync;
+		methods:
+		[id(2)] void Refresh();
+		[id(4)] BSTR GetObjectInfoByIndex( long lIdx, VARIANT* varStorageName, VARIANT* varRecord );
+		[id(6)] void Invalidate();
+		[id(7)] long GetItemCount();
+		
+	};
+
+	//  Class information for image_bar
+
+	[ uuid(2D98D0CD-3FA2-4D08-84CE-9E0733F5AD87) ]
+	coclass image_bar
+	{
+		[default] dispinterface Iimage_bar;
+	};
+};

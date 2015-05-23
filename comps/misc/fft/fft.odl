@@ -1,0 +1,16 @@
+// fft.odl : type library source for fft.dll
+
+// This file will be processed by the MIDL compiler to produce the
+// type library (fft.tlb).
+
+[ uuid(78B9A6C0-3095-4C5F-AB40-360CF53E3454), version(1.0) ]
+library Fft
+{
+	importlib("stdole32.tlb");
+	importlib("stdole2.tlb");
+
+
+
+	//{{AFX_APPEND_ODL}}
+	//}}AFX_APPEND_ODL}}
+};

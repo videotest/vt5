@@ -1,0 +1,55 @@
+#ifndef __sew_h__
+#define __sew_h__
+
+/*
+#ifdef _DEBUG
+
+// {C4927E07-7AA0-431f-AF55-C39000F552E3}
+static const GUID clsidAutoSewHorzInfo = 
+{ 0xc4927e07, 0x7aa0, 0x431f, { 0xaf, 0x55, 0xc3, 0x90, 0x0, 0xf5, 0x52, 0xe3 } };
+// {5B82CE62-2147-41d0-8C04-EB1CE34EB4E1}
+static const GUID clsidAutoSewVertInfo = 
+{ 0x5b82ce62, 0x2147, 0x41d0, { 0x8c, 0x4, 0xeb, 0x1c, 0xe3, 0x4e, 0xb4, 0xe1 } };
+// {88F4F7A3-6D94-4a90-9EC4-700B6D05B794}
+static const GUID clsidSewManual = 
+{ 0x88f4f7a3, 0x6d94, 0x4a90, { 0x9e, 0xc4, 0x70, 0xb, 0x6d, 0x5, 0xb7, 0x94 } };
+// {D2C7F4E1-6131-4589-82FE-0BCDA472C3E1}
+static const GUID clsidSewPage = 
+{ 0xd2c7f4e1, 0x6131, 0x4589, { 0x82, 0xfe, 0xb, 0xcd, 0xa4, 0x72, 0xc3, 0xe1 } };
+
+
+
+#define pszAutoSewHorzProgID	"sew.AutoSewD"
+#define pszAutoSewVertProgID	"sew.AutoSewVD"
+#define pszSewProgID			"sew.SewD"
+#define pszSewPageProgID		"sew.SewPageD"
+
+#else
+*/
+// {878A3C2F-0F93-4af2-8088-678D16C7AF83}
+static const GUID clsidAutoSewHorzInfo = 
+{ 0x878a3c2f, 0xf93, 0x4af2, { 0x80, 0x88, 0x67, 0x8d, 0x16, 0xc7, 0xaf, 0x83 } };
+// {0D600282-68D4-4c3d-8014-32459A06FC5A}
+static const GUID clsidAutoSewVertInfo = 
+{ 0xd600282, 0x68d4, 0x4c3d, { 0x80, 0x14, 0x32, 0x45, 0x9a, 0x6, 0xfc, 0x5a } };
+// {69F4B9BA-3659-4e32-B20C-361959DB099F}
+static const GUID clsidAutoSew2Info = 
+{ 0x69f4b9ba, 0x3659, 0x4e32, { 0xb2, 0xc, 0x36, 0x19, 0x59, 0xdb, 0x9, 0x9f } };
+// {312CD7CD-57F0-492f-B2F5-0D99294B03D5}
+static const GUID clsidSewManual = 
+{ 0x312cd7cd, 0x57f0, 0x492f, { 0xb2, 0xf5, 0xd, 0x99, 0x29, 0x4b, 0x3, 0xd5 } };
+// {7B3D722C-2588-4917-9A03-64B8BFD56605}
+static const GUID clsidSewPage = 
+{ 0x7b3d722c, 0x2588, 0x4917, { 0x9a, 0x3, 0x64, 0xb8, 0xbf, 0xd5, 0x66, 0x5 } };
+
+
+
+#define pszAutoSewHorzProgID	"sew.AutoSew"
+#define pszAutoSewVertProgID	"sew.AutoSewV"
+#define pszSewProgID			"sew.Sew"
+#define pszSewPageProgID		"sew.SewPage"
+#define pszAutoSew2ProgID		"sew.AutoSew2"
+/*
+#endif //_DEBUG
+*/
+#endif //__sew_h__

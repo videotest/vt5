@@ -1,0 +1,581 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include "resource.h"
+
+// Generated Help ID header file
+#define APSTUDIO_HIDDEN_SYMBOLS
+#include "resource.hm"
+#undef APSTUDIO_HIDDEN_SYMBOLS
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// Chinese (P.R.C.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)
+#ifdef _WIN32
+LANGUAGE LANG_CHINESE, SUBLANG_CHINESE_SIMPLIFIED
+#pragma code_page(936)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_WIZARD_DIALOG DIALOG  0, 0, 189, 76
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | 
+    WS_SYSMENU
+CAPTION "Ïòµ¼"
+FONT 8, "MS Sans Serif"
+BEGIN
+    CONTROL         "",IDC_CONTROLS,"Static",SS_BLACKFRAME,0,0,189,75
+END
+
+IDD_MY_DIALOG DIALOG  0, 0, 186, 95
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CLIPSIBLINGS | 
+    WS_CLIPCHILDREN | WS_CAPTION | WS_SYSMENU
+CAPTION "¶Ô»°¿ò"
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "È·¶¨",IDOK,129,7,50,14
+    PUSHBUTTON      "È¡Ïû",IDCANCEL,129,24,50,14
+    PUSHBUTTON      "°ïÖú",IDHELP,129,42,50,14
+END
+
+IDD_DIALOG_OPTIONS DIALOGEX 0, 0, 321, 199
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CLIPSIBLINGS | 
+    WS_CLIPCHILDREN | WS_CAPTION | WS_SYSMENU
+CAPTION "Ñ¡Ïî"
+FONT 8, "MS Sans Serif", 0, 0, 0x1
+BEGIN
+    CONTROL         "",IDC_FAKE_STATIC,"Static",SS_GRAYFRAME | SS_SUNKEN,7,7,
+                    80,170,0,HIDC_FAKE_STATIC
+    LTEXT           "Static",IDC_STATIC_TAB,93,7,222,169,NOT WS_VISIBLE,
+                    WS_EX_STATICEDGE,HIDC_STATIC_TAB
+    DEFPUSHBUTTON   "È·¶¨",IDOK,107,181,50,14
+    PUSHBUTTON      "È¡Ïû",IDCANCEL,160,181,50,14
+    PUSHBUTTON      "Ó¦ÓÃ",ID_APPLY,213,181,50,14
+    PUSHBUTTON      "°ïÖú",IDHELP,266,181,50,14
+END
+
+IDD_DEFAULT_PAGE DIALOG  0, 0, 197, 106
+STYLE DS_SETFONT | WS_CHILD | WS_DISABLED | WS_CAPTION
+CAPTION "qq"
+FONT 8, "MS Sans Serif"
+BEGIN
+    CONTROL         "",IDC_CONTROLS,"Static",SS_BLACKFRAME,0,0,177,87
+END
+
+IDD_CONTAINER_DOCKDIALOG DIALOG  0, 0, 187, 72
+STYLE DS_SETFONT | DS_CONTROL | WS_CHILD | WS_VISIBLE | WS_CLIPSIBLINGS | 
+    WS_CLIPCHILDREN
+FONT 8, "MS Sans Serif"
+BEGIN
+    CONTROL         "",IDC_CONTROLS,"Static",SS_BLACKFRAME,2,0,185,72
+END
+
+IDD_CONTAINER_DIALOG DIALOG  0, 0, 167, 95
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CLIPSIBLINGS | 
+    WS_CLIPCHILDREN | WS_CAPTION | WS_SYSMENU
+CAPTION "¶Ô»°¿ò"
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "È·¶¨",IDOK,5,76,50,14
+    PUSHBUTTON      "È¡Ïû",IDCANCEL,58,76,50,14
+    CONTROL         "",IDC_CONTROLS,"Static",SS_BLACKFRAME,5,3,156,67
+    PUSHBUTTON      "°ïÖú",IDHELP,111,76,50,14
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO 
+BEGIN
+    IDD_MY_DIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 179
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 88
+    END
+
+    IDD_DIALOG_OPTIONS, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 315
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 192
+    END
+
+    IDD_DEFAULT_PAGE, DIALOG
+    BEGIN
+        BOTTOMMARGIN, 104
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE 
+BEGIN
+    IDS_UNTITLED            "ÎÞ±êÌâ"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_AX_FILTERNAME       "ActiveX ´°ÌåÎÄ¼þ"
+END
+
+STRINGTABLE 
+BEGIN
+    ID_GFX_REMOVEITEM       "É¾³ýÏîÄ¿"
+    ID_GFX_RENAMEITEM       "ÖØÃüÃûÏîÄ¿"
+    IDS_PAGE_TITLE          "Ä¬ÈÏÒ³ÃæÃû³Æ"
+    IDS_BTN_NEXT            "ÏÂÒ»²½"
+    IDS_BTN_PREV            "ÉÏÒ»²½"
+    IDS_BTN_CANCEL          "È¡Ïû"
+    IDS_BTN_FINISH          "Íê³É"
+    IDS_BTN_OK              "È·¶¨"
+    IDS_BTN_APPLY           "Ó¦ÓÃ"
+    IDS_CANTEXIT_OPERATION  "Íê³Éµ±Ç°²Ù×÷£¬È»ºó¹Ø±Õ´°Ìå"
+    IDS_CTRL_TYPE           "ActiveX ¿Ø¼þ"
+    IDS_FORM_TYPE           "ActiveX ´°Ìå"
+    IDS_BTN_HELP            "°ïÖú"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_ACTION_FORMPRESSOK  "FormPressOK\n°´´°ÌåÖÐµÄ""È·¶¨""\n²¼¾Ö\n°´´°ÌåÖÐµÄ""È·¶¨""\n°´´°ÌåÖÐµÄ""È·¶¨"""
+    IDS_ACTION_FORMPRESSCANCEL 
+                            "FormPressCancel\n°´´°ÌåÖÐµÄ""È¡Ïû""\n²¼¾Ö\n°´´°ÌåÖÐµÄ""È¡Ïû""\n°´´°ÌåÖÐµÄ""È¡Ïû"""
+END
+
+#endif    // Chinese (P.R.C.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+/////////////////////////////////////////////////////////////////////////////
+// Russian resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_RUS)
+#ifdef _WIN32
+LANGUAGE LANG_RUSSIAN, SUBLANG_DEFAULT
+#pragma code_page(1251)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)\r\n"
+    "#ifdef _WIN32\r\n"
+    "LANGUAGE 9, 1\r\n"
+    "#pragma code_page(1252)\r\n"
+    "#endif //_WIN32\r\n"
+    "#include ""res\\axform.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "#include ""afxres.rc""         // Standard components\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_CONTAINER_DIALOG DIALOG  0, 0, 169, 95
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CLIPSIBLINGS | 
+    WS_CLIPCHILDREN | WS_CAPTION | WS_SYSMENU
+CAPTION "Dialog"
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,6,77,50,14
+    PUSHBUTTON      "Îòìåíà",IDCANCEL,59,77,50,14
+    CONTROL         "",IDC_CONTROLS,"Static",SS_BLACKFRAME,5,3,157,67
+    PUSHBUTTON      "Ñïðàâêà",IDHELP,112,77,50,14
+END
+
+IDD_CONTAINER_DOCKDIALOG DIALOG  0, 0, 187, 72
+STYLE DS_SETFONT | DS_CONTROL | WS_CHILD | WS_VISIBLE | WS_CLIPSIBLINGS | 
+    WS_CLIPCHILDREN
+FONT 8, "MS Sans Serif"
+BEGIN
+    CONTROL         "",IDC_CONTROLS,"Static",SS_BLACKFRAME,2,0,185,72
+END
+
+IDD_DEFAULT_PAGE DIALOG  0, 0, 197, 106
+STYLE DS_SETFONT | WS_CHILD | WS_DISABLED | WS_CAPTION
+CAPTION "qq"
+FONT 8, "MS Sans Serif"
+BEGIN
+    CONTROL         "",IDC_CONTROLS,"Static",SS_BLACKFRAME,0,0,177,87
+END
+
+IDD_DIALOG_OPTIONS DIALOGEX 0, 0, 321, 194
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CLIPSIBLINGS | 
+    WS_CLIPCHILDREN | WS_CAPTION | WS_SYSMENU
+CAPTION "Óñòàíîâêè"
+FONT 8, "MS Sans Serif", 0, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,106,176,50,14
+    PUSHBUTTON      "Îòìåíà",IDCANCEL,160,176,50,14
+    PUSHBUTTON      "Ïðèìåíèòü",ID_APPLY,213,176,50,14
+    CONTROL         "",IDC_FAKE_STATIC,"Static",SS_GRAYFRAME | SS_SUNKEN,7,7,
+                    80,161,0,HIDC_FAKE_STATIC
+    LTEXT           "Static",IDC_STATIC_TAB,93,7,222,161,NOT WS_VISIBLE,
+                    WS_EX_STATICEDGE,HIDC_STATIC_TAB
+    PUSHBUTTON      "Ñïðàâêà",IDHELP,266,176,50,14
+END
+
+IDD_MY_DIALOG DIALOG  0, 0, 186, 95
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CLIPSIBLINGS | 
+    WS_CLIPCHILDREN | WS_CAPTION | WS_SYSMENU
+CAPTION "Dialog"
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,129,4,50,14
+    PUSHBUTTON      "Îòìåíà",IDCANCEL,129,21,50,14
+    PUSHBUTTON      "Ñïðàâêà",IDHELP,129,38,50,14
+END
+
+IDD_WIZARD_DIALOG DIALOG  0, 0, 189, 76
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | 
+    WS_SYSMENU
+CAPTION "Ìàñòåð"
+FONT 8, "MS Sans Serif"
+BEGIN
+    CONTROL         "",IDC_CONTROLS,"Static",SS_BLACKFRAME,0,0,189,75
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO 
+BEGIN
+    IDD_DEFAULT_PAGE, DIALOG
+    BEGIN
+        BOTTOMMARGIN, 104
+    END
+
+    IDD_DIALOG_OPTIONS, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 315
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 187
+    END
+
+    IDD_MY_DIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 179
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 88
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE 
+BEGIN
+    IDS_UNTITLED            "Áåç èìåíè"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_AX_FILTERNAME       "Ôàéë ActiveX form"
+END
+
+STRINGTABLE 
+BEGIN
+    ID_GFX_REMOVEITEM       "Óäàëèòü"
+    ID_GFX_RENAMEITEM       "Ïåðåèìåíîâàòü"
+    IDS_PAGE_TITLE          "Èìÿ ñòðàíèöû ïî óìîë÷àíèþ"
+    IDS_BTN_NEXT            "Äàëüøå"
+    IDS_BTN_PREV            "Íàçàä"
+    IDS_BTN_CANCEL          "Îòìåíà"
+    IDS_BTN_FINISH          "Ãîòîâî"
+    IDS_BTN_OK              "OK"
+    IDS_BTN_APPLY           "Ïðèìåíèòü"
+    IDS_CANTEXIT_OPERATION  "Çàâåðøèòå òåêóùóþ îïåðàöèþ ïåðåä çàêðûòèåì ôîðìû "
+    IDS_CTRL_TYPE           "Ýëåìåíò ActiveX"
+    IDS_FORM_TYPE           "ActiveX ôîðìà"
+    IDS_BTN_HELP            "Ñïðàâêà"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_ACTION_FORMPRESSOK  "FormPressOK\nForm Press OK\nLayout\nForm Press OK\nForm Press OK"
+    IDS_ACTION_FORMPRESSCANCEL 
+                            "FormPressCancel\nForm Press Cancel\nLayout\nForm Press Cancel\nForm Press Cancel"
+END
+
+#endif    // Russian resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.S.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_CONTAINER_DIALOG DIALOG  0, 0, 167, 95
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CLIPSIBLINGS | 
+    WS_CLIPCHILDREN | WS_CAPTION | WS_SYSMENU
+CAPTION "Dialog"
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,5,76,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,58,76,50,14
+    CONTROL         "",IDC_CONTROLS,"Static",SS_BLACKFRAME,5,3,156,67
+    PUSHBUTTON      "Help",IDHELP,111,76,50,14
+END
+
+IDD_CONTAINER_DOCKDIALOG DIALOG  0, 0, 187, 72
+STYLE DS_SETFONT | DS_CONTROL | WS_CHILD | WS_VISIBLE | WS_CLIPSIBLINGS | 
+    WS_CLIPCHILDREN
+FONT 8, "MS Sans Serif"
+BEGIN
+    CONTROL         "",IDC_CONTROLS,"Static",SS_BLACKFRAME,2,0,185,72
+END
+
+IDD_DIALOG_OPTIONS DIALOGEX 0, 0, 321, 199
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CLIPSIBLINGS | 
+    WS_CLIPCHILDREN | WS_CAPTION | WS_SYSMENU
+CAPTION "Options"
+FONT 8, "MS Sans Serif", 0, 0, 0x1
+BEGIN
+    CONTROL         "",IDC_FAKE_STATIC,"Static",SS_GRAYFRAME | SS_SUNKEN,7,7,
+                    80,170,0,HIDC_FAKE_STATIC
+    LTEXT           "Static",IDC_STATIC_TAB,93,7,222,169,NOT WS_VISIBLE,
+                    WS_EX_STATICEDGE,HIDC_STATIC_TAB
+    DEFPUSHBUTTON   "OK",IDOK,107,181,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,160,181,50,14
+    PUSHBUTTON      "Apply",ID_APPLY,213,181,50,14
+    PUSHBUTTON      "Help",IDHELP,266,181,50,14
+END
+
+IDD_DEFAULT_PAGE DIALOG  0, 0, 197, 106
+STYLE DS_SETFONT | WS_CHILD | WS_DISABLED | WS_CAPTION
+CAPTION "qq"
+FONT 8, "MS Sans Serif"
+BEGIN
+    CONTROL         "",IDC_CONTROLS,"Static",SS_BLACKFRAME,0,0,177,87
+END
+
+IDD_MY_DIALOG DIALOG  0, 0, 186, 95
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CLIPSIBLINGS | 
+    WS_CLIPCHILDREN | WS_CAPTION | WS_SYSMENU
+CAPTION "Dialog"
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,129,7,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,129,24,50,14
+    PUSHBUTTON      "Help",IDHELP,129,42,50,14
+END
+
+IDD_WIZARD_DIALOG DIALOG  0, 0, 189, 76
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | 
+    WS_SYSMENU
+CAPTION "Wizard"
+FONT 8, "MS Sans Serif"
+BEGIN
+    CONTROL         "",IDC_CONTROLS,"Static",SS_BLACKFRAME,0,0,189,75
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO 
+BEGIN
+    IDD_DIALOG_OPTIONS, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 315
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 192
+    END
+
+    IDD_DEFAULT_PAGE, DIALOG
+    BEGIN
+        BOTTOMMARGIN, 104
+    END
+
+    IDD_MY_DIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 179
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 88
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDB_IMAGELIST           BITMAP                  "res\\imageList.bmp"
+IDR_MAINFRAME           BITMAP                  "res\\Toolbar.bmp"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDI_THUMBNAIL_ICON_AXFORM ICON                    "res\\icon1.ico"
+IDI_THUMBNAIL_ICON_BLANK ICON                    "res\\ico00002.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Toolbar
+//
+
+IDR_MAINFRAME TOOLBAR  16, 15
+BEGIN
+    BUTTON      ID_GFX_LARGEICON
+    BUTTON      ID_GFX_SMALLICON
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Cursor
+//
+
+IDC_DRAGGING            CURSOR                  "res\\dragging.cur"
+IDC_HANDCUR             CURSOR                  "res\\icr_hand.cur"
+IDC_NODRAGGING          CURSOR                  "res\\nodraggi.cur"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE 
+BEGIN
+    IDS_UNTITLED            "Untitled"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_AX_FILTERNAME       "ActiveX form file"
+END
+
+STRINGTABLE 
+BEGIN
+    ID_GFX_REMOVEITEM       "Remove item"
+    ID_GFX_RENAMEITEM       "Rename item"
+    IDS_PAGE_TITLE          "Default page name"
+    IDS_BTN_NEXT            "Next"
+    IDS_BTN_PREV            "Back"
+    IDS_BTN_CANCEL          "Cancel"
+    IDS_BTN_FINISH          "Finish"
+    IDS_BTN_OK              "OK"
+    IDS_BTN_APPLY           "Apply"
+    IDS_CANTEXIT_OPERATION  "Complete the current operation before closing the form"
+    IDS_CTRL_TYPE           "ActiveX Control"
+    IDS_FORM_TYPE           "ActiveX Form"
+    IDS_BTN_HELP            "Help"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_ACTION_FORMPRESSOK  "FormPressOK\nForm Press OK\nLayout\nForm Press OK\nForm Press OK"
+    IDS_ACTION_FORMPRESSCANCEL 
+                            "FormPressCancel\nForm Press Cancel\nLayout\nForm Press Cancel\nForm Press Cancel"
+END
+
+#endif    // English (U.S.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE 9, 1
+#pragma code_page(1252)
+#endif //_WIN32
+#include "res\axform.rc2"  // non-Microsoft Visual C++ edited resources
+#include "afxres.rc"         // Standard components
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

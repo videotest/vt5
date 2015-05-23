@@ -1,0 +1,110 @@
+// NewDoc.odl : type library source for NewDoc.dll
+
+// This file will be processed by the MIDL compiler to produce the
+// type library (NewDoc.tlb).
+
+[ uuid(3F277086-C8EB-11D3-99F5-000000000000), version(1.0) ]
+library NewDoc
+{
+	importlib("stdole32.tlb");
+	importlib("stdole2.tlb");
+
+
+
+
+	//  Primary dispatch interface for CInputDriverManager
+	
+	[ uuid(394913EA-2CEC-463B-AE00-1388A2FD6F3D) ]
+	dispinterface IInputDriverManager
+	{
+		properties:
+			// NOTE - ClassWizard will maintain property information here.
+			//    Use extreme caution when editing this section.
+			//{{AFX_ODL_PROP(CInputDriverManager)
+			[id(1)] BSTR CurrentDriver;
+			[id(2)] BSTR CurrentDevice;
+			[id(3)] BSTR CurrentDeviceName;
+			//}}AFX_ODL_PROP
+			
+		methods:
+			// NOTE - ClassWizard will maintain method information here.
+			//    Use extreme caution when editing this section.
+			//{{AFX_ODL_METHOD(CInputDriverManager)
+			[id(4)] void SetValue(BSTR Name, VARIANT Value);
+			[id(5)] VARIANT GetValue(BSTR Name);
+			[id(6)] long GetDevicesNum();
+			[id(7)] BSTR GetDeviceName(long iDev);
+			[id(8)] BSTR GetDeviceCategory(long iDev);
+			[id(9)] BSTR GetDeviceFullName(long iDev);
+			[id(10)] void ExecuteDriverDialog(BSTR strName);
+			//}}AFX_ODL_METHOD
+
+	};
+
+	//  Class information for CInputDriverManager
+
+	[ uuid(BB2A4DD0-9D8C-4F9D-914A-B8922D247CA9) ]
+	coclass InputDriverManager
+	{
+		[default] dispinterface IInputDriverManager;
+	};
+
+
+	//  Primary dispatch interface for CDriverEmpty
+	
+	[ uuid(FDE17BB1-7E51-4C52-A87A-EB2ECC2410B5) ]
+	dispinterface IDriverEmpty
+	{
+		properties:
+			// NOTE - ClassWizard will maintain property information here.
+			//    Use extreme caution when editing this section.
+			//{{AFX_ODL_PROP(CDriverEmpty)
+			//}}AFX_ODL_PROP
+			
+		methods:
+			// NOTE - ClassWizard will maintain method information here.
+			//    Use extreme caution when editing this section.
+			//{{AFX_ODL_METHOD(CDriverEmpty)
+			//}}AFX_ODL_METHOD
+
+	};
+
+	//  Class information for CDriverEmpty
+
+	[ uuid(6A6CD424-8DD2-4283-9AC2-300E27821666) ]
+	coclass DriverEmpty
+	{
+		[default] dispinterface IDriverEmpty;
+	};
+
+
+	//  Primary dispatch interface for CIPreviewView
+	
+	[ uuid(C0D5CB20-6ABF-4DCC-ADBA-9E9C998965A8) ]
+	dispinterface IIPreviewView
+	{
+		properties:
+			// NOTE - ClassWizard will maintain property information here.
+			//    Use extreme caution when editing this section.
+			//{{AFX_ODL_PROP(CIPreviewView)
+			//}}AFX_ODL_PROP
+			
+		methods:
+			// NOTE - ClassWizard will maintain method information here.
+			//    Use extreme caution when editing this section.
+			//{{AFX_ODL_METHOD(CIPreviewView)
+			//}}AFX_ODL_METHOD
+
+	};
+
+	//  Class information for CIPreviewView
+
+	[ uuid(E3C7484B-3415-4982-89B2-C4920AB7391F) ]
+	coclass PreviewView
+	{
+		[default] dispinterface IIPreviewView;
+	};
+
+	//{{AFX_APPEND_ODL}}
+	//}}AFX_APPEND_ODL}}
+};

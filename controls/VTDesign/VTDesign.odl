@@ -1,0 +1,502 @@
+// VTDesign.odl : type library source for ActiveX Control project.
+
+// This file will be processed by the Make Type Library (mktyplib) tool to
+// produce the type library (VTDesign.tlb) that will become a resource in
+// VTDesign.ocx.
+
+[ uuid(BC127B08-026C-11D4-8124-0000E8DF68C3), version(1.0),
+  helpfile("VTDesign.hlp"),
+  helpstring("VTDesign ActiveX Control module"),
+  control ]
+library VTDESIGNLib
+{
+#include <olectl.h>
+#include <idispids.h>
+
+	importlib(STDOLE_TLB);
+	importlib(STDTYPE_TLB);
+
+typedef enum
+{
+	[helpstring ("SOLID")] lsSOLID							= 0, 
+	[helpstring ("DASH")] lsDASH							= 1, 
+	[helpstring ("DOT")]	lsDOT							= 2, 
+	[helpstring ("DASHDOT")]	lsDASHDOT					= 3, 
+	[helpstring ("DASHDOTDOT")] lsDASHDOTDOT				= 4, 
+	[helpstring ("DASHDOTDOTDOT")] lsDASHDOTDOTDOT			= 5, 
+	[helpstring ("DASH_GAP")] lsDASH_GAP					= 6, 
+	[helpstring ("DOT_GAP")] lsDOT_GAP						= 7, 
+	[helpstring ("DASHDOT_GAP")]	lsDASHDOT_GAP			= 8, 
+	[helpstring ("DASHDOTDOT_GAP")] lsDASHDOTDOT_GAP		= 9, 
+	[helpstring ("DASHDOTDOTDOT_GAP")] lsDASHDOTDOTDOT_GAP	= 10,
+
+} LineStyle;
+
+typedef enum
+{
+	[helpstring ("none")] asNone							= 0, 
+	[helpstring ("pureArrow")] asPureArrow					= 1, 
+	[helpstring ("openArrow")]	asOpenArrow					= 2, 
+	[helpstring ("stealthArrow")]	asStealthArrow			= 3, 
+	[helpstring ("diamondArrow")] asDiamondArrow			= 4, 
+	[helpstring ("ovalArrow")] asOvalArrow					= 5, 
+
+} ArrowStyle;
+
+
+
+typedef enum { 
+	[helpstring ("EdgeNone")] btEdgeNone			= 0,
+	[helpstring ("EdgeRaised")]btEdgeRaised		= 1, 
+	[helpstring ("EdgeSunken")]btEdgeSunken		= 2, 
+	[helpstring ("EdgeEtched")]btEdgeEtched		= 3,
+	[helpstring ("EdgeBump")]btEdgeBump			= 4
+} BorderType;
+
+typedef enum{ 
+	[helpstring ("Normal")]ftNormal			= 0, 
+	[helpstring ("Positive")]ftPositive			= 1, 
+	[helpstring ("Negative")]ftNegative			= 2
+} FlipType;
+
+typedef enum 
+{
+	[helpstring ("Left")]ptLeft		= 0,
+	[helpstring ("Right")]ptRight		= 1,
+	[helpstring ("Top")]ptTop		= 2,
+	[helpstring ("Bottom")]ptBottom	= 3
+} PositionType;
+
+typedef enum {
+	[helpstring ("Left")] atLeft		= 0,
+	[helpstring ("Center")] atCenter	= 1,
+	[helpstring ("Right")] atRight		= 2
+} AlignType;
+
+typedef enum {
+	[helpstring ("Left")] ahLeft		= 0,
+	[helpstring ("Center")] ahCenter	= 1,
+	[helpstring ("Right")] ahRight		= 2
+} AlignHoriz;
+
+typedef enum {
+	[helpstring ("Top")] avTop			= 0,
+	[helpstring ("Center")] avCenter	= 1,
+	[helpstring ("Bottom")] avBottom	= 2
+} AlignVert;
+
+typedef enum { 
+	[helpstring ("Date")] stDate				= 0, 
+	[helpstring ("Date Time")] stDateTime			= 1, 
+	[helpstring ("PageNum")] stPageNum			= 2
+} SystemType;
+
+
+	//  Primary dispatch interface for CVTLine
+
+	[ uuid(BC127B09-026C-11D4-8124-0000E8DF68C3),
+	  helpstring("Dispatch interface for VT Design Line Control"), hidden ]
+	dispinterface _DVTDLine
+	{
+		properties:
+			// NOTE - ClassWizard will maintain property information here.
+			//    Use extreme caution when editing this section.
+			//{{AFX_ODL_PROP(CVTLine)
+			[id(1)] OLE_COLOR BackColor;
+			[id(2)] boolean TransparentBack;
+			[id(3)] OLE_COLOR LineColor;
+			[id(4)] short LineStyle;
+			[id(5)] double LineWidth;
+			[id(6)] boolean RoundedLine;
+			[id(7)] short StartArrow;
+			[id(8)] short EndArrow;
+			[id(9)] boolean Visible;
+			[id(10)] short HorizontalFlip;
+			[id(11)] short VerticalFlip;
+			[id(12)] short Orientation;
+			//}}AFX_ODL_PROP
+
+		methods:
+			// NOTE - ClassWizard will maintain method information here.
+			//    Use extreme caution when editing this section.
+			//{{AFX_ODL_METHOD(CVTLine)
+			[id(13)] boolean GetPropertyAXStatus();
+			[id(14)] void SetPropertyAXStatus(boolean val);
+			//}}AFX_ODL_METHOD
+			[id(DISPID_ABOUTBOX)] void AboutBox();
+	};
+
+	//  Event dispatch interface for CVTLine
+
+	[ uuid(BC127B0A-026C-11D4-8124-0000E8DF68C3),
+	  helpstring("Event interface for VT Design Line Control") ]
+	dispinterface _DVTDLineEvents
+	{
+		properties:
+			//  Event interface has no properties
+
+		methods:
+			// NOTE - ClassWizard will maintain event information here.
+			//    Use extreme caution when editing this section.
+			//{{AFX_ODL_EVENT(CVTLine)
+			//}}AFX_ODL_EVENT
+	};
+
+	//  Class information for CVTLine
+
+	[ uuid(BC127B0B-026C-11D4-8124-0000E8DF68C3),
+	  helpstring("VT Design Line Control"), control ]
+	coclass VTDLine
+	{
+		[default] dispinterface _DVTDLine;
+		[default, source] dispinterface _DVTDLineEvents;
+	};
+
+	//  Primary dispatch interface for CVTRectangle
+
+	[ uuid(BC127B0D-026C-11D4-8124-0000E8DF68C3),
+	  helpstring("Dispatch interface for VT Design Rectangle Control"), hidden ]
+	dispinterface _DVTDRectangle
+	{
+		properties:
+			// NOTE - ClassWizard will maintain property information here.
+			//    Use extreme caution when editing this section.
+			//{{AFX_ODL_PROP(CVTRectangle)
+			[id(1)] OLE_COLOR FillColor;
+			[id(2)] boolean TransparentFill;
+			[id(3)] OLE_COLOR LineColor;
+			[id(4)] LineStyle LineStyle;
+			[id(5)] double LineWidth;
+			[id(6)] boolean RoundedLine;
+			[id(7)] boolean Visible;
+			//}}AFX_ODL_PROP
+
+		methods:
+			// NOTE - ClassWizard will maintain method information here.
+			//    Use extreme caution when editing this section.
+			//{{AFX_ODL_METHOD(CVTRectangle)
+			[id(8)] boolean GetPropertyAXStatus();
+			[id(9)] void SetPropertyAXStatus(boolean val);
+			//}}AFX_ODL_METHOD
+			[id(DISPID_ABOUTBOX)] void AboutBox();
+	};
+
+	//  Event dispatch interface for CVTRectangle
+
+	[ uuid(BC127B0E-026C-11D4-8124-0000E8DF68C3),
+	  helpstring("Event interface for VT Design Rectangle Control") ]
+	dispinterface _DVTDRectangleEvents
+	{
+		properties:
+			//  Event interface has no properties
+
+		methods:
+			// NOTE - ClassWizard will maintain event information here.
+			//    Use extreme caution when editing this section.
+			//{{AFX_ODL_EVENT(CVTRectangle)
+			//}}AFX_ODL_EVENT
+	};
+
+	//  Class information for CVTRectangle
+
+	[ uuid(BC127B0F-026C-11D4-8124-0000E8DF68C3),
+	  helpstring("VT Design Rectangle Control"), control ]
+	coclass VTDRectangle
+	{
+		[default] dispinterface _DVTDRectangle;
+		[default, source] dispinterface _DVTDRectangleEvents;
+	};
+
+	//  Primary dispatch interface for CVTEllipse
+
+	[ uuid(BC127B11-026C-11D4-8124-0000E8DF68C3),
+	  helpstring("Dispatch interface for VT Design Ellipse Control"), hidden ]
+	dispinterface _DVTDEllipse
+	{
+		properties:
+			// NOTE - ClassWizard will maintain property information here.
+			//    Use extreme caution when editing this section.
+			//{{AFX_ODL_PROP(CVTEllipse)
+			[id(1)] OLE_COLOR BackColor;
+			[id(2)] boolean TransparentBack;
+			[id(3)] OLE_COLOR FillColor;
+			[id(4)] boolean TransparentFill;
+			[id(5)] OLE_COLOR LineColor;
+			[id(6)] short LineStyle;
+			[id(7)] double LineWidth;
+			[id(8)] boolean RoundedLine;
+			[id(9)] boolean Visible;
+			//}}AFX_ODL_PROP
+
+		methods:
+			// NOTE - ClassWizard will maintain method information here.
+			//    Use extreme caution when editing this section.
+			//{{AFX_ODL_METHOD(CVTEllipse)
+			[id(10)] boolean GetPropertyAXStatus();
+			[id(11)] void SetPropertyAXStatus(boolean val);
+			//}}AFX_ODL_METHOD
+			[id(DISPID_ABOUTBOX)] void AboutBox();
+	};
+
+	//  Event dispatch interface for CVTEllipse
+
+	[ uuid(BC127B12-026C-11D4-8124-0000E8DF68C3),
+	  helpstring("Event interface for VT Design Ellipse Control") ]
+	dispinterface _DVTDEllipseEvents
+	{
+		properties:
+			//  Event interface has no properties
+
+		methods:
+			// NOTE - ClassWizard will maintain event information here.
+			//    Use extreme caution when editing this section.
+			//{{AFX_ODL_EVENT(CVTEllipse)
+			//}}AFX_ODL_EVENT
+	};
+
+	//  Class information for CVTEllipse
+
+	[ uuid(BC127B13-026C-11D4-8124-0000E8DF68C3),
+	  helpstring("VT Design Ellipse Control"), control ]
+	coclass VTDEllipse
+	{
+		[default] dispinterface _DVTDEllipse;
+		[default, source] dispinterface _DVTDEllipseEvents;
+	};
+
+	//  Primary dispatch interface for CVTText
+
+	[ uuid(BC127B15-026C-11D4-8124-0000E8DF68C3),
+	  helpstring("Dispatch interface for VT Design Text Control"), hidden ]
+	dispinterface _DVTDText
+	{
+		properties:
+			// NOTE - ClassWizard will maintain property information here.
+			//    Use extreme caution when editing this section.
+			//{{AFX_ODL_PROP(CVTText)
+			[id(1)] OLE_COLOR BackColor;
+			[id(2)] boolean TransparentBack;
+			[id(3)] OLE_COLOR FontColor;
+			[id(4)] PositionType TextPosition;			
+			[id(5)] BSTR Text;
+			[id(6)] IFontDisp* TextFont;
+			[id(7)] boolean Visible;
+			[id(8)] short Degree;
+			[id(9)] AlignHoriz HorzAlign;
+			[id(10)] AlignVert VertAlign;
+			[id(11)] boolean Disabled;
+			[id(12)] BSTR Key;
+			//}}AFX_ODL_PROP
+
+		methods:
+			// NOTE - ClassWizard will maintain method information here.
+			//    Use extreme caution when editing this section.
+			//{{AFX_ODL_METHOD(CVTText)
+			[id(13)] boolean GetPropertyAXStatus();
+			[id(14)] void SetPropertyAXStatus(boolean val);
+			//}}AFX_ODL_METHOD
+
+			[id(DISPID_ABOUTBOX)] void AboutBox();
+	};
+
+	//  Event dispatch interface for CVTText
+
+	[ uuid(BC127B16-026C-11D4-8124-0000E8DF68C3),
+	  helpstring("Event interface for VT Design Text Control") ]
+	dispinterface _DVTDTextEvents
+	{
+		properties:
+			//  Event interface has no properties
+
+		methods:
+			// NOTE - ClassWizard will maintain event information here.
+			//    Use extreme caution when editing this section.
+			//{{AFX_ODL_EVENT(CVTText)
+			//}}AFX_ODL_EVENT
+	};
+
+	//  Class information for CVTText
+
+	[ uuid(BC127B17-026C-11D4-8124-0000E8DF68C3),
+	  helpstring("VT Design Text Control"), control ]
+	coclass VTDText
+	{
+		[default] dispinterface _DVTDText;
+		[default, source] dispinterface _DVTDTextEvents;
+	};
+
+	//  Primary dispatch interface for CVTImage
+
+	[ uuid(BC127B19-026C-11D4-8124-0000E8DF68C3),
+	  helpstring("Dispatch interface for VT Design Image Control"), hidden ]
+	dispinterface _DVTDImage
+	{
+		properties:
+			// NOTE - ClassWizard will maintain property information here.
+			//    Use extreme caution when editing this section.
+			//{{AFX_ODL_PROP(CVTImage)			
+			[id(1)] OLE_COLOR TransparentColor;
+			[id(2)] short PermanentImage;
+			[id(3)] BSTR FileName;			
+			[id(4)] boolean Visible;
+			[id(5)] OLE_COLOR BackgroundColor;
+			//}}AFX_ODL_PROP
+
+		methods:
+			// NOTE - ClassWizard will maintain method information here.
+			//    Use extreme caution when editing this section.
+			//{{AFX_ODL_METHOD(CVTImage)
+			[id(6)] boolean ReloadImage();
+			[id(7)] boolean GetPropertyAXStatus();
+			[id(8)] void SetPropertyAXStatus(boolean val);
+			//}}AFX_ODL_METHOD
+
+			[id(DISPID_ABOUTBOX)] void AboutBox();
+	};
+
+	//  Event dispatch interface for CVTImage
+
+	[ uuid(BC127B1A-026C-11D4-8124-0000E8DF68C3),
+	  helpstring("Event interface for VT Design Image Control") ]
+	dispinterface _DVTDImageEvents
+	{
+		properties:
+			//  Event interface has no properties
+
+		methods:
+			// NOTE - ClassWizard will maintain event information here.
+			//    Use extreme caution when editing this section.
+			//{{AFX_ODL_EVENT(CVTImage)
+			//}}AFX_ODL_EVENT
+	};
+
+	//  Class information for CVTImage
+
+	[ uuid(BC127B1B-026C-11D4-8124-0000E8DF68C3),
+	  helpstring("VT Design Image Control"), control ]
+	coclass VTDImage
+	{
+		[default] dispinterface _DVTDImage;
+		[default, source] dispinterface _DVTDImageEvents;
+	};
+
+	//  Primary dispatch interface for CVT3DBar
+
+	[ uuid(BC127B1D-026C-11D4-8124-0000E8DF68C3),
+	  helpstring("Dispatch interface for VT Design 3DBar Control"), hidden ]
+	dispinterface _DVTD3DBar
+	{
+		properties:
+			// NOTE - ClassWizard will maintain property information here.
+			//    Use extreme caution when editing this section.
+			//{{AFX_ODL_PROP(CVT3DBar)
+			[id(1)] OLE_COLOR BackColor;
+			[id(2)] boolean TransparentBack;
+			[id(3)] OLE_COLOR FontColor;
+			[id(4)] PositionType TextPosition;
+			[id(5)] AlignType TextAlign;
+			[id(6)] BSTR Text;
+			[id(7)] IFontDisp* TextFont;
+			[id(8)] BorderType BorderType;
+			[id(9)] double LineWidth;
+			[id(10)] boolean Visible;
+			//}}AFX_ODL_PROP
+
+		methods:
+			// NOTE - ClassWizard will maintain method information here.
+			//    Use extreme caution when editing this section.
+			//{{AFX_ODL_METHOD(CVT3DBar)
+			//}}AFX_ODL_METHOD
+
+			[id(DISPID_ABOUTBOX)] void AboutBox();
+			[id(11)] boolean GetPropertyAXStatus();
+			[id(12)] void SetPropertyAXStatus(boolean bNewValue);
+	};
+
+	//  Event dispatch interface for CVT3DBar
+
+	[ uuid(BC127B1E-026C-11D4-8124-0000E8DF68C3),
+	  helpstring("Event interface for VT Design 3DBar Control") ]
+	dispinterface _DVTD3DBarEvents
+	{
+		properties:
+			//  Event interface has no properties
+
+		methods:
+			// NOTE - ClassWizard will maintain event information here.
+			//    Use extreme caution when editing this section.
+			//{{AFX_ODL_EVENT(CVT3DBar)
+			//}}AFX_ODL_EVENT
+	};
+
+	//  Class information for CVT3DBar
+
+	[ uuid(BC127B1F-026C-11D4-8124-0000E8DF68C3),
+	  helpstring("VT Design 3DBar Control"), control ]
+	coclass VTD3DBar
+	{
+		[default] dispinterface _DVTD3DBar;
+		[default, source] dispinterface _DVTD3DBarEvents;
+	};
+
+	//  Primary dispatch interface for CVTSystem
+
+	[ uuid(BC127B21-026C-11D4-8124-0000E8DF68C3),
+	  helpstring("Dispatch interface for VT Design System Control"), hidden ]
+	dispinterface _DVTDSystem
+	{
+		properties:
+			// NOTE - ClassWizard will maintain property information here.
+			//    Use extreme caution when editing this section.
+			//{{AFX_ODL_PROP(CVTSystem)
+			[id(1)] OLE_COLOR BackColor;
+			[id(2)] boolean TransparentBack;
+			[id(3)] OLE_COLOR FontColor;
+			[id(4)] SystemType DataType;			
+			[id(5)] IFontDisp* TextFont;			
+			[id(6)] boolean Visible;
+			[id(7)] AlignHoriz HorzAlign;
+			[id(8)] AlignVert VertAlign;
+			//}}AFX_ODL_PROP
+
+		methods:
+			// NOTE - ClassWizard will maintain method information here.
+			//    Use extreme caution when editing this section.
+			//{{AFX_ODL_METHOD(CVTSystem)
+			[id(9)] boolean GetPropertyAXStatus();
+			[id(10)] void SetPropertyAXStatus(boolean val);
+			//}}AFX_ODL_METHOD
+
+			[id(DISPID_ABOUTBOX)] void AboutBox();
+	};
+
+	//  Event dispatch interface for CVTSystem
+
+	[ uuid(BC127B22-026C-11D4-8124-0000E8DF68C3),
+	  helpstring("Event interface for VT Design System Control") ]
+	dispinterface _DVTDSystemEvents
+	{
+		properties:
+			//  Event interface has no properties
+
+		methods:
+			// NOTE - ClassWizard will maintain event information here.
+			//    Use extreme caution when editing this section.
+			//{{AFX_ODL_EVENT(CVTSystem)
+			//}}AFX_ODL_EVENT
+	};
+
+	//  Class information for CVTSystem
+
+	[ uuid(BC127B23-026C-11D4-8124-0000E8DF68C3),
+	  helpstring("VT Design System Control"), control ]
+	coclass VTDSystem
+	{
+		[default] dispinterface _DVTDSystem;
+		[default, source] dispinterface _DVTDSystemEvents;
+	};
+
+
+	//{{AFX_APPEND_ODL}}
+	//}}AFX_APPEND_ODL}}
+};

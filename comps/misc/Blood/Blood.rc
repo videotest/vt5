@@ -1,0 +1,131 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// Russian resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_RUS)
+#ifdef _WIN32
+LANGUAGE LANG_RUSSIAN, SUBLANG_DEFAULT
+#pragma code_page(1251)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "#include ""res\\blood.rc2""\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+#endif    // Russian resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.S.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Toolbar
+//
+
+IDR_TOOLBAR1 TOOLBAR  16, 15
+BEGIN
+    BUTTON      ID_ACTION_FINDCELLS
+    BUTTON      ID_ACTION_BUBBLESELECT
+    BUTTON      ID_ACTION_CELL2BIN
+    BUTTON      ID_ACTION_CLASSIFYAAM
+    BUTTON      ID_ACTION_LEARNAAM
+    BUTTON      ID_ACTION_LEARNLINKAAM
+    BUTTON      ID_ACTION_SPLITCIRCLES
+    BUTTON      ID_ACTION_CUTFRAME
+    BUTTON      ID_ACTION_FINDCIRCLES
+    BUTTON      ID_ACTION_RESEGMENTCELLS
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDR_TOOLBAR1            BITMAP                  "toolbar1.bmp"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE 
+BEGIN
+    ID_ACTION_FINDCELLS     "FindCells\nFindCells\nBlood\nFind Cells\nFind Cells"
+END
+
+STRINGTABLE 
+BEGIN
+    ID_ACTION_BUBBLESELECT  "BubbleSelect\nBubbleSelect\nBlood\nBubble Select\nBubble Select"
+    ID_ACTION_CELL2BIN      "Cell2Bin\nCell2Bin\nBlood\nCell to Binary\nCell to Binary"
+    ID_ACTION_CLASSIFYAAM   "ClassifyAAM\nClassifyAAM\nBlood\nClassifyAAM\nClassifyAAM"
+    ID_ACTION_LEARNAAM      "LearnAAM\nLearnAAM\nBlood\nLearnAAM\nLearnAAM"
+    ID_ACTION_LEARNLINKAAM  "LearnLinkAAM\nLearnLinkAAM\nBlood\nLearnLinkAAM\nLearnLinkAAM"
+    ID_ACTION_SPLITCIRCLES  "SplitCircles\nSplitCircles\nBlood\nSplitCircles\nSplitCircles"
+    ID_ACTION_CUTFRAME      "CutFrame\nCutFrame\nBlood\nCutFrame\nCutFrame"
+END
+
+STRINGTABLE 
+BEGIN
+    ID_ACTION_FINDCIRCLES   "FindCircles\nFindCircles\nBlood\nFindCircles\nFindCircles"
+    ID_ACTION_RESEGMENTCELLS 
+                            "ResegmentCells\nResegmentCells\nBlood\nResegmentCells\nResegmentCells"
+END
+
+#endif    // English (U.S.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#include "res\blood.rc2"
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

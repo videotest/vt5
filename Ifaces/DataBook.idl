@@ -1,0 +1,16 @@
+[
+	uuid(2F13D1E0-3F7E-4c9d-9579-D28B0FD82C36),
+	version(1.0),
+	helpstring("VideoTesT 5 DataBook Type Library")
+]
+library DataBookTypeLib
+{
+
+	/*
+	[uuid(A5C0C965-C75C-489f-8765-787DAD8BBB2B)]
+	interface IDataBookView : IUnknown
+	{
+	};
+	*/
+
+};

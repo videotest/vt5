@@ -1,0 +1,14 @@
+// Microsoft Developer Studio generated Help ID include file.
+// Used by IV460Drv.rc
+//
+#define HIDC_ENABLE_FRAME               0x880e0830    // IDD_FRAME
+#define HIDC_E_BOTTOM_MARGIN            0x880e0805    // IDD_FRAME
+#define HIDC_E_LEFT_MARGIN              0x880e07ff    // IDD_FRAME
+#define HIDC_E_RIGHT_MARGIN             0x880e0801    // IDD_FRAME
+#define HIDC_E_TOP_MARGIN               0x880e0803    // IDD_FRAME
+#define HIDC_PREVIEW_ALL_FRAME          0x880e0818    // IDD_FRAME
+#define HIDC_STATIC                     0x880affff    // IDD_FRAME
+#define HIDC_S_BOTTOM_MARGIN            0x880e0806    // IDD_FRAME
+#define HIDC_S_LEFT_MARGIN              0x880e0800    // IDD_FRAME
+#define HIDC_S_RIGHT_MARGIN             0x880e0802    // IDD_FRAME
+#define HIDC_S_TOP_MARGIN               0x880e0804    // IDD_FRAME

@@ -1,0 +1,921 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// Chinese (P.R.C.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)
+#ifdef _WIN32
+LANGUAGE LANG_CHINESE, SUBLANG_CHINESE_SIMPLIFIED
+#pragma code_page(936)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_ABOUTBOX_DBCONTROLS DIALOG  34, 22, 260, 55
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "№ШУЪ DBControls Control"
+FONT 8, "MS Sans Serif"
+BEGIN
+    ICON            IDI_ABOUTDLL,IDC_STATIC,10,10,20,20
+    LTEXT           "DBControls ControlЈ¬°ж±ѕ 1.0",IDC_STATIC,40,10,170,8
+    LTEXT           "°жИЁЛщУР (C) 2000, VideoTesT",IDC_STATIC,40,25,170,8
+    DEFPUSHBUTTON   "И·¶Ё",IDOK,221,7,32,14,WS_GROUP
+END
+
+IDD_PROPPAGE_DBCONTROLS DIALOG  0, 0, 250, 62
+STYLE DS_SETFONT | WS_CHILD
+FONT 8, "MS Sans Serif"
+BEGIN
+    LTEXT           "TODO: Place controls to manipulate properties of DBControls Control on this dialog.",
+                    IDC_STATIC,7,25,229,16
+END
+
+IDD_ABOUTBOX_DBTEXT DIALOG  34, 22, 260, 55
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "№ШУЪ VT DBText Control"
+FONT 8, "MS Sans Serif"
+BEGIN
+    ICON            IDI_ABOUTDLL,IDC_STATIC,10,10,20,20
+    LTEXT           "VT DBText ControlЈ¬°ж±ѕ 1.0",IDC_STATIC,40,10,170,8
+    LTEXT           "°жИЁЛщУР (C) 2000, VideoTesT",IDC_STATIC,40,25,170,8
+    DEFPUSHBUTTON   "И·¶Ё",IDOK,221,7,32,14,WS_GROUP
+END
+
+IDD_ABOUTBOX_DBNUMBER DIALOG  34, 22, 260, 55
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "№ШУЪ VT DBNumber Control"
+FONT 8, "MS Sans Serif"
+BEGIN
+    ICON            IDI_ABOUTDLL,IDC_STATIC,10,10,20,20
+    LTEXT           "VT DBNumber ControlЈ¬°ж±ѕ 1.0",IDC_STATIC,40,10,170,
+                    8
+    LTEXT           "°жИЁЛщУР (C) 2000, VideoTesT",IDC_STATIC,40,25,170,8
+    DEFPUSHBUTTON   "И·¶Ё",IDOK,221,7,32,14,WS_GROUP
+END
+
+IDD_ABOUTBOX_DBDATETIME DIALOG  34, 22, 260, 55
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "№ШУЪ VT DBDateTime Control"
+FONT 8, "MS Sans Serif"
+BEGIN
+    ICON            IDI_ABOUTDLL,IDC_STATIC,10,10,20,20
+    LTEXT           "VT DBDateTime ControlЈ¬°ж±ѕ 1.0",IDC_STATIC,40,10,
+                    170,8
+    LTEXT           "°жИЁЛщУР (C) 2000, VideoTesT",IDC_STATIC,40,25,170,8
+    DEFPUSHBUTTON   "И·¶Ё",IDOK,221,7,32,14,WS_GROUP
+END
+
+IDD_PROPPAGE_DBTEXT DIALOG  0, 0, 250, 62
+STYLE DS_SETFONT | WS_CHILD
+FONT 8, "MS Sans Serif"
+BEGIN
+    LTEXT           "TODO: Place controls to manipulate properties of VT DBText Control on this dialog.",
+                    IDC_STATIC,7,25,229,16
+END
+
+IDD_PROPPAGE_DBNUMBER DIALOG  0, 0, 250, 62
+STYLE DS_SETFONT | WS_CHILD
+FONT 8, "MS Sans Serif"
+BEGIN
+    LTEXT           "TODO: Place controls to manipulate properties of VT DBNumber Control on this dialog.",
+                    IDC_STATIC,7,25,229,16
+    EDITTEXT        IDC_EDIT1,101,41,102,14,ES_AUTOHSCROLL
+END
+
+IDD_PROPPAGE_DBDATETIME DIALOG  0, 0, 250, 62
+STYLE DS_SETFONT | WS_CHILD
+FONT 8, "MS Sans Serif"
+BEGIN
+    LTEXT           "TODO: Place controls to manipulate properties of VT DBDateTime Control on this dialog.",
+                    IDC_STATIC,7,25,229,16
+END
+
+IDD_PROPPAGE_COMMON DIALOGEX 0, 0, 250, 110
+STYLE DS_SETFONT | WS_CHILD
+FONT 8, "MS Sans Serif", 0, 0, 0x0
+BEGIN
+    GROUPBOX        "±кМв",IDC_STATIC,24,51,199,47
+    CONTROL         "Чу",IDC_RADIO_LEFT,"Button",BS_AUTORADIOBUTTON | 
+                    WS_GROUP,54,63,28,10
+    CONTROL         "ЙП",IDC_RADIO2,"Button",BS_AUTORADIOBUTTON,54,79,29,10
+    CONTROL         "ПФКѕ±кМв",IDC_AUTOLABEL,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,90,63,57,10
+    CONTROL         "ПВА­БР±н",IDC_ENABLEENUMERATION,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,90,79,61,10
+    LTEXT           "±н:",IDC_STATIC,29,14,21,8
+    LTEXT           "Static",IDC_TABLE,55,14,163,13,SS_SUNKEN
+    LTEXT           "ЧЦ¶О:",IDC_STATIC,29,32,18,8
+    LTEXT           "Static",IDC_FIELD,55,32,163,13,SS_SUNKEN
+    CONTROL         "Ц»¶Б",IDC_READONLY,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,158,63,48,10
+END
+
+IDD_ABOUTBOX_DBOBJECT DIALOG  34, 22, 260, 55
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "№ШУЪ VT DBDateTime Control"
+FONT 8, "MS Sans Serif"
+BEGIN
+    ICON            IDI_ABOUTDLL,IDC_STATIC,10,10,20,20
+    LTEXT           "VT DBObject ControlЈ¬°ж±ѕ 1.0",IDC_STATIC,40,10,170,
+                    8
+    LTEXT           "°жИЁЛщУР (C) 2000, VideoTesT",IDC_STATIC,40,25,170,8
+    DEFPUSHBUTTON   "И·¶Ё",IDOK,221,7,32,14,WS_GROUP
+END
+
+IDD_PROPPAGE_DBOBJECT DIALOG  0, 0, 250, 62
+STYLE DS_SETFONT | WS_CHILD
+FONT 8, "MS Sans Serif"
+BEGIN
+    COMBOBOX        IDC_VIEW_TYPE,41,17,140,126,CBS_DROPDOWN | WS_VSCROLL | 
+                    WS_TABSTOP
+    LTEXT           "АаРН:",IDC_STATIC,14,19,19,8
+    CONTROL         "ЧФ¶Ї",IDC_AUTO_ASIGN,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,13,34,31,10
+    GROUPBOX        "КУНј",IDC_STATIC,7,7,186,43
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO 
+BEGIN
+    IDD_ABOUTBOX_DBCONTROLS, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 253
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 48
+    END
+
+    IDD_PROPPAGE_DBCONTROLS, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 243
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 55
+    END
+
+    IDD_ABOUTBOX_DBTEXT, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 253
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 48
+    END
+
+    IDD_ABOUTBOX_DBNUMBER, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 253
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 48
+    END
+
+    IDD_ABOUTBOX_DBDATETIME, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 253
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 48
+    END
+
+    IDD_PROPPAGE_DBTEXT, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 243
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 55
+    END
+
+    IDD_PROPPAGE_DBNUMBER, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 243
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 55
+    END
+
+    IDD_PROPPAGE_DBDATETIME, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 243
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 55
+    END
+
+    IDD_PROPPAGE_COMMON, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 243
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 103
+    END
+
+    IDD_ABOUTBOX_DBOBJECT, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 253
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 48
+    END
+
+    IDD_PROPPAGE_DBOBJECT, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 243
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 55
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDI_ABOUTDLL            ICON                       "DBControls.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDB_DBCONTROLS          BITMAP                     "DBControlsCtl.bmp"
+IDB_DBNUMBER            BITMAP                     "DBNumberCtl.bmp"
+IDB_DBDATETIME          BITMAP                     "DBDateTimeCtl.bmp"
+IDB_DBOBJECT            BITMAP                     "dbdateti.bmp"
+IDB_DBTEXT              BITMAP                     "DBTextCtl.bmp"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE 
+BEGIN
+    IDS_DBTEXT              "DB ОД±ѕїШјю"
+    IDS_DBTEXT_PPG          "DBText КфРФТіГж"
+    IDS_DBNUMBER            "DB КэЧЦїШјю"
+    IDS_DBNUMBER_PPG        "DBNumber КфРФТіГж"
+    IDS_DBDATETIME          "DB ИХЖЪК±јдїШјю"
+    IDS_DBDATETIME_PPG      "DBDateTime КфРФТіГж"
+    IDS_DBCOMMON_PPG        "DB №«№ІКфРФТіГж"
+    IDS_DBOBJECT            "DB ¶ФПуїШјю"
+    IDS_DBOBJECT_PPG        "DBObject КфРФТіГж"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_DBTEXT_PPG_CAPTION  "НЁУГ"
+    IDS_DBNUMBER_PPG_CAPTION "НЁУГ"
+    IDS_DBDATETIME_PPG_CAPTION "¶ФПу"
+    IDS_DBCOMMON_PPG_CAPTION "№«№І"
+    IDS_DBOBJECT_PPG_CAPTION "¶ФПу"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_MENU_ADD_FILTER     "МнјУ№эВЛЖч..."
+    IDS_MENU_EDIT_FILTER    "±ај­№эВЛЖч..."
+    IDS_MENU_DELETE_FILTER  "Йѕіэ№эВЛЖч"
+END
+
+#endif    // Chinese (P.R.C.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+/////////////////////////////////////////////////////////////////////////////
+// Russian resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_RUS)
+#ifdef _WIN32
+LANGUAGE LANG_RUSSIAN, SUBLANG_DEFAULT
+#pragma code_page(1251)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "1 TYPELIB ""DBControls.tlb""\r\n"
+    "#include ""res\\DBControls.rc2""\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_ABOUTBOX_DBCONTROLS DIALOG  34, 22, 260, 55
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Об элементе оформления DBControls"
+FONT 8, "MS Sans Serif"
+BEGIN
+    ICON            IDI_ABOUTDLL,IDC_STATIC,10,10,20,20
+    LTEXT           "Элемент оформления DBControls, Версия 1.0",IDC_STATIC,
+                    40,10,170,8
+    LTEXT           "Copyright (C) 2000, VideoTesT",IDC_STATIC,40,25,170,8
+    DEFPUSHBUTTON   "OK",IDOK,221,7,32,14,WS_GROUP
+END
+
+IDD_ABOUTBOX_DBDATETIME DIALOG  34, 22, 260, 55
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Об элементе оформления VT DBDateTime"
+FONT 8, "MS Sans Serif"
+BEGIN
+    ICON            IDI_ABOUTDLL,IDC_STATIC,10,10,20,20
+    LTEXT           "Элемент оформления VT DBDateTime, Версия 1.0",
+                    IDC_STATIC,40,10,170,8
+    LTEXT           "Copyright (C) 2000, VideoTesT",IDC_STATIC,40,25,170,8
+    DEFPUSHBUTTON   "OK",IDOK,221,7,32,14,WS_GROUP
+END
+
+IDD_ABOUTBOX_DBNUMBER DIALOG  34, 22, 260, 55
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Об элементе оформления VT DBNumber "
+FONT 8, "MS Sans Serif"
+BEGIN
+    ICON            IDI_ABOUTDLL,IDC_STATIC,10,10,20,20
+    LTEXT           "Элемент оформления VT DBNumber, Версия 1.0",IDC_STATIC,
+                    40,10,170,8
+    LTEXT           "Copyright (C) 2000, VideoTesT",IDC_STATIC,40,25,170,8
+    DEFPUSHBUTTON   "OK",IDOK,221,7,32,14,WS_GROUP
+END
+
+IDD_ABOUTBOX_DBOBJECT DIALOG  34, 22, 260, 55
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Об элементе оформления VT DBDateTime"
+FONT 8, "MS Sans Serif"
+BEGIN
+    ICON            IDI_ABOUTDLL,IDC_STATIC,10,10,20,20
+    LTEXT           "Элемент оформления VT DBObject, Версия 1.0",IDC_STATIC,
+                    40,10,170,8
+    LTEXT           "Copyright (C) 2000, VideoTesT",IDC_STATIC,40,25,170,8
+    DEFPUSHBUTTON   "OK",IDOK,221,7,32,14,WS_GROUP
+END
+
+IDD_ABOUTBOX_DBTEXT DIALOG  34, 22, 260, 55
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Об элементе оформления VT DBText "
+FONT 8, "MS Sans Serif"
+BEGIN
+    ICON            IDI_ABOUTDLL,IDC_STATIC,10,10,20,20
+    LTEXT           "Элемент оформления VT DBText, Версия 1.0",IDC_STATIC,40,
+                    10,170,8
+    LTEXT           "Copyright (C) 2000, VideoTesT",IDC_STATIC,40,25,170,8
+    DEFPUSHBUTTON   "OK",IDOK,221,7,32,14,WS_GROUP
+END
+
+IDD_PROPPAGE_COMMON DIALOGEX 0, 0, 244, 110
+STYLE DS_SETFONT | WS_CHILD
+FONT 8, "MS Sans Serif", 0, 0, 0x0
+BEGIN
+    GROUPBOX        "Надпись",IDC_STATIC,21,53,206,50
+    CONTROL         "Слева",IDC_RADIO_LEFT,"Button",BS_AUTORADIOBUTTON | 
+                    WS_GROUP,38,64,37,10
+    CONTROL         "Сверху",IDC_RADIO2,"Button",BS_AUTORADIOBUTTON,38,76,39,
+                    10
+    CONTROL         "Показать надпись",IDC_AUTOLABEL,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,97,64,102,10
+    CONTROL         "Выпадающий список значений",IDC_ENABLEENUMERATION,
+                    "Button",BS_AUTOCHECKBOX | WS_TABSTOP,97,76,119,10
+    LTEXT           "Таблица:",IDC_STATIC,25,14,32,8
+    LTEXT           "Static",IDC_TABLE,60,13,159,13,SS_SUNKEN
+    LTEXT           "Поле:",IDC_STATIC,25,32,20,8
+    LTEXT           "Static",IDC_FIELD,60,31,159,13,SS_SUNKEN
+    CONTROL         "Только для чтения",IDC_READONLY,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,97,88,79,10
+END
+
+IDD_PROPPAGE_DBCONTROLS DIALOG  0, 0, 250, 62
+STYLE DS_SETFONT | WS_CHILD
+FONT 8, "MS Sans Serif"
+BEGIN
+    LTEXT           "TODO: Place controls to manipulate properties of DBControls Control on this dialog.",
+                    IDC_STATIC,7,25,229,16
+END
+
+IDD_PROPPAGE_DBDATETIME DIALOG  0, 0, 250, 62
+STYLE DS_SETFONT | WS_CHILD
+FONT 8, "MS Sans Serif"
+BEGIN
+    LTEXT           "TODO: Place controls to manipulate properties of VT DBDateTime Control on this dialog.",
+                    IDC_STATIC,7,25,229,16
+END
+
+IDD_PROPPAGE_DBNUMBER DIALOG  0, 0, 250, 62
+STYLE DS_SETFONT | WS_CHILD
+FONT 8, "MS Sans Serif"
+BEGIN
+    LTEXT           "TODO: Place controls to manipulate properties of VT DBNumber Control on this dialog.",
+                    IDC_STATIC,7,25,229,16
+    EDITTEXT        IDC_EDIT1,101,41,102,14,ES_AUTOHSCROLL
+END
+
+IDD_PROPPAGE_DBOBJECT DIALOG  0, 0, 250, 62
+STYLE DS_SETFONT | WS_CHILD
+FONT 8, "MS Sans Serif"
+BEGIN
+    COMBOBOX        IDC_VIEW_TYPE,41,17,140,137,CBS_DROPDOWN | WS_VSCROLL | 
+                    WS_TABSTOP
+    LTEXT           "Тип:",IDC_STATIC,14,19,16,8
+    CONTROL         "Авто",IDC_AUTO_ASIGN,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,13,34,32,10
+    GROUPBOX        "Вид отображения",IDC_STATIC,7,7,186,43
+END
+
+IDD_PROPPAGE_DBTEXT DIALOG  0, 0, 250, 62
+STYLE DS_SETFONT | WS_CHILD
+FONT 8, "MS Sans Serif"
+BEGIN
+    LTEXT           "TODO: Place controls to manipulate properties of VT DBText Control on this dialog.",
+                    IDC_STATIC,7,25,229,16
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO 
+BEGIN
+    IDD_ABOUTBOX_DBCONTROLS, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 253
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 48
+    END
+
+    IDD_ABOUTBOX_DBDATETIME, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 253
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 48
+    END
+
+    IDD_ABOUTBOX_DBNUMBER, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 253
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 48
+    END
+
+    IDD_ABOUTBOX_DBOBJECT, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 253
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 48
+    END
+
+    IDD_ABOUTBOX_DBTEXT, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 253
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 48
+    END
+
+    IDD_PROPPAGE_COMMON, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 237
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 103
+    END
+
+    IDD_PROPPAGE_DBCONTROLS, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 243
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 55
+    END
+
+    IDD_PROPPAGE_DBDATETIME, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 243
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 55
+    END
+
+    IDD_PROPPAGE_DBNUMBER, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 243
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 55
+    END
+
+    IDD_PROPPAGE_DBOBJECT, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 243
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 55
+    END
+
+    IDD_PROPPAGE_DBTEXT, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 243
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 55
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE 
+BEGIN
+    IDS_DBTEXT              "Текстовое поле базы данных"
+    IDS_DBTEXT_PPG          "Свойства элемента Текстовое поле базы"
+    IDS_DBNUMBER            "Числовое поле базы данных"
+    IDS_DBNUMBER_PPG        "Свойства элемента Числовое поле базы"
+    IDS_DBDATETIME          "Поле даты"
+    IDS_DBDATETIME_PPG      "Свойства элемента Поле даты"
+    IDS_DBCOMMON_PPG        "DB Common Property Page"
+    IDS_DBOBJECT            "Поле объекта"
+    IDS_DBOBJECT_PPG        "Свойства элемента Поле объекта"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_DBTEXT_PPG_CAPTION  "Основные"
+    IDS_DBNUMBER_PPG_CAPTION "Основные"
+    IDS_DBDATETIME_PPG_CAPTION "Основные"
+    IDS_DBCOMMON_PPG_CAPTION "Основные"
+    IDS_DBOBJECT_PPG_CAPTION "Объект"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_MENU_ADD_FILTER     "Добавить фильтр..."
+    IDS_MENU_EDIT_FILTER    "Редактировать фильтр..."
+    IDS_MENU_DELETE_FILTER  "Удалить фильтр"
+END
+
+#endif    // Russian resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.S.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_ABOUTBOX_DBCONTROLS DIALOG  34, 22, 260, 55
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "About DBControls Control"
+FONT 8, "MS Sans Serif"
+BEGIN
+    ICON            IDI_ABOUTDLL,IDC_STATIC,10,10,20,20
+    LTEXT           "DBControls Control, Version 1.0",IDC_STATIC,40,10,170,8
+    LTEXT           "Copyright (C) 2000, VideoTesT",IDC_STATIC,40,25,170,8
+    DEFPUSHBUTTON   "OK",IDOK,221,7,32,14,WS_GROUP
+END
+
+IDD_PROPPAGE_DBCONTROLS DIALOG  0, 0, 250, 62
+STYLE DS_SETFONT | WS_CHILD
+FONT 8, "MS Sans Serif"
+BEGIN
+    LTEXT           "TODO: Place controls to manipulate properties of DBControls Control on this dialog.",
+                    IDC_STATIC,7,25,229,16
+END
+
+IDD_ABOUTBOX_DBTEXT DIALOG  34, 22, 260, 55
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "About VT DBText Control"
+FONT 8, "MS Sans Serif"
+BEGIN
+    ICON            IDI_ABOUTDLL,IDC_STATIC,10,10,20,20
+    LTEXT           "VT DBText Control, Version 1.0",IDC_STATIC,40,10,170,8
+    LTEXT           "Copyright (C) 2000, VideoTesT",IDC_STATIC,40,25,170,8
+    DEFPUSHBUTTON   "OK",IDOK,221,7,32,14,WS_GROUP
+END
+
+IDD_ABOUTBOX_DBNUMBER DIALOG  34, 22, 260, 55
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "About VT DBNumber Control"
+FONT 8, "MS Sans Serif"
+BEGIN
+    ICON            IDI_ABOUTDLL,IDC_STATIC,10,10,20,20
+    LTEXT           "VT DBNumber Control, Version 1.0",IDC_STATIC,40,10,170,
+                    8
+    LTEXT           "Copyright (C) 2000, VideoTesT",IDC_STATIC,40,25,170,8
+    DEFPUSHBUTTON   "OK",IDOK,221,7,32,14,WS_GROUP
+END
+
+IDD_ABOUTBOX_DBDATETIME DIALOG  34, 22, 260, 55
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "About VT DBDateTime Control"
+FONT 8, "MS Sans Serif"
+BEGIN
+    ICON            IDI_ABOUTDLL,IDC_STATIC,10,10,20,20
+    LTEXT           "VT DBDateTime Control, Version 1.0",IDC_STATIC,40,10,
+                    170,8
+    LTEXT           "Copyright (C) 2000, VideoTesT",IDC_STATIC,40,25,170,8
+    DEFPUSHBUTTON   "OK",IDOK,221,7,32,14,WS_GROUP
+END
+
+IDD_PROPPAGE_DBTEXT DIALOG  0, 0, 250, 62
+STYLE DS_SETFONT | WS_CHILD
+FONT 8, "MS Sans Serif"
+BEGIN
+    LTEXT           "TODO: Place controls to manipulate properties of VT DBText Control on this dialog.",
+                    IDC_STATIC,7,25,229,16
+END
+
+IDD_PROPPAGE_DBNUMBER DIALOG  0, 0, 250, 62
+STYLE DS_SETFONT | WS_CHILD
+FONT 8, "MS Sans Serif"
+BEGIN
+    LTEXT           "TODO: Place controls to manipulate properties of VT DBNumber Control on this dialog.",
+                    IDC_STATIC,7,25,229,16
+    EDITTEXT        IDC_EDIT1,101,41,102,14,ES_AUTOHSCROLL
+END
+
+IDD_PROPPAGE_DBDATETIME DIALOG  0, 0, 250, 62
+STYLE DS_SETFONT | WS_CHILD
+FONT 8, "MS Sans Serif"
+BEGIN
+    LTEXT           "TODO: Place controls to manipulate properties of VT DBDateTime Control on this dialog.",
+                    IDC_STATIC,7,25,229,16
+END
+
+IDD_PROPPAGE_COMMON DIALOGEX 0, 0, 250, 110
+STYLE DS_SETFONT | WS_CHILD
+FONT 8, "MS Sans Serif", 0, 0, 0x0
+BEGIN
+    GROUPBOX        "Caption ",IDC_STATIC,24,51,199,47
+    CONTROL         "Left",IDC_RADIO_LEFT,"Button",BS_AUTORADIOBUTTON | 
+                    WS_GROUP,54,63,28,10
+    CONTROL         "Top",IDC_RADIO2,"Button",BS_AUTORADIOBUTTON,54,79,29,10
+    CONTROL         "Show caption",IDC_AUTOLABEL,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,90,63,57,10
+    CONTROL         "Drop-down list",IDC_ENABLEENUMERATION,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,90,79,61,10
+    LTEXT           "Table:",IDC_STATIC,29,14,21,8
+    LTEXT           "Static",IDC_TABLE,55,14,163,13,SS_SUNKEN
+    LTEXT           "Field:",IDC_STATIC,29,32,18,8
+    LTEXT           "Static",IDC_FIELD,55,32,163,13,SS_SUNKEN
+    CONTROL         "Read-only",IDC_READONLY,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,158,63,48,10
+END
+
+IDD_ABOUTBOX_DBOBJECT DIALOG  34, 22, 260, 55
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "About VT DBDateTime Control"
+FONT 8, "MS Sans Serif"
+BEGIN
+    ICON            IDI_ABOUTDLL,IDC_STATIC,10,10,20,20
+    LTEXT           "VT DBObject Control, Version 1.0",IDC_STATIC,40,10,170,
+                    8
+    LTEXT           "Copyright (C) 2000, VideoTesT",IDC_STATIC,40,25,170,8
+    DEFPUSHBUTTON   "OK",IDOK,221,7,32,14,WS_GROUP
+END
+
+IDD_PROPPAGE_DBOBJECT DIALOG  0, 0, 250, 62
+STYLE DS_SETFONT | WS_CHILD
+FONT 8, "MS Sans Serif"
+BEGIN
+    COMBOBOX        IDC_VIEW_TYPE,41,17,140,126,CBS_DROPDOWN | WS_VSCROLL | 
+                    WS_TABSTOP
+    LTEXT           "Type:",IDC_STATIC,14,19,19,8
+    CONTROL         "Auto",IDC_AUTO_ASIGN,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,13,34,31,10
+    GROUPBOX        "View",IDC_STATIC,7,7,186,43
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO 
+BEGIN
+    IDD_ABOUTBOX_DBCONTROLS, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 253
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 48
+    END
+
+    IDD_PROPPAGE_DBCONTROLS, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 243
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 55
+    END
+
+    IDD_ABOUTBOX_DBTEXT, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 253
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 48
+    END
+
+    IDD_ABOUTBOX_DBNUMBER, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 253
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 48
+    END
+
+    IDD_ABOUTBOX_DBDATETIME, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 253
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 48
+    END
+
+    IDD_PROPPAGE_DBTEXT, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 243
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 55
+    END
+
+    IDD_PROPPAGE_DBNUMBER, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 243
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 55
+    END
+
+    IDD_PROPPAGE_DBDATETIME, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 243
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 55
+    END
+
+    IDD_PROPPAGE_COMMON, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 243
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 103
+    END
+
+    IDD_ABOUTBOX_DBOBJECT, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 253
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 48
+    END
+
+    IDD_PROPPAGE_DBOBJECT, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 243
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 55
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDI_ABOUTDLL            ICON                    "DBControls.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDB_DBCONTROLS          BITMAP                  "DBControlsCtl.bmp"
+IDB_DBNUMBER            BITMAP                  "DBNumberCtl.bmp"
+IDB_DBDATETIME          BITMAP                  "DBDateTimeCtl.bmp"
+IDB_DBOBJECT            BITMAP                  "dbdateti.bmp"
+IDB_DBTEXT              BITMAP                  "DBTextCtl.bmp"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE 
+BEGIN
+    IDS_DBTEXT              "DB Text Control"
+    IDS_DBTEXT_PPG          "DBText Property Page"
+    IDS_DBNUMBER            "DB Number Control"
+    IDS_DBNUMBER_PPG        "DBNumber Property Page"
+    IDS_DBDATETIME          "DB Date and Time Control"
+    IDS_DBDATETIME_PPG      "DBDateTime Property Page"
+    IDS_DBCOMMON_PPG        "DB Common Property Page"
+    IDS_DBOBJECT            "DB Object Control"
+    IDS_DBOBJECT_PPG        "DBObject Property Page"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_DBTEXT_PPG_CAPTION  "General"
+    IDS_DBNUMBER_PPG_CAPTION "General"
+    IDS_DBDATETIME_PPG_CAPTION "Object"
+    IDS_DBCOMMON_PPG_CAPTION "Common"
+    IDS_DBOBJECT_PPG_CAPTION "Object"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_MENU_ADD_FILTER     "Add filter..."
+    IDS_MENU_EDIT_FILTER    "Edit filter..."
+    IDS_MENU_DELETE_FILTER  "Delete filter"
+END
+
+#endif    // English (U.S.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+1 TYPELIB "DBControls.tlb"
+#include "res\DBControls.rc2"
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

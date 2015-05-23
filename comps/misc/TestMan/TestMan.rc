@@ -1,0 +1,261 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// Russian resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_RUS)
+#ifdef _WIN32
+LANGUAGE LANG_RUSSIAN, SUBLANG_DEFAULT
+#pragma code_page(1251)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDR_TOOLBAR1            BITMAP                  "toolbar2.bmp"
+IDB_BITMAP1             BITMAP                  "bitmap1.bmp"
+IDB_BITMAP_FINDER_FILLED BITMAP                  "finderf.bmp"
+IDB_BITMAP_FINDER_EMPTY BITMAP                  "findere.bmp"
+IDB_BITMAP_FIND_DISABLED BITMAP                  "finderfd.bmp"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Toolbar
+//
+
+IDR_TOOLBAR1 TOOLBAR  16, 15
+BEGIN
+    BUTTON      ID_ACTION_SNAPSHOT
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_SNAPSHOT DIALOGEX 0, 0, 194, 142
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | DS_CENTER | WS_POPUP | 
+    WS_CAPTION | WS_SYSMENU
+CAPTION "Dialog"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,45,128,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,98,128,50,14
+    CONTROL         1101,IDC_STATIC_ICON_FINDER_TOOL,"Static",SS_BITMAP | 
+                    SS_NOTIFY,15,17,21,20
+    GROUPBOX        "Target :",IDC_STATIC_TARGET_BOX,7,7,187,119
+    LTEXT           "",IDC_STATIC_XPOS,71,18,26,8
+    EDITTEXT        IDC_EDIT_DETAILS,13,41,176,67,ES_MULTILINE | 
+                    ES_AUTOHSCROLL | ES_READONLY
+    LTEXT           "",IDC_STATIC_YPOS,71,30,25,8
+    CONTROL         108,IDC_STATIC_ICON_FINDER_TOOL_EMPTY,"Static",SS_BITMAP | 
+                    SS_NOTIFY,15,17,21,20
+    LTEXT           "X Pos :",IDC_STATIC_XPTITLE,42,18,24,8
+    LTEXT           "Y Pos : ",IDC_STATIC_YPTITLE,42,30,26,8
+    PUSHBUTTON      "Parent",IDC_BUTTON_PARENT_WND,115,19,31,15
+    PUSHBUTTON      "| --",IDC_BUTTON_CORRECT,150,19,18,15,NOT WS_VISIBLE
+    EDITTEXT        IDC_EDIT1,19,110,35,14,ES_AUTOHSCROLL
+    CONTROL         "",IDC_SPIN1,"msctls_updown32",UDS_SETBUDDYINT | 
+                    UDS_ALIGNRIGHT | UDS_AUTOBUDDY | UDS_ARROWKEYS,18,122,11,
+                    14
+    EDITTEXT        IDC_EDIT2,62,110,35,14,ES_AUTOHSCROLL
+    CONTROL         "",IDC_SPIN2,"msctls_updown32",UDS_SETBUDDYINT | 
+                    UDS_ALIGNRIGHT | UDS_AUTOBUDDY | UDS_ARROWKEYS,57,118,11,
+                    14
+    EDITTEXT        IDC_EDIT3,109,110,35,14,ES_AUTOHSCROLL
+    CONTROL         "",IDC_SPIN3,"msctls_updown32",UDS_SETBUDDYINT | 
+                    UDS_ALIGNRIGHT | UDS_AUTOBUDDY | UDS_ARROWKEYS,103,121,
+                    11,14
+    EDITTEXT        IDC_EDIT4,155,108,35,14,ES_AUTOHSCROLL
+    CONTROL         "",IDC_SPIN4,"msctls_updown32",UDS_SETBUDDYINT | 
+                    UDS_ALIGNRIGHT | UDS_AUTOBUDDY | UDS_ARROWKEYS,155,122,
+                    11,14
+    LTEXT           "R:",IDC_STATIC,101,112,8,8
+    LTEXT           "L:",IDC_STATIC,11,112,8,8
+    LTEXT           "T:",IDC_STATIC,54,112,8,8
+    LTEXT           "B:",IDC_STATIC,146,112,8,8
+END
+
+IDD_SNAPSHOTPARAMS DIALOGEX 0, 0, 146, 60
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | DS_CENTER | WS_POPUP | 
+    WS_CAPTION | WS_SYSMENU
+CAPTION "Snapshot Parameters"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,34,39,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,89,39,50,14
+    LTEXT           "Resize to",IDC_STATIC,7,23,31,8
+    EDITTEXT        IDC_RESIZECX,39,23,40,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_RESIZECY,83,23,40,12,ES_AUTOHSCROLL
+    CONTROL         "Scroll Window",IDC_SCROLLWINDOW,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,76,7,63,10
+    CONTROL         "Select Target",IDC_SELECTTARGET,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,7,7,60,10
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO 
+BEGIN
+    IDD_SNAPSHOT, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        TOPMARGIN, 7
+    END
+
+    IDD_SNAPSHOTPARAMS, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 139
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 53
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Cursor
+//
+
+IDC_CURSOR1             CURSOR                  "cursor1.cur"
+IDC_CURSOR_FINDER       CURSOR                  "finder.cur"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDI_TESTDATAARRAY       ICON                    "icon1.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE 
+BEGIN
+    ID_ACTION_SNAPSHOT      "Snapshot\nSnapshot\nTests\nSnapshot\nSnapshot"
+    IDS_WARING_MSG          "Количество комбинаций привышает %ld"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_WARING_TITLE        "Внимание"
+END
+
+#endif    // Russian resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.S.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)\r\n"
+    "#ifdef _WIN32\r\n"
+    "LANGUAGE 9, 1\r\n"
+    "#pragma code_page(1252)\r\n"
+    "#endif //_WIN32\r\n"
+    "#include ""res\\testman.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "#include ""afxres.rc""         // Standard components\r\n"
+    "#endif\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE 
+BEGIN
+    ID_ACTION_SNAPSHOT      "Snapshot\nSnapshot\nTests\nSnapshot\nSnapshot"
+    IDS_WARING_MSG          "Test's combination count is higher then %ld"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_WARING_TITLE        "Caution"
+END
+
+#endif    // English (U.S.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE 9, 1
+#pragma code_page(1252)
+#endif //_WIN32
+#include "res\testman.rc2"  // non-Microsoft Visual C++ edited resources
+#include "afxres.rc"         // Standard components
+#endif
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

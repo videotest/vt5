@@ -1,0 +1,36 @@
+[
+	uuid(C8D828AA-F0B8-4a61-AAFA-6CA8B642C0B6),
+	version(1.0),
+	helpstring("VT5 BinaryImage Type Library")
+	
+]
+library ABinaryImage
+{	
+
+	importlib("stdole2.tlb");
+
+	[
+		object,
+		uuid(72AE473E-F865-41ee-9B53-1AD260212355),
+		dual,		
+		pointer_default(unique),		
+	]	
+	interface IBinaryImageDisp : IDispatch
+	{
+		// Имя объекта
+		[propget, id(0), helpstring("property Name")] HRESULT Name([out, retval] BSTR* pVal);
+		[propput, id(0), helpstring("property Name")] HRESULT Name([in] BSTR newVal);
+		HRESULT GetType( [out, retval] BSTR *pbstrType );
+	};
+
+	[
+		uuid(8DDF82EA-680E-4ae5-917C-766F6CC0F8BC),
+		helpstring("VT5 BinaryImage Class")
+	]
+	coclass BinaryImageDisp
+	{
+		[default] interface IBinaryImageDisp;
+		
+	};
+
+}

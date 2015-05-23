@@ -1,0 +1,258 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// Neutral resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_NEU)
+#ifdef _WIN32
+LANGUAGE LANG_NEUTRAL, SUBLANG_NEUTRAL
+#pragma code_page(936)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Cursor
+//
+
+IDC_ERECT               CURSOR                  "Erect.cur"
+#endif    // Neutral resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+/////////////////////////////////////////////////////////////////////////////
+// Chinese (P.R.C.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)
+#ifdef _WIN32
+LANGUAGE LANG_CHINESE, SUBLANG_CHINESE_SIMPLIFIED
+#pragma code_page(936)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE 
+BEGIN
+    ID_ACTION_SELECTBYAXIS  "SelectByAxis\n±ај­ЕдЦГОДјю\nKaryo\nёьХэЦРПЯЈЁµҐ»чЧујьЙиЦГµгЈ¬µҐ»чУТјьЅбКшІЩЧчЈ©єНЧЕЛїБЈЈЁ°ґЧЎ shift µДН¬К±µҐ»чКу±кЧујьЈ©Ј¬ °ґ Esc НЛіцЎЈ\n±ај­ЕдЦГОДјю"
+    ID_ACTION_CHROMSEGM     "SegmSource\n¶ФПујмІв\nјмІв\n°ґББ¶ИЧФ¶ЇјмІв¶ФПу\n¶ФПујмІв"
+END
+
+STRINGTABLE 
+BEGIN
+    ID_ACTION_CHROMSEGMSECOND 
+                            "SegmBin\n°ґГЙ°ејмІв\nјмІв\n°ґГЙ°еЧФ¶ЇјмІв¶ФПу\n°ґГЙ°ејмІв¶ФПу"
+    ID_ACTION_STRANGEAVERAGE 
+                            "StrangeAverage\nStrangeAverage\nChromos\nStrangeAverage\nStrangeAverage"
+    ID_ACTION_AUTOADJUSTBIN "AutoAdjustBin\nГЙ°еРЮХэ\nјмІв\nРЮХэ¶ФПуГЙ°е\n¶ФПуГЙ°еРЮХэ"
+    ID_ACTION_CROSSDIV      "CrossManualDiv\nЅ»Іж·Цёо\n·Цёо\nНЁ№э 4 ёцµгЦё¶ЁЅ»ІжЗшУтАґ·Цёо¶ФПу\nЅ»Іж·Цёо"
+    ID_ACTION_CROSSDIV1     "CrossAutoDiv\nЧФ¶ЇЅ»Іж·Цёо\n·Цёо\nНЁ№эµҐ»чКу±кЧујьЦё¶ЁЅ»ІжЗшУтАґ·Цёо¶ФПу\nЧФ¶ЇЅ»Іж·Цёо"
+    ID_ACTION_AUTODIV       "AutoDiv\nЧФ¶Ї·Цёо\n·Цёо\nЧФ¶Ї·Цёо¶ФПу\nЧФ¶Ї·Цёо"
+    ID_ACTION_BOUNDDISTANCE "BoundDistance\nBoundDistance\nChromos\nBoundDistance\nBoundDistance"
+    ID_ACTION_GLUEOBJ       "GlueObj\nі·Пъ·Цёо\n·Цёо\nі·Пъ¶ФПуµД·ЦёоІЩЧч:УГКу±кЧујьµҐ»чТЄі·ПъµД·Цёо\nі·Пъ·Цёо"
+    ID_ACTION_ERECTCHROM    "ErectChrom\nА­Ц±НјПсЦРµДИѕЙ«Ме\nKaryo\nА­Ц±НјПсЦРµДИѕЙ«Ме\nА­Ц±ИѕЙ«Ме"
+END
+
+STRINGTABLE 
+BEGIN
+    ID_ACTION_AVERAGEOBJECTS 
+                            "AverageObjects\nИѕЙ«МеЖЅѕщ»Ї\nИѕЙ«Ме\nИѕЙ«МеЖЅѕщ»Ї\nИѕЙ«МеЖЅѕщ»Ї"
+    ID_ACTION_FILLHOLES     "FillHoles\nМоідїЧ¶ґ\nИѕЙ«Ме\nМоідїЧ¶ґ\nМоідїЧ¶ґ"
+    ID_ACTION_ERECTCHROMON  "ErectChromOn\nА­Ц±ИѕЙ«Ме\nKaryo\nА­Ц±єЛРННјЦРµДИѕЙ«Ме\nА­Ц±ИѕЙ«Ме"
+    ID_ACTION_ERECTONECHROMONOFF 
+                            "ErectOneChromOnOff\nА­Ц±µҐёцИѕЙ«Ме\nKaryo\nµҐ»чКу±кЧујьА­Ц±Т»ёцИѕЙ«Ме»ті·ПъА­Ц±ІЩЧч\nА­Ц±µҐёцИѕЙ«Ме"
+END
+
+#endif    // Chinese (P.R.C.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+/////////////////////////////////////////////////////////////////////////////
+// Russian resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_RUS)
+#ifdef _WIN32
+LANGUAGE LANG_RUSSIAN, SUBLANG_DEFAULT
+#pragma code_page(1251)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Cursor
+//
+
+IDC_CURSORGLUEOBJ       CURSOR                  "GlueObj.cur"
+IDC_CURSORCROSSDIV1     CURSOR                  "CrossDiv1.cur"
+IDC_CURSORCROSSDIV      CURSOR                  "CrossDiv.cur"
+IDC_CURSORSELECTBYAXIS  CURSOR                  "cursor1.cur"
+IDC_CURSORSELECTBYAXISSHIFT CURSOR                  "SelectByAxisShift.cur"
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "#include ""res\\chrom_aam.rc2""\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE 
+BEGIN
+    ID_ACTION_SELECTBYAXIS  "SelectByAxis\nПравка построений\nКарио\nКорректировка центральной линии (левая кнопка - задать точку, правая - завершить) и центромеры (левая кнопка+Shift), Esc - выход.\nПравка построений"
+    ID_ACTION_CHROMSEGM     "SegmSource\nАвт. выделение\nВыделение объектов\nАвтоматическое выделение объектов по яркости\nАвтоматическое выделение объектов"
+END
+
+STRINGTABLE 
+BEGIN
+    ID_ACTION_CHROMSEGMSECOND 
+                            "SegmBin\nАвт. выд-е по маскам\nВыделение объектов\nАвтоматическое выделение объектов по маскам\nАвтоматическое выделение объектов по маскам"
+    ID_ACTION_STRANGEAVERAGE 
+                            "StrangeAverage\nStrangeAverage\nChromos\nStrangeAverage\nStrangeAverage"
+    ID_ACTION_AUTOADJUSTBIN "AutoAdjustBin\nКоррекция масок\nВыделение объектов\nКорректировать маски объектов\nКорректировать маски"
+    ID_ACTION_CROSSDIV      "CrossManualDiv\nРаздел. крестов по точкам\nРазделение\nУкажите область пересечения объектов 4-мя точками \nРазделение крестов по точкам"
+    ID_ACTION_CROSSDIV1     "CrossAutoDiv\nАвтораздел. крестов\nРазделение\nУкажите центр пересечения объектов левой кнопкой мыши\nРазделение крестов по пересечению"
+    ID_ACTION_AUTODIV       "AutoDiv\nАвт. разделение\nРазделение\nАвтоматическое разделение объектов\nАвтоматическое разделение"
+    ID_ACTION_BOUNDDISTANCE "BoundDistance\nBoundDistance\nChromos\nBoundDistance\nBoundDistance"
+    ID_ACTION_GLUEOBJ       "GlueObj\nОтменить разделение\nРазделение\nОтменить произведенное разделение объектов: укажите место разделения левой кнопкой мыши\nОтменить разделение"
+    ID_ACTION_ERECTCHROM    "ErectChrom\nВыпрямить хромосомы\nКарио\nВыпрямить хромосомы\nВыпрямить хромосомы"
+END
+
+STRINGTABLE 
+BEGIN
+    ID_ACTION_AVERAGEOBJECTS 
+                            "AverageObjects\nУсреднить хромосомы\nChromos\nУсреднение хромосом\nУсреднить хромосомы"
+    ID_ACTION_FILLHOLES     "FillHoles\nFillHoles\nChromos\nFillHoles\nFillHoles"
+    ID_ACTION_ERECTCHROMON  "ErectChromOn\nВыпрямить хромосомы\nКарио\nВыпрямить хромосомы\nВыпрямить хромосомы"
+    ID_ACTION_ERECTONECHROMONOFF 
+                            "ErectOneChromOnOff\nВыпрямить хромосому\nКарио\nВыпрямить хромосому или убрать выпрямление - левая кнопка мыши\nВыпрямить хромосому"
+END
+
+#endif    // Russian resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.S.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Toolbar
+//
+
+IDR_TOOLBAR1 TOOLBAR  16, 15
+BEGIN
+    BUTTON      ID_ACTION_SELECTBYAXIS
+    BUTTON      ID_ACTION_CHROMSEGM
+    BUTTON      ID_ACTION_CHROMSEGMSECOND
+    BUTTON      ID_ACTION_STRANGEAVERAGE
+    BUTTON      ID_ACTION_AUTOADJUSTBIN
+    BUTTON      ID_ACTION_CROSSDIV
+    BUTTON      ID_BUTTON40009
+    BUTTON      ID_ACTION_AUTODIV
+    BUTTON      ID_ACTION_BOUNDDISTANCE
+    BUTTON      ID_ACTION_GLUEOBJ
+    BUTTON      ID_ACTION_ERECTCHROM
+    BUTTON      ID_ACTION_AVERAGEOBJECTS
+    BUTTON      ID_ACTION_FILLHOLES
+    BUTTON      ID_ACTION_ERECTCHROMON
+    BUTTON      ID_ACTION_ERECTONECHROMONOFF
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDR_TOOLBAR1            BITMAP                  "toolbar1.bmp"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE 
+BEGIN
+    ID_ACTION_SELECTBYAXIS  "SelectByAxis\nEdit Profiles\nKaryo\nCorrect middle line (left-click to set points, right-click to complete) and centromere (left-click + Shift), Esc - exit.\nEdit Profiles"
+    ID_ACTION_CHROMSEGM     "SegmSource\nObject Thresholding\nThresholding\nThreshold objects by brightness automatically\nObject Thresholding"
+END
+
+STRINGTABLE 
+BEGIN
+    ID_ACTION_CHROMSEGMSECOND 
+                            "SegmBin\nThresholding by Masks\nThresholding\nThreshold objects by masks automatically\nObject Thresholding by Masks"
+    ID_ACTION_STRANGEAVERAGE 
+                            "StrangeAverage\nStrangeAverage\nChromos\nStrangeAverage\nStrangeAverage"
+    ID_ACTION_AUTOADJUSTBIN "AutoAdjustBin\nMask Correction\nThresholding\nCorrect object masks\nObject Mask Correction"
+    ID_ACTION_CROSSDIV      "CrossManualDiv\nCross Separation\nSeparation\nSeparate objects by specifying crossing area with 4 points\nCrossDiv"
+    ID_ACTION_CROSSDIV1     "CrossAutoDiv\nCross Auto Separation\nSeparation\nSeparate objects by specifying the crossing area with 1 left-click\nCross Auto Separation"
+    ID_ACTION_AUTODIV       "AutoDiv\nAuto Separation\nSeparation\nSeparate objects automatically\nAuto Separation"
+    ID_ACTION_BOUNDDISTANCE "BoundDistance\nBoundDistance\nChromos\nBoundDistance\nBoundDistance"
+    ID_ACTION_GLUEOBJ       "GlueObj\nUndo Separation\nSeparation\nUndo separation of objects: left-click on separation to be undone\nUndo Separation"
+    ID_ACTION_ERECTCHROM    "ErectChrom\nStraighten Chromosomes on Image\nKaryo\nStraighten chromosomes on image\nStraighten Chromosomes"
+END
+
+STRINGTABLE 
+BEGIN
+    ID_ACTION_AVERAGEOBJECTS 
+                            "AverageObjects\nAverage Chromosomes\nChromos\nAverage chromosomes\nAverage Chromosomes"
+    ID_ACTION_FILLHOLES     "FillHoles\nFillHoles\nChromos\nFillHoles\nFillHoles"
+    ID_ACTION_ERECTCHROMON  "ErectChromOn\nStraighten Chromosomes\nKaryo\nStraighten chromosomes on karyogram\nStraighten Chromosomes"
+    ID_ACTION_ERECTONECHROMONOFF 
+                            "ErectOneChromOnOff\nStraighten One Chromosome\nKaryo\nLeft-click to straighten one chromosome or to undo straightening\nStraighten One Chromosome"
+END
+
+#endif    // English (U.S.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#include "res\chrom_aam.rc2"
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

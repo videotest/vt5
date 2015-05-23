@@ -1,0 +1,15 @@
+// axeditor.odl : type library source for axeditor.dll
+
+// This file will be processed by the MIDL compiler to produce the
+// type library (axeditor.tlb).
+
+[ uuid(CA86FDD3-EC3F-4023-AA2E-E050DFEE0E90), version(1.0) ]
+library Axeditor
+{
+	importlib("stdole32.tlb");
+	importlib("stdole2.tlb");
+
+
+	//{{AFX_APPEND_ODL}}
+	//}}AFX_APPEND_ODL}}
+};

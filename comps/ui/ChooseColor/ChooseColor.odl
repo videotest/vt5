@@ -1,0 +1,43 @@
+// ChooseColor.odl : type library source for ChooseColor.dll
+
+// This file will be processed by the MIDL compiler to produce the
+// type library (ChooseColor.tlb).
+
+[ uuid(BE0B0294-A0AE-11D3-A538-0000B493A187), version(1.0) ]
+library ChooseColor
+{
+	importlib("stdole32.tlb");
+	importlib("stdole2.tlb");
+
+
+
+
+	//  Primary dispatch interface for CColorChooseDlg
+	[ uuid(09A5EBF3-A0E0-11d3-A538-0000B493A187) ]
+	dispinterface IColorChooseDlg
+	{
+		properties:
+			// NOTE - ClassWizard will maintain property information here.
+			//    Use extreme caution when editing this section.
+			//{{AFX_ODL_PROP(CColorChooseDlg)
+			//}}AFX_ODL_PROP
+			
+		methods:
+			// NOTE - ClassWizard will maintain method information here.
+			//    Use extreme caution when editing this section.
+			//{{AFX_ODL_METHOD(CColorChooseDlg)
+			//}}AFX_ODL_METHOD
+
+	};
+
+	//  Class information for CColorChooseDlg
+
+	[ uuid(09A5EBF2-A0E0-11d3-A538-0000B493A187) ]
+	coclass ColorChooseDlg
+	{
+		[default] dispinterface IColorChooseDlg;
+	};
+
+	//{{AFX_APPEND_ODL}}
+	//}}AFX_APPEND_ODL}}
+};

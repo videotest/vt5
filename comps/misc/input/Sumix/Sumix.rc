@@ -1,0 +1,1006 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include "resource.h"
+
+// Generated Help ID header file
+#define APSTUDIO_HIDDEN_SYMBOLS
+#include "resource.hm"
+#undef APSTUDIO_HIDDEN_SYMBOLS
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// Russian resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_RUS)
+#ifdef _WIN32
+LANGUAGE LANG_RUSSIAN, SUBLANG_DEFAULT
+#pragma code_page(1251)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_PREVIEW_FRAME DIALOGEX 0, 0, 346, 216
+STYLE DS_SETFONT | DS_MODALFRAME | WS_VISIBLE | WS_CLIPSIBLINGS | 
+    WS_CLIPCHILDREN | WS_CAPTION | WS_SYSMENU
+CAPTION "Sumix"
+FONT 8, "MS Sans Serif", 0, 0, 0x0
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,7,7,40,18,WS_GROUP
+    PUSHBUTTON      "Отмена",IDCANCEL,59,7,40,18
+    PUSHBUTTON      "Справка",ID_HELP,111,7,40,18
+    EDITTEXT        IDC_EDIT_EXPOSURE,10,57,24,12,ES_AUTOHSCROLL | WS_GROUP
+    CONTROL         "",IDC_SPIN1_EXPOSURE,"msctls_updown32",UDS_ARROWKEYS,39,
+                    46,11,11
+    CONTROL         "",IDC_SLIDER1_EXPOSURE,"msctls_trackbar32",
+                    TBS_AUTOTICKS | TBS_TOP | WS_TABSTOP,50,41,101,19
+    CONTROL         "",IDC_SPIN2_EXPOSURE,"msctls_updown32",UDS_ARROWKEYS,39,
+                    71,11,11
+    CONTROL         "",IDC_SLIDER2_EXPOSURE,"msctls_trackbar32",
+                    TBS_AUTOTICKS | TBS_TOP | WS_TABSTOP,50,66,100,19
+    LTEXT           "Яркость:",IDC_STATIC,53,28,42,11,NOT WS_GROUP
+    RADIOBUTTON     "Преобразование",IDC_ENHANCEMENT,10,88,62,18,BS_PUSHLIKE | 
+                    WS_GROUP | WS_TABSTOP
+    RADIOBUTTON     "Изображение",IDC_IMAGE_PAGE,10,112,62,18,BS_PUSHLIKE | 
+                    WS_GROUP | WS_TABSTOP
+    RADIOBUTTON     "Баланс белого",IDC_COLOR_BALANCE,78,88,62,18,
+                    BS_PUSHLIKE
+    RADIOBUTTON     "Настройки",IDC_SETTINGS_PAGE,78,112,62,18,BS_PUSHLIKE
+    RADIOBUTTON     "AVI настройки",IDC_VIDEO_SETTINGS,10,136,62,18,
+                    BS_PUSHLIKE
+    CONTROL         "100 ms",IDC_STATIC_PERIOD,"Static",SS_SIMPLE | 
+                    WS_BORDER | WS_GROUP,94,162,25,10
+    CONTROL         "",IDC_IMAGE,"Static",SS_BLACKRECT,153,7,186,202
+END
+
+IDD_COLOR_BALANCE DIALOGEX 0, 0, 182, 116
+STYLE DS_SETFONT | DS_NOIDLEMSG | WS_CHILD | WS_CLIPSIBLINGS | 
+    WS_CLIPCHILDREN | WS_BORDER
+EXSTYLE WS_EX_CLIENTEDGE
+FONT 8, "MS Sans Serif", 0, 0, 0x1
+BEGIN
+    CONTROL         "Авто",IDC_WB_AUTO,"Button",BS_AUTORADIOBUTTON | 
+                    WS_GROUP,7,7,31,14
+    CONTROL         "Вручную",IDC_WB_MANUAL,"Button",BS_AUTORADIOBUTTON,7,24,
+                    41,14
+    PUSHBUTTON      "Построить",IDC_WB_BUILD,52,7,40,16,WS_GROUP
+    LTEXT           "Красный:",IDC_STATIC,7,42,33,10
+    EDITTEXT        IDC_EDIT_WB_RED,42,41,26,15,ES_AUTOHSCROLL | WS_GROUP
+    CONTROL         "Spin1",IDC_SPIN_WB_RED,"msctls_updown32",UDS_ALIGNRIGHT | 
+                    UDS_ARROWKEYS,66,42,11,14
+    CONTROL         "Slider1",IDC_SLIDER_WB_RED,"msctls_trackbar32",
+                    TBS_AUTOTICKS | TBS_TOP | WS_TABSTOP,78,34,96,23
+    LTEXT           "Зеленый:",IDC_STATIC,7,62,32,11
+    EDITTEXT        IDC_EDIT_WB_GREEN,42,60,26,15,ES_AUTOHSCROLL | WS_GROUP
+    CONTROL         "Spin1",IDC_SPIN_WB_GREEN,"msctls_updown32",
+                    UDS_ALIGNRIGHT | UDS_ARROWKEYS,67,60,11,14
+    CONTROL         "Slider1",IDC_SLIDER_WB_GREEN,"msctls_trackbar32",
+                    TBS_AUTOTICKS | TBS_TOP | WS_TABSTOP,78,54,96,23
+    LTEXT           "Синий:",IDC_STATIC,7,84,24,8
+    EDITTEXT        IDC_EDIT_WB_BLUE,42,81,26,15,ES_AUTOHSCROLL | WS_GROUP
+    CONTROL         "Spin1",IDC_SPIN_WB_BLUE,"msctls_updown32",
+                    UDS_ALIGNRIGHT | UDS_ARROWKEYS,67,81,11,14
+    CONTROL         "Slider1",IDC_SLIDER_WB_BLUE,"msctls_trackbar32",
+                    TBS_AUTOTICKS | TBS_TOP | WS_TABSTOP,78,80,96,23
+    PUSHBUTTON      "По умолчанию",IDC_DEFAULT,122,7,52,14,NOT WS_VISIBLE
+END
+
+IDD_DIALOG_SETTING_NAME DIALOGEX 0, 0, 191, 78
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | 
+    WS_SYSMENU
+CAPTION "Имя конфигурации"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,7,57,50,14
+    PUSHBUTTON      "Отмена",IDCANCEL,134,57,50,14
+    LTEXT           "ВВедите, пожалуйста, имя конфигурации:",IDC_STATIC,7,7,
+                    177,15
+    EDITTEXT        IDC_EDIT1,7,25,177,17,ES_AUTOHSCROLL
+END
+
+IDD_ENHANCEMENT DIALOGEX 0, 0, 161, 67
+STYLE DS_SETFONT | DS_NOIDLEMSG | WS_CHILD | WS_CLIPSIBLINGS | 
+    WS_CLIPCHILDREN | WS_BORDER
+EXSTYLE WS_EX_CLIENTEDGE
+FONT 8, "MS Sans Serif", 0, 0, 0x1
+BEGIN
+    LTEXT           "Яркость:",IDC_STATIC,0,27,33,11
+    EDITTEXT        IDC_EDIT_GAIN,35,25,17,15,ES_AUTOHSCROLL | WS_GROUP
+    CONTROL         "Spin1",IDC_SPIN_GAIN,"msctls_updown32",UDS_ALIGNRIGHT | 
+                    UDS_ARROWKEYS,52,26,11,14
+    CONTROL         "Slider1",IDC_SLIDER_GAIN,"msctls_trackbar32",
+                    TBS_AUTOTICKS | TBS_TOP | WS_TABSTOP,65,22,96,23
+    LTEXT           "Гамма:",IDC_STATIC,0,48,32,8
+    EDITTEXT        IDC_EDIT_ENH_GAMMA,35,46,17,15,ES_AUTOHSCROLL | WS_GROUP
+    CONTROL         "Spin1",IDC_SPIN_ENH_GAMMA,"msctls_updown32",
+                    UDS_ALIGNRIGHT | UDS_ARROWKEYS,52,46,11,14
+    CONTROL         "Slider1",IDC_SLIDER_ENH_GAMMA,"msctls_trackbar32",
+                    TBS_AUTOTICKS | TBS_TOP | WS_TABSTOP,65,44,96,23
+    PUSHBUTTON      "Темное поле",IDC_DARK_FIELD,5,4,50,16
+    PUSHBUTTON      "По умолчанию",IDC_BUTTON_DEFAULT_GAIN_GAMMA,71,4,53,13,
+                    WS_GROUP
+END
+
+IDD_ENHANCEMENT_EX DIALOGEX 0, 0, 161, 118
+STYLE DS_SETFONT | DS_NOIDLEMSG | WS_CHILD | WS_CLIPSIBLINGS | 
+    WS_CLIPCHILDREN | WS_BORDER
+EXSTYLE WS_EX_CLIENTEDGE
+FONT 8, "MS Sans Serif", 0, 0, 0x1
+BEGIN
+    LTEXT           "Яркость:",IDC_STATIC,0,27,33,11
+    EDITTEXT        IDC_EDIT_GAIN,35,25,17,15,ES_AUTOHSCROLL | WS_GROUP
+    CONTROL         "Spin1",IDC_SPIN_GAIN,"msctls_updown32",UDS_ALIGNRIGHT | 
+                    UDS_ARROWKEYS,52,26,11,14
+    CONTROL         "Slider1",IDC_SLIDER_GAIN,"msctls_trackbar32",
+                    TBS_AUTOTICKS | TBS_TOP | WS_TABSTOP,65,22,96,23
+    LTEXT           "Гамма:",IDC_STATIC,0,48,32,8
+    EDITTEXT        IDC_EDIT_ENH_GAMMA,35,46,17,15,ES_AUTOHSCROLL | WS_GROUP
+    CONTROL         "Spin1",IDC_SPIN_ENH_GAMMA,"msctls_updown32",
+                    UDS_ALIGNRIGHT | UDS_ARROWKEYS,52,46,11,14
+    CONTROL         "Slider1",IDC_SLIDER_ENH_GAMMA,"msctls_trackbar32",
+                    TBS_AUTOTICKS | TBS_TOP | WS_TABSTOP,65,43,96,23
+    PUSHBUTTON      "Темное поле",IDC_DARK_FIELD,5,4,50,16
+    LTEXT           "Контраст:",IDC_STATIC,0,69,32,20
+    EDITTEXT        IDC_EDIT_ENH_DAC_RAW_OFFSET,35,70,17,15,ES_AUTOHSCROLL | 
+                    WS_GROUP
+    CONTROL         "",IDC_SPIN_ENH_DAC_RAW_OFFSET,"msctls_updown32",
+                    UDS_ALIGNRIGHT | UDS_ARROWKEYS,52,70,11,14
+    CONTROL         "",IDC_SLIDER_ENH_DAC_RAW_OFFSET,"msctls_trackbar32",
+                    TBS_AUTOTICKS | TBS_TOP | WS_TABSTOP,65,67,71,23
+    LTEXT           "Точная настройка АЦП:",IDC_STATIC,0,88,35,28
+    EDITTEXT        IDC_EDIT_ENH_DAC_FINE_OFFSET,35,90,17,15,ES_AUTOHSCROLL | 
+                    WS_GROUP
+    CONTROL         "",IDC_SPIN_ENH_DAC_FINE_OFFSET,"msctls_updown32",
+                    UDS_ALIGNRIGHT | UDS_ARROWKEYS,52,90,11,14
+    CONTROL         "",IDC_SLIDER_ENH_DAC_FINE_OFFSET,"msctls_trackbar32",
+                    TBS_AUTOTICKS | TBS_TOP | WS_TABSTOP,65,87,76,23
+    PUSHBUTTON      "Авто",IDC_BUTTON_AUTO_FINE_OFFSET,142,90,19,11
+    PUSHBUTTON      "По умолчанию",IDC_BUTTON_DEFAULT_GAIN_GAMMA,73,6,54,13,
+                    WS_GROUP
+END
+
+IDD_HISTO DIALOGEX 0, 0, 194, 83
+STYLE DS_SETFONT | DS_CONTROL | WS_CHILD | WS_VISIBLE
+FONT 8, "MS Sans Serif", 0, 0, 0x1
+BEGIN
+    CONTROL         "",IDC_HISTO,"Static",SS_BLACKRECT,12,1,113,67
+    CONTROL         "Яркость",IDC_GRAY,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,
+                    131,15,39,11,0,HIDC_GRAY
+    CONTROL         "Красный",IDC_RED,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,
+                    132,28,43,11,0,HIDC_RED
+    CONTROL         "Зеленый",IDC_GREEN,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,131,42,48,11,0,HIDC_GREEN
+    CONTROL         "Синий",IDC_BLUE,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,
+                    131,56,34,11,0,HIDC_BLUE
+    LTEXT           "мин. - %d, макс. - %d, ср. - %d",IDC_STATIC_MSG,21,71,
+                    106,9
+    LTEXT           "0",IDC_STATIC_0,0,67,8,11
+    RTEXT           "s",IDC_STATIC_MAX_COLOR,126,70,17,10
+    LTEXT           "Static",IDC_STATIC_MAX_POINTS,1,14,8,11,NOT WS_VISIBLE
+    CONTROL         "100 ms",IDC_STATIC_PERIOD,"Static",SS_SIMPLE | 
+                    WS_BORDER | WS_GROUP,147,70,40,10
+END
+
+IDD_IMAGE DIALOGEX 0, 0, 181, 118
+STYLE DS_SETFONT | DS_NOIDLEMSG | WS_CHILD | WS_CLIPSIBLINGS | WS_BORDER
+EXSTYLE WS_EX_CLIENTEDGE
+FONT 8, "MS Sans Serif", 0, 0, 0x1
+BEGIN
+    GROUPBOX        "Переворот",IDC_STATIC,2,4,78,38
+    CONTROL         "Вертикальный",IDC_CHECK_FLIP_VERT,"Button",
+                    BS_AUTOCHECKBOX | WS_GROUP | WS_TABSTOP,2,13,65,16
+    CONTROL         "Горизонтальный",IDC_CHECK_FLIP_HORZ,"Button",
+                    BS_AUTOCHECKBOX | WS_GROUP | WS_TABSTOP,2,26,71,15
+    CONTROL         "Полутоновое",IDC_CHECK_GRAYSCALE,"Button",
+                    BS_AUTOCHECKBOX | WS_GROUP | WS_TABSTOP,2,81,65,8
+    LTEXT           "Захват:",IDC_STATIC,82,7,30,12
+    COMBOBOX        IDC_COMBO_CAPTURE,118,7,56,49,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_GROUP | WS_TABSTOP
+    CONTROL         "Фокус",IDC_CHECK_FOCUS,"Button",BS_AUTOCHECKBOX | 
+                    WS_GROUP | WS_TABSTOP,2,47,34,11
+    LTEXT           "",IDC_STATIC_FOCUS_CURRENT,68,49,26,11
+    CONTROL         "Прямоугольник фокуса",IDC_SHOW_FOCUS_RECT,"Button",
+                    BS_AUTOCHECKBOX | WS_GROUP | WS_TABSTOP,2,63,96,10
+    LTEXT           "",IDC_STATIC_FOCUS_PEAK,99,59,26,11,NOT WS_VISIBLE
+    CONTROL         "Гистограмма",IDC_HISTOGRAM,"Button",BS_AUTOCHECKBOX | 
+                    WS_GROUP | WS_TABSTOP,2,100,65,8
+    PUSHBUTTON      "По умолчанию",IDC_DEFAULT,69,97,52,14,NOT WS_VISIBLE
+    LTEXT           "Maximal:",IDC_STATIC_FOCUS_PEAK1,67,62,29,11,NOT 
+                    WS_VISIBLE
+    LTEXT           "Current:",IDC_STATIC_FOCUS_CURRENT1,68,76,28,11,NOT 
+                    WS_VISIBLE
+    CONTROL         "Засветка и затемнение",IDC_CHECK_OVER_UNDER_EXPOSURE,
+                    "Button",BS_AUTOCHECKBOX | WS_GROUP | WS_TABSTOP,80,25,
+                    94,13
+END
+
+IDD_PREVIEW_VIDEO DIALOGEX 0, 0, 346, 216
+STYLE DS_SETFONT | DS_MODALFRAME | WS_VISIBLE | WS_CLIPSIBLINGS | 
+    WS_CLIPCHILDREN | WS_CAPTION | WS_SYSMENU
+CAPTION "Sumix"
+FONT 8, "MS Sans Serif", 0, 0, 0x0
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,7,7,40,18,WS_GROUP
+    PUSHBUTTON      "Отмена",IDCANCEL,59,7,40,18
+    PUSHBUTTON      "Справка",ID_HELP,111,7,40,18
+    EDITTEXT        IDC_EDIT_EXPOSURE,10,57,24,12,ES_AUTOHSCROLL | WS_GROUP
+    CONTROL         "",IDC_SPIN1_EXPOSURE,"msctls_updown32",UDS_ARROWKEYS,39,
+                    46,11,11
+    CONTROL         "",IDC_SLIDER1_EXPOSURE,"msctls_trackbar32",
+                    TBS_AUTOTICKS | TBS_TOP | WS_TABSTOP,50,41,101,19
+    CONTROL         "",IDC_SPIN2_EXPOSURE,"msctls_updown32",UDS_ARROWKEYS,39,
+                    71,11,11
+    CONTROL         "",IDC_SLIDER2_EXPOSURE,"msctls_trackbar32",
+                    TBS_AUTOTICKS | TBS_TOP | WS_TABSTOP,50,66,100,19
+    LTEXT           "Яркость:",IDC_STATIC,53,28,42,11,NOT WS_GROUP
+    RADIOBUTTON     "Камера",IDC_ENHANCEMENT,10,88,62,18,BS_PUSHLIKE | 
+                    WS_GROUP | WS_TABSTOP
+    RADIOBUTTON     "Изображение",IDC_IMAGE_PAGE,10,112,62,18,BS_PUSHLIKE | 
+                    WS_GROUP | WS_TABSTOP
+    RADIOBUTTON     "Баланс белого",IDC_COLOR_BALANCE,78,88,62,18,
+                    BS_PUSHLIKE
+    RADIOBUTTON     "Настройки",IDC_SETTINGS_PAGE,78,112,62,18,BS_PUSHLIKE
+    RADIOBUTTON     "AVI настройки",IDC_VIDEO_SETTINGS,10,136,62,18,
+                    BS_PUSHLIKE
+    CONTROL         "100 ms",IDC_STATIC_PERIOD,"Static",SS_SIMPLE | 
+                    WS_BORDER | WS_GROUP,94,162,25,10
+    CONTROL         "",IDC_IMAGE,"Static",SS_BLACKRECT,153,7,186,188
+    CONTROL         "",IDC_PROGRESS_VIDEO_STAGE,"msctls_progress32",NOT 
+                    WS_VISIBLE | WS_BORDER,161,199,169,10
+    LTEXT           "%s (%d/%d)",IDC_STATIC_VIDEO_STAGE,62,198,52,12,NOT 
+                    WS_VISIBLE
+END
+
+IDD_SETTINGS DIALOGEX 0, 0, 158, 105
+STYLE DS_SETFONT | DS_NOIDLEMSG | WS_CHILD | WS_CLIPSIBLINGS | WS_BORDER
+EXSTYLE WS_EX_CLIENTEDGE
+FONT 8, "MS Sans Serif", 0, 0, 0x1
+BEGIN
+    PUSHBUTTON      "По умолчанию",IDC_DEFAULT,61,80,52,14,NOT WS_VISIBLE
+    LISTBOX         IDC_LIST_SETTINGS,7,7,79,76,LBS_NOINTEGRALHEIGHT | 
+                    WS_VSCROLL | WS_GROUP | WS_TABSTOP
+    PUSHBUTTON      "Новая",IDC_BUTTON_NEW_SETTINGS,92,20,59,16,WS_GROUP
+    PUSHBUTTON      "Удалить",IDC_BUTTON_DELETE_SETTINGS,92,55,59,16,
+                    WS_GROUP
+END
+
+IDD_SHUTTER DIALOGEX 0, 0, 159, 68
+STYLE DS_SETFONT | DS_NOIDLEMSG | WS_CHILD | WS_CLIPSIBLINGS | WS_BORDER
+EXSTYLE WS_EX_CLIENTEDGE
+FONT 8, "MS Sans Serif", 0, 0, 0x1
+BEGIN
+    EDITTEXT        IDC_EDIT_EXPOSURE,11,28,24,12,ES_AUTOHSCROLL | WS_GROUP
+    CONTROL         "",IDC_SPIN1_EXPOSURE,"msctls_updown32",UDS_ARROWKEYS,40,
+                    17,11,11
+    CONTROL         "",IDC_SLIDER1_EXPOSURE,"msctls_trackbar32",
+                    TBS_AUTOTICKS | TBS_TOP | WS_TABSTOP,51,12,101,19
+    CONTROL         "",IDC_SPIN2_EXPOSURE,"msctls_updown32",UDS_ARROWKEYS,40,
+                    42,11,11
+    CONTROL         "",IDC_SLIDER2_EXPOSURE,"msctls_trackbar32",
+                    TBS_AUTOTICKS | TBS_TOP | WS_TABSTOP,51,37,100,19
+END
+
+IDD_VIDEO DIALOGEX 0, 0, 130, 83
+STYLE DS_SETFONT | DS_NOIDLEMSG | WS_CHILD | WS_CLIPSIBLINGS | WS_BORDER
+EXSTYLE WS_EX_CLIENTEDGE
+FONT 8, "MS Sans Serif", 0, 0, 0x1
+BEGIN
+    LTEXT           "&Захват к/сек:",IDC_STATIC,8,10,49,11
+    EDITTEXT        IDC_FPS,61,6,28,12,ES_AUTOHSCROLL | WS_GROUP
+    LTEXT           "&Время (в сек):",IDC_STATIC,8,27,50,12
+    EDITTEXT        IDC_TIME_LIM,61,26,28,12,ES_AUTOHSCROLL | WS_GROUP
+    LTEXT           "Файл",IDC_STATIC,8,50,24,8
+    RTEXT           "c:\\capture.avi",IDC_FILE,38,51,50,8
+    PUSHBUTTON      "...",IDC_BROWSE,92,48,11,14,WS_GROUP
+    PUSHBUTTON      "По умолчанию",IDC_DEFAULT2,24,64,52,14
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO 
+BEGIN
+    IDD_PREVIEW_FRAME, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 339
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 209
+    END
+
+    IDD_COLOR_BALANCE, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 174
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 103
+    END
+
+    IDD_DIALOG_SETTING_NAME, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 184
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 71
+    END
+
+    IDD_HISTO, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 187
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 80
+    END
+
+    IDD_IMAGE, DIALOG
+    BEGIN
+        LEFTMARGIN, 2
+        RIGHTMARGIN, 174
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 111
+    END
+
+    IDD_PREVIEW_VIDEO, DIALOG
+BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 339
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 209
+END
+
+    IDD_SETTINGS, DIALOG
+BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 151
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 98
+END
+
+    IDD_SHUTTER, DIALOG
+BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 152
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 61
+END
+
+    IDD_VIDEO, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 123
+        TOPMARGIN, 6
+        BOTTOMMARGIN, 76
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog Info
+//
+
+IDD_IMAGE DLGINIT
+BEGIN
+    IDC_COMBO_CAPTURE, 0x403, 10, 0
+0x3732, 0x3637, 0x3278, 0x3730, 0x0034, 
+    IDC_COMBO_CAPTURE, 0x403, 10, 0
+0x3331, 0x3239, 0x3178, 0x3430, 0x0030, 
+    IDC_COMBO_CAPTURE, 0x403, 8, 0
+0x3436, 0x7830, 0x3834, 0x0030, 
+    0
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE 
+    BEGIN
+    IDS_SUMIX               "Sumix"
+    IDS_2080x1542_LOW_QUALITY "2080x1542 низкое качество"
+    IDS_2080x1542_HIGH_QUALITY "2080x1542 высокое качество"
+    IDS_PREDEFINED_METHODIC "Предустановка"
+    IDS_NEW_METHODIC        "Мои настройки"
+    IDS_IMAGE               "Изображение"
+    IDS_WHITE_BALANCE       "Баланс белого"
+    IDS_SETTINGS            "Настройки"
+END
+
+STRINGTABLE 
+        BEGIN
+    IDS_INPUT               "Захват изображения"
+        END
+
+STRINGTABLE 
+BEGIN
+    IDS_BRIGHTNESS          "Яркость"
+    IDS_FPS                 "%.1f к/сек  "
+    IDS_FRAME_PERIOD        "%d мс  "
+    IDS_ENHANCEMENT         "Преобразования"
+    IDS_FILTER              "AVI files(*.avi)|*.avi|All files(*.*)|*.*||"
+    END
+
+STRINGTABLE 
+    BEGIN
+    IDS_FILE_NOT_OPENED     "Файл %s не  открыть"
+    IDS_VIDEO_CAPTURED      "Video saved in %s. %d frames captured, %d frames skipped."
+    END
+
+STRINGTABLE 
+BEGIN
+    IDS_NETWORK_PATH        "Video can be saved only onto local hard drive."
+END
+
+#endif    // Russian resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.S.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_COLOR_BALANCE DIALOGEX 0, 0, 173, 116
+STYLE DS_SETFONT | DS_NOIDLEMSG | WS_CHILD | WS_CLIPSIBLINGS | 
+    WS_CLIPCHILDREN | WS_BORDER
+EXSTYLE WS_EX_CLIENTEDGE
+FONT 8, "MS Sans Serif", 0, 0, 0x1
+BEGIN
+    CONTROL         "Auto",IDC_WB_AUTO,"Button",BS_AUTORADIOBUTTON | 
+                    WS_GROUP,7,7,31,14
+    CONTROL         "Manual",IDC_WB_MANUAL,"Button",BS_AUTORADIOBUTTON,7,24,
+                    41,14
+    PUSHBUTTON      "Build",IDC_WB_BUILD,56,7,28,16,WS_GROUP
+    LTEXT           "Red:",IDC_STATIC,7,42,18,10
+    EDITTEXT        IDC_EDIT_WB_RED,29,41,26,15,ES_AUTOHSCROLL | WS_GROUP
+    CONTROL         "Spin1",IDC_SPIN_WB_RED,"msctls_updown32",UDS_ALIGNRIGHT | 
+                    UDS_ARROWKEYS,55,42,11,14
+    CONTROL         "Slider1",IDC_SLIDER_WB_RED,"msctls_trackbar32",
+                    TBS_AUTOTICKS | TBS_TOP | WS_TABSTOP,70,34,96,23
+    LTEXT           "Green:",IDC_STATIC,7,62,20,11
+    EDITTEXT        IDC_EDIT_WB_GREEN,29,61,26,15,ES_AUTOHSCROLL | WS_GROUP
+    CONTROL         "Spin1",IDC_SPIN_WB_GREEN,"msctls_updown32",
+                    UDS_ALIGNRIGHT | UDS_ARROWKEYS,55,62,11,14
+    CONTROL         "Slider1",IDC_SLIDER_WB_GREEN,"msctls_trackbar32",
+                    TBS_AUTOTICKS | TBS_TOP | WS_TABSTOP,69,58,96,23
+    LTEXT           "Blue:",IDC_STATIC,7,84,17,8
+    EDITTEXT        IDC_EDIT_WB_BLUE,29,82,26,15,ES_AUTOHSCROLL | WS_GROUP
+    CONTROL         "Spin1",IDC_SPIN_WB_BLUE,"msctls_updown32",
+                    UDS_ALIGNRIGHT | UDS_ARROWKEYS,55,82,11,14
+    CONTROL         "Slider1",IDC_SLIDER_WB_BLUE,"msctls_trackbar32",
+                    TBS_AUTOTICKS | TBS_TOP | WS_TABSTOP,70,80,96,23
+    PUSHBUTTON      "Default",IDC_DEFAULT,114,7,52,14,NOT WS_VISIBLE
+END
+
+IDD_DIALOG_SETTING_NAME DIALOGEX 0, 0, 191, 78
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | 
+    WS_SYSMENU
+CAPTION "Settings name"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,7,57,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,134,57,50,14
+    LTEXT           "Input the name of settings file, please:",IDC_STATIC,7,
+                    7,131,15
+    EDITTEXT        IDC_EDIT1,7,25,177,17,ES_AUTOHSCROLL
+END
+
+IDD_DIALOG_SETTINGS DIALOGEX 0, 0, 275, 187
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | 
+    WS_SYSMENU
+CAPTION "ProgRes settings"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,52,166,50,14
+    CONTROL         "",IDC_TAB_SELECT,"SysTabControl32",0x0,7,7,261,146
+END
+
+IDD_SHUTTER DIALOGEX 0, 0, 159, 68
+STYLE DS_SETFONT | DS_NOIDLEMSG | WS_CHILD | WS_CLIPSIBLINGS | WS_BORDER
+EXSTYLE WS_EX_CLIENTEDGE
+FONT 8, "MS Sans Serif", 0, 0, 0x1
+BEGIN
+    EDITTEXT        IDC_EDIT_EXPOSURE,11,28,24,12,ES_AUTOHSCROLL | WS_GROUP
+    CONTROL         "",IDC_SPIN1_EXPOSURE,"msctls_updown32",UDS_ARROWKEYS,40,
+                    17,11,11
+    CONTROL         "",IDC_SLIDER1_EXPOSURE,"msctls_trackbar32",
+                    TBS_AUTOTICKS | TBS_TOP | WS_TABSTOP,51,12,101,19
+    CONTROL         "",IDC_SPIN2_EXPOSURE,"msctls_updown32",UDS_ARROWKEYS,40,
+                    42,11,11
+    CONTROL         "",IDC_SLIDER2_EXPOSURE,"msctls_trackbar32",
+                    TBS_AUTOTICKS | TBS_TOP | WS_TABSTOP,51,37,100,19
+END
+
+IDD_SETTINGS DIALOGEX 0, 0, 158, 105
+STYLE DS_SETFONT | DS_NOIDLEMSG | WS_CHILD | WS_CLIPSIBLINGS | WS_BORDER
+EXSTYLE WS_EX_CLIENTEDGE
+FONT 8, "MS Sans Serif", 0, 0, 0x1
+BEGIN
+    PUSHBUTTON      "Default",IDC_DEFAULT,61,80,52,14,NOT WS_VISIBLE
+    LISTBOX         IDC_LIST_SETTINGS,7,7,79,76,LBS_NOINTEGRALHEIGHT | 
+                    WS_VSCROLL | WS_GROUP | WS_TABSTOP
+    PUSHBUTTON      "New",IDC_BUTTON_NEW_SETTINGS,92,20,59,16,WS_GROUP
+    PUSHBUTTON      "Delete",IDC_BUTTON_DELETE_SETTINGS,92,55,59,16,WS_GROUP
+END
+
+IDD_PREVIEW_VIDEO DIALOGEX 0, 0, 346, 216
+STYLE DS_SETFONT | DS_MODALFRAME | WS_VISIBLE | WS_CLIPSIBLINGS | 
+    WS_CLIPCHILDREN | WS_CAPTION | WS_SYSMENU
+CAPTION "Sumix"
+FONT 8, "MS Sans Serif", 0, 0, 0x0
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,7,7,40,18,WS_GROUP
+    PUSHBUTTON      "Cancel",IDCANCEL,59,7,40,18
+    PUSHBUTTON      "Help",ID_HELP,111,7,40,18
+    EDITTEXT        IDC_EDIT_EXPOSURE,10,57,24,12,ES_AUTOHSCROLL | WS_GROUP
+    CONTROL         "",IDC_SPIN1_EXPOSURE,"msctls_updown32",UDS_ARROWKEYS,39,
+                    46,11,11
+    CONTROL         "",IDC_SLIDER1_EXPOSURE,"msctls_trackbar32",
+                    TBS_AUTOTICKS | TBS_TOP | WS_TABSTOP,50,41,101,19
+    CONTROL         "",IDC_SPIN2_EXPOSURE,"msctls_updown32",UDS_ARROWKEYS,39,
+                    71,11,11
+    CONTROL         "",IDC_SLIDER2_EXPOSURE,"msctls_trackbar32",
+                    TBS_AUTOTICKS | TBS_TOP | WS_TABSTOP,50,66,100,19
+    LTEXT           "Brightness:",IDC_STATIC,53,28,42,11,NOT WS_GROUP
+    RADIOBUTTON     "Camera",IDC_ENHANCEMENT,10,88,62,18,BS_PUSHLIKE | 
+                    WS_GROUP | WS_TABSTOP
+    RADIOBUTTON     "Image",IDC_IMAGE_PAGE,10,112,62,18,BS_PUSHLIKE | 
+                    WS_GROUP | WS_TABSTOP
+    RADIOBUTTON     "White balance",IDC_COLOR_BALANCE,78,88,62,18,
+                    BS_PUSHLIKE
+    RADIOBUTTON     "Configurator",IDC_SETTINGS_PAGE,78,112,62,18,
+                    BS_PUSHLIKE
+    RADIOBUTTON     "AVI settings",IDC_VIDEO_SETTINGS,10,136,62,18,
+                    BS_PUSHLIKE
+    CONTROL         "100 ms",IDC_STATIC_PERIOD,"Static",SS_SIMPLE | 
+                    WS_BORDER | WS_GROUP,94,162,25,10
+    CONTROL         "",IDC_IMAGE,"Static",SS_BLACKRECT,153,7,186,188
+    CONTROL         "",IDC_PROGRESS_VIDEO_STAGE,"msctls_progress32",NOT 
+                    WS_VISIBLE | WS_BORDER,161,199,169,10
+    LTEXT           "%s (%d/%d)",IDC_STATIC_VIDEO_STAGE,62,198,52,12,NOT 
+                    WS_VISIBLE
+END
+
+IDD_IMAGE DIALOGEX 0, 0, 149, 118
+STYLE DS_SETFONT | DS_NOIDLEMSG | WS_CHILD | WS_CLIPSIBLINGS | WS_BORDER
+EXSTYLE WS_EX_CLIENTEDGE
+FONT 8, "MS Sans Serif", 0, 0, 0x1
+BEGIN
+    GROUPBOX        "Flip",IDC_STATIC,2,4,55,38
+    CONTROL         "Vertical",IDC_CHECK_FLIP_VERT,"Button",BS_AUTOCHECKBOX | 
+                    WS_GROUP | WS_TABSTOP,7,13,43,16
+    CONTROL         "Horizontal",IDC_CHECK_FLIP_HORZ,"Button",
+                    BS_AUTOCHECKBOX | WS_GROUP | WS_TABSTOP,7,26,47,15
+    CONTROL         "Grayscale",IDC_CHECK_GRAYSCALE,"Button",BS_AUTOCHECKBOX | 
+                    WS_GROUP | WS_TABSTOP,7,81,65,8
+    LTEXT           "Capture:",IDC_STATIC,60,9,30,12
+    COMBOBOX        IDC_COMBO_CAPTURE,88,8,56,49,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_GROUP | WS_TABSTOP
+    CONTROL         "Focus",IDC_CHECK_FOCUS,"Button",BS_AUTOCHECKBOX | 
+                    WS_GROUP | WS_TABSTOP,7,47,34,11
+    LTEXT           "",IDC_STATIC_FOCUS_CURRENT,68,49,26,11
+    CONTROL         "Focus rectangle",IDC_SHOW_FOCUS_RECT,"Button",
+                    BS_AUTOCHECKBOX | WS_GROUP | WS_TABSTOP,7,63,67,10
+    LTEXT           "",IDC_STATIC_FOCUS_PEAK,99,59,26,11,NOT WS_VISIBLE
+    CONTROL         "Histogram",IDC_HISTOGRAM,"Button",BS_AUTOCHECKBOX | 
+                    WS_GROUP | WS_TABSTOP,7,100,65,8
+    PUSHBUTTON      "Default",IDC_DEFAULT,63,92,52,14,NOT WS_VISIBLE
+    LTEXT           "Maximal:",IDC_STATIC_FOCUS_PEAK1,67,62,29,11,NOT 
+                    WS_VISIBLE
+    LTEXT           "Current:",IDC_STATIC_FOCUS_CURRENT1,68,76,28,11,NOT 
+                    WS_VISIBLE
+    CONTROL         "Over- && underexposure",IDC_CHECK_OVER_UNDER_EXPOSURE,
+                    "Button",BS_AUTOCHECKBOX | WS_GROUP | WS_TABSTOP,62,25,
+                    87,13
+END
+
+IDD_HISTO DIALOGEX 0, 0, 194, 83
+STYLE DS_SETFONT | DS_CONTROL | WS_CHILD | WS_VISIBLE
+FONT 8, "MS Sans Serif", 0, 0, 0x1
+BEGIN
+    CONTROL         "",IDC_HISTO,"Static",SS_BLACKRECT,12,1,113,67
+    CONTROL         "Gray",IDC_GRAY,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,
+                    131,14,34,11,0,HIDC_GRAY
+    CONTROL         "Red",IDC_RED,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,131,
+                    28,27,11,0,HIDC_RED
+    CONTROL         "Green",IDC_GREEN,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,
+                    131,42,31,11,0,HIDC_GREEN
+    CONTROL         "Blue",IDC_BLUE,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,
+                    131,56,34,11,0,HIDC_BLUE
+    LTEXT           "Min - %d, Max - %d, Avr - %d",IDC_STATIC_MSG,21,71,106,
+                    9
+    LTEXT           "0",IDC_STATIC_0,0,67,8,11
+    RTEXT           "s",IDC_STATIC_MAX_COLOR,126,66,17,10
+    LTEXT           "Static",IDC_STATIC_MAX_POINTS,1,14,8,11,NOT WS_VISIBLE
+    CONTROL         "100 ms",IDC_STATIC_PERIOD,"Static",SS_SIMPLE | 
+                    WS_BORDER | WS_GROUP,162,32,25,10
+END
+
+IDD_ENHANCEMENT DIALOGEX 0, 0, 161, 67
+STYLE DS_SETFONT | DS_NOIDLEMSG | WS_CHILD | WS_CLIPSIBLINGS | 
+    WS_CLIPCHILDREN | WS_BORDER
+EXSTYLE WS_EX_CLIENTEDGE
+FONT 8, "MS Sans Serif", 0, 0, 0x1
+BEGIN
+    LTEXT           "Gain:",IDC_STATIC,0,27,33,11
+    EDITTEXT        IDC_EDIT_GAIN,35,25,17,15,ES_AUTOHSCROLL | WS_GROUP
+    CONTROL         "Spin1",IDC_SPIN_GAIN,"msctls_updown32",UDS_ALIGNRIGHT | 
+                    UDS_ARROWKEYS,52,26,11,14
+    CONTROL         "Slider1",IDC_SLIDER_GAIN,"msctls_trackbar32",
+                    TBS_AUTOTICKS | TBS_TOP | WS_TABSTOP,65,22,96,23
+    LTEXT           "Gamma:",IDC_STATIC,0,48,32,8
+    EDITTEXT        IDC_EDIT_ENH_GAMMA,35,46,17,15,ES_AUTOHSCROLL | WS_GROUP
+    CONTROL         "Spin1",IDC_SPIN_ENH_GAMMA,"msctls_updown32",
+                    UDS_ALIGNRIGHT | UDS_ARROWKEYS,52,46,11,14
+    CONTROL         "Slider1",IDC_SLIDER_ENH_GAMMA,"msctls_trackbar32",
+                    TBS_AUTOTICKS | TBS_TOP | WS_TABSTOP,65,44,96,23
+    PUSHBUTTON      "Dark field",IDC_DARK_FIELD,5,4,50,16
+    PUSHBUTTON      "Default",IDC_BUTTON_DEFAULT_GAIN_GAMMA,71,4,42,13,
+                    WS_GROUP
+END
+
+IDD_VIDEO DIALOGEX 0, 0, 130, 83
+STYLE DS_SETFONT | DS_NOIDLEMSG | WS_CHILD | WS_CLIPSIBLINGS | WS_BORDER
+EXSTYLE WS_EX_CLIENTEDGE
+FONT 8, "MS Sans Serif", 0, 0, 0x1
+BEGIN
+    LTEXT           "&Capture rate:",IDC_STATIC,8,10,43,11
+    EDITTEXT        IDC_FPS,58,8,28,12,ES_AUTOHSCROLL | WS_GROUP
+    LTEXT           "&Time (in sec):",IDC_STATIC,8,27,45,12
+    EDITTEXT        IDC_TIME_LIM,58,26,28,12,ES_AUTOHSCROLL | WS_GROUP
+    LTEXT           "File",IDC_STATIC,8,50,12,8
+    RTEXT           "c:\\capture.avi",IDC_FILE,24,51,64,8
+    PUSHBUTTON      "...",IDC_BROWSE,92,48,11,14,WS_GROUP
+    PUSHBUTTON      "Default",IDC_DEFAULT2,24,64,52,14
+END
+
+IDD_ENHANCEMENT_EX DIALOGEX 0, 0, 161, 116
+STYLE DS_SETFONT | DS_NOIDLEMSG | WS_CHILD | WS_CLIPSIBLINGS | 
+    WS_CLIPCHILDREN | WS_BORDER
+EXSTYLE WS_EX_CLIENTEDGE
+FONT 8, "MS Sans Serif", 0, 0, 0x1
+BEGIN
+    LTEXT           "Gain:",IDC_STATIC,0,27,33,11
+    EDITTEXT        IDC_EDIT_GAIN,35,25,17,15,ES_AUTOHSCROLL | WS_GROUP
+    CONTROL         "Spin1",IDC_SPIN_GAIN,"msctls_updown32",UDS_ALIGNRIGHT | 
+                    UDS_ARROWKEYS,52,26,11,14
+    CONTROL         "Slider1",IDC_SLIDER_GAIN,"msctls_trackbar32",
+                    TBS_AUTOTICKS | TBS_TOP | WS_TABSTOP,65,22,96,23
+    LTEXT           "Gamma:",IDC_STATIC,0,48,32,8
+    EDITTEXT        IDC_EDIT_ENH_GAMMA,35,46,17,15,ES_AUTOHSCROLL | WS_GROUP
+    CONTROL         "Spin1",IDC_SPIN_ENH_GAMMA,"msctls_updown32",
+                    UDS_ALIGNRIGHT | UDS_ARROWKEYS,52,46,11,14
+    CONTROL         "Slider1",IDC_SLIDER_ENH_GAMMA,"msctls_trackbar32",
+                    TBS_AUTOTICKS | TBS_TOP | WS_TABSTOP,65,43,96,23
+    PUSHBUTTON      "Dark field",IDC_DARK_FIELD,5,4,50,16
+    LTEXT           "DAC raw offset:",IDC_STATIC,0,69,32,20
+    EDITTEXT        IDC_EDIT_ENH_DAC_RAW_OFFSET,35,70,17,15,ES_AUTOHSCROLL | 
+                    WS_GROUP
+    CONTROL         "",IDC_SPIN_ENH_DAC_RAW_OFFSET,"msctls_updown32",
+                    UDS_ALIGNRIGHT | UDS_ARROWKEYS,52,70,11,14
+    CONTROL         "",IDC_SLIDER_ENH_DAC_RAW_OFFSET,"msctls_trackbar32",
+                    TBS_AUTOTICKS | TBS_TOP | WS_TABSTOP,65,67,71,23
+    LTEXT           "DAC fine offset:",IDC_STATIC,0,88,32,20
+    EDITTEXT        IDC_EDIT_ENH_DAC_FINE_OFFSET,35,90,17,15,ES_AUTOHSCROLL | 
+                    WS_GROUP
+    CONTROL         "",IDC_SPIN_ENH_DAC_FINE_OFFSET,"msctls_updown32",
+                    UDS_ALIGNRIGHT | UDS_ARROWKEYS,52,90,11,14
+    CONTROL         "",IDC_SLIDER_ENH_DAC_FINE_OFFSET,"msctls_trackbar32",
+                    TBS_AUTOTICKS | TBS_TOP | WS_TABSTOP,65,87,76,23
+    PUSHBUTTON      "Auto",IDC_BUTTON_AUTO_FINE_OFFSET,142,90,19,11
+    PUSHBUTTON      "Default",IDC_BUTTON_DEFAULT_GAIN_GAMMA,73,6,42,13,
+                    WS_GROUP
+END
+
+IDD_PREVIEW_FRAME DIALOGEX 0, 0, 346, 216
+STYLE DS_SETFONT | DS_MODALFRAME | WS_VISIBLE | WS_CLIPSIBLINGS | 
+    WS_CLIPCHILDREN | WS_CAPTION | WS_SYSMENU
+CAPTION "Sumix"
+FONT 8, "MS Sans Serif", 0, 0, 0x0
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,7,7,40,18,WS_GROUP
+    PUSHBUTTON      "Cancel",IDCANCEL,59,7,40,18
+    PUSHBUTTON      "Help",ID_HELP,111,7,40,18
+    EDITTEXT        IDC_EDIT_EXPOSURE,10,57,24,12,ES_AUTOHSCROLL | WS_GROUP
+    CONTROL         "",IDC_SPIN1_EXPOSURE,"msctls_updown32",UDS_ARROWKEYS,39,
+                    46,11,11
+    CONTROL         "",IDC_SLIDER1_EXPOSURE,"msctls_trackbar32",
+                    TBS_AUTOTICKS | TBS_TOP | WS_TABSTOP,50,41,101,19
+    CONTROL         "",IDC_SPIN2_EXPOSURE,"msctls_updown32",UDS_ARROWKEYS,39,
+                    71,11,11
+    CONTROL         "",IDC_SLIDER2_EXPOSURE,"msctls_trackbar32",
+                    TBS_AUTOTICKS | TBS_TOP | WS_TABSTOP,50,66,100,19
+    LTEXT           "Brightness:",IDC_STATIC,53,28,42,11,NOT WS_GROUP
+    RADIOBUTTON     "Camera",IDC_ENHANCEMENT,10,88,62,18,BS_PUSHLIKE | 
+                    WS_GROUP | WS_TABSTOP
+    RADIOBUTTON     "Image",IDC_IMAGE_PAGE,10,112,62,18,BS_PUSHLIKE | 
+                    WS_GROUP | WS_TABSTOP
+    RADIOBUTTON     "White balance",IDC_COLOR_BALANCE,78,88,62,18,
+                    BS_PUSHLIKE
+    RADIOBUTTON     "Configurator",IDC_SETTINGS_PAGE,78,112,62,18,
+                    BS_PUSHLIKE
+    RADIOBUTTON     "AVI settings",IDC_VIDEO_SETTINGS,10,136,62,18,
+                    BS_PUSHLIKE
+    CONTROL         "100 ms",IDC_STATIC_PERIOD,"Static",SS_SIMPLE | 
+                    WS_BORDER | WS_GROUP,94,162,25,10
+    CONTROL         "",IDC_IMAGE,"Static",SS_BLACKRECT,153,7,186,202
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO 
+BEGIN
+    IDD_COLOR_BALANCE, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 166
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 109
+    END
+
+    IDD_DIALOG_SETTING_NAME, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 184
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 71
+    END
+
+    IDD_DIALOG_SETTINGS, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 268
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 180
+    END
+
+    IDD_SHUTTER, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 152
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 61
+    END
+
+    IDD_SETTINGS, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 151
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 94
+    END
+
+    IDD_PREVIEW_VIDEO, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 339
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 209
+    END
+
+    IDD_IMAGE, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 142
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 111
+    END
+
+    IDD_HISTO, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 187
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 76
+    END
+
+    IDD_VIDEO, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 123
+        TOPMARGIN, 6
+        BOTTOMMARGIN, 76
+    END
+
+    IDD_PREVIEW_FRAME, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 339
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 209
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog Info
+//
+
+IDD_IMAGE DLGINIT
+BEGIN
+    IDC_COMBO_CAPTURE, 0x403, 10, 0
+0x3732, 0x3637, 0x3278, 0x3730, 0x0034, 
+    IDC_COMBO_CAPTURE, 0x403, 10, 0
+0x3331, 0x3239, 0x3178, 0x3430, 0x0030, 
+    IDC_COMBO_CAPTURE, 0x403, 8, 0
+0x3436, 0x7830, 0x3834, 0x0030, 
+    0
+END
+
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)\r\n"
+    "LANGUAGE 9, 1\r\n"
+    "#pragma code_page(1252)\r\n"
+    "#include ""res\\Sumix.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "#include ""afxres.rc""     // Standard components\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 1,0,0,1
+ PRODUCTVERSION 1,0,0,1
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x2L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "040904B0"
+        BEGIN
+            VALUE "CompanyName", "TODO: <Company name>"
+            VALUE "FileDescription", "TODO: <File description>"
+            VALUE "FileVersion", "1.0.0.1"
+            VALUE "InternalName", "Sumix.dll"
+            VALUE "LegalCopyright", "TODO: (c) <Company name>.  All rights reserved."
+            VALUE "OriginalFilename", "Sumix.dll"
+            VALUE "ProductName", "TODO: <Product name>"
+            VALUE "ProductVersion", "1.0.0.1"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x409, 1200
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE 
+BEGIN
+    IDS_SUMIX               "Sumix"
+    IDS_2080x1542_LOW_QUALITY "2080x1542 low quality"
+    IDS_2080x1542_HIGH_QUALITY "2080x1542 high quality"
+    IDS_PREDEFINED_METHODIC "Predefined"
+    IDS_NEW_METHODIC        "New methodic"
+    IDS_IMAGE               "Image"
+    IDS_WHITE_BALANCE       "White balance"
+    IDS_SETTINGS            "Settings"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_INPUT               "Acquire image"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_BRIGHTNESS          "Brightness"
+    IDS_FPS                 "%.1f fps   "
+    IDS_FRAME_PERIOD        "%d ms   "
+    IDS_ENHANCEMENT         "Enhancement"
+    IDS_FILTER              "AVI files(*.avi)|*.avi|All files(*.*)|*.*||"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_FILE_NOT_OPENED     "File %s can not be opened"
+    IDS_VIDEO_CAPTURED      "Video saved in %s. %d frames captured, %d frames skipped."
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_NETWORK_PATH        "Video can be saved only onto local hard drive."
+END
+
+#endif    // English (U.S.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+LANGUAGE 9, 1
+#pragma code_page(1252)
+#include "res\Sumix.rc2"  // non-Microsoft Visual C++ edited resources
+#include "afxres.rc"     // Standard components
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

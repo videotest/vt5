@@ -1,0 +1,29 @@
+// PropertyBrowser.idl : IDL source for PropertyBrowser.dll
+//
+
+// This file will be processed by the MIDL tool to
+// produce the type library (PropertyBrowser.tlb) and marshalling code.
+
+import "oaidl.idl";
+import "ocidl.idl";
+
+[
+	uuid(2F1431F6-D876-11D3-A095-0000B493A187),
+	version(1.0),
+	helpstring("PropertyBrowser 1.0 Type Library")
+]
+library PROPERTYBROWSERLib
+{
+	importlib("stdole32.tlb");
+	importlib("stdole2.tlb");
+
+	
+	[
+		uuid(2F143203-D876-11D3-A095-0000B493A187),
+		helpstring("AllPropPage Class")
+	]
+	coclass AllPropPage
+	{
+		interface IUnknown;
+	};
+};

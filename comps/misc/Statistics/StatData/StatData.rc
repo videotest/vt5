@@ -1,0 +1,316 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// Russian resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_RUS)
+#ifdef _WIN32
+LANGUAGE LANG_RUSSIAN, SUBLANG_DEFAULT
+#pragma code_page(1251)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDI_STAT_TABLE          ICON                    "res\\stat_table.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Toolbar
+//
+
+IDR_ACTIONS TOOLBAR  16, 15
+BEGIN
+    BUTTON      IDS_CREATE_STAT_TABLE
+    BUTTON      IDS_SHOW_STAT_TABLE
+    BUTTON      IDS_EXPORT_STAT_TABLE
+    BUTTON      IDS_DELETE_OBJECTS
+    BUTTON      IDS_FILTER_STAT_TABLE
+    BUTTON      ID_BUTTON40005
+    BUTTON      IDS_ADD_STAT_TABLE
+    BUTTON      IDS_HIDE_STAT_TABLE_COLUMN
+    BUTTON      IDS_SHOW_ALL_STAT_TABLE_COLUMNS
+    BUTTON      IDS_CUSTOMIZE_STAT_TABLE_COLUMNS
+    BUTTON      IDS_SHOW_STAT_TABLE_DEPENDENCE
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDR_ACTIONS             BITMAP                  "res\\toolbar.bmp"
+IDB_HOTZONE             BITMAP                  "res\\bitmap1.bmp"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE 
+BEGIN
+    IDS_STAT_VIEW_NAME      "Таблица данных"
+    IDS_STAT_TABLE_TYPE_NAME "Таблица данных"
+    IDS_STAT_TABLE_FILTERNAME "Таблица данных"
+    IDS_OVEWRITE_RESULT_IMAGE "Переписать таблицу данных?"
+    IDS_OVEWRITE_RESULT_OBJECT_LIST "Переписать таблицу данных?"
+    IDS_OVEWRITE_RESULT_OBJECT "Переписать таблицу данных?"
+    IDS_EXPORT_TITLE        "Сохранить таблицу данных в текстовый файл"
+    IDS_EXPORT_FILTER       "Text files\n*.txt\nAll files\n*.*\n\n"
+    IDS_EXPORT_ERROR        "Error"
+    IDS_SEW_OVEWRITE        "There are different parameters in tables. Would you like to append parameters?"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_CREATE_STAT_TABLE   "CreateStatTable\nCreate Statistics Table\nStatistics\nCreate statatistics table\nCreate Statatistics Table"
+    IDS_SHOW_STAT_TABLE     "ShowStatTable\nТаблица данных\nВид\nПоказать таблицу данных\nТаблица данных"
+    IDS_EXPORT_STAT_TABLE   "ExportStatTable\nСохранить таблицу данных в текстовом формате\nИзмерения\nСохранить таблицу данных в текстовом формате\nСохранить таблицу данных в текстовом формате"
+    IDS_DELETE_OBJECTS      "DeleteObjectsFromStatTable\nDelete Objects From Statistics Table\nStatistics\nDelete objects from statatistics table\nDelete Objects From Statatistics Table"
+    IDS_FILTER_STAT_TABLE   "FilterStatTable\nFilter Statistics Table\nStatistics\nFilter statatistics table\nFilter Statatistics Table"
+    IDS_SEW_STAT_TABLE      "SewStatTable\nSew Statistics Table\nStatistics\nSew statatistics table\nSew Statatistics Table"
+    IDS_HIDE_STAT_TABLE_COLUMN 
+                            "HideStatTableColumn\nHide Statistics Table Column\nStatistics\nHide statatistics table column\nHide Statatistics Table Column"
+    IDS_SHOW_ALL_STAT_TABLE_COLUMNS 
+                            "ShowAllStatTableColumns\nShow All Statistics Table Columns\nStatistics\nShow all statatistics table columns\nShow All Statatistics Table Columns"
+    IDS_CUSTOMIZE_STAT_TABLE_COLUMNS 
+                            "CustomizeStatTable\nCustomize Statistics Table\nStatistics\nCustomize statatistics table\nCustomize Statatistics Table"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_CLASS_CAPTION       "Класс"
+    IDS_STAT_DEPENDENCE_VIEW_NAME "Зависимость"
+    IDS_SHOW_STAT_TABLE_DEPENDENCE 
+                            "ShowStatTableDependence\nЗависимость\nВид\nПоказать зависимость\nЗависимость"
+    IDS_COUNT               "Количество:"
+    IDS_MODEL               "Модель:"
+    IDS_COREL               "Корреляция:"
+    IDS_NO_DEPENDANCE       "Нет данных"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_ERROR_TITLE         "Внимание!"
+    IDS_AXIS_LABEL_ERROR_X  "Слишком большой шаг разметки по оси Х!"
+    IDS_AXIS_LABEL_ERROR_Y  "Слишком большой шаг разметки по оси Y!"
+    IDS_AXIS_VALUES_ERROR_X "Слишком большой шаг значений по оси Х!"
+    IDS_AXIS_VALUES_ERROR_Y "Слишком большой шаг значений по оси Y!"
+    IDS_AXIS_GRID_ERROR_X   "Слишком большой шаг сетки по оси Х!"
+    IDS_AXIS_GRID_ERROR_Y   "Слишком большой шаг сетки по оси Y!"
+    IDS_VAL_LOG_ERROR_X     "Для построения логорифмической оси X все значения X должны быть > 0!"
+    IDS_VAL_LOG_ERROR_Y     "Для построения логорифмической оси Y все значения Y должны быть > 0!"
+    IDS_NAME                "Название:"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_NO_DATA             "Нет данных"
+END
+
+#endif    // Russian resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.S.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "#include ""res\\StatData.rc2""\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_DELETE_OBJECTS DIALOGEX 0, 0, 223, 130
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | DS_CENTER | WS_POPUP | 
+    WS_CAPTION | WS_SYSMENU
+CAPTION "Delete Objects"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    CONTROL         "Delete all objects for object list",
+                    IDC_RADIO_OBJECT_LIST,"Button",BS_AUTORADIOBUTTON | 
+                    WS_GROUP,17,20,115,10
+    COMBOBOX        IDC_OBJECT_LIST,29,33,175,99,CBS_DROPDOWN | CBS_SORT | 
+                    WS_VSCROLL | WS_TABSTOP
+    CONTROL         "Delete all objects for image",IDC_RADIO_IMAGE,"Button",
+                    BS_AUTORADIOBUTTON,16,49,103,10
+    COMBOBOX        IDC_IMAGE,28,61,175,71,CBS_DROPDOWN | CBS_SORT | 
+                    WS_VSCROLL | WS_TABSTOP
+    DEFPUSHBUTTON   "OK",IDOK,104,109,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,166,109,50,14
+    GROUPBOX        "Select objects to delete",IDC_STATIC,7,7,209,82
+END
+
+IDD_CUSTOMIZE DIALOGEX 0, 0, 297, 221
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | DS_CENTER | WS_POPUP | 
+    WS_CAPTION | WS_SYSMENU
+CAPTION "Customize columns"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    CONTROL         "",IDC_LIST,"SysListView32",LVS_REPORT | 
+                    LVS_SHOWSELALWAYS | LVS_ALIGNLEFT | LVS_NOCOLUMNHEADER | 
+                    WS_BORDER | WS_TABSTOP,7,23,205,162
+    PUSHBUTTON      "Move &up",IDC_MOVE_UP,226,23,50,14
+    PUSHBUTTON      "Move &down",IDC_MOVE_DOWN,226,42,50,14
+    DEFPUSHBUTTON   "OK",IDOK,182,200,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,240,200,50,14
+    CONTROL         "",IDC_STATIC,"Static",SS_BLACKFRAME,7,190,283,1,
+                    WS_EX_STATICEDGE
+    LTEXT           "Choose columns:",IDC_STATIC,7,7,55,8
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO 
+BEGIN
+    IDD_DELETE_OBJECTS, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 216
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 123
+    END
+
+    IDD_CUSTOMIZE, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 290
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 214
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE 
+BEGIN
+    IDS_STAT_VIEW_NAME      "Data Table"
+    IDS_STAT_TABLE_TYPE_NAME "Data Table"
+    IDS_STAT_TABLE_FILTERNAME "Data Table"
+    IDS_OVEWRITE_RESULT_IMAGE "Overwrite table result?"
+    IDS_OVEWRITE_RESULT_OBJECT_LIST "Overwrite table result?"
+    IDS_OVEWRITE_RESULT_OBJECT "Overwrite table result?"
+    IDS_EXPORT_TITLE        "Choose file for export statistic table"
+    IDS_EXPORT_FILTER       "Text files\n*.txt\nAll files\n*.*\n\n"
+    IDS_EXPORT_ERROR        "Error"
+    IDS_SEW_OVEWRITE        "There are different parameters in tables. Would you like to append parameters?"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_CREATE_STAT_TABLE   "CreateStatTable\nCreate Statistics Table\nStatistics\nCreate statatistics table\nCreate Statatistics Table"
+    IDS_SHOW_STAT_TABLE     "ShowStatTable\nData Table\nView\nShow data table\nData Table"
+    IDS_EXPORT_STAT_TABLE   "ExportStatTable\nExport Statistics Table\nStatistics\nExport statatistics table\nExport Statatistics Table"
+    IDS_DELETE_OBJECTS      "DeleteObjectsFromStatTable\nDelete Objects From Statistics Table\nStatistics\nDelete objects from statatistics table\nDelete Objects From Statatistics Table"
+    IDS_FILTER_STAT_TABLE   "FilterStatTable\nFilter Statistics Table\nStatistics\nFilter statatistics table\nFilter Statatistics Table"
+    IDS_SEW_STAT_TABLE      "SewStatTable\nSew Statistics Table\nStatistics\nSew statatistics table\nSew Statatistics Table"
+    IDS_HIDE_STAT_TABLE_COLUMN 
+                            "HideStatTableColumn\nHide Statistics Table Column\nStatistics\nHide statatistics table column\nHide Statatistics Table Column"
+    IDS_SHOW_ALL_STAT_TABLE_COLUMNS 
+                            "ShowAllStatTableColumns\nShow All Statistics Table Columns\nStatistics\nShow all statatistics table columns\nShow All Statatistics Table Columns"
+    IDS_CUSTOMIZE_STAT_TABLE_COLUMNS 
+                            "CustomizeStatTable\nCustomize Statistics Table\nStatistics\nCustomize statatistics table\nCustomize Statatistics Table"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_CLASS_CAPTION       "Class"
+    IDS_STAT_DEPENDENCE_VIEW_NAME "Dependence"
+    IDS_SHOW_STAT_TABLE_DEPENDENCE 
+                            "ShowStatTableDependence\nDepandance\nView\nShow Depandance\nDepandance"
+    IDS_COUNT               "Object count:"
+    IDS_MODEL               "Dependence model:"
+    IDS_COREL               "Correlation:"
+    IDS_NO_DEPENDANCE       "No Dependence"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_ERROR_TITLE         "Attention!"
+    IDS_AXIS_LABEL_ERROR_X  "Too large marking step on X axis!"
+    IDS_AXIS_LABEL_ERROR_Y  "Too large marking step on Y axis!"
+    IDS_AXIS_VALUES_ERROR_X "Too large increment on X axis!"
+    IDS_AXIS_VALUES_ERROR_Y "Too large increment on Y axis!"
+    IDS_AXIS_GRID_ERROR_X   "Too large grid spacing on X axis!"
+    IDS_AXIS_GRID_ERROR_Y   "Too large grid spacing on Y axis!"
+    IDS_VAL_LOG_ERROR_X     "All X values must be > 0 to use logarithmic scale for X axis"
+    IDS_VAL_LOG_ERROR_Y     "All Y values must be > 0 to use logarithmic scale for Y axis"
+    IDS_NAME                "Name:"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_NO_DATA             "No data"
+END
+
+#endif    // English (U.S.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#include "res\StatData.rc2"
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

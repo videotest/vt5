@@ -1,0 +1,85 @@
+// MeasManual.odl : type library source for MeasManual.dll
+
+// This file will be processed by the MIDL compiler to produce the
+// type library (MeasManual.tlb).
+
+	[ uuid(F5B36DD2-E81C-4334-98FB-FD2981689505), version(1.0) ]
+library MeasManual
+{
+	importlib("stdole32.tlb");
+	importlib("stdole2.tlb");
+
+	//  Primary dispatch interface for COleEventProvider
+	
+	[ uuid(4010031B-2B07-4721-84D8-584D7656F3DF) ]
+	dispinterface IOleEventProviderDisp
+	{
+		properties:
+			// NOTE - ClassWizard will maintain property information here.
+			//    Use extreme caution when editing this section.
+			//{{AFX_ODL_PROP(COleEventProvider)
+			//}}AFX_ODL_PROP
+			
+		methods:
+			// NOTE - ClassWizard will maintain method information here.
+			//    Use extreme caution when editing this section.
+				//{{AFX_ODL_METHOD(COleEventProvider)
+			//}}AFX_ODL_METHOD
+
+	};
+
+	[ uuid(FB940961-F89A-4807-AC94-002AC088DC48) ]
+	dispinterface IOleEventProviderEvents
+	{
+		properties:
+		methods:
+			// NOTE - ClassWizard will maintain event information here.
+			//    Use extreme caution when editing this section.
+			//{{AFX_ODL_EVENT(COleEventProvider)
+			[id(1)] void AfterManualMeasure(BSTR szParamType, double fValue);
+			[id(2)] void BeforeManualMeasure(BSTR szParamType);
+			//}}AFX_ODL_EVENT
+	};
+
+
+	//  Class information for COleEventProvider
+	[ uuid(43B1743F-B5C4-4c68-B5BA-D21E9F2A6D00) ]
+	coclass OleEventProvider
+	{
+		[default] dispinterface IOleEventProviderDisp;
+		[default, source] dispinterface IOleEventProviderEvents;
+	};
+
+
+
+	//  Primary dispatch interface for CMeasManager
+	
+	[ uuid(8DBC9EE3-A4EA-4FA8-BA47-08EE47932CA8) ]
+	dispinterface IMeasManager
+	{
+		properties:
+			// NOTE - ClassWizard will maintain property information here.
+			//    Use extreme caution when editing this section.
+			//{{AFX_ODL_PROP(CMeasManager)
+			//}}AFX_ODL_PROP
+			
+		methods:
+			// NOTE - ClassWizard will maintain method information here.
+			//    Use extreme caution when editing this section.
+			//{{AFX_ODL_METHOD(CMeasManager)
+			//}}AFX_ODL_METHOD
+
+	};
+
+	//  Class information for CMeasManager
+
+	[ uuid(986021C1-0B2A-4C8C-843E-7FF6860B4BD3) ]
+	coclass MeasManager
+	{
+		[default] dispinterface IMeasManager;
+	};
+
+
+	//{{AFX_APPEND_ODL}}
+	//}}AFX_APPEND_ODL}}
+};

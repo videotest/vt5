@@ -1,0 +1,6 @@
+// 4093
+#ifndef AUTOBUILDCOUNT_H
+#define AUTOBUILDCOUNT_H
+#define BUILDCOUNT_NUM 4093
+#define BUILDCOUNT_STR "4093"
+#endif

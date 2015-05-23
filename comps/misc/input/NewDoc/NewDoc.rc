@@ -1,0 +1,1254 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// Chinese (P.R.C.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)
+#ifdef _WIN32
+LANGUAGE LANG_CHINESE, SUBLANG_CHINESE_SIMPLIFIED
+#pragma code_page(936)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_PROPPAGE1 DIALOG  0, 0, 290, 160
+STYLE DS_SETFONT | WS_CHILD | WS_DISABLED | WS_CAPTION
+CAPTION "НјПсКдИл·Ѕ·Ё"
+FONT 8, "MS Sans Serif"
+BEGIN
+    LISTBOX         IDC_CREATORS_LIST,44,29,200,100,LBS_NOINTEGRALHEIGHT | 
+                    WS_VSCROLL | WS_TABSTOP
+END
+
+IDD_PROPPAGE2 DIALOGEX 0, 0, 290, 160
+STYLE DS_SETFONT | WS_CHILD | WS_DISABLED | WS_CAPTION
+CAPTION "СЎФсЙи±ё"
+FONT 8, "MS Sans Serif", 0, 0, 0x0
+BEGIN
+    LISTBOX         IDC_DRIVERS_LIST,45,29,200,60,LBS_NOINTEGRALHEIGHT | 
+                    WS_VSCROLL | WS_TABSTOP
+    GROUPBOX        "",IDC_STATIC,45,93,90,49
+    CONTROL         "ЖЅѕщЦµ",IDC_ACCUMULATION,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,56,101,56,16
+    LTEXT           "НјПсКэ:",IDC_STATIC_IMAGES,56,122,39,8
+    EDITTEXT        IDC_E_IMAGES_NUM,93,120,30,14,ES_AUTOHSCROLL
+    CONTROL         "Spin1",IDC_S_IMAGES_NUM,"msctls_updown32",
+                    UDS_SETBUDDYINT | UDS_ALIGNRIGHT | UDS_AUTOBUDDY | 
+                    UDS_ARROWKEYS,111,120,11,18
+    GROUPBOX        "",IDC_STATIC,139,93,106,49
+    CONTROL         "К№УГКдИлїтјЬ",IDC_USE_FRAME,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,159,104,66,16
+    CONTROL         "±ај­КдИлїтјЬ",IDC_EDIT_INPUT_FRAME,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,159,120,63,14
+END
+
+IDD_CLIPBOARD_DLG DIALOGEX 0, 0, 174, 46
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "ґУјфМщ°еХіМщ"
+FONT 8, "MS Sans Serif", 0, 0, 0x0
+BEGIN
+    DEFPUSHBUTTON   "И·¶Ё",IDOK,5,25,50,14
+    PUSHBUTTON      "ИЎПы",IDCANCEL,61,25,50,14
+    PUSHBUTTON      "°пЦъ",IDHELP,119,25,50,14
+    GROUPBOX        "",IDC_CLIPBOARD_PREVIEW,1,3,172,17,NOT WS_VISIBLE
+END
+
+IDD_VIDEO_CAP DIALOGEX 0, 0, 290, 155
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "І¶»сКУЖµ"
+FONT 8, "MS Sans Serif", 0, 0, 0x0
+BEGIN
+    GROUPBOX        "І¶»сІОКэ",IDC_STATIC,5,4,215,96
+    LTEXT           "І¶»сЛЩВК(&C):",IDC_STATIC,37,36,43,11
+    EDITTEXT        IDC_FPS,102,34,31,16,ES_AUTOHSCROLL
+    COMBOBOX        IDC_CAPTURE_RATE_SCALE,149,34,40,62,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    LTEXT           "ЦШ·ЕЛЩВК:",IDC_STATIC,37,57,46,11
+    EDITTEXT        IDC_PLAYBACK_FPS,102,55,31,16,ES_AUTOHSCROLL
+    COMBOBOX        IDC_PLAYBACK_RATE_SCALE,148,55,40,52,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    LTEXT           "К±јд(Гл)(&T)",IDC_TIME,37,79,56,11
+    EDITTEXT        IDC_TIME_LIM,102,76,31,16,ES_AUTOHSCROLL
+    LTEXT           "AVI ОДјюГы",IDC_STATIC,5,110,42,14,SS_CENTERIMAGE
+    LTEXT           "Static",IDC_FILE,55,110,165,14,SS_CENTERIMAGE | 
+                    SS_SUNKEN
+    DEFPUSHBUTTON   "И·¶Ё",IDOK,235,8,50,14
+    PUSHBUTTON      "ИЎПы",IDCANCEL,235,26,50,14
+    PUSHBUTTON      "дЇАА...",IDC_BROWSE,235,110,50,14
+    PUSHBUTTON      "°пЦъ",IDHELP,235,62,50,14
+    PUSHBUTTON      "С№Лх",IDC_COMPRESSION,235,44,50,14
+    CONTROL         "·ЦЕдОДјю",IDC_ALLOC_FILE,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,5,134,53,11
+    EDITTEXT        IDC_EDIT_FILE_SIZE,68,131,42,17,ES_AUTOHSCROLL
+    LTEXT           "MB",IDC_STATIC,117,133,15,13
+END
+
+IDD_INPUT DIALOG  0, 0, 560, 263
+STYLE DS_SETFONT | WS_MINIMIZEBOX | WS_MAXIMIZEBOX | WS_POPUP | WS_VISIBLE | 
+    WS_CAPTION | WS_SYSMENU
+CAPTION "КдИл"
+FONT 8, "MS Sans Serif"
+BEGIN
+    PUSHBUTTON      "ёсКЅ",IDC_FORMAT,5,242,50,14
+    PUSHBUTTON      "Фґ",IDC_SOURCE,58,242,50,14
+    PUSHBUTTON      "ПФКѕ",IDC_DISPLAY,111,242,50,14
+    PUSHBUTTON      "AVI",IDC_AVI,164,242,50,14
+    CONTROL         "Ф¤АА",IDC_PREVIEW,"Button",BS_AUTOCHECKBOX | 
+                    BS_PUSHLIKE | WS_TABSTOP,217,242,50,14
+    CONTROL         "ЦШµю",IDC_OVERLAY,"Button",BS_AUTOCHECKBOX | 
+                    BS_PUSHLIKE | WS_TABSTOP,270,242,50,14
+    DEFPUSHBUTTON   "±Јґж",IDC_SAVE,396,242,50,14,WS_DISABLED
+    PUSHBUTTON      "№Ш±Х",IDCANCEL,449,242,50,14
+    PUSHBUTTON      "°пЦъ",IDHELP,502,242,50,14
+END
+
+IDD_TRIGGER_SEQUENCE DIALOG  0, 0, 64, 28
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION
+CAPTION "РтБР"
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "№Ш±Х",IDOK,7,7,50,14
+END
+
+IDD_DSHOW DIALOGEX 0, 0, 76, 146
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | 
+    WS_SYSMENU
+CAPTION "Ц±ЅУПФКѕ"
+FONT 8, "MS Sans Serif", 0, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "И·¶Ё",IDOK,20,12,50,14
+    PUSHBUTTON      "ИЎПы",IDCANCEL,20,33,50,14
+    PUSHBUTTON      "Фґ",IDC_SETTINGS,20,55,50,14
+    PUSHBUTTON      "ёсКЅ",IDC_FORMAT,20,76,50,14
+    PUSHBUTTON      "Ѕ»ІжїЄ№Ш",IDC_CROSSBAR,20,100,50,14
+    PUSHBUTTON      "µчРіЖч",IDC_TUNER,20,124,50,14
+    GROUPBOX        "",IDC_DSPREVIEW,4,4,10,138,NOT WS_VISIBLE
+    PUSHBUTTON      "КУЖµ",IDC_VIDEO_SETTINGS,0,22,50,14,NOT WS_VISIBLE
+    CONTROL         "",IDC_PROGRESS_VIDEO,"msctls_progress32",NOT WS_VISIBLE | 
+                    WS_BORDER,0,44,51,8
+END
+
+IDD_DSCOMPRESSION DIALOG  0, 0, 290, 170
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "С№Лх"
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "И·¶Ё",IDOK,43,138,50,14
+    PUSHBUTTON      "ИЎПы",IDCANCEL,116,138,50,14
+    LISTBOX         IDC_LIST,7,7,276,119,LBS_NOINTEGRALHEIGHT | WS_VSCROLL | 
+                    WS_TABSTOP
+    PUSHBUTTON      "ЙиЦГ",IDC_SETTINGS,189,138,50,14
+END
+
+IDD_VIDEO_DRIVERS_LIST DIALOGEX 0, 0, 230, 210
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "СЎФсКдИлКУЖµОДјюµДЗэ¶ЇЖч"
+FONT 8, "MS Sans Serif", 0, 0, 0x0
+BEGIN
+    DEFPUSHBUTTON   "И·¶Ё",IDOK,67,191,50,14
+    PUSHBUTTON      "ИЎПы",IDCANCEL,121,191,50,14
+    LISTBOX         IDC_LIST_DRIVERS,1,1,226,183,LBS_NOINTEGRALHEIGHT | 
+                    WS_VSCROLL | WS_TABSTOP
+    PUSHBUTTON      "°пЦъ",IDHELP,175,191,50,14
+END
+
+IDD_DSHOW_VIDEO DIALOGEX 0, 0, 76, 185
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | 
+    WS_SYSMENU
+CAPTION "Ц±ЅУПФКѕ"
+FONT 8, "MS Sans Serif", 0, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "И·¶Ё",IDOK,20,12,50,14
+    PUSHBUTTON      "ИЎПы",IDCANCEL,20,33,50,14
+    PUSHBUTTON      "Фґ",IDC_SETTINGS,20,55,50,14
+    PUSHBUTTON      "ёсКЅ",IDC_FORMAT,20,76,50,14
+    PUSHBUTTON      "Ѕ»ІжїЄ№Ш",IDC_CROSSBAR,20,100,50,14
+    PUSHBUTTON      "µчРіЖч",IDC_TUNER,20,124,50,14
+    GROUPBOX        "",IDC_DSPREVIEW,4,4,10,181,NOT WS_VISIBLE
+    PUSHBUTTON      "КУЖµ",IDC_VIDEO_SETTINGS,20,147,50,14
+    CONTROL         "Progress1",IDC_PROGRESS_VIDEO,"msctls_progress32",NOT 
+                    WS_VISIBLE | WS_BORDER,20,169,51,8
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO 
+BEGIN
+    IDD_PROPPAGE1, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 283
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 152
+    END
+
+    IDD_PROPPAGE2, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 283
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 152
+    END
+
+    IDD_CLIPBOARD_DLG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 167
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 39
+    END
+
+    IDD_INPUT, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 553
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 256
+    END
+
+    IDD_TRIGGER_SEQUENCE, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 57
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 21
+    END
+
+    IDD_DSHOW, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 69
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 139
+    END
+
+    IDD_DSCOMPRESSION, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 283
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 163
+    END
+
+    IDD_VIDEO_DRIVERS_LIST, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 223
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 203
+    END
+
+    IDD_DSHOW_VIDEO, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 69
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 178
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog Info
+//
+
+IDD_VIDEO_CAP DLGINIT
+BEGIN
+    IDC_CAPTURE_RATE_SCALE, 0x403, 4, 0
+0x7066, 0x0073, 
+    IDC_CAPTURE_RATE_SCALE, 0x403, 4, 0
+0x7066, 0x006d, 
+    IDC_CAPTURE_RATE_SCALE, 0x403, 4, 0
+0x7066, 0x0068, 
+    IDC_CAPTURE_RATE_SCALE, 0x403, 4, 0
+0x7066, 0x0064, 
+    IDC_PLAYBACK_RATE_SCALE, 0x403, 4, 0
+0x7066, 0x0073, 
+    IDC_PLAYBACK_RATE_SCALE, 0x403, 4, 0
+0x7066, 0x006d, 
+    IDC_PLAYBACK_RATE_SCALE, 0x403, 4, 0
+0x7066, 0x0068, 
+    IDC_PLAYBACK_RATE_SCALE, 0x403, 4, 0
+0x7066, 0x0064, 
+    0
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Toolbar
+//
+
+IDR_TOOLBAR1 TOOLBAR  16, 15
+BEGIN
+    BUTTON      IDS_ACTION_INPUT_IMAGE
+    BUTTON      IDS_ACTION_SHOW_PREVIEW
+    BUTTON      ID_ACTION_TRIGGERMODE
+    BUTTON      ID_ACTION_DO_TRIGGER
+    BUTTON      ID_ACTION_TRIGGER_SEQUENCE
+    BUTTON      ID_ACTION_DRIVERDLG
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDR_TOOLBAR1            BITMAP                  "toolbar1.bmp"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Accelerator
+//
+
+IDR_ACCELERATOR1 ACCELERATORS 
+BEGIN
+    "I",            IDS_ACTION_INPUT_IMAGE_IN_CUR, VIRTKEY, CONTROL, 
+                                                    NOINVERT
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE 
+BEGIN
+    IDS_ACTION_INPUT_IMAGE  "InputImage\nНјПсКдИл·Ѕ·Ё\n\nСЎФсНјПсКдИл·Ѕ·Ё\nНјПсКдИл·Ѕ·Ё"
+    IDS_MENU_INPUT_IMAGE    "anydoc\\File"
+    IDS_TB_MAIN             "ОДјюІЩЧч"
+    IDS_ACTION_INPUT_IMAGE_IN_CUR 
+                            "InputImageInCurrentDoc\nЅ«НјПсКдИлµ±З°ОДµµ\n\nЅ«НјПсКдИл»о¶ЇОДµµ\nЅ«НјПсКдИлµ±З°ОДµµ"
+    IDS_TEMPLATE            "\nPreview\nФ¤ААОДµµ\nФ¤ААОДµµ\n\nPreview.Document\nФ¤ААОДµµ"
+    IDS_ACTION_IMAGE_BY_SEL "ImageBySel\n°ґСЎЗшІГјф\nНјПс\n°ґСЎЗшІГјфНјПс\n°ґСЎЗшІГјф"
+    IDS_ACTION_RESTORE_SEL  "RestoreSel\n»ЦёґСЎЗш\n\n»ЦёґСЎЗш\n»ЦёґСЎЗш"
+    IDS_EMPTY               "ґґЅЁїХНјПс"
+    IDS_ACTION_INPUT_VIDEO  "InputVideo\nКдИлКУЖµ\n\nКдИлКУЖµ\nКдИлКУЖµ"
+    IDS_CLIPBOARD_MESSAGE   "ЗлЅ«НјПсёґЦЖµЅјфМщ°е..."
+    IDS_FILE_CAN_NOT_BE_OPENED "File %s can not be opened"
+    IDS_NO_DRIVER_SUPPORTS_AVI "Оґ°ІЧ°Ц§іЦКУЖµКдИлµДЗэ¶ЇіМРтЎЈ"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_PROPSHT_CAPTION     "Птµј"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_ACTION_SHOW_PREVIEW "ShowPreview\nКУЖµ\nКУЖµ\nК№УГКУЖµЙи±ёПФКѕКУЖµБч\nКУЖµ"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_MENU_VIEW           "Image\\КУНј"
+    IDS_CLIPBOARD           "ґУјфМщ°еХіМщ"
+    IDS_OPEN_FILE           "ґтїЄОДјю"
+    IDS_FILE_SEQUENCE       "ґтїЄОДјю"
+    IDS_LAST_FILE_IN_SEQUENCE "РтБРЦРІ»ґжФЪЖдЛьОДјюЎЈ"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_AVIRECORDED         "AVI ТСВјЦЖµЅОДјюЈє%s"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_ERROR_DURING_AVI_CAPTURE "І¶»с AVI  (%d-0x%x) К±іцґнЎЈ"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_ERROR_CONVERT_AVI   "ЧЄ»» AVI ОДјюК±іцґнЎЈЗлІйїґЗэ¶ЇЖч %c ЙПµДїЙУГґЕЕМїХјдЎЈ"
+    IDS_TIME_IN_SECONDS     "К±јд(Гл)(&T)"
+    IDS_TIME_IN_MINUTES     "К±јд(·Ц)(&T)"
+    IDS_TIME_IN_HOURS       "К±јд(РЎК±)(&T)"
+    IDS_INPUT               "»сИЎНјПс"
+    IDS_TWAIN               "TWAIN"
+    IDS_NO_PREVIEW          "µ±З°Зэ¶ЇіМРтІ»Ц§іЦФ¤ААєНґ°їЪЦШµю№¦ДЬЎЈ"
+    IDS_PREVIEW_VIEW        "Ф¤АА"
+    IDS_DIRECTSHOW          "Ц±ЅУПФКѕ"
+    IDS_NO_COMPRESSION      "ОЮС№Лх"
+    IDS_NETWORK_PATH        "КУЖµОДјюЦ»ДЬФЪ±ѕµШУІЕМЗэ¶ЇЖчЎЈ"
+    IDS_FILE_INACCESSIBLE   "ОДјю %s їЙДЬ±»Лш¶Ё»тІ»їЙ·ГОКЎЈ"
+END
+
+STRINGTABLE 
+BEGIN
+    ID_ACTION_TRIGGERMODE   "TriggerMode\nґҐ·ўЖчДЈКЅ\nКдИл\nёщѕЭНвІїРЕєЕКдИлНјПс\nґҐ·ўЖчДЈКЅ"
+    ID_ACTION_DO_TRIGGER    "DoTrigger\nИнјюґҐ·ўЖч\nКдИл\nНвІїРЕєЕДЈДв\nИнјюґҐ·ўЖч"
+    ID_ACTION_TRIGGER_SEQUENCE 
+                            "TriggerSequence\nґҐ·ўЖчРтБР\nКдИл\nёщѕЭНвІїРЕєЕКдИлПµБРНјПс\nґҐ·ўЖчРтБР"
+    ID_ACTION_DRIVERDLG     "DriverDlg\nЙгПс»ъЗэ¶ЇіМРт°ІЧ°\nКдИл\nµчУГЙгПс»ъЗэ¶ЇіМРтµД°ІЧ°¶Ф»°їт\nЙгПс»ъЗэ¶ЇіМРт°ІЧ°"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_ALLFILTER_NAME_FORMAT "All %s files ("
+END
+
+#endif    // Chinese (P.R.C.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+/////////////////////////////////////////////////////////////////////////////
+// Russian resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_RUS)
+#ifdef _WIN32
+LANGUAGE LANG_RUSSIAN, SUBLANG_DEFAULT
+#pragma code_page(1251)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_VIDEO_CAP DIALOGEX 0, 0, 290, 160
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Захват видео"
+FONT 8, "MS Sans Serif", 0, 0, 0x0
+BEGIN
+    GROUPBOX        "Параметры захвата",IDC_STATIC,6,3,215,95
+    LTEXT           "Скорость захвата:",IDC_STATIC,15,34,85,11
+    EDITTEXT        IDC_FPS,100,32,31,12,ES_AUTOHSCROLL
+    COMBOBOX        IDC_CAPTURE_RATE_SCALE,147,32,40,62,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    LTEXT           "Скорость воспроизведения:",IDC_STATIC,16,52,82,18
+    EDITTEXT        IDC_PLAYBACK_FPS,100,56,31,12,ES_AUTOHSCROLL
+    COMBOBOX        IDC_PLAYBACK_RATE_SCALE,146,56,40,52,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    LTEXT           "Время (в сек.)",IDC_TIME,16,77,81,11
+    EDITTEXT        IDC_TIME_LIM,100,76,31,12,ES_AUTOHSCROLL
+    LTEXT           "Файл",IDC_STATIC,6,110,20,8
+    LTEXT           "Static",IDC_FILE,34,107,186,14,SS_CENTERIMAGE | 
+                    SS_SUNKEN
+    DEFPUSHBUTTON   "OK",IDOK,231,7,50,14
+    PUSHBUTTON      "Отмена",IDCANCEL,231,26,50,14
+    PUSHBUTTON      "Открыть...",IDC_BROWSE,230,107,50,14
+    PUSHBUTTON      "Справка",IDHELP,230,64,50,14
+    PUSHBUTTON      "Сжатие",IDC_COMPRESSION,230,45,50,14
+    CONTROL         "Зарезервировать",IDC_ALLOC_FILE,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,8,133,72,11
+    EDITTEXT        IDC_EDIT_FILE_SIZE,87,130,42,17,ES_AUTOHSCROLL
+    LTEXT           "MB",IDC_STATIC,139,132,15,13
+END
+
+IDD_INPUT DIALOG  0, 0, 601, 264
+STYLE DS_SETFONT | WS_MINIMIZEBOX | WS_MAXIMIZEBOX | WS_POPUP | WS_VISIBLE | 
+    WS_CAPTION | WS_SYSMENU
+CAPTION "Ввод"
+FONT 8, "MS Sans Serif"
+BEGIN
+    PUSHBUTTON      "Формат",IDC_FORMAT,6,244,50,14
+    PUSHBUTTON      "Источник",IDC_SOURCE,59,244,50,14
+    PUSHBUTTON      "Дисплей",IDC_DISPLAY,112,244,50,14
+    PUSHBUTTON      "AVI",IDC_AVI,165,244,50,14
+    CONTROL         "Просмотр",IDC_PREVIEW,"Button",BS_AUTOCHECKBOX | 
+                    BS_PUSHLIKE | WS_TABSTOP,218,244,50,14
+    CONTROL         "Перекрытия",IDC_OVERLAY,"Button",BS_AUTOCHECKBOX | 
+                    BS_PUSHLIKE | WS_TABSTOP,271,244,50,14
+    PUSHBUTTON      "Сохранить",IDC_SAVE,436,244,50,14,WS_DISABLED
+    PUSHBUTTON      "Закрыть",IDCANCEL,489,244,50,14
+    PUSHBUTTON      "Справка",IDHELP,542,244,50,14
+END
+
+IDD_CLIPBOARD_DLG DIALOGEX 0, 0, 172, 38
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Вставить из буфера"
+FONT 8, "MS Sans Serif", 0, 0, 0x0
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,4,19,50,14
+    PUSHBUTTON      "Отмена",IDCANCEL,61,19,50,14
+    PUSHBUTTON      "Справка",IDHELP,118,19,50,14
+    GROUPBOX        "",IDC_CLIPBOARD_PREVIEW,2,3,170,13,NOT WS_VISIBLE
+END
+
+IDD_PROPPAGE1 DIALOG  0, 0, 290, 160
+STYLE DS_SETFONT | WS_CHILD | WS_DISABLED | WS_CAPTION
+CAPTION "Способ получения изображения"
+FONT 8, "MS Sans Serif"
+BEGIN
+    LISTBOX         IDC_CREATORS_LIST,44,29,200,100,LBS_NOINTEGRALHEIGHT | 
+                    WS_VSCROLL | WS_TABSTOP
+END
+
+IDD_PROPPAGE2 DIALOG  0, 0, 290, 160
+STYLE DS_SETFONT | WS_CHILD | WS_DISABLED | WS_CAPTION
+CAPTION "Выбор устройства"
+FONT 8, "MS Sans Serif"
+BEGIN
+    LISTBOX         IDC_DRIVERS_LIST,44,29,200,55,LBS_NOINTEGRALHEIGHT | 
+                    WS_VSCROLL | WS_TABSTOP
+    GROUPBOX        "",IDC_STATIC,44,92,94,49
+    CONTROL         "Ввод с усреднением",IDC_ACCUMULATION,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,50,103,82,16
+    LTEXT           "Количество изображений:",IDC_STATIC_IMAGES,50,118,47,19
+    EDITTEXT        IDC_E_IMAGES_NUM,102,119,30,14,ES_AUTOHSCROLL
+    CONTROL         "Spin1",IDC_S_IMAGES_NUM,"msctls_updown32",
+                    UDS_SETBUDDYINT | UDS_ALIGNRIGHT | UDS_AUTOBUDDY | 
+                    UDS_ARROWKEYS,114,120,11,18
+    GROUPBOX        "",IDC_STATIC,142,92,102,49
+    CONTROL         "Ввод по рамке",IDC_USE_FRAME,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,146,103,66,16
+    CONTROL         "Редактировать рамку",IDC_EDIT_INPUT_FRAME,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,146,119,90,14
+END
+
+IDD_DSHOW DIALOGEX 0, 0, 75, 146
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | 
+    WS_SYSMENU
+CAPTION "Direct show"
+FONT 8, "MS Sans Serif", 0, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,19,10,50,14
+    PUSHBUTTON      "Отмена",IDCANCEL,19,31,50,14
+    PUSHBUTTON      "Источник",IDC_SETTINGS,19,52,50,14
+    PUSHBUTTON      "Формат",IDC_FORMAT,19,74,50,14
+    PUSHBUTTON      "Вход",IDC_CROSSBAR,19,98,50,14
+    PUSHBUTTON      "Канал",IDC_TUNER,19,122,50,14
+    GROUPBOX        "",IDC_DSPREVIEW,4,4,9,136,NOT WS_VISIBLE
+    PUSHBUTTON      "Видео",IDC_VIDEO_SETTINGS,3,64,50,14,NOT WS_VISIBLE
+    CONTROL         "",IDC_PROGRESS_VIDEO,"msctls_progress32",NOT WS_VISIBLE | 
+                    WS_BORDER,3,86,51,8
+END
+
+IDD_DSCOMPRESSION DIALOG  0, 0, 290, 170
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Сжатие"
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,43,138,50,14
+    PUSHBUTTON      "Выход",IDCANCEL,116,138,50,14
+    LISTBOX         IDC_LIST,7,7,276,119,LBS_NOINTEGRALHEIGHT | WS_VSCROLL | 
+                    WS_TABSTOP
+    PUSHBUTTON      "Установки",IDC_SETTINGS,189,138,50,14
+END
+
+IDD_VIDEO_DRIVERS_LIST DIALOG  0, 0, 230, 214
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Выбор драйвера для ввода видеоизображения"
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,65,194,50,14
+    PUSHBUTTON      "Отмена",IDCANCEL,118,194,50,14
+    LISTBOX         IDC_LIST_DRIVERS,5,3,217,187,LBS_NOINTEGRALHEIGHT | 
+                    WS_VSCROLL | WS_TABSTOP
+    PUSHBUTTON      "Справка",IDHELP,172,194,50,14
+END
+
+IDD_DSHOW_VIDEO DIALOGEX 0, 0, 75, 183
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | 
+    WS_SYSMENU
+CAPTION "Direct show"
+FONT 8, "MS Sans Serif", 0, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,19,10,50,14
+    PUSHBUTTON      "Отмена",IDCANCEL,19,31,50,14
+    PUSHBUTTON      "Источник",IDC_SETTINGS,19,52,50,14
+    PUSHBUTTON      "Формат",IDC_FORMAT,19,74,50,14
+    PUSHBUTTON      "Вход",IDC_CROSSBAR,19,98,50,14
+    PUSHBUTTON      "Канал",IDC_TUNER,19,122,50,14
+    GROUPBOX        "",IDC_DSPREVIEW,4,4,9,172,NOT WS_VISIBLE
+    PUSHBUTTON      "Видео",IDC_VIDEO_SETTINGS,19,145,50,14
+    CONTROL         "Progress1",IDC_PROGRESS_VIDEO,"msctls_progress32",NOT 
+                    WS_VISIBLE | WS_BORDER,19,167,51,8
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO 
+BEGIN
+    IDD_VIDEO_CAP, DIALOG
+    BEGIN
+        RIGHTMARGIN, 280
+        BOTTOMMARGIN, 153
+    END
+
+    IDD_INPUT, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 594
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 257
+    END
+
+    IDD_CLIPBOARD_DLG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 165
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 31
+    END
+
+    IDD_PROPPAGE1, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 283
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 152
+    END
+
+    IDD_PROPPAGE2, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 283
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 152
+    END
+
+    IDD_DSHOW, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 68
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 139
+    END
+
+    IDD_DSCOMPRESSION, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 283
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 163
+    END
+
+    IDD_VIDEO_DRIVERS_LIST, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 223
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 207
+    END
+
+    IDD_DSHOW_VIDEO, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 68
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 176
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog Info
+//
+
+IDD_VIDEO_CAP DLGINIT
+BEGIN
+    IDC_CAPTURE_RATE_SCALE, 0x403, 4, 0
+0x7066, 0x0073, 
+    IDC_CAPTURE_RATE_SCALE, 0x403, 4, 0
+0x7066, 0x006d, 
+    IDC_CAPTURE_RATE_SCALE, 0x403, 4, 0
+0x7066, 0x0068, 
+    IDC_CAPTURE_RATE_SCALE, 0x403, 4, 0
+0x7066, 0x0064, 
+    IDC_PLAYBACK_RATE_SCALE, 0x403, 4, 0
+0x7066, 0x0073, 
+    IDC_PLAYBACK_RATE_SCALE, 0x403, 4, 0
+0x7066, 0x006d, 
+    IDC_PLAYBACK_RATE_SCALE, 0x403, 4, 0
+0x7066, 0x0068, 
+    IDC_PLAYBACK_RATE_SCALE, 0x403, 4, 0
+0x7066, 0x0064, 
+    0
+END
+
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)\r\n"
+    "#ifdef _WIN32\r\n"
+    "LANGUAGE 9, 1\r\n"
+    "#pragma code_page(1252)\r\n"
+    "#endif //_WIN32\r\n"
+    "#include ""res\\NewDoc.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "#include ""afxres.rc""         // Standard components\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE 
+BEGIN
+    IDS_ACTION_INPUT_IMAGE  "InputImage\nСпособ получения изображения\nВвод\nВыбор способа получения изображения\nСпособ получения изображения"
+    IDS_MENU_INPUT_IMAGE    "anydoc\\File"
+    IDS_TB_MAIN             "Файловая операция"
+    IDS_ACTION_INPUT_IMAGE_IN_CUR 
+                            "InputImageInCurrentDoc\nВвод изображения в активный документ\n\nВвести изображение в активный документ\nВвод изображения в активный документ"
+    IDS_TEMPLATE            "\nPreview\nДокумент просмотра\nДокумент просмотра\n\nPreview.Document\nPreview Document"
+    IDS_ACTION_IMAGE_BY_SEL "ImageBySel\nОбрезать по рамке\nИзображение\nОбрезать изображение по рамке\nОбрезать по рамке"
+    IDS_ACTION_RESTORE_SEL  "RestoreSel\nrestore selection\n\nrestore selection\nRestoreSel"
+    IDS_EMPTY               "Создать пустое изображение"
+    IDS_ACTION_INPUT_VIDEO  "InputVideo\nВидео\nВвод\nВидео\nВидео"
+    IDS_CLIPBOARD_MESSAGE   "Скопируйте, пожалуйста, изображение в буфер обмена..."
+    IDS_FILE_CAN_NOT_BE_OPENED "Файл ""%s"" не может быть открыт"
+    IDS_NO_DRIVER_SUPPORTS_AVI 
+                            "Не инсталлирован драйвер для ввода видеоизображения."
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_PROPSHT_CAPTION     "Мастер"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_ACTION_SHOW_PREVIEW "ShowPreview\nВидео\nВид\nПросмотр ""живого видео"" с видеоустройства\nВидео"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_MENU_VIEW           "Image\\View"
+    IDS_CLIPBOARD           "Вставить из буфера"
+    IDS_OPEN_FILE           "Открыть файл"
+    IDS_FILE_SEQUENCE       "Открыть файл"
+    IDS_LAST_FILE_IN_SEQUENCE "В последовательности нет больше файлов."
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_AVIRECORDED         "AVI сохранен в файле: %s"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_ERROR_DURING_AVI_CAPTURE "Ошибка во время захвата AVI (%d-0x%x)."
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_ERROR_CONVERT_AVI   "Ошибка во время преобразования AVI файла. Проверьте наличие достаточного количества дискового пространства на диске %c."
+    IDS_TIME_IN_SECONDS     "&Время (в секундах)"
+    IDS_TIME_IN_MINUTES     "&Время (в минутах)"
+    IDS_TIME_IN_HOURS       "&Время (в часах)"
+    IDS_INPUT               "Захват изображения"
+    IDS_TWAIN               "TWAIN"
+    IDS_NO_PREVIEW          "Драйвер не поддерживает окна  предварительного просмотра и наложения."
+    IDS_PREVIEW_VIEW        "Предварительный просмотр"
+    IDS_DIRECTSHOW          "DirectShow"
+    IDS_NO_COMPRESSION      "Без сжатия"
+    IDS_NETWORK_PATH        "Видео должно сохраняться только на локальный жесткий диск."
+    IDS_FILE_INACCESSIBLE   "Файл %s недоступен или используется другим приложением."
+END
+
+STRINGTABLE 
+BEGIN
+    ID_ACTION_TRIGGERMODE   "TriggerMode\nВвод по триггеру\nВвод\nВвод изображения по внешнему сигналу\nВвод по триггеру"
+    ID_ACTION_DO_TRIGGER    "DoTrigger\nПрограммный триггер\nВвод\nЭмуляция срабатывания внешнего сигнала\nПрограммный триггер"
+    ID_ACTION_TRIGGER_SEQUENCE 
+                            "TriggerSequence\nПоследовательный ввод по внешнему сигналу\nВвод\nПоследовательный ввод по внешнему сигналу\nПоследовательный ввод по внешнему сигналу"
+    ID_ACTION_DRIVERDLG     "DriverDlg\nНастройки драйвера камеры\nВвод\nНастройки драйвера камеры\nНастройки драйвера камеры"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_ALLFILTER           "Все Файлы(*.*)"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_ALLFILTER_NAME_FORMAT "Все файлы %s ("
+END
+
+#endif    // Russian resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.S.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_PROPPAGE1 DIALOG  0, 0, 290, 160
+STYLE DS_SETFONT | WS_CHILD | WS_DISABLED | WS_CAPTION
+CAPTION "Method of Image Input"
+FONT 8, "MS Sans Serif"
+BEGIN
+    LISTBOX         IDC_CREATORS_LIST,44,29,200,100,LBS_NOINTEGRALHEIGHT | 
+                    WS_VSCROLL | WS_TABSTOP
+END
+
+IDD_PROPPAGE2 DIALOG  0, 0, 290, 160
+STYLE DS_SETFONT | WS_CHILD | WS_DISABLED | WS_CAPTION
+CAPTION "Select Device"
+FONT 8, "MS Sans Serif"
+BEGIN
+    LISTBOX         IDC_DRIVERS_LIST,45,29,200,60,LBS_NOINTEGRALHEIGHT | 
+                    WS_VSCROLL | WS_TABSTOP
+    GROUPBOX        "",IDC_STATIC,45,93,90,49
+    CONTROL         "Average",IDC_ACCUMULATION,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,56,101,56,16
+    LTEXT           "Number of images :",IDC_STATIC_IMAGES,56,118,39,16
+    EDITTEXT        IDC_E_IMAGES_NUM,93,120,30,14,ES_AUTOHSCROLL
+    CONTROL         "Spin1",IDC_S_IMAGES_NUM,"msctls_updown32",
+                    UDS_SETBUDDYINT | UDS_ALIGNRIGHT | UDS_AUTOBUDDY | 
+                    UDS_ARROWKEYS,111,120,11,18
+    GROUPBOX        "",IDC_STATIC,139,93,106,49
+    CONTROL         "Use input frame",IDC_USE_FRAME,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,159,104,66,16
+    CONTROL         "Edit input frame",IDC_EDIT_INPUT_FRAME,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,159,120,63,14
+END
+
+IDD_CLIPBOARD_DLG DIALOGEX 0, 0, 174, 46
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Paste from Clipboard"
+FONT 8, "MS Sans Serif", 0, 0, 0x0
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,5,25,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,61,25,50,14
+    PUSHBUTTON      "Help",IDHELP,119,25,50,14
+    GROUPBOX        "",IDC_CLIPBOARD_PREVIEW,1,3,172,17,NOT WS_VISIBLE
+END
+
+IDD_VIDEO_CAP DIALOGEX 0, 0, 290, 155
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Video Capture"
+FONT 8, "MS Sans Serif", 0, 0, 0x0
+BEGIN
+    GROUPBOX        "Parameters of Capture",IDC_STATIC,5,4,215,96
+    LTEXT           "&Capture rate:",IDC_STATIC,37,36,43,11
+    EDITTEXT        IDC_FPS,102,34,31,16,ES_AUTOHSCROLL
+    COMBOBOX        IDC_CAPTURE_RATE_SCALE,149,34,40,62,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    LTEXT           "Playback rate:",IDC_STATIC,37,57,46,11
+    EDITTEXT        IDC_PLAYBACK_FPS,102,55,31,16,ES_AUTOHSCROLL
+    COMBOBOX        IDC_PLAYBACK_RATE_SCALE,148,55,40,52,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    LTEXT           "&Time (in seconds)",IDC_TIME,37,79,56,11
+    EDITTEXT        IDC_TIME_LIM,102,76,31,16,ES_AUTOHSCROLL
+    LTEXT           "AVI file name",IDC_STATIC,5,110,42,14,SS_CENTERIMAGE
+    LTEXT           "Static",IDC_FILE,55,110,165,14,SS_CENTERIMAGE | 
+                    SS_SUNKEN
+    DEFPUSHBUTTON   "OK",IDOK,235,8,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,235,26,50,14
+    PUSHBUTTON      "Browse...",IDC_BROWSE,235,110,50,14
+    PUSHBUTTON      "Help",IDHELP,235,62,50,14
+    PUSHBUTTON      "Compression",IDC_COMPRESSION,235,44,50,14
+    CONTROL         "Allocate file",IDC_ALLOC_FILE,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,5,134,53,11
+    EDITTEXT        IDC_EDIT_FILE_SIZE,68,131,42,17,ES_AUTOHSCROLL
+    LTEXT           "MB",IDC_STATIC,117,133,15,13
+END
+
+IDD_INPUT DIALOG  0, 0, 560, 263
+STYLE DS_SETFONT | WS_MINIMIZEBOX | WS_MAXIMIZEBOX | WS_POPUP | WS_VISIBLE | 
+    WS_CAPTION | WS_SYSMENU
+CAPTION "Input"
+FONT 8, "MS Sans Serif"
+BEGIN
+    PUSHBUTTON      "Format",IDC_FORMAT,5,242,50,14
+    PUSHBUTTON      "Source",IDC_SOURCE,58,242,50,14
+    PUSHBUTTON      "Display",IDC_DISPLAY,111,242,50,14
+    PUSHBUTTON      "AVI",IDC_AVI,164,242,50,14
+    CONTROL         "Preview",IDC_PREVIEW,"Button",BS_AUTOCHECKBOX | 
+                    BS_PUSHLIKE | WS_TABSTOP,217,242,50,14
+    CONTROL         "Overlay",IDC_OVERLAY,"Button",BS_AUTOCHECKBOX | 
+                    BS_PUSHLIKE | WS_TABSTOP,270,242,50,14
+    DEFPUSHBUTTON   "Save",IDC_SAVE,396,242,50,14,WS_DISABLED
+    PUSHBUTTON      "Close",IDCANCEL,449,242,50,14
+    PUSHBUTTON      "Help",IDHELP,502,242,50,14
+END
+
+IDD_TRIGGER_SEQUENCE DIALOG  0, 0, 64, 28
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION
+CAPTION "Sequence"
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "Close",IDOK,7,7,50,14
+END
+
+IDD_DSHOW DIALOGEX 0, 0, 76, 146
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | 
+    WS_SYSMENU
+CAPTION "Direct show"
+FONT 8, "MS Sans Serif", 0, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,20,12,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,20,33,50,14
+    PUSHBUTTON      "Source",IDC_SETTINGS,20,55,50,14
+    PUSHBUTTON      "Format",IDC_FORMAT,20,76,50,14
+    PUSHBUTTON      "Crossbar",IDC_CROSSBAR,20,100,50,14
+    PUSHBUTTON      "Tuner",IDC_TUNER,20,124,50,14
+    GROUPBOX        "",IDC_DSPREVIEW,4,4,10,138,NOT WS_VISIBLE
+    PUSHBUTTON      "Video",IDC_VIDEO_SETTINGS,0,22,50,14,NOT WS_VISIBLE
+    CONTROL         "",IDC_PROGRESS_VIDEO,"msctls_progress32",NOT WS_VISIBLE | 
+                    WS_BORDER,0,44,51,8
+END
+
+IDD_DSCOMPRESSION DIALOG  0, 0, 290, 170
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Compression"
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,43,138,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,116,138,50,14
+    LISTBOX         IDC_LIST,7,7,276,119,LBS_NOINTEGRALHEIGHT | WS_VSCROLL | 
+                    WS_TABSTOP
+    PUSHBUTTON      "Settings",IDC_SETTINGS,189,138,50,14
+END
+
+IDD_VIDEO_DRIVERS_LIST DIALOGEX 0, 0, 230, 210
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Select Driver to Input Video File"
+FONT 8, "MS Sans Serif", 0, 0, 0x0
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,67,191,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,121,191,50,14
+    LISTBOX         IDC_LIST_DRIVERS,1,1,226,183,LBS_NOINTEGRALHEIGHT | 
+                    WS_VSCROLL | WS_TABSTOP
+    PUSHBUTTON      "Help",IDHELP,175,191,50,14
+END
+
+IDD_DSHOW_VIDEO DIALOGEX 0, 0, 76, 185
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | 
+    WS_SYSMENU
+CAPTION "Direct show"
+FONT 8, "MS Sans Serif", 0, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,20,12,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,20,33,50,14
+    PUSHBUTTON      "Source",IDC_SETTINGS,20,55,50,14
+    PUSHBUTTON      "Format",IDC_FORMAT,20,76,50,14
+    PUSHBUTTON      "Crossbar",IDC_CROSSBAR,20,100,50,14
+    PUSHBUTTON      "Tuner",IDC_TUNER,20,124,50,14
+    GROUPBOX        "",IDC_DSPREVIEW,4,4,10,181,NOT WS_VISIBLE
+    PUSHBUTTON      "Video",IDC_VIDEO_SETTINGS,20,147,50,14
+    CONTROL         "Progress1",IDC_PROGRESS_VIDEO,"msctls_progress32",NOT 
+                    WS_VISIBLE | WS_BORDER,20,169,51,8
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO 
+BEGIN
+    IDD_PROPPAGE1, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 283
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 152
+    END
+
+    IDD_PROPPAGE2, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 283
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 152
+    END
+
+    IDD_CLIPBOARD_DLG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 167
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 39
+    END
+
+    IDD_INPUT, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 553
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 256
+    END
+
+    IDD_TRIGGER_SEQUENCE, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 57
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 21
+    END
+
+    IDD_DSHOW, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 69
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 139
+    END
+
+    IDD_DSCOMPRESSION, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 283
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 163
+    END
+
+    IDD_VIDEO_DRIVERS_LIST, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 223
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 203
+    END
+
+    IDD_DSHOW_VIDEO, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 69
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 178
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog Info
+//
+
+IDD_VIDEO_CAP DLGINIT
+BEGIN
+    IDC_CAPTURE_RATE_SCALE, 0x403, 4, 0
+0x7066, 0x0073, 
+    IDC_CAPTURE_RATE_SCALE, 0x403, 4, 0
+0x7066, 0x006d, 
+    IDC_CAPTURE_RATE_SCALE, 0x403, 4, 0
+0x7066, 0x0068, 
+    IDC_CAPTURE_RATE_SCALE, 0x403, 4, 0
+0x7066, 0x0064, 
+    IDC_PLAYBACK_RATE_SCALE, 0x403, 4, 0
+0x7066, 0x0073, 
+    IDC_PLAYBACK_RATE_SCALE, 0x403, 4, 0
+0x7066, 0x006d, 
+    IDC_PLAYBACK_RATE_SCALE, 0x403, 4, 0
+0x7066, 0x0068, 
+    IDC_PLAYBACK_RATE_SCALE, 0x403, 4, 0
+0x7066, 0x0064, 
+    0
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Toolbar
+//
+
+IDR_TOOLBAR1 TOOLBAR  16, 15
+BEGIN
+    BUTTON      IDS_ACTION_INPUT_IMAGE
+    BUTTON      IDS_ACTION_SHOW_PREVIEW
+    BUTTON      ID_ACTION_TRIGGERMODE
+    BUTTON      ID_ACTION_DO_TRIGGER
+    BUTTON      ID_ACTION_TRIGGER_SEQUENCE
+    BUTTON      ID_ACTION_DRIVERDLG
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDR_TOOLBAR1            BITMAP                  "toolbar1.bmp"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Accelerator
+//
+
+IDR_ACCELERATOR1 ACCELERATORS 
+BEGIN
+    "I",            IDS_ACTION_INPUT_IMAGE_IN_CUR, VIRTKEY, CONTROL, 
+                                                    NOINVERT
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE 
+BEGIN
+    IDS_ACTION_INPUT_IMAGE  "InputImage\nMethod of Image Input\n\nSelect method of image input\nMethod of Image Input"
+    IDS_MENU_INPUT_IMAGE    "anydoc\\File"
+    IDS_TB_MAIN             "File operation"
+    IDS_ACTION_INPUT_IMAGE_IN_CUR 
+                            "InputImageInCurrentDoc\nInput Image into Current Document\n\nInput image into the active document\nInput Image into Current Document"
+    IDS_TEMPLATE            "\nPreview\nPreview Document\nPreview Document\n\nPreview.Document\nPreview Document"
+    IDS_ACTION_IMAGE_BY_SEL "ImageBySel\nCrop by Selection\nImage\nCrop the image by selection\nCrop by Selection"
+    IDS_ACTION_RESTORE_SEL  "RestoreSel\nRestore Selection\n\nRestore selection\nRestore Selection"
+    IDS_EMPTY               "Create empty image"
+    IDS_ACTION_INPUT_VIDEO  "InputVideo\nInput Video\n\nInput video\nInput Video"
+    IDS_CLIPBOARD_MESSAGE   "Please, copy the image to the clipboard..."
+    IDS_FILE_CAN_NOT_BE_OPENED "File %s can not be opened"
+    IDS_NO_DRIVER_SUPPORTS_AVI 
+                            "No drivers supporting video input are installed."
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_PROPSHT_CAPTION     "Wizard"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_ACTION_SHOW_PREVIEW "ShowPreview\nVideo\nView\nShow video stream from video device\nVideo"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_MENU_VIEW           "Image\\View"
+    IDS_CLIPBOARD           "Paste from clipboard"
+    IDS_OPEN_FILE           "Open File"
+    IDS_FILE_SEQUENCE       "Open File"
+    IDS_LAST_FILE_IN_SEQUENCE "There are no more files in sequence."
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_AVIRECORDED         "AVI recorded to file: %s"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_ERROR_DURING_AVI_CAPTURE "Error during AVI capture (%d-0x%x)."
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_ERROR_CONVERT_AVI   "Error during AVI file conversion. Check for free disk space on drive %c, please."
+    IDS_TIME_IN_SECONDS     "&Time (in seconds)"
+    IDS_TIME_IN_MINUTES     "&Time (in minutes)"
+    IDS_TIME_IN_HOURS       "&Time (in hours)"
+    IDS_INPUT               "Acquire image"
+    IDS_TWAIN               "TWAIN"
+    IDS_NO_PREVIEW          "Current driver supports neither preview nor overlay window."
+    IDS_PREVIEW_VIEW        "Preview"
+    IDS_DIRECTSHOW          "DirectShow"
+    IDS_NO_COMPRESSION      "No compression"
+    IDS_NETWORK_PATH        "Video can be only onto local hard drive."
+    IDS_FILE_INACCESSIBLE   "File %s can is locked or inaccessible."
+END
+
+STRINGTABLE 
+BEGIN
+    ID_ACTION_TRIGGERMODE   "TriggerMode\nTrigger Mode\nInput\nInput image at external signal\nTrigger Mode"
+    ID_ACTION_DO_TRIGGER    "DoTrigger\nSoftware Trigger\nInput\nExternal signal emulation\nSoftware Trigger"
+    ID_ACTION_TRIGGER_SEQUENCE 
+                            "TriggerSequence\nTrigger Sequence\nInput\nInput series of images at external signal\nTrigger Sequence"
+    ID_ACTION_DRIVERDLG     "DriverDlg\nCamera Driver Setup\nInput\nInvoke camera driver setup dialog box\nCamera Driver Setup"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_ALLFILTER           "All Files(*.*)"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_ALLFILTER_NAME_FORMAT "All %s files ("
+END
+
+#endif    // English (U.S.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE 9, 1
+#pragma code_page(1252)
+#endif //_WIN32
+#include "res\NewDoc.rc2"  // non-Microsoft Visual C++ edited resources
+#include "afxres.rc"         // Standard components
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

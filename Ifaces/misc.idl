@@ -1,0 +1,163 @@
+import "miscdefs.idl";
+
+#define com_call HRESULT
+[
+	uuid(769503AA-DCA1-49eb-823F-C5FB7C3E14FA),
+	version(1.0),
+	helpstring("VideoTesT 5 Calibration Type Library")
+]
+library MiscTypeLib
+{
+
+//main purpose of it interface is support standard mechanizm for
+//using named item's
+[uuid(51CE67A8-2220-11d3-A5D6-0000B493FF1B)]
+interface INamedObject2 : IUnknown
+{
+	com_call GetName( BSTR *pbstr ) = 0;
+	com_call GetUserName( BSTR *pbstr ) = 0;
+	com_call SetName( BSTR bstr ) = 0;
+	com_call SetUserName( BSTR bstr ) = 0;
+	com_call GenerateUniqueName( BSTR bstrBase ) = 0;
+};
+
+
+//purpose of this interface is support unique number.
+[uuid(51CE67A9-2220-11d3-A5D6-0000B493FF1B)]
+interface INumeredObject : IUnknown
+{
+	com_call AssignKey( GUID Key ) = 0;
+	com_call GetKey( GUID *pKey ) = 0;
+//	com_call GenerateNewKey() = 0;
+	com_call GetCreateNum( long *plNum ) = 0;
+	com_call GenerateNewKey( GUID * pKey ) = 0;
+};
+
+
+//interface of component, who requires IUnknown from application
+[uuid(51CE67AB-2220-11d3-A5D6-0000B493FF1B)]
+interface IRootedObject : IUnknown
+{
+	com_call AttachParent( IUnknown *punkParent ) = 0;
+	com_call GetParent( IUnknown **punkParent ) = 0;
+};
+
+
+//compenent management
+[uuid(51CE67AC-2220-11d3-A5D6-0000B493FF1B)]
+interface ICompManager : IUnknown
+{
+	com_call GetCount( int *piCount ) = 0;
+	com_call LoadComponents() = 0;
+	com_call FreeComponents() = 0;
+
+	com_call GetComponentUnknownByIdx( int idx, IUnknown **ppunk ) = 0;
+	com_call GetComponentUnknownByIID( const IID iid, IUnknown **ppunk ) = 0;
+	com_call GetComponentUnknownByCLSID( const CLSID clsid, IUnknown **ppunk ) = 0;
+
+	com_call AddComponent( IUnknown *punk, int *piIdx ) = 0;
+	com_call RemoveComponent( int idx ) = 0;
+};
+
+//compenent management
+[uuid(51CE67AD-2220-11d3-A5D6-0000B493FF1B)]
+interface ICompRegistrator : IUnknown
+{
+	com_call GetCount( int *piCount ) = 0;
+	com_call GetCompInfo( int idx, BSTR *pbstr ) = 0;
+//		com_call GetSection
+//		com_call RegisterComp( BSTR bstr, DWORD dwComp );
+//		com_call UnRegisterComp( BSTR bstr, DWORD dwComp );
+};
+[uuid(51CE67AE-2220-11d3-A5D6-0000B493FF1B)]
+interface IEventListener : IUnknown
+{
+	com_call Notify( BSTR szEventDesc, IUnknown *pHint, IUnknown *pFrom, void *pdata, long cbSize ) = 0;
+	com_call IsInNotify(BOOL *pbFlag) = 0;
+
+};
+
+[uuid(51CE67B3-2220-11d3-A5D6-0000B493FF1B)]
+interface INotifyController : IUnknown
+{
+	com_call FireEvent( BSTR szEventDesc, IUnknown *pHint, IUnknown *pFrom, void *pdata, long cbSize ) = 0;
+	com_call RegisterEventListener( BSTR szEventDesc, IUnknown *pListener ) = 0;
+	com_call UnRegisterEventListener( BSTR szEventDesc, IUnknown *pListener ) = 0;
+	com_call IsRegisteredEventListener( BSTR szEventDesc, IUnknown *pListener, BOOL * pbFlag) = 0;
+};
+
+[uuid(EEB71132-0F95-41f6-A851-8E985B8A7076)]
+interface INotifyController2 : INotifyController
+{
+	com_call AddSource(IUnknown * punkSrc) = 0;
+	com_call RemoveSource(IUnknown * punkSrc) = 0;
+};
+
+[uuid(911C6B01-5AEB-11d3-A635-0090275995FE)]
+interface IHelpInfo : IUnknown
+{
+	com_call GetHelpInfo( BSTR *pbstrHelpFile, BSTR *pbstrHelpTopic, DWORD *pdwFlags ) = 0;
+};
+
+// [vanek]  - 04.11.2004
+[uuid(AD1B4F26-AA9A-49df-815B-299509E2CBDA)]
+interface IHelpInfo2 : IHelpInfo
+{
+	com_call GetHelpInfo2( BSTR *pbstrHelpFile, BSTR *pbstrHelpTopic, DWORD *pdwFlags, BSTR *pbstrHelpPrefix ) = 0;
+};
+
+[uuid(59C0F710-7FE5-11d3-A50C-0000B493A187)]
+interface IPropertySheet : IUnknown
+{
+	com_call IncludePage(int nPage) = 0;
+	com_call ExcludePage(int nPage) = 0;
+	
+	com_call GetPagesCount(int* pNumPages) = 0;
+	com_call GetPage( int nPage, IUnknown **ppunkPage ) = 0;
+
+	com_call ActivatePage( int nPage ) = 0;
+	com_call GetActivePage( int *pnPage ) = 0;
+	com_call SetModified( BOOL bSetModified ) = 0;
+};
+
+[uuid(1362B112-8AE6-11d3-A523-0000B493A187)]
+interface IStatusBar : IUnknown
+{
+	com_call IncludePane(IUnknown* punkPane, int* pNum) = 0;
+	com_call ExcludePane(int nNum) = 0;
+	com_call SaveState(IUnknown* punkNamedData, BSTR bstrSection) = 0;
+	com_call LoadState(IUnknown* punkNamedData, BSTR bstrSection) = 0;
+	com_call GetHandle( HANDLE *phWnd ) = 0;
+};
+
+[uuid(AB4386E1-FE60-11d3-A0C5-0000B493A187)]
+interface IProvideColors : IUnknown
+{
+	com_call GetColorsInfo(long* pnCount, DWORD** ppdwColors) = 0;
+};
+
+[uuid(D1EFC4A4-F6F0-4667-96B5-957BBCC2C4B8)]
+interface IClipboard : IUnknown
+{
+	com_call GetFirstFormatPosition(long *pnPos) = 0;
+	com_call GetNextFormat(UINT* pnFormat, long *pnPosNext) = 0;
+	com_call Copy(UINT nFormat, HANDLE* pHandle) = 0;
+	com_call Paste(UINT nFormat,HANDLE Handle) = 0;
+	com_call IsSupportPaste(BOOL* pboolSupportPaste) = 0;
+};
+
+[uuid(55049B03-6244-42d9-AFFA-51F751494F76)]
+interface IStateObject: IUnknown
+{
+	com_call LoadState();
+	com_call StoreState();
+};
+
+[uuid(F09F8272-2A8D-4c32-9517-A24524DEECC4)]
+interface IInitializeObjectVT: IUnknown
+{
+	com_call Initialize();
+};
+
+
+};

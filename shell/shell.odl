@@ -1,0 +1,415 @@
+// shell.odl : type library source for shell.exe
+
+// This file will be processed by the MIDL compiler to produce the
+// type library (shell.tlb).
+
+[ uuid(A23423C1-69D5-11d3-A64D-0090275995FE), version(1.0) ]
+
+library Shell
+{
+	importlib("stdole32.tlb");
+	importlib("stdole2.tlb");
+	typedef LONG_PTR TPOS;
+
+	//  Primary dispatch interface for CShellDoc
+	
+	[ uuid(C48CE9B7-F947-11D2-A596-0000B493FF1B) ]
+	dispinterface IShell
+	{
+		properties:
+			// NOTE - ClassWizard will maintain property information here.
+			//    Use extreme caution when editing this section.
+			//{{AFX_ODL_PROP(CShellDoc)
+			//}}AFX_ODL_PROP
+			
+		methods:
+			// NOTE - ClassWizard will maintain method information here.
+			//    Use extreme caution when editing this section.
+			//{{AFX_ODL_METHOD(CShellDoc)
+			[id(1)] long GetViewsCount();
+			[id(2)] IDispatch* GetView(long nPos);
+			[id(3)] IDispatch* GetActiveView();
+			[id(4)] long GetFramesCount();
+			[id(5)] IDispatch* GetFrame(long nPos);
+			[id(6)] IDispatch* GetData();
+			[id(7)] IDispatch* GetActiveDataContext();
+			[id(8)] BSTR GetDocPathName();
+			[id(9)] IDispatch* GetActiveDocumentWindow(IDispatch* pdispDoc);
+			[id(11)] boolean GetModifiedFlag();
+			[id(12)] void SetModifiedFlag(boolean bModified);
+			[id(13)] BSTR GetDocType();
+			//}}AFX_ODL_METHOD
+
+	};
+
+	//  Class information for CShellDoc
+	
+	[ uuid(C48CE9B5-F947-11D2-A596-0000B493FF1B) ]
+	coclass Document
+	{
+		[default] dispinterface IShell;
+	};
+
+
+
+	//  Primary dispatch interface for CCommandManager
+	
+	[ uuid(F49AE623-0446-11D3-A5A3-0000B493FF1B) ]
+	dispinterface ICommandManager
+	{
+		properties:
+			// NOTE - ClassWizard will maintain property information here.
+			//    Use extreme caution when editing this section.
+			//{{AFX_ODL_PROP(CCommandManager)
+			//}}AFX_ODL_PROP
+			
+		methods:
+			// NOTE - ClassWizard will maintain method information here.
+			//    Use extreme caution when editing this section.
+			//{{AFX_ODL_METHOD(CCommandManager)
+			[id(1)] long GetBarsCount();
+			[id(2)] BSTR GetBarName(long BarNo);
+			[id(3)] long CreateNewBar(BSTR BarName);
+			[id(4)] void MakeEmpty(long BarNo);
+			[id(5)] long FindNo(BSTR Name);
+			[id(6)] void AddButton(long BarNo, BSTR ActionName);
+			[id(7)] void ShowBar(long BarNo, short Visible);
+			[id(8)] void InsertButton(long BarNo, BSTR ActionName, long InsertAfter);
+			[id(9)] void DeleteBar(long BarNo);
+			[id(10)] void LoadState(BSTR FileName);
+			[id(11)] void SaveState(BSTR FileName);
+			[id(12)] long AddOutlookBar(BSTR szName);
+			[id(13)] BOOL IsBarVisible(long nBarNo);
+			[id(14)] long GetButtonCount(long nBarNo);
+			[id(15)] BSTR GetButton(long nBarNo, long nButtonNo);
+			[id(16)] BOOL IsOutlookToolBar(long nBarNo);
+			[id(17)] long GetDockBarsCount();
+			[id(18)] BSTR GetDockBarName(long nBarNo);
+			[id(19)] BOOL IsDockBarVisible(long nBarNo);
+			[id(20)] void ShowDockBar(long nBarNo, short bVisible);
+			[id(21)] long FindDockNo(BSTR pszName);
+			[id(22)] void SetCanCloseDockBar(long nBarNo, bool bCanClose);
+			[id(23)] bool CanCloseDockBar( long nBarNo );
+			[id(24)] IDispatch *GetDockBarImplByName(BSTR szName);
+			[id(25)] void SaveAsState(BSTR FileName);
+			[id(26)] BOOL HasAction(long BarNo, BSTR ActionName);
+			//}}AFX_ODL_METHOD
+
+	};
+
+	//  Class information for CCommandManager
+
+	[ uuid(F49AE625-0446-11D3-A5A3-0000B493FF1B) ]
+	coclass CommandManager
+	{
+		[default] dispinterface ICommandManager;
+	};
+
+
+	//  Primary dispatch interface for CSettingsWindow
+	
+	[ uuid(87F6BED3-11A3-11D3-A5BE-0000B493FF1B) ]
+	dispinterface ISettingsWindow
+	{
+		properties:
+			// NOTE - ClassWizard will maintain property information here.
+			//    Use extreme caution when editing this section.
+			//{{AFX_ODL_PROP(CSettingsWindow)
+			//}}AFX_ODL_PROP
+			
+		methods:
+			// NOTE - ClassWizard will maintain method information here.
+			//    Use extreme caution when editing this section.
+			//{{AFX_ODL_METHOD(CSettingsWindow)
+			//}}AFX_ODL_METHOD
+
+	};
+
+	//  Class information for CSettingsWindow
+
+	[ uuid(87F6BED5-11A3-11D3-A5BE-0000B493FF1B) ]
+	coclass SettingsWindow
+	{
+		[default] dispinterface ISettingsWindow;
+	};
+
+
+	//  Primary dispatch interface for CShellDockBar
+	
+	[ uuid(265274C4-1EFD-11D3-A5D3-0000B493FF1B) ]
+	dispinterface IShellDockBar
+	{
+		properties:
+			// NOTE - ClassWizard will maintain property information here.
+			//    Use extreme caution when editing this section.
+			//{{AFX_ODL_PROP(CShellDockBar)
+			//}}AFX_ODL_PROP
+			
+		methods:
+			// NOTE - ClassWizard will maintain method information here.
+			//    Use extreme caution when editing this section.
+			//{{AFX_ODL_METHOD(CShellDockBar)
+			//}}AFX_ODL_METHOD
+
+	};
+
+	//  Class information for CShellDockBar
+
+	[ uuid(265274C6-1EFD-11D3-A5D3-0000B493FF1B) ]
+	coclass ShellDockBar
+	{
+		[default] dispinterface IShellDockBar;
+	};
+
+
+	//  Primary dispatch interface for CMainFrame
+	
+	[ uuid(05E1F7E3-38E6-11D3-A602-0090275995FE) ]
+	dispinterface IMainFrame
+	{
+		properties:
+			// NOTE - ClassWizard will maintain property information here.
+			//    Use extreme caution when editing this section.
+			//{{AFX_ODL_PROP(CMainFrame)
+			[id(3)] IDispatch* ActiveFrame;
+			[id(4)] BOOL Visible;
+			[id(5)] BOOL Maximized;
+			[id(6)] BOOL Iconic;
+			[id(1)] BSTR Title;
+			[id(2)] BSTR Label;
+			[id(64)] BOOL EnableAccelerators;
+			//}}AFX_ODL_PROP
+			
+		methods:
+			// NOTE - ClassWizard will maintain method information here.
+			//    Use extreme caution when editing this section.
+			//{{AFX_ODL_METHOD(CMainFrame)
+			[id(7)] void SaveState(BSTR szFileName);
+			[id(8)] void RestoreState(BSTR szFileName);
+			[id(9)] void SetWindowPos(short X, short Y, short CX, short CY);
+			[id(10)] long GetFramesCount();
+			[id(11)] IDispatch* GetFrame(long nPos);
+			[id(12)] void GetDesktopSize(VARIANT* varCX, VARIANT* varCY);
+			[id(13)] void GetWindowPos(VARIANT* varX, VARIANT* varY, VARIANT* varCX, VARIANT* varCY);
+			[id(14)] void ResetUserButtonNames();
+			[id(15)] void ShowSplash(BSTR szFileName);
+			[id(16)] void ShowXPBar(BOOL bShow);
+			[id(17)] long AddToolbarPane(BSTR szCaption, long lInsertPos, long lImageList, long nImage);
+			[id(18)] void XPExpandPane(long lpos, long state);
+			[id(19)] void XPAddButton(long lpos, BSTR pszAction, long nImage, long nState);
+			[id(20)] void XPSetButton(long lPane, BSTR szActionName, long nImage, long nState);
+			[id(21)] void XPRemovePane(long lPos);
+			[id(22)] void XPEnsureVisible(long lpos);
+			[id(23)] long CreateImageList(BSTR szFileName, long cx, long cy, long nTransparent);
+			[id(24)] void DestroyImageList(long lImageList);
+			[id(25)] void DestroyAllImageLists();
+			[id(26)] void XPSetPaneParam(long lpos, long param);
+			[id(27)] long XPGetPaneParam(long lpos);
+			[id(28)] long XPGetFirstPane();
+			[id(29)] long XPGetNextPane(long lpos);
+			[id(30)] void XPSetImageList(long lImageList);
+			[id(31)] void LogFontSetBold(long lpos, long fBold);
+			[id(32)] void LogFontSetFace(long lpos, BSTR pszFaceName);
+			[id(33)] void LogFontSetColor(long lpos, long color);
+			[id(34)] void LogFontSetHeight(long lpos, long nHeight);
+			[id(35)] void RenderSetLayout(long lpos, long left, long top, long right, long bottom);
+			[id(36)] void RenderSetRect(long lpos, long left, long top, long right, long bottom);
+			[id(37)] TPOS RectCreate(TPOS lpos_parent);
+			[id(38)] void RectSetColor(long lpos, long color);
+			[id(39)] TPOS PageCreate(TPOS lpos_parent);
+			[id(40)] TPOS TipCreate(TPOS lpos_parent);
+			[id(41)] void TipAddText(long lpos, BSTR psz);
+			[id(42)] void TipSetIcon(long lpos, BSTR pszFileName);
+			[id(43)] TPOS ImageCreate(TPOS lpos_parent);
+			[id(44)] void ImageSetBitmap(long lpos, BSTR psz_filename);
+			[id(45)] void ImageSetTransparent(long lpos, long color);
+			[id(46)] TPOS TextCreate(TPOS lpos_parent);
+			[id(47)] void TextAddText(long lpos, BSTR psz);
+			[id(48)] TPOS MenuCreate(TPOS lpos_parent);
+			[id(49)] void MenuAddItem(TPOS lpos, BSTR pszAction);
+			[id(50)] void DeleteAllDrawing();
+			[id(51)] void MDIClientUpdate();
+			[id(52)] void IdleUpdate();
+			[id(53)] void UpdateSystemSettings();
+			[id(54)] BOOL GetWindowLock();
+			[id(55)] void SetWindowLock(BOOL bWindowLock, BOOL bRecalcLayout);
+			[id(56)] BSTR  XPCreateStatusItem(BSTR pszItem);
+			[id(57)] void XPSetStatusItem(BSTR pszGUID, BSTR pszText);
+			[id(58)] void XPRemoveStatusItem(BSTR pszGUID);
+			[id(59)] void XPSetDefaultStatusText(BSTR sz);
+			[id(60)] void UpdateSystemSettingsForCurrentDoc();
+			[id(61)] void UpdateSystemSettingsForDoc( LPDISPATCH lpDisp );
+			[id(62)] void UpdateViewSettings();
+			[id(65)] void ShowProgress(BSTR text, LONG percent);
+			//}}AFX_ODL_METHOD
+	};
+
+	//  Class information for CMainFrame
+
+	[ uuid(05E1F7E5-38E6-11D3-A602-0090275995FE) ]
+	coclass MainFrame
+	{
+		[default] dispinterface IMainFrame;
+	};
+
+
+	//  Primary dispatch interface for CShellDocManagerDisp
+	[ uuid(4D6FBF33-39B6-11D3-A603-0090275995FE) ]
+	dispinterface IShellDocManagerDisp
+	{
+		properties:
+			// NOTE - ClassWizard will maintain property information here.
+			//    Use extreme caution when editing this section.
+			//{{AFX_ODL_PROP(CShellDocManagerDisp)
+			[id(1)] IDispatch* ActiveDocument;
+			//}}AFX_ODL_PROP
+			
+		methods:
+			// NOTE - ClassWizard will maintain method information here.
+			//    Use extreme caution when editing this section.
+			//{{AFX_ODL_METHOD(CShellDocManagerDisp)
+			[id(2)] IDispatch* GetActiveDocument(BSTR szType);
+			[id(3)] long GetDocTypesCount();
+			[id(4)] BSTR GetDocTypeName(long nPos);
+			[id(5)] IDispatch* GetDocument(long nPos, BSTR szType);
+			[id(6)] long GetDocumentsCount(BSTR szType);
+			[id(7)] IDispatch* GetActiveObject(BSTR lpszProgID);
+			[id(8)] BSTR GenerateGUID();
+			[id(9)] BOOL IsPointerNull(IDispatch* pdisp);
+			[id(10)] void IdleUpdateActions();
+			[id(11)] BSTR LoadString(BSTR sz_id);
+			[id(12)] BSTR LoadStringEx(BSTR sz_id, BSTR sz_sect);
+			//}}AFX_ODL_METHOD
+
+	};
+
+	[ uuid(A23423C2-69D5-11d3-A64D-0090275995FE) ]
+	dispinterface IShellDocManagerEvents
+	{
+		properties:
+		methods:
+			// NOTE - ClassWizard will maintain event information here.
+			//    Use extreme caution when editing this section.
+			//{{AFX_ODL_EVENT(CShellDocManagerDisp)
+			[id(1)] void OnOpenDocument(BSTR FileName, IDispatch* Document);
+			[id(2)] void OnSaveDocument(BSTR FileName, IDispatch* Document);
+			[id(3)] void OnCloseDocument(IDispatch* Document, VARIANT *bCanClose);
+			[id(4)] void OnNewDocument(IDispatch* Document);
+			[id(5)] void OnActivateDocument(IDispatch* Document);
+			[id(6)] void OnActivateView(IDispatch* Document, long nRow, long nCol, bool bActivate);
+			//}}AFX_ODL_EVENT
+	};
+
+
+	//  Class information for CShellDocManagerDisp
+	[ uuid(A23423C4-69D5-11d3-A64D-0090275995FE) ]
+	coclass ShellDocManagerDisp
+	{
+		[default] dispinterface IShellDocManagerDisp;
+		[default, source] dispinterface IShellDocManagerEvents;
+	};
+
+
+	//  Primary dispatch interface for CStatusBarMan
+	
+	[ uuid(63F2E0D3-8AC1-11D3-A523-0000B493A187) ]
+	dispinterface IStatusBarMan
+	{
+		properties:
+			// NOTE - ClassWizard will maintain property information here.
+			//    Use extreme caution when editing this section.
+			//{{AFX_ODL_PROP(CStatusBarMan)
+			//}}AFX_ODL_PROP
+			
+		methods:
+			// NOTE - ClassWizard will maintain method information here.
+			//    Use extreme caution when editing this section.
+			//{{AFX_ODL_METHOD(CStatusBarMan)
+			//}}AFX_ODL_METHOD
+
+	};
+
+	//  Class information for CStatusBarMan
+
+	[ uuid(63F2E0D4-8AC1-11D3-A523-0000B493A187) ]
+	coclass StatusBarMan
+	{
+		[default] dispinterface IStatusBarMan;
+	};
+
+
+	//  Primary dispatch interface for CShellView
+	[ uuid(28888205-51B2-47f2-9359-6EEA31DF0E47) ]
+	dispinterface IShellViewDisp
+	{
+		properties:
+			// NOTE - ClassWizard will maintain property information here.
+			//    Use extreme caution when editing this section.
+			//{{AFX_ODL_PROP(CShellView)
+			[id(1)] double Zoom;
+			//}}AFX_ODL_PROP
+			
+		methods:
+			// NOTE - ClassWizard will maintain method information here.
+			//    Use extreme caution when editing this section.
+			//{{AFX_ODL_METHOD(CShellView)
+			//}}AFX_ODL_METHOD
+
+	};
+
+	//  Class information for CShellView
+	[ uuid(E9DBCA3C-A3B7-40fd-8D44-BB0E0A130CB9) ]
+	coclass ShellView
+	{
+		[default] dispinterface IShellViewDisp;
+	};
+
+
+
+	//  Primary dispatch interface for CAppDisp
+	
+	[ uuid(BBC55473-AE6D-4864-AAF2-26969B0F00CB) ]
+	dispinterface IAppDisp
+	{
+		properties:
+			// NOTE - ClassWizard will maintain property information here.
+			//    Use extreme caution when editing this section.
+			//{{AFX_ODL_PROP(CAppDisp)
+			//}}AFX_ODL_PROP
+			
+		methods:
+			// NOTE - ClassWizard will maintain method information here.
+			//    Use extreme caution when editing this section.
+			//{{AFX_ODL_METHOD(CAppDisp)
+			[id(1)] boolean ProcessMessage(long lFlags);
+			[id(2)] BSTR DoOpenFileDialog( BSTR bstrFileName, BSTR bstrTemplate );
+			[id(3)] BSTR DoSaveFileDialog( BSTR bstrFileName, BSTR bstrTemplate );
+			[id(4)] IDispatch* GetGlobalScript(BSTR psz_name);
+			[id(5)] void debug_break();
+			[id(6)] boolean WritePrivateProfileString( BSTR bstrFile, BSTR bstrSection, BSTR bstrKey, BSTR bstrValue );
+			[id(7)] BSTR GetPrivateProfileString( BSTR bstrFile, BSTR bstrSection, BSTR bstrKey, BSTR bstrValue );
+			[id(8)] double VtDbl( VARIANT var );
+			[id(9)] BSTR VtStr( VARIANT var, BSTR bstrFormat );
+			[id(10)] BSTR DoSelectFolderDialog( BSTR bstrTitle, BSTR bstrRootFolder, BSTR bstrCurrFolder );
+			[id(11)] void OpenHelp( BSTR bstrCHMFileName, BSTR bstrHTML );
+			[id(12)] long GetVMSize();
+			[id(13)] long GetGDICount();
+			[id(14)] void ShellExecute( BSTR bstrCommand );
+			[id(15)] void ReloadScripts();
+			[id(16)] double GetMeasureParamCoef( long lCode );
+			[id(17)] BSTR GetMeasureParamUnit( long lCode );
+			//}}AFX_ODL_METHOD
+
+	};
+
+	//  Class information for CAppDisp
+
+	[ uuid(E52BCA9C-5664-46AB-A0A5-11BD9ACE9A7B) ]
+	coclass AppDisp
+	{
+		[default] dispinterface IAppDisp;
+	};
+
+	//{{AFX_APPEND_ODL}}
+	//}}AFX_APPEND_ODL}}
+};

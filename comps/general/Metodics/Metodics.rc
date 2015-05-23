@@ -1,0 +1,532 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// Russian resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_RUS)
+#ifdef _WIN32
+LANGUAGE LANG_RUSSIAN, SUBLANG_DEFAULT
+#pragma code_page(1251)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)\r\n"
+    "LANGUAGE 9, 1\r\n"
+    "#pragma code_page(1252)\r\n"
+    "#include ""res\\Metodics.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "#include ""afxres.rc""     // Standard components\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDI_MENU_ICON           ICON                    "menu.ico"
+IDI_METHOD_ICON         ICON                    "method.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Cursor
+//
+
+IDC_CURSOR_HAND         CURSOR                  "cur00001.cur"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_DLG_ADD_PANE DIALOGEX 0, 0, 168, 54
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | 
+    WS_SYSMENU
+EXSTYLE WS_EX_TOOLWINDOW
+CAPTION "Свойства акции"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    EDITTEXT        IDC_EDIT1,49,15,109,14,ES_AUTOHSCROLL
+    DEFPUSHBUTTON   "OK",IDOK,63,37,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,118,37,50,14
+    GROUPBOX        " Параметры ",IDC_STATIC,6,4,162,30
+    LTEXT           "Название: ",IDC_STATIC,10,16,38,8
+END
+
+IDD_DLG_INPUT_MTD_NAME DIALOGEX 0, 0, 213, 52
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | DS_CENTER | WS_POPUP | 
+    WS_CAPTION | WS_SYSMENU
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    EDITTEXT        IDC_EDIT_MTD_NAME,95,8,109,12,ES_AUTOHSCROLL
+    DEFPUSHBUTTON   "OK",IDOK,22,31,50,14
+    PUSHBUTTON      "Отмена",IDCANCEL,141,31,50,14
+    CONTROL         "Введите имя методики: ",IDC_STATIC,"Static",
+                    SS_LEFTNOWORDWRAP | WS_GROUP,9,10,82,8
+END
+
+IDD_DLG_INPUT_MSG DIALOGEX 0, 0, 222, 116
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | DS_CENTER | WS_POPUP | 
+    WS_CAPTION | WS_SYSMENU
+CAPTION "Dialog"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    EDITTEXT        IDC_EDIT_MSG,7,7,208,85,ES_MULTILINE | ES_AUTOHSCROLL
+    DEFPUSHBUTTON   "OK",IDOK,111,95,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,165,95,50,14
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Toolbar
+//
+
+IDR_TOOLBAR1 TOOLBAR  16, 15
+BEGIN
+    BUTTON      IDS_ACTION_ADD_PANE
+    BUTTON      IDS_ACTION_REMOVE_PANE
+    BUTTON      IDS_ACTION_MTD_LOAD_CONTENT
+    BUTTON      IDS_ACTION_MTD_STORE_CONTENT
+    BUTTON      IDS_ACTION_MTD_RUN_STOP
+    BUTTON      IDS_ACTION_MTD_REMOVE_ITEM
+    BUTTON      IDS_ACTION_MTD_ITEM_PROP
+    BUTTON      IDS_ACTION_MTD_DELETE_STEP
+    BUTTON      IDS_ACTION_MTD_UNDO
+    BUTTON      IDS_ACTION_MTD_REDO
+    BUTTON      IDS_ACTION_MTD_EXPORTSCRIPT
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDR_TOOLBAR1            BITMAP                  "toolbar1.bmp"
+IDB_NEW_METHOD          BITMAP                  "new_method.bmp"
+IDB_COPY_METHOD         BITMAP                  "copy_method.bmp"
+IDB_SAVE_METHOD         BITMAP                  "save_method.bmp"
+IDB_PLAY_METHOD         BITMAP                  "play_method.bmp"
+IDB_DEL_FUNC            BITMAP                  "del_func.bmp"
+IDB_PROPS               BITMAP                  "props.bmp"
+IDB_REC_OFF_METHOD      BITMAP                  "rec_off.bmp"
+IDB_REC_ON_METHOD       BITMAP                  "rec_on.bmp"
+IDB_UNDO_METHOD         BITMAP                  "res\\undo.bmp"
+IDB_REDO_METHOD         BITMAP                  "res\\redo.bmp"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO 
+BEGIN
+    IDD_DLG_INPUT_MTD_NAME, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 206
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 45
+    END
+
+    IDD_DLG_INPUT_MSG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 215
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 109
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE 
+BEGIN
+    IDS_ACTION_MTD_DELETE_STEP 
+                            "DeleteMethodStep\nDeleteMethodStep\nMethod\nDeleteMethodStep\nDeleteMethodStep"
+    IDS_ACTION_MTD_UNDO     "MethodUndo\nMethodUndo\nMethod\nMethodUndo\nMethodUndo"
+    IDS_ACTION_MTD_REDO     "MethodRedo\nMethodRedo\nMethod\nMethodRedo\nMethodRedo"
+    IDS_ACTION_MTD_EXPORTSCRIPT 
+                            "ExportScript\nExportScript\nMethod\nExportScript\nExportScript"
+    IDS_ACTION_MTD_INSERT_MSG_STEP 
+                            "MtdInsertMsgStep\nВставить сообщение\nМетодика\nВставить сообщение в активную методику\nВставить сообщение в активную методику"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_ACTION_OPEN_MTD_PANE 
+                            "MethodOpen\nMethodOpen\nMethod\nMethodOpen\nMethodOpen"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_DEL_ACTIVE_FUNC_STR "Удалить активный шаг"
+    IDS_OPEN_MENU_STR       "Показать меню панели Методика"
+    IDS_METHOD_EXIST_OVERWRITE 
+                            "Методика ""%s"" уже существует. Переписать ее?"
+    IDS_INPUT_MESSAGE_STR   "Ввод сообщения"
+    IDS_WINDOW_VIEW_STR     "Вид окна"
+    IDS_REMOVE_ALL_FUNC_STR "Удалить все шаги"
+    IDS_FILTER_SCRIPT_STR   "Script files|*.script||"
+    IDS_METHOD_CLEAR_STR    "Вы действительно хотите очистить методику ""%s""?"
+    IDS_METHOD_DELETE_STR   "Вы действительно хотите удалить методику ""%s""?"
+    IDS_METHOD_DELETE_STEP_STR 
+                            "Вы действительно хотите удалить активный шаг методики?"
+    IDS_UNDO_STR            "Отменить"
+    IDS_REDO_STR            "Повторить"
+    IDS_SPACE_WARNING       "Недостаточно места на диске!\nВозможны проблемы при воспроизведении или записи методик.\nОстановить?"
+    IDS_METHOD_ESC_STOP     "Остановить методику?"
+    IDS_METHOD_ESC_STOP_RECORD "Остановить запись методики?"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_METODICS_TAB        "Функции"
+    IDS_METHOD_PANEL        "Методика"
+    IDS_ACTION_ADD_PANE     "AddMtdPane\nAddMtdPane\nMethod\nAddMtdPane\nAddMtdPane"
+    IDS_ACTION_REMOVE_PANE  "RemoveMtdPane\nRemoveMtdPane\nMethod\nRemoveMtdPane\nRemoveMtdPane"
+    IDS_ACTION_MTD_LOAD_CONTENT 
+                            "LoadMtdContent\nLoadMtdContent\nMethod\nLoadMtdContent\nLoadMtdContent"
+    IDS_ACTION_MTD_STORE_CONTENT 
+                            "StoreMtdContent\nStoreMtdContent\nMethod\nStoreMtdContent\nStoreMtdContent"
+    IDS_FILTER_STR          "Method Tab Content files|*.smtd||"
+    IDS_ACTION_MTD_LIST     "MtdList\nСписок методик\nМетодика\nСписок методик\nСписок методик"
+    IDS_ACTION_MTD_RUN_STOP "MtdRunStop\nСтарт методики\nМетодика\nЗапустить или остановить методику\nСтарт методики"
+    IDS_FREE_MODE           "Свободный режим"
+    IDS_METHOD_EMPTY        "Свободный режим"
+    IDS_ACTION_MTD_REMOVE_ITEM 
+                            "MtdRemoveItem\nMtdRemoveItemt\nMethod\nMtdRemoveItem\nMtdRemoveItem"
+    IDS_ACTION_MTD_ITEM_PROP 
+                            "MtdItemItemProp\nMtdItemItemProp\nMethod\nMtdItemItemProp\nMtdItemItemProp"
+    IDS_ACTION_MTD_EXPORT_METHOD 
+                            "MtdExportMethod\nMtdExportMethod\nMethod\nMtdExportMethod\nMtdExportMethod"
+    IDS_FILTER_MTD          "Method file (*.method)|*.method"
+    IDS_ACTION_MTD_IMPORT_METHOD 
+                            "MtdImporttMethod\nMtdImporttMethod\nMethod\nMtdImporttMethod\nMtdImporttMethod"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_ACTION_MTD_SAVE_METHOD 
+                            "MtdSaveMethod\nMtdSaveMethod\nMethod\nMtdSaveMethod\nMtdSaveMethod"
+    IDS_ACTION_MTD_COPY_METHOD 
+                            "MtdCopyMethod\nКопировать методику\nМетодика\nКопировать методику\nКопировать методику"
+    IDS_METHOD_EXIST        "Методика ""%s"" уже существует!"
+    IDS_COPY_ACTIVE_MTD_STR "Копировать активную методику"
+    IDS_CREATE_NEW_MTD_STR  "Создать новую методику"
+    IDS_ACTION_MTD_CREATE_METHOD 
+                            "MtdCreateMethod\nНовая методика\nМетодика\nНовая методика\nНовая методика"
+    IDS_CHANGE_ACTIVE_METHOD_STR "Change active method"
+    IDS_METHOD_MODIFIED_STR "Методика ""%s"" была изменена. Сохранить?"
+    IDS_ACTION_MTD_DELETE_METHOD 
+                            "MtdDeleteMethod\nУдалить методику\nМетодика\nУдалить методику\nУдалить методику"
+    IDS_CREATE_NEW_STR      "Новая методика"
+    IDS_COPY_STR            "Копировать методику"
+    IDS_SAVE_STR            "Сохранить методику"
+    IDS_START_REC_STR       "Начать запись"
+    IDS_STOP_REC_STR        "Остановить запись"
+    IDS_START_PLAY_STR      "Старт методики"
+    IDS_STOP_PLAY_STR       "Остановить методику"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_ACTION_MTD_CLEAR_METHOD 
+                            "MtdClearMethod\nУдалить все шаги\nМетодика\nУдаление всех шагов методики\nУдаление всех шагов методики"
+    IDS_ACTION_MTD_ADD_ITEM "MtdAddItem\nMtdAddItemt\nMethod\nMtdAddItem\nMtdAddItem"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_ATTENTION           "Внимание"
+END
+
+#endif    // Russian resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+/////////////////////////////////////////////////////////////////////////////
+// Neutral (Sys. Default) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_NEUSD)
+#ifdef _WIN32
+LANGUAGE LANG_NEUTRAL, SUBLANG_SYS_DEFAULT
+#pragma code_page(1251)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDI_ICON_OPEN           ICON                    "res\\icon_open.ico"
+IDI_ICON_CLOSED         ICON                    "res\\icon_close.ico"
+#endif    // Neutral (Sys. Default) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.S.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Cursor
+//
+
+IDC_DRAGGING            CURSOR                  "res\\dragging.cur"
+IDC_NODRAGGING          CURSOR                  "res\\nodraggi.cur"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_DLG_ADD_PANE DIALOGEX 0, 0, 168, 54
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | 
+    WS_SYSMENU
+EXSTYLE WS_EX_TOOLWINDOW
+CAPTION "Action's properties"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    EDITTEXT        IDC_EDIT1,49,15,109,14,ES_AUTOHSCROLL
+    DEFPUSHBUTTON   "OK",IDOK,63,37,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,118,37,50,14
+    GROUPBOX        " Parameters ",IDC_STATIC,6,4,162,30
+    LTEXT           "Name: ",IDC_STATIC,10,16,38,8
+END
+
+IDD_DLG_INPUT_MTD_NAME DIALOGEX 0, 0, 213, 52
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | DS_CENTER | WS_POPUP | 
+    WS_CAPTION | WS_SYSMENU
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    EDITTEXT        IDC_EDIT_MTD_NAME,83,8,121,12,ES_AUTOHSCROLL
+    DEFPUSHBUTTON   "OK",IDOK,22,31,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,141,31,50,14
+    CONTROL         "Enter method name: ",IDC_STATIC,"Static",
+                    SS_LEFTNOWORDWRAP | WS_GROUP,9,10,70,8
+END
+
+IDD_DLG_INPUT_MSG DIALOGEX 0, 0, 222, 116
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | DS_CENTER | WS_POPUP | 
+    WS_CAPTION | WS_SYSMENU
+CAPTION "Dialog"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    EDITTEXT        IDC_EDIT_MSG,7,7,208,85,ES_MULTILINE | ES_AUTOHSCROLL
+    DEFPUSHBUTTON   "OK",IDOK,111,95,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,165,95,50,14
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO 
+BEGIN
+    IDD_DLG_INPUT_MTD_NAME, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 206
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 45
+    END
+
+    IDD_DLG_INPUT_MSG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 215
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 109
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE 
+BEGIN
+    IDS_METODICS_TAB        "Function Bar"
+    IDS_METHOD_PANEL        "Method Bar"
+    IDS_ACTION_ADD_PANE     "AddMtdPane\nAddMtdPane\nMethod\nAddMtdPane\nAddMtdPane"
+    IDS_ACTION_REMOVE_PANE  "RemoveMtdPane\nRemoveMtdPane\nMethod\nRemoveMtdPane\nRemoveMtdPane"
+    IDS_ACTION_MTD_LOAD_CONTENT 
+                            "LoadMtdContent\nLoadMtdContent\nMethod\nLoadMtdContent\nLoadMtdContent"
+    IDS_ACTION_MTD_STORE_CONTENT 
+                            "StoreMtdContent\nStoreMtdContent\nMethod\nStoreMtdContent\nStoreMtdContent"
+    IDS_FILTER_STR          "Method Tab Content files|*.smtd||"
+    IDS_ACTION_MTD_LIST     "MtdList\nMethod List\nMethod\nMethod list\nMethod List"
+    IDS_ACTION_MTD_RUN_STOP "MtdRunStop\nMethod Start\nMethod\nStart or stop method\nMethod Start"
+    IDS_FREE_MODE           "Free mode"
+    IDS_METHOD_EMPTY        "Empty"
+    IDS_ACTION_MTD_REMOVE_ITEM 
+                            "MtdRemoveItem\nMtdRemoveItemt\nMethod\nMtdRemoveItem\nMtdRemoveItem"
+    IDS_ACTION_MTD_ITEM_PROP 
+                            "MtdItemItemProp\nMtdItemItemProp\nMethod\nMtdItemItemProp\nMtdItemItemProp"
+    IDS_ACTION_MTD_EXPORT_METHOD 
+                            "MtdExportMethod\nMtdExportMethod\nMethod\nMtdExportMethod\nMtdExportMethod"
+    IDS_FILTER_MTD          "Method file (*.method)|*.method"
+    IDS_ACTION_MTD_IMPORT_METHOD 
+                            "MtdImporttMethod\nMtdImporttMethod\nMethod\nMtdImporttMethod\nMtdImporttMethod"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_ACTION_MTD_SAVE_METHOD 
+                            "MtdSaveMethod\nMtdSaveMethod\nMethod\nMtdSaveMethod\nMtdSaveMethod"
+    IDS_ACTION_MTD_COPY_METHOD 
+                            "MtdCopyMethod\nCopy Method\nMethod\nCopy method\nCopy Method"
+    IDS_METHOD_EXIST        "Method ""%s"" already exists!"
+    IDS_COPY_ACTIVE_MTD_STR "Copy active method"
+    IDS_CREATE_NEW_MTD_STR  "Create new method"
+    IDS_ACTION_MTD_CREATE_METHOD 
+                            "MtdCreateMethod\nNew Method\nMethod\nCreate new method\nNew Method"
+    IDS_CHANGE_ACTIVE_METHOD_STR "Change active method"
+    IDS_METHOD_MODIFIED_STR "Method ""%s"" has modified. Save?"
+    IDS_ACTION_MTD_DELETE_METHOD 
+                            "MtdDeleteMethod\nDelete Method\nMethod\nDelete method\nDelete Method"
+    IDS_CREATE_NEW_STR      "New Method"
+    IDS_COPY_STR            "Copy"
+    IDS_SAVE_STR            "Save Method"
+    IDS_START_REC_STR       "Start Record"
+    IDS_STOP_REC_STR        "Stop Record"
+    IDS_START_PLAY_STR      "Start play"
+    IDS_STOP_PLAY_STR       "Stop play"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_DEL_ACTIVE_FUNC_STR "Delete Active Step"
+    IDS_OPEN_MENU_STR       "Show Method Bar Menu"
+    IDS_METHOD_EXIST_OVERWRITE "Method ""%s"" already exists. Overwrite it?"
+    IDS_INPUT_MESSAGE_STR   "Input Message"
+    IDS_WINDOW_VIEW_STR     "Window's view"
+    IDS_REMOVE_ALL_FUNC_STR "Delete All Steps"
+    IDS_FILTER_SCRIPT_STR   "Script files|*.script||"
+    IDS_METHOD_CLEAR_STR    "Are you sure to clear method ""%s""?"
+    IDS_METHOD_DELETE_STR   "Are you sure to delete method ""%s""?"
+    IDS_METHOD_DELETE_STEP_STR "Are you sure to delete active method's step?"
+    IDS_UNDO_STR            "Undo"
+    IDS_REDO_STR            "Redo"
+    IDS_SPACE_WARNING       "Not enough disc space on your PC!\nPossible problems while running or recording methods!\nDo you want to stop?"
+    IDS_METHOD_ESC_STOP     "Stop method?"
+    IDS_METHOD_ESC_STOP_RECORD "Stop method recording?"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_ACTION_MTD_DELETE_STEP 
+                            "DeleteMethodStep\nDeleteMethodStep\nMethod\nDeleteMethodStep\nDeleteMethodStep"
+    IDS_ACTION_MTD_UNDO     "MethodUndo\nMethodUndo\nMethod\nMethodUndo\nMethodUndo"
+    IDS_ACTION_MTD_REDO     "MethodRedo\nMethodRedo\nMethod\nMethodRedo\nMethodRedo"
+    IDS_ACTION_MTD_EXPORTSCRIPT 
+                            "ExportScript\nExportScript\nMethod\nExportScript\nExportScript"
+    IDS_ACTION_MTD_INSERT_MSG_STEP 
+                            "MtdInsertMsgStep\nInsert Message\nMethod\nInsert message in acticve method\nInsert Message"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_ACTION_OPEN_MTD_PANE 
+                            "MethodOpen\nMethodOpen\nMethod\nMethodOpen\nMethodOpen"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_ACTION_MTD_CLEAR_METHOD 
+                            "MtdClearMethod\nDelete All Steps\nMethod\nDelete all method's steps\nDelete All Steps"
+    IDS_ACTION_MTD_ADD_ITEM "MtdAddItem\nMtdAddItemt\nMethod\nMtdAddItem\nMtdAddItem"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_ATTENTION           "Attention"
+END
+
+#endif    // English (U.S.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+LANGUAGE 9, 1
+#pragma code_page(1252)
+#include "res\Metodics.rc2"  // non-Microsoft Visual C++ edited resources
+#include "afxres.rc"     // Standard components
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

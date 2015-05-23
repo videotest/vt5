@@ -1,0 +1,129 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// Russian resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_RUS)
+#ifdef _WIN32
+LANGUAGE LANG_RUSSIAN, SUBLANG_DEFAULT
+#pragma code_page(1251)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE 
+BEGIN
+    IDS_ACTION_EXPORT_BRIGHTNESS 
+                            "ExportBrightness\nExportBrightness\nExport\nExportBrightness\nExportBrightness"
+    IDS_INTENSITY_STR       "Intensity"
+    IDS_PROCESSED_PIXELS    "%d pixels are processed"
+    IDS_WRONG_COLOR_MODEL_STR 
+                            "Пожулуйста, переведите изображение в модель GRAY или RGB, пересоздайте объект и попробуйте снова..."
+    IDS_ACTION_FIND_DROP_ANGLE 
+                            "FindDropAngle\nFindDropAngle\nDrop\nFindDropAngle\nFindDropAngle"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_SAVEAS_DIALOG_TITLE "Save file as"
+    IDS_SAVEAS_DIALOG_FILTER 
+                            "Text files(*.txt)\n*.txt\nAll files(*.*)\n*.*\n\n"
+    IDS_ACTION_SETACTIVE_IMAGEDB 
+                            "SetActiveImageDB\nSetActiveImageDB\nSetActiveImageDB\nSetActiveImageDB\nSetActiveImageDB"
+END
+
+#endif    // Russian resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.S.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE 
+BEGIN
+    IDS_ACTION_EXPORT_BRIGHTNESS 
+                            "ExportBrightness\nExportBrightness\nExport\nExportBrightness\nExportBrightness"
+    IDS_INTENSITY_STR       "Intensity"
+    IDS_PROCESSED_PIXELS    "%d pixels are processed"
+    IDS_WRONG_COLOR_MODEL_STR 
+                            "Please, convert image to GRAY's or RGB's color model, recreate object and try again..."
+    IDS_ACTION_FIND_DROP_ANGLE 
+                            "FindDropAngle\nFindDropAngle\nDrop\nFindDropAngle\nFindDropAngle"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_SAVEAS_DIALOG_TITLE "Save file as"
+    IDS_SAVEAS_DIALOG_FILTER 
+                            "Text files(*.txt)\n*.txt\nAll files(*.*)\n*.*\n\n"
+    IDS_ACTION_SETACTIVE_IMAGEDB 
+                            "SetActiveImageDB\nSetActiveImageDB\nSetActiveImageDB\nSetActiveImageDB\nSetActiveImageDB"
+END
+
+#endif    // English (U.S.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

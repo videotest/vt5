@@ -1,0 +1,377 @@
+import "oaidl.idl";
+import "ocidl.idl";
+
+////////////////////////////////////////////////////////////////////
+[ uuid(07BB0478-1A9C-4f59-B56A-41F347515210), v1_enum,
+  helpstring("The ChartColors enumeration") ]
+typedef enum ChartColors
+{
+	ccfChartColor 	= 1 << 0, // Цвет графика
+	ccfAxisColor 	= 1 << 1, // Цвет осей		  
+	ccfAxisText 	= 1 << 2, // Цвет текста на осях
+	ccfGistFillColor= 1 << 3, // Цвет заливки гистограммы
+	ccfHintTextColor= 1 << 4, // Цвет текста для хинта
+} ChartColors;
+//------------------------------------------------------------------
+[ uuid(E39FC74B-8902-4735-90D6-CEF9EE63445D), v1_enum, 
+  helpstring("The CommonChartColors enumeration") ]
+typedef enum CommonChartColors
+{
+	ccfBackColor 	= 1 << 0, // Цвет фона		  
+	ccfTargetColor  = 1 << 1, // Цвет визира		  
+	ccfGridColor  = 1 << 2, // Цвет линий сетки
+} CommonChartColors;
+////////////////////////////////////////////////////////////////////
+[ uuid(2C4233C6-9F24-4766-BB5C-58D0F4E92B28), v1_enum,  
+  helpstring("The ChartLineStyles enumeration") ]
+typedef enum ChartLineStyles
+{
+	clfChartStyle 	= 1 << 0, // Стиль линии графика
+	clfAxisStyle 	= 1 << 1, // Стиль линий осей
+} ChartLineStyles;
+//------------------------------------------------------------------
+[ uuid(3D21EDE6-3FCF-49be-9A89-D50F12941F74), v1_enum,  
+  helpstring("The CommonChartLineStyles enumeration") ]
+typedef enum CommonChartLineStyles
+{
+	clfTargetStyle  = 1 << 0 // Стиль линий визира
+} CommonChartLineStyles;
+////////////////////////////////////////////////////////////////////
+[ uuid(E960EDE6-9F85-4703-B59B-28E7256D404B), v1_enum,  
+  helpstring("The ChartLineThickness enumeration") ]
+typedef enum ChartLineThickness
+{
+	ctfChartThick 	= 1 << 0, // Толщина графика
+	ctfAxisThick 	= 1 << 1, // Толщина осей
+} ChartLineThickness;
+//------------------------------------------------------------------
+[ uuid(985DDEB5-5147-4bad-8F9A-9275E939FD3B), v1_enum,  
+  helpstring("The CommonChartLineThickness enumeration") ]
+typedef enum CommonChartLineThickness
+{
+	ctfTargetThick  = 1 << 0 // Толщина визира
+} CommonChartLineThickness;
+////////////////////////////////////////////////////////////////////
+[ uuid(344963EF-9AF7-4fa0-B279-225B246A4F48), v1_enum,  
+  helpstring("The ChartLineSmooth enumeration") ]
+typedef enum ChartLineSmooth
+{
+	csfMovingAverage = 1 << 0, // Скользящее среднее
+	csfExp		 	 = 1 << 1, // Экспоненциальное сглаживание
+	csfMediane 		 = 1 << 2, // Медиана
+	csfSpline2 		 = 1 << 3, // Сплайн второго порядка
+	csfSpline3 		 = 1 << 4, // Сплайн третьего порядка
+} ChartLineSmooth;
+////////////////////////////////////////////////////////////////////
+[ uuid(3BFDBAC2-D26A-4aed-9220-C1F8894BBA65), v1_enum,  
+  helpstring("The ChartViewParam enumeration") ]
+typedef enum ChartViewParam
+{
+	cfAxisX 	 = 1 << 0, // Рисовать осьX
+	cfAxisY 	 = 1 << 1, // Рисовать осьY
+	cfAxisArrowX = 1 << 2, // Стрелка на оси X
+	cfAxisArrowY = 1 << 3, // Стрелка на оси Y
+	cfAxisNameX  = 1 << 4, // Название оси X
+	cfAxisNameY  = 1 << 5, // Название оси Y
+
+	cfAxisDigitsX = 1 << 6,  // Цифры на оси X
+	cfAxisDigitsY = 1 << 7, // Цифры на оси Y
+
+	cfAxisScaleX  = 1 << 8, // Разметка на оси X
+	cfAxisScaleY  = 1 << 9, // Разметка на оси Y
+	cfHatch  = 1 << 10, // Принимать номер штриховки(в GDIPlus) вместо цвета заливки
+	cfAll  = cfAxisScaleY | cfAxisScaleX | cfAxisDigitsY | cfAxisDigitsX | cfAxisNameY | cfAxisNameX |  cfAxisArrowY | cfAxisArrowX | cfAxisY | cfAxisX
+} ChartViewParam;
+//-----------------------------------------------------------
+[ uuid(C787B687-59F0-49ba-8D21-7B66B301DBC0), v1_enum,  
+  helpstring("The ChartViewParam enumeration") ]
+typedef enum CommonChartViewParam
+{
+	cfBack  		= 1 << 0, // Залить фон
+	cfTargetVert 	= 1 << 1,  // Вертикальная полоска визира
+	cfTargetHorz  	= 1 << 2, // Горизонтальная полоска визира
+	cfAxisOnBorder 	= 1 << 3, // Режим отображния осей на краю
+	cfAbsolute		= 1 << 4, // Значения строятся по абсолютному максимому.
+	cf90CW			= 1 << 5, // Поворот на 90 по часовой
+	cf90CCW			= 1 << 6, // Поворот на 90 против часовой
+	cf180CW			= 1 << 7, // Поворот на 180 по часовой
+	cf180CCW		= 1 << 8, // Поворот на 180 против часовой
+} CommonChartViewParam;
+////////////////////////////////////////////////////////////////////
+[ uuid(8E74CC24-4107-46e7-A448-98ECBECB5582), v1_enum,  
+  helpstring("The ChartDataType enumeration") ]
+typedef enum ChartDataType
+{
+	cdfDataX 	= 1 << 0, // Данные для оси X
+	cdfDataY 	= 1 << 1, // Данные для оси Y
+	cdfDataGist	= 1 << 2, // Гистограмма
+} ChartDataType;
+////////////////////////////////////////////////////////////////////
+[ uuid(6914F5BE-D89E-4684-A2E0-FC9729598087), v1_enum,  
+  helpstring("The ChartRange enumeration") ]
+typedef enum ChartRange
+{
+	crfRangeX = 1 << 0, // Диапазон по X
+	crfRangeY = 1 << 1,	// Диапазон по Y
+} ChartRange;
+////////////////////////////////////////////////////////////////////
+[ uuid(282DEA9C-B33B-4ded-8746-B08AFAAD8615), v1_enum,  
+  helpstring("The ChartAxis enumeration") ]
+typedef enum ChartAxis
+{
+	cafAxisX = 1 << 0, // Текст для оси X
+	cafAxisY = 1 << 1, // Текст для оси Y
+} ChartAxis;
+////////////////////////////////////////////////////////////////////
+
+[ uuid(277C2844-9C23-4461-ACBF-02DE53D96DA8), v1_enum,  
+  helpstring("The ChartFont enumeration") ]
+typedef enum ChartFont
+{
+	cfnDigit = 1 << 0, // Шрифт для оси
+	cfnAxisName = 1 << 1, // Шрифт для текст на оси
+} ChartFont;
+////////////////////////////////////////////////////////////////////
+[ uuid(8C03CD61-E69F-453a-8909-19FE150EB945), v1_enum,  
+  helpstring("The ChartTextFormat enumeration") ]
+typedef enum ChartTextFormat
+{
+	cffDigitsX  = 1 << 0, // Формат для разметки на оси X
+	cffDigitsY  = 1 << 1, // Формат для разметки на оси Y
+} ChartTextFormat;
+////////////////////////////////////////////////////////////////////
+[ uuid(7A73C1B6-F5C1-4ff7-91CF-F6313FAAF4DF), v1_enum,  
+  helpstring("The ChartTextFormat enumeration") ]
+typedef enum CommonChartConst
+{
+	ccfAxisOffsetX   = 1 << 0,  // Смещение между осями X
+	ccfAxisOffsetY   = 1 << 1,  // Смещение между осями Y
+	ccfArrowLength   = 1 << 2,  // Длина стрелок
+	ccfScaleHalfSize = 1 << 3,  // Половиная длина штриха
+	ccfScaleCountX	 = 1 << 4,  // Кол-во штрихов на оси X
+	ccfScaleCountY	 = 1 << 5,  // Кол-во штрихов на оси Y
+	ccfDigitCountX	 = 1 << 7,  // Кол-во цифр на оси X
+	ccfDigitCountY	 = 1 << 8,  // Кол-во цифр на оси Y
+	ccfLBorder		 = 1 << 9,  // Левый отступ  
+	ccfRBorder		 = 1 << 10, // Правый отступ  
+	ccfTBorder		 = 1 << 11, // Верхний отступ
+	ccfBBorder		 = 1 << 12, // Нижний отступ
+	ccfScaleDirectionX= 1 << 13, // Направление отрисовки штрифов X
+	ccfScaleDirectionY= 1 << 14, // Направление отрисовки штрифов Y
+	ccfTextOffsetX= 1 << 15,
+	ccfTextOffsetY= 1 << 16,
+} CommonChartConst;
+
+////////////////////////////////////////////////////////////////////
+[ uuid(7BEC68C6-E78C-48bd-994B-547DDCB2A655), v1_enum,  
+  helpstring("The CommonChartGrid enumeration") ]
+typedef enum CommonChartGrid
+{
+	ccgXGrid		 = 1 << 0, // Сетка по X
+	ccgYGrid		 = 1 << 1, // Сетка по Y
+
+	ccgXEndGrid		 = 1 << 2, // Линия окоймляющая сетку по X
+	ccgYEndGrid		 = 1 << 3, // Линия окоймляющая сетку по Y
+} CommonChartGrid;
+
+////////////////////////////////////////////////////////////////////
+[ uuid(B8FEDE44-E998-4af8-ADF5-EEB922F1EB74), v1_enum,  
+  helpstring("The ChartMarker enumeration") ]
+typedef enum ChartMarker
+{
+	cmCross		 = 1 << 0, // крестообразный маркер
+	cmRect		 = 1 << 1, // квадратный маркер
+	cmCircle		 = 1 << 2, // круговой маркер
+} ChartMarker;
+
+////////////////////////////////////////////////////////////////////
+[
+	object,
+	uuid(7E4AA4DE-46B3-4de2-9802-72AEA184E85E),
+	helpstring("IChartAttributes Interface"),
+	pointer_default(unique)
+]
+interface IChartAttributes : IUnknown // Задание/Изменение параметров
+{
+	// Установа/Получение цвета
+	[id(1), helpstring("method SetColor")] HRESULT SetColor( [in] DWORD lColor, [in] CommonChartColors dwFlag );
+	[id(2), helpstring("method GetColor")] HRESULT GetColor( [out] DWORD *lColor, [in] CommonChartColors dwFlag );
+
+	[id(3), helpstring("method SetChartColor")] HRESULT SetChartColor( [in] long nID, [in] DWORD lColor, [in] ChartColors dwFlag );
+	[id(4), helpstring("method GetChartColor")] HRESULT GetChartColor( [in] long nID, [out] DWORD *lColor, [in] ChartColors dwFlag );
+
+	// Установа/Получение общего стиля. 
+	[id(5), helpstring("method SetStyle")] HRESULT SetStyle( [in] CommonChartViewParam dwFlag );
+	[id(6), helpstring("method GetStyle")] HRESULT GetStyle( [out] CommonChartViewParam *dwFlag );
+
+	[id(7), helpstring("method SetChartStyle")] HRESULT SetChartStyle([in] long nID, [in] ChartViewParam dwFlag );
+	[id(8), helpstring("method GetChartStyle")] HRESULT GetChartStyle([in] long nID, [out] ChartViewParam *dwFlag );
+
+	// Установа/Получение стиля линии.
+	[id(9), helpstring("method SetLineStyle")] HRESULT SetLineStyle( [in] ULONG lStyle, [in] CommonChartLineStyles dwFlag );
+	[id(10), helpstring("method GetLineStyle")] HRESULT GetLineStyle( [out] ULONG *lStyle, [in] CommonChartLineStyles dwFlag );
+
+	[id(11), helpstring("method SetChartLineStyle")] HRESULT SetChartLineStyle([in] long nID, [in] ULONG lStyle, [in] ChartLineStyles dwFlag );
+	[id(12), helpstring("method GetChartLineStyle")] HRESULT GetChartLineStyle([in] long nID, [out] ULONG *lStyle, [in] ChartLineStyles dwFlag );
+
+	// Установа/Получение толoщины линии. 
+	// ChartLineThickness
+	[id(13), helpstring("method SetLineThick")] HRESULT SetLineThick( [in] long nThick,   [in] CommonChartLineThickness dwFlag );
+	[id(14), helpstring("method GetLineThick")] HRESULT GetLineThick( [out] long *nThick, [in] CommonChartLineThickness dwFlag );
+
+	[id(15), helpstring("method SetChartLineThick")] HRESULT SetChartLineThick([in] long nID, [in] long nThick,   [in] ChartLineThickness dwFlag );
+	[id(16), helpstring("method GetChartLineThick")] HRESULT GetChartLineThick([in] long nID, [out] long *nThick, [in] ChartLineThickness dwFlag );
+
+	// Область графика на которую будут рисовать
+	[id(17), helpstring("method SetChartRange")] HRESULT SetChartRange([in] long nID, [in] double lfMin, [in] double lfMax, [in] ChartRange dwFlag );
+	[id(18), helpstring("method GetChartRange")] HRESULT GetChartRange([in] long nID, [out] double *lfMin, [out] double *lfMax, [in] ChartRange dwFlag );
+
+	[id(19), helpstring("method SetRangeState")] HRESULT SetRangeState([in] long nID, [in] int bEnable, [in] ChartRange dwFlag );
+	[id(20), helpstring("method GetRangeState")] HRESULT GetRangeState([in] long nID, [out] int *bEnable, [in] ChartRange dwFlag );
+
+	// Установа положение визира.
+	[id(23), helpstring("method SetTargetPos")] HRESULT SetTargetPos( [in] POINT ptPos );
+
+	// Установа формата вывода текста.
+	[id(25), helpstring("method SetTextFormat")] HRESULT SetTextFormat( [in] long nID, [in] BSTR bstrFormat, [in] ChartTextFormat dwFlag ) = 0;
+
+	// Удаляет график и данные связанные с ним.
+	[id(26), helpstring("method RemoveChart")] HRESULT RemoveChart( [in] long nID ) = 0;
+
+	// Удаляет график и данные связанные с ним.
+	[id(27), helpstring("method ShowChart")] HRESULT ShowChart( [in] long nID, [in] int bShow ) = 0;
+
+	// Установа/Получение обозначений осей.
+	[id(28), helpstring("method SetAxisText")] HRESULT SetAxisText( [in] long nID, [in] BSTR bstrText, [in] ChartAxis dwFlag ) = 0;
+	[id(29), helpstring("method GetAxisText")] HRESULT GetAxisText( [in] long nID, [out] BSTR *bstrText, [in] ChartAxis dwFlag ) = 0;
+
+	// Установа/Получение различный параметров.
+	[id(30), helpstring("method SetConstParams")] HRESULT SetConstParams( [in] long nVal, [in] CommonChartConst dwFlag ) = 0;
+	[id(31), helpstring("method GetConstParams")] HRESULT GetConstParams( [out] long *nVal, [in] CommonChartConst dwFlag ) = 0;
+
+	// Установа/Получение различный параметров.
+	[id(32), helpstring("method SetColorizedMap")] HRESULT SetColorizedMap( [in] long nID,[in] DWORD lColor, [in] double lfMinX, [in] double lfMinY, [in] double lfMaxX, [in] double lfMaxY ) = 0;
+	[id(33), helpstring("method ClearColorized")] HRESULT ClearColorized( [in] long nID ) = 0;
+
+	// Сетка.
+	[id(34), helpstring("method EnableGridLines")] HRESULT EnableGridLines( [in] CommonChartGrid dwFlags ) = 0;
+	[id(35), helpstring("method SetGridLines")] HRESULT SetGridLines( [in] double *fGridVals, [in] long lCount, [in] CommonChartGrid dwFlags ) = 0;
+
+	// Штрихи по оси
+	[id(36), helpstring("method SetScaleLabels")] HRESULT SetScaleLabels( [in] long nID, [in] double *pfVals, [in] long lCount, [in] ChartAxis dwFlags ) = 0;
+
+	// Значения по оси																				   место вывода			само сначение
+	[id(37), helpstring("method SetScaleTextLabels")] HRESULT SetScaleTextLabels( [in] long nID,  [in] double *pfVals, [in] double *pfLabels, [in] long lCount, [in] ChartAxis dwFlags ) = 0;
+
+	// Шрифт хначения по оси
+	// Снаружи LOGFONT * приводится к BYTE *
+	[id(38), helpstring("method SetAxisTextFont")] HRESULT SetAxisTextFont( [in] long nID,  [in] BYTE *plfFont, [in] ChartAxis dwFlags, [in] ChartFont dwFlag2 ) = 0;
+
+	[id(39), helpstring("method RemoveHints")] HRESULT RemoveHints( [in] long nID );
+	[id(40), helpstring("method SetHintText")] HRESULT SetHintText( [in] long nID,[in] double fX,[in] double fY,[in] BSTR bstrHint, [in]int nAlign, [in]int XOffsetInPixel, [in]int YOffsetInPixel  );
+	[id(41), helpstring("method SetHintFont")] HRESULT SetHintFont( [in] long nID,  [in] BYTE *plfFont );
+
+	[id(42), helpstring("method SetTextZoom")] HRESULT SetTextZoom( [in] double fZoom );
+	[id(43), helpstring("method GetTextZoom")] HRESULT GetTextZoom( [out, retval] double *pfZoom );
+
+	[id(44), helpstring("method SetPixelUnit")] HRESULT SetPixelUnit( [in] int nUnit );
+};
+
+[
+	object,
+	uuid(4EB92343-D990-4511-A4B9-30036B6036D2),
+	helpstring("IChartDrawer Interface"),
+	pointer_default(unique)
+]
+interface IChartDrawer : IUnknown //Отрисов массива(ов) данных 
+{
+	//Установка набора данных.
+	[id(1), helpstring("method SetData")] HRESULT SetData([in] long nID, [in] double*pValues, [in] long nCount, [in] ChartDataType dwFlag );
+	[id(2), helpstring("method GetData")] HRESULT GetData([in] long nID, [out] double**pValues, [out] long * nCount, [in] ChartDataType dwFlag );
+
+	//Установка набора данных данные по Y, диапазон изменения х. 
+	[id(3), helpstring("method SetData2")] HRESULT SetData2([in] long nID, [in] VARIANT PtrToFunct, [in] double lfMinX, [in] double lfMaxX, [in] double lfStep );
+	
+	// Данные на копируются. Они должны храниться на стороне клиента
+	[id(4), helpstring("method SetExternData")] HRESULT SetExternData([in] long nID, [in] double*pValues, [in] long nCount, [in] ChartDataType dwFlag );
+
+	//Отрисовка графика(ов)
+	[id(5), helpstring("method Draw")] HRESULT Draw( [in] DWORD hDC,  [in] RECT rcDraw ); 
+
+	// Возвражает значение под ptMiceInDC.
+	[id(6), helpstring("method GetToolTipValue")] HRESULT GetToolTipValue( [in] long nID, [in] POINT ptMiceInDC, [out] double *pX, [out] double *pY, [in] short bYfromX, [in] int nHalfHotZone );
+
+	// Cглаживание. 
+	[id(7), helpstring("method SmoothChart")] HRESULT SmoothChart([in] long nID, [in] double fSmoothParam, [in] short bYFromX, [in] ChartLineSmooth dwFlag );
+
+	// Удаленик всех графиков 
+	[id(8), helpstring("method ClearAll")] HRESULT ClearAll();
+	
+	// Преобразовать в логорифмический масштаб
+	[id(9), helpstring("method LogarifmScale")] HRESULT LogarifmScale( [in] ChartDataType dwFlag  );
+
+	// Добавить маркер
+	[id(10), helpstring("method AddMarker")] HRESULT AddMarker( [in]double fX, [in]double fY, [in]long nPixelInSize, COLORREF clColor, ChartMarker dwFlag  );
+};
+[
+	object,
+	uuid(4810C3EF-2090-4128-8D70-ED1780D223ED),
+	helpstring("ISmartChartDrawer Interface"),
+	pointer_default(unique)
+]
+interface ISmartChartDrawer : IUnknown
+{
+	//Отрисовка графика(ов)
+	[id(1), helpstring("method Draw")] HRESULT Draw( [in] DWORD hDC,  [in] RECT rcDraw ); 
+
+	// Возвражает значение под ptMiceInDC.
+	[id(2), helpstring("method GetToolTipValue")] HRESULT GetToolTipValue( [in] long nID, [in] POINT ptMiceInDC, [out] double *pX, [out] double *pY, [in] short bYfromX, [in] int nHalfHotZone );
+
+	// сглаживание
+	[id(3), helpstring("method SmoothChart")] HRESULT SmoothChart([in] long nID, [in] double fSmoothParam, [in] short bYFromX, [in] ChartLineSmooth dwFlag );
+
+	// Вычисление значений
+	[id(4), helpstring("method CalcValues")] HRESULT CalcValues( [in] long nID, [in] BSTR bstrExpr, [in] double fMin, [in] double fMax, [in] double fStep );
+
+	// Удаленик всех графиков 
+	[id(5), helpstring("method ClearAll")] HRESULT ClearAll();
+
+	// Преобразовать в логорифмический масштаб
+	[id(6), helpstring("method LogarifmScale")] HRESULT LogarifmScale( [in] ChartDataType dwFlag  );
+};
+[
+	object,
+	uuid(4C2B900F-7DE5-4da5-9113-F3C79D3F4A5B),
+	helpstring("IChartMiscHelper Interface"),
+	pointer_default(unique)
+]
+interface IChartMiscHelper : IUnknown
+{
+	//Установка и разбор выражения. 
+	[id(1), helpstring("method LPtoDP")] HRESULT LPtoDP( [in] DWORD hDC, [out] POINT *pt );
+	[id(2), helpstring("method DPtoLP")] HRESULT DPtoLP( [in] DWORD hDC, [out] POINT *pt );
+
+	[id(3), helpstring("method ConvertToDC")] HRESULT ConvertToDC( [in] long nID, [in]RECT rcDraw, [in] double x, [in] double y, [out, retval] POINT *pt );
+};
+
+//////////////////////////////////////////////////////////////////////////
+[
+	uuid(074601E3-8F84-44ca-AA4B-EC45B331BDA9),
+	version(1.0),
+	helpstring("ChartsLib 1.0 Type Library")
+]
+library ChartsLib
+{
+	importlib("stdole2.tlb");
+	[
+		uuid(B7D2C875-8C05-46d4-9BE0-2B47E6B98668),
+		helpstring("ChartDrawer Class")
+	]
+	coclass ChartDrawer
+	{
+		[default] interface IChartAttributes;
+				  interface IChartDrawer;
+		 	      interface ISmartChartDrawer;
+				  interface IChartMiscHelper;
+	};
+}; 

@@ -1,0 +1,154 @@
+//Microsoft Developer Studio generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// Russian resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_RUS)
+#ifdef _WIN32
+LANGUAGE LANG_RUSSIAN, SUBLANG_DEFAULT
+#pragma code_page(1251)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)\r\n"
+    "#ifdef _WIN32\r\n"
+    "LANGUAGE 9, 1\r\n"
+    "#pragma code_page(1252)\r\n"
+    "#endif //_WIN32\r\n"
+    "#include ""res\\Periodic.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "#include ""afxres.rc""         // Standard components\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_PERIODIC_DIALOG DIALOGEX 0, 0, 263, 82
+STYLE DS_MODALFRAME | DS_CONTROL | WS_CHILD | WS_VISIBLE
+EXSTYLE WS_EX_APPWINDOW
+FONT 8, "MS Sans Serif", 0, 0, 0x1
+BEGIN
+    LTEXT           "Интервал в секундах:",IDC_STATIC,7,7,74,8
+    EDITTEXT        IDC_E_INTERVAL,86,6,40,14,ES_AUTOHSCROLL
+    LTEXT           "Количество кадров:",IDC_STATIC,7,26,68,8
+    EDITTEXT        IDC_E_FRAMES,86,23,40,14,ES_AUTOHSCROLL
+    PUSHBUTTON      "Старт",IDC_START,7,61,50,14
+    PUSHBUTTON      "Стоп",IDC_STOP1,87,61,50,14,WS_DISABLED
+    LTEXT           "",IDC_PROGRESS,10,46,112,8
+    GROUPBOX        "Захват",IDC_STATIC,150,7,99,68
+    CONTROL         "По времени",IDC_TIME,"Button",BS_AUTORADIOBUTTON | 
+                    WS_GROUP | WS_TABSTOP,155,15,56,14
+    CONTROL         "По внешнему сигналу",IDC_SIGNAL,"Button",
+                    BS_AUTORADIOBUTTON,155,32,90,10
+    CONTROL         "По времени и внешнему сигналу",IDC_BOTH,"Button",
+                    BS_AUTORADIOBUTTON | BS_MULTILINE,155,43,91,23
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO DISCARDABLE 
+BEGIN
+    IDD_PERIODIC_DIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 256
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 75
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_ACTION_READCOORDS    "ReadCoords\nread coords\nFile\nread coords\nread coords"
+    IDS_DLGNAME             "Захват последовательности"
+    IDS_DEVICE_NOT_FOUND    "Устройство %s не найдено"
+    IDS_INVALID_DEVICE      "Устройство %s не может быть использовано для захвата последовательности"
+    IDS_NO_DEVICES          "Не найдено ни одного устройства для ввода для захвата последовательности"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    AFX_IDS_APP_TITLE       "Захват последовательности"
+    IDS_DATA_CANNOT_BE_READ "Ошибка чтения данных"
+END
+
+#endif    // Russian resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE 9, 1
+#pragma code_page(1252)
+#endif //_WIN32
+#include "res\Periodic.rc2"  // non-Microsoft Visual C++ edited resources
+#include "afxres.rc"         // Standard components
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

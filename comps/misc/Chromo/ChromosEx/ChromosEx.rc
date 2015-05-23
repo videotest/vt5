@@ -1,0 +1,696 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// Chinese (P.R.C.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)
+#ifdef _WIN32
+LANGUAGE LANG_CHINESE, SUBLANG_CHINESE_SIMPLIFIED
+#pragma code_page(936)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Cursor
+//
+
+IDC_MOVE_CROMO          CURSOR                  "arrowcop.cur"
+IDC_CURSOR_ROTATE       CURSOR                  "move_cro.cur"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_IDIO_NUMS_DLG DIALOGEX 0, 0, 118, 87
+STYLE DS_SETFONT | DS_MODALFRAME | DS_3DLOOK | DS_NOFAILCREATE | DS_CENTER | 
+    WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+EXSTYLE WS_EX_TOOLWINDOW
+CAPTION "ґшРНєЕ"
+FONT 8, "MS Sans Serif", 0, 0, 0x1
+BEGIN
+    EDITTEXT        IDC_EDIT1,75,9,36,12,ES_AUTOHSCROLL | ES_READONLY
+    CONTROL         "Spin2",IDC_SPIN1,"msctls_updown32",UDS_SETBUDDYINT | 
+                    UDS_ALIGNRIGHT | UDS_AUTOBUDDY | UDS_ARROWKEYS,108,9,11,
+                    14
+    EDITTEXT        IDC_EDIT2,75,23,36,12,ES_AUTOHSCROLL | ES_READONLY
+    CONTROL         "Spin2",IDC_SPIN2,"msctls_updown32",UDS_SETBUDDYINT | 
+                    UDS_ALIGNRIGHT | UDS_AUTOBUDDY | UDS_ARROWKEYS,108,24,11,
+                    14
+    CONTROL         "СЗґш (1):",IDC_CHECK_N3,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,11,37,59,10
+    EDITTEXT        IDC_EDIT3,75,36,36,12,ES_AUTOHSCROLL | ES_READONLY
+    CONTROL         "Spin2",IDC_SPIN3,"msctls_updown32",UDS_SETBUDDYINT | 
+                    UDS_ALIGNRIGHT | UDS_AUTOBUDDY | UDS_ARROWKEYS,108,36,11,
+                    14
+    CONTROL         "СЗґш (2):",IDC_CHECK_N4,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,11,51,59,10
+    EDITTEXT        IDC_EDIT4,75,50,36,12,ES_AUTOHSCROLL | ES_READONLY
+    CONTROL         "Spin2",IDC_SPIN4,"msctls_updown32",UDS_SETBUDDYINT | 
+                    UDS_ALIGNRIGHT | UDS_AUTOBUDDY | UDS_ARROWKEYS,107,50,11,
+                    14
+    DEFPUSHBUTTON   "И·¶Ё",IDOK,5,70,45,14
+    PUSHBUTTON      "ИЎПы",IDCANCEL,66,70,45,14
+    CONTROL         "·ыєЕ",IDC_CHECK7,"Button",BS_AUTOCHECKBOX | 
+                    BS_MULTILINE | WS_TABSTOP,38,11,35,8
+    GROUPBOX        " ј¶±р",IDC_STATIC_FULL,4,1,110,66
+    LTEXT           "ЗшУт:",IDC_STATIC_N1,11,11,26,8
+    LTEXT           "ґшРН:",IDC_CHECK_N2,11,24,20,8
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Menu
+//
+
+IDR_MENU_EDITBEND MENU 
+BEGIN
+    POPUP "sub"
+    BEGIN
+        MENUITEM "ЙѕіэЛщУРґшРН",                1013
+    END
+END
+
+IDR_MENU_EDITBEND2 MENU 
+BEGIN
+    POPUP "sub"
+    BEGIN
+        MENUITEM "ЙѕіэЛжМе",                    ID_SPUTNIC_DELETE
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Toolbar
+//
+
+IDR_TOOLBAR1 TOOLBAR  16, 15
+BEGIN
+    BUTTON      IDS_SHOW_CARIO_VIEW
+    BUTTON      IDS_SHOW_CARIO_ON_IMAGE
+    BUTTON      IDS_CARIO_BUILD
+    BUTTON      IDS_SHOW_CARIO_VIEW_DESIGN
+    BUTTON      IDS_ACTION_INSERT_CARIO_LINE
+    BUTTON      IDS_ACTION_APPEND_CARIO_LINE
+    BUTTON      IDS_ACTION_INSERT_CARIO_CELL
+    BUTTON      IDS_ACTION_APPEND_CARIO_CELL
+    BUTTON      IDS_ACTION_DELETE_CARIO_LINE
+    BUTTON      IDS_ACTION_DELETE_CARIO_CELL
+    BUTTON      IDS_SHOW_CHROMO_IDIOGRAMM
+    BUTTON      IDS_SHOW_CHROMO_ALL_IDIOGRAMM
+    BUTTON      IDS_SET_CHROMO_ZOOM
+    BUTTON      IDS_SET_CHROMO_ANGLE
+    BUTTON      IDS_ACTION_DELETE_CHROMOSOME
+    BUTTON      IDS_SET_CHROMO_MIRROR
+    BUTTON      IDS_SHOW_CARIO_IDIOEDIT
+    BUTTON      IDS_ADD_BEND2
+    SEPARATOR
+    BUTTON      IDS_SET_EDITABLE_IDIO
+    SEPARATOR
+    BUTTON      IDS_SHOW_CHROMO_ALL_BRIGHTNESS
+    BUTTON      IDS_SHOW_CHROMO_ALL_RATIO
+    BUTTON      IDS_SHOW_CHROMO_ALL_AMPLIFICATION
+    BUTTON      IDS_SHOW_CHROMO_ALL
+    BUTTON      IDS_ADD_TO_ANALIZE
+    BUTTON      IDS_SET_FILL_AND_NUMBER
+    BUTTON      IDS_SHOW_CHROMO_ADD_LINES
+    BUTTON      IDS_ROTATE_EDITABLE_IDIO
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDR_TOOLBAR1            BITMAP                  "chromos_ex_tb.bmp"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE 
+BEGIN
+    IDS_CARIO_VIEW_NAME     "єЛРННј"
+    IDS_SHOW_CARIO_VIEW     "ShowKaryoView\nєЛРННј\nKaryo\nПФКѕєЛРННј\nПФКѕєЛРННј"
+    IDS_CARIO_TYPE          "єЛРН¶ФПу"
+    IDS_SHOW_CARIO_ANLIZE   "ShowKaryoAnalize\nПФКѕєЛРН·ЦОц\nKaryo\nПФКѕєЛРН·ЦОц\nПФКѕєЛРН·ЦОц"
+    IDS_CARIO_BUILD         "KaryoBuild\nЅЁБўєЛРННј\nKaryo\nЅЁБўєЛРННј\nЅЁБўєЛРННј"
+    IDS_SHOW_CARIO_VIEW_DESIGN 
+                            "ShowKaryoViewDesign\nєЛРННјЙијЖ\nKaryo\nКдИлєЛРННјµДЙијЖДЈКЅ\nєЛРННјЙијЖ"
+    IDS_ACTION_INSERT_CARIO_LINE 
+                            "InsertKaryoLine\nІеИлРР\nKaryo\nФЪєЛРННјµДСЎЦРРРЦ®ЙПІеИлТ»РР\nФЪєЛРННјЦРІеИлРР "
+    IDS_ACTION_APPEND_CARIO_LINE 
+                            "AppendKaryoLine\nЧ·јУРР\nKaryo\nФЪєЛРННјЦРЧ·јУТ»РР\nФЪєЛРННјЦРЧ·јУТ»РР"
+    IDS_ACTION_INSERT_CARIO_CELL 
+                            "InsertKaryoCell\nІеИлµҐФЄёс\nKaryo\nФЪєЛРННјµДСЎЦРµҐФЄёсЧуІаІеИлТ»ёцµҐФЄёс\nФЪєЛРННјЦРІеИлµҐФЄёс"
+    IDS_ACTION_APPEND_CARIO_CELL 
+                            "AppendKaryoCell\nЧ·јУµҐФЄёс\nKaryo\nФЪєЛРННјµДРРЦРЧ·јУµҐФЄёс\nФЪєЛРННјµДРРЦРЧ·јУµҐФЄёс"
+    IDS_ACTION_DELETE_CARIO_LINE 
+                            "DeleteKaryoLine\nЙѕіэРР\nKaryo\nЙѕіэєЛРННјЦРµДРР\nЙѕіэєЛРННјЦРµДРР"
+    IDS_ACTION_DELETE_CARIO_CELL 
+                            "DeleteKaryoCell\nЙѕіэµҐФЄёс\nKaryo\nЙѕіэєЛРННјЦРµДµҐФЄёс\nЙѕіэєЛРННјЦРµДµҐФЄёс"
+    IDS_CELLAR_CAPTION      " "
+    IDS_CARIO_ANALIZE_VIEW_NAME "±ИЅПЧЦ¶О"
+    IDS_ACTION_DELETE_CHROMOSOME 
+                            "DeleteChromosome\nЙѕіэИѕЙ«Ме\nKaryo\nЙѕіэИѕЙ«Ме\nЙѕіэИѕЙ«Ме"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_SHOW_CHROMO_IDIOGRAMM 
+                            "ShowChromoIdiogramm\nПФКѕДЈКЅНј\nKaryo\nПФКѕ/ТюІШК№УГЛщСЎИѕЙ«МеЕФµД*ІеИлДЈКЅНј*ГьБоІеИлµДДЈКЅНј\nПФКѕДЈКЅНј"
+    IDS_SHOW_CHROMO_ALL_IDIOGRAMM 
+                            "ShowAllChromoIdiogramm\n±кЧјДЈКЅНј\nKaryo\nПФКѕ»тТюІШ±кЧјДЈКЅНј\nПФКѕ/ТюІШ±кЧјДЈКЅНј"
+    IDS_SET_CHROMO_ZOOM     "SetChromoZoom\nЛх·ЕИѕЙ«Ме\nKaryo\nЛх·ЕСЎЦРµДИѕЙ«Ме\nЛх·ЕИѕЙ«Ме"
+    IDS_SET_CHROMO_ANGLE    "SetChromoAngle\nРэЧЄИѕЙ«Ме\nKaryo\n°ґЧЎКу±кЧујьРэЧЄСЎЦРµДИѕЙ«МеЈ¬°ґЧЎ Shift µДН¬К±µҐ»чКу±кЧујьїЙЅ«СЎЦРИѕЙ«МеРэЧЄ 180 ¶И\nРэЧЄИѕЙ«Ме"
+    IDS_SET_CHROMO_MIRROR   "SetChromoMirror\nѕµПсИѕЙ«Ме\nKaryo\nѕµПсСЎЦРИѕЙ«Ме\nѕµПсИѕЙ«Ме"
+    IDS_CARIO_IDIO_VIEW_NAME "±ИЅПЧЦ¶О"
+    IDS_SHOW_CARIO_IDIOEDIT "ShowKaryoIdioEdit\nShow Karyo Idio Edit\nKaryo\nShow karyo idio edit\nShow Karyo Idio Edit"
+    IDS_IDIOEDIT_MODE       "IdioEditMode\nЗР»»µЅДЈКЅНј±ај­ДЈКЅ\nKaryo\nЗР»»µЅДЈКЅНј±ај­ДЈКЅ\nЗР»»µЅДЈКЅНј±ај­ДЈКЅ"
+    IDS_SHOW_CHROMO_ALL_BRIGHTNESS 
+                            "ShowAllChromoBrightness\nПФКѕББ¶ИЕдЦГОДјю\nKaryo\nПФКѕ»тТюІШєЛРННјЙПµДИѕЙ«МеББ¶ИЕдЦГОДјю\nПФКѕ/ТюІШББ¶ИЕдЦГОДјю"
+    IDS_ADD_BEND            "AddIdioBend\nAddIdioBend\nKaryo\nAddIdioBend\nAddIdioBend"
+    IDS_SHOW_CHROMO_ALL_RATIO 
+                            "ShowAllChromoRatio\nПФКѕУ«№в±ИЕдЦГОДјю\nKaryo\nПФКѕ»тТюІШУ«№в±ИЕдЦГОДјю\nПФКѕ/ТюІШУ«№в±ИЕдЦГОДјю"
+    IDS_SHOW_CHROMO_ALL_AMPLIFICATION 
+                            "ShowAllChromoAmplification\nПФКѕДЈКЅНјЦРµДПсІо\nKaryo\nПФКѕ»тТюІШДЈКЅНјЦРµДПсІоЗшУт±кјЗ\nПФКѕ/ТюІШДЈКЅНјЦРµДПсІо"
+    IDS_SHOW_CHROMO_ALL     "ShowAllChromoObjects\nПФКѕЛщУРИѕЙ«Ме\nKaryo\nПФКѕ»тТюІШДЈРННјЦРµДЛщУРИѕЙ«Ме\nПФКѕ/ТюІШЛщУРИѕЙ«Ме"
+    IDS_ADD_BEND2           "AddIdioBend\n»жЦЖґшРН±ЯЅз\nKaryo\nКЦ¶Ї»жЦЖґшРНµД±ЯЅз\n»жЦЖґшРН±ЯЅз"
+    IDS_SET_FILL_AND_NUMBER "SetIdioFillAndNumber\nМоідґшРНІў¶ФЖдЅшРР±аєЕ\nKaryo\nК№УГКу±кЧујь¶ФґшРНЅшРР±аєЕЈ¬К№УГУТјьМоідґшРНЎЈ\nМоідґшРНІў¶ФЖдЅшРР±аєЕ"
+    IDS_SHOW_CHROMO_ADD_LINES 
+                            "ShowAllChromoAddLines\nПФКѕґшРН±ЯЅз\nKaryo\nПФКѕИѕЙ«МеЙПµДґшРН±ЯЅз\nПФКѕґшРН±ЯЅз"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_SHOW_CARIO_NUMBERSET 
+                            "SetIdioNumber\nЙиЦГДЈКЅНј±аєЕ\nKaryo\nЙиЦГДЈКЅНј±аєЕ\nЙиЦГДЈКЅНј±аєЕ"
+    IDS_ADD_TO_ANALIZE      "AddToAnalize\nМнјУµЅ±ИЅПЧЦ¶О\nKaryo\nЅ«ИѕЙ«МеМнјУµЅ±ИЅПЧЦ¶О\nМнјУµЅ±ИЅПЧЦ¶О"
+    IDS_SET_CHROMO_CLASS    "SetChromoClass\nЙиЦГИѕЙ«МеАа\nKaryo\nЙиЦГИѕЙ«МеµДАа\nЙиЦГИѕЙ«МеАа"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_SET_EDITABLE_IDIO   "ShowEditableIdio\nПФКѕїЙ±ај­ДЈКЅНј\nKaryo\nФЪ±ИЅПЧЦ¶ОЦРПФКѕїЙ±ај­ДЈКЅНј\nПФКѕїЙ±ај­ДЈКЅНј"
+    IDS_ADD_TO_ANALIZE2     "AddToAnalize\nМнјУµЅ±ИЅПЧЦ¶О\nKaryo\nЅ«ИѕЙ«МеМнјУµЅ±ИЅПЧЦ¶О\nМнјУµЅ±ИЅПЧЦ¶О"
+    IDS_ADD_TO_ANALIZE3     "AddToAnalize3\nМнјУµЅ±ИЅПЧЦ¶О\nKaryo\nЅ«ИѕЙ«МеМнјУµЅ±ИЅПЧЦ¶О\nМнјУµЅ±ИЅПЧЦ¶О"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_ROTATE_EDITABLE_IDIO 
+                            "RotateEditableIdio\nЅ«ДЈКЅНјРэЧЄ 180 ¶И\nKaryo\nЅ«їЙ±ај­µДДЈКЅНјРэЧЄ 180 ¶И\nЅ«ДЈКЅНјРэЧЄ 180 ¶И"
+    IDS_SPUTNIC             "ЛжМе"
+    IDS_LINK                "БґЅУ"
+    IDS_ADD_BEND22          "AddIdioBend2\n»жЦЖґшРН±ЯЅз\nєЛРН\nКЦ¶Ї»жЦЖґшРНµД±ЯЅз\n»жЦЖґшРН±ЯЅз"
+END
+
+#endif    // Chinese (P.R.C.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+/////////////////////////////////////////////////////////////////////////////
+// Russian resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_RUS)
+#ifdef _WIN32
+LANGUAGE LANG_RUSSIAN, SUBLANG_DEFAULT
+#pragma code_page(1251)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Cursor
+//
+
+IDC_CURSOR_CROMO_MIRROR CURSOR                  "cursor_c.cur"
+IDC_IDIO_EDIT           CURSOR                  "idio_edit.cur"
+IDC_IDIO_EDIT_CUT       CURSOR                  "idio_edi.cur"
+IDC_CURSOR_DODRAG       CURSOR                  "cursor1.cur"
+IDC_CURSOR_DROP         CURSOR                  "cur00001.cur"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_IDIO_NUMS_DLG DIALOGEX 0, 0, 119, 87
+STYLE DS_SETFONT | DS_MODALFRAME | DS_3DLOOK | DS_NOFAILCREATE | DS_CENTER | 
+    WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+EXSTYLE WS_EX_TOOLWINDOW
+CAPTION "Номер бэнда"
+FONT 8, "MS Sans Serif", 0, 0, 0x1
+BEGIN
+    EDITTEXT        IDC_EDIT1,78,9,36,12,ES_AUTOHSCROLL | ES_READONLY
+    CONTROL         "Spin2",IDC_SPIN1,"msctls_updown32",UDS_SETBUDDYINT | 
+                    UDS_ALIGNRIGHT | UDS_AUTOBUDDY | UDS_ARROWKEYS,113,8,11,
+                    14
+    EDITTEXT        IDC_EDIT2,78,23,36,12,ES_AUTOHSCROLL | ES_READONLY
+    CONTROL         "Spin2",IDC_SPIN2,"msctls_updown32",UDS_SETBUDDYINT | 
+                    UDS_ALIGNRIGHT | UDS_AUTOBUDDY | UDS_ARROWKEYS,113,24,11,
+                    14
+    CONTROL         "Под-бэнд (1):",IDC_CHECK_N3,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,11,37,59,10
+    EDITTEXT        IDC_EDIT3,78,36,36,12,ES_AUTOHSCROLL | ES_READONLY
+    CONTROL         "Spin2",IDC_SPIN3,"msctls_updown32",UDS_SETBUDDYINT | 
+                    UDS_ALIGNRIGHT | UDS_AUTOBUDDY | UDS_ARROWKEYS,113,36,11,
+                    14
+    CONTROL         "Под-бэнд (2):",IDC_CHECK_N4,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,11,51,59,10
+    EDITTEXT        IDC_EDIT4,78,50,36,12,ES_AUTOHSCROLL | ES_READONLY
+    CONTROL         "Spin2",IDC_SPIN4,"msctls_updown32",UDS_SETBUDDYINT | 
+                    UDS_ALIGNRIGHT | UDS_AUTOBUDDY | UDS_ARROWKEYS,113,50,11,
+                    14
+    DEFPUSHBUTTON   "ОК",IDOK,5,71,45,14
+    PUSHBUTTON      "Выход",IDCANCEL,70,71,45,14
+    CONTROL         "буква",IDC_CHECK7,"Button",BS_AUTOCHECKBOX | 
+                    BS_MULTILINE | WS_TABSTOP,40,11,36,9
+    GROUPBOX        " Уровни ",IDC_STATIC_FULL,4,1,114,67
+    LTEXT           "Регион:",IDC_STATIC_N1,11,11,27,8
+    LTEXT           "Бэнд:",IDC_CHECK_N2,11,24,20,8
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Menu
+//
+
+IDR_MENU_EDITBEND MENU 
+BEGIN
+    POPUP "sub"
+    BEGIN
+        MENUITEM "Удалить все бэнды",           1013
+    END
+END
+
+IDR_MENU_EDITBEND2 MENU 
+BEGIN
+    POPUP "sub"
+    BEGIN
+        MENUITEM "Удалить спутник",             ID_SPUTNIC_DELETE
+    END
+END
+
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)\r\n"
+    "#ifdef _WIN32\r\n"
+    "LANGUAGE 9, 1\r\n"
+    "#pragma code_page(1252)\r\n"
+    "#endif //_WIN32\r\n"
+    "#include ""res\\ChromosEx.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "#include ""afxres.rc""         // Standard components\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDI_CARIO               ICON                    "cario.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO 
+BEGIN
+    IDD_IDIO_NUMS_DLG, DIALOG
+    BEGIN
+        RIGHTMARGIN, 116
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE 
+BEGIN
+    IDS_CARIO_VIEW_NAME     "Кариограмма"
+    IDS_SHOW_CARIO_VIEW     "ShowKaryoView\nКариограмма\nКарио\nПоказть кариограмму\nПоказть кариограмму"
+    IDS_CARIO_TYPE          "Karyo Object"
+    IDS_SHOW_CARIO_ANLIZE   "ShowKaryoAnalize\nShow Karyo Analyze\nКарио\nShow karyo analyze\nShow Karyo Analyze"
+    IDS_CARIO_BUILD         "KaryoBuild\nПостроить кариограмму\nКарио\nПостроить кариограмму\nПостроить кариограмму"
+    IDS_SHOW_CARIO_VIEW_DESIGN 
+                            "ShowKaryoViewDesign\nКонструктор\nКарио\nВключить режим конструирования кариограммы\nКонструктор кариограммы"
+    IDS_ACTION_INSERT_CARIO_LINE 
+                            "InsertKaryoLine\nВставить ряд\nКарио\nВставить ряд в кариограмму над указанным\nВставить ряд в кариограмму"
+    IDS_ACTION_APPEND_CARIO_LINE 
+                            "AppendKaryoLine\nВставить ряд в конец\nКарио\nВставить ряд в конец кариограммы\nВставить ряд в конец кариограммы"
+    IDS_ACTION_INSERT_CARIO_CELL 
+                            "InsertKaryoCell\nВставить ячейку\nКарио\nВставить ячейку в кариограмму слева от указанной\nВставить ячейку в кариограмму"
+    IDS_ACTION_APPEND_CARIO_CELL 
+                            "AppendKaryoCell\nВставить ячейку в конец\nКарио\nВставить ячейку в конец строки кариограммы\nВставить ячейку в конец строки кариограммы"
+    IDS_ACTION_DELETE_CARIO_LINE 
+                            "DeleteKaryoLine\nУдалить ряд\nКарио\nУдалить ряд из кариограммы\nУдалить ряд из кариограммы"
+    IDS_ACTION_DELETE_CARIO_CELL 
+                            "DeleteKaryoCell\nУдалить ячейку\nКарио\nУдалить ячейку из кариограммы\nУдалить ячейку из кариограммы"
+    IDS_CELLAR_CAPTION      " "
+    IDS_CARIO_ANALIZE_VIEW_NAME "Поле сравнения"
+    IDS_ACTION_DELETE_CHROMOSOME 
+                            "DeleteChromosome\nУдалить хромосому\nКарио\nУдалить хромосому\nУдалить хромосому"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_SHOW_CHROMO_IDIOGRAMM 
+                            "ShowChromoIdiogramm\nПоказать идиограмму\nКарио\nВключить/выключить отображение идиограммы, вставленной при помощи команды *Вставить идиограмму* рядом с выбранной хромосомой\nПоказать идиограмму"
+    IDS_SHOW_CHROMO_ALL_IDIOGRAMM 
+                            "ShowAllChromoIdiogramm\nСтандартные идиограммы\nКарио\nВключить/выключить отображение стандартных идиограмм\nСтандартные идиограммы"
+    IDS_SET_CHROMO_ZOOM     "SetChromoZoom\nУвеличение\nКарио\nМасштабировать выбранную хромосому\nУвеличение хромосомы"
+    IDS_SET_CHROMO_ANGLE    "SetChromoAngle\nВращение\nКарио\nВращать выбранную хромосому при нажатой левой кнопке мыши. Правая кнопка + Shift: вращать на 180\nВращение хромосомы"
+    IDS_SET_CHROMO_MIRROR   "SetChromoMirror\nОтобразить зеркально\nКарио\nОтобразить выбранную хромосому зеркально\nОтобразить хромосому зеркально"
+    IDS_CARIO_IDIO_VIEW_NAME "Поле сравнения"
+    IDS_SHOW_CARIO_IDIOEDIT "ShowKaryoIdioEdit\nShow Karyo Idio Edit\nКарио\nShow karyo idio edit\nShow Karyo Idio Edit"
+    IDS_IDIOEDIT_MODE       "IdioEditMode\nSwitch to idio edit mode\nКарио\nSwitch to idio edit mode\nSwitch to idio edit mode"
+    IDS_SHOW_CHROMO_ALL_BRIGHTNESS 
+                            "ShowAllChromoBrightness\nПоказать яркостные разрезы\nКарио\nВключить/выключить отображение яркостных разрезов хромосом в кариограмме\nПоказать яркостные разрезы"
+    IDS_SET_OWNDRAW_IDIO    "SetOwnDrawIdio\nSet own draw idio\nКарио\nSet own draw idio \nSet own draw idio"
+    IDS_SHOW_CHROMO_ALL_RATIO 
+                            "ShowAllChromoRatio\nПоказать профиль флуоресцентного отношения\nКарио\nВключить/выключить отображение профиля флуоресцентного отношения\nПоказать профиль флуоресцентного отношения"
+    IDS_SHOW_CHROMO_ALL_AMPLIFICATION 
+                            "ShowAllChromoAmplification\nПоказать аберрации на идиограммах\nКарио\nВключить/выключить маркировку участков аберраций на идиограммах\nПоказать аберрации на идиограммах"
+    IDS_SHOW_CHROMO_ALL     "ShowAllChromoObjects\nПоказать все хромосомы\nКарио\nВключить/выключить отображение хромосом на кариограмме\nПоказать все хромосомы"
+    IDS_ADD_BEND2           "AddIdioBend\nНанести границы бэндов\nКарио\nРежим ручного нанесения границ бэндов\nНанести границы бэндов"
+    IDS_SET_FILL_AND_NUMBER "SetIdioFillAndNumber\nЗакрасить и нумеровать\nКарио\nЗакрасить и нумеровать бэнды. Закраска - правая кнопка мыши, нумерация - левая кнопка мыши\nЗакрасить и нумеровать бэнды"
+    IDS_SHOW_CHROMO_ADD_LINES 
+                            "ShowAllChromoAddLines\nПоказать границы бэндов\nКарио\nПоказать границы бэндов на хромосоме\nПоказать границы бэндов"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_SHOW_CARIO_NUMBERSET 
+                            "SetIdioNumber\nSet Idio Number\nКарио\nSet idio number\nSet idio number"
+    IDS_ADD_TO_ANALIZE      "AddToAnalize\nДобавить в поле сравнения\nКарио\nДобавить хромосому в поле сравнения\nДобавить в поле сравнения"
+    IDS_SET_CHROMO_CLASS    "SetChromoClass\nSetChromoClass\nКарио\nSetChromoClass\nSetChromoClass"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_SET_EDITABLE_IDIO   "ShowEditableIdio\nПоказать редактируемые идиограммы\nКарио\nПоказать редактируемые идиограммы в поле сравнения\nПоказать редактируемые идиограммы"
+    IDS_ADD_TO_ANALIZE2     "AddToAnalize2\nДобавить в поле сравнения\nКарио\nДобавить хромосому в поле сравнения\nДобавить в поле сравнения"
+    IDS_ADD_TO_ANALIZE3     "AddToAnalize3\nДобавить в поле сравнения\nКарио\nДобавить хромосому в поле сравнения\nДобавить в поле сравнения"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_ROTATE_EDITABLE_IDIO 
+                            "RotateEditableIdio\nПовернуть на 180\nКарио\nПовернуть редактируемую идиограмму на 180\nПовернуть идиограмму на 180"
+    IDS_SPUTNIC             "Satellite"
+    IDS_LINK                "Link"
+    IDS_ADD_BEND22          "AddIdioBend2\nНанести границы бэндов\nКарио\nРежим ручного нанесения границ бэндов\nНанести границы бэндов"
+END
+
+#endif    // Russian resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.S.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Cursor
+//
+
+IDC_MOVE_CROMO          CURSOR                  "arrowcop.cur"
+IDC_CURSOR_ROTATE       CURSOR                  "move_cro.cur"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_IDIO_NUMS_DLG DIALOGEX 0, 0, 118, 87
+STYLE DS_SETFONT | DS_MODALFRAME | DS_3DLOOK | DS_NOFAILCREATE | DS_CENTER | 
+    WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+EXSTYLE WS_EX_TOOLWINDOW
+CAPTION "Band Number"
+FONT 8, "MS Sans Serif", 0, 0, 0x1
+BEGIN
+    EDITTEXT        IDC_EDIT1,75,9,36,12,ES_AUTOHSCROLL | ES_READONLY
+    CONTROL         "Spin2",IDC_SPIN1,"msctls_updown32",UDS_SETBUDDYINT | 
+                    UDS_ALIGNRIGHT | UDS_AUTOBUDDY | UDS_ARROWKEYS,108,9,11,
+                    14
+    EDITTEXT        IDC_EDIT2,75,23,36,12,ES_AUTOHSCROLL | ES_READONLY
+    CONTROL         "Spin2",IDC_SPIN2,"msctls_updown32",UDS_SETBUDDYINT | 
+                    UDS_ALIGNRIGHT | UDS_AUTOBUDDY | UDS_ARROWKEYS,108,24,11,
+                    14
+    CONTROL         "Sub-band (1):",IDC_CHECK_N3,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,11,37,59,10
+    EDITTEXT        IDC_EDIT3,75,36,36,12,ES_AUTOHSCROLL | ES_READONLY
+    CONTROL         "Spin2",IDC_SPIN3,"msctls_updown32",UDS_SETBUDDYINT | 
+                    UDS_ALIGNRIGHT | UDS_AUTOBUDDY | UDS_ARROWKEYS,108,36,11,
+                    14
+    CONTROL         "Sub-band (2):",IDC_CHECK_N4,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,11,51,59,10
+    EDITTEXT        IDC_EDIT4,75,50,36,12,ES_AUTOHSCROLL | ES_READONLY
+    CONTROL         "Spin2",IDC_SPIN4,"msctls_updown32",UDS_SETBUDDYINT | 
+                    UDS_ALIGNRIGHT | UDS_AUTOBUDDY | UDS_ARROWKEYS,107,50,11,
+                    14
+    DEFPUSHBUTTON   "OK",IDOK,5,70,45,14
+    PUSHBUTTON      "Cancel",IDCANCEL,66,70,45,14
+    CONTROL         "symbol",IDC_CHECK7,"Button",BS_AUTOCHECKBOX | 
+                    BS_MULTILINE | WS_TABSTOP,38,11,35,8
+    GROUPBOX        " Levels ",IDC_STATIC_FULL,4,1,110,66
+    LTEXT           "Region:",IDC_STATIC_N1,11,11,26,8
+    LTEXT           "Band:",IDC_CHECK_N2,11,24,20,8
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Menu
+//
+
+IDR_MENU_EDITBEND MENU 
+BEGIN
+    POPUP "sub"
+    BEGIN
+        MENUITEM "Delete All Bands",            1013
+    END
+END
+
+IDR_MENU_EDITBEND2 MENU 
+BEGIN
+    POPUP "sub"
+    BEGIN
+        MENUITEM "Delete Satellite",            ID_SPUTNIC_DELETE
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Toolbar
+//
+
+IDR_TOOLBAR1 TOOLBAR  16, 15
+BEGIN
+    BUTTON      IDS_SHOW_CARIO_VIEW
+    BUTTON      IDS_SHOW_CARIO_ON_IMAGE
+    BUTTON      IDS_CARIO_BUILD
+    BUTTON      IDS_SHOW_CARIO_VIEW_DESIGN
+    BUTTON      IDS_ACTION_INSERT_CARIO_LINE
+    BUTTON      IDS_ACTION_APPEND_CARIO_LINE
+    BUTTON      IDS_ACTION_INSERT_CARIO_CELL
+    BUTTON      IDS_ACTION_APPEND_CARIO_CELL
+    BUTTON      IDS_ACTION_DELETE_CARIO_LINE
+    BUTTON      IDS_ACTION_DELETE_CARIO_CELL
+    BUTTON      IDS_SHOW_CHROMO_IDIOGRAMM
+    BUTTON      IDS_SHOW_CHROMO_ALL_IDIOGRAMM
+    BUTTON      IDS_SET_CHROMO_ZOOM
+    BUTTON      IDS_SET_CHROMO_ANGLE
+    BUTTON      IDS_ACTION_DELETE_CHROMOSOME
+    BUTTON      IDS_SET_CHROMO_MIRROR
+    BUTTON      IDS_SHOW_CARIO_IDIOEDIT
+    BUTTON      IDS_ADD_BEND2
+    SEPARATOR
+    BUTTON      IDS_SET_EDITABLE_IDIO
+    SEPARATOR
+    BUTTON      IDS_SHOW_CHROMO_ALL_BRIGHTNESS
+    BUTTON      IDS_SHOW_CHROMO_ALL_RATIO
+    BUTTON      IDS_SHOW_CHROMO_ALL_AMPLIFICATION
+    BUTTON      IDS_SHOW_CHROMO_ALL
+    BUTTON      IDS_ADD_TO_ANALIZE
+    BUTTON      IDS_SET_FILL_AND_NUMBER
+    BUTTON      IDS_SHOW_CHROMO_ADD_LINES
+    BUTTON      IDS_ROTATE_EDITABLE_IDIO
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDR_TOOLBAR1            BITMAP                  "chromos_ex_tb.bmp"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE 
+BEGIN
+    IDS_CARIO_VIEW_NAME     "Karyogram"
+    IDS_SHOW_CARIO_VIEW     "ShowKaryoView\nKaryogram\nKaryo\nShow karyogram\nShow karyogram"
+    IDS_CARIO_TYPE          "Karyo Object"
+    IDS_SHOW_CARIO_ANLIZE   "ShowKaryoAnalize\nShow Karyo Analyze\nKaryo\nShow karyo analyze\nShow karyo analyze"
+    IDS_CARIO_BUILD         "KaryoBuild\nBuild Karyogram\nKaryo\nBuild karyogram\nBuild Karyogram"
+    IDS_SHOW_CARIO_VIEW_DESIGN 
+                            "ShowKaryoViewDesign\nKaryogram Design\nKaryo\nEnter karyogram design mode\nKaryogram Design"
+    IDS_ACTION_INSERT_CARIO_LINE 
+                            "InsertKaryoLine\nInsert Row\nKaryo\nInsert row into karyogram over the selected one\nInsert Row into Karyogram "
+    IDS_ACTION_APPEND_CARIO_LINE 
+                            "AppendKaryoLine\nAppend Row\nKaryo\nAppend row to karyogram\nAppend Row to Karyogram"
+    IDS_ACTION_INSERT_CARIO_CELL 
+                            "InsertKaryoCell\nInsert Cell\nKaryo\nInsert cell into karyogram to the left of the selected one\nInsert Cell into Karyogram "
+    IDS_ACTION_APPEND_CARIO_CELL 
+                            "AppendKaryoCell\nAppend Cell\nKaryo\nAppend cell to karyogram row\nAppend Cell to Karyogram Row"
+    IDS_ACTION_DELETE_CARIO_LINE 
+                            "DeleteKaryoLine\nDelete Row\nKaryo\nDelete karyogram row\nDelete karyo line"
+    IDS_ACTION_DELETE_CARIO_CELL 
+                            "DeleteKaryoCell\nDelete Cell\nKaryo\nDelete karyogram cell\nDelete Karyogram Cell"
+    IDS_CELLAR_CAPTION      " "
+    IDS_CARIO_ANALIZE_VIEW_NAME "Field of Comparison"
+    IDS_ACTION_DELETE_CHROMOSOME 
+                            "DeleteChromosome\nDelete Chromosome\nKaryo\nDelete chromosome\nDelete Сhromosome"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_SHOW_CHROMO_IDIOGRAMM 
+                            "ShowChromoIdiogramm\nShow Ideogram\nKaryo\nShow/hide ideogram inserted by *Insert Ideogram* command next to the selected chromosome\nShow Ideogram"
+    IDS_SHOW_CHROMO_ALL_IDIOGRAMM 
+                            "ShowAllChromoIdiogramm\nStandard Ideograms\nKaryo\nShow or hide standard ideograms\nShow/Hide Standard Ideograms"
+    IDS_SET_CHROMO_ZOOM     "SetChromoZoom\nZoom Chromosome\nKaryo\nZoom selected chromosome\nZoom Chromosome"
+    IDS_SET_CHROMO_ANGLE    "SetChromoAngle\nRotate Chromosome\nKaryo\nRotate selected chromosome by holding the left mouse button, right-click + Shift to rotate at 180\nRotate Chromosome"
+    IDS_SET_CHROMO_MIRROR   "SetChromoMirror\nMirror Chromosome\nKaryo\nMirror selected chromosome\nMirror Chromosome"
+    IDS_CARIO_IDIO_VIEW_NAME "Compare field"
+    IDS_SHOW_CARIO_IDIOEDIT "ShowKaryoIdioEdit\nShow Karyo Idio Edit\nKaryo\nShow karyo idio edit\nShow Karyo Idio Edit"
+    IDS_IDIOEDIT_MODE       "IdioEditMode\nSwitch to idio edit mode\nKaryo\nSwitch to idio edit mode\nSwitch to idio edit mode"
+    IDS_SHOW_CHROMO_ALL_BRIGHTNESS 
+                            "ShowAllChromoBrightness\nShow Brightness Profiles\nKaryo\nShow or hide chromosome brightness profiles on karyogram\nShow/Hide Brightness Profiles"
+    IDS_ADD_BEND            "AddIdioBend\nAddIdioBend\nKaryo\nAddIdioBend\nAddIdioBend"
+    IDS_SHOW_CHROMO_ALL_RATIO 
+                            "ShowAllChromoRatio\nShow Fluorescence Ratio Profiles\nKaryo\nShow or hide fluorescence ratio profiles\nShow/Hide Fluorescence Ratio Profiles"
+    IDS_SHOW_CHROMO_ALL_AMPLIFICATION 
+                            "ShowAllChromoAmplification\nShow Aberrations on Ideograms\nKaryo\nShow or hide marking of areas of aberrations on ideograms\nShow/Hide Aberrations on Ideograms"
+    IDS_SHOW_CHROMO_ALL     "ShowAllChromoObjects\nShow All Chromosomes\nKaryo\nShow or hide chromosomes on karyogram\nShow/Hide All Chromosomes"
+    IDS_ADD_BEND2           "AddIdioBend\nDraw Band Borders\nKaryo\nManual drawing of band borders\nDraw Band Borders"
+    IDS_SET_FILL_AND_NUMBER "SetIdioFillAndNumber\nFill and Number Bands\nKaryo\nTo number bands use the left mouse button, to fill - the right one.\nFill and Number Bands"
+    IDS_SHOW_CHROMO_ADD_LINES 
+                            "ShowAllChromoAddLines\nShow Band Borders\nKaryo\nShow band borders on chromosomes\nShow Band Borders"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_SHOW_CARIO_NUMBERSET 
+                            "SetIdioNumber\nSet Idio Number\nKaryo\nSet idio number\nSet idio number"
+    IDS_ADD_TO_ANALIZE      "AddToAnalize\nAdd to Field of Comparison\nKaryo\nAdd chromosome to Field of Comparison\nAdd to Field of Comparison"
+    IDS_SET_CHROMO_CLASS    "SetChromoClass\nSetChromoClass\nKaryo\nSetChromoClass\nSetChromoClass"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_SET_EDITABLE_IDIO   "ShowEditableIdio\nShow Editable Ideograms\nKaryo\nShow editable ideograms in the Field of Comparison\nShow Editable Ideograms"
+    IDS_ADD_TO_ANALIZE2     "AddToAnalize2\nAdd to Field of Comparison\nKaryo\nAdd chromosome to Field of Comparison\nAdd to Field of Comparison"
+    IDS_ADD_TO_ANALIZE3     "AddToAnalize3\nAdd to Field of Comparison\nKaryo\nAdd chromosome to Field of Comparison\nAdd to Field of Comparison"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_ROTATE_EDITABLE_IDIO 
+                            "RotateEditableIdio\nRotate Ideogram at 180\nKaryo\nRotate editable ideogram at 180\nRotate Ideogram at 180"
+    IDS_SPUTNIC             "Satellite"
+    IDS_LINK                "Link"
+    IDS_ADD_BEND22          "AddIdioBend2\nDraw Band Borders\nKaryo\nManual drawing of band borders\nDraw Band Borders"
+END
+
+#endif    // English (U.S.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE 9, 1
+#pragma code_page(1252)
+#endif //_WIN32
+#include "res\ChromosEx.rc2"  // non-Microsoft Visual C++ edited resources
+#include "afxres.rc"         // Standard components
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

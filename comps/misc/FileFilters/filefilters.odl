@@ -1,0 +1,100 @@
+// f.odl : type library source for f.dll
+
+// This file will be processed by the MIDL compiler to produce the
+// type library (filefilters.tlb).
+
+[ uuid(46F61013-6699-11D3-A4EA-0000B493A187), version(1.0) ]
+library FileFilters
+{
+	importlib("stdole32.tlb");
+	importlib("stdole2.tlb");
+
+
+
+
+	//  Primary dispatch interface for CTIFile
+	
+	[ uuid(7FCAC279-69A6-11D3-A4EC-0000B493A187) ]
+	dispinterface ITIFile
+	{
+		properties:
+			// NOTE - ClassWizard will maintain property information here.
+			//    Use extreme caution when editing this section.
+			//{{AFX_ODL_PROP(CTIFile)
+			//}}AFX_ODL_PROP
+			
+		methods:
+			// NOTE - ClassWizard will maintain method information here.
+			//    Use extreme caution when editing this section.
+			//{{AFX_ODL_METHOD(CTIFile)
+			//}}AFX_ODL_METHOD
+
+	};
+
+	//  Class information for CTIFile
+
+	[ uuid(7FCAC27A-69A6-11D3-A4EC-0000B493A187) ]
+	coclass TIFileFilter
+	{
+		[default] dispinterface ITIFile;
+	};
+
+
+	//  Primary dispatch interface for CJPGFileFilter
+	
+	[ uuid(A1618773-6AA5-11D3-A4ED-0000B493A187) ]
+	dispinterface IJPGFileFilter
+	{
+		properties:
+			// NOTE - ClassWizard will maintain property information here.
+			//    Use extreme caution when editing this section.
+			//{{AFX_ODL_PROP(CJPGFileFilter)
+			//}}AFX_ODL_PROP
+			
+		methods:
+			// NOTE - ClassWizard will maintain method information here.
+			//    Use extreme caution when editing this section.
+			//{{AFX_ODL_METHOD(CJPGFileFilter)
+			//}}AFX_ODL_METHOD
+
+	};
+
+	//  Class information for CJPGFileFilter
+
+	[ uuid(A1618774-6AA5-11D3-A4ED-0000B493A187) ]
+	coclass JPGFileFilter
+	{
+		[default] dispinterface IJPGFileFilter;
+	};
+
+
+	//  Primary dispatch interface for CPCXFileFilter
+	
+	[ uuid(A1618776-6AA5-11D3-A4ED-0000B493A187) ]
+	dispinterface IPCXFileFilter
+	{
+		properties:
+			// NOTE - ClassWizard will maintain property information here.
+			//    Use extreme caution when editing this section.
+			//{{AFX_ODL_PROP(CPCXFileFilter)
+			//}}AFX_ODL_PROP
+			
+		methods:
+			// NOTE - ClassWizard will maintain method information here.
+			//    Use extreme caution when editing this section.
+			//{{AFX_ODL_METHOD(CPCXFileFilter)
+			//}}AFX_ODL_METHOD
+
+	};
+
+	//  Class information for CPCXFileFilter
+
+	[ uuid(A1618777-6AA5-11D3-A4ED-0000B493A187) ]
+	coclass PCXFileFilter
+	{
+		[default] dispinterface IPCXFileFilter;
+	};
+
+	//{{AFX_APPEND_ODL}}
+	//}}AFX_APPEND_ODL}}
+};

@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="chromaxis2.c" />
+    <ClCompile Include="ChromExtrn.cpp" />
+    <ClCompile Include="Compare.cpp" />
+    <ClCompile Include="FilterPropBase.cpp" />
+    <ClCompile Include="mfeatures.c" />
+    <ClCompile Include="RectFilter.cpp" />
+    <ClCompile Include="StdAfx.cpp" />
+    <ClCompile Include="WoolzFilter.cpp" />
+    <ClCompile Include="WoolzObject.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="ChildArray.h" />
+    <ClInclude Include="..\..\Classifiers\Common\Classifiers.h" />
+    <ClInclude Include="Compare.h" />
+    <ClInclude Include="DebugObj.h" />
+    <ClInclude Include="FilterPropBase.h" />
+    <ClInclude Include="..\chromos\ParamsKeys.h" />
+    <ClInclude Include="RectFilter.h" />
+    <ClInclude Include="resource.h" />
+    <ClInclude Include="StdAfx.h" />
+    <ClInclude Include="StdioFile.h" />
+    <ClInclude Include="Vcv.h" />
+    <ClInclude Include="VcvData.h" />
+    <ClInclude Include="..\common\woolz.h" />
+    <ClInclude Include="WoolzFilter.h" />
+    <ClInclude Include="WoolzObject.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="ChromExtrn.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ChromExtrn.def" />
+    <None Include="allres.bmp" />
+    <None Include="res\ChromExtrn.rc2" />
+    <None Include="pclass.ico" />
+    <None Include="pipercla.ico" />
+    <None Include="ReadMe.txt" />
+  </ItemGroup>
+</Project>

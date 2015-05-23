@@ -1,0 +1,361 @@
+// vtcontrols2.odl : type library source for ActiveX Control project.
+
+// This file will be processed by the Make Type Library (mktyplib) tool to
+// produce the type library (vtcontrols2.tlb) that will become a resource in
+// vtcontrols2.ocx.
+
+[ uuid(D4975FBA-118A-4368-B941-8A441A0CCFA4),
+  version(1.4),
+  helpfile("vtcontrols2.hlp"),
+  helpstring("vtcontrols2 ActiveX Control module"),
+  control ]
+library VTCONTROLS2Lib
+{
+#include <olectl.h>
+#include <idispids.h>
+
+	importlib(STDOLE_TLB);
+	importlib(STDTYPE_TLB);
+
+	//  Primary dispatch interface for CVTComboBoxCtrl
+
+	[ uuid(F0A32695-7EDB-45A1-97F6-4EF7C2A8A988),
+	  helpstring("Dispatch interface for VTComboBox Control"), hidden ]
+	dispinterface _DVTComboBox
+	{
+		properties:
+			// NOTE - ClassWizard will maintain property information here.
+			//    Use extreme caution when editing this section.
+			//{{AFX_ODL_PROP(CVTComboBoxCtrl)
+			[id(DISPID_ENABLED), bindable, requestedit] boolean Enabled;
+			[id(1)] boolean Visible;
+			[id(DISPID_FONT), bindable] IFontDisp* Font;
+			//}}AFX_ODL_PROP
+
+		methods:
+			// NOTE - ClassWizard will maintain method information here.
+			//    Use extreme caution when editing this section.
+			//{{AFX_ODL_METHOD(CVTComboBoxCtrl)
+			[id(2)] BSTR GetText();
+			[id(3)] long GetStringsCount();
+			[id(4)] BSTR GetString(long idx);
+			[id(5)] void DeleteString(long idx);
+			[id(6)] void ReplaceString(long idx, BSTR NewVal);
+			[id(7)] void DeleteContents();
+			[id(8)] void InsertString(long idx, BSTR NewVal);
+			[id(9)] long GetSel();
+			[id(10)] void SetSel(long idx);
+			[id(11)] void SetType(long nType);
+			[id(12)] long GetType();
+			[id(13)] void SetSortStrings(boolean sStr);
+			//}}AFX_ODL_METHOD
+	};
+
+	//  Event dispatch interface for CVTComboBoxCtrl
+
+	[ uuid(5CA42129-892D-4041-8A82-0DDAA31449E6),
+	  helpstring("Event interface for VTComboBox Control") ]
+	dispinterface _DVTComboBoxEvents
+	{
+		properties:
+			//  Event interface has no properties
+
+		methods:
+			// NOTE - ClassWizard will maintain event information here.
+			//    Use extreme caution when editing this section.
+			//{{AFX_ODL_EVENT(CVTComboBoxCtrl)
+			[id(1)] void OnChange();
+			[id(2)] void OnSelectChange();
+			[id(DISPID_CLICK)] void Click();
+			//}}AFX_ODL_EVENT
+	};
+
+	//  Class information for CVTComboBoxCtrl
+
+	[ uuid(B4B4C08F-8D9A-4655-A0F1-D5B0419D1ED7),
+	  helpstring("VTComboBox Control"), control ]
+	coclass VTComboBox
+	{
+		[default] dispinterface _DVTComboBox;
+		[default, source] dispinterface _DVTComboBoxEvents;
+	};
+
+// {}
+	[ uuid(824C79E5-6DDF-427a-90A9-5FC4C7859C91),
+	  helpstring("VTComboBox2 Control"), control ]
+	coclass VTComboBox2
+	{
+		[default] dispinterface _DVTComboBox;
+		[default, source] dispinterface _DVTComboBoxEvents;
+	};
+
+	//  Primary dispatch interface for CVTColorPickerCtrl
+
+	[ uuid(F6816F65-EA89-471C-9939-3164B7D30041),
+	  helpstring("Dispatch interface for VTColorPicker Control"), hidden ]
+	dispinterface _DVTColorPicker
+	{
+		properties:
+			// NOTE - ClassWizard will maintain property information here.
+			//    Use extreme caution when editing this section.
+			//{{AFX_ODL_PROP(CVTColorPickerCtrl)
+			[id(4)] long Color;
+			[id(1)] boolean LikeCombo;
+			[id(2)] boolean BlackAndWhite;
+			[id(3)] boolean Binary;
+			[id(DISPID_ENABLED), helpstring("property Enabled")] VARIANT_BOOL Enabled;
+			//}}AFX_ODL_PROP
+
+		methods:
+			// NOTE - ClassWizard will maintain method information here.
+			//    Use extreme caution when editing this section.
+			//{{AFX_ODL_METHOD(CVTColorPickerCtrl)
+			[id(5)] OLE_COLOR GetBinaryColor(short index);
+			[id(6)] void SetBinaryColor(short index, long color);
+			[id(7)] short GetActiveBinaryIndex();
+			[id(8)] short GetBinaryColorsCount();
+			[id(9)] void SetActiveBinaryIndex(short nIdx);
+			[id(10)] BSTR GetBinaryColorRGB(short index);
+			[id(11)] void SetBinaryColorRGB(short index, LPCTSTR pbStrValue);
+			[id(12)] void SetColorRGB(LPCTSTR pbStrValue);
+			[id(13)] BSTR GetColorRGB();
+			[id(14)] void SetPaletteEntry(short index, long color);
+			[id(15)] void InitializePicker(LPUNKNOWN pView, LPUNKNOWN pImage);
+			[id(16)] void SetVisible(boolean bNewValue);
+			[id(17)] boolean GetVisible();
+			//}}AFX_ODL_METHOD
+	};
+
+	//  Event dispatch interface for CVTColorPickerCtrl
+
+	[ uuid(C187CFDD-9AAE-4943-8FE1-6872CAA1C456),
+	  helpstring("Event interface for VTColorPicker Control") ]
+	dispinterface _DVTColorPickerEvents
+	{
+		properties:
+			//  Event interface has no properties
+
+		methods:
+			// NOTE - ClassWizard will maintain event information here.
+			//    Use extreme caution when editing this section.
+			//{{AFX_ODL_EVENT(CVTColorPickerCtrl)
+			[id(DISPID_CLICK)] void Click();
+			[id(1)] void OnChange();
+			//}}AFX_ODL_EVENT
+	};
+
+	//  Class information for CVTColorPickerCtrl
+
+	[ uuid(BC383BC9-6FD1-4FF7-82AD-B405341D5E60),
+	  helpstring("VTColorPicker Control"), control ]
+	coclass VTColorPicker
+	{
+		[default] dispinterface _DVTColorPicker;
+		[default, source] dispinterface _DVTColorPickerEvents;
+	};
+
+	//  Primary dispatch interface for CVTWidthCtrl
+
+	[ uuid(92B9F891-E68C-4C52-A763-5C71CDE6E1C7),
+	  helpstring("Dispatch interface for VTWidth Control"), hidden ]
+	dispinterface _DVTWidth
+	{
+		properties:
+			// NOTE - ClassWizard will maintain property information here.
+			//    Use extreme caution when editing this section.
+			//{{AFX_ODL_PROP(CVTWidthCtrl)
+			[id(8)] long Width;
+			[id(9)] boolean Checked;
+			[id(10)] long Min;
+			[id(11)] long Max;
+			[id(12)] boolean Orientation;
+			[id(1)] boolean Visible;
+			[id(2)] OLE_COLOR ColorText;
+			[id(3)] OLE_COLOR ColorTextHighlight;
+			[id(4)] OLE_COLOR ColorSlider;
+			[id(5)] OLE_COLOR ColorSliderArrows;
+			[id(6)] OLE_COLOR ColorTextScale;
+			[id(7)] OLE_COLOR ColorSliderArrowsHighlight;
+			//}}AFX_ODL_PROP
+
+		methods:
+			// NOTE - ClassWizard will maintain method information here.
+			//    Use extreme caution when editing this section.
+			//{{AFX_ODL_METHOD(CVTWidthCtrl)
+			//}}AFX_ODL_METHOD
+	};
+
+	//  Event dispatch interface for CVTWidthCtrl
+
+	[ uuid(EEB7070C-932F-41F1-908F-93DC32362796),
+	  helpstring("Event interface for VTWidth Control") ]
+	dispinterface _DVTWidthEvents
+	{
+		properties:
+			//  Event interface has no properties
+
+		methods:
+			// NOTE - ClassWizard will maintain event information here.
+			//    Use extreme caution when editing this section.
+			//{{AFX_ODL_EVENT(CVTWidthCtrl)
+			[id(1)] void OnChange();
+			[id(DISPID_CLICK)] void Click();
+			//}}AFX_ODL_EVENT
+	};
+
+	//  Class information for CVTWidthCtrl
+
+	[ uuid(5DF91A6E-34A7-4CE0-A231-8E0E7EF340E5),
+	  helpstring("VTWidth Control"), control ]
+	coclass VTWidth
+	{
+		[default] dispinterface _DVTWidth;
+		[default, source] dispinterface _DVTWidthEvents;
+	};
+
+
+//  Primary dispatch interface for CColorRangeCtrl
+
+	[ uuid(C21B81BB-7E16-4630-A713-1A044AB90E58),
+	  helpstring("Dispatch interface for ColorRange Control"), hidden ]
+	dispinterface _DColorRange
+	{
+		properties:
+			// NOTE - ClassWizard will maintain property information here.
+			//    Use extreme caution when editing this section.
+			//{{AFX_ODL_PROP(CColorRangeCtrl)
+			[id(1)] double MinValue;
+			[id(2)] double MaxValue;
+			[id(3)] int RangesCount;
+			[id(4)] OLE_COLOR BackColor;
+			//}}AFX_ODL_PROP
+
+		methods:
+			// NOTE - ClassWizard will maintain method information here.
+			//    Use extreme caution when editing this section.
+			//{{AFX_ODL_METHOD(CColorRangeCtrl)
+			[id(5)] OLE_COLOR GetRangeColor(long nidx);
+			[id(6)] void SetRangeColor(long nidx, OLE_COLOR color);
+			[id(7)] double GetRangeLen(long nidx);
+			[id(8)] void SetRangeLen(long nidx, double flen);
+			[id(9)] void InvalidateCtrl();
+			//}}AFX_ODL_METHOD
+
+			[id(DISPID_ABOUTBOX)] void AboutBox();
+	};
+
+	//  Event dispatch interface for CColorRangeCtrl
+
+	[ uuid(5264AD94-C1D2-4AFE-9359-DBE47F00F92F),
+	  helpstring("Event interface for ColorRange Control") ]
+	dispinterface _DColorRangeEvents
+	{
+		properties:
+			//  Event interface has no properties
+
+		methods:
+			// NOTE - ClassWizard will maintain event information here.
+			//    Use extreme caution when editing this section.
+			//{{AFX_ODL_EVENT(CColorRangeCtrl)
+			[id(1)] void RangeLenChange();
+			[id(2)] void RangeColorChange();
+			//}}AFX_ODL_EVENT
+	};
+
+	//  Class information for CColorRangeCtrl
+
+	[ uuid(A02750E3-B2CC-49DB-A84B-2C9C96081C8F),
+	  helpstring("ColorRange Control"), control ]
+	coclass ColorRange
+	{
+		[default] dispinterface _DColorRange;
+		[default, source] dispinterface _DColorRangeEvents;
+	};
+
+	//  Primary dispatch interface for CVTRadioBtnCtrl
+
+	[ uuid(5A81931C-E10B-4143-A960-D2B066F4F5BE),
+	  helpstring("Dispatch interface for VTRadioBtn Control")]
+	dispinterface _DVTRadioBtn
+	{
+		properties:
+		[id(8), helpstring("property ItemChecked")] LONG ItemChecked;
+		[id(9), helpstring("property Visible")]	VARIANT_BOOL Visible;
+		[id(DISPID_ENABLED), helpstring("property Enabled")] VARIANT_BOOL Enabled;
+		[id(10), helpstring("property EvenlySpaced")]	VARIANT_BOOL EvenlySpaced;
+		[id(11), helpstring("property EnableMask")] LONG EnableMask;
+		methods:
+		[id(2), helpstring("method AddItem")] LONG AddItem(BSTR NewValue);
+		[id(3), helpstring("method DeleteItem")] LONG DeleteItem(LONG lIndex);
+		[id(4), helpstring("method GetItemsCount")] LONG GetItemsCount(void);
+		[id(5), helpstring("method DeleteAll")] void DeleteAll(void);
+		[id(6), helpstring("method ReCreate")] void ReCreate(void);
+		[id(7), helpstring("method GetItem")] BSTR GetItem(LONG lIndex);
+		[id(12), helpstring("method DisableRButton")] VARIANT_BOOL DisableRButton(LONG LIndex);
+		[id(13), helpstring("method EnableRButton")] VARIANT_BOOL EnableRButton(LONG LIndex);
+	};
+
+	//  Event dispatch interface for CVTRadioBtnCtrl
+
+	[ uuid(DE1D575C-14DD-4734-BADE-B88B12A15AC8),
+	  helpstring("Event interface for VTRadioBtn Control") ]
+	dispinterface _DVTRadioBtnEvents
+	{
+		properties:
+			//  Event interface has no properties
+
+		methods:
+		[id(1)] void OnChangeCheck(LONG lItem);
+	};
+
+	//  Class information for CVTRadioBtnCtrl
+
+	[ uuid(565483D1-812A-43BB-A228-86651F5497BC),
+	  helpstring("VTRadioBtn Control"), control ]
+	coclass VTRadioBtn
+	{
+		[default] dispinterface _DVTRadioBtn;
+		[default, source] dispinterface _DVTRadioBtnEvents;
+	};
+
+	//  Primary dispatch interface for CVTProgressBarCtrl
+
+	[ uuid(D0DB664C-3B19-404B-8B54-8ACA7A50BCC0),
+	  helpstring("Dispatch interface for VTProgressBar Control")]
+	dispinterface _DVTProgressBar
+	{
+		properties:
+		[id(1), helpstring("property Min")] LONG Min;
+		[id(2), helpstring("property Max")] LONG Max;
+		[id(3), helpstring("property Pos")] LONG Pos;
+		[id(4), helpstring("property Smooth")] boolean Smooth;
+		//[id(5), helpstring("property ShowPercent")] boolean ShowPercent;
+		methods:
+	};
+
+	//  Event dispatch interface for CVTProgressBarCtrl
+
+	[ uuid(799BA6E4-C589-47EF-B896-A104731B4AD9),
+	  helpstring("Event interface for VTProgressBar Control") ]
+	dispinterface _DVTProgressBarEvents
+	{
+		properties:
+			//  Event interface has no properties
+
+		methods:
+	};
+
+	//  Class information for CVTProgressBarCtrl
+
+	[ uuid(ED1CBCF6-7824-4294-92D1-230E9B26DE2C),
+	  helpstring("VTProgressBar Control"), control ]
+	coclass VTProgressBar
+	{
+		[default] dispinterface _DVTProgressBar;
+		[default, source] dispinterface _DVTProgressBarEvents;
+	};
+
+
+	//{{AFX_APPEND_ODL}}
+	//}}AFX_APPEND_ODL}}
+};

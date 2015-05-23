@@ -1,0 +1,16 @@
+// Baumer.odl : type library source for Baumer.dll
+
+// This file will be processed by the MIDL compiler to produce the
+// type library (Baumer.tlb).
+
+[ uuid(18830455-B129-44B9-81B4-5CE4B7E4BC7E), version(1.0) ]
+library Baumer
+{
+	importlib("stdole32.tlb");
+	importlib("stdole2.tlb");
+
+
+
+	//{{AFX_APPEND_ODL}}
+	//}}AFX_APPEND_ODL}}
+};

@@ -1,0 +1,27 @@
+HKCR
+{
+	Blot.BlotOb.1 = s 'BlotOb Class'
+	{
+		CLSID = s '{390CF2CE-AFAC-4DA4-B794-95232AB9258D}'
+	}
+	Blot.BlotOb = s 'BlotOb Class'
+	{
+		CLSID = s '{390CF2CE-AFAC-4DA4-B794-95232AB9258D}'
+		CurVer = s 'Blot.BlotOb.1'
+	}
+	NoRemove CLSID
+	{
+		ForceRemove {390CF2CE-AFAC-4DA4-B794-95232AB9258D} = s 'BlotOb Class'
+		{
+			ProgID = s 'Blot.BlotOb.1'
+			VersionIndependentProgID = s 'Blot.BlotOb'
+			ForceRemove 'Programmable'
+			InprocServer32 = s '%MODULE%'
+			{
+				val ThreadingModel = s 'Apartment'
+			}
+			val AppID = s '%APPID%'
+			'TypeLib' = s '{755E5668-050A-4195-9721-47E510844768}'
+		}
+	}
+}

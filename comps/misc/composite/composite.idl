@@ -1,0 +1,10 @@
+// composite.idl : type library source for composite.dll
+// This file will be processed by the MIDL compiler to produce the
+// type library (composite.tlb).
+
+[ uuid(AF2841C9-4216-463C-B7B4-891A0C9EF24F), version(1.0) ]
+library composite
+{
+	importlib("stdole32.tlb");
+	importlib("stdole2.tlb");
+};

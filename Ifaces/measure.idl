@@ -1,0 +1,356 @@
+#define com_call HRESULT
+
+//import "misc.idl";
+
+[
+	uuid(61778A7B-15D1-4a58-A579-C24F84A17657),
+	version(1.0),
+	helpstring("VideoTesT 5 Calibration Type Library")
+]
+library CalibrationTypeLib
+{
+	//struct __POSITION { char c; };
+	//typedef __POSITION* TPOS;
+	typedef LONG_PTR TPOS;
+
+[uuid(384B4AA8-CDCA-4739-8B15-38823C87874C)]
+interface ICalibr : IUnknown
+{
+	HRESULT GetCalibration( [out] double *pfPixelPerMeter, [out] GUID *pguidC );
+	HRESULT SetCalibration( [in] double fPixelPerMeter, [in] REFGUID guidC );
+};
+
+//the interface for full measurement object
+[uuid(6D849A65-8C44-11d3-A686-0090275995FE)]
+interface IMeasureObject : IUnknown
+{
+	com_call SetImage( IUnknown *punkImage );
+	com_call GetImage( IUnknown **ppunkImage );
+	com_call UpdateParent();
+	com_call GetChildByParam(long lParamKey, IUnknown **ppunkChild);
+
+	com_call SetDrawingNumber(long   nNum);
+	com_call GetDrawingNumber(long* pnNum);
+
+	com_call SetNumberPos( POINT point );
+	com_call GetNumberPos( POINT *ppoint );
+};
+
+[uuid(1DB4EFA0-4859-446e-996B-AD03059B9495)]
+interface IMeasureObject2 : IMeasureObject
+{
+	com_call SetZOrder( int nZOrder );
+	com_call GetZOrder( int *pnZOrder );
+};
+
+enum copy_flags
+{
+	cf_selected		= 0,
+	cf_all			= 1,
+	cf_grid			= 2,
+};
+
+//the interface for full measurement object
+[uuid(C3A156EF-EFD4-4a10-BA37-6D6825970C93)]
+interface IMeasureView : IUnknown
+{
+	HRESULT AlignByImage() = 0;
+	HRESULT CopyToClipboard( DWORD dwFlags ) = 0;
+};
+
+enum EMeasObjType
+{
+	emotUndefined = 0,
+	emotLine,
+	emotBrokenLine,
+	emotSpline,
+	emotCycle3,
+	emotCycle2,
+	emotAngle2Line,
+	emotAngle3Point,
+	emotCount,
+	emotFreeLine,
+	emotParallelLines,
+};
+
+[uuid(47B615DD-0D57-4c57-887D-45586529A69E)]
+interface IManualMeasureObject : IUnknown
+{
+	com_call GetParamInfo(long * plParamKey, DWORD * pdwType);
+	com_call SetParamInfo(long * plParamKey, DWORD * pdwType);
+	com_call GetObjectType(DWORD * pdwType);
+	com_call SetObjectType(DWORD dwType);
+
+	com_call SetValue(double fVal);
+	com_call GetValue(double * pfVal);
+	com_call CalcValue(double * pfVal);
+
+	com_call ExchangeData(DWORD * pdwData, BOOL bRead);
+	com_call UpdateParent();
+	
+	com_call StartStopMeasure(BOOL bStart);
+	com_call IsProcessMeasure(BOOL * pbRun);
+
+	com_call SetOffset(POINT pt);
+	com_call CrossPoint(POINT pt, BOOL * pbReturn);
+};
+
+
+[uuid(C6F353C6-A63A-400b-9BEB-8581F9E26B3B)]
+interface IManualMeasureObject2 : IManualMeasureObject
+{
+	com_call GetParametersCount(long *plParamsCount);
+	com_call SetParametersCount(long lParamsCount);
+	com_call GetParamKey(long lParam, long *plParamKey);
+	com_call SetParamKey(long lParam, long lParamKey);
+	com_call SetValue2(long lParam, double fVal);
+	com_call GetValue2(long lParam, double *pfVal);
+	com_call CalcAllValues();
+}
+
+struct ParameterDescriptor
+{
+	long		cbSize;
+	BSTR		bstrName;
+	BSTR		bstrUserName;
+	BSTR		bstrDefFormat;
+	long		lKey;
+	long		lEnabled;
+	TPOS pos;
+	//must be filled on ReLoadState()
+	BSTR		bstrUnit;
+	double		fCoeffToUnits;
+	DWORD       dwPanesMask;      // Panes for parameters' calculation
+	DWORD       adwPhasesMask[4]; // Phases for parameters' calculation
+	long		lTableOrder;
+};
+
+[uuid(51807F95-E2B2-4f02-9A64-6FD7886C1762)]
+interface IMeasParamGroup : IUnknown
+{
+ 	com_call CalcValues(IUnknown *punkCalcObject, IUnknown *punkSource );
+
+	com_call GetParamsCount(long *plCount);
+	com_call GetFirstPos(TPOS *plPos);
+	com_call GetNextParam(TPOS *plPos, struct ParameterDescriptor **ppDescriptior );
+	com_call GetPosByKey(long lKey, TPOS *plPos);
+
+	com_call GetUnit( long lType, BSTR *pbstr, double *pfCoeffToUnits );
+
+	com_call InitializeCalculation( IUnknown *punkContainer );
+	com_call FinalizeCalculation();
+	
+};
+
+
+enum ShiftMode
+{
+	esmNextParam = 0,
+	esmNextObject = 1,
+	esmFillObject = 2
+};
+
+enum ParamType
+{	
+etUndefined, 
+etLinear, 
+etCounter, 
+etAngle };
+
+
+struct ParameterContainer
+{
+	long	cbSize;
+	long	lpos;	//initialized by container
+
+	IMeasParamGroup				*pGroup;
+	struct ParameterDescriptor	*pDescr;
+	enum ParamType				type;
+	BSTR				bstrAction;
+	int					cxWidth;
+};
+
+//if( pDescr->lpos == 0 ), ParameterContainer must copy and free pDescr
+
+
+[uuid(ACB5D40E-8A91-44d4-AF7F-F63022428A68)]
+interface ICalcObjectContainer : IUnknown
+{
+	com_call GetCurentPosition( LONG_PTR *plpos, long *plKey );
+	com_call SetCurentPosition( LONG_PTR lpos );
+	com_call Move( long lDirection );
+
+	com_call GetFirstParameterPos( LONG_PTR *plpos );
+	com_call GetLastParameterPos( LONG_PTR *plpos );
+	com_call GetNextParameter( LONG_PTR *plpos, struct ParameterContainer **ppContainer );
+	com_call GetPrevParameter( LONG_PTR *plpos, struct ParameterContainer **ppContainer );
+	com_call MoveParameterAfter( LONG_PTR lpos, struct ParameterContainer *p );	//InsertAfter, if pos=zero, 
+
+	com_call DefineParameter( long lKey, enum ParamType type, IMeasParamGroup *pGroup, LONG_PTR *plpos );
+	com_call DefineParameterFull( struct ParameterContainer *p, LONG_PTR *plpos );
+	com_call RemoveParameter( long lKey );
+	com_call RemoveParameterAt( LONG_PTR lpos );
+	com_call Reset();
+
+	com_call ParamDefByKey( long lKey, struct ParameterContainer **ppContainer );
+	com_call GetParameterCount( long *pnCount );
+};
+
+
+[uuid(ABCCD4CB-A816-4afb-BD67-81621BF70DCB)]
+interface IMeasureManager: IUnknown
+{
+};
+
+/*[uuid(64A6BC37-FFBD-4137-AD11-B12FA5850AD4)]
+coclass MeasurementManager
+{
+	//own interface 
+	interface IMeasureManager;
+	//contain one or more measurement groups
+	interface ICompManager;
+	//named data - for scripting
+	interface INamedObject2;
+};	*/
+
+
+[uuid(6BE5AD64-5DF7-48f1-B40E-2AB97F01BEFF)]
+interface IUnitManager
+{
+	com_call GetCurrentUnit( const GUID guidSys, GUID *pguidUnit );
+	com_call SetCurrentUnit( const GUID guidSys, const GUID guidUnit );
+
+	com_call GetFirstSysUnitPos( long *plpos );
+	com_call GetNextSysUnit( GUID *pguidSys, long *plpos );
+
+	com_call GetFirstUnitPos( long lposSys, long *plPos );
+	com_call GetNextUnitPos( long lposSys, GUID *pguidUnit, long *plPos );
+	
+	com_call RemoveUnit( const GUID guidUnit );
+	com_call SetUnitInfo( const GUID guidUnit, const GUID guidSys, BSTR bstrName, double fUnitToSysUnit, BSTR bstrFormat );
+	com_call GetUnitInfo( const GUID guidUnit, GUID *pguidSys, BSTR *pbstrName, double *pfUnitToSysUnit, BSTR *pbstrFormat );
+};
+
+/*[uuid(C17F0A80-6A74-4b92-AB6D-F9573492E806)]
+coclass UnitManager
+{
+	interface IUnitManager;
+	interface INamedObject2;
+	
+};*/
+
+[uuid(87D67370-50AA-4a2b-A04C-9370A9D3BD86)]
+interface ICalcObject : IUnknown
+{
+	com_call GetValue(long lParamKey, double *pfValue);
+	com_call SetValue(long lParamKey, double fValue);
+	com_call RemoveValue(long lParamKey);
+	com_call ClearValues();
+
+	com_call GetFirstValuePos(long * plPos);
+	com_call GetNextValue(long * plPos, long * plKey, double * pfValue);
+	com_call GetValuePos(long lKey, long * plPos);
+	com_call RemoveValueByPos(long lPos);
+
+/*	com_call GetObjectClass(GUID	*plClassKey);
+	com_call SetObjectClass(GUID	lClassKey);*/
+};
+
+
+
+[uuid(DE4A00ED-8CB5-4af5-96AF-913113B7925B)]
+interface IClassObject : IUnknown
+{
+	com_call GetColor(DWORD *pdwColor);
+	com_call SetColor(DWORD dwColor);
+
+	com_call SetParamLimits(long lParamKey, double fLo, double fHi);
+	com_call GetParamLimits(long lParamKey, double* pfLo, double* pfHi);
+	com_call RemoveParamLimits(long lParamKey); 
+	com_call EmptyAllParamsLimits(); 
+	com_call GetFirstParamLimitsPos(LONG_PTR* plPos);
+	com_call GetNextParamLimits(LONG_PTR* plPos, long* plParamKey, double* pfLo, double* pfHi);
+};
+
+[uuid(9036F30D-6128-43ac-9997-0B5D0225FFC1)]
+interface IPriority : IUnknown
+{
+	com_call GetPriority(long *plPriority);	
+}
+
+/*
+coclass ClassObject
+{
+	IClassObject
+	INamedDataObject
+	INamedDataObject2
+	ISerializableObject
+	INamedObject2
+	INamedData
+}
+*/
+
+struct ParameterAdditionalInfo
+{
+	byte byPane;
+	byte byPhase;
+};
+
+[uuid(C00ACB28-0022-4fb9-BD85-1C5D7C364387)]
+interface ICalcObject2 : ICalcObject
+{
+	com_call GetValueEx(long lParamKey, struct ParameterAdditionalInfo *pAddInfo, double *pfValue);
+	com_call SetValueEx(long lParamKey, struct ParameterAdditionalInfo *pAddInfo, double fValue);
+};
+struct CCompositeInfo
+{
+	int m_nCount;
+	int* p_nClass;
+	int m_nVersion;
+	BOOL m_bActual;
+};
+[uuid(D237B552-5247-4332-831A-B1277BD32B5C)]
+interface ICompositeObject: IUnknown
+{
+	com_call SetPurpose(int purpose);
+	com_call GetPurpose(int* purpose);
+	com_call BuildTree([defaultvalue(-1)] LONG  binaryCount);
+	com_call CalculateComposite();
+	com_call IsComposite(BOOL* bC);
+	com_call SetCompositeFlag();
+	com_call GetMainLevelObjects(IUnknown** unk);
+	com_call GetTreeNotion(void** tn);
+	com_call GetLevel(int level, IUnknown** unkLevel);
+	com_call GetLevelbyClass(int cls, IUnknown** unkLevel);
+	com_call DelayRemove(BOOL delay, IUnknown* pUnkLevel);
+	com_call GetElderLevel(int cls, IUnknown** unkLevel);
+	com_call RestoreTreeByGUIDs();
+	com_call GetPlaneCount(long* count);
+	com_call SetPlaneCount(long count);
+	com_call SetCompositeInfo(struct CCompositeInfo* ci);
+	com_call GetCompositeInfo(struct CCompositeInfo** ci);
+};
+[uuid(03542F3F-1651-4858-9F68-A1B90D32959A)]
+interface ICompositeMeasureGroup: IUnknown
+{
+	com_call UpdateClassName( struct ParameterContainer* pc); 
+};
+[uuid(1F88A4A6-83BE-4a5d-BBC0-45734BB8B551)]
+interface ICompositeSupport: IUnknown
+{
+	com_call IsSyncronized(long* flag);
+	com_call SetSyncronizedFlag(long flag);
+	com_call GetLevel(long* lvl);
+	com_call SetLevel(long lvl);
+	com_call GetPixCount(long *pixCount);
+	com_call SetPixCount(long pixCount);
+	com_call GetParentKey(GUID* key);
+	com_call SetParentKey(const GUID key);
+	com_call GetTreeKey(GUID* key);
+	com_call SetTreeKey(const GUID key);
+	com_call GetGrandParent(IUnknown** unkParent);
+	com_call CopyAllCompositeData(IUnknown* destObject);
+};
+
+
+};

@@ -1,0 +1,200 @@
+// MeasCtrls.idl : type library source for ActiveX Control project.
+
+// This file will be processed by the MIDL compiler tool to
+// produce the type library (MeasCtrls.tlb) that will become a resource in
+// MeasCtrls.ocx.
+
+[ uuid(40075923-4631-4A92-A6BE-6FA82744087A), version(1.0),
+  helpfile("MeasCtrls.hlp"),
+  helpstring("MeasCtrls ActiveX Control module"),
+  control ]
+library MeasCtrlsLib
+{
+#include <olectl.h>
+#include <idispids.h>
+#include "olectl.h"
+
+	importlib(STDOLE_TLB);
+
+	//  Primary dispatch interface for CDisplUserParamCtrl
+
+	[ uuid(C3FAB755-E612-4640-A1D8-A03BDFFB6AA1),
+	  helpstring("Dispatch interface for DisplUserParam Control")]
+	dispinterface _DMeasCtrls
+	{
+		properties:
+		[id(DISPID_FONT), helpstring("property Font")] IFontDisp*Font;
+		[id(DISPID_BACKCOLOR), helpstring("property BackColor")] OLE_COLOR BackColor;
+		[id(DISPID_FORECOLOR), helpstring("property ForeColor")] OLE_COLOR ForeColor;
+		[id(4), helpstring("property Expression")] BSTR Expression;
+		[id(5), helpstring("property LeftMargin")] LONG LeftMargin;
+		[id(6), helpstring("property WorksMode")] LONG WorksMode;
+methods:
+		[id(2), helpstring("method GetLastError")] BSTR GetLastError(void);
+		[id(3), helpstring("method Draw")] void Draw(void);
+        // vanek : refresh expression parameters infos - 29.03.2005
+		[id(7), helpstring("method Refresh")] void Refresh(void);
+		[id(8), helpstring("method GetLastErrorCode")] int GetLastErrorCode(void);
+		[id(9), helpstring("method Insert")] void Insert(LPCTSTR str);
+		[id(10), helpstring("works as if bkspace pressed")] void Backspace();
+	};
+
+	//  Event dispatch interface for CDisplUserParamCtrl
+
+	[ uuid(B592174D-0E82-48DB-BBCC-FD22C5492F58),
+	  helpstring("Event interface for DisplUserParam Control") ]
+	dispinterface _DMeasCtrlsEvents
+	{
+		properties:
+			//  Event interface has no properties
+
+		methods:
+		[id(DISPID_KEYDOWN)] void KeyDown(SHORT* KeyCode, SHORT Shift);
+		
+		[id(1)] void ContentChanged(void);
+	};
+
+    //  Class information for CDisplUserParamCtrl
+
+	[ uuid(9ACF8F66-B50F-46F9-AA45-DB14276EFACC),
+	  helpstring("DisplUserParam Control"), control ]
+	coclass MeasCtrls
+	{
+		[default] dispinterface _DMeasCtrls;
+		[default, source] dispinterface _DMeasCtrlsEvents;
+	};
+
+		//  Primary dispatch interface for CChoiceGreekSymbolCtrl
+
+	[ uuid(D1BF7023-90E9-4DD6-9F4A-2D903A6ADD0F),
+	  helpstring("Dispatch interface for ChoiceGreekSymbol Control")]
+	dispinterface _DChoiceGreekSymbol
+	{
+		properties:
+		[id(DISPID_BACKCOLOR), helpstring("property BackColor")] OLE_COLOR BackColor;
+		[id(DISPID_FORECOLOR), helpstring("property ForeColor")] OLE_COLOR ForeColor;
+		[id(DISPID_FONT), helpstring("property Font")] IFontDisp*Font;
+		[id(1), helpstring("property FirstChar")] LONG FirstChar;
+		[id(2), helpstring("property LastChar")] LONG LastChar;
+		[id(3), helpstring("property ActiveItem")] LONG ActiveItem;
+methods:
+		[id(4), helpstring("method GetItemCount")] LONG GetItemCount(void);
+		[id(5), helpstring("method GetChar")] LONG GetChar(LONG nIdx);
+	};
+
+	//  Event dispatch interface for CChoiceGreekSymbolCtrl
+
+	[ uuid(5AEFB763-3801-4D40-B260-41C002232DF6),
+	  helpstring("Event interface for ChoiceGreekSymbol Control") ]
+	dispinterface _DChoiceGreekSymbolEvents
+	{
+		properties:
+			//  Event interface has no properties
+
+		methods:
+		
+		[id(1)] void OnActiveItemChange(LONG nIdx);
+	};
+
+	//  Class information for CChoiceGreekSymbolCtrl
+
+	[ uuid(896FB8CB-C056-451F-9DA6-33714BF92B4D),
+	  helpstring("ChoiceGreekSymbol Control"), control ]
+	coclass ChoiceGreekSymbol
+	{
+		[default] dispinterface _DChoiceGreekSymbol;
+		[default, source] dispinterface _DChoiceGreekSymbolEvents;
+	};
+
+	//  Primary dispatch interface for CUserParamsListBoxCtrl
+
+	[ uuid(1D715E46-1BC4-4DCC-B730-5DD4FA89A5DC),
+	  helpstring("Dispatch interface for UserParamsListBox Control")]
+	dispinterface _DUserParamsListBox
+	{
+		properties:
+		[id(DISPID_BACKCOLOR), helpstring("property BackColor")] OLE_COLOR BackColor;
+		[id(DISPID_FONT), helpstring("property Font")] IFontDisp*Font;
+		[id(DISPID_FORECOLOR), helpstring("property ForeColor")] OLE_COLOR ForeColor;
+		[id(5), helpstring("property ActiveItem")] LONG ActiveItem;
+		[id(9), helpstring("property FirstColumnsWidth")] LONG FirstColumnsWidth;
+		[id(10), helpstring("property WorksMode")] LONG WorksMode;
+methods:
+		[id(1), helpstring("method GetItemCount")] LONG GetItemCount(void);
+		[id(2), helpstring("method GetParamSection")] BSTR GetParamSection(LONG nIdx);
+		[id(3), helpstring("method AddParam")] LONG AddParam(BSTR Section);
+		[id(4), helpstring("method RemoveItem")] VARIANT_BOOL RemoveItem(LONG nIdx);
+		[id(6), helpstring("method Refresh")] void Refresh(void);
+		[id(7), helpstring("method SetItemData")] VARIANT_BOOL SetItemData(LONG nIdx, LONG lData);
+		[id(8), helpstring("method GetItemData")] LONG GetItemData(LONG nIdx);
+	};
+
+	//  Event dispatch interface for CUserParamsListBoxCtrl
+
+	[ uuid(FD25AC5A-AF2F-43A0-A523-5F03CD684F6B),
+	  helpstring("Event interface for UserParamsListBox Control") ]
+	dispinterface _DUserParamsListBoxEvents
+	{
+		properties:
+			//  Event interface has no properties
+
+		methods:
+		[id(1)] void OnActiveItemChange(LONG nIdx);
+	};
+
+	//  Class information for CUserParamsListBoxCtrl
+
+	[ uuid(C58B9605-705F-411C-818D-F41EF1A9E0A0),
+	  helpstring("UserParamsListBox Control"), control ]
+	coclass UserParamsListBox
+	{
+		[default] dispinterface _DUserParamsListBox;
+		[default, source] dispinterface _DUserParamsListBoxEvents;
+	};
+
+	//  Primary dispatch interface for CUserParamsComboBoxCtrl
+
+	[ uuid(F587A927-16A6-4405-B9EC-FECD9515D27C),
+	  helpstring("Dispatch interface for UserParamsComboBox Control")]
+	dispinterface _DUserParamsComboBox
+	{
+		properties:
+		[id(DISPID_FONT), helpstring("property Font")] IFontDisp*Font;
+		[id(DISPID_FORECOLOR), helpstring("property ForeColor")] OLE_COLOR ForeColor;
+		[id(DISPID_BACKCOLOR), helpstring("property BackColor")] OLE_COLOR BackColor;
+		[id(3), helpstring("property ShowUserName")] VARIANT_BOOL ShowUserName;
+		[id(6), helpstring("property ActiveItem")] LONG ActiveItem;
+		[id(8), helpstring("property WorksMode")] LONG WorksMode;
+methods:
+		[id(1), helpstring("method SetItemData")] VARIANT_BOOL SetItemData(LONG nIdx, LONG lData);
+		[id(2), helpstring("method GetItemData")] LONG GetItemData(LONG nIdx);
+		[id(4), helpstring("method GetItemCount")] LONG GetItemCount(void);
+		[id(5), helpstring("method GetParamSection")] BSTR GetParamSection(LONG nIdx);
+		[id(7), helpstring("method Refresh")] void Refresh(void);
+		[id(9), helpstring("method SetSortUserStrings")] void SetSortUserStrings(BOOL sStr);
+	};
+
+	//  Event dispatch interface for CUserParamsComboBoxCtrl
+
+	[ uuid(51863815-27E0-40CA-A67A-E63AA9CB2F97),
+	  helpstring("Event interface for UserParamsComboBox Control") ]
+	dispinterface _DUserParamsComboBoxEvents
+	{
+		properties:
+			//  Event interface has no properties
+
+		methods:
+		[id(1)] void OnActiveItemChange(LONG nIdx);
+	};
+
+	//  Class information for CUserParamsComboBoxCtrl
+
+	[ uuid(7FCC3AF7-8988-4D01-AA89-D099B44A0876),
+	  helpstring("UserParamsComboBox Control"), control ]
+	coclass UserParamsComboBox
+	{
+		[default] dispinterface _DUserParamsComboBox;
+		[default, source] dispinterface _DUserParamsComboBoxEvents;
+	};
+
+};

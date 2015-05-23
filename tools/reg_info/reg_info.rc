@@ -1,0 +1,179 @@
+//Microsoft Developer Studio generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// Russian resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_RUS)
+#ifdef _WIN32
+LANGUAGE LANG_RUSSIAN, SUBLANG_DEFAULT
+#pragma code_page(1251)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_MAIN DIALOGEX 0, 0, 534, 286
+STYLE DS_MODALFRAME | DS_CENTER | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Reg info"
+FONT 8, "MS Sans Serif"
+BEGIN
+    PUSHBUTTON      "&Enum",IDC_ENUM,7,4,50,14
+    PUSHBUTTON      "Filters...",IDC_FILTERS,60,4,50,14
+    PUSHBUTTON      "&Select Entry",IDC_SELECT_ENTRY,118,4,50,14
+    PUSHBUTTON      "&Unselect Entry",IDC_UNSELECT_ENTRY,178,4,50,14
+    PUSHBUTTON      "Unselect &All Entry",IDC_UNSELECT_ALL,234,4,65,14
+    PUSHBUTTON      "&Delete selected...",IDC_DELETE_SELECTED,306,4,65,14
+    CONTROL         "Tree1",IDC_TREE,"SysTreeView32",TVS_HASBUTTONS | 
+                    TVS_HASLINES | TVS_LINESATROOT | TVS_EDITLABELS | 
+                    TVS_SHOWSELALWAYS | TVS_CHECKBOXES | WS_BORDER | 
+                    WS_TABSTOP,7,23,520,218
+    CONTROL         "Progress1",IDC_PROGRESS,"msctls_progress32",PBS_SMOOTH | 
+                    WS_BORDER,7,267,520,12
+    LTEXT           "Status:",IDC_STATIC,7,252,23,8
+    LTEXT           "",IDC_STATUS,35,252,382,8
+    CONTROL         "",IDC_STATIC,"Static",SS_ETCHEDHORZ,7,246,520,1
+    LTEXT           "",IDC_GEN_STATUS,378,4,149,11,0,WS_EX_CLIENTEDGE
+END
+
+IDD_CONFIRM DIALOG DISCARDABLE  0, 0, 531, 281
+STYLE DS_MODALFRAME | DS_CENTER | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Confirm"
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,415,260,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,474,260,50,14
+    LTEXT           "Wanna delete next entries?",IDC_STATIC,7,7,88,8
+    CONTROL         "List1",IDC_LIST,"SysListView32",LVS_REPORT | 
+                    LVS_SHAREIMAGELISTS | WS_BORDER | WS_TABSTOP,7,18,517,
+                    229
+    CONTROL         "",IDC_STATIC,"Static",SS_ETCHEDHORZ,7,253,517,1
+END
+
+IDD_FILTER DIALOG DISCARDABLE  0, 0, 235, 157
+STYLE DS_MODALFRAME | DS_CENTER | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Filters"
+FONT 8, "MS Sans Serif"
+BEGIN
+    CONTROL         "Show if ProgID consist:",IDC_PROGID_CHECK,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,7,9,89,10
+    EDITTEXT        IDC_PROGID_EDIT,101,7,127,14,ES_AUTOHSCROLL
+    CONTROL         "And (uncheck - or)",IDC_PROGID_CLAUSE,"Button",
+                    BS_AUTOCHECKBOX | NOT WS_VISIBLE | WS_TABSTOP,17,21,75,
+                    10
+    CONTROL         "Show if file path consist:",IDC_FILE_CHECK,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,7,45,92,10
+    EDITTEXT        IDC_FILE_EDIT,101,42,127,14,ES_AUTOHSCROLL
+    CONTROL         "And (uncheck - or)",IDC_FILE_CLAUSE,"Button",
+                    BS_AUTOCHECKBOX | NOT WS_VISIBLE | WS_TABSTOP,17,56,75,
+                    10
+    CONTROL         "Show if file not exist",IDC_NA_FILE_CHECK,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,7,78,78,10
+    CONTROL         "And (uncheck - or)",IDC_NA_FILE_CLAUSE,"Button",
+                    BS_AUTOCHECKBOX | NOT WS_VISIBLE | WS_TABSTOP,17,89,75,
+                    10
+    CONTROL         "&Use filters",IDC_USE_FILTER,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,7,111,47,10
+    DEFPUSHBUTTON   "OK",IDOK,126,136,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,178,136,50,14
+    CONTROL         "",IDC_STATIC,"Static",SS_ETCHEDHORZ,7,35,221,1
+    CONTROL         "",IDC_STATIC,"Static",SS_ETCHEDHORZ,7,70,221,1
+    CONTROL         "",IDC_STATIC,"Static",SS_ETCHEDHORZ,7,103,221,1
+    CONTROL         "",IDC_STATIC,"Static",SS_ETCHEDHORZ,7,127,221,1
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO DISCARDABLE 
+BEGIN
+    IDD_MAIN, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 527
+        BOTTOMMARGIN, 279
+    END
+
+    IDD_CONFIRM, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 524
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 274
+    END
+
+    IDD_FILTER, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 228
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 150
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDB_LIST                BITMAP  DISCARDABLE     "list.bmp"
+#endif    // Russian resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

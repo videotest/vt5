@@ -1,0 +1,46 @@
+// CCManager.odl : type library source for CCManager.dll
+
+// This file will be processed by the MIDL compiler to produce the
+// type library (CCManager.tlb).
+
+[ uuid(6A1FC3B6-6749-11D3-A4EB-0000B493A187), version(1.0) ]
+library CCManager
+{
+	importlib("stdole32.tlb");
+	importlib("stdole2.tlb");
+
+//  Primary dispatch interface for CColorConvertorManager
+	
+	[ uuid(6A1FC3C9-6749-11D3-A4EB-0000B493A187) ]
+	dispinterface IColorConvertorManager
+	{
+		properties:
+			// NOTE - ClassWizard will maintain property information here.
+			//    Use extreme caution when editing this section.
+			//{{AFX_ODL_PROP(CColorConvertorManager)
+			//}}AFX_ODL_PROP
+			
+		methods:
+			// NOTE - ClassWizard will maintain method information here.
+			//    Use extreme caution when editing this section.
+			//{{AFX_ODL_METHOD(CColorConvertorManager)
+			[id(1)] long GetCnvCount();
+			[id(2)] long GetCnvPos(BSTR szName);
+			[id(3)] BSTR GetCnvName(long nPos);
+			[id(4)] long GetCnvPanesCount(long nPos);
+			[id(5)] BSTR GetCnvPaneName(short nPosCnv, short nPosPane);
+			//}}AFX_ODL_METHOD
+
+	};
+
+	//  Class information for CColorConvertorManager
+
+	[ uuid(6A1FC3CA-6749-11D3-A4EB-0000B493A187) ]
+	coclass ColorConvertorManager
+	{
+		[default] dispinterface IColorConvertorManager;
+	};
+
+	//{{AFX_APPEND_ODL}}
+	//}}AFX_APPEND_ODL}}
+};

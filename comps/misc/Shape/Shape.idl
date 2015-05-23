@@ -1,0 +1,10 @@
+// Shape.idl : type library source for Shape.dll
+// This file will be processed by the MIDL compiler to produce the
+// type library (Shape.tlb).
+
+[ uuid(A4BBDE06-0288-4878-93E9-3FC4E6146061), version(1.0) ]
+library Shape
+{
+	importlib("stdole32.tlb");
+	importlib("stdole2.tlb");
+};

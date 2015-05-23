@@ -1,0 +1,251 @@
+// DBControls.odl : type library source for ActiveX Control project.
+
+// This file will be processed by the Make Type Library (mktyplib) tool to
+// produce the type library (DBControls.tlb) that will become a resource in
+// DBControls.ocx.
+
+#include <olectl.h>
+#include <idispids.h>
+
+[ uuid(59213681-18D6-46B4-AF62-E737D72410BF), version(1.0),
+  helpfile("DBControls.hlp"),
+  helpstring("DBControls ActiveX Control module"),
+  control ]
+library DBCONTROLSLib
+{
+	importlib(STDOLE_TLB);
+	importlib(STDTYPE_TLB);
+
+	//  Primary dispatch interface for CDBTextCtrl
+
+	[ uuid(EF00F5FB-9F2B-4921-8B3C-67A90DD67694),
+	  helpstring("Dispatch interface for VT DBText Control"), hidden ]
+	dispinterface _DDBText
+	{
+		properties:
+			// NOTE - ClassWizard will maintain property information here.
+			//    Use extreme caution when editing this section.
+			//{{AFX_ODL_PROP(CDBTextCtrl)
+			[id(1)] boolean AutoLabel;
+			[id(2)] boolean EnableEnumeration;
+			[id(3)] BSTR TableName;
+			[id(4)] BSTR FieldName;
+			[id(5)] short LabelPosition;
+			[id(6)] IFontDisp* TextFont;
+			[id(7)] boolean ReadOnly;
+			//}}AFX_ODL_PROP
+
+		methods:
+			// NOTE - ClassWizard will maintain method information here.
+			//    Use extreme caution when editing this section.
+			//{{AFX_ODL_METHOD(CDBTextCtrl)
+			[id(8)] boolean GetPropertyAXStatus();
+			[id(9)] void SetPropertyAXStatus(boolean val);
+			//}}AFX_ODL_METHOD
+
+			[id(DISPID_ABOUTBOX)] void AboutBox();
+	};
+
+	//  Event dispatch interface for CDBTextCtrl
+
+	[ uuid(C16587C7-6AA5-407F-A1D4-29E67943BD42),
+	  helpstring("Event interface for VT DBText Control") ]
+	dispinterface _DDBTextEvents
+	{
+		properties:
+			//  Event interface has no properties
+
+		methods:
+			// NOTE - ClassWizard will maintain event information here.
+			//    Use extreme caution when editing this section.
+			//{{AFX_ODL_EVENT(CDBTextCtrl)
+			//}}AFX_ODL_EVENT
+	};
+
+	//  Class information for CDBTextCtrl
+
+	[ uuid(4A17BF90-E003-4C5F-AA99-257B34D8DF0F),
+	  helpstring("VT DBText Control"), control ]
+	coclass DBText
+	{
+		[default] dispinterface _DDBText;
+		[default, source] dispinterface _DDBTextEvents;
+	};
+
+	//  Primary dispatch interface for CDBNumberCtrl
+
+	[ uuid(739709C4-A075-4520-B403-BFE5D8F160D9),
+	  helpstring("Dispatch interface for VT DBNumber Control"), hidden ]
+	dispinterface _DDBNumber
+	{
+		properties:
+			// NOTE - ClassWizard will maintain property information here.
+			//    Use extreme caution when editing this section.
+			//{{AFX_ODL_PROP(CDBNumberCtrl)
+			[id(1)] BSTR TableName;
+			[id(2)] BSTR FieldName;
+			[id(3)] boolean EnableEnumeration;
+			[id(4)] boolean AutoLabel;
+			[id(5)] short LabelPosition;
+			[id(6)] IFontDisp* TextFont;
+			[id(7)] boolean ReadOnly;
+			//}}AFX_ODL_PROP
+
+		methods:
+			// NOTE - ClassWizard will maintain method information here.
+			//    Use extreme caution when editing this section.
+			//{{AFX_ODL_METHOD(CDBNumberCtrl)
+			[id(8)] boolean GetPropertyAXStatus();
+			[id(9)] void SetPropertyAXStatus(boolean val);
+			//}}AFX_ODL_METHOD
+
+			[id(DISPID_ABOUTBOX)] void AboutBox();
+	};
+
+	//  Event dispatch interface for CDBNumberCtrl
+
+	[ uuid(D6DD5A3C-473C-482F-B1E1-488998CA12AD),
+	  helpstring("Event interface for VT DBNumber Control") ]
+	dispinterface _DDBNumberEvents
+	{
+		properties:
+			//  Event interface has no properties
+
+		methods:
+			// NOTE - ClassWizard will maintain event information here.
+			//    Use extreme caution when editing this section.
+			//{{AFX_ODL_EVENT(CDBNumberCtrl)
+			//}}AFX_ODL_EVENT
+	};
+
+	//  Class information for CDBNumberCtrl
+
+	[ uuid(2868ADBF-0EAE-4038-A226-827332ECA326),
+	  helpstring("VT DBNumber Control"), control ]
+	coclass DBNumber
+	{
+		[default] dispinterface _DDBNumber;
+		[default, source] dispinterface _DDBNumberEvents;
+	};
+
+	//  Primary dispatch interface for CDBDateTimeCtrl
+
+	[ uuid(414F5379-B140-4586-87A5-98D9B82BE4CE),
+	  helpstring("Dispatch interface for VT DBDateTime Control"), hidden ]
+	dispinterface _DDBDateTime
+	{
+		properties:
+			// NOTE - ClassWizard will maintain property information here.
+			//    Use extreme caution when editing this section.
+			//{{AFX_ODL_PROP(CDBDateTimeCtrl)
+			[id(1)] boolean AutoLabel;
+			[id(2)] boolean EnableEnumeration;
+			[id(3)] BSTR TableName;
+			[id(4)] BSTR FieldName;
+			[id(5)] short LabelPosition;			
+			[id(6)] IFontDisp* TextFont;
+			//[id(7)] BSTR ViewType;
+			//[id(8)] boolean AutoViewType;
+			[id(7)] boolean ReadOnly;
+			//}}AFX_ODL_PROP
+
+		methods:
+			// NOTE - ClassWizard will maintain method information here.
+			//    Use extreme caution when editing this section.
+			//{{AFX_ODL_METHOD(CDBDateTimeCtrl)
+			[id(8)] boolean GetPropertyAXStatus();
+			[id(9)] void SetPropertyAXStatus(boolean val);
+			//}}AFX_ODL_METHOD
+
+			[id(DISPID_ABOUTBOX)] void AboutBox();
+	};
+
+	//  Event dispatch interface for CDBDateTimeCtrl
+
+	[ uuid(F8205CAF-6501-4E8F-9D6A-4BFAECF16E0B),
+	  helpstring("Event interface for VT DBDateTime Control") ]
+	dispinterface _DDBDateTimeEvents
+	{
+		properties:
+			//  Event interface has no properties
+
+		methods:
+			// NOTE - ClassWizard will maintain event information here.
+			//    Use extreme caution when editing this section.
+			//{{AFX_ODL_EVENT(CDBDateTimeCtrl)
+			//}}AFX_ODL_EVENT
+	};
+
+	//  Class information for CDBDateTimeCtrl
+
+	[ uuid(1AC3AEB0-92EC-4E43-89D3-8665ED351899),
+	  helpstring("VT DBDateTime Control"), control ]
+	coclass DBDateTime
+	{
+		[default] dispinterface _DDBDateTime;
+		[default, source] dispinterface _DDBDateTimeEvents;
+	};
+
+
+
+	//  Primary dispatch interface for CDBObject
+
+	[ uuid(6F09781B-09DA-4e83-907A-F21140AD7F7C),
+	  helpstring("Dispatch interface for VT DBObject Control"), hidden ]
+	dispinterface _DDBObject
+	{
+		properties:
+			// NOTE - ClassWizard will maintain property information here.
+			//    Use extreme caution when editing this section.
+			//{{AFX_ODL_PROP(CDBObject)
+			[id(1)] boolean AutoLabel;
+			[id(2)] boolean EnableEnumeration;
+			[id(3)] BSTR TableName;
+			[id(4)] BSTR FieldName;
+			[id(5)] short LabelPosition;			
+			[id(6)] BSTR ViewType;
+			[id(7)] boolean AutoViewType;
+			//[id(8)] boolean ReadOnly;
+			//}}AFX_ODL_PROP
+
+		methods:
+			// NOTE - ClassWizard will maintain method information here.
+			//    Use extreme caution when editing this section.
+			//{{AFX_ODL_METHOD(CDBObject)
+			[id(8)] boolean GetPropertyAXStatus();
+			[id(9)] void SetPropertyAXStatus(boolean val);
+			//}}AFX_ODL_METHOD
+
+			[id(DISPID_ABOUTBOX)] void AboutBox();
+	};
+
+	//  Event dispatch interface for CDBObject
+
+	[ uuid(0ED332C9-CC5F-4bd2-AEC6-C4C99568AE1D),
+	  helpstring("Event interface for VT DBObject Control") ]
+	dispinterface _DDBObjectEvents
+	{
+		properties:
+			//  Event interface has no properties
+
+		methods:
+			// NOTE - ClassWizard will maintain event information here.
+			//    Use extreme caution when editing this section.
+			//{{AFX_ODL_EVENT(CDBObject)
+			//}}AFX_ODL_EVENT
+	};
+
+	//  Class information for CDBObject
+
+	[ uuid(31BD1B24-7B8D-4017-B5BF-EBB85F9612E3),
+	  helpstring("VT DBObject Control"), control ]
+	coclass DBObject
+	{
+		[default] dispinterface _DDBObject;
+		[default, source] dispinterface _DDBObjectEvents;
+	};
+
+
+	//{{AFX_APPEND_ODL}}
+	//}}AFX_APPEND_ODL}}
+};

@@ -1,0 +1,229 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// Russian resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_RUS)
+#ifdef _WIN32
+LANGUAGE LANG_RUSSIAN, SUBLANG_DEFAULT
+#pragma code_page(1251)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "1 TYPELIB ""MeasCtrls.tlb""\r\n"
+    "#include ""res\\MeasCtrls.rc2 ""\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDB_MEASCTRLS           BITMAP                  "DisplUserParamCtrl.bmp"
+IDB_CHOICEGREEKSYMBOL   BITMAP                  "ChoiceGreekSymbolCtrl.bmp"
+IDB_USERPARAMSLISTBOX   BITMAP                  "UserParamsListBoxCtrl.bmp"
+IDB_USERPARAMSCOMBOBOX  BITMAP                  "UserParamsComboBoxCtrl.bmp"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_WORKSMODEPROPPAGE DIALOGEX 0, 0, 250, 62
+STYLE DS_SETFONT | WS_CHILD
+FONT 8, "MS Sans Serif", 0, 0, 0x0
+BEGIN
+    CONTROL         "измерительные пользовательские параметры",
+                    IDC_RADIO_MEASUSERS,"Button",BS_AUTORADIOBUTTON | 
+                    WS_GROUP,28,20,175,10
+    CONTROL         "статистические пользовательские параметры",
+                    IDC_RADIO_STATUSERS,"Button",BS_AUTORADIOBUTTON,28,35,
+                    175,10
+    GROUPBOX        "Свойства ",IDC_STATIC,7,7,209,45
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO 
+BEGIN
+    IDD_WORKSMODEPROPPAGE, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 236
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 52
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE 
+BEGIN
+    IDS_MEASCTRLS           "DisplUserParam Control"
+    IDS_MEASCTRLS_PPG       "DisplUserParam Property Page"
+    IDS_CHOICEGREEKSYMBOL   "ChoiceGreekSymbol Control"
+    IDS_CHOICEGREEKSYMBOL_PPG "ChoiceGreekSymbol Property Page"
+    IDS_USERPARAMSLISTBOX   "UserParamsListBox Control"
+    IDS_STATPARAMS_CLASSNAME_TOTAL "Всего"
+    IDS_USERPARAMSCOMBOBOX  "UserParamsComboBox Control"
+    IDS_ERR_INIT_EXPR       "Ошибка инициализации выражения!"
+    IDS_WORKSMODE_PPG_CAPTION "Основные"
+    IDS_WORKSMODE_PPG       "WorksMode Property Page"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_CHOICEGREEKSYMBOL_PPG_CAPTION "General"
+END
+
+#endif    // Russian resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.S.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_PROPPAGE_CHOICEGREEKSYMBOL DIALOG  0, 0, 250, 62
+STYLE DS_SETFONT | WS_CHILD
+FONT 8, "MS Sans Serif"
+BEGIN
+    LTEXT           "TODO: Place controls to manipulate properties of ChoiceGreekSymbol Control on this dialog.",
+                    IDC_STATIC,7,25,229,16
+END
+
+IDD_WORKSMODEPROPPAGE DIALOGEX 0, 0, 250, 62
+STYLE DS_SETFONT | WS_CHILD
+FONT 8, "MS Sans Serif", 0, 0, 0x0
+BEGIN
+    CONTROL         "works with measuring users parameters",
+                    IDC_RADIO_MEASUSERS,"Button",BS_AUTORADIOBUTTON | 
+                    WS_GROUP,28,20,139,10
+    CONTROL         "works with statistics users parameters",
+                    IDC_RADIO_STATUSERS,"Button",BS_AUTORADIOBUTTON,28,35,
+                    133,10
+    GROUPBOX        "Properties ",IDC_STATIC,7,7,175,45
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO 
+BEGIN
+    IDD_PROPPAGE_CHOICEGREEKSYMBOL, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 243
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 55
+    END
+
+    IDD_WORKSMODEPROPPAGE, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 236
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 52
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE 
+BEGIN
+    IDS_MEASCTRLS           "DisplUserParam Control"
+    IDS_MEASCTRLS_PPG       "DisplUserParam Property Page"
+    IDS_CHOICEGREEKSYMBOL   "ChoiceGreekSymbol Control"
+    IDS_CHOICEGREEKSYMBOL_PPG "ChoiceGreekSymbol Property Page"
+    IDS_USERPARAMSLISTBOX   "UserParamsListBox Control"
+    IDS_STATPARAMS_CLASSNAME_TOTAL "Total"
+    IDS_USERPARAMSCOMBOBOX  "UserParamsComboBox Control"
+    IDS_ERR_INIT_EXPR       "Error of initialization of expression!"
+    IDS_WORKSMODE_PPG_CAPTION "General"
+    IDS_WORKSMODE_PPG       "WorksMode Property Page"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_CHOICEGREEKSYMBOL_PPG_CAPTION "General"
+END
+
+#endif    // English (U.S.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+1 TYPELIB "MeasCtrls.tlb"
+#include "res\MeasCtrls.rc2 "
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

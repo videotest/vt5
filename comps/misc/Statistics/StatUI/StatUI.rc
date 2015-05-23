@@ -1,0 +1,470 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// Neutral resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_NEU)
+#ifdef _WIN32
+LANGUAGE LANG_NEUTRAL, SUBLANG_NEUTRAL
+#pragma code_page(1251)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDI_STAT_OBJECT         ICON                    "res\\stat_table.ico"
+IDI_STAT_CMP            ICON                    "res\\stat_obj.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Toolbar
+//
+
+IDR_ACTIONS TOOLBAR  16, 15
+BEGIN
+    BUTTON      IDS_SHOW_STAT_OBJECT_VIEW
+    BUTTON      IDS_CHART_VIEW_ONOFF
+    BUTTON      IDS_LEGEND_VIEW_ONOFF
+    BUTTON      IDS_TABLE_VIEW_ONOFF
+    BUTTON      IDS_CREATE_STAT_OBJECT
+    BUTTON      IDS_ASSIGN_VIRTUAL_CLASS
+    BUTTON      IDS_SHOW_VIRTUAL_CLASS
+    BUTTON      IDS_SHOW_STAT_CMP_VIEW
+    BUTTON      IDS_CHART_CMP_ONOFF
+    BUTTON      IDS_LEGEND_CMP_ONOFF
+    BUTTON      IDS_TABLE_CMP_ONOFF
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDR_ACTIONS             BITMAP                  "res\\toolbar1.bmp"
+IDB_HOTZONE             BITMAP                  "res\\bitmap1.bmp"
+#endif    // Neutral resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+/////////////////////////////////////////////////////////////////////////////
+// Russian resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_RUS)
+#ifdef _WIN32
+LANGUAGE LANG_RUSSIAN, SUBLANG_DEFAULT
+#pragma code_page(1251)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)\r\n"
+    "LANGUAGE 9, 1\r\n"
+    "#pragma code_page(1252)\r\n"
+    "#include ""res\\StatUI.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "#include ""afxres.rc""     // Standard components\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE 
+BEGIN
+    IDS_STAT_VIEW_NAME      "Статистика"
+    IDS_STAT_OBJECT_TYPE_NAME "Статистика"
+    IDS_STAT_OBJECT_FILTERNAME "Statistics File Filter"
+    IDS_CHART_VIEW_ONOFF    "ShowStatChartView\nПоказать диаграмму\nСтатистика\nВключить/выключить отображение столбцовой диаграммы\nПоказать диаграмму"
+    IDS_LEGEND_VIEW_ONOFF   "ShowStatLegendView\nПоказать легенду\nСтатистика\nВключить/выключить отображение легенды\nПоказать легенду"
+    IDS_TABLE_VIEW_ONOFF    "ShowStatTableView\nПоказать таблицу\nСтатистика\nВключить/выключить отображение таблицы\nПоказать таблицу"
+    IDS_CREATE_STAT_OBJECT  "CreateStatObject\nCreateStatObject\nСтатистика\nCreateStatObject\nCreateStatObject"
+    IDS_TOTAL               "Всего"
+    IDS_CLASSNAME           "Название класса"
+    IDS_PARAM_MX            "Ср. арифметическое"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_SHOW_STAT_OBJECT_VIEW 
+                            "ShowStatView\nСтатистика\nВид\nПоказать статистику\nСтатистика"
+    IDS_SHOW_STAT_CMP_VIEW  "ShowCompareView\nСравнение статистик\nВид сравнеия\nПоказать сравнение\nСравнение"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_PARAM_GEOM          "Ср. геометрическое"
+    IDS_PARAM_GORM          "Ср. гармоническое"
+    IDS_PARAM_MIN           "Мин."
+    IDS_PARAM_MAX           "Макс."
+    IDS_PARAM_VAR           "Размах вар."
+    IDS_PARAM_DISP          "Дисперсия"
+    IDS_PARAM_STDDEV        "Ст. откл."
+    IDS_PARAM_MODE          "Мода"
+    IDS_PARAM_MEDIANE       "Медиана"
+    IDS_PARAM_ASSIMETRY     "Асимметрия"
+    IDS_PARAM_EXCESS        "Эксцесс"
+    IDS_PARAM_COEFVAR       "Коэф. вар."
+    IDS_NOVAL               "---"
+    IDS_CHART_BEGIN_END     "Диапазон:"
+    IDS_CHART_STEP          "Шаг:"
+    IDS_CHART_CLASSES       "Кол-во классов:"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_CHART_MODEL         "Модель:"
+    IDS_CHI_SQUARE          "Хи-квадрат"
+    IDS_FISHER              "Fisher"
+    IDS_PARAM_COUNT         "Количество"
+    IDS_CLASSES             "Классы"
+    IDS_NOEXPR              "---"
+    IDS_ASSIGN_VIRTUAL_CLASS 
+                            "AssignVirtualClasses\nAssignVirtualClasses\nStatistics\nAssignVirtualClasses\nAssignVirtualClasses"
+    IDS_SHOW_VIRTUAL_CLASS  "ShowVirtualClasses\nShowVirtualClasses\nStatistics\nShowVirtualClasses\nShowVirtualClasses"
+    IDS_PARAM_AREA          "Площадь"
+    IDS_PARAM_LENGTH        "Длина"
+    IDS_PARAM_USEDAREA      "Проанализированная площадь"
+    IDS_PARAM_SPECAREA      "Удельная площадь"
+    IDS_PARAM_AREAPERC      "% площади"
+    IDS_PARAM_SPECAREA_ERR  "Ошибка по удельной площади"
+    IDS_PARAM_AREAPERC_ERR  "Ошибка % площади"
+    IDS_PARAM_NORMAL_AREA   "Нормированная площадь"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_PARAM_SPECCOUNT     "Удельное количество"
+    IDS_PARAM_SPECCOUNT_ERR "Ошибка по удельному количеству"
+    IDS_PARAM_COUNTPERC     "% количества"
+    IDS_PARAM_COUNTPERC_ERR "Ошибка % количества"
+    IDS_PARAM_NORMAL_COUNT  "Нормированное количество"
+    IDS_PARAM_SPECLEN       "Удельная длина"
+    IDS_PARAM_SPECLEN_ERR   "Ошибка по удельной длине"
+    IDS_PARAM_3DPART        "Объемная доля"
+    IDS_PARAM_MXERR         "Ошибка по среднему"
+    IDS_PARAM_MXPROB        "Доверительный интервал"
+    IDS_PARAM_CHI_SQUARE    "Хи-квадрат"
+    IDS_PARAM_CHI_SQUARE_LOG "Хи-квадрат логарифма"
+    IDS_PARAM_IMAGE_COUNT   "Количество изображений"
+    IDS_PARAM_FULLAREA      "Общая площадь"
+    IDS_NO_DATA             "Нет данных"
+    IDS_NO_LOG              "Невозможно построить модель логнормального распределения!"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_NO_LOG_TITLE        "Внимание!"
+    IDS_NO_LOG_CHI_SQUARE   "Нет данных"
+    IDS_ERROR_TITLE         "Внимание!"
+    IDS_AXIS_LABEL_ERROR_X  "Слишком большой шаг разметки по оси Х!"
+    IDS_AXIS_LABEL_ERROR_Y  "Слишком большой шаг разметки по оси Y!"
+    IDS_AXIS_VALUES_ERROR_X "Слишком большой шаг значений по оси Х!"
+    IDS_AXIS_VALUES_ERROR_Y "Слишком большой шаг значений по оси Y!"
+    IDS_AXIS_GRID_ERROR_X   "Слишком маленький шаг сетки по оси Х!"
+    IDS_AXIS_GRID_ERROR_Y   "Слишком большой шаг сетки по оси Y!"
+    IDS_PARAM_PERIMETR      "Perimeter"
+    IDS_PARAM_SURF_AREA     "Surface area"
+    IDS_PARAM_MDL_CHORD     "Middle Chord"
+    IDS_PARAM_MDL_DIST      "Middle dist"
+    IDS_PARAM_SURFAREAPERC  "% Surface area"
+    IDS_PARAM_SPEC_SURF_PERC "% Specific Surface"
+    IDS_PARAM_SPEC_SURF     "Specific Surface"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_CHART_TITLE_COMPARE "Сравнение"
+    IDS_LEGEND_TITLE_COMPARE "Результаты сравнения"
+    IDS_PARAM_STDDEV_LOG    "Standard Deviation (log)"
+    IDS_PARAM_MXERR_LOG     "Average Error(log)"
+    IDS_PARAM_MX_LOG        "Average (log)"
+    IDS_PARAM_DISP_LOG      "Variance(log)"
+    IDS_PARAM_MXPROB_LOG    "Confidence Interval (log)"
+    IDS_PARAM_MODE_LOG      "Mode(log)"
+    IDS_PARAM_ASSIMETRY_LOG "Skewness(log)"
+    IDS_PARAM_EXCESS_LOG    "Kurtosis(log)"
+    IDS_PARAM_COEFVAR_LOG   "Variation Coefficient(log)"
+    IDS_PARAM_MX_LOGNORM    "Среднее(lognormal)"
+    IDS_PARAM_DISP_LOGNORM  "Дисперсия(lognormal)"
+    IDS_PARAM_MODE_LOGNORM  "Мода(lognormal)"
+    IDS_PARAM_ASSIMETRY_LOGNORM "Асимметрия(lognormal)"
+    IDS_PARAM_EXCESS_LOGNORM "Эксцесс(lognormal)"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_PARAM_CHI_SQUARE_LOGNORM "Хи-квадрат логнормали"
+    IDS_PARAM_CHI2_CRITIC   "Хи-квадрат критический"
+    IDS_ALL_YVALUES_ZERO    "Все значения по координате Y равны 0 или неверны"
+    IDS_LOGSCALE_MAX_INVALID "Неверное значение для макс границы лог шкалы"
+    IDS_PARAM_WEIGHTED_AVERAGE "Средневзвешенное"
+    IDS_PARAM_CHI2_PROB     "Вероятность согласия"
+    IDS_PARAM_CHI2_PROB_LOG "Вероятность согласия логарифма"
+    IDS_CMP_STAT_OBJECT_TYPE_NAME "Сравнение статистик"
+    IDS_DOCUMENT            "Документ"
+    IDS_TABLE_NUMBER        "Число таблиц"
+    IDS_EQUAL               "равны"
+    IDS_NOT_EQUAL           "не равны"
+    IDS_DX_EQ               "Равенство дисперсий"
+    IDS_FISHERS_TEST        "по Фишеру"
+    IDS_MX_EQ               "Равенство средних"
+    IDS_STUDENTS_TEST       "по Стьюденту"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_CHART_CMP_ONOFF     "ShowStatChartCmp\nShow/Hide Compare Chart\nStatistics\nShow/Hide statistics comparison chart\nShow/Hide Bar Chart"
+    IDS_LEGEND_CMP_ONOFF    "ShowStatLegendCmp\nShow/Hide comparison legend\nStatistics\nShow/hide statistic legend\nShow/Hide Legend"
+    IDS_TABLE_CMP_ONOFF     "ShowStatTableCmp\nShow/Hide comparison table\nStatistics\nShow/Hide statistic comparison table\nShow/Hide statistic comparison table"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_FILES               "Файлы"
+    IDS_CMP_VIEW_NAME       "Сравнение статистик"
+    NO_SELECTED_VIEWS       "Нет выбранных представлений"
+END
+
+#endif    // Russian resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.S.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE 
+BEGIN
+    IDS_STAT_VIEW_NAME      "Statistics"
+    IDS_STAT_OBJECT_TYPE_NAME "Statistics"
+    IDS_STAT_OBJECT_FILTERNAME "Statistics file filter"
+    IDS_CHART_VIEW_ONOFF    "ShowStatChartView\nShow/Hide Chart\nStatistics\nShow/hide statistic bar chart\nShow/Hide Bar Chart"
+    IDS_LEGEND_VIEW_ONOFF   "ShowStatLegendView\nShow/Hide Legend\nStatistics\nShow/hide statistic legend\nShow/Hide Legend"
+    IDS_TABLE_VIEW_ONOFF    "ShowStatTableView\nShow/Hide Table\nStatistics\nShow/hide statistic table\nShow/Hide Statistic Table"
+    IDS_CREATE_STAT_OBJECT  "CreateStatObject\nCreateStatObject\nStatistics\nCreateStatObject\nCreateStatObject"
+    IDS_TOTAL               "Total"
+    IDS_CLASSNAME           "Class Name"
+    IDS_PARAM_MX            "Average"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_SHOW_STAT_OBJECT_VIEW 
+                            "ShowStatView\nStatistics\nView\nShow statistics\nStatistics"
+    IDS_SHOW_STAT_CMP_VIEW  "ShowCompareView\nComparison\nComparison view\nShow comparison\nComparison"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_PARAM_GEOM          "Geometric Mean"
+    IDS_PARAM_GORM          "Harmonic Mean"
+    IDS_PARAM_MIN           "Min"
+    IDS_PARAM_MAX           "Max"
+    IDS_PARAM_VAR           "Range"
+    IDS_PARAM_DISP          "Variance"
+    IDS_PARAM_STDDEV        "Standard Deviation"
+    IDS_PARAM_MODE          "Mode"
+    IDS_PARAM_MEDIANE       "Mediane"
+    IDS_PARAM_ASSIMETRY     "Skewness"
+    IDS_PARAM_EXCESS        "Kurtosis"
+    IDS_PARAM_COEFVAR       "Variation Coefficient"
+    IDS_NOVAL               "---"
+    IDS_CHART_BEGIN_END     "Range:"
+    IDS_CHART_STEP          "Step:"
+    IDS_CHART_CLASSES       "Number of classes:"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_CHART_MODEL         "Model:"
+    IDS_CHI_SQUARE          "Pearson's probability"
+    IDS_FISHER              "Fisher"
+    IDS_PARAM_COUNT         "Number"
+    IDS_CLASSES             "Classes"
+    IDS_NOEXPR              "---"
+    IDS_ASSIGN_VIRTUAL_CLASS 
+                            "AssignVirtualClasses\nAssignVirtualClasses\nStatistics\nAssignVirtualClasses\nAssignVirtualClasses"
+    IDS_SHOW_VIRTUAL_CLASS  "ShowVirtualClasses\nShowVirtualClasses\nStatistics\nShowVirtualClasses\nShowVirtualClasses"
+    IDS_PARAM_AREA          "Area"
+    IDS_PARAM_LENGTH        "Length"
+    IDS_PARAM_USEDAREA      "Analysed Area"
+    IDS_PARAM_SPECAREA      "Specific Area"
+    IDS_PARAM_AREAPERC      "% Aarea"
+    IDS_PARAM_SPECAREA_ERR  "Specific Area Error"
+    IDS_PARAM_AREAPERC_ERR  "% Area Error"
+    IDS_PARAM_NORMAL_AREA   "Standard Area"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_PARAM_SPECCOUNT     "Specific Number"
+    IDS_PARAM_SPECCOUNT_ERR "Specific Number Error"
+    IDS_PARAM_COUNTPERC     "% Number"
+    IDS_PARAM_COUNTPERC_ERR "% Number Error"
+    IDS_PARAM_NORMAL_COUNT  "Standard Number"
+    IDS_PARAM_SPECLEN       "Specific Length"
+    IDS_PARAM_SPECLEN_ERR   "Specific Length Error "
+    IDS_PARAM_3DPART        "Volume Fraction"
+    IDS_PARAM_MXERR         "Average Error"
+    IDS_PARAM_MXPROB        "Confidence Interval"
+    IDS_PARAM_CHI_SQUARE    "Chi-Square"
+    IDS_PARAM_CHI_SQUARE_LOG "Chi-Square(log)"
+    IDS_PARAM_IMAGE_COUNT   "Number of Images"
+    IDS_PARAM_FULLAREA      "Total Area"
+    IDS_NO_DATA             "No data"
+    IDS_NO_LOG              " Lognormal distribution model can not be built!"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_NO_LOG_TITLE        "Attention!"
+    IDS_NO_LOG_CHI_SQUARE   "No data"
+    IDS_ERROR_TITLE         "Attention!"
+    IDS_AXIS_LABEL_ERROR_X  "Too large marking step on X axis!"
+    IDS_AXIS_LABEL_ERROR_Y  "Too large marking step on Y axis!"
+    IDS_AXIS_VALUES_ERROR_X "Too large increment on Х axis!"
+    IDS_AXIS_VALUES_ERROR_Y "Too large increment on Y axis!"
+    IDS_AXIS_GRID_ERROR_X   "Too small grid spacing on X axis!"
+    IDS_AXIS_GRID_ERROR_Y   "Too large grid spacing on Y axis!"
+    IDS_PARAM_PERIMETR      "Perimetr"
+    IDS_PARAM_SURF_AREA     "Surface area"
+    IDS_PARAM_MDL_CHORD     "Middle Chord"
+    IDS_PARAM_MDL_DIST      "Middle dist"
+    IDS_PARAM_SURFAREAPERC  "% Surface area"
+    IDS_PARAM_SPEC_SURF_PERC "% Specific Surface"
+    IDS_PARAM_SPEC_SURF     "Specific Surface"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_CHART_TITLE_COMPARE "Compare"
+    IDS_LEGEND_TITLE_COMPARE "Compare results"
+    IDS_PARAM_STDDEV_LOG    "Standard Deviation(log)"
+    IDS_PARAM_MXERR_LOG     "Average Error(log)"
+    IDS_PARAM_MX_LOG        "Average (log)"
+    IDS_PARAM_DISP_LOG      "Variance(log)"
+    IDS_PARAM_MXPROB_LOG    "Confidence Interval(log)"
+    IDS_PARAM_MODE_LOG      "Mode(log)"
+    IDS_PARAM_ASSIMETRY_LOG "Skewness(log)"
+    IDS_PARAM_EXCESS_LOG    "Kurtosis(log)"
+    IDS_PARAM_COEFVAR_LOG   "Variation Coefficient(log)"
+    IDS_PARAM_MX_LOGNORM    "Average (lognormal)"
+    IDS_PARAM_DISP_LOGNORM  "Variance(lognormal)"
+    IDS_PARAM_MODE_LOGNORM  "Mode(lognormal)"
+    IDS_PARAM_ASSIMETRY_LOGNORM "Skewness(lognormal)"
+    IDS_PARAM_EXCESS_LOGNORM "Kurtosis(lognormal)"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_PARAM_CHI_SQUARE_LOGNORM "Chi-square(lognormal)"
+    IDS_PARAM_CHI2_CRITIC   "Critical chi-square value"
+    IDS_ALL_YVALUES_ZERO    "All Y-coordinate values are zero or invalid"
+    IDS_LOGSCALE_MAX_INVALID "Max x value is invalid for log scale"
+    IDS_PARAM_WEIGHTED_AVERAGE "Weighted average"
+    IDS_PARAM_CHI2_PROB     "Pearson's test probability"
+    IDS_PARAM_CHI2_PROB_LOG "Pearson's logarithm test probability"
+    IDS_CMP_STAT_OBJECT_TYPE_NAME "Statistics compare"
+    IDS_DOCUMENT            "Document"
+    IDS_TABLE_NUMBER        "Table Number"
+    IDS_EQUAL               "equal"
+    IDS_NOT_EQUAL           "not equal"
+    IDS_DISP_EQ             "Variance equality"
+    IDS_FISHERS_TEST        "Fisher's test"
+    IDS_MX_EQ               "Mean equality"
+    IDS_STUDENTS_TEST       "Student's test"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_CHART_CMP_ONOFF     "ShowStatChartCmp\nShow/Hide Compare Chart\nStatistics\nShow/Hide statistics comparison chart\nShow/Hide Bar Chart"
+    IDS_LEGEND_CMP_ONOFF    "ShowStatLegendCmp\nShow/Hide comparison legend\nStatistics\nShow/hide statistic legend\nShow/Hide Legend"
+    IDS_TABLE_CMP_ONOFF     "ShowStatTableCmp\nShow/Hide comparison table\nStatistics\nShow/Hide statistic comparison table\nShow/Hide statistic comparison table"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_FILES               "Files"
+    IDS_CMP_VIEW_NAME       "Comparison"
+    NO_SELECTED_VIEWS       "No selected views"
+END
+
+#endif    // English (U.S.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+LANGUAGE 9, 1
+#pragma code_page(1252)
+#include "res\StatUI.rc2"  // non-Microsoft Visual C++ edited resources
+#include "afxres.rc"     // Standard components
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

@@ -1,0 +1,393 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// Chinese (P.R.C.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)
+#ifdef _WIN32
+LANGUAGE LANG_CHINESE, SUBLANG_CHINESE_SIMPLIFIED
+#pragma code_page(936)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_MENU DIALOG  0, 0, 186, 90
+STYLE DS_SETFONT | DS_3DLOOK | WS_POPUP | WS_VISIBLE | WS_CLIPSIBLINGS | 
+    WS_CLIPCHILDREN | WS_THICKFRAME
+FONT 8, "MS Sans Serif"
+BEGIN
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO 
+BEGIN
+    IDD_MENU, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 179
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 83
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE 
+BEGIN
+    ID_ACTION_CLASSIFY      "ClassifyObjects\n¶ФПу·ЦАа\n·ЦАа\nЧФ¶Ї¶Ф»о¶ЇНјПсЙПµДЛщУР¶ФПуЅшРР·ЦАа\n¶ФПу·ЦАа"
+    ID_ACTION_TEACH         "TeachClassifier\nСµБ··ЦАаЖч\n·ЦАа\nК№УГАаКэѕЭївСµБ··ЦАаЖч\nСµБ··ЦАаЖч"
+    ID_ACTION_EMPTY         "EmptyClassifier\nЗеїХ·ЦАаЖч\n·ЦАа\nЗеїХ·ЦАаКэѕЭїв\nЗеїХ·ЦАаЖч"
+    ID_ACTION_ADD_OBJECT    "AddObjectToTeach\nЅ«¶ФПуМнјУµЅАаКэѕЭїв\n·ЦАа\nЅ«СЎЦР¶ФПуМнјУµЅАаКэѕЭїв\nЅ«¶ФПуМнјУµЅАаКэѕЭїв"
+    ID_ACTION_ADD_ALL       "AddAllObjectsToTeach\nЅ«ЛщУР¶ФПуМнјУµЅАаКэѕЭїв\n·ЦАа\nЅ«ЛщУР¶ФПуМнјУµЅАаКэѕЭїв\nЅ«ЛщУР¶ФПуМнјУµЅАаКэѕЭїв"
+    ID_ACTION_MANUAL_CLASSIFY 
+                            "ManualClassifyObjects\nКЦ¶Ї·ЦАа\n·ЦАа\nКЦ¶ЇЅ«¶ФПу·ЦАа\nКЦ¶Ї·ЦАа"
+    IDS_WRONG_NUMBER_OF_CLASSES "·ЦАаЖчУГЖдЛы±аєЕµДАаСµБ·№эЎЈ"
+END
+
+STRINGTABLE 
+BEGIN
+    ID_ACTION_COPYIMAGES    "CopyImageToObjects\nёьРВ¶ФПуБР±н\nФцЗї\nёьРВ»о¶ЇНјПсµД¶ФПуБР±н\nёьРВ¶ФПуБР±н"
+    ID_ACTION_CHROMO_EQUALIZE 
+                            "EqualizeAllObj\nФцЗїИѕЙ«Ме¶Ф±И¶И\nФцЗї\nФцЗїИѕЙ«Ме¶Ф±И¶И\nФцЗїИѕЙ«Ме¶Ф±И¶И"
+    ID_ACTION_CHROMO_EQUALIZE_OBJ 
+                            "EqualizeObj\n¶Ф±ИИѕЙ«Ме\nФцЗї\n¶Ф±ИСЎЦРИѕЙ«Ме\n¶Ф±ИИѕЙ«Ме"
+    ID_ACTION_CHROMO_UNEQUALIZE_OBJ 
+                            "UnEqualizeObj\nі·Пы¶Ф±И¶И\nФцЗї\nµҐ»чКу±кЧујьі·ПъСЎЦРИѕЙ«МеµД¶Ф±ИІЩЧчЈ¬°ґ Esc ЅбКшІЩЧч\nі·Пы¶Ф±И¶И"
+    IDS_NO_FEATURES         "ОЮ·Ё·ГОК·ЦАаЖчРиТЄµДјёёцІОКэЎЈ"
+    IDS_LEARNDB_EMPTY       "·ЦАаКэѕЭївОЄїХЎЈ"
+    IDS_LEARNDB_SAME_CLASS  "·ЦАаКэѕЭївЦРµДЛщУР¶ФПу¶ј»№Г»УР·ЦАа»тН¬КфТ»ёцАаЎЈ"
+    IDS_NO_PARAMETERS       "ОґСЎФсСµБ·ІОКэ"
+    IDS_PARAMETER_ABSENT    "ДіР©·ЦАаІОКэ±»ЅыУГ»тОґѕ­№эІв¶ЁЎЈ"
+    IDS_TEXT1               "ТС·ЦАа %d"
+    IDS_TEXT2               "№І %d"
+    IDS_TITLE               "·ЦАа"
+    IDS_OBJECT_UNKNOWN      "І»ДЬЅ«ОґЦЄ¶ФПуМнјУµЅ·ЦАаКэѕЭїв"
+    IDS_SOME_OBJECTS_UNKNOWN 
+                            "УРјёёц¶ФПуКЗ±ѕіМРт°ж±ѕОЮ·ЁК¶±рµД»тКфУЪґнОуµДАаЈ¬ТтґЛІ»ДЬЅ«ХвР©¶ФПуМнјУµЅ·ЦАаКэѕЭївЦР"
+    IDS_1CHROMOSOME         "1 МхИѕЙ«Ме"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_2CHROMOSOME         "2 МхИѕЙ«Ме"
+    IDS_3CHROMOSOME         "3 МхИѕЙ«Ме"
+    IDS_NOT_30_DATABASE     "ИѕЙ«МеКэѕЭївУлµ±З°іМРт°ж±ѕІ»јжИЭЎЈ"
+    IDS_CLASSIFIER_NOT_TEACHED "ЛщСЎ·ЦАаЖчОґѕ­№эСµБ·ЎЈ"
+END
+
+#endif    // Chinese (P.R.C.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+/////////////////////////////////////////////////////////////////////////////
+// Russian resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_RUS)
+#ifdef _WIN32
+LANGUAGE LANG_RUSSIAN, SUBLANG_DEFAULT
+#pragma code_page(1251)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)\r\n"
+    "#ifdef _WIN32\r\n"
+    "LANGUAGE 9, 1\r\n"
+    "#pragma code_page(1252)\r\n"
+    "#endif //_WIN32\r\n"
+    "#include ""res\\Classify.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "#include ""afxres.rc""         // Standard components\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_MENU DIALOG  0, 0, 186, 90
+STYLE DS_SETFONT | DS_3DLOOK | WS_POPUP | WS_VISIBLE | WS_CLIPSIBLINGS | 
+    WS_CLIPCHILDREN | WS_THICKFRAME
+FONT 8, "MS Sans Serif"
+BEGIN
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO 
+BEGIN
+    IDD_MENU, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 179
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 83
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE 
+BEGIN
+    ID_ACTION_CLASSIFY      "ClassifyObjects\nКлассифицировать объекты\nКлассификация\nАвтоматическая классификация всех объектов на активном изображении\nКлассифицировать объекты"
+    ID_ACTION_TEACH         "TeachClassifier\nОбучить классификатор\nКлассификация\nОбучение классификатора по обучающей базе\nОбучить классификатор"
+    ID_ACTION_EMPTY         "EmptyClassifier\nОчистить обучающую базу\nКлассификация\nОчистка обучающей базы классификатора\nОчистить обучающую базу"
+    ID_ACTION_ADD_OBJECT    "AddObjectToTeach\nДобавить объект для обучения\nКлассификация\nДобавить объект в обучающую базу - левая кнопка мыши\nДобавить объект для обучения"
+    ID_ACTION_ADD_ALL       "AddAllObjectsToTeach\nДобавить все объекты для обучения\nКлассификация\nДобавить все объекты на активном изображении в обучающую базу\nДобавить все объекты для обучения"
+    ID_ACTION_MANUAL_CLASSIFY 
+                            "ManualClassifyObjects\nРучная классификация\nКлассификация\nРучная классификация объектов. Укажите класс выбранного объекта\nРучная классификация объектов"
+    IDS_WRONG_NUMBER_OF_CLASSES 
+                            "Классификатор был обучен с другим числом классов."
+END
+
+STRINGTABLE 
+BEGIN
+    ID_ACTION_COPYIMAGES    "CopyImageToObjects\nОбновить список объектов\nПреобразования\nОбновить список объектов с изображения\nОбновить список объектов с изображения"
+    ID_ACTION_CHROMO_EQUALIZE 
+                            "EqualizeAllObj\nКонтраст хромосом\nПреобразования\nКонтрастирование всех хромосом\nКонтрастирование хромосом"
+    ID_ACTION_CHROMO_EQUALIZE_OBJ 
+                            "EqualizeObj\nКонтраст хромосомы\nПреобразования\nКонтрастирование указанной хромосомы - левая кнопка мыши\nКонтрастирование указанной хромосомы"
+    ID_ACTION_CHROMO_UNEQUALIZE_OBJ 
+                            "UnEqualizeObj\nОтменить контраст\nПреобразования\nОтменить контрастирование выбранной хромосомы - левая кнопка мыши, выход - Esc.\nОтменить контраст"
+    IDS_NO_FEATURES         "Некоторые из параметров, необходимые для классификатора, недоступны."
+    IDS_LEARNDB_EMPTY       "Обучающая база данных пуста."
+    IDS_LEARNDB_SAME_CLASS  "Все объекты в обучающей базе данных не классифицированы или одного класса."
+    IDS_NO_PARAMETERS       "Не заданы параметры для обучения."
+    IDS_PARAMETER_ABSENT    "Параметры не измерены или некоторые параметры, использованные  в обучающей базе данных,  сейчас не доступны."
+    IDS_TEXT1               "Классифицировано - %d"
+    IDS_TEXT2               "Всего - %d"
+    IDS_TITLE               "Классификация"
+    IDS_OBJECT_UNKNOWN      "Неклассифицированные объекты и объекты, имеющие недопустимый в данной версии программы класс, не могут быть добавлены в обучающую базу данных"
+    IDS_SOME_OBJECTS_UNKNOWN 
+                            "Некоторые из объектов не классифицированы и не могут быть добавлены в обучающую базу данных"
+    IDS_1CHROMOSOME         "1 хромосома в ячейке"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_2CHROMOSOME         "2 хромосомы в ячейке"
+    IDS_3CHROMOSOME         "больше 2 хромосом в ячейке"
+    IDS_NOT_30_DATABASE     "База хромосом не совместима с данной версией программы."
+    IDS_CLASSIFIER_NOT_TEACHED "Выбранный классификатор не обучен."
+END
+
+#endif    // Russian resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.S.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_MENU DIALOG  0, 0, 186, 90
+STYLE DS_SETFONT | DS_3DLOOK | WS_POPUP | WS_VISIBLE | WS_CLIPSIBLINGS | 
+    WS_CLIPCHILDREN | WS_THICKFRAME
+FONT 8, "MS Sans Serif"
+BEGIN
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO 
+BEGIN
+    IDD_MENU, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 179
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 83
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Toolbar
+//
+
+IDR_ALLRES TOOLBAR  16, 15
+BEGIN
+    BUTTON      ID_ACTION_CLASSIFY
+    BUTTON      ID_ACTION_TEACH
+    BUTTON      ID_ACTION_EMPTY
+    BUTTON      ID_ACTION_ADD_OBJECT
+    BUTTON      ID_ACTION_ADD_ALL
+    BUTTON      ID_ACTION_MANUAL_CLASSIFY
+    BUTTON      ID_ACTION_COPYIMAGES
+    BUTTON      ID_ACTION_CHROMO_EQUALIZE
+    BUTTON      ID_ACTION_CHROMO_EQUALIZE_OBJ
+    BUTTON      ID_ACTION_CHROMO_UNEQUALIZE_OBJ
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDR_ALLRES              BITMAP                  "allres.bmp"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Cursor
+//
+
+IDC_ADD_LEARN           CURSOR                  "AddLearn.cur"
+IDC_EQUALIZE            CURSOR                  "equalize.cur"
+IDC_UNEQUALIZE          CURSOR                  "unequali.cur"
+IDC_MANUALCLASSIFY      CURSOR                  "ManClsfy.cur"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE 
+BEGIN
+    ID_ACTION_CLASSIFY      "ClassifyObjects\nClassify Objects\nClassification\nClassify all objects on active image automatically\nClassify Objects"
+    ID_ACTION_TEACH         "TeachClassifier\nTrain Classifier\nClassification\nTrain classifier using the class database\nTrain Classifier"
+    ID_ACTION_EMPTY         "EmptyClassifier\nEmpty Classifier\nClassification\nEmpty classification database\nEmpty Classifier"
+    ID_ACTION_ADD_OBJECT    "AddObjectToTeach\nAdd Object to Class Database\nClassification\nAdd selected object to class database\nAdd Object to Class Database"
+    ID_ACTION_ADD_ALL       "AddAllObjectsToTeach\nAdd All Objects to Class Database\nClassification\nAdd all objects to class database\nAdd All Objects to Class Database"
+    ID_ACTION_MANUAL_CLASSIFY 
+                            "ManualClassifyObjects\nManual Classification\nClassification\nClassify objects manually\nManual Classification"
+    IDS_WRONG_NUMBER_OF_CLASSES 
+                            "Classifier was teached with another number of classes."
+END
+
+STRINGTABLE 
+BEGIN
+    ID_ACTION_COPYIMAGES    "CopyImageToObjects\nUpdate Object List\nEnhance\nUpdate object list of the active image\nUpdate Object List"
+    ID_ACTION_CHROMO_EQUALIZE 
+                            "EqualizeAllObj\nContrast All Chromosomes\nEnhance\nContrast all chromosomes\nContrast All Chromosomes"
+    ID_ACTION_CHROMO_EQUALIZE_OBJ 
+                            "EqualizeObj\nContrast Chromosome\nEnhance\nContrast selected chromosome\nContrast Chromosome"
+    ID_ACTION_CHROMO_UNEQUALIZE_OBJ 
+                            "UnEqualizeObj\nUndo Contrast\nEnhance\nUndo contrasting of the chromosome selected with left-click, press Esc to complete\nUndo Contrast"
+    IDS_NO_FEATURES         "Several parameters needed for classifier are not accessible."
+    IDS_LEARNDB_EMPTY       "Classification database is empty."
+    IDS_LEARNDB_SAME_CLASS  "All objects in the classification database are not classified or have the same class."
+    IDS_NO_PARAMETERS       "Parameters for training are not selected"
+    IDS_PARAMETER_ABSENT    "Some classification parameters are disabled or not measured."
+    IDS_TEXT1               "Classified %d"
+    IDS_TEXT2               "Total %d"
+    IDS_TITLE               "Classification"
+    IDS_OBJECT_UNKNOWN      "Unknown objects can not be added to classification database"
+    IDS_SOME_OBJECTS_UNKNOWN 
+                            "Several objects are unknown or have incorrect class for this version of program and can not be added to classification database"
+    IDS_1CHROMOSOME         "1 chromosome"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_2CHROMOSOME         "2 chromosomes"
+    IDS_3CHROMOSOME         "3 chromosomes"
+    IDS_NOT_30_DATABASE     "Chromosome database is incompatible with the current program version."
+    IDS_CLASSIFIER_NOT_TEACHED "Selected classifier is not trained."
+END
+
+#endif    // English (U.S.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE 9, 1
+#pragma code_page(1252)
+#endif //_WIN32
+#include "res\Classify.rc2"  // non-Microsoft Visual C++ edited resources
+#include "afxres.rc"         // Standard components
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

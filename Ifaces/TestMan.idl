@@ -1,0 +1,136 @@
+import "oaidl.idl";
+import "ocidl.idl";
+
+
+[
+	object,
+	uuid(008D4C73-2889-43cd-98F2-D9FD2F84B6F1),
+	helpstring("ITestManagerDisp Interface"),
+	pointer_default(unique)
+]
+interface ITestManagerDisp : IDispatch
+{
+	[id(0), helpstring("method GetFirstTestPos")] HRESULT GetFirstTestPos( [in] long lParentPos, [out, retval] long *plPos );
+	[id(1), helpstring("method GetNextTest")] HRESULT GetNextTest( [in] long lParentPos, [out] VARIANT *plPos, [out, retval] IDispatch **ppunk );
+	[id(2), helpstring("method AddTest")] HRESULT AddTest( [in] long lParent, [in] IDispatch *punk,  /*[out,retval]*/ long *plpos );
+	[id(3), helpstring("method DeleteTest")] HRESULT DeleteTest( [in] long lPos );
+
+	[id(4), helpstring("method RunTestCompare")] HRESULT RunTestCompare();
+	[id(5), helpstring("method RunTestSave")] HRESULT RunTestSave();
+	[id(6), helpstring("method StopTesting")] HRESULT StopTesting();
+	[id(7), helpstring("method GetRunningState")] HRESULT GetRunningState( [out, retval] long *plState );
+	[id(8), helpstring("method RunTestSimple")] HRESULT RunTestSimple();
+};
+
+[
+	object,
+	uuid(37E9B6A7-5AA9-40bf-B3CF-08A8C1CE4F0A),
+	helpstring("ITestItemDisp Interface"),
+	pointer_default(unique)
+]
+interface ITestItemDisp: IDispatch
+{
+	[id(0), helpstring("method SetPath")] HRESULT SetPath( [in] BSTR bstrPath );
+	[id(1), helpstring("method GetPath")] HRESULT GetPath( [out, retval] BSTR *pbstrPath );
+	[id(2), helpstring("method GetFirstCondPos")] HRESULT GetFirstCondPos( [out, retval] long *lpPos );
+	[id(3), helpstring("method GetNextCond")] HRESULT GetNextCond( [out] VARIANT *plPos, [out, retval] BSTR *pbstr );
+	[id(4), helpstring("method AddCond")] HRESULT AddCond( [in] BSTR bstrCond );
+	[id(5), helpstring("method DeleteCond")] HRESULT DeleteCond( [in] long lPos );
+	[id(6), helpstring("method DeleteAllCond")] HRESULT DeleteAllCond();
+	[id(7), helpstring("method SetScript")] HRESULT SetScript( [in] BSTR bstrScript );
+	[id(8), helpstring("method GetScript")] HRESULT GetScript( [out, retval] BSTR *pbstrScript );
+	[id(9), helpstring("method LoadContent")] HRESULT LoadContent();
+	[id(10), helpstring("method StoreContent")] HRESULT StoreContent();
+
+	[id(11), helpstring("method GetRunTime")] HRESULT GetRunTime( [out, retval] DATE *pDate );
+	[id(12), helpstring("method SetRunTime")] HRESULT SetRunTime( [in] DATE Date );
+	[id(13), helpstring("method SetTestChecked")] HRESULT SetTestChecked( [in] BOOL bSet );
+	[id(14), helpstring("method GetTestChecked")] HRESULT GetTestChecked( [out, retval] BOOL *pbSet );
+
+	[id(15), helpstring("method KillThemselves")] HRESULT KillThemselvesFromDisk();
+
+	[id(16), helpstring("method ParseCond")] HRESULT ParseCond();
+ 
+	[id(17), helpstring("method GetFirstSingleCond")] HRESULT GetFirstSingleCond( [out,retval] long *lpPos );
+	[id(18), helpstring("method NextSingleCond")] HRESULT NextSingleCond( [out] VARIANT *lpPos, [out] VARIANT *pVarName, [out] VARIANT *pVarPath, [out] VARIANT *pVarParams );
+
+	[id(19), helpstring("method GetFirstMultyCond")] HRESULT GetFirstMultyCond( [out,retval] long *lpPos );
+	[id(20), helpstring("method NextMultyCond")] HRESULT NextMultyCond( [out] VARIANT *lpPos, [out] VARIANT *pVarName, [out] VARIANT *pVarPath, [out] VARIANT **pVarParams,[out] VARIANT *pVarFlag, [out] long *plCount, VARIANT *pVarNameMain, [out] VARIANT **pVarParamsMain, [out, retval] long *plCountMain );
+
+	[id(21), helpstring("method SetTestSavedState")] HRESULT SetTestSavedState( [in] long bSet );
+	[id(22), helpstring("method GetTestSavedState")] HRESULT GetTestSavedState( [out, retval] long *pbSet );
+
+	[id(23), helpstring("method SetTestRunTime")] HRESULT SetTestRunTime( /*[in]*/ unsigned long dwTime );
+	[id(24), helpstring("method GetTestRunTime")] HRESULT GetTestRunTime( /*[out]*/ unsigned long *pdwTime );
+
+	[id(25), helpstring("method SetScriptFinal")] HRESULT SetScriptFinal( [in] BSTR bstrScript );
+	[id(26), helpstring("method GetScriptFinal")] HRESULT GetScriptFinal( [out, retval] BSTR *pbstrScript );
+	
+	[id(27), helpstring("method Rename")] HRESULT Rename( [in] BSTR bstrNewName );
+
+	[id(28), helpstring("method GetAdditionalInfo")] HRESULT GetAdditionalInfo( [out, retval] BSTR *pbstrInfo );
+	[id(29), helpstring("method SetAdditionalInfo")] HRESULT SetAdditionalInfo( [in] BSTR bstrInfo );
+
+	[id(30), helpstring("method GetSaveTime")] HRESULT GetSaveTime( [out, retval] DATE *pDate );
+	[id(31), helpstring("method SetSaveTime")] HRESULT SetSaveTime( [in] DATE Date );
+
+	[id(32), helpstring("method GetTestErrorState")] HRESULT GetTestErrorState( [out, retval] long *pbError );
+	[id(33), helpstring("method SetTestErrorState")] HRESULT SetTestErrorState( [in] long bError );
+};
+
+[
+	object,
+	uuid(190D55A9-4888-4e61-AF0A-1F6C340BBE78),
+	helpstring("ITestDataArrayDisp Interface"),
+	pointer_default(unique)
+]
+interface ITestDataArrayDisp: IDispatch
+{
+	[id(0), helpstring("method AddItem")] HRESULT AddItem( [in] VARIANT vData, [in] BSTR bstrName);
+	[id(1), helpstring("method GetItem")] HRESULT GetItem( [in] UINT nID, [out,retval] VARIANT *lpvRetVal);
+    [id(2), helpstring("method GetItemCount")] HRESULT GetItemCount( [out,retval] long *lplRet);
+	[id(3), helpstring("method RemoveItem")] HRESULT RemoveItem( [in] UINT nID);
+	[id(4), helpstring("method RemoveAll")] HRESULT RemoveAll();
+	[id(5), helpstring("method GetItemName")] HRESULT GetItemName( [in] UINT nID, [out,retval] BSTR *pbstrName);
+	[id(6), helpstring("method SetItemCmpExpr")] HRESULT SetItemCmpExpr( [in] UINT nID, [in] BSTR bstrCmpExpr);
+	[id(7), helpstring("method GetItemCmpExpr")] HRESULT GetItemCmpExpr( [in] UINT nID, [out,retval] BSTR *pbstrCmpExpr);
+};
+
+
+//////////////////////////////////////////////////////////////////////////
+[
+	uuid(6859CE52-A955-450e-806A-DC2B250A6DFD),
+	version(1.0),
+	helpstring("TestManLib 1.0 Type Library")
+]
+library TestManLib
+{
+	importlib("stdole2.tlb");
+	[
+		uuid(42F0E2B8-A151-45aa-891A-3A6E05981226),
+		helpstring("TestManager Class")
+	]
+	coclass CoTestManager
+
+	{
+		[default] interface ITestManagerDisp;
+	};
+
+	[
+		uuid(10B89DC8-6DAF-4c20-9B9C-CF0B82C98AB0),
+		helpstring("TestItem Class")
+	]
+	coclass CoTestItem
+	{
+		[default] interface ITestItemDisp;
+	};
+
+	[
+		uuid(9C469E11-A284-40c4-A771-5271BCD77BAD),
+		helpstring("TestDataArray Class")
+	]
+	coclass CoTestDataArray
+	{
+		[default] interface ITestDataArrayDisp;
+	};
+}; 

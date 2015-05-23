@@ -1,0 +1,16 @@
+// mouse.odl : type library source for mouse.dll
+
+// This file will be processed by the MIDL compiler to produce the
+// type library (mouse.tlb).
+
+[ uuid(BC7BBB66-A887-11D3-A6B8-0090275995FE), version(1.0) ]
+library Mouse
+{
+	importlib("stdole32.tlb");
+	importlib("stdole2.tlb");
+
+
+
+	//{{AFX_APPEND_ODL}}
+	//}}AFX_APPEND_ODL}}
+};

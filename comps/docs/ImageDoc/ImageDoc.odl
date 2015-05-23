@@ -1,0 +1,72 @@
+// ImageDoc.odl : type library source for ImageDoc.dll
+
+// This file will be processed by the MIDL compiler to produce the
+// type library (ImageDoc.tlb).
+
+[ uuid(2D8A4636-4323-11D3-A60F-0090275995FE), version(1.0) ]
+library ImageDoc
+{
+	importlib("stdole32.tlb");
+	importlib("stdole2.tlb");
+
+
+
+
+	//  Primary dispatch interface for CImageView
+	
+	[ uuid(2D8A4643-4323-11D3-A60F-0090275995FE) ]
+	dispinterface IImageView
+	{
+		properties:
+			// NOTE - ClassWizard will maintain property information here.
+			//    Use extreme caution when editing this section.
+			//{{AFX_ODL_PROP(CImageView)
+			//}}AFX_ODL_PROP
+			
+		methods:
+			// NOTE - ClassWizard will maintain method information here.
+			//    Use extreme caution when editing this section.
+			//{{AFX_ODL_METHOD(CImageView)
+			//}}AFX_ODL_METHOD
+
+	};
+
+	//  Class information for CImageView
+
+	[ uuid(2D8A4644-4323-11D3-A60F-0090275995FE) ]
+	coclass ImageView
+	{
+		[default] dispinterface IImageView;
+	};
+
+
+	//  Primary dispatch interface for CImageSourceView
+	
+	[ uuid(7AE3A6AC-5383-4FB8-8F81-FEBDD3519FAC) ]
+	dispinterface IImageSourceView
+	{
+		properties:
+			// NOTE - ClassWizard will maintain property information here.
+			//    Use extreme caution when editing this section.
+			//{{AFX_ODL_PROP(CImageSourceView)
+			//}}AFX_ODL_PROP
+			
+		methods:
+			// NOTE - ClassWizard will maintain method information here.
+			//    Use extreme caution when editing this section.
+			//{{AFX_ODL_METHOD(CImageSourceView)
+			//}}AFX_ODL_METHOD
+
+	};
+
+	//  Class information for CImageSourceView
+
+	[ uuid(E942E459-45F5-4E6D-AE10-A85166E6CFBF) ]
+	coclass ImageSourceView
+	{
+		[default] dispinterface IImageSourceView;
+	};
+
+	//{{AFX_APPEND_ODL}}
+	//}}AFX_APPEND_ODL}}
+};

@@ -1,0 +1,305 @@
+#ifndef __image_app_h__
+#define __image_app_h__
+
+/*
+#ifdef _DEBUG
+
+// {8E1C4971-C429-4d53-BFFC-6236E4E892B2}
+static const GUID clsidBinImage = 
+{ 0x8e1c4971, 0xc429, 0x4d53, { 0xbf, 0xfc, 0x62, 0x36, 0xe4, 0xe8, 0x92, 0xb2 } };
+// {9370B934-8EC5-4ab4-BAC2-9E0E753D4821}
+static const GUID clsidBinImageInfo = 
+{ 0x9370b934, 0x8ec5, 0x4ab4, { 0xba, 0xc2, 0x9e, 0xe, 0x75, 0x3d, 0x48, 0x21 } };
+// {75E9ED33-FBAC-4363-A2D7-6F80DF0C33E9}
+static const GUID clsidBinView = 
+{ 0x75e9ed33, 0xfbac, 0x4363, { 0xa2, 0xd7, 0x6f, 0x80, 0xdf, 0xc, 0x33, 0xe9 } };
+// {ACC78CB4-F7BA-41c3-B928-F3C8167EE928}
+static const GUID clsidTestActionInfo = 
+{ 0xacc78cb4, 0xf7ba, 0x41c3, { 0xb9, 0x28, 0xf3, 0xc8, 0x16, 0x7e, 0xe9, 0x28 } };
+// {C5AC13E9-21D5-4842-8AD2-54CAA650F831}
+static const GUID clsidTestAction = 
+{ 0xc5ac13e9, 0x21d5, 0x4842, { 0x8a, 0xd2, 0x54, 0xca, 0xa6, 0x50, 0xf8, 0x31 } };
+// {C2663B19-941D-4474-8CDD-51320FCAB5A4}
+static const GUID clsidBinErodeInfo = 
+{ 0xc2663b19, 0x941d, 0x4474, { 0x8c, 0xdd, 0x51, 0x32, 0xf, 0xca, 0xb5, 0xa4 } };
+// {300DD166-89E3-4699-A345-0CDE3C927480}
+static const GUID clsidBinErode = 
+{ 0x300dd166, 0x89e3, 0x4699, { 0xa3, 0x45, 0xc, 0xde, 0x3c, 0x92, 0x74, 0x80 } };
+// {90A46A88-A3F6-4d77-B35A-6C16B86C72A2}
+static const GUID clsidBinDilateInfo = 
+{ 0x90a46a88, 0xa3f6, 0x4d77, { 0xb3, 0x5a, 0x6c, 0x16, 0xb8, 0x6c, 0x72, 0xa2 } };
+// {06DB73C9-3D57-4c55-ACC1-9637F03922D1}
+static const GUID clsidBinDilate =
+{ 0x6db73c9, 0x3d57, 0x4c55, { 0xac, 0xc1, 0x96, 0x37, 0xf0, 0x39, 0x22, 0xd1 } };
+// {BE2AD647-EBE4-4517-9542-19338CEB8BA5}
+static const GUID clsidBinOpenInfo = 
+{ 0xbe2ad647, 0xebe4, 0x4517, { 0x95, 0x42, 0x19, 0x33, 0x8c, 0xeb, 0x8b, 0xa5 } };
+// {CD2C80E4-0E11-4ecc-B3E8-7A0FD2D38890}
+static const GUID clsidBinOpen = 
+{ 0xcd2c80e4, 0xe11, 0x4ecc, { 0xb3, 0xe8, 0x7a, 0xf, 0xd2, 0xd3, 0x88, 0x90 } };
+// {AF4F9434-A596-4c49-AF7C-C1C97026C4E8}
+static const GUID clsidBinCloseInfo = 
+{ 0xaf4f9434, 0xa596, 0x4c49, { 0xaf, 0x7c, 0xc1, 0xc9, 0x70, 0x26, 0xc4, 0xe8 } };
+// {6EC9A263-F2DD-4de5-86F1-73A92D5182E0}
+static const GUID clsidBinClose = 
+{ 0x6ec9a263, 0xf2dd, 0x4de5, { 0x86, 0xf1, 0x73, 0xa9, 0x2d, 0x51, 0x82, 0xe0 } };
+// {459982A3-611C-4f03-89BA-BCBF9FF2016A}
+static const GUID clsidBinNot = 
+{ 0x459982a3, 0x611c, 0x4f03, { 0x89, 0xba, 0xbc, 0xbf, 0x9f, 0xf2, 0x1, 0x6a } };
+// {7B512731-507F-4cfd-BCDF-281749E490B5}
+static const GUID clsidBinNotInfo = 
+{ 0x7b512731, 0x507f, 0x4cfd, { 0xbc, 0xdf, 0x28, 0x17, 0x49, 0xe4, 0x90, 0xb5 } };
+// {951193F3-3B5D-469a-A82F-4CF8A919DC1B}
+static const GUID clsidBinOr = 
+{ 0x951193f3, 0x3b5d, 0x469a, { 0xa8, 0x2f, 0x4c, 0xf8, 0xa9, 0x19, 0xdc, 0x1b } };
+// {CC886C4C-53B8-4550-93EE-37857869D9B7}
+static const GUID clsidBinOrInfo = 
+{ 0xcc886c4c, 0x53b8, 0x4550, { 0x93, 0xee, 0x37, 0x85, 0x78, 0x69, 0xd9, 0xb7 } };
+// {5C7E9971-64B4-4659-B328-1402DAEEFD64}
+static const GUID clsidBinAnd = 
+{ 0x5c7e9971, 0x64b4, 0x4659, { 0xb3, 0x28, 0x14, 0x2, 0xda, 0xee, 0xfd, 0x64 } };
+// {A36A574E-C198-4e4c-993E-7ADE66E9B1AF}
+static const GUID clsidBinAndInfo = 
+{ 0xa36a574e, 0xc198, 0x4e4c, { 0x99, 0x3e, 0x7a, 0xde, 0x66, 0xe9, 0xb1, 0xaf } };
+// {46483F0A-B1C6-449f-8B27-711BC95DABD6}
+static const GUID clsidBinXor = 
+{ 0x46483f0a, 0xb1c6, 0x449f, { 0x8b, 0x27, 0x71, 0x1b, 0xc9, 0x5d, 0xab, 0xd6 } };
+// {B93F6F27-9FBE-4e3f-B110-FAEA2036F491}
+static const GUID clsidBinXorInfo = 
+{ 0xb93f6f27, 0x9fbe, 0x4e3f, { 0xb1, 0x10, 0xfa, 0xea, 0x20, 0x36, 0xf4, 0x91 } };
+// {28E1D9C6-4773-402f-BA52-FC69FB125888}
+static const GUID clsidBinMoveInfo = 
+{ 0x28e1d9c6, 0x4773, 0x402f, { 0xba, 0x52, 0xfc, 0x69, 0xfb, 0x12, 0x58, 0x88 } };
+// {8A74D0DB-DEDC-4ea4-9D59-534D3A4F9F13}
+static const GUID clsidBinMove = 
+{ 0x8a74d0db, 0xdedc, 0x4ea4, { 0x9d, 0x59, 0x53, 0x4d, 0x3a, 0x4f, 0x9f, 0x13 } };
+
+
+#define pszImageProgID		"image.BinImageD"
+#define pszImageInfoProgID	"image.BinImageInfoD"
+#define pszBinViewProgID	"binary.BinaryViewD"
+#define pszTestActionInfoProgID	"binary.TestActionInfoD"
+#define pszTestActionProgID		"binary.TestActionD"
+#define pszBinErodeInfoProgID	"binary.BinErodeInfoD"
+#define pszBinErodeProgID		"binary.BinErodeD"
+#define pszBinDilateInfoProgID	"binary.BinDilateInfoD"
+#define pszBinDilateProgID		"binary.BinDilateD"
+#define pszBinOpenInfoProgID	"binary.BinOpenInfoD"
+#define pszBinOpenProgID		"binary.BinOpenD"
+#define pszBinCloseInfoProgID	"binary.BinCloseInfoD"
+#define pszBinCloseProgID		"binary.BinCloseD"
+#define pszBinNotInfoProgID		"binary.BinNotInfoD"
+#define pszBinNotProgID			"binary.BinNotD"
+#define pszBinOrInfoProgID		"binary.BinOrInfoD"
+#define pszBinOrProgID			"binary.BinOrD"
+#define pszBinAndInfoProgID		"binary.BinAndInfoD"
+#define pszBinAndProgID			"binary.BinAndD"
+#define pszBinXorInfoProgID		"binary.BinXorInfoD"
+#define pszBinXorProgID			"binary.BinXorD"
+#define pszBinMoveInfoProgID		"binary.BinMoveInfoD"
+#define pszBinMoveProgID			"binary.BinMoveD"
+
+
+#else
+*/
+// {DF16A297-C2ED-43b5-8CCA-845FDFF1F225}
+static const GUID clsidBinImage = 
+{ 0xdf16a297, 0xc2ed, 0x43b5, { 0x8c, 0xca, 0x84, 0x5f, 0xdf, 0xf1, 0xf2, 0x25 } };
+// {8A0DB3F4-9955-45de-ACDD-C0A4A9DB6360}
+static const GUID clsidBinImageInfo = 
+{ 0x8a0db3f4, 0x9955, 0x45de, { 0xac, 0xdd, 0xc0, 0xa4, 0xa9, 0xdb, 0x63, 0x60 } };
+// {36449EA8-91DA-4163-BAFA-F9F00261F0E5}
+static const GUID clsidBinView = 
+{ 0x36449ea8, 0x91da, 0x4163, { 0xba, 0xfa, 0xf9, 0xf0, 0x2, 0x61, 0xf0, 0xe5 } };
+// {F9431BF7-AA06-4f1b-B8DA-026ED1178C3D}
+static const GUID clsidTestActionInfo = 
+{ 0xf9431bf7, 0xaa06, 0x4f1b, { 0xb8, 0xda, 0x2, 0x6e, 0xd1, 0x17, 0x8c, 0x3d } };
+// {046FC0AC-FFA3-489c-B91A-C19127E2BAB4}
+static const GUID clsidTestAction = 
+{ 0x46fc0ac, 0xffa3, 0x489c, { 0xb9, 0x1a, 0xc1, 0x91, 0x27, 0xe2, 0xba, 0xb4 } };
+// {3EC590B0-F988-4360-8FF3-17749891583C}
+static const GUID clsidBinCleanV4 = 
+{ 0x3ec590b0, 0xf988, 0x4360, { 0x8f, 0xf3, 0x17, 0x74, 0x98, 0x91, 0x58, 0x3c } };
+// {4ADB0378-699E-4db0-947F-A28D28FB9214}
+static const GUID clsidBinCleanV4Info = 
+{ 0x4adb0378, 0x699e, 0x4db0, { 0x94, 0x7f, 0xa2, 0x8d, 0x28, 0xfb, 0x92, 0x14 } };
+// {2177480E-E601-43a7-B199-47C6B7F02137}
+static const GUID clsidBinMedianInfo = 
+{ 0x2177480e, 0xe601, 0x43a7, { 0xb1, 0x99, 0x47, 0xc6, 0xb7, 0xf0, 0x21, 0x37 } };
+// {78C98AD8-9B11-412b-BE35-593CD5B9E8BB}
+static const GUID clsidBinMedian = 
+{ 0x78c98ad8, 0x9b11, 0x412b, { 0xbe, 0x35, 0x59, 0x3c, 0xd5, 0xb9, 0xe8, 0xbb } };
+// {27471EC3-B0F4-46e6-8983-CAF14FBEB27D}
+static const GUID clsidBinErodeInfo =
+{ 0x27471ec3, 0xb0f4, 0x46e6, { 0x89, 0x83, 0xca, 0xf1, 0x4f, 0xbe, 0xb2, 0x7d } };
+// {E4959CE3-645E-4175-81E1-1A29F3DE9B71}
+static const GUID clsidBinErode = 
+{ 0xe4959ce3, 0x645e, 0x4175, { 0x81, 0xe1, 0x1a, 0x29, 0xf3, 0xde, 0x9b, 0x71 } };
+// {FC26BB90-19AF-4ff3-95EB-D328AF36FC53}
+static const GUID clsidBinDilateInfo = 
+{ 0xfc26bb90, 0x19af, 0x4ff3, { 0x95, 0xeb, 0xd3, 0x28, 0xaf, 0x36, 0xfc, 0x53 } };
+// {A07B7923-23B7-4f1f-B9DD-1823071359E1}
+static const GUID clsidBinDilate = 
+{ 0xa07b7923, 0x23b7, 0x4f1f, { 0xb9, 0xdd, 0x18, 0x23, 0x7, 0x13, 0x59, 0xe1 } };
+// {83707CBB-8080-410b-BBD5-A2B3E4FBC0AC}
+static const GUID clsidBinOpenInfo = 
+{ 0x83707cbb, 0x8080, 0x410b, { 0xbb, 0xd5, 0xa2, 0xb3, 0xe4, 0xfb, 0xc0, 0xac } };
+// {7C3CBED2-2F22-460c-8389-B4462862661A}
+static const GUID clsidBinOpen = 
+{ 0x7c3cbed2, 0x2f22, 0x460c, { 0x83, 0x89, 0xb4, 0x46, 0x28, 0x62, 0x66, 0x1a } };
+// {27976CB3-F686-4752-B8A5-0F6136F1BA96}
+static const GUID clsidBinCloseInfo = 
+{ 0x27976cb3, 0xf686, 0x4752, { 0xb8, 0xa5, 0xf, 0x61, 0x36, 0xf1, 0xba, 0x96 } };
+// {3F462244-94FE-4037-BD2B-94B94993FE07}
+static const GUID clsidBinClose = 
+{ 0x3f462244, 0x94fe, 0x4037, { 0xbd, 0x2b, 0x94, 0xb9, 0x49, 0x93, 0xfe, 0x7 } };
+// {7489E325-FFDC-4b08-A958-2F4B3E6A57F5}
+static const GUID clsidBinNotInfo = 
+{ 0x7489e325, 0xffdc, 0x4b08, { 0xa9, 0x58, 0x2f, 0x4b, 0x3e, 0x6a, 0x57, 0xf5 } };
+// {AE0102BD-84FB-48cf-AC3A-2C8BCE870DB8}
+static const GUID clsidBinNot = 
+{ 0xae0102bd, 0x84fb, 0x48cf, { 0xac, 0x3a, 0x2c, 0x8b, 0xce, 0x87, 0xd, 0xb8 } };
+// {9CACBD53-3E51-4cef-91B1-310114F8F714}
+static const GUID clsidBinOrInfo = 
+{ 0x9cacbd53, 0x3e51, 0x4cef, { 0x91, 0xb1, 0x31, 0x1, 0x14, 0xf8, 0xf7, 0x14 } };
+// {3D7EFF2E-543E-4c2d-8C1B-E628F7D955F8}
+static const GUID clsidBinOr = 
+{ 0x3d7eff2e, 0x543e, 0x4c2d, { 0x8c, 0x1b, 0xe6, 0x28, 0xf7, 0xd9, 0x55, 0xf8 } };
+// {78108751-80EB-43c7-AE10-66D0AFCB7797}
+static const GUID clsidBinAndInfo = 
+{ 0x78108751, 0x80eb, 0x43c7, { 0xae, 0x10, 0x66, 0xd0, 0xaf, 0xcb, 0x77, 0x97 } };
+// {A8274059-A6D4-4a06-917B-136D926689A7}
+static const GUID clsidBinAnd = 
+{ 0xa8274059, 0xa6d4, 0x4a06, { 0x91, 0x7b, 0x13, 0x6d, 0x92, 0x66, 0x89, 0xa7 } };
+// {69B9A33F-25EF-4bde-A417-D9C41F77F1F1}
+static const GUID clsidBinXorInfo = 
+{ 0x69b9a33f, 0x25ef, 0x4bde, { 0xa4, 0x17, 0xd9, 0xc4, 0x1f, 0x77, 0xf1, 0xf1 } };
+// {1957E73A-DB50-400c-B81F-56D4E62A26BD}
+static const GUID clsidBinXor = 
+{ 0x1957e73a, 0xdb50, 0x400c, { 0xb8, 0x1f, 0x56, 0xd4, 0xe6, 0x2a, 0x26, 0xbd } };
+// {D2F3160B-CDFF-4eeb-A68B-C945ADF5180D}
+static const GUID clsidBinCustomLogicInfo = 
+{ 0xd2f3160b, 0xcdff, 0x4eeb, { 0xa6, 0x8b, 0xc9, 0x45, 0xad, 0xf5, 0x18, 0xd } };
+// {6A7DADB8-4AB4-4fde-AE1B-D62E3CC7AEA7}
+static const GUID clsidBinCustomLogic = 
+{ 0x6a7dadb8, 0x4ab4, 0x4fde, { 0xae, 0x1b, 0xd6, 0x2e, 0x3c, 0xc7, 0xae, 0xa7 } };
+// {9B8CCB03-0D06-4d03-872C-3B221C1A1BE8}
+static const GUID clsidBinMoveInfo = 
+{ 0x9b8ccb03, 0xd06, 0x4d03, { 0x87, 0x2c, 0x3b, 0x22, 0x1c, 0x1a, 0x1b, 0xe8 } };
+// {CB8B45B8-E7FD-4863-B2D9-4E65AEFCDBDF}
+static const GUID clsidBinMove = 
+{ 0xcb8b45b8, 0xe7fd, 0x4863, { 0xb2, 0xd9, 0x4e, 0x65, 0xae, 0xfc, 0xdb, 0xdf } };
+// {3C16353D-1DC6-47e4-9813-A1E4CD568DC0}
+static const GUID clsidMorphSmoothInfo = 
+{ 0x3c16353d, 0x1dc6, 0x47e4, { 0x98, 0x13, 0xa1, 0xe4, 0xcd, 0x56, 0x8d, 0xc0 } };
+// {4B80BAEF-7585-49d9-8A84-5B260E0CACB6}
+static const GUID clsidMorphSmooth = 
+{ 0x4b80baef, 0x7585, 0x49d9, { 0x8a, 0x84, 0x5b, 0x26, 0xe, 0xc, 0xac, 0xb6 } };
+// {BF5F9405-1F6E-4BC1-B78A-5BDE41D76B98}
+static const GUID clsidBinDilateObjects = 
+{ 0xbf5f9405, 0x1f6e, 0x4bc1, { 0xb7, 0x8a, 0x5b, 0xde, 0x41, 0xd7, 0x6b, 0x98 } };
+// {8DBD5260-23D5-41DD-95E8-F9B057C0D15F}
+static const GUID clsidBinDilateObjectsInfo = 
+{ 0x8dbd5260, 0x23d5, 0x41dd, { 0x95, 0xe8, 0xf9, 0xb0, 0x57, 0xc0, 0xd1, 0x5f } };
+// {0094E8C6-FCED-44d0-BA21-DF1D609224F3}
+static const GUID clsidBinReconstructFore = 
+{ 0x94e8c6, 0xfced, 0x44d0, { 0xba, 0x21, 0xdf, 0x1d, 0x60, 0x92, 0x24, 0xf3 } };
+// {B81A7C8D-1CD4-4e0a-B1E9-2903F056CCB0}
+static const GUID clsidBinReconstructForeInfo = 
+{ 0xb81a7c8d, 0x1cd4, 0x4e0a, { 0xb1, 0xe9, 0x29, 0x3, 0xf0, 0x56, 0xcc, 0xb0 } };
+// {EEA5F64F-0017-421e-A7C5-A1408BF42BD9}
+static const GUID clsidBinReconstructBack = 
+{ 0xeea5f64f, 0x17, 0x421e, { 0xa7, 0xc5, 0xa1, 0x40, 0x8b, 0xf4, 0x2b, 0xd9 } };
+// {01652461-5FE8-4d31-ABE4-B2DC75004B34}
+static const GUID clsidBinReconstructBackInfo = 
+{ 0x1652461, 0x5fe8, 0x4d31, { 0xab, 0xe4, 0xb2, 0xdc, 0x75, 0x0, 0x4b, 0x34 } };
+// {C1297FB8-05F0-4b07-9605-2645776A68B9}
+static const GUID clsidBinDeleteSmallObjects = 
+{ 0xc1297fb8, 0x5f0, 0x4b07, { 0x96, 0x5, 0x26, 0x45, 0x77, 0x6a, 0x68, 0xb9 } };
+// {9F269CA8-9E37-49c2-A861-7CA20969C0E5}
+static const GUID clsidBinDeleteSmallObjectsInfo = 
+{ 0x9f269ca8, 0x9e37, 0x49c2, { 0xa8, 0x61, 0x7c, 0xa2, 0x9, 0x69, 0xc0, 0xe5 } };
+// MorphDivision
+// {9EC4DCA9-08EA-4d31-B136-97134EEF6F8D}
+static const GUID clsidBinMorphDivision = 
+{ 0x9ec4dca9, 0x8ea, 0x4d31, { 0xb1, 0x36, 0x97, 0x13, 0x4e, 0xef, 0x6f, 0x8d } };
+// {80057468-3B18-4a10-A195-BA2C27A5E023}
+static const GUID clsidBinMorphDivisionInfo = 
+{ 0x80057468, 0x3b18, 0x4a10, { 0xa1, 0x95, 0xba, 0x2c, 0x27, 0xa5, 0xe0, 0x23 } };
+// {98AAB52A-934A-4bfc-9A4F-A7960EBB51DA}
+static const GUID clsidResizeBin = 
+{ 0x98aab52a, 0x934a, 0x4bfc, { 0x9a, 0x4f, 0xa7, 0x96, 0xe, 0xbb, 0x51, 0xda } };
+// {385D547A-7BBB-4b09-BA90-E565345F3FBB}
+static const GUID clsidResizeBinInfo = 
+{ 0x385d547a, 0x7bbb, 0x4b09, { 0xba, 0x90, 0xe5, 0x65, 0x34, 0x5f, 0x3f, 0xbb } };
+// {9657C6D7-63CF-423c-BB81-1C5117214F25}
+static const GUID clsidBinMorphDivision2Info = 
+{ 0x9657c6d7, 0x63cf, 0x423c, { 0xbb, 0x81, 0x1c, 0x51, 0x17, 0x21, 0x4f, 0x25 } };
+// {5BC064F4-2188-4a8c-BD04-2D82947A8728}
+static const GUID clsidSmoothContour = 
+{ 0x5bc064f4, 0x2188, 0x4a8c, { 0xbd, 0x4, 0x2d, 0x82, 0x94, 0x7a, 0x87, 0x28 } };
+// {74DE8449-27D4-4e24-8123-FEB213F86BFB}
+static const GUID clsidSmoothContourInfo = 
+{ 0x74de8449, 0x27d4, 0x4e24, { 0x81, 0x23, 0xfe, 0xb2, 0x13, 0xf8, 0x6b, 0xfb } };
+
+
+
+#define pszImageProgID		"image.BinImage"
+#define pszImageInfoProgID	"image.BinImageInfo"
+#define pszBinViewProgID	"binary.BinaryView"
+#define pszTestActionInfoProgID	"binary.TestActionInfo"
+#define pszTestActionProgID		"binary.TestAction"
+#define pszBinCleanV4InfoProgID	"binary.BinCleanV4Info"
+#define pszBinCleanV4ProgID		"binary.BinCleanV4"
+#define pszBinMedianInfoProgID	"binary.BinMedianInfo"
+#define pszBinMedianProgID		"binary.BinMedian"
+#define pszBinErodeInfoProgID	"binary.BinErodeInfo"
+#define pszBinErodeProgID		"binary.BinErode"
+#define pszBinDilateInfoProgID	"binary.BinDilateInfo"
+#define pszBinDilateProgID		"binary.BinDilate"
+#define pszBinOpenInfoProgID	"binary.BinOpenInfo"
+#define pszBinOpenProgID		"binary.BinOpen"
+#define pszBinCloseInfoProgID	"binary.BinCloseInfo"
+#define pszBinCloseProgID		"binary.BinClose"
+#define pszBinNotInfoProgID	"binary.BinNotInfo"
+#define pszBinNotProgID		"binary.BinNot"
+#define pszBinOrInfoProgID	"binary.BinOrInfo"
+#define pszBinOrProgID		"binary.BinOr"
+#define pszBinAndInfoProgID	"binary.BinAndInfo"
+#define pszBinAndProgID		"binary.BinAnd"
+#define pszBinXorInfoProgID	"binary.BinXorInfo"
+#define pszBinXorProgID		"binary.BinXor"
+#define pszBinCustomLogicInfoProgID	"binary.BinCustomLogicInfo"
+#define pszBinCustomLogicProgID		"binary.BinCustomLogic"
+#define pszBinMoveInfoProgID	"binary.BinMoveInfo"
+#define pszBinMoveProgID		"binary.BinMove"
+#define pszMorphSmoothID		"binary.MorphSmooth"
+#define pszMorphSmoothInfoID	"binary.MorphSmoothInfo"
+#define pszBinDilateObjectsInfoProgID	"binary.BinDilateObjectsInfo"
+#define pszBinDilateObjectsProgID		"binary.BinDilateObjects"
+#define pszBinReconstructForeInfoProgID		"binary.BinReconstructForeInfo"
+#define pszBinReconstructForeProgID		"binary.BinReconstructFore"
+#define pszBinReconstructBackInfoProgID		"binary.BinReconstructBackInfo"
+#define pszBinReconstructBackProgID		"binary.BinReconstructBack"
+#define pszBinDeleteSmallObjectsInfoProgID		"binary.BinDeleteSmallObjectsInfo"
+#define pszBinDeleteSmallObjectsProgID		"binary.BinDeleteSmallObjects"
+// MorphDivision
+#define pszBinMorphDivisionInfoProgID	"binary.BinMorphDivisionInfo"
+#define pszBinMorphDivisionProgID		"binary.BinMorphDivision"
+// MorphDivision2
+#define pszBinMorphDivision2InfoProgID	"binary.BinMorphDivision2Info"
+#define pszBinMorphDivision2ProgID		"binary.BinMorphDivision2"
+
+// SmoothContour
+#define pszSmoothContourInfoProgID	"binary.SmoothContourInfo"
+#define pszSmoothContourProgID		"binary.SmoothContour"
+
+#define pszResizeBinProgID		"binary.ResizeBin"
+#define pszResizeBinInfoProgID		"binary.ResizeBinInfo"
+
+/*
+#endif //_DEBUG
+*/
+
+
+#endif //__image_app_h__

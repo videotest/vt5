@@ -1,0 +1,13 @@
+// forensic.odl : type library source for forensic.dll
+
+[ uuid(F8ECBEFE-B118-45CD-A838-6CF574406B06), version(1.0) ]
+library Forensic
+{
+	importlib("stdole32.tlb");
+	importlib("stdole2.tlb");
+
+
+
+	//{{AFX_APPEND_ODL}}
+	//}}AFX_APPEND_ODL}}
+};

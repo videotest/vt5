@@ -1,0 +1,75 @@
+// AciveColorsView.odl : type library source for ActiveX Control project.
+
+// This file will be processed by the Make Type Library (mktyplib) tool to
+// produce the type library (AciveColorsView.tlb) that will become a resource in
+// AciveColorsView.ocx.
+
+[ uuid(0C1F6A88-9DB3-11D3-A536-0000B493A187), version(1.0),
+  helpfile("AciveColorsView.hlp"),
+  helpstring("AciveColorsView ActiveX Control module"),
+  control ]
+library ACIVECOLORSVIEWLib
+{
+#include <olectl.h>
+#include <idispids.h>
+
+	importlib(STDOLE_TLB);
+	importlib(STDTYPE_TLB);
+
+	//  Primary dispatch interface for CAciveColorsViewCtrl
+
+	[ uuid(0C1F6A89-9DB3-11D3-A536-0000B493A187),
+	  helpstring("Dispatch interface for AciveColorsView Control"), hidden ]
+	dispinterface _DAciveColorsView
+	{
+		properties:
+			// NOTE - ClassWizard will maintain property information here.
+			//    Use extreme caution when editing this section.
+			//{{AFX_ODL_PROP(CAciveColorsViewCtrl)
+			[id(1)] BSTR BMPFileName;
+			[id(2)] OLE_COLOR LeftBtnTransparentColor;
+			[id(3)] OLE_COLOR RightBtnTransparentColor;
+			[id(4)] OLE_COLOR LeftBtnColor;
+			[id(5)] OLE_COLOR RightBtnColor;
+			[id(6)] OLE_COLOR ColorTransparent;
+			//}}AFX_ODL_PROP
+
+		methods:
+			// NOTE - ClassWizard will maintain method information here.
+			//    Use extreme caution when editing this section.
+			//{{AFX_ODL_METHOD(CAciveColorsViewCtrl)
+			//}}AFX_ODL_METHOD
+
+			[id(DISPID_ABOUTBOX)] void AboutBox();
+	};
+
+	//  Event dispatch interface for CAciveColorsViewCtrl
+
+	[ uuid(0C1F6A8A-9DB3-11D3-A536-0000B493A187),
+	  helpstring("Event interface for AciveColorsView Control") ]
+	dispinterface _DAciveColorsViewEvents
+	{
+		properties:
+			//  Event interface has no properties
+
+		methods:
+			// NOTE - ClassWizard will maintain event information here.
+			//    Use extreme caution when editing this section.
+			//{{AFX_ODL_EVENT(CAciveColorsViewCtrl)
+			//}}AFX_ODL_EVENT
+	};
+
+	//  Class information for CAciveColorsViewCtrl
+
+	[ uuid(0C1F6A8B-9DB3-11D3-A536-0000B493A187),
+	  helpstring("AciveColorsView Control"), control ]
+	coclass AciveColorsView
+	{
+		[default] dispinterface _DAciveColorsView;
+		[default, source] dispinterface _DAciveColorsViewEvents;
+	};
+
+
+	//{{AFX_APPEND_ODL}}
+	//}}AFX_APPEND_ODL}}
+};

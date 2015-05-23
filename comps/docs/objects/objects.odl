@@ -1,0 +1,135 @@
+// objects.odl : type library source for objects.dll
+
+// This file will be processed by the MIDL compiler to produce the
+// type library (objects.tlb).
+
+[ uuid(A594B22B-8B74-11D3-A684-0090275995FE), version(1.0) ]
+library Objects
+{
+	importlib("stdole32.tlb");
+	importlib("stdole2.tlb");
+
+
+	//  Primary dispatch interface for CMeasGroupMgr
+	[ uuid(F71103BA-5014-4b2b-B682-3EBFE453C01F) ]
+	dispinterface IMeasGroupMgrDisp
+	{
+		properties:
+			// NOTE - ClassWizard will maintain property information here.
+			//    Use extreme caution when editing this section.
+			//{{AFX_ODL_PROP(CMeasGroupMgr)
+			//}}AFX_ODL_PROP
+			
+		methods:
+			// NOTE - ClassWizard will maintain method information here.
+			//    Use extreme caution when editing this section.
+			//{{AFX_ODL_METHOD(CMeasGroupMgr)
+			//}}AFX_ODL_METHOD
+
+	};
+
+	//  Class information for CMeasGroupMgr
+
+	[ uuid(91678E7E-B56C-4c98-8671-84C40C65268F) ]
+	coclass MeasGroupMgr
+	{
+		[default] dispinterface IMeasGroupMgrDisp;
+	};
+
+
+
+
+	//  Primary dispatch interface for CFereMeasGroup
+	
+	[ uuid(D64C3F55-9E69-44F8-86F8-9D6DB95752FE) ]
+	dispinterface IFereMeasGroup
+	{
+		properties:
+			// NOTE - ClassWizard will maintain property information here.
+			//    Use extreme caution when editing this section.
+			//{{AFX_ODL_PROP(CFereMeasGroup)
+			//}}AFX_ODL_PROP
+			
+		methods:
+			// NOTE - ClassWizard will maintain method information here.
+			//    Use extreme caution when editing this section.
+			//{{AFX_ODL_METHOD(CFereMeasGroup)
+			//}}AFX_ODL_METHOD
+
+	};
+
+	//  Class information for CFereMeasGroup
+
+	[ uuid(1ADC0C0D-A5F2-40F6-AA99-60A1B238D0C6) ]
+	coclass FereMeasGroup
+	{
+		[default] dispinterface IFereMeasGroup;
+	};
+
+
+	//  Primary dispatch interface for COpticMeasureMan
+	
+	[ uuid(67C3AAD6-0466-4F36-8997-EA56BF924502) ]
+	dispinterface IOpticMeasureMan
+	{
+		properties:
+			// NOTE - ClassWizard will maintain property information here.
+			//    Use extreme caution when editing this section.
+			//{{AFX_ODL_PROP(COpticMeasureMan)
+			[id(1)] short Method;
+			//}}AFX_ODL_PROP
+			
+		methods:
+			// NOTE - ClassWizard will maintain method information here.
+			//    Use extreme caution when editing this section.
+			//{{AFX_ODL_METHOD(COpticMeasureMan)
+			[id(2)] void SetDarkField(IDispatch* pImage);
+			[id(3)] void SetBackground(IDispatch* pImage);
+			[id(4)] void Free();
+			[id(5)] double AddExample(double fDensity, IDispatch* dispImage);
+			[id(6)] bool RemoveSampleCalc(double dNominal, double dCalcToRemove);
+			[id(7)] long CalkAvgBack(IDispatch* dispImage);
+			[id(8)] double Interpolate(double fVal);
+			//}}AFX_ODL_METHOD
+
+	};
+
+	//  Class information for COpticMeasureMan
+
+	[ uuid(B8921000-6AC5-483D-A29E-B53BBF898097) ]
+	coclass OpticMeasureMan
+	{
+		[default] dispinterface IOpticMeasureMan;
+	};
+
+
+	//  Primary dispatch interface for COpticMeasGroup
+	
+	[ uuid(28484FDE-18CE-420D-885B-1FAE639F33B7) ]
+	dispinterface IOpticMeasGroup
+	{
+		properties:
+			// NOTE - ClassWizard will maintain property information here.
+			//    Use extreme caution when editing this section.
+			//{{AFX_ODL_PROP(COpticMeasGroup)
+			//}}AFX_ODL_PROP
+			
+		methods:
+			// NOTE - ClassWizard will maintain method information here.
+			//    Use extreme caution when editing this section.
+			//{{AFX_ODL_METHOD(COpticMeasGroup)
+			//}}AFX_ODL_METHOD
+
+	};
+
+	//  Class information for COpticMeasGroup
+
+	[ uuid(723BFD60-B073-4C1E-AFCE-AB17F39F7063) ]
+	coclass OpticMeasGroup
+	{
+		[default] dispinterface IOpticMeasGroup;
+	};
+
+	//{{AFX_APPEND_ODL}}
+	//}}AFX_APPEND_ODL}}
+};

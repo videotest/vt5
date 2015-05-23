@@ -1,0 +1,341 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// Chinese (P.R.C.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)
+#ifdef _WIN32
+LANGUAGE LANG_CHINESE, SUBLANG_CHINESE_SIMPLIFIED
+#pragma code_page(936)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_THUMBNAIL_DLG DIALOG  0, 0, 256, 151
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Àı¬‘Õº∂‘ª∞øÚ"
+FONT 8, "MS Sans Serif"
+BEGIN
+    EDITTEXT        IDC_GENERATE_WIDTH,61,41,40,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_GENERATE_HEIGHT,168,41,40,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_X,33,69,40,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_Y,34,86,40,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_WIDTH,107,70,40,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_HEIGHT,108,87,40,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_FLAGS,33,108,40,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_LPARAM,109,108,40,14,ES_AUTOHSCROLL
+    DEFPUSHBUTTON   "»∑∂®",IDOK,199,7,50,14
+    PUSHBUTTON      "»°œ˚",IDCANCEL,199,24,50,14
+    LTEXT           "∂‘œÛ:",IDC_STATIC,7,23,24,8
+    LTEXT           "X",IDC_STATIC,7,72,8,8
+    LTEXT           "Y",IDC_STATIC,7,88,8,8
+    LTEXT           "±Íº«",IDC_STATIC,7,110,18,8
+    LTEXT           "øÌ∂»",IDC_STATIC,81,73,20,8
+    LTEXT           "∏ﬂ∂»",IDC_STATIC,81,89,22,8
+    LTEXT           "LParam",IDC_STATIC,84,111,25,8
+    LTEXT           "…˙≥…øÌ∂»",IDC_STATIC,7,43,51,8
+    LTEXT           "…˙≥…∏ﬂ∂»",IDC_STATIC,107,44,53,8
+    COMBOBOX        IDC_OBJECT_NAME,36,20,141,188,CBS_DROPDOWN | CBS_SORT | 
+                    WS_VSCROLL | WS_TABSTOP
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO 
+BEGIN
+    IDD_THUMBNAIL_DLG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 249
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 144
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDI_DEFAULT_ICON        ICON                    "icon1.ico"
+IDI_IMAGE_ADV           ICON                    "ico00001.ico"
+IDI_AVI_ADD             ICON                    "avi_add.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// WMFDATA
+//
+
+WMF_NO_IMAGE            WMFDATA                 "WmfNoImage.bin"
+WMF_NO_IMAGE_ADV        WMFDATA                 "wmfNoImageAdv.bin"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE 
+BEGIN
+    IDS_SHOW_THUMBNAIL      "ShowThumbnail\nœ‘ æÀı¬‘Õº\n ˝æ›\nœ‘ æÀı¬‘Õº\nœ‘ æÀı¬‘Õº"
+END
+
+#endif    // Chinese (P.R.C.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+/////////////////////////////////////////////////////////////////////////////
+// Russian resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_RUS)
+#ifdef _WIN32
+LANGUAGE LANG_RUSSIAN, SUBLANG_DEFAULT
+#pragma code_page(1251)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_THUMBNAIL_DLG DIALOG  0, 0, 236, 131
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "”ÒÚ‡ÌÓ‚ÍË Í‡‰‡"
+FONT 8, "MS Sans Serif"
+BEGIN
+    EDITTEXT        IDC_GENERATE_WIDTH,42,41,40,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_GENERATE_HEIGHT,131,41,40,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_X,42,67,40,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_Y,42,83,40,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_WIDTH,131,67,40,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_HEIGHT,131,83,40,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_FLAGS,42,108,40,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_LPARAM,131,108,40,14,ES_AUTOHSCROLL
+    DEFPUSHBUTTON   "OK",IDOK,179,7,50,14
+    PUSHBUTTON      "ŒÚÏÂÌ‡",IDCANCEL,179,24,50,14
+    LTEXT           "Œ·˙ÂÍÚ:",IDC_STATIC,7,23,28,8
+    LTEXT           "X",IDC_STATIC,27,70,8,8
+    LTEXT           "Y",IDC_STATIC,27,85,8,8
+    LTEXT           "‘Î‡„Ë",IDC_STATIC,7,110,24,8
+    LTEXT           "ÿËËÌ‡",IDC_STATIC,95,70,27,8
+    LTEXT           "¬˚ÒÓÚ‡",IDC_STATIC,95,85,26,8
+    LTEXT           "œ‡‡ÏÂÚ",IDC_STATIC,95,111,35,8
+    LTEXT           "ÿËËÌ‡",IDC_STATIC,7,43,27,8
+    LTEXT           "¬˚ÒÓÚ‡",IDC_STATIC,95,43,29,8
+    COMBOBOX        IDC_OBJECT_NAME,42,20,130,188,CBS_DROPDOWN | CBS_SORT | 
+                    WS_VSCROLL | WS_TABSTOP
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO 
+BEGIN
+    IDD_THUMBNAIL_DLG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 229
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 124
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)\r\n"
+    "#ifdef _WIN32\r\n"
+    "LANGUAGE 9, 1\r\n"
+    "#pragma code_page(1252)\r\n"
+    "#endif //_WIN32\r\n"
+    "#include ""res\\ThumbMan.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "#include ""afxres.rc""         // Standard components\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE 
+BEGIN
+    IDS_SHOW_THUMBNAIL      "ShowThumbnail\nœÓÍ‡Á‡Ú¸ Í‡‰\nData\nœÓÍ‡Á‡Ú¸ Í‡‰\nœÓÍ‡Á‡Ú¸ Í‡‰"
+END
+
+#endif    // Russian resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.S.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_THUMBNAIL_DLG DIALOG  0, 0, 256, 151
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Thumbnail Dialog"
+FONT 8, "MS Sans Serif"
+BEGIN
+    EDITTEXT        IDC_GENERATE_WIDTH,61,41,40,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_GENERATE_HEIGHT,168,41,40,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_X,33,69,40,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_Y,34,86,40,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_WIDTH,107,70,40,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_HEIGHT,108,87,40,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_FLAGS,33,108,40,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_LPARAM,109,108,40,14,ES_AUTOHSCROLL
+    DEFPUSHBUTTON   "OK",IDOK,199,7,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,199,24,50,14
+    LTEXT           "Object:",IDC_STATIC,7,23,24,8
+    LTEXT           "X",IDC_STATIC,7,72,8,8
+    LTEXT           "Y",IDC_STATIC,7,88,8,8
+    LTEXT           "Flags",IDC_STATIC,7,110,18,8
+    LTEXT           "Width",IDC_STATIC,81,73,20,8
+    LTEXT           "Height",IDC_STATIC,81,89,22,8
+    LTEXT           "LParam",IDC_STATIC,84,111,25,8
+    LTEXT           "Generate Width",IDC_STATIC,7,43,51,8
+    LTEXT           "Generate Height",IDC_STATIC,107,44,53,8
+    COMBOBOX        IDC_OBJECT_NAME,36,20,141,188,CBS_DROPDOWN | CBS_SORT | 
+                    WS_VSCROLL | WS_TABSTOP
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO 
+BEGIN
+    IDD_THUMBNAIL_DLG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 249
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 144
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDI_DEFAULT_ICON        ICON                    "icon1.ico"
+IDI_IMAGE_ADV           ICON                    "ico00001.ico"
+IDI_AVI_ADD             ICON                    "avi_add.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// WMFDATA
+//
+
+WMF_NO_IMAGE            WMFDATA                 "WmfNoImage.bin"
+WMF_NO_IMAGE_ADV        WMFDATA                 "wmfNoImageAdv.bin"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE 
+BEGIN
+    IDS_SHOW_THUMBNAIL      "ShowThumbnail\nShow Thumbnail\nData\nShow Thumbnail\nShow Thumbnail"
+END
+
+#endif    // English (U.S.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE 9, 1
+#pragma code_page(1252)
+#endif //_WIN32
+#include "res\ThumbMan.rc2"  // non-Microsoft Visual C++ edited resources
+#include "afxres.rc"         // Standard components
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

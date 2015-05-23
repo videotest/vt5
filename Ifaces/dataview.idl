@@ -1,0 +1,27 @@
+typedef LONG_PTR TPOS;
+
+[
+	uuid(56E8638B-A601-4ac2-BB0B-FFCE962B2391),
+	version(1.0),
+	helpstring("VideoTesT 5 DataView Type Library")
+]
+library DataViewTypeLib
+{
+
+[uuid(D3A6B9E3-F6D3-49e6-B178-F57B5D536C39)]
+interface IClassView : IUnknown
+{
+};
+
+[uuid(00EBE551-A884-4405-943D-B1A668408245)]
+interface IGridView : IUnknown
+{
+	HRESULT	GetObjectByRow( long lrow, IUnknown **ppunkObject ) = 0;
+
+	HRESULT	GetRowHeight( long lrow, long *lpheight ) = 0;
+	HRESULT	SetRowHeight( long lrow, long lheight ) = 0;
+	HRESULT	GetColumnWidth( long lcolumn, long *lpwidth ) = 0;
+	HRESULT	SetColumnWidth( long lcolumn, long lwidth ) = 0;
+};
+
+};

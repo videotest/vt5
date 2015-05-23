@@ -1,0 +1,44 @@
+// monster.odl : type library source for monster.dll
+
+// This file will be processed by the MIDL compiler to produce the
+// type library (monster.tlb).
+
+[ uuid(223D1DB4-70AD-11D3-A65B-0090275995FE), version(1.0) ]
+library Monster
+{
+	importlib("stdole32.tlb");
+	importlib("stdole2.tlb");
+
+
+
+
+	//  Primary dispatch interface for CMonsterWindow
+	
+	[ uuid(223D1DC1-70AD-11D3-A65B-0090275995FE) ]
+	dispinterface IMonsterWindow
+	{
+		properties:
+			// NOTE - ClassWizard will maintain property information here.
+			//    Use extreme caution when editing this section.
+			//{{AFX_ODL_PROP(CMonsterWindow)
+			//}}AFX_ODL_PROP
+			
+		methods:
+			// NOTE - ClassWizard will maintain method information here.
+			//    Use extreme caution when editing this section.
+			//{{AFX_ODL_METHOD(CMonsterWindow)
+			//}}AFX_ODL_METHOD
+
+	};
+
+	//  Class information for CMonsterWindow
+
+	[ uuid(223D1DC2-70AD-11D3-A65B-0090275995FE) ]
+	coclass MonsterWindow
+	{
+		[default] dispinterface IMonsterWindow;
+	};
+
+	//{{AFX_APPEND_ODL}}
+	//}}AFX_APPEND_ODL}}
+};

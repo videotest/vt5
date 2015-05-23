@@ -1,0 +1,704 @@
+ActionName	UserName	GroupName	Help	Type	FileName	ArgIn	ArgOut
+Redo	Повторить	Правка	Повторить последнюю ранее отмененную операцию Повторить		D:\vt5\vt5\debug\comps\ActionMan.dll			
+Undo	Отменить	Правка	Отменить последнюю выполненную операцию Отменить		D:\vt5\vt5\debug\comps\ActionMan.dll			
+EnumActions	Список акций...	For Developers	Список акций Список акций		D:\vt5\vt5\debug\comps\ActionMan.dll			
+RunScript	Командная строка...	Сервис	Run the script Командная строка		D:\vt5\vt5\debug\comps\ActionMan.dll			
+ShowLayout	Показать расположение элементов оформления	Расположение	Показать расположение элементов оформления Показать расположение элементов оформления		D:\vt5\vt5\debug\comps\axeditor.dll			
+AxInsertControl	Вставить элемент оформления	Расположение	Вставить новый  элемент оформления Вставить элемент оформления	 (interactive)	D:\vt5\vt5\debug\comps\axeditor.dll	ProgID:string		
+AxChangeSize	Изменить размер элемента оформления	Расположение	Изменить размер элемента оформления Изменить размер элемента оформления		D:\vt5\vt5\debug\comps\axeditor.dll	width:int=-1; height:int=-1		
+AxControlProperties	Свойства	Расположение	Изменить свойства элемента оформления Свойства элемента оформления		D:\vt5\vt5\debug\comps\axeditor.dll			
+AxAlignLeft	Выравнивание по левому краю	Расположение	Выравнивание по левому краю Выравнивание по левому краю		D:\vt5\vt5\debug\comps\axeditor.dll			
+AxAlignTop	Выравнивание по верхнему краю	Расположение	Выравнивание по верхнему краю Выравнивание по верхнему краю		D:\vt5\vt5\debug\comps\axeditor.dll			
+AxAlignRight	Выравнивание по правому краю	Расположение	Выравнивание по правому краю Выравнивание по правому краю		D:\vt5\vt5\debug\comps\axeditor.dll			
+AxAlignBottom	Выравнивание по нижнему краю	Расположение	Выравнивание по нижнему краю Выравнивание по нижнему краю		D:\vt5\vt5\debug\comps\axeditor.dll			
+AxSpaceAccross	Горизонтальный интервал	Расположение	Выравнивание горизонтального интервала Горизонтальный интервал		D:\vt5\vt5\debug\comps\axeditor.dll			
+AxSpaceDown	Вертикальный интервал	Расположение	Выравнивание вертикального интервала Вертикальный интервал		D:\vt5\vt5\debug\comps\axeditor.dll			
+AxMakeSameWidth	Выравнивание по ширине	Расположение	Выравнивание по ширине Выравнивание по ширине		D:\vt5\vt5\debug\comps\axeditor.dll			
+AxMakeSameHeight	Выравнивание по высоте	Расположение	Выравнивание по высоте Выравнивание по высоте		D:\vt5\vt5\debug\comps\axeditor.dll			
+AxMakeSameSize	Выравнивание по размеру	Расположение	Выравнивание по размеру Выравнивание по размеру		D:\vt5\vt5\debug\comps\axeditor.dll			
+AxSetControlSize	Установить размер элемента оформления	Расположение	Установить размер элемента оформления Установить размер элемента оформления		D:\vt5\vt5\debug\comps\axeditor.dll	left:int=10; top:int=10; right:int=110; bottom:int=110		
+AxAddEventHandlers	Добавить обработчика событий	Расположение	Добавить обработчика событий Добавить обработчика событий		D:\vt5\vt5\debug\comps\axeditor.dll			
+AxIncMoveSize	Изменить размер элементов оформления	Расположение	Изменить размер элементов оформления Изменить размер элементов оформления		D:\vt5\vt5\debug\comps\axeditor.dll	dx:int=0; dy:int=0; dcx:int=0; dcy:int=0		
+AxShowControlID	Показать идентификаторы справки	Расположение	Показать идентификаторы справки Показать идентификаторы справки		D:\vt5\vt5\debug\comps\axeditor.dll			
+FormPressCancel	Form Press Cancel	Layout	Form Press Cancel Form Press Cancel		D:\vt5\vt5\debug\comps\axform.dll			
+FormPressOK	Form Press OK	Layout	Form Press OK Form Press OK		D:\vt5\vt5\debug\comps\axform.dll			
+CalcStat	Статистический анализ	Classification	Статистический анализ Статистический анализ		D:\vt5\vt5\debug\comps\Classes.dll			
+ObjectSetClass	Назначить класс	Classification	Назначить класс для выбранного обекта Назначить класс		D:\vt5\vt5\debug\comps\Classes.dll	ClassName:string		
+ClassRename	Переименовать класс	Classification	Переименовать класс Переименовать класс		D:\vt5\vt5\debug\comps\Classes.dll	OldName:string; NewName:string		
+ClassRecolor	Изменить цвет класса	Classification	Изменить цвета класса Изменить цвет класса		D:\vt5\vt5\debug\comps\Classes.dll	ClassName:string; Color:int=0		
+ClassCreate	Создать класс	Classification	Создать новый класс Создать класс		D:\vt5\vt5\debug\comps\Classes.dll	ClassName:string		
+ClassDelete	Удалить класс	Classification	Удалить выбранный класс Удалить класс		D:\vt5\vt5\debug\comps\Classes.dll	ClassName:string		
+ObjectSetClassDirect	Назначить класс для объекта	Classification	Назначить активный класс для выбранного объекта Назначить класс для объекта		D:\vt5\vt5\debug\comps\Classes.dll	ObjectName:string; ClassName:string		
+SetActiveClass	Активизировать класс	Classification	Выбрать класс и активизировать его Активизировать класс		D:\vt5\vt5\debug\comps\Classes.dll	ClassName:string		
+CollectByDisp	Расширенный фокус по Disp	Internal Actions	Создать результирующее изображение по Disp Расширенный фокус по Disp	 (filter)	D:\vt5\vt5\debug\comps\Collect.dll	Image0:Image; Image1:Image; Image2:Image; Image3:Image; Image4:Image; Image5:Image; Image6:Image; Image7:Image; Image8:Image; Image9:Image; Image10:Image; Image11:Image; Image12:Image; Image13:Image; Image14:Image; Image15:Image; Image16:Image; Image17:Image; Image18:Image; Image19:Image; Image20:Image	Focus Result:Image	
+CollectByPoints	Расширенный фокус  по точкам	Internal Actions	Создать результирующее изображение по точкам Расширенный фокус  по точкам	 (filter)	D:\vt5\vt5\debug\comps\Collect.dll	Image0:Image; Image1:Image; Image2:Image; Image3:Image; Image4:Image; Image5:Image; Image6:Image; Image7:Image; Image8:Image; Image9:Image; Image10:Image; Image11:Image; Image12:Image; Image13:Image; Image14:Image; Image15:Image; Image16:Image; Image17:Image; Image18:Image; Image19:Image; Image20:Image	CollectedByPoints:Image	
+CollectByMasks	Расширенный фокус по маскам	Internal Actions	Создать результирующее изображение по маскам Расширенный фокус по маскам	 (filter)	D:\vt5\vt5\debug\comps\Collect.dll	Image0:Image; Image1:Image; Image2:Image; Image3:Image; Image4:Image; Image5:Image; Image6:Image; Image7:Image; Image8:Image; Image9:Image; Image10:Image; Image11:Image; Image12:Image; Image13:Image; Image14:Image; Image15:Image; Image16:Image; Image17:Image; Image18:Image; Image19:Image; Image20:Image	Focus Result:Image	
+CompareImages	Сравнить изображения	Изображение	Поворот-PgDn, PgUp; перемещение-стрелки; изм-е размера-Shift+стрелки Сравнить изображения	 (interactive)	D:\vt5\vt5\debug\comps\Compare.dll			
+FreeTransformation	Свободное преобразование	Изображение	Свободное преобразование изображения Свободное преобразование	 (interactive)	D:\vt5\vt5\debug\comps\Compare.dll			
+TransformationByPoints	Совместить точки на изображениях	Изображение	Совместить реперные точки на изображениях. Установите на каждом изображении соответствующие точки. Двойное нажатие - завершение операции Совмещение точек	 (interactive)	D:\vt5\vt5\debug\comps\Compare.dll			
+SendTo	Отправить в...	Сервис	Отправить активный элемент в другой открытый документ Отправить в		D:\vt5\vt5\debug\comps\Data.dll	SourceDocGuid:string; TargetDocGuid:string; PutToDocument:int=1; DBaseFieldName:string; NewDocument:int=0; SingleObjectName:string		
+DataToExcelAvail	DataToExcelAvail	Правка	DataToExcelAvail DataToExcelAvail		D:\vt5\vt5\debug\comps\Data.dll			
+ClipboardAvail	Буфер обмена доступен	Правка	Буфер обмена доступен Буфер обмена доступен		D:\vt5\vt5\debug\comps\Data.dll			
+CreateImageByView	Объединить видимые элементы	Изображение	Объединить элементы из активной части окна документа Объединить видимые элементы		D:\vt5\vt5\debug\comps\Data.dll	ImageName:string		
+ObjectNew	Новый элемент...	Правка	Создание нового элемента в активном документе Новый элемент		D:\vt5\vt5\debug\comps\Data.dll	Type:string; Name:string; ActivateObject:int=1		
+ObjectSelect	Выбрать элемент	Правка	Выбор существующего элемента Выбрать элемент		D:\vt5\vt5\debug\comps\Data.dll	Object:string; ActivateType:int=0		
+ObjectDelete	Удалить элемент(ы)	Правка	Удаление элементов, выбранных в окне Содержание Удалить выбранные элементы		D:\vt5\vt5\debug\comps\Data.dll	Object:string		
+ObjectRename	Переименовать элемент...	Правка	Переименование элемента Переименовать элемент		D:\vt5\vt5\debug\comps\Data.dll	OldName:string; NewName:string		
+ObjectProperties	Свойства элемента	Правка	Свойства элемента Свойства элемента		D:\vt5\vt5\debug\comps\Data.dll	Object:string		
+ObjectLoad	Загрузить элемент	Файл	Загрузить новый элемент Загрузить элемент		D:\vt5\vt5\debug\comps\Data.dll	Type:string; Path:string; ActivateObject:int=1		
+ObjectSave	Сохранить элемент как...	Файл	Сохранение элемента в отдельном файле Сохранить элемент как		D:\vt5\vt5\debug\comps\Data.dll	ObjectName:string; Path:string		
+ObjectOrganize	Организовать элементы	Правка	Организовать элементы Организовать элементы		D:\vt5\vt5\debug\comps\Data.dll			
+ObjectMoveToApp	Переместить элемент в приложение	Правка	Перемещение элемента из документа в приложение Переместить элемент в приложение		D:\vt5\vt5\debug\comps\Data.dll	ObjectName:string		
+ObjectMoveToDoc	Переместить элемент в документ	Правка	Перемещение элемента из приложения в документ Переместить элемент в документ		D:\vt5\vt5\debug\comps\Data.dll	ObjectName:string		
+EditPaste	Вставить	Правка	Вставить элемент из буфера обмена Вставить		D:\vt5\vt5\debug\comps\Data.dll			
+EditCut	Вырезать	Правка	Переместить  элемент в буфер обмена Вырезать		D:\vt5\vt5\debug\comps\Data.dll	ObjectName:string		
+EditCopy	Копировать	Правка	Копирование элемента в буфер обмена Копировать		D:\vt5\vt5\debug\comps\Data.dll	ObjectName:string		
+ObjectDrag	ObjectDrag	По умолчанию	ObjectDrag ObjectDrag		D:\vt5\vt5\debug\comps\Data.dll	xOffset:int=0; yOffset:int=0		
+ObjectDrop	ObjectDrop	По умолчанию	ObjectDrop ObjectDrop		D:\vt5\vt5\debug\comps\Data.dll	PositionX:int=0; PositionY:int=0; Copy:int=0		
+ObjectDeleteSelection	Удалить активный объект	Правка	Удаление активного объекта Удалить активный объект		D:\vt5\vt5\debug\comps\Data.dll			
+DataShowContents	Показать сожержание данных...	For Developers	Показать сожержание данных Показать сожержание данных		D:\vt5\vt5\debug\comps\Data.dll			
+DataUnselect	Снять выделение всех объектов	Internal Actions	Снять выделение всех объектов Снять выделение всех объектов		D:\vt5\vt5\debug\comps\Data.dll			
+ShowContext	Окно Содержание	Вид	Показать окно Содержание документа Окно Содержание		D:\vt5\vt5\debug\comps\Data.dll			
+ChooseObject	Выбрать объект...	Правка	Выбрать объект Выбрать объект		D:\vt5\vt5\debug\comps\DataUI.dll			
+GridObjectHeight	Высота строки	---	Высота строки Высота строки		D:\vt5\vt5\debug\comps\DataView.dll	ObjectRow:int=-1; Height:int=100		
+CopyAllMeasCell	Копировать все ячейкиl	Измерения	Копировать все ячейки Копировать все ячейки		D:\vt5\vt5\debug\comps\DataView.dll			
+CopySelectedMeasCell	Копировать выбранные ячейкиl	Измерения	Копировать выбранные ячейки Копировать выбранные ячейки		D:\vt5\vt5\debug\comps\DataView.dll			
+AlignGridByImage	Выровнять сетку по изображению	Измерения	Выровнять сетку по изображению Выровнять сетку по изображению		D:\vt5\vt5\debug\comps\DataView.dll			
+RemoveParam	Удалить столбец ручных измерений	Измерения	Удаление выбранных результатов ручных измерений из списка объектов Удалить столбец ручных измерений		D:\vt5\vt5\debug\comps\DataView.dll	ParamKey:int=-1		
+CreateNewParam	Создать новый параметр измерений	Internal Actions	Создать новый параметр для ручных измерений Создать новый параметр измерений		D:\vt5\vt5\debug\comps\DataView.dll	ParamType:string; ParamName:string; Number:int=1		
+ShowClassView	Показать классы	Вид	Показать классы Показать классы		D:\vt5\vt5\debug\comps\DataView.dll			
+ShowMeasView	Таблица измерений	Вид	Показать результаты измерений Таблица измерений		D:\vt5\vt5\debug\comps\DataView.dll			
+ZoomInTable	Увеличить на 10 %	Вид	Увеличить на 10 % Увеличить на 10%		D:\vt5\vt5\debug\comps\DataView.dll			
+ZoomOutTable	Уменьшить на 10 %	Вид	Уменьшить на 10 % Уменьшить на 10 %		D:\vt5\vt5\debug\comps\DataView.dll			
+RemoveMMObjects	Удалить все	Измерения	Удаление всех результатов ручных измерений из активного списка Удалить все		D:\vt5\vt5\debug\comps\DataView.dll	ObjList:string		
+AlignGridByCell	Выравнивание по выделенной ячейке	Вид	Выравнивание размера всех ячеек таблицы по выделенной Выравнивание по выделенной ячейке		D:\vt5\vt5\debug\comps\DataView.dll	CellRow:int=-1; CellCol:int=-1		
+AlignGridDefault	Выравнивание по умолчанию	Вид	Выравнивание размера всех ячеек таблицы по умолчанию Выравнивание по умолчанию		D:\vt5\vt5\debug\comps\DataView.dll			
+GridMoveParam	Переместить колонку	---	Переместить колонку Переместить колонку		D:\vt5\vt5\debug\comps\DataView.dll	ParamKey:int=-1; ParamKeyAfter:int=100		
+GridParamWidth	Ширина колонки	---	Ширина колонки Ширина колонки		D:\vt5\vt5\debug\comps\DataView.dll	ParamKey:int=-1; Width:int=100		
+GridRenameParam	Переименовать параметр	---	Переименовать параметр Переименовать параметр		D:\vt5\vt5\debug\comps\DataView.dll	ParamKey:int=-1; Name:string=NewName		
+EditMarker	Произвольный маркер	Измерения	Калибровочный маркер произвольной длины Произвольный маркер	 (interactive)	D:\vt5\vt5\debug\comps\Editor.dll	X:int=0; Y:int=0; Length:double=0; Precision:int=1		
+EditArrow	Стрелка	Редактор	Нанести стрелку на изображение Стрелка	 (interactive)	D:\vt5\vt5\debug\comps\Editor.dll			
+EditCircleArrow	Set Circle Arrow	Редактор	Set circle arrow to the image Circle arrow	 (interactive)	D:\vt5\vt5\debug\comps\Editor.dll			
+EditLine	Прямая линия	Редактор	Левая кнопка мыши-цвет линии, правая-цвет фона. Shift-доп. возможности. Ctrl-Пипетка. Прямая линия	 (interactive)	D:\vt5\vt5\debug\comps\Editor.dll	X1:int=0; Y1:int=0; X2:int=0; Y2:int=0		
+EditFreeLine	Произвольная линия	Редактор	Левая кнопка мыши-цвет линии, правая-цвет фона. Ctrl-Пипетка. Произвольная линия	 (interactive)	D:\vt5\vt5\debug\comps\Editor.dll			
+EditSplainLine	Линия сплайном	Редактор	Левая кнопка-цвет линии, правая-цвет фона.Ctrl-Пипетка. Завершение-двойное нажатие левой кнопки. Линия сплайном	 (interactive)	D:\vt5\vt5\debug\comps\Editor.dll			
+EditCircle	Окружность	Редактор	Используйте для нанесения правую или левую кнопки мыши. Ctrl-Пипетка. Окружность	 (interactive)	D:\vt5\vt5\debug\comps\Editor.dll	X:int=0; Y:int=0; D:int=0		
+EditRect	Прямоугольник	Редактор	Используйте для нанесения правую или левую кнопки мыши. Shift-доп. возможности. Ctrl-Пипетка. Прямоугольник	 (interactive)	D:\vt5\vt5\debug\comps\Editor.dll	Left:int=0; Top:int=0; Right:int=0; Bottom:int=0		
+AutoBack	Auto Background	Internal Actions	Auto background Auto background		D:\vt5\vt5\debug\comps\Editor.dll			
+PickColor	Пипетка	Редактор	Выбор цвета на изображении: правая или левая кнопки мыши Пипетка	 (interactive)	D:\vt5\vt5\debug\comps\Editor.dll	X:int=-1; Y:int=-1; SetBack:int=-1; SaveResult:int=1		
+FloodFill	Заливка	Редактор	Заливка однородным цветом: правая или левая кнопки мыши Заливка	 (interactive)	D:\vt5\vt5\debug\comps\Editor.dll	SetBack:int=-1		
+Dodge	Осветление	Преобразования	Осветлить участки изображения Осветление	 (interactive)	D:\vt5\vt5\debug\comps\Editor.dll			
+Burn	Затемнение	Преобразования	Затемнить участки изображения Затемнение	 (interactive)	D:\vt5\vt5\debug\comps\Editor.dll			
+BinEditLine	Прямая линия на бинарном изображении	Редактор бинарного	Нанести прямую линию на бинарное изображение. Shift - дополнительные возможности. Прямая линия на бинарном изображении	 (interactive)	D:\vt5\vt5\debug\comps\Editor.dll	X1:int=0; Y1:int=0; X2:int=0; Y2:int=0		
+BinEditFreeLine	Произвольная линия на бинарном изображении	Редактор бинарного	Нанести произвольную линию на бинарное изображение Произвольная линия на бинарном изображении	 (interactive)	D:\vt5\vt5\debug\comps\Editor.dll			
+BinEditSplainLine	Линия сплайном на бинарном изображении	Редактор бинарного	Линия сплайном на бинарном изображении. Завершение - двойное нажатие левой кнопки мыши Линия сплайном на бинарном изображении	 (interactive)	D:\vt5\vt5\debug\comps\Editor.dll			
+EditPolyline	Ломаная линия	Редактор	Левая кнопка-цвет линии, правая-цвет фона.Ctrl-Пипетка. Завершение-двойное нажатие левой кнопки. Ломаная линия	 (interactive)	D:\vt5\vt5\debug\comps\Editor.dll			
+BinEditPolyline	Линия полигоном на бинарном изображении	Редактор бинарного	Линия полигоном на бинарном изображении. Завершение - двойное нажатие левой кнопки мыши Линия полигоном на бинарном изображении	 (interactive)	D:\vt5\vt5\debug\comps\Editor.dll			
+Comment	Комментарий	Редактор	Рисовать:левая кнопка мыши, Ctrl+Enter:переход строки, Enter: завершить Комментарий	 (interactive)	D:\vt5\vt5\debug\comps\Editor.dll	X:int=-1; Y:int=-1; xArrow:int=-1; yArrow:int=-1; nCommentID:int=-1; Text:string		
+Even	Выравнивание фона	Internal Actions	Выравнивание фона Выравнивание фона	 (filter)	D:\vt5\vt5\debug\comps\Even.dll	MaskSize:int=16; Contrast:bool=0; EvenColor:bool=0; Restriction:bool=0; Source:Image	Even:Image	
+GrayThresholding	Полутоновая бинаризация	Фильтры	Полутоновая бинаризация Полутоновая бинаризация	 (filter)	D:\vt5\vt5\debug\comps\FiltersMain.dll	Low:int=96; High:int=192; Image:Image; PaneNum:int=-1	ObjectList:Object List	
+AddRemoveColor	Добавить/удалить цвет	Internal Actions	Добавить/удалить цвет Добавить/удалить цвет	 (interactive)	D:\vt5\vt5\debug\comps\FiltersMain.dll	X:int=-1; Y:int=-1		
+AddRemoveColorInterval	Добавить/удалить цветовой интервал	Internal Actions	Добавить или удалить цветовой интервал Добавить/удалить цветовой интервал	 (interactive)	D:\vt5\vt5\debug\comps\FiltersMain.dll			
+ExtractPhase	Выделить фазу	Internal Actions	Выделить фазу Выделить фазу	 (filter)	D:\vt5\vt5\debug\comps\FiltersMain.dll	Class:int=-1; Image:Image	ObjectList:Object List	
+GrayThresholdingBin	Бинаризация полутонового	Фильтры	Бинаризация полутонового Бинаризация полутонового	 (filter)	D:\vt5\vt5\debug\comps\FiltersMain.dll	Low:int=96; High:int=192; Image:Image; PaneNum:int=-1	ThresholdingGray:Binary	
+MeasurePhasesLight	Измерить фазы на бинарном	Фильтры	Измерить фазы на бинарном Измерить фазы на бинарном	 (filter)	D:\vt5\vt5\debug\comps\FiltersMain.dll	BaseImage:Image; BinImage:Binary; Calc:int=1; Phase:int=-1; CopyPhases:int=1; ClassifierName:string	MeasureBin:Object List	
+MeasurePhases	Измерить фазы на бинарном	Фильтры	Измерить фазы на бинарном Измерить фазы на бинарном	 (filter)	D:\vt5\vt5\debug\comps\FiltersMain.dll	BaseImage:Image; BinImage:Binary; Calc:int=1; Phase:int=-1; CopyPhases:int=0; ClassifierName:string	MeasureBin:Object List	
+MeasureBin	Измерить бинарное	Фильтры	Измерить бинарное Измерить бинарное	 (filter)	D:\vt5\vt5\debug\comps\FiltersMain.dll	BaseImage:Image; BinImage:Binary; Calc:int=1; Phase:int=-1; CopyPhases:int=0	MeasureBin:Object List	
+Erode	Эрозия	Internal Actions	Применить фильтр Эрозия к активному изображению Эрозия	 (filter)	D:\vt5\vt5\debug\comps\FiltersMain.dll	MaskSize:int=5; Source:Image	Erode:Image	
+Dilate	Дилатация	Internal Actions	Применить фильтр Дилатация к активному изображению Дилатация	 (filter)	D:\vt5\vt5\debug\comps\FiltersMain.dll	MaskSize:int=5; Source:Image	Dilate:Image	
+Open	Открытие	Фильтры	Применить фильтр Открытие к активному изображению Открытие	 (filter)	D:\vt5\vt5\debug\comps\FiltersMain.dll	MaskSize:int=5; Source:Image	Open:Image	
+Close	Закрытие	FInternal Actions	Применить фильтр Закрытие к активному изображению Закрытие	 (filter)	D:\vt5\vt5\debug\comps\FiltersMain.dll	MaskSize:int=5; Source:Image	Close:Image	
+Boundary	Границы	Internal Actions	Применить фильтр Усиление Границ к текущему изображению Границы	 (filter)	D:\vt5\vt5\debug\comps\FiltersMain.dll	MaskSize:int=5; Power:int=3; Source:Image	Boundary:Image	
+BinaryExtractPhases	Выделить бинарные фазы	Internal Actions	Выделить бинарные фазы Выделить бинарные фазы	 (filter)	D:\vt5\vt5\debug\comps\FiltersMain.dll	Source:Image	Phase:Binary	
+Negative	Негатив	Преобразования	Преобразовать активное изображение в негатив Негатив	 (filter)	D:\vt5\vt5\debug\comps\FiltersMain.dll	Source:Image	Negative:Image	
+Emboss	Рельеф	Internal Actions	Создать рельефное изображение Рельеф	 (filter)	D:\vt5\vt5\debug\comps\FiltersMain.dll	Source:Image	Emboss:Image	
+BrightContrast	Яркость&Контраст	Internal Actions	Изменить яркость и контраст активного изображения Яркость&Контраст	 (filter)	D:\vt5\vt5\debug\comps\FiltersMain.dll	Brightness:int=0; Contrast:int=0; Gamma:double=0; Source:Image	BriContrast:Image	
+Sharping	Резкость	Фильтры	Применить фильтр Резкость к активному изображению Резкость	 (filter)	D:\vt5\vt5\debug\comps\FiltersMain.dll	Strength:int=0; Source:Image	Sharping:Image	
+Median	Сглаживание по медиане	Фильтры	Применить сглаживание по медиане к активному изображению Сглаживание по медиане	 (filter)	D:\vt5\vt5\debug\comps\FiltersMain.dll	MaskSize:int=5; Source:Image	Median:Image	
+Average	Сглаживание с усреднением	Internal Actions	Применить сглаживание с усреднением к активному изображению Сглаживание с усреднением	 (filter)	D:\vt5\vt5\debug\comps\FiltersMain.dll	MaskSize:int=5; Source:Image	Average:Image	
+Laplas	Лаплас	Фильтры	Применить фильтрацию методом Лапласа к активному изображению Лаплас	 (filter)	D:\vt5\vt5\debug\comps\FiltersMain.dll	Add:int=0; Source:Image	Laplas:Image	
+Equalize	Выравнивание	Internal Actions	Выровнять активное изображение Выравнивание	 (filter)	D:\vt5\vt5\debug\comps\FiltersMain.dll	FullByFrame:int=0; Source:Image	Equalize:Image	
+LocalEqualize	Локальное выравнивание	Фильтры	Выровнять активное изображение с использованием локального фильтра Локальное выравнивание	 (filter)	D:\vt5\vt5\debug\comps\FiltersMain.dll	MaskSize:int=5; Source:Image	Equalize:Image	
+Kirsch	Кирш	Фильтры	Применить фильтрацию по методу Кирша к активному изображению Кирш	 (filter)	D:\vt5\vt5\debug\comps\FiltersMain.dll	Level:int=1; Add:int=0; Source:Image	Kirsch:Image	
+ExtractPhases	Выделить фазы	Internal Actions	Выделить фазы Выделить фазы	 (filter)	D:\vt5\vt5\debug\comps\FiltersMain.dll	Source:Image	Phases:Image	
+UnsharpenMask	Усиление резкости	Фильтры	Усиление общей резкости изображения Усиление резкости	 (filter)	D:\vt5\vt5\debug\comps\FiltersMain.dll	MaskSize:int=5; Threshold:int=0; Strength:int=100; Source:Image	UnsharpenMask:Image	
+EqualHists	Выравнивание гистограмм	Преобразования	Выравнивание гистограммы двух изображений Выравнивание гистограмм	 (filter)	D:\vt5\vt5\debug\comps\FiltersMain.dll	Image0:Image; Image1:Image	EqualHists:Image	
+EqualContrasts	Выравнивание контраста	Преобразования	Выравнивание контраста двух изображений Выравнивание контраста	 (filter)	D:\vt5\vt5\debug\comps\FiltersMain.dll	Image0:Image; Image1:Image	Result Equal:Image	
+FastAverage	Быстрое сглаживание с усреднением	Internal Actions	Применить быстрое сглаживание с усреднением к изображению Быстрое сглаживание с усреднением	 (filter)	D:\vt5\vt5\debug\comps\FiltersMain.dll	MaskSize:int=5; SourceImage:Image	Average:Image	
+FastUnsharpenMask	Быстрое усиление резкости	Фильтры	Применить быстрое усиления резкости к активному изображению Быстрое усиление резкости	 (filter)	D:\vt5\vt5\debug\comps\FiltersMain.dll	MaskSize:int=5; Threshold:int=0; Strength:int=100; Source:Image	UnsharpenMask:Image	
+FastGradient	Быстрый градиент	Фильтры	Применить фильтр Быстрый градиент к активному изображению Быстрый градиент	 (filter)	D:\vt5\vt5\debug\comps\FiltersMain.dll	MaskSize:int=5; Power:int=3; Base:int=32000; SourceImage:Image	Gradient:Image	
+CreateBinaryBySelection	Создать бинарное по рамке	Binary	Создать бинарное по рамке Создать бинарное по рамке	 (filter)	D:\vt5\vt5\debug\comps\FiltersMain.dll	Selection:Image; Source:Image	BinImage:Binary	
+CreateSelectionByBinary	Создать рамку по бинарному	Binary	Создать рамку по бинарному Создать рамку по бинарному	 (filter)	D:\vt5\vt5\debug\comps\FiltersMain.dll	Source:Image; BinImage:Binary	Selection:Image	
+UltimateErosion	UltimateErosion	Binary	UltimateErosion UltimateErosion	 (filter)	D:\vt5\vt5\debug\comps\FiltersMain.dll	Method:int=3; Algorythm:int=1; BinImage:Binary	BinResult:Binary	
+MorphDivideExBin	Расширенное морфологическое разделение по бинарному изображению	Binary	Расширенное морфологическое разделение по бинарному изображению Расширенное морфологическое разделение по бинарному изображению	 (filter)	D:\vt5\vt5\debug\comps\FiltersMain.dll	Method:int=3; Algorythm:int=1; BinImage:Binary	BinResult:Binary	
+FillHolesBin	Заполнение дыр в бинарном изображении	Binary	Заполнение дыр в бинарном изображении Заполнение дыр в бинарном изображении	 (filter)	D:\vt5\vt5\debug\comps\FiltersMain.dll	Size:int=0; BinImage:Binary	BinResult:Binary	
+Cipher	Cipher	Image	Cipher Image Cipher Image	 (filter)	D:\vt5\vt5\debug\comps\ImageDoc.dll	NX:int=10; NY:int=10; Cipher:int=13; Image:Image	Ciphered:Image	
+ShowCalibr	Показать маркер	View	Показать калибровочный маркер на изображении Показать маркер		D:\vt5\vt5\debug\comps\ImageDoc.dll	Show:int=-1; SetToShellData:int=0		
+ShowImage	Изображение с контурами	Вид	Показать изображение с контурами объектов Изображение с контурами		D:\vt5\vt5\debug\comps\ImageDoc.dll			
+ImageTransform	Масштабирование и поворот изображения	Правка	Масштабирование и поворот изображения Масштабирование и поворот изображения		D:\vt5\vt5\debug\comps\ImageDoc.dll	ZoomX:double=1; ZoomY:double=1; Angle:double=0; PosX:int=0; PosY:int=0		
+ShowObjects	Объекты на фоне	Вид	Показать изображение с обектами на фоне Объекты на фоне		D:\vt5\vt5\debug\comps\ImageDoc.dll			
+ShowMasks	Маски объектов	Вид	Показать изображение с масками объектов Маски объектов		D:\vt5\vt5\debug\comps\ImageDoc.dll			
+Resize	Изменить размер	Правка	Изменить размера изображения Изменить размер	 (filter)	D:\vt5\vt5\debug\comps\ImageDoc.dll	Width:int=-1; Height:int=-1; Source:Image	Resized:Image	
+Rotate	Произвольный поворот...	Изображение	Произвольный поворот изображения Произвольный поворот	 (filter)	D:\vt5\vt5\debug\comps\ImageDoc.dll	Angle:int=0; Source:Image	Rotated:Image	
+MirrorHorz	Горизонтальное отражение	Изображение	Горизонтальное отражение изображения Горизонтальное отражение	 (filter)	D:\vt5\vt5\debug\comps\ImageDoc.dll	Source:Image	FlipedHorz:Image	
+MirrorVert	Вертикальное отражение	Изображение	Вертикальное отражение изображения Вертикальное отражение	 (filter)	D:\vt5\vt5\debug\comps\ImageDoc.dll	Source:Image	FlipedVert:Image	
+Rotate90	Повернуть на 90	Изображение	Поворот изображения на 90 градусов Повернуть на 90	 (filter)	D:\vt5\vt5\debug\comps\ImageDoc.dll	Source:Image	Rotated90:Image	
+Rotate180	Повернуть на 180	Изображение	Поворот изображения на 180 градусов Повернуть на 180	 (filter)	D:\vt5\vt5\debug\comps\ImageDoc.dll	Source:Image	Rotated180:Image	
+Rotate270	Повернуть на 270	Изображение	Поворот изображения на 270 градусов Повернуть на 270	 (filter)	D:\vt5\vt5\debug\comps\ImageDoc.dll	Source:Image	Rotated270:Image	
+Expansion	Выделить цветовые каналы	Изображение	Выделить отдельные цветовые каналы цветного изображения Выделить цветовые каналы		D:\vt5\vt5\debug\comps\ImageDoc.dll			
+Merge	Объединить цветовые каналы	Правка	Объединить цветовые каналы изображения Объединить цветовые каналы	 (filter)	D:\vt5\vt5\debug\comps\ImageDoc.dll	ColorSpace:string=RGB; Pane0Image:Image; Pane1Image:Image; Pane2Image:Image	Combined:Image	
+Clone	Дубликат изображения	Изображение	Создать дубликат изображения Дубликат изображения		D:\vt5\vt5\debug\comps\ImageDoc.dll	Source:string		
+Borders	Добавить поля	Internal Actions	Нанести поля на изображение Добавить поля	 (filter)	D:\vt5\vt5\debug\comps\ImageDoc.dll	Left:int=0; Top:int=0; Right:int=0; Bottom:int=0; Source:Image	Expanded:Image	
+Crop	Вырезать фрагмент	Изображение	Вырезать фрагмент изображения Вырезать фрагмент	 (interactive)	D:\vt5\vt5\debug\comps\ImageDoc.dll	X:int=0; Y:int=0; Width:int=-1; Height:int=-1		
+ShowSource	Исходное изображение	Вид	Показать исходное изображение Исходное изображение		D:\vt5\vt5\debug\comps\ImageDoc.dll			
+ShowPseudo	Цветокодированное изображение	Вид	Показать цветокодированное изображение Цветокодированное изображение		D:\vt5\vt5\debug\comps\ImageDoc.dll			
+ShowPhase	Показать фазы	Вид	Показать фазы Показать фазы		D:\vt5\vt5\debug\comps\ImageDoc.dll			
+ShowBinaryFore	Трейсы на исходном изображении	Вид	Показать трейсы на исходном изображении Трейсы на исходном изображении		D:\vt5\vt5\debug\comps\ImageDoc.dll			
+ShowBinaryBack	Трейсы на фоне	Вид	Показать трейсы на фоне Трейсы на фоне		D:\vt5\vt5\debug\comps\ImageDoc.dll			
+ShowBinary	Бинарное изображение	View	Показать бинарное изображение Бинарное изображение		D:\vt5\vt5\debug\comps\ImageDoc.dll			
+ShowBinaryContour	Показать бинарное с контурами	View	Показать бинарное изображение с контурами Показать бинарное с контурами		D:\vt5\vt5\debug\comps\ImageDoc.dll			
+ShowView	Показать вид с использованием программного идентификатора	View	Показать вид с использованием программного идентификатора Показать вид с использованием программного идентификатора		D:\vt5\vt5\debug\comps\ImageDoc.dll	ViewProgID:string=ImageDoc.ImageView		
+CanConvertToGray	CanConvertToGray	Вид	CanConvertToGray CanConvertToGray		D:\vt5\vt5\debug\comps\ImageDoc.dll			
+ConvertImage	Конвертирование изображения...	Изображение	Перевести изображение в другую цветовую модель Конвертирование изображения	 (filter)	D:\vt5\vt5\debug\comps\ImageDoc.dll	newColorSystem:string; DeleteArg:int=-1; Source:Image	Converted:Image	
+MacroRecord	Записать новый макрос	Tools	Записать новый макрос Записать новый макрос		D:\vt5\vt5\debug\comps\macros.dll			
+MeasManualFreeLine	Длина произвольной линии	Измерения	Измерить длину произвольной линии Длина произвольной линии	 (interactive)	D:\vt5\vt5\debug\comps\MeasManual.dll			
+MeasManualSpline	Длина линии сплайном	Измерения	Измерить длину линии сплайном Длина линии сплайном	 (interactive)	D:\vt5\vt5\debug\comps\MeasManual.dll			
+MeasManualCount	Подсчет количества	Измерения	Подсчет количества объектов. Левая кнопка мыши-подсчет, правая-завершение. Подсчет количества	 (interactive)	D:\vt5\vt5\debug\comps\MeasManual.dll			
+MeasManualLine	Длина прямой линии	Измерения	Измерить длину прямой линии Длина прямой линии	 (interactive)	D:\vt5\vt5\debug\comps\MeasManual.dll			
+MeasManualBrokenLine	Длина ломаной линии	Измерения	Измерить длину ломаной линии Длина ломаной линии	 (interactive)	D:\vt5\vt5\debug\comps\MeasManual.dll			
+MeasManualCycle2	Радиус по 2 точкам	Измерения	Измерить радиус по 2 точкам Радиус по 2 точкам	 (interactive)	D:\vt5\vt5\debug\comps\MeasManual.dll			
+MeasManualCycle3	Радиус по 3 точкам	Измерения	Измерить радиус по 3 точкам Радиус по 3 точкам	 (interactive)	D:\vt5\vt5\debug\comps\MeasManual.dll			
+MeasManualAngle3Point	Угол по 3 точкам	Измерения	Измерить угол по 3 точкам Угол по 3 точкам	 (interactive)	D:\vt5\vt5\debug\comps\MeasManual.dll			
+MeasManualAngle2Line	Угол по 2 линиям	Измерения	Измерить угол по двум линиям Угол по 2 линиям	 (interactive)	D:\vt5\vt5\debug\comps\MeasManual.dll			
+MeasManualParallel	Расстояние между параллельными линиями	Измерения	Расстояние между параллельными линиями. Левая кнопка мыши-измерить, правая-закончить. Расстояние между параллельными линиями	 (interactive)	D:\vt5\vt5\debug\comps\MeasManual.dll			
+MtdClearMethod	Очистить список	Методика	Удаление всех шагов методики Удаление всех шагов методики		D:\vt5\vt5\debug\comps\Metodics.dll	MethodName:string; ShowWarning:int=1		
+MtdInsertMsgStep	Вставить сообщение	Методика	Вставить сообщение в активную методику Вставить сообщение в активную методику		D:\vt5\vt5\debug\comps\Metodics.dll	Message:string; ShowResult:int=1		
+ExportScript	ExportScript	Method	ExportScript ExportScript		D:\vt5\vt5\debug\comps\Metodics.dll	FileName:string		
+MethodRedo	MethodRedo	Method	MethodRedo MethodRedo		D:\vt5\vt5\debug\comps\Metodics.dll			
+MethodUndo	MethodUndo	Method	MethodUndo MethodUndo		D:\vt5\vt5\debug\comps\Metodics.dll			
+MtdDeleteMethod	Удалить методику	Методика	Удалить методику Удалить методику		D:\vt5\vt5\debug\comps\Metodics.dll	MethodName:string; ShowWarning:int=1		
+MtdCopyMethod	Копировать методику	Методика	Копировать методику Копировать методику		D:\vt5\vt5\debug\comps\Metodics.dll	MethodName:string; Activate:int=1		
+MtdSaveMethod	MtdSaveMethod	Method	MtdSaveMethod MtdSaveMethod		D:\vt5\vt5\debug\comps\Metodics.dll	MethodName:string		
+MtdCreateMethod	Новая методика	Методика	Новая методика Новая методика		D:\vt5\vt5\debug\comps\Metodics.dll	MethodName:string; Activate:int=1		
+MtdRunStop	Старт методики	Методика	Запустить или остановить методику Старт методики		D:\vt5\vt5\debug\comps\Metodics.dll			
+MtdList	Список методик	Методика	Список методик Список методик		D:\vt5\vt5\debug\comps\Metodics.dll			
+MethodOpen	MethodOpen	Method	MethodOpen MethodOpen		D:\vt5\vt5\debug\comps\Metodics.dll	PanePath:string; Open:int=1		
+MtdRemoveItem	MtdRemoveItemt	Method	MtdRemoveItem MtdRemoveItem		D:\vt5\vt5\debug\comps\Metodics.dll			
+StoreMtdContent	StoreMtdContent	Method	StoreMtdContent StoreMtdContent		D:\vt5\vt5\debug\comps\Metodics.dll	FileName:string		
+LoadMtdContent	LoadMtdContent	Method	LoadMtdContent LoadMtdContent		D:\vt5\vt5\debug\comps\Metodics.dll	FileName:string		
+RemoveMtdPane	RemoveMtdPane	Method	RemoveMtdPane RemoveMtdPane		D:\vt5\vt5\debug\comps\Metodics.dll			
+AddMtdPane	AddMtdPane	Method	AddMtdPane AddMtdPane		D:\vt5\vt5\debug\comps\Metodics.dll	PaneName:string		
+TriggerSequence	Последовательный ввод по внешнему сигналу	Ввод	Последовательный ввод по внешнему сигналу Последовательный ввод по внешнему сигналу		D:\vt5\vt5\debug\comps\NewDoc.dll			
+DoTrigger	Программный триггер	Ввод	Эмуляция срабатывания внешнего сигнала Программный триггер		D:\vt5\vt5\debug\comps\NewDoc.dll			
+TriggerMode	Ввод по триггеру	Ввод	Ввод изображения по внешнему сигналу Ввод по триггеру		D:\vt5\vt5\debug\comps\NewDoc.dll			
+DriverDlg	Настройки драйвера камеры	Ввод	Настройки драйвера камеры Настройки драйвера камеры		D:\vt5\vt5\debug\comps\NewDoc.dll	DialogName:string		
+ShowPreview	Видео	Вид	Просмотр "живого видео" с видеоустройства Видео		D:\vt5\vt5\debug\comps\NewDoc.dll			
+InputVideo	Видео	Ввод	Видео Видео		D:\vt5\vt5\debug\comps\NewDoc.dll	SelectDriver:int=1; DialogMode:int=1; Name:string; Configuration:string		
+InputImageInCurrentDoc	Ввод изображения в активный документ	По умолчанию	Ввести изображение в активный документ Ввод изображения в активный документ		D:\vt5\vt5\debug\comps\NewDoc.dll	SelectDriver:int=1; DialogMode:int=1; First:int=1; Name:string; Configuration:string		
+InputImage	Способ получения изображения	Ввод	Выбор способа получения изображения Способ получения изображения		D:\vt5\vt5\debug\comps\NewDoc.dll	SelectDriver:int=1; DialogMode:int=1; First:int=1; Name:string; Configuration:string		
+RestoreSel	restore selection	По умолчанию	restore selection RestoreSel		D:\vt5\vt5\debug\comps\NewDoc.dll			
+ImageBySel	Обрезать по рамке	Изображение	Обрезать изображение по рамке Обрезать по рамке		D:\vt5\vt5\debug\comps\NewDoc.dll	RestoreSel:bool=0		
+SetListZOrder	SetListZOrder	Измерения	SetListZOrder SetListZOrder		D:\vt5\vt5\debug\comps\objects.dll	ZOrder:int=0; UsedClass:int=-1; ClassifierName:string; ListName:string		
+JoinAllObjects	Join all objects	Edit	Join all objects Join all objects	 (filter)	D:\vt5\vt5\debug\comps\objects.dll	UseClasses:int=0; ClassifierName:string; InitContours:int=0; MeasObjects:Object List	TotalObject:Object List	
+ReCalcOnChangeCalibr	Перемерить объекты	Измерения	Перемерить объекты в соответствии с выбранной калибровкой Перемерить объекты		D:\vt5\vt5\debug\comps\objects.dll	ObjList:string		
+CalcMeasResult	Измерить объекты	Измерения	Измерить или перемерить нанесенные объекты Измерить объекты		D:\vt5\vt5\debug\comps\objects.dll	ObjectList:string		
+ObjectMagickStick	Волшебная палочка	Измерения	Shift-добавление, Alt-вычитание Волшебная палочка	 (interactive)	D:\vt5\vt5\debug\comps\objects.dll			
+ObjectRect	Прямоугольный объект	Измерения	Shift-добавление, Alt-вычитание, Ctrl-перекрестье Прямоугольный объект	 (interactive)	D:\vt5\vt5\debug\comps\objects.dll	Left:int=0; Top:int=0; Right:int=0; Bottom:int=0		
+ObjectEllipse	Круглый объект	Измерения	Shift-добавление, Alt-вычитание Круглый объект	 (interactive)	D:\vt5\vt5\debug\comps\objects.dll	X:int=-1; Y:int=-1; R:int=-1		
+ObjectSpline	Объект сплайном	Измерения	Shift-добавление, Alt-вычитание, завершение-двойное нажатие левой кнопки Объект сплайном	 (interactive)	D:\vt5\vt5\debug\comps\objects.dll			
+ObjectFree	Произвольный объект	Измерения	Shift-добавление, Alt-вычитание Произвольный объект	 (interactive)	D:\vt5\vt5\debug\comps\objects.dll			
+ObjectRectFixed	Прямоугольный фиксированный объект	Измерения	Shift-добавление, Alt-вычитание Прямоугольный фиксированный объект	 (interactive)	D:\vt5\vt5\debug\comps\objects.dll	X:double=-1; Y:double=-1; Width:double=0; Height:double=0; UseCalibration:int=0		
+ObjectRectDirect	Прямоугольный направленный объект	Измерения	Shift-добавление, Alt-вычитание Прямоугольный направленный объект 	 (interactive)	D:\vt5\vt5\debug\comps\objects.dll	X1:int=-1; Y1:int=-1; X2:int=-1; Y2:int=-1; Width:int=-1		
+ObjectEllipseFixed	Эллиптический фиксированный объект	Измерения	Shift-добавление, Alt-вычитание Эллиптический фиксированный объект	 (interactive)	D:\vt5\vt5\debug\comps\objects.dll	X:double=-1; Y:double=-1; Width:double=0; Height:double=0; UseCalibration:int=0		
+ObjectEllipseDirect	Эллиптический направленный объект	Измерения	Shift-добавление, Alt-вычитание Эллиптический направленный объект	 (interactive)	D:\vt5\vt5\debug\comps\objects.dll	X1:int=-1; Y1:int=-1; X2:int=-1; Y2:int=-1; Width:int=-1		
+ObjectEditorSpec	Область на изображении	Измерения	Левая кнопка мыши-рисование Область на изображении	 (interactive)	D:\vt5\vt5\debug\comps\objects.dll			
+ObjectEditor	Карандаш	Измерения	Левая кнопка мыши-рисование, правая-стирание Карандаш	 (interactive)	D:\vt5\vt5\debug\comps\objects.dll			
+ObjectLine	Линейный объект	Измерения	Нанести линейный объект Линейный объект	 (interactive)	D:\vt5\vt5\debug\comps\objects.dll			
+ObjectPolyLine	Объект ломаной линией	Измерения	Нанести объект в форме ломаной линии Объект ломаной линией	 (interactive)	D:\vt5\vt5\debug\comps\objects.dll			
+ObjectsMakeLight	Облегчить объекты	Правка	Облегчить объекты Облегчить объекты	 (filter)	D:\vt5\vt5\debug\comps\objects.dll	MeasObjects:Object List	MeasObjects light:Object List	
+ObjectsSplit	Разделить объекты на классы	Правка	Разделить объекты на классы Разделить объекты на классы	 (filter)	D:\vt5\vt5\debug\comps\objects.dll	MeasObjects:Object List		
+ObjectsSetClass	Назначить класс для всех объектов в списке	Правка	Назначить класс для всех объектов в списке Назначить класс для всех объектов в списке	 (filter)	D:\vt5\vt5\debug\comps\objects.dll	Class:string; MeasObjects:Object List	ObjectsSetClass:Object List	
+ObjectsMerge	Объединить два списка объектов	Измерения	Объединить два списка объектов Объединить два списка объектов	 (filter)	D:\vt5\vt5\debug\comps\objects.dll	MeasObjects1:Object List; MeasObjects2:Object List; VerifyType:int=0	ObjectsMerge:Object List	
+ObjectsRemove	Удалить все объекты выбранного класса	Правка	Удалить все объекты выбранного класса Удалить все объекты выбранного класса	 (filter)	D:\vt5\vt5\debug\comps\objects.dll	Class:int=-2; MeasObjects:Object List	ObjectsRemove:Object List	
+AutoAssignClasses	Автоматически разделить на классы по параметрам	Правка	Автоматически разделить на классы по параметрам Автоматически разделить на классы по параметрам	 (filter)	D:\vt5\vt5\debug\comps\objects.dll	MeasObjects:Object List	AutoAssignClasses:Object List	
+ObjectScissors	Ножницы	Правка	Ножницы для разделения объектов Ножницы	 (interactive)	D:\vt5\vt5\debug\comps\objects.dll			
+ObjectFilter	Фильтрация объектов	Правка	Фильтрация объектов Фильтрация объектов	 (filter)	D:\vt5\vt5\debug\comps\objects.dll	SectionName:string=Objects\ObjectFilter; ShowInterface:int=1; MeasObjects:Object List	ObjectFilter:Object List	
+ObjectClassifyByLimits	Классифицировать объекты по пределам	Правка	Классифицировать объекты в соответствии с установленными пределами Классифицировать объекты по пределам	 (filter)	D:\vt5\vt5\debug\comps\objects.dll	SectionName:string=Objects\ObjectLimitsClassifier; ShowInterface:int=1; MeasObjects:Object List	ObjectClassifier:Object List	
+FilterObjectList	FilterObjectList	Edit	FilterObjectList FilterObjectList	 (filter)	D:\vt5\vt5\debug\comps\objects.dll	Action:string; Params:string; LeaveVirtual:int=0; ActiveObjectOnly:int=0; ObjectList:Object List	ObjectListNew:Object List	
+MakeObjectsVirtual	MakeObjectsVirtual	Правка	MakeObjectsVirtual MakeObjectsVirtual		D:\vt5\vt5\debug\comps\objects.dll			
+MapObjectsToImage	MapObjectsToImage	Правка	MapObjectsToImage MapObjectsToImage		D:\vt5\vt5\debug\comps\objects.dll			
+SetZOrder	SetZOrder	Edit	SetZOrder SetZOrder		D:\vt5\vt5\debug\comps\objects.dll	ParamKey:int=1; Direction:int=0		
+ActiveObjectFillHoles	Заполнение дыр в активном объекте	Правка	Заполнение дыр в активном объекте Заполнение дыр в активном объекте		D:\vt5\vt5\debug\comps\objects.dll	Size:int=0		
+ActiveObjectClose	Закрытие активного объекта	Правка	Закрытие активного объекта Закрытие активного объекта		D:\vt5\vt5\debug\comps\objects.dll	OperationsCount:int=1; MinObject:int=5		
+ActiveObjectOpen	Открытие активного объекта	Правка	Открытие активного объекта Открытие активного объекта		D:\vt5\vt5\debug\comps\objects.dll	OperationsCount:int=1; MinObject:int=5		
+ActiveObjectDilate	Дилатация активного объекта	Правка	Дилатация активного объекта Дилатация активного объекта		D:\vt5\vt5\debug\comps\objects.dll	OperationsCount:int=1		
+ActiveObjectErode	Эрозия активного объекта	Правка	Эрозия активного объекта Эрозия активного объекта		D:\vt5\vt5\debug\comps\objects.dll	OperationsCount:int=1; MinObject:int=5		
+FindBorderObjects	Поиск объектов, граничащих с рамкой	Правка	Поиск объектов, граничащих с рамкой Поиск объектов, граничащих с рамкой	 (filter)	D:\vt5\vt5\debug\comps\objects.dll	SrcList:Object List	DstList:Object List	
+ObjectCutFrame	Отброс объектов от рамки	Правка	Отброс объектов от рамки Отброс объектов от рамки	 (filter)	D:\vt5\vt5\debug\comps\objects.dll	SrcList:Object List	DstList:Object List	
+CreateImageByList	Заливка фона	Правка	Заливка областей изображения, не являющихся объектами Заливка фона	 (filter)	D:\vt5\vt5\debug\comps\objects.dll	Image:Image; Objects:Object List	Generated:Image	
+OverlaySectionHorz	Горизонтальный график по яркости	Измерения	Создать новый горизонтальный график по яркости на изображении Горизонтальный график по яркости	 (interactive)	D:\vt5\vt5\debug\comps\oversect.dll			
+OverlaySectionVert	Вертикальный график по яркости	Измерения	Создать новый вертикальный график по яркости на изображении Вертикальный график по яркости	 (interactive)	D:\vt5\vt5\debug\comps\oversect.dll			
+OverlaySection	График яркости от точки до точки	Измерения	Создать новый график яркости от точки до точки на изображении График яркости от точки до точки	 (interactive)	D:\vt5\vt5\debug\comps\oversect.dll			
+Print	Печать	Печать	Печать активного документа Печать		D:\vt5\vt5\debug\comps\Print.dll			
+PrintPreview	Предварительный просмотр...	Печать	Предварительный просмотр отчета перед печатью Предварительный просмотр		D:\vt5\vt5\debug\comps\Print.dll			
+PrintDesignMode	Конструктор шаблона отчета...	Печать	Создать шаблон отчета Конструктор шаблона отчета		D:\vt5\vt5\debug\comps\Print.dll			
+PageSetup	Параметры страницы...	Печать	Параметры страницы Параметры страницы		D:\vt5\vt5\debug\comps\Print.dll			
+PrinterSetup	Настройка печати...	Печать	Настройка печати Настройка печати		D:\vt5\vt5\debug\comps\Print.dll			
+FitToPage	По размеру окна	Печать	Установить размер шаблона отчета по размеру окна По размеру окна		D:\vt5\vt5\debug\comps\Print.dll			
+FitToPageWidth	По ширине	Печать	Установить ширину шаблона отчета по ширине окна По ширине		D:\vt5\vt5\debug\comps\Print.dll			
+TemplateSetup	Установки шаблона...	Печать	Установки шаблона Установки шаблона		D:\vt5\vt5\debug\comps\Print.dll			
+PrintTemplateDelete	Удалить шаблон отчета...	Печать	Удалить шаблон отчета Удалить шаблон отчета		D:\vt5\vt5\debug\comps\Print.dll			
+ShowPreviewIndirect	Просмотр отчета	Печать	Предварительный просмотр отчета перед печатью Просмотр отчета		D:\vt5\vt5\debug\comps\Print.dll	ReadOnly:int=1		
+ShowOptions	Установки...	Tools	Изменить установки программы Установки		D:\vt5\vt5\debug\comps\properties.dll			
+ShowScript	Показать скрипт	View	Показать скрипт Показать скрипт		D:\vt5\vt5\debug\comps\ScriptDoc.dll			
+ScriptChange	Заменить скрипт	Edit	Заменить скрипт Заменить скрипт		D:\vt5\vt5\debug\comps\ScriptDoc.dll			
+ScriptTerminate	Остановить скрипт	Script	Остановить скрипт Остановить скрипт		D:\vt5\vt5\debug\comps\ScriptDoc.dll			
+ScriptExecute	Выполнить скрипт	Script	Выполнить скрипт Выполнить скрипт		D:\vt5\vt5\debug\comps\ScriptDoc.dll			
+BreakAtNextStatement	Точка останова на следующей строке	For Developers	Точка останова на следующей строке Точка останова на следующей строке		D:\vt5\vt5\debug\comps\ScriptDoc.dll			
+ToggleBreakpoint	Включить/выключить точку останова	Script	Включить/выключить точку останова Включить/выключить точку останова		D:\vt5\vt5\debug\comps\ScriptDoc.dll			
+StartDebugger	Запустить программу отладки	Script	Запустить внешнюю программу отладки Запустить программу отладки		D:\vt5\vt5\debug\comps\ScriptDoc.dll			
+FourierSelectEllipse	Эллиптическая рамка на изображении Фурье	FFT	Нанести рамку эллиптической формы на изображение Фурье Эллиптическая рамка на изображении Фурье	 (interactive)	D:\vt5\vt5\debug\comps\selection.dll			
+FourierSelectFree	Произвольная рамка на изображении Фурье	FFT	Нанести рамку произвольной формы на изображение Фурье Произвольная рамка на изображении Фурье	 (interactive)	D:\vt5\vt5\debug\comps\selection.dll			
+FourierSelectCenter	Выделить центр изображения Фурье	FFT	Нанести рамку на центр изображения Фурье Выделить центр изображения Фурье	 (interactive)	D:\vt5\vt5\debug\comps\selection.dll			
+MagickStick	Волшебная палочка	Рамки	Shift-добавление, Alt-вычитание Волшебная палочка	 (interactive)	D:\vt5\vt5\debug\comps\selection.dll			
+SelectRect	Прямоугольная рамка	Рамки	Shift-добавление, Alt-вычитание, Ctrl-перекрестие Прямоугольная рамка	 (interactive)	D:\vt5\vt5\debug\comps\selection.dll	Left:int=0; Top:int=0; Right:int=0; Bottom:int=0		
+SelectArea	Произвольная рамка	Рамки	Завершение-двойное нажатие левой кнопки мыши, Shift-добавление, Alt-вычитание Произвольная рамка	 (interactive)	D:\vt5\vt5\debug\comps\selection.dll			
+SelectAdd	Добавить рамку	Рамки	Добавить новую рамку к активной Добавить рамку		D:\vt5\vt5\debug\comps\selection.dll	Select:int=-1		
+SelectRemove	Удалить рамку	Рамки	Удалить новую рамку из активной Удалить рамку		D:\vt5\vt5\debug\comps\selection.dll	Select:int=-1		
+SelectEllipse	Круглая рамка	Рамки	Используйте Shift для добавления и Alt для вычитания рамки Круглая рамка	 (interactive)	D:\vt5\vt5\debug\comps\selection.dll	X:int=-1; Y:int=-1; R:int=-1		
+SelectInvert	Инвертировать рамку	Рамки	Инвертировать активную рамку Инвертировать рамку		D:\vt5\vt5\debug\comps\selection.dll			
+SelectSmooth	Сглаживание рамки	Рамки	Сглаживание рамки Сглаживание рамки		D:\vt5\vt5\debug\comps\selection.dll			
+SelectMakeVirtual	Виртуализировать рамку	Internal Actions	Виртуализировать рамку Виртуализировать рамку		D:\vt5\vt5\debug\comps\selection.dll			
+SelectAll	Выделить все	Рамки	Нанести рамку на все изображение Выделить все		D:\vt5\vt5\debug\comps\selection.dll			
+AddView	Добавить вид отображения в разделитель окна	Internal Actions	Добавить вид отображения в разделитель окна Добавить вид отображения в разделитель окна		D:\vt5\vt5\debug\comps\StdSplitter.dll	Name:string		
+RemoveView	Удалить вид отображения из разделителя окна	Internal Actions	Удалить вид отображения из разделителя окна Удалить вид отображения из разделителя окна		D:\vt5\vt5\debug\comps\StdSplitter.dll			
+RenameView	Переименовать вид отображения в разделителе окна	Internal Actions	Переименовать вид отображения в разделителе окна Переименовать вид отображения в разделителе окна		D:\vt5\vt5\debug\comps\StdSplitter.dll	Name:string		
+LoadViewState	Загрузить сотояние вида отображения	Internal Actions	Загрузить сотояние вида отображения Загрузить сотояние вида отображения		D:\vt5\vt5\debug\comps\StdSplitter.dll	FileName:string		
+SaveViewState	Сохранить сотояние вида отображения\Internal Actions	Сохранить сотояние вида отображения	Сохранить сотояние вида отображения Сохранить сотояние вида отображения		D:\vt5\vt5\debug\comps\StdSplitter.dll	FileName:string		
+CompareScreen	Захватить вид сравнения	Internal Actions	Захват вида сравнения Захватить вид сравнения		D:\vt5\vt5\debug\comps\StdSplitter.dll	ImageName:string=CompareScreen		
+SyncEdit	Синхронное редактирование	Вид	Синхронизировать операции редактирования Синхронное редактирование		D:\vt5\vt5\debug\comps\syncedit.dll			
+SyncScroll	Синхронизация изображений	Окно	Синхронизация изображений (если окно документа разделено) Синхронизация изображений		D:\vt5\vt5\debug\comps\syncview.dll	Param:string		
+SyncZoom	Синхронизация изображений и увеличений	Окно	Синхронизация изображений и увеличений (если окно документа разделено) Синхронизация изображений и увеличений		D:\vt5\vt5\debug\comps\syncview.dll	Param:string		
+SyncScrollRelative	Относительная синхронизация изображений	Окно	Относительная синхронизация изображений (если окно документа разделено) Относительная синхронизация изображений		D:\vt5\vt5\debug\comps\syncview.dll	Param:string		
+SyncContextAll	Синхронизация содержания	Окно	Синхронизация содержания и видов отображения Синхронизация содержания		D:\vt5\vt5\debug\comps\syncview.dll	Param:string		
+SyncContext	Синхронизация содержания	Окно	Синхронизация содержания и видов отображения Синхронизация содержания		D:\vt5\vt5\debug\comps\syncview.dll	Param:string		
+RunTestWindow	RunTestWindow	Tests	run test window RunTestWindow		D:\vt5\vt5\debug\comps\TestUI.dll			
+EditTestDB	EditTestDB	Tests	edit tests database EditTestDB		D:\vt5\vt5\debug\comps\TestUI.dll			
+ShowThumbnail	Показать кадр	Data	Показать кадр Показать кадр		D:\vt5\vt5\debug\comps\ThumbMan.dll			
+InteractiveZoom	Интерактиваная лупа	Вид	Левой кнопкой мыши открыть выпадающий список, движком изменить увеличение Интерактиваная лупа		D:\vt5\vt5\debug\comps\zoom.dll			
+ZoomIn	Увеличение	Вид	Увеличить изображение Увеличение		D:\vt5\vt5\debug\comps\zoom.dll			
+ZoomOut	Уменьшение	Вид	Уменьшение изображения Уменьшение		D:\vt5\vt5\debug\comps\zoom.dll			
+Zoom41	Уменьшение 4:1	Вид	Уменьшить изображение 4:1 Уменьшение 4:1		D:\vt5\vt5\debug\comps\zoom.dll			
+Zoom31	Уменьшение 3:1	Вид	Уменьшить изображение 3:1 Уменьшение 3:1		D:\vt5\vt5\debug\comps\zoom.dll			
+Zoom21	Уменьшение 2:1	Вид	Уменьшить изображения 2:1 Уменьшение 2:1		D:\vt5\vt5\debug\comps\zoom.dll			
+Zoom12	Увеличение 1:2	Вид	Увеличить изображение 1:2 Увеличение 1:2		D:\vt5\vt5\debug\comps\zoom.dll			
+Zoom13	Увеличение 1:3	Вид	Увеличить изображение 1:3 Увеличение 1:3		D:\vt5\vt5\debug\comps\zoom.dll			
+Zoom14	Увеличение 1:4	Вид	Увеличить изображение 1:4 Увеличение 1:4		D:\vt5\vt5\debug\comps\zoom.dll			
+ZoomNormal	Увеличение 1:1	Вид	Увеличить изображение 1:1 Увеличение 1:1		D:\vt5\vt5\debug\comps\zoom.dll			
+Zoom	Лупа	Вид	Левая кнопка мыши: увеличение, +Shift: уменьшение, правая кнопка: исх. изображение Лупа	 (interactive)	D:\vt5\vt5\debug\comps\zoom.dll	Zoom:double=0		
+FitDoc2Screen	Размер изображения по экрану	Вид	Устанавить размер изображения по размеру экрана Размер изображения по экрану		D:\vt5\vt5\debug\comps\zoom.dll			
+Fit2Image	Размер окна по изображению	Вид	Установить размер окна документа по изображению Размер окна по изображению		D:\vt5\vt5\debug\comps\zoom.dll			
+InteractiveScroll	Прокрутка изображения	Вид	Удерживая левую кнопку мыши, просматривайте изображение в любом направлении Прокрутка изображения	 (interactive)	D:\vt5\vt5\debug\comps\zoom.dll			
+RequestForPrintSD	Запрос данных для печати по ShellData	Edit	Запрос значений пользовательских полей для печати по ShellData Request Values For Printing from ShellData		D:\vt5\vt5\debug\comps\PrintFieldAX.ocx	ShowIfDataExist:int=1		
+StoreForPrint	Запись данных для печати	Edit	Запись значений пользовательских полей для печати Store Values For Printing		D:\vt5\vt5\debug\comps\PrintFieldAX.ocx	ShowIfDataExist:int=1		
+RequestForPrint	Запрос данных для печати	Edit	Запрос значений пользовательских полей для печати Request Values For Printing		D:\vt5\vt5\debug\comps\PrintFieldAX.ocx	ShowIfDataExist:int=1; UseReportPosition:int=0; DlgTitle:string		
+RequestForDB	Запрос данных для базы	Edit	Запрос значений пользовательских полей для базы данных Запрос данных для базы		D:\vt5\vt5\debug\comps\PrintFieldAX.ocx	ShowIfDataExist:int=1		
+WindowClose	Закрыть окно	Окно	Закрыть активное окно Закрыть окно		D:\vt5\vt5\debug\shell.exe	WindowTitle:string		
+WindowArrange	Упорядочить	Окно	Упорядочить значки Упорядочить		D:\vt5\vt5\debug\shell.exe			
+WindowCascade	Расположить окна каскадом	Окно	Расположить окна каскадом Расположить окна каскадом		D:\vt5\vt5\debug\shell.exe			
+WindowTile	Расположить окна мозаикой	Окно	Расположить окна мозаикой Расположить окна мозаикой		D:\vt5\vt5\debug\shell.exe			
+WindowNew	Новое окно	Окно	Открыть новое окно Новое окно		D:\vt5\vt5\debug\shell.exe			
+WindowActivate	Активизировать окно	Окно	Активизировать окно Активизировать окно		D:\vt5\vt5\debug\shell.exe	WindowTitle:string		
+ShowVersion	Show Version...	File	Show version Show Version		D:\vt5\vt5\debug\shell.exe			
+ToolsSaveAsState	SaveAs State...	Tools	SaveAs the program interface - toolbars, menus etc. SaveAs State		D:\vt5\vt5\debug\shell.exe	FileName:string		
+ToolsLoadStateEx	Загрузить состояние панелей и меню...	Сервис	Загрузить состояние панелей и меню Загрузить состояние панелей и меню		D:\vt5\vt5\debug\shell.exe	FileName:string		
+ToolsCustomize	Настройка...	Сервис	Настройка интерфейса программы-панелей инструментов, меню и т. д. Настройка		D:\vt5\vt5\debug\shell.exe			
+ToolsSaveState	Сохранить состояние панелей и меню...	Сервис	Сохранить интерфейс программы  - панели инструментов, меню и т.д. Сохранить состояние панелей и меню		D:\vt5\vt5\debug\shell.exe	FileName:string		
+ToolsLoadState	Загрузить состояние панелей и меню...	Сервис	Загрузить состояние панелей и меню Загрузить состояние панелей и меню		D:\vt5\vt5\debug\shell.exe	FileName:string		
+HelpContext	Контекстная справка	Справка	Информация по выбранной кнопке, пункту меню или окну Контекстная справка		D:\vt5\vt5\debug\shell.exe	Topic:string		
+HelpAbout	О программе...	Справка	Информация о программе О программе		D:\vt5\vt5\debug\shell.exe			
+HelpIndex	Справка...	Справка	Показать окно помощи Справка		D:\vt5\vt5\debug\shell.exe			
+DumpMemory	Dump Memory	File	Dump memory Dump Memory		D:\vt5\vt5\debug\shell.exe	Flags:string		
+FileSendView	Отправить вид окна...	Файл	Отправить текущий вид окна документа по E-Mail Отправить вид окна		D:\vt5\vt5\debug\shell.exe			
+FileSaveView	Сохранить вид окна...	Файл	Сохранить текущий вид окна документа в файл Сохранить вид окна		D:\vt5\vt5\debug\shell.exe			
+FileSendEMail	Отправить по E-Mail...	Файл	Отправить текущий документ по e-mail Отправить по E-Mail		D:\vt5\vt5\debug\shell.exe			
+FileClose	Закрыть документ	Файл	Закрыть активный документ Закрыть документ		D:\vt5\vt5\debug\shell.exe	DocumentTitle:string		
+FileSaveAs	Сохранить как...	Файл	Сохранить документ с новым именем Сохранить как		D:\vt5\vt5\debug\shell.exe			
+FileSave	Сохранить	Файл	Сохранить Сохранить		D:\vt5\vt5\debug\shell.exe	FileName:string; DocumentTitle:string		
+AppExit	Выход	Файл	Закрыть приложение Выход		D:\vt5\vt5\debug\shell.exe			
+FileOpen	Открыть...	Файл	Открыть файл Открыть		D:\vt5\vt5\debug\shell.exe	FileName:string; Template:string		
+FileNew	Новый документ	Файл	Создать новый документ Новый документ		D:\vt5\vt5\debug\shell.exe	Template:string; DialogMode:int=-1	NewDocName:string	
+FileCloseAll	Закрыть все документы	Файл	Закрыть все документы Закрыть все документы		D:\vt5\vt5\debug\shell.exe			
+FourierMode	Режим FFT	FFT	Начало и завершение режима быстрого преобразования Фурье Режим FFT		D:\vt5\vt5\debug\comps\fft.dll			
+Fourier	Прямое преобразование Фурье	FFT	Провести прямое преобразование Фурье на активном изображении Прямое преобразование Фурье	 (filter)	D:\vt5\vt5\debug\comps\fft.dll	Source:Image	FFT Image:Image	
+FourierBack	Обратное преобразование Фурье	FFT	Провести обратное преобразование Фурье на активном изображении Обратное преобразование Фурье	 (filter)	D:\vt5\vt5\debug\comps\fft.dll	FFT:Image	RestoredFFT:Image	
+FourierRemove	Удалить области спектра	FFT	Удалить области со спектра Фурье Удалить области спектра	 (filter)	D:\vt5\vt5\debug\comps\fft.dll	Inside:bool=1; SelectedArea:Image	ResImage:Image	
+FourierHilight	Выделить области спектра	FFT	Выделить области со спектра  Фурье Выделить области спектра	 (filter)	D:\vt5\vt5\debug\comps\fft.dll	Inside:bool=1; SelectedArea:Image	ResImage:Image	
+SearchIdioByText	Найти идиограмму	Карио	Найти идиограмму по тексту комментария Найти идиограмму		D:\vt5\vt5\debug\comps\IdioDBase.dll			
+AddToIdioDB	Послать в базу идиограмм	Карио	Послать выделенную идиограмму в базу идиограмм Послать в базу идиограмм		D:\vt5\vt5\debug\comps\IdioDBase.dll	FileName:string; DBFileName:string		
+ShowIdioDBView	База идиограмм	Вид	Показать базу идиограмм База идиограмм		D:\vt5\vt5\debug\comps\IdioDBase.dll			
+CalcPartResult	CalcPartResult	Measurement	CalcPartResult CalcPartResult		D:\vt5\vt5\debug\comps\SpermParams.dll	ObjectList:string; BaseParamKey:int=KEY_PARTICLES_NFRAMES; ExcludeKeys:int=1		
+BatchInput	Захват последовательности	Ввод	Захват серии изображений Захват последовательности		D:\vt5\vt5\debug\comps\BatchInput.dll			
+Scissors	Ножницы	Карио	Разделение хромосом. Рисовать при нажатой левой кнопке мыши, отпустить кнопку - завершение. Separate objects	 (interactive)	D:\vt5\vt5\debug\comps\CutArea.dll			
+ImposingDivision	Разделение наложений	Карио	Обведите контур хромосомы при нажатой левой кнопке мыши, по завершении отпустите кнопку Разделение наложений	 (interactive)	D:\vt5\vt5\debug\comps\CutArea.dll			
+MakeObjectsNonVirtual	MakeObjectsNonVirtual	Edit	MakeObjectsNonVirtual MakeObjectsNonVirtual		D:\vt5\vt5\debug\comps\objects.dll			
+ResizeBin	ResizeBin	Binary	ResizeBin ResizeBin	 (filter)	D:\vt5\vt5\debug\comps\FiltersMain.dll	cx:int=640; cy:int=480; BinImage:Binary	BinResult:Binary	
+CutDocBySel	Обрезать данные в документе по рамке	Изображение	Обрезать данные в документе по рамке Обрезать данные в документе по рамке		D:\vt5\vt5\debug\comps\FiltersMain.dll			
+ClassesArrange	Упорядочить классы	Classification	Упорядочить классы		D:\vt5\vt5\debug\comps\Apportionment.dll	ClassList:Class List		
+ShowApportionment	Показать распределение	Вид	Показать распределение		D:\vt5\vt5\debug\comps\Apportionment.dll			
+AviSignature	AviSignature	AVI	AviSignature		D:\vt5\vt5\debug\comps\AviBase.dll			
+ShowAviGallery	Показать галерею AVI	AVI	Показать галерею AVI		D:\vt5\vt5\debug\comps\AviBase.dll			
+AviStop	Стоп	AVI	Стоп		D:\vt5\vt5\debug\comps\AviBase.dll			
+AviPlay	Показать AVI файл	AVI	Показать AVI файл	 (interactive)	D:\vt5\vt5\debug\comps\AviBase.dll			
+AviMoveTo	Перейти	AVI	Перейти		D:\vt5\vt5\debug\comps\AviBase.dll	FrameNum:int=1		
+AviMovePrev	Предыдущий	AVI	Показать предыдущий кадр		D:\vt5\vt5\debug\comps\AviBase.dll			
+AviMoveLast	Последний	AVI	Показать последний кадр		D:\vt5\vt5\debug\comps\AviBase.dll			
+AviMoveNext	Следующий	AVI	Показать следующий кадр		D:\vt5\vt5\debug\comps\AviBase.dll			
+AviMoveFirst	Первый	AVI	Показать первый кадр		D:\vt5\vt5\debug\comps\AviBase.dll			
+InsertAviObject	Добавить AVI-объект	AVI	Добавление AVI-объекта		D:\vt5\vt5\debug\comps\AviBase.dll	AviFileName:string; LinkToFile:int=1		
+ResegmentCells	ResegmentCells	Blood	ResegmentCells	 (filter)	D:\vt5\vt5\debug\comps\Blood.dll	SeedThreshold:double=0.0; Threshold:double=0.3; MaxDilate:double=10; Cells:Object List	Resegmented:Object List	
+FindCircles	FindCircles	Blood	FindCircles	 (filter)	D:\vt5\vt5\debug\comps\Blood.dll	Radius:int=25; Points:int=16; Img:Image	FindCircles:Image	
+CutFrame	CutFrame	Blood	CutFrame		D:\vt5\vt5\debug\comps\Blood.dll	Frame:Image; ObjectList:Object List		
+SplitCircles	SplitCircles	Blood	SplitCircles	 (filter)	D:\vt5\vt5\debug\comps\Blood.dll	Objects:Object List	SplitCircles:Object List	
+LearnLinkAAM	LearnLinkAAM	Blood	LearnLinkAAM		D:\vt5\vt5\debug\comps\Blood.dll	ClassifyInfo:string		
+LearnAAM	LearnAAM	Blood	LearnAAM	 (filter)	D:\vt5\vt5\debug\comps\Blood.dll	ClassifyInfo:string; ObjectList:Object List		
+ClassifyAAM	ClassifyAAM	Blood	ClassifyAAM	 (filter)	D:\vt5\vt5\debug\comps\Blood.dll	ClassifyInfo:string; ObjectList:Object List		
+Cell2Bin	Cell2Bin	Blood	Cell to Binary	 (filter)	D:\vt5\vt5\debug\comps\Blood.dll	Img:Image	Cell2Bin:Object List; Binary:Binary	
+BubbleSelect	BubbleSelect	Blood	Bubble Select	 (filter)	D:\vt5\vt5\debug\comps\Blood.dll	BinSrc:Binary; x0:int=0; y0:int=0	BubbleSelect:Binary	
+FindCells	FindCells	Blood	Find Cells		D:\vt5\vt5\debug\comps\Blood.dll	Img:Image	Binary:Binary; FindCells:Object List; TestOnly:int	
+ExportBrightness	ExportBrightness	Export	ExportBrightness		D:\vt5\vt5\debug\comps\brex.dll			
+ErectOneChromOnOff	Выпрямить хромосому	Карио	Выпрямить хромосому или убрать выпрямление - левая кнопка мыши	 (interactive)	D:\vt5\vt5\debug\comps\Chromaam.dll	NewState:int=-1; NonInteractive:int=0		
+ErectChromOn	Выпрямить хромосомы	Карио	Выпрямить хромосомы		D:\vt5\vt5\debug\comps\Chromaam.dll	ImageList:Object List		
+FillHoles	FillHoles	Chromos	FillHoles	 (filter)	D:\vt5\vt5\debug\comps\Chromaam.dll	MaxHoleSize:int=1000; Source:Object List	FillHoles:Object List	
+AverageObjects	Усреднить хромосомы	Chromos	Усреднение хромосом	 (filter)	D:\vt5\vt5\debug\comps\Chromaam.dll	AutoScaleX:int=0; AutoScaleY:int=1; Source0:Object List; Source1:Object List; Source2:Object List; Source3:Object List; Source4:Object List; Source5:Object List; Source6:Object List; Source7:Object List; Source8:Object List; Source9:Object List; Source10:Object List; Source11:Object List; Source12:Object List; Source13:Object List; Source14:Object List; Source15:Object List; Source16:Object List; Source17:Object List; Source18:Object List; Source19:Object List	Averaged:Object List	
+ErectChrom	Выпрямить хромосомы	Карио	Выпрямить хромосомы		D:\vt5\vt5\debug\comps\Chromaam.dll	Source:Object List	Erected:Object List	
+GlueObj	Отменить разделение	Разделение	Отменить произведенное разделение объектов: укажите место разделения левой кнопкой мыши	 (interactive)	D:\vt5\vt5\debug\comps\Chromaam.dll	Img:Image; MeasObjects:Object List	MeasObjectsRes:Object List	
+AutoDiv	Авт. разделение	Разделение	Автоматическое разделение объектов	 (filter)	D:\vt5\vt5\debug\comps\Chromaam.dll	Source:Object List	AutoDiv:Object List	
+CrossAutoDiv	Автораздел. крестов	Разделение	Укажите центр пересечения объектов левой кнопкой мыши	 (interactive)	D:\vt5\vt5\debug\comps\Chromaam.dll	MeasObjects:Object List	MeasObjectsRes:Object List	
+CrossManualDiv	Раздел. крестов по точкам	Разделение	Укажите область пересечения объектов 4-мя точками 	 (interactive)	D:\vt5\vt5\debug\comps\Chromaam.dll	Img:Image; MeasObjects:Object List	MeasObjectsRes:Object List	
+AutoAdjustBin	Коррекция масок	Выделение объектов	Корректировать маски объектов	 (filter)	D:\vt5\vt5\debug\comps\Chromaam.dll	MaskSize:int=10; Img:Image; Binary:Binary	Adjusted:Binary	
+BoundDistance	BoundDistance	Chromos	BoundDistance	 (filter)	D:\vt5\vt5\debug\comps\Chromaam.dll	Binary:Binary	BoundDistance:Image	
+StrangeAverage	StrangeAverage	Chromos	StrangeAverage	 (filter)	D:\vt5\vt5\debug\comps\Chromaam.dll	MaskSize:int=10; Img:Image; Binary:Binary	StrangeAverage:Image	
+SegmBin	Авт. выд-е по маскам	Выделение объектов	Автоматическое выделение объектов по маскам	 (filter)	D:\vt5\vt5\debug\comps\Chromaam.dll	SquareSize:int=64; ThresholdRatio:double=0.5; Img:Image; Binary:Binary	Refined:Binary	
+SegmSource	Авт. выделение	Выделение объектов	Автоматическое выделение объектов по яркости	 (filter)	D:\vt5\vt5\debug\comps\Chromaam.dll	InvertRatio:int=0; PaneNum:int=0; Img:Image	Binary:Binary	
+SelectByAxis	Правка построений	Карио	Корректировка центральной линии (левая кнопка - задать точку, правая - завершить) и центромеры (левая кнопка+Shift), Esc - выход.	 (interactive)	D:\vt5\vt5\debug\comps\Chromaam.dll	AddToSource:int=0; Img:Image	Result:Image	
+CompareObjectsList	Сравнить списки объектов	Классификация	Сравнить списки объектов		D:\vt5\vt5\debug\comps\ChromExtrn.dll	Silent:int; Mode:int		
+GetObjectDescription	Информация	ClassBase	Информация		D:\vt5\vt5\debug\comps\ClassBase.dll	ObjectListName:string; Class:int=0		
+TrainClassifier	TrainClassifier	ClassBase	TrainClassifier		D:\vt5\vt5\debug\comps\ClassBase.dll	ClassFile:string		
+ClassifyObjectList	ClassifyObjectList	ClassBase	ClassifyObjectList		D:\vt5\vt5\debug\comps\ClassBase.dll	ClassFile:string; ObjectName:string; PrevClassFile:string; PrevClasses:string		
+SetClass	Назначить класс	Правка	Назначить класс для выбранного объекта		D:\vt5\vt5\debug\comps\ClassBase.dll	Class:int=-1; ClassFile:string; Deselect:int=0		
+AddAllObjectsToTeach	Добавить все объекты для обучения	Классификация	Добавить все объекты на активном изображении в обучающую базу		D:\vt5\vt5\debug\comps\Classify.dll			
+AddObjectToTeach	Добавить объект для обучения	Классификация	Добавить объект в обучающую базу - левая кнопка мыши	 (interactive)	D:\vt5\vt5\debug\comps\Classify.dll			
+EmptyClassifier	Очистить обучающую базу	Классификация	Очистка обучающей базы классификатора		D:\vt5\vt5\debug\comps\Classify.dll			
+TeachClassifier	Обучить классификатор	Классификация	Обучение классификатора по обучающей базе		D:\vt5\vt5\debug\comps\Classify.dll	ShowMessage:int		
+ManualClassifyObjects	Ручная классификация	Классификация	Ручная классификация объектов. Укажите класс выбранного объекта	 (interactive)	D:\vt5\vt5\debug\comps\Classify.dll			
+ClassifyObjects	Классифицировать объекты	Классификация	Автоматическая классификация всех объектов на активном изображении		D:\vt5\vt5\debug\comps\Classify.dll			
+CopyImageToObjects	Обновить список объектов	Преобразования	Обновить список объектов с изображения	 (filter)	D:\vt5\vt5\debug\comps\Classify.dll	Img:Image; ObjOld:Object List	Obj:Object List	
+EqualizeAllObj	Контраст хромосом	Преобразования	Контрастирование всех хромосом		D:\vt5\vt5\debug\comps\Classify.dll	Name:string		
+UnEqualizeObj	Отменить контраст	Преобразования	Отменить контрастирование выбранной хромосомы - левая кнопка мыши, выход - Esc.	 (interactive)	D:\vt5\vt5\debug\comps\Classify.dll			
+EqualizeObj	Контраст хромосомы	Преобразования	Контрастирование указанной хромосомы - левая кнопка мыши	 (interactive)	D:\vt5\vt5\debug\comps\Classify.dll			
+Freeze	Заморозка окна	For Developers	Заморозить окно программы		D:\vt5\vt5\debug\comps\Freeze.dll	WantToFreeze:int=1		
+InsertIdio	Вставить идиограмму	Карио	Вставить выбранную идиограмму из базы идиограмм		D:\vt5\vt5\debug\comps\idio.dll			
+BinMorphDivision	Разделение бинарного	Binary	Разделение бинарного изображение	 (filter)	D:\vt5\vt5\debug\comps\image.dll	BinImage:Binary	BinMorphDivision:Binary	
+BinDeleteSmallObjects	BinDeleteSmallObjects	Binary	BinDeleteSmallObjects	 (filter)	D:\vt5\vt5\debug\comps\image.dll	MinSize:int=5; MinSize2:int=-1; FormThreshold:double=0.3; FillValue:int=0; BinSource:Binary; Flags:int=0	BinResult:Binary	
+BinReconstructBack	BinReconstructBack	Binary	BinReconstructBack	 (filter)	D:\vt5\vt5\debug\comps\image.dll	BinSource:Binary; BinSeed:Binary	BinReconstructed:Binary	
+BinReconstructFore	BinReconstructFore	Binary	BinReconstructFore	 (filter)	D:\vt5\vt5\debug\comps\image.dll	BinSource:Binary; BinSeed:Binary	BinReconstructed:Binary	
+BinDilateObjects	Дилатация бинарного без слияния объектов	Binary	Дилатация бинарного без слияния объектов	 (filter)	D:\vt5\vt5\debug\comps\image.dll	DilateCount:int=0; BinImage:Binary	BinResult:Binary	
+BinSmooth	Сглаживание бинарного	Filters	Сглаживание бинарного изображения	 (filter)	D:\vt5\vt5\debug\comps\image.dll	MaskSize:int=9; Level:int=3; BinImage:Binary	BinSmooth:Binary	
+BinCustomLogic	BinCustomLogic	Binary	BinCustomLogic	 (filter)	D:\vt5\vt5\debug\comps\image.dll	Combinations:int=11; BinSource1:Binary; BinSource2:Binary	CustomLogic:Binary	
+BinXor	Объединение масок без пересечения	Маски объектов	Объединение масок без пересечения	 (filter)	D:\vt5\vt5\debug\comps\image.dll	BinSource1:Binary; BinSource2:Binary	BinXor:Binary	
+BinAnd	Пересечение масок	Маски объектов	Пересечение масок	 (filter)	D:\vt5\vt5\debug\comps\image.dll	BinSource1:Binary; BinSource2:Binary	BinAnd:Binary	
+BinOr	Объединение масок	Маски объектов	Объединение масок	 (filter)	D:\vt5\vt5\debug\comps\image.dll	BinSource1:Binary; BinSource2:Binary	BinOr:Binary	
+BinNot	Инвертировать маски	Маски объектов	Инвертировать маски объектов	 (filter)	D:\vt5\vt5\debug\comps\image.dll	BinSource1:Binary	BinNot:Binary	
+BinClose	Закрытие бинарного	Binary	Закрытие бинарного изображения	 (filter)	D:\vt5\vt5\debug\comps\image.dll	MaskSize:int=3; BinImage:Binary	BinErode:Binary	
+BinOpen	Открытие бинарного	Binary	Открытие бинарного изображения	 (filter)	D:\vt5\vt5\debug\comps\image.dll	MaskSize:int=3; BinImage:Binary	BinErode:Binary	
+BinDilate	Дилатация бинарного	Binary	Дилатация бинарного изображения	 (filter)	D:\vt5\vt5\debug\comps\image.dll	MaskSize:int=3; BinImage:Binary	BinDilate:Binary	
+BinErode	Эрозия бинарного	Binary	Эрозия бинарного изображения	 (filter)	D:\vt5\vt5\debug\comps\image.dll	MaskSize:int=3; BinImage:Binary	BinErode:Binary	
+BinMedian	Медиана бинарного	Binary	Медиана бинарного изображения	 (filter)	D:\vt5\vt5\debug\comps\image.dll	MaskSize:int=3; BinImage:Binary	BinMedian:Binary	
+ImageSubEx	Вычитание изображений	Преобразования	Вычитание изображений	 (filter)	D:\vt5\vt5\debug\comps\ImageFilters.dll	img1:Image; img2:Image	result:Image	
+ImageMul	Умножение изображений	Преобразования	Умножение изображений	 (filter)	D:\vt5\vt5\debug\comps\ImageFilters.dll	mul:double=1; img1:Image; img2:Image	result:Image	
+ImageDiv	Деление изображений	Преобразования	Деление изображений	 (filter)	D:\vt5\vt5\debug\comps\ImageFilters.dll	mul:double=1; img1:Image; img2:Image	result:Image	
+ImageSubLight	Вычитание фона	Преобразования	Устранение неровностей фона на изображении	 (filter)	D:\vt5\vt5\debug\comps\ImageFilters.dll	img1:Image; img2:Image	result:Image	
+ImageDiff	Разность изображений	Преобразования	Разность изображений	 (filter)	D:\vt5\vt5\debug\comps\ImageFilters.dll	img1:Image; img2:Image	result:Image	
+ImageSub	Вычитание изображений	Преобразования	Вычитание изображений	 (filter)	D:\vt5\vt5\debug\comps\ImageFilters.dll	img1:Image; img2:Image	result:Image	
+ImageAdd	Сложение изображений	Преобразования	Сложение изображений	 (filter)	D:\vt5\vt5\debug\comps\ImageFilters.dll	img1:Image; img2:Image	result:Image	
+ImageCombine	Комбинировать изображения	Filters	Комбинировать два изображения	 (filter)	D:\vt5\vt5\debug\comps\ImageFilters.dll	ShowInterface:int=1; A:double=1; B:double=0; C:double=0; img1:Image; img2:Image	result:Image	
+ApplyLookup	Применить таблицу преобразования цветов к изображению	Internal Actions	Применить таблицу преобразования цветов к изображению	 (filter)	D:\vt5\vt5\debug\comps\ImageFilters.dll	Result:Image	Img:Image	
+AutoBC	Автоконтраст	Преобразования	Автоматическое контрастирование изображения	 (filter)	D:\vt5\vt5\debug\comps\ImageFilters.dll	InputBlackLevel:int=0; InputWhiteLevel:int=0; OutputBlackLevel:int=0; OutputWhiteLevel:int=100; Img:Image	Result:Image	
+DilateOnImage	DilateOnImage	Filters	DilateOnImage	 (filter)	D:\vt5\vt5\debug\comps\ImageFilters2.dll	Quantity:double=100.0; Tolerance:double=20.0; Image:Image; Seed:Binary	DilateOnImage:Binary	
+Signature	Signature	Security	Signature	 (filter)	D:\vt5\vt5\debug\comps\ImageFilters2.dll	ImgSrc:Image	ImgResult:Image	
+Watermark	Watermark	Security	Watermark	 (filter)	D:\vt5\vt5\debug\comps\ImageFilters2.dll	Mark:int=1; ImgSrc:Image; ImgMark:Image	ImgResult:Image	
+TopHat	TopHat	Filters	TopHat	 (filter)	D:\vt5\vt5\debug\comps\ImageFilters2.dll	Mask:int=15; FindDark:int=1; Img:Image	TopHat:Image	
+FindNuclei	FindNuclei	Filters	Find Nuclei	 (filter)	D:\vt5\vt5\debug\comps\ImageFilters2.dll	Img:Image	Result:Image	
+AreaSeg	AreaSeg	Filters	Area Segmentation	 (filter)	D:\vt5\vt5\debug\comps\ImageFilters2.dll	smooth:int=4; k9:double=3; min_obj_size:double=1.0; bg_selection_method:int=3; bg_expand_method:int=2; bg_expand_level:double=0.1; Img:Image	Result:Binary	
+ColorSeg	ColorSeg	Filters	Color Segmentation	 (filter)	D:\vt5\vt5\debug\comps\ImageFilters2.dll	preset:int=1; seg_colors:int=0; radius:int=5; n_min:int=400; n_min1:int=200; n_con:int=30; count_lim:int=5; Img:Image	Result:Binary	
+EvenAAM	Выравнивание фона	Filters	Выравнивание фона	 (filter)	D:\vt5\vt5\debug\comps\ImageFilters2.dll	sqr_size:int=32; even_method:int=3; background_type:int=0; even_brightness:int=0; max_contrast:double=20; auto_contrast:int=0; Img:Image	Result:Image	
+CloseByReconstructionAAM	Close By Reconstruction AAM	Filters	Close By Reconstruction AAM	 (filter)	D:\vt5\vt5\debug\comps\ImageFilters2.dll	Seed:Image; Img:Image	Result:Image	
+OpenByReconstructionAAM	Open By Reconstruction AAM	Filters	Open By Reconstruction AAM	 (filter)	D:\vt5\vt5\debug\comps\ImageFilters2.dll	Seed:Image; Img:Image	Result:Image	
+DoubleEdge	DoubleEdge thresholding	Filters	DoubleEdge thresholding	 (filter)	D:\vt5\vt5\debug\comps\ImageFilters2.dll	Tmin:int=30000; Tmax:int=50000; Img:Image	Result:Binary	
+Variance	Вариации	Filters	Вариации	 (filter)	D:\vt5\vt5\debug\comps\ImageFilters2.dll	AddToSource:int=0; Img:Image	Result:Image	
+Gradient	Градиент	Filters	Градиент	 (filter)	D:\vt5\vt5\debug\comps\ImageFilters2.dll	AddToSource:int=0; Img:Image	Result:Image	
+MeanKNV	Сглаживание по размеру	Filters	Сглаживание по размеру	 (filter)	D:\vt5\vt5\debug\comps\ImageFilters2.dll	nMaskSize:int=20; nParam:int=100; Img:Image	Result:Image	
+MeanEV	Сглаживание по яркости	Filters	Сглаживание по яркости	 (filter)	D:\vt5\vt5\debug\comps\ImageFilters2.dll	mask_size:int=20; nParam:int=10000; Img:Image	Result:Image	
+AutoContrast	Автоконтраст	Filters	Автоконтраст	 (filter)	D:\vt5\vt5\debug\comps\ImageFilters2.dll	string_values1:string; string_values2:string; Img:Image	Result:Image	
+ColorBalance	Цветовой баланс	Filters	Коррекция цвета изображения	 (filter)	D:\vt5\vt5\debug\comps\ImageFilters2.dll	string_valeus:string; Img:Image	Result:Image	
+CloseByReconstruction	Close by Reconstruction	Filters	Close by reconstruction	 (filter)	D:\vt5\vt5\debug\comps\ImageFilters2.dll	mask_size:int=5; mask_type:int=1; color_epsilon:int=0; Img:Image	Result:Image	
+OpenByReconstruction	Open by Reconstruction	Filters	Open by reconstruction	 (filter)	D:\vt5\vt5\debug\comps\ImageFilters2.dll	mask_size:int=5; mask_type:int=1; color_epsilon:int=0; Img:Image	Result:Image	
+TeachNeuro	TeachNeuro	neuro	TeachNeuro		D:\vt5\vt5\debug\comps\neuro.dll	LearningInfo:string; ClassifyInfo:string		
+ClassifyNeuro	ClassifyNeuro	neuro	ClassifyNeuro	 (filter)	D:\vt5\vt5\debug\comps\neuro.dll	ClassifyInfo:string; ObjectList:Object List		
+UpdateOleObject	Обновить OLE объект	OLE объект	Обновить OLE объект		D:\vt5\vt5\debug\comps\OleClient.dll			
+ShowOleObjectContent	О создании OLE объекта	OLE объект	Информация о создании OLE объекта		D:\vt5\vt5\debug\comps\OleClient.dll			
+ShowOleObject	Показать OLE объект	OLE объект	Показать OLE объект		D:\vt5\vt5\debug\comps\OleClient.dll			
+DeactivateOleObject	Сделать неактивным OLE объект	OLE объект	Сделать неактивным OLE объект		D:\vt5\vt5\debug\comps\OleClient.dll			
+ActivateOleObject	Активизировать OLE объект	OLE объект	Активизировать OLE объект		D:\vt5\vt5\debug\comps\OleClient.dll			
+InsertOleObjectFromClipboardToExist	Вставить OLE объект из буфера	OLE объект	Вставить OLE объект из буфера		D:\vt5\vt5\debug\comps\OleClient.dll			
+InsertOleObjectFromClipboard	Вставить OLE объект из буфера в документ	OLE объект	Вставить OLE объект из буфера в документ		D:\vt5\vt5\debug\comps\OleClient.dll			
+InsertOleObjectToExist	Вставить OLE объект	OLE объект	Вставить  OLE объект		D:\vt5\vt5\debug\comps\OleClient.dll	InputFileName:string		
+InsertOleObject	Вставить OLE объект в документ	OLE объект	Вставить OLE объект в документ		D:\vt5\vt5\debug\comps\OleClient.dll	InputFileName:string		
+TakeObjectsRects	TakeObjectsRects	Particles	TakeObjectsRects	 (filter)	D:\vt5\vt5\debug\comps\Particles.dll	cx:int=100; cy:int=100; Image:Image; Objects:Object List	ObjectsWithRects:Object List	
+TailEdit	Редактирование хвоста	Particles	Редактирование хвоста (левая кнопка мыши) и средней части (Shift+лев. кнопка мыши)	 (interactive)	D:\vt5\vt5\debug\comps\Particles.dll			
+SegmLines	SegmLines	Particles	SegmLines	 (filter)	D:\vt5\vt5\debug\comps\Particles.dll	Src:Image; SrcParticles:Object List; SrcStopZone:Image	ResParticles:Object List	
+SegmObjects	SegmObjects	Particles	SegmObjects	 (filter)	D:\vt5\vt5\debug\comps\Particles.dll	Threshold:double=0.5; Dilate:int=5; Src:Object List	Res:Object List	
+ParticlesAddFrame	ParticlesAddFrame	Particles	ParticlesAddFrame		D:\vt5\vt5\debug\comps\Particles.dll	Current:Object List	Total:Object List	
+SpermSegm	SpermSegm	Particles	SpermSegm	 (filter)	D:\vt5\vt5\debug\comps\Particles.dll	BackTolerance:double=6; Img:Image; ForeMethod:int=-1	Binary:Binary	
+SegmSmallObjects	SegmSmallObjects	Particles	SegmSmallObjects		D:\vt5\vt5\debug\comps\Particles.dll	Image:Image; Binary:Binary; MinArea:int=5; Border:int=0; MinCX:int=16; MinCY:int=16	Objects:Object List	
+UnpackPhase	unpack phase	Phase analysis	unpack phase		D:\vt5\vt5\debug\comps\PhaseAnalysis.dll	UnpackedName:string; PackedName:string; Phase:int		
+PackPhase	pack phase	Phase analysis	pack phase		D:\vt5\vt5\debug\comps\PhaseAnalysis.dll	PackedName:string; UnpackedName:string; Phase:string=-1		
+UpdateWindow	UpdateWindow	For Developers	UpdateWindow		D:\vt5\vt5\debug\comps\PhaseAnalysis.dll	Invalidate:int=0; UpdateChildren:int=0		
+Sleep	sleep	For Developers	sleep		D:\vt5\vt5\debug\comps\PhaseAnalysis.dll	TimeMsec:int=1000		
+NewPhasePacked	Make new phase from background on single binary	Phase analysis	Make new phase from backgroundfrom background on single binary	 (filter)	D:\vt5\vt5\debug\comps\PhaseAnalysis.dll	NewPhase:int=-1; BinImage:Binary	BinResult:Binary	
+NewPhase	Сделать фон новой фазой	Фазовый анализ	Сделать фон новой фазой		D:\vt5\vt5\debug\comps\PhaseAnalysis.dll	PhaseNumber:int=-1; Name:string		
+SwitchPhase	Переключение фазы на активном фазовом изображении	Фазовый анализ	Переключение фазы на активном фазовом изображении		D:\vt5\vt5\debug\comps\PhaseAnalysis.dll	Phase:int=-1		
+GrayThresholdingPhase	Полутоновая бинаризация с получением фазы	Фазовый анализ	Полутоновая бинаризация с получением фазы	 (filter)	D:\vt5\vt5\debug\comps\PhaseAnalysis.dll	Low:int=0; High:int=256; Phase:int=0; BinImage:Image	BinResult:Binary	
+GrayThresholdingAllPhases	threshold all phases on image	Phase analysis	threshold all phases on image	 (filter)	D:\vt5\vt5\debug\comps\PhaseAnalysis.dll	Image:Image	BinResult:Binary	
+SewManual	Ручная сшивка	Изображение	Движение-стрелки, Ctrl-ускорение	 (interactive)	D:\vt5\vt5\debug\comps\sew.dll			
+SewAuto2	Auto Stitch	Image	Stitch selected images automatically	 (filter)	D:\vt5\vt5\debug\comps\sew.dll	Img0:Image; Img1:Image	Stitch Result:Image	
+SewAutoVert	Автоматическая вертикальная сшивка	Изображение	Автоматическая сшивка пронумерованных  изображений сверху вниз	 (filter)	D:\vt5\vt5\debug\comps\sew.dll	Img0:Image; Img1:Image; Img2:Image; Img3:Image; Img4:Image; Img5:Image; Img6:Image; Img7:Image; Img8:Image; Img9:Image; Img10:Image; Img11:Image; Img12:Image; Img13:Image; Img14:Image; Img15:Image; Img16:Image; Img17:Image; Img18:Image; Img19:Image	Stitch Result:Image	
+SewAuto	Автоматическая горизонтальная сшивка	Изображение	Автоматическая сшивка пронумерованных  изображений слева на право	 (filter)	D:\vt5\vt5\debug\comps\sew.dll	Img0:Image; Img1:Image; Img2:Image; Img3:Image; Img4:Image; Img5:Image; Img6:Image; Img7:Image; Img8:Image; Img9:Image; Img10:Image; Img11:Image; Img12:Image; Img13:Image; Img14:Image; Img15:Image; Img16:Image; Img17:Image; Img18:Image; Img19:Image	Stitch Result:Image	
+StageUndoMove	undo move stage	Stage	undo move stage		D:\vt5\vt5\debug\comps\Stage.dll			
+StageFocusInformation	focus information	Stage	focus information		D:\vt5\vt5\debug\comps\Stage.dll			
+StageAutoFocus	find focus	Stage	find focus		D:\vt5\vt5\debug\comps\Stage.dll	InitialStepMcs:int=0; StepsUp:int=0; StepsDown:int=0		
+MoveStage	move stage	Stage	move stage by mouse	 (interactive)	D:\vt5\vt5\debug\comps\Stage.dll			
+ShowStatTableDependence	Show Statistics Table Depandance	Statistics	Show statatistics table Depandance		D:\vt5\vt5\debug\comps\StatData.dll			
+CustomizeStatTable	Customize Statistics Table	Statistics	Customize statatistics table		D:\vt5\vt5\debug\comps\StatData.dll			
+ShowAllStatTableColumns	Show All Statistics Table Columns	Statistics	Show all statatistics table columns		D:\vt5\vt5\debug\comps\StatData.dll			
+HideStatTableColumn	Hide Statistics Table Column	Statistics	Hide statatistics table column		D:\vt5\vt5\debug\comps\StatData.dll			
+SewStatTable	Sew Statistics Table	Statistics	Sew statatistics table		D:\vt5\vt5\debug\comps\StatData.dll	StatTable1:string; StatTable2:string; StatTableNew:string; ActivateTable:int=1; OvewriteType:int=0		
+FilterStatTable	Filter Statistics Table	Statistics	Filter statatistics table		D:\vt5\vt5\debug\comps\StatData.dll	StatTable:string; StatTableNew:string; ActivateTable:int=1; UseParamsFilter:int=1; Classes:string; ClassesFile:string		
+DeleteObjectsFromStatTable	Delete Objects From Statistics Table	Statistics	Delete objects from statatistics table		D:\vt5\vt5\debug\comps\StatData.dll	StatTable:string; ObjectListName:string; ImageName:string		
+ExportStatTable	Сохранить таблицу данных в текстовом формате	Измерения	Сохранить таблицу данных в текстовом формате		D:\vt5\vt5\debug\comps\StatData.dll	StatTable:string; FileName:string; ExportType:int=0; AddParamNames:int=1		
+ShowStatTable	Таблица данных	Вид	Показать таблицу данных		D:\vt5\vt5\debug\comps\StatData.dll			
+CreateStatTable	Create Statistics Table	Statistics	Create statatistics table		D:\vt5\vt5\debug\comps\StatData.dll	ObjectList:string; TableName:string; ActivateTable:int=1; SendImages:int=0; VerifyType:int=0; AskOverWrite:int=1; EnableUndo:int=1		
+ShowVirtualClasses	ShowVirtualClasses	Statistics	ShowVirtualClasses		D:\vt5\vt5\debug\comps\StatUI.dll	bShow:int=-1		
+AssignVirtualClasses	AssignVirtualClasses	Statistics	AssignVirtualClasses		D:\vt5\vt5\debug\comps\StatUI.dll	ObjectListName:string; StatObjectName:string		
+CreateStatObject	CreateStatObject	Статистика	CreateStatObject		D:\vt5\vt5\debug\comps\StatUI.dll	StatDataName:string; OutputObjectName:string; ClassForDivision:int=-1; ActivateAfterCreate:int=1; ValidateAfterCreate:int=1; Flags:int=0		
+ShowStatTableView	Показать таблицу	Статистика	Включить/выключить отображение таблицы		D:\vt5\vt5\debug\comps\StatUI.dll	Show:int=-1		
+ShowStatLegendView	Показать легенду	Статистика	Включить/выключить отображение легенды		D:\vt5\vt5\debug\comps\StatUI.dll	Show:int=-1		
+ShowStatChartView	Показать диаграмму	Статистика	Включить/выключить отображение столбцовой диаграммы		D:\vt5\vt5\debug\comps\StatUI.dll	Show:int=-1		
+ShowStatView	Статистика	Вид	Показать статистику		D:\vt5\vt5\debug\comps\StatUI.dll			
+CreateStorageObject	Create Storage Object	Storage	Create storage object		D:\vt5\vt5\debug\comps\Storage.dll	ObjectName:string; FileName:string; Temporary:int=0; OverwritePrompt:int=1		
+Snapshot	Snapshot	Tests	Snapshot		D:\vt5\vt5\debug\comps\TestMan.dll	ShowTargetDialog:int=0; ResizeCX:int=0; ResizeCY:int=0; ScrollWindow:int=0; WndPhoto:string=WndPhoto; SnapParents:int=0; SnapX:int=-1; SnapY:int=-1		
+TransformColor1	TransformColor1	Color	TransformColor1	 (filter)	D:\vt5\vt5\debug\comps\thresholding.dll	Flags:int=0; Img:Image	TransformColor1:Image	
+SegmColorPhases	SegmColorPhases	Filters	SegmColorPhases	 (filter)	D:\vt5\vt5\debug\comps\thresholding.dll	Img:Image; TestPointX:int=-1; TestPointY:int=-1	SegmColorPhases:Binary	
+FindPhasesColor	FindPhasesColor	Filters	FindPhasesColor	 (filter)	D:\vt5\vt5\debug\comps\thresholding.dll	nPhases:int=3; CreateResult:int=1; Img:Image	FindPhasesColor:Image	
+FindPhasesGray	Поиск фаз на grayscale	Filters	FindPhasesGray	 (filter)	D:\vt5\vt5\debug\comps\thresholding.dll	CreateResult:int=1; Img:Image	FindPhasesGray:Binary	
+LocalMin	Бинаризация локального минимума	Filters	Бинаризация локального минимума	 (filter)	D:\vt5\vt5\debug\comps\thresholding.dll	Img:Image	LocalMin:Binary	
+LocalMax	Бинаризация локального максимума	Filters	Бинаризация локального максимума	 (filter)	D:\vt5\vt5\debug\comps\thresholding.dll	Img:Image	LocalMax:Binary	
+ChowKaneko	Бинаризация Шов/Канеко	Filters	Бинаризация Шов/Канеко	 (filter)	D:\vt5\vt5\debug\comps\thresholding.dll	Param:int=64; Type:int=0; Img:Image	ChowKaneko:Binary	
+Relaxation	Бинаризация с релаксацией	Filters	Бинаризация с релаксацией	 (filter)	D:\vt5\vt5\debug\comps\thresholding.dll	Param:int=100; Img:Image	Relaxation:Binary	
+Pyramid	Пирамидальная сегментация	Filters	Пирамидальная сегментация	 (filter)	D:\vt5\vt5\debug\comps\thresholding.dll	Param:int=1; Img:Image	Pyramid:Image	
+MinBinaryThreshold	Бинаризация по минимизации	Filters	Бинаризация по минимизации ошибки	 (filter)	D:\vt5\vt5\debug\comps\thresholding.dll	Img:Image	BinaryMinimum:Binary	
+BoundsThreshold	Бинаризация по границам	Filters	Бинаризация по границам	 (filter)	D:\vt5\vt5\debug\comps\thresholding.dll	Img:Image	BoundsEdge:Binary	
+PeaksThreshold	Бинаризация по пикам	Filters	Бинаризация по пикам гистограммы	 (filter)	D:\vt5\vt5\debug\comps\thresholding.dll	Img:Image	Peaks:Binary	
+EntropyThreshold	Бинаризация по энтропии	Filters	Бинаризация по критерию минимума энтропии	 (filter)	D:\vt5\vt5\debug\comps\thresholding.dll	Img:Image	Entropy:Binary	
+FuzzySetsThreshold	Бинаризация нечетких множеств	Filters	Бинаризация по границе нечетких множеств	 (filter)	D:\vt5\vt5\debug\comps\thresholding.dll	Img:Image	FuzzySets:Binary	
+IterationThreshold	Итерационная бинаризация	Filters	Бинаризация с использованием итерационной границы	 (filter)	D:\vt5\vt5\debug\comps\thresholding.dll	Img:Image	Iteration:Binary	
+add_functions	add_functions	Скрипты	add_functions 					
+add_functions_db	add_functions_db	Скрипты	add_functions_db 					
+add_functions_object_keys	add_functions_object_keys	Скрипты	add_functions_object_keys 					
+AT2Windows	Show AT in 2 Windows	View	Show AT in 2 windows Show AT in 2 Windows					
+AutoContastBCscript	AutoContastBCscript	Скрипты	AutoContastBCscript 					
+AutoSave	AutoSave	Скрипты	AutoSave 					
+BinMeas	Measure Masks	Measurement	Measure object masks Measure Masks					
+CaseOpen	Open Case...	File	Open an existing Case File Open Case					
+Collect	Focus Enhancement	Enhance	Focus Enhancement Focus Enhancement					
+CombineHSB	Merge HSB Channels	Image	Merge the image from the color channels Merge HSB channels					
+CombineRGB	Merge RGB Channels	Image	Merge the image from the color channels Merge RGB Сhannels					
+CombineYIQ	Merge YIQ Channels	Image	Merge the image from the color channels Merge YIQ Сhannels					
+CombineYUV	Merge YUV Channels	Image	Merge the image from the color channels Merge YUV Сhannels					
+CompareResut	Stitch from Splitter	Image	Create new image by combining two split images Stitch from splitter					
+ConvertToGRAY	Convert to Gray Scale	Color	Remove the color information from the image Convert to Gray Scale					
+ConvertToHSB	ConvertToHSB	Скрипты	ConvertToHSB 					
+ConvertToRGB	ConvertToRGB	Скрипты	ConvertToRGB 					
+CreateTD	Add to Statistics	Measurement	Add data to statistics Add Data to Statistics					
+DataTableToExcel	Data Table to Excel	Measurement	Send current Data Table to MS Excel Send Data Table to MS					
+DataToExcel	Отправить данные в MS Excel	Измерения	Отправить активный список объектов в MS Excel Отправить данные в MS Excel					
+DeleteSelectionPro	Delete Active Object	Edit	Delete the active object Delete Active Object					
+EmptyFileOpen	EmptyFileOpen	Internal Scripts	EmptyFileOpen 					
+EmptyFileOpenLight	EmptyFileOpenLight	Internal Scripts	EmptyFileOpenLight 					
+FFTMode	Режим Фурье	FFT	Нажатие кнопки - запуск прямого преобразования Фурье на активном изображении, отжатие кнопки - запуск обратного преобразования Фурье Режим Фурье					
+FileSaveViewScript	Save View...	File	Save the current view as file Save View					
+FileSendViewScript	Send View...	File	Send the current view by E-Mail Send View					
+FloodFillSelection	Fill Freehand Selection	Image	Fill freehand selection with background color Fill Freehand Selection					
+Format	Format	---	Format 					
+HideColorAndPropertis	Hide Color and Properties	Tools	Hide Color and Properties toolbars. Hide Color and Properties					
+HideDockBars	Hide Dockbars	Internal Scripts	Hide dockbars 					
+ImageTile	Tile Selected Images	View	Tile Selected Images Tile Selected Images					
+ImportVTI	Import VTI...	File	Import VTI file Import VTI					
+Init_Expert	_	---	_ _					
+Init_FP	_	---	_ _					
+Init_Master	Init_Master	Скрипты	Init_Master 					
+Init_Size	_	---	_ _					
+InputColorFromnBW	InputColorFromnBW	Скрипты	InputColorFromnBW 					
+JoinObjects	Объединить объекты...	Измерения	Объединить объекты Объединить объекты					
+LoadImage	Load Image...	File	Load image into open document Load Image					
+LocalContrast	Local Contrast	Enhance	Local contrast Local Contrast					
+MasterModeDataBase	Database	Tools	Switch to Database mode Database Mode					
+MasterModeMethod	Method	Tools	Switch to Method mode Method Mode					
+Master_states	Master_states	Скрипты	Master_states 					
+MethodStart	MethodStart	Скрипты	MethodStart 					
+NewCase	New Case...	File	Create new Case File New Case					
+NewDataBase	New Database...	Database	Create new database New Database					
+NewDoc	Новый документ	Файл	Создать новый документ Новый документ					
+NewReport	New Print Template	Print	Create new print template New print template					
+NewScissors	Ножницы...	Измерения	Ножницы Ножницы					
+Null_Action	Null	---	Null Null					
+OpenDataBase	Open Database...	Database	Open existing database Open Database					
+OpenDB	Открыть базу данных...	База данных	Открыть базу данных Открыть базу данных					
+OpenImage	Open Document	File	Open document Open Document					
+OpenLastDB	Open Last Database...	Database	Open last used database Open Last Database					
+Options	Options	Tools	Main Options Main Options					
+OptionsMaster	Options...	Tools	Main program options Main Options					
+OptionsSize	Установки...	Сервис	Основные установки Основные установки					
+PasteAsNew	Paste into New Document	Edit	Paste into new document Paste into New Document					
+qq	666	666	cq666 666					
+RemoveUnknClass	Delete Unknown	Measurement	Delete all unknown objects Delete All Unknown Objects					
+RenameMethod	Rename Method	Method	Rename the selected method Rename Method					
+RGBInput	Input Color from BW...	Acquire	Input three black-and-white images from RGB color filters and then combine them Input color from BW					
+RunAutoSave	Установки записи	Ввод	Установки записи Установки записи					
+RunAutoTemplateSetup	Установки автошаблона	Печать	Установки автошаблона Установки автошаблона					
+RunBinMorph	Mask Morphology...	Object masks	Morphological operations on the object masks on the image Morphological Operations on the Object Masks					
+RunBrightnessContrast	Яркость/контраст	Преобразования	Настройка яркости и контрастности изображения Яркость/контраст					
+RunBrightnessContrastLight	Brightness and Contrast	Enhance	Adjust brightness and contrast of the active image Brightness and Contrast					
+RunCalibr	Calibration...	Measurement	Select existing calibration or create new. Select calibration					
+RunCalibrFP	Calibration FP	Measurement	Create new calibration Calibration FP					
+RunCalibrXYRatio	Input Device X/Y Ratio	Measurement	Specify X/Y pixel ratio for active input device Input Device X/Y Ratio					
+RunClass	Classifier	Statistics	Classifier Classifier					
+RunColorAutoThresholding	Автоматическое...	Маски объектов	Автоматическое выделение масок объектов на изображении Автоматическое выделение масок объектов					
+RunColorBalance	Цветовой баланс	Преобразования	Коррекция цвета изображения Цветовой баланс					
+RunColorManualThresholding	По указанным областям...	Маски объектов	Ручное выделение масок объектов на изображении по образцам цвета или яркости Выделение масок объектов по указанным областям					
+RunColorPhaseThresholding	Выделение фаз...	Маски объектов	Автоматическое выделение фаз на изображении Автоматическое выделение фаз					
+RunContrast	Contrast	Filters	Ajust contrast Contrast					
+RunCreateEmptyImage	Create Empty Image...	File	Create an empty image in the active document Create Empty Image					
+RunCreateParam	Новый столбец	Измерения	Добавить новый столбец в таблицу измерений Новый столбец					
+RunDataBaseDesign	Form Design...	Database	Form design and database editing Form Design					
+RunDivide	Разделение...	Маски объектов	Автоматическое разделение масок объектов на изображении Автоматическое разделение масок объектов					
+RunEdgeDetection	Выделение границ	Преобразования	Выделить границы деталей изображения Выделение границ					
+RunEditMarker	Произвольный маркер	Измерения	Калибровочный маркер произвольной длины Произвольный маркер					
+RunEnchancedFocus	RunEnchancedFocus	Скрипты	RunEnchancedFocus 					
+RunEqualize	Выравнивание	Преобразования	Усиление контрастности деталей изображения Выравнивание					
+RunEven	Выравнивание фона	Преобразования	Выравнивание неоднородного по яркости фона изображения Выравнивание фона					
+RunExcelForm	RunExcelForm	Скрипты	RunExcelForm 					
+RunFases	Phases	Enhance	Phases Phases					
+RunFFTColor	FFT Color	Tools	Select color of FFT lines FFT Color					
+RunGrayThresholding	По порогу яркости...	Маски объектов	Выделение масок объектов на изображении по порогу яркости Выделение масок объектов по порогу яркости					
+RunHist	RunHist	Скрипты	RunHist 					
+RunInfo	Информация об изображении...	Изображение	Информация об изображении Информация об изображении					
+RunInfoNoCalibre	Image Information...	Image	Image Information Image Information					
+RunInput3Panes	RunInput3Panes	Скрипты	RunInput3Panes 					
+RunLookUp	Расширенный контраст	Инструменты	Расширенный контраст Расширенный контраст					
+RunMarker	Фиксированный маркер...	Измерения	Калибровочный маркер фиксированной длины Фиксированный маркер					
+RunMeasParameters	Параметры измерений...	Измерения	Выбор параметров измерений Параметры измерений					
+RunMethodSetup	Установки методики	Методика	Установки методики Установки методики					
+RunMorphology	Морфологические фильтры...	Изображение	Морфологические операции на исходном изображении Морфологические фильтры					
+RunNewCalibr	New Calibration...	Measurement	Create new calibration New Calibration					
+RunODensity	Настройка оптической плотности...	Измерения	Настройка оптической плотности Настройка оптической плотности					
+RunOptionsAudit	Установки записи истории...	Инструменты	Вызов окна установок записи истории Установки записи истории					
+RunOptionsCalibr	Выбор калибровки...	Измерения	Выбор калибровки или единиц измерения Выбор калибровки					
+RunOptionsCalibrNoUnits	Выбор калибровки...	Измерения	Выбор калибровки Выбор калибровки					
+RunOptionsDB	Взаимодействие с базой данных...	База данных	Выбор полей для взаимодействия с базой данных Взаимодействие с базой данных					
+RunOptionsDBMaster	Взаимодействие с базой данных...	База данных	Выбор полей для взаимодействия с базой данных Взаимодействие с базой данных					
+RunOptionsMain	RunOptionsMain	Скрипты	RunOptionsMain 					
+RunOptionsManualColor	RunOptionsManualColor	Скрипты	RunOptionsManualColor 					
+RunOptionsManualMeas	RunOptionsManualMeas	Скрипты	RunOptionsManualMeas 					
+RunOptionsManualMeasLabel	RunOptionsManualMeasLabel	Скрипты	RunOptionsManualMeasLabel 					
+RunOptionsManualMeasStat	RunOptionsManualMeasStat	Скрипты	RunOptionsManualMeasStat 					
+RunOptionsPrint	Цвета страницы	Печать	Выбор цветов страницы шаблона печати Цвета страницы					
+RunOptionsStitch	Установки автоматической сшивки...	Изображение	Установки автоматической сшивки Установки автоматической сшивки					
+RunPrintPanelDBMaster	Печать базы...	Печать	Печать... Печать...					
+RunPrintPanelMaster	Печать...	Печать	Печать... Печать...					
+RunPrintTemlateEdit	RunPrintTemlateEdit	Скрипты	RunPrintTemlateEdit 					
+RunResize	Изменить размер...	Изображение	Изменить размер изображения Изменить размер					
+RunSaveAVI	Ввод AVI файлов	Ввод	Ввод AVI файлов Ввод AVI файлов					
+RunSetup	RunSetup	Скрипты	RunSetup 					
+RunSetupBorders	Добавить поля...	Изображение	Добавить поля вокруг изображения Добавить поля					
+RunSetupRGBInput	Setup RGB Input...	Acquire	Specify coefficients for RGB input Setup RGB Input					
+RunSharpen	Sharpen	Enhance	Sharpen Sharpen					
+RunSmooth	Сглаживание	Преобразования	Очистка изображения от высокочастотных шумов и удаление ненужных деталей Сглаживание					
+RunStat	RunStat	Скрипты	RunStat 					
+RunStatGraphAxis	Оси	Статистика	Оси Оси					
+RunStatGraphCompare	Сравнение	Статистика	Сравнение Сравнение					
+RunStatGraphDepend	Зависимость	Статистика	Зависимость Зависимость					
+RunStatGraphDistr	Распределение	Статистика	Распределение Распределение					
+RunStatGraphDistrOptions	Заголовки	Статистика	Заголовки Заголовки					
+RunStatSelect	Выборка	Статистика	Выборка Выборка					
+RunSupport	Technical Support	Help	Technical support Technical Support					
+RunTemplatesManagerDBMaster	Редактор шаблонов в базе...	Печать	Редактор шаблонов печати Редактор шаблонов					
+RunTemplatesManagerMaster	Редактор шаблонов...	Печать	Редактор шаблонов печати Редактор шаблонов					
+RunTestNewCalibr	Calibration Test...	Measurement	Calibration accuracy test Calibration Test					
+RunThresholding	Thresholding...	Binary	Thresholding Thresholding					
+RunTimerInput	Ввод по таймеру	Ввод	Ввод кадров с заданным интервалом Ввод по таймеру					
+RunTraceColor	RunTraceColor	Скрипты	RunTraceColor 					
+RunUnsharpen	Усиление резкости	Преобразования	Усиление общей (контурной) резкости изображения Усиление резкости					
+RunUserMeasParamEdit	Пользовательские параметры...	Измерения	Пользовательские измерительные параметры Пользовательские параметры					
+SaveGalleryAsImage	Save gallery	File	Save gallery Save gallery					
+SaveImage	Save Image...	File	Save image to file Save Image					
+SaveObjects	SaveObjects	Скрипты	SaveObjects 					
+SelectAreaCrop	Crop by Freehand Selection	Image	Crop the image by freehand selection Crop by Freehand Selection					
+SelectInputDevice	Способ получения изображения...	Ввод	Выбор способа получения изображения Способ получения изображения					
+SelectRectCrop	Crop by Rectangle Selection	Image	Crop the image by rectangle selection Crop by Rectangle Selection					
+SelectUser	Select User...	Tools	Select user. Select user					
+SendSrcImageToDB	Исходное изображение в БД	База данных	Отправить исходное изображение в базу данных по настройкам взаимодействия Отправить исходное изображение в БД					
+SendToDB	Send to Database	Database	Send data to new database record Send to New Database Record					
+SendToDBAllTypes	Все элементы в БД	База данных	Отправить все элементы в базу данных по настройкам взаимодействия Отправить все элементы в БД					
+SendToDBFieldsSetup	Настроить поля	База данных	Назначить поля для отправки в базу данных Настроить поля					
+SendToDBFileName	Отправить в базу	База данных	Отправить изображение и название файла в базу, в текущую запись Отправить изображение и имя файла в базу					
+SendToDBToActiveField	В активное поле БД	База данных	Отправить активный элемент в активное поле базы данных Отправить в активное поле БД					
+SetBrightnessPanes	Set Panes for Brightness	Internal Scripts	Set Panes for Brightness Set Panes for Brightness					
+Setup	Setup	Скрипты	Setup 					
+ShowAdd	ShowAdd	Скрипты	ShowAdd 					
+ShowBinaryToolBar	Binary Editor	Tools	Show/hide Binary Editor toolbar Binary Editor					
+ShowCfg	Конфигурация	Статистика	Показать/спрятать панель Конфигурация Показать/спрятать панель Конфигурация					
+ShowClassLabels	Show Class Labels	Tools	Show/hide labels of classes Show Class Labels					
+ShowColor	Палитра	Сервис	Показать/спрятать Палитру Палитра					
+ShowColorAndPropertis	Show/Hide Color and Properties	Tools	Show/hide Color and Properties boxes. Show/hide Color and Properties					
+ShowContextscript	Context Viewer	Tools	Show/hide Context Viewer Context Viewer					
+ShowDockBars	Show Dockbars	Internal Scripts	Show dockbars 					
+ShowEdit	Редактор	Сервис	Показать/спрятать панель Редактор Редактор					
+ShowFilters	Фильтры	Сервис	Показать/спрятать панель Фильтры Фильтры					
+ShowHistogram	Гистограмма	Сервис	Показать/спрятать Гистограмму Гистограмма					
+ShowImageAnnotation	Image Annotation	Tools	Show/hide Image Annotation toolbar Image Annotation					
+ShowMeas	Измерения	Сервис	Показать/спрятать панель Измерения Измерения					
+ShowMeasManual	Manual Measurements	Tools	Show/hide Manual Measurements toolbar Manual Measurements					
+ShowMethodPanel	Методика	Сервис	Показать/спрятать панель Методика Методика					
+ShowMetodicsTab	Функции	Сервис	Показать/спрятать панель Функции Функции					
+ShowObjectEditor	Object Editor	Tools	Show/hide Object Editor toolbar Object Editor					
+ShowPropertyBar	Properties Page	Tools	Show/hide Properties page Properties Page					
+ShowSelectionToolBar	Рамки	Сервис	Показать/спрятать панель Рамки Рамки					
+ShowStatInfo	Информация	Статистика	Показать/спрятать панель Информация Показать/спрятать панель Информация					
+SideBySide	Split Window	Window	To divide the window into two parts Split Window					
+Source	Source	---	Source 					
+SplFrm	Split Form	For Developers	Show form layout and script. Split form					
+StartFFT	FFT Forward	FFT	Run Fast Fourier Transformation  FFT Forward					
+StatDataToExcel	Отправить данные таблицы статистики в MS Excel	Измерения	Отправить данные таблицы статистики в MS Excel Отправить данные таблицы статистики в MS Excel					
+StatRemove	Очистить статистику	Статистика	Удалить таблицу данных Удалить таблицу данных					
+SwitchImageSourceView	Вкл./выкл. контуры объектов	Вид	Вкл./выкл. контуры объектов Вкл./выкл. контуры объектов					
+TestScript	Test Method...	Measurement	Test input system quality and software operability Test Method					
+ToolbarList	ToolbarList	Скрипты	ToolbarList 					
+TV1	Выбор устройства ввода...	Ввод	Выбор устройства ввода изображения Выбор устройства ввода 					
+TV2	Ввод изображения в новый документ...	Ввод	Ввод изображения в новый документ без выбора устройства Ввод изображения в новый документ					
+TV3	TV3	Скрипты	TV3 					
+TV4	Ввод изображения в активный документ...	Ввод	Ввод изображения в активный документ Ввод изображения в активный документ					
+TV5	Захват	Ввод	Захват изображения с устройства ввода Захват					
+Wnd2AT	Изображение и его история	Окно	Отображать в разделенном окне документа изображение и его историю Изображение и его история					
+Wnd2Meas	Разделить и синхронизировать	Окно	Отображать в разделенном окне документа изображение и таблицу измерений Разделить и синхронизировать					

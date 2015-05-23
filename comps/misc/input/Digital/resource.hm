@@ -1,0 +1,35 @@
+// Microsoft Developer Studio generated Help ID include file.
+// Used by Digital.rc
+//
+#define HIDCANCEL                       0x80650002    // IDD_DLG_SETUP
+#define HIDC_ADDR                       0x80650407    // IDD_DLG_SETUP
+#define HIDC_AMP                        0x806503f2    // IDD_DLG_SETUP
+#define HIDC_EDIT_0                     0x806503ea    // IDD_DLG_SETUP
+#define HIDC_EDIT_255                   0x80650412    // IDD_DLG_SETUP
+#define HIDC_FRAMES                     0x806503f4    // IDD_DLG_SETUP
+#define HIDC_FRAMES_SPIN                0x806503eb    // IDD_DLG_SETUP
+#define HIDC_GAMMA                      0x8065042c    // IDD_DLG_SETUP
+#define HIDC_IMAGE                      0x80650406    // IDD_DLG_SETUP
+#define HIDC_INTERFACE_SIMPLE           0x8065041e    // IDD_DLG_SETUP
+#define HIDC_KADROV                     0x80650421    // IDD_DLG_SETUP
+#define HIDC_MEM                        0x8065042a    // IDD_DLG_SETUP
+#define HIDC_SET_ZERO                   0x8065042b    // IDD_DLG_SETUP
+#define HIDC_SHUTTER                    0x8065041c    // IDD_DLG_SETUP
+#define HIDC_STATIC_ADDR                0x8065040b    // IDD_DLG_SETUP
+#define HIDC_STATIC_AMPL                0x80650419    // IDD_DLG_SETUP
+#define HIDC_STATIC_AVER                0x80650415    // IDD_DLG_SETUP
+#define HIDC_STATIC_MAX                 0x8065040d    // IDD_DLG_SETUP
+#define HIDC_STATIC_MIN                 0x8065040c    // IDD_DLG_SETUP
+#define HIDC_STATIC_TIMER               0x80650429    // IDD_DLG_SETUP
+#define HIDC_STATIC_ZERO_LEVEL          0x80650418    // IDD_DLG_SETUP
+#define HIDC_ST_AMPL2                   0x80650425    // IDD_DLG_SETUP
+#define HIDC_ST_ZERO2                   0x80650426    // IDD_DLG_SETUP
+#define HIDC_SUPER                      0x8065041d    // IDD_DLG_SETUP
+#define HIDC_TECH_SHOW_HIDE             0x80650400    // IDD_DLG_SETUP
+#define HIDC_TIMER                      0x80650428    // IDD_DLG_SETUP
+#define HIDC_TUNE                       0x806503f3    // IDD_DLG_SETUP
+#define HIDC_VAL_AVER                   0x80650410    // IDD_DLG_SETUP
+#define HIDC_VAL_MAX                    0x8065040f    // IDD_DLG_SETUP
+#define HIDC_VAL_MIN                    0x8065040e    // IDD_DLG_SETUP
+#define HIDC_ZLEVEL                     0x806503f1    // IDD_DLG_SETUP
+#define HIDOK                           0x80650001    // IDD_DLG_SETUP

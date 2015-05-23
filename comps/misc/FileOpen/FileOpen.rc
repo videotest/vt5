@@ -1,0 +1,432 @@
+//Microsoft Developer Studio generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// Chinese (P.R.C.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)
+#ifdef _WIN32
+LANGUAGE LANG_CHINESE, SUBLANG_CHINESE_SIMPLIFIED
+#pragma code_page(936)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO DISCARDABLE 
+BEGIN
+    "IDD_FILEOPEN", DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 323
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 146
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_FILEOPEN DIALOG DISCARDABLE  0, 0, 330, 153
+STYLE DS_3DLOOK | WS_VISIBLE | WS_CAPTION | WS_SYSMENU | WS_THICKFRAME
+FONT 8, "MS Sans Serif"
+BEGIN
+    CONTROL         "",IDC_PREVIEW,"",WS_TABSTOP,150,7,126,91
+    COMBOBOX        IDC_CB_FILE_NAME,74,47,75,30,CBS_DROPDOWN | CBS_SORT | 
+                    WS_VSCROLL | WS_TABSTOP
+    LTEXT           "",IDC_ST_FILE_INFO,16,97,119,40,SS_SUNKEN
+    PUSHBUTTON      "Button1",IDCANCEL,165,104,50,14
+    LISTBOX         IDC_LIST_FILE_INFO,221,102,82,18,NOT LBS_NOTIFY | 
+                    LBS_NOINTEGRALHEIGHT | LBS_NOSEL | WS_DISABLED | 
+                    WS_VSCROLL | WS_HSCROLL | WS_TABSTOP
+    CONTROL         "Progress1",IDC_PROGRESS,"msctls_progress32",PBS_SMOOTH | 
+                    WS_BORDER,116,73,80,14
+    LTEXT           "Static",IDC_ST_SIZER,35,107,19,8
+    SCROLLBAR       IDC_SCROLLBAR_HORZ,83,16,40,11
+    SCROLLBAR       IDC_SCROLLBAR_VERT,299,22,10,40,SBS_VERT
+    GROUPBOX        "mjmj",IDC_STATIC,15,22,48,40
+    LTEXT           "Static",IDC_STATIC,31,79,19,8,SS_SUNKEN
+END
+
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)\r\n"
+    "#ifdef _WIN32\r\n"
+    "LANGUAGE 9, 1\r\n"
+    "#pragma code_page(1252)\r\n"
+    "#endif //_WIN32\r\n"
+    "#include ""res\\FileOpen.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "#include ""afxres.rc""         // Standard components\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDR_TOOLBAR_PREVIEW     BITMAP     DISCARDABLE        "toolbar1.bmp"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Toolbar
+//
+
+IDR_TOOLBAR_PREVIEW TOOLBAR DISCARDABLE  16, 15
+BEGIN
+    BUTTON      ID_BT_LIST
+    BUTTON      ID_BT_DETAIL
+    BUTTON      ID_BT_PREVIEW
+    SEPARATOR
+    BUTTON      ID_BT_ADD_FAVORITE
+    BUTTON      ID_BT_GOTO_FAVORITE
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_TOOLTIP_PREVIEW     "Ф¤АА"
+    IDS_TOOLTIP_LIST        "БР±н"
+    IDS_TOOLTIP_DETAILS     "ПкПёРЕПў"
+    IDS_TOOLTIP_ADD_FAV     "МнјУµЅКХІШјР"
+    IDS_TOOLTIP_GOTO_FAV    "ЧЄµЅКХІШјР"
+    IDS_FAVORITE_FOLDER     "КХІШјР"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_INFO_NUMPAGES       "ТіКэ:"
+    IDS_INFO_WIDTH          "їн¶И:"
+    IDS_INFO_HEIGHT         "ёЯ¶И:"
+    IDS_INFO_COLORS         "СХЙ«"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_INFO_DEPTH          "ГїПсЛШ±ИМШКэ"
+    IDS_INFO_COMPRESS       "С№Лх:"
+    IDS_INFO_FILESIZE       "ОДјюґуРЎ:"
+    IDS_INFO_CAPTION        "РЕПў"
+    IDS_ERROR_LOAD_FILE     "ОЮ·ЁФ¤ААґЛОДјюЈЎ"
+END
+
+#endif    // Chinese (P.R.C.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+/////////////////////////////////////////////////////////////////////////////
+// Russian resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_RUS)
+#ifdef _WIN32
+LANGUAGE LANG_RUSSIAN, SUBLANG_DEFAULT
+#pragma code_page(1251)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO DISCARDABLE 
+BEGIN
+    "IDD_FILEOPEN", DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 323
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 146
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_FILEOPEN DIALOG DISCARDABLE  0, 0, 330, 153
+STYLE DS_3DLOOK | WS_VISIBLE | WS_CAPTION | WS_SYSMENU | WS_THICKFRAME
+FONT 8, "MS Sans Serif"
+BEGIN
+    CONTROL         "",IDC_PREVIEW,"",WS_TABSTOP,150,7,126,91
+    COMBOBOX        IDC_CB_FILE_NAME,74,47,75,30,CBS_DROPDOWN | CBS_SORT | 
+                    WS_VSCROLL | WS_TABSTOP
+    LTEXT           "",IDC_ST_FILE_INFO,16,97,119,40,SS_SUNKEN
+    PUSHBUTTON      "Button1",IDCANCEL,165,104,50,14
+    LISTBOX         IDC_LIST_FILE_INFO,221,102,82,18,NOT LBS_NOTIFY | 
+                    LBS_NOINTEGRALHEIGHT | LBS_NOSEL | WS_DISABLED | 
+                    WS_VSCROLL | WS_HSCROLL | WS_TABSTOP
+    CONTROL         "Progress1",IDC_PROGRESS,"msctls_progress32",PBS_SMOOTH | 
+                    WS_BORDER,116,73,80,14
+    LTEXT           "Static",IDC_ST_SIZER,35,107,19,8
+    SCROLLBAR       IDC_SCROLLBAR_HORZ,83,16,40,11
+    SCROLLBAR       IDC_SCROLLBAR_VERT,299,22,10,40,SBS_VERT
+    GROUPBOX        "mjmj",IDC_STATIC,15,22,48,40
+    LTEXT           "Static",IDC_STATIC,31,79,19,8,SS_SUNKEN
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_TOOLTIP_PREVIEW     "Просмотр"
+    IDS_TOOLTIP_LIST        "Список"
+    IDS_TOOLTIP_DETAILS     "Детали"
+    IDS_TOOLTIP_ADD_FAV     "Добавить в Избранное"
+    IDS_TOOLTIP_GOTO_FAV    "Перейти в Избранное"
+    IDS_FAVORITE_FOLDER     "Папка Избранное"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_INFO_NUMPAGES       "Число стр.:"
+    IDS_INFO_WIDTH          "Ширина:"
+    IDS_INFO_HEIGHT         "Высота:"
+    IDS_INFO_COLORS         "цвета"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_INFO_DEPTH          "бит на пиксел"
+    IDS_INFO_COMPRESS       "Компрессия:"
+    IDS_INFO_FILESIZE       "Размер файла:"
+    IDS_INFO_CAPTION        "Информация"
+    IDS_ERROR_LOAD_FILE     "Файл не доступен для предварительного просмотра"
+END
+
+#endif    // Russian resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.S.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO DISCARDABLE 
+BEGIN
+    "IDD_FILEOPEN", DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 323
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 146
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_FILEOPEN DIALOG DISCARDABLE  0, 0, 330, 153
+STYLE DS_3DLOOK | WS_VISIBLE | WS_CAPTION | WS_SYSMENU | WS_THICKFRAME
+FONT 8, "MS Sans Serif"
+BEGIN
+    CONTROL         "",IDC_PREVIEW,"",WS_TABSTOP,150,7,126,91
+    COMBOBOX        IDC_CB_FILE_NAME,74,47,75,30,CBS_DROPDOWN | CBS_SORT | 
+                    WS_VSCROLL | WS_TABSTOP
+    LTEXT           "",IDC_ST_FILE_INFO,16,97,119,40,SS_SUNKEN
+    PUSHBUTTON      "Button1",IDCANCEL,165,104,50,14
+    LISTBOX         IDC_LIST_FILE_INFO,221,102,82,18,NOT LBS_NOTIFY | 
+                    LBS_NOINTEGRALHEIGHT | LBS_NOSEL | WS_DISABLED | 
+                    WS_VSCROLL | WS_HSCROLL | WS_TABSTOP
+    CONTROL         "Progress1",IDC_PROGRESS,"msctls_progress32",PBS_SMOOTH | 
+                    WS_BORDER,116,73,80,14
+    LTEXT           "Static",IDC_ST_SIZER,35,107,19,8
+    SCROLLBAR       IDC_SCROLLBAR_HORZ,83,16,40,11
+    SCROLLBAR       IDC_SCROLLBAR_VERT,299,22,10,40,SBS_VERT
+    GROUPBOX        "mjmj",IDC_STATIC,15,22,48,40
+    LTEXT           "Static",IDC_STATIC,31,79,19,8,SS_SUNKEN
+END
+
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)\r\n"
+    "#ifdef _WIN32\r\n"
+    "LANGUAGE 9, 1\r\n"
+    "#pragma code_page(1252)\r\n"
+    "#endif //_WIN32\r\n"
+    "#include ""res\\FileOpen.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "#include ""afxres.rc""         // Standard components\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDR_TOOLBAR_PREVIEW     BITMAP  DISCARDABLE     "toolbar1.bmp"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Toolbar
+//
+
+IDR_TOOLBAR_PREVIEW TOOLBAR DISCARDABLE  16, 15
+BEGIN
+    BUTTON      ID_BT_LIST
+    BUTTON      ID_BT_DETAIL
+    BUTTON      ID_BT_PREVIEW
+    SEPARATOR
+    BUTTON      ID_BT_ADD_FAVORITE
+    BUTTON      ID_BT_GOTO_FAVORITE
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_TOOLTIP_PREVIEW     "Preview"
+    IDS_TOOLTIP_LIST        "List"
+    IDS_TOOLTIP_DETAILS     "Details"
+    IDS_TOOLTIP_ADD_FAV     "Add favorite"
+    IDS_TOOLTIP_GOTO_FAV    "Go to favorite"
+    IDS_FAVORITE_FOLDER     "Favorite folder"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_INFO_NUMPAGES       "Num pages:"
+    IDS_INFO_WIDTH          "Width:"
+    IDS_INFO_HEIGHT         "Height:"
+    IDS_INFO_COLORS         "colors"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_INFO_DEPTH          "bits per pixel"
+    IDS_INFO_COMPRESS       "Compression:"
+    IDS_INFO_FILESIZE       "FileSize:"
+    IDS_INFO_CAPTION        "Info"
+    IDS_ERROR_LOAD_FILE     "This file cannot be previewed!"
+END
+
+#endif    // English (U.S.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE 9, 1
+#pragma code_page(1252)
+#endif //_WIN32
+#include "res\FileOpen.rc2"  // non-Microsoft Visual C++ edited resources
+#include "afxres.rc"         // Standard components
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

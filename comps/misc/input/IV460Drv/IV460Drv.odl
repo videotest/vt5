@@ -1,0 +1,16 @@
+// IV460Drv.odl : type library source for IV460Drv.dll
+
+// This file will be processed by the MIDL compiler to produce the
+// type library (IV460Drv.tlb).
+
+[ uuid(485F70CE-E2D2-41E4-9EC1-4383958A2BDC), version(1.0) ]
+library IV460Drv
+{
+	importlib("stdole32.tlb");
+	importlib("stdole2.tlb");
+
+
+
+	//{{AFX_APPEND_ODL}}
+	//}}AFX_APPEND_ODL}}
+};

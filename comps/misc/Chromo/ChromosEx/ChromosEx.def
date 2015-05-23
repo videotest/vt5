@@ -1,0 +1,11 @@
+; ChromosEx.def : Declares the module parameters for the DLL.
+
+LIBRARY      "ChromosEx"
+
+
+EXPORTS
+    ; Explicit exports can go here
+	DllCanUnloadNow PRIVATE
+	DllGetClassObject PRIVATE
+	DllRegisterServer PRIVATE
+	DllUnregisterServer PRIVATE

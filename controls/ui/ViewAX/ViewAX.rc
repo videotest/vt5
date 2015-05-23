@@ -1,0 +1,858 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// Chinese (P.R.C.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)
+#ifdef _WIN32
+LANGUAGE LANG_CHINESE, SUBLANG_CHINESE_SIMPLIFIED
+#pragma code_page(936)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_PROPPAGE_VIEWAX DIALOG  0, 0, 250, 110
+STYLE DS_SETFONT | WS_CHILD
+FONT 8, "MS Sans Serif"
+BEGIN
+    LTEXT           "¶ФПу:",IDC_STATIC,12,24,22,8
+    EDITTEXT        IDC_EDIT_OBJECT,37,23,75,12,ES_AUTOHSCROLL
+    LTEXT           "DPI:",IDC_STATIC,12,52,14,8
+    EDITTEXT        IDC_EDIT_DPI,37,50,21,12,ES_AUTOHSCROLL
+    LTEXT           "Лх·Е:",IDC_STATIC,12,79,20,8
+    EDITTEXT        IDC_EDIT_ZOOM,37,77,21,12,ES_AUTOHSCROLL
+    LTEXT           "КУНјАаРН:",IDC_STATIC,132,24,18,8
+    COMBOBOX        IDC_COMBO_VIEW,155,23,83,51,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    LTEXT           "¶ФЖлАаРН:",IDC_STATIC,132,52,22,8
+    COMBOBOX        IDC_COMBO_ALIGN,155,50,83,65,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    LTEXT           "¶ФПу¶ЁТе:",IDC_STATIC,132,79,23,8
+    COMBOBOX        IDC_COMBO_DEFINITION,155,77,83,65,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    EDITTEXT        IDC_EDIT_PROGID,167,24,10,12,ES_AUTOHSCROLL | NOT 
+                    WS_VISIBLE
+    GROUPBOX        "",IDC_STATIC,5,6,116,96
+    GROUPBOX        "",IDC_STATIC,124,7,120,96
+END
+
+IDD_PROPPAGE_LARGE DIALOG  0, 0, 235, 156
+STYLE DS_SETFONT | WS_CHILD | WS_DISABLED | WS_CAPTION
+CAPTION "КфРФТіГж"
+FONT 8, "MS Sans Serif"
+BEGIN
+    CONTROL         "",IDC_STATIC,"Static",SS_ETCHEDHORZ,45,11,182,1
+    LTEXT           "¶ФПу¶ЁТе",IDC_STATIC,20,39,55,8
+    CONTROL         "",IDC_STATIC,"Static",SS_ETCHEDHORZ,81,43,140,1
+    LTEXT           "КУНјАаРН",IDC_STATIC,7,117,32,8
+    CONTROL         "",IDC_STATIC,"Static",SS_ETCHEDHORZ,43,122,180,1
+    CONTROL         "КЦ¶ЇЙиЦГ",IDC_RADIO2,"Button",BS_AUTORADIOBUTTON,15,128,
+                    51,10
+    CONTROL         "ЧФ¶Ї·ЦЕд",IDC_RADIO3,"Button",BS_AUTORADIOBUTTON,15,139,
+                    61,10
+    LTEXT           "КУНјАаРН:",IDC_STATIC,80,130,34,8
+    COMBOBOX        IDC_COMBO2,117,130,106,30,CBS_DROPDOWN | CBS_SORT | 
+                    WS_VSCROLL | WS_TABSTOP
+    PUSHBUTTON      "МнјУ",IDC_BUTTON3,162,97,50,14
+    PUSHBUTTON      "Йѕіэ",IDC_BUTTON4,162,83,50,14
+    CONTROL         "ґУ»о¶ЇКУНјЦР»сИЎ",IDC_RADIO1,"Button",
+                    BS_AUTORADIOBUTTON,79,49,81,10
+    CONTROL         "КЦ¶ЇЙиЦГ",IDC_RADIO4,"Button",BS_AUTORADIOBUTTON,15,49,
+                    51,10
+    GROUPBOX        "КЦ¶ЇЦё¶ЁµД¶ФПуБР±н",IDC_STATIC,13,61,203,55
+    CONTROL         "List1",IDC_LIST1,"SysListView32",LVS_REPORT | WS_BORDER | 
+                    WS_TABSTOP,20,71,139,42
+END
+
+IDD_PROPPAGE_SIZE DIALOGEX 0, 0, 250, 110
+STYLE DS_SETFONT | WS_CHILD
+FONT 8, "MS Sans Serif", 0, 0, 0x0
+BEGIN
+    COMBOBOX        IDC_TRANSFORMATION,36,21,66,95,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    EDITTEXT        IDC_EDIT_DPI,51,63,39,12,ES_AUTOHSCROLL
+    CONTROL         "Spin1",IDC_SPIN1,"msctls_updown32",UDS_SETBUDDYINT | 
+                    UDS_ALIGNRIGHT | UDS_AUTOBUDDY | UDS_ARROWKEYS,84,63,11,
+                    14
+    EDITTEXT        IDC_EDIT_ZOOM,166,63,31,12,ES_AUTOHSCROLL
+    CONTROL         "Spin2",IDC_SPIN2,"msctls_updown32",UDS_SETBUDDYINT | 
+                    UDS_ALIGNRIGHT | UDS_AUTOBUDDY | UDS_ARROWKEYS,192,63,11,
+                    14
+    LTEXT           "DPI:",IDC_STATIC_DPI,35,65,14,8
+    LTEXT           "Лх·Е:",IDC_STATIC_ZOOM,144,65,20,8
+    GROUPBOX        "±ИАэСЎПо",IDC_STATIC_MS,14,47,220,56,BS_LEFT
+    GROUPBOX        "Лх·Е±ИАэ",IDC_STATIC,14,9,112,31
+    CONTROL         "ЧФ¶ЇЅЁБў",IDC_AUTO_BUILD,"Button",BS_AUTOCHECKBOX | NOT 
+                    WS_VISIBLE | WS_TABSTOP,143,23,47,10
+    CONTROL         "К№УГНјПс DPI",IDC_USE_OBJECT_DPI,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,36,86,105,10
+    EDITTEXT        IDC_OBJECT_DPI,194,32,40,14,ES_AUTOHSCROLL | NOT 
+                    WS_VISIBLE
+END
+
+IDD_PROPPAGE_OBJECT DIALOG  0, 0, 260, 110
+STYLE DS_SETFONT | WS_CHILD
+FONT 8, "MS Sans Serif"
+BEGIN
+    GROUPBOX        "ФЄЛШБР±н",IDC_STATIC,3,2,202,55
+    LTEXT           "Static",IDC_OBJECT_LIST,9,12,189,39,NOT WS_VISIBLE | 
+                    WS_BORDER
+    PUSHBUTTON      "МнјУ",IDC_ADD,208,12,40,13
+    PUSHBUTTON      "Йѕіэ",IDC_DELETE,208,32,40,13
+    COMBOBOX        IDC_VIEW_NAME,118,68,84,129,CBS_DROPDOWN | CBS_SORT | 
+                    WS_VSCROLL | WS_TABSTOP
+    CONTROL         "»о¶ЇФЄЛШ",IDC_USE_ACTIVE_VIEW,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,9,93,63,10
+    GROUPBOX        "КУНјАаРН",IDC_STATIC,4,58,202,28
+    CONTROL         "ЧФ¶Ї·ЦЕд",IDC_VIEW_AUTO_ASSIGNED,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,9,72,61,9
+    LTEXT           "КУНјГыіЖ:",IDC_STATIC,78,72,38,10
+END
+
+IDD_PROPPAGE_CGH DIALOG  0, 0, 223, 59
+STYLE DS_SETFONT | WS_CHILD
+FONT 8, "MS Sans Serif"
+BEGIN
+    CONTROL         "»о¶Їґ°ёс",IDC_RATIO_ACTIVE,"Button",BS_AUTORADIOBUTTON | 
+                    WS_GROUP,9,12,54,10
+    CONTROL         "СЎЦРґ°ёс",IDC_RATIO_SELECTED,"Button",
+                    BS_AUTORADIOBUTTON,9,23,58,10
+    GROUPBOX        "ґ°ёс",IDC_STATIC,3,1,106,52
+    GROUPBOX        "ЖдЛы",IDC_STATIC,113,1,106,52
+    CONTROL         "ёєЖ¬",IDC_CHECK1,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,
+                    120,12,45,10
+    CONTROL         "µҐЙ«",IDC_CHECK2,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,
+                    120,22,57,10
+    COMBOBOX        IDC_COMBO1,20,33,82,30,CBS_DROPDOWN | WS_VSCROLL | 
+                    WS_TABSTOP
+END
+
+IDD_PROPPAGE_STATUI DIALOGEX 0, 0, 159, 57
+STYLE DS_SETFONT | WS_CHILD
+FONT 8, "MS Sans Serif", 0, 0, 0x0
+BEGIN
+    GROUPBOX        "КУНј",IDC_STATIC,3,1,154,55
+    CONTROL         "Нј±н",IDC_RATIO_CHART,"Button",BS_AUTORADIOBUTTON | 
+                    WS_GROUP,9,12,33,10
+    CONTROL         "НјАэ",IDC_RATIO_LEGEND,"Button",BS_AUTORADIOBUTTON,9,23,
+                    40,10
+    GROUPBOX        "КУНј",IDC_STATIC,3,1,154,55
+    CONTROL         "±н",IDC_RATIO_TABLE,"Button",BS_AUTORADIOBUTTON,9,33,34,
+                    10
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog Info
+//
+
+IDD_PROPPAGE_VIEWAX DLGINIT
+BEGIN
+    IDC_COMBO_ALIGN, 0x403, 5, 0
+0xabcb, 0xf2cf, "\000" 
+    IDC_COMBO_ALIGN, 0x403, 5, 0
+0xaecb, 0xbdc6, "\000" 
+    IDC_COMBO_ALIGN, 0x403, 5, 0
+0xb9b4, 0xb1d6, "\000" 
+    IDC_COMBO_ALIGN, 0x403, 5, 0
+0xecc9, 0xb9d5, "\000" 
+    IDC_COMBO_DEFINITION, 0x403, 13, 0
+0xb9ca, 0xc3d3, 0xeebb, 0xafb6, 0xd3ca, 0xbccd, "\000" 
+    IDC_COMBO_DEFINITION, 0x403, 13, 0
+0xb9ca, 0xc3d3, 0xeebb, 0xafb6, 0xd4b6, 0xf3cf, "\000" 
+    IDC_COMBO_DEFINITION, 0x403, 13, 0
+0xb9ca, 0xc3d3, 0xccb9, 0xa8b6, 0xd4b6, 0xf3cf, "\000" 
+    0
+END
+
+IDD_PROPPAGE_LARGE DLGINIT
+BEGIN
+    IDC_COMBO2, 0x403, 9, 0
+0xbccd, 0xf1cf, 0xd3ca, 0xbccd, "\000" 
+    0
+END
+
+IDD_PROPPAGE_SIZE DLGINIT
+BEGIN
+    IDC_TRANSFORMATION, 0x403, 5, 0
+0xabcb, 0xf2cf, "\000" 
+    IDC_TRANSFORMATION, 0x403, 5, 0
+0xaecb, 0xbdc6, "\000" 
+    IDC_TRANSFORMATION, 0x403, 5, 0
+0xb9b4, 0xb1d6, "\000" 
+    IDC_TRANSFORMATION, 0x403, 5, 0
+0xf5cb, 0xc5b7, "\000" 
+    0
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO 
+BEGIN
+    IDD_PROPPAGE_LARGE, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 228
+        TOPMARGIN, 6
+        BOTTOMMARGIN, 149
+    END
+
+    IDD_PROPPAGE_SIZE, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 243
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 103
+    END
+
+    IDD_PROPPAGE_OBJECT, DIALOG
+    BEGIN
+        LEFTMARGIN, 3
+        RIGHTMARGIN, 256
+        TOPMARGIN, 2
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDB_VIEWAX              BITMAP                  "ViewAXCtl.bmp"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE 
+BEGIN
+    IDS_VIEWAX              "ОДµµФЄЛШЧЦ¶О"
+    IDS_VIEWAX_PPG          "ОДµµФЄЛШїШјюКфРФТіГж"
+    IDS_VIEWAX_D            "Ійїґ AX їШјюµчКФ"
+    IDS_OBJECT_HEADER       "ГыіЖ"
+    IDS_TYPE_HEADER         "АаРН"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_VIEWAX_PPG_CAPTION  "НЁУГ"
+    IDS_OBJECT              "ФЄЛШ:"
+    IDS_VIEWTYPE            "КУНјАаРН:"
+    IDS_NOTSPEC             "ОґЦё¶Ё"
+    IDS_VIEWAX_SIZE_PPG_CAPTION "ґуРЎ"
+    IDS_VIEWAX_OBJECT_PPG_CAPTION "ФЄЛШ"
+    IDS_ACTIVE_OBJECT       "»о¶Ї"
+    IDS_USE_ACTIVE_VIEW     "»о¶ЇФЄЛШ"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_VIEW_AUTO_ASSIGNED  "КУНјЧФ¶Ї·ЦЕд"
+    IDS_VIEWAX_CGH_PPG_CAPTION "CGH"
+    IDS_VIEWAX_STATUI_PPG_CAPTION "StatUI"
+END
+
+#endif    // Chinese (P.R.C.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+/////////////////////////////////////////////////////////////////////////////
+// Russian resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_RUS)
+#ifdef _WIN32
+LANGUAGE LANG_RUSSIAN, SUBLANG_DEFAULT
+#pragma code_page(1251)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_PROPPAGE_LARGE DIALOG  0, 0, 235, 156
+STYLE DS_SETFONT | WS_CHILD | WS_DISABLED | WS_CAPTION
+CAPTION "Property Page"
+FONT 8, "MS Sans Serif"
+BEGIN
+    CONTROL         "",IDC_STATIC,"Static",SS_ETCHEDHORZ,45,11,182,1
+    LTEXT           "Objects definition",IDC_STATIC,20,39,55,8
+    CONTROL         "",IDC_STATIC,"Static",SS_ETCHEDHORZ,81,43,140,1
+    LTEXT           "View type",IDC_STATIC,7,117,32,8
+    CONTROL         "",IDC_STATIC,"Static",SS_ETCHEDHORZ,43,122,180,1
+    CONTROL         "Manual set",IDC_RADIO2,"Button",BS_AUTORADIOBUTTON,15,
+                    128,51,10
+    CONTROL         "Auto assigned",IDC_RADIO3,"Button",BS_AUTORADIOBUTTON,
+                    15,139,61,10
+    LTEXT           "View type:",IDC_STATIC,80,130,34,8
+    COMBOBOX        IDC_COMBO2,117,130,106,30,CBS_DROPDOWN | CBS_SORT | 
+                    WS_VSCROLL | WS_TABSTOP
+    PUSHBUTTON      "Добавить",IDC_BUTTON3,162,97,50,14
+    PUSHBUTTON      "Удалить",IDC_BUTTON4,162,83,50,14
+    CONTROL         "Get from active view",IDC_RADIO1,"Button",
+                    BS_AUTORADIOBUTTON,79,49,81,10
+    CONTROL         "Manual set",IDC_RADIO4,"Button",BS_AUTORADIOBUTTON,15,
+                    49,51,10
+    GROUPBOX        "Manual specified object list",IDC_STATIC,13,61,203,55
+    CONTROL         "List1",IDC_LIST1,"SysListView32",LVS_REPORT | WS_BORDER | 
+                    WS_TABSTOP,20,71,139,42
+END
+
+IDD_PROPPAGE_OBJECT DIALOG  0, 0, 260, 110
+STYLE DS_SETFONT | WS_CHILD
+FONT 8, "MS Sans Serif"
+BEGIN
+    GROUPBOX        "Список элементов",IDC_STATIC,3,2,202,55
+    LTEXT           "Static",IDC_OBJECT_LIST,9,12,189,39,NOT WS_VISIBLE | 
+                    WS_BORDER
+    PUSHBUTTON      "Добавить",IDC_ADD,209,12,42,13
+    PUSHBUTTON      "Удалить",IDC_DELETE,209,29,42,13
+    COMBOBOX        IDC_VIEW_NAME,67,69,134,129,CBS_DROPDOWN | CBS_SORT | 
+                    WS_VSCROLL | WS_TABSTOP
+    CONTROL         "Активный элемент",IDC_USE_ACTIVE_VIEW,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,17,93,80,10
+    GROUPBOX        "Вид отображения элементов",IDC_STATIC,4,58,202,28
+    CONTROL         "Авто",IDC_VIEW_AUTO_ASSIGNED,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,12,72,31,9
+    LTEXT           "Тип:",IDC_STATIC,48,72,18,10
+END
+
+IDD_PROPPAGE_SIZE DIALOGEX 0, 0, 258, 110
+STYLE DS_SETFONT | WS_CHILD
+FONT 8, "MS Sans Serif", 0, 0, 0x0
+BEGIN
+    COMBOBOX        IDC_TRANSFORMATION,24,21,92,95,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    EDITTEXT        IDC_EDIT_DPI,51,62,39,12,ES_AUTOHSCROLL
+    CONTROL         "Spin1",IDC_SPIN1,"msctls_updown32",UDS_SETBUDDYINT | 
+                    UDS_ALIGNRIGHT | UDS_AUTOBUDDY | UDS_ARROWKEYS,84,62,11,
+                    14
+    EDITTEXT        IDC_EDIT_ZOOM,166,62,31,12,ES_AUTOHSCROLL
+    CONTROL         "Spin2",IDC_SPIN2,"msctls_updown32",UDS_SETBUDDYINT | 
+                    UDS_ALIGNRIGHT | UDS_AUTOBUDDY | UDS_ARROWKEYS,192,62,11,
+                    14
+    LTEXT           "DPI:",IDC_STATIC_DPI,35,65,14,8
+    LTEXT           "Увеличение:",IDC_STATIC_ZOOM,121,65,44,8
+    GROUPBOX        "Установки масштабирования",IDC_STATIC_MS,14,47,230,56,
+                    BS_LEFT
+    GROUPBOX        "Масштабирование",IDC_STATIC,14,9,112,31
+    CONTROL         "Автоматическое построение",IDC_AUTO_BUILD,"Button",
+                    BS_AUTOCHECKBOX | NOT WS_VISIBLE | WS_TABSTOP,131,23,113,
+                    10
+    CONTROL         "Использовать DPI изображения",IDC_USE_OBJECT_DPI,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,36,86,128,10
+    EDITTEXT        IDC_OBJECT_DPI,195,32,48,14,ES_AUTOHSCROLL | NOT 
+                    WS_VISIBLE
+END
+
+IDD_PROPPAGE_VIEWAX DIALOG  0, 0, 266, 110
+STYLE DS_SETFONT | WS_CHILD
+FONT 8, "MS Sans Serif"
+BEGIN
+    LTEXT           "Объект:",IDC_STATIC,12,24,27,8
+    EDITTEXT        IDC_EDIT_OBJECT,47,23,75,12,ES_AUTOHSCROLL
+    LTEXT           "DPI:",IDC_STATIC,12,52,14,8
+    EDITTEXT        IDC_EDIT_DPI,47,50,21,12,ES_AUTOHSCROLL
+    LTEXT           "Zoom:",IDC_STATIC,12,79,20,8
+    EDITTEXT        IDC_EDIT_ZOOM,47,77,21,12,ES_AUTOHSCROLL
+    LTEXT           "View type:",IDC_STATIC,142,24,18,8
+    COMBOBOX        IDC_COMBO_VIEW,169,23,83,51,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    LTEXT           "Align type:",IDC_STATIC,142,52,22,8
+    COMBOBOX        IDC_COMBO_ALIGN,169,50,83,65,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    LTEXT           "Object definition:",IDC_STATIC,142,79,23,8
+    COMBOBOX        IDC_COMBO_DEFINITION,169,77,83,65,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    EDITTEXT        IDC_EDIT_PROGID,167,24,10,12,ES_AUTOHSCROLL | NOT 
+                    WS_VISIBLE
+    GROUPBOX        "",IDC_STATIC,7,6,123,96
+    GROUPBOX        "",IDC_STATIC,135,7,123,96
+END
+
+IDD_PROPPAGE_CGH DIALOG  0, 0, 225, 59
+STYLE DS_SETFONT | WS_CHILD
+FONT 8, "MS Sans Serif"
+BEGIN
+    CONTROL         "Активную пану",IDC_RATIO_ACTIVE,"Button",
+                    BS_AUTORADIOBUTTON | WS_GROUP,10,14,66,10
+    CONTROL         "Выбранную пану",IDC_RATIO_SELECTED,"Button",
+                    BS_AUTORADIOBUTTON,10,25,72,10
+    GROUPBOX        " Паны ",IDC_STATIC,4,3,106,52
+    GROUPBOX        " Прочее ",IDC_STATIC,114,3,106,52
+    CONTROL         "Негатив",IDC_CHECK1,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,121,15,44,10
+    CONTROL         "Монохромное",IDC_CHECK2,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,121,24,63,10
+    COMBOBOX        IDC_COMBO1,21,35,82,30,CBS_DROPDOWN | WS_VSCROLL | 
+                    WS_TABSTOP
+END
+
+IDD_PROPPAGE_STATUI DIALOGEX 0, 0, 160, 56
+STYLE DS_SETFONT | WS_CHILD
+FONT 8, "MS Sans Serif", 0, 0, 0x0
+BEGIN
+    CONTROL         "Chart",IDC_RATIO_CHART,"Button",BS_AUTORADIOBUTTON | 
+                    WS_GROUP,9,12,33,10
+    CONTROL         "Legend",IDC_RATIO_LEGEND,"Button",BS_AUTORADIOBUTTON,9,
+                    23,40,10
+    GROUPBOX        " Views ",IDC_STATIC,3,1,154,55
+    CONTROL         "Table",IDC_RATIO_TABLE,"Button",BS_AUTORADIOBUTTON,9,33,
+                    34,10
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog Info
+//
+
+IDD_PROPPAGE_LARGE DLGINIT
+BEGIN
+    IDC_COMBO2, 0x403, 11, 0
+0x6d49, 0x6761, 0x2065, 0x6956, 0x7765, "\000" 
+    0
+END
+
+IDD_PROPPAGE_SIZE DLGINIT
+BEGIN
+    IDC_TRANSFORMATION, 0x403, 17, 0
+0xeecf, 0xe420, 0xf3e2, 0x20ec, 0xf2f1, 0xf0ee, 0xedee, 0xece0, "\000" 
+    IDC_TRANSFORMATION, 0x403, 15, 0
+0xeec3, 0xe8f0, 0xeee7, 0xf2ed, 0xebe0, 0xedfc, 0xe5ee, "\000" 
+    IDC_TRANSFORMATION, 0x403, 13, 0
+0xe5c2, 0xf2f0, 0xeae8, 0xebe0, 0xedfc, 0xe5ee, "\000" 
+    IDC_TRANSFORMATION, 0x403, 14, 0
+0x20d1, 0xe2f3, 0xebe5, 0xf7e8, 0xede5, 0xe5e8, 0x00ec, 
+    0
+END
+
+IDD_PROPPAGE_VIEWAX DLGINIT
+BEGIN
+    IDC_COMBO_ALIGN, 0x403, 10, 0
+0x7754, 0x206f, 0x6973, 0x6564, 0x0073, 
+    IDC_COMBO_ALIGN, 0x403, 15, 0
+0xeec3, 0xe8f0, 0xeee7, 0xf2ed, 0xebe0, 0xedfc, 0xe5ee, "\000" 
+    IDC_COMBO_ALIGN, 0x403, 13, 0
+0xe5c2, 0xf2f0, 0xeae8, 0xebe0, 0xedfc, 0xe5ee, "\000" 
+    IDC_COMBO_ALIGN, 0x403, 8, 0
+0x7453, 0x6165, 0x6374, 0x0068, 
+    IDC_COMBO_DEFINITION, 0x403, 16, 0
+0x7355, 0x2065, 0x6361, 0x6974, 0x6576, 0x7620, 0x6569, 0x0077, 
+    IDC_COMBO_DEFINITION, 0x403, 18, 0
+0x7355, 0x2065, 0x6361, 0x6974, 0x6576, 0x6f20, 0x6a62, 0x6365, 0x0074, 
+
+    IDC_COMBO_DEFINITION, 0x403, 17, 0
+0x7355, 0x2065, 0x6966, 0x6578, 0x2064, 0x626f, 0x656a, 0x7463, "\000" 
+    0
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO 
+BEGIN
+    IDD_PROPPAGE_LARGE, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 228
+        TOPMARGIN, 6
+        BOTTOMMARGIN, 149
+    END
+
+    IDD_PROPPAGE_OBJECT, DIALOG
+    BEGIN
+        LEFTMARGIN, 3
+        RIGHTMARGIN, 256
+        TOPMARGIN, 2
+    END
+
+    IDD_PROPPAGE_SIZE, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 251
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 103
+    END
+
+    IDD_PROPPAGE_VIEWAX, DIALOG
+    BEGIN
+        RIGHTMARGIN, 250
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "1 TYPELIB ""ViewAX.tlb""\r\n"
+    "#include ""res\\ViewAX.rc2""\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE 
+BEGIN
+    IDS_VIEWAX              "Поле элемента документа"
+    IDS_VIEWAX_PPG          "Свойства Поля элемента документа"
+    IDS_VIEWAX_D            "ViewAX Control Debug"
+    IDS_OBJECT_HEADER       "Имя"
+    IDS_TYPE_HEADER         "Тип"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_VIEWAX_PPG_CAPTION  "Основные"
+    IDS_OBJECT              "Элемент:"
+    IDS_VIEWTYPE            "Вид:"
+    IDS_NOTSPEC             "не установлен"
+    IDS_VIEWAX_SIZE_PPG_CAPTION "Размер"
+    IDS_VIEWAX_OBJECT_PPG_CAPTION "Элементы"
+    IDS_ACTIVE_OBJECT       "Активный"
+    IDS_USE_ACTIVE_VIEW     "активный элемент"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_VIEW_AUTO_ASSIGNED  "вид отображения определяется автоматически"
+    IDS_VIEWAX_CGH_PPG_CAPTION "CGH"
+    IDS_VIEWAX_STATUI_PPG_CAPTION "StatUI"
+END
+
+#endif    // Russian resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.S.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_PROPPAGE_VIEWAX DIALOG  0, 0, 250, 110
+STYLE DS_SETFONT | WS_CHILD
+FONT 8, "MS Sans Serif"
+BEGIN
+    LTEXT           "Object:",IDC_STATIC,12,24,22,8
+    EDITTEXT        IDC_EDIT_OBJECT,37,23,75,12,ES_AUTOHSCROLL
+    LTEXT           "DPI:",IDC_STATIC,12,52,14,8
+    EDITTEXT        IDC_EDIT_DPI,37,50,21,12,ES_AUTOHSCROLL
+    LTEXT           "Zoom:",IDC_STATIC,12,79,20,8
+    EDITTEXT        IDC_EDIT_ZOOM,37,77,21,12,ES_AUTOHSCROLL
+    LTEXT           "View type:",IDC_STATIC,132,24,18,8
+    COMBOBOX        IDC_COMBO_VIEW,155,23,83,51,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    LTEXT           "Align type:",IDC_STATIC,132,52,22,8
+    COMBOBOX        IDC_COMBO_ALIGN,155,50,83,65,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    LTEXT           "Object definition:",IDC_STATIC,132,79,23,8
+    COMBOBOX        IDC_COMBO_DEFINITION,155,77,83,65,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    EDITTEXT        IDC_EDIT_PROGID,167,24,10,12,ES_AUTOHSCROLL | NOT 
+                    WS_VISIBLE
+    GROUPBOX        "",IDC_STATIC,5,6,116,96
+    GROUPBOX        "",IDC_STATIC,124,7,120,96
+END
+
+IDD_PROPPAGE_LARGE DIALOG  0, 0, 235, 156
+STYLE DS_SETFONT | WS_CHILD | WS_DISABLED | WS_CAPTION
+CAPTION "Property Page"
+FONT 8, "MS Sans Serif"
+BEGIN
+    CONTROL         "",IDC_STATIC,"Static",SS_ETCHEDHORZ,45,11,182,1
+    LTEXT           "Objects definition",IDC_STATIC,20,39,55,8
+    CONTROL         "",IDC_STATIC,"Static",SS_ETCHEDHORZ,81,43,140,1
+    LTEXT           "View type",IDC_STATIC,7,117,32,8
+    CONTROL         "",IDC_STATIC,"Static",SS_ETCHEDHORZ,43,122,180,1
+    CONTROL         "Manual set",IDC_RADIO2,"Button",BS_AUTORADIOBUTTON,15,
+                    128,51,10
+    CONTROL         "Auto assigned",IDC_RADIO3,"Button",BS_AUTORADIOBUTTON,
+                    15,139,61,10
+    LTEXT           "View type:",IDC_STATIC,80,130,34,8
+    COMBOBOX        IDC_COMBO2,117,130,106,30,CBS_DROPDOWN | CBS_SORT | 
+                    WS_VSCROLL | WS_TABSTOP
+    PUSHBUTTON      "Add",IDC_BUTTON3,162,97,50,14
+    PUSHBUTTON      "Remove",IDC_BUTTON4,162,83,50,14
+    CONTROL         "Get from active view",IDC_RADIO1,"Button",
+                    BS_AUTORADIOBUTTON,79,49,81,10
+    CONTROL         "Manual set",IDC_RADIO4,"Button",BS_AUTORADIOBUTTON,15,
+                    49,51,10
+    GROUPBOX        "Manual specified object list",IDC_STATIC,13,61,203,55
+    CONTROL         "List1",IDC_LIST1,"SysListView32",LVS_REPORT | WS_BORDER | 
+                    WS_TABSTOP,20,71,139,42
+END
+
+IDD_PROPPAGE_SIZE DIALOGEX 0, 0, 250, 110
+STYLE DS_SETFONT | WS_CHILD
+FONT 8, "MS Sans Serif", 0, 0, 0x0
+BEGIN
+    COMBOBOX        IDC_TRANSFORMATION,36,21,66,95,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    EDITTEXT        IDC_EDIT_DPI,51,63,39,12,ES_AUTOHSCROLL
+    CONTROL         "Spin1",IDC_SPIN1,"msctls_updown32",UDS_SETBUDDYINT | 
+                    UDS_ALIGNRIGHT | UDS_AUTOBUDDY | UDS_ARROWKEYS,84,63,11,
+                    14
+    EDITTEXT        IDC_EDIT_ZOOM,166,63,31,12,ES_AUTOHSCROLL
+    CONTROL         "Spin2",IDC_SPIN2,"msctls_updown32",UDS_SETBUDDYINT | 
+                    UDS_ALIGNRIGHT | UDS_AUTOBUDDY | UDS_ARROWKEYS,192,63,11,
+                    14
+    LTEXT           "DPI:",IDC_STATIC_DPI,35,65,14,8
+    LTEXT           "Zoom:",IDC_STATIC_ZOOM,144,65,20,8
+    GROUPBOX        "Scale options",IDC_STATIC_MS,14,47,220,56,BS_LEFT
+    GROUPBOX        "Scaling",IDC_STATIC,14,9,112,31
+    CONTROL         "Auto build",IDC_AUTO_BUILD,"Button",BS_AUTOCHECKBOX | 
+                    NOT WS_VISIBLE | WS_TABSTOP,143,23,47,10
+    CONTROL         "Use image DPI",IDC_USE_OBJECT_DPI,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,36,86,105,10
+    EDITTEXT        IDC_OBJECT_DPI,194,32,40,14,ES_AUTOHSCROLL | NOT 
+                    WS_VISIBLE
+END
+
+IDD_PROPPAGE_OBJECT DIALOG  0, 0, 260, 110
+STYLE DS_SETFONT | WS_CHILD
+FONT 8, "MS Sans Serif"
+BEGIN
+    GROUPBOX        "Element list",IDC_STATIC,3,2,202,55
+    LTEXT           "Static",IDC_OBJECT_LIST,9,12,189,39,NOT WS_VISIBLE | 
+                    WS_BORDER
+    PUSHBUTTON      "Add",IDC_ADD,208,12,40,13
+    PUSHBUTTON      "Del",IDC_DELETE,208,32,40,13
+    COMBOBOX        IDC_VIEW_NAME,118,68,84,129,CBS_DROPDOWN | CBS_SORT | 
+                    WS_VSCROLL | WS_TABSTOP
+    CONTROL         "Active element",IDC_USE_ACTIVE_VIEW,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,9,93,63,10
+    GROUPBOX        "View type",IDC_STATIC,4,58,202,28
+    CONTROL         "Auto assigned",IDC_VIEW_AUTO_ASSIGNED,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,9,72,61,9
+    LTEXT           "View name:",IDC_STATIC,78,72,38,10
+END
+
+IDD_PROPPAGE_CGH DIALOG  0, 0, 223, 59
+STYLE DS_SETFONT | WS_CHILD
+FONT 8, "MS Sans Serif"
+BEGIN
+    CONTROL         "Active pane",IDC_RATIO_ACTIVE,"Button",
+                    BS_AUTORADIOBUTTON | WS_GROUP,9,12,54,10
+    CONTROL         "Selected one",IDC_RATIO_SELECTED,"Button",
+                    BS_AUTORADIOBUTTON,9,23,58,10
+    GROUPBOX        " Panes ",IDC_STATIC,3,1,106,52
+    GROUPBOX        " Other ",IDC_STATIC,113,1,106,52
+    CONTROL         "Negative",IDC_CHECK1,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,120,12,45,10
+    CONTROL         "Monochrome",IDC_CHECK2,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,120,22,57,10
+    COMBOBOX        IDC_COMBO1,20,33,82,30,CBS_DROPDOWN | WS_VSCROLL | 
+                    WS_TABSTOP
+END
+
+IDD_PROPPAGE_STATUI DIALOGEX 0, 0, 159, 57
+STYLE DS_SETFONT | WS_CHILD
+FONT 8, "MS Sans Serif", 0, 0, 0x0
+BEGIN
+    GROUPBOX        " Views ",IDC_STATIC,3,1,154,55
+    CONTROL         "Chart",IDC_RATIO_CHART,"Button",BS_AUTORADIOBUTTON | 
+                    WS_GROUP,9,12,33,10
+    CONTROL         "Legend",IDC_RATIO_LEGEND,"Button",BS_AUTORADIOBUTTON,9,
+                    23,40,10
+    GROUPBOX        " Views ",IDC_STATIC,3,1,154,55
+    CONTROL         "Table",IDC_RATIO_TABLE,"Button",BS_AUTORADIOBUTTON,9,33,
+                    34,10
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog Info
+//
+
+IDD_PROPPAGE_VIEWAX DLGINIT
+BEGIN
+    IDC_COMBO_ALIGN, 0x403, 10, 0
+0x7754, 0x206f, 0x6973, 0x6564, 0x0073, 
+    IDC_COMBO_ALIGN, 0x403, 11, 0
+0x6f48, 0x6972, 0x6f7a, 0x746e, 0x6c61, "\000" 
+    IDC_COMBO_ALIGN, 0x403, 9, 0
+0x6556, 0x7472, 0x6369, 0x6c61, "\000" 
+    IDC_COMBO_ALIGN, 0x403, 8, 0
+0x7453, 0x6165, 0x6374, 0x0068, 
+    IDC_COMBO_DEFINITION, 0x403, 16, 0
+0x7355, 0x2065, 0x6361, 0x6974, 0x6576, 0x7620, 0x6569, 0x0077, 
+    IDC_COMBO_DEFINITION, 0x403, 18, 0
+0x7355, 0x2065, 0x6361, 0x6974, 0x6576, 0x6f20, 0x6a62, 0x6365, 0x0074, 
+
+    IDC_COMBO_DEFINITION, 0x403, 17, 0
+0x7355, 0x2065, 0x6966, 0x6578, 0x2064, 0x626f, 0x656a, 0x7463, "\000" 
+    0
+END
+
+IDD_PROPPAGE_LARGE DLGINIT
+BEGIN
+    IDC_COMBO2, 0x403, 11, 0
+0x6d49, 0x6761, 0x2065, 0x6956, 0x7765, "\000" 
+    0
+END
+
+IDD_PROPPAGE_SIZE DLGINIT
+BEGIN
+    IDC_TRANSFORMATION, 0x403, 10, 0
+0x7754, 0x206f, 0x6973, 0x6564, 0x0073, 
+    IDC_TRANSFORMATION, 0x403, 11, 0
+0x6f48, 0x6972, 0x6f7a, 0x746e, 0x6c61, "\000" 
+    IDC_TRANSFORMATION, 0x403, 9, 0
+0x6556, 0x7472, 0x6369, 0x6c61, "\000" 
+    IDC_TRANSFORMATION, 0x403, 5, 0
+0x6f5a, 0x6d6f, "\000" 
+    0
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO 
+BEGIN
+    IDD_PROPPAGE_LARGE, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 228
+        TOPMARGIN, 6
+        BOTTOMMARGIN, 149
+    END
+
+    IDD_PROPPAGE_SIZE, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 243
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 103
+    END
+
+    IDD_PROPPAGE_OBJECT, DIALOG
+    BEGIN
+        LEFTMARGIN, 3
+        RIGHTMARGIN, 256
+        TOPMARGIN, 2
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDB_VIEWAX              BITMAP                  "ViewAXCtl.bmp"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE 
+BEGIN
+    IDS_VIEWAX              "Document Element Field"
+    IDS_VIEWAX_PPG          "Document Element Control Property Page"
+    IDS_VIEWAX_D            "View AX Control Debug"
+    IDS_OBJECT_HEADER       "Name"
+    IDS_TYPE_HEADER         "Type"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_VIEWAX_PPG_CAPTION  "General"
+    IDS_OBJECT              "Element:"
+    IDS_VIEWTYPE            "View type:"
+    IDS_NOTSPEC             "not specified"
+    IDS_VIEWAX_SIZE_PPG_CAPTION "Size"
+    IDS_VIEWAX_OBJECT_PPG_CAPTION "Elements"
+    IDS_ACTIVE_OBJECT       "Active"
+    IDS_USE_ACTIVE_VIEW     "active element"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_VIEW_AUTO_ASSIGNED  "view auto assigned"
+    IDS_VIEWAX_CGH_PPG_CAPTION "CGH"
+    IDS_VIEWAX_STATUI_PPG_CAPTION "StatUI"
+END
+
+#endif    // English (U.S.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+1 TYPELIB "ViewAX.tlb"
+#include "res\ViewAX.rc2"
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

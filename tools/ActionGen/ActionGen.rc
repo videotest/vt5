@@ -1,0 +1,278 @@
+//Microsoft Developer Studio generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// Russian resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_RUS)
+#ifdef _WIN32
+LANGUAGE LANG_RUSSIAN, SUBLANG_DEFAULT
+#pragma code_page(1251)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)\r\n"
+    "#ifdef _WIN32\r\n"
+    "LANGUAGE 9, 1\r\n"
+    "#pragma code_page(1252)\r\n"
+    "#endif //_WIN32\r\n"
+    "#include ""res\\ActionGen.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "#include ""afxres.rc""         // Standard components\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_ACTIONGEN_DIALOG DIALOGEX 0, 0, 349, 212
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+EXSTYLE WS_EX_APPWINDOW
+CAPTION "Action Generator"
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "Generate and exit...",IDOK,177,191,103,14
+    LTEXT           "1. Имя акции",IDC_STATIC,11,11,46,8
+    EDITTEXT        IDC_ACTION,67,9,112,14,ES_AUTOHSCROLL
+    LTEXT           "2. Имя проекта",IDC_STATIC,11,27,53,8
+    EDITTEXT        IDC_PROJECT,66,26,114,14,ES_AUTOHSCROLL
+    LTEXT           "3. Имя файла",IDC_STATIC,11,47,47,8
+    PUSHBUTTON      "...",IDC_BROWSE,166,44,13,14
+    EDITTEXT        IDC_FILENAME,66,45,96,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT4,7,81,173,33,ES_AUTOHSCROLL
+    LTEXT           "4. Расположение меню",IDC_STATIC,9,68,80,8
+    EDITTEXT        IDC_EDIT5,8,130,171,33,ES_AUTOHSCROLL
+    LTEXT           "5. Расположение панелей инструментов",IDC_STATIC,8,117,
+                    138,8
+    LTEXT           "6. Горячая клвиша",IDC_STATIC,209,9,64,8
+    CONTROL         "HotKey1",IDC_HOTKEY1,"msctls_hotkey32",WS_BORDER | 
+                    WS_TABSTOP,253,7,80,14
+    LISTBOX         IDC_LIST1,210,43,123,64,LBS_SORT | LBS_NOINTEGRALHEIGHT | 
+                    WS_VSCROLL | WS_TABSTOP
+    LTEXT           "7. Argument list",IDC_STATIC,214,30,49,8
+    CONTROL         "8. Has settings interface",IDC_SETTINGS,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,210,112,92,10
+    CONTROL         "9. Interactive",IDC_INTERACTIVE,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,210,125,57,10
+    CONTROL         "10. Undoneable",IDC_UNDONEABLE,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,210,138,67,10
+    PUSHBUTTON      "Generate",IDC_GENERATE,59,191,103,14
+    CONTROL         "11. Target",IDC_TARGET,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,209,152,49,10
+    EDITTEXT        IDC_STR_TARGET,264,149,78,14,ES_AUTOHSCROLL
+    CONTROL         "Additional updating",IDC_UPDATE,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,208,171,76,10
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO DISCARDABLE 
+BEGIN
+    IDD_ACTIONGEN_DIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 342
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 205
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+#endif    // Russian resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.S.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_ACTIONGEN_DIALOG DIALOGEX 0, 0, 349, 212
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+EXSTYLE WS_EX_APPWINDOW
+CAPTION "Action Generator"
+FONT 8, "MS Sans Serif", 0, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "Generate and exit...",IDOK,177,191,103,14
+    LTEXT           "1. Action name",IDC_STATIC,11,11,48,8
+    EDITTEXT        IDC_ACTION,67,9,112,14,ES_AUTOHSCROLL
+    LTEXT           "2. Project name",IDC_STATIC,11,27,50,8
+    EDITTEXT        IDC_PROJECT,66,26,114,14,ES_AUTOHSCROLL
+    LTEXT           "3. Filename",IDC_STATIC,11,47,37,8
+    PUSHBUTTON      "...",IDC_BROWSE,166,44,13,14
+    EDITTEXT        IDC_FILENAME,66,45,96,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT4,7,81,173,33,ES_AUTOHSCROLL
+    LTEXT           "4. Menu locations",IDC_STATIC,9,68,57,8
+    EDITTEXT        IDC_EDIT5,8,130,171,33,ES_AUTOHSCROLL
+    LTEXT           "5. Toolbar locations",IDC_STATIC,8,117,63,8
+    LTEXT           "6. Hot key",IDC_STATIC,214,9,34,8
+    CONTROL         "HotKey1",IDC_HOTKEY1,"msctls_hotkey32",WS_BORDER | 
+                    WS_TABSTOP,253,7,80,14
+    LISTBOX         IDC_LIST1,210,43,123,64,LBS_SORT | LBS_NOINTEGRALHEIGHT | 
+                    WS_VSCROLL | WS_TABSTOP
+    LTEXT           "7. Argument list",IDC_STATIC,214,30,49,8
+    CONTROL         "8. Has settings interface",IDC_SETTINGS,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,210,112,92,10
+    CONTROL         "9. Interactive",IDC_INTERACTIVE,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,210,125,57,10
+    CONTROL         "10. Undoneable",IDC_UNDONEABLE,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,210,138,67,10
+    PUSHBUTTON      "Generate",IDC_GENERATE,59,191,103,14
+    CONTROL         "11. Target",IDC_TARGET,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,209,152,49,10
+    EDITTEXT        IDC_STR_TARGET,264,149,78,14,ES_AUTOHSCROLL
+    CONTROL         "Additional updating",IDC_UPDATE,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,208,171,76,10
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO DISCARDABLE 
+BEGIN
+    IDD_ACTIONGEN_DIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 342
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 205
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDR_MAINFRAME           ICON    DISCARDABLE     "res\\ActionGen.ico"
+
+#ifndef _MAC
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 1,0,0,1
+ PRODUCTVERSION 1,0,0,1
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "040904B0"
+        BEGIN
+            VALUE "CompanyName", "\0"
+            VALUE "FileDescription", "ACTIONGEN MFC Application\0"
+            VALUE "FileVersion", "1, 0, 0, 1\0"
+            VALUE "InternalName", "ACTIONGEN\0"
+            VALUE "LegalCopyright", "Copyright © 191999\0"
+            VALUE "LegalTrademarks", "\0"
+            VALUE "OriginalFilename", "ACTIONGEN.EXE\0"
+            VALUE "ProductName", "ACTIONGEN Application\0"
+            VALUE "ProductVersion", "1, 0, 0, 1\0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x409, 1200
+    END
+END
+
+#endif    // !_MAC
+
+#endif    // English (U.S.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE 9, 1
+#pragma code_page(1252)
+#endif //_WIN32
+#include "res\ActionGen.rc2"  // non-Microsoft Visual C++ edited resources
+#include "afxres.rc"         // Standard components
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

@@ -1,0 +1,213 @@
+// Data.odl : type library source for Data.dll
+
+// This file will be processed by the MIDL compiler to produce the
+// type library (Data.tlb).
+
+[ uuid(526B6D32-1CAD-11D3-A5CF-0000B493FF1B), version(1.0) ]
+library Data
+{
+	importlib("stdole32.tlb");
+	importlib("stdole2.tlb");
+
+
+
+
+	//  Primary dispatch interface for NamedData
+	
+	[ uuid(ADBA6C03-1D68-11D3-A5D0-0000B493FF1B) ]
+	dispinterface INamedData
+	{
+		properties:
+			// NOTE - ClassWizard will maintain property information here.
+			//    Use extreme caution when editing this section.
+			//{{AFX_ODL_PROP(CNamedData)
+			//}}AFX_ODL_PROP
+			
+		methods:
+			// NOTE - ClassWizard will maintain method information here.
+			//    Use extreme caution when editing this section.
+			//{{AFX_ODL_METHOD(CNamedData)
+			[id(1)] void SetValue(BSTR Entry, VARIANT Value);
+			[id(2)] VARIANT GetValue(BSTR Entry);
+			[id(3)] void SetSection(BSTR Section);
+			[id(4)] long GetEntriesCount();
+			[id(5)] BSTR GetEntryName(long index);
+			[id(6)] long GetTypesCount();
+			[id(7)] BSTR GetTypeName(long index);
+			[id(8)] VARIANT GetDefValue(BSTR Entry, VARIANT DefVal);
+			[id(9)] void RemoveValue(BSTR szPath);
+			[id(10)] boolean WriteTextFile(BSTR fullPath);
+			[id(11)] boolean WriteFile(BSTR fullPath);
+			[id(12)] boolean ReadFile(BSTR fullPath);
+			[id(13)] boolean ExportEntry(BSTR pszEntry, BSTR pszFileName, long dwFlags);
+			[id(14)] boolean ImportEntry(BSTR pszEntry, BSTR pszFileName, long dwFlags);
+			[id(15)] LONG_PTR GetFirstObjectPos(long ltype);
+			[id(16)] IDispatch* GetNextObject(long ltype, VARIANT* var_pos);
+			[id(17)] bool CopyNamedData(IDispatch* pDispSrc, BSTR pszSrcEntry, BSTR pszTargetEntry, long dwFlags);
+			[id(18)] BSTR GetSection();
+			//}}AFX_ODL_METHOD
+
+	};
+
+	//  Class information for NamedData
+
+	[ uuid(ADBA6C05-1D68-11D3-A5D0-0000B493FF1B) ]
+	coclass NamedData
+	{
+		[default] dispinterface INamedData;
+	};
+
+
+	//  Primary dispatch interface for CDataContext
+	[ uuid(DCEE4109-9579-46d3-9E57-576CA16D60B4) ]
+	dispinterface IDataContext
+	{
+		properties:
+			// NOTE - ClassWizard will maintain property information here.
+			//    Use extreme caution when editing this section.
+			//{{AFX_ODL_PROP(CDataContext)
+			//}}AFX_ODL_PROP
+			
+		methods:
+			// NOTE - ClassWizard will maintain method information here.
+			//    Use extreme caution when editing this section.
+			//{{AFX_ODL_METHOD(CDataContext)
+			[id(1)] IDispatch* GetActiveObject(BSTR szType);
+			[id(2)] void SetActiveObject(IDispatch* lpdispObj);
+			[id(3)] long GetObjectCount(BSTR szType);
+			[id(4)] long GetFirstObjectPos(BSTR szType);
+			[id(5)] IDispatch* GetNextObject(BSTR szType, long* plPos);
+			[id(6)] long GetLastObjectPos(BSTR szType);
+			[id(7)] LPDISPATCH GetPrevObject(BSTR szType, long* plPos);
+			//}}AFX_ODL_METHOD
+
+	};
+
+	//  Class information for CDataContext
+
+	[ uuid(B438FADB-38E7-11D3-87C5-0000B493FF1B) ]
+	coclass DataContext
+	{
+		[default] dispinterface IDataContext;
+	};
+
+
+	//  Primary dispatch interface for CTypeInfoManager
+	
+	[ uuid(C49F7850-39FA-11D3-87C6-0000B493FF1B) ]
+	dispinterface ITypeInfoManager
+	{
+		properties:
+			// NOTE - ClassWizard will maintain property information here.
+			//    Use extreme caution when editing this section.
+			//{{AFX_ODL_PROP(CTypeInfoManager)
+			//}}AFX_ODL_PROP
+			
+		methods:
+			// NOTE - ClassWizard will maintain method information here.
+			//    Use extreme caution when editing this section.
+			//{{AFX_ODL_METHOD(CTypeInfoManager)
+			//}}AFX_ODL_METHOD
+
+	};
+
+	//  Class information for CTypeInfoManager
+
+	[ uuid(C49F7851-39FA-11D3-87C6-0000B493FF1B) ]
+	coclass TypeInfoManager
+	{
+		[default] dispinterface ITypeInfoManager;
+	};
+
+
+
+	//  Primary dispatch interface for CObjectsDisp
+	[ uuid(0185A230-5FF4-4f68-B96C-A44D4CEE8906) ]	
+	dispinterface IObjectsDisp
+	{
+		properties:
+			// NOTE - ClassWizard will maintain property information here.
+			//    Use extreme caution when editing this section.
+			//{{AFX_ODL_PROP(CObjectsDisp)
+			[id(1)] IDispatch* ActiveImage;
+			[id(2)] IDispatch* ActiveObjectList;
+			[id(3)] IDispatch* ActiveClasses;
+			//}}AFX_ODL_PROP
+			
+		methods:
+			// NOTE - ClassWizard will maintain method information here.
+			//    Use extreme caution when editing this section.
+			//{{AFX_ODL_METHOD(CObjectsDisp)
+			[id(4)] IDispatch* GetActiveObject(BSTR szType);
+			[id(5)] long GetObjectCount(BSTR szType);
+			[id(6)] long GetTypesCount();
+			[id(7)] BSTR GetType(long nTypeNo);
+			[id(8)] void AddObject(IDispatch* pdispObject);
+			[id(9)] void RemoveObject(IDispatch* pdispObject);
+			[id(10)] void SetObjectActive(IDispatch* pdispObject);
+			[id(11)] IDispatch* CreateNewObject(BSTR szType);
+			[id(12)] IDispatch* GetObjectByName(BSTR szName);
+			[id(13)] long GetFirstObjectPos(BSTR szType);
+			[id(14)] long GetNextObjectPos(BSTR szType, long lPos);
+			[id(15)] long GetLastObjectPos(BSTR szType);
+			[id(16)] long GetPrevObjectPos(BSTR szType, long lPos);
+			[id(17)] IDispatch* GetObject(BSTR szType, long lPos);
+			[id(18)] void GetFirstSelectedObjectPos(BSTR szType, VARIANT* pvarPos);
+			[id(19)] void GetLastSelectedObjectPos(BSTR szType, VARIANT* pvarPos);
+			[id(20)] IDispatch* GetNextSelectedObject(BSTR szType, VARIANT* pvarPos);
+			[id(21)] IDispatch* GetPrevSelectedObject(BSTR szType, VARIANT* pvarPos);
+			[id(22)] long GetSelectedObjectsCount(BSTR szType);
+			[id(23)] void SelectObject(IDispatch* pObject, boolean bSelect);
+			[id(24)] IDispatch* GetSelectedObject(BSTR szType, long lPos);
+			[id(25)] IDispatch* GetSelectedByIndex(BSTR szType, long nIndex);
+			[id(26)] long SetToActiveDocument(IDispatch* pobj);
+			[id(27)] IDispatch* CloneObject(IDispatch* obj);
+			[id(28)] BSTR GenerateNewKey();
+			[id(29)] boolean SetBaseObjectKey(BSTR szType, long lPos, BSTR lpctVal );
+			[id(30)] BSTR GetBaseObjectKey(BSTR szType, long lPos );
+			[id(31)] boolean IsBaseObject(BSTR szType, long lPos );
+			[id(32)] BSTR GetObjectKey(BSTR szType, long lPos );
+			[id(33)] IDispatch* GetLastActiveObject(BSTR bstrTypes);
+			//}}AFX_ODL_METHOD
+
+	};
+
+	//  Class information for CObjectsDisp
+	[ uuid(27DDB9F9-6F44-424b-AE43-1D65D1F7901B) ]
+	coclass Objects
+	{
+		[default] dispinterface IObjectsDisp;
+	};
+
+
+	//  Primary dispatch interface for object_manager
+	
+	[ uuid(46A13E4D-6738-4FB1-8BC3-BAEEB5B5D3AE) ]
+	dispinterface Iobject_manager
+	{
+		properties:
+			// NOTE - ClassWizard will maintain property information here.
+			//    Use extreme caution when editing this section.
+			//{{AFX_ODL_PROP(object_manager)
+			//}}AFX_ODL_PROP
+			
+		methods:
+			// NOTE - ClassWizard will maintain method information here.
+			//    Use extreme caution when editing this section.
+			//{{AFX_ODL_METHOD(object_manager)
+			//}}AFX_ODL_METHOD
+
+			[id(777)] LONGLONG getFirstPos();
+	};
+
+	//  Class information for object_manager
+
+	[ uuid(B0097FB7-FBA0-46A8-8FA6-C4865E9136F9) ]
+	coclass objectmanager
+	{
+		[default] dispinterface Iobject_manager;
+	};
+
+	//{{AFX_APPEND_ODL}}
+	//}}AFX_APPEND_ODL}}
+};

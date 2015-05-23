@@ -1,0 +1,72 @@
+// ScriptDoc.odl : type library source for ScriptDoc.dll
+
+// This file will be processed by the MIDL compiler to produce the
+// type library (ScriptDoc.tlb).
+
+[ uuid(92FDEF6B-0C1A-11D3-A5B6-0000B493FF1B), version(1.0) ]
+library ScriptDoc
+{
+	importlib("stdole32.tlb");
+	importlib("stdole2.tlb");
+
+
+
+
+	//  Primary dispatch interface for CScriptDocument
+	
+	[ uuid(A66BA363-0F48-11D3-A5BD-0000B493FF1B) ]
+	dispinterface IScriptDocument
+	{
+		properties:
+			// NOTE - ClassWizard will maintain property information here.
+			//    Use extreme caution when editing this section.
+			//{{AFX_ODL_PROP(CScriptDocument)
+			//}}AFX_ODL_PROP
+			
+		methods:
+			// NOTE - ClassWizard will maintain method information here.
+			//    Use extreme caution when editing this section.
+			//{{AFX_ODL_METHOD(CScriptDocument)
+			//}}AFX_ODL_METHOD
+
+	};
+
+	//  Class information for CScriptDocument
+
+	[ uuid(A66BA365-0F48-11D3-A5BD-0000B493FF1B) ]
+	coclass ScriptDocument
+	{
+		[default] dispinterface IScriptDocument;
+	};
+
+
+	//  Primary dispatch interface for CScriptDataObject
+	
+	[ uuid(39346386-2480-11D3-A5D9-0000B493FF1B) ]
+	dispinterface IScriptDataObject
+	{
+		properties:
+			// NOTE - ClassWizard will maintain property information here.
+			//    Use extreme caution when editing this section.
+			//{{AFX_ODL_PROP(CScriptDataObject)
+			//}}AFX_ODL_PROP
+			
+		methods:
+			// NOTE - ClassWizard will maintain method information here.
+			//    Use extreme caution when editing this section.
+			//{{AFX_ODL_METHOD(CScriptDataObject)
+			//}}AFX_ODL_METHOD
+
+	};
+
+	//  Class information for CScriptDataObject
+
+	[ uuid(39346388-2480-11D3-A5D9-0000B493FF1B) ]
+	coclass ScriptDataObject
+	{
+		[default] dispinterface IScriptDataObject;
+	};
+
+	//{{AFX_APPEND_ODL}}
+	//}}AFX_APPEND_ODL}}
+};

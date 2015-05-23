@@ -1,0 +1,124 @@
+//{{NO_DEPENDENCIES}}
+// Microsoft Visual C++ generated include file.
+// Used by ImageDoc.rc
+//
+#define IDS_TEMPLATE                    1
+#define IDS_FILTERNAME                  2
+#define IDS_IMAGE_TYPE                  3
+#define IDS_ACTION_SHOW_PHASE           4
+#define IDS_PHASEVIEWNAME               5
+#define IDS_ACTION_SHOW_PHASE2          6
+#define IDS_ACTION_SWITCH_PHASE         6
+#define IDS_WIDTH                       7
+#define IDS_HEIGHT                      8
+#define IDS_COLORS                      9
+#define IDS_DEPTH                       10
+#define IDS_PAGES                       11
+#define IDS_BI_RGB                      12
+#define IDS_BI_RLE8                     13
+#define IDS_BI_RLE4                     14
+#define IDS_BI_BITFIELDS                15
+#define IDS_BI_JPEG                     16
+#define IDS_UndefinedCompression        17
+#define IDS_COMPRESS                    18
+#define IDS_CROP_DLG                    19
+#define IDS_IMAGEVIEW_NAME              20
+#define IDS_OBJECTSVIEW_NAME            21
+#define IDS_MASKVIEW_NAME               22
+#define IDS_NO_IMAGE                    23
+#define IDS_NO_IMAGE_INFO               24
+#define IDS_IMAGE_PAGE                  25
+#define IDS_SRCVIEW_NAME                26
+#define IDS_BINVIEW_NAME                27
+#define IDS_PSEUDOVIEW_NAME             27
+#define IDS_IMAGEVIEW_CONTEXT_MENU      28
+#define IDS_OBJECTSVIEW_CONTEXT_MENU    29
+#define IDS_MASKVIEW_CONTEXT_MENU       30
+#define IDS_OBJECT_LIST_MENU            31
+#define IDS_DRAWING_OBJECT_MENU         32
+#define IDS_SOURCEVIEW_CONTEXT_MENU     33
+#define IDS_PSEUDOVIEW_CONTEXT_MENU     34
+#define IDS_IMAGE_CHILD_MENU            35
+#define IDS_CANT_CONVERT_FROM           36
+#define IDS_BINARYFOREVIEW_NAME         37
+#define IDS_BINARYFOREVIEW_CONTEXT_MENU 38
+#define IDS_BINARYBACKVIEW_NAME         39
+#define IDS_BINARYBACKVIEW_CONTEXT_MENU 40
+#define IDS_BINARYVIEW_CONTEXT_MENU     41
+#define IDS_BINARYVIEW_NAME             42
+#define IDS_BINARYCONTOURVIEW_NAME      43
+#define IDS_BINARYCONTOURVIEW_CONTEXT_MENU 44
+#define IDS_PROMT_CHANGE_VIEW           45
+#define IDS_WRONG_CROUP_SIZE            46
+#define IDD_DIALOG_CROP                 103
+#define IDS_ACTION_SHOW_IMAGE           10002
+#define IDS_ACTION_TRANSFORM            10003
+#define IDS_ACTION_SHOW_OBJECTS         10004
+#define IDS_ACTION_SHOW_MASKS           10005
+#define IDS_ACTION_CONVERTIMAGE         10006
+#define IDS_ACTION_ENABLE_FRAME         10007
+#define IDS_ACTION_ENABLE_OBJECT        10008
+#define IDS_ACTION_RESIZE               10009
+#define IDS_ACTION_ROTATE               10010
+#define IDS_ACTION_MIRROR_HORZ          10011
+#define IDS_ACTION_MIRROR_VERT          10012
+#define IDS_ACTION_ROTATE_90            10013
+#define IDS_ACTION_ROTATE_180           10014
+#define IDS_ACTION_ROTATE_270           10015
+#define IDS_ACTION_EXPANSION            10016
+#define IDS_ACTION_MERGE                10017
+#define IDS_ACTION_CLONE                10018
+#define IDS_ACTION_BORDERS              10019
+#define IDS_ACTION_CROP                 10020
+#define IDS_ACTION_SHOW_PSEUDO          10021
+#define IDS_ACTION_SHOW_SOURCE          10022
+#define IDS_ACTION_ENABLE_BINARY        10023
+#define IDS_ACTION_SHOW_BINARYFORE      10024
+#define IDS_ACTION_SHOW_BINARYBACK      10025
+#define IDS_ACTION_SHOW_BINARY          10026
+#define IDS_ACTION_SHOW_BINARYCONTOUR   10027
+#define IDS_ACTION_SHOW_VIEW            10028
+#define IDC_COMBOBOXEX_CONVERTTO        16000
+#define IDR_TOOLBAR1                    16001
+#define IDC_STATIC_CUR_SYSTEM           16001
+#define IDC_STATIC_CUR_ICON             16004
+#define IDD_DIALOG_CONVERT_IMAGE        16006
+#define IDC_EDIT_WIDTH                  16006
+#define IDC_EDIT_HEIGHT                 16007
+#define IDC_EDIT_ANGLE                  16007
+#define IDI_ICON_RGB                    16008
+#define IDC_RADIO_PIXEL                 16008
+#define IDI_ICON_YUV                    16009
+#define IDC_RADIO_CALIBR                16009
+#define IDI_ICON_HSB                    16010
+#define IDI_ICON_GRAY                   16011
+#define IDI_ICON_YIQ                    16013
+#define IDD_DIALOG_RESIZE               16015
+#define IDD_DIALOG_ROTATE               16016
+#define IDI_NOIMAGE                     16017
+#define IDD_PAGE_IMAGE                  16017
+#define IDC_CURSOR_KIRPICH              16018
+#define IDI_THUMBNAIL_IMAGE             16019
+#define IDB_DIMENSION                   16021
+#define IDS_MENU_VIEW                   20001
+#define IDS_WARNING_NO_COMPRESSOR       20002
+#define IDS_ACTION_TO_GRAY_AVAIL        20003
+#define IDC_WIDTH                       23001
+#define IDC_HEIGH                       23002
+#define IDC_SPIN_WIDTH                  23004
+#define IDC_SPIN_HEIGHT                 23006
+#define IDI_ICON_RECT                   23019
+#define IDS_ACTION_SHOW_CALIBR          32810
+#define ID_BUTTON32811                  32811
+#define IDS_ACTION_CIPHER               32812
+
+// Next default values for new objects
+// 
+#ifdef APSTUDIO_INVOKED
+#ifndef APSTUDIO_READONLY_SYMBOLS
+#define _APS_NEXT_RESOURCE_VALUE        16024
+#define _APS_NEXT_COMMAND_VALUE         32813
+#define _APS_NEXT_CONTROL_VALUE         16009
+#define _APS_NEXT_SYMED_VALUE           16000
+#endif
+#endif

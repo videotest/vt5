@@ -1,0 +1,13 @@
+// Compare.odl : type library source for Compare.dll
+
+[ uuid(84C0BA0E-860A-4B62-B871-FA3F519D33ED), version(1.0) ]
+library Compare
+{
+	importlib("stdole32.tlb");
+	importlib("stdole2.tlb");
+
+
+
+	//{{AFX_APPEND_ODL}}
+	//}}AFX_APPEND_ODL}}
+};

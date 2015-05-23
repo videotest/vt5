@@ -1,0 +1,123 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClInclude Include="action5.h" />
+    <ClInclude Include="action_ui_int.h" />
+    <ClInclude Include="auditint.h" />
+    <ClInclude Include="axint.h" />
+    <ClInclude Include="calc_int.h" />
+    <ClInclude Include="carioint.h" />
+    <ClInclude Include="cgh_int.h" />
+    <ClInclude Include="Chromosome.h" />
+    <ClInclude Include="classify_int.h" />
+    <ClInclude Include="clone.h" />
+    <ClInclude Include="clonedata.h" />
+    <ClInclude Include="ColorConvertorParams.h" />
+    <ClInclude Include="compressint.h" />
+    <ClInclude Include="core5.h" />
+    <ClInclude Include="data5.h" />
+    <ClInclude Include="docmiscint.h" />
+    <ClInclude Include="docview5.h" />
+    <ClInclude Include="editor5.h" />
+    <ClInclude Include="editorint.h" />
+    <ClInclude Include="fileopenint.h" />
+    <ClInclude Include="fish_int.h" />
+    <ClInclude Include="GuardInt.h" />
+    <ClInclude Include="histint.h" />
+    <ClInclude Include="idio_int.h" />
+    <ClInclude Include="image5.h" />
+    <ClInclude Include="imagemisc.h" />
+    <ClInclude Include="Input.h" />
+    <ClInclude Include="method_int.h" />
+    <ClInclude Include="obj_man.h" />
+    <ClInclude Include="object5.h" />
+    <ClInclude Include="oledata.h" />
+    <ClInclude Include="PropBag.h" />
+    <ClInclude Include="PropPageInt.h" />
+    <ClInclude Include="script_int.h" />
+    <ClInclude Include="scriptdocint.h" />
+    <ClInclude Include="ScriptNotifyInt.h" />
+    <ClInclude Include="statistics.h" />
+    <ClInclude Include="statui_int.h" />
+    <ClInclude Include="statusint.h" />
+    <ClInclude Include="test_man.h" />
+    <ClInclude Include="thumbnail.h" />
+    <ClInclude Include="trajectory_int.h" />
+    <ClInclude Include="undoint.h" />
+    <ClInclude Include="window5.h" />
+    <ClInclude Include="avi_int.h" />
+    <ClInclude Include="aview_int.h" />
+    <ClInclude Include="binimageint.h" />
+    <ClInclude Include="calibrint.h" />
+    <ClInclude Include="Charts_int.h" />
+    <ClInclude Include="Classes5.h" />
+    <ClInclude Include="MacroRecorder_int.h" />
+    <ClInclude Include="measure5.h" />
+    <ClInclude Include="misc5.h" />
+    <ClInclude Include="statdata_int.h" />
+    <ClInclude Include="StorageObj_int.h" />
+    <ClInclude Include="aliaseint.h" />
+    <ClInclude Include="BinaryImage_int.h" />
+    <ClInclude Include="idiodbase_int.h" />
+    <ClInclude Include="iSewLI.h" />
+    <ClInclude Include="sewLI_int.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Midl Include="DataBook.idl">
+      <Filter>idl</Filter>
+    </Midl>
+    <Midl Include="dataview.idl">
+      <Filter>idl</Filter>
+    </Midl>
+    <Midl Include="miscdefs.idl">
+      <Filter>idl</Filter>
+    </Midl>
+    <Midl Include="MacroRecorder.idl">
+      <Filter>idl\comps</Filter>
+    </Midl>
+    <Midl Include="OleClient.idl">
+      <Filter>idl\comps</Filter>
+    </Midl>
+    <Midl Include="StatData.idl">
+      <Filter>idl\comps</Filter>
+    </Midl>
+    <Midl Include="TestMan.idl">
+      <Filter>idl\comps</Filter>
+    </Midl>
+    <Midl Include="StorageObj.idl">
+      <Filter>idl\comps</Filter>
+    </Midl>
+    <Midl Include="statobject.idl">
+      <Filter>idl\comps</Filter>
+    </Midl>
+    <Midl Include="avi.idl">
+      <Filter>idl\comps</Filter>
+    </Midl>
+    <Midl Include="aview.idl">
+      <Filter>idl\comps</Filter>
+    </Midl>
+    <Midl Include="BinaryImage.idl">
+      <Filter>idl\comps</Filter>
+    </Midl>
+    <Midl Include="sewLI.idl">
+      <Filter>idl\comps</Filter>
+    </Midl>
+    <Midl Include="measure.idl">
+      <Filter>idl\comps</Filter>
+    </Midl>
+    <Midl Include="misc.idl">
+      <Filter>idl\comps</Filter>
+    </Midl>
+    <Midl Include="Charts.idl">
+      <Filter>idl\comps</Filter>
+    </Midl>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="idl">
+      <UniqueIdentifier>{6e573fd1-94fd-4489-9209-ac8037425987}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="idl\comps">
+      <UniqueIdentifier>{c17d1df5-fb1e-4682-ac38-99104c52952b}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

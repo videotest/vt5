@@ -1,0 +1,247 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// Neutral resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_NEU)
+#ifdef _WIN32
+LANGUAGE LANG_NEUTRAL, SUBLANG_NEUTRAL
+#pragma code_page(1251)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Cursor
+//
+
+IDC_POLY                CURSOR                  "poly.cur"
+IDC_POLY3               CURSOR                  "poly3.cur"
+IDC_POLY4               CURSOR                  "poly4.cur"
+IDC_POLY5               CURSOR                  "poly5.cur"
+IDC_POLY6               CURSOR                  "poly6.cur"
+IDC_POLY1               CURSOR                  "poly7.cur"
+IDC_POLY2               CURSOR                  "poly8.cur"
+#endif    // Neutral resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+/////////////////////////////////////////////////////////////////////////////
+// Russian resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_RUS)
+#ifdef _WIN32
+LANGUAGE LANG_RUSSIAN, SUBLANG_DEFAULT
+#pragma code_page(1251)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Cursor
+//
+
+IDC_CURSORSTRIP         CURSOR                  "Strip.cur"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Toolbar
+//
+
+IDR_TOOLBAR1 TOOLBAR  16, 15
+BEGIN
+    BUTTON      ID_ACTION_SEGMSO
+    BUTTON      ID_ACTION_MEASURECHORD
+    BUTTON      ID_ACTION_JOINPHASES
+    BUTTON      ID_ACTION_STRIP
+    BUTTON      ID_ACTION_FIND_BORDER
+    BUTTON      ID_ACTION_WATERSHED
+    BUTTON      ID_ACTION_MERGEOBJECTS
+    BUTTON      ID_ACTION_DIRDILATE
+    BUTTON      ID_ACTION_STRIP_EX
+    BUTTON      ID_ACTION_POLY_EDIT
+    BUTTON      ID_ACTION_FINDSTRIPES
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDR_TOOLBAR1            BITMAP                  "toolbar1.bmp"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE 
+BEGIN
+    ID_ACTION_THRESHOLD_PHASE 
+                            "GrayThresholdingPhase\nПолутоновая бинаризация с получением фазы\nФазовый анализ\nПолутоновая бинаризация с получением фазы\nПолутоновая бинаризация с получением фазы"
+    ID_ACTION_SWITCH_PHASE  "SwitchPhase\nПереключение фазы на активном фазовом изображении\nФазовый анализ\nПереключение фазы на активном фазовом изображении\nПереключение фазы на активном фазовом изображении"
+    ID_ACTION_SLEEP         "Sleep\nsleep\nFor Developers\nsleep\nsleep"
+    ID_ACTION_UPDATE_WINDOW "UpdateWindow\nUpdateWindow\nFor Developers\nUpdateWindow\nUpdateWindow"
+    ID_ACTION_NEW_PHASE     "NewPhase\nСделать фон новой фазой\nФазовый анализ\nСделать фон новой фазой\nСделать фон новой фазой"
+    ID_ACTION_DELETE_LINE   "DelLines\nУдаление штрихов и царапин на изображении\nМеталл\nУдаление штрихов и царапин на изображении\nУдаление штрихов и царапин на изображении"
+    ID_ACTION_STRINGER      "FindStringers\nпоиск строчек\nМеталл\nпоиск строчек\nпоиск строчек"
+    ID_ACTION_DELETE_LINE_BIN 
+                            "DelLinesBin\nУдаление штрихов и царапин на бинарном изображении\nМеталл\nУдаление штрихов и царапин на бинарном изображении\nУдаление штрихов и царапин на бинарном изображении"
+    ID_ACTION_FIND_BORDER   "FindBorders\nпоиск границ объектов\nМеталл\nпоиск границ объектов\nпоиск границ объектов"
+END
+
+STRINGTABLE 
+BEGIN
+    ID_ACTION_SEGMSO        "SegmSO\nSegmSO\nMetall\nSegmSO\nSegmSO"
+    ID_ACTION_MEASURECHORD  "MeasureChord\nMeasureChord\nMetall\nMeasureChord\nMeasureChord"
+    ID_ACTION_JOINPHASES    "JoinPhases\nJoinPhases\nMetall\nJoinPhases\nJoinPhases"
+    ID_ACTION_STRIP         "StripTop\nStripTop\nMetall\nStripTop\nStripTop"
+    ID_ACTION_COMPARE_STAT_SELECTIONS 
+                            "CompareStatSelections\nCompareStatSelections\nMetall\nCompareStatSelections\nCompareStatSelections"
+    ID_ACTION_WATERSHED     "Watershed\nWatershed\nMetall\nWatershed\nWatershed"
+    ID_ACTION_MERGEOBJECTS  "MergeObjects\nMergeObjects\nMetall\nMergeObjects\nMergeObjects"
+    ID_ACTION_DIRDILATE     "DirDilate\nDirDilate\nMetall\nDirDilate\nDirDilate\n"
+    ID_ACTION_STRIP_EX      "StripTopEx\nStripTopEx\nMetall\nStripTopEx\nStripTopEx"
+    ID_ACTION_POLY_EDIT     "PolyEdit\nPolyEdit\nMetall\nPolyEdit\nPolyEdit"
+END
+
+STRINGTABLE 
+BEGIN
+    ID_ACTION_FINDSTRIPES   "FindStripes\nFindStripes\nTexture\nFindStripes\nFindStripes"
+    ID_ACTION_BINARYFROMOBJECTS 
+                            "BinFromObjects\nBinFromObjects\nMetall\nBinFromObjects\nBinFromObjects"
+END
+
+#endif    // Russian resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.S.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)\r\n"
+    "#ifdef _WIN32\r\n"
+    "LANGUAGE 9, 1\r\n"
+    "#pragma code_page(1252)\r\n"
+    "#endif //_WIN32\r\n"
+    "#include ""res\\Metall.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "#include ""afxres.rc""         // Standard components\r\n"
+    "#endif\r\n"
+    "\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE 
+BEGIN
+    ID_ACTION_THRESHOLD_PHASE 
+                            "GrayThresholdingPhase\nthreshold one phase on image\nBinary\nthreshold one phase on image\nthreshold one phase on image"
+    ID_ACTION_SWITCH_PHASE  "SwitchPhase\nSwitch phase on phase view\nPhase analysis\nSwitch phase on phase view\nSwitch phase on phase view"
+    ID_ACTION_SLEEP         "Sleep\nsleep\nFor Developers\nsleep\nsleep"
+    ID_ACTION_UPDATE_WINDOW "UpdateWindow\nUpdateWindow\nFor Developers\nUpdateWindow\nUpdateWindow"
+    ID_ACTION_NEW_PHASE     "NewPhase\nMake new phase from background\nPhase analysis\nMake new phase from background\nMake new phase from background"
+    ID_ACTION_DELETE_LINE   "DelLines\ndelete lines on image\nMetall\ndelete lines on image\ndelete lines on image"
+    ID_ACTION_STRINGER      "FindStringers\nfind stringers\nMetall\nfind stringers\nfind stringers"
+    ID_ACTION_DELETE_LINE_BIN 
+                            "DelLinesBin\ndelete lines on binary image\nMetall\ndelete lines on binary image\ndelete lines on binary image"
+    ID_ACTION_FIND_BORDER   "FindBorders\nfind objects border\nMetall\nfind objects border\nfind objects border"
+END
+
+STRINGTABLE 
+BEGIN
+    ID_ACTION_SEGMSO        "SegmSO\nSegmSO\nMetall\nSegmSO\nSegmSO"
+    ID_ACTION_MEASURECHORD  "MeasureChord\nMeasureChord\nMetall\nMeasureChord\nMeasureChord"
+    ID_ACTION_JOINPHASES    "JoinPhases\nJoinPhases\nMetall\nJoinPhases\nJoinPhases"
+    ID_ACTION_STRIP         "StripTop\nStripTop\nMetall\nStripTop\nStripTop"
+    ID_ACTION_COMPARE_STAT_SELECTIONS 
+                            "CompareStatSelections\nCompareStatSelections\nMetall\nCompareStatSelections\nCompareStatSelections"
+    ID_ACTION_WATERSHED     "Watershed\nWatershed\nMetall\nWatershed\nWatershed"
+    ID_ACTION_MERGEOBJECTS  "MergeObjects\nMergeObjects\nMetall\nMergeObjects\nMergeObjects"
+    ID_ACTION_DIRDILATE     "DirDilate\nDirDilate\nMetall\nDirDilate\nDirDilate\n"
+    ID_ACTION_STRIP_EX      "StripTopEx\nStripTopEx\nMetall\nStripTopEx\nStripTopEx"
+    ID_ACTION_POLY_EDIT     "PolyEdit\nPolyEdit\nMetall\nPolyEdit\nPolyEdit"
+END
+
+STRINGTABLE 
+BEGIN
+    ID_ACTION_FINDSTRIPES   "FindStripes\nFindStripes\nTexture\nFindStripes\nFindStripes"
+    ID_ACTION_BINARYFROMOBJECTS 
+                            "BinFromObjects\nBinFromObjects\nMetall\nBinFromObjects\nBinFromObjects"
+END
+
+#endif    // English (U.S.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE 9, 1
+#pragma code_page(1252)
+#endif //_WIN32
+#include "res\Metall.rc2"  // non-Microsoft Visual C++ edited resources
+#include "afxres.rc"         // Standard components
+#endif
+
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

@@ -1,0 +1,165 @@
+// DBaseDoc.odl : type library source for DBaseDoc.dll
+
+// This file will be processed by the MIDL compiler to produce the
+// type library (DBaseDoc.tlb).
+
+
+//uuid(1AD5ED15-BEBC-4203-B4A7-4FAA7788A144), version(1.0)
+
+
+[ uuid(5DF7A4E0-7BCB-4c10-B899-31978165482C), version(1.0),
+	helpstring("DBControls ActiveX Control module")
+]
+library DBaseDoc
+{
+#include <olectl.h>
+#include <idispids.h>
+	importlib("stdole32.tlb");
+	importlib("stdole2.tlb");
+
+
+
+	//  Primary dispatch interface for CGalleryView
+	
+	[ uuid(F97A3846-BF78-40FF-9E4B-FFDEC7E6A033) ]
+	dispinterface IGalleryView
+	{
+		properties:
+			// NOTE - ClassWizard will maintain property information here.
+			//    Use extreme caution when editing this section.
+			//{{AFX_ODL_PROP(CGalleryView)
+			//}}AFX_ODL_PROP
+			
+		methods:
+			// NOTE - ClassWizard will maintain method information here.
+			//    Use extreme caution when editing this section.
+			//{{AFX_ODL_METHOD(CGalleryView)
+			//}}AFX_ODL_METHOD
+
+	};
+
+	//  Class information for CGalleryView
+
+	[ uuid(72F13015-810C-4689-9499-417EA00F3751) ]
+	coclass GalleryView
+	{
+		[default] dispinterface IGalleryView;
+	};
+
+
+
+
+	//  Primary dispatch interface for CBlankView
+	
+	[ uuid(0CC9CDE3-3819-4848-B772-C0D8C88F78EC) ]
+	dispinterface IBlankView
+	{
+		properties:
+			// NOTE - ClassWizard will maintain property information here.
+			//    Use extreme caution when editing this section.
+			//{{AFX_ODL_PROP(CBlankView)
+			//}}AFX_ODL_PROP
+			
+		methods:
+			// NOTE - ClassWizard will maintain method information here.
+			//    Use extreme caution when editing this section.
+			//{{AFX_ODL_METHOD(CBlankView)
+			//}}AFX_ODL_METHOD
+
+	};
+
+	//  Class information for CBlankView
+
+	[ uuid(92A26F3B-69AC-44F2-B1AB-8DCCF87DB4A3) ]
+	coclass BlankView
+	{
+		[default] dispinterface IBlankView;
+	};	
+
+
+	//  Primary dispatch interface for CDBaseGridView
+	
+	[ uuid(42CA470A-FDBF-47e8-A0B4-E3CDE782623C) ]
+	dispinterface IDBaseGridView
+	{
+		properties:
+			// NOTE - ClassWizard will maintain property information here.
+			//    Use extreme caution when editing this section.
+			//{{AFX_ODL_PROP(CDBaseGridView)
+			//}}AFX_ODL_PROP
+			
+		methods:
+			// NOTE - ClassWizard will maintain method information here.
+			//    Use extreme caution when editing this section.
+			//{{AFX_ODL_METHOD(CDBaseGridView)
+			//}}AFX_ODL_METHOD
+
+	};
+
+	//  Class information for CDBaseGridView
+
+	[ uuid(5B9B0B42-B147-4b14-9AF1-284F6140B5AC) ]
+	coclass DBaseGridView
+	{
+		[default] dispinterface IDBaseGridView;
+	};
+
+
+	//  Primary dispatch interface for CAlbomFactory
+	
+	[ uuid(2838997B-3E4F-4130-947F-9B0BFBE83CA5) ]
+	dispinterface IAlbomFactory
+	{
+		properties:
+			// NOTE - ClassWizard will maintain property information here.
+			//    Use extreme caution when editing this section.
+			//{{AFX_ODL_PROP(CAlbomFactory)
+			//}}AFX_ODL_PROP
+			
+		methods:
+			// NOTE - ClassWizard will maintain method information here.
+			//    Use extreme caution when editing this section.
+			//{{AFX_ODL_METHOD(CAlbomFactory)
+			//}}AFX_ODL_METHOD
+
+	};
+
+	//  Class information for CAlbomFactory
+
+	[ uuid(9518D746-CD50-40C5-960A-E31A27D73FAB) ]
+	coclass AlbomFactory
+	{
+		[default] dispinterface IAlbomFactory;
+	};
+
+
+	//  Primary dispatch interface for CAlbomDB
+	
+	[ uuid(CF1154A4-BE94-4665-9DE2-159E000CE545) ]
+	dispinterface IAlbomDB
+	{
+		properties:
+			// NOTE - ClassWizard will maintain property information here.
+			//    Use extreme caution when editing this section.
+			//{{AFX_ODL_PROP(CAlbomDB)
+			//}}AFX_ODL_PROP
+			
+		methods:
+			// NOTE - ClassWizard will maintain method information here.
+			//    Use extreme caution when editing this section.
+			//{{AFX_ODL_METHOD(CAlbomDB)
+			//}}AFX_ODL_METHOD
+
+	};
+
+	//  Class information for CAlbomDB
+
+	[ uuid(08A33477-B75E-4148-8136-01297654A150) ]
+	coclass AlbomDB
+	{
+		[default] dispinterface IAlbomDB;
+	};
+
+	//{{AFX_APPEND_ODL}}
+	//}}AFX_APPEND_ODL}}
+};

@@ -1,0 +1,35 @@
+[
+	uuid(DC9D4001-0F2F-43b0-85BE-1F1D9912705D),
+	version(1.0),
+	helpstring("VT5 AView Type Library")
+	
+]
+library AViewLib
+{	
+
+	importlib("stdole2.tlb");
+
+	[
+		object,
+		uuid(E95D6413-7A15-40fe-9A56-F1B7E75D9EB5),
+		dual,		
+		pointer_default(unique),		
+	]	
+	interface IAView : IDispatch
+	{
+		HRESULT ScrollToClass( [in]long nClass);
+		
+		//[propget] HRESULT TotalFrames( [out, retval]VARIANT* pv_count );//long
+	};
+
+	[
+		uuid(129AB27A-6E73-4418-A3D1-CC1FD3985A31),
+		helpstring("VT5 AView Class")
+	]
+	coclass AView
+	{
+		[default] interface IAview;
+		
+	};
+
+}

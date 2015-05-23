@@ -1,0 +1,84 @@
+import "oaidl.idl";
+import "ocidl.idl";
+
+
+///////////// Interfaces /////////////
+
+[
+	object,
+	uuid(77EB74DD-09B7-40df-94A2-E1DD518DCD24),
+	dual,
+	helpstring("IMacroManagerDisp Interface"),
+    pointer_default(unique)
+]
+interface IMacroManagerDisp : IDispatch
+{
+	[id(0), helpstring("method StartRecord")] HRESULT StartRecord( );
+	[id(1), helpstring("method ResumeRecord")] HRESULT ResumeRecord( );
+	[id(2), helpstring("method StopRecord")] HRESULT StopRecord( );
+	[id(3), helpstring("method SetMacroScript")] HRESULT SetMacroScript( [in] BSTR bstrScript );
+	[id(4), helpstring("method GetMacroScript")] HRESULT GetMacroScript( [out, retval] BSTR *pbstrScript );
+	[id(5), helpstring("method ExecuteScript")] HRESULT ExecuteScript( );  
+};
+
+[
+	object,
+	uuid(B0C7B4BE-6A1B-48b6-A1F5-B1BAC0810348),
+	helpstring("IMacroHelperDisp Interface"),
+	pointer_default(unique)
+]
+interface IMacroHelperDisp : IDispatch
+{
+    [id(0), helpstring("method SetEventsWindow")] HRESULT SetEventsWindow( [in] BSTR bstrWndClass );
+	
+	[id(1), helpstring("method MouseMove")] HRESULT MouseMove( [in] int nX, [in] int nY, [in] DWORD dwDelay );
+
+	[id(2), helpstring("method LButtonDown")] HRESULT LButtonDown( [in] int nX, [in] int nY, [in] DWORD dwDelay );
+	[id(3), helpstring("method LButtonUp")] HRESULT LButtonUp( [in] int nX, [in] int nY, [in] DWORD dwDelay );
+	[id(4), helpstring("method LButtonDblClk")] HRESULT LButtonDblClk( [in] int nX, [in] int nY, [in] DWORD dwDelay );
+
+	[id(5), helpstring("method RButtonDown")] HRESULT RButtonDown( [in] int nX, [in] int nY, [in] DWORD dwDelay );
+	[id(6), helpstring("method RButtonUp")] HRESULT RButtonUp( [in] int nX, [in] int nY, [in] DWORD dwDelay );
+	[id(7), helpstring("method RButtonDblClk")] HRESULT RButtonDblClk( [in] int nX, [in] int nY, [in] DWORD dwDelay );
+
+    [id(8), helpstring("method KeyDown")] HRESULT KeyDown( [in] long lKeyCode, [in] long lIsExtendedKey,[in] DWORD dwDelay );
+	[id(9), helpstring("method KeyUp")] HRESULT KeyUp( [in] long lKeyCode, [in] long lIsExtendedKey, [in] DWORD dwDelay );
+
+	[id(10), helpstring("method WaitMacroEnd")] HRESULT WaitMacroEnd( );	
+	[id(11), helpstring("method SetScriptRunning")] HRESULT SetScriptRunning( [in] long lSet );	
+
+    [id(12), helpstring("method SetEventsWindow2")] HRESULT SetEventsWindow2( [in] BSTR bstrWndClass, [in] int nX, [in] int nY,
+		[in] int nCX, [in] int nCY, [in] long lHwnd );
+};
+
+
+
+///////////// Library /////////////
+
+[
+	uuid(EC846B0B-3184-423f-B728-56121208A3E6),
+	version(1.0),
+	helpstring("MacroRecordLib 1.0 Type Library")
+]
+library MacroRecordLib
+{
+	importlib("stdole2.tlb");
+	[
+		uuid(8B8F28C2-6F8E-4d61-8212-1AEBE1C1C8CF),
+		helpstring("MacroManager Class")
+	]
+	coclass CoMacroManager
+	{
+		[default]	interface IMacroManagerDisp;
+	};
+
+	[
+		uuid(9ACE10DF-FB94-4239-8D15-B7D25CEDE85C),
+		helpstring("MacroHelper Class")
+	]
+	coclass CoMacroHelper
+	{
+		[default]	interface IMacroHelperDisp;
+	};
+	
+};

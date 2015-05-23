@@ -1,0 +1,279 @@
+//Microsoft Developer Studio generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// Russian resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_RUS)
+#ifdef _WIN32
+LANGUAGE LANG_RUSSIAN, SUBLANG_DEFAULT
+#pragma code_page(1251)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#include ""res\\OleClient.rc2""\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_OLE_PROP_PAGE DIALOG DISCARDABLE  0, 0, 227, 46
+STYLE WS_CHILD | WS_VISIBLE
+FONT 8, "MS Sans Serif"
+BEGIN
+    PUSHBUTTON      "Сделать неактивным OLE объект",IDC_DEACTIVATE,10,24,119,
+                    14
+    PUSHBUTTON      "Обновить OLE объект",IDC_UPDATE,10,6,80,14
+    CONTROL         "",IDC_VTCHECKBOXCTRL1,
+                    "{F6188DC0-9F7F-4021-AA3C-395956D021F1}",NOT WS_VISIBLE | 
+                    WS_TABSTOP,153,7,67,12
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO DISCARDABLE 
+BEGIN
+    IDD_OLE_PROP_PAGE, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 220
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 39
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog Info
+//
+
+IDD_OLE_PROP_PAGE DLGINIT
+BEGIN
+    IDC_VTCHECKBOXCTRL1, 0x376, 123, 0
+0x0000, 0x0000, 0x0000, 0x0000, 0x0004, 0x0000, 0x0000, 0x0000, 0xc709, 
+0xe3e0, 0xebee, 0xe2ee, 0xeaee, 0x0008, 0x8000, 0x000f, 0x8000, 0x0008, 
+0x8000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 
+0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 
+0x0000, 0x0001, 0x0000, 0x0000, 0x0001, 0x0300, 0xe352, 0x910b, 0xce8f, 
+0x9d11, 0x00e3, 0x00aa, 0xb84b, 0x0151, 0x00cc, 0x9000, 0x4401, 0x0142, 
+0x0d00, 0x534d, 0x5320, 0x6e61, 0x2073, 0x6553, 0x6972, "\146" 
+    0
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_INSERT_OLE_OBJECT   "InsertOleObject\nВставить OLE объект в документ\nOLE объект\nВставить OLE объект в документ\nВставить OLE объект в документ"
+    IDS_WARNING_FILE_NOT_FOUND "Файл %s не найден"
+    IDS_SHOW_OLE_OBJECT     "ShowOleObject\nПоказать OLE объект\nOLE объект\nПоказать OLE объект\nПоказать OLE объект"
+    IDS_ACTIVATE_OLE_OBJECT "ActivateOleObject\nАктивизировать OLE объект\nOLE объект\nАктивизировать OLE объект\nАктивизировать OLE объект"
+    IDS_DEACTIVATE_OLE_OBJECT 
+                            "DeactivateOleObject\nСделать неактивным OLE объект\nOLE объект\nСделать неактивным OLE объект\nСделать неактивным OLE объект"
+    IDS_WARNING_OLE_ITEM_IS_LINK 
+                            "Вы хотите сохранить файл %s на диске? Файл является ссылкой."
+    IDS_SHOW_OLE_OBJECT_CONTENT 
+                            "ShowOleObjectContent\nО создании OLE объекта\nOLE объект\nИнформация о создании OLE объекта\nО создании OLE объекта"
+    IDS_CREATE_OLE_OBJECT_FROM_CLIPBOARD 
+                            "InsertOleObjectFromClipboard\nВставить OLE объект из буфера в документ\nOLE объект\nВставить OLE объект из буфера в документ\nВставить OLE объект из буфера в документ"
+    IDS_UPDATE_OLE_OBJECT   "UpdateOleObject\nОбновить OLE объект\nOLE объект\nОбновить OLE объект\nОбновить OLE объект"
+    IDS_INSERT_OLE_OBJECT_TO_EXIST 
+                            "InsertOleObjectToExist\nВставить OLE объект\nOLE объект\nВставить  OLE объект\nВставить  OLE объект"
+    IDS_CREATE_OLE_OBJECT_FROM_CLIPBOARD_TO_EXIST 
+                            "InsertOleObjectFromClipboardToExist\nВставить OLE объект из буфера\nOLE объект\nВставить OLE объект из буфера\nВставить OLE объект из буфера"
+    IDS_OLE_VIEW_NAME       "OLE объект"
+    IDS_OLE_OBJECT_TYPE_NAME "OLE объект"
+END
+
+#endif    // Russian resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.S.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_OLE_PROP_PAGE DIALOG DISCARDABLE  0, 0, 227, 46
+STYLE WS_CHILD | WS_VISIBLE
+FONT 8, "MS Sans Serif"
+BEGIN
+    PUSHBUTTON      "Deactivate OLE Object",IDC_DEACTIVATE,11,24,78,14
+    PUSHBUTTON      "Update OLE Object",IDC_UPDATE,12,7,67,14
+    CONTROL         "",IDC_VTCHECKBOXCTRL1,
+                    "{F6188DC0-9F7F-4021-AA3C-395956D021F1}",NOT WS_VISIBLE | 
+                    WS_TABSTOP,153,7,67,12
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO DISCARDABLE 
+BEGIN
+    IDD_OLE_PROP_PAGE, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 220
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 39
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog Info
+//
+
+IDD_OLE_PROP_PAGE DLGINIT
+BEGIN
+    IDC_VTCHECKBOXCTRL1, 0x376, 121, 0
+0x0000, 0x0000, 0x0000, 0x0000, 0x0004, 0x0000, 0x0000, 0x0000, 0x4307, 
+0x7061, 0x6974, 0x6e6f, 0x0008, 0x8000, 0x000f, 0x8000, 0x0008, 0x8000, 
+0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 
+0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 
+0x0001, 0x0000, 0x0000, 0x0001, 0x0300, 0xe352, 0x910b, 0xce8f, 0x9d11, 
+0x00e3, 0x00aa, 0xb84b, 0x0151, 0x00cc, 0x9000, 0x4401, 0x0142, 0x0d00, 
+0x534d, 0x5320, 0x6e61, 0x2073, 0x6553, 0x6972, "\146" 
+    0
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDI_OLEITEMIMAGE        ICON    DISCARDABLE     "icon1.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Toolbar
+//
+
+IDR_TOOLBAR1 TOOLBAR DISCARDABLE  16, 15
+BEGIN
+    BUTTON      IDS_INSERT_OLE_OBJECT
+    BUTTON      IDS_SHOW_OLE_OBJECT
+    BUTTON      IDS_ACTIVATE_OLE_OBJECT
+    BUTTON      IDS_DEACTIVATE_OLE_OBJECT
+    BUTTON      IDS_SHOW_OLE_OBJECT_CONTENT
+    BUTTON      IDS_CREATE_OLE_OBJECT_FROM_CLIPBOARD
+    BUTTON      IDS_UPDATE_OLE_OBJECT
+    BUTTON      IDS_INSERT_OLE_OBJECT_TO_EXIST
+    BUTTON      IDS_CREATE_OLE_OBJECT_FROM_CLIPBOARD_TO_EXIST
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDR_TOOLBAR1            BITMAP  DISCARDABLE     "toolbar1.bmp"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_INSERT_OLE_OBJECT   "InsertOleObject\nInsert OLE Object into Document\nOLE Object\nInsert OLE Object into document\nInsert OLE Object into Document"
+    IDS_WARNING_FILE_NOT_FOUND "File %s not found"
+    IDS_SHOW_OLE_OBJECT     "ShowOleObject\nShow OLE Object\nOLE Object\nShow OLE object\nShow OLE Object"
+    IDS_ACTIVATE_OLE_OBJECT "ActivateOleObject\nActivate OLE Object\nOLE Object\nActivate OLE object\nActivate OLE Object"
+    IDS_DEACTIVATE_OLE_OBJECT 
+                            "DeactivateOleObject\nDeactivate OLE Object\nOLE Object\nDeactivate OLE object\nDeactivate OLE Object"
+    IDS_WARNING_OLE_ITEM_IS_LINK 
+                            "Would you like to save %s file to disk? It is only a link to file."
+    IDS_SHOW_OLE_OBJECT_CONTENT 
+                            "ShowOleObjectContent\nShow OLE Object Content\nOLE Object\nShow OLE object content\nShow OLE Object Content"
+    IDS_CREATE_OLE_OBJECT_FROM_CLIPBOARD 
+                            "InsertOleObjectFromClipboard\nInsert OLE Object from Clipboard into Document\nOLE Object\nInsert OLE object from the clipboard into document\nInsert OLE Object from Clipboard into Document"
+    IDS_UPDATE_OLE_OBJECT   "UpdateOleObject\nUpdate OLE Object\nOLE Object\nUpdate OLE object\nUpdate OLE Object"
+    IDS_INSERT_OLE_OBJECT_TO_EXIST 
+                            "InsertOleObjectToExist\nInsert OLE Object\nOLE Object\nInsert OLE Object\nInsert OLE Object"
+    IDS_CREATE_OLE_OBJECT_FROM_CLIPBOARD_TO_EXIST 
+                            "InsertOleObjectFromClipboardToExist\nInsert OLE Object from Clipboard\nOLE Object\nInsert OLE object from clipboard\nInsert OLE Object from Clipboard"
+    IDS_OLE_VIEW_NAME       "Ole Object"
+    IDS_OLE_OBJECT_TYPE_NAME "Ole Object"
+END
+
+#endif    // English (U.S.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#include "res\OleClient.rc2"
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

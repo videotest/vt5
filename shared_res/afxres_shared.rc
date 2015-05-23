@@ -1,0 +1,551 @@
+// Microsoft Visual C++ generated resource script.
+//
+
+#include "\vt5\shared_res\afxres_shared.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// Russian resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_RUS)
+#ifdef _WIN32
+LANGUAGE LANG_RUSSIAN, SUBLANG_DEFAULT
+#pragma code_page(1251)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE 
+BEGIN
+    AFX_IDS_OPENFILE        "Открыть"
+    AFX_IDS_SAVEFILE        "Сохранить как"
+    AFX_IDS_ALLFILTER       "Все файлы (*.*)"
+    AFX_IDS_UNTITLED        "Без названия"
+    AFX_IDS_UNNAMED_FILE    "файл без названия"
+END
+
+STRINGTABLE 
+BEGIN
+    AFX_IDS_HIDE            "&Hide"
+END
+
+STRINGTABLE 
+BEGIN
+    AFX_IDP_NO_ERROR_AVAILABLE "Сообщение об ошибке отсутствует."
+    AFX_IDS_NOT_SUPPORTED_EXCEPTION 
+                            "Попытка произвести неподдерживаемую операцию."
+    AFX_IDS_RESOURCE_EXCEPTION "Необходимый ресурс недоступен."
+    AFX_IDS_MEMORY_EXCEPTION "Недостаточно памяти."
+    AFX_IDS_USER_EXCEPTION  "Произошла неизвестная ошибка."
+END
+
+STRINGTABLE 
+BEGIN
+    AFX_IDS_PASTELINKEDTYPE "Связь с файлом %s"
+    AFX_IDS_UNKNOWNTYPE     "Неизвестный тип"
+END
+
+STRINGTABLE 
+BEGIN
+    AFX_IDP_INVALID_FILENAME "Неверное имя файла."
+    AFX_IDP_FAILED_TO_OPEN_DOC "Невозможно открыть документ."
+    AFX_IDP_FAILED_TO_SAVE_DOC "Невозможно сохранить документ."
+    AFX_IDP_ASK_TO_SAVE     "Сохранить изменения в %1?"
+    AFX_IDP_FAILED_TO_CREATE_DOC "Невозможно создать пустой документ."
+    AFX_IDP_FILE_TOO_LARGE  "Невозможно открыть файл, т.к. его размер слишком велик."
+    AFX_IDP_FAILED_TO_START_PRINT "Невозможно запустить печать."
+    AFX_IDP_FAILED_TO_LAUNCH_HELP "Невозможно загрузить файл справки."
+    AFX_IDP_INTERNAL_FAILURE "Внутренняя программная ошибка."
+    AFX_IDP_COMMAND_FAILURE "Невозможно выполнить команду."
+    AFX_IDP_FAILED_MEMORY_ALLOC "Недостаточно памяти для выполнения операции."
+    AFX_IDP_UNREG_DONE      "Записи в системном реестре и файл INI (если имеется) успешно удалены."
+    AFX_IDP_UNREG_FAILURE   "Не удалось удалить все записи из реестра (или файл INI)."
+    AFX_IDP_DLL_LOAD_FAILED "Файл %s, необходимый для работы программы, не обнаружен в системе."
+    AFX_IDP_DLL_BAD_VERSION "Не найдена функция %s в файле %s, привязанная к программе. Возможна несовместимость %s."
+END
+
+STRINGTABLE 
+BEGIN
+    AFX_IDP_PARSE_INT       "Пожалуйста, введите целое число."
+    AFX_IDP_PARSE_REAL      "Пожалуйста, введите число."
+    AFX_IDP_PARSE_INT_RANGE "Пожалуйста, введите целое число между %1 и %2."
+    AFX_IDP_PARSE_REAL_RANGE 
+                            "Пожалуйста, введите число в диапазоне от %1 and %2."
+    AFX_IDP_PARSE_STRING_SIZE "Пожалуйста, вводите не более %1 символов."
+    AFX_IDP_PARSE_RADIO_BUTTON "Пожалуйста, выберите кнопку."
+    AFX_IDP_PARSE_BYTE      "Пожалуйста, введите целое число от 0 до 255."
+    AFX_IDP_PARSE_UINT      "Пожалуйста, введите положительное целое число."
+    AFX_IDP_PARSE_DATETIME  "Пожалуйста, введите дату и/или время."
+    AFX_IDP_PARSE_CURRENCY  "Пожалуйста, введите обозначение валюты."
+    AFX_IDP_PARSE_GUID      "Пожалуйста, введите GUID."
+    AFX_IDP_PARSE_TIME      "Пожалуйста, введите время."
+    AFX_IDP_PARSE_DATE      "Пожалуйста, введите дату."
+END
+
+STRINGTABLE 
+BEGIN
+    AFX_IDP_FAILED_INVALID_FORMAT "Непредвиденный формат файла."
+    AFX_IDP_FAILED_INVALID_PATH 
+                            "%1\nФайл не найден.\nПроверьте путь к файлу и его имя."
+    AFX_IDP_FAILED_DISK_FULL "Недостаточно места на указанном диске."
+    AFX_IDP_FAILED_ACCESS_READ 
+                            "Файл %1 недоступен для чтения, т.к. открыт другим пользователем."
+    AFX_IDP_FAILED_ACCESS_WRITE 
+                            "Файл %1 недоступен для записи, т.к. имеет аттрибут ""только для чтения"" или открыт другим пользователем."
+    AFX_IDP_FAILED_IO_ERROR_READ "При чтении %1 возникла неизвестная ошибка."
+    AFX_IDP_FAILED_IO_ERROR_WRITE "При записи %1 возникла неизвестная ошибка."
+END
+
+STRINGTABLE 
+BEGIN
+    AFX_IDP_SCRIPT_ERROR    "%1: %2\nПродолжить выполнение скрипта?"
+    AFX_IDP_SCRIPT_DISPATCH_EXCEPTION "Dispatch exception: %1"
+END
+
+STRINGTABLE 
+BEGIN
+    AFX_IDS_NOT_DOCOBJECT   "Файл не поддерживается серевером Document Object."
+    AFX_IDP_FAILED_TO_NOTIFY 
+                            "%1\nНевозможно зарегистрировать документ.\nВозможно, документ уже открыт."
+    AFX_IDP_GET_NOT_SUPPORTED 
+                            "Невозможно прочитать свойство ""только для записи""."
+    AFX_IDP_SET_NOT_SUPPORTED 
+                            "Невозможно записать свойство ""только для чтения""."
+END
+
+STRINGTABLE 
+BEGIN
+    AFX_IDP_FAILED_MAPI_LOAD 
+                            "Невозможно загрузить поддержку почтовой системы."
+    AFX_IDP_INVALID_MAPI_DLL "Неисправна DLL почтовой системы."
+    AFX_IDP_FAILED_MAPI_SEND "Невозможно отправить сообщение."
+END
+
+STRINGTABLE 
+BEGIN
+    AFX_IDP_FILE_NONE       "Ошибок не обнаружено."
+    AFX_IDP_FILE_GENERIC    "Неизвестная ошибка при попытке доступа к %1."
+    AFX_IDP_FILE_NOT_FOUND  "%1 не обнаружен."
+    AFX_IDP_FILE_BAD_PATH   "%1 содержит неверный путь."
+    AFX_IDP_FILE_TOO_MANY_OPEN 
+                            "%1 невозможно открыть, поскольку открыто слишком много файлов."
+    AFX_IDP_FILE_ACCESS_DENIED "В доступе к %1 отказано."
+    AFX_IDP_FILE_INVALID_FILE "%1 присвоен неверный дескриптор."
+    AFX_IDP_FILE_REMOVE_CURRENT 
+                            "%1 невозможно удалить, т.к. это активная папка."
+    AFX_IDP_FILE_DIR_FULL   "Невозможно создать %1 - папка переполнена."
+    AFX_IDP_FILE_BAD_SEEK   "Ошибка при поиске %1"
+    AFX_IDP_FILE_HARD_IO    "При доступе к  %1 обнаружена аппаратная ошибка ввода/вывода (hardware I/O error)."
+    AFX_IDP_FILE_SHARING    "Нарушение процедуры совместного использования %1 (sharing violation)."
+    AFX_IDP_FILE_LOCKING    "Нарушение процедуры блокировки (locking violation) при обращении к %1."
+    AFX_IDP_FILE_DISKFULL   "Недостаточно места на диске при обращении к %1."
+    AFX_IDP_FILE_EOF        "Попытка доступа к %1 после конца файла."
+END
+
+STRINGTABLE 
+BEGIN
+    AFX_IDP_ARCH_NONE       "Ошибок не обнаружено."
+    AFX_IDP_ARCH_GENERIC    "Неизвестная ошибка при доступе к %1."
+    AFX_IDP_ARCH_READONLY   "Попытка записи в файл с атрибутом ""только для чтения"": %1."
+    AFX_IDP_ARCH_ENDOFFILE  "An attempt was made to access %1 past its end."
+    AFX_IDP_ARCH_WRITEONLY  "Попытка чтения из файла с атрибутом ""только для записи"":  %1."
+    AFX_IDP_ARCH_BADINDEX   "%1 имеет неверный формат."
+    AFX_IDP_ARCH_BADCLASS   "%1 содержит непредвиденный объект."
+    AFX_IDP_ARCH_BADSCHEMA  "%1 содержит некорректную схему."
+END
+
+STRINGTABLE 
+BEGIN
+    AFX_IDS_OCC_SCALEUNITS_PIXELS "пикселы"
+END
+
+STRINGTABLE 
+BEGIN
+    AFX_IDS_CHECKLISTBOX_UNCHECK "Uncheck"
+    AFX_IDS_CHECKLISTBOX_CHECK "Check"
+    AFX_IDS_CHECKLISTBOX_MIXED "Mixed"
+END
+
+#endif    // Russian resources
+/////////////////////////////////////////////////////////////////////////////
+
+/////////////////////////////////////////////////////////////////////////////
+// Chinese (P.R.C.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)
+#ifdef _WIN32
+LANGUAGE LANG_CHINESE, SUBLANG_CHINESE_SIMPLIFIED
+#pragma code_page(936)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE 
+BEGIN
+    AFX_IDS_OPENFILE        "ґтїЄ"
+    AFX_IDS_SAVEFILE        "БнґжОЄ"
+    AFX_IDS_ALLFILTER       "ЛщУРОДјю(*.*)"
+    AFX_IDS_UNTITLED        "ОЮ±кМв"
+    AFX_IDS_UNNAMED_FILE    "ОґГьГыОДјю"
+END
+
+STRINGTABLE 
+BEGIN
+    AFX_IDS_HIDE            "ТюІШ(&H)"
+END
+
+STRINGTABLE 
+BEGIN
+    AFX_IDP_NO_ERROR_AVAILABLE "Г»УРїЙУГµДґнОуПыПўЎЈ"
+    AFX_IDS_NOT_SUPPORTED_EXCEPTION 
+									"КФНјЅшРР·З·ЁІЩЧчЎЈ"
+    AFX_IDS_RESOURCE_EXCEPTION "ЛщРиµДЧКФґІ»їЙУГЎЈ"
+    AFX_IDS_MEMORY_EXCEPTION "ДЪґжТзіцЎЈ"
+    AFX_IDS_USER_EXCEPTION  "·ўЙъОґЦЄґнОуЎЈ"
+END
+
+STRINGTABLE 
+BEGIN
+    AFX_IDS_PASTELINKEDTYPE "БґЅУ %s"
+    AFX_IDS_UNKNOWNTYPE     "ОґЦЄАаРН"
+END
+
+STRINGTABLE 
+BEGIN
+    AFX_IDP_INVALID_FILENAME "ОДјюГыОЮР§ЎЈ"
+    AFX_IDP_FAILED_TO_OPEN_DOC "ґтїЄОДµµК§°ЬЎЈ"
+    AFX_IDP_FAILED_TO_SAVE_DOC "±ЈґжОДµµК§°ЬЎЈ"
+    AFX_IDP_ASK_TO_SAVE     "±Јґж¶Ф %1 µДёьёДВрЈї"
+    AFX_IDP_FAILED_TO_CREATE_DOC "ОЮ·ЁґґЅЁїХОДµµЎЈ"
+    AFX_IDP_FILE_TOO_LARGE  "ОДјюМ«ґуЈ¬ТФЦБОЮ·ЁґтїЄЎЈ"
+    AFX_IDP_FAILED_TO_START_PRINT "ОЮ·ЁїЄКјґтУЎЧчТµЎЈ"
+    AFX_IDP_FAILED_TO_LAUNCH_HELP "ОЮ·ЁЖф¶Ї°пЦъЎЈ"
+    AFX_IDP_INTERNAL_FAILURE "ДЪІїУ¦УГіМРтіцґнЎЈ"
+    AFX_IDP_COMMAND_FAILURE "ГьБоК§°ЬЎЈ"
+    AFX_IDP_FAILED_MEMORY_ALLOC "ДЪґжІ»ЧгЈ¬ОЮ·ЁЦґРРІЩЧчЎЈ"
+    AFX_IDP_UNREG_DONE      "ПµНіЧўІб±нМхДї±»ЙѕіэЈ¬INI ОДјюЈЁИз№ыУРЈ©ТІ±»ЙѕіэЎЈ"
+    AFX_IDP_UNREG_FAILURE   "ПµНіЧўІб±нМхДїЈЁ»т INI ОДјюЈ©Г»УРНкИ«ЙѕіэЎЈ"
+    AFX_IDP_DLL_LOAD_FAILED "ґЛіМРтРиТЄµДОДјю %s ФЪґЛПµНіЙПХТІ»µЅЎЈ"
+    AFX_IDP_DLL_BAD_VERSION "ґЛіМРтБґЅУµЅИ±К§µДµјіц %s ЙПЈЁФЪОДјю %s ЦРЈ©ЎЈґЛЙи±ёЙПїЙДЬґжФЪІ»јжИЭµД %s °ж±ѕЎЈ"
+END
+
+STRINGTABLE 
+BEGIN
+    AFX_IDP_PARSE_INT       "ЗлКдИлТ»ёцХыКэЎЈ"
+    AFX_IDP_PARSE_REAL      "ЗлКдИлТ»ёцКэЧЦЎЈ"
+    AFX_IDP_PARSE_INT_RANGE "ЗлКдИлТ»ёцЅйУЪ %1 єН %2 Ц®јдµДХыКэЎЈ"
+    AFX_IDP_PARSE_REAL_RANGE "ЗлКдИлТ»ёцЅйУЪ %1 єН %2 Ц®јдµДКэЧЦЎЈ"
+    AFX_IDP_PARSE_STRING_SIZE "ЗлКдИлТ»ёці¤¶ИІ»і¬№э %1 µДЧЦ·ыґ®ЎЈ"
+    AFX_IDP_PARSE_RADIO_BUTTON "ЗлСЎФсТ»ёц°ґЕҐЎЈ"
+    AFX_IDP_PARSE_BYTE      "ЗлКдИлТ»ёцЅйУЪ 0 єН 255 Ц®јдµДХыКэЎЈ"
+    AFX_IDP_PARSE_UINT      "ЗлКдИлТ»ёцХэХыКэЎЈ"
+    AFX_IDP_PARSE_DATETIME  "ЗлКдИлИХЖЪєНК±јдЎЈ"
+    AFX_IDP_PARSE_CURRENCY  "ЗлКдИл±ТЦЦЎЈ"
+    AFX_IDP_PARSE_GUID      "ЗлКдИл GUIDЎЈ"
+    AFX_IDP_PARSE_TIME      "ЗлКдИлК±јдЎЈ"
+    AFX_IDP_PARSE_DATE      "ЗлКдИлИХЖЪЎЈ"
+END
+
+STRINGTABLE 
+BEGIN
+    AFX_IDP_FAILED_INVALID_FORMAT "ОґЦЄµДОДјюёсКЅЎЈ"
+    AFX_IDP_FAILED_INVALID_PATH 
+                            "%1\nХТІ»µЅґЛОДјюЎЈ\nЗлИ·ИПёш¶ЁµДВ·ѕ¶єНОДјюГыХэИ·ЎЈ"
+    AFX_IDP_FAILED_DISK_FULL "ДїµДґЕЕМЗэ¶ЇЖчВъЎЈ"
+    AFX_IDP_FAILED_ACCESS_READ 
+                            "ОЮ·Ё¶БИЎ %1Ј¬УРИЛТСґтїЄЛьЎЈ"
+    AFX_IDP_FAILED_ACCESS_WRITE 
+                            "ОЮ·ЁРґИл %1Ј¬їЙДЬКЗЦ»¶БОДјю»тУРИЛТСґтїЄЛьЎЈ"
+    AFX_IDP_FAILED_IO_ERROR_READ 
+                            "¶БИЎ %1 К±·ўЙъТвНвґнОуЎЈ"
+    AFX_IDP_FAILED_IO_ERROR_WRITE 
+                            "РґИл %1 К±·ўЙъТвНвґнОуЎЈ"
+END
+
+STRINGTABLE 
+BEGIN
+    AFX_IDP_SCRIPT_ERROR    "%1: %2\nТЄјМРшФЛРРЅЕ±ѕВрЈї"
+    AFX_IDP_SCRIPT_DISPATCH_EXCEPTION "ЕЧіцТміЈЈє%1"
+END
+
+STRINGTABLE 
+BEGIN
+    AFX_IDS_NOT_DOCOBJECT   "ОДµµ¶ФПу·юОсЖчІ»Ц§іЦёГОДјюЎЈ"
+    AFX_IDP_FAILED_TO_NOTIFY 
+                            "%1\nОЮ·ЁЧўІбОДµµЎЈ\nёГОДµµїЙДЬТСґтїЄЎЈ"
+    AFX_IDP_GET_NOT_SUPPORTED "ОЮ·Ё¶БИЎЦ»РґКфРФЎЈ"
+    AFX_IDP_SET_NOT_SUPPORTED "ОЮ·ЁРґИлЦ»¶БКфРФЎЈ"
+END
+
+STRINGTABLE 
+BEGIN
+    AFX_IDP_FAILED_MAPI_LOAD "ОЮ·ЁјУФШУКјюПµНіЦ§іЦЎЈ"
+    AFX_IDP_INVALID_MAPI_DLL "УКјюПµНі DLL ОЮР§ЎЈ"
+    AFX_IDP_FAILED_MAPI_SEND "·ўЛНУКјюПыПўК§°ЬЎЈ"
+END
+
+STRINGTABLE 
+BEGIN
+    AFX_IDP_FILE_NONE       "ОґіцПЦґнОуЎЈ"
+    AFX_IDP_FILE_GENERIC    "·ГОК %1 К±·ўЙъОґЦЄґнОуЎЈ"
+    AFX_IDP_FILE_NOT_FOUND  "ХТІ»µЅ %1ЎЈ"
+    AFX_IDP_FILE_BAD_PATH   "%1 °ьє¬µДВ·ѕ¶ОЮР§ЎЈ"
+    AFX_IDP_FILE_TOO_MANY_OPEN 
+                            "ґтїЄµДОДјю№э¶аЈ¬ТтґЛОЮ·ЁґтїЄ %1ЎЈ"
+    AFX_IDP_FILE_ACCESS_DENIED "·ГОК %1 ±»ѕЬѕшЎЈ"
+    AFX_IDP_FILE_INVALID_FILE "Ул %1 УР№ШµДДіёцОДјюѕд±ъОЮР§ЎЈ"
+    AFX_IDP_FILE_REMOVE_CURRENT 
+                            "%1 ОЄµ±З°ДїВјЈ¬ТтґЛОЮ·ЁЙѕіэЛьЎЈ"
+    AFX_IDP_FILE_DIR_FULL   "ДїВјТСВъЈ¬ТтґЛОЮ·ЁґґЅЁ %1ЎЈ"
+    AFX_IDP_FILE_BAD_SEEK   "¶Ф %1 µДЛСЛчІЩЧчК§°Ь"
+    AFX_IDP_FILE_HARD_IO    "·ГОК %1 К±Ј¬ПµНі±ЁёжіцПЦУІјю I/O ґнОуЎЈ"
+    AFX_IDP_FILE_SHARING    "·ГОК %1 К±·ўЙъ№ІПніеН»ЎЈ"
+    AFX_IDP_FILE_LOCKING    "·ГОК %1 К±·ўЙъЛш¶ЁіеН»ЎЈ"
+    AFX_IDP_FILE_DISKFULL   "·ГОК %1 К±ґЕЕМВъЎЈ"
+    AFX_IDP_FILE_EOF        "¶Ф %1 µД·ГОКі¬іц·¶О§ЎЈ"
+END
+
+STRINGTABLE 
+BEGIN
+    AFX_IDP_ARCH_NONE       "ОґіцПЦґнОуЎЈ"
+    AFX_IDP_ARCH_GENERIC    "·ГОК %1 К±·ўЙъОґЦЄґнОуЎЈ"
+    AFX_IDP_ARCH_READONLY   "КФНјРґИлЦ»¶БОДјю %1ЎЈ"
+    AFX_IDP_ARCH_ENDOFFILE  "¶Ф %1 µД·ГОКі¬іц·¶О§ЎЈ"
+    AFX_IDP_ARCH_WRITEONLY  "КФНј¶БИЎЦ»РґОДјю %1ЎЈ"
+    AFX_IDP_ARCH_BADINDEX   "%1 УРёсКЅґнОуЎЈ"
+    AFX_IDP_ARCH_BADCLASS   "%1 °ьє¬Т»ёцТвНв¶ФПуЎЈ"
+    AFX_IDP_ARCH_BADSCHEMA  "%1 °ьє¬ґнОуµДёЩТЄЎЈ"
+END
+
+STRINGTABLE 
+BEGIN
+    AFX_IDS_OCC_SCALEUNITS_PIXELS "ПсЛШ"
+END
+
+STRINGTABLE 
+BEGIN
+    AFX_IDS_CHECKLISTBOX_UNCHECK "ОґСЎЦР"
+    AFX_IDS_CHECKLISTBOX_CHECK "СЎЦР"
+    AFX_IDS_CHECKLISTBOX_MIXED "»мєП"
+END
+
+#endif    // Chinese (P.R.C.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.S.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE 
+BEGIN
+    AFX_IDS_OPENFILE        "Open"
+    AFX_IDS_SAVEFILE        "Save As"
+    AFX_IDS_ALLFILTER       "All Files (*.*)"
+    AFX_IDS_UNTITLED        "Untitled"
+    AFX_IDS_UNNAMED_FILE    "an unnamed file"
+END
+
+STRINGTABLE 
+BEGIN
+    AFX_IDS_HIDE            "&Hide"
+END
+
+STRINGTABLE 
+BEGIN
+    AFX_IDP_NO_ERROR_AVAILABLE "No error message is available."
+    AFX_IDS_NOT_SUPPORTED_EXCEPTION "An unsupported operation was attempted."
+    AFX_IDS_RESOURCE_EXCEPTION "A required resource was unavailable."
+    AFX_IDS_MEMORY_EXCEPTION "Out of memory."
+    AFX_IDS_USER_EXCEPTION  "An unknown error has occurred."
+END
+
+STRINGTABLE 
+BEGIN
+    AFX_IDS_PASTELINKEDTYPE "Linked %s"
+    AFX_IDS_UNKNOWNTYPE     "Unknown Type"
+END
+
+STRINGTABLE 
+BEGIN
+    AFX_IDP_INVALID_FILENAME "Invalid file name."
+    AFX_IDP_FAILED_TO_OPEN_DOC "Failed to open document."
+    AFX_IDP_FAILED_TO_SAVE_DOC "Failed to save document."
+    AFX_IDP_ASK_TO_SAVE     "Save changes to %1?"
+    AFX_IDP_FAILED_TO_CREATE_DOC "Failed to create empty document."
+    AFX_IDP_FILE_TOO_LARGE  "The file is too large to open."
+    AFX_IDP_FAILED_TO_START_PRINT "Could not start print job."
+    AFX_IDP_FAILED_TO_LAUNCH_HELP "Failed to launch help."
+    AFX_IDP_INTERNAL_FAILURE "Internal application error."
+    AFX_IDP_COMMAND_FAILURE "Command failed."
+    AFX_IDP_FAILED_MEMORY_ALLOC "Insufficient memory to perform operation."
+    AFX_IDP_UNREG_DONE      "System registry entries have been removed and the INI file (if any) was deleted."
+    AFX_IDP_UNREG_FAILURE   "Not all of the system registry entries (or INI file) were removed."
+    AFX_IDP_DLL_LOAD_FAILED "This program requires the file %s, which was not found on this system."
+    AFX_IDP_DLL_BAD_VERSION "This program is linked to the missing export %s in the file %s. This machine may have an incompatible version of %s."
+END
+
+STRINGTABLE 
+BEGIN
+    AFX_IDP_PARSE_INT       "Please enter an integer."
+    AFX_IDP_PARSE_REAL      "Please enter a number."
+    AFX_IDP_PARSE_INT_RANGE "Please enter an integer between %1 and %2."
+    AFX_IDP_PARSE_REAL_RANGE "Please enter a number between %1 and %2."
+    AFX_IDP_PARSE_STRING_SIZE "Please enter no more than %1 characters."
+    AFX_IDP_PARSE_RADIO_BUTTON "Please select a button."
+    AFX_IDP_PARSE_BYTE      "Please enter an integer between 0 and 255."
+    AFX_IDP_PARSE_UINT      "Please enter a positive integer."
+    AFX_IDP_PARSE_DATETIME  "Please enter a date and/or time."
+    AFX_IDP_PARSE_CURRENCY  "Please enter a currency."
+    AFX_IDP_PARSE_GUID      "Please enter a GUID."
+    AFX_IDP_PARSE_TIME      "Please enter a time."
+    AFX_IDP_PARSE_DATE      "Please enter a date."
+END
+
+STRINGTABLE 
+BEGIN
+    AFX_IDP_FAILED_INVALID_FORMAT "Unexpected file format."
+    AFX_IDP_FAILED_INVALID_PATH 
+                            "%1\nCannot find this file.\nPlease verify that the correct path and file name are given."
+    AFX_IDP_FAILED_DISK_FULL "Destination disk drive is full."
+    AFX_IDP_FAILED_ACCESS_READ 
+                            "Unable to read from %1, it is opened by someone else."
+    AFX_IDP_FAILED_ACCESS_WRITE 
+                            "Unable to write to %1, it is read-only or opened by someone else."
+    AFX_IDP_FAILED_IO_ERROR_READ 
+                            "An unexpected error occurred while reading %1."
+    AFX_IDP_FAILED_IO_ERROR_WRITE 
+                            "An unexpected error occurred while writing %1."
+END
+
+STRINGTABLE 
+BEGIN
+    AFX_IDP_SCRIPT_ERROR    "%1: %2\nContinue running script?"
+    AFX_IDP_SCRIPT_DISPATCH_EXCEPTION "Dispatch exception: %1"
+END
+
+STRINGTABLE 
+BEGIN
+    AFX_IDS_NOT_DOCOBJECT   "The file is not supported by a Document Object server."
+    AFX_IDP_FAILED_TO_NOTIFY 
+                            "%1\nUnable to register document.\nThe document may already be open."
+    AFX_IDP_GET_NOT_SUPPORTED "Unable to read write-only property."
+    AFX_IDP_SET_NOT_SUPPORTED "Unable to write read-only property."
+END
+
+STRINGTABLE 
+BEGIN
+    AFX_IDP_FAILED_MAPI_LOAD "Unable to load mail system support."
+    AFX_IDP_INVALID_MAPI_DLL "Mail system DLL is invalid."
+    AFX_IDP_FAILED_MAPI_SEND "Send Mail failed to send message."
+END
+
+STRINGTABLE 
+BEGIN
+    AFX_IDP_FILE_NONE       "No error occurred."
+    AFX_IDP_FILE_GENERIC    "An unknown error occurred while accessing %1."
+    AFX_IDP_FILE_NOT_FOUND  "%1 was not found."
+    AFX_IDP_FILE_BAD_PATH   "%1 contains an invalid path."
+    AFX_IDP_FILE_TOO_MANY_OPEN 
+                            "%1 could not be opened because there are too many open files."
+    AFX_IDP_FILE_ACCESS_DENIED "Access to %1 was denied."
+    AFX_IDP_FILE_INVALID_FILE "An invalid file handle was associated with %1."
+    AFX_IDP_FILE_REMOVE_CURRENT 
+                            "%1 could not be removed because it is the current directory."
+    AFX_IDP_FILE_DIR_FULL   "%1 could not be created because the directory is full."
+    AFX_IDP_FILE_BAD_SEEK   "Seek failed on %1"
+    AFX_IDP_FILE_HARD_IO    "A hardware I/O error was reported while accessing %1."
+    AFX_IDP_FILE_SHARING    "A sharing violation occurred while accessing %1."
+    AFX_IDP_FILE_LOCKING    "A locking violation occurred while accessing %1."
+    AFX_IDP_FILE_DISKFULL   "Disk full while accessing %1."
+    AFX_IDP_FILE_EOF        "An attempt was made to access %1 past its end."
+END
+
+STRINGTABLE 
+BEGIN
+    AFX_IDP_ARCH_NONE       "No error occurred."
+    AFX_IDP_ARCH_GENERIC    "An unknown error occurred while accessing %1."
+    AFX_IDP_ARCH_READONLY   "An attempt was made to wright to %1 which is read-only."
+    AFX_IDP_ARCH_ENDOFFILE  "An attempt was made to access %1 past its end."
+    AFX_IDP_ARCH_WRITEONLY  "An attempt was made to read from %1 which is write-only."
+    AFX_IDP_ARCH_BADINDEX   "%1 has a bad format."
+    AFX_IDP_ARCH_BADCLASS   "%1 contained an unexpected object."
+    AFX_IDP_ARCH_BADSCHEMA  "%1 contains an incorrect schema."
+END
+
+STRINGTABLE 
+BEGIN
+    AFX_IDS_OCC_SCALEUNITS_PIXELS "pixels"
+END
+
+STRINGTABLE 
+BEGIN
+    AFX_IDS_CHECKLISTBOX_UNCHECK "Uncheck"
+    AFX_IDS_CHECKLISTBOX_CHECK "Check"
+    AFX_IDS_CHECKLISTBOX_MIXED "Mixed"
+END
+
+#endif    // English (U.S.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

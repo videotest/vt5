@@ -1,0 +1,935 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// Chinese (P.R.C.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)
+#ifdef _WIN32
+LANGUAGE LANG_CHINESE, SUBLANG_CHINESE_SIMPLIFIED
+#pragma code_page(936)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_DIALOG_CONVERT_IMAGE DIALOG  0, 0, 181, 69
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "ЧЄ»»НјПс"
+FONT 8, "MS Sans Serif"
+BEGIN
+    GROUPBOX        "",IDC_STATIC,3,0,117,65
+    LTEXT           "µ±З°ДЈРН:",IDC_STATIC,9,10,50,8
+    LTEXT           "",IDC_STATIC_CUR_ICON,16,24,32,32,SS_CENTERIMAGE | 
+                    WS_BORDER
+    LTEXT           "Static",IDC_STATIC_CUR_SYSTEM,63,10,21,8
+    LTEXT           "ЧЄ»»ОЄ:",IDC_STATIC,64,30,36,8
+    CONTROL         "",IDC_COMBOBOXEX_CONVERTTO,"ComboBoxEx32",
+                    CBS_DROPDOWNLIST | CBS_SORT | WS_VSCROLL | WS_TABSTOP,64,
+                    42,47,47
+    DEFPUSHBUTTON   "И·¶Ё",IDOK,126,5,50,14
+    PUSHBUTTON      "ИЎПы",IDCANCEL,126,22,50,14
+    PUSHBUTTON      "°пЦъ",IDHELP,126,40,50,14
+END
+
+IDD_DIALOG_RESIZE DIALOG  0, 0, 168, 55
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "µчХыґуРЎ"
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "И·¶Ё",IDOK,110,1,50,14
+    PUSHBUTTON      "ИЎПы",IDCANCEL,110,18,50,14
+    EDITTEXT        IDC_EDIT_WIDTH,40,12,31,14,ES_AUTOHSCROLL | ES_NUMBER
+    EDITTEXT        IDC_EDIT_HEIGHT,40,29,31,14,ES_AUTOHSCROLL | ES_NUMBER
+    LTEXT           "їн¶И:",IDC_STATIC,10,15,20,8
+    LTEXT           "ёЯ¶И:",IDC_STATIC,10,32,22,8
+    PUSHBUTTON      "°пЦъ",IDHELP,110,36,50,14
+    GROUPBOX        "",IDC_STATIC,3,0,97,50
+END
+
+IDD_DIALOG_ROTATE DIALOG  0, 0, 149, 57
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "РэЧЄ"
+FONT 8, "MS Sans Serif"
+BEGIN
+    GROUPBOX        "",IDC_STATIC,6,6,79,44
+    LTEXT           "ЅЗ¶И:",IDC_STATIC,22,25,20,8
+    EDITTEXT        IDC_EDIT_ANGLE,45,24,21,14,ES_AUTOHSCROLL | ES_NUMBER
+    DEFPUSHBUTTON   "И·¶Ё",IDOK,92,7,50,14
+    PUSHBUTTON      "ИЎПы",IDCANCEL,92,23,50,14
+    PUSHBUTTON      "°пЦъ",IDHELP,92,39,50,14
+END
+
+IDD_DIALOG_CROP DIALOGEX 0, 0, 227, 46
+STYLE DS_SETFONT | DS_CONTROL | WS_CHILD | WS_VISIBLE
+EXSTYLE WS_EX_CONTROLPARENT
+FONT 8, "MS Sans Serif", 0, 0, 0x1
+BEGIN
+    EDITTEXT        IDC_HEIGH,54,7,30,14,ES_AUTOHSCROLL
+    CONTROL         "Spin1",IDC_SPIN_HEIGHT,"msctls_updown32",
+                    UDS_SETBUDDYINT | UDS_ALIGNRIGHT | UDS_AUTOBUDDY | 
+                    UDS_ARROWKEYS,85,8,11,14
+    EDITTEXT        IDC_WIDTH,22,25,30,14,ES_AUTOHSCROLL
+    CONTROL         "Spin1",IDC_SPIN_WIDTH,"msctls_updown32",UDS_SETBUDDYINT | 
+                    UDS_ALIGNRIGHT | UDS_AUTOBUDDY | UDS_ARROWKEYS,53,25,11,
+                    14
+    ICON            IDI_ICON_RECT,IDC_STATIC,25,6,20,20,SS_RIGHTJUST | 
+                    SS_REALSIZEIMAGE
+    GROUPBOX        " ІЩЧчµҐО»",IDC_STATIC,120,4,92,35
+    CONTROL         "ПсЛШ",IDC_RADIO_PIXEL,"Button",BS_AUTORADIOBUTTON | 
+                    WS_GROUP,129,14,34,10
+    CONTROL         "РЈЧјµҐО»",IDC_RADIO_CALIBR,"Button",
+                    BS_AUTORADIOBUTTON,129,26,65,10
+END
+
+IDD_PAGE_IMAGE DIALOGEX 0, 0, 227, 46
+STYLE DS_SETFONT | DS_CONTROL | WS_CHILD | WS_VISIBLE
+EXSTYLE WS_EX_CONTROLPARENT
+FONT 8, "MS Sans Serif", 0, 0, 0x1
+BEGIN
+    LTEXT           "ґЛґ¦ЗлЅ«·ЕНјПсРЕПў...",
+                    IDC_STATIC,39,17,145,8
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO 
+BEGIN
+    IDD_DIALOG_CONVERT_IMAGE, DIALOG
+    BEGIN
+        BOTTOMMARGIN, 68
+    END
+
+    IDD_DIALOG_CROP, DIALOG
+    BEGIN
+        LEFTMARGIN, 3
+        RIGHTMARGIN, 225
+        BOTTOMMARGIN, 42
+    END
+
+    IDD_PAGE_IMAGE, DIALOG
+    BEGIN
+        LEFTMARGIN, 3
+        RIGHTMARGIN, 225
+        BOTTOMMARGIN, 42
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Toolbar
+//
+
+IDR_TOOLBAR1 TOOLBAR  16, 15
+BEGIN
+    BUTTON      IDS_ACTION_SHOW_IMAGE
+    BUTTON      IDS_ACTION_SHOW_OBJECTS
+    BUTTON      IDS_ACTION_SHOW_MASKS
+    BUTTON      IDS_ACTION_ENABLE_OBJECT
+    BUTTON      IDS_ACTION_ENABLE_BINARY
+    BUTTON      IDS_ACTION_ENABLE_FRAME
+    BUTTON      IDS_ACTION_RESIZE
+    BUTTON      IDS_ACTION_ROTATE
+    BUTTON      IDS_ACTION_MIRROR_HORZ
+    BUTTON      IDS_ACTION_MIRROR_VERT
+    BUTTON      IDS_ACTION_ROTATE_90
+    BUTTON      IDS_ACTION_ROTATE_180
+    BUTTON      IDS_ACTION_ROTATE_270
+    BUTTON      10016
+    BUTTON      IDS_ACTION_MERGE
+    BUTTON      IDS_ACTION_SHOW_SOURCE
+    BUTTON      IDS_ACTION_SHOW_BINARYFORE
+    BUTTON      IDS_ACTION_SHOW_BINARYBACK
+    BUTTON      IDS_ACTION_SHOW_BINARY
+    BUTTON      IDS_ACTION_SHOW_BINARYCONTOUR
+    BUTTON      IDS_ACTION_SHOW_PHASE
+    BUTTON      IDS_ACTION_SHOW_CALIBR
+    BUTTON      IDS_ACTION_CIPHER
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDR_TOOLBAR1            BITMAP                     "toolbar1.bmp"
+IDB_DIMENSION           BITMAP                     "res\\dimensio.bmp"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDI_ICON_RGB            ICON                       "icon1.ico"
+IDI_ICON_YUV            ICON                       "icon2.ico"
+IDI_ICON_GRAY           ICON                       "ico00002.ico"
+IDI_ICON_YIQ            ICON                       "ico00004.ico"
+IDI_ICON_HSB            ICON                       "icon_hsb.ico"
+IDI_ICON_RECT           ICON                       "res\\orect.ico"
+IDI_NOIMAGE             ICON                       "res\\noimage.ico"
+IDI_THUMBNAIL_IMAGE     ICON                       "res\\icon1.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Cursor
+//
+
+IDC_CURSOR_KIRPICH      CURSOR                     "res\\cursor1.cur"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE 
+BEGIN
+    IDS_TEMPLATE            "\nImage\nНјПсОДµµ\nНјПсОДµµ\n.image\nImage.Document\nНјПсОДµµ"
+    IDS_FILTERNAME          "О»НјОДјю"
+    IDS_IMAGE_TYPE          "НјПс"
+    IDS_ACTION_SHOW_PHASE   "ShowPhase\nПФКѕПаНј\nКУНј\nПФКѕПаНј\nПФКѕПаНј"
+    IDS_PHASEVIEWNAME       "Па"
+    IDS_WIDTH               "їн¶И:"
+    IDS_HEIGHT              "ёЯ¶И:"
+    IDS_COLORS              "СХЙ«"
+    IDS_DEPTH               "ГїПсЛШ±ИМШКэ"
+    IDS_PAGES               "ТіКэ:"
+    IDS_BI_RGB              "RGBЈЁОЮС№ЛхЈ©"
+    IDS_BI_RLE8             "RLE8"
+    IDS_BI_RLE4             "RLE4"
+    IDS_BI_BITFIELDS        "BITFIELDS"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_MENU_VIEW           "Image\\Ійїґ\nНјПсКУНј"
+    IDS_WARNING_NO_COMPRESSOR 
+                            "С№ЛхіМРт±ЈґжµДНјПсІ»ФЪµ±З°ПµНіЦРЈЎ"
+    IDS_ACTION_TO_GRAY_AVAIL 
+                            "CanConvertToGray\nїЙЧЄ»»ОЄ»Т¶И\nКУНј\nїЙТФЧЄ»»ОЄ»Т¶И\nїЙТФЧЄ»»ОЄ»Т¶И"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_ACTION_SHOW_IMAGE   "ShowImage\nУРВЦАЄПЯµДНјПс\nКУНј\nПФКѕІвБї¶ФПуУРВЦАЄПЯµД»о¶ЇНјПс\nУРВЦАЄПЯµДНјПс"
+    IDS_ACTION_TRANSFORM    "ImageTransform\nРэЧЄ/µчХыНјПсґуРЎ\n±ај­\nРэЧЄ/µчХыµ±З°НјПсґуРЎ\nРэЧЄ/µчХыНјПсґуРЎ"
+    IDS_ACTION_SHOW_OBJECTS "ShowObjects\n±іѕ°ЙПµД¶ФПу\nКУНј\nПФКѕ±іѕ°ЙПµД¶ФПу\n±іѕ°ЙПµД¶ФПу"
+    IDS_ACTION_SHOW_MASKS   "ShowMasks\n¶ФПуГЙ°е\nКУНј\nПФКѕ»о¶ЇНјПсЙПµД¶ФПуГЙ°е\n¶ФПуГЙ°е"
+    IDS_ACTION_CONVERTIMAGE "ConvertImage\nЧЄ»»НјПс...\nНјПс\nЅ«»о¶ЇНјПсЧЄ»»іЙБнТ»ЦЦСХЙ«ДЈРН\nЧЄ»»НјПс"
+    IDS_ACTION_ENABLE_FRAME "EnableFrameSelection\nїтјЬСЎФсДЈКЅ\nСЎФс\nЖфУГїтјЬСЎФсДЈКЅ\nїтјЬСЎФсДЈКЅ"
+    IDS_ACTION_ENABLE_OBJECT 
+                            "EnableObjectSelection\n¶ФПуСЎФсДЈКЅ\nІвБї\nЖфУГ¶ФПуСЎФсДЈКЅ\n¶ФПуСЎФсДЈКЅ"
+    IDS_ACTION_RESIZE       "Resize\nµчХыНјПсґуРЎ\n±ај­\nµчХыНјПсґуРЎ\nµчХыНјПсґуРЎ"
+    IDS_ACTION_ROTATE       "Rotate\nРэЧЄНјПс...\nНјПс\nЧФУЙРэЧЄНјПс\nРэЧЄНјПс"
+    IDS_ACTION_MIRROR_HORZ  "MirrorHorz\nЛ®ЖЅѕµПсНјПс\nНјПс\nЛ®ЖЅѕµПсНјПс\nЛ®ЖЅѕµПсНјПс"
+    IDS_ACTION_MIRROR_VERT  "MirrorVert\nґ№Ц±ѕµПсНјПс\nНјПс\nґ№Ц±ѕµПсНјПс\nґ№Ц±ѕµПсНјПс"
+    IDS_ACTION_ROTATE_90    "Rotate90\nНјПсРэЧЄ 90 ¶И\nНјПс\nЅ«НјПсРэЧЄ 90 ¶И\nНјПсРэЧЄ 90 ¶И"
+    IDS_ACTION_ROTATE_180   "Rotate180\nНјПсРэЧЄ 180 ¶И\nНјПс\nЅ«НјПсРэЧЄ 180 ¶И\nНјПсРэЧЄ 180 ¶И"
+    IDS_ACTION_ROTATE_270   "Rotate270\nНјПсРэЧЄ 270 ¶И\nНјПс\nЅ«НјПсРэЧЄ 270 ¶И\nНјПсРэЧЄ 270 ¶И"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_BI_JPEG             "JPEG"
+    IDS_UndefinedCompression "Оґ¶ЁТе"
+    IDS_COMPRESS            "С№Лх:"
+    IDS_CROP_DLG            "ІГјф"
+    IDS_IMAGEVIEW_NAME      "УРВЦАЄПЯµДНјПс"
+    IDS_OBJECTSVIEW_NAME    "±іѕ°ЙПµД¶ФПу"
+    IDS_MASKVIEW_NAME       "¶ФПуГЙ°е"
+    IDS_NO_IMAGE            "ОЮНјПс"
+    IDS_NO_IMAGE_INFO       "І¶»сТ»·щРВНјПсУРБЅЦЦ·Ѕ·ЁЈєґУјфМщ°еХіМщ»тґУОДјюФШИл"
+    IDS_IMAGE_PAGE          "НјПс"
+    IDS_SRCVIEW_NAME        "ФґНјПс"
+    IDS_PSEUDOVIEW_NAME     "О±Й«"
+    IDS_IMAGEVIEW_CONTEXT_MENU "УРВЦАЄПЯµДНјПс"
+    IDS_OBJECTSVIEW_CONTEXT_MENU "±іѕ°ЙПµД¶ФПу"
+    IDS_MASKVIEW_CONTEXT_MENU "¶ФПуГЙ°е"
+    IDS_OBJECT_LIST_MENU    "НјПсЙПµД¶ФПуБР±н"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_ACTION_EXPANSION    "Expansion\nМбИЎСХЙ«НЁµА\nСХЙ«\nМбИЎІКЙ«НјПсµДМШ¶ЁСХЙ«НЁµА\nМбИЎСХЙ«НЁµА"
+    IDS_ACTION_MERGE        "Merge\nєПІўСХЙ«НЁµА\n±ај­\nЅ«¶аёцСХЙ«НЁµАІўИлТ»·щНјПс\nєПІўСХЙ«НЁµА"
+    IDS_ACTION_CLONE        "Clone\nїЛВЎНјПс\nНјПс\nїЛВЎНјПс\nїЛВЎНјПс"
+    IDS_ACTION_BORDERS      "Borders\nМнјУ±Яїт\nДЪІїІЩЧч\nОЄµ±З°НјПсМнјУ±Яїт\nМнјУ±Яїт"
+    IDS_ACTION_CROP         "Crop\nІГјф\nНјПс\nІГјфНјПс\nІГјф"
+    IDS_ACTION_SHOW_PSEUDO  "ShowPseudo\nПФКѕО±НјПс\nКУНј\nПФКѕО±КУНј\nПФКѕО±НјПс"
+    IDS_ACTION_SHOW_SOURCE  "ShowSource\nФґНјПс\nКУНј\nПФКѕФґНјПс\nФґНјПс"
+    IDS_ACTION_ENABLE_BINARY 
+                            "EnableBinarySelection\n¶юЦµСЎФсДЈКЅ\n¶юЦµ\nЖфУГ¶юЦµСЎФсДЈКЅ\n¶юЦµСЎФс"
+    IDS_ACTION_SHOW_BINARYFORE 
+                            "ShowBinaryFore\nПФКѕ¶юЦµЗ°ѕ°НјПс\nКУНј\nПФКѕ¶юЦµЗ°ѕ°КУНј\nПФКѕ¶юЦµЗ°ѕ°НјПс"
+    IDS_ACTION_SHOW_BINARYBACK 
+                            "ShowBinaryBack\nПФКѕ¶юЦµ±іѕ°НјПс\nКУНј\nПФКѕ¶юЦµ±іѕ°КУНј\nПФКѕ¶юЦµ±іѕ°НјПс"
+    IDS_ACTION_SHOW_BINARY  "ShowBinary\nПФКѕ¶юЦµНјПс\nКУНј\nПФКѕ¶юЦµКУНј\nПФКѕ¶юЦµНјПс"
+    IDS_ACTION_SHOW_BINARYCONTOUR 
+                            "ShowBinaryContour\nПФКѕ¶юЦµВЦАЄНјПс\nКУНј\nПФКѕ¶юЦµВЦАЄКУНј\nПФКѕ¶юЦµВЦАЄНјПс"
+    IDS_ACTION_SHOW_VIEW    "ShowView\n°ґ ProgID ПФКѕКУНј\nКУНј\n°ґ ProgID ПФКѕКУНј\n°ґ ProgID ПФКѕКУНј"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_DRAWING_OBJECT_MENU "ФЪНјПсЙП»жЦЖ¶ФПу"
+    IDS_SOURCEVIEW_CONTEXT_MENU "ФґНјПс"
+    IDS_PSEUDOVIEW_CONTEXT_MENU "О±Й«"
+    IDS_IMAGE_CHILD_MENU    "НјПсКУНјЙПµДНјПсЧйіЙІї·Ц"
+    IDS_CANT_CONVERT_FROM   "ПµНіІ»Ц§іЦЅ«µ±З°ДЈРНЧЄ»»іЙБнТ»ЦЦДЈРНЎЈ"
+    IDS_BINARYFOREVIEW_NAME "З°ѕ°¶юЦµ"
+    IDS_BINARYFOREVIEW_CONTEXT_MENU "З°ѕ°¶юЦµ"
+    IDS_BINARYBACKVIEW_NAME "±іѕ°¶юЦµ"
+    IDS_BINARYBACKVIEW_CONTEXT_MENU "±іѕ°¶юЦµ"
+    IDS_BINARYVIEW_CONTEXT_MENU "¶юЦµКУНј"
+    IDS_BINARYVIEW_NAME     "¶юЦµКУНј"
+    IDS_BINARYCONTOURVIEW_NAME "¶юЦµВЦАЄКУНј"
+    IDS_BINARYCONTOURVIEW_CONTEXT_MENU "¶юЦµВЦАЄІЛµҐ"
+    IDS_PROMT_CHANGE_VIEW   "µ±З°КУНјОЮ·ЁПФКѕОґСЎЦРµД¶ФПуЎЈТЄСЎФсККµ±µДКУНјВрЈї"
+    IDS_WRONG_CROUP_SIZE    "ІГјфµДНјПсГж»эІ»ДЬі¬№эФґНјПсГж»э"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_ACTION_SHOW_CALIBR  "ShowCalibr\nПФКѕРЈЧјМх\nКУНј\nФЪНјПсЙППФКѕРЈЧјМх\nПФКѕРЈЧјМх"
+    IDS_ACTION_CIPHER       "Cipher\nјУГЬ\nНјПс\nјУГЬНјПс\nјУГЬНјПс"
+END
+
+#endif    // Chinese (P.R.C.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+/////////////////////////////////////////////////////////////////////////////
+// Russian resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_RUS)
+#ifdef _WIN32
+LANGUAGE LANG_RUSSIAN, SUBLANG_DEFAULT
+#pragma code_page(1251)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)\r\n"
+    "#ifdef _WIN32\r\n"
+    "LANGUAGE 9, 1\r\n"
+    "#pragma code_page(1252)\r\n"
+    "#endif //_WIN32\r\n"
+    "#include ""res\\ImageDoc.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "#include ""afxres.rc""         // Standard components\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_DIALOG_CONVERT_IMAGE DIALOG  0, 0, 181, 69
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Конвертирование изображения"
+FONT 8, "MS Sans Serif"
+BEGIN
+    GROUPBOX        "",IDC_STATIC,3,0,117,65
+    LTEXT           "Текущая\nмодель:",IDC_STATIC,16,6,32,16
+    LTEXT           "",IDC_STATIC_CUR_ICON,16,24,32,32,SS_CENTERIMAGE | 
+                    WS_BORDER
+    LTEXT           "Static",IDC_STATIC_CUR_SYSTEM,60,14,21,8
+    LTEXT           "Перевести в:",IDC_STATIC,60,31,46,8
+    CONTROL         "",IDC_COMBOBOXEX_CONVERTTO,"ComboBoxEx32",
+                    CBS_DROPDOWNLIST | CBS_SORT | WS_VSCROLL | WS_TABSTOP,60,
+                    42,47,47
+    DEFPUSHBUTTON   "OK",IDOK,126,5,50,14
+    PUSHBUTTON      "Отмена",IDCANCEL,126,22,50,14
+    PUSHBUTTON      "Справка",IDHELP,125,39,50,14
+END
+
+IDD_DIALOG_CROP DIALOGEX 0, 0, 227, 46
+STYLE DS_SETFONT | DS_CONTROL | WS_CHILD | WS_VISIBLE
+EXSTYLE WS_EX_CONTROLPARENT
+FONT 8, "MS Sans Serif", 0, 0, 0x1
+BEGIN
+    EDITTEXT        IDC_HEIGH,54,7,30,14,ES_AUTOHSCROLL
+    CONTROL         "Spin1",IDC_SPIN_HEIGHT,"msctls_updown32",
+                    UDS_SETBUDDYINT | UDS_ALIGNRIGHT | UDS_AUTOBUDDY | 
+                    UDS_ARROWKEYS,85,8,11,14
+    EDITTEXT        IDC_WIDTH,22,25,30,14,ES_AUTOHSCROLL
+    CONTROL         "Spin1",IDC_SPIN_WIDTH,"msctls_updown32",UDS_SETBUDDYINT | 
+                    UDS_ALIGNRIGHT | UDS_AUTOBUDDY | UDS_ARROWKEYS,53,25,11,
+                    14
+    ICON            IDI_ICON_RECT,IDC_STATIC,25,6,20,20,SS_RIGHTJUST | 
+                    SS_REALSIZEIMAGE
+    GROUPBOX        "Единицы",IDC_STATIC,111,5,101,34
+    CONTROL         "Пиксел",IDC_RADIO_PIXEL,"Button",BS_AUTORADIOBUTTON | 
+                    WS_GROUP,118,14,41,10
+    CONTROL         "Единицы калибровки",IDC_RADIO_CALIBR,"Button",
+                    BS_AUTORADIOBUTTON,118,26,88,10
+END
+
+IDD_DIALOG_RESIZE DIALOG  0, 0, 166, 58
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Изменить размер"
+FONT 8, "MS Sans Serif"
+BEGIN
+    GROUPBOX        "",IDC_STATIC,5,1,92,52
+    LTEXT           "Ширина:",IDC_STATIC,16,15,32,8
+    EDITTEXT        IDC_EDIT_WIDTH,53,12,31,14,ES_AUTOHSCROLL | ES_NUMBER
+    LTEXT           "Высота:",IDC_STATIC,17,35,28,8
+    EDITTEXT        IDC_EDIT_HEIGHT,53,30,31,14,ES_AUTOHSCROLL | ES_NUMBER
+    DEFPUSHBUTTON   "OK",IDOK,106,4,50,14
+    PUSHBUTTON      "Отмена",IDCANCEL,106,21,50,14
+    PUSHBUTTON      "Справка",IDHELP,106,38,50,14
+END
+
+IDD_DIALOG_ROTATE DIALOG  0, 0, 164, 52
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Поворот"
+FONT 8, "MS Sans Serif"
+BEGIN
+    GROUPBOX        "",IDC_STATIC,4,2,89,45
+    LTEXT           "Угол:",IDC_STATIC,28,22,18,8
+    EDITTEXT        IDC_EDIT_ANGLE,49,20,22,14,ES_AUTOHSCROLL | ES_NUMBER
+    DEFPUSHBUTTON   "OK",IDOK,104,3,50,14
+    PUSHBUTTON      "Отмена",IDCANCEL,104,19,50,14
+    PUSHBUTTON      "Справка",IDHELP,104,35,50,14
+END
+
+IDD_PAGE_IMAGE DIALOGEX 0, 0, 227, 46
+STYLE DS_SETFONT | DS_CONTROL | WS_CHILD | WS_VISIBLE
+EXSTYLE WS_EX_CONTROLPARENT
+FONT 8, "MS Sans Serif", 0, 0, 0x1
+BEGIN
+    LTEXT           "Information about images will be placed here...",
+                    IDC_STATIC,39,17,145,8
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO 
+BEGIN
+    IDD_DIALOG_CONVERT_IMAGE, DIALOG
+    BEGIN
+        BOTTOMMARGIN, 68
+    END
+
+    IDD_DIALOG_CROP, DIALOG
+    BEGIN
+        LEFTMARGIN, 3
+        RIGHTMARGIN, 225
+        BOTTOMMARGIN, 42
+    END
+
+    IDD_PAGE_IMAGE, DIALOG
+    BEGIN
+        LEFTMARGIN, 3
+        RIGHTMARGIN, 225
+        BOTTOMMARGIN, 42
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE 
+BEGIN
+    IDS_TEMPLATE            "\nImage\nДокумент ВидеоТесТ\nДокумент ВидеоТесТ\n.image\nImage.Document\nImage Document"
+    IDS_FILTERNAME          "Файлы Bitmap"
+    IDS_IMAGE_TYPE          "Изображение"
+    IDS_ACTION_SHOW_PHASE   "ShowPhase\nПоказать фазы\nВид\nПоказать фазы\nПоказать фазы"
+    IDS_PHASEVIEWNAME       "Фазы"
+    IDS_WIDTH               "Ширина:"
+    IDS_HEIGHT              "Высота:"
+    IDS_COLORS              "Цвета"
+    IDS_DEPTH               "бит на пиксел"
+    IDS_PAGES               "Количество страниц:"
+    IDS_BI_RGB              "RGB (без компрессии)"
+    IDS_BI_RLE8             "RLE8"
+    IDS_BI_RLE4             "RLE4"
+    IDS_BI_BITFIELDS        "BITFIELDS"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_MENU_VIEW           "Image\\View\nImage Views"
+    IDS_WARNING_NO_COMPRESSOR 
+                            "Вы сохраняете изображение компрессором, не представленным в системе"
+    IDS_ACTION_TO_GRAY_AVAIL 
+                            "CanConvertToGray\nCanConvertToGray\nВид\nCanConvertToGray\nCanConvertToGray"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_ACTION_SHOW_IMAGE   "ShowImage\nИзображение с контурами\nВид\nПоказать изображение с контурами объектов\nИзображение с контурами"
+    IDS_ACTION_TRANSFORM    "ImageTransform\nМасштабирование и поворот изображения\nПравка\nМасштабирование и поворот изображения\nМасштабирование и поворот изображения"
+    IDS_ACTION_SHOW_OBJECTS "ShowObjects\nОбъекты на фоне\nВид\nПоказать изображение с обектами на фоне\nОбъекты на фоне"
+    IDS_ACTION_SHOW_MASKS   "ShowMasks\nМаски объектов\nВид\nПоказать изображение с масками объектов\nМаски объектов"
+    IDS_ACTION_CONVERTIMAGE "ConvertImage\nКонвертирование изображения...\nИзображение\nПеревести изображение в другую цветовую модель\nКонвертирование изображения"
+    IDS_ACTION_ENABLE_FRAME "EnableFrameSelection\nРежим нанесения рамки\nРамки\nВключить режим нанесения рамки\nРежим нанесения рамки"
+    IDS_ACTION_ENABLE_OBJECT 
+                            "EnableObjectSelection\nРежим нанесения объекта\nИзмерения\nВключить режим нанесения объектов\nРежим нанесения объекта"
+    IDS_ACTION_RESIZE       "Resize\nИзменить размер\nПравка\nИзменить размера изображения\nИзменить размер"
+    IDS_ACTION_ROTATE       "Rotate\nПроизвольный поворот...\nИзображение\nПроизвольный поворот изображения\nПроизвольный поворот"
+    IDS_ACTION_MIRROR_HORZ  "MirrorHorz\nГоризонтальное отражение\nИзображение\nГоризонтальное отражение изображения\nГоризонтальное отражение"
+    IDS_ACTION_MIRROR_VERT  "MirrorVert\nВертикальное отражение\nИзображение\nВертикальное отражение изображения\nВертикальное отражение"
+    IDS_ACTION_ROTATE_90    "Rotate90\nПовернуть на 90\nИзображение\nПоворот изображения на 90 градусов\nПовернуть на 90"
+    IDS_ACTION_ROTATE_180   "Rotate180\nПовернуть на 180\nИзображение\nПоворот изображения на 180 градусов\nПовернуть на 180"
+    IDS_ACTION_ROTATE_270   "Rotate270\nПовернуть на 270\nИзображение\nПоворот изображения на 270 градусов\nПовернуть на 270"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_BI_JPEG             "JPEG"
+    IDS_UndefinedCompression "Не установленный тип компрессии"
+    IDS_COMPRESS            "Компрессия:"
+    IDS_CROP_DLG            "Вырезать фрагмент"
+    IDS_IMAGEVIEW_NAME      "Изображение с контурами"
+    IDS_OBJECTSVIEW_NAME    "Объекты на фоне"
+    IDS_MASKVIEW_NAME       "Маски объектов"
+    IDS_NO_IMAGE            "Нет изображения"
+    IDS_NO_IMAGE_INFO       "Вы можете ввести новое изображение, вставить его из буфера обмена или загрузить из файла"
+    IDS_IMAGE_PAGE          "Изображение"
+    IDS_SRCVIEW_NAME        "Исходное изображение"
+    IDS_PSEUDOVIEW_NAME     "Цветокодированное изображение"
+    IDS_IMAGEVIEW_CONTEXT_MENU "Изобр. с контурами"
+    IDS_OBJECTSVIEW_CONTEXT_MENU "Объекты на фоне"
+    IDS_MASKVIEW_CONTEXT_MENU "Маски объектов"
+    IDS_OBJECT_LIST_MENU    "Список объектов на изобр."
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_ACTION_EXPANSION    "Expansion\nВыделить цветовые каналы\nИзображение\nВыделить отдельные цветовые каналы цветного изображения\nВыделить цветовые каналы"
+    IDS_ACTION_MERGE        "Merge\nОбъединить цветовые каналы\nПравка\nОбъединить цветовые каналы изображения\nОбъединить цветовые каналы"
+    IDS_ACTION_CLONE        "Clone\nДубликат изображения\nИзображение\nСоздать дубликат изображения\nДубликат изображения"
+    IDS_ACTION_BORDERS      "Borders\nДобавить поля\nInternal Actions\nНанести поля на изображение\nДобавить поля"
+    IDS_ACTION_CROP         "Crop\nВырезать фрагмент\nИзображение\nВырезать фрагмент изображения\nВырезать фрагмент"
+    IDS_ACTION_SHOW_PSEUDO  "ShowPseudo\nЦветокодированное изображение\nВид\nПоказать цветокодированное изображение\nЦветокодированное изображение"
+    IDS_ACTION_SHOW_SOURCE  "ShowSource\nИсходное изображение\nВид\nПоказать исходное изображение\nИсходное изображение"
+    IDS_ACTION_ENABLE_BINARY 
+                            "EnableBinarySelection\nРежим нанесение рамки на бинарное\nBinary\nВключить режим нанесения рамки на бинарное изображение\nРежим нанесение рамки на бинарное"
+    IDS_ACTION_SHOW_BINARYFORE 
+                            "ShowBinaryFore\nТрейсы на исходном изображении\nВид\nПоказать трейсы на исходном изображении\nТрейсы на исходном изображении"
+    IDS_ACTION_SHOW_BINARYBACK 
+                            "ShowBinaryBack\nТрейсы на фоне\nВид\nПоказать трейсы на фоне\nТрейсы на фоне"
+    IDS_ACTION_SHOW_BINARY  "ShowBinary\nБинарное изображение\nView\nПоказать бинарное изображение\nБинарное изображение"
+    IDS_ACTION_SHOW_BINARYCONTOUR 
+                            "ShowBinaryContour\nПоказать бинарное с контурами\nView\nПоказать бинарное изображение с контурами\nПоказать бинарное с контурами"
+    IDS_ACTION_SHOW_VIEW    "ShowView\nПоказать вид с использованием программного идентификатора\nView\nПоказать вид с использованием программного идентификатора\nПоказать вид с использованием программного идентификатора"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_DRAWING_OBJECT_MENU "Вектор. объекты на изобр."
+    IDS_SOURCEVIEW_CONTEXT_MENU "Исходное изображение"
+    IDS_PSEUDOVIEW_CONTEXT_MENU "Цветокод. изображение"
+    IDS_IMAGE_CHILD_MENU    "Дочерний элемент на изобр."
+    IDS_CANT_CONVERT_FROM   "Не поддерживается конвертирование изображений в данной цветовой модели."
+    IDS_BINARYFOREVIEW_NAME "Трейсы на исх.изобр."
+    IDS_BINARYFOREVIEW_CONTEXT_MENU "Бинарное изобр. на фоне"
+    IDS_BINARYBACKVIEW_NAME "Трейсы на фоне"
+    IDS_BINARYBACKVIEW_CONTEXT_MENU "Трейсы на фоне"
+    IDS_BINARYVIEW_CONTEXT_MENU "Бинарное изобр."
+    IDS_BINARYVIEW_NAME     "Бинарное изображение"
+    IDS_BINARYCONTOURVIEW_NAME "Бинарное с контурами"
+    IDS_BINARYCONTOURVIEW_CONTEXT_MENU "Бинарное с контурами"
+    IDS_PROMT_CHANGE_VIEW   "Удаленные объекты не могут быть отображениы в текущем виде. Выбрать соответствующий вид отбражения?"
+    IDS_WRONG_CROUP_SIZE    "Невозможно вырезать из изображения часть большую по размерам, чем само изображение"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_ACTION_SHOW_CALIBR  "ShowCalibr\nПоказать маркер\nView\nПоказать калибровочный маркер на изображении\nПоказать маркер"
+    IDS_ACTION_CIPHER       "Cipher\nCipher\nImage\nCipher Image\nCipher Image"
+END
+
+#endif    // Russian resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.S.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_DIALOG_CONVERT_IMAGE DIALOG  0, 0, 181, 69
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Convert Image"
+FONT 8, "MS Sans Serif"
+BEGIN
+    GROUPBOX        "",IDC_STATIC,3,0,117,65
+    LTEXT           "Current model:",IDC_STATIC,9,10,50,8
+    LTEXT           "",IDC_STATIC_CUR_ICON,16,24,32,32,SS_CENTERIMAGE | 
+                    WS_BORDER
+    LTEXT           "Static",IDC_STATIC_CUR_SYSTEM,63,10,21,8
+    LTEXT           "Convert to:",IDC_STATIC,64,30,36,8
+    CONTROL         "",IDC_COMBOBOXEX_CONVERTTO,"ComboBoxEx32",
+                    CBS_DROPDOWNLIST | CBS_SORT | WS_VSCROLL | WS_TABSTOP,64,
+                    42,47,47
+    DEFPUSHBUTTON   "OK",IDOK,126,5,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,126,22,50,14
+    PUSHBUTTON      "Help",IDHELP,126,40,50,14
+END
+
+IDD_DIALOG_RESIZE DIALOG  0, 0, 168, 55
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Resize"
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,110,1,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,110,18,50,14
+    EDITTEXT        IDC_EDIT_WIDTH,40,12,31,14,ES_AUTOHSCROLL | ES_NUMBER
+    EDITTEXT        IDC_EDIT_HEIGHT,40,29,31,14,ES_AUTOHSCROLL | ES_NUMBER
+    LTEXT           "Width:",IDC_STATIC,10,15,20,8
+    LTEXT           "Height:",IDC_STATIC,10,32,22,8
+    PUSHBUTTON      "Help",IDHELP,110,36,50,14
+    GROUPBOX        "",IDC_STATIC,3,0,97,50
+END
+
+IDD_DIALOG_ROTATE DIALOG  0, 0, 149, 57
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Rotate"
+FONT 8, "MS Sans Serif"
+BEGIN
+    GROUPBOX        "",IDC_STATIC,6,6,79,44
+    LTEXT           "Angle:",IDC_STATIC,22,25,20,8
+    EDITTEXT        IDC_EDIT_ANGLE,45,24,21,14,ES_AUTOHSCROLL | ES_NUMBER
+    DEFPUSHBUTTON   "OK",IDOK,92,7,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,92,23,50,14
+    PUSHBUTTON      "Help",IDHELP,92,39,50,14
+END
+
+IDD_DIALOG_CROP DIALOGEX 0, 0, 227, 46
+STYLE DS_SETFONT | DS_CONTROL | WS_CHILD | WS_VISIBLE
+EXSTYLE WS_EX_CONTROLPARENT
+FONT 8, "MS Sans Serif", 0, 0, 0x1
+BEGIN
+    EDITTEXT        IDC_HEIGH,54,7,30,14,ES_AUTOHSCROLL
+    CONTROL         "Spin1",IDC_SPIN_HEIGHT,"msctls_updown32",
+                    UDS_SETBUDDYINT | UDS_ALIGNRIGHT | UDS_AUTOBUDDY | 
+                    UDS_ARROWKEYS,85,8,11,14
+    EDITTEXT        IDC_WIDTH,22,25,30,14,ES_AUTOHSCROLL
+    CONTROL         "Spin1",IDC_SPIN_WIDTH,"msctls_updown32",UDS_SETBUDDYINT | 
+                    UDS_ALIGNRIGHT | UDS_AUTOBUDDY | UDS_ARROWKEYS,53,25,11,
+                    14
+    ICON            IDI_ICON_RECT,IDC_STATIC,25,6,20,20,SS_RIGHTJUST | 
+                    SS_REALSIZEIMAGE
+    GROUPBOX        " Work in",IDC_STATIC,120,4,92,35
+    CONTROL         "Pixels",IDC_RADIO_PIXEL,"Button",BS_AUTORADIOBUTTON | 
+                    WS_GROUP,129,14,34,10
+    CONTROL         "Calibration units",IDC_RADIO_CALIBR,"Button",
+                    BS_AUTORADIOBUTTON,129,26,65,10
+END
+
+IDD_PAGE_IMAGE DIALOGEX 0, 0, 227, 46
+STYLE DS_SETFONT | DS_CONTROL | WS_CHILD | WS_VISIBLE
+EXSTYLE WS_EX_CONTROLPARENT
+FONT 8, "MS Sans Serif", 0, 0, 0x1
+BEGIN
+    LTEXT           "Information about images will be placed here...",
+                    IDC_STATIC,39,17,145,8
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO 
+BEGIN
+    IDD_DIALOG_CONVERT_IMAGE, DIALOG
+    BEGIN
+        BOTTOMMARGIN, 68
+    END
+
+    IDD_DIALOG_CROP, DIALOG
+    BEGIN
+        LEFTMARGIN, 3
+        RIGHTMARGIN, 225
+        BOTTOMMARGIN, 42
+    END
+
+    IDD_PAGE_IMAGE, DIALOG
+    BEGIN
+        LEFTMARGIN, 3
+        RIGHTMARGIN, 225
+        BOTTOMMARGIN, 42
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Toolbar
+//
+
+IDR_TOOLBAR1 TOOLBAR  16, 15
+BEGIN
+    BUTTON      IDS_ACTION_SHOW_IMAGE
+    BUTTON      IDS_ACTION_SHOW_OBJECTS
+    BUTTON      IDS_ACTION_SHOW_MASKS
+    BUTTON      IDS_ACTION_ENABLE_OBJECT
+    BUTTON      IDS_ACTION_ENABLE_BINARY
+    BUTTON      IDS_ACTION_ENABLE_FRAME
+    BUTTON      IDS_ACTION_RESIZE
+    BUTTON      IDS_ACTION_ROTATE
+    BUTTON      IDS_ACTION_MIRROR_HORZ
+    BUTTON      IDS_ACTION_MIRROR_VERT
+    BUTTON      IDS_ACTION_ROTATE_90
+    BUTTON      IDS_ACTION_ROTATE_180
+    BUTTON      IDS_ACTION_ROTATE_270
+    BUTTON      10016
+    BUTTON      IDS_ACTION_MERGE
+    BUTTON      IDS_ACTION_SHOW_SOURCE
+    BUTTON      IDS_ACTION_SHOW_BINARYFORE
+    BUTTON      IDS_ACTION_SHOW_BINARYBACK
+    BUTTON      IDS_ACTION_SHOW_BINARY
+    BUTTON      IDS_ACTION_SHOW_BINARYCONTOUR
+    BUTTON      IDS_ACTION_SHOW_PHASE
+    BUTTON      IDS_ACTION_SHOW_CALIBR
+    BUTTON      IDS_ACTION_CIPHER
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDR_TOOLBAR1            BITMAP                  "toolbar1.bmp"
+IDB_DIMENSION           BITMAP                  "res\\dimensio.bmp"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDI_ICON_RGB            ICON                    "icon1.ico"
+IDI_ICON_YUV            ICON                    "icon2.ico"
+IDI_ICON_GRAY           ICON                    "ico00002.ico"
+IDI_ICON_YIQ            ICON                    "ico00004.ico"
+IDI_ICON_HSB            ICON                    "icon_hsb.ico"
+IDI_ICON_RECT           ICON                    "res\\orect.ico"
+IDI_NOIMAGE             ICON                    "res\\noimage.ico"
+IDI_THUMBNAIL_IMAGE     ICON                    "res\\icon1.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Cursor
+//
+
+IDC_CURSOR_KIRPICH      CURSOR                  "res\\cursor1.cur"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE 
+BEGIN
+    IDS_TEMPLATE            "\nImage\nImage Document\nImage Document\n.image\nImage.Document\nImage Document"
+    IDS_FILTERNAME          "Bitmap files"
+    IDS_IMAGE_TYPE          "Image"
+    IDS_ACTION_SHOW_PHASE   "ShowPhase\nShow Phase Image\nView\nShow the phase view\nShow Phase Image"
+    IDS_PHASEVIEWNAME       "Phase"
+    IDS_WIDTH               "Width:"
+    IDS_HEIGHT              "Height:"
+    IDS_COLORS              "colors"
+    IDS_DEPTH               "bits per pixel"
+    IDS_PAGES               "Number of pages:"
+    IDS_BI_RGB              "RGB (no compression)"
+    IDS_BI_RLE8             "RLE8"
+    IDS_BI_RLE4             "RLE4"
+    IDS_BI_BITFIELDS        "BITFIELDS"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_MENU_VIEW           "Image\\View\nImage Views"
+    IDS_WARNING_NO_COMPRESSOR 
+                            "The image was saved  by compressor that is not present in the system!"
+    IDS_ACTION_TO_GRAY_AVAIL 
+                            "CanConvertToGray\nCanConvertToGray\nView\nCanConvertToGray\nCanConvertToGray"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_ACTION_SHOW_IMAGE   "ShowImage\nImage with Contours\nView\nShow the active image with contours of measurement objects\nImage with Contours"
+    IDS_ACTION_TRANSFORM    "ImageTransform\nRotate/Resize Image\nEdit\nRotate/Resize the active image\nRotate/Resize Image"
+    IDS_ACTION_SHOW_OBJECTS "ShowObjects\nObjects on Background\nView\nShow the objects on background\nObjects on Background"
+    IDS_ACTION_SHOW_MASKS   "ShowMasks\nObject Masks\nView\nShow the object masks on the active  image\nObject Masks"
+    IDS_ACTION_CONVERTIMAGE "ConvertImage\nConvert Image...\nImage\nConvert the active image to another color model\nConvert Image"
+    IDS_ACTION_ENABLE_FRAME "EnableFrameSelection\nFrame Selection Mode\nSelection\nEnable the frame selection mode\nFrame Selection Mode"
+    IDS_ACTION_ENABLE_OBJECT 
+                            "EnableObjectSelection\nObject Selection Mode\nMeasurement\nEnable the object selection mode\nObject Selection Mode"
+    IDS_ACTION_RESIZE       "Resize\nResize Image\nEdit\nResize the image\nResize Image"
+    IDS_ACTION_ROTATE       "Rotate\nRotate Image...\nImage\nRotate the image by free angle\nRotate Image"
+    IDS_ACTION_MIRROR_HORZ  "MirrorHorz\nMirror Image Horizontally\nImage\nMirror the image horizontally\nMirror Image Horizontally"
+    IDS_ACTION_MIRROR_VERT  "MirrorVert\nMirror Image Vertically\nImage\nMirror the image vertically\nMirror Image Vertically"
+    IDS_ACTION_ROTATE_90    "Rotate90\nRotate Image 90\nImage\nRotate the image by 90 degrees\nRotate Image 90"
+    IDS_ACTION_ROTATE_180   "Rotate180\nRotate Image 180\nImage\nRotate the image by 180 degrees\nRotate Image 180"
+    IDS_ACTION_ROTATE_270   "Rotate270\nRotate Image 270\nImage\nRotate the image by 270 degrees\nRotate Image 270"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_BI_JPEG             "JPEG"
+    IDS_UndefinedCompression "Undefined"
+    IDS_COMPRESS            "Compression:"
+    IDS_CROP_DLG            "Crop"
+    IDS_IMAGEVIEW_NAME      "Image with Contours"
+    IDS_OBJECTSVIEW_NAME    "Objects on Background"
+    IDS_MASKVIEW_NAME       "Object Masks"
+    IDS_NO_IMAGE            "No image"
+    IDS_NO_IMAGE_INFO       "You can capture a new image, paste it from the clipboard or load from file"
+    IDS_IMAGE_PAGE          "Image"
+    IDS_SRCVIEW_NAME        "Source Image"
+    IDS_PSEUDOVIEW_NAME     "Pseudo Color"
+    IDS_IMAGEVIEW_CONTEXT_MENU "Image with Contours"
+    IDS_OBJECTSVIEW_CONTEXT_MENU "Objects on Background"
+    IDS_MASKVIEW_CONTEXT_MENU "Object Masks"
+    IDS_OBJECT_LIST_MENU    "Object List on Image"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_ACTION_EXPANSION    "Expansion\nExtract Color Channels\nImage\nExtract specific color channels from a color image\nExtract Color Channels"
+    IDS_ACTION_MERGE        "Merge\nMerge Color Channels\nEdit\nMerge color channels into a single  image\nMerge Color Channels"
+    IDS_ACTION_CLONE        "Clone\nClone Image\nImage\nClone the image\nClone Image"
+    IDS_ACTION_BORDERS      "Borders\nAdd Borders\nInternal Actions\nAdd borders to the active image\nAdd Borders"
+    IDS_ACTION_CROP         "Crop\nCrop\nImage\nCrop the image\nCrop"
+    IDS_ACTION_SHOW_PSEUDO  "ShowPseudo\nShow Pseudo Image\nView\nShow the pseudo view\nShow Pseudo Image"
+    IDS_ACTION_SHOW_SOURCE  "ShowSource\nSource Image\nView\nShow the source image\nSource Image"
+    IDS_ACTION_ENABLE_BINARY 
+                            "EnableBinarySelection\nBinary Selection Mode\nBinary\nEnable a binary selection mode\nBinary Selection"
+    IDS_ACTION_SHOW_BINARYFORE 
+                            "ShowBinaryFore\nShow Binary Fore Image\nView\nShow the binary fore view\nShow Binary Fore Image"
+    IDS_ACTION_SHOW_BINARYBACK 
+                            "ShowBinaryBack\nShow Binary Back Image\nView\nShow the binary back view\nShow Binary Back Image"
+    IDS_ACTION_SHOW_BINARY  "ShowBinary\nShow Binary Image\nView\nShow the binary view\nShow Binary Image"
+    IDS_ACTION_SHOW_BINARYCONTOUR 
+                            "ShowBinaryContour\nShow Binary Contour Image\nView\nShow the binary contour view\nShow Binary Contour Image"
+    IDS_ACTION_SHOW_VIEW    "ShowView\nShow View by ProgID\nView\nShow view by ProgID\nShow View by ProgID"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_DRAWING_OBJECT_MENU "Drawing Objects on Image"
+    IDS_SOURCEVIEW_CONTEXT_MENU "Source Image"
+    IDS_PSEUDOVIEW_CONTEXT_MENU "Pseudo Color"
+    IDS_IMAGE_CHILD_MENU    "Image Сhild on Image View"
+    IDS_CANT_CONVERT_FROM   "Current model doesn't support convertion to another one."
+    IDS_BINARYFOREVIEW_NAME "Binary on Foreground"
+    IDS_BINARYFOREVIEW_CONTEXT_MENU "Binary on Foreground"
+    IDS_BINARYBACKVIEW_NAME "Binary on Background"
+    IDS_BINARYBACKVIEW_CONTEXT_MENU "Binary on Background menu"
+    IDS_BINARYVIEW_CONTEXT_MENU "Binary View"
+    IDS_BINARYVIEW_NAME     "Binary View"
+    IDS_BINARYCONTOURVIEW_NAME "Binary Contour View"
+    IDS_BINARYCONTOURVIEW_CONTEXT_MENU "BinaryContour menu"
+    IDS_PROMT_CHANGE_VIEW   "Current view can't show deselected objects. Select appropriate view?"
+    IDS_WRONG_CROUP_SIZE    "It is impossible to crop part of image larger then source image"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_ACTION_SHOW_CALIBR  "ShowCalibr\nShow Calibration Bar\nView\nShow the calibration bar on image\nShow Calibration Bar"
+    IDS_ACTION_CIPHER       "Cipher\nCipher\nImage\nCipher Image\nCipher Image"
+END
+
+#endif    // English (U.S.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE 9, 1
+#pragma code_page(1252)
+#endif //_WIN32
+#include "res\ImageDoc.rc2"  // non-Microsoft Visual C++ edited resources
+#include "afxres.rc"         // Standard components
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

@@ -1,0 +1,364 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// Chinese (P.R.C.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)
+#ifdef _WIN32
+LANGUAGE LANG_CHINESE, SUBLANG_CHINESE_SIMPLIFIED
+#pragma code_page(936)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDI_THUMBNAIL_IDIODB    ICON                    "icon2.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IID_SEARCH DIALOGEX 0, 0, 186, 46
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | 
+    WS_SYSMENU
+CAPTION "ЛСЛч"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    EDITTEXT        IDC_EDIT1,7,15,118,14,ES_AUTOHSCROLL
+    DEFPUSHBUTTON   "И·¶Ё",IDOK,129,7,50,14
+    PUSHBUTTON      "ИЎПы",IDCANCEL,129,25,50,14
+    LTEXT           "ЛµГч:",IDC_STATIC,7,7,32,8
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO 
+BEGIN
+    IID_SEARCH, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 179
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 39
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE 
+BEGIN
+    IDS_TEMPLATE            "\nIdioDBase\nДЈКЅНјКэѕЭївОДµµ\nДЈКЅНјКэѕЭївОДµµ\n.dbi\nIdioDBase.Document\nДЈКЅНјКэѕЭївОДµµ"
+    IDS_ACTION_SHOW_VIEW    "ShowIdioDBView\nПФКѕДЈКЅНј DB\nКУНј\nПФКѕДЈКЅНјКэѕЭїв\nПФКѕДЈКЅНјКэѕЭїв"
+    IDS_IDIODB_TYPE         "ДЈКЅНјКэѕЭїв"
+    IDS_IDIOVIEW_NAME       "ДЈКЅНјКэѕЭїв"
+    IDS_ACTION_SEARCH_BY_TEXT 
+                            "SearchIdioByText\nЛСЛчДЈКЅНј\nєЛРН\n°ґЛµГчОДЧЦЛСЛчДЈКЅНј\nЛСЛчДЈКЅНј"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_MENU_VIEW           "IdioDB\\ДЈКЅНј DB\nДЈКЅНј DB КУНј"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_IDIO_NAME           "ДЈКЅНјКэѕЭївОДјю"
+    IDS_IDIO_FILTER         ".dbi"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_ACTION_ADD_TO_IDIODB 
+                            "AddToIdioDB\n·ўЛНµЅДЈКЅНј DB\nєЛРН\nЅ«ЛщСЎДЈКЅНј·ўЛНµЅДЈКЅНјКэѕЭїв\n·ўЛНµЅДЈКЅНјКэѕЭїв"
+END
+
+#endif    // Chinese (P.R.C.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+/////////////////////////////////////////////////////////////////////////////
+// Russian resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_RUS)
+#ifdef _WIN32
+LANGUAGE LANG_RUSSIAN, SUBLANG_DEFAULT
+#pragma code_page(1251)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDI_THUMBNAIL_IDIODB    ICON                    "thumbnai.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IID_SEARCH DIALOGEX 0, 0, 186, 46
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | 
+    WS_SYSMENU
+CAPTION "Поиск"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    EDITTEXT        IDC_EDIT1,7,15,118,14,ES_AUTOHSCROLL
+    DEFPUSHBUTTON   "OK",IDOK,129,7,50,14
+    PUSHBUTTON      "Отмена",IDCANCEL,129,25,50,14
+    LTEXT           "Комментарий:",IDC_STATIC,7,6,48,8
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO 
+BEGIN
+    IID_SEARCH, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 179
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 39
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)\r\n"
+    "LANGUAGE 9, 1\r\n"
+    "#pragma code_page(1252)\r\n"
+    "#include ""res\\IdioDBase.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "#include ""afxres.rc""     // Standard components\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Toolbar
+//
+
+IDR_TOOLBAR1 TOOLBAR  16, 15
+BEGIN
+    BUTTON      IDS_ACTION_SHOW_VIEW
+    BUTTON      IDS_ACTION_ADD_TO_IDIODB
+    BUTTON      IDS_ACTION_SEARCH_BY_TEXT
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDR_TOOLBAR1            BITMAP                  "toolbar1.bmp"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE 
+BEGIN
+    IDS_TEMPLATE            "\nIdioDBase\nБаза идиограмм\nБаза идиограмм\n.dbi\nIdioDBase.Document\nБаза идиограмм"
+    IDS_ACTION_SHOW_VIEW    "ShowIdioDBView\nБаза идиограмм\nВид\nПоказать базу идиограмм\nБаза идиограмм"
+    IDS_IDIODB_TYPE         "База идиограмм"
+    IDS_IDIOVIEW_NAME       "База идиограмм"
+    IDS_ACTION_SEARCH_BY_TEXT 
+                            "SearchIdioByText\nНайти идиограмму\nКарио\nНайти идиограмму по тексту комментария\nНайти идиограмму"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_MENU_VIEW           "IdioDB\\IdioDB\nIdioDB Views"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_IDIO_NAME           "Файл базы идиограмм"
+    IDS_IDIO_FILTER         ".dbi"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_ACTION_ADD_TO_IDIODB 
+                            "AddToIdioDB\nПослать в базу идиограмм\nКарио\nПослать выделенную идиограмму в базу идиограмм\nПослать в базу идиограмм"
+END
+
+#endif    // Russian resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.S.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDI_THUMBNAIL_IDIODB    ICON                    "icon2.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IID_SEARCH DIALOGEX 0, 0, 186, 46
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | 
+    WS_SYSMENU
+CAPTION "Search"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    EDITTEXT        IDC_EDIT1,7,15,118,14,ES_AUTOHSCROLL
+    DEFPUSHBUTTON   "OK",IDOK,129,7,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,129,25,50,14
+    LTEXT           "Comment:",IDC_STATIC,7,7,32,8
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO 
+BEGIN
+    IID_SEARCH, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 179
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 39
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE 
+BEGIN
+    IDS_TEMPLATE            "\nIdioDBase\nIdeogram Database\nIdeogram Database\n.dbi\nIdioDBase.Document\nIdeogram Database"
+    IDS_ACTION_SHOW_VIEW    "ShowIdioDBView\nShow Ideogram DB\nView\nShow Ideogram Database\nShow Ideogram Database"
+    IDS_IDIODB_TYPE         "Ideogram Database"
+    IDS_IDIOVIEW_NAME       "Ideogram Database"
+    IDS_ACTION_SEARCH_BY_TEXT 
+                            "SearchIdioByText\nSearch for Ideogram\nKaryo\nSearch for ideogram by text of comment\nSearch for Ideogram"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_MENU_VIEW           "IdioDB\\IdioDB\nIdioDB Views"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_IDIO_NAME           "Ideogram Database File"
+    IDS_IDIO_FILTER         ".dbi"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_ACTION_ADD_TO_IDIODB 
+                            "AddToIdioDB\nSend to Ideogram DB\nKaryo\nSend selected ideogram to ideogram database\nSend to Ideogram Database"
+END
+
+#endif    // English (U.S.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+LANGUAGE 9, 1
+#pragma code_page(1252)
+#include "res\IdioDBase.rc2"  // non-Microsoft Visual C++ edited resources
+#include "afxres.rc"     // Standard components
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

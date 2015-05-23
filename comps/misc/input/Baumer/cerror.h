@@ -1,0 +1,83 @@
+// Include this file only once in your code for the entire project.
+
+#ifndef _CERROR_H_
+#define	_CERROR_H_
+
+#define CE_DUMMY				 0
+#define CE_NOINIT				-1
+#define CE_UNKNOWNTYPE			-2
+#define CE_INITFGRABBER			-3
+#define CE_MEMORYBUFFER			-4
+#define CE_LOADMACRO			-5
+#define CE_FGTYPE				-6
+#define	CE_EXECMACRO			-7
+#define	CE_IO					-8
+#define CE_TYPENOTSUPP			-9
+#define CE_NOPCIDEV				-10
+#define CE_READPCICFG			-11
+#define CE_NOVGADEV				-12
+#define CE_VGAADDR				-13
+#define CE_NODISPLAYDEVICE		-14
+#define CE_FGNOTVALID			-15		
+#define CE_IONOTVALID			-16
+#define CE_MENOTVALID			-17
+#define CE_VINOTVALID			-18
+#define CE_NOMAPMEMSYS			-19
+#define CE_NOSUPFUNCTION		-20
+#define CE_PATHREGISTRYERROR	-21
+#define CE_IFCREGISTRYERROR		-22
+#define CE_FILECOPYERROR		-23
+#define CE_CAMNORESPONSE		-24
+#define CE_CAMIDENT				-25
+#define CE_NOSUPFUNC4MODE		-26
+#define CE_ZEROPOINTER		    -27
+#define CE_VIRTBUFOVER4MB		-28
+
+typedef struct {
+	DWORD  err;
+	char * pch; 
+} CxErrList;
+
+static CxErrList CxLibErrors[] = 
+{
+ CE_DUMMY,			"CE_DUMMYOROTHER",			 0
+ CE_NOINIT,			"CE_NOINIT",				-1
+ CE_UNKNOWNTYPE,	"CE_UNKNOWNTYPE",			-2
+ CE_INITFGRABBER,	"CE_INITFGRABBER",			-3
+ CE_MEMORYBUFFER,	"CE_MEMORYBUFFER",			-4
+ CE_LOADMACRO,		"CE_LOADMACRO",				-5
+ CE_FGTYPE,			"CE_FGTYPE",				-6
+ CE_EXECMACRO,		"CE_EXECMACRO",				-7
+ CE_IO,				"CE_IO",					-8
+ CE_TYPENOTSUPP,	"CE_TYPENOTSUPP",			-9
+ CE_NOPCIDEV,		"CE_NOPCIDEV",				-10
+ CE_READPCICFG,		"CE_READPCICFG",			-11
+ CE_NOVGADEV,		"CE_NOVGADEV",				-12
+ CE_VGAADDR,		"CE_VGAADDR",				-13
+ CE_NODISPLAYDEVICE,"CE_NODISPLAYDEVICE",		-14
+ CE_FGNOTVALID,		"CE_FGNOTVALID",			-15		
+ CE_IONOTVALID,		"CE_IONOTVALID",			-16
+ CE_MENOTVALID,		"CE_MENOTVALID",			-17
+ CE_VINOTVALID,		"CE_VINOTVALID",			-18
+ CE_NOMAPMEMSYS,	"CE_NOMAPMEMSYS",			-19
+ CE_NOSUPFUNCTION,	"CE_NOSUPFUNCTION",			-20
+ CE_PATHREGISTRYERROR,"CE_PATHREGISTRYERROR",	-21
+ CE_IFCREGISTRYERROR,"CE_IFCREGISTRYERROR",		-22
+ CE_FILECOPYERROR,	 "CE_FILECOPYERROR",		-23
+ CE_CAMNORESPONSE,	 "CE_CAMNORESPONSE",  	    -24
+ CE_CAMIDENT,		 "CE_CAMERAIDENT",			-25
+ CE_NOSUPFUNC4MODE,	 "CE_NOSUPFUNC4MODE",		-26
+ CE_ZEROPOINTER,	 "CE_ZEROPOINTER",			-27
+ CE_VIRTBUFOVER4MB,	 "CE_VIRTBUFOVER4MB",		-28
+
+};
+
+static char *  GetCxLibErrString( int n )
+{
+	if( -n >= sizeof(CxLibErrors)/sizeof(CxErrList)) 
+		return "No valid ErrorCode";
+	else
+		return CxLibErrors[-n].pch;
+}
+
+#endif

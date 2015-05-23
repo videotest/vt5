@@ -1,0 +1,213 @@
+//Microsoft Developer Studio generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// Chinese (P.R.C.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)
+#ifdef _WIN32
+LANGUAGE LANG_CHINESE, SUBLANG_CHINESE_SIMPLIFIED
+#pragma code_page(936)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDB_PATTERN_VIEW        BITMAP     DISCARDABLE        "res\\Pattern.bmp"
+IDB_BITMAP_NOTSPECIFIED BITMAP     DISCARDABLE        "res\\bitmap1.bmp"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDI_POSITION            ICON       DISCARDABLE        "res\\icon1.ico"
+IDI_SIZE                ICON       DISCARDABLE        "res\\icon2.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_ACTION_INSERT_CONTROL 
+                            "AxInsertControl\nІеИл ActiveX їШјю...\nЙијЖ\nІеИлРВµД ActiveX їШјю\nІеИл ActiveX їШјю"
+    IDS_ACTION_RESIZESIZE   "AxChangeSize\nµчХыґ°МеґуРЎ\nЙијЖ\nёД±дґ°МеґуРЎ\nµчХыґ°МеґуРЎ"
+    IDS_ACTION_PROPERTIES   "AxControlProperties\nКфРФ\nЙијЖ\nёьёД ActiveX їШјюµДКфРФ\nActiveX їШјюКфРФ"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_PROPPAGE_INSERT     "ІеИл ActiveX їШјю"
+    IDS_ACTION_ADD_EVENT_HANDLERS 
+                            "AxAddEventHandlers\nМнјУКВјюѕд±ъ\nХл¶ФїЄ·ўИЛФ±\nМнјУКВјюѕд±ъ\nМнјУКВјюѕд±ъ"
+    IDS_ACTION_MOVESIZE     "AxIncMoveSize\nµчХыїШјюґуРЎ\nЙијЖ\nµчХыїШјюґуРЎ\nµчХыїШјюґуРЎ"
+END
+
+#endif    // Chinese (P.R.C.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+/////////////////////////////////////////////////////////////////////////////
+// Russian resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_RUS)
+#ifdef _WIN32
+LANGUAGE LANG_RUSSIAN, SUBLANG_DEFAULT
+#pragma code_page(1251)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)\r\n"
+    "#ifdef _WIN32\r\n"
+    "LANGUAGE 9, 1\r\n"
+    "#pragma code_page(1252)\r\n"
+    "#endif //_WIN32\r\n"
+    "#include ""res\\EditorView.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "#include ""afxres.rc""         // Standard components\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_ACTION_INSERT_CONTROL 
+                            "AxInsertControl\nВставить элемент оформления\nРасположение\nВставить новый элемент оформления\nВставить элемент оформления"
+    IDS_ACTION_RESIZESIZE   "AxChangeSize\nИзменить размер формы\nРасположение\nИзменить размер формы\nИзменить размер формы"
+    IDS_ACTION_PROPERTIES   "AxControlProperties\nСвойства элемента оформления\nРасположение\nИзменить свойства элемента оформления\nСвойства элемента оформления"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_PROPPAGE_INSERT     "Вставить ActiveX"
+    IDS_ACTION_ADD_EVENT_HANDLERS 
+                            "AxAddEventHandlers\nДобавить обработчика событий\nFor Developers\nДобавить обработчика событий\nДобавить обработчика событий"
+    IDS_ACTION_MOVESIZE     "AxIncMoveSize\nИзменить размер элементов управления\nРасположение\nИзменить размер элементов управления\nИзменить размер элементов управления"
+END
+
+#endif    // Russian resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.S.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDB_PATTERN_VIEW        BITMAP  DISCARDABLE     "res\\Pattern.bmp"
+IDB_BITMAP_NOTSPECIFIED BITMAP  DISCARDABLE     "res\\bitmap1.bmp"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDI_POSITION            ICON    DISCARDABLE     "res\\icon1.ico"
+IDI_SIZE                ICON    DISCARDABLE     "res\\icon2.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_ACTION_INSERT_CONTROL 
+                            "AxInsertControl\nInsert ActiveX Control...\nDesign\nInsert a new ActiveX control\nInsert ActiveX Control"
+    IDS_ACTION_RESIZESIZE   "AxChangeSize\nResize Form\nDesign\nChange the form size\nResize Form"
+    IDS_ACTION_PROPERTIES   "AxControlProperties\nProperties\nDesign\nChange the ActiveX control properties\nActiveX Properties"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_PROPPAGE_INSERT     "Insert ActiveX"
+    IDS_ACTION_ADD_EVENT_HANDLERS 
+                            "AxAddEventHandlers\nAdd Event Handlers\nFor Developers\nAdd event handlers\nAdd Event Handlers"
+    IDS_ACTION_MOVESIZE     "AxIncMoveSize\nResize Controls\nDesign\nResize controls\nResize Controls"
+END
+
+#endif    // English (U.S.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE 9, 1
+#pragma code_page(1252)
+#endif //_WIN32
+#include "res\EditorView.rc2"  // non-Microsoft Visual C++ edited resources
+#include "afxres.rc"         // Standard components
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

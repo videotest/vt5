@@ -1,0 +1,49 @@
+// {95D645E6-D4EF-4f44-B2BA-B813365A9D10}
+static const GUID clsidFindCellsInfo = 
+{ 0x95d645e6, 0xd4ef, 0x4f44, { 0xb2, 0xba, 0xb8, 0x13, 0x36, 0x5a, 0x9d, 0x10 } };
+#define pszFindCellsProgID "Blood.FindCells"
+
+// {0035B080-B80A-11d5-96D6-008048FD42FE}
+static const GUID clsidBubbleSelectInfo = 
+{ 0x35b080, 0xb80a, 0x11d5, { 0x96, 0xd6, 0x0, 0x80, 0x48, 0xfd, 0x42, 0xfe } };
+#define pszBubbleSelectProgID "Blood.BubbleSelect"
+
+// {8A49FAA0-B856-11d5-96D6-008048FD42FE}
+static const GUID clsidCell2BinInfo = 
+{ 0x8a49faa0, 0xb856, 0x11d5, { 0x96, 0xd6, 0x0, 0x80, 0x48, 0xfd, 0x42, 0xfe } };
+#define pszCell2BinProgID "Blood.Cell2Bin"
+
+// {228E5BA0-5229-11d6-96D8-0080004442FE}
+static const GUID clsidClassifyAamInfo = 
+{ 0x228e5ba0, 0x5229, 0x11d6, { 0x96, 0xd8, 0x0, 0x80, 0x0, 0x44, 0x42, 0xfe } };
+#define pszClassifyAamProgID "Blood.ClassifyAam"
+
+// {80C0540F-45AA-47dd-B40E-F4564910DE58}
+static const GUID clsidLearnAamInfo = 
+{ 0x80c0540f, 0x45aa, 0x47dd, { 0xb4, 0xe, 0xf4, 0x56, 0x49, 0x10, 0xde, 0x58 } };
+#define pszLearnAamProgID "Blood.LearnAam"
+
+// {C15A2158-04B6-45b0-85A1-16D26F523BA9}
+static const GUID clsidLearnLinkAamInfo = 
+{ 0xc15a2158, 0x4b6, 0x45b0, { 0x85, 0xa1, 0x16, 0xd2, 0x6f, 0x52, 0x3b, 0xa9 } };
+#define pszLearnLinkAamProgID "Blood.LearnLinkAam"
+
+// {061B1AB4-F23D-4039-9895-D2A1CF39B2FF}
+static const GUID clsidSplitCirclesInfo = 
+{ 0x61b1ab4, 0xf23d, 0x4039, { 0x98, 0x95, 0xd2, 0xa1, 0xcf, 0x39, 0xb2, 0xff } };
+#define pszSplitCirclesProgID "Blood.SplitCircles"
+
+// {918E1F24-9A57-49f5-BB80-1977E4AF8964}
+static const GUID clsidCutFrameInfo = 
+{ 0x918e1f24, 0x9a57, 0x49f5, { 0xbb, 0x80, 0x19, 0x77, 0xe4, 0xaf, 0x89, 0x64 } };
+#define pszCutFrameProgID "Blood.CutFrame"
+
+// {2618A6AD-6EA6-4563-9400-20FBAE20841E}
+static const GUID clsidFindCirclesInfo = 
+{ 0x2618a6ad, 0x6ea6, 0x4563, { 0x94, 0x0, 0x20, 0xfb, 0xae, 0x20, 0x84, 0x1e } };
+#define pszFindCirclesProgID "Blood.FindCircles"
+
+// {EE31EF22-2763-4175-88F6-B453D030F3B1}
+static const GUID clsidResegmentCellsInfo = 
+{ 0xee31ef22, 0x2763, 0x4175, { 0x88, 0xf6, 0xb4, 0x53, 0xd0, 0x30, 0xf3, 0xb1 } };
+#define pszResegmentCellsProgID "Blood.ResegmentCells"

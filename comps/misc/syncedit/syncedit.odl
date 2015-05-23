@@ -1,0 +1,16 @@
+// syncedit.odl : type library source for syncedit.dll
+
+// This file will be processed by the MIDL compiler to produce the
+// type library (syncedit.tlb).
+
+[ uuid(14ABB937-0A87-46C5-A597-FB54DE62F8B8), version(1.0) ]
+library Syncedit
+{
+	importlib("stdole32.tlb");
+	importlib("stdole2.tlb");
+
+
+
+	//{{AFX_APPEND_ODL}}
+	//}}AFX_APPEND_ODL}}
+};

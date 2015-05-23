@@ -1,0 +1,249 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// Chinese (P.R.C.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)
+#ifdef _WIN32
+LANGUAGE LANG_CHINESE, SUBLANG_CHINESE_SIMPLIFIED
+#pragma code_page(936)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE 
+BEGIN
+    IDS_ACTION_CALCNRMPARAM "NormalizeParameters\n±кЧј»ЇІОКэ\n·ЦАа\n±кЧј»ЇІОКэ\n±кЧј»ЇІОКэ"
+    IDS_COMPOSED_OBJECTS    "І»Ц§іЦЧйєП¶ФПу"
+    IDS_CHROMOSOME_TYPE     "ChromosomeAxisAndCentromere"
+    IDS_CHROMOCNV_EMPTY     "ChromoCnvEmpty"
+    IDS_CHROMOCNV_ROTATE    "ChromoCnvRotate"
+    IDS_CHROMOCNV_EQUALIZE  "ChromoCnvEqualize"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_CGHFILTERNAME       "CGH µД .bmp РтБР"
+    IDS_WIDTH               "їн¶И:"
+    IDS_HEIGHT              "ёЯ¶И:"
+    IDS_COLORS              "СХЙ«"
+    IDS_DEPTH               "ГїПсЛШ±ИМШКэ"
+    IDS_PAGES               "ТіКэ:"
+    IDS_BI_RGB              "RGBЈЁОЮС№ЛхЈ©"
+    IDS_BI_RLE8             "RLE8"
+    IDS_BI_RLE4             "RLE4"
+    IDS_BI_BITFIELDS        "BITFIELDS"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_BI_JPEG             "JPEG"
+    IDS_UndefinedCompression "Оґ¶ЁТе"
+    IDS_COMPRESS            "С№Лх:"
+END
+
+#endif    // Chinese (P.R.C.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+/////////////////////////////////////////////////////////////////////////////
+// Russian resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_RUS)
+#ifdef _WIN32
+LANGUAGE LANG_RUSSIAN, SUBLANG_DEFAULT
+#pragma code_page(1251)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)\r\n"
+    "#ifdef _WIN32\r\n"
+    "LANGUAGE 9, 1\r\n"
+    "#pragma code_page(1252)\r\n"
+    "#endif //_WIN32\r\n"
+    "#include ""res\\Cromos.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "#include ""afxres.rc""         // Standard components\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE 
+BEGIN
+    IDS_ACTION_CALCNRMPARAM "NormalizeParameters\nНормализация параметров\nКлассификация\nНормализация параметров\nНормализация параметров"
+    IDS_COMPOSED_OBJECTS    "Composed objects does not supported"
+    IDS_CHROMOSOME_TYPE     "ChromosomeAxisAndCentromere"
+    IDS_CHROMOCNV_EMPTY     "ChromoCnvEmpty"
+    IDS_CHROMOCNV_ROTATE    "ChromoCnvRotate"
+    IDS_CHROMOCNV_EQUALIZE  "ChromoCnvEqualize"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_CGHFILTERNAME       ".bmp-последовательности для CGH"
+    IDS_WIDTH               "Ширина:"
+    IDS_HEIGHT              "Высота:"
+    IDS_COLORS              "Цвета"
+    IDS_DEPTH               "бит на пиксел"
+    IDS_PAGES               "Количество страниц:"
+    IDS_BI_RGB              "RGB (без компрессии)"
+    IDS_BI_RLE8             "RLE8"
+    IDS_BI_RLE4             "RLE4"
+    IDS_BI_BITFIELDS        "BITFIELDS"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_BI_JPEG             "JPEG"
+    IDS_UndefinedCompression "Не установленный тип компрессии"
+    IDS_COMPRESS            "Компрессия:"
+END
+
+#endif    // Russian resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.S.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDI_THUMBNAIL_OBJECT    ICON                    "res\\icon3.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Toolbar
+//
+
+IDR_TOOLBAR1 TOOLBAR  16, 15
+BEGIN
+    BUTTON      IDS_ACTION_CALCNRMPARAM
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDR_TOOLBAR1            BITMAP                  "res\\toolbar1.bmp"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE 
+BEGIN
+    IDS_ACTION_CALCNRMPARAM "NormalizeParameters\nNormalize parameters\nClassification\nNormalize parameters\nNormalize parameters"
+    IDS_COMPOSED_OBJECTS    "Composed objects does not supported"
+    IDS_CHROMOSOME_TYPE     "ChromosomeAxisAndCentromere"
+    IDS_CHROMOCNV_EMPTY     "ChromoCnvEmpty"
+    IDS_CHROMOCNV_ROTATE    "ChromoCnvRotate"
+    IDS_CHROMOCNV_EQUALIZE  "ChromoCnvEqualize"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_CGHFILTERNAME       ".bmp sequences for CGH"
+    IDS_WIDTH               "Width:"
+    IDS_HEIGHT              "Height:"
+    IDS_COLORS              "colors"
+    IDS_DEPTH               "bits per pixel"
+    IDS_PAGES               "Number of pages:"
+    IDS_BI_RGB              "RGB (no compression)"
+    IDS_BI_RLE8             "RLE8"
+    IDS_BI_RLE4             "RLE4"
+    IDS_BI_BITFIELDS        "BITFIELDS"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_BI_JPEG             "JPEG"
+    IDS_UndefinedCompression "Undefined"
+    IDS_COMPRESS            "Compression:"
+END
+
+#endif    // English (U.S.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE 9, 1
+#pragma code_page(1252)
+#endif //_WIN32
+#include "res\Cromos.rc2"  // non-Microsoft Visual C++ edited resources
+#include "afxres.rc"         // Standard components
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

@@ -1,0 +1,344 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// Russian resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_RUS)
+#ifdef _WIN32
+LANGUAGE LANG_RUSSIAN, SUBLANG_DEFAULT
+#pragma code_page(1251)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)\r\n"
+    "#ifdef _WIN32\r\n"
+    "LANGUAGE 9, 1\r\n"
+    "#pragma code_page(1252)\r\n"
+    "#endif //_WIN32\r\n"
+    "#include ""res\\AuditTrail.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "#include ""afxres.rc""         // Standard components\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_DIALOG_CREATE_AT DIALOG  0, 0, 196, 143
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Запись истории"
+FONT 8, "MS Sans Serif"
+BEGIN
+    CONTROL         "List2",IDC_LIST_IMAGES,"SysListView32",LVS_REPORT | 
+                    LVS_SINGLESEL | LVS_SHOWSELALWAYS | LVS_NOCOLUMNHEADER | 
+                    WS_BORDER | WS_TABSTOP,7,28,120,86
+    PUSHBUTTON      "&Выделить все",IDC_BUTTON_SELECT,7,121,55,14
+    PUSHBUTTON      "&Снять выделение",IDC_BUTTON_DESELECT,64,121,64,14
+    DEFPUSHBUTTON   "OK",IDOK,139,7,50,14
+    PUSHBUTTON      "Отмена",IDCANCEL,139,25,50,14
+    PUSHBUTTON      "Справка",IDHELP,139,43,50,14
+    LTEXT           "Выберите изображения для которых нужно создать запись истории",
+                    IDC_STATIC,9,7,125,17
+END
+
+IDD_DIALOG_SETUP DIALOG  0, 0, 342, 195
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Установки записи истории"
+FONT 8, "MS Sans Serif"
+BEGIN
+    LISTBOX         IDC_LIST_AVAIL,7,19,148,149,LBS_SORT | 
+                    LBS_NOINTEGRALHEIGHT | LBS_EXTENDEDSEL | WS_VSCROLL | 
+                    WS_HSCROLL | WS_TABSTOP
+    PUSHBUTTON      ">",IDC_BUTTON_ADD,161,58,17,14
+    PUSHBUTTON      "<",IDC_BUTTON_REMOVE,161,82,17,14
+    LISTBOX         IDC_LIST_AUDITED,185,19,148,149,LBS_SORT | 
+                    LBS_NOINTEGRALHEIGHT | LBS_EXTENDEDSEL | WS_VSCROLL | 
+                    WS_HSCROLL | WS_TABSTOP
+    DEFPUSHBUTTON   "OK",IDOK,180,174,50,14
+    PUSHBUTTON      "Отмена",IDCANCEL,233,174,50,14
+    PUSHBUTTON      "Справка",IDHELP,286,174,50,14
+    LTEXT           "Доступных акций:",IDC_STATIC,7,7,62,8
+    LTEXT           "Записанных акций:",IDC_STATIC,185,7,66,8
+    LTEXT           "11",IDC_ACTIONS_COUNT,80,7,33,8
+    LTEXT           "11",IDC_AUDITED_COUNT,258,7,33,8
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO 
+BEGIN
+    IDD_DIALOG_CREATE_AT, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 189
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 135
+    END
+
+    IDD_DIALOG_SETUP, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 335
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 188
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE 
+BEGIN
+    IDS_ACTION_ON_OFF_AT    "OnOffAuditTrail\nВкл./Выкл. запись истории\nAudit Trail\nВключить / выключить запись истории (функция должна быть включена до начала ввода изображения)\nВкл./Выкл. запись истории"
+    IDS_ACTION_SHOW_AT      "ShowAT\nПоказать историю в виде галереи\nAudit Trail\nОтображение истории в виде галереи\nПоказать историю в виде галереи"
+    IDS_ACTION_SET_ACTIVE   "SetActiveAThumbnail\nПоказать активный кадр истории\nAudit Trail\nПоказать активный кадр истории\nПоказать активный кадр истории"
+    IDS_ACTION_SHOW_SINGLE_AT 
+                            "ShowSingleAT\nКадр историиl\nAudit Trail\nПоказать кадр истории\nКадр истории"
+    IDS_ACTION_SET_NEXT     "SetNextAThumbnail\nПоказать следующий кадр истории\nAudit Trail\nПоказать следующий кадр истории\nПоказать следующий кадр истории"
+    IDS_ACTION_SET_PREV     "SetPrevAThumbnail\nПоказать предыдущий кадр истории\nAudit Trail\nПоказать предыдущий кадр истории\nПоказать предыдущий кадр истории"
+    IDS_ACTION_SHOW_TEXT_AT "ShowTextAT\nИстория в текстовом виде\nAudit Trail\nПоказать историю в текстовом виде\nИстория в текстовом виде"
+    IDS_ACTION_SETUP_AT     "SetupAT\nУстановки записи истории\nAudit Trail\nИзменить установки записи истории\nУстановки записи истории"
+    IDS_AUDIT_FOR           "История_для_"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_AT_VIEW_NAME        "История"
+    IDS_FILTERNAME          "Файлы Истории"
+    IDS_AT_SINGLE_VIEW_NAME "Кадр Истории"
+    IDS_COL_HEADER_0        "Время"
+    IDS_COL_HEADER_1        "Название акции"
+    IDS_COL_HEADER_2        "Параметры"
+    IDS_ATVIEW_CONTEXT_MENU "Audit Trail"
+    IDS_ATTEXTVIEW_CONTEXT_MENU "Audit Trail as Text"
+    IDS_AT_TEXT_VIEW_NAME   "История в текстовом виде"
+    IDS_AUDIT_TYPE          "История"
+END
+
+#endif    // Russian resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.S.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_DIALOG_CREATE_AT DIALOG  0, 0, 181, 140
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Create Audit Trail"
+FONT 8, "MS Sans Serif"
+BEGIN
+    CONTROL         "List2",IDC_LIST_IMAGES,"SysListView32",LVS_REPORT | 
+                    LVS_SINGLESEL | LVS_SHOWSELALWAYS | LVS_NOCOLUMNHEADER | 
+                    WS_BORDER | WS_TABSTOP,7,28,109,86
+    PUSHBUTTON      "&Select all",IDC_BUTTON_SELECT,7,118,50,14
+    PUSHBUTTON      "&Deselect all",IDC_BUTTON_DESELECT,66,118,50,14
+    DEFPUSHBUTTON   "OK",IDOK,124,7,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,124,24,50,14
+    PUSHBUTTON      "Help",IDHELP,124,41,50,14
+    LTEXT           "Select images for which AuditTrail objects will be generated ",
+                    IDC_STATIC,7,7,107,19
+END
+
+IDD_DIALOG_SETUP DIALOG  0, 0, 342, 199
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Setup Audit Trail"
+FONT 8, "MS Sans Serif"
+BEGIN
+    LISTBOX         IDC_LIST_AVAIL,7,21,148,149,LBS_SORT | 
+                    LBS_NOINTEGRALHEIGHT | LBS_EXTENDEDSEL | WS_VSCROLL | 
+                    WS_HSCROLL | WS_TABSTOP
+    PUSHBUTTON      ">",IDC_BUTTON_ADD,161,55,17,14
+    PUSHBUTTON      "<",IDC_BUTTON_REMOVE,161,79,17,14
+    LISTBOX         IDC_LIST_AUDITED,185,21,148,149,LBS_SORT | 
+                    LBS_NOINTEGRALHEIGHT | LBS_EXTENDEDSEL | WS_VSCROLL | 
+                    WS_HSCROLL | WS_TABSTOP
+    DEFPUSHBUTTON   "OK",IDOK,175,175,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,230,175,50,14
+    PUSHBUTTON      "Help",IDHELP,285,175,50,14
+    LTEXT           "Available actions:",IDC_STATIC,7,7,56,8
+    LTEXT           "Audited actions:",IDC_STATIC,185,7,52,8
+    LTEXT           "11",IDC_ACTIONS_COUNT,80,7,33,8
+    LTEXT           "11",IDC_AUDITED_COUNT,258,7,33,8
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO 
+BEGIN
+    IDD_DIALOG_CREATE_AT, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 174
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 132
+    END
+
+    IDD_DIALOG_SETUP, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 335
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 192
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDI_AT_OBJECTS          ICON                    "icon1.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDR_TOOLBAR1            BITMAP                  "toolbar1.bmp"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Toolbar
+//
+
+IDR_TOOLBAR1 TOOLBAR  16, 15
+BEGIN
+    BUTTON      IDS_ACTION_CREATE_AT
+    BUTTON      IDS_ACTION_SHOW_AT
+    BUTTON      IDS_ACTION_SHOW_SINGLE_AT
+    BUTTON      IDS_ACTION_SHOW_TEXT_AT
+    BUTTON      IDS_ACTION_SET_PREV
+    BUTTON      IDS_ACTION_SET_NEXT
+    BUTTON      IDS_ACTION_SETUP_AT
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE 
+BEGIN
+    IDS_ACTION_ON_OFF_AT    "OnOffAuditTrail\nOn/Off Audit Trail Manager\nAudit Trail\nOn/off Audit Trail manager (apply this command before you have acquired an image)\nOn/Off Audit Trail Manager"
+    IDS_ACTION_SHOW_AT      "ShowAT\nAudit Trail Thumbnails\nAudit Trail\nShow audit trail thumbnails\nAudit Trail Thumbnails"
+    IDS_ACTION_SET_ACTIVE   "SetActiveAThumbnail\nSet Active Audit Trail Thumbnail\nAudit Trail\nSet Active Audit Trail Thumbnail\nSet Active Audit Trail Thumbnail"
+    IDS_ACTION_SHOW_SINGLE_AT 
+                            "ShowSingleAT\nSingle Audit Trail\nAudit Trail\nShow single audit trail image\nSingle Audit Trail"
+    IDS_ACTION_SET_NEXT     "SetNextAThumbnail\nSet Next Audit Trail Thumbnail\nAudit Trail\nSet Next Audit Trail Thumbnail\nSet Next Audit Trail Thumbnail"
+    IDS_ACTION_SET_PREV     "SetPrevAThumbnail\nSet Previous Audit Trail Thumbnail\nAudit Trail\nSet Previous Audit Trail Thumbnail\nSet Previous Audit Trail Thumbnail"
+    IDS_ACTION_SHOW_TEXT_AT "ShowTextAT\nAudit Trail as Text\nAudit Trail\nShow audit trail as text\nAudit Trail as Text"
+    IDS_ACTION_SETUP_AT     "SetupAT\nSetup Audit Trail\nAudit Trail\nSetup Audit Trail\nSetup Audit Trail"
+    IDS_AUDIT_FOR           "AuditTrail_for_"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_AT_VIEW_NAME        "AuditTrail View"
+    IDS_FILTERNAME          "AuditTrail files"
+    IDS_AT_SINGLE_VIEW_NAME "AuditTrail Single View"
+    IDS_COL_HEADER_0        "Time"
+    IDS_COL_HEADER_1        "Action name"
+    IDS_COL_HEADER_2        "Parameters"
+    IDS_ATVIEW_CONTEXT_MENU "Audit Trail"
+    IDS_ATTEXTVIEW_CONTEXT_MENU "Audit Trail"
+    IDS_AT_TEXT_VIEW_NAME   "Audit Trail as Text"
+    IDS_AUDIT_TYPE          "Audit Trail"
+END
+
+#endif    // English (U.S.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE 9, 1
+#pragma code_page(1252)
+#endif //_WIN32
+#include "res\AuditTrail.rc2"  // non-Microsoft Visual C++ edited resources
+#include "afxres.rc"         // Standard components
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

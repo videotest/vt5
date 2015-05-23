@@ -1,0 +1,225 @@
+//Microsoft Developer Studio generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// Russian resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_RUS)
+#ifdef _WIN32
+LANGUAGE LANG_RUSSIAN, SUBLANG_DEFAULT
+#pragma code_page(1251)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_GIF_FILTERNAME      "Файлы  GIF"
+    IDS_TIF_FILTERNAME      "Файлы TIFF"
+    IDS_JPG_FILTERNAME      "Файлы JPG"
+    IDS_PCX_FILTERNAME      "Файлы PCX"
+    IDS_MULTYPAGE_SUFFIX    "_page"
+    IDS_GIF_WRITE           "Данная операция может занять много времени. Продолжить?"
+    IDS_WIDTH               "Высота:"
+    IDS_HEIGHT              "Ширина:"
+    IDS_COLORS              "colors"
+    IDS_DEPTH               "бит на пиксел"
+    IDS_PAGES               "Количество страниц:"
+    IDS_COMPRESS            "Сжатие:"
+    IDS_NoCompression       "Без сжатия"
+    IDS_BZipCompression     "BZip"
+    IDS_FaxCompression      "Fax"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_Group4Compression   "Group4 fax"
+    IDS_JPEGCompression     "JPEG"
+    IDS_LZWCompression      "LZW"
+    IDS_RunlengthEncodedCompression "RunlengthEncoded"
+    IDS_ZipCompression      "Zip"
+    IDS_UndefinedCompression "Undefined"
+    IDS_BAD_TIFF_COMPRESSION "Данный тип компрессии TIFF не поддерживается"
+    IDS_BAD_TIFF_FORMAT     "Данный класс TIFF не поддерживается. Программа работает только с классами B, G, P, R, Y, JPEG формата TIFF."
+    IDS_Group3Compression   "Group3 fax"
+    IDS_NEXT_COMPRESSION    "NeXT 2-bit RLE"
+    IDS_PACKBITS_COMPRESSION "PackBits"
+    IDS_THUNDERSCAN_COMPRESSION "ThunderScan 4-bit RLE"
+    IDS_CANT_SAVE_COLORSPACE 
+                            "Невозможно сохранить изображение в данной цветовой модели."
+    IDS_CANT_LOAD_COLORSPACE 
+                            "Невозможно загрузить изображение в данной цветовой модели."
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_ACTION_COMPARE       "CompareObjectsList\nСравнить списки объектов\nКлассификация\nСравнить списки объектов\nСравнить списки объектов"
+END
+
+#endif    // Russian resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.S.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)\r\n"
+    "#ifdef _WIN32\r\n"
+    "LANGUAGE 9, 1\r\n"
+    "#pragma code_page(1252)\r\n"
+    "#endif //_WIN32\r\n"
+    "#include ""res\\ChromExtrn.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "#include ""afxres.rc""         // Standard components\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDI_PIPERCLASSIFIER     ICON    DISCARDABLE     "pclass.ico"
+IDI_LIKCLASSIFIER       ICON    DISCARDABLE     "pipercla.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Toolbar
+//
+
+IDR_ALLRES TOOLBAR DISCARDABLE  16, 15
+BEGIN
+    BUTTON      ID_ACTION_COMPARE
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDR_ALLRES              BITMAP  DISCARDABLE     "allres.bmp"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_GIF_FILTERNAME      "GIF files"
+    IDS_TIF_FILTERNAME      "TIF files"
+    IDS_JPG_FILTERNAME      "JPG files"
+    IDS_PCX_FILTERNAME      "PCX files"
+    IDS_MULTYPAGE_SUFFIX    "_page"
+    IDS_GIF_WRITE           "This operation may run too long. Would you like to perform it?"
+    IDS_WIDTH               "Width:"
+    IDS_HEIGHT              "Height:"
+    IDS_COLORS              "colors"
+    IDS_DEPTH               "bits per pixel"
+    IDS_PAGES               "Number of pages:"
+    IDS_COMPRESS            "Compression:"
+    IDS_NoCompression       "NoCompression"
+    IDS_BZipCompression     "BZip"
+    IDS_FaxCompression      "Fax"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_Group4Compression   "Group4 fax"
+    IDS_JPEGCompression     "JPEG"
+    IDS_LZWCompression      "LZW"
+    IDS_RunlengthEncodedCompression "RunlengthEncoded"
+    IDS_ZipCompression      "Zip"
+    IDS_UndefinedCompression "Undefined"
+    IDS_BAD_TIFF_COMPRESSION "Unsupported TIFF compression."
+    IDS_BAD_TIFF_FORMAT     "Unsupported TIFF class. Program can work only with B, G, P, R, Y, JPEG classes of TIFF format."
+    IDS_Group3Compression   "Group3 fax"
+    IDS_NEXT_COMPRESSION    "NeXT 2-bit RLE"
+    IDS_PACKBITS_COMPRESSION "PackBits"
+    IDS_THUNDERSCAN_COMPRESSION "ThunderScan 4-bit RLE"
+    IDS_CANT_SAVE_COLORSPACE "Can't save image in this color model."
+    IDS_CANT_LOAD_COLORSPACE "Can't load image in this color model."
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_ACTION_COMPARE       "CompareObjectsList\nCompare objects lists\nClassification\nCompare objects lists\nCompare objects lists"
+END
+
+#endif    // English (U.S.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE 9, 1
+#pragma code_page(1252)
+#endif //_WIN32
+#include "res\ChromExtrn.rc2"  // non-Microsoft Visual C++ edited resources
+#include "afxres.rc"         // Standard components
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

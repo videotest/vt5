@@ -1,0 +1,120 @@
+//{{NO_DEPENDENCIES}}
+// Microsoft Developer Studio generated include file.
+// Used by Compare.rc
+//
+#define IDOK2                           2
+#define IDS_PROPPAGE_COMPARE            100
+#define IDS_PROPPAGE_MODE               101
+#define IDS_NOIMAGE                     102
+#define IDS_NOSELECTIONIMAGE            103
+#define IDD_PAGE_COMPARE                104
+#define IDS_IMAGE_REQUIRED              104
+#define IDD_PAGE_MODE                   105
+#define IDS_PROPPAGE_CMPPAGE            105
+#define IDS_ANGLE_FORMAT                106
+#define IDS_CANT_CREATE_DESTINATION     107
+#define IDS_CANT_COMPARE_EMPTY          108
+#define IDS_DIFFERENT_COUNT_OF_POINTS   109
+#define IDS_CANT_TRANSPHORM             110
+#define IDS_INVALID_TARGET_WINDOW       111
+#define IDS_CANT_GET_FRAME              112
+#define IDS_WRONG_FRAME                 113
+#define IDS_NO_SPLITTER                 114
+#define IDS_WRONG_SPLITTER              115
+#define IDS_MORE2VIEW                   116
+#define IDS_SPLIT                       117
+#define IDS_CANT_GET_ACTIVE             118
+#define IDS_CANT_GET_SECOND             119
+#define IDS_INVALID_SECOND              120
+#define IDS_MANY_POINTS                 121
+#define IDS_WRONG_NUMBER                122
+#define IDS_VERYBIGIMAGE                123
+#define IDS_POINTCOUNTS                 124
+#define IDS_DIFFERENT_POINTS_COUNT      125
+#define IDR_TOOLBAR1                    3000
+#define IDC_ROTATE_LEFT                 3001
+#define IDB_UP                          3002
+#define IDC_UP                          3002
+#define IDB_DOWN                        3003
+#define IDC_ROTATE_RIGHT                3003
+#define IDB_LEFT                        3004
+#define IDC_LEFT                        3004
+#define IDB_RIGHT                       3005
+#define IDC_DOWN                        3005
+#define IDC_ADD                         3005
+#define IDC_RIGHT                       3006
+#define IDB_HEIGHT_EXPAND               3006
+#define IDC_HEIGHT                      3007
+#define IDB_WIDTH_EXPAND                3007
+#define IDB_ROTATE_LEFT                 3008
+#define IDC_WIDTH                       3008
+#define IDB_ROTATE_RIGHT                3009
+#define IDC_VTSTATICTEXT1               3009
+#define IDC_ADD2                        3009
+#define IDB_PAGE_CMP_PICT               3010
+#define IDC_YPOS                        3010
+#define IDC_VTSTATICTEXT2               3010
+#define IDB_HEIGHT                      3011
+#define IDC_HEIGHT_VAL                  3011
+#define IDC_SUB                         3011
+#define IDB_WIDTH                       3012
+#define IDC_VTSTATICTEXT3               3012
+#define IDC_SUB2                        3012
+#define IDC_XPOS                        3013
+#define IDB_MODE_ADD                    3013
+#define IDC_TRANSPARENCY                3013
+#define IDC_HEIGHT_DOWN                 3014
+#define IDB_MODE_SUB                    3014
+#define IDD_DIALOG1                     3014
+#define IDD_COMPARE_PAGE                3014
+#define IDC_ANGLE                       3015
+#define IDC_WIDTH_DOWN                  3016
+#define IDB_BITMAP1                     3016
+#define IDC_WIDTH_VAL                   3017
+#define IDC_DEFAULT                     3018
+#define IDC_VTKEYBUTTON1                3019
+#define IDC_DEFAULT2                    3019
+#define IDC_VTKEYBUTTON2                3020
+#define IDB_BITMAP2                     3020
+#define IDC_VTKEYBUTTON3                3021
+#define IDB_BITMAP3                     3021
+#define IDC_VTKEYBUTTON4                3022
+#define IDB_BITMAP4                     3022
+#define IDC_VTKEYBUTTON5                3023
+#define IDB_BITMAP5                     3023
+#define IDC_VTKEYBUTTON6                3024
+#define IDB_BITMAP6                     3024
+#define IDC_VTKEYBUTTON7                3025
+#define IDB_BITMAP7                     3025
+#define IDC_VTKEYBUTTON8                3026
+#define IDB_BITMAP8                     3027
+#define IDC_OVERLAY_FRAME               3029
+#define IDR_ACCELERATOR1                3029
+#define IDC_OVERLAY_FRAME2              3030
+#define IDD_ANGLE                       3030
+#define IDC_OVERLAY                     3031
+#define IDC_CURRENT_ANGLE               3032
+#define IDC_CURRENT_ANGLE2              3033
+#define IDC_PUSHBUTTONCTRL1             3035
+#define IDC_PUSHBUTTONCTRL2             3036
+#define IDC_CLOCKWISE                   3038
+#define IDC_ANTICLOCKWISE               3039
+#define IDS_ACTION_COMPARE              10000
+#define IDS_ACTION_ROTATE               10001
+#define IDS_ACTION_BYPOINT              10002
+#define btnDefault                      10031
+#define btnDefault2                     10032
+#define IDC_                            23019
+#define IDC_2                           23020
+#define IDC_3                           23021
+
+// Next default values for new objects
+// 
+#ifdef APSTUDIO_INVOKED
+#ifndef APSTUDIO_READONLY_SYMBOLS
+#define _APS_NEXT_RESOURCE_VALUE        3031
+#define _APS_NEXT_COMMAND_VALUE         32774
+#define _APS_NEXT_CONTROL_VALUE         3042
+#define _APS_NEXT_SYMED_VALUE           3000
+#endif
+#endif

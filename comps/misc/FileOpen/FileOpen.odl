@@ -1,0 +1,67 @@
+// FileOpen.odl : type library source for FileOpen.dll
+
+// This file will be processed by the MIDL compiler to produce the
+// type library (FileOpen.tlb).
+
+[ uuid(F360E263-7AF1-11d3-A504-0000B493A187), version(1.0) ]
+library FileOpen
+{
+	importlib("stdole32.tlb");
+	importlib("stdole2.tlb");
+
+
+	//  Primary dispatch interface for CFileOpenDlg
+
+	[ uuid(B189049B-7180-11D3-A4F6-0000B493A187) ]
+	dispinterface IFileOpenDlg
+	{
+		properties:
+			// NOTE - ClassWizard will maintain property information here.
+			//    Use extreme caution when editing this section.
+			//{{AFX_ODL_PROP(CFileOpenDlg)
+			[id(1)] long Flags;
+			[id(2)] BSTR Title;
+			[id(3)] BSTR FileName;
+			[id(4)] BSTR Extentions;
+			[id(5)] boolean Preview;
+			[id(6)] BSTR DefaultExtention;
+			[id(7)] BSTR InitialDir;
+			//}}AFX_ODL_PROP
+			
+		methods:
+			// NOTE - ClassWizard will maintain method information here.
+			//    Use extreme caution when editing this section.
+			//{{AFX_ODL_METHOD(CFileOpenDlg)
+			[id(8)] boolean SaveState(IUnknown* punkNameData, BSTR pszSection);
+			[id(9)] boolean LoadState(IUnknown* punkNameData, BSTR pszSection);
+			//}}AFX_ODL_METHOD
+
+	};
+
+
+
+	[ uuid(F360E264-7AF1-11d3-A504-0000B493A187) ]
+	dispinterface IOpenFileDialogEvents
+	{
+		properties:
+		methods:
+			// NOTE - ClassWizard will maintain event information here.
+			//    Use extreme caution when editing this section.
+			//{{AFX_ODL_EVENT(CFileOpenDlg)
+			[id(1)] void OnBeforeExecute();
+			[id(2)] void OnDialogInited();
+			[id(3)] void OnAfterExecute();
+			//}}AFX_ODL_EVENT
+	};
+
+	//  Class information for CFileOpenDlg
+	[ uuid(B1890499-7180-11D3-A4F6-0000B493A187) ]
+	coclass FileOpenDlg
+	{
+		[default] dispinterface IFileOpenDlg;
+		[default, source] dispinterface IOpenFileDialogEvents;
+	};
+
+	//{{AFX_APPEND_ODL}}
+	//}}AFX_APPEND_ODL}}
+};

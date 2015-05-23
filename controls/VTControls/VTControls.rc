@@ -1,0 +1,2893 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// Chinese (P.R.C.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)
+#ifdef _WIN32
+LANGUAGE LANG_CHINESE, SUBLANG_CHINESE_SIMPLIFIED
+#pragma code_page(936)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_ABOUTBOX_VTKEYBUTTON DIALOG  34, 22, 260, 55
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "№ШУЪ VTPushButton"
+FONT 8, "MS Sans Serif"
+BEGIN
+    ICON            IDI_ABOUTDLL,IDC_STATIC,10,10,20,20
+    LTEXT           "VTPushButtonЈ¬°ж±ѕ 1.0",IDC_STATIC,40,10,170,8
+    LTEXT           "°жИЁЛщУР (C) 2000, VideoTesT",IDC_STATIC,40,25,170,8
+    DEFPUSHBUTTON   "И·¶Ё",IDOK,221,7,32,14,WS_GROUP
+END
+
+IDD_PROPPAGE_VTKEYBUTTON DIALOG  0, 0, 250, 62
+STYLE DS_SETFONT | WS_CHILD
+FONT 8, "MS Sans Serif"
+BEGIN
+    LTEXT           "РйДвјьґъВл:",IDC_STATIC,12,9,54,8
+    EDITTEXT        IDC_VIRT_KEY,70,7,40,14,ES_AUTOHSCROLL
+    PUSHBUTTON      "СЎИЎ",IDC_BTN_PICK,117,7,30,14
+    LTEXT           "Static",IDC_STATE,155,9,80,8
+    EDITTEXT        IDC_ITEM_DELTA_X,40,35,28,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_ITEM_DELTA_Y,107,35,28,14,ES_AUTOHSCROLL
+    GROUPBOX        "НјПсПоДї",IDC_STATIC,7,22,236,33
+    LTEXT           "¦¤X:",IDC_STATIC,13,37,26,8
+    LTEXT           "¦¤Y:",IDC_STATIC,79,37,26,8
+    LTEXT           "Л®ЖЅ:",IDC_STATIC,148,30,18,8
+    COMBOBOX        IDC_ALIGN_HORZ,171,29,66,112,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    LTEXT           "ґ№Ц±:",IDC_STATIC,148,42,16,8
+    COMBOBOX        IDC_ALIGN_VERT,171,41,66,112,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+END
+
+IDD_ABOUTBOX_VTSTATICTEXT DIALOG  34, 22, 260, 55
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "№ШУЪ VTStaticText"
+FONT 8, "MS Sans Serif"
+BEGIN
+    ICON            IDI_ABOUTDLL,IDC_STATIC,10,10,20,20
+    LTEXT           "VTStaticTextЈ¬°ж±ѕ 1.0",IDC_STATIC,40,10,170,8
+    LTEXT           "°жИЁЛщУР (C) 2000, VideoTesT",IDC_STATIC,40,25,170,8
+    DEFPUSHBUTTON   "И·¶Ё",IDOK,221,7,32,14,WS_GROUP
+END
+
+IDD_PROPPAGE_VTSTATICTEXT DIALOG  0, 0, 250, 62
+STYLE DS_SETFONT | WS_CHILD
+FONT 8, "MS Sans Serif"
+BEGIN
+    LTEXT           "ГыіЖ:",IDC_STATIC,7,13,22,8
+    EDITTEXT        IDC_EDIT_NAME,32,10,85,14,ES_AUTOHSCROLL
+    CONTROL         "К№УГПµНіЧЦМе",IDC_USE_SYSTEM_FONT,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,7,28,66,10
+END
+
+IDD_ABOUTBOX_VTEDITOR DIALOG  34, 22, 260, 55
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "№ШУЪ VTEditor"
+FONT 8, "MS Sans Serif"
+BEGIN
+    ICON            IDI_ABOUTDLL,IDC_STATIC,10,10,20,20
+    LTEXT           "VTEditorЈ¬°ж±ѕ 1.0",IDC_STATIC,40,10,170,8
+    LTEXT           "°жИЁЛщУР (C) 2000, VideoTesT",IDC_STATIC,40,25,170,8
+    DEFPUSHBUTTON   "И·¶Ё",IDOK,221,7,32,14,WS_GROUP
+END
+
+IDD_PROPPAGE_VTEDITOR DIALOG  0, 0, 250, 110
+STYLE DS_SETFONT | WS_CHILD
+FONT 8, "MS Sans Serif"
+BEGIN
+    LTEXT           "ГыіЖ:",IDC_STATIC,7,9,22,8
+    EDITTEXT        IDC_EDIT_NAME,34,7,94,14,ES_AUTOHSCROLL
+    CONTROL         "ЧФ¶ЇёьРВ",IDC_CHECK_AUTO_UPDATE,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,7,44,55,10
+    LTEXT           "№ШјьЧЦ:",IDC_STATIC,7,26,15,8
+    EDITTEXT        IDC_EDIT_KEY_VALUE,34,25,94,14,ES_AUTOHSCROLL
+    CONTROL         "К№УГПµНіЧЦМе",IDC_USE_SYSTEM_FONT,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,7,62,66,10
+END
+
+IDD_ABOUTBOX_VTLIST DIALOG  34, 22, 260, 61
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "№ШУЪ VTList"
+FONT 8, "MS Sans Serif"
+BEGIN
+    ICON            IDI_ABOUTDLL,IDC_STATIC,10,10,20,20
+    LTEXT           "VTListЈ¬°ж±ѕ 1.0",IDC_STATIC,40,10,170,8
+    LTEXT           "°жИЁЛщУР (C) 2000, VideoTesT",IDC_STATIC,40,25,170,8
+    DEFPUSHBUTTON   "И·¶Ё",IDOK,221,7,32,14,WS_GROUP
+END
+
+IDD_PROPPAGE_VTLIST DIALOGEX 0, 0, 250, 120
+STYLE DS_SETFONT | WS_CHILD
+FONT 8, "MS Sans Serif", 0, 0, 0x0
+BEGIN
+    LTEXT           "ГыіЖ:",IDC_STATIC,40,25,22,8
+    EDITTEXT        IDC_EDIT_NAME,65,22,121,14,ES_AUTOHSCROLL
+    CONTROL         "ЖфУГ",IDC_CHECK_ENABLE,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,40,48,38,10
+    CONTROL         "К№УГНшёс",IDC_USEGRID,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,40,62,42,10
+    CONTROL         "К№УГПµНіЧЦМе",IDC_USE_SYSTEM_FONT,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,40,77,66,10
+    CONTROL         "К№УГХыРРСЎФс",IDC_USE_FULL_ROW_SELECT,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,133,48,73,10
+    CONTROL         "ЧФ¶ЇёьРВ",IDC_CHECK_AUTO_SAVE_TO_SHELL,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,133,62,55,10
+    CONTROL         "јтµҐЧЦМеСЎФс",IDC_SIMPLE_FONT_CHOOSER,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,133,77,76,10
+    CONTROL         "ЖфУГБРґуРЎµчХы",IDC_RESIZE_COLS,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,40,92,86,10
+END
+
+IDD_ABOUTBOX_VTSLIDER DIALOG  34, 22, 260, 55
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "№ШУЪ VTSlider"
+FONT 8, "MS Sans Serif"
+BEGIN
+    ICON            IDI_ABOUTDLL,IDC_STATIC,10,10,20,20
+    LTEXT           "VTSliderЈ¬°ж±ѕ 1.0",IDC_STATIC,40,10,170,8
+    LTEXT           "°жИЁЛщУР (C) 2000, VideoTesT",IDC_STATIC,40,25,170,8
+    DEFPUSHBUTTON   "И·¶Ё",IDOK,221,7,32,14,WS_GROUP
+END
+
+IDD_PROPPAGE_VTSLIDER DIALOG  0, 0, 250, 120
+STYLE DS_SETFONT | WS_CHILD
+FONT 8, "MS Sans Serif"
+BEGIN
+    LTEXT           "ГыіЖ:",IDC_STATIC,11,9,22,8
+    EDITTEXT        IDC_EDIT_NAME,40,7,75,14,ES_AUTOHSCROLL
+    GROUPBOX        "Shell Ц§іЦ",IDC_STATIC,7,27,232,45
+    LTEXT           "°µµч:",IDC_STATIC,11,41,30,8
+    EDITTEXT        IDC_EDIT_LOW_KEY,43,40,70,14,ES_AUTOHSCROLL
+    LTEXT           "Гчµч:",IDC_STATIC,127,41,31,8
+    EDITTEXT        IDC_EDIT_HIGH_KEY,163,40,70,14,ES_AUTOHSCROLL
+    CONTROL         "ЧФ¶ЇёьРВ",IDC_CHECK_AUTO_UPDATE,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,11,57,55,10
+    LTEXT           "ЧоРЎЦµ:",IDC_STATIC,11,79,14,8
+    EDITTEXT        IDC_EDIT_MIN,32,77,40,14,ES_AUTOHSCROLL
+    LTEXT           "ЧоґуЦµ:",IDC_STATIC,11,95,16,8
+    EDITTEXT        IDC_EDIT_MAX,32,95,40,14,ES_AUTOHSCROLL
+    CONTROL         "ПФКѕ¶Ф№ґ",IDC_CHECK_TICK,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,90,78,47,10
+    CONTROL         "ПФКѕєЕВл",IDC_CHECK_SHOW_NUM,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,90,92,53,10
+    CONTROL         "С­»·",IDC_CHECK_CYCLED,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,157,78,37,10
+    LTEXT           "№ґСЎЖµВК:",IDC_STATIC,158,93,31,8
+    EDITTEXT        IDC_EDIT_TICK_FREQ,193,91,40,14,ES_AUTOHSCROLL
+    CONTROL         "µҐ»¬їй",IDC_CHECKSINGLE_SLIDE,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,120,10,51,10
+    CONTROL         "К№УГПµНіЧЦМе",IDC_USE_SYSTEM_FONT,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,175,10,66,10
+END
+
+IDD_PROPPAGE_VTLISTEX DIALOG  0, 0, 250, 120
+STYLE DS_SETFONT | WS_CHILD
+FONT 8, "MS Sans Serif"
+BEGIN
+    CONTROL         "List1",IDC_LIST,"SysListView32",LVS_REPORT | 
+                    LVS_SINGLESEL | LVS_SHOWSELALWAYS | LVS_EDITLABELS | 
+                    WS_BORDER | WS_TABSTOP,7,7,69,69
+    PUSHBUTTON      "МнјУ",IDC_BUTTON_ADD,7,78,50,14
+    PUSHBUTTON      "Йѕіэ",IDC_BUTTON_DELETE,7,94,50,14
+    GROUPBOX        "Нв№Ы",IDC_STATIC,81,3,131,58
+    PUSHBUTTON      "З°ѕ°Й«...",IDC_BUTTON_FORE_COLOR,86,17,50,14
+    PUSHBUTTON      "±іѕ°Й«...",IDC_BUTTON_BACK_COLOR,138,17,50,14
+    PUSHBUTTON      "ЧЦМе...",IDC_BUTTON_FONT,86,35,50,14
+    LTEXT           "¶ФЖл·ЅКЅ:",IDC_STATIC,138,38,18,8
+    COMBOBOX        IDC_COMBO_ALIGN,156,36,52,69,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    PUSHBUTTON      "Хж...",IDC_BUTTON_SET_TRUE_ICON,218,7,25,14
+    PUSHBUTTON      "јЩ...",IDC_BUTTON_SET_FALSE_ICON,218,27,25,14
+    PUSHBUTTON      "»Т¶И...",IDC_BUTTON_SET_GRAY_ICON,218,47,25,14
+    LTEXT           "АаРН:",IDC_STATIC,82,72,19,8
+    COMBOBOX        IDC_COMBO_COLUMN_TYPE,104,71,62,70,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    LTEXT           "їн¶И:",IDC_STATIC,170,72,20,8
+    EDITTEXT        IDC_EDIT_COL_WIDTH,192,70,40,14,ES_AUTOHSCROLL
+    CONTROL         "Spin1",IDC_SPIN_WIDTH,"msctls_updown32",UDS_SETBUDDYINT | 
+                    UDS_AUTOBUDDY | UDS_ARROWKEYS,232,70,10,14
+    CONTROL         "К№УГНј±к",IDC_CHECK_USE_ICON,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,84,89,45,10
+    CONTROL         "Ц»¶Б",IDC_CHECK_READ_ONLY,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,84,100,48,10
+    CONTROL         "Ѕ«ВЯј­ПФКѕОЄОД±ѕ",IDC_CHECK_LOG_AS_TEXT,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,153,89,83,10
+END
+
+IDD_PROPPAGE_VTLIST_ROW DIALOGEX 0, 0, 250, 120
+STYLE DS_SETFONT | WS_CHILD
+FONT 8, "MS Sans Serif", 0, 0, 0x0
+BEGIN
+    CONTROL         "List1",IDC_LIST_ROW,"SysListView32",LVS_REPORT | 
+                    LVS_SINGLESEL | LVS_SHOWSELALWAYS | LVS_EDITLABELS | 
+                    WS_BORDER | WS_TABSTOP,7,9,103,79
+    PUSHBUTTON      "МнјУ",IDC_BUTTON_ADD_ROW,7,92,50,14
+    PUSHBUTTON      "Йѕіэ",IDC_BUTTON_DELETE_ROW,59,92,50,14
+    LTEXT           "№ШјьЧЦ:",IDC_STATIC,124,12,15,8
+    EDITTEXT        IDC_EDIT_KEY_VALUE,142,10,91,14,ES_AUTOHSCROLL
+    PUSHBUTTON      "Нј±к...",IDC_BUTTON_SET_ICON,124,27,46,14
+    PUSHBUTTON      "ЗеіэНј±к",IDC_BUTTON_CLEAR_ICON,188,27,46,14
+    GROUPBOX        "БР",IDC_STATIC,122,41,114,39
+    LTEXT           "Static",IDC_STATIC_CUR_COLUMN,129,49,99,8
+    PUSHBUTTON      "<<",IDC_BUTTON_CUR_COLUMN_LEFT,130,59,20,14
+    PUSHBUTTON      ">>",IDC_BUTTON_CUR_COLUMN_RIGHT,154,59,20,14
+    PUSHBUTTON      "ЛўРВ",IDC_BUTTON_REFRESH,178,60,50,14
+    GROUPBOX        "Нв№Ы",IDC_STATIC,122,80,114,31
+    PUSHBUTTON      "З°ѕ°Й«...",IDC_BUTTON_FORE_COLOR,125,91,50,14
+    PUSHBUTTON      "±іѕ°Й«...",IDC_BUTTON_BACK_COLOR,177,91,50,14
+END
+
+IDD_DIALOG1 DIALOG  0, 0, 202, 61
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "¶Ф»°їт"
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "И·¶Ё",IDOK,145,7,50,14
+    PUSHBUTTON      "ИЎПы",IDCANCEL,145,24,50,14
+    CONTROL         "",IDC_VTKEYBUTTON1,
+                    "{6743979D-D00F-48A0-A036-DD7EE33A30B3}",WS_TABSTOP,14,
+                    11,67,31
+    CONTROL         "",IDC_VTEDITOR1,"{6BDF8B84-C1B9-448E-8965-0E4557467FDA}",
+                    WS_TABSTOP,85,14,67,31
+END
+
+IDD_PROPPAGE_VTEDITOR_EXT DIALOG  0, 0, 250, 120
+STYLE DS_SETFONT | WS_CHILD
+FONT 8, "MS Sans Serif"
+BEGIN
+    GROUPBOX        "±кМв",IDC_STATIC,7,7,236,26
+    CONTROL         "ЖфУГ",IDC_CHECK_CAPTION_ENABLE,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,18,18,38,10
+    LTEXT           "О»ЦГ:",IDC_STATIC,70,18,28,8
+    COMBOBOX        IDC_COMBO_CAPTION_ALIGN,101,16,61,54,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    LTEXT           "ОД±ѕїт:",IDC_STATIC,173,18,17,8
+    EDITTEXT        IDC_EDIT_CAPTION_TEXT,195,16,40,14,ES_AUTOHSCROLL
+    GROUPBOX        "КэѕЭ",IDC_STATIC,7,33,104,76
+    LTEXT           "АаРН:",IDC_STATIC,12,42,19,8
+    COMBOBOX        IDC_COMBO_DATA_TYPE,39,40,66,51,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    GROUPBOX        "СйЦ¤",IDC_STATIC,14,59,89,44
+    LTEXT           "ЧоРЎЦµ:",IDC_STATIC,21,72,14,8
+    EDITTEXT        IDC_EDIT_MIN_VALUE,39,69,40,14,ES_AUTOHSCROLL
+    CONTROL         "Spin1",IDC_SPIN_MIN,"msctls_updown32",UDS_SETBUDDYINT | 
+                    UDS_AUTOBUDDY | UDS_ARROWKEYS,79,69,10,14
+    LTEXT           "ЧоґуЦµ:",IDC_STATIC,22,88,16,8
+    EDITTEXT        IDC_EDIT_MAX_VALUE,40,85,40,14,ES_AUTOHSCROLL
+    CONTROL         "Spin2",IDC_SPIN_MAX,"msctls_updown32",UDS_SETBUDDYINT | 
+                    UDS_AUTOBUDDY | UDS_ARROWKEYS,80,85,10,14
+    CONTROL         "ЖфУГ Spin",IDC_CHECK_ENABLE_SPIN,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,127,41,53,10
+    CONTROL         "їН»§Зш¶ФЖл",IDC_CHECK_ALIGN_CLIENT,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,127,51,50,10
+    CONTROL         "¶аПЯ±ај­Жч",IDC_CHECK_MULTI_LINE,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,127,61,63,10
+    CONTROL         "±кМвЧФ¶Їїн¶И",IDC_CHECK_ENABLE_CAPTION_AUTO_WIDTH,
+                    "Button",BS_AUTOCHECKBOX | WS_TABSTOP,127,71,75,10
+    CONTROL         "ЖфУГЧоРЎЦµ/ЧоґуЦµСйЦ¤",IDC_CHECK_ENABLE_VALIDATION,
+                    "Button",BS_AUTOCHECKBOX | WS_TABSTOP,127,81,99,10
+    LTEXT           "±кМвЧЦ¶Оїн¶И:",IDC_STATIC,127,99,60,8
+    EDITTEXT        IDC_EDIT_FIELD_WIDTH,187,96,40,14,ES_AUTOHSCROLL
+    CONTROL         "Spin3",IDC_SPIN_EDIT_WIDTH,"msctls_updown32",
+                    UDS_SETBUDDYINT | UDS_AUTOBUDDY | UDS_ARROWKEYS,225,96,
+                    11,14
+    PUSHBUTTON      "ЧФ¶ЇµчХыґуРЎ",IDC_BUTTON_AUTO_SIZE,196,40,40,14
+END
+
+IDD_PROPPAGE_FRAMES DIALOG  0, 0, 250, 110
+STYLE DS_SETFONT | WS_CHILD
+FONT 8, "MS Sans Serif"
+BEGIN
+    GROUPBOX        "ДЪ±Яїт",IDC_STATIC,29,21,81,37
+    CONTROL         "Н№Жр",IDC_CHECK1,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,
+                    37,31,38,10
+    CONTROL         "°јПЭ",IDC_CHECK2,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,
+                    37,42,41,10
+    GROUPBOX        "Нв±Яїт",IDC_STATIC,132,21,81,37
+    CONTROL         "Н№Жр",IDC_CHECK4,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,
+                    141,31,38,10
+    CONTROL         "°јПЭ",IDC_CHECK5,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,
+                    141,42,41,10
+    LTEXT           "ДЈ°е:",IDC_STATIC,36,73,32,8
+    COMBOBOX        IDC_COMBO_TEMPLATE,72,71,130,100,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+END
+
+IDD_PROPPAGE_PUSHBUTTON DIALOGEX 0, 0, 250, 136
+STYLE DS_SETFONT | WS_CHILD
+FONT 8, "MS Sans Serif", 0, 0, 0x0
+BEGIN
+    LTEXT           "їн¶И:",IDC_STATIC,12,8,22,8
+    EDITTEXT        IDC_EDIT_WIDTH,12,18,28,12
+    LTEXT           "ёЯ¶И:",IDC_STATIC,44,8,24,8
+    EDITTEXT        IDC_EDIT_HEIGHT,44,18,28,12
+    CONTROL         "ЧФ¶ЇµчХыґуРЎ",IDC_CHECK_AUTOSIZE,"Button",
+                    BS_AUTOCHECKBOX | NOT WS_VISIBLE | WS_TABSTOP,103,4,44,
+                    10
+    LTEXT           "Йо¶И:",IDC_STATIC,136,6,22,8
+    EDITTEXT        IDC_EDIT_BUTTONDEPTH,131,17,20,14
+    CONTROL         "Spin1",IDC_SPIN_SHADOW,"msctls_updown32",
+                    UDS_SETBUDDYINT | UDS_AUTOBUDDY | UDS_ARROWKEYS,151,17,9,
+                    14
+    LTEXT           "ОДјюГы:",IDC_STATIC,6,41,33,8
+    EDITTEXT        IDC_EDIT_FILENAME,41,40,60,12,ES_AUTOHSCROLL
+    PUSHBUTTON      "дЇАА",IDC_BUTTON_FILEOPEN,105,40,16,12,BS_ICON
+    CONTROL         "",IDC_STATIC,"Static",SS_ETCHEDFRAME,6,4,111,31
+    CONTROL         "",IDC_STATIC,"Static",SS_ETCHEDFRAME,123,4,46,31
+    GROUPBOX        "Ку±кЅшИл",IDC_STATIC,7,72,50,40
+    CONTROL         "ІКЙ«О»Нј",IDC_CHECK_MOUSEIN_COLOR,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,11,84,44,10
+    CONTROL         "ТхУ°",IDC_CHECK_MOUSEIN_SHADOW,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,11,97,42,10
+    GROUPBOX        "Ку±кАлїЄ",IDC_STATIC,58,72,53,40
+    CONTROL         "ІКЙ«О»Нј",IDC_CHECK_MOUSEOUT_COLOR,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,64,84,43,10
+    CONTROL         "ТхУ°",IDC_CHECK_MOUSEOUT_SHADOW,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,64,97,42,10
+    GROUPBOX        "°ґЕҐ°ґПВ",IDC_STATIC,112,72,59,40
+    CONTROL         "ІКЙ«О»Нј",IDC_CHECK_BPRESSED_COLOR,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,117,84,47,10
+    CONTROL         "ТхУ°",IDC_CHECK_BPRESSED_SHADOW,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,117,97,42,10
+    CONTROL         "ЖЅГж°ґЕҐ",IDC_CHECK_FLATBUTTON,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,175,78,48,10
+    CONTROL         "»жЦЖ±ЯЅз",IDC_CHECK_DRAWBORDER,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,175,90,53,10
+    CONTROL         "3State",IDC_CHECKTREESTATE,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,175,7,37,10
+    CONTROL         "ѕЫЅ№ѕШРО",IDC_CHECK_FOCUSRECT,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,175,19,50,9
+    CONTROL         "ЙмХ№",IDC_CHECK_STRETCH,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,75,7,39,10
+    PUSHBUTTON      "ЧФ¶ЇµчХыґуРЎ",IDC_BUTTON_AUTO_SIZE,75,18,38,13
+    PUSHBUTTON      "дЇАА",IDC_BUTTON_RELOAD,121,40,16,12,BS_ICON
+    LTEXT           "ІЩЧч:",IDC_STATIC,7,57,23,8
+    EDITTEXT        IDC_EDIT_ACTION_NAME,41,56,129,12,ES_AUTOHSCROLL
+    CONTROL         "ФЛРРІЩЧч",IDC_CHECK_IS_RUN_ACTION,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,175,66,49,10
+    CONTROL         "ЧФ¶ЇЦШёґ",IDC_AUTO_REPEAT,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,175,54,53,10
+    CONTROL         "»жЦЖѕЫЅ№ѕШРО",IDC_DRAW_FOCUSED_RECT,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,175,42,70,10
+    CONTROL         "°лЖЅГж(&F)",IDC_SEMIFLAT,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,175,102,43,10
+    PUSHBUTTON      "P",IDC_PASTE,138,40,16,12
+    PUSHBUTTON      "C",IDC_COPY,154,40,16,12
+    CONTROL         "SF",IDC_SYSTEM_FONT,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,175,30,24,10
+    CONTROL         "ПФКѕ№¤ѕЯМбКѕ",IDC_SHOWTOOLTIP,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,175,114,55,10
+    LTEXT           "№¤ѕЯМбКѕ:",IDC_STATIC,7,117,26,8
+    EDITTEXT        IDC_EDIT_TOOLTIP,41,115,129,12,ES_AUTOHSCROLL
+END
+
+IDD_PROPPAGE_VTSTATICTEXT_EXT DIALOG  0, 0, 250, 131
+STYLE DS_SETFONT | WS_CHILD
+FONT 8, "MS Sans Serif"
+BEGIN
+    GROUPBOX        "ОД±ѕїН»§Зш¶ФЖл",IDC_STATIC,7,7,75,73
+    CONTROL         "їїЧу",IDC_CHECK_LEFT_TEXT,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,14,16,28,10
+    CONTROL         "їїУТ",IDC_CHECK_RIGHT_TEXT,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,14,27,33,10
+    CONTROL         "їїЙП",IDC_CHECK_TOP_TEXT,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,14,38,29,10
+    CONTROL         "їїПВ",IDC_CHECK_BOTTOM_TEXT,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,14,49,38,10
+    GROUPBOX        "НјЖ¬їН»§Зш¶ФЖл",IDC_STATIC,87,7,75,58
+    CONTROL         "їїЧу",IDC_CHECK_LEFT_PIC,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,93,17,28,10
+    CONTROL         "їїУТ",IDC_CHECK_RIGHT_PIC,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,93,28,33,10
+    CONTROL         "їїЙП",IDC_CHECK_TOP_PIC,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,93,39,29,10
+    CONTROL         "їїПВ",IDC_CHECK_BOTTOM_PIC,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,93,50,38,10
+    GROUPBOX        "ОД±ѕУлНјЖ¬¶ФЖл",IDC_STATIC,168,7,75,58
+    CONTROL         "їїЧу",IDC_CHECK_LEFT_TEXT_TO_PIC,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,175,17,28,10
+    CONTROL         "їїУТ",IDC_CHECK_RIGHT_TEXT_TO_PIC,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,175,28,33,10
+    CONTROL         "їїЙП",IDC_CHECK_TOP_TEXT_TO_PIC,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,175,39,29,10
+    CONTROL         "їїПВ",IDC_CHECK_BOTTOM_TEXT_TO_PIC,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,175,50,38,10
+    LTEXT           "ОД±ѕ:",IDC_STATIC,7,82,16,8
+    CONTROL         "НёГчОД±ѕ",IDC_CHECK_TRANSPARENCY,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,30,82,73,10
+    EDITTEXT        IDC_EDIT_TEXT,7,95,121,25,ES_MULTILINE | ES_AUTOVSCROLL | 
+                    ES_AUTOHSCROLL
+    LTEXT           "НјЖ¬:",IDC_STATIC,133,82,25,8
+    EDITTEXT        IDC_EDIT_PIC_FILENAME,132,92,71,14,ES_AUTOHSCROLL
+    CONTROL         "ѕУЦРНјПс",IDC_CHECK_CENTER_IMAGE,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,132,110,57,10
+    PUSHBUTTON      "дЇАА",IDC_BUTTON_FILEOPEN,207,92,16,12,BS_ICON
+    PUSHBUTTON      "дЇАА",IDC_BUTTON_RELOAD,226,92,16,12,BS_ICON
+    PUSHBUTTON      "ЧФ¶ЇµчХыґуРЎ",IDC_BUTTON_AUTO_SIZE,205,108,38,11
+    CONTROL         "ѕУЦР",IDC_CHECK_CENTER_TEXT,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,14,59,37,10
+    CONTROL         "ґ№Ц±ѕУЦР",IDC_CHECK_MIDDLE_TEXT,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,13,68,51,10
+END
+
+IDD_PROPPAGE_VTCHECKBOX DIALOG  0, 0, 250, 62
+STYLE DS_SETFONT | WS_CHILD
+FONT 8, "MS Sans Serif"
+BEGIN
+    LTEXT           "±кМв(&T):",IDC_STATIC,7,8,27,8
+    EDITTEXT        IDC_CAPTION,37,7,160,22,ES_MULTILINE | ES_AUTOHSCROLL
+    CONTROL         "РВ»жНјДЈКЅ(&D)",IDC_NEW_DRAWING_MODE,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,7,30,77,10
+    CONTROL         "3D Нв№Ы(&D)",IDC_3DAPPEARANCE,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,7,45,65,10
+    CONTROL         "К№УГПµНіЧЦМе",IDC_USE_SYSTEM_FONT,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,100,29,98,10
+END
+
+IDD_ABOUTBOX_VTCHECKBOX DIALOG  34, 22, 260, 55
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "№ШУЪ VTCheckBox Control"
+FONT 8, "MS Sans Serif"
+BEGIN
+    ICON            IDI_ABOUTDLL,IDC_STATIC,10,10,20,20
+    LTEXT           "VTCheckBox ControlЈ¬°ж±ѕ 1.0",IDC_STATIC,40,10,170,8
+    LTEXT           "°жИЁЛщУР (C) 2000, VideoTesT",IDC_STATIC,40,25,105,8
+    DEFPUSHBUTTON   "И·¶Ё",IDOK,221,7,32,14,WS_GROUP
+    CONTROL         "Check1",202,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,156,
+                    26,41,10
+    CONTROL         "",IDC_VTCHECKBOXCTRL1,
+                    "{F6188DC0-9F7F-4021-AA3C-395956D021F1}",NOT WS_VISIBLE | 
+                    WS_TABSTOP,186,15,67,31
+END
+
+IDD_PROPPAGE_VTKEY_IMAGE DIALOG  0, 0, 243, 62
+STYLE DS_SETFONT | WS_CHILD
+FONT 8, "MS Sans Serif"
+BEGIN
+    LTEXT           "ОДјюГы:",IDC_STATIC,12,8,33,8
+    EDITTEXT        IDC_EDIT_FILENAME,48,7,140,12,ES_AUTOHSCROLL
+    PUSHBUTTON      "дЇАА",IDC_BUTTON_FILEOPEN,193,6,16,12,BS_ICON
+    PUSHBUTTON      "дЇАА",IDC_BUTTON_RELOAD,214,6,16,12,BS_ICON
+    GROUPBOX        "ПоДї",IDC_STATIC,7,22,229,33
+    LTEXT           "їн¶И:",IDC_STATIC,13,35,22,8
+    EDITTEXT        IDC_ITEM_WIDTH,38,32,34,14,ES_AUTOHSCROLL
+    CONTROL         "Spin1",IDC_SPIN1,"msctls_updown32",UDS_SETBUDDYINT | 
+                    UDS_ALIGNRIGHT | UDS_AUTOBUDDY | UDS_ARROWKEYS,73,32,10,
+                    14
+    LTEXT           "ёЯ¶И:",IDC_STATIC,84,35,24,8
+    EDITTEXT        IDC_ITEM_HEIGHT,109,32,34,14,ES_AUTOHSCROLL
+    CONTROL         "Spin1",IDC_SPIN2,"msctls_updown32",UDS_SETBUDDYINT | 
+                    UDS_ALIGNRIGHT | UDS_AUTOBUDDY | UDS_ARROWKEYS,144,33,11,
+                    14
+    LTEXT           "ПоДїЛчТэ:",IDC_STATIC,160,35,35,8
+    EDITTEXT        IDC_IMAGE_INDEX,196,32,34,14,ES_AUTOHSCROLL
+    CONTROL         "Spin1",IDC_SPIN3,"msctls_updown32",UDS_SETBUDDYINT | 
+                    UDS_ALIGNRIGHT | UDS_AUTOBUDDY | UDS_ARROWKEYS,224,31,11,
+                    14
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO 
+BEGIN
+    IDD_ABOUTBOX_VTKEYBUTTON, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 253
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 48
+    END
+
+    IDD_PROPPAGE_VTKEYBUTTON, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 243
+        TOPMARGIN, 3
+        BOTTOMMARGIN, 59
+    END
+
+    IDD_ABOUTBOX_VTSTATICTEXT, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 253
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 48
+    END
+
+    IDD_PROPPAGE_VTSTATICTEXT, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 243
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 55
+    END
+
+    IDD_ABOUTBOX_VTEDITOR, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 253
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 48
+    END
+
+    IDD_PROPPAGE_VTEDITOR, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 243
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 103
+    END
+
+    IDD_ABOUTBOX_VTLIST, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 253
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 54
+    END
+
+    IDD_PROPPAGE_VTLIST, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 243
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 113
+    END
+
+    IDD_ABOUTBOX_VTSLIDER, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 253
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 48
+    END
+
+    IDD_PROPPAGE_VTSLIDER, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 243
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 113
+    END
+
+    IDD_PROPPAGE_VTLISTEX, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 243
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 113
+    END
+
+    IDD_PROPPAGE_VTLIST_ROW, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 243
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 113
+    END
+
+    IDD_DIALOG1, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 195
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 54
+    END
+
+    IDD_PROPPAGE_VTEDITOR_EXT, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 243
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 113
+    END
+
+    IDD_PROPPAGE_FRAMES, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 243
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 102
+    END
+
+    IDD_PROPPAGE_PUSHBUTTON, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 242
+        TOPMARGIN, 4
+        BOTTOMMARGIN, 120
+    END
+
+    IDD_PROPPAGE_VTSTATICTEXT_EXT, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 243
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 124
+    END
+
+    IDD_PROPPAGE_VTCHECKBOX, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 243
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 55
+    END
+
+    IDD_ABOUTBOX_VTCHECKBOX, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 253
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 46
+    END
+
+    IDD_PROPPAGE_VTKEY_IMAGE, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 236
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 55
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog Info
+//
+
+IDD_PROPPAGE_VTLISTEX DLGINIT
+BEGIN
+    IDC_COMBO_ALIGN, 0x403, 5, 0
+0xbfbf, 0xf3d7, "\000" 
+    IDC_COMBO_ALIGN, 0x403, 5, 0
+0xd3be, 0xd0d6, "\000" 
+    IDC_COMBO_ALIGN, 0x403, 5, 0
+0xbfbf, 0xd2d3, "\000" 
+    IDC_COMBO_COLUMN_TYPE, 0x403, 5, 0
+0xf7d6, 0xe2cc, "\000" 
+    IDC_COMBO_COLUMN_TYPE, 0x403, 5, 0
+0xdfc2, 0xadbc, "\000" 
+    IDC_COMBO_COLUMN_TYPE, 0x403, 5, 0
+0xd5d1, 0xabc9, "\000" 
+    IDC_COMBO_COLUMN_TYPE, 0x403, 5, 0
+0xd6d7, 0xe5cc, "\000" 
+    IDC_COMBO_COLUMN_TYPE, 0x403, 3, 0
+0xb5d6, "\000" 
+    IDC_COMBO_COLUMN_TYPE, 0x403, 7, 0
+0xd0c1, 0xedb1, 0xb5d6, "\000" 
+    0
+END
+
+IDD_PROPPAGE_FRAMES DLGINIT
+BEGIN
+    IDC_COMBO_TEMPLATE, 0x403, 9, 0
+0xdfb1, 0xf2bf, 0xb9cd, 0xf0c6, "\000" 
+    IDC_COMBO_TEMPLATE, 0x403, 9, 0
+0xdfb1, 0xf2bf, 0xbcb0, 0xddcf, "\000" 
+    IDC_COMBO_TEMPLATE, 0x403, 9, 0
+0xdfb1, 0xf2bf, 0xb4ca, 0xccbf, "\000" 
+    IDC_COMBO_TEMPLATE, 0x403, 9, 0
+0xdfb1, 0xf2bf, 0xb9cd, 0xd4cf, "\000" 
+    IDC_COMBO_TEMPLATE, 0x403, 7, 0
+0xdece, 0xdfb1, 0xf2bf, "\000" 
+    0
+END
+
+IDD_DIALOG1 DLGINIT
+BEGIN
+    IDC_VTKEYBUTTON1, 0x376, 1700, 0
+0x0000, 0x0000, 0x0004, 0x0000, 0x0010, 0x0000, 0x4523, 0x5c3a, 0x7476, 
+0x5c35, 0x6f63, 0x746e, 0x6f72, 0x736c, 0x565c, 0x4354, 0x6e6f, 0x7274, 
+0x6c6f, 0x5c73, 0x6574, 0x7473, 0x622e, 0x706d, 0x4c49, 0x0101, 0x0002, 
+0x0003, 0x0004, 0x000d, 0x000d, 0xffff, 0xffff, 0x1011, 0xffff, 0xffff, 
+0xffff, 0xffff, 0x4d42, 0x0036, 0x0000, 0x0000, 0x0000, 0x0036, 0x0000, 
+0x0028, 0x0000, 0x0034, 0x0000, 0x000d, 0x0000, 0x0001, 0x0010, 0x0000, 
+0x0000, 0x0548, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 
+0x0000, 0x0000, 0x7fff, 0x7fff, 0x7fff, 0x7fff, 0x7fff, 0x7fff, 0x7fff, 
+0x7fff, 0x7fff, 0x7fff, 0x7fff, 0x7fff, 0x7fff, 0x7fff, 0x7fff, 0x7fff, 
+0x7fff, 0x7fff, 0x7fff, 0x7fff, 0x7fff, 0x7fff, 0x7fff, 0x7fff, 0x7fff, 
+0x7fff, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 
+0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 
+0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 
+0x7fff, 0x7fff, 0x7fff, 0x7fff, 0x7fff, 0x0000, 0x7fff, 0x7fff, 0x7fff, 
+0x7fff, 0x7fff, 0x7fff, 0x7fff, 0x7fff, 0x7fff, 0x7fff, 0x7fff, 0x7fff, 
+0x7fff, 0x7fff, 0x0000, 0x0000, 0x0000, 0x7fff, 0x7fff, 0x7fff, 0x0000, 
+0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 
+0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 
+0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x7fff, 0x7fff, 
+0x7fff, 0x7fff, 0x7fff, 0x0000, 0x7fff, 0x7fff, 0x7fff, 0x7fff, 0x7fff, 
+0x7fff, 0x7fff, 0x7fff, 0x7fff, 0x7fff, 0x7fff, 0x7fff, 0x7fff, 0x0000, 
+0x0000, 0x7fff, 0x0000, 0x7fff, 0x7fff, 0x7fff, 0x0000, 0x0000, 0x0000, 
+0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 
+0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 
+0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x7fff, 0x7fff, 0x7fff, 0x7fff, 
+0x7fff, 0x0000, 0x7fff, 0x7fff, 0x7fff, 0x7fff, 0x7fff, 0x7fff, 0x7fff, 
+0x7fff, 0x7fff, 0x7fff, 0x7fff, 0x7fff, 0x7fff, 0x0000, 0x7fff, 0x7fff, 
+0x7fff, 0x0000, 0x7fff, 0x7fff, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 
+0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 
+0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 
+0x0000, 0x0000, 0x0000, 0x7fff, 0x7fff, 0x7fff, 0x7fff, 0x7fff, 0x0000, 
+0x7fff, 0x7fff, 0x7fff, 0x7fff, 0x7fff, 0x7fff, 0x7fff, 0x7fff, 0x7fff, 
+0x7fff, 0x7fff, 0x7fff, 0x7fff, 0x0000, 0x7fff, 0x7fff, 0x7fff, 0x0000, 
+0x7fff, 0x7fff, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 
+0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 
+0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 
+0x0000, 0x7fff, 0x7fff, 0x7fff, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 
+0x0000, 0x7fff, 0x7fff, 0x7fff, 0x7fff, 0x7fff, 0x7fff, 0x7fff, 0x7fff, 
+0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x7fff, 0x0000, 0x7fff, 0x7fff, 
+0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 
+0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 
+0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x7fff, 
+0x7fff, 0x7fff, 0x7fff, 0x7fff, 0x0000, 0x7fff, 0x7fff, 0x7fff, 0x7fff, 
+0x7fff, 0x7fff, 0x7fff, 0x7fff, 0x7fff, 0x7fff, 0x7fff, 0x0000, 0x7fff, 
+0x0000, 0x7fff, 0x0000, 0x7fff, 0x0000, 0x7fff, 0x7fff, 0x0000, 0x0000, 
+0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 
+0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 
+0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x7fff, 0x7fff, 0x7fff, 
+0x7fff, 0x7fff, 0x0000, 0x7fff, 0x7fff, 0x7fff, 0x7fff, 0x7fff, 0x7fff, 
+0x7fff, 0x7fff, 0x7fff, 0x7fff, 0x7fff, 0x0000, 0x7fff, 0x0000, 0x7fff, 
+0x0000, 0x7fff, 0x7fff, 0x7fff, 0x7fff, 0x0000, 0x0000, 0x0000, 0x0000, 
+0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 
+0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 
+0x0000, 0x0000, 0x0000, 0x0000, 0x7fff, 0x7fff, 0x7fff, 0x7fff, 0x7fff, 
+0x0000, 0x7fff, 0x7fff, 0x7fff, 0x7fff, 0x7fff, 0x7fff, 0x7fff, 0x7fff, 
+0x7fff, 0x7fff, 0x0000, 0x7fff, 0x7fff, 0x0000, 0x7fff, 0x0000, 0x7fff, 
+0x7fff, 0x7fff, 0x7fff, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 
+0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 
+0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 
+0x0000, 0x0000, 0x7fff, 0x7fff, 0x7fff, 0x7fff, 0x7fff, 0x0000, 0x7fff, 
+0x7fff, 0x7fff, 0x7fff, 0x7fff, 0x7fff, 0x7fff, 0x7fff, 0x7fff, 0x7fff, 
+0x0000, 0x7fff, 0x0000, 0x7fff, 0x0000, 0x0000, 0x7fff, 0x7fff, 0x7fff, 
+0x7fff, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 
+0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 
+0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 
+0x7fff, 0x7fff, 0x7fff, 0x7fff, 0x7fff, 0x7fff, 0x7fff, 0x7fff, 0x7fff, 
+0x7fff, 0x7fff, 0x7fff, 0x7fff, 0x7fff, 0x7fff, 0x7fff, 0x0000, 0x0000, 
+0x0000, 0x7fff, 0x7fff, 0x7fff, 0x7fff, 0x7fff, 0x7fff, 0x7fff, 0x0000, 
+0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 
+0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 
+0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x7fff, 0x7fff, 
+0x7fff, 0x7fff, 0x7fff, 0x7fff, 0x7fff, 0x7fff, 0x7fff, 0x7fff, 0x7fff, 
+0x7fff, 0x7fff, 0x7fff, 0x7fff, 0x7fff, 0x7fff, 0x0000, 0x7fff, 0x7fff, 
+0x7fff, 0x7fff, 0x7fff, 0x7fff, 0x7fff, 0x7fff, 0x0000, 0x0000, 0x0000, 
+0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 
+0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 
+0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x7fff, 0x7fff, 0x7fff, 0x7fff, 
+0x7fff, 0x7fff, 0x7fff, 0x7fff, 0x7fff, 0x7fff, 0x7fff, 0x7fff, 0x7fff, 
+0x7fff, 0x7fff, 0x7fff, 0x7fff, 0x7fff, 0x7fff, 0x7fff, 0x7fff, 0x7fff, 
+0x7fff, 0x7fff, 0x7fff, 0x7fff, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 
+0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 
+0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 
+0x0000, 0x0000, 0x0000, 0x4d42, 0x003e, 0x0000, 0x0000, 0x0000, 0x003e, 
+0x0000, 0x0028, 0x0000, 0x0034, 0x0000, 0x000d, 0x0000, 0x0001, 0x0001, 
+0x0000, 0x0000, 0x0068, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 
+0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0xffff, 0x00ff, 0x0000, 0x0000, 
+0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 
+0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 
+0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 
+0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 
+0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 
+0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 
+0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x000d, 0x000d, 
+0x000f, 0x8000, 0x0001, 0x0002, 0x0000, 0x0000, 0x0000, 0xfffe, 0xfffe, 
+0xfffd, 0x0005, 0x0000, 0x0000, 
+    IDC_VTEDITOR1, 0x376, 242, 0
+0x0000, 0x0000, 0x0000, 0x0001, 0x0009, 0x0000, 0x000c, 0x0000, 0x0009, 
+0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0190, 0x0000, 0x0000, 0x0100, 
+0x0200, 0x0202, 0x534d, 0x5320, 0x6e61, 0x2073, 0x6553, 0x6972, 0x0066, 
+0xcdcd, 0xcdcd, 0xcdcd, 0xcdcd, 0xcdcd, 0xcdcd, 0xcdcd, 0xcdcd, 0xcdcd, 
+0x000c, 0x0000, 0x0009, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0190, 
+0x0000, 0x0000, 0x0100, 0x0200, 0x0202, 0x534d, 0x5320, 0x6e61, 0x2073, 
+0x6553, 0x6972, 0x0066, 0xcdcd, 0xcdcd, 0xcdcd, 0xcdcd, 0xcdcd, 0xcdcd, 
+0xcdcd, 0xcdcd, 0xcdcd, 0x5608, 0x4554, 0x6964, 0x6f74, 0x0072, 0x0800, 
+0xeab1, 0xe2cc, 0x2628, 0x2941, 0x0001, 0x0000, 0x0000, 0xb104, 0xbce0, 
+0x64ad, 0x0000, 0x0000, 0x0100, 0x0000, 0x0000, 0xc800, 0x0042, 0x0000, 
+0x0800, 0x0000, 0x0580, 0x0000, 0x0880, 0x0000, 0x0f80, 0x0000, 0x0f80, 
+0x0000, 0x0180, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 
+0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 
+0x0000, 0x0000, 0x0001, 0x0000, 
+    0
+END
+
+IDD_PROPPAGE_VTKEYBUTTON DLGINIT
+BEGIN
+    IDC_ALIGN_HORZ, 0x403, 5, 0
+0xbfbf, 0xf3d7, "\000" 
+    IDC_ALIGN_HORZ, 0x403, 5, 0
+0xd3be, 0xd0d6, "\000" 
+    IDC_ALIGN_HORZ, 0x403, 5, 0
+0xbfbf, 0xd2d3, "\000" 
+    IDC_ALIGN_VERT, 0x403, 5, 0
+0xbfbf, 0xcfc9, "\000" 
+    IDC_ALIGN_VERT, 0x403, 5, 0
+0xd3be, 0xd0d6, "\000" 
+    IDC_ALIGN_VERT, 0x403, 5, 0
+0xbfbf, 0xc2cf, "\000" 
+    0
+END
+
+IDD_ABOUTBOX_VTCHECKBOX DLGINIT
+BEGIN
+    IDC_VTCHECKBOXCTRL1, 0x376, 124, 0
+0x0000, 0x0000, 0x0000, 0x0000, 0x0004, 0x0000, 0x0000, 0x0000, 0x4307, 
+0x7061, 0x6974, 0x6e6f, 0x0008, 0x8000, 0x0008, 0x8000, 0x0008, 0x8000, 
+0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 
+0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 
+0x0001, 0x0000, 0x0000, 0x0001, 0x0300, 0xe352, 0x910b, 0xce8f, 0x9d11, 
+0x00e3, 0x00aa, 0xb84b, 0x0151, 0x00cc, 0x9000, 0x4401, 0x0142, 0x0d00, 
+0x534d, 0x5320, 0x6e61, 0x2073, 0x6553, 0x6972, 0x4566, 0x7ff5, 
+    0
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDI_ABOUTDLL            ICON                    "VTControls.ico"
+IDI_ICON                ICON                    "icon.ico"
+IDI_ICON_RELOAD         ICON                    "ico00002.ico"
+IDI_BROWSE              ICON                    "ico00003.ico"
+IDI_UP                  ICON                    "up.ico"
+IDI_SHIFT               ICON                    "shift.ico"
+IDI_RIGHT               ICON                    "up2.ico"
+IDI_LEFT                ICON                    "up1.ico"
+IDI_DOWN                ICON                    "down.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDB_VTKEYBUTTON         BITMAP                  "VTKeyButton.bmp"
+IDB_VTSTATICTEXT        BITMAP                  "VTStaticText.bmp"
+IDB_VTEDITOR            BITMAP                  "VTEditor.bmp"
+IDB_VTSLIDER            BITMAP                  "VTSlider.bmp"
+BROWSEU                 BITMAP                  "bitmap1.bmp"
+BROWSED                 BITMAP                  "bmp00001.bmp"
+IDB_PUSHBUTTON          BITMAP                  "PushButtonCtl.bmp"
+IDB_CHECKED             BITMAP                  "checked.bmp"
+IDB_VTCHECKBOX          BITMAP                  "VTCheckBoxCtl.bmp"
+IDB_VTLIST              BITMAP                  "VTList.bmp"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE 
+BEGIN
+    IDS_VTKEYBUTTON         "VT °ґјь"
+    IDS_VTKEYBUTTON_PPG     "VT °ґјьКфРФТіГж"
+    IDS_VTSTATICTEXT        "VT ѕІМ¬ОД±ѕ"
+    IDS_VTSTATICTEXT_PPG    "VT ѕІМ¬ОД±ѕКфРФТіГж"
+    IDS_VTEDITOR            "VT ±ај­Жч"
+    IDS_VTEDITOR_PPG        "VT ±ај­ЖчКфРФТіГж"
+    IDS_VTLIST              "VT БР±н"
+    IDS_VTLIST_PPG          "VT БР±нКфРФТіГж"
+    IDS_VTSLIDER            "VT »¬їй"
+    IDS_VTSLIDER_PPG        "VT »¬їйКфРФТіГж"
+    IDS_VTLIST_PPGEX        "VT БР±нКфРФТіГж"
+    IDS_VTLIST_PPGROW       "VT БР±нКфРФТіГж"
+    IDS_VTEDITOR_PPG_EXT    "VT ±ај­ЖчКфРФТіГж"
+    IDS_PUSHBUTTON          "°ґЕҐїШјю"
+    IDS_PUSHBUTTON_PPG      "°ґЕҐКфРФТіГж"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_VTKEYBUTTON_PPG_CAPTION "НЁУГ"
+    IDS_VTSTATICTEXT_PPG_CAPTION "НЁУГ"
+    IDS_VTEDITOR_PPG_CAPTION "НЁУГ"
+    IDS_VTLIST_PPG_CAPTION  "НЁУГ"
+    IDS_VTSLIDER_PPG_CAPTION "НЁУГ"
+    IDS_VTLIST_PPGEX_CAPTION "БР"
+    IDS_VTLIST_PPGROW_CAPTION "РР"
+    IDS_VTEDITOR_PPG_EXT_CAPTION "ЧФ¶ЁТе"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_PUSHBUTTON_FAMESPPG "їтјЬКфРФТіГж"
+    IDS_VTSTATICTEXT_PPG_EXT "VT ѕІМ¬ОД±ѕА©Х№КфРФТіГж "
+    IDS_VTKEYIMAGEBUTTON_PPG "VT °ґјьНјПсБР±нКфРФТіГж"
+    IDS_VTCHECKBOX          "VT ёґСЎїтїШјю"
+    IDS_VTCHECKBOX_PPG      "VT ёґСЎїтКфРФТіГж"
+    IDS_VTLIST_PPGHEADER    "VT List Header Property Page"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_PUSHBUTTON_PPG_CAPTION "НЁУГ"
+    IDS_PUSHBUTTON_FAMESPPG_CAPTION "їтјЬ"
+    IDS_VTSTATICTEXT_PPG_EXT_CAPTION "ЧФ¶ЁТе"
+    IDS_WAITING             " "
+    IDS_KEY_MESSAGE         "Дъ°ґПВБЛ  %d јь"
+    IDS_KEY_PICK_PROCESS    "ПЦФЪЗл°ґИОТвјь"
+    IDS_VTKEYIMAGEBUTTON_PPG_CAPTION "НјПсБР±н"
+    IDS_VTCHECKBOX_PPG_CAPTION "НЁУГ"
+    IDS_VTLIST_PPGHEADER_CAPTION "Header"
+END
+
+#endif    // Chinese (P.R.C.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+/////////////////////////////////////////////////////////////////////////////
+// Russian resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_RUS)
+#ifdef _WIN32
+LANGUAGE LANG_RUSSIAN, SUBLANG_DEFAULT
+#pragma code_page(1251)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_ABOUTBOX_VTCHECKBOX DIALOG  34, 22, 260, 55
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Об элементе управления VTCheckBox"
+FONT 8, "MS Sans Serif"
+BEGIN
+    ICON            IDI_ABOUTDLL,IDC_STATIC,10,10,20,20
+    LTEXT           "Элемент управления VTCheckBox, Версия 1.0",IDC_STATIC,
+                    40,10,170,8
+    LTEXT           "Copyright (C) 2000, VideoTest",IDC_STATIC,40,25,105,8
+    DEFPUSHBUTTON   "OK",IDOK,221,7,32,14,WS_GROUP
+    CONTROL         "Check1",202,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,156,
+                    26,41,10
+    CONTROL         "",IDC_VTCHECKBOXCTRL1,
+                    "{F6188DC0-9F7F-4021-AA3C-395956D021F1}",NOT WS_VISIBLE | 
+                    WS_TABSTOP,186,15,67,31
+END
+
+IDD_ABOUTBOX_VTEDITOR DIALOG  34, 22, 260, 55
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Об элементе управления VTEditor"
+FONT 8, "MS Sans Serif"
+BEGIN
+    ICON            IDI_ABOUTDLL,IDC_STATIC,10,10,20,20
+    LTEXT           "Элемент управления VTEditor, Версия 1.0",IDC_STATIC,40,
+                    10,170,8
+    LTEXT           "Copyright (C) 2000, VideoTest",IDC_STATIC,40,25,170,8
+    DEFPUSHBUTTON   "OK",IDOK,221,7,32,14,WS_GROUP
+END
+
+IDD_ABOUTBOX_VTKEYBUTTON DIALOG  34, 22, 260, 55
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Об элементе управления VTPushButton"
+FONT 8, "MS Sans Serif"
+BEGIN
+    ICON            IDI_ABOUTDLL,IDC_STATIC,10,10,20,20
+    LTEXT           "Элемент управления VTPushButton, Версия 1.0",IDC_STATIC,
+                    40,10,170,8
+    LTEXT           "Copyright (C) 2000, VideoTest",IDC_STATIC,40,25,170,8
+    DEFPUSHBUTTON   "OK",IDOK,221,7,32,14,WS_GROUP
+END
+
+IDD_ABOUTBOX_VTLIST DIALOG  34, 22, 260, 61
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Об элементе управления VTList"
+FONT 8, "MS Sans Serif"
+BEGIN
+    ICON            IDI_ABOUTDLL,IDC_STATIC,10,10,20,20
+    LTEXT           "Элемент управления VTList, Версия 1.0",IDC_STATIC,40,10,
+                    170,8
+    LTEXT           "Copyright (C) 2000, VideoTest",IDC_STATIC,40,25,170,8
+    DEFPUSHBUTTON   "OK",IDOK,221,7,32,14,WS_GROUP
+END
+
+IDD_ABOUTBOX_VTSLIDER DIALOG  34, 22, 260, 55
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Об элементе управления VTSlider"
+FONT 8, "MS Sans Serif"
+BEGIN
+    ICON            IDI_ABOUTDLL,IDC_STATIC,10,10,20,20
+    LTEXT           "Элемент управления VTSlider, Версия 1.0",IDC_STATIC,40,
+                    10,170,8
+    LTEXT           "Copyright (C) 2000, VideoTest",IDC_STATIC,40,25,170,8
+    DEFPUSHBUTTON   "OK",IDOK,221,7,32,14,WS_GROUP
+END
+
+IDD_ABOUTBOX_VTSTATICTEXT DIALOG  34, 22, 260, 55
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Об элементе управления VTStaticText"
+FONT 8, "MS Sans Serif"
+BEGIN
+    ICON            IDI_ABOUTDLL,IDC_STATIC,10,10,20,20
+    LTEXT           "Элемент управления VTStaticText, Версия 1.0",IDC_STATIC,
+                    40,10,170,8
+    LTEXT           "Copyright (C) 2000, VideoTest",IDC_STATIC,40,25,170,8
+    DEFPUSHBUTTON   "OK",IDOK,221,7,32,14,WS_GROUP
+END
+
+IDD_DIALOG1 DIALOG  0, 0, 202, 61
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Dialog"
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,145,7,50,14
+    PUSHBUTTON      "Отмена",IDCANCEL,145,24,50,14
+    CONTROL         "",IDC_VTKEYBUTTON1,
+                    "{6743979D-D00F-48A0-A036-DD7EE33A30B3}",WS_TABSTOP,14,
+                    11,67,31
+    CONTROL         "",IDC_VTEDITOR1,"{6BDF8B84-C1B9-448E-8965-0E4557467FDA}",
+                    WS_TABSTOP,85,14,67,31
+END
+
+IDD_PROPPAGE_FRAMES DIALOG  0, 0, 250, 110
+STYLE DS_SETFONT | WS_CHILD
+FONT 8, "MS Sans Serif"
+BEGIN
+    GROUPBOX        "Внутренняя граница",IDC_STATIC,27,19,90,40
+    CONTROL         "Выпуклая",IDC_CHECK1,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,36,30,49,10
+    CONTROL         "Вдавленная",IDC_CHECK2,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,36,43,57,10
+    GROUPBOX        "Внешняя граница",IDC_STATIC,125,19,90,40
+    CONTROL         "Выпуклая",IDC_CHECK4,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,136,30,49,10
+    CONTROL         "Вдавленная",IDC_CHECK5,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,136,43,57,10
+    LTEXT           "Шаблон:",IDC_STATIC,34,75,29,8
+    COMBOBOX        IDC_COMBO_TEMPLATE,71,73,135,100,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+END
+
+IDD_PROPPAGE_PUSHBUTTON DIALOGEX 0, 0, 250, 139
+STYLE DS_SETFONT | WS_CHILD
+FONT 8, "MS Sans Serif", 0, 0, 0x0
+BEGIN
+    CONTROL         "",IDC_STATIC,"Static",SS_ETCHEDFRAME,3,5,124,34
+    LTEXT           "Ширина:",IDC_STATIC,6,10,29,8
+    EDITTEXT        IDC_EDIT_WIDTH,6,20,28,12
+    LTEXT           "Высота:",IDC_STATIC,38,10,28,8
+    EDITTEXT        IDC_EDIT_HEIGHT,38,20,28,12
+    PUSHBUTTON      "Авто. размер",IDC_BUTTON_AUTO_SIZE,71,22,51,13
+    CONTROL         "Растянуть",IDC_CHECK_STRETCH,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,72,9,51,10
+    CONTROL         "",IDC_STATIC,"Static",SS_ETCHEDFRAME,129,5,40,34
+    EDITTEXT        IDC_EDIT_BUTTONDEPTH,134,19,20,14
+    CONTROL         "Spin1",IDC_SPIN_SHADOW,"msctls_updown32",
+                    UDS_SETBUDDYINT | UDS_AUTOBUDDY | UDS_ARROWKEYS,154,19,9,
+                    14
+    LTEXT           "Имя файла:",IDC_STATIC,3,44,40,8
+    EDITTEXT        IDC_EDIT_FILENAME,44,43,57,12,ES_AUTOHSCROLL
+    PUSHBUTTON      "Browse",IDC_BUTTON_FILEOPEN,103,43,16,12,BS_ICON
+    PUSHBUTTON      "Browse",IDC_BUTTON_RELOAD,120,43,16,12,BS_ICON
+    PUSHBUTTON      "P",IDC_PASTE,137,43,16,12
+    PUSHBUTTON      "C",IDC_COPY,153,43,16,12
+    CONTROL         "SF",IDC_SYSTEM_FONT,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,174,54,24,10
+    CONTROL         "Draw focused rect",IDC_DRAW_FOCUSED_RECT,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,174,30,74,10
+    CONTROL         "Auto repeat",IDC_AUTO_REPEAT,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,174,42,53,10
+    GROUPBOX        "Курсор на",IDC_STATIC,3,73,52,40
+    CONTROL         "Цвет",IDC_CHECK_MOUSEIN_COLOR,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,9,85,44,10
+    CONTROL         "Тень",IDC_CHECK_MOUSEIN_SHADOW,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,9,96,33,10
+    GROUPBOX        "Курсор вне",IDC_STATIC,57,73,49,40
+    CONTROL         "Цвет",IDC_CHECK_MOUSEOUT_COLOR,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,61,85,43,10
+    CONTROL         "Тень",IDC_CHECK_MOUSEOUT_SHADOW,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,61,96,33,10
+    GROUPBOX        "Кнопка нажата",IDC_STATIC,109,73,61,40
+    CONTROL         "Цвет",IDC_CHECK_BPRESSED_COLOR,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,121,85,33,10
+    CONTROL         "Тень",IDC_CHECK_BPRESSED_SHADOW,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,121,96,33,10
+    CONTROL         "3State",IDC_CHECKTREESTATE,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,174,7,37,10
+    CONTROL         "Фокус",IDC_CHECK_FOCUSRECT,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,174,19,50,9
+    LTEXT           "Акция:",IDC_STATIC,3,59,24,8
+    EDITTEXT        IDC_EDIT_ACTION_NAME,44,58,125,12,ES_AUTOHSCROLL
+    CONTROL         "Run action",IDC_CHECK_IS_RUN_ACTION,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,174,66,49,10
+    CONTROL         "Плоская",IDC_CHECK_FLATBUTTON,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,174,78,45,10
+    CONTROL         "Граница",IDC_CHECK_DRAWBORDER,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,174,90,44,10
+    CONTROL         "Полу&плоская",IDC_SEMIFLAT,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,174,102,61,10
+    CONTROL         "AutoSize",IDC_CHECK_AUTOSIZE,"Button",BS_AUTOCHECKBOX | 
+                    NOT WS_VISIBLE | WS_TABSTOP,102,5,44,10
+    LTEXT           "Глубина:",IDC_STATIC,133,7,30,8
+    CONTROL         "Подсказка",IDC_SHOWTOOLTIP,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,174,114,53,10
+    LTEXT           "Подсказка: ",IDC_STATIC,3,118,92,8
+    EDITTEXT        IDC_EDIT_TOOLTIP,44,116,125,12,ES_AUTOHSCROLL
+END
+
+IDD_PROPPAGE_VTCHECKBOX DIALOG  0, 0, 250, 62
+STYLE DS_SETFONT | WS_CHILD
+FONT 8, "MS Sans Serif"
+BEGIN
+    LTEXT           "&Заголовок:",IDC_STATIC,7,8,39,8
+    EDITTEXT        IDC_CAPTION,51,7,160,22,ES_MULTILINE | ES_AUTOHSCROLL
+    CONTROL         "&Новый режим рисования",IDC_NEW_DRAWING_MODE,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,7,30,101,10
+    CONTROL         "3&D",IDC_3DAPPEARANCE,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,7,45,25,10
+    CONTROL         "Системный шифт",IDC_USE_SYSTEM_FONT,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,117,30,98,10
+END
+
+IDD_PROPPAGE_VTEDITOR DIALOG  0, 0, 250, 110
+STYLE DS_SETFONT | WS_CHILD
+FONT 8, "MS Sans Serif"
+BEGIN
+    LTEXT           "Имя:",IDC_STATIC,7,9,18,8
+    EDITTEXT        IDC_EDIT_NAME,43,7,94,14,ES_AUTOHSCROLL
+    CONTROL         "Автоматическое обновление",IDC_CHECK_AUTO_UPDATE,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,7,44,114,10
+    LTEXT           "Клавиша:",IDC_STATIC,7,26,33,8
+    EDITTEXT        IDC_EDIT_KEY_VALUE,43,25,94,14,ES_AUTOHSCROLL
+    CONTROL         "Системный шрифт",IDC_USE_SYSTEM_FONT,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,7,62,79,10
+END
+
+IDD_PROPPAGE_VTEDITOR_EXT DIALOG  0, 0, 250, 120
+STYLE DS_SETFONT | WS_CHILD
+FONT 8, "MS Sans Serif"
+BEGIN
+    GROUPBOX        "Заголовок",IDC_STATIC,7,3,231,38
+    CONTROL         "Активизировать",IDC_CHECK_CAPTION_ENABLE,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,24,18,71,10
+    LTEXT           "Положение:",IDC_STATIC,107,11,40,10
+    COMBOBOX        IDC_COMBO_CAPTION_ALIGN,150,9,55,54,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    LTEXT           "Текст:",IDC_STATIC,107,25,23,10
+    EDITTEXT        IDC_EDIT_CAPTION_TEXT,150,24,53,14,ES_AUTOHSCROLL
+    GROUPBOX        "Данные",IDC_STATIC,7,41,83,75
+    LTEXT           "Тип:",IDC_STATIC,10,54,16,8
+    COMBOBOX        IDC_COMBO_DATA_TYPE,27,53,59,51,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    GROUPBOX        "Подтверждение",IDC_STATIC,11,67,75,46
+    LTEXT           "Мин:",IDC_STATIC,19,81,17,8
+    EDITTEXT        IDC_EDIT_MIN_VALUE,41,78,29,14,ES_AUTOHSCROLL
+    CONTROL         "Spin1",IDC_SPIN_MIN,"msctls_updown32",UDS_SETBUDDYINT | 
+                    UDS_AUTOBUDDY | UDS_ARROWKEYS,69,78,10,14
+    LTEXT           "Макс:",IDC_STATIC,19,97,21,8
+    EDITTEXT        IDC_EDIT_MAX_VALUE,42,94,29,14,ES_AUTOHSCROLL
+    CONTROL         "Spin2",IDC_SPIN_MAX,"msctls_updown32",UDS_SETBUDDYINT | 
+                    UDS_AUTOBUDDY | UDS_ARROWKEYS,70,94,10,14
+    CONTROL         "Вращение",IDC_CHECK_ENABLE_SPIN,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,96,44,51,10
+    CONTROL         "Мультилиния",IDC_CHECK_MULTI_LINE,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,96,55,61,10
+    CONTROL         "Выравнивание",IDC_CHECK_ALIGN_CLIENT,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,96,66,66,10
+    CONTROL         "Автоматическая ширина заголовка",
+                    IDC_CHECK_ENABLE_CAPTION_AUTO_WIDTH,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,96,77,137,10
+    CONTROL         "Актив-ть мин/макс подтверждение",
+                    IDC_CHECK_ENABLE_VALIDATION,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,96,88,137,10
+    LTEXT           "Ширина поля заголовка:",IDC_STATIC,95,104,84,8
+    EDITTEXT        IDC_EDIT_FIELD_WIDTH,182,101,29,14,ES_AUTOHSCROLL
+    CONTROL         "Spin3",IDC_SPIN_EDIT_WIDTH,"msctls_updown32",
+                    UDS_SETBUDDYINT | UDS_AUTOBUDDY | UDS_ARROWKEYS,208,101,
+                    11,14
+    PUSHBUTTON      "Авто размер",IDC_BUTTON_AUTO_SIZE,177,45,51,14
+END
+
+IDD_PROPPAGE_VTKEY_IMAGE DIALOG  0, 0, 291, 62
+STYLE DS_SETFONT | WS_CHILD
+FONT 8, "MS Sans Serif"
+BEGIN
+    LTEXT           "Имя файла:",IDC_STATIC,12,8,41,8
+    EDITTEXT        IDC_EDIT_FILENAME,58,7,140,12,ES_AUTOHSCROLL
+    PUSHBUTTON      "Browse",IDC_BUTTON_FILEOPEN,203,6,16,12,BS_ICON
+    PUSHBUTTON      "Browse",IDC_BUTTON_RELOAD,224,6,16,12,BS_ICON
+    GROUPBOX        "Элемент",IDC_STATIC,7,22,277,33
+    LTEXT           "Ширина:",IDC_STATIC,13,35,29,8
+    EDITTEXT        IDC_ITEM_WIDTH,44,32,34,14,ES_AUTOHSCROLL
+    CONTROL         "Spin1",IDC_SPIN1,"msctls_updown32",UDS_SETBUDDYINT | 
+                    UDS_ALIGNRIGHT | UDS_AUTOBUDDY | UDS_ARROWKEYS,79,32,10,
+                    14
+    LTEXT           "Высота:",IDC_STATIC,91,35,28,8
+    EDITTEXT        IDC_ITEM_HEIGHT,122,32,34,14,ES_AUTOHSCROLL
+    CONTROL         "Spin1",IDC_SPIN2,"msctls_updown32",UDS_SETBUDDYINT | 
+                    UDS_ALIGNRIGHT | UDS_AUTOBUDDY | UDS_ARROWKEYS,157,33,11,
+                    14
+    LTEXT           "Индекс элемента:",IDC_STATIC,173,35,63,8
+    EDITTEXT        IDC_IMAGE_INDEX,239,32,34,14,ES_AUTOHSCROLL
+    CONTROL         "Spin1",IDC_SPIN3,"msctls_updown32",UDS_SETBUDDYINT | 
+                    UDS_ALIGNRIGHT | UDS_AUTOBUDDY | UDS_ARROWKEYS,267,31,11,
+                    14
+END
+
+IDD_PROPPAGE_VTKEYBUTTON DIALOG  0, 0, 357, 62
+STYLE DS_SETFONT | WS_CHILD
+FONT 8, "MS Sans Serif"
+BEGIN
+    LTEXT           "Виртуальный ключ:",IDC_STATIC,12,9,66,8
+    EDITTEXT        IDC_VIRT_KEY,83,7,40,14,ES_AUTOHSCROLL
+    PUSHBUTTON      "Выбор",IDC_BTN_PICK,134,7,30,14
+    LTEXT           "Static",IDC_STATE,172,9,80,8
+    EDITTEXT        IDC_ITEM_DELTA_X,52,35,28,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_ITEM_DELTA_Y,124,35,28,14,ES_AUTOHSCROLL
+    GROUPBOX        "Элемент изображения",IDC_STATIC,7,22,343,33
+    LTEXT           "Дельта X:",IDC_STATIC,13,37,35,8
+    LTEXT           "Дельта Y:",IDC_STATIC,85,37,35,8
+    LTEXT           "Горизонтальное выравнивание:",IDC_STATIC,158,30,110,8
+    COMBOBOX        IDC_ALIGN_HORZ,270,29,77,112,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    LTEXT           "Вертикальное выравнивание:",IDC_STATIC,158,42,102,8
+    COMBOBOX        IDC_ALIGN_VERT,270,41,77,112,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+END
+
+IDD_PROPPAGE_VTLIST DIALOGEX 0, 0, 250, 120
+STYLE DS_SETFONT | WS_CHILD
+FONT 8, "MS Sans Serif", 0, 0, 0x0
+BEGIN
+    LTEXT           "Имя:",IDC_STATIC,12,22,18,8
+    EDITTEXT        IDC_EDIT_NAME,36,20,153,12,ES_AUTOHSCROLL
+    CONTROL         "Активизировать",IDC_CHECK_ENABLE,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,12,45,71,10
+    CONTROL         "Сетка",IDC_USEGRID,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,12,60,36,10
+    CONTROL         "Системный шрифт",IDC_USE_SYSTEM_FONT,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,12,75,79,10
+    CONTROL         "Выделить всю строку",IDC_USE_FULL_ROW_SELECT,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,128,45,89,10
+    CONTROL         "Автоматическое обновление",IDC_CHECK_AUTO_SAVE_TO_SHELL,
+                    "Button",BS_AUTOCHECKBOX | WS_TABSTOP,128,59,114,10
+    CONTROL         "Простой выбор фона",IDC_SIMPLE_FONT_CHOOSER,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,128,76,87,10
+    CONTROL         "Изменение ширины столбцов",IDC_RESIZE_COLS,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,12,90,117,10
+END
+
+IDD_PROPPAGE_VTLIST_ROW DIALOGEX 0, 0, 259, 120
+STYLE DS_SETFONT | WS_CHILD
+FONT 8, "MS Sans Serif", 0, 0, 0x0
+BEGIN
+    CONTROL         "List1",IDC_LIST_ROW,"SysListView32",LVS_REPORT | 
+                    LVS_SINGLESEL | LVS_SHOWSELALWAYS | LVS_EDITLABELS | 
+                    WS_BORDER | WS_TABSTOP,7,11,103,74
+    PUSHBUTTON      "Добавить",IDC_BUTTON_ADD_ROW,7,89,50,14
+    PUSHBUTTON      "Удалить",IDC_BUTTON_DELETE_ROW,59,89,50,14
+    LTEXT           "Ключ",IDC_STATIC,123,14,18,8
+    EDITTEXT        IDC_EDIT_KEY_VALUE,156,12,91,14,ES_AUTOHSCROLL
+    PUSHBUTTON      "Значок...",IDC_BUTTON_SET_ICON,124,28,46,14
+    PUSHBUTTON      "Удалить значок",IDC_BUTTON_CLEAR_ICON,185,28,62,14
+    GROUPBOX        "Колонка",IDC_STATIC,123,43,124,37
+    LTEXT           "Static",IDC_STATIC_CUR_COLUMN,129,51,99,8
+    PUSHBUTTON      "<<",IDC_BUTTON_CUR_COLUMN_LEFT,130,60,20,14
+    PUSHBUTTON      ">>",IDC_BUTTON_CUR_COLUMN_RIGHT,154,60,20,14
+    PUSHBUTTON      "Обновить",IDC_BUTTON_REFRESH,178,61,50,14
+    GROUPBOX        "Вид",IDC_STATIC,123,81,124,30
+    PUSHBUTTON      "Основной цвет...",IDC_BUTTON_FORE_COLOR,127,91,62,14
+    PUSHBUTTON      "Цвет фона...",IDC_BUTTON_BACK_COLOR,192,91,51,14
+END
+
+IDD_PROPPAGE_VTLISTEX DIALOGEX 0, 0, 250, 120
+STYLE DS_SETFONT | WS_CHILD
+FONT 8, "MS Sans Serif", 0, 0, 0x0
+BEGIN
+    CONTROL         "List1",IDC_LIST,"SysListView32",LVS_REPORT | 
+                    LVS_SINGLESEL | LVS_SHOWSELALWAYS | LVS_EDITLABELS | 
+                    WS_BORDER | WS_TABSTOP,7,7,69,71
+    PUSHBUTTON      "Добавить",IDC_BUTTON_ADD,7,80,50,14
+    PUSHBUTTON      "Удалить",IDC_BUTTON_DELETE,7,96,50,14
+    GROUPBOX        "Вид",IDC_STATIC,82,4,127,66
+    PUSHBUTTON      "Основной цвет...",IDC_BUTTON_FORE_COLOR,86,15,62,14
+    PUSHBUTTON      "Цвет фона...",IDC_BUTTON_BACK_COLOR,151,15,51,14
+    PUSHBUTTON      "Шрифт...",IDC_BUTTON_FONT,86,32,62,14
+    LTEXT           "Выравнивание:",IDC_STATIC,88,53,53,8
+    COMBOBOX        IDC_COMBO_ALIGN,142,51,64,69,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    PUSHBUTTON      "True...",IDC_BUTTON_SET_TRUE_ICON,213,13,27,14
+    PUSHBUTTON      "False...",IDC_BUTTON_SET_FALSE_ICON,213,34,27,14
+    PUSHBUTTON      "Gray...",IDC_BUTTON_SET_GRAY_ICON,213,55,27,14
+    LTEXT           "Тип:",IDC_STATIC,82,74,16,8
+    COMBOBOX        IDC_COMBO_COLUMN_TYPE,99,73,68,89,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    LTEXT           "Ширина:",IDC_STATIC,174,76,28,8
+    EDITTEXT        IDC_EDIT_COL_WIDTH,205,74,26,14,ES_AUTOHSCROLL
+    CONTROL         "Spin1",IDC_SPIN_WIDTH,"msctls_updown32",UDS_SETBUDDYINT | 
+                    UDS_AUTOBUDDY | UDS_ARROWKEYS,230,74,10,14
+    CONTROL         "Значок",IDC_CHECK_USE_ICON,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,82,91,37,10
+    CONTROL         "Только для чтения",IDC_CHECK_READ_ONLY,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,124,91,79,10
+    CONTROL         "Показать логический в виде текста",
+                    IDC_CHECK_LOG_AS_TEXT,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,82,103,138,10
+END
+
+IDD_PROPPAGE_VTSLIDER DIALOG  0, 0, 250, 120
+STYLE DS_SETFONT | WS_CHILD
+FONT 8, "MS Sans Serif"
+BEGIN
+    LTEXT           "Имя:",IDC_STATIC,8,11,18,8
+    EDITTEXT        IDC_EDIT_NAME,27,9,75,14,ES_AUTOHSCROLL
+    CONTROL         "Один движок",IDC_CHECKSINGLE_SLIDE,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,106,12,61,10
+    CONTROL         "Системный шрифт",IDC_USE_SYSTEM_FONT,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,168,13,78,10
+    GROUPBOX        "Поддержка оболочки",IDC_STATIC,7,32,235,43
+    LTEXT           "Верхнее\nзначение:",IDC_STATIC,14,43,34,17
+    EDITTEXT        IDC_EDIT_LOW_KEY,50,44,70,14,ES_AUTOHSCROLL
+    LTEXT           "Нижнее\nзначение:",IDC_STATIC,126,43,35,17
+    EDITTEXT        IDC_EDIT_HIGH_KEY,164,44,70,14,ES_AUTOHSCROLL
+    CONTROL         "Автоматическое обновление",IDC_CHECK_AUTO_UPDATE,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,14,63,114,10
+    LTEXT           "Мин:",IDC_STATIC,11,81,17,8
+    EDITTEXT        IDC_EDIT_MIN,36,79,40,14,ES_AUTOHSCROLL
+    LTEXT           "Макс:",IDC_STATIC,11,97,21,8
+    EDITTEXT        IDC_EDIT_MAX,36,97,40,14,ES_AUTOHSCROLL
+    CONTROL         "Деления",IDC_CHECK_TICK,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,90,80,46,10
+    CONTROL         "Числа",IDC_CHECK_SHOW_NUM,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,90,94,37,10
+    CONTROL         "Цикл",IDC_CHECK_CYCLED,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,143,80,33,10
+    LTEXT           "Цена деления:",IDC_STATIC,144,95,50,8
+    EDITTEXT        IDC_EDIT_TICK_FREQ,199,93,40,14,ES_AUTOHSCROLL
+END
+
+IDD_PROPPAGE_VTSTATICTEXT DIALOG  0, 0, 250, 62
+STYLE DS_SETFONT | WS_CHILD
+FONT 8, "MS Sans Serif"
+BEGIN
+    LTEXT           "Имя:",IDC_STATIC,7,13,18,8
+    EDITTEXT        IDC_EDIT_NAME,32,10,85,14,ES_AUTOHSCROLL
+    CONTROL         "Системный шрифт",IDC_USE_SYSTEM_FONT,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,7,28,79,10
+END
+
+IDD_PROPPAGE_VTSTATICTEXT_EXT DIALOG  0, 0, 250, 143
+STYLE DS_SETFONT | WS_CHILD
+FONT 8, "MS Sans Serif"
+BEGIN
+    GROUPBOX        "Выравнивание по краю",IDC_STATIC,7,2,233,87
+    GROUPBOX        "Текст",IDC_STATIC,14,11,62,75
+    CONTROL         "Левому ",IDC_CHECK_LEFT_TEXT,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,22,21,44,10
+    CONTROL         "Правому",IDC_CHECK_RIGHT_TEXT,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,22,32,57,10
+    CONTROL         "Верхнему ",IDC_CHECK_TOP_TEXT,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,22,43,50,10
+    CONTROL         "Нижнему",IDC_CHECK_BOTTOM_TEXT,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,22,54,47,10
+    GROUPBOX        "Изображение ",IDC_STATIC,78,11,62,56
+    CONTROL         "Левому",IDC_CHECK_LEFT_PIC,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,85,21,42,10
+    CONTROL         "Правому",IDC_CHECK_RIGHT_PIC,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,85,32,46,10
+    CONTROL         "Верхнему",IDC_CHECK_TOP_PIC,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,85,43,49,10
+    CONTROL         "Нижнему",IDC_CHECK_BOTTOM_PIC,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,85,54,47,10
+    GROUPBOX        "Текст по изображению",IDC_STATIC,143,11,93,56
+    CONTROL         "Левому",IDC_CHECK_LEFT_TEXT_TO_PIC,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,163,21,42,10
+    CONTROL         "Правому",IDC_CHECK_RIGHT_TEXT_TO_PIC,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,163,32,46,10
+    CONTROL         "Верхнему",IDC_CHECK_TOP_TEXT_TO_PIC,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,163,43,49,10
+    CONTROL         "Нижнему",IDC_CHECK_BOTTOM_TEXT_TO_PIC,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,163,54,47,10
+    CONTROL         "Прозрачный текст",IDC_CHECK_TRANSPARENCY,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,9,92,79,10
+    EDITTEXT        IDC_EDIT_TEXT,7,106,116,25,ES_MULTILINE | ES_AUTOVSCROLL | 
+                    ES_AUTOHSCROLL
+    LTEXT           "Изображение:",IDC_STATIC,128,93,50,8
+    EDITTEXT        IDC_EDIT_PIC_FILENAME,127,106,76,14,ES_AUTOHSCROLL
+    PUSHBUTTON      "Browse",IDC_BUTTON_FILEOPEN,205,107,16,12,BS_ICON
+    PUSHBUTTON      "Browse",IDC_BUTTON_RELOAD,221,107,16,12,BS_ICON
+    CONTROL         "Центрировать изображение",IDC_CHECK_CENTER_IMAGE,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,127,122,109,10
+    PUSHBUTTON      "Авто размер",IDC_BUTTON_AUTO_SIZE,182,91,55,13
+    CONTROL         "Центр",IDC_CHECK_CENTER_TEXT,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,22,64,37,10
+    CONTROL         "Центр верт",IDC_CHECK_MIDDLE_TEXT,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,22,74,54,10
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO 
+BEGIN
+    IDD_ABOUTBOX_VTCHECKBOX, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 253
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 46
+    END
+
+    IDD_ABOUTBOX_VTEDITOR, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 253
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 48
+    END
+
+    IDD_ABOUTBOX_VTKEYBUTTON, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 253
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 48
+    END
+
+    IDD_ABOUTBOX_VTLIST, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 253
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 54
+    END
+
+    IDD_ABOUTBOX_VTSLIDER, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 253
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 48
+    END
+
+    IDD_ABOUTBOX_VTSTATICTEXT, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 253
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 48
+    END
+
+    IDD_DIALOG1, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 195
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 54
+    END
+
+    IDD_PROPPAGE_FRAMES, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 243
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 103
+    END
+
+    IDD_PROPPAGE_PUSHBUTTON, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 248
+        TOPMARGIN, 4
+        BOTTOMMARGIN, 120
+    END
+
+    IDD_PROPPAGE_VTCHECKBOX, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 243
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 55
+    END
+
+    IDD_PROPPAGE_VTEDITOR, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 243
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 103
+    END
+
+    IDD_PROPPAGE_VTEDITOR_EXT, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 243
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 113
+    END
+
+    IDD_PROPPAGE_VTKEY_IMAGE, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 284
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 55
+    END
+
+    IDD_PROPPAGE_VTKEYBUTTON, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 350
+        TOPMARGIN, 3
+        BOTTOMMARGIN, 59
+    END
+
+    IDD_PROPPAGE_VTLIST, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 243
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 113
+    END
+
+    IDD_PROPPAGE_VTLIST_ROW, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 252
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 113
+    END
+
+    IDD_PROPPAGE_VTLISTEX, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 243
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 113
+    END
+
+    IDD_PROPPAGE_VTSLIDER, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 243
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 113
+    END
+
+    IDD_PROPPAGE_VTSTATICTEXT, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 243
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 55
+    END
+
+    IDD_PROPPAGE_VTSTATICTEXT_EXT, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 243
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 136
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog Info
+//
+
+IDD_ABOUTBOX_VTCHECKBOX DLGINIT
+BEGIN
+    IDC_VTCHECKBOXCTRL1, 0x376, 124, 0
+0x0000, 0x0000, 0x0000, 0x0000, 0x0004, 0x0000, 0x0000, 0x0000, 0x4307, 
+0x7061, 0x6974, 0x6e6f, 0x0008, 0x8000, 0x0008, 0x8000, 0x0008, 0x8000, 
+0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 
+0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 
+0x0001, 0x0000, 0x0000, 0x0001, 0x0300, 0xe352, 0x910b, 0xce8f, 0x9d11, 
+0x00e3, 0x00aa, 0xb84b, 0x0151, 0x00cc, 0x9000, 0x4401, 0x0142, 0x0d00, 
+0x534d, 0x5320, 0x6e61, 0x2073, 0x6553, 0x6972, 0x3a66, 0x0000, 
+    0
+END
+
+IDD_DIALOG1 DLGINIT
+BEGIN
+    IDC_VTKEYBUTTON1, 0x376, 1700, 0
+0x0000, 0x0000, 0x0004, 0x0000, 0x0010, 0x0000, 0x4523, 0x5c3a, 0x7476, 
+0x5c35, 0x6f63, 0x746e, 0x6f72, 0x736c, 0x565c, 0x4354, 0x6e6f, 0x7274, 
+0x6c6f, 0x5c73, 0x6574, 0x7473, 0x622e, 0x706d, 0x4c49, 0x0101, 0x0002, 
+0x0003, 0x0004, 0x000d, 0x000d, 0xffff, 0xffff, 0x1011, 0xffff, 0xffff, 
+0xffff, 0xffff, 0x4d42, 0x0036, 0x0000, 0x0000, 0x0000, 0x0036, 0x0000, 
+0x0028, 0x0000, 0x0034, 0x0000, 0x000d, 0x0000, 0x0001, 0x0010, 0x0000, 
+0x0000, 0x0548, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 
+0x0000, 0x0000, 0x7fff, 0x7fff, 0x7fff, 0x7fff, 0x7fff, 0x7fff, 0x7fff, 
+0x7fff, 0x7fff, 0x7fff, 0x7fff, 0x7fff, 0x7fff, 0x7fff, 0x7fff, 0x7fff, 
+0x7fff, 0x7fff, 0x7fff, 0x7fff, 0x7fff, 0x7fff, 0x7fff, 0x7fff, 0x7fff, 
+0x7fff, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 
+0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 
+0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 
+0x7fff, 0x7fff, 0x7fff, 0x7fff, 0x7fff, 0x0000, 0x7fff, 0x7fff, 0x7fff, 
+0x7fff, 0x7fff, 0x7fff, 0x7fff, 0x7fff, 0x7fff, 0x7fff, 0x7fff, 0x7fff, 
+0x7fff, 0x7fff, 0x0000, 0x0000, 0x0000, 0x7fff, 0x7fff, 0x7fff, 0x0000, 
+0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 
+0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 
+0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x7fff, 0x7fff, 
+0x7fff, 0x7fff, 0x7fff, 0x0000, 0x7fff, 0x7fff, 0x7fff, 0x7fff, 0x7fff, 
+0x7fff, 0x7fff, 0x7fff, 0x7fff, 0x7fff, 0x7fff, 0x7fff, 0x7fff, 0x0000, 
+0x0000, 0x7fff, 0x0000, 0x7fff, 0x7fff, 0x7fff, 0x0000, 0x0000, 0x0000, 
+0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 
+0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 
+0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x7fff, 0x7fff, 0x7fff, 0x7fff, 
+0x7fff, 0x0000, 0x7fff, 0x7fff, 0x7fff, 0x7fff, 0x7fff, 0x7fff, 0x7fff, 
+0x7fff, 0x7fff, 0x7fff, 0x7fff, 0x7fff, 0x7fff, 0x0000, 0x7fff, 0x7fff, 
+0x7fff, 0x0000, 0x7fff, 0x7fff, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 
+0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 
+0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 
+0x0000, 0x0000, 0x0000, 0x7fff, 0x7fff, 0x7fff, 0x7fff, 0x7fff, 0x0000, 
+0x7fff, 0x7fff, 0x7fff, 0x7fff, 0x7fff, 0x7fff, 0x7fff, 0x7fff, 0x7fff, 
+0x7fff, 0x7fff, 0x7fff, 0x7fff, 0x0000, 0x7fff, 0x7fff, 0x7fff, 0x0000, 
+0x7fff, 0x7fff, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 
+0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 
+0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 
+0x0000, 0x7fff, 0x7fff, 0x7fff, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 
+0x0000, 0x7fff, 0x7fff, 0x7fff, 0x7fff, 0x7fff, 0x7fff, 0x7fff, 0x7fff, 
+0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x7fff, 0x0000, 0x7fff, 0x7fff, 
+0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 
+0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 
+0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x7fff, 
+0x7fff, 0x7fff, 0x7fff, 0x7fff, 0x0000, 0x7fff, 0x7fff, 0x7fff, 0x7fff, 
+0x7fff, 0x7fff, 0x7fff, 0x7fff, 0x7fff, 0x7fff, 0x7fff, 0x0000, 0x7fff, 
+0x0000, 0x7fff, 0x0000, 0x7fff, 0x0000, 0x7fff, 0x7fff, 0x0000, 0x0000, 
+0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 
+0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 
+0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x7fff, 0x7fff, 0x7fff, 
+0x7fff, 0x7fff, 0x0000, 0x7fff, 0x7fff, 0x7fff, 0x7fff, 0x7fff, 0x7fff, 
+0x7fff, 0x7fff, 0x7fff, 0x7fff, 0x7fff, 0x0000, 0x7fff, 0x0000, 0x7fff, 
+0x0000, 0x7fff, 0x7fff, 0x7fff, 0x7fff, 0x0000, 0x0000, 0x0000, 0x0000, 
+0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 
+0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 
+0x0000, 0x0000, 0x0000, 0x0000, 0x7fff, 0x7fff, 0x7fff, 0x7fff, 0x7fff, 
+0x0000, 0x7fff, 0x7fff, 0x7fff, 0x7fff, 0x7fff, 0x7fff, 0x7fff, 0x7fff, 
+0x7fff, 0x7fff, 0x0000, 0x7fff, 0x7fff, 0x0000, 0x7fff, 0x0000, 0x7fff, 
+0x7fff, 0x7fff, 0x7fff, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 
+0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 
+0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 
+0x0000, 0x0000, 0x7fff, 0x7fff, 0x7fff, 0x7fff, 0x7fff, 0x0000, 0x7fff, 
+0x7fff, 0x7fff, 0x7fff, 0x7fff, 0x7fff, 0x7fff, 0x7fff, 0x7fff, 0x7fff, 
+0x0000, 0x7fff, 0x0000, 0x7fff, 0x0000, 0x0000, 0x7fff, 0x7fff, 0x7fff, 
+0x7fff, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 
+0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 
+0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 
+0x7fff, 0x7fff, 0x7fff, 0x7fff, 0x7fff, 0x7fff, 0x7fff, 0x7fff, 0x7fff, 
+0x7fff, 0x7fff, 0x7fff, 0x7fff, 0x7fff, 0x7fff, 0x7fff, 0x0000, 0x0000, 
+0x0000, 0x7fff, 0x7fff, 0x7fff, 0x7fff, 0x7fff, 0x7fff, 0x7fff, 0x0000, 
+0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 
+0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 
+0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x7fff, 0x7fff, 
+0x7fff, 0x7fff, 0x7fff, 0x7fff, 0x7fff, 0x7fff, 0x7fff, 0x7fff, 0x7fff, 
+0x7fff, 0x7fff, 0x7fff, 0x7fff, 0x7fff, 0x7fff, 0x0000, 0x7fff, 0x7fff, 
+0x7fff, 0x7fff, 0x7fff, 0x7fff, 0x7fff, 0x7fff, 0x0000, 0x0000, 0x0000, 
+0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 
+0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 
+0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x7fff, 0x7fff, 0x7fff, 0x7fff, 
+0x7fff, 0x7fff, 0x7fff, 0x7fff, 0x7fff, 0x7fff, 0x7fff, 0x7fff, 0x7fff, 
+0x7fff, 0x7fff, 0x7fff, 0x7fff, 0x7fff, 0x7fff, 0x7fff, 0x7fff, 0x7fff, 
+0x7fff, 0x7fff, 0x7fff, 0x7fff, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 
+0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 
+0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 
+0x0000, 0x0000, 0x0000, 0x4d42, 0x003e, 0x0000, 0x0000, 0x0000, 0x003e, 
+0x0000, 0x0028, 0x0000, 0x0034, 0x0000, 0x000d, 0x0000, 0x0001, 0x0001, 
+0x0000, 0x0000, 0x0068, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 
+0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0xffff, 0x00ff, 0x0000, 0x0000, 
+0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 
+0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 
+0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 
+0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 
+0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 
+0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 
+0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x000d, 0x000d, 
+0x000f, 0x8000, 0x0001, 0x0002, 0x0000, 0x0000, 0x0000, 0xfffe, 0xfffe, 
+0xfffd, 0x0005, 0x0000, 0x0000, 
+    IDC_VTEDITOR1, 0x376, 244, 0
+0x0000, 0x0000, 0x0000, 0x0001, 0x0009, 0x0000, 0x000c, 0x0000, 0x0009, 
+0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0190, 0x0000, 0x0000, 0x0000, 
+0x0200, 0x0202, 0x534d, 0x5320, 0x6e61, 0x2073, 0x6553, 0x6972, 0x0066, 
+0xcdcd, 0xcdcd, 0xcdcd, 0xcdcd, 0xcdcd, 0xcdcd, 0xcdcd, 0xcdcd, 0xcdcd, 
+0x000c, 0x0000, 0x0009, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0190, 
+0x0000, 0x0000, 0x0000, 0x0200, 0x0202, 0x534d, 0x5320, 0x6e61, 0x2073, 
+0x6553, 0x6972, 0x0066, 0xcdcd, 0xcdcd, 0xcdcd, 0xcdcd, 0xcdcd, 0xcdcd, 
+0xcdcd, 0xcdcd, 0xcdcd, 0x5608, 0x4554, 0x6964, 0x6f74, 0x0072, 0x0800, 
+0x2643, 0x7061, 0x6974, 0x6e6f, 0x0001, 0x0000, 0x0000, 0x4504, 0x6964, 
+0x6474, 0x0000, 0x0000, 0x0100, 0x0000, 0x0000, 0xc800, 0x0042, 0x0000, 
+0x0800, 0x0000, 0x0580, 0x0000, 0x0880, 0x0000, 0x0f80, 0x0000, 0x0f80, 
+0x0000, 0x0180, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 
+0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 
+0x0000, 0x0000, 0x0001, 0x0000, 0x0000, 
+    0
+END
+
+IDD_PROPPAGE_FRAMES DLGINIT
+BEGIN
+    IDC_COMBO_TEMPLATE, 0x403, 23, 0
+0xdbc2, 0xd3cf, 0xcbca, 0xdfc0, 0x2020, 0xcecf, 0xc5c2, 0xd5d0, 0xcecd, 
+0xd2d1, 0x20dc, "\000" 
+    IDC_COMBO_TEMPLATE, 0x403, 23, 0
+0xc4c2, 0xc2c0, 0xc5cb, 0xcdcd, 0xdfc0, 0xcf20, 0xc2ce, 0xd0c5, 0xcdd5, 
+0xd1ce, 0xdcd2, "\000" 
+    IDC_COMBO_TEMPLATE, 0x403, 17, 0
+0xc4c2, 0xc2c0, 0xc5cb, 0xcdcd, 0xdfc0, 0xd020, 0xccc0, 0xc0ca, "\000" 
+    IDC_COMBO_TEMPLATE, 0x403, 15, 0
+0xdbc2, 0xd3cf, 0xcbca, 0xdfc0, 0xd020, 0xccc0, 0xc0ca, "\000" 
+    IDC_COMBO_TEMPLATE, 0x403, 10, 0
+0xc5cd, 0x20d2, 0xc0d0, 0xcacc, 0x00c8, 
+    0
+END
+
+IDD_PROPPAGE_VTKEYBUTTON DLGINIT
+BEGIN
+    IDC_ALIGN_HORZ, 0x403, 15, 0
+0xeecf, 0xeb20, 0xe2e5, 0xecee, 0x20f3, 0xf0ea, 0xfee0, "\000" 
+    IDC_ALIGN_HORZ, 0x403, 10, 0
+0xeecf, 0xf620, 0xede5, 0xf0f2, 0x00f3, 
+    IDC_ALIGN_HORZ, 0x403, 16, 0
+0xeecf, 0xef20, 0xe0f0, 0xeee2, 0xf3ec, 0xea20, 0xe0f0, 0x00fe, 
+    IDC_ALIGN_VERT, 0x403, 17, 0
+0xeecf, 0xe220, 0xf0e5, 0xedf5, 0xece5, 0x20f3, 0xf0ea, 0xfee0, "\000" 
+    IDC_ALIGN_VERT, 0x403, 10, 0
+0xeecf, 0xf620, 0xede5, 0xf0f2, 0x00f3, 
+    IDC_ALIGN_VERT, 0x403, 16, 0
+0xeecf, 0xed20, 0xe6e8, 0xe5ed, 0xf3ec, 0xea20, 0xe0f0, 0x00fe, 
+    0
+END
+
+IDD_PROPPAGE_VTLISTEX DLGINIT
+BEGIN
+    IDC_COMBO_ALIGN, 0x403, 15, 0
+0xeecf, 0xeb20, 0xe2e5, 0xecee, 0x20f3, 0xf0ea, 0xfee0, "\000" 
+    IDC_COMBO_ALIGN, 0x403, 10, 0
+0xeecf, 0xf620, 0xede5, 0xf0f2, 0x00f3, 
+    IDC_COMBO_ALIGN, 0x403, 16, 0
+0xeecf, 0xef20, 0xe0f0, 0xeee2, 0xf3ec, 0xea20, 0xe0f0, 0x00fe, 
+    IDC_COMBO_COLUMN_TYPE, 0x403, 7, 0
+0xc1ce, 0xc5da, 0xd2ca, "\000" 
+    IDC_COMBO_COLUMN_TYPE, 0x403, 11, 0
+0xcecb, 0xc8c3, 0xc5d7, 0xcad1, 0xc9c8, "\000" 
+    IDC_COMBO_COLUMN_TYPE, 0x403, 5, 0
+0xc2d6, 0xd2c5, "\000" 
+    IDC_COMBO_COLUMN_TYPE, 0x403, 6, 0
+0xd0d8, 0xd4c8, 0x00d2, 
+    IDC_COMBO_COLUMN_TYPE, 0x403, 9, 0
+0xcdc7, 0xd7c0, 0xcdc5, 0xc5c8, "\000" 
+    IDC_COMBO_COLUMN_TYPE, 0x403, 20, 0
+0xcdc7, 0xd7c0, 0xcdc5, 0xc5c8, 0xd120, 0x20ce, 0xcfd1, 0xd1c8, 0xceca, 
+0x00cc, 
+    IDC_COMBO_COLUMN_TYPE, 0x403, 10, 0
+0xd2d8, 0xc8d0, 0xced5, 0xcac2, 0x00c0, 
+    0
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDI_SHADING1            ICON                    "icon1.ico"
+IDI_SHADING2            ICON                    "ico00001.ico"
+IDI_SHADING3            ICON                    "icon2.ico"
+IDI_SHADING4            ICON                    "icon3.ico"
+IDI_SHADING5            ICON                    "icon4.ico"
+IDI_SHADING6            ICON                    "icon5.ico"
+IDI_SHADING7            ICON                    "icon6.ico"
+IDI_SHADING8            ICON                    "icon7.ico"
+IDI_SHADING9            ICON                    "icon8.ico"
+IDI_SHADING10           ICON                    "icon9.ico"
+IDI_SHADING11           ICON                    "icon10.ico"
+IDI_SHADING12           ICON                    "icon11.ico"
+IDI_SHADING13           ICON                    "icon12.ico"
+IDI_SHADING14           ICON                    "icon13.ico"
+IDI_SHADING15           ICON                    "icon14.ico"
+IDI_SHADING16           ICON                    "icon15.ico"
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "1 TYPELIB ""VTControls.tlb""\r\n"
+    "#include ""res\\VTControls.rc2""\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE 
+BEGIN
+    IDS_VTKEYBUTTON         "VTKeyButton"
+    IDS_VTKEYBUTTON_PPG     "VTKeyButton Property Page"
+    IDS_VTSTATICTEXT        "VTStaticText"
+    IDS_VTSTATICTEXT_PPG    "VTStaticText Property Page"
+    IDS_VTEDITOR            "VTEditor"
+    IDS_VTEDITOR_PPG        "VTEditor Property Page"
+    IDS_VTLIST              "VTList"
+    IDS_VTLIST_PPG          "VTList Property Page"
+    IDS_VTSLIDER            "VTSlider"
+    IDS_VTSLIDER_PPG        "VTSlider Property Page"
+    IDS_VTLIST_PPGEX        "VTList Property Page"
+    IDS_VTLIST_PPGROW       "VTList Property Page"
+    IDS_VTEDITOR_PPG_EXT    "VTEditor Property Page"
+    IDS_PUSHBUTTON          "Элемент управления PushButton "
+    IDS_PUSHBUTTON_PPG      "PushButton Property Page"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_VTKEYBUTTON_PPG_CAPTION "Основные"
+    IDS_VTSTATICTEXT_PPG_CAPTION "Основные"
+    IDS_VTEDITOR_PPG_CAPTION "Основные"
+    IDS_VTLIST_PPG_CAPTION  "Основные"
+    IDS_VTSLIDER_PPG_CAPTION "Основные"
+    IDS_VTLIST_PPGEX_CAPTION "Колонки"
+    IDS_VTLIST_PPGROW_CAPTION "Строка"
+    IDS_VTEDITOR_PPG_EXT_CAPTION "Настройка"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_PUSHBUTTON_FAMESPPG "Frames Property Page"
+    IDS_VTSTATICTEXT_PPG_EXT "VTStaticText Property Page Ext"
+    IDS_VTKEYIMAGEBUTTON_PPG "VTKeyButton Image List Property Page"
+    IDS_VTCHECKBOX          "Элемент управления VTCheckBox "
+    IDS_VTCHECKBOX_PPG      "VTCheckBox Property Page"
+    IDS_VTLIST_PPGHEADER    "VT List Header Property Page"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_PUSHBUTTON_PPG_CAPTION "Основные"
+    IDS_PUSHBUTTON_FAMESPPG_CAPTION "Рамки"
+    IDS_VTSTATICTEXT_PPG_EXT_CAPTION "Настройка"
+    IDS_WAITING             " "
+    IDS_KEY_MESSAGE         "Вы нажали на клавишу  %d"
+    IDS_KEY_PICK_PROCESS    "Нажмите любую клавишу"
+    IDS_VTKEYIMAGEBUTTON_PPG_CAPTION "Список изображений"
+    IDS_VTCHECKBOX_PPG_CAPTION "Основные"
+    IDS_VTLIST_PPGHEADER_CAPTION "Header"
+END
+
+#endif    // Russian resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.S.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_ABOUTBOX_VTKEYBUTTON DIALOG  34, 22, 260, 55
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "About VTPushButton"
+FONT 8, "MS Sans Serif"
+BEGIN
+    ICON            IDI_ABOUTDLL,IDC_STATIC,10,10,20,20
+    LTEXT           "VTPushButton, Version 1.0",IDC_STATIC,40,10,170,8
+    LTEXT           "Copyright (C) 2000, VideoTesT",IDC_STATIC,40,25,170,8
+    DEFPUSHBUTTON   "OK",IDOK,221,7,32,14,WS_GROUP
+END
+
+IDD_PROPPAGE_VTKEYBUTTON DIALOG  0, 0, 250, 62
+STYLE DS_SETFONT | WS_CHILD
+FONT 8, "MS Sans Serif"
+BEGIN
+    LTEXT           "Virtual key code:",IDC_STATIC,12,9,54,8
+    EDITTEXT        IDC_VIRT_KEY,70,7,40,14,ES_AUTOHSCROLL
+    PUSHBUTTON      "Pick",IDC_BTN_PICK,117,7,30,14
+    LTEXT           "Static",IDC_STATE,155,9,80,8
+    EDITTEXT        IDC_ITEM_DELTA_X,40,35,28,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_ITEM_DELTA_Y,107,35,28,14,ES_AUTOHSCROLL
+    GROUPBOX        "Image Item",IDC_STATIC,7,22,236,33
+    LTEXT           "Delta X:",IDC_STATIC,13,37,26,8
+    LTEXT           "Delta Y:",IDC_STATIC,79,37,26,8
+    LTEXT           "Horz:",IDC_STATIC,148,30,18,8
+    COMBOBOX        IDC_ALIGN_HORZ,171,29,66,112,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    LTEXT           "Vert:",IDC_STATIC,148,42,16,8
+    COMBOBOX        IDC_ALIGN_VERT,171,41,66,112,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+END
+
+IDD_ABOUTBOX_VTSTATICTEXT DIALOG  34, 22, 260, 55
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "About VTStaticText"
+FONT 8, "MS Sans Serif"
+BEGIN
+    ICON            IDI_ABOUTDLL,IDC_STATIC,10,10,20,20
+    LTEXT           "VTStaticText, Version 1.0",IDC_STATIC,40,10,170,8
+    LTEXT           "Copyright (C) 2000, VideoTesT",IDC_STATIC,40,25,170,8
+    DEFPUSHBUTTON   "OK",IDOK,221,7,32,14,WS_GROUP
+END
+
+IDD_PROPPAGE_VTSTATICTEXT DIALOG  0, 0, 250, 62
+STYLE DS_SETFONT | WS_CHILD
+FONT 8, "MS Sans Serif"
+BEGIN
+    LTEXT           "Name:",IDC_STATIC,7,13,22,8
+    EDITTEXT        IDC_EDIT_NAME,32,10,85,14,ES_AUTOHSCROLL
+    CONTROL         "Use system font",IDC_USE_SYSTEM_FONT,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,7,28,66,10
+END
+
+IDD_ABOUTBOX_VTEDITOR DIALOG  34, 22, 260, 55
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "About VTEditor"
+FONT 8, "MS Sans Serif"
+BEGIN
+    ICON            IDI_ABOUTDLL,IDC_STATIC,10,10,20,20
+    LTEXT           "VTEditor, Version 1.0",IDC_STATIC,40,10,170,8
+    LTEXT           "Copyright (C) 2000, VideoTesT",IDC_STATIC,40,25,170,8
+    DEFPUSHBUTTON   "OK",IDOK,221,7,32,14,WS_GROUP
+END
+
+IDD_PROPPAGE_VTEDITOR DIALOG  0, 0, 250, 110
+STYLE DS_SETFONT | WS_CHILD
+FONT 8, "MS Sans Serif"
+BEGIN
+    LTEXT           "Name:",IDC_STATIC,7,9,22,8
+    EDITTEXT        IDC_EDIT_NAME,34,7,94,14,ES_AUTOHSCROLL
+    CONTROL         "Auto update",IDC_CHECK_AUTO_UPDATE,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,7,44,55,10
+    LTEXT           "Key:",IDC_STATIC,7,26,15,8
+    EDITTEXT        IDC_EDIT_KEY_VALUE,34,25,94,14,ES_AUTOHSCROLL
+    CONTROL         "Use system font",IDC_USE_SYSTEM_FONT,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,7,62,66,10
+END
+
+IDD_ABOUTBOX_VTLIST DIALOG  34, 22, 260, 61
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "About VTList"
+FONT 8, "MS Sans Serif"
+BEGIN
+    ICON            IDI_ABOUTDLL,IDC_STATIC,10,10,20,20
+    LTEXT           "VTList, Version 1.0",IDC_STATIC,40,10,170,8
+    LTEXT           "Copyright (C) 2000, VideoTesT",IDC_STATIC,40,25,170,8
+    DEFPUSHBUTTON   "OK",IDOK,221,7,32,14,WS_GROUP
+END
+
+IDD_PROPPAGE_VTLIST DIALOGEX 0, 0, 250, 120
+STYLE DS_SETFONT | WS_CHILD
+FONT 8, "MS Sans Serif", 0, 0, 0x0
+BEGIN
+    LTEXT           "Name:",IDC_STATIC,40,25,22,8
+    EDITTEXT        IDC_EDIT_NAME,65,22,121,14,ES_AUTOHSCROLL
+    CONTROL         "Enable",IDC_CHECK_ENABLE,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,40,48,38,10
+    CONTROL         "Use grid",IDC_USEGRID,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,40,62,42,10
+    CONTROL         "Use system font",IDC_USE_SYSTEM_FONT,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,40,77,66,10
+    CONTROL         "Use full row select",IDC_USE_FULL_ROW_SELECT,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,133,48,73,10
+    CONTROL         "Auto update",IDC_CHECK_AUTO_SAVE_TO_SHELL,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,133,62,55,10
+    CONTROL         "Simple font choose",IDC_SIMPLE_FONT_CHOOSER,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,133,77,76,10
+    CONTROL         "Enable resize columns",IDC_RESIZE_COLS,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,40,92,86,10
+END
+
+IDD_ABOUTBOX_VTSLIDER DIALOG  34, 22, 260, 55
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "About VTSlider"
+FONT 8, "MS Sans Serif"
+BEGIN
+    ICON            IDI_ABOUTDLL,IDC_STATIC,10,10,20,20
+    LTEXT           "VTSlider, Version 1.0",IDC_STATIC,40,10,170,8
+    LTEXT           "Copyright (C) 2000, VideoTesT",IDC_STATIC,40,25,170,8
+    DEFPUSHBUTTON   "OK",IDOK,221,7,32,14,WS_GROUP
+END
+
+IDD_PROPPAGE_VTSLIDER DIALOG  0, 0, 250, 120
+STYLE DS_SETFONT | WS_CHILD
+FONT 8, "MS Sans Serif"
+BEGIN
+    LTEXT           "Name:",IDC_STATIC,11,9,22,8
+    EDITTEXT        IDC_EDIT_NAME,40,7,75,14,ES_AUTOHSCROLL
+    GROUPBOX        "Shell support",IDC_STATIC,7,27,232,45
+    LTEXT           "Low key:",IDC_STATIC,11,41,30,8
+    EDITTEXT        IDC_EDIT_LOW_KEY,43,40,70,14,ES_AUTOHSCROLL
+    LTEXT           "High key:",IDC_STATIC,127,41,31,8
+    EDITTEXT        IDC_EDIT_HIGH_KEY,163,40,70,14,ES_AUTOHSCROLL
+    CONTROL         "Auto update",IDC_CHECK_AUTO_UPDATE,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,11,57,55,10
+    LTEXT           "Min:",IDC_STATIC,11,79,14,8
+    EDITTEXT        IDC_EDIT_MIN,32,77,40,14,ES_AUTOHSCROLL
+    LTEXT           "Max:",IDC_STATIC,11,95,16,8
+    EDITTEXT        IDC_EDIT_MAX,32,95,40,14,ES_AUTOHSCROLL
+    CONTROL         "Show tick",IDC_CHECK_TICK,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,90,78,47,10
+    CONTROL         "Show nums",IDC_CHECK_SHOW_NUM,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,90,92,53,10
+    CONTROL         "Cycled",IDC_CHECK_CYCLED,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,157,78,37,10
+    LTEXT           "Tick freq:",IDC_STATIC,158,93,31,8
+    EDITTEXT        IDC_EDIT_TICK_FREQ,193,91,40,14,ES_AUTOHSCROLL
+    CONTROL         "Single slide",IDC_CHECKSINGLE_SLIDE,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,120,10,51,10
+    CONTROL         "Use system font",IDC_USE_SYSTEM_FONT,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,175,10,66,10
+END
+
+IDD_PROPPAGE_VTLISTEX DIALOGEX 0, 0, 250, 120
+STYLE DS_SETFONT | WS_CHILD
+FONT 8, "MS Sans Serif", 0, 0, 0x0
+BEGIN
+    CONTROL         "List1",IDC_LIST,"SysListView32",LVS_REPORT | 
+                    LVS_SINGLESEL | LVS_SHOWSELALWAYS | LVS_EDITLABELS | 
+                    WS_BORDER | WS_TABSTOP,7,7,69,69
+    PUSHBUTTON      "Add",IDC_BUTTON_ADD,7,78,50,14
+    PUSHBUTTON      "Delete",IDC_BUTTON_DELETE,7,94,50,14
+    GROUPBOX        "Appearance",IDC_STATIC,81,3,131,58
+    PUSHBUTTON      "Fore color...",IDC_BUTTON_FORE_COLOR,86,17,50,14
+    PUSHBUTTON      "Back color...",IDC_BUTTON_BACK_COLOR,138,17,50,14
+    PUSHBUTTON      "Font...",IDC_BUTTON_FONT,86,35,50,14
+    LTEXT           "Align:",IDC_STATIC,138,38,18,8
+    COMBOBOX        IDC_COMBO_ALIGN,156,36,52,69,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    PUSHBUTTON      "True...",IDC_BUTTON_SET_TRUE_ICON,218,7,25,14
+    PUSHBUTTON      "False...",IDC_BUTTON_SET_FALSE_ICON,218,27,25,14
+    PUSHBUTTON      "Gray...",IDC_BUTTON_SET_GRAY_ICON,218,47,25,14
+    LTEXT           "Type:",IDC_STATIC,82,72,19,8
+    COMBOBOX        IDC_COMBO_COLUMN_TYPE,104,71,62,86,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    LTEXT           "Width:",IDC_STATIC,170,72,20,8
+    EDITTEXT        IDC_EDIT_COL_WIDTH,192,70,40,14,ES_AUTOHSCROLL
+    CONTROL         "Spin1",IDC_SPIN_WIDTH,"msctls_updown32",UDS_SETBUDDYINT | 
+                    UDS_AUTOBUDDY | UDS_ARROWKEYS,232,70,10,14
+    CONTROL         "Use Icon",IDC_CHECK_USE_ICON,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,84,89,45,10
+    CONTROL         "Read only",IDC_CHECK_READ_ONLY,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,84,100,48,10
+    CONTROL         "Display logical as text",IDC_CHECK_LOG_AS_TEXT,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,153,89,83,10
+END
+
+IDD_PROPPAGE_VTLIST_ROW DIALOGEX 0, 0, 250, 120
+STYLE DS_SETFONT | WS_CHILD
+FONT 8, "MS Sans Serif", 0, 0, 0x0
+BEGIN
+    CONTROL         "List1",IDC_LIST_ROW,"SysListView32",LVS_REPORT | 
+                    LVS_SINGLESEL | LVS_SHOWSELALWAYS | LVS_EDITLABELS | 
+                    WS_BORDER | WS_TABSTOP,7,9,103,79
+    PUSHBUTTON      "Add",IDC_BUTTON_ADD_ROW,7,92,50,14
+    PUSHBUTTON      "Delete",IDC_BUTTON_DELETE_ROW,59,92,50,14
+    LTEXT           "Key:",IDC_STATIC,124,12,15,8
+    EDITTEXT        IDC_EDIT_KEY_VALUE,142,10,91,14,ES_AUTOHSCROLL
+    PUSHBUTTON      "Icon...",IDC_BUTTON_SET_ICON,124,25,46,14
+    PUSHBUTTON      "Clear icon",IDC_BUTTON_CLEAR_ICON,188,25,46,14
+    GROUPBOX        "Column",IDC_STATIC,122,41,114,40
+    LTEXT           "Static",IDC_STATIC_CUR_COLUMN,129,50,99,8
+    PUSHBUTTON      "<<",IDC_BUTTON_CUR_COLUMN_LEFT,130,60,20,14
+    PUSHBUTTON      ">>",IDC_BUTTON_CUR_COLUMN_RIGHT,154,60,20,14
+    PUSHBUTTON      "Refresh",IDC_BUTTON_REFRESH,178,61,50,14
+    GROUPBOX        "Appearance",IDC_STATIC,122,81,114,29
+    PUSHBUTTON      "Fore color...",IDC_BUTTON_FORE_COLOR,128,91,50,14
+    PUSHBUTTON      "Back color...",IDC_BUTTON_BACK_COLOR,180,91,50,14
+END
+
+IDD_DIALOG1 DIALOG  0, 0, 202, 61
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Dialog"
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,145,7,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,145,24,50,14
+    CONTROL         "",IDC_VTKEYBUTTON1,
+                    "{6743979D-D00F-48A0-A036-DD7EE33A30B3}",WS_TABSTOP,14,
+                    11,67,31
+    CONTROL         "",IDC_VTEDITOR1,"{6BDF8B84-C1B9-448E-8965-0E4557467FDA}",
+                    WS_TABSTOP,85,14,67,31
+END
+
+IDD_PROPPAGE_VTEDITOR_EXT DIALOG  0, 0, 250, 120
+STYLE DS_SETFONT | WS_CHILD
+FONT 8, "MS Sans Serif"
+BEGIN
+    GROUPBOX        "Caption",IDC_STATIC,7,7,236,26
+    CONTROL         "Enable",IDC_CHECK_CAPTION_ENABLE,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,18,18,38,10
+    LTEXT           "Position:",IDC_STATIC,70,18,28,8
+    COMBOBOX        IDC_COMBO_CAPTION_ALIGN,101,16,61,54,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    LTEXT           "Text:",IDC_STATIC,173,18,17,8
+    EDITTEXT        IDC_EDIT_CAPTION_TEXT,195,16,40,14,ES_AUTOHSCROLL
+    GROUPBOX        "Data",IDC_STATIC,7,33,104,76
+    LTEXT           "Type:",IDC_STATIC,12,42,19,8
+    COMBOBOX        IDC_COMBO_DATA_TYPE,39,40,66,51,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    GROUPBOX        "Validation",IDC_STATIC,14,59,89,44
+    LTEXT           "Min:",IDC_STATIC,21,72,14,8
+    EDITTEXT        IDC_EDIT_MIN_VALUE,39,69,40,14,ES_AUTOHSCROLL
+    CONTROL         "Spin1",IDC_SPIN_MIN,"msctls_updown32",UDS_SETBUDDYINT | 
+                    UDS_AUTOBUDDY | UDS_ARROWKEYS,79,69,10,14
+    LTEXT           "Max:",IDC_STATIC,22,88,16,8
+    EDITTEXT        IDC_EDIT_MAX_VALUE,40,85,40,14,ES_AUTOHSCROLL
+    CONTROL         "Spin2",IDC_SPIN_MAX,"msctls_updown32",UDS_SETBUDDYINT | 
+                    UDS_AUTOBUDDY | UDS_ARROWKEYS,80,85,10,14
+    CONTROL         "Enable spin",IDC_CHECK_ENABLE_SPIN,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,127,41,53,10
+    CONTROL         "Align client",IDC_CHECK_ALIGN_CLIENT,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,127,51,50,10
+    CONTROL         "Multi line editor",IDC_CHECK_MULTI_LINE,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,127,61,63,10
+    CONTROL         "Caption auto width",IDC_CHECK_ENABLE_CAPTION_AUTO_WIDTH,
+                    "Button",BS_AUTOCHECKBOX | WS_TABSTOP,127,71,75,10
+    CONTROL         "Enable min/max validation",IDC_CHECK_ENABLE_VALIDATION,
+                    "Button",BS_AUTOCHECKBOX | WS_TABSTOP,127,81,99,10
+    LTEXT           "Caption field width:",IDC_STATIC,127,99,60,8
+    EDITTEXT        IDC_EDIT_FIELD_WIDTH,187,96,40,14,ES_AUTOHSCROLL
+    CONTROL         "Spin3",IDC_SPIN_EDIT_WIDTH,"msctls_updown32",
+                    UDS_SETBUDDYINT | UDS_AUTOBUDDY | UDS_ARROWKEYS,225,96,
+                    11,14
+    PUSHBUTTON      "Auto size",IDC_BUTTON_AUTO_SIZE,196,40,40,14
+END
+
+IDD_PROPPAGE_FRAMES DIALOG  0, 0, 250, 110
+STYLE DS_SETFONT | WS_CHILD
+FONT 8, "MS Sans Serif"
+BEGIN
+    GROUPBOX        "Inner border",IDC_STATIC,29,21,81,37
+    CONTROL         "Raised",IDC_CHECK1,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,37,31,38,10
+    CONTROL         "Sunken",IDC_CHECK2,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,37,42,41,10
+    GROUPBOX        "Outer border",IDC_STATIC,132,21,81,37
+    CONTROL         "Raised",IDC_CHECK4,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,141,31,38,10
+    CONTROL         "Sunken",IDC_CHECK5,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,141,42,41,10
+    LTEXT           "Template:",IDC_STATIC,36,73,32,8
+    COMBOBOX        IDC_COMBO_TEMPLATE,72,71,130,100,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+END
+
+IDD_PROPPAGE_PUSHBUTTON DIALOGEX 0, 0, 250, 136
+STYLE DS_SETFONT | WS_CHILD
+FONT 8, "MS Sans Serif", 0, 0, 0x0
+BEGIN
+    LTEXT           "Width:",IDC_STATIC,12,8,22,8
+    EDITTEXT        IDC_EDIT_WIDTH,12,18,28,12
+    LTEXT           "Height:",IDC_STATIC,44,8,24,8
+    EDITTEXT        IDC_EDIT_HEIGHT,44,18,28,12
+    CONTROL         "AutoSize",IDC_CHECK_AUTOSIZE,"Button",BS_AUTOCHECKBOX | 
+                    NOT WS_VISIBLE | WS_TABSTOP,103,4,44,10
+    LTEXT           "Depth:",IDC_STATIC,136,6,22,8
+    EDITTEXT        IDC_EDIT_BUTTONDEPTH,131,17,20,14
+    CONTROL         "Spin1",IDC_SPIN_SHADOW,"msctls_updown32",
+                    UDS_SETBUDDYINT | UDS_AUTOBUDDY | UDS_ARROWKEYS,151,17,9,
+                    14
+    LTEXT           "File name:",IDC_STATIC,6,41,33,8
+    EDITTEXT        IDC_EDIT_FILENAME,41,40,60,12,ES_AUTOHSCROLL
+    PUSHBUTTON      "Browse",IDC_BUTTON_FILEOPEN,105,40,16,12,BS_ICON
+    CONTROL         "",IDC_STATIC,"Static",SS_ETCHEDFRAME,6,4,111,31
+    CONTROL         "",IDC_STATIC,"Static",SS_ETCHEDFRAME,123,4,46,31
+    GROUPBOX        "MouseIn",IDC_STATIC,7,72,50,40
+    CONTROL         "ColorBMP",IDC_CHECK_MOUSEIN_COLOR,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,11,84,44,10
+    CONTROL         "Shadow",IDC_CHECK_MOUSEIN_SHADOW,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,11,97,42,10
+    GROUPBOX        "MouseOut",IDC_STATIC,58,72,53,40
+    CONTROL         "ColorBMP",IDC_CHECK_MOUSEOUT_COLOR,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,64,84,43,10
+    CONTROL         "Shadow",IDC_CHECK_MOUSEOUT_SHADOW,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,64,97,42,10
+    GROUPBOX        "ButtonPressed",IDC_STATIC,112,72,59,40
+    CONTROL         "ColorBMP",IDC_CHECK_BPRESSED_COLOR,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,117,84,47,10
+    CONTROL         "Shadow",IDC_CHECK_BPRESSED_SHADOW,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,117,97,42,10
+    CONTROL         "FlatButton",IDC_CHECK_FLATBUTTON,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,175,78,48,10
+    CONTROL         "DrawBorder",IDC_CHECK_DRAWBORDER,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,175,90,53,10
+    CONTROL         "3State",IDC_CHECKTREESTATE,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,175,7,37,10
+    CONTROL         "FocusRect",IDC_CHECK_FOCUSRECT,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,175,19,50,9
+    CONTROL         "Stretch",IDC_CHECK_STRETCH,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,75,7,39,10
+    PUSHBUTTON      "Auto size",IDC_BUTTON_AUTO_SIZE,75,18,38,13
+    PUSHBUTTON      "Browse",IDC_BUTTON_RELOAD,121,40,16,12,BS_ICON
+    LTEXT           "Action:",IDC_STATIC,7,57,23,8
+    EDITTEXT        IDC_EDIT_ACTION_NAME,41,56,129,12,ES_AUTOHSCROLL
+    CONTROL         "Run action",IDC_CHECK_IS_RUN_ACTION,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,175,66,49,10
+    CONTROL         "Auto repeat",IDC_AUTO_REPEAT,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,175,54,53,10
+    CONTROL         "Draw focused rect",IDC_DRAW_FOCUSED_RECT,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,175,42,70,10
+    CONTROL         "Semi&Flat",IDC_SEMIFLAT,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,175,102,43,10
+    PUSHBUTTON      "P",IDC_PASTE,138,40,16,12
+    PUSHBUTTON      "C",IDC_COPY,154,40,16,12
+    CONTROL         "SF",IDC_SYSTEM_FONT,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,175,30,24,10
+    CONTROL         "Show tooltip",IDC_SHOWTOOLTIP,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,175,114,55,10
+    LTEXT           "Tooltip: ",IDC_STATIC,7,117,26,8
+    EDITTEXT        IDC_EDIT_TOOLTIP,41,115,129,12,ES_AUTOHSCROLL
+END
+
+IDD_PROPPAGE_VTSTATICTEXT_EXT DIALOG  0, 0, 250, 131
+STYLE DS_SETFONT | WS_CHILD
+FONT 8, "MS Sans Serif"
+BEGIN
+    GROUPBOX        "Text client align",IDC_STATIC,7,7,75,73
+    CONTROL         "Left",IDC_CHECK_LEFT_TEXT,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,14,16,28,10
+    CONTROL         "Right",IDC_CHECK_RIGHT_TEXT,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,14,27,33,10
+    CONTROL         "Top",IDC_CHECK_TOP_TEXT,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,14,38,29,10
+    CONTROL         "Bottom",IDC_CHECK_BOTTOM_TEXT,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,14,49,38,10
+    GROUPBOX        "Picture client align",IDC_STATIC,87,7,75,58
+    CONTROL         "Left",IDC_CHECK_LEFT_PIC,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,93,17,28,10
+    CONTROL         "Right",IDC_CHECK_RIGHT_PIC,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,93,28,33,10
+    CONTROL         "Top",IDC_CHECK_TOP_PIC,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,93,39,29,10
+    CONTROL         "Bottom",IDC_CHECK_BOTTOM_PIC,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,93,50,38,10
+    GROUPBOX        "Text to picture align",IDC_STATIC,168,7,75,58
+    CONTROL         "Left",IDC_CHECK_LEFT_TEXT_TO_PIC,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,175,17,28,10
+    CONTROL         "Right",IDC_CHECK_RIGHT_TEXT_TO_PIC,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,175,28,33,10
+    CONTROL         "Top",IDC_CHECK_TOP_TEXT_TO_PIC,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,175,39,29,10
+    CONTROL         "Bottom",IDC_CHECK_BOTTOM_TEXT_TO_PIC,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,175,50,38,10
+    LTEXT           "Text:",IDC_STATIC,7,82,16,8
+    CONTROL         "Transparency text",IDC_CHECK_TRANSPARENCY,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,30,82,73,10
+    EDITTEXT        IDC_EDIT_TEXT,7,95,121,25,ES_MULTILINE | ES_AUTOVSCROLL | 
+                    ES_AUTOHSCROLL
+    LTEXT           "Picture:",IDC_STATIC,133,82,25,8
+    EDITTEXT        IDC_EDIT_PIC_FILENAME,132,92,71,14,ES_AUTOHSCROLL
+    CONTROL         "Center image",IDC_CHECK_CENTER_IMAGE,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,132,110,57,10
+    PUSHBUTTON      "Browse",IDC_BUTTON_FILEOPEN,207,92,16,12,BS_ICON
+    PUSHBUTTON      "Browse",IDC_BUTTON_RELOAD,226,92,16,12,BS_ICON
+    PUSHBUTTON      "Auto size",IDC_BUTTON_AUTO_SIZE,205,108,38,11
+    CONTROL         "Center",IDC_CHECK_CENTER_TEXT,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,14,59,37,10
+    CONTROL         "Center vert",IDC_CHECK_MIDDLE_TEXT,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,13,68,51,10
+END
+
+IDD_PROPPAGE_VTCHECKBOX DIALOG  0, 0, 250, 62
+STYLE DS_SETFONT | WS_CHILD
+FONT 8, "MS Sans Serif"
+BEGIN
+    LTEXT           "Cap&tion:",IDC_STATIC,7,8,27,8
+    EDITTEXT        IDC_CAPTION,37,7,160,22,ES_MULTILINE | ES_AUTOHSCROLL
+    CONTROL         "New &drawing mode",IDC_NEW_DRAWING_MODE,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,7,30,77,10
+    CONTROL         "3&D appearance",IDC_3DAPPEARANCE,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,7,45,65,10
+    CONTROL         "Use system font",IDC_USE_SYSTEM_FONT,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,100,29,98,10
+END
+
+IDD_ABOUTBOX_VTCHECKBOX DIALOG  34, 22, 260, 55
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "About VTCheckBox Control"
+FONT 8, "MS Sans Serif"
+BEGIN
+    ICON            IDI_ABOUTDLL,IDC_STATIC,10,10,20,20
+    LTEXT           "VTCheckBox Control, Version 1.0",IDC_STATIC,40,10,170,8
+    LTEXT           "Copyright (C) 2000, VideoTesT",IDC_STATIC,40,25,105,8
+    DEFPUSHBUTTON   "OK",IDOK,221,7,32,14,WS_GROUP
+    CONTROL         "Check1",202,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,156,
+                    26,41,10
+    CONTROL         "",IDC_VTCHECKBOXCTRL1,
+                    "{F6188DC0-9F7F-4021-AA3C-395956D021F1}",NOT WS_VISIBLE | 
+                    WS_TABSTOP,186,15,67,31
+END
+
+IDD_PROPPAGE_VTKEY_IMAGE DIALOG  0, 0, 243, 62
+STYLE DS_SETFONT | WS_CHILD
+FONT 8, "MS Sans Serif"
+BEGIN
+    LTEXT           "File name:",IDC_STATIC,12,8,33,8
+    EDITTEXT        IDC_EDIT_FILENAME,48,7,140,12,ES_AUTOHSCROLL
+    PUSHBUTTON      "Browse",IDC_BUTTON_FILEOPEN,193,6,16,12,BS_ICON
+    PUSHBUTTON      "Browse",IDC_BUTTON_RELOAD,214,6,16,12,BS_ICON
+    GROUPBOX        "Item",IDC_STATIC,7,22,229,33
+    LTEXT           "Width:",IDC_STATIC,13,35,22,8
+    EDITTEXT        IDC_ITEM_WIDTH,38,32,34,14,ES_AUTOHSCROLL
+    CONTROL         "Spin1",IDC_SPIN1,"msctls_updown32",UDS_SETBUDDYINT | 
+                    UDS_ALIGNRIGHT | UDS_AUTOBUDDY | UDS_ARROWKEYS,73,32,10,
+                    14
+    LTEXT           "Height:",IDC_STATIC,84,35,24,8
+    EDITTEXT        IDC_ITEM_HEIGHT,109,32,34,14,ES_AUTOHSCROLL
+    CONTROL         "Spin1",IDC_SPIN2,"msctls_updown32",UDS_SETBUDDYINT | 
+                    UDS_ALIGNRIGHT | UDS_AUTOBUDDY | UDS_ARROWKEYS,144,33,11,
+                    14
+    LTEXT           "Item index:",IDC_STATIC,160,35,35,8
+    EDITTEXT        IDC_IMAGE_INDEX,196,32,34,14,ES_AUTOHSCROLL
+    CONTROL         "Spin1",IDC_SPIN3,"msctls_updown32",UDS_SETBUDDYINT | 
+                    UDS_ALIGNRIGHT | UDS_AUTOBUDDY | UDS_ARROWKEYS,224,31,11,
+                    14
+END
+
+IDD_PROPPAGE_VTLIST_HEADER DIALOGEX 0, 0, 250, 159
+STYLE DS_SETFONT | WS_CHILD
+FONT 8, "MS Sans Serif", 0, 0, 0x0
+BEGIN
+    CONTROL         "Use additional headers",IDC_CHECK1,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,3,3,88,10
+    PUSHBUTTON      "Delete",IDC_BUTTON_DELETE_HEADER,64,135,50,14,
+                    WS_DISABLED
+    PUSHBUTTON      "Add",IDC_BUTTON_ADD_HEADER,11,135,50,14,WS_DISABLED
+    CONTROL         "",IDC_LIST_ROW,"SysListView32",LVS_REPORT | 
+                    LVS_SINGLESEL | LVS_SHOWSELALWAYS | LVS_EDITLABELS | 
+                    WS_DISABLED | WS_BORDER | WS_TABSTOP,13,29,108,102
+    LTEXT           "Number of assigned column on prev level:",
+                    IDC_STATIC_NLEV,130,66,73,17,NOT WS_VISIBLE | 
+                    WS_DISABLED
+    EDITTEXT        IDC_EDIT2,132,84,65,14,ES_AUTOHSCROLL | NOT WS_VISIBLE | 
+                    WS_DISABLED
+    CONTROL         "",IDC_SPIN4,"msctls_updown32",UDS_SETBUDDYINT | 
+                    UDS_ALIGNRIGHT | UDS_AUTOBUDDY | UDS_ARROWKEYS | NOT 
+                    WS_VISIBLE | WS_DISABLED,203,83,11,14
+    LTEXT           "Levels:",IDC_STATIC_LEV,131,111,24,8,NOT WS_VISIBLE | 
+                    WS_DISABLED
+    EDITTEXT        IDC_EDIT3,155,109,40,14,ES_AUTOHSCROLL | NOT WS_VISIBLE | 
+                    WS_DISABLED
+    CONTROL         "",IDC_SPIN5,"msctls_updown32",UDS_SETBUDDYINT | 
+                    UDS_ALIGNRIGHT | UDS_AUTOBUDDY | UDS_ARROWKEYS | NOT 
+                    WS_VISIBLE | WS_DISABLED,195,110,11,14
+    LTEXT           "Current level:",IDC_STATIC_CLEV,132,136,42,8,NOT 
+                    WS_VISIBLE | WS_DISABLED
+    EDITTEXT        IDC_EDIT4,175,133,40,14,ES_AUTOHSCROLL | NOT WS_VISIBLE | 
+                    WS_DISABLED
+    CONTROL         "",IDC_SPIN6,"msctls_updown32",UDS_SETBUDDYINT | 
+                    UDS_ALIGNRIGHT | UDS_AUTOBUDDY | UDS_ARROWKEYS | NOT 
+                    WS_VISIBLE | WS_DISABLED,215,133,11,14
+    GROUPBOX        "Name headers ",IDC_STATIC_CNT,4,17,240,137,WS_DISABLED
+    LTEXT           "Column width:",IDC_STATIC_WIDTH,130,28,45,8,WS_DISABLED
+    EDITTEXT        IDC_EDIT1,130,36,65,14,ES_AUTOHSCROLL | WS_DISABLED
+    CONTROL         "",IDC_SPIN1,"msctls_updown32",UDS_SETBUDDYINT | 
+                    UDS_ALIGNRIGHT | UDS_AUTOBUDDY | UDS_ARROWKEYS | 
+                    WS_DISABLED,201,36,11,14
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO 
+BEGIN
+    IDD_ABOUTBOX_VTKEYBUTTON, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 253
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 48
+    END
+
+    IDD_PROPPAGE_VTKEYBUTTON, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 243
+        TOPMARGIN, 3
+        BOTTOMMARGIN, 59
+    END
+
+    IDD_ABOUTBOX_VTSTATICTEXT, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 253
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 48
+    END
+
+    IDD_PROPPAGE_VTSTATICTEXT, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 243
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 55
+    END
+
+    IDD_ABOUTBOX_VTEDITOR, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 253
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 48
+    END
+
+    IDD_PROPPAGE_VTEDITOR, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 243
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 103
+    END
+
+    IDD_ABOUTBOX_VTLIST, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 253
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 54
+    END
+
+    IDD_PROPPAGE_VTLIST, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 243
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 113
+    END
+
+    IDD_ABOUTBOX_VTSLIDER, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 253
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 48
+    END
+
+    IDD_PROPPAGE_VTSLIDER, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 243
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 113
+    END
+
+    IDD_PROPPAGE_VTLISTEX, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 243
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 113
+    END
+
+    IDD_PROPPAGE_VTLIST_ROW, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 243
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 113
+    END
+
+    IDD_DIALOG1, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 195
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 54
+    END
+
+    IDD_PROPPAGE_VTEDITOR_EXT, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 243
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 113
+    END
+
+    IDD_PROPPAGE_FRAMES, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 243
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 102
+    END
+
+    IDD_PROPPAGE_PUSHBUTTON, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 242
+        TOPMARGIN, 4
+        BOTTOMMARGIN, 120
+    END
+
+    IDD_PROPPAGE_VTSTATICTEXT_EXT, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 243
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 124
+    END
+
+    IDD_PROPPAGE_VTCHECKBOX, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 243
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 55
+    END
+
+    IDD_ABOUTBOX_VTCHECKBOX, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 253
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 46
+    END
+
+    IDD_PROPPAGE_VTKEY_IMAGE, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 236
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 55
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog Info
+//
+
+IDD_PROPPAGE_VTLISTEX DLGINIT
+BEGIN
+    IDC_COMBO_ALIGN, 0x403, 5, 0
+0x454c, 0x5446, "\000" 
+    IDC_COMBO_ALIGN, 0x403, 7, 0
+0x4543, 0x544e, 0x5245, "\000" 
+    IDC_COMBO_ALIGN, 0x403, 6, 0
+0x4952, 0x4847, 0x0054, 
+    IDC_COMBO_COLUMN_TYPE, 0x403, 8, 0
+0x5553, 0x4a42, 0x4345, 0x0054, 
+    IDC_COMBO_COLUMN_TYPE, 0x403, 8, 0
+0x4f4c, 0x4947, 0x4143, 0x004c, 
+    IDC_COMBO_COLUMN_TYPE, 0x403, 6, 0
+0x4f43, 0x4f4c, 0x0052, 
+    IDC_COMBO_COLUMN_TYPE, 0x403, 5, 0
+0x4f46, 0x544e, "\000" 
+    IDC_COMBO_COLUMN_TYPE, 0x403, 6, 0
+0x4156, 0x554c, 0x0045, 
+    IDC_COMBO_COLUMN_TYPE, 0x403, 16, 0
+0x4156, 0x554c, 0x2045, 0x4957, 0x4854, 0x4c20, 0x5349, 0x0054, 
+    IDC_COMBO_COLUMN_TYPE, 0x403, 8, 0
+0x4853, 0x4441, 0x4e49, 0x0047, 
+    0
+END
+
+IDD_PROPPAGE_FRAMES DLGINIT
+BEGIN
+    IDC_COMBO_TEMPLATE, 0x403, 12, 0
+0x4445, 0x4547, 0x525f, 0x4941, 0x4553, 0x0044, 
+    IDC_COMBO_TEMPLATE, 0x403, 12, 0
+0x4445, 0x4547, 0x535f, 0x4e55, 0x454b, 0x004e, 
+    IDC_COMBO_TEMPLATE, 0x403, 12, 0
+0x4445, 0x4547, 0x455f, 0x4354, 0x4548, 0x0044, 
+    IDC_COMBO_TEMPLATE, 0x403, 10, 0
+0x4445, 0x4547, 0x425f, 0x4d55, 0x0050, 
+    IDC_COMBO_TEMPLATE, 0x403, 10, 0
+0x4445, 0x4547, 0x4e5f, 0x4e4f, 0x0045, 
+    0
+END
+
+IDD_DIALOG1 DLGINIT
+BEGIN
+    IDC_VTKEYBUTTON1, 0x376, 1700, 0
+0x0000, 0x0000, 0x0004, 0x0000, 0x0010, 0x0000, 0x4523, 0x5c3a, 0x7476, 
+0x5c35, 0x6f63, 0x746e, 0x6f72, 0x736c, 0x565c, 0x4354, 0x6e6f, 0x7274, 
+0x6c6f, 0x5c73, 0x6574, 0x7473, 0x622e, 0x706d, 0x4c49, 0x0101, 0x0002, 
+0x0003, 0x0004, 0x000d, 0x000d, 0xffff, 0xffff, 0x1011, 0xffff, 0xffff, 
+0xffff, 0xffff, 0x4d42, 0x0036, 0x0000, 0x0000, 0x0000, 0x0036, 0x0000, 
+0x0028, 0x0000, 0x0034, 0x0000, 0x000d, 0x0000, 0x0001, 0x0010, 0x0000, 
+0x0000, 0x0548, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 
+0x0000, 0x0000, 0x7fff, 0x7fff, 0x7fff, 0x7fff, 0x7fff, 0x7fff, 0x7fff, 
+0x7fff, 0x7fff, 0x7fff, 0x7fff, 0x7fff, 0x7fff, 0x7fff, 0x7fff, 0x7fff, 
+0x7fff, 0x7fff, 0x7fff, 0x7fff, 0x7fff, 0x7fff, 0x7fff, 0x7fff, 0x7fff, 
+0x7fff, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 
+0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 
+0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 
+0x7fff, 0x7fff, 0x7fff, 0x7fff, 0x7fff, 0x0000, 0x7fff, 0x7fff, 0x7fff, 
+0x7fff, 0x7fff, 0x7fff, 0x7fff, 0x7fff, 0x7fff, 0x7fff, 0x7fff, 0x7fff, 
+0x7fff, 0x7fff, 0x0000, 0x0000, 0x0000, 0x7fff, 0x7fff, 0x7fff, 0x0000, 
+0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 
+0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 
+0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x7fff, 0x7fff, 
+0x7fff, 0x7fff, 0x7fff, 0x0000, 0x7fff, 0x7fff, 0x7fff, 0x7fff, 0x7fff, 
+0x7fff, 0x7fff, 0x7fff, 0x7fff, 0x7fff, 0x7fff, 0x7fff, 0x7fff, 0x0000, 
+0x0000, 0x7fff, 0x0000, 0x7fff, 0x7fff, 0x7fff, 0x0000, 0x0000, 0x0000, 
+0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 
+0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 
+0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x7fff, 0x7fff, 0x7fff, 0x7fff, 
+0x7fff, 0x0000, 0x7fff, 0x7fff, 0x7fff, 0x7fff, 0x7fff, 0x7fff, 0x7fff, 
+0x7fff, 0x7fff, 0x7fff, 0x7fff, 0x7fff, 0x7fff, 0x0000, 0x7fff, 0x7fff, 
+0x7fff, 0x0000, 0x7fff, 0x7fff, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 
+0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 
+0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 
+0x0000, 0x0000, 0x0000, 0x7fff, 0x7fff, 0x7fff, 0x7fff, 0x7fff, 0x0000, 
+0x7fff, 0x7fff, 0x7fff, 0x7fff, 0x7fff, 0x7fff, 0x7fff, 0x7fff, 0x7fff, 
+0x7fff, 0x7fff, 0x7fff, 0x7fff, 0x0000, 0x7fff, 0x7fff, 0x7fff, 0x0000, 
+0x7fff, 0x7fff, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 
+0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 
+0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 
+0x0000, 0x7fff, 0x7fff, 0x7fff, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 
+0x0000, 0x7fff, 0x7fff, 0x7fff, 0x7fff, 0x7fff, 0x7fff, 0x7fff, 0x7fff, 
+0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x7fff, 0x0000, 0x7fff, 0x7fff, 
+0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 
+0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 
+0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x7fff, 
+0x7fff, 0x7fff, 0x7fff, 0x7fff, 0x0000, 0x7fff, 0x7fff, 0x7fff, 0x7fff, 
+0x7fff, 0x7fff, 0x7fff, 0x7fff, 0x7fff, 0x7fff, 0x7fff, 0x0000, 0x7fff, 
+0x0000, 0x7fff, 0x0000, 0x7fff, 0x0000, 0x7fff, 0x7fff, 0x0000, 0x0000, 
+0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 
+0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 
+0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x7fff, 0x7fff, 0x7fff, 
+0x7fff, 0x7fff, 0x0000, 0x7fff, 0x7fff, 0x7fff, 0x7fff, 0x7fff, 0x7fff, 
+0x7fff, 0x7fff, 0x7fff, 0x7fff, 0x7fff, 0x0000, 0x7fff, 0x0000, 0x7fff, 
+0x0000, 0x7fff, 0x7fff, 0x7fff, 0x7fff, 0x0000, 0x0000, 0x0000, 0x0000, 
+0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 
+0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 
+0x0000, 0x0000, 0x0000, 0x0000, 0x7fff, 0x7fff, 0x7fff, 0x7fff, 0x7fff, 
+0x0000, 0x7fff, 0x7fff, 0x7fff, 0x7fff, 0x7fff, 0x7fff, 0x7fff, 0x7fff, 
+0x7fff, 0x7fff, 0x0000, 0x7fff, 0x7fff, 0x0000, 0x7fff, 0x0000, 0x7fff, 
+0x7fff, 0x7fff, 0x7fff, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 
+0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 
+0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 
+0x0000, 0x0000, 0x7fff, 0x7fff, 0x7fff, 0x7fff, 0x7fff, 0x0000, 0x7fff, 
+0x7fff, 0x7fff, 0x7fff, 0x7fff, 0x7fff, 0x7fff, 0x7fff, 0x7fff, 0x7fff, 
+0x0000, 0x7fff, 0x0000, 0x7fff, 0x0000, 0x0000, 0x7fff, 0x7fff, 0x7fff, 
+0x7fff, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 
+0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 
+0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 
+0x7fff, 0x7fff, 0x7fff, 0x7fff, 0x7fff, 0x7fff, 0x7fff, 0x7fff, 0x7fff, 
+0x7fff, 0x7fff, 0x7fff, 0x7fff, 0x7fff, 0x7fff, 0x7fff, 0x0000, 0x0000, 
+0x0000, 0x7fff, 0x7fff, 0x7fff, 0x7fff, 0x7fff, 0x7fff, 0x7fff, 0x0000, 
+0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 
+0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 
+0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x7fff, 0x7fff, 
+0x7fff, 0x7fff, 0x7fff, 0x7fff, 0x7fff, 0x7fff, 0x7fff, 0x7fff, 0x7fff, 
+0x7fff, 0x7fff, 0x7fff, 0x7fff, 0x7fff, 0x7fff, 0x0000, 0x7fff, 0x7fff, 
+0x7fff, 0x7fff, 0x7fff, 0x7fff, 0x7fff, 0x7fff, 0x0000, 0x0000, 0x0000, 
+0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 
+0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 
+0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x7fff, 0x7fff, 0x7fff, 0x7fff, 
+0x7fff, 0x7fff, 0x7fff, 0x7fff, 0x7fff, 0x7fff, 0x7fff, 0x7fff, 0x7fff, 
+0x7fff, 0x7fff, 0x7fff, 0x7fff, 0x7fff, 0x7fff, 0x7fff, 0x7fff, 0x7fff, 
+0x7fff, 0x7fff, 0x7fff, 0x7fff, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 
+0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 
+0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 
+0x0000, 0x0000, 0x0000, 0x4d42, 0x003e, 0x0000, 0x0000, 0x0000, 0x003e, 
+0x0000, 0x0028, 0x0000, 0x0034, 0x0000, 0x000d, 0x0000, 0x0001, 0x0001, 
+0x0000, 0x0000, 0x0068, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 
+0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0xffff, 0x00ff, 0x0000, 0x0000, 
+0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 
+0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 
+0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 
+0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 
+0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 
+0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 
+0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x000d, 0x000d, 
+0x000f, 0x8000, 0x0001, 0x0002, 0x0000, 0x0000, 0x0000, 0xfffe, 0xfffe, 
+0xfffd, 0x0005, 0x0000, 0x0000, 
+    IDC_VTEDITOR1, 0x376, 238, 0
+0x0000, 0x0000, 0x0000, 0x0001, 0x0008, 0x0000, 0x000c, 0x0000, 0x0009, 
+0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0190, 0x0000, 0x0000, 0x0000, 
+0x0200, 0x0202, 0x534d, 0x5320, 0x6e61, 0x2073, 0x6553, 0x6972, 0x0066, 
+0xcdcd, 0xcdcd, 0xcdcd, 0xcdcd, 0xcdcd, 0xcdcd, 0xcdcd, 0xcdcd, 0xcdcd, 
+0x000c, 0x0000, 0x0009, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0190, 
+0x0000, 0x0000, 0x0000, 0x0200, 0x0202, 0x534d, 0x5320, 0x6e61, 0x2073, 
+0x6553, 0x6972, 0x0066, 0xcdcd, 0xcdcd, 0xcdcd, 0xcdcd, 0xcdcd, 0xcdcd, 
+0xcdcd, 0xcdcd, 0xcdcd, 0x5608, 0x4554, 0x6964, 0x6f74, 0x0072, 0x0800, 
+0x2643, 0x7061, 0x6974, 0x6e6f, 0x0001, 0x0000, 0x0000, 0x4504, 0x6964, 
+0x6474, 0x0000, 0x0000, 0x0100, 0x0000, 0x0000, 0xc800, 0x0042, 0x0000, 
+0x0800, 0x0000, 0x0580, 0x0000, 0x0880, 0x0000, 0x0f80, 0x0000, 0x0f80, 
+0x0000, 0x0180, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 
+0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 
+0x0000, 0x0000, 
+    0
+END
+
+IDD_PROPPAGE_VTKEYBUTTON DLGINIT
+BEGIN
+    IDC_ALIGN_HORZ, 0x403, 5, 0
+0x654c, 0x7466, "\000" 
+    IDC_ALIGN_HORZ, 0x403, 7, 0
+0x6543, 0x746e, 0x7265, "\000" 
+    IDC_ALIGN_HORZ, 0x403, 6, 0
+0x6952, 0x6867, 0x0074, 
+    IDC_ALIGN_VERT, 0x403, 4, 0
+0x6f54, 0x0070, 
+    IDC_ALIGN_VERT, 0x403, 7, 0
+0x6543, 0x746e, 0x7265, "\000" 
+    IDC_ALIGN_VERT, 0x403, 7, 0
+0x6f42, 0x7474, 0x6d6f, "\000" 
+    0
+END
+
+IDD_ABOUTBOX_VTCHECKBOX DLGINIT
+BEGIN
+    IDC_VTCHECKBOXCTRL1, 0x376, 124, 0
+0x0000, 0x0000, 0x0000, 0x0000, 0x0004, 0x0000, 0x0000, 0x0000, 0x4307, 
+0x7061, 0x6974, 0x6e6f, 0x0008, 0x8000, 0x0008, 0x8000, 0x0008, 0x8000, 
+0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 
+0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 
+0x0001, 0x0000, 0x0000, 0x0001, 0x0300, 0xe352, 0x910b, 0xce8f, 0x9d11, 
+0x00e3, 0x00aa, 0xb84b, 0x0151, 0x00cc, 0x9000, 0x4401, 0x0142, 0x0d00, 
+0x534d, 0x5320, 0x6e61, 0x2073, 0x6553, 0x6972, 0x4566, 0x7ff5, 
+    0
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDI_ABOUTDLL            ICON                    "VTControls.ico"
+IDI_ICON                ICON                    "icon.ico"
+IDI_ICON_RELOAD         ICON                    "ico00002.ico"
+IDI_BROWSE              ICON                    "ico00003.ico"
+IDI_UP                  ICON                    "up.ico"
+IDI_SHIFT               ICON                    "shift.ico"
+IDI_RIGHT               ICON                    "up2.ico"
+IDI_LEFT                ICON                    "up1.ico"
+IDI_DOWN                ICON                    "down.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDB_VTKEYBUTTON         BITMAP                  "VTKeyButton.bmp"
+IDB_VTSTATICTEXT        BITMAP                  "VTStaticText.bmp"
+IDB_VTEDITOR            BITMAP                  "VTEditor.bmp"
+IDB_VTSLIDER            BITMAP                  "VTSlider.bmp"
+BROWSEU                 BITMAP                  "bitmap1.bmp"
+BROWSED                 BITMAP                  "bmp00001.bmp"
+IDB_PUSHBUTTON          BITMAP                  "PushButtonCtl.bmp"
+IDB_CHECKED             BITMAP                  "checked.bmp"
+IDB_VTCHECKBOX          BITMAP                  "VTCheckBoxCtl.bmp"
+IDB_VTLIST              BITMAP                  "VTList.bmp"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE 
+BEGIN
+    IDS_VTKEYBUTTON         "VT Key Button"
+    IDS_VTKEYBUTTON_PPG     "VT Key Button Property Page"
+    IDS_VTSTATICTEXT        "VT Static Text"
+    IDS_VTSTATICTEXT_PPG    "VT Static Text Property Page"
+    IDS_VTEDITOR            "VT Editor"
+    IDS_VTEDITOR_PPG        "VT Editor Property Page"
+    IDS_VTLIST              "VT List"
+    IDS_VTLIST_PPG          "VT List Property Page"
+    IDS_VTSLIDER            "VT Slider"
+    IDS_VTSLIDER_PPG        "VT Slider Property Page"
+    IDS_VTLIST_PPGEX        "VT List Property Page"
+    IDS_VTLIST_PPGROW       "VT List Property Page"
+    IDS_VTEDITOR_PPG_EXT    "VT Editor Property Page"
+    IDS_PUSHBUTTON          "Push Button Control"
+    IDS_PUSHBUTTON_PPG      "Push Button Property Page"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_VTKEYBUTTON_PPG_CAPTION "General"
+    IDS_VTSTATICTEXT_PPG_CAPTION "General"
+    IDS_VTEDITOR_PPG_CAPTION "General"
+    IDS_VTLIST_PPG_CAPTION  "General"
+    IDS_VTSLIDER_PPG_CAPTION "General"
+    IDS_VTLIST_PPGEX_CAPTION "Columns"
+    IDS_VTLIST_PPGROW_CAPTION "Row"
+    IDS_VTEDITOR_PPG_EXT_CAPTION "Custom"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_PUSHBUTTON_FAMESPPG "Frames Property Page"
+    IDS_VTSTATICTEXT_PPG_EXT "VT Static Text Property Page Ext"
+    IDS_VTKEYIMAGEBUTTON_PPG "VT Key Button Image List Property Page"
+    IDS_VTCHECKBOX          "VT Check Box Control"
+    IDS_VTCHECKBOX_PPG      "VT Check Box Property Page"
+    IDS_VTLIST_PPGHEADER    "VT List Header Property Page"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_PUSHBUTTON_PPG_CAPTION "General"
+    IDS_PUSHBUTTON_FAMESPPG_CAPTION "Frames"
+    IDS_VTSTATICTEXT_PPG_EXT_CAPTION "Custom"
+    IDS_WAITING             " "
+    IDS_KEY_MESSAGE         "You pressed %d key"
+    IDS_KEY_PICK_PROCESS    "Now press any key"
+    IDS_VTKEYIMAGEBUTTON_PPG_CAPTION "Image List"
+    IDS_VTCHECKBOX_PPG_CAPTION "General"
+    IDS_VTLIST_PPGHEADER_CAPTION "Header"
+END
+
+#endif    // English (U.S.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+1 TYPELIB "VTControls.tlb"
+#include "res\VTControls.rc2"
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

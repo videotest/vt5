@@ -1,0 +1,16 @@
+// Controls.odl : type library source for Controls.dll
+
+// This file will be processed by the MIDL compiler to produce the
+// type library (Controls.tlb).
+
+[ uuid(B1654788-44F2-4431-AAA2-E5BD1C5DDF43), version(1.0) ]
+library Controls
+{
+	importlib("stdole32.tlb");
+	importlib("stdole2.tlb");
+
+
+
+	//{{AFX_APPEND_ODL}}
+	//}}AFX_APPEND_ODL}}
+};

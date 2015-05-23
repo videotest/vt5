@@ -1,0 +1,1338 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// Chinese (P.R.C.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)
+#ifdef _WIN32
+LANGUAGE LANG_CHINESE, SUBLANG_CHINESE_SIMPLIFIED
+#pragma code_page(936)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_PROPPAGE_VTCOMBOBOX DIALOG  0, 0, 217, 62
+STYLE DS_SETFONT | WS_CHILD
+FONT 8, "MS Sans Serif"
+BEGIN
+    LISTBOX         IDC_LISTDROPDOWN,7,25,90,30,LBS_NOINTEGRALHEIGHT | 
+                    WS_VSCROLL | WS_TABSTOP
+    EDITTEXT        IDC_EDITSTRING,7,7,89,14,ES_AUTOHSCROLL
+    PUSHBUTTON      "ІеИлЧЦ·ыґ®(&I)",IDC_BUTTONINSERT,102,7,44,14
+    PUSHBUTTON      "ЙѕіэЧЦ·ыґ®(&D)",IDC_BUTTONDELETE,102,24,44,14
+    PUSHBUTTON      "И«ІїЙѕіэ(&A)",IDC_BUTTONDELETEALL,102,41,44,14
+    GROUPBOX        "ґуРЎ",IDC_STATIC,149,7,59,42
+    LTEXT           "їн¶И",IDC_STATIC,154,18,20,8
+    LTEXT           "ёЯ¶И",IDC_STATIC,154,32,22,8
+    EDITTEXT        IDC_EDITSIZEWIDTH,181,14,22,14,ES_NUMBER
+    EDITTEXT        IDC_EDITSIZEHEIGHT,181,30,22,14,ES_NUMBER
+END
+
+IDD_PROPPAGE_VTCOLORPICKER DIALOGEX 0, 0, 250, 62
+STYLE DS_SETFONT | WS_CHILD
+FONT 8, "MS Sans Serif", 0, 0, 0x1
+BEGIN
+    CONTROL         "АаЛЖЧйєПїт",IDC_CHECK1,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,7,9,66,10
+    GROUPBOX        "ґуРЎ",IDC_STATIC,184,7,59,42
+    LTEXT           "їн¶И",IDC_STATIC,189,18,20,8
+    LTEXT           "ёЯ¶И",IDC_STATIC,189,32,22,8
+    EDITTEXT        IDC_EDITSIZEWIDTH,216,14,22,14,ES_NUMBER
+    EDITTEXT        IDC_EDITSIZEHEIGHT,216,30,22,14,ES_NUMBER
+    CONTROL         "єЪ°Ч",IDC_CHECKBAW,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,7,21,63,10
+    CONTROL         "¶юЦµ",IDC_CHECK2,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,
+                    7,33,62,10
+    CONTROL         "ЖфУГ",IDC_ENABLE,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,
+                    7,45,38,10
+END
+
+IDD_PROPPAGE_VTWIDTH DIALOG  0, 0, 250, 62
+STYLE DS_SETFONT | WS_CHILD
+FONT 8, "MS Sans Serif"
+BEGIN
+    EDITTEXT        IDC_EDITMAX,7,7,18,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDITMIN,7,44,18,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDITWIDTH,7,25,18,14,ES_NUMBER
+    LTEXT           "ЧоґуЦµ",IDC_STATIC,33,7,30,8
+    LTEXT           "їн¶И",IDC_STATIC,33,28,20,8
+    LTEXT           "ЧоРЎЦµ",IDC_STATIC,33,46,31,8
+    CONTROL         "·ЅПт",IDC_CHECKORIENTATION,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,81,7,42,10
+    CONTROL         "СЎЦР",IDC_CHECKCHECKED,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,81,22,45,10
+    GROUPBOX        "ґуРЎ",IDC_STATIC,137,5,59,42
+    LTEXT           "їн¶И",IDC_STATIC,142,16,20,8
+    LTEXT           "ёЯ¶И",IDC_STATIC,142,30,22,8
+    EDITTEXT        IDC_EDITSIZEWIDTH,169,12,22,14,ES_NUMBER
+    EDITTEXT        IDC_EDITSIZEHEIGHT,169,28,22,14,ES_NUMBER
+END
+
+IDD_DIALOGWIDTH DIALOG  0, 0, 179, 46
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | 
+    WS_SYSMENU
+CAPTION "їн¶И"
+FONT 8, "MS Sans Serif"
+BEGIN
+    PUSHBUTTON      "И·¶Ё",IDOK,122,7,50,14
+    PUSHBUTTON      "ИЎПы",IDCANCEL,122,25,50,14
+    CONTROL         "Spin1",IDC_SPIN1,"msctls_updown32",UDS_SETBUDDYINT | 
+                    UDS_ALIGNRIGHT,97,19,11,13
+    GROUPBOX        "",IDC_STATIC,7,7,109,32
+    EDITTEXT        IDC_EDIT1,57,19,40,13,ES_AUTOHSCROLL
+    LTEXT           "КдИлїн¶И",IDC_STATIC,13,21,43,8
+END
+
+IDD_BCGBARRES_COLOR_DLG DIALOGEX 0, 0, 226, 181
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "СХЙ«"
+FONT 8, "MS Sans Serif", 0, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "И·¶Ё",IDOK,161,22,50,14
+    PUSHBUTTON      "ИЎПы",IDCANCEL,161,41,50,14
+    LTEXT           "",IDC_BCGBARRES_STATICPLACEHOLDER,0,0,224,180,NOT 
+                    WS_VISIBLE | WS_BORDER
+    CONTROL         "",IDC_BCGBARRES_COLOURPLACEHOLDER,"Button",BS_OWNERDRAW | 
+                    WS_TABSTOP,160,104,51,49,WS_EX_STATICEDGE
+    CTEXT           "РВФц",IDC_STATIC,166,90,38,8
+    CTEXT           "µ±З°",IDC_STATIC,164,156,42,8
+END
+
+IDD_COLOR_DLG DIALOG  0, 0, 125, 60
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_VISIBLE
+FONT 8, "MS Sans Serif"
+BEGIN
+    PUSHBUTTON      "",IDC_COLOR1,3,0,11,11
+    PUSHBUTTON      "",IDC_COLOR2,15,0,11,11
+    PUSHBUTTON      "",IDC_COLOR3,27,0,11,11
+    PUSHBUTTON      "",IDC_COLOR4,39,0,11,11
+    PUSHBUTTON      "",IDC_COLOR5,51,0,11,11
+    PUSHBUTTON      "",IDC_COLOR6,63,0,11,11
+    PUSHBUTTON      "",IDC_COLOR7,75,0,11,11
+    PUSHBUTTON      "",IDC_COLOR8,87,0,11,11
+    PUSHBUTTON      "",IDC_COLOR9,99,0,11,11
+    PUSHBUTTON      "",IDC_COLOR10,111,0,11,11
+    PUSHBUTTON      "",IDC_COLOR11,3,11,11,11
+    PUSHBUTTON      "",IDC_COLOR12,15,11,11,11
+    PUSHBUTTON      "",IDC_COLOR13,27,11,11,11
+    PUSHBUTTON      "",IDC_COLOR14,39,11,11,11
+    PUSHBUTTON      "",IDC_COLOR15,51,11,11,11
+    PUSHBUTTON      "",IDC_COLOR16,63,11,11,11
+    PUSHBUTTON      "",IDC_COLOR17,75,11,11,11
+    PUSHBUTTON      "",IDC_COLOR18,87,11,11,11
+    PUSHBUTTON      "",IDC_COLOR19,99,11,11,11
+    PUSHBUTTON      "",IDC_COLOR20,111,11,11,11
+    PUSHBUTTON      "ЖдЛыСХЙ«",IDC_OTHER,37,46,50,14
+    PUSHBUTTON      "",IDC_COLOR21,3,30,11,11
+    PUSHBUTTON      "",IDC_COLOR22,15,30,11,11
+    PUSHBUTTON      "",IDC_COLOR23,27,30,11,11
+    PUSHBUTTON      "",IDC_COLOR24,39,30,11,11
+    PUSHBUTTON      "",IDC_COLOR25,51,30,11,11
+    PUSHBUTTON      "",IDC_COLOR26,63,30,11,11
+    PUSHBUTTON      "",IDC_COLOR27,75,30,11,11
+    PUSHBUTTON      "",IDC_COLOR28,87,30,11,11
+    PUSHBUTTON      "",IDC_COLOR29,99,30,11,11
+    PUSHBUTTON      "",IDC_COLOR30,111,30,11,11
+    GROUPBOX        "ЧоЅьК№УГµДСХЙ«",IDC_STATIC,0,22,125,23,BS_CENTER
+END
+
+IDD_BCGBARRES_COLOR_PAGE_ONE DIALOG  0, 0, 148, 158
+STYLE DS_SETFONT | WS_CHILD | WS_VISIBLE | WS_DISABLED | WS_CAPTION
+CAPTION "±кЧј"
+FONT 8, "MS Sans Serif"
+BEGIN
+    CONTROL         "",IDC_BCGBARRES_HEXPLACEHOLDER,"Button",BS_OWNERDRAW | 
+                    WS_TABSTOP,3,3,142,113
+    CONTROL         "",IDC_BCGBARRES_GREYSCALEPLACEHOLDER,"Button",
+                    BS_OWNERDRAW | WS_TABSTOP,3,119,142,36
+END
+
+IDD_BCGBARRES_COLORPAGE_TWO DIALOG  0, 0, 143, 157
+STYLE DS_SETFONT | WS_CHILD | WS_VISIBLE | WS_DISABLED | WS_CAPTION
+CAPTION "ЧФ¶ЁТе"
+FONT 8, "MS Sans Serif"
+BEGIN
+    EDITTEXT        IDC_BCGBARRES_R,99,98,27,14,ES_AUTOHSCROLL
+    CONTROL         "Spin4",IDC_BCGBARRES_SPIN1,"msctls_updown32",
+                    UDS_SETBUDDYINT | UDS_ALIGNRIGHT | UDS_AUTOBUDDY | 
+                    UDS_ARROWKEYS,125,98,11,14
+    EDITTEXT        IDC_BCGBARRES_B,99,117,27,14,ES_AUTOHSCROLL
+    CONTROL         "Spin5",IDC_BCGBARRES_SPIN2,"msctls_updown32",
+                    UDS_SETBUDDYINT | UDS_ALIGNRIGHT | UDS_AUTOBUDDY | 
+                    UDS_ARROWKEYS,125,116,11,14
+    EDITTEXT        IDC_BCGBARRES_G,99,138,27,14,ES_AUTOHSCROLL
+    CONTROL         "Spin6",IDC_BCGBARRES_SPIN3,"msctls_updown32",
+                    UDS_SETBUDDYINT | UDS_ALIGNRIGHT | UDS_AUTOBUDDY | 
+                    UDS_ARROWKEYS,125,138,11,14
+    EDITTEXT        IDC_BCGBARRES_L,25,98,27,14,ES_AUTOHSCROLL
+    CONTROL         "Spin7",IDC_BCGBARRES_SPIN4,"msctls_updown32",
+                    UDS_SETBUDDYINT | UDS_ALIGNRIGHT | UDS_AUTOBUDDY | 
+                    UDS_ARROWKEYS,61,98,11,14
+    EDITTEXT        IDC_BCGBARRES_H,25,117,27,14,ES_AUTOHSCROLL
+    CONTROL         "Spin8",IDC_BCGBARRES_SPIN5,"msctls_updown32",
+                    UDS_SETBUDDYINT | UDS_ALIGNRIGHT | UDS_AUTOBUDDY | 
+                    UDS_ARROWKEYS,61,115,11,14
+    EDITTEXT        IDC_BCGBARRES_S,25,138,27,14,ES_AUTOHSCROLL
+    CONTROL         "Spin9",IDC_BCGBARRES_SPIN6,"msctls_updown32",
+                    UDS_SETBUDDYINT | UDS_ALIGNRIGHT | UDS_AUTOBUDDY | 
+                    UDS_ARROWKEYS,61,138,11,14
+    CONTROL         "",IDC_BCGBARRES_COLOURPLACEHOLDER,"Button",BS_OWNERDRAW | 
+                    WS_TABSTOP,5,5,102,87
+    CONTROL         "",IDC_BCGBARRES_LUMINANCEPLACEHOLDER,"Button",
+                    BS_OWNERDRAW | WS_TABSTOP,115,5,21,87
+    LTEXT           "єм(&R):",IDC_STATIC,75,100,16,8
+    LTEXT           "А¶(&B):",IDC_STATIC,75,121,17,8
+    LTEXT           "ВМ(&G):",IDC_STATIC,75,140,22,8
+    LTEXT           "ББ¶И(&L):",IDC_STATIC,5,100,16,8
+    LTEXT           "Й«µч(&U):",IDC_STATIC,5,119,16,8
+    LTEXT           "±ҐєН¶И(&S):",IDC_STATIC,5,139,14,8
+END
+
+IDD_BCGBARRES_COLOR_PAGE_THREE DIALOG  0, 0, 158, 154
+STYLE DS_SETFONT | WS_CHILD | WS_VISIBLE | WS_DISABLED | WS_CAPTION
+CAPTION "єЪ°Ч"
+FONT 8, "MS Sans Serif"
+BEGIN
+    CONTROL         "",IDC_BCGBARRES_GREYLUMPLACEHOLDER,"Button",
+                    BS_OWNERDRAW | WS_TABSTOP,13,7,26,99
+    CONTROL         "",IDC_BCGBARRES_GREYHEXPLACEHOLDER,"Button",
+                    BS_OWNERDRAW | WS_TABSTOP,4,107,142,40
+    LTEXT           "ББ¶И:",IDC_STATIC,59,17,18,8
+    EDITTEXT        IDC_EDIT_LUMINANCE,81,15,28,14,ES_AUTOHSCROLL
+    CONTROL         "Spin1",IDC_BAW_SPIN1,"msctls_updown32",UDS_SETBUDDYINT | 
+                    UDS_ALIGNRIGHT | UDS_AUTOBUDDY | UDS_ARROWKEYS,123,7,11,
+                    14
+    LTEXT           "єм:",IDC_STATIC,59,39,8,8
+    EDITTEXT        IDC_BAW_R,81,35,28,14,ES_AUTOHSCROLL
+    CONTROL         "Spin2",IDC_BAW_SPIN3,"msctls_updown32",UDS_SETBUDDYINT | 
+                    UDS_ALIGNRIGHT | UDS_AUTOBUDDY | UDS_ARROWKEYS,127,52,10,
+                    14
+    LTEXT           "ВМ:",IDC_STATIC,59,58,8,8
+    EDITTEXT        IDC_BAW_G,81,55,28,14,ES_AUTOHSCROLL
+    CONTROL         "Spin3",IDC_BAW_SPIN4,"msctls_updown32",UDS_SETBUDDYINT | 
+                    UDS_ALIGNRIGHT | UDS_AUTOBUDDY | UDS_ARROWKEYS,127,73,10,
+                    14
+    LTEXT           "А¶:",IDC_STATIC,60,77,8,8
+    EDITTEXT        IDC_BAW_B,81,75,28,14,ES_AUTOHSCROLL
+    CONTROL         "Spin1",IDC_BAW_SPIN2,"msctls_updown32",UDS_SETBUDDYINT | 
+                    UDS_ALIGNRIGHT | UDS_AUTOBUDDY | UDS_ARROWKEYS,126,34,10,
+                    14
+END
+
+IDD_PROPPAGE_COLORRANGE DIALOG  0, 0, 250, 62
+STYLE DS_SETFONT | WS_CHILD
+FONT 8, "MS Sans Serif"
+BEGIN
+    LTEXT           "TODO: Place controls to manipulate properties of ColorRangeCtrl Control on this dialog.",
+                    IDC_STATIC,7,25,229,16
+END
+
+IDD_PROPPAGE_VTRADIOBTN DIALOG  0, 0, 250, 110
+STYLE DS_SETFONT | WS_CHILD
+FONT 8, "MS Sans Serif"
+BEGIN
+    EDITTEXT        209,7,88,178,14,ES_AUTOHSCROLL
+    PUSHBUTTON      "МнјУ",IDC_BUTTON1,190,88,50,14
+    LISTBOX         IDC_LIST2,7,17,177,68,LBS_HASSTRINGS | 
+                    LBS_NOINTEGRALHEIGHT | WS_VSCROLL | WS_HSCROLL | 
+                    WS_TABSTOP
+    PUSHBUTTON      "ЙПТЖ",IDC_BUTTON3,190,17,50,14,WS_DISABLED
+    PUSHBUTTON      "ПВТЖ",IDC_BUTTON4,190,34,50,14,WS_DISABLED
+    PUSHBUTTON      "Йѕіэ",IDC_BUTTON2,190,54,50,14,WS_DISABLED
+    PUSHBUTTON      "ёьРВ",IDC_BUTTON5,190,71,50,14,WS_DISABLED
+    LTEXT           "µҐСЎ°ґЕҐ:",IDC_STATIC,7,7,191,8
+END
+
+IDD_PROPPAGE_VTPROGRESSBAR DIALOGEX 0, 0, 250, 62
+STYLE DS_SETFONT | WS_CHILD
+FONT 8, "MS Sans Serif", 0, 0, 0x1
+BEGIN
+    LTEXT           "ЧоРЎЦµ:",IDC_STATIC,7,9,32,8
+    LTEXT           "ЧоґуЦµ:",IDC_STATIC,7,25,36,8
+    LTEXT           "О»ЦГ:",IDC_STATIC,7,39,30,8
+    EDITTEXT        IDC_EDIT_MIN,44,7,40,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT_MAX,44,22,40,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT_POS,44,37,40,14,ES_AUTOHSCROLL
+    CONTROL         "ЖЅ»¬",IDC_SMOOTH,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,
+                    120,9,40,10
+    CONTROL         "ПФКѕ°Щ·Ц±И",IDC_SHOW_PERCENT,"Button",BS_AUTOCHECKBOX | 
+                    NOT WS_VISIBLE | WS_TABSTOP,120,26,60,10
+END
+
+IDD_PROPPAGE_VTRADIOBTN_TWO DIALOGEX 0, 0, 250, 62
+STYLE DS_SETFONT | DS_FIXEDSYS | WS_CHILD
+FONT 8, "MS Shell Dlg", 0, 0, 0x1
+BEGIN
+    CONTROL         "ЖфУГ",IDC_ENABLE,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,
+                    11,14,37,10
+    CONTROL         "їЙјы",IDC_VISIBLE,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,
+                    11,27,35,10
+    CONTROL         "Evenly spaced",IDC_EVENLYSPACED,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,11,40,62,10
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO 
+BEGIN
+    IDD_PROPPAGE_VTCOMBOBOX, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 210
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 55
+    END
+
+    IDD_PROPPAGE_VTCOLORPICKER, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 243
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 55
+    END
+
+    IDD_PROPPAGE_VTWIDTH, DIALOG
+    BEGIN
+        RIGHTMARGIN, 246
+    END
+
+    IDD_DIALOGWIDTH, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 172
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 39
+    END
+
+    IDD_BCGBARRES_COLOR_DLG, DIALOG
+    BEGIN
+        BOTTOMMARGIN, 180
+    END
+
+    IDD_BCGBARRES_COLOR_PAGE_ONE, DIALOG
+    BEGIN
+        LEFTMARGIN, 3
+        RIGHTMARGIN, 145
+        TOPMARGIN, 3
+        BOTTOMMARGIN, 155
+    END
+
+    IDD_BCGBARRES_COLOR_PAGE_THREE, DIALOG
+    BEGIN
+        LEFTMARGIN, 4
+        RIGHTMARGIN, 152
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 147
+    END
+
+    IDD_PROPPAGE_COLORRANGE, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 243
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 55
+    END
+
+    IDD_PROPPAGE_VTRADIOBTN, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 240
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 102
+    END
+
+    IDD_PROPPAGE_VTPROGRESSBAR, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 243
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 54
+    END
+
+    IDD_PROPPAGE_VTRADIOBTN_TWO, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 243
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 55
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDB_VTCOMBOBOX          BITMAP                  "VTComboBoxCtl.bmp"
+IDB_VTCOLORPICKER       BITMAP                  "VTColorPickerCtl.bmp"
+IDB_VTWIDTH             BITMAP                  "VTWidthCtl.bmp"
+IDB_VTCOMBOBOX2         BITMAP                  "vtcombob.bmp"
+IDB_COLORRANGE          BITMAP                  "ColorRangeCtrl.bmp"
+IDB_VTPROGRESSBAR       BITMAP                  "VTProgressBarCtrl.bmp"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Accelerator
+//
+
+IDR_ACCELERATOR1 ACCELERATORS 
+BEGIN
+    VK_F4,          IDC_DROPDOWN,           VIRTKEY, NOINVERT
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE 
+BEGIN
+    IDS_VTCOMBOBOX          "VT ЧйєПїтїШјю"
+    IDS_VTCOMBOBOX_PPG      "VT ЧйєПїтКфРФТіГж"
+    IDS_VTCOLORPICKER       "VT СХЙ«СЎФсЖчїШјю"
+    IDS_VTCOLORPICKER_PPG   "VT СХЙ«СЎФсЖчКфРФТіГж"
+    IDS_VTWIDTH             "VT їн¶ИїШјю"
+    IDS_VTWIDTH_PPG         "VT їн¶ИКфРФТіГж"
+    IDS_VTCOMBOBOX2         "VT ЧйєПїт 2 їШјю"
+    IDS_COLORRANGE          "VT ColorRange їШјю"
+    IDS_COLORRANGE_PPG      "VT ColorRange КфРФТіГж"
+    IDS_WRONG_WIDTH         "їн¶Иі¬іц·¶О§ЈЎ"
+    IDS_VTRADIOBTN          "VTRadioBtn їШјю"
+    IDS_VTRADIOBTN_PPG      "VTRadioBtn КфРФТіГж"
+    IDS_VTPROGRESSBAR       "VTProgressBar їШјю"
+    IDS_VTPROGRESSBAR_PPG   "VTProgressBar КфРФТіГж"
+    IDS_VTRADIOBTN_PPG_TWO_CAPTION "НЁУГ"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_VTCOMBOBOX_PPG_CAPTION "НЁУГ"
+    IDS_VTCOLORPICKER_PPG_CAPTION "НЁУГ"
+    IDS_VTWIDTH_PPG_CAPTION "НЁУГ"
+    IDS_FIRST_TYPE          "їЙ±ај­"
+    IDS_SECOND_TYPE         "І»їЙ±ај­"
+    IDS_COLORRANGE_PPG_CAPTION "НЁУГ"
+    IDS_VTRADIOBTN_PPG_CAPTION "°ґЕҐ"
+    IDS_VTPROGRESSBAR_PPG_CAPTION "НЁУГ"
+END
+
+#endif    // Chinese (P.R.C.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+/////////////////////////////////////////////////////////////////////////////
+// Russian resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_RUS)
+#ifdef _WIN32
+LANGUAGE LANG_RUSSIAN, SUBLANG_DEFAULT
+#pragma code_page(1251)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_COLOR_DLG DIALOG  0, 0, 125, 60
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_VISIBLE
+FONT 8, "MS Sans Serif"
+BEGIN
+    PUSHBUTTON      "",IDC_COLOR1,3,0,11,11
+    PUSHBUTTON      "",IDC_COLOR2,15,0,11,11
+    PUSHBUTTON      "",IDC_COLOR3,27,0,11,11
+    PUSHBUTTON      "",IDC_COLOR4,39,0,11,11
+    PUSHBUTTON      "",IDC_COLOR5,51,0,11,11
+    PUSHBUTTON      "",IDC_COLOR6,63,0,11,11
+    PUSHBUTTON      "",IDC_COLOR7,75,0,11,11
+    PUSHBUTTON      "",IDC_COLOR8,87,0,11,11
+    PUSHBUTTON      "",IDC_COLOR9,99,0,11,11
+    PUSHBUTTON      "",IDC_COLOR10,111,0,11,11
+    PUSHBUTTON      "",IDC_COLOR11,3,11,11,11
+    PUSHBUTTON      "",IDC_COLOR12,15,11,11,11
+    PUSHBUTTON      "",IDC_COLOR13,27,11,11,11
+    PUSHBUTTON      "",IDC_COLOR14,39,11,11,11
+    PUSHBUTTON      "",IDC_COLOR15,51,11,11,11
+    PUSHBUTTON      "",IDC_COLOR16,63,11,11,11
+    PUSHBUTTON      "",IDC_COLOR17,75,11,11,11
+    PUSHBUTTON      "",IDC_COLOR18,87,11,11,11
+    PUSHBUTTON      "",IDC_COLOR19,99,11,11,11
+    PUSHBUTTON      "",IDC_COLOR20,111,11,11,11
+    PUSHBUTTON      "Другой",IDC_OTHER,37,46,50,14
+    PUSHBUTTON      "",IDC_COLOR21,3,30,11,11
+    PUSHBUTTON      "",IDC_COLOR22,15,30,11,11
+    PUSHBUTTON      "",IDC_COLOR23,27,30,11,11
+    PUSHBUTTON      "",IDC_COLOR24,39,30,11,11
+    PUSHBUTTON      "",IDC_COLOR25,51,30,11,11
+    PUSHBUTTON      "",IDC_COLOR26,63,30,11,11
+    PUSHBUTTON      "",IDC_COLOR27,75,30,11,11
+    PUSHBUTTON      "",IDC_COLOR28,87,30,11,11
+    PUSHBUTTON      "",IDC_COLOR29,99,30,11,11
+    PUSHBUTTON      "",IDC_COLOR30,111,30,11,11
+    GROUPBOX        "Последние цвета",IDC_STATIC,0,22,125,23,BS_CENTER
+END
+
+IDD_BCGBARRES_COLOR_DLG DIALOGEX 0, 0, 226, 181
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Цвета"
+FONT 8, "MS Sans Serif", 0, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,161,22,50,14
+    PUSHBUTTON      "Отмена",IDCANCEL,161,41,50,14
+    LTEXT           "",IDC_BCGBARRES_STATICPLACEHOLDER,0,0,224,180,NOT 
+                    WS_VISIBLE | WS_BORDER
+    CONTROL         "",IDC_BCGBARRES_COLOURPLACEHOLDER,"Button",BS_OWNERDRAW | 
+                    WS_TABSTOP,160,104,51,49,WS_EX_STATICEDGE
+    CTEXT           "New",IDC_STATIC,166,90,38,8
+    CTEXT           "Current",IDC_STATIC,164,156,42,8
+END
+
+IDD_BCGBARRES_COLOR_PAGE_ONE DIALOG  0, 0, 148, 158
+STYLE DS_SETFONT | WS_CHILD | WS_VISIBLE | WS_DISABLED | WS_CAPTION
+CAPTION "Стандарт"
+FONT 8, "MS Sans Serif"
+BEGIN
+    CONTROL         "",IDC_BCGBARRES_HEXPLACEHOLDER,"Button",BS_OWNERDRAW | 
+                    WS_TABSTOP,3,3,142,113
+    CONTROL         "",IDC_BCGBARRES_GREYSCALEPLACEHOLDER,"Button",
+                    BS_OWNERDRAW | WS_TABSTOP,3,119,142,36
+END
+
+IDD_BCGBARRES_COLOR_PAGE_THREE DIALOG  0, 0, 158, 154
+STYLE DS_SETFONT | WS_CHILD | WS_VISIBLE | WS_DISABLED | WS_CAPTION
+CAPTION "Черное и белое"
+FONT 8, "MS Sans Serif"
+BEGIN
+    CONTROL         "",IDC_BCGBARRES_GREYLUMPLACEHOLDER,"Button",
+                    BS_OWNERDRAW | WS_TABSTOP,13,7,26,99
+    CONTROL         "",IDC_BCGBARRES_GREYHEXPLACEHOLDER,"Button",
+                    BS_OWNERDRAW | WS_TABSTOP,4,107,142,40
+    LTEXT           "Lum:",IDC_STATIC,59,17,18,8
+    EDITTEXT        IDC_EDIT_LUMINANCE,81,15,28,14,ES_AUTOHSCROLL
+    CONTROL         "Spin1",IDC_BAW_SPIN1,"msctls_updown32",UDS_SETBUDDYINT | 
+                    UDS_ALIGNRIGHT | UDS_AUTOBUDDY | UDS_ARROWKEYS,123,7,11,
+                    14
+    LTEXT           "R:",IDC_STATIC,59,39,8,8
+    EDITTEXT        IDC_BAW_R,81,35,28,14,ES_AUTOHSCROLL
+    CONTROL         "Spin2",IDC_BAW_SPIN3,"msctls_updown32",UDS_SETBUDDYINT | 
+                    UDS_ALIGNRIGHT | UDS_AUTOBUDDY | UDS_ARROWKEYS,127,52,10,
+                    14
+    LTEXT           "G:",IDC_STATIC,59,58,8,8
+    EDITTEXT        IDC_BAW_G,81,55,28,14,ES_AUTOHSCROLL
+    CONTROL         "Spin3",IDC_BAW_SPIN4,"msctls_updown32",UDS_SETBUDDYINT | 
+                    UDS_ALIGNRIGHT | UDS_AUTOBUDDY | UDS_ARROWKEYS,127,73,10,
+                    14
+    LTEXT           "B:",IDC_STATIC,60,77,8,8
+    EDITTEXT        IDC_BAW_B,81,75,28,14,ES_AUTOHSCROLL
+    CONTROL         "Spin1",IDC_BAW_SPIN2,"msctls_updown32",UDS_SETBUDDYINT | 
+                    UDS_ALIGNRIGHT | UDS_AUTOBUDDY | UDS_ARROWKEYS,126,34,10,
+                    14
+END
+
+IDD_BCGBARRES_COLORPAGE_TWO DIALOG  0, 0, 143, 157
+STYLE DS_SETFONT | WS_CHILD | WS_VISIBLE | WS_DISABLED | WS_CAPTION
+CAPTION "Настройка"
+FONT 8, "MS Sans Serif"
+BEGIN
+    EDITTEXT        IDC_BCGBARRES_R,99,98,27,14,ES_AUTOHSCROLL
+    CONTROL         "Spin4",IDC_BCGBARRES_SPIN1,"msctls_updown32",
+                    UDS_SETBUDDYINT | UDS_ALIGNRIGHT | UDS_AUTOBUDDY | 
+                    UDS_ARROWKEYS,125,98,11,14
+    EDITTEXT        IDC_BCGBARRES_B,99,117,27,14,ES_AUTOHSCROLL
+    CONTROL         "Spin5",IDC_BCGBARRES_SPIN2,"msctls_updown32",
+                    UDS_SETBUDDYINT | UDS_ALIGNRIGHT | UDS_AUTOBUDDY | 
+                    UDS_ARROWKEYS,125,116,11,14
+    EDITTEXT        IDC_BCGBARRES_G,99,138,27,14,ES_AUTOHSCROLL
+    CONTROL         "Spin6",IDC_BCGBARRES_SPIN3,"msctls_updown32",
+                    UDS_SETBUDDYINT | UDS_ALIGNRIGHT | UDS_AUTOBUDDY | 
+                    UDS_ARROWKEYS,125,138,11,14
+    EDITTEXT        IDC_BCGBARRES_L,25,98,27,14,ES_AUTOHSCROLL
+    CONTROL         "Spin7",IDC_BCGBARRES_SPIN4,"msctls_updown32",
+                    UDS_SETBUDDYINT | UDS_ALIGNRIGHT | UDS_AUTOBUDDY | 
+                    UDS_ARROWKEYS,61,98,11,14
+    EDITTEXT        IDC_BCGBARRES_H,25,117,27,14,ES_AUTOHSCROLL
+    CONTROL         "Spin8",IDC_BCGBARRES_SPIN5,"msctls_updown32",
+                    UDS_SETBUDDYINT | UDS_ALIGNRIGHT | UDS_AUTOBUDDY | 
+                    UDS_ARROWKEYS,61,115,11,14
+    EDITTEXT        IDC_BCGBARRES_S,25,138,27,14,ES_AUTOHSCROLL
+    CONTROL         "Spin9",IDC_BCGBARRES_SPIN6,"msctls_updown32",
+                    UDS_SETBUDDYINT | UDS_ALIGNRIGHT | UDS_AUTOBUDDY | 
+                    UDS_ARROWKEYS,61,138,11,14
+    CONTROL         "",IDC_BCGBARRES_COLOURPLACEHOLDER,"Button",BS_OWNERDRAW | 
+                    WS_TABSTOP,5,5,102,87
+    CONTROL         "",IDC_BCGBARRES_LUMINANCEPLACEHOLDER,"Button",
+                    BS_OWNERDRAW | WS_TABSTOP,115,5,21,87
+    LTEXT           "&Red:",IDC_STATIC,75,100,16,8
+    LTEXT           "&Blue:",IDC_STATIC,75,121,17,8
+    LTEXT           "&Green:",IDC_STATIC,75,140,22,8
+    LTEXT           "&Lum:",IDC_STATIC,5,100,16,8
+    LTEXT           "H&ue:",IDC_STATIC,5,119,16,8
+    LTEXT           "&Sat:",IDC_STATIC,5,139,14,8
+END
+
+IDD_DIALOGWIDTH DIALOG  0, 0, 179, 46
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | 
+    WS_SYSMENU
+CAPTION "Ширина"
+FONT 8, "MS Sans Serif"
+BEGIN
+    PUSHBUTTON      "OK",IDOK,122,7,50,14
+    PUSHBUTTON      "Отмена",IDCANCEL,122,25,50,14
+    CONTROL         "Spin1",IDC_SPIN1,"msctls_updown32",UDS_SETBUDDYINT | 
+                    UDS_ALIGNRIGHT,97,19,11,13
+    GROUPBOX        "",IDC_STATIC,7,7,109,32
+    EDITTEXT        IDC_EDIT1,57,19,40,13,ES_AUTOHSCROLL
+    LTEXT           "Ширина:",IDC_STATIC,15,21,34,8
+END
+
+IDD_PROPPAGE_VTCOLORPICKER DIALOGEX 0, 0, 250, 62
+STYLE DS_SETFONT | WS_CHILD
+FONT 8, "MS Sans Serif", 0, 0, 0x0
+BEGIN
+    CONTROL         "В виде выпадающего списка",IDC_CHECK1,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,7,9,115,10
+    GROUPBOX        "Размер",IDC_STATIC,174,7,69,42
+    LTEXT           "Ширина:",IDC_STATIC,181,18,29,8
+    LTEXT           "Высота:",IDC_STATIC,181,32,28,8
+    EDITTEXT        IDC_EDITSIZEWIDTH,216,14,22,14,ES_NUMBER
+    EDITTEXT        IDC_EDITSIZEHEIGHT,216,30,22,14,ES_NUMBER
+    CONTROL         "Черное и белое",IDC_CHECKBAW,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,7,21,67,10
+    CONTROL         "Бинарное",IDC_CHECK2,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,7,33,62,10
+    CONTROL         "Доступен",IDC_ENABLE,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,7,45,49,10
+END
+
+IDD_PROPPAGE_VTCOMBOBOX DIALOG  0, 0, 240, 59
+STYLE DS_SETFONT | WS_CHILD
+FONT 8, "MS Sans Serif"
+BEGIN
+    LISTBOX         IDC_LISTDROPDOWN,7,22,90,30,LBS_NOINTEGRALHEIGHT | 
+                    WS_VSCROLL | WS_TABSTOP
+    EDITTEXT        IDC_EDITSTRING,7,7,89,14,ES_AUTOHSCROLL
+    PUSHBUTTON      "&Вставить текст",IDC_BUTTONINSERT,102,7,57,14
+    PUSHBUTTON      "&Удалить текст",IDC_BUTTONDELETE,102,24,57,14
+    PUSHBUTTON      "Удалить в&се",IDC_BUTTONDELETEALL,102,38,57,14
+    GROUPBOX        "Размер",IDC_STATIC,163,7,66,42
+    LTEXT           "Ширина:",IDC_STATIC,169,18,29,8
+    LTEXT           "Высота:",IDC_STATIC,169,32,28,8
+    EDITTEXT        IDC_EDITSIZEWIDTH,202,14,22,14,ES_NUMBER
+    EDITTEXT        IDC_EDITSIZEHEIGHT,202,30,22,14,ES_NUMBER
+END
+
+IDD_PROPPAGE_VTWIDTH DIALOG  0, 0, 250, 62
+STYLE DS_SETFONT | WS_CHILD
+FONT 8, "MS Sans Serif"
+BEGIN
+    EDITTEXT        IDC_EDITMAX,7,7,18,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDITMIN,7,44,18,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDITWIDTH,7,25,18,14,ES_NUMBER
+    LTEXT           "Максимум",IDC_STATIC,33,7,37,8
+    LTEXT           "Ширина",IDC_STATIC,33,28,30,8
+    LTEXT           "Минимум",IDC_STATIC,33,46,36,8
+    CONTROL         "Ориентация",IDC_CHECKORIENTATION,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,81,7,58,10
+    CONTROL         "Checked",IDC_CHECKCHECKED,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,81,22,45,10
+    GROUPBOX        "Размер",IDC_STATIC,146,5,65,42
+    LTEXT           "Ширина:",IDC_STATIC,151,16,29,8
+    LTEXT           "Высота:",IDC_STATIC,151,30,28,8
+    EDITTEXT        IDC_EDITSIZEWIDTH,184,12,22,14,ES_NUMBER
+    EDITTEXT        IDC_EDITSIZEHEIGHT,184,28,22,14,ES_NUMBER
+END
+
+IDD_PROPPAGE_COLORRANGE DIALOG  0, 0, 250, 62
+STYLE DS_SETFONT | WS_CHILD
+FONT 8, "MS Sans Serif"
+BEGIN
+    LTEXT           "TODO: Place controls to manipulate properties of ColorRangeCtrl Control on this dialog.",
+                    IDC_STATIC,7,25,229,16
+END
+
+IDD_PROPPAGE_VTRADIOBTN DIALOGEX 0, 0, 250, 110
+STYLE DS_SETFONT | WS_CHILD
+FONT 8, "MS Sans Serif", 0, 0, 0x0
+BEGIN
+    EDITTEXT        209,7,88,178,14,ES_AUTOHSCROLL
+    PUSHBUTTON      "Добавить",IDC_BUTTON1,190,88,50,14
+    LISTBOX         IDC_LIST2,7,17,177,68,LBS_HASSTRINGS | 
+                    LBS_NOINTEGRALHEIGHT | WS_VSCROLL | WS_HSCROLL | 
+                    WS_TABSTOP
+    PUSHBUTTON      "Вверх",IDC_BUTTON3,190,17,50,14,WS_DISABLED
+    PUSHBUTTON      "Вниз",IDC_BUTTON4,190,34,50,14,WS_DISABLED
+    PUSHBUTTON      "Удалить",IDC_BUTTON2,190,54,50,14,WS_DISABLED
+    PUSHBUTTON      "Обновить",IDC_BUTTON5,190,71,50,14,WS_DISABLED
+    LTEXT           "Кнопки выбора:",IDC_STATIC,7,7,55,8
+END
+
+IDD_PROPPAGE_VTPROGRESSBAR DIALOGEX 0, 0, 250, 62
+STYLE DS_SETFONT | WS_CHILD
+FONT 8, "MS Sans Serif", 0, 0, 0x0
+BEGIN
+    LTEXT           "Минимум: ",IDC_STATIC,7,10,37,8
+    LTEXT           "Максимум:  ",IDC_STATIC,7,25,43,8
+    LTEXT           "Позиция: ",IDC_STATIC,7,39,34,8
+    EDITTEXT        IDC_EDIT_MIN,46,7,40,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT_MAX,46,22,40,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT_POS,46,37,40,14,ES_AUTOHSCROLL
+    CONTROL         "Сплошной",IDC_SMOOTH,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,108,8,50,10
+    CONTROL         "Показывать процент выполнения",IDC_SHOW_PERCENT,"Button",
+                    BS_AUTOCHECKBOX | NOT WS_VISIBLE | WS_TABSTOP,108,23,131,
+                    10
+END
+
+IDD_PROPPAGE_VTRADIOBTN_TWO DIALOGEX 0, 0, 250, 62
+STYLE DS_SETFONT | DS_FIXEDSYS | WS_CHILD
+FONT 8, "MS Shell Dlg", 0, 0, 0x0
+BEGIN
+    CONTROL         "Enable",IDC_ENABLE,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,11,13,37,10
+    CONTROL         "Visible",IDC_VISIBLE,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,11,26,35,10
+    CONTROL         "Evenly spaced",IDC_EVENLYSPACED,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,11,39,62,10
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO 
+BEGIN
+    IDD_BCGBARRES_COLOR_DLG, DIALOG
+    BEGIN
+        BOTTOMMARGIN, 180
+    END
+
+    IDD_BCGBARRES_COLOR_PAGE_ONE, DIALOG
+    BEGIN
+        LEFTMARGIN, 3
+        RIGHTMARGIN, 145
+        TOPMARGIN, 3
+        BOTTOMMARGIN, 155
+    END
+
+    IDD_BCGBARRES_COLOR_PAGE_THREE, DIALOG
+    BEGIN
+        LEFTMARGIN, 4
+        RIGHTMARGIN, 152
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 147
+    END
+
+    IDD_DIALOGWIDTH, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 172
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 39
+    END
+
+    IDD_PROPPAGE_VTCOLORPICKER, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 243
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 55
+    END
+
+    IDD_PROPPAGE_VTCOMBOBOX, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 233
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 52
+    END
+
+    IDD_PROPPAGE_VTWIDTH, DIALOG
+    BEGIN
+        RIGHTMARGIN, 246
+    END
+
+    IDD_PROPPAGE_COLORRANGE, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 243
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 55
+    END
+
+    IDD_PROPPAGE_VTRADIOBTN, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 240
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 102
+    END
+
+    IDD_PROPPAGE_VTPROGRESSBAR, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 243
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 54
+    END
+
+    IDD_PROPPAGE_VTRADIOBTN_TWO, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 243
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 55
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDB_VTRADIOBTN          BITMAP                  "VTRadioBtnCtrl.bmp"
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "1 TYPELIB ""vtcontrols2.tlb""\r\n"
+    "#include ""res\\VTControls2.rc2""\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDI_COLOR_SLIDER        ICON                    "col_slider.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE 
+BEGIN
+    IDS_VTCOMBOBOX          "Элемент управления VTComboBox "
+    IDS_VTCOMBOBOX_PPG      "VTComboBox Property Page"
+    IDS_VTCOLORPICKER       "Элемент управления VTColorPicker"
+    IDS_VTCOLORPICKER_PPG   "VTColorPicker Property Page"
+    IDS_VTWIDTH             "Элемент управления VTWidth "
+    IDS_VTWIDTH_PPG         "VTWidth Property Page"
+    IDS_VTCOMBOBOX2         "Элемент управления VTComboBox2 "
+    IDS_COLORRANGE          "VT ColorRange Control"
+    IDS_COLORRANGE_PPG      "VT ColorRange Property Page"
+    IDS_WRONG_WIDTH         "Пожалуйста введите корректную ширину."
+    IDS_VTRADIOBTN          "VTRadioBtn Control"
+    IDS_VTRADIOBTN_PPG      "VTRadioBtn Property Page"
+    IDS_VTPROGRESSBAR       "VTProgressBar Control"
+    IDS_VTPROGRESSBAR_PPG   "VTProgressBar Property Page"
+    IDS_VTRADIOBTN_PPG_TWO_CAPTION "Основные"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_VTCOMBOBOX_PPG_CAPTION "Основные"
+    IDS_VTCOLORPICKER_PPG_CAPTION "Основные"
+    IDS_VTWIDTH_PPG_CAPTION "Основные"
+    IDS_FIRST_TYPE          "редактируемый"
+    IDS_SECOND_TYPE         "не редактируемый"
+    IDS_COLORRANGE_PPG_CAPTION "General"
+    IDS_VTRADIOBTN_PPG_CAPTION "Кнопки"
+    IDS_VTPROGRESSBAR_PPG_CAPTION "Свойства"
+END
+
+#endif    // Russian resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.S.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_PROPPAGE_VTCOMBOBOX DIALOG  0, 0, 217, 62
+STYLE DS_SETFONT | WS_CHILD
+FONT 8, "MS Sans Serif"
+BEGIN
+    LISTBOX         IDC_LISTDROPDOWN,7,25,90,30,LBS_NOINTEGRALHEIGHT | 
+                    WS_VSCROLL | WS_TABSTOP
+    EDITTEXT        IDC_EDITSTRING,7,7,89,14,ES_AUTOHSCROLL
+    PUSHBUTTON      "&Insert string",IDC_BUTTONINSERT,102,7,44,14
+    PUSHBUTTON      "&Delete string",IDC_BUTTONDELETE,102,24,44,14
+    PUSHBUTTON      "Delete &All",IDC_BUTTONDELETEALL,102,41,44,14
+    GROUPBOX        "Size",IDC_STATIC,149,7,59,42
+    LTEXT           "Width",IDC_STATIC,154,18,20,8
+    LTEXT           "Height",IDC_STATIC,154,32,22,8
+    EDITTEXT        IDC_EDITSIZEWIDTH,181,14,22,14,ES_NUMBER
+    EDITTEXT        IDC_EDITSIZEHEIGHT,181,30,22,14,ES_NUMBER
+END
+
+IDD_PROPPAGE_VTCOLORPICKER DIALOGEX 0, 0, 250, 62
+STYLE DS_SETFONT | WS_CHILD
+FONT 8, "MS Sans Serif", 0, 0, 0x0
+BEGIN
+    CONTROL         "Like combo box",IDC_CHECK1,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,7,9,66,10
+    GROUPBOX        "Size",IDC_STATIC,184,7,59,42
+    LTEXT           "Width",IDC_STATIC,189,18,20,8
+    LTEXT           "Height",IDC_STATIC,189,32,22,8
+    EDITTEXT        IDC_EDITSIZEWIDTH,216,14,22,14,ES_NUMBER
+    EDITTEXT        IDC_EDITSIZEHEIGHT,216,30,22,14,ES_NUMBER
+    CONTROL         "Black and white",IDC_CHECKBAW,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,7,21,63,10
+    CONTROL         "Binary",IDC_CHECK2,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,7,33,62,10
+    CONTROL         "Enable",IDC_ENABLE,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,7,45,38,10
+END
+
+IDD_PROPPAGE_VTWIDTH DIALOG  0, 0, 250, 62
+STYLE DS_SETFONT | WS_CHILD
+FONT 8, "MS Sans Serif"
+BEGIN
+    EDITTEXT        IDC_EDITMAX,7,7,18,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDITMIN,7,44,18,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDITWIDTH,7,25,18,14,ES_NUMBER
+    LTEXT           "Maximum",IDC_STATIC,33,7,30,8
+    LTEXT           "Width",IDC_STATIC,33,28,20,8
+    LTEXT           "Minumum",IDC_STATIC,33,46,31,8
+    CONTROL         "Orientation",IDC_CHECKORIENTATION,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,81,7,47,10
+    CONTROL         "Checked",IDC_CHECKCHECKED,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,81,22,45,10
+    GROUPBOX        "Size",IDC_STATIC,137,5,59,42
+    LTEXT           "Width",IDC_STATIC,142,16,20,8
+    LTEXT           "Height",IDC_STATIC,142,30,22,8
+    EDITTEXT        IDC_EDITSIZEWIDTH,169,12,22,14,ES_NUMBER
+    EDITTEXT        IDC_EDITSIZEHEIGHT,169,28,22,14,ES_NUMBER
+END
+
+IDD_DIALOGWIDTH DIALOG  0, 0, 179, 46
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | 
+    WS_SYSMENU
+CAPTION "Width"
+FONT 8, "MS Sans Serif"
+BEGIN
+    PUSHBUTTON      "OK",IDOK,122,7,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,122,25,50,14
+    CONTROL         "Spin1",IDC_SPIN1,"msctls_updown32",UDS_SETBUDDYINT | 
+                    UDS_ALIGNRIGHT,97,19,11,13
+    GROUPBOX        "",IDC_STATIC,7,7,109,32
+    EDITTEXT        IDC_EDIT1,57,19,40,13,ES_AUTOHSCROLL
+    LTEXT           "Enter width",IDC_STATIC,13,21,43,8
+END
+
+IDD_BCGBARRES_COLOR_DLG DIALOGEX 0, 0, 226, 181
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Colors"
+FONT 8, "MS Sans Serif", 0, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,161,22,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,161,41,50,14
+    LTEXT           "",IDC_BCGBARRES_STATICPLACEHOLDER,0,0,224,180,NOT 
+                    WS_VISIBLE | WS_BORDER
+    CONTROL         "",IDC_BCGBARRES_COLOURPLACEHOLDER,"Button",BS_OWNERDRAW | 
+                    WS_TABSTOP,160,104,51,49,WS_EX_STATICEDGE
+    CTEXT           "New",IDC_STATIC,166,90,38,8
+    CTEXT           "Current",IDC_STATIC,164,156,42,8
+END
+
+IDD_COLOR_DLG DIALOG  0, 0, 125, 60
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_VISIBLE
+FONT 8, "MS Sans Serif"
+BEGIN
+    PUSHBUTTON      "",IDC_COLOR1,3,0,11,11
+    PUSHBUTTON      "",IDC_COLOR2,15,0,11,11
+    PUSHBUTTON      "",IDC_COLOR3,27,0,11,11
+    PUSHBUTTON      "",IDC_COLOR4,39,0,11,11
+    PUSHBUTTON      "",IDC_COLOR5,51,0,11,11
+    PUSHBUTTON      "",IDC_COLOR6,63,0,11,11
+    PUSHBUTTON      "",IDC_COLOR7,75,0,11,11
+    PUSHBUTTON      "",IDC_COLOR8,87,0,11,11
+    PUSHBUTTON      "",IDC_COLOR9,99,0,11,11
+    PUSHBUTTON      "",IDC_COLOR10,111,0,11,11
+    PUSHBUTTON      "",IDC_COLOR11,3,11,11,11
+    PUSHBUTTON      "",IDC_COLOR12,15,11,11,11
+    PUSHBUTTON      "",IDC_COLOR13,27,11,11,11
+    PUSHBUTTON      "",IDC_COLOR14,39,11,11,11
+    PUSHBUTTON      "",IDC_COLOR15,51,11,11,11
+    PUSHBUTTON      "",IDC_COLOR16,63,11,11,11
+    PUSHBUTTON      "",IDC_COLOR17,75,11,11,11
+    PUSHBUTTON      "",IDC_COLOR18,87,11,11,11
+    PUSHBUTTON      "",IDC_COLOR19,99,11,11,11
+    PUSHBUTTON      "",IDC_COLOR20,111,11,11,11
+    PUSHBUTTON      "Other",IDC_OTHER,37,46,50,14
+    PUSHBUTTON      "",IDC_COLOR21,3,30,11,11
+    PUSHBUTTON      "",IDC_COLOR22,15,30,11,11
+    PUSHBUTTON      "",IDC_COLOR23,27,30,11,11
+    PUSHBUTTON      "",IDC_COLOR24,39,30,11,11
+    PUSHBUTTON      "",IDC_COLOR25,51,30,11,11
+    PUSHBUTTON      "",IDC_COLOR26,63,30,11,11
+    PUSHBUTTON      "",IDC_COLOR27,75,30,11,11
+    PUSHBUTTON      "",IDC_COLOR28,87,30,11,11
+    PUSHBUTTON      "",IDC_COLOR29,99,30,11,11
+    PUSHBUTTON      "",IDC_COLOR30,111,30,11,11
+    GROUPBOX        "Last used colors",IDC_STATIC,0,22,125,23,BS_CENTER
+END
+
+IDD_BCGBARRES_COLOR_PAGE_ONE DIALOG  0, 0, 148, 158
+STYLE DS_SETFONT | WS_CHILD | WS_VISIBLE | WS_DISABLED | WS_CAPTION
+CAPTION "Standard"
+FONT 8, "MS Sans Serif"
+BEGIN
+    CONTROL         "",IDC_BCGBARRES_HEXPLACEHOLDER,"Button",BS_OWNERDRAW | 
+                    WS_TABSTOP,3,3,142,113
+    CONTROL         "",IDC_BCGBARRES_GREYSCALEPLACEHOLDER,"Button",
+                    BS_OWNERDRAW | WS_TABSTOP,3,119,142,36
+END
+
+IDD_BCGBARRES_COLORPAGE_TWO DIALOG  0, 0, 143, 157
+STYLE DS_SETFONT | WS_CHILD | WS_VISIBLE | WS_DISABLED | WS_CAPTION
+CAPTION "Custom"
+FONT 8, "MS Sans Serif"
+BEGIN
+    EDITTEXT        IDC_BCGBARRES_R,99,98,27,14,ES_AUTOHSCROLL
+    CONTROL         "Spin4",IDC_BCGBARRES_SPIN1,"msctls_updown32",
+                    UDS_SETBUDDYINT | UDS_ALIGNRIGHT | UDS_AUTOBUDDY | 
+                    UDS_ARROWKEYS,125,98,11,14
+    EDITTEXT        IDC_BCGBARRES_B,99,117,27,14,ES_AUTOHSCROLL
+    CONTROL         "Spin5",IDC_BCGBARRES_SPIN2,"msctls_updown32",
+                    UDS_SETBUDDYINT | UDS_ALIGNRIGHT | UDS_AUTOBUDDY | 
+                    UDS_ARROWKEYS,125,116,11,14
+    EDITTEXT        IDC_BCGBARRES_G,99,138,27,14,ES_AUTOHSCROLL
+    CONTROL         "Spin6",IDC_BCGBARRES_SPIN3,"msctls_updown32",
+                    UDS_SETBUDDYINT | UDS_ALIGNRIGHT | UDS_AUTOBUDDY | 
+                    UDS_ARROWKEYS,125,138,11,14
+    EDITTEXT        IDC_BCGBARRES_L,25,98,27,14,ES_AUTOHSCROLL
+    CONTROL         "Spin7",IDC_BCGBARRES_SPIN4,"msctls_updown32",
+                    UDS_SETBUDDYINT | UDS_ALIGNRIGHT | UDS_AUTOBUDDY | 
+                    UDS_ARROWKEYS,61,98,11,14
+    EDITTEXT        IDC_BCGBARRES_H,25,117,27,14,ES_AUTOHSCROLL
+    CONTROL         "Spin8",IDC_BCGBARRES_SPIN5,"msctls_updown32",
+                    UDS_SETBUDDYINT | UDS_ALIGNRIGHT | UDS_AUTOBUDDY | 
+                    UDS_ARROWKEYS,61,115,11,14
+    EDITTEXT        IDC_BCGBARRES_S,25,138,27,14,ES_AUTOHSCROLL
+    CONTROL         "Spin9",IDC_BCGBARRES_SPIN6,"msctls_updown32",
+                    UDS_SETBUDDYINT | UDS_ALIGNRIGHT | UDS_AUTOBUDDY | 
+                    UDS_ARROWKEYS,61,138,11,14
+    CONTROL         "",IDC_BCGBARRES_COLOURPLACEHOLDER,"Button",BS_OWNERDRAW | 
+                    WS_TABSTOP,5,5,102,87
+    CONTROL         "",IDC_BCGBARRES_LUMINANCEPLACEHOLDER,"Button",
+                    BS_OWNERDRAW | WS_TABSTOP,115,5,21,87
+    LTEXT           "&Red:",IDC_STATIC,75,100,16,8
+    LTEXT           "&Blue:",IDC_STATIC,75,121,17,8
+    LTEXT           "&Green:",IDC_STATIC,75,140,22,8
+    LTEXT           "&Lum:",IDC_STATIC,5,100,16,8
+    LTEXT           "H&ue:",IDC_STATIC,5,119,16,8
+    LTEXT           "&Sat:",IDC_STATIC,5,139,14,8
+END
+
+IDD_BCGBARRES_COLOR_PAGE_THREE DIALOG  0, 0, 158, 154
+STYLE DS_SETFONT | WS_CHILD | WS_VISIBLE | WS_DISABLED | WS_CAPTION
+CAPTION "Black and White"
+FONT 8, "MS Sans Serif"
+BEGIN
+    CONTROL         "",IDC_BCGBARRES_GREYLUMPLACEHOLDER,"Button",
+                    BS_OWNERDRAW | WS_TABSTOP,13,7,26,99
+    CONTROL         "",IDC_BCGBARRES_GREYHEXPLACEHOLDER,"Button",
+                    BS_OWNERDRAW | WS_TABSTOP,4,107,142,40
+    LTEXT           "Lum:",IDC_STATIC,59,17,18,8
+    EDITTEXT        IDC_EDIT_LUMINANCE,81,15,28,14,ES_AUTOHSCROLL
+    CONTROL         "Spin1",IDC_BAW_SPIN1,"msctls_updown32",UDS_SETBUDDYINT | 
+                    UDS_ALIGNRIGHT | UDS_AUTOBUDDY | UDS_ARROWKEYS,123,7,11,
+                    14
+    LTEXT           "R:",IDC_STATIC,59,39,8,8
+    EDITTEXT        IDC_BAW_R,81,35,28,14,ES_AUTOHSCROLL
+    CONTROL         "Spin2",IDC_BAW_SPIN3,"msctls_updown32",UDS_SETBUDDYINT | 
+                    UDS_ALIGNRIGHT | UDS_AUTOBUDDY | UDS_ARROWKEYS,127,52,10,
+                    14
+    LTEXT           "G:",IDC_STATIC,59,58,8,8
+    EDITTEXT        IDC_BAW_G,81,55,28,14,ES_AUTOHSCROLL
+    CONTROL         "Spin3",IDC_BAW_SPIN4,"msctls_updown32",UDS_SETBUDDYINT | 
+                    UDS_ALIGNRIGHT | UDS_AUTOBUDDY | UDS_ARROWKEYS,127,73,10,
+                    14
+    LTEXT           "B:",IDC_STATIC,60,77,8,8
+    EDITTEXT        IDC_BAW_B,81,75,28,14,ES_AUTOHSCROLL
+    CONTROL         "Spin1",IDC_BAW_SPIN2,"msctls_updown32",UDS_SETBUDDYINT | 
+                    UDS_ALIGNRIGHT | UDS_AUTOBUDDY | UDS_ARROWKEYS,126,34,10,
+                    14
+END
+
+IDD_PROPPAGE_COLORRANGE DIALOG  0, 0, 250, 62
+STYLE DS_SETFONT | WS_CHILD
+FONT 8, "MS Sans Serif"
+BEGIN
+    LTEXT           "TODO: Place controls to manipulate properties of ColorRangeCtrl Control on this dialog.",
+                    IDC_STATIC,7,25,229,16
+END
+
+IDD_PROPPAGE_VTRADIOBTN DIALOGEX 0, 0, 250, 110
+STYLE DS_SETFONT | WS_CHILD
+FONT 8, "MS Sans Serif", 0, 0, 0x0
+BEGIN
+    EDITTEXT        209,7,88,178,14,ES_AUTOHSCROLL
+    PUSHBUTTON      "Add",IDC_BUTTON1,190,88,50,14
+    LISTBOX         IDC_LIST2,7,17,177,68,LBS_HASSTRINGS | 
+                    LBS_NOINTEGRALHEIGHT | WS_VSCROLL | WS_HSCROLL | 
+                    WS_TABSTOP
+    PUSHBUTTON      "Up",IDC_BUTTON3,190,17,50,14,WS_DISABLED
+    PUSHBUTTON      "Down",IDC_BUTTON4,190,34,50,14,WS_DISABLED
+    PUSHBUTTON      "Delete",IDC_BUTTON2,190,54,50,14,WS_DISABLED
+    PUSHBUTTON      "Update",IDC_BUTTON5,190,71,50,14,WS_DISABLED
+    LTEXT           "Radio Buttons:",IDC_STATIC,7,7,48,8
+END
+
+IDD_PROPPAGE_VTPROGRESSBAR DIALOGEX 0, 0, 250, 62
+STYLE DS_SETFONT | WS_CHILD
+FONT 8, "MS Sans Serif", 0, 0, 0x0
+BEGIN
+    LTEXT           "Minimum: ",IDC_STATIC,7,9,32,8
+    LTEXT           "Maximum:  ",IDC_STATIC,7,25,36,8
+    LTEXT           "Position: ",IDC_STATIC,7,39,30,8
+    EDITTEXT        IDC_EDIT_MIN,44,7,40,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT_MAX,44,22,40,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT_POS,44,37,40,14,ES_AUTOHSCROLL
+    CONTROL         "Smooth",IDC_SMOOTH,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,120,9,40,10
+    CONTROL         "Show percent",IDC_SHOW_PERCENT,"Button",BS_AUTOCHECKBOX | 
+                    NOT WS_VISIBLE | WS_TABSTOP,120,26,60,10
+END
+
+IDD_PROPPAGE_VTRADIOBTN_TWO DIALOGEX 0, 0, 250, 62
+STYLE DS_SETFONT | DS_FIXEDSYS | WS_CHILD
+FONT 8, "MS Shell Dlg", 0, 0, 0x0
+BEGIN
+    CONTROL         "Enable",IDC_ENABLE,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,11,13,37,10
+    CONTROL         "Visible",IDC_VISIBLE,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,11,26,35,10
+    CONTROL         "Evenly spaced",IDC_EVENLYSPACED,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,11,39,62,10
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO 
+BEGIN
+    IDD_PROPPAGE_VTCOMBOBOX, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 210
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 55
+    END
+
+    IDD_PROPPAGE_VTCOLORPICKER, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 243
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 55
+    END
+
+    IDD_PROPPAGE_VTWIDTH, DIALOG
+    BEGIN
+        RIGHTMARGIN, 246
+    END
+
+    IDD_DIALOGWIDTH, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 172
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 39
+    END
+
+    IDD_BCGBARRES_COLOR_DLG, DIALOG
+    BEGIN
+        BOTTOMMARGIN, 180
+    END
+
+    IDD_BCGBARRES_COLOR_PAGE_ONE, DIALOG
+    BEGIN
+        LEFTMARGIN, 3
+        RIGHTMARGIN, 145
+        TOPMARGIN, 3
+        BOTTOMMARGIN, 155
+    END
+
+    IDD_BCGBARRES_COLOR_PAGE_THREE, DIALOG
+    BEGIN
+        LEFTMARGIN, 4
+        RIGHTMARGIN, 152
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 147
+    END
+
+    IDD_PROPPAGE_COLORRANGE, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 243
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 55
+    END
+
+    IDD_PROPPAGE_VTRADIOBTN, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 240
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 102
+    END
+
+    IDD_PROPPAGE_VTPROGRESSBAR, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 243
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 54
+    END
+
+    IDD_PROPPAGE_VTRADIOBTN_TWO, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 243
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 55
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDB_VTCOMBOBOX          BITMAP                  "VTComboBoxCtl.bmp"
+IDB_VTCOLORPICKER       BITMAP                  "VTColorPickerCtl.bmp"
+IDB_VTWIDTH             BITMAP                  "VTWidthCtl.bmp"
+IDB_VTCOMBOBOX2         BITMAP                  "vtcombob.bmp"
+IDB_COLORRANGE          BITMAP                  "ColorRangeCtrl.bmp"
+IDB_VTPROGRESSBAR       BITMAP                  "VTProgressBarCtrl.bmp"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Accelerator
+//
+
+IDR_ACCELERATOR1 ACCELERATORS 
+BEGIN
+    VK_F4,          IDC_DROPDOWN,           VIRTKEY, NOINVERT
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE 
+BEGIN
+    IDS_VTCOMBOBOX          "VT Combo Box Control"
+    IDS_VTCOMBOBOX_PPG      "VT Combo Box Property Page"
+    IDS_VTCOLORPICKER       "VT Color Picker Control"
+    IDS_VTCOLORPICKER_PPG   "VT Color Picker Property Page"
+    IDS_VTWIDTH             "VT Width Control"
+    IDS_VTWIDTH_PPG         "VT Width Property Page"
+    IDS_VTCOMBOBOX2         "VT Combo Box 2 Control"
+    IDS_COLORRANGE          "VT ColorRange Control"
+    IDS_COLORRANGE_PPG      "VT ColorRange Property Page"
+    IDS_WRONG_WIDTH         "Width is out of range!"
+    IDS_VTRADIOBTN          "VTRadioBtn Control"
+    IDS_VTRADIOBTN_PPG      "VTRadioBtn Property Page"
+    IDS_VTPROGRESSBAR       "VTProgressBar Control"
+    IDS_VTPROGRESSBAR_PPG   "VTProgressBar Property Page"
+    IDS_VTRADIOBTN_PPG_TWO_CAPTION "General"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_VTCOMBOBOX_PPG_CAPTION "General"
+    IDS_VTCOLORPICKER_PPG_CAPTION "General"
+    IDS_VTWIDTH_PPG_CAPTION "General"
+    IDS_FIRST_TYPE          "editable"
+    IDS_SECOND_TYPE         "not editable"
+    IDS_COLORRANGE_PPG_CAPTION "General"
+    IDS_VTRADIOBTN_PPG_CAPTION "Buttons"
+    IDS_VTPROGRESSBAR_PPG_CAPTION "General"
+END
+
+#endif    // English (U.S.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+1 TYPELIB "vtcontrols2.tlb"
+#include "res\VTControls2.rc2"
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

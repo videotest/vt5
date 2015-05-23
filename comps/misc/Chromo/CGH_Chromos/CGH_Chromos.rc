@@ -1,0 +1,261 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// Russian resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_RUS)
+#ifdef _WIN32
+LANGUAGE LANG_RUSSIAN, SUBLANG_DEFAULT
+#pragma code_page(1251)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)\r\n"
+    "#ifdef _WIN32\r\n"
+    "LANGUAGE 9, 1\r\n"
+    "#pragma code_page(1252)\r\n"
+    "#endif //_WIN32\r\n"
+    "#include ""res\\CGH_Chromos.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "#include ""afxres.rc""         // Standard components\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Toolbar
+//
+
+IDR_TOOLBAR1 TOOLBAR  16, 15
+BEGIN
+    BUTTON      IDS_ACTION_MERGE
+    BUTTON      IDS_ACTION_REMOVE_PANE
+    BUTTON      IDS_ACTION_AUTO_CORRECT
+    BUTTON      IDS_ACTION_MANUAL_CORRECT
+    BUTTON      IDS_ACTION_CALCRATIOPANE
+    BUTTON      IDS_ACTION_SWITCHCGHPANE
+    BUTTON      IDS_ACTION_SWITCHCGHPANE0
+    BUTTON      IDS_ACTION_SWITCHCGHPANE1
+    BUTTON      IDS_ACTION_SWITCHCGHPANE2
+    BUTTON      IDS_ACTION_SWITCHCGHPANE3
+    BUTTON      IDS_ACTION_SWITCHCGHPANE4
+    BUTTON      IDS_ACTION_TESTPLATE
+    BUTTON      IDS_ACTION_TESTAVERAGED
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDR_TOOLBAR1            BITMAP                  "toolbar1.bmp"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Cursor
+//
+
+IDC_CURSOR_FREE         CURSOR                  "cursor1.cur"
+IDC_CURSOR_CATCH        CURSOR                  "cursor2.cur"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE 
+BEGIN
+    IDS_ACTION_MERGE        "SetImagePane\nSetImagePane\nEdit\nSetImagePane\nSetImagePane"
+    IDS_SET_ERROR           "Too much panes on image"
+    IDS_ACTION_REMOVE_PANE  "RemoveImagePane\nRemoveImagePane\nEdit\nRemoveImagePane\nRemoveImagePane"
+    IDS_ACTION_AUTO_CORRECT "AutoCorrectionPanes\nOptical Shift Correction\nEdit\nCorrection of optical shift between image planes\nOptical Shift Correction"
+    IDS_ACTION_MANUAL_CORRECT 
+                            "ManualCorrectionPanes\nРучная коррекция сдвига\nПравка\nКоррекция сдвига\nРучная коррекция сдвига"
+    IDS_ACTION_CALCRATIOPANE 
+                            "CalcRatioPane\nCalculate Ratio Image\nCGH Chromos\nCalculate brightness ratio between test and reference images\nCalculate Ratio Image"
+    IDS_ACTION_SWITCHCGHPANE 
+                            "SwitchCGHPane\nSwitchCGHPane\nCGH Chromos\nSwitchCGHPane\nCSwitchCGHPane"
+    IDS_ACTION_SWITCHCGHPANE0 
+                            "SwitchCGHPane0\nSwitchCGHPane0\nCGH Chromos\nSwitchCGHPane0\nCSwitchCGHPane0"
+    IDS_ACTION_SWITCHCGHPANE1 
+                            "SwitchCGHPane1\nSwitchCGHPane1\nCGH Chromos\nSwitchCGHPane1\nCSwitchCGHPane1"
+    IDS_ACTION_SWITCHCGHPANE2 
+                            "SwitchCGHPane2\nSwitchCGHPane2\nCGH Chromos\nSwitchCGHPane2\nCSwitchCGHPane2"
+    IDS_ACTION_SWITCHCGHPANE3 
+                            "SwitchCGHPane3\nSwitchCGHPane3\nCGH Chromos\nSwitchCGHPane3\nCSwitchCGHPane3"
+    IDS_ACTION_SWITCHCGHPANE4 
+                            "SwitchCGHPane4\nSwitchCGHPane4\nCGH Chromos\nSwitchCGHPane4\nCSwitchCGHPane4"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_CONVERT_ERROR       "Error of color convertion!"
+    IDS_REMOVE_ERROR        "PaneNum is out of range"
+    IDS_ACTION_TESTPLATE    "TestCGHPlate\nTestCGHPlate\nCGH Chromos\nTestCGHPlate\nTestCGHPlate"
+    IDS_ACTION_TESTAVERAGED "TestAveraged\nTestAveraged\nCGH Chromos\nTestAveraged\nTestAveraged"
+    IDS_ERRONEOUSAVERAGING  "There is %u erroneous averaging - in classes %s."
+END
+
+#endif    // Russian resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.S.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_COMBINE_PAGE DIALOGEX 0, 0, 186, 49
+STYLE DS_SETFONT | DS_CONTROL | WS_CHILD | WS_VISIBLE
+EXSTYLE WS_EX_CONTROLPARENT
+FONT 8, "MS Sans Serif", 0, 0, 0x1
+BEGIN
+    CONTROL         "Active layer:",IDC_STATIC,"Static",SS_SIMPLE | WS_GROUP,
+                    5,3,40,8
+    CONTROL         "Layer 2",IDC_RADIO1,"Button",BS_AUTORADIOBUTTON | 
+                    BS_PUSHLIKE | BS_FLAT,5,12,111,12
+    CONTROL         "Layer 3",IDC_RADIO2,"Button",BS_AUTORADIOBUTTON | 
+                    BS_PUSHLIKE | BS_FLAT,5,26,111,12
+    PUSHBUTTON      "Combine",IDC_BUTTON1,127,12,50,12
+    PUSHBUTTON      "Cancel",IDC_BUTTON2,127,27,50,12
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDI_ICON_CGH            ICON                    "icon_cgh.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO 
+BEGIN
+    IDD_COMBINE_PAGE, DIALOG
+    BEGIN
+        BOTTOMMARGIN, 48
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE 
+BEGIN
+    IDS_ACTION_MERGE        "SetImagePane\nSetImagePane\nEdit\nSetImagePane\nSetImagePane"
+    IDS_SET_ERROR           "Too much panes on image"
+    IDS_ACTION_REMOVE_PANE  "RemoveImagePane\nRemoveImagePane\nEdit\nRemoveImagePane\nRemoveImagePane"
+    IDS_ACTION_AUTO_CORRECT "AutoCorrectionPanes\nOptical Shift Correction\nEdit\nCorrection of optical shift between image planes\nOptical Shift Correction"
+    IDS_ACTION_MANUAL_CORRECT 
+                            "ManualCorrectionPanes\nManual Shift Correction\nEdit\nShift correction\nManual Shift Correction"
+    IDS_ACTION_CALCRATIOPANE 
+                            "CalcRatioPane\nCalculate Ratio Image\nCGH Chromos\nCalculate brightness ratio between test and reference images\nCalculate Ratio Image"
+    IDS_ACTION_SWITCHCGHPANE 
+                            "SwitchCGHPane\nSwitchCGHPane\nCGH Chromos\nSwitchCGHPane\nCSwitchCGHPane"
+    IDS_ACTION_SWITCHCGHPANE0 
+                            "SwitchCGHPane0\nSwitchCGHPane0\nCGH Chromos\nSwitchCGHPane0\nCSwitchCGHPane0"
+    IDS_ACTION_SWITCHCGHPANE1 
+                            "SwitchCGHPane1\nSwitchCGHPane1\nCGH Chromos\nSwitchCGHPane1\nCSwitchCGHPane1"
+    IDS_ACTION_SWITCHCGHPANE2 
+                            "SwitchCGHPane2\nSwitchCGHPane2\nCGH Chromos\nSwitchCGHPane2\nCSwitchCGHPane2"
+    IDS_ACTION_SWITCHCGHPANE3 
+                            "SwitchCGHPane3\nSwitchCGHPane3\nCGH Chromos\nSwitchCGHPane3\nCSwitchCGHPane3"
+    IDS_ACTION_SWITCHCGHPANE4 
+                            "SwitchCGHPane4\nSwitchCGHPane4\nCGH Chromos\nSwitchCGHPane4\nCSwitchCGHPane4"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_CONVERT_ERROR       "Error of color convertion!"
+    IDS_REMOVE_ERROR        "PaneNum is out of range"
+    IDS_ACTION_TESTPLATE    "TestCGHPlate\nTestCGHPlate\nCGH Chromos\nTestCGHPlate\nTestCGHPlate"
+    IDS_ACTION_TESTAVERAGED "TestAveraged\nTestAveraged\nCGH Chromos\nTestAveraged\nTestAveraged"
+    IDS_ERRONEOUSAVERAGING  "There is %u erroneous averaging - in classes %s."
+END
+
+#endif    // English (U.S.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE 9, 1
+#pragma code_page(1252)
+#endif //_WIN32
+#include "res\CGH_Chromos.rc2"  // non-Microsoft Visual C++ edited resources
+#include "afxres.rc"         // Standard components
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

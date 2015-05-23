@@ -1,0 +1,832 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// Chinese (P.R.C.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)
+#ifdef _WIN32
+LANGUAGE LANG_CHINESE, SUBLANG_CHINESE_SIMPLIFIED
+#pragma code_page(936)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_PROPPAGE_PRINTFIELDAX DIALOGEX 0, 0, 257, 101
+STYLE DS_SETFONT | WS_CHILD
+FONT 8, "MS Sans Serif", 0, 0, 0x1
+BEGIN
+    EDITTEXT        IDC_CAPTION,40,6,89,12,ES_AUTOHSCROLL
+    COMBOBOX        IDC_GROUP,40,26,89,87,CBS_DROPDOWN | CBS_SORT | 
+                    WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_STYLE,40,44,89,87,CBS_DROPDOWNLIST | WS_VSCROLL | 
+                    WS_TABSTOP
+    CONTROL         "їїЧу(&L)",IDC_ALIGN_LEFT,"Button",BS_AUTORADIOBUTTON | 
+                    WS_GROUP | WS_TABSTOP,144,11,28,10
+    CONTROL         "ѕУЦР(&C)",IDC_ALIGN_CENTER,"Button",BS_AUTORADIOBUTTON,
+                    143,22,37,10
+    CONTROL         "їїУТ(&G)",IDC_ALIGN_RIGHT,"Button",BS_AUTORADIOBUTTON,
+                    143,34,38,10
+    CONTROL         "№М¶Ё(&X)",IDC_FIXED_WIDTH,"Button",BS_AUTORADIOBUTTON,
+                    143,46,38,10
+    EDITTEXT        IDC_WIDTH,184,43,34,14,ES_AUTOHSCROLL
+    CONTROL         "Spin1",IDC_SPIN_WIDTH,"msctls_updown32",UDS_SETBUDDYINT | 
+                    UDS_ALIGNRIGHT | UDS_ARROWKEYS | UDS_NOTHOUSANDS,235,43,
+                    11,14
+    CONTROL         "»сИЎ shell КэѕЭµДЦµ",IDC_CHECK_USEKEY,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,9,67,94,10
+    COMBOBOX        IDC_COMBO_FROM,9,78,90,62,CBS_DROPDOWNLIST | CBS_SORT | 
+                    WS_VSCROLL | WS_TABSTOP
+    PUSHBUTTON      "їШјюКфРФ(&O)...",IDC_PROPERTIES,137,76,104,14
+    LTEXT           "±кМв(&C):",IDC_STATIC,7,8,27,8
+    LTEXT           "Чй(&G):",IDC_STATIC,7,28,22,8
+    LTEXT           "АаРН(&T):",IDC_STATIC,7,46,19,8
+    LTEXT           "%",IDC_WIDTH_PERCENT,220,48,8,8
+    GROUPBOX        "КэѕЭІјѕЦ",IDC_STATIC,136,0,116,61
+END
+
+IDD_TEXT_PROPERTIES DIALOGEX 0, 0, 137, 135
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "ОД±ѕ"
+FONT 8, "MS Sans Serif", 0, 0, 0x0
+BEGIN
+    GROUPBOX        "АаРН",IDC_STATIC,7,6,117,79
+    CONTROL         "µҐРР(&S)",IDC_SINGLELINE,"Button",BS_AUTORADIOBUTTON | 
+                    WS_GROUP | WS_TABSTOP,41,25,48,10
+    CONTROL         "¶аРР(&U)",IDC_MULTYLINE,"Button",BS_AUTORADIOBUTTON,41,
+                    43,41,10
+    CONTROL         "ПВА­БР±н(&D)",IDC_COMBOBOX,"Button",BS_AUTORADIOBUTTON,
+                    41,61,61,10
+    CONTROL         "Ѕ«µ±З°КэѕЭЙиЦГОЄД¬ИПЦµ(&E)",IDC_SETDATE,"Button",
+                    BS_AUTOCHECKBOX | NOT WS_VISIBLE | WS_TABSTOP,7,92,119,
+                    10
+    DEFPUSHBUTTON   "И·¶Ё",IDOK,13,114,50,14
+    PUSHBUTTON      "ИЎПы",IDCANCEL,75,114,50,14
+END
+
+IDD_NUMERIC_PROPERTIES DIALOG  0, 0, 147, 172
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "КэЧЦ"
+FONT 8, "MS Sans Serif"
+BEGIN
+    GROUPBOX        "КэЧЦАаРН",IDC_STATIC,7,6,134,40
+    CONTROL         "ХыКэ(&I)",IDC_INTEGER,"Button",BS_AUTORADIOBUTTON | 
+                    WS_GROUP,16,25,38,10
+    CONTROL         "ёЎµгКэ(&F)",IDC_FLOAT,"Button",BS_AUTORADIOBUTTON,76,25,
+                    58,10
+    GROUPBOX        "",IDC_STATIC,7,54,134,59
+    CONTROL         "ЖфУГПЮЦЖјмІй(&E)",IDC_BOUNDS,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,16,54,77,10
+    LTEXT           "ЧоРЎЦµ(&N)",IDC_LOW_STATIC,25,74,44,8
+    EDITTEXT        IDC_LOW,87,71,40,14,ES_AUTOHSCROLL
+    LTEXT           "ЧоґуЦµ(&X)",IDC_HIGH_STATIC,25,93,46,8
+    EDITTEXT        IDC_HIGH,87,90,40,14,ES_AUTOHSCROLL
+    CONTROL         "Д¬ИПЦµ",IDC_DEFAULT,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,16,122,58,10
+    DEFPUSHBUTTON   "И·¶Ё",IDOK,15,150,50,14
+    PUSHBUTTON      "ИЎПы",IDCANCEL,77,150,50,14
+    EDITTEXT        IDC_VALUE,87,119,40,14,ES_AUTOHSCROLL
+END
+
+IDD_ENTER_VALUES DIALOGEX 0, 0, 246, 22
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "»јХЯЧКБП"
+FONT 8, "MS Sans Serif", 0, 0, 0x0
+BEGIN
+    DEFPUSHBUTTON   "И·¶Ё",IDOK,14,3,50,14
+    PUSHBUTTON      "ИЎПы",IDCANCEL,70,3,50,14
+    PUSHBUTTON      "°пЦъ",IDHELP,182,3,50,14
+    PUSHBUTTON      "Д¬ИПБР±н",IDC_COMBO_DEFAULT,126,3,50,14,WS_DISABLED
+END
+
+IDD_DATE_PROPERTIES DIALOGEX 0, 0, 137, 51
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "ИХЖЪ"
+FONT 8, "MS Sans Serif", 0, 0, 0x0
+BEGIN
+    CONTROL         "Ѕ«µ±З°КэѕЭЙиЦГОЄД¬ИПЦµ(&E)",IDC_SETDATE,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,7,10,119,10
+    DEFPUSHBUTTON   "И·¶Ё",IDOK,12,25,50,14
+    PUSHBUTTON      "ИЎПы",IDCANCEL,74,25,50,14
+END
+
+IDD_PROPPAGE_VIEWLOADER DIALOGEX 0, 0, 250, 62
+STYLE DS_SETFONT | DS_FIXEDSYS | WS_CHILD
+FONT 8, "MS Shell Dlg", 0, 0, 0x0
+BEGIN
+    COMBOBOX        IDC_TEMPLATE_ALGORITHM,19,22,155,47,CBS_DROPDOWN | 
+                    CBS_SORT | WS_VSCROLL | WS_TABSTOP
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO 
+BEGIN
+    IDD_PROPPAGE_PRINTFIELDAX, DIALOG
+    BEGIN
+        LEFTMARGIN, 1
+        RIGHTMARGIN, 256
+        TOPMARGIN, 2
+        BOTTOMMARGIN, 98
+    END
+
+    IDD_TEXT_PROPERTIES, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 130
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 128
+    END
+
+    IDD_NUMERIC_PROPERTIES, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 140
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 165
+    END
+
+    IDD_ENTER_VALUES, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 239
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 15
+    END
+
+    IDD_DATE_PROPERTIES, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 130
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 44
+    END
+
+    IDD_PROPPAGE_VIEWLOADER, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 243
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 55
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog Info
+//
+
+IDD_PROPPAGE_PRINTFIELDAX DLGINIT
+BEGIN
+    IDC_STYLE, 0x403, 5, 0
+0xfdca, 0xd6d7, "\000" 
+    IDC_STYLE, 0x403, 5, 0
+0xc4ce, 0xbeb1, "\000" 
+    IDC_STYLE, 0x403, 5, 0
+0xd5c8, 0xdac6, "\000" 
+    0
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE 
+BEGIN
+    IDS_PRINTFIELDAX        "Ѕ»»ҐКэѕЭЧЦ¶О"
+    IDS_PRINTFIELDAX_PPG    "Ѕ»»ҐКэѕЭКфРФТі"
+    IDS_INVALIDRANGE        "ОЮР§·¶О§"
+    IDS_INVALIDDEFVALUE     "ОЮР§Д¬ИПЦµЈЁі¬іц·¶О§Ј©"
+    IDS_VIEWLOADER          "ViewLoader Control"
+    IDS_VIEWLOADER_PPG      "ViewLoader Property Page"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_PRINTFIELDAX_PPG_CAPTION "НЁУГ"
+    IDS_REQUEST_FOR_DB      "RequestForDB\nЗлЗуКэѕЭївµДКэѕЭ\n±ај­\nЗлЗуКэѕЭївµДУГ»§ЧЦ¶ОЦµ\nЗлЗуКэѕЭївµДЦµ"
+    IDS_REQUEST_FOR_PRINT   "RequestForPrint\nЗлЗуґтУЎКэѕЭ\n±ај­\nЗлЗуТЄґтУЎµДУГ»§ЧЦ¶ОЦµ\nЗлЗуґтУЎЦµ"
+    IDS_CANT_LOAD_REPORT    "І»ДЬјУФШ±Ёёж"
+    IDS_NOFIELDAXFOUND      "»о¶Ї±ЁёжОЄїХ»тТСґУ <ДЈ°е> ОДјюјРТЖіцЎЈ\nЗлБнСЎТ»ёцЎЈ"
+    IDS_NOINTEGER           "ЗлКдИлУРР§КэЧЦ"
+    IDS_INT_NOTININTERVAL   "КэЧЦ %d І»ФЪУРР§јдёф %d-%d ЦР"
+    IDS_NODOUBLE            "ЗлКдИлУРР§ёЎµгЦµ"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_DOUBLE_NOTININTERVAL "КэЧЦ %g І»ФЪУРР§јдёф %g-%g ЦР"
+    IDS_DATABASE            "КэѕЭїв"
+    IDS_NO_DBASE_DOCUMENT   "ХТІ»µЅКэѕЭївОДµµ"
+    IDS_NO_ACTIVE_QUERY     "ХТІ»µЅ»о¶ЇІйСЇ"
+    IDS_NO_DBASECONTROLS_FOUND "ХТІ»µЅјжИЭµДКэѕЭївЧЦ¶О"
+    IDS_STORE_FOR_PRINT     "StoreForPrint\nStore Data for Printing\nEdit\nStore user field values for printing\nStore Data for Printing"
+    IDS_CTRL_TEXT           "ОД±ѕ"
+    IDS_CTRL_GROUP          "ЧйГы"
+    IDS_CTRL_CAPTION        "±кМв"
+    IDS_REQUEST_FOR_PRINTSD "RequestForPrintSD\nЗлЗу ShellData ЦРµДґтУЎКэѕЭ\n±ај­\nЗлЗу ShellData ЦРТЄґтУЎµДУГ»§ЧЦ¶ОЦµ\nЗлЗу ShellData ЦРµДґтУЎЦµ"
+    IDS_NOFIELDAXFOUND2     "ХТІ»µЅКэѕЭЈЎ"
+    IDS_VIEWLOADER_PPG_CAPTION "General"
+END
+
+#endif    // Chinese (P.R.C.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+/////////////////////////////////////////////////////////////////////////////
+// Neutral resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_NEU)
+#ifdef _WIN32
+LANGUAGE LANG_NEUTRAL, SUBLANG_NEUTRAL
+#pragma code_page(1251)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDB_PRINTFIELDAX        BITMAP                  "PrintFieldAXCtl.bmp"
+IDB_VIEWLOADER          BITMAP                  "ViewLoader.bmp"
+#endif    // Neutral resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+/////////////////////////////////////////////////////////////////////////////
+// Russian resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_RUS)
+#ifdef _WIN32
+LANGUAGE LANG_RUSSIAN, SUBLANG_DEFAULT
+#pragma code_page(1251)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_ENTER_VALUES DIALOGEX 0, 0, 252, 31
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Данные о пациенте"
+FONT 8, "MS Sans Serif", 0, 0, 0x0
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,6,8,50,14
+    PUSHBUTTON      "Выход",IDCANCEL,59,8,50,14
+    PUSHBUTTON      "Справка",IDHELP,194,8,50,14
+    PUSHBUTTON      "Список по умолчанию",IDC_COMBO_DEFAULT,112,8,79,14,
+                    WS_DISABLED
+END
+
+IDD_NUMERIC_PROPERTIES DIALOG  0, 0, 147, 172
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Числовое"
+FONT 8, "MS Sans Serif"
+BEGIN
+    GROUPBOX        "Число",IDC_STATIC,7,6,134,40
+    CONTROL         "&Целое",IDC_INTEGER,"Button",BS_AUTORADIOBUTTON | 
+                    WS_GROUP,16,25,37,10
+    CONTROL         "&Дробное",IDC_FLOAT,"Button",BS_AUTORADIOBUTTON,71,25,
+                    46,10
+    GROUPBOX        "",IDC_STATIC,7,54,134,59
+    CONTROL         "&Вкл. пределы",IDC_BOUNDS,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,16,54,62,10
+    LTEXT           "Ми&н. значение:",IDC_LOW_STATIC,25,74,52,8
+    EDITTEXT        IDC_LOW,87,71,40,14,ES_AUTOHSCROLL
+    LTEXT           "Ма&кс. значение:",IDC_HIGH_STATIC,25,93,56,8
+    EDITTEXT        IDC_HIGH,87,90,40,14,ES_AUTOHSCROLL
+    CONTROL         "По умолчанию",IDC_DEFAULT,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,16,122,65,10
+    DEFPUSHBUTTON   "OK",IDOK,15,150,50,14
+    PUSHBUTTON      "Выход",IDCANCEL,77,150,50,14
+    EDITTEXT        IDC_VALUE,87,119,40,14,ES_AUTOHSCROLL
+END
+
+IDD_PROPPAGE_PRINTFIELDAX DIALOGEX 0, 0, 252, 93
+STYLE DS_SETFONT | WS_CHILD
+FONT 8, "MS Sans Serif", 0, 0, 0x0
+BEGIN
+    EDITTEXT        IDC_CAPTION,40,6,89,12,ES_AUTOHSCROLL
+    COMBOBOX        IDC_GROUP,40,26,89,87,CBS_DROPDOWN | CBS_AUTOHSCROLL | 
+                    CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_STYLE,40,44,89,87,CBS_DROPDOWNLIST | CBS_AUTOHSCROLL | 
+                    WS_VSCROLL | WS_TABSTOP
+    CONTROL         "&Слева",IDC_ALIGN_LEFT,"Button",BS_AUTORADIOBUTTON | 
+                    WS_GROUP | WS_TABSTOP,144,11,37,10
+    CONTROL         "&Центр",IDC_ALIGN_CENTER,"Button",BS_AUTORADIOBUTTON,
+                    143,22,37,10
+    CONTROL         "Право",IDC_ALIGN_RIGHT,"Button",BS_AUTORADIOBUTTON,143,
+                    34,37,10
+    CONTROL         "Фикс.",IDC_FIXED_WIDTH,"Button",BS_AUTORADIOBUTTON,143,
+                    46,35,10
+    EDITTEXT        IDC_WIDTH,179,43,34,14,ES_AUTOHSCROLL
+    CONTROL         "Spin1",IDC_SPIN_WIDTH,"msctls_updown32",UDS_SETBUDDYINT | 
+                    UDS_ALIGNRIGHT | UDS_ARROWKEYS | UDS_NOTHOUSANDS,228,43,
+                    11,14
+    CONTROL         "Брать данные из Shell.Data",IDC_CHECK_USEKEY,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,9,67,108,10
+    COMBOBOX        IDC_COMBO_FROM,9,78,104,64,CBS_DROPDOWNLIST | 
+                    CBS_AUTOHSCROLL | CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    PUSHBUTTON      "Свойства",IDC_PROPERTIES,137,76,104,14
+    LTEXT           "&Надпись:",IDC_STATIC,7,8,32,8
+    LTEXT           "&Группа:",IDC_STATIC,7,28,26,8
+    LTEXT           "&Тип:",IDC_STATIC,7,46,16,8
+    LTEXT           "%",IDC_WIDTH_PERCENT,215,48,8,8
+    GROUPBOX        " Выравнивание ",IDC_STATIC,136,0,108,61
+END
+
+IDD_TEXT_PROPERTIES DIALOGEX 0, 0, 137, 153
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Текст"
+FONT 8, "MS Sans Serif", 0, 0, 0x0
+BEGIN
+    GROUPBOX        "Вид",IDC_STATIC,7,6,117,101
+    CONTROL         "&Строка",IDC_SINGLELINE,"Button",BS_AUTORADIOBUTTON | 
+                    WS_GROUP | WS_TABSTOP,41,25,40,10
+    CONTROL         "М&ногострочный",IDC_MULTYLINE,"Button",
+                    BS_AUTORADIOBUTTON,41,43,69,10
+    CONTROL         "&Вып. список",IDC_COMBOBOX,"Button",BS_AUTORADIOBUTTON,
+                    41,61,58,10
+    CONTROL         "Т&екущая дата по умолч.",IDC_SETDATE,"Button",
+                    BS_AUTOCHECKBOX | NOT WS_VISIBLE | WS_TABSTOP,7,114,118,
+                    10
+    DEFPUSHBUTTON   "OK",IDOK,13,132,50,14
+    PUSHBUTTON      "Выход",IDCANCEL,75,132,50,14
+    CONTROL         "&Нередакт. вып. список",IDC_COMBOBOX_DROPLIST,"Button",
+                    BS_AUTORADIOBUTTON | BS_MULTILINE,41,75,58,23
+END
+
+IDD_DATE_PROPERTIES DIALOGEX 0, 0, 137, 49
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Дата"
+FONT 8, "MS Sans Serif", 0, 0, 0x0
+BEGIN
+    CONTROL         "Т&екущая дата по умолч.",IDC_SETDATE,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,12,10,118,10
+    DEFPUSHBUTTON   "OK",IDOK,13,25,50,14
+    PUSHBUTTON      "Выход",IDCANCEL,75,25,50,14
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO 
+BEGIN
+    IDD_ENTER_VALUES, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 245
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 24
+    END
+
+    IDD_NUMERIC_PROPERTIES, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 140
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 165
+    END
+
+    IDD_TEXT_PROPERTIES, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 130
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 146
+    END
+
+    IDD_DATE_PROPERTIES, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 130
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 42
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog Info
+//
+
+IDD_PROPPAGE_PRINTFIELDAX DLGINIT
+BEGIN
+    IDC_STYLE, 0x403, 9, 0
+0xe8f7, 0xebf1, 0xe2ee, 0xe5ee, "\000" 
+    IDC_STYLE, 0x403, 10, 0
+0xe5f2, 0xf1ea, 0xeef2, 0xeee2, 0x00e5, 
+    IDC_STYLE, 0x403, 5, 0
+0xe0e4, 0xe0f2, "\000" 
+    0
+END
+
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "1 TYPELIB ""PrintFieldAX.tlb""\r\n"
+    "#include ""res\\PrintFieldAX.rc2""\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE 
+BEGIN
+    IDS_PRINTFIELDAX        "Интерактивное поле"
+    IDS_PRINTFIELDAX_PPG    "Свойства интерактивного поля"
+    IDS_INVALIDRANGE        "Значение вне допустимого интервала"
+    IDS_INVALIDDEFVALUE     "Неправильное значение по умолчанию (вне допустимого интервала)"
+    IDS_VIEWLOADER          "Генератор отчетов"
+    IDS_VIEWLOADER_PPG      "Свойства генератора отчетов"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_PRINTFIELDAX_PPG_CAPTION "Основные"
+    IDS_REQUEST_FOR_DB      "RequestForDB\nЗапрос данных для базы\nEdit\nЗапрос значений пользовательских полей для базы данных\nЗапрос данных для базы"
+    IDS_REQUEST_FOR_PRINT   "RequestForPrint\nЗапрос данных для печати\nEdit\nЗапрос значений пользовательских полей для печати\nRequest Values For Printing"
+    IDS_CANT_LOAD_REPORT    "Невозможно загрузить отчет"
+    IDS_NOFIELDAXFOUND      "Активный шаблон пуст или перемещен из папки <Templates>\nВыберите другой шаблон"
+    IDS_NOINTEGER           "Неверный формат числа"
+    IDS_INT_NOTININTERVAL   "Число %d находится вне допустимого интервала %d-%d"
+    IDS_NODOUBLE            "Неверный формат дробного числа"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_DOUBLE_NOTININTERVAL 
+                            "Число %g находится вне допустимого интервала %g-%g"
+    IDS_DATABASE            "База данных"
+    IDS_NO_DBASE_DOCUMENT   "Не найден документ базы даннных."
+    IDS_NO_ACTIVE_QUERY     "Не найден активный запрос"
+    IDS_NO_DBASECONTROLS_FOUND "Не найден совместимый файл базы данных"
+    IDS_STORE_FOR_PRINT     "StoreForPrint\nЗапись данных для печати\nEdit\nЗапись значений пользовательских полей для печати\nStore Values For Printing"
+    IDS_CTRL_TEXT           "Текст"
+    IDS_CTRL_GROUP          "Заголовок группы"
+    IDS_CTRL_CAPTION        "Название"
+    IDS_REQUEST_FOR_PRINTSD "RequestForPrintSD\nЗапрос данных для печати по ShellData\nEdit\nЗапрос значений пользовательских полей для печати по ShellData\nRequest Values For Printing from ShellData"
+    IDS_NOFIELDAXFOUND2     "Не обнаружено данных!"
+    IDS_VIEWLOADER_PPG_CAPTION "Общие"
+END
+
+#endif    // Russian resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+/////////////////////////////////////////////////////////////////////////////
+// Neutral (Sys. Default) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_NEUSD)
+#ifdef _WIN32
+LANGUAGE LANG_NEUTRAL, SUBLANG_SYS_DEFAULT
+#pragma code_page(1251)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_PROPPAGE_VIEWLOADER DIALOGEX 0, 0, 250, 62
+STYLE DS_SETFONT | DS_FIXEDSYS | WS_CHILD
+FONT 8, "MS Shell Dlg", 0, 0, 0x0
+BEGIN
+    COMBOBOX        IDC_TEMPLATE_ALGORITHM,20,25,153,42,CBS_DROPDOWN | 
+                    CBS_SORT | WS_VSCROLL | WS_TABSTOP
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO 
+BEGIN
+    IDD_PROPPAGE_VIEWLOADER, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 243
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 55
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+#endif    // Neutral (Sys. Default) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.S.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_PROPPAGE_PRINTFIELDAX DIALOGEX 0, 0, 250, 101
+STYLE DS_SETFONT | WS_CHILD
+FONT 8, "MS Sans Serif", 0, 0, 0x1
+BEGIN
+    EDITTEXT        IDC_CAPTION,40,6,89,12,ES_AUTOHSCROLL
+    COMBOBOX        IDC_GROUP,40,26,89,87,CBS_DROPDOWN | CBS_AUTOHSCROLL | 
+                    CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_STYLE,40,44,89,87,CBS_DROPDOWNLIST | CBS_AUTOHSCROLL | 
+                    WS_VSCROLL | WS_TABSTOP
+    CONTROL         "&Left",IDC_ALIGN_LEFT,"Button",BS_AUTORADIOBUTTON | 
+                    WS_GROUP | WS_TABSTOP,144,11,28,10
+    CONTROL         "&Center",IDC_ALIGN_CENTER,"Button",BS_AUTORADIOBUTTON,
+                    143,22,37,10
+    CONTROL         "Ri&ght",IDC_ALIGN_RIGHT,"Button",BS_AUTORADIOBUTTON,143,
+                    34,33,10
+    CONTROL         "Fi&xed",IDC_FIXED_WIDTH,"Button",BS_AUTORADIOBUTTON,143,
+                    46,33,10
+    EDITTEXT        IDC_WIDTH,177,43,34,14,ES_AUTOHSCROLL
+    CONTROL         "Spin1",IDC_SPIN_WIDTH,"msctls_updown32",UDS_SETBUDDYINT | 
+                    UDS_ALIGNRIGHT | UDS_ARROWKEYS | UDS_NOTHOUSANDS,228,43,
+                    11,14
+    CONTROL         "Get value from shell data",IDC_CHECK_USEKEY,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,9,67,94,10
+    COMBOBOX        IDC_COMBO_FROM,9,78,90,62,CBS_DROPDOWNLIST | 
+                    CBS_AUTOHSCROLL | CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    PUSHBUTTON      "Control Pr&operties....",IDC_PROPERTIES,137,76,104,14
+    LTEXT           "&Caption:",IDC_STATIC,7,8,27,8
+    LTEXT           "&Group:",IDC_STATIC,7,28,22,8
+    LTEXT           "&Type:",IDC_STATIC,7,46,19,8
+    LTEXT           "%",IDC_WIDTH_PERCENT,213,48,8,8
+    GROUPBOX        "Data layout",IDC_STATIC,136,0,108,61
+END
+
+IDD_TEXT_PROPERTIES DIALOGEX 0, 0, 137, 149
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Text"
+FONT 8, "MS Sans Serif", 0, 0, 0x0
+BEGIN
+    GROUPBOX        "Style",IDC_STATIC,7,6,117,95
+    CONTROL         "&Single line",IDC_SINGLELINE,"Button",
+                    BS_AUTORADIOBUTTON | WS_GROUP | WS_TABSTOP,41,25,48,10
+    CONTROL         "M&ultiline",IDC_MULTYLINE,"Button",BS_AUTORADIOBUTTON,
+                    41,43,41,10
+    CONTROL         "&Drop-down list",IDC_COMBOBOX,"Button",
+                    BS_AUTORADIOBUTTON,41,61,61,10
+    CONTROL         "S&et current date as default value",IDC_SETDATE,"Button",
+                    BS_AUTOCHECKBOX | NOT WS_VISIBLE | WS_TABSTOP,7,111,119,
+                    10
+    DEFPUSHBUTTON   "OK",IDOK,10,129,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,71,129,50,14
+    CONTROL         "&Drop list",IDC_COMBOBOX_DROPLIST,"Button",
+                    BS_AUTORADIOBUTTON | BS_MULTILINE,41,74,58,23
+END
+
+IDD_NUMERIC_PROPERTIES DIALOG  0, 0, 147, 172
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Numeric"
+FONT 8, "MS Sans Serif"
+BEGIN
+    GROUPBOX        "Number type",IDC_STATIC,7,6,134,40
+    CONTROL         "&Integer",IDC_INTEGER,"Button",BS_AUTORADIOBUTTON | 
+                    WS_GROUP,16,25,38,10
+    CONTROL         "&Floating point",IDC_FLOAT,"Button",BS_AUTORADIOBUTTON,
+                    76,25,58,10
+    GROUPBOX        "",IDC_STATIC,7,54,134,59
+    CONTROL         "&Enable limits check",IDC_BOUNDS,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,16,54,77,10
+    LTEXT           "Mi&nimal value",IDC_LOW_STATIC,25,74,44,8
+    EDITTEXT        IDC_LOW,87,71,40,14,ES_AUTOHSCROLL
+    LTEXT           "Ma&ximal value",IDC_HIGH_STATIC,25,93,46,8
+    EDITTEXT        IDC_HIGH,87,90,40,14,ES_AUTOHSCROLL
+    CONTROL         "Default value",IDC_DEFAULT,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,16,122,58,10
+    DEFPUSHBUTTON   "OK",IDOK,15,150,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,77,150,50,14
+    EDITTEXT        IDC_VALUE,87,119,40,14,ES_AUTOHSCROLL
+END
+
+IDD_ENTER_VALUES DIALOGEX 0, 0, 246, 22
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Patient Data"
+FONT 8, "MS Sans Serif", 0, 0, 0x0
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,14,3,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,70,3,50,14
+    PUSHBUTTON      "Help",IDHELP,182,3,50,14
+    PUSHBUTTON      "Default List",IDC_COMBO_DEFAULT,126,3,50,14,WS_DISABLED
+END
+
+IDD_DATE_PROPERTIES DIALOGEX 0, 0, 137, 51
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Date"
+FONT 8, "MS Sans Serif", 0, 0, 0x0
+BEGIN
+    CONTROL         "S&et current date as default value",IDC_SETDATE,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,7,10,119,10
+    DEFPUSHBUTTON   "OK",IDOK,12,25,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,74,25,50,14
+END
+
+IDD_PROPPAGE_VIEWLOADER DIALOGEX 0, 0, 250, 62
+STYLE DS_SETFONT | DS_FIXEDSYS | WS_CHILD
+FONT 8, "MS Shell Dlg", 0, 0, 0x0
+BEGIN
+    COMBOBOX        IDC_TEMPLATE_ALGORITHM,20,25,155,46,CBS_DROPDOWN | 
+                    CBS_SORT | WS_VSCROLL | WS_TABSTOP
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO 
+BEGIN
+    IDD_PROPPAGE_PRINTFIELDAX, DIALOG
+    BEGIN
+        LEFTMARGIN, 1
+        RIGHTMARGIN, 249
+        TOPMARGIN, 2
+        BOTTOMMARGIN, 98
+    END
+
+    IDD_TEXT_PROPERTIES, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 130
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 142
+    END
+
+    IDD_NUMERIC_PROPERTIES, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 140
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 165
+    END
+
+    IDD_ENTER_VALUES, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 239
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 15
+    END
+
+    IDD_DATE_PROPERTIES, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 130
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 44
+    END
+
+    IDD_PROPPAGE_VIEWLOADER, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 243
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 55
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog Info
+//
+
+IDD_PROPPAGE_PRINTFIELDAX DLGINIT
+BEGIN
+    IDC_STYLE, 0x403, 8, 0
+0x754e, 0x656d, 0x6972, 0x0063, 
+    IDC_STYLE, 0x403, 5, 0
+0x6554, 0x7478, "\000" 
+    IDC_STYLE, 0x403, 5, 0
+0x6144, 0x6574, "\000" 
+    0
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE 
+BEGIN
+    IDS_PRINTFIELDAX        "Interactive Data Field"
+    IDS_PRINTFIELDAX_PPG    "Interactive Data Property Page"
+    IDS_INVALIDRANGE        "Invalid range"
+    IDS_INVALIDDEFVALUE     "Invalid default value (out of ranges)"
+    IDS_VIEWLOADER          "ViewLoader Control"
+    IDS_VIEWLOADER_PPG      "ViewLoader Property Page"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_PRINTFIELDAX_PPG_CAPTION "General"
+    IDS_REQUEST_FOR_DB      "RequestForDB\nRequest Data For Database\nEdit\nRequest user field values for database\nRequest Values For Database"
+    IDS_REQUEST_FOR_PRINT   "RequestForPrint\nRequest Data For Printing\nEdit\nRequest user field values for printing\nRequest Values For Printing"
+    IDS_CANT_LOAD_REPORT    "Can't load report"
+    IDS_NOFIELDAXFOUND      "The active report is empty or moved from the <Templates> folder.\nSelect another one."
+    IDS_NOINTEGER           "Please enter valid number"
+    IDS_INT_NOTININTERVAL   "Number %d not in valid interval %d-%d"
+    IDS_NODOUBLE            "Please enter valid float value"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_DOUBLE_NOTININTERVAL "Number %g not in valid interval %g-%g"
+    IDS_DATABASE            "Database"
+    IDS_NO_DBASE_DOCUMENT   "No Database document found"
+    IDS_NO_ACTIVE_QUERY     "No active query found"
+    IDS_NO_DBASECONTROLS_FOUND "No compatible database field found"
+    IDS_STORE_FOR_PRINT     "StoreForPrint\nStore Data for Printing\nEdit\nStore user field values for printing\nStore Data for Printing"
+    IDS_CTRL_TEXT           "Text"
+    IDS_CTRL_GROUP          "Group Name"
+    IDS_CTRL_CAPTION        "Caption"
+    IDS_REQUEST_FOR_PRINTSD "RequestForPrintSD\nRequest Data For Printing from ShellData\nEdit\nRequest user field values for printing from ShellData\nRequest Values For Printing from ShellData"
+    IDS_NOFIELDAXFOUND2     "No data found!"
+    IDS_VIEWLOADER_PPG_CAPTION "General"
+END
+
+#endif    // English (U.S.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+1 TYPELIB "PrintFieldAX.tlb"
+#include "res\PrintFieldAX.rc2"
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

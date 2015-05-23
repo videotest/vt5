@@ -1,0 +1,59 @@
+// Blot.idl : IDL source for Blot
+//
+
+// This file will be processed by the MIDL tool to
+// produce the type library (Blot.tlb) and marshalling code.
+
+import "oaidl.idl";
+import "ocidl.idl";
+
+[
+	object,
+	uuid(EDCFC6FE-F30F-419B-930E-94DB8A5598E2),
+	dual,
+	nonextensible,
+	helpstring("IBlotOb Interface"),
+	pointer_default(unique)
+]
+interface IBlotOb : IDispatch{
+	[propget, id(1), helpstring("Get array of processing classes")] HRESULT Classes([out, retval] VARIANT* pVal);
+	[propput, id(1), helpstring("Set array of processing classes")] HRESULT Classes([in] VARIANT newVal);
+	[propget, id(2), helpstring("Get unknown interface of stat data table")] HRESULT Table([out, retval] IUnknown** pVal);
+	[propput, id(2), helpstring("Set unknown interface of stat data table")] HRESULT Table([in] IUnknown* newVal);
+	[propget, id(3), helpstring("Get precision in X coordinate")] HRESULT XPrecision([out, retval] FLOAT* pVal);
+	[propput, id(3), helpstring("Set precision in X coordinate")] HRESULT XPrecision([in] FLOAT newVal);
+	[propget, id(4), helpstring("Get precision in Y coordinate")] HRESULT YPrecision([out, retval] FLOAT* pVal);
+	[propput, id(4), helpstring("Set precision in Y coordinate")] HRESULT YPrecision([in] FLOAT newVal);
+	[propget, id(5), helpstring("Get count of frames with max values")] HRESULT Count([out, retval] SHORT* pVal);
+	[propget, id(6), helpstring("Get area of selected classes on frame")] HRESULT Area([in] SHORT Index, [out, retval] FLOAT* pVal);
+	[propget, id(7), helpstring("Get center mass X of selected classes on frame")] HRESULT MassX([in] SHORT Index, [out, retval] FLOAT* pVal);
+	[propget, id(8), helpstring("Get center mass Y of selected classes on frame")] HRESULT MassY([in] SHORT Index, [out, retval] FLOAT* pVal);
+	[id(9), helpstring("Do search process in frames")] HRESULT Find(void);
+	[id(10), helpstring("Add processing class to processing")] HRESULT AddClass([in] SHORT iClass);
+	[id(11), helpstring("Set image size")] HRESULT SetPictureSize([in] FLOAT x, [in] FLOAT y);
+	[id(12), helpstring("Set image offsets")] HRESULT SetOffs([in] BSTR Picture, [in] FLOAT x, [in] FLOAT y);
+	[propget, id(13), helpstring("Get max area if frames are overlaped")] HRESULT MaxOverlapArea([out, retval] FLOAT* pVal);
+	[propput, id(13), helpstring("Set max area if frames are overlaped")] HRESULT MaxOverlapArea([in] FLOAT newVal);
+	[propget, id(14), helpstring("Get left upper X coordinate of frame")] HRESULT XShift([in] SHORT Index, [out, retval] FLOAT* pVal);
+	[propget, id(15), helpstring("Get left upper X coordinate of frame")] HRESULT YShift([in] SHORT Index, [out, retval] FLOAT* pVal);
+	[propget, id(16), helpstring("Get computed number of frames")] HRESULT NCadr([out, retval] LONG* pVal);
+	[propput, id(16), helpstring("Set max number of frames to be computed")] HRESULT NCadr([in] LONG newVal);
+	[id(17), helpstring("Set frame size")] HRESULT SetFrameSize([in] FLOAT x, [in] FLOAT y);
+};
+[
+	uuid(755E5668-050A-4195-9721-47E510844768),
+	version(1.0),
+	helpstring("Blot 1.0 Type Library")
+]
+library BlotLib
+{
+	importlib("stdole2.tlb");
+	[
+		uuid(390CF2CE-AFAC-4DA4-B794-95232AB9258D),
+		helpstring("BlotOb Class")
+	]
+	coclass BlotOb
+	{
+		[default] interface IBlotOb;
+	};
+};

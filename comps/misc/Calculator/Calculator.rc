@@ -1,0 +1,136 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// Russian resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_RUS)
+#ifdef _WIN32
+LANGUAGE LANG_RUSSIAN, SUBLANG_DEFAULT
+#pragma code_page(1251)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE 
+BEGIN
+    IDS_NOERROR             "Ошибок нет"
+    IDS_UNKNOWNERROR        "Неизвестная ошибка"
+    IDS_STREMPTY            "Строка выражения пустая"
+    IDS_NORBRACE            "Отсутствует '}'"
+    IDS_NOLBRACE            "Отсутствует '{'"
+    IDS_UNKNOWNSIMBOL       "Неизвестный символ или отсутствует '(' или '['"
+    IDS_ZERODIVIDE          "Деление на ноль"
+    IDS_NOLBRACKETAFTERFUNC "Отсутствует '(' или  '[' после имени функции"
+    IDS_UNKNOWNFUNC         "Неизветстная функция"
+    IDS_NORBRACKET          "Отсутствует  ') 'или ']'"
+    IDS_NOLBRACKET          "Отсутствует '(' или '['"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_NOOPERAND           "Отсутствует операнд или  есть лишние ')'"
+    IDS_NOOPERATION         "Отсутствует операция"
+    IDS_PARAMUNDEFINED      "Значение параметра не определено"
+    IDS_DRAWERROR           "Ошибка при отрисовке формулы"
+    IDS_MATHERROR           "Ошибка при вычислении выражения"
+END
+
+#endif    // Russian resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.S.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+	 "#include ""res\\Calculator.rc2 ""\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE 
+BEGIN
+    IDS_NOERROR             "No errors"
+    IDS_UNKNOWNERROR        "Unknown error"
+    IDS_STREMPTY            "String is empty"
+    IDS_NORBRACE            "No right brace '}'"
+    IDS_NOLBRACE            "No left brace '{'"
+    IDS_UNKNOWNSIMBOL       "Unknown symbol or no left bracket '(' or '['"
+    IDS_ZERODIVIDE          "Zero divide"
+    IDS_NOLBRACKETAFTERFUNC "No left bracket  '(' or '[' after function name"
+    IDS_UNKNOWNFUNC         "Unknown function"
+    IDS_NORBRACKET          "No right brackets: ')' or ']'"
+    IDS_NOLBRACKET          "No left brackets: '(' or '['"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_NOOPERAND           "No operand or too many ')'"
+    IDS_NOOPERATION         "No operation"
+    IDS_PARAMUNDEFINED      "Undefined parameter!"
+    IDS_DRAWERROR           "Error while drawing formula!"
+    IDS_MATHERROR           "Math error!"
+    IDS_MISSING_ARGS_NUMBER "Missing number of arguments"
+END
+
+#endif    // English (U.S.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#include "res\Calculator.rc2 "
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

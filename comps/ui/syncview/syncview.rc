@@ -1,0 +1,154 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// Russian resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_RUS)
+#ifdef _WIN32
+LANGUAGE LANG_RUSSIAN, SUBLANG_DEFAULT
+#pragma code_page(1251)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)\r\n"
+    "#ifdef _WIN32\r\n"
+    "LANGUAGE 9, 1\r\n"
+    "#pragma code_page(1252)\r\n"
+    "#endif //_WIN32\r\n"
+    "#include ""res\\syncview.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "#include ""afxres.rc""         // Standard components\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE 
+BEGIN
+    IDS_ACTION_SYNCZOOM     "SyncZoom\nСинхронизация изображений и увеличений\nОкно\nСинхронизация изображений и увеличений (если окно документа разделено)\nСинхронизация изображений и увеличений"
+    IDS_ACTION_SYNCSCROLL   "SyncScroll\nСинхронизация изображений\nОкно\nСинхронизация изображений (если окно документа разделено)\nСинхронизация изображений"
+    IDS_ACTION_SYNCSCROLLRELATIVE 
+                            "SyncScrollRelative\nОтносительная синхронизация изображений\nОкно\nОтносительная синхронизация изображений (если окно документа разделено)\nОтносительная синхронизация изображений"
+    IDS_ACTION_SYNCCONTEXT  "SyncContext\nСинхронизация содержания\nОкно\nСинхронизация содержания и видов отображения\nСинхронизация содержания"
+    IDS_ACTION_SYNCCONTEXTALL 
+                            "SyncContextAll\nСинхронизация содержания\nОкно\nСинхронизация содержания и видов отображения\nСинхронизация содержания"
+END
+
+#endif    // Russian resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.S.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Toolbar
+//
+
+IDR_TOOLBAR1 TOOLBAR  16, 15
+BEGIN
+    BUTTON      IDS_ACTION_SYNCSCROLL
+    BUTTON      IDS_ACTION_SYNCSCROLLRELATIVE
+    BUTTON      IDS_ACTION_SYNCZOOM
+    BUTTON      IDS_ACTION_SYNCCONTEXT
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDR_TOOLBAR1            BITMAP                  "toolbar1.bmp"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE 
+BEGIN
+    IDS_ACTION_SYNCZOOM     "SyncZoom\nSynchronize Scroll and Zoom\nWindow\nSynchronize the scroll position and zoom of the images in the split document window\nSynchronize Scroll and Zoom"
+    IDS_ACTION_SYNCSCROLL   "SyncScroll\nSynchronize Scroll\nWindow\nSynchronize the scroll position of the images in the split document window\nSynchronize Scroll"
+    IDS_ACTION_SYNCSCROLLRELATIVE 
+                            "SyncScrollRelative\nSynchronize Scroll Relatively\nWindow\nSynchronize the scroll positions of the images in the split document window relative to the selected point\nSynchronize Scroll Relatively"
+    IDS_ACTION_SYNCCONTEXT  "SyncContext\nSynchronize Contexts\nWindow\nSynchronize contexts between views\nSynchronize Contexts"
+    IDS_ACTION_SYNCCONTEXTALL 
+                            "SyncContextAll\nSynchronize All Contexts\nWindow\nSynchronize contexts between all the views\nSynchronize All Contexts"
+END
+
+#endif    // English (U.S.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE 9, 1
+#pragma code_page(1252)
+#endif //_WIN32
+#include "res\syncview.rc2"  // non-Microsoft Visual C++ edited resources
+#include "afxres.rc"         // Standard components
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

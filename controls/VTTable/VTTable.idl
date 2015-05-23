@@ -1,0 +1,53 @@
+// VTTable.idl : type library source for ActiveX Control project.
+
+// This file will be processed by the MIDL compiler tool to
+// produce the type library (VTTable.tlb) that will become a resource in
+// VTTable.ocx.
+
+#include <olectl.h>
+#include <idispids.h>
+
+[ uuid(0CEF8513-89B5-486E-99B7-35BC5E766160), version(1.0),
+  helpfile("VTTable.hlp"),
+  helpstring("VTTable ActiveX Control module"),
+  control ]
+library VTTableLib
+{
+	importlib(STDOLE_TLB);
+
+	//  Primary dispatch interface for CVTTableCtrl
+
+	[ uuid(A4CCD95C-7C07-4B20-A24A-FEBA65927A1D),
+	  helpstring("Dispatch interface for VTTable Control")]
+	dispinterface _DVTTable
+	{
+		properties:
+		[id(3), helpstring("property RootSection")] BSTR RootSection;
+methods:
+		[id(1), helpstring("method PasteFromClipboard")] void PasteFromClipboard(void);
+		[id(2), helpstring("method CopyToClipboard")] void CopyToClipboard(void);
+	};
+
+	//  Event dispatch interface for CVTTableCtrl
+
+	[ uuid(8321B3DD-9A35-4185-BC0D-8D212D6CC18F),
+	  helpstring("Event interface for VTTable Control") ]
+	dispinterface _DVTTableEvents
+	{
+		properties:
+			//  Event interface has no properties
+
+		methods:
+	};
+
+	//  Class information for CVTTableCtrl
+
+	[ uuid(C63275F8-6165-4432-9022-C7CC5F49F2A6),
+	  helpstring("VTTable Control"), control ]
+	coclass VTTable
+	{
+		[default] dispinterface _DVTTable;
+		[default, source] dispinterface _DVTTableEvents;
+	};
+
+};

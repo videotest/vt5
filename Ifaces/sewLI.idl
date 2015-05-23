@@ -1,0 +1,62 @@
+import "oaidl.idl";
+import "ocidl.idl";
+
+[
+	uuid(88623545-F7BD-4ab6-BD32-CD3205B102FB),
+	version(1.0),
+	helpstring("VT5 SewLIView Type Library")
+	
+]
+library SewLIViewLib
+{	
+
+	importlib("stdole2.tlb");
+
+	[
+		object,
+		uuid(4B523B7D-81E1-48c5-BCAD-BA1414624894),
+		dual,		
+		pointer_default(unique),		
+	]	
+	interface ISewLIView : IDispatch
+	{
+		// Имя объекта
+		[propget, id(0), helpstring("property Name")] HRESULT Name([out, retval] BSTR* pVal);
+		[propput, id(0), helpstring("property Name")] HRESULT Name([in] BSTR newVal);
+		// Процент перекрытия
+		[propget, id(1), helpstring("property OverlapProcent")] HRESULT OverlapProcent([out, retval] int* pVal);
+		// Показатель точности наложения
+		[propget, id(2), helpstring("property OverlayCoefficient")] HRESULT OverlayCoefficient([out, retval] int* pVal);
+		// Показывать ли живое видео в окне
+		[propget, id(3), helpstring("property ShowLiveVideo")] HRESULT ShowLiveVideo([out, retval] int* pVal);
+		[propput, id(3), helpstring("property ShowLiveVideo")] HRESULT ShowLiveVideo([in] int newVal);
+		[id(4), helpstring("method GetLiveVideoRect")] HRESULT GetLiveVideoRect([out] int* pLeft, [out] int *pTop, [out] int *pRight, [out] int *pBottom);
+		[id(5), helpstring("method GetDocumentOrg")] HRESULT GetDocumentOrg([out] int *px, [out] int *py);
+		[id(6), helpstring("method MoveLiveVideo")] HRESULT MoveLiveVideo([in] int x, [in] int y, [in] int nFlags);
+		// Работает ли сейчас акция передвижения живого видео
+		[propget, id(7), helpstring("property LiveVideoMoving")] HRESULT LiveVideoMoving([out, retval] int* pVal);
+		[propput, id(7), helpstring("property LiveVideoMoving")] HRESULT LiveVideoMoving([in] int newVal);
+		[id(8), helpstring("method MoveLiveVideoTo")] HRESULT MoveLiveVideoTo([in] int x, [in] int y, [in] int nFlags);
+		[propget, id(9), helpstring("property AutoMoveLiveVideoMode")] HRESULT AutoMoveLiveVideoMode([out, retval] int* pVal);
+		[propput, id(9), helpstring("property AutoMoveLiveVideoMode")] HRESULT AutoMoveLiveVideoMode([in] int newVal);
+		[propget, id(10), helpstring("property ShowLiveVideoMode")] HRESULT ShowLiveVideoMode([out, retval] int* pVal);
+		[propput, id(10), helpstring("property ShowLiveVideoMode")] HRESULT ShowLiveVideoMode([in] int newVal);
+		[propget, id(11), helpstring("property BaseFragment")] HRESULT BaseFragment([out, retval] IUnknown** ppunkVal);
+		[propget, id(12), helpstring("property LastFragmentMode")] HRESULT LastFragmentMode([out, retval] int* pVal);
+		[propput, id(12), helpstring("property LastFragmentMode")] HRESULT LastFragmentMode([in] int newVal);
+		[propget, id(13), helpstring("property ShowFrame")] HRESULT ShowFrame([out, retval] int* pVal);
+		[propput, id(13), helpstring("property ShowFrame")] HRESULT ShowFrame([in] int newVal);
+		[propget, id(14), helpstring("property NextFragmentDirection")] HRESULT NextFragmentDirection([out, retval] double* pVal);
+	};
+
+	[
+		uuid(01B332D7-7AEF-4cc6-A047-654BC1EC2790),
+		helpstring("VT5 SewLIView Class")
+	]
+	coclass SewLIView
+	{
+		[default] interface ISewLIview;
+		
+	};
+
+}

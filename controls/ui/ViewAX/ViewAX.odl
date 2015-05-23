@@ -1,0 +1,87 @@
+// ViewAX.odl : type library source for ActiveX Control project.
+
+// This file will be processed by the Make Type Library (mktyplib) tool to
+// produce the type library (ViewAX.tlb) that will become a resource in
+// ViewAX.ocx.
+
+[ uuid(225ABEF5-2C0D-4804-B92D-A354268FBA44), version(1.0),
+  helpfile("ViewAX.hlp"),
+  helpstring("ViewAX ActiveX Control module"),
+  control ]
+library VIEWAXLib
+{
+#include <olectl.h>
+#include <idispids.h>
+
+	importlib(STDOLE_TLB);
+	importlib(STDTYPE_TLB);
+
+	//  Primary dispatch interface for CViewAXCtrl
+
+	[ uuid(A108B56B-B544-4EB3-AC1D-10006435D203),
+	  helpstring("Dispatch interface for ViewAX Control"), hidden ]
+	dispinterface _DViewAX
+	{
+		properties:
+			// NOTE - ClassWizard will maintain property information here.
+			//    Use extreme caution when editing this section.
+			//{{AFX_ODL_PROP(CViewAXCtrl)
+			[id(1)] double Zoom;
+			[id(2)] double DPI;
+			[id(3)] bool AutoBuild;
+			[id(4)] short ObjectTransformation;
+			[id(5)] bool UseActiveView;
+			[id(6)] bool ViewAutoAssigned;
+			[id(7)] BSTR ViewName;
+			[id(8)] bool UseObjectDPI;
+			[id(9)] double ObjectDPI;
+			[id(19)] BSTR ViewProgID;
+		//}}AFX_ODL_PROP
+
+		methods:
+			// NOTE - ClassWizard will maintain method information here.
+			//    Use extreme caution when editing this section.
+			//{{AFX_ODL_METHOD(CViewAXCtrl)
+			[id(10)] long GetFirstObjectPos();
+			[id(11)] long GetNextObject(VARIANT* varObjectName, VARIANT* varActiveObject, VARIANT* varObjectType, VARIANT* varPos);
+			[id(12)] boolean AddObject(BSTR strObjectName, boolean bActiveObject, BSTR strObjectType);
+			[id(13)] boolean DeleteObject(long lPos);
+			[id(14)] long GetFirstPropertyPos();
+			[id(15)] long GetNextProperty(VARIANT* varName, VARIANT* varValue, VARIANT* valPos);
+			[id(16)] boolean SetProperty(BSTR strName, VARIANT varValue);
+			[id(17)] boolean DeletePropery(long lPos);
+			[id(18)] boolean Rebuild();
+			[id(20)] boolean GetPropertyAXStatus();
+			[id(21)] void SetPropertyAXStatus(boolean val);
+			//}}AFX_ODL_METHOD
+	};
+
+	//  Event dispatch interface for CViewAXCtrl
+
+	[ uuid(5A5575EA-BB7D-45A3-971B-8F2181D7E683),
+	  helpstring("Event interface for ViewAX Control") ]
+	dispinterface _DViewAXEvents
+	{
+		properties:
+			//  Event interface has no properties
+
+		methods:
+			// NOTE - ClassWizard will maintain event information here.
+			//    Use extreme caution when editing this section.
+			//{{AFX_ODL_EVENT(CViewAXCtrl)
+			//}}AFX_ODL_EVENT
+	};
+
+	//  Class information for CViewAXCtrl
+	[ uuid(14C00616-4768-4091-9231-4D18C101FFBB),
+	  helpstring("ViewAX Control"), control ]
+	coclass ViewAX
+	{
+		[default] dispinterface _DViewAX;
+		[default, source] dispinterface _DViewAXEvents;
+	};
+
+
+	//{{AFX_APPEND_ODL}}
+	//}}AFX_APPEND_ODL}}
+};

@@ -1,0 +1,181 @@
+// axform.odl : type library source for axform.dll
+
+// This file will be processed by the MIDL compiler to produce the
+// type library (axform.tlb).
+[ uuid(BBC08690-FE5A-46c4-B82D-E4ECDA7BD57F), version(1.0) ]
+
+library Axform
+{
+	importlib("stdole32.tlb");
+	importlib("stdole2.tlb");
+
+
+
+
+	//  Primary dispatch interface for CFormManager
+	
+	[ uuid(C4633177-A0FD-440A-A2DE-73DBCAC188A5) ]
+	dispinterface IFormManager
+	{
+		properties:
+			// NOTE - ClassWizard will maintain property information here.
+			//    Use extreme caution when editing this section.
+			//{{AFX_ODL_PROP(CFormManager)
+			[id(1)] boolean ModalMode;
+			[id(34)] boolean PageActive;
+			//}}AFX_ODL_PROP
+			
+		methods:
+			// NOTE - ClassWizard will maintain method information here.
+			//    Use extreme caution when editing this section.
+			//{{AFX_ODL_METHOD(CFormManager)
+			[id(2)] long ExecutePage(BSTR szFormName);
+			[id(3)] long ExecuteModal(BSTR szFormName);
+			[id(4)] long ExecuteDockBar(BSTR szFormName);
+			[id(5)] void Finalize(BSTR nPageID);
+			[id(6)] long ExecuteOptions();
+			[id(7)] void ResetOptions();
+			[id(8)] void LoadCategoryImage(BSTR pszFileName);
+			[id(9)] void AddOptionsCategory(short nImageIdx, BSTR pszTitle);
+			[id(10)] void SetActiveCategory(BSTR pszName);
+			[id(11)] BSTR GetActiveCategory();
+			[id(12)] void AddOptionsPage(BSTR pszCategory, BSTR pszFormName);
+			[id(13)] boolean SetActivePage(BSTR pszFormName);
+			[id(14)] BSTR GetActivePage();
+			[id(15)] boolean StoreOptionsConfig(BSTR pszFileName);
+			[id(16)] boolean LoadOptionsConfig(BSTR pszFileName);
+			[id(17)] void CreateNewWizard(BSTR szWizardName);
+			[id(18)] void ExecuteWizard(BSTR szWizardName);
+			[id(19)] boolean StackCurrentPage();
+			[id(20)] void ExecutePage2(BSTR bstrName, boolean EnableOK, boolean EnableCancel, boolean EnableApply);
+			[id(21)] void AddWizardPage(BSTR szFormName, boolean bModalMode);
+			[id(22)] void ExecuteNestedWizard();
+			[id(23)] void EnableNext(boolean bEnable);
+			[id(24)] void EnablePrev(boolean bEnable);
+			[id(25)] void EnableOk(boolean bEnable);
+			[id(26)] void EnableApply(boolean bEnable);
+			[id(27)] void PressNext();
+			[id(28)] void PressPrev();
+			[id(29)] void ExecutePageModal(BSTR szFormName);			
+			[id(30)] void PressOK();
+			[id(31)] void PressCancel();
+			[id(32)] long CreateHideDockBar(BSTR szFormName);
+			[id(33)] void PressHelp();
+			//}}AFX_ODL_METHOD
+
+	};
+
+	//  Class information for CFormManager
+
+	[ uuid(57F4F94D-7AD5-4821-AC4B-7939A6292D76) ]
+	coclass FormManager
+	{
+		[default] dispinterface IFormManager;
+	};
+
+
+	//  Primary dispatch interface for CActiveXSite
+	
+	[ uuid(C7D2F99D-E12E-4edf-8FB4-0A77826EB865) ]
+	dispinterface IActiveXSite
+	{
+		properties:
+			// NOTE - ClassWizard will maintain property information here.
+			//    Use extreme caution when editing this section.
+			//{{AFX_ODL_PROP(CActiveXSite)
+			[id(1)] BSTR Title;
+			[id(17)] long Preview2_StagesCount;
+			//}}AFX_ODL_PROP
+			
+		methods:
+			// NOTE - ClassWizard will maintain method information here.
+			//    Use extreme caution when editing this section.
+			//{{AFX_ODL_METHOD(CActiveXSite)
+			[id(2)] void ApplyPreview();
+			[id(3)] void CancelPreview();
+			[id(4)] void AddHeadActionArgument(IDispatch* pdispObject);
+			[id(5)] void InitializePreview();
+			[id(6)] void UpdateSystemSettings();
+			[id(7)] void ContiueModal();
+			[id(8)] void debug_break();
+			[id(9)] IDispatch* GetFormScript();
+			[id(10)] void BeginFilterGroup();
+			[id(11)] void EndFilterGroup();
+			[id(12)] void EnableButtons(long lFlags);
+			[id(13)] void ShowButtons(long lFlags);
+			[id(14)] void TerminateCurrentAction();
+			[id(15)] void Preview2_Init();
+			[id(16)] void Preview2_DeInit();
+			[id(18)] void Preview2_LoadState(long index);
+			[id(19)] void Preview2_SaveState(long index);
+			[id(20)] void Preview2_Invalidate(long index);
+			[id(21)] void Preview2_Cancel();
+			[id(22)] void Preview2_Apply();
+			//}}AFX_ODL_METHOD
+
+	};
+
+	[ uuid(9B6C9468-F9C4-460f-BD44-5D41BAF3205D) ]
+	dispinterface IActiveXSiteEvents
+	{
+		properties:
+		methods:
+			// NOTE - ClassWizard will maintain event information here.
+			//    Use extreme caution when editing this section.
+			//{{AFX_ODL_EVENT(CActiveXSite)
+			[id(1)] void OnOK();
+			[id(2)] void OnCancel();
+			[id(3)] void OnLoadState(IDispatch* NamedData);
+			[id(4)] void OnSaveState(IDispatch* NamedData);
+			[id(5)] void OnInitialize();
+			[id(6)] void OnDestroy();
+			[id(7)] void OnNext();
+			[id(8)] void OnPrev();
+			[id(9)] void OnChangePreview();
+			[id(10)] void OnShow();
+			[id(11)] void OnCreate( );
+			[id(12)] void OnHide();
+			[id(13)] void OnProcess(long nStage);
+			//}}AFX_ODL_EVENT
+	};
+
+	//  Class information for CActiveXSite
+
+
+	[ uuid(4666C0CC-FD8F-48ef-9F7B-2D9D5F3E9C99) ]
+	coclass ActiveXSite
+	{
+		[default] dispinterface IActiveXSite;
+		[default, source] dispinterface IActiveXSiteEvents;
+	};
+
+	//  Primary dispatch interface for CAXFileFilter
+	
+	[ uuid(4E093842-D7EC-11d3-A094-0000B493A187) ]
+	dispinterface IAXFileFilter
+	{
+		properties:
+			// NOTE - ClassWizard will maintain property information here.
+			//    Use extreme caution when editing this section.
+			//{{AFX_ODL_PROP(CPCXFileFilter)
+			//}}AFX_ODL_PROP
+			
+		methods:
+			// NOTE - ClassWizard will maintain method information here.
+			//    Use extreme caution when editing this section.
+			//{{AFX_ODL_METHOD(CPCXFileFilter)
+			//}}AFX_ODL_METHOD
+
+	};
+
+	//  Class information for CAXFileFilter
+
+	[ uuid(4E093841-D7EC-11d3-A094-0000B493A187) ]
+	coclass AXFileFilter
+	{
+		[default] dispinterface IAXFileFilter;
+	};
+
+	//{{AFX_APPEND_ODL}}
+	//}}AFX_APPEND_ODL}}
+};

@@ -1,0 +1,373 @@
+//Microsoft Developer Studio generated resource script.
+//
+#include "resource.h"
+
+// Generated Help ID header file
+#define APSTUDIO_HIDDEN_SYMBOLS
+#include "resource.hm"
+#undef APSTUDIO_HIDDEN_SYMBOLS
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// Russian resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_RUS)
+#ifdef _WIN32
+LANGUAGE LANG_RUSSIAN, SUBLANG_DEFAULT
+#pragma code_page(1251)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)\r\n"
+    "#ifdef _WIN32\r\n"
+    "LANGUAGE 9, 1\r\n"
+    "#pragma code_page(1252)\r\n"
+    "#endif //_WIN32\r\n"
+    "#include ""res\\Digital.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "#include ""afxres.rc""         // Standard components\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_DLG_SETUP800 DIALOGEX 0, 0, 500, 307
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Установки камеры DC96"
+FONT 8, "MS Sans Serif", 0, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "&OK",IDOK,425,0,74,20,0,0,HIDOK
+    PUSHBUTTON      "Отмена",IDCANCEL,425,22,74,14,0,0,HIDCANCEL
+    PUSHBUTTON      "Настройка",IDC_TUNE,425,38,74,20,0,0,HIDC_TUNE
+    PUSHBUTTON      "Установки >>",IDC_TECH_SHOW_HIDE,425,60,74,14,0,0,
+                    HIDC_TECH_SHOW_HIDE
+    EDITTEXT        IDC_EDIT_0,473,87,17,12,ES_AUTOHSCROLL,0,HIDC_EDIT_0
+    EDITTEXT        IDC_EDIT_255,473,102,17,12,ES_AUTOHSCROLL,0,
+                    HIDC_EDIT_255
+    CONTROL         "Супер усиление",IDC_SUPER,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,428,121,66,10,0,HIDC_SUPER
+    COMBOBOX        IDC_ADDR,457,133,38,56,CBS_DROPDOWNLIST | CBS_SORT | 
+                    WS_VSCROLL | WS_TABSTOP,0,HIDC_ADDR
+    CONTROL         "Расширенный",IDC_INTERFACE_SIMPLE,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,429,151,61,8,0,
+                    HIDC_INTERFACE_SIMPLE
+    EDITTEXT        IDC_FRAMES,456,176,17,13,ES_AUTOHSCROLL,0,HIDC_FRAMES
+    CONTROL         "Slider2",IDC_AMP,"msctls_trackbar32",TBS_TOP | 
+                    WS_TABSTOP,427,207,70,14,0,HIDC_AMP
+    CONTROL         "Slider1",IDC_ZLEVEL,"msctls_trackbar32",TBS_TOP | 
+                    WS_TABSTOP,427,242,70,14,0,HIDC_ZLEVEL
+    COMBOBOX        IDC_SHUTTER,453,262,46,79,CBS_DROPDOWN | WS_VSCROLL | 
+                    WS_TABSTOP,0,HIDC_SHUTTER
+    GROUPBOX        "",IDC_ST_ZERO,425,223,74,36
+    CONTROL         "Spin2",IDC_FRAMES_SPIN,"msctls_updown32",
+                    UDS_SETBUDDYINT | UDS_ARROWKEYS | UDS_HORZ,473,176,22,13
+    LTEXT           "",IDC_IMAGE,0,0,423,306,SS_SUNKEN | NOT WS_GROUP,0,
+                    HIDC_IMAGE
+    LTEXT           "Адрес",IDC_STATIC_ADDR,431,136,22,8
+    LTEXT           "min",IDC_STATIC_MIN,429,278,12,8
+    LTEXT           "max",IDC_STATIC_MAX,462,278,14,8
+    LTEXT           "255",IDC_VAL_MIN,445,278,13,8
+    LTEXT           "255",IDC_VAL_MAX,480,278,13,8
+    LTEXT           "Среднее",IDC_STATIC_AVER,435,288,30,8
+    LTEXT           "Static",IDC_VAL_AVER,469,288,19,8
+    GROUPBOX        "% зашкала",IDC_STATIC_OVERFLOW,431,77,63,41
+    LTEXT           "черное",IDC_STATIC_0,440,90,24,8
+    LTEXT           "белое",IDC_STATIC_255,440,105,21,8
+    CTEXT           "33",IDC_STATIC_ZERO_LEVEL,473,231,14,11,SS_CENTERIMAGE | 
+                    WS_BORDER
+    CTEXT           "33",IDC_STATIC_AMPL,473,195,14,11,SS_CENTERIMAGE | 
+                    WS_BORDER
+    LTEXT           "Усиление",IDC_ST_AMPL2,431,198,34,8
+    LTEXT           "Уровень 0",IDC_ST_ZERO2,431,232,36,8
+    LTEXT           "Кадров:",IDC_KADROV,427,179,28,8
+    LTEXT           "Затвор",IDC_STATIC_SHUTTER,427,264,25,8
+    GROUPBOX        "",IDC_ST_AMPL,425,189,74,36
+    LTEXT           "интерфейс",IDC_IS2,443,160,38,8
+    GROUPBOX        "",IDC_STATIC_SETUP,425,72,74,101,NOT WS_VISIBLE
+    LTEXT           "Время, сек.",IDC_STATIC_TIMER,427,297,41,8
+    LTEXT           "000000",IDC_TIMER,470,297,25,8,0,0,HIDC_TIMER
+    LTEXT           "",IDC_STATIC_UPD,422,0,77,306
+END
+
+IDD_DLG_SETUP DIALOGEX 0, 0, 569, 355
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Установки камеры DC96"
+FONT 8, "MS Sans Serif", 0, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "&OK",IDOK,496,3,72,20,0,0,HIDOK
+    PUSHBUTTON      "Отмена",IDCANCEL,496,26,72,14,0,0,HIDCANCEL
+    PUSHBUTTON      "Настройка",IDC_TUNE,496,44,72,20,0,0,HIDC_TUNE
+    PUSHBUTTON      "Установки >>",IDC_TECH_SHOW_HIDE,496,67,72,14,0,0,
+                    HIDC_TECH_SHOW_HIDE
+    EDITTEXT        IDC_EDIT_0,544,96,17,12,ES_AUTOHSCROLL,0,HIDC_EDIT_0
+    EDITTEXT        IDC_EDIT_255,544,111,17,12,ES_AUTOHSCROLL,0,
+                    HIDC_EDIT_255
+    CONTROL         "Супер усиление",IDC_SUPER,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,499,159,66,10,0,HIDC_SUPER
+    COMBOBOX        IDC_ADDR,525,189,38,56,CBS_DROPDOWNLIST | CBS_SORT | 
+                    WS_VSCROLL | WS_TABSTOP,0,HIDC_ADDR
+    CONTROL         "Расширенный интерфейс",IDC_INTERFACE_SIMPLE,"Button",
+                    BS_AUTOCHECKBOX | BS_MULTILINE | WS_TABSTOP,499,170,61,
+                    17,0,HIDC_INTERFACE_SIMPLE
+    EDITTEXT        IDC_FRAMES,527,210,17,13,ES_AUTOHSCROLL,0,HIDC_FRAMES
+    CONTROL         "Slider2",IDC_AMP,"msctls_trackbar32",TBS_TOP | 
+                    WS_TABSTOP,498,241,68,14,0,HIDC_AMP
+    CONTROL         "Slider1",IDC_ZLEVEL,"msctls_trackbar32",TBS_TOP | 
+                    WS_TABSTOP,498,278,68,14,0,HIDC_ZLEVEL
+    COMBOBOX        IDC_SHUTTER,524,299,44,79,CBS_DROPDOWN | WS_VSCROLL | 
+                    WS_TABSTOP,0,HIDC_SHUTTER
+    GROUPBOX        "",IDC_ST_ZERO,496,259,72,36
+    CONTROL         "Spin2",IDC_FRAMES_SPIN,"msctls_updown32",
+                    UDS_SETBUDDYINT | UDS_ARROWKEYS | UDS_HORZ,544,210,22,13,
+                    0,HIDC_FRAMES_SPIN
+    LTEXT           "",IDC_IMAGE,0,0,493,354,SS_SUNKEN | NOT WS_GROUP,0,
+                    HIDC_IMAGE
+    LTEXT           "Адрес",IDC_STATIC_ADDR,499,193,22,8,0,0,
+                    HIDC_STATIC_ADDR
+    LTEXT           "min",IDC_STATIC_MIN,500,319,12,8,0,0,HIDC_STATIC_MIN
+    LTEXT           "max",IDC_STATIC_MAX,533,319,14,8,0,0,HIDC_STATIC_MAX
+    LTEXT           "255",IDC_VAL_MIN,516,319,13,8,0,0,HIDC_VAL_MIN
+    LTEXT           "255",IDC_VAL_MAX,551,319,13,8,0,0,HIDC_VAL_MAX
+    LTEXT           "Среднее",IDC_STATIC_AVER,506,329,30,8,0,0,
+                    HIDC_STATIC_AVER
+    LTEXT           "Static",IDC_VAL_AVER,540,329,19,8,0,0,HIDC_VAL_AVER
+    GROUPBOX        "% зашкала",IDC_STATIC_OVERFLOW,502,87,63,57
+    LTEXT           "черное",IDC_STATIC_0,511,99,24,8
+    LTEXT           "белое",IDC_STATIC_255,511,114,21,8
+    CTEXT           "33",IDC_STATIC_ZERO_LEVEL,544,267,14,11,SS_CENTERIMAGE | 
+                    WS_BORDER,0,HIDC_STATIC_ZERO_LEVEL
+    CTEXT           "33",IDC_STATIC_AMPL,544,230,14,11,SS_CENTERIMAGE | 
+                    WS_BORDER,0,HIDC_STATIC_AMPL
+    LTEXT           "Усиление",IDC_ST_AMPL2,502,232,34,8,0,0,HIDC_ST_AMPL2
+    LTEXT           "Уровень 0",IDC_ST_ZERO2,502,268,36,8,0,0,HIDC_ST_ZERO2
+    LTEXT           "Кадров:",IDC_KADROV,498,213,28,8,0,0,HIDC_KADROV
+    LTEXT           "Затвор",IDC_STATIC_SHUTTER,498,301,25,8
+    GROUPBOX        "",IDC_ST_AMPL,496,223,72,36
+    GROUPBOX        "",IDC_STATIC_SETUP,496,80,72,125
+    LTEXT           "Время, сек.",IDC_STATIC_TIMER,498,341,41,8,0,0,
+                    HIDC_STATIC_TIMER
+    LTEXT           "000000",IDC_TIMER,541,341,25,8,0,0,HIDC_TIMER
+    PUSHBUTTON      "Текущие",IDC_MEM,506,127,38,14,0,0,HIDC_MEM
+    PUSHBUTTON      "0",IDC_SET_ZERO,547,127,13,14,0,0,HIDC_SET_ZERO
+    CONTROL         "Gamma 1.0",IDC_GAMMA,"Button",BS_AUTOCHECKBOX | NOT 
+                    WS_VISIBLE | WS_TABSTOP,499,146,56,10,0,HIDC_GAMMA
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog Info
+//
+
+IDD_DLG_SETUP800 DLGINIT
+BEGIN
+    IDC_ADDR, 0x403, 5, 0
+0x3033, 0x6830, "\000" 
+    IDC_ADDR, 0x403, 5, 0
+0x3033, 0x6838, "\000" 
+    IDC_ADDR, 0x403, 5, 0
+0x3133, 0x6830, "\000" 
+    IDC_ADDR, 0x403, 5, 0
+0x3133, 0x6838, "\000" 
+    IDC_ADDR, 0x403, 5, 0
+0x3233, 0x6830, "\000" 
+    IDC_SHUTTER, 0x403, 5, 0
+0x2f31, 0x3035, "\000" 
+    IDC_SHUTTER, 0x403, 6, 0
+0x2f31, 0x3031, 0x0030, 
+    IDC_SHUTTER, 0x403, 6, 0
+0x2f31, 0x3032, 0x0030, 
+    IDC_SHUTTER, 0x403, 7, 0
+0x2f31, 0x3031, 0x3030, "\000" 
+    IDC_SHUTTER, 0x403, 7, 0
+0x2f31, 0x3032, 0x3030, "\000" 
+    IDC_SHUTTER, 0x403, 7, 0
+0x2f31, 0x3035, 0x3030, "\000" 
+    IDC_SHUTTER, 0x403, 8, 0
+0x2f31, 0x3031, 0x3030, 0x0030, 
+    0
+END
+
+IDD_DLG_SETUP DLGINIT
+BEGIN
+    IDC_ADDR, 0x403, 5, 0
+0x3033, 0x6830, "\000" 
+    IDC_ADDR, 0x403, 5, 0
+0x3033, 0x6838, "\000" 
+    IDC_ADDR, 0x403, 5, 0
+0x3133, 0x6830, "\000" 
+    IDC_ADDR, 0x403, 5, 0
+0x3133, 0x6838, "\000" 
+    IDC_ADDR, 0x403, 5, 0
+0x3233, 0x6830, "\000" 
+    IDC_SHUTTER, 0x403, 5, 0
+0x2f31, 0x3035, "\000" 
+    IDC_SHUTTER, 0x403, 6, 0
+0x2f31, 0x3031, 0x0030, 
+    IDC_SHUTTER, 0x403, 6, 0
+0x2f31, 0x3032, 0x0030, 
+    IDC_SHUTTER, 0x403, 6, 0
+0x2f31, 0x3035, 0x0030, 
+    IDC_SHUTTER, 0x403, 7, 0
+0x2f31, 0x3031, 0x3030, "\000" 
+    IDC_SHUTTER, 0x403, 7, 0
+0x2f31, 0x3032, 0x3030, "\000" 
+    IDC_SHUTTER, 0x403, 7, 0
+0x2f31, 0x3035, 0x3030, "\000" 
+    IDC_SHUTTER, 0x403, 8, 0
+0x2f31, 0x3031, 0x3030, 0x0030, 
+    0
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO DISCARDABLE 
+BEGIN
+    IDD_DLG_SETUP800, DIALOG
+    BEGIN
+        RIGHTMARGIN, 499
+    END
+
+    IDD_DLG_SETUP, DIALOG
+    BEGIN
+        RIGHTMARGIN, 568
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_DIGITAL             "Digital"
+END
+
+#endif    // Russian resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.S.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+#ifndef _MAC
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 1,0,0,1
+ PRODUCTVERSION 1,0,0,1
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x2L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "040904B0"
+        BEGIN
+            VALUE "CompanyName", "\0"
+            VALUE "FileDescription", "Digital DLL\0"
+            VALUE "FileVersion", "1, 0, 0, 1\0"
+            VALUE "InternalName", "Digital\0"
+            VALUE "LegalCopyright", "Copyright (C) 2000\0"
+            VALUE "LegalTrademarks", "\0"
+            VALUE "OriginalFilename", "Digital.DLL\0"
+            VALUE "ProductName", "Digital Dynamic Link Library\0"
+            VALUE "ProductVersion", "1, 0, 0, 1\0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x409, 1200
+    END
+END
+
+#endif    // !_MAC
+
+#endif    // English (U.S.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE 9, 1
+#pragma code_page(1252)
+#endif //_WIN32
+#include "res\Digital.rc2"  // non-Microsoft Visual C++ edited resources
+#include "afxres.rc"         // Standard components
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

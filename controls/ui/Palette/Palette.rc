@@ -1,0 +1,467 @@
+//Microsoft Developer Studio generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// Chinese (P.R.C.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)
+#ifdef _WIN32
+LANGUAGE LANG_CHINESE, SUBLANG_CHINESE_SIMPLIFIED
+#pragma code_page(936)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_ABOUTBOX_PALETTE DIALOG DISCARDABLE  34, 22, 260, 55
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "№ШУЪ Palette Control"
+FONT 8, "MS Sans Serif"
+BEGIN
+    ICON            IDI_ABOUTDLL,IDC_STATIC,10,10,20,20
+    LTEXT           "Palette ControlЈ¬°ж±ѕ 1.0",IDC_STATIC,40,10,170,8
+    LTEXT           "°жИЁЛщУР (C) 1999, VideoTest",IDC_STATIC,40,25,170,8
+    DEFPUSHBUTTON   "И·¶Ё",IDOK,221,7,32,14,WS_GROUP
+END
+
+IDD_PROPPAGE_PALETTE DIALOG DISCARDABLE  0, 0, 233, 62
+STYLE WS_CHILD
+FONT 8, "MS Sans Serif"
+BEGIN
+    LTEXT           "БР:",IDC_STATIC,13,17,30,8
+    EDITTEXT        IDC_EDIT_COLS,50,15,40,14,ES_AUTOHSCROLL
+    LTEXT           "РР:",IDC_STATIC,13,36,21,8
+    EDITTEXT        IDC_EDIT_ROWS,50,33,40,14,ES_AUTOHSCROLL
+    LTEXT           "µҐФЄёсјдѕа:",IDC_STATIC,117,17,49,8
+    EDITTEXT        IDC_EDIT_INTERCELLSPACE,172,15,40,14,ES_AUTOHSCROLL
+END
+
+IDD_DIALOG1 DIALOG DISCARDABLE  0, 0, 278, 154
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "¶Ф»°їт"
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "И·¶Ё",IDOK,210,126,50,14
+    PUSHBUTTON      "Button1",IDC_BUTTON1,221,102,50,14
+END
+
+IDD_PROPPAGE_FRAMES DIALOG DISCARDABLE  0, 0, 250, 62
+STYLE WS_CHILD
+FONT 8, "MS Sans Serif"
+BEGIN
+    GROUPBOX        "ДЪ±Яїт",IDC_STATIC,18,12,92,37
+    CONTROL         "Н№Жр",IDC_CHECK1,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,26,22,38,10
+    CONTROL         "°јПЭ",IDC_CHECK2,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,26,33,41,10
+    GROUPBOX        "Нв±Яїт",IDC_STATIC,139,12,92,37
+    CONTROL         "Н№Жр",IDC_CHECK4,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,148,22,38,10
+    CONTROL         "°јПЭ",IDC_CHECK5,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,148,33,41,10
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO DISCARDABLE 
+BEGIN
+    IDD_ABOUTBOX_PALETTE, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 253
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 48
+    END
+
+    IDD_PROPPAGE_PALETTE, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 226
+        BOTTOMMARGIN, 55
+    END
+
+    IDD_DIALOG1, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 271
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 147
+    END
+
+    IDD_PROPPAGE_FRAMES, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 243
+        TOPMARGIN, 6
+        BOTTOMMARGIN, 56
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDI_ABOUTDLL            ICON       DISCARDABLE        "Palette.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDB_PALETTE             BITMAP     DISCARDABLE        "PaletteCtl.bmp"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_PALETTE             "Palette їШјю"
+    IDS_PALETTE_PPG         "Palette КфРФТіГж"
+    IDS_PALETTE_FAMESPPG    "їтјЬКфРФТіГж"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_PALETTE_PPG_CAPTION "НЁУГ"
+    IDS_PALETTE_FAMESPPG_CAPTION "їтјЬ"
+END
+
+#endif    // Chinese (P.R.C.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+/////////////////////////////////////////////////////////////////////////////
+// Russian resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_RUS)
+#ifdef _WIN32
+LANGUAGE LANG_RUSSIAN, SUBLANG_DEFAULT
+#pragma code_page(1251)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "1 TYPELIB ""Palette.tlb""\r\n"
+    "#include ""res\\Palette.rc2""\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_ABOUTBOX_PALETTE DIALOG DISCARDABLE  34, 22, 260, 55
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Об элементе управления Палитра"
+FONT 8, "MS Sans Serif"
+BEGIN
+    ICON            IDI_ABOUTDLL,IDC_STATIC,10,10,20,20
+    LTEXT           "Элемент управления Палитра, Весия 1.0",IDC_STATIC,40,10,
+                    170,8
+    LTEXT           "Copyright (C) 1999, VideoTest",IDC_STATIC,40,25,170,8
+    DEFPUSHBUTTON   "OK",IDOK,221,7,32,14,WS_GROUP
+END
+
+IDD_DIALOG1 DIALOG DISCARDABLE  0, 0, 278, 154
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Dialog"
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,210,126,50,14
+    PUSHBUTTON      "Button1",IDC_BUTTON1,221,102,50,14
+END
+
+IDD_PROPPAGE_FRAMES DIALOG DISCARDABLE  0, 0, 250, 62
+STYLE WS_CHILD
+FONT 8, "MS Sans Serif"
+BEGIN
+    GROUPBOX        "Внутренняя граница",IDC_STATIC,18,15,92,37
+    CONTROL         "Выпуклая",IDC_CHECK1,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,26,25,49,10
+    CONTROL         "Вдавленная",IDC_CHECK2,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,26,36,57,10
+    GROUPBOX        "Внешняя граница",IDC_STATIC,139,15,92,37
+    CONTROL         "Выпуклая",IDC_CHECK4,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,148,25,49,10
+    CONTROL         "Вдавленная",IDC_CHECK5,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,148,36,57,10
+END
+
+IDD_PROPPAGE_PALETTE DIALOG DISCARDABLE  0, 0, 250, 62
+STYLE WS_CHILD
+FONT 8, "MS Sans Serif"
+BEGIN
+    LTEXT           "Колонки:",IDC_STATIC,13,17,32,8
+    EDITTEXT        IDC_EDIT_COLS,50,15,40,14,ES_AUTOHSCROLL
+    LTEXT           "Строки:",IDC_STATIC,13,36,27,8
+    EDITTEXT        IDC_EDIT_ROWS,50,33,40,14,ES_AUTOHSCROLL
+    LTEXT           "Интервал между ячейками:",IDC_STATIC,100,17,94,8
+    EDITTEXT        IDC_EDIT_INTERCELLSPACE,195,15,40,14,ES_AUTOHSCROLL
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO DISCARDABLE 
+BEGIN
+    IDD_ABOUTBOX_PALETTE, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 253
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 48
+    END
+
+    IDD_DIALOG1, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 271
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 147
+    END
+
+    IDD_PROPPAGE_FRAMES, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 243
+        TOPMARGIN, 6
+        BOTTOMMARGIN, 56
+    END
+
+    IDD_PROPPAGE_PALETTE, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 243
+        BOTTOMMARGIN, 55
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_PALETTE             "Элемент управления Палитра"
+    IDS_PALETTE_PPG         "Palette Property Page"
+    IDS_PALETTE_FAMESPPG    "Frames Property Page"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_PALETTE_PPG_CAPTION "Основные"
+    IDS_PALETTE_FAMESPPG_CAPTION "Рамки"
+END
+
+#endif    // Russian resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.S.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_ABOUTBOX_PALETTE DIALOG DISCARDABLE  34, 22, 260, 55
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "About Palette Control"
+FONT 8, "MS Sans Serif"
+BEGIN
+    ICON            IDI_ABOUTDLL,IDC_STATIC,10,10,20,20
+    LTEXT           "Palette Control, Version 1.0",IDC_STATIC,40,10,170,8
+    LTEXT           "Copyright (C) 1999, VideoTest",IDC_STATIC,40,25,170,8
+    DEFPUSHBUTTON   "OK",IDOK,221,7,32,14,WS_GROUP
+END
+
+IDD_PROPPAGE_PALETTE DIALOG DISCARDABLE  0, 0, 233, 62
+STYLE WS_CHILD
+FONT 8, "MS Sans Serif"
+BEGIN
+    LTEXT           "Columns:",IDC_STATIC,13,17,30,8
+    EDITTEXT        IDC_EDIT_COLS,50,15,40,14,ES_AUTOHSCROLL
+    LTEXT           "Rows:",IDC_STATIC,13,36,21,8
+    EDITTEXT        IDC_EDIT_ROWS,50,33,40,14,ES_AUTOHSCROLL
+    LTEXT           "Intercell space:",IDC_STATIC,117,17,49,8
+    EDITTEXT        IDC_EDIT_INTERCELLSPACE,172,15,40,14,ES_AUTOHSCROLL
+END
+
+IDD_DIALOG1 DIALOG DISCARDABLE  0, 0, 278, 154
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Dialog"
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,210,126,50,14
+    PUSHBUTTON      "Button1",IDC_BUTTON1,221,102,50,14
+END
+
+IDD_PROPPAGE_FRAMES DIALOG DISCARDABLE  0, 0, 250, 62
+STYLE WS_CHILD
+FONT 8, "MS Sans Serif"
+BEGIN
+    GROUPBOX        "Inner border",IDC_STATIC,18,12,92,37
+    CONTROL         "Raised",IDC_CHECK1,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,26,22,38,10
+    CONTROL         "Sunken",IDC_CHECK2,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,26,33,41,10
+    GROUPBOX        "Outer border",IDC_STATIC,139,12,92,37
+    CONTROL         "Raised",IDC_CHECK4,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,148,22,38,10
+    CONTROL         "Sunken",IDC_CHECK5,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,148,33,41,10
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO DISCARDABLE 
+BEGIN
+    IDD_ABOUTBOX_PALETTE, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 253
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 48
+    END
+
+    IDD_PROPPAGE_PALETTE, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 226
+        BOTTOMMARGIN, 55
+    END
+
+    IDD_DIALOG1, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 271
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 147
+    END
+
+    IDD_PROPPAGE_FRAMES, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 243
+        TOPMARGIN, 6
+        BOTTOMMARGIN, 56
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDI_ABOUTDLL            ICON    DISCARDABLE     "Palette.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDB_PALETTE             BITMAP  DISCARDABLE     "PaletteCtl.bmp"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_PALETTE             "Palette Control"
+    IDS_PALETTE_PPG         "Palette Property Page"
+    IDS_PALETTE_FAMESPPG    "Frames Property Page"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_PALETTE_PPG_CAPTION "General"
+    IDS_PALETTE_FAMESPPG_CAPTION "Frames"
+END
+
+#endif    // English (U.S.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+1 TYPELIB "Palette.tlb"
+#include "res\Palette.rc2"
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

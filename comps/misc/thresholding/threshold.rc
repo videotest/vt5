@@ -1,0 +1,232 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// Russian resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_RUS)
+#ifdef _WIN32
+LANGUAGE LANG_RUSSIAN, SUBLANG_DEFAULT
+#pragma code_page(1251)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE 
+BEGIN
+    ID_ACTION_ITERATIONEDGE "IterationThreshold\nИтерационная бинаризация\nFilters\nБинаризация с использованием итерационной границы\nИтерационная бинаризация"
+    ID_ACTION_FUZZYSETSEDGE "FuzzySetsThreshold\nБинаризация нечетких множеств\nFilters\nБинаризация по границе нечетких множеств\nБинаризация нечетких множеств"
+    ID_ACTION_ENTROPYEDGE   "EntropyThreshold\nБинаризация по энтропии\nFilters\nБинаризация по критерию минимума энтропии\nБинаризация по энтропии"
+    ID_ACTION_PEAKSEDGE     "PeaksThreshold\nБинаризация по пикам\nFilters\nБинаризация по пикам гистограммы\nБинаризация по пикам"
+    ID_ACTION_MINBINARYEDGE "MinBinaryThreshold\nБинаризация по минимизации\nFilters\nБинаризация по минимизации ошибки\nБинаризация по минимизации"
+    ID_ACTION_BOUNDSEDGE    "BoundsThreshold\nБинаризация по границам\nFilters\nБинаризация по границам\nБинаризация по границам"
+    ID_ACTION_RELAXATION    "Relaxation\nБинаризация с релаксацией\nFilters\nБинаризация с релаксацией\nБинаризация с релаксацией"
+    ID_ACTION_PYRAMID       "Pyramid\nПирамидальная сегментация\nFilters\nПирамидальная сегментация\nПирамидальная сегментация"
+    ID_ACTION_CHOWKANEKO    "ChowKaneko\nБинаризация Шов/Канеко\nFilters\nБинаризация Шов/Канеко\nБинаризация Шов/Канеко"
+    ID_ACTION_LOCALMAX      "LocalMax\nБинаризация локального максимума\nFilters\nБинаризация локального максимума\nБинаризация локального максимума"
+    ID_ACTION_LOCALMIN      "LocalMin\nБинаризация локального минимума\nFilters\nБинаризация локального минимума\nБинаризация локального минимума"
+    IDS_IMAGE_HAVE_TO_BE_GREYSCALE 
+                            "Эта операция поддерживает обработку только полутоновых изображений!"
+    ID_ACTION_FINDPHASESGRAY 
+                            "FindPhasesGray\nПоиск фаз на grayscale\nFilters\nFindPhasesGray\nFindPhasesGray"
+    ID_ACTION_FINDPHASESCOLOR 
+                            "FindPhasesColor\nFindPhasesColor\nFilters\nFindPhasesColor\nFindPhasesColor"
+    ID_ACTION_SEGMCOLORPHASES 
+                            "SegmColorPhases\nПоиск цветовых диапазонов\nFilters\nПоиск цветовых диапазонов\nПоиск цветовых диапазонов"
+END
+
+STRINGTABLE 
+BEGIN
+    ID_ACTION_TRANSFORMCOLOR1 
+                            "TransformColor1\nTransformColor1\nColor\nTransformColor1\nTransformColor1"
+    ID_ACTION_FINDCIRCLES2  "FindCircles2\nFindCircles2\nFilters\nFindCircles2\nFindCircles2"
+    ID_ACTION_PROCESSPAIRS  "ProcessPairs\nProcessPairs\nFilters\nProcessPairs\nProcessPairs"
+    ID_ACTION_FINDCIRCLES3  "FindCircles3\nFindCircles3\nFilters\nFindCircles3\nFindCircles3"
+    ID_ACTION_CANNYTHRESHOLD 
+                            "Canny\nCannyThreshold\nThresholding\nCannyThreshold\nCannyThreshold"
+    ID_ACTION_FINDCURVES    "FindCurves\nFindCurves\nThresholding\nFindCurves\nFindCurves"
+    ID_ACTION_THRESHOLDBYEDGES 
+                            "ThresholdByEdges\nThresholdByEdges\nThresholding\nThresholdByEdges\nThresholdByEdges"
+    ID_ACTION_CONTINUECURVES 
+                            "ContinueCurves\nContinueCurves\nThresholding\nContinueCurves\nContinueCurves"
+END
+
+STRINGTABLE 
+BEGIN
+    ID_ACTION_LINESTHRESHOLD 
+                            "LinesThreshold\nLinesThreshold\nThresholding\nLinesThreshold\nLinesThreshold"
+    ID_ACTION_EVENBYEDGE    "EvenByEdge\nEvenByEdge\nFilters\nEvenByEdge\nEvenByEdge"
+    ID_ACTION_SEGMSERIAL    "SegmSerial\nSegmSerial\nThresholding\nSegmSerial\nSegmSerial"
+    ID_ACTION_SEGMSERIAL2   "SegmSerial2\nSegmSerial2\nThresholding\nSegmSerial2\nSegmSerial2"
+    ID_ACTION_SEGMSERIAL3   "SegmSerial3\nSegmSerial3\nThresholding\nSegmSerial3\nSegmSerial3"
+    ID_ACTION_FASTFINDPHASESCOLOR 
+                            "FastFindPhasesColor\nFastFindPhasesColor\nThresholding\nFastFindPhasesColor\nFastFindPhasesColor"
+END
+
+#endif    // Russian resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.S.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "#include ""res\\thresholding.rc2""\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Toolbar
+//
+
+IDR_TOOLBAR1 TOOLBAR  16, 15
+BEGIN
+    BUTTON      ID_ACTION_ITERATIONEDGE
+    BUTTON      ID_ACTION_FUZZYSETSEDGE
+    BUTTON      ID_ACTION_ENTROPYEDGE
+    BUTTON      ID_ACTION_PEAKSEDGE
+    BUTTON      ID_ACTION_MINBINARYEDGE
+    BUTTON      ID_ACTION_BOUNDSEDGE
+    BUTTON      ID_ACTION_PYRAMID
+    BUTTON      ID_ACTION_RELAXATION
+    BUTTON      ID_ACTION_CHOWKANEKO
+    BUTTON      ID_ACTION_FINDPHASESGRAY
+    BUTTON      ID_ACTION_FINDPHASESCOLOR
+    BUTTON      ID_ACTION_SEGMCOLORPHASES
+    BUTTON      ID_ACTION_TRANSFORMCOLOR1
+    BUTTON      ID_ACTION_FINDCIRCLES2
+    BUTTON      ID_ACTION_PROCESSPAIRS
+    BUTTON      ID_ACTION_FINDCIRCLES3
+    BUTTON      ID_ACTION_CANNYTHRESHOLD
+    BUTTON      ID_ACTION_FINDCURVES
+    BUTTON      ID_ACTION_THRESHOLDBYEDGES
+    BUTTON      ID_ACTION_CONTINUECURVES
+    BUTTON      ID_ACTION_LINESTHRESHOLD
+    BUTTON      ID_ACTION_EVENBYEDGE
+    BUTTON      ID_ACTION_SEGMSERIAL
+    BUTTON      ID_ACTION_SEGMSERIAL2
+    BUTTON      ID_ACTION_SEGMSERIAL3
+    BUTTON      ID_ACTION_FASTFINDPHASESCOLOR
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDR_TOOLBAR1            BITMAP                  "toolbar1.bmp"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE 
+BEGIN
+    ID_ACTION_ITERATIONEDGE "IterationThreshold\nIterative Thresholding\nFilters\nThresholding by iterative edge\nIterative Thresholding"
+    ID_ACTION_FUZZYSETSEDGE "FuzzySetsThreshold\nFuzzy Sets Thresholding\nFilters\nThresholding by fuzzy sets edge\nFuzzy Sets Thresholding"
+    ID_ACTION_ENTROPYEDGE   "EntropyThreshold\nEntropy Thresholding\nFilters\nThresholding by entropy edge\nEntropy Thresholding"
+    ID_ACTION_PEAKSEDGE     "PeaksThreshold\nPeaks Thresholding\nFilters\nThresholding by histogram peaks\nPeaks Thresholding"
+    ID_ACTION_MINBINARYEDGE "MinBinaryThreshold\nMin Binary Thresholding\nFilters\nThresholding by minimizing binarization error\nMin Binary Thresholding"
+    ID_ACTION_BOUNDSEDGE    "BoundsThreshold\nBounds Thresholding\nFilters\nThresholding by bounds edge\nBounds Thresholding"
+    ID_ACTION_RELAXATION    "Relaxation\nRelaxation Thresholding\nFilters\nRelaxation thresholding\nRelaxation Thresholding"
+    ID_ACTION_PYRAMID       "Pyramid\nPyramid Segmentation\nFilters\nPyramid segmentation\nPyramid Segmentation"
+    ID_ACTION_CHOWKANEKO    "ChowKaneko\nChow Kaneko Thresholding\nFilters\nChow Kaneko thresholding\nChow Kaneko Thresholding"
+    ID_ACTION_LOCALMAX      "LocalMax\nLocal Max Thresholding\nFilters\nLocal max thresholding\nLocal Max Thresholding"
+    ID_ACTION_LOCALMIN      "LocalMin\nLocal Min Thresholding\nFilters\nLocal Min thresholding\nLocal Min Thresholding"
+    IDS_IMAGE_HAVE_TO_BE_GREYSCALE 
+                            "This operation supports processing of grayscale images only!"
+    ID_ACTION_FINDPHASESGRAY 
+                            "FindPhasesGray\nFindPhasesGray\nFilters\nFindPhasesGray\nFindPhasesGray"
+    ID_ACTION_FINDPHASESCOLOR 
+                            "FindPhasesColor\nFindPhasesColor\nFilters\nFindPhasesColor\nFindPhasesColor"
+    ID_ACTION_SEGMCOLORPHASES 
+                            "SegmColorPhases\nDetermining Color Ranges\nFilters\nDetermining color ranges\nDetermining Color Ranges"
+END
+
+STRINGTABLE 
+BEGIN
+    ID_ACTION_TRANSFORMCOLOR1 
+                            "TransformColor1\nTransformColor1\nColor\nTransformColor1\nTransformColor1"
+    ID_ACTION_FINDCIRCLES2  "FindCircles2\nFindCircles2\nFilters\nFindCircles2\nFindCircles2"
+    ID_ACTION_PROCESSPAIRS  "ProcessPairs\nProcessPairs\nFilters\nProcessPairs\nProcessPairs"
+    ID_ACTION_FINDCIRCLES3  "FindCircles3\nFindCircles3\nFilters\nFindCircles3\nFindCircles3"
+    ID_ACTION_CANNYTHRESHOLD 
+                            "Canny\nCannyThreshold\nThresholding\nCannyThreshold\nCannyThreshold"
+    ID_ACTION_FINDCURVES    "FindCurves\nFindCurves\nThresholding\nFindCurves\nFindCurves"
+    ID_ACTION_THRESHOLDBYEDGES 
+                            "ThresholdByEdges\nThresholdByEdges\nThresholding\nThresholdByEdges\nThresholdByEdges"
+    ID_ACTION_CONTINUECURVES 
+                            "ContinueCurves\nContinueCurves\nThresholding\nContinueCurves\nContinueCurves"
+END
+
+STRINGTABLE 
+BEGIN
+    ID_ACTION_LINESTHRESHOLD 
+                            "LinesThreshold\nLinesThreshold\nThresholding\nLinesThreshold\nLinesThreshold"
+    ID_ACTION_EVENBYEDGE    "EvenByEdge\nEvenByEdge\nFilters\nEvenByEdge\nEvenByEdge"
+    ID_ACTION_SEGMSERIAL    "SegmSerial\nSegmSerial\nThresholding\nSegmSerial\nSegmSerial"
+    ID_ACTION_SEGMSERIAL2   "SegmSerial2\nSegmSerial2\nThresholding\nSegmSerial2\nSegmSerial2"
+    ID_ACTION_SEGMSERIAL3   "SegmSerial3\nSegmSerial3\nThresholding\nSegmSerial3\nSegmSerial3"
+    ID_ACTION_FASTFINDPHASESCOLOR 
+                            "FastFindPhasesColor\nFastFindPhasesColor\nThresholding\nFastFindPhasesColor\nFastFindPhasesColor"
+END
+
+#endif    // English (U.S.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#include "res\thresholding.rc2"
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

@@ -1,0 +1,101 @@
+// AppMan.odl : type library source for AppMan.dll
+
+// This file will be processed by the MIDL compiler to produce the
+// type library (AppMan.tlb).
+
+[ uuid(53665021-669E-11d3-A64B-0090275995FE), version(1.0) ]
+
+library AppMan
+{
+#include <olectl.h> // Yep, we're pretending to be a control
+#include <idispids.h> 
+
+	importlib("stdole32.tlb");
+	importlib("stdole2.tlb");
+
+	//  Primary dispatch interface for CAppWindow
+	[ uuid(E790124D-3A7D-11D3-A604-0090275995FE) ]
+	dispinterface IAppWindow
+	{
+		properties:
+			// NOTE - ClassWizard will maintain property information here.
+			//    Use extreme caution when editing this section.
+			//{{AFX_ODL_PROP(CAppWindow)
+			//}}AFX_ODL_PROP
+			
+		methods:
+			// NOTE - ClassWizard will maintain method information here.
+			//    Use extreme caution when editing this section.
+			//{{AFX_ODL_METHOD(CAppWindow)
+			//}}AFX_ODL_METHOD
+
+	};
+	//  Class information for CAppWindow
+
+	[ uuid(FD981A72-3ACE-11d3-A604-0090275995FE) ]
+	coclass AppWindow
+	{
+		[default] dispinterface IAppWindow;
+	};
+
+
+	//  Primary dispatch interface for CAppManager
+	
+	[ uuid(B91F7CC6-3B46-11D3-A605-0090275995FE) ]
+	dispinterface IAppManager
+	{
+		properties:
+			// NOTE - ClassWizard will maintain property information here.
+			//    Use extreme caution when editing this section.
+			//{{AFX_ODL_PROP(CAppManager)
+			[id(1)] long ActiveApp;
+			[id(2)] long ActiveMethodic;
+			//}}AFX_ODL_PROP
+			
+		methods:
+			// NOTE - ClassWizard will maintain method information here.
+			//    Use extreme caution when editing this section.
+				//{{AFX_ODL_METHOD(CAppManager)
+			[id(3)] long GetAppsCount();
+			[id(4)] BSTR GetAppName(long nPos);
+			[id(5)] long CreateNewApplication(BSTR szName);
+			[id(6)] void RemoveApplication(long nPos);
+			[id(7)] long GetMethodicCount(long nAppPos);
+			[id(8)] BSTR GetMethodicName(long nAppPos, long nMethPos);
+			[id(9)] void CreateMethodic(long nAppPos, BSTR nMethName);
+			[id(10)] void SetCurrentMethodic(long nIndex);
+			[id(11)] void SetCurrentApplication(long nIndex);
+			[id(12)] void RenameMethodic(long nIndex, BSTR szNewName);
+			[id(13)] void RenameApplication(long nIndex, BSTR szNewName);
+			[id(14)] void MoveMethodic(long nPos, long nPosTo);
+			[id(15)] void ReloadActiveMethodic();
+			//}}AFX_ODL_METHOD
+
+	};
+	[ uuid(3A752EF1-668C-11d3-A64B-0090275995FE) ]
+	dispinterface IAppManagerEvents
+	{
+		properties:
+		methods:
+			// NOTE - ClassWizard will maintain event information here.
+			//    Use extreme caution when editing this section.
+			//{{AFX_ODL_EVENT(CAppManager)
+			[id(1)] void OnAfterMethodicChange();
+			[id(2)] void OnBeforeMethodicChange();
+			[id(3)] void OnBeforeAppChange();
+			[id(4)] void OnAfterAppChange();
+			//}}AFX_ODL_EVENT
+	};
+
+
+	//  Class information for CAppManager
+	[ uuid(EFABC941-3B63-11d3-A605-0090275995FE) ]
+	coclass AppManager
+	{
+		[default] dispinterface IAppManager;
+		[default, source] dispinterface IAppManagerEvents;
+	};
+
+	//{{AFX_APPEND_ODL}}
+	//}}AFX_APPEND_ODL}}
+};

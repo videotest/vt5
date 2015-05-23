@@ -1,0 +1,125 @@
+// ChromosEx.odl : type library source for ChromosEx.dll
+
+// This file will be processed by the MIDL compiler to produce the
+// type library (ChromosEx.tlb).
+
+[ uuid(3B969DD0-D454-4F4F-B22E-906178363527), version(1.0) ]
+library ChromosEx
+{
+	importlib("stdole32.tlb");
+	importlib("stdole2.tlb");
+
+
+
+
+	//  Primary dispatch interface for CChromosGallery
+	
+	[ uuid(65272489-9943-4DE6-83BE-04B4732BC87D) ]
+	dispinterface IChromosGallery
+	{
+		properties:
+			// NOTE - ClassWizard will maintain property information here.
+			//    Use extreme caution when editing this section.
+			//{{AFX_ODL_PROP(CChromosGallery)
+			//}}AFX_ODL_PROP
+			
+		methods:
+			// NOTE - ClassWizard will maintain method information here.
+			//    Use extreme caution when editing this section.
+			//{{AFX_ODL_METHOD(CChromosGallery)
+			//}}AFX_ODL_METHOD
+
+	};
+
+	//  Class information for CChromosGallery
+
+	[ uuid(AE25F9DE-076C-4779-954E-DE3527D33149) ]
+	coclass ChromosGallery
+	{
+		[default] dispinterface IChromosGallery;
+	};
+
+
+	//  Primary dispatch interface for CCarioObj
+	
+	[ uuid(5761789C-D91B-4EDF-8742-40AB3EDEBD3E) ]
+	dispinterface ICarioObj
+	{
+		properties:
+			// NOTE - ClassWizard will maintain property information here.
+			//    Use extreme caution when editing this section.
+			//{{AFX_ODL_PROP(CCarioObj)
+			//}}AFX_ODL_PROP
+			
+		methods:
+			// NOTE - ClassWizard will maintain method information here.
+			//    Use extreme caution when editing this section.
+			//{{AFX_ODL_METHOD(CCarioObj)
+			//}}AFX_ODL_METHOD
+
+	};
+
+	//  Class information for CCarioObj
+
+	[ uuid(108E66F4-697C-409C-8862-20699E8E2A63) ]
+	coclass CarioObj
+	{
+		[default] dispinterface ICarioObj;
+	};
+
+
+	//  Primary dispatch interface for CCarioAnalizeView
+	
+	[ uuid(FEE7B82E-2704-46C8-83C2-ADAE33B3FD30) ]
+	dispinterface ICarioAnalizeView
+	{
+		properties:
+			// NOTE - ClassWizard will maintain property information here.
+			//    Use extreme caution when editing this section.
+			//{{AFX_ODL_PROP(CCarioAnalizeView)
+			//}}AFX_ODL_PROP
+			
+		methods:
+			// NOTE - ClassWizard will maintain method information here.
+			//    Use extreme caution when editing this section.
+			//{{AFX_ODL_METHOD(CCarioAnalizeView)
+			//}}AFX_ODL_METHOD
+
+	};
+
+	//  Class information for CCarioAnalizeView
+
+	[ uuid(D17CF4FD-F5EF-4788-840C-56DF29022D11) ]
+	coclass CarioAnalizeView
+	{
+		[default] dispinterface ICarioAnalizeView;
+	};
+
+	[ uuid(E4695896-A2D1-44ad-9396-68AF079C10B3) ]
+	dispinterface ICarioIdioEditView
+	{
+		properties:
+			// NOTE - ClassWizard will maintain property information here.
+			//    Use extreme caution when editing this section.
+			//{{AFX_ODL_PROP(CCarioIdioEditView)
+			//}}AFX_ODL_PROP
+			
+		methods:
+			// NOTE - ClassWizard will maintain method information here.
+			//    Use extreme caution when editing this section.
+			//{{AFX_ODL_METHOD(CCarioIdioEditView)
+			//}}AFX_ODL_METHOD
+
+	};
+
+	//  Class information for CCarioIdioEditView
+
+	[ uuid(F1EF20B8-89D5-4d53-BE4F-07DD8708843E) ]
+	coclass CarioIdioEditView
+	{
+		[default] dispinterface ICarioIdioEditView;
+	};
+
+	//{{AFX_APPEND_ODL}}
+	//}}AFX_APPEND_ODL}}
+};

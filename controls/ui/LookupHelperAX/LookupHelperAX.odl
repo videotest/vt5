@@ -1,0 +1,92 @@
+// LookupHelperAX.odl : type library source for ActiveX Control project.
+
+// This file will be processed by the Make Type Library (mktyplib) tool to
+// produce the type library (LookupHelperAX.tlb) that will become a resource in
+// LookupHelperAX.ocx.
+
+
+	[ uuid(F970DB7A-64A1-4da2-9A88-1FAEDD790012), version(1.1),
+  helpfile("LookupHelperAX.hlp"),
+  helpstring("LookupHelperAX ActiveX Control module"),
+  control ]
+library LOOKUPHELPERAXLib
+{
+#include <olectl.h>
+#include <idispids.h>
+	importlib(STDOLE_TLB);
+	importlib(STDTYPE_TLB);
+
+	//  Primary dispatch interface for CLookupHelperAXCtrl
+
+	[ uuid(5161EFE8-F62D-4818-9B91-E176C0164CE0),
+	  helpstring("Dispatch interface for LookupHelperAX Control"), hidden ]
+	dispinterface _DLookupHelperAX
+	{
+		properties:
+			// NOTE - ClassWizard will maintain property information here.
+			//    Use extreme caution when editing this section.
+			//{{AFX_ODL_PROP(CLookupHelperAXCtrl)
+			[id(1)] short Border;
+			[id(DISPID_BACKCOLOR), bindable, requestedit] OLE_COLOR BackColor;
+			[id(2)] boolean ShowGrid;
+			[id(3)] short Mode;
+			[id(4)] short CurveNum;
+			[id(5)] short BrightBrightness;
+			[id(6)] short BrightGamma;
+			[id(7)] short BrightContrast;
+			[id(8)] short RedBrightness;
+			[id(9)] short GreenBrightness;
+			[id(10)] short BlueBrightness;
+			[id(11)] short RedGamma;
+			[id(12)] short GreenGamma;
+			[id(13)] short BlueGamma;
+			[id(14)] short RedContrast;
+			[id(15)] short GreenContrast;
+			[id(16)] short BlueContrast;
+			[id(17)] boolean ActionMode;
+			//}}AFX_ODL_PROP
+
+		methods:
+			// NOTE - ClassWizard will maintain method information here.
+			//    Use extreme caution when editing this section.
+			//{{AFX_ODL_METHOD(CLookupHelperAXCtrl)
+			[id(18)] void ResetState();
+			[id(19)] void Trace(BSTR szOutString);
+			[id(20)] void Cancel();
+			[id(21)] void Apply();
+			[id(22)] void LoadState(BSTR szSection);
+			[id(23)] void SaveState(BSTR szSection);
+			//}}AFX_ODL_METHOD
+	};
+
+	//  Event dispatch interface for CLookupHelperAXCtrl
+	[ uuid(91E410AA-7B21-4fa1-B737-30260499DB30),
+	  helpstring("Event interface for LookupHelperAX Control") ]
+	dispinterface _DLookupHelperAXEvents
+	{
+		properties:
+			//  Event interface has no properties
+
+		methods:
+			// NOTE - ClassWizard will maintain event information here.
+			//    Use extreme caution when editing this section.
+			//{{AFX_ODL_EVENT(CLookupHelperAXCtrl)
+			[id(1)] void UpdateExternalControls();
+			[id(2)] void OnAction();
+			//}}AFX_ODL_EVENT
+	};
+
+	//  Class information for CLookupHelperAXCtrl
+
+	[ uuid(3FEAC05C-7050-431E-B134-26BBDEB32EDA),
+	  helpstring("LookupHelperAX Control"), control ]
+	coclass LookupHelperAX
+	{
+		[default] dispinterface _DLookupHelperAX;
+		[default, source] dispinterface _DLookupHelperAXEvents;
+	};
+
+
+	//{{AFX_APPEND_ODL}}
+	//}}AFX_APPEND_ODL}}
+};

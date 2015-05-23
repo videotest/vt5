@@ -1,0 +1,9 @@
+; IdioDBase.def : Declares the module parameters for the DLL.
+
+LIBRARY      "IdioDBase"
+
+EXPORTS
+	DllCanUnloadNow PRIVATE
+	DllGetClassObject PRIVATE
+	DllRegisterServer PRIVATE
+	DllUnregisterServer PRIVATE

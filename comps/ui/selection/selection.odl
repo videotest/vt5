@@ -1,0 +1,16 @@
+// selection.odl : type library source for selection.dll
+
+// This file will be processed by the MIDL compiler to produce the
+// type library (selection.tlb).
+
+[ uuid(06B1A266-53A3-11D3-A626-0090275995FE), version(1.0) ]
+library Selection
+{
+	importlib("stdole32.tlb");
+	importlib("stdole2.tlb");
+
+
+
+	//{{AFX_APPEND_ODL}}
+	//}}AFX_APPEND_ODL}}
+};

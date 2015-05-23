@@ -1,0 +1,93 @@
+// ColorManAX.odl : type library source for ActiveX Control project.
+
+// This file will be processed by the Make Type Library (mktyplib) tool to
+// produce the type library (ColorManAX.tlb) that will become a resource in
+// ColorManAX.ocx.
+
+
+[ uuid(5DB73BB3-F590-11D3-A0BC-0000B493A187), version(1.0),
+  helpfile("ColorManAX.hlp"),
+  helpstring("ColorManAX ActiveX Control module"),
+  control ]
+library COLORMANAXLib
+{
+#include <olectl.h>
+#include <idispids.h>
+	importlib(STDOLE_TLB);
+	importlib(STDTYPE_TLB);
+
+	//  Primary dispatch interface for CColorManAXCtrl
+
+	[ uuid(5DB73BB4-F590-11D3-A0BC-0000B493A187),
+	  helpstring("Dispatch interface for ColorManAX Control"), hidden ]
+	dispinterface _DColorManAX
+	{
+		properties:
+			// NOTE - ClassWizard will maintain property information here.
+			//    Use extreme caution when editing this section.
+			//{{AFX_ODL_PROP(CColorManAXCtrl)
+			[id(1)] boolean InnerSunken;
+			[id(2)] boolean OuterRaised;
+			[id(3)] boolean OuterSunken;
+			[id(4)] boolean InnerRaised;
+			[id(DISPID_FONT), bindable] IFontDisp* Font;
+			[id(5)] long HiRange;
+			[id(6)] long LoRange;
+			[id(7)] boolean AddInterval;
+			//}}AFX_ODL_PROP
+
+		methods:
+			// NOTE - ClassWizard will maintain method information here.
+			//    Use extreme caution when editing this section.
+			//{{AFX_ODL_METHOD(CColorManAXCtrl)
+			[id(8)] boolean IsPaneCycled(short nPane);
+			[id(9)] void ResetIntervalsSet(short nIS);
+			[id(10)] void UndoChangeIntervals();
+			[id(11)] boolean IsUndoAvail();
+			[id(12)] void AddIntervalsSet();
+			[id(13)] void RemoveIntervalsSet(short nIntervalsSet);
+			[id(14)] void SetActiveIntervalsSet(short nIntervalsSet);
+			[id(15)] long GetLoRangeOfPane(short nClass, short nPane);
+			[id(16)] long GetHiRangeOfPane(short nClass, short nPane);
+			[id(17)] long GetPanesCount();
+			[id(18)] void Fake(BSTR szComment);
+			//}}AFX_ODL_METHOD
+	};
+
+	//  Event dispatch interface for CColorManAXCtrl
+
+	[ uuid(5DB73BB5-F590-11D3-A0BC-0000B493A187),
+	  helpstring("Event interface for ColorManAX Control") ]
+	dispinterface _DColorManAXEvents
+	{
+		properties:
+			//  Event interface has no properties
+
+		methods:
+			// NOTE - ClassWizard will maintain event information here.
+			//    Use extreme caution when editing this section.
+			//{{AFX_ODL_EVENT(CColorManAXCtrl)
+			[id(1)] void OnPaneChange(short nPane);
+			[id(2)] void OnChangeHiRange(long nValue);
+			[id(3)] void OnChangeLoRange(long nValue);
+			[id(4)] void OnManageColorInterval();
+			[id(5)] void OnChangeUndoState();
+			[id(6)] void OnColorModelChange();
+			[id(7)] void OnChangeWorkingImage(IDispatch* pdispNewImage);
+			//}}AFX_ODL_EVENT
+	};
+
+	//  Class information for CColorManAXCtrl
+
+	[ uuid(3871368D-87AC-4f8e-AE3D-2FC2A3DB60A8),
+	  helpstring("ColorManAX Control"), control ]
+	coclass ColorManAX
+	{
+		[default] dispinterface _DColorManAX;
+		[default, source] dispinterface _DColorManAXEvents;
+	};
+
+
+	//{{AFX_APPEND_ODL}}
+	//}}AFX_APPEND_ODL}}
+};

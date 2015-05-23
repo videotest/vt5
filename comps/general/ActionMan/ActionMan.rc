@@ -1,0 +1,435 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// Chinese (P.R.C.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)
+#ifdef _WIN32
+LANGUAGE LANG_CHINESE, SUBLANG_CHINESE_SIMPLIFIED
+#pragma code_page(936)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_ENUMACTIONS DIALOG  0, 0, 351, 193
+STYLE DS_SETFONT | DS_MODALFRAME | DS_CENTER | WS_POPUP | WS_CAPTION | 
+    WS_SYSMENU
+CAPTION "Г¶ѕЩІЩЧч"
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "№Ш±Х",IDOK,244,175,50,14
+    EDITTEXT        IDC_EDIT1,4,3,343,166,ES_MULTILINE | ES_AUTOHSCROLL | 
+                    WS_VSCROLL
+    PUSHBUTTON      "°пЦъ",IDHELP,298,175,50,14
+END
+
+IDD_SCRIPTDLG DIALOG  0, 0, 267, 129
+STYLE DS_SETFONT | DS_MODALFRAME | DS_CENTER | WS_POPUP | WS_CAPTION | 
+    WS_SYSMENU
+CAPTION "ГьБоРР"
+FONT 8, "MS Sans Serif"
+BEGIN
+    LTEXT           "ФЪґЛґ¦КдИлЅЕ±ѕ",IDC_STATIC,6,1,64,8
+    EDITTEXT        IDC_SCRIPT,5,12,256,92,ES_MULTILINE | ES_AUTOHSCROLL | 
+                    ES_WANTRETURN | WS_VSCROLL
+    PUSHBUTTON      "ЙПТ»ЅЕ±ѕ(&P)...",IDC_PREV,6,109,50,14
+    DEFPUSHBUTTON   "И·¶Ё",IDOK,104,109,50,14
+    PUSHBUTTON      "ИЎПы",IDCANCEL,158,109,50,14
+    PUSHBUTTON      "°пЦъ",IDHELP,212,109,50,14
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO 
+BEGIN
+    IDD_ENUMACTIONS, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 344
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 186
+    END
+
+    IDD_SCRIPTDLG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 260
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 122
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE 
+BEGIN
+    IDS_NO_INTERACTIVE_INTERAFCE 
+                            "Г»УРґ¦УЪ»о¶ЇЧґМ¬µДЅ»»ҐЅзГжЈ¬ТтґЛІ»ДЬТФЅ»»ҐДЈКЅЦґРРЎЈ"
+    IDS_NO_WINDOW_TARGET    "Ѕ»»ҐІЩЧчЦРГ»УРґ°їЪДї±к"
+    IDS_NO_MSG_LISTENER     "Ѕ»»ҐІЩЧчЦРГ»УРПыПўјаМэЅУїЪ"
+    IDS_ACTION              "ІЩЧч"
+    IDS_GROUP               "Чй"
+    IDS_ARGS_IN             "КдИлІОКэ"
+    IDS_ARGS_OUT            "КдіцІОКэ"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_ACTION_UNDO         "Undo\nі·Пъ\n±ај­\nі·ПъЙПґОЦґРРµДІЩЧч\nі·ПъЙПґОЦґРРµДІЩЧч"
+    IDS_ACTION_REDO         "Redo\nЦШЧц\n±ај­\nЦШЧцЙПґОИЎПыЈЁК№УГі·ПъГьБоЈ©µДІЩЧч\nЦШЧцЙПґОИЎПыµДІЩЧч"
+    IDS_ACTION_ENUMACTIONS  "EnumActions\nГ¶ѕЩІЩЧч...\nХл¶ФїЄ·ўИЛФ±\nГ¶ѕЩІЩЧч\nГ¶ѕЩ"
+    IDS_ACTION_RUN          "RunScript\nГьБоРР...\n№¤ѕЯ\nФЛРРЅЕ±ѕ\nГьБоРР"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_MENU_EDIT           "anydoc\\Edit"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_TB_MAIN             "Main"
+END
+
+#endif    // Chinese (P.R.C.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+/////////////////////////////////////////////////////////////////////////////
+// Russian resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_RUS)
+#ifdef _WIN32
+LANGUAGE LANG_RUSSIAN, SUBLANG_DEFAULT
+#pragma code_page(1251)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#include ""res\\ActionMan.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "#include ""afxres.rc""         // Standard components\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_ENUMACTIONS DIALOG  0, 0, 351, 193
+STYLE DS_SETFONT | DS_MODALFRAME | DS_CENTER | WS_POPUP | WS_CAPTION | 
+    WS_SYSMENU
+CAPTION "Список акций"
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "Закрыть",IDOK,245,175,50,14
+    EDITTEXT        IDC_EDIT1,4,3,343,166,ES_MULTILINE | ES_AUTOHSCROLL | 
+                    WS_VSCROLL
+    PUSHBUTTON      "Справка",IDHELP,297,175,50,14
+END
+
+IDD_SCRIPTDLG DIALOG  0, 0, 240, 146
+STYLE DS_SETFONT | DS_MODALFRAME | DS_CENTER | WS_POPUP | WS_CAPTION | 
+    WS_SYSMENU
+CAPTION "Командная строка"
+FONT 8, "MS Sans Serif"
+BEGIN
+    LTEXT           "Введите скрипт",IDC_STATIC,6,1,54,8
+    EDITTEXT        IDC_SCRIPT,5,12,230,108,ES_MULTILINE | ES_AUTOHSCROLL | 
+                    ES_WANTRETURN | WS_VSCROLL
+    PUSHBUTTON      "&Предыдущие...",IDC_PREV,6,127,53,14
+    DEFPUSHBUTTON   "OK",IDOK,79,127,50,14
+    PUSHBUTTON      "Отмена",IDCANCEL,132,127,50,14
+    PUSHBUTTON      "Справка",IDHELP,185,127,50,14
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO 
+BEGIN
+    IDD_ENUMACTIONS, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 344
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 186
+    END
+
+    IDD_SCRIPTDLG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 233
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 139
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE 
+BEGIN
+    IDS_NO_INTERACTIVE_INTERAFCE 
+                            "No interactive interface in action. It can't be executed in interactive mode."
+    IDS_NO_WINDOW_TARGET    "No window target in interactive action"
+    IDS_NO_MSG_LISTENER     "No message listener interface in interactive action"
+    IDS_ACTION              "Операция"
+    IDS_GROUP               "Группа"
+    IDS_ARGS_IN             "Ввод аргументов"
+    IDS_ARGS_OUT            "Output Args"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_ACTION_UNDO         "Undo\nОтменить\nПравка\nОтменить последнюю выполненную операцию\nОтменить"
+    IDS_ACTION_REDO         "Redo\nПовторить\nПравка\nПовторить последнюю ранее отмененную операцию\nПовторить"
+    IDS_ACTION_ENUMACTIONS  "EnumActions\nСписок акций...\nFor Developers\nСписок акций\nСписок акций"
+    IDS_ACTION_RUN          "RunScript\nКомандная строка...\nСервис\nRun the script\nКомандная строка"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_MENU_EDIT           "anydoc\\Правка"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_TB_MAIN             "Main"
+END
+
+#endif    // Russian resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.S.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_ENUMACTIONS DIALOG  0, 0, 351, 193
+STYLE DS_SETFONT | DS_MODALFRAME | DS_CENTER | WS_POPUP | WS_CAPTION | 
+    WS_SYSMENU
+CAPTION "Enum Actions"
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "Close",IDOK,244,175,50,14
+    EDITTEXT        IDC_EDIT1,4,3,343,166,ES_MULTILINE | ES_AUTOHSCROLL | 
+                    WS_VSCROLL
+    PUSHBUTTON      "Help",IDHELP,298,175,50,14
+END
+
+IDD_SCRIPTDLG DIALOG  0, 0, 267, 129
+STYLE DS_SETFONT | DS_MODALFRAME | DS_CENTER | WS_POPUP | WS_CAPTION | 
+    WS_SYSMENU
+CAPTION "Command Line"
+FONT 8, "MS Sans Serif"
+BEGIN
+    LTEXT           "Enter the script here",IDC_STATIC,6,1,64,8
+    EDITTEXT        IDC_SCRIPT,5,12,256,92,ES_MULTILINE | ES_AUTOHSCROLL | 
+                    ES_WANTRETURN | WS_VSCROLL
+    PUSHBUTTON      "&Prev scripts...",IDC_PREV,6,109,50,14
+    DEFPUSHBUTTON   "OK",IDOK,104,109,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,158,109,50,14
+    PUSHBUTTON      "Help",IDHELP,212,109,50,14
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO 
+BEGIN
+    IDD_ENUMACTIONS, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 344
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 186
+    END
+
+    IDD_SCRIPTDLG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 260
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 122
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Toolbar
+//
+
+IDR_ACTIONS TOOLBAR  16, 15
+BEGIN
+    BUTTON      IDS_ACTION_UNDO
+    BUTTON      IDS_ACTION_REDO
+    BUTTON      IDS_ACTION_RUN
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDR_ACTIONS             BITMAP                  "toolbar1.bmp"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Accelerator
+//
+
+IDR_ACCELERATOR1 ACCELERATORS 
+BEGIN
+    "R",            IDS_ACTION_RUN,         VIRTKEY, CONTROL, NOINVERT
+    VK_BACK,        IDS_ACTION_UNDO,        VIRTKEY, ALT, NOINVERT
+    VK_BACK,        IDS_ACTION_REDO,        VIRTKEY, SHIFT, CONTROL, 
+                                                    NOINVERT
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Menu
+//
+
+IDR_LOG_MENU MENU 
+BEGIN
+    POPUP "__ActionLogMenu__"
+    BEGIN
+        MENUITEM "&Copy",                       ID_ACTIONLOGMENU_COPY
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE 
+BEGIN
+    IDS_NO_INTERACTIVE_INTERAFCE 
+                            "No interactive interface in action. It can't be executed in interactive mode"
+    IDS_NO_WINDOW_TARGET    "No window target in interactive action"
+    IDS_NO_MSG_LISTENER     "No message listener interface in interactive action"
+    IDS_ACTION              "Action"
+    IDS_GROUP               "Group"
+    IDS_ARGS_IN             "Input arguments"
+    IDS_ARGS_OUT            "Output Args"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_ACTION_UNDO         "Undo\nUndo\nEdit\nUndo the last performed operation\nUndo Last Performed Operation"
+    IDS_ACTION_REDO         "Redo\nRedo\nEdit\nRedo the last canceled operation (by Undo command)\nRedo Last Canceled Operation"
+    IDS_ACTION_ENUMACTIONS  "EnumActions\nEnum Actions...\nFor Developers\nEnum the actions\nEnum"
+    IDS_ACTION_RUN          "RunScript\nCommand line...\nTools\nRun the script\nCommand Line"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_MENU_EDIT           "anydoc\\Edit"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_TB_MAIN             "Main"
+END
+
+#endif    // English (U.S.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#include "res\ActionMan.rc2"  // non-Microsoft Visual C++ edited resources
+#include "afxres.rc"         // Standard components
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

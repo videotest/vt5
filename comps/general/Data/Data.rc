@@ -1,0 +1,1250 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// Chinese (P.R.C.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)
+#ifdef _WIN32
+LANGUAGE LANG_CHINESE, SUBLANG_CHINESE_SIMPLIFIED
+#pragma code_page(936)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_CREATE_OBJECT DIALOG  0, 0, 221, 98
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "ґґЅЁРВФЄЛШ"
+FONT 8, "MS Sans Serif"
+BEGIN
+    GROUPBOX        "РВФЄЛШКфРФ",IDC_STATIC,5,3,150,86
+    LTEXT           "СЎФсФЄЛШАаРН:",IDC_STATIC,15,18,75,8
+    COMBOBOX        IDC_KIND,15,28,129,68,CBS_DROPDOWNLIST | CBS_SORT | 
+                    WS_VSCROLL | WS_TABSTOP
+    LTEXT           "јьИлФЄЛШµДГыіЖЈ¬·сФтПµНіЅ«ЧФ¶ЇСЎФсТ»ёцГыіЖЎЈ\n",
+                    IDC_STATIC,15,49,128,18
+    EDITTEXT        IDC_NAME,15,69,129,14,ES_AUTOHSCROLL
+    DEFPUSHBUTTON   "И·¶Ё",IDOK,162,7,50,14
+    PUSHBUTTON      "ИЎПы",IDCANCEL,162,24,50,14
+    PUSHBUTTON      "°пЦъ",IDHELP,162,41,50,14
+END
+
+IDD_SELECT_OBJECT DIALOGEX 0, 0, 216, 158
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "ј¤»оФЄЛШ"
+FONT 8, "MS Sans Serif", 0, 0, 0x1
+BEGIN
+    GROUPBOX        "СЎФсТЄј¤»оµДФЄЛШ",IDC_STATIC,7,3,147,150
+    LTEXT           "СЎФсФЄЛШАаРН:",IDC_STATIC,15,18,75,8
+    COMBOBOX        IDC_KIND,15,30,132,81,CBS_DROPDOWNLIST | CBS_SORT | 
+                    WS_VSCROLL | WS_TABSTOP
+    LTEXT           "їЙУГФЄЛШ:",IDC_STATIC,15,50,64,8
+    CONTROL         "Tree1",IDC_TREE,"SysTreeView32",TVS_HASBUTTONS | 
+                    TVS_HASLINES | TVS_DISABLEDRAGDROP | TVS_SHOWSELALWAYS | 
+                    TVS_FULLROWSELECT | WS_TABSTOP,15,61,133,88,
+                    WS_EX_CLIENTEDGE
+    DEFPUSHBUTTON   "И·¶Ё",IDOK,160,7,50,14
+    PUSHBUTTON      "ИЎПы",IDCANCEL,160,24,50,14
+    PUSHBUTTON      "°пЦъ",IDHELP,159,41,50,14
+END
+
+IDD_DELETE_OBJECT DIALOGEX 0, 0, 219, 167
+STYLE DS_SETFONT | DS_MODALFRAME | DS_3DLOOK | WS_POPUP | WS_CAPTION | 
+    WS_SYSMENU
+CAPTION "ЙѕіэФЄЛШ"
+FONT 8, "MS Sans Serif", 0, 0, 0x1
+BEGIN
+    GROUPBOX        "СЎФсТЄЙѕіэµДФЄЛШ",IDC_BOUND_STRING,5,5,154,153
+    LTEXT           "їЙУГФЄЛШ:",IDC_OBJECT_STRING,11,19,64,8
+    CONTROL         "Tree1",IDC_TREE,"SysTreeView32",TVS_HASBUTTONS | 
+                    TVS_HASLINES | WS_TABSTOP,11,33,141,122,WS_EX_CLIENTEDGE
+    DEFPUSHBUTTON   "И·¶Ё",IDOK,166,7,50,14
+    PUSHBUTTON      "ИЎПы",IDCANCEL,166,24,50,14
+    PUSHBUTTON      "°пЦъ",IDHELP,166,41,50,14
+END
+
+IDD_RENAME_OBJECT DIALOGEX 0, 0, 222, 161
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "ЦШГьГыФЄЛШ"
+FONT 8, "MS Sans Serif", 0, 0, 0x1
+BEGIN
+    GROUPBOX        "СЎФсТЄЦШГьГыµДФЄЛШ:",IDC_STATIC,5,1,155,154
+    CONTROL         "Tree1",IDC_TREE,"SysTreeView32",TVS_HASBUTTONS | 
+                    TVS_HASLINES | TVS_LINESATROOT | TVS_FULLROWSELECT | 
+                    WS_TABSTOP,10,11,145,114,WS_EX_CLIENTEDGE
+    LTEXT           "КдИлСЎ¶ЁФЄЛШµДРВГыіЖ:",IDC_STATIC,10,128,145,10
+    EDITTEXT        IDC_EDIT,10,138,145,12,ES_AUTOHSCROLL
+    DEFPUSHBUTTON   "И·¶Ё",IDOK,165,5,50,14
+    PUSHBUTTON      "ИЎПы",IDCANCEL,165,22,50,14
+    PUSHBUTTON      "°пЦъ",IDHELP,165,39,50,14
+END
+
+IDD_ORGANIZE_OBJECT DIALOGEX 0, 0, 323, 193
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "ЧйЦЇЖч"
+FONT 8, "MS Sans Serif", 0, 0, 0x1
+BEGIN
+    GROUPBOX        "У¦УГіМРт",IDC_STATIC,3,4,138,165
+    CONTROL         "Tree1",IDC_TREE1,"SysTreeView32",TVS_HASBUTTONS | 
+                    TVS_HASLINES | TVS_DISABLEDRAGDROP | TVS_SHOWSELALWAYS | 
+                    WS_TABSTOP,10,15,123,148,WS_EX_CLIENTEDGE
+    PUSHBUTTON      "<<",IDC_TOAPP,149,16,20,14
+    PUSHBUTTON      ">>",IDC_TODOC,149,33,20,14
+    GROUPBOX        "»о¶ЇОДµµ",IDC_STATIC,177,4,138,165
+    CONTROL         "Tree1",IDC_TREE2,"SysTreeView32",TVS_HASBUTTONS | 
+                    TVS_HASLINES | TVS_DISABLEDRAGDROP | TVS_SHOWSELALWAYS | 
+                    WS_TABSTOP,185,15,123,148,WS_EX_CLIENTEDGE
+    PUSHBUTTON      "і·Пъ",IDC_UNDO,158,173,50,14
+    DEFPUSHBUTTON   "№Ш±Х",IDOK,211,173,50,14
+    PUSHBUTTON      "°пЦъ",IDHELP,264,173,50,14
+END
+
+IDD_DATA_CONTENT DIALOGEX 0, 0, 432, 335
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "ПФКѕКэѕЭДЪИЭ"
+FONT 8, "MS Sans Serif", 0, 0, 0x1
+BEGIN
+    LTEXT           "КэѕЭФґ",IDC_STATIC,11,12,41,8
+    COMBOBOX        IDC_DATA,82,9,343,162,CBS_DROPDOWNLIST | WS_VSCROLL | 
+                    WS_TABSTOP
+    CONTROL         "Tree1",IDC_TREE1,"SysTreeView32",TVS_HASBUTTONS | 
+                    TVS_HASLINES | TVS_LINESATROOT | TVS_EDITLABELS | 
+                    TVS_SHOWSELALWAYS | TVS_FULLROWSELECT | WS_TABSTOP,9,30,
+                    415,277,WS_EX_CLIENTEDGE
+    PUSHBUTTON      "№Ш±Х",IDCANCEL,321,313,50,14
+    PUSHBUTTON      "°пЦъ",IDHELP,375,313,50,14
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO 
+BEGIN
+    IDD_CREATE_OBJECT, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 214
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 91
+    END
+
+    IDD_SELECT_OBJECT, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 209
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 151
+    END
+
+    IDD_DELETE_OBJECT, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 212
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 160
+    END
+
+    IDD_RENAME_OBJECT, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 215
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 154
+    END
+
+    IDD_ORGANIZE_OBJECT, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 316
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 186
+    END
+
+    IDD_DATA_CONTENT, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 425
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 328
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog Info
+//
+
+IDD_DATA_CONTENT DLGINIT
+BEGIN
+    IDC_DATA, 0x403, 13, 0
+0xa6d3, 0xc3d3, 0xccb3, 0xf2d0, 0xfdca, 0xddbe, "\000" 
+    IDC_DATA, 0x403, 9, 0
+0xb1b5, 0xb0c7, 0xc4ce, 0xb5b5, "\000" 
+    0
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Toolbar
+//
+
+IDR_ACTIONS TOOLBAR  16, 15
+BEGIN
+    BUTTON      IDS_ACTION_NEWOBJECT
+    BUTTON      IDS_ACTION_SELECTOBJECT
+    BUTTON      IDS_ACTION_DELETEOBJECT
+    BUTTON      ID_BUTTON32774
+    BUTTON      ID_BUTTON32773
+    BUTTON      ID_BUTTON32772
+    BUTTON      IDS_ACTION_RENAMEOBJECT
+    BUTTON      IDS_ACTION_OBJECTPROPS
+    BUTTON      IDS_ACTION_LOADOBJECT
+    SEPARATOR
+    BUTTON      IDS_ACTION_SAVEOBJECT
+    BUTTON      IDS_ACTION_EDITCUT
+    BUTTON      IDS_ACTION_EDITCOPY
+    BUTTON      IDS_ACTION_EDITPASTE
+    SEPARATOR
+    BUTTON      IDS_ACTION_OBJECT_DELETE
+    BUTTON      IDS_ACTION_CONTENT
+    BUTTON      IDS_ACTION_UNSELECT
+    BUTTON      IDS_ACTION_SHOWCONTEXT
+    BUTTON      IDS_SEND_TO
+    BUTTON      IDS_ACTION_CREATE_IMAGE_BY_VIEW
+    BUTTON      IDS_ACTION_CLIPBOARDAVAIL
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDR_ACTIONS             BITMAP                  "toolbar1.bmp"
+IDB_CONTENT_BITMAP1     BITMAP                  "content.bmp"
+IDB_CONTEXT_BITMAP_SMALL BITMAP                  "res\\ContextSM.bmp"
+IDB_CONTEXT_BITMAP      BITMAP                  "res\\Context.bmp"
+IDB_ARROWUP             BITMAP                  "res\\arrowup.bmp"
+IDB_ARROWDOWN           BITMAP                  "res\\arrowdow.bmp"
+IDB_BUTTON_TYPE         BITMAP                  "res\\button_t.bmp"
+IDB_BUTTON_TYPE_SM      BITMAP                  "res\\bmp00001.bmp"
+IDB_BUTTON_COLLAPSE     BITMAP                  "res\\button_c.bmp"
+IDB_BUTTON_COLLAPSE_SM  BITMAP                  "res\\bmp00002.bmp"
+IDB_BUTTON_EXPAND       BITMAP                  "res\\button_e.bmp"
+IDB_BUTTON_EXPAND_SM    BITMAP                  "res\\bmp00003.bmp"
+IDB_BUTTON_OBJ          BITMAP                  "res\\button_o.bmp"
+IDB_BUTTON_OBJ_SM       BITMAP                  "res\\bmp00004.bmp"
+IDB_BUTTON_NUMBER_ON    BITMAP                  "res\\button_n.bmp"
+IDB_BUTTON_NUMBER_ON_SM BITMAP                  "res\\bmp00005.bmp"
+IDB_BUTTON_NUMBER_OFF   BITMAP                  "res\\bmp00006.bmp"
+IDB_BUTTON_NUMBER_OFF_SM BITMAP                  "res\\bmp00007.bmp"
+IDB_BUTTON_ABC          BITMAP                  "res\\button_a.bmp"
+IDB_BUTTON_TIME         BITMAP                  "res\\bmp00008.bmp"
+IDB_DBASE_OBJECT        BITMAP                  "res\\dbase_ob.bmp"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Accelerator
+//
+
+IDR_ACCELERATOR1 ACCELERATORS 
+BEGIN
+    "0",            IDS_ACTION_SHOWCONTEXT, VIRTKEY, ALT, NOINVERT
+    "C",            IDS_ACTION_EDITCOPY,    VIRTKEY, CONTROL, NOINVERT
+    "L",            IDS_ACTION_LOADOBJECT,  VIRTKEY, SHIFT, CONTROL, 
+                                                    NOINVERT
+    "V",            IDS_ACTION_EDITPASTE,   VIRTKEY, CONTROL, NOINVERT
+    VK_DELETE,      IDS_ACTION_OBJECT_DELETE, VIRTKEY, NOINVERT
+    VK_DELETE,      IDS_ACTION_EDITPASTE,   VIRTKEY, SHIFT, NOINVERT
+    VK_DELETE,      IDS_ACTION_EDITCUT,     VIRTKEY, SHIFT, NOINVERT
+    VK_INSERT,      IDS_ACTION_EDITCOPY,    VIRTKEY, CONTROL, NOINVERT
+    "X",            IDS_ACTION_EDITCUT,     VIRTKEY, CONTROL, NOINVERT
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Cursor
+//
+
+IDC_CURSOR_NUMBER       CURSOR                  "res\\cursor_n.cur"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE 
+BEGIN
+    IDS_ACTION_NEWOBJECT    "ObjectNew\nРВФЄЛШ...\n±ај­\nФЪ»о¶ЇОДµµЦРґґЅЁРВФЄЛШ\nРВФЄЛШ"
+    IDS_ACTION_SELECTOBJECT "ObjectSelect\nСЎФсФЄЛШ\n±ај­\nСЎФсПЦУРФЄЛШ\nСЎФсФЄЛШ"
+    IDS_ACTION_DELETEOBJECT "ObjectDelete\nЙѕіэСЎ¶ЁФЄЛШ\n±ај­\nЙѕіэЙППВОДІйїґЖчЦРµДСЎ¶ЁФЄЛШ\nЙѕіэСЎ¶ЁФЄЛШ"
+    IDS_ACTION_RENAMEOBJECT "ObjectRename\nЦШГьГыФЄЛШ...\n±ај­\nЦШГьГы»о¶ЇФЄЛШ\nЦШГьГыФЄЛШ"
+    IDS_ACTION_OBJECTPROPS  "ObjectProperties\nФЄЛШКфРФ\n±ај­\nФЄЛШКфРФ\nФЄЛШКфРФ"
+    IDS_ACTION_SAVEOBJECT   "ObjectSave\nБнґжФЄЛШ...\nОДјю\nК№УГЖдЛьОДјюГыіЖ»тФЪЖдЛьО»ЦГ±ЈґжµҐёцФЄЛШ\nБнґжФЄЛШ"
+    IDS_ACTION_LOADOBJECT   "ObjectLoad\nФШИлФЄЛШ...\n±ај­\nФШИлРВФЄЛШ\nФШИлФЄЛШ"
+    IDS_ACTION_ORGANIZE     "ObjectOrganize\nЧйЦЇФЄЛШ\n±ај­\nЧйЦЇФЄЛШ\nЧйЦЇФЄЛШ"
+    IDS_ACTION_TODOC        "ObjectMoveToDoc\nЅ«ФЄЛШТЖИлОДµµ\n±ај­\nЅ«У¦УГіМРтЦРµДФЄЛШТЖИлОДµµ\nЅ«ФЄЛШТЖИлОДµµ"
+    IDS_ACTION_TOAPP        "ObjectMoveToApp\nЅ«ФЄЛШТЖИлУ¦УГіМРт\n±ај­\nЅ«ОДµµЦРµДФЄЛШТЖИлУ¦УГіМРт\nЅ«ФЄЛШТЖИлУ¦УГіМРт"
+    IDS_ACTION_EDITCOPY     "EditCopy\nёґЦЖ\n±ај­\nЅ«ФЄЛШёґЦЖµЅјфМщ°еЙП\nёґЦЖ"
+    IDS_ACTION_EDITCUT      "EditCut\nјфЗР\n±ај­\nЅ«ФЄЛШјфЗРµЅјфМщ°еЙП\nјфЗР"
+    IDS_ACTION_EDITPASTE    "EditPaste\nХіМщ\n±ај­\nХіМщјфМщ°еЙПµДФЄЛШ\nХіМщ"
+    IDS_ACTION_OBJECT_DRAG  "ObjectDrag"
+    IDS_ACTION_OBJECT_DROP  "ObjectDrop"
+    IDS_ACTION_OBJECT_DELETE 
+                            "ObjectDeleteSelection\nЙѕіэ»о¶Ї¶ФПу\n±ај­\nЙѕіэ»о¶Ї¶ФПу\nЙѕіэ»о¶Ї¶ФПу"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_MENU_EDIT           "anydoc\\Edit\nContext Viewer"
+    IDS_MENU_VIEW           "anydoc\\View\nContext Viewer"
+    IDS_MENU_EDIT_DUC       "anydoc\\Edit"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_TB_DATA             "КэѕЭ"
+    IDS_ERR_OBJECTNAME_EXISTS_S 
+                            "ФЄЛШ '%s' ТСґжФЪЎЈЗлОЄРВФЄЛШКдИлБнТ»ёцГыіЖ»тЙѕіэёГГыіЖЎЈ\nґЛК±Ј¬РВФЄЛШ»б±»ГьГыОЄД¬ИПГыЎЈ"
+    IDS_OBJECT_NEWNAME_REQUIRED "±ШРлОЄСЎ¶ЁФЄЛШКдИлРВГыіЖ"
+    IDS_FILE_OPEN_DLG_TITLE "СЎФсТЄФШИлµДОДјю..."
+    IDS_FILE_SAVE_DLG_TITLE "±ЈґжФЄЛШµЅ..."
+    IDS_NEW_OBJECT          "РВФЄЛШ"
+    IDS_ALL_SELECTED_OBJECTS "ЛщУРСЎ¶Ё¶ФПу"
+    IDS_CREATE_IN_DOCUMENT  "ФЪОДµµЦРґґЅЁ"
+    IDS_SEND_SELECTED_OBJECTS "Ѕ«СЎ¶ЁФЄЛШ·ўЛНµЅ:"
+    IDS_SEND_OBJECT_TO      "Ѕ« *%s* ·ўЛНµЅ:"
+    IDS_CREATE_IN_NEW_DOC   "РВОДµµ"
+    IDS_SEND_TO_PREFIX      "·ўЛН"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_OBJECT_REQUIRED     "±ШРлЦё¶ЁФЄЛШ"
+    IDS_ACTIVATE_OBJECT     "ј¤»оФЄЛШ"
+    IDS_BOUND_TITLE         "СЎФсТЄј¤»оµДФЄЛШ"
+    IDS_OBJECT_TITLE        "їЙУГФЄЛШ"
+    IDS_DOC_NOTFOUND        "ХТІ»µЅОДµµ"
+    IDS_ERROR_PASTING       "ХіМщјфМщ°еЙПµДФЄЛШК±іцґн"
+    IDS_INCORRECT_OBJTYPE   "ФЄЛШАаРНґнОу"
+    IDS_INCORRECT_OBJECT    "Цё¶ЁФЄЛШґнОу"
+    IDS_NO_FILE_FILTER      "ОЮ·Ё»сИЎґЛ¶ФПуµДОДјю№эВЛЖчЈЎ"
+    IDS_NOTFOUND_IN_ACTIVEDOC "»о¶ЇОДµµЦРХТІ»µЅФЄЛШ"
+    IDS_INCORRECT_OBJNAME   "ФЪґтїЄµДОДµµЦРЈ¬ХТІ»µЅЦё¶ЁГыіЖµДФЄЛШЈЎ"
+    IDS_NO_FILTER           "ОЮ·Ё±ЈґжґЛФЄЛШЈЎ"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_ACTION_CONTENT      "DataShowContents\nПФКѕКэѕЭДЪИЭ...\nХл¶ФїЄ·ўИЛФ±\nПФКѕКэѕЭ\nПФКѕКэѕЭДЪИЭ"
+    IDS_ACTION_UNSELECT     "DataUnselect\nИЎПыСЎФсЛщУР¶ФПу\nДЪІїІЩЧч\nИЎПыСЎФсЛщУР¶ФПу\nИЎПыСЎФсЛщУР¶ФПу"
+    IDS_ACTION_SHOWCONTEXT  "ShowContext\nПФКѕЙППВОДІйїґЖч\nІйїґ\nПФКѕЙППВОДІйїґЖчїт\nПФКѕЙППВОДІйїґЖч"
+    IDS_SEND_TO             "SendTo\n·ўЛНµЅ...\n№¤ѕЯ\nЅ«»о¶ЇФЄЛШ·ўЛНµЅБнТ»ёцґтїЄµДОДµµЦР\n·ўЛНµЅ..."
+    IDS_ACTION_CREATE_IMAGE_BY_VIEW 
+                            "CreateImageByView\nєПІўКУНј\nНјПс\nєПІўІр·ЦОДµµґ°їЪЦРµДКУНј\nєПІўКУНј"
+    IDS_RESTORE_DATA_FILE_FROM_BACKUP 
+                            "File %s is corrupted. Backup file %s found on disk. Restore file from backup?"
+    IDS_CAN_NOT_RESTORE_FROM_BACKUP "Can not restore file from backup"
+    IDS_ACTION_TOUCHOBJECT  "ObjectTouch\nMake object last in type\nEdit\nMake object last in type\nMake object last in type"
+    IDS_ACTION_DATA_TO_EXCEL_AVAIL 
+                            "DataToExcelAvail\nDataToExcelAvail\n±ај­\nDataToExcelAvail\nDataToExcelAvail"
+    IDS_BUTTON_OBJECTS_BY_TYPE "Sort by Type"
+    IDS_BUTTON_OBJECTS_BY_OBJ "Sort by Belonging"
+    IDS_BUTTON_OBJECTS_ABC  "Sort Alphabetically"
+    IDS_BUTTON_OBJECTS_NUM  "Sort by Creation Time"
+    IDS_BUTTON_OBJECTS_NUMBERS_ON "Switch on Numbering"
+    IDS_BUTTON_OBJECTS_NUMBERS_OFF "Switch off Numbering"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_SEND_TO_POSTFIX     "µЅ"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_CONTEXT_NEWOBJECT   "РВФЄЛШ *%s*"
+    IDS_CONTEXT_SELECTOBJECT "СЎФсФЄЛШ *%s*"
+    IDS_CONTEXT_DELETEOBJECT "ЙѕіэФЄЛШ *%s*"
+    IDS_CONTEXT_RENAMEOBJECT "ЦШГьГыФЄЛШ *%s*"
+    IDS_CONTEXT_OBJECTPROPS "*%s* КфРФ"
+    IDS_CONTEXT_SAVEOBJECT  "±Јґж *%s*"
+    IDS_CONTEXT_LOADOBJECT  "ФШИл *%s*"
+    IDS_CONTEXT_EDITCOPY    "ёґЦЖ *%s*"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_WARNING_OBJECT_EXIST "Мж»»¶ФПуВрЈї"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_NO_ACTIVEVIEW       "ОДµµЦРХТІ»µЅ»о¶ЇКУНјЈЎ"
+    IDS_CONTEXT_TITLE       "ЙППВОДІйїґЖч"
+    IDS_NO_OBJECT_SELECTED  "ОґСЎЦРИОєО¶ФПуЈЎ"
+    IDS_NAME_EXIST          "ТСґжФЪґЛГыіЖµД¶ФПуЈЎ"
+    IDS_ERROR_CREATE        "ґґЅЁ¶ФПуК±іцґнЈЎ"
+    IDS_ERROR_DIF_TYPE      "ОЮ·ЁЅ«¶ФПу %s ·ўЛНµЅ %sЎЈ¶ФПуАаРНІ»Т»ЦВ (%s, %s)ЎЈ"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_ACTION_CLIPBOARDAVAIL 
+                            "ClipboardAvail\nјфМщ°еїЙУГ\n±ај­\nјфМщ°еїЙУГ\nјфМщ°еїЙУГ"
+    IDS_OBJECT_LOAD_NO_FILTER "ґЛФЄЛШОЮ·ЁФШИлОДµµ"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_ALLFILTER_NAME_FORMAT "ЛщУР %s ОДјюЈЁ"
+END
+
+STRINGTABLE 
+BEGIN
+    AFX_IDS_ALLFILTER       "ЛщУРОДјю(*.*)"
+END
+
+#endif    // Chinese (P.R.C.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+/////////////////////////////////////////////////////////////////////////////
+// Russian resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_RUS)
+#ifdef _WIN32
+LANGUAGE LANG_RUSSIAN, SUBLANG_DEFAULT
+#pragma code_page(1251)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_CREATE_OBJECT DIALOG  0, 0, 221, 98
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Создание нового элемента"
+FONT 8, "MS Sans Serif"
+BEGIN
+    GROUPBOX        "Свойства нового элемента",IDC_STATIC,5,5,150,86
+    LTEXT           "Тип элемента:",IDC_STATIC,15,18,50,8
+    COMBOBOX        IDC_KIND,15,28,129,68,CBS_DROPDOWNLIST | CBS_SORT | 
+                    WS_VSCROLL | WS_TABSTOP
+    LTEXT           "Имя элемента (если не задано, будет присвоено автоматически):",
+                    IDC_STATIC,15,49,128,18
+    EDITTEXT        IDC_NAME,15,69,129,14,ES_AUTOHSCROLL
+    DEFPUSHBUTTON   "OK",IDOK,162,8,50,14
+    PUSHBUTTON      "Отмена",IDCANCEL,162,25,50,14
+    PUSHBUTTON      "Справка",IDHELP,162,43,50,14
+END
+
+IDD_DATA_CONTENT DIALOGEX 0, 0, 432, 335
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Содержание"
+FONT 8, "MS Sans Serif", 0, 0, 0x1
+BEGIN
+    LTEXT           "Источник данных:",IDC_STATIC,11,12,62,8
+    COMBOBOX        IDC_DATA,82,9,343,162,CBS_DROPDOWNLIST | WS_VSCROLL | 
+                    WS_TABSTOP
+    CONTROL         "Tree1",IDC_TREE1,"SysTreeView32",TVS_HASBUTTONS | 
+                    TVS_HASLINES | TVS_LINESATROOT | TVS_EDITLABELS | 
+                    TVS_SHOWSELALWAYS | TVS_FULLROWSELECT | WS_TABSTOP,9,30,
+                    415,277,WS_EX_CLIENTEDGE
+    PUSHBUTTON      "Закрыть",IDCANCEL,321,315,50,14
+    PUSHBUTTON      "Справка",IDHELP,376,315,50,14
+END
+
+IDD_DELETE_OBJECT DIALOGEX 0, 0, 219, 167
+STYLE DS_SETFONT | DS_MODALFRAME | DS_3DLOOK | WS_POPUP | WS_CAPTION | 
+    WS_SYSMENU
+CAPTION "Удаление элемента"
+FONT 8, "MS Sans Serif", 0, 0, 0x1
+BEGIN
+    GROUPBOX        "Выберите элемент для удаления",IDC_BOUND_STRING,5,4,154,
+                    153
+    LTEXT           "Доступные элементы:",IDC_OBJECT_STRING,11,19,77,8
+    CONTROL         "Tree1",IDC_TREE,"SysTreeView32",TVS_HASBUTTONS | 
+                    TVS_HASLINES | WS_TABSTOP,11,33,141,122,WS_EX_CLIENTEDGE
+    DEFPUSHBUTTON   "OK",IDOK,166,7,50,14
+    PUSHBUTTON      "Отмена",IDCANCEL,166,24,50,14
+    PUSHBUTTON      "Справка",IDHELP,166,41,50,14
+END
+
+IDD_ORGANIZE_OBJECT DIALOGEX 0, 0, 323, 193
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Органайзер"
+FONT 8, "MS Sans Serif", 0, 0, 0x1
+BEGIN
+    GROUPBOX        "Приложение",IDC_STATIC,3,4,138,165
+    CONTROL         "Tree1",IDC_TREE1,"SysTreeView32",TVS_HASBUTTONS | 
+                    TVS_HASLINES | TVS_DISABLEDRAGDROP | TVS_SHOWSELALWAYS | 
+                    WS_TABSTOP,10,15,123,148,WS_EX_CLIENTEDGE
+    PUSHBUTTON      "<<",IDC_TOAPP,149,16,20,14
+    PUSHBUTTON      ">>",IDC_TODOC,149,33,20,14
+    GROUPBOX        "Активный документ",IDC_STATIC,177,4,138,165
+    CONTROL         "Tree1",IDC_TREE2,"SysTreeView32",TVS_HASBUTTONS | 
+                    TVS_HASLINES | TVS_DISABLEDRAGDROP | TVS_SHOWSELALWAYS | 
+                    WS_TABSTOP,185,15,123,148,WS_EX_CLIENTEDGE
+    DEFPUSHBUTTON   "Закрыть",IDOK,159,175,50,14
+    PUSHBUTTON      "Отменить",IDC_UNDO,212,175,50,14
+    PUSHBUTTON      "Справка",IDHELP,266,175,50,14
+END
+
+IDD_RENAME_OBJECT DIALOGEX 0, 0, 222, 161
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Переименовать элемент"
+FONT 8, "MS Sans Serif", 0, 0, 0x1
+BEGIN
+    GROUPBOX        "Выбор элемента для переименования",IDC_STATIC,5,1,155,
+                    154
+    CONTROL         "Tree1",IDC_TREE,"SysTreeView32",TVS_HASBUTTONS | 
+                    TVS_HASLINES | TVS_LINESATROOT | TVS_FULLROWSELECT | 
+                    WS_TABSTOP,10,11,145,114,WS_EX_CLIENTEDGE
+    LTEXT           "Новое имя элемента:",IDC_STATIC,10,128,145,10
+    EDITTEXT        IDC_EDIT,10,138,145,12,ES_AUTOHSCROLL
+    DEFPUSHBUTTON   "OK",IDOK,165,5,50,14
+    PUSHBUTTON      "Отмена",IDCANCEL,165,22,50,14
+    PUSHBUTTON      "Справка",IDHELP,165,40,50,14
+END
+
+IDD_SELECT_OBJECT DIALOGEX 0, 0, 216, 158
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Активизировать элемент"
+FONT 8, "MS Sans Serif", 0, 0, 0x1
+BEGIN
+    GROUPBOX        "Выбор элемента для активизации",IDC_STATIC,7,3,147,150
+    LTEXT           "Тип элемента для активизации:",IDC_STATIC,15,18,110,8
+    COMBOBOX        IDC_KIND,15,30,132,81,CBS_DROPDOWNLIST | CBS_SORT | 
+                    WS_VSCROLL | WS_TABSTOP
+    LTEXT           "Доступные элементы:",IDC_STATIC,15,50,77,8
+    CONTROL         "Tree1",IDC_TREE,"SysTreeView32",TVS_HASBUTTONS | 
+                    TVS_HASLINES | TVS_DISABLEDRAGDROP | TVS_SHOWSELALWAYS | 
+                    TVS_FULLROWSELECT | WS_TABSTOP,15,61,133,88,
+                    WS_EX_CLIENTEDGE
+    DEFPUSHBUTTON   "OK",IDOK,160,7,50,14
+    PUSHBUTTON      "Отмена",IDCANCEL,160,24,50,14
+    PUSHBUTTON      "Справка",IDHELP,159,41,50,14
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO 
+BEGIN
+    IDD_CREATE_OBJECT, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 214
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 91
+    END
+
+    IDD_DATA_CONTENT, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 425
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 328
+    END
+
+    IDD_DELETE_OBJECT, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 212
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 160
+    END
+
+    IDD_ORGANIZE_OBJECT, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 316
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 186
+    END
+
+    IDD_RENAME_OBJECT, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 215
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 154
+    END
+
+    IDD_SELECT_OBJECT, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 209
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 151
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog Info
+//
+
+IDD_DATA_CONTENT DLGINIT
+BEGIN
+    IDC_DATA, 0x403, 17, 0
+0x7041, 0x6c70, 0x6369, 0x7461, 0x6f69, 0x206e, 0x6144, 0x6174, "\000" 
+    IDC_DATA, 0x403, 17, 0
+0x7543, 0x7272, 0x6e65, 0x2074, 0x6f44, 0x7563, 0x656d, 0x746e, "\000" 
+    0
+END
+
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)\r\n"
+    "#ifdef _WIN32\r\n"
+    "LANGUAGE 9, 1\r\n"
+    "#pragma code_page(1252)\r\n"
+    "#endif //_WIN32\r\n"
+    "#include ""res\\Data.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "#include ""afxres.rc""         // Standard components\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE 
+BEGIN
+    IDS_ACTION_NEWOBJECT    "ObjectNew\nНовый элемент...\nПравка\nСоздание нового элемента в активном документе\nНовый элемент"
+    IDS_ACTION_SELECTOBJECT "ObjectSelect\nВыбрать элемент\nПравка\nВыбор существующего элемента\nВыбрать элемент"
+    IDS_ACTION_DELETEOBJECT "ObjectDelete\nУдалить элемент(ы)\nПравка\nУдаление элементов, выбранных в окне Содержание\nУдалить выбранные элементы"
+    IDS_ACTION_RENAMEOBJECT "ObjectRename\nПереименовать элемент...\nПравка\nПереименование элемента\nПереименовать элемент"
+    IDS_ACTION_OBJECTPROPS  "ObjectProperties\nСвойства элемента\nПравка\nСвойства элемента\nСвойства элемента"
+    IDS_ACTION_SAVEOBJECT   "ObjectSave\nСохранить элемент как...\nФайл\nСохранение элемента в отдельном файле\nСохранить элемент как"
+    IDS_ACTION_LOADOBJECT   "ObjectLoad\nЗагрузить элемент\nФайл\nЗагрузить новый элемент\nЗагрузить элемент"
+    IDS_ACTION_ORGANIZE     "ObjectOrganize\nОрганизовать элементы\nПравка\nОрганизовать элементы\nОрганизовать элементы"
+    IDS_ACTION_TODOC        "ObjectMoveToDoc\nПереместить элемент в документ\nПравка\nПеремещение элемента из приложения в документ\nПереместить элемент в документ"
+    IDS_ACTION_TOAPP        "ObjectMoveToApp\nПереместить элемент в приложение\nПравка\nПеремещение элемента из документа в приложение\nПереместить элемент в приложение"
+    IDS_ACTION_EDITCOPY     "EditCopy\nКопировать\nПравка\nКопирование элемента в буфер обмена\nКопировать"
+    IDS_ACTION_EDITCUT      "EditCut\nВырезать\nПравка\nПереместить  элемент в буфер обмена\nВырезать"
+    IDS_ACTION_EDITPASTE    "EditPaste\nВставить\nПравка\nВставить элемент из буфера обмена\nВставить"
+    IDS_ACTION_OBJECT_DRAG  "ObjectDrag"
+    IDS_ACTION_OBJECT_DROP  "ObjectDrop"
+    IDS_ACTION_OBJECT_DELETE 
+                            "ObjectDeleteSelection\nУдалить активный объект\nПравка\nУдаление активного объекта\nУдалить активный объект"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_MENU_EDIT           "anydoc\\Edit\nContext Viewer"
+    IDS_MENU_VIEW           "anydoc\\View\nContext Viewer"
+    IDS_MENU_EDIT_DUC       "anydoc\\Edit"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_TB_DATA             "Данные"
+    IDS_ERR_OBJECTNAME_EXISTS_S 
+                            "Элемент '%s' уже существует. Введите другое имя или оставьте строку пустой.\nВ последнем случае имя будет присвоено автоматически."
+    IDS_OBJECT_NEWNAME_REQUIRED "Введите новое имя для выбранного элемента"
+    IDS_FILE_OPEN_DLG_TITLE "Загрузить элемент из файла"
+    IDS_FILE_SAVE_DLG_TITLE "Сохранить элемент в файл"
+    IDS_NEW_OBJECT          "Новый элемент"
+    IDS_ALL_SELECTED_OBJECTS "Все выбранные элементы"
+    IDS_CREATE_IN_DOCUMENT  "Создать в документе"
+    IDS_SEND_SELECTED_OBJECTS "Отправить выбранный элемент в "
+    IDS_SEND_OBJECT_TO      "Отправить *%s* в:"
+    IDS_CREATE_IN_NEW_DOC   "Новый документ"
+    IDS_SEND_TO_PREFIX      "Отправить"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_OBJECT_REQUIRED     "Требуется элемент"
+    IDS_ACTIVATE_OBJECT     "Активизировать элемент"
+    IDS_BOUND_TITLE         "Выбор элемента для активизации"
+    IDS_OBJECT_TITLE        "Доступный элемент"
+    IDS_DOC_NOTFOUND        "Документ не найден"
+    IDS_ERROR_PASTING       "Ошибка при получении элемента из буфера обмена"
+    IDS_INCORRECT_OBJTYPE   "Некорректный тип элемента"
+    IDS_INCORRECT_OBJECT    "Некорректный элемент для присваивания "
+    IDS_NO_FILE_FILTER      "Невозможно получить файловый фильтр для элемента этого типа"
+    IDS_NOTFOUND_IN_ACTIVEDOC "Элемент не найден в активном документе"
+    IDS_INCORRECT_OBJNAME   "Элемент с заданным именем не найден в документах приложения"
+    IDS_NO_FILTER           "Данный тип элемента не может быть сохранен"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_ACTION_CONTENT      "DataShowContents\nПоказать сожержание данных...\nFor Developers\nПоказать сожержание данных\nПоказать сожержание данных"
+    IDS_ACTION_UNSELECT     "DataUnselect\nСнять выделение всех объектов\nInternal Actions\nСнять выделение всех объектов\nСнять выделение всех объектов"
+    IDS_ACTION_SHOWCONTEXT  "ShowContext\nОкно Содержание\nВид\nПоказать окно Содержание документа\nОкно Содержание"
+    IDS_SEND_TO             "SendTo\nОтправить в...\nСервис\nОтправить активный элемент в другой открытый документ\nОтправить в"
+    IDS_ACTION_CREATE_IMAGE_BY_VIEW 
+                            "CreateImageByView\nОбъединить видимые элементы\nИзображение\nОбъединить элементы из активной части окна документа\nОбъединить видимые элементы"
+    IDS_RESTORE_DATA_FILE_FROM_BACKUP 
+                            "Файл %s поврежден. Обнаружена его сохраненная версия: %s. Использовать ее?"
+    IDS_CAN_NOT_RESTORE_FROM_BACKUP "Загрузка сохраненной версии не удалась"
+    IDS_ACTION_TOUCHOBJECT  "ObjectTouch\nMake object last in type\nEdit\nMake object last in type\nMake object last in type"
+    IDS_ACTION_DATA_TO_EXCEL_AVAIL 
+                            "DataToExcelAvail\nDataToExcelAvail\nПравка\nDataToExcelAvail\nDataToExcelAvail"
+    IDS_BUTTON_OBJECTS_BY_TYPE "Сортировать по типам"
+    IDS_BUTTON_OBJECTS_BY_OBJ "Сортировать по принадлежности"
+    IDS_BUTTON_OBJECTS_ABC  "Сортировать по алфавиту"
+    IDS_BUTTON_OBJECTS_NUM  "Сортировать по времени создания"
+    IDS_BUTTON_OBJECTS_NUMBERS_ON "Включить нумерацию"
+    IDS_BUTTON_OBJECTS_NUMBERS_OFF "Отключить нумерацию"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_SEND_TO_POSTFIX     "в"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_WARNING_OBJECT_EXIST "Заменить объект?"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_NO_ACTIVEVIEW       "Нет активного вида для документа!"
+    IDS_CONTEXT_TITLE       "Содержание"
+    IDS_NO_OBJECT_SELECTED  "Не выбран ни один объект!"
+    IDS_NAME_EXIST          "Объект с этим именем уже существует!"
+    IDS_ERROR_CREATE        "Ошибка при создании элемента!"
+    IDS_ERROR_DIF_TYPE      "Элемент %s нельзя отправить в поле %s. Типы данных различны (%s, %s)."
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_CONTEXT_NEWOBJECT   "Новый элемент *%s*"
+    IDS_CONTEXT_SELECTOBJECT "Выбрать *%s*"
+    IDS_CONTEXT_DELETEOBJECT "Удалить *%s*"
+    IDS_CONTEXT_RENAMEOBJECT "Переименовать *%s*"
+    IDS_CONTEXT_OBJECTPROPS "Свойства элемента *%s*"
+    IDS_CONTEXT_SAVEOBJECT  "Сохранить *%s* как..."
+    IDS_CONTEXT_LOADOBJECT  "Загрузить элемент *%s*"
+    IDS_CONTEXT_EDITCOPY    "Копировать *%s*"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_ACTION_CLIPBOARDAVAIL 
+                            "ClipboardAvail\nБуфер обмена доступен\nПравка\nБуфер обмена доступен\nБуфер обмена доступен"
+    IDS_OBJECT_LOAD_NO_FILTER "Невозможно загрузить элемент в документ"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_ALLFILTER_NAME_FORMAT "Все файлы %s ("
+END
+
+STRINGTABLE 
+BEGIN
+    AFX_IDS_ALLFILTER       "Все файлы (*.*)"
+END
+
+#endif    // Russian resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.S.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_CREATE_OBJECT DIALOGEX 0, 0, 219, 97
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Create New Element"
+FONT 8, "MS Sans Serif", 0, 0, 0x0
+BEGIN
+    GROUPBOX        "Element Properties",IDC_STATIC,7,3,146,87
+    LTEXT           "Select element type:",IDC_STATIC,15,18,65,8
+    COMBOBOX        IDC_KIND,15,28,129,68,CBS_DROPDOWNLIST | CBS_SORT | 
+                    WS_VSCROLL | WS_TABSTOP
+    LTEXT           "Type element name. \n Else it will be selected automatically.",
+                    IDC_STATIC,15,49,128,18
+    EDITTEXT        IDC_NAME,15,69,129,14,ES_AUTOHSCROLL
+    DEFPUSHBUTTON   "OK",IDOK,162,7,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,162,24,50,14
+    PUSHBUTTON      "Help",IDHELP,162,41,50,14
+END
+
+IDD_SELECT_OBJECT DIALOGEX 0, 0, 216, 158
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Activate Element "
+FONT 8, "MS Sans Serif", 0, 0, 0x1
+BEGIN
+    GROUPBOX        "Select the element to activate",IDC_STATIC,7,3,147,150
+    LTEXT           "Select an element type:",IDC_STATIC,15,18,75,8
+    COMBOBOX        IDC_KIND,15,30,132,81,CBS_DROPDOWNLIST | CBS_SORT | 
+                    WS_VSCROLL | WS_TABSTOP
+    LTEXT           "Available elements: ",IDC_STATIC,15,50,64,8
+    CONTROL         "Tree1",IDC_TREE,"SysTreeView32",TVS_HASBUTTONS | 
+                    TVS_HASLINES | TVS_DISABLEDRAGDROP | TVS_SHOWSELALWAYS | 
+                    TVS_FULLROWSELECT | WS_TABSTOP,15,61,133,88,
+                    WS_EX_CLIENTEDGE
+    DEFPUSHBUTTON   "OK",IDOK,160,7,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,160,24,50,14
+    PUSHBUTTON      "Help",IDHELP,159,41,50,14
+END
+
+IDD_DELETE_OBJECT DIALOGEX 0, 0, 219, 167
+STYLE DS_SETFONT | DS_MODALFRAME | DS_3DLOOK | WS_POPUP | WS_CAPTION | 
+    WS_SYSMENU
+CAPTION "Delete Element "
+FONT 8, "MS Sans Serif", 0, 0, 0x1
+BEGIN
+    GROUPBOX        "Select the element to delete ",IDC_BOUND_STRING,5,5,154,
+                    153
+    LTEXT           "Available elements: ",IDC_OBJECT_STRING,11,19,64,8
+    CONTROL         "Tree1",IDC_TREE,"SysTreeView32",TVS_HASBUTTONS | 
+                    TVS_HASLINES | WS_TABSTOP,11,33,141,122,WS_EX_CLIENTEDGE
+    DEFPUSHBUTTON   "OK",IDOK,166,7,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,166,24,50,14
+    PUSHBUTTON      "Help",IDHELP,166,41,50,14
+END
+
+IDD_RENAME_OBJECT DIALOGEX 0, 0, 222, 161
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Rename Element "
+FONT 8, "MS Sans Serif", 0, 0, 0x1
+BEGIN
+    GROUPBOX        "Select the element to rename:",IDC_STATIC,5,1,155,154
+    CONTROL         "Tree1",IDC_TREE,"SysTreeView32",TVS_HASBUTTONS | 
+                    TVS_HASLINES | TVS_LINESATROOT | TVS_FULLROWSELECT | 
+                    WS_TABSTOP,10,11,145,114,WS_EX_CLIENTEDGE
+    LTEXT           "Enter a new name for the selected element:",IDC_STATIC,
+                    10,128,145,10
+    EDITTEXT        IDC_EDIT,10,138,145,12,ES_AUTOHSCROLL
+    DEFPUSHBUTTON   "OK",IDOK,165,5,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,165,22,50,14
+    PUSHBUTTON      "Help",IDHELP,165,39,50,14
+END
+
+IDD_ORGANIZE_OBJECT DIALOGEX 0, 0, 323, 193
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Organizer"
+FONT 8, "MS Sans Serif", 0, 0, 0x1
+BEGIN
+    GROUPBOX        "Application",IDC_STATIC,3,4,138,165
+    CONTROL         "Tree1",IDC_TREE1,"SysTreeView32",TVS_HASBUTTONS | 
+                    TVS_HASLINES | TVS_DISABLEDRAGDROP | TVS_SHOWSELALWAYS | 
+                    WS_TABSTOP,10,15,123,148,WS_EX_CLIENTEDGE
+    PUSHBUTTON      "<<",IDC_TOAPP,149,16,20,14
+    PUSHBUTTON      ">>",IDC_TODOC,149,33,20,14
+    GROUPBOX        "Active document",IDC_STATIC,177,4,138,165
+    CONTROL         "Tree1",IDC_TREE2,"SysTreeView32",TVS_HASBUTTONS | 
+                    TVS_HASLINES | TVS_DISABLEDRAGDROP | TVS_SHOWSELALWAYS | 
+                    WS_TABSTOP,185,15,123,148,WS_EX_CLIENTEDGE
+    PUSHBUTTON      "Undo",IDC_UNDO,158,173,50,14
+    DEFPUSHBUTTON   "Close",IDOK,211,173,50,14
+    PUSHBUTTON      "Help",IDHELP,264,173,50,14
+END
+
+IDD_DATA_CONTENT DIALOGEX 0, 0, 432, 335
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Show Data Content"
+FONT 8, "MS Sans Serif", 0, 0, 0x1
+BEGIN
+    LTEXT           "Data Source",IDC_STATIC,11,12,41,8
+    COMBOBOX        IDC_DATA,82,9,343,162,CBS_DROPDOWNLIST | WS_VSCROLL | 
+                    WS_TABSTOP
+    CONTROL         "Tree1",IDC_TREE1,"SysTreeView32",TVS_HASBUTTONS | 
+                    TVS_HASLINES | TVS_LINESATROOT | TVS_EDITLABELS | 
+                    TVS_SHOWSELALWAYS | TVS_FULLROWSELECT | WS_TABSTOP,9,30,
+                    415,277,WS_EX_CLIENTEDGE
+    PUSHBUTTON      "Close",IDCANCEL,321,313,50,14
+    PUSHBUTTON      "Help",IDHELP,375,313,50,14
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO 
+BEGIN
+    IDD_CREATE_OBJECT, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 212
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 90
+    END
+
+    IDD_SELECT_OBJECT, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 209
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 151
+    END
+
+    IDD_DELETE_OBJECT, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 212
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 160
+    END
+
+    IDD_RENAME_OBJECT, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 215
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 154
+    END
+
+    IDD_ORGANIZE_OBJECT, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 316
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 186
+    END
+
+    IDD_DATA_CONTENT, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 425
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 328
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog Info
+//
+
+IDD_DATA_CONTENT DLGINIT
+BEGIN
+    IDC_DATA, 0x403, 17, 0
+0x7041, 0x6c70, 0x6369, 0x7461, 0x6f69, 0x206e, 0x6144, 0x6174, "\000" 
+    IDC_DATA, 0x403, 17, 0
+0x7543, 0x7272, 0x6e65, 0x2074, 0x6f44, 0x7563, 0x656d, 0x746e, "\000" 
+    0
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Toolbar
+//
+
+IDR_ACTIONS TOOLBAR  16, 15
+BEGIN
+    BUTTON      IDS_ACTION_NEWOBJECT
+    BUTTON      IDS_ACTION_SELECTOBJECT
+    BUTTON      IDS_ACTION_DELETEOBJECT
+    BUTTON      ID_BUTTON32774
+    BUTTON      ID_BUTTON32773
+    BUTTON      ID_BUTTON32772
+    BUTTON      IDS_ACTION_RENAMEOBJECT
+    BUTTON      IDS_ACTION_OBJECTPROPS
+    BUTTON      IDS_ACTION_LOADOBJECT
+    SEPARATOR
+    BUTTON      IDS_ACTION_SAVEOBJECT
+    BUTTON      IDS_ACTION_EDITCUT
+    BUTTON      IDS_ACTION_EDITCOPY
+    BUTTON      IDS_ACTION_EDITPASTE
+    SEPARATOR
+    BUTTON      IDS_ACTION_OBJECT_DELETE
+    BUTTON      IDS_ACTION_CONTENT
+    BUTTON      IDS_ACTION_UNSELECT
+    BUTTON      IDS_ACTION_SHOWCONTEXT
+    BUTTON      IDS_SEND_TO
+    BUTTON      IDS_ACTION_CREATE_IMAGE_BY_VIEW
+    BUTTON      IDS_ACTION_CLIPBOARDAVAIL
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDR_ACTIONS             BITMAP                  "toolbar1.bmp"
+IDB_CONTENT_BITMAP1     BITMAP                  "content.bmp"
+IDB_CONTEXT_BITMAP_SMALL BITMAP                  "res\\ContextSM.bmp"
+IDB_CONTEXT_BITMAP      BITMAP                  "res\\Context.bmp"
+IDB_ARROWUP             BITMAP                  "res\\arrowup.bmp"
+IDB_ARROWDOWN           BITMAP                  "res\\arrowdow.bmp"
+IDB_BUTTON_TYPE         BITMAP                  "res\\button_t.bmp"
+IDB_BUTTON_TYPE_SM      BITMAP                  "res\\bmp00001.bmp"
+IDB_BUTTON_COLLAPSE     BITMAP                  "res\\button_c.bmp"
+IDB_BUTTON_COLLAPSE_SM  BITMAP                  "res\\bmp00002.bmp"
+IDB_BUTTON_EXPAND       BITMAP                  "res\\button_e.bmp"
+IDB_BUTTON_EXPAND_SM    BITMAP                  "res\\bmp00003.bmp"
+IDB_BUTTON_OBJ          BITMAP                  "res\\button_o.bmp"
+IDB_BUTTON_OBJ_SM       BITMAP                  "res\\bmp00004.bmp"
+IDB_BUTTON_NUMBER_ON    BITMAP                  "res\\button_n.bmp"
+IDB_BUTTON_NUMBER_ON_SM BITMAP                  "res\\bmp00005.bmp"
+IDB_BUTTON_NUMBER_OFF   BITMAP                  "res\\bmp00006.bmp"
+IDB_BUTTON_NUMBER_OFF_SM BITMAP                  "res\\bmp00007.bmp"
+IDB_BUTTON_ABC          BITMAP                  "res\\button_a.bmp"
+IDB_BUTTON_TIME         BITMAP                  "res\\bmp00008.bmp"
+IDB_DBASE_OBJECT        BITMAP                  "res\\dbase_ob.bmp"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Accelerator
+//
+
+IDR_ACCELERATOR1 ACCELERATORS 
+BEGIN
+    "0",            IDS_ACTION_SHOWCONTEXT, VIRTKEY, ALT, NOINVERT
+    "C",            IDS_ACTION_EDITCOPY,    VIRTKEY, CONTROL, NOINVERT
+    "L",            IDS_ACTION_LOADOBJECT,  VIRTKEY, SHIFT, CONTROL, 
+                                                    NOINVERT
+    "V",            IDS_ACTION_EDITPASTE,   VIRTKEY, CONTROL, NOINVERT
+    VK_DELETE,      IDS_ACTION_OBJECT_DELETE, VIRTKEY, NOINVERT
+    VK_DELETE,      IDS_ACTION_EDITPASTE,   VIRTKEY, SHIFT, NOINVERT
+    VK_DELETE,      IDS_ACTION_EDITCUT,     VIRTKEY, SHIFT, NOINVERT
+    VK_INSERT,      IDS_ACTION_EDITCOPY,    VIRTKEY, CONTROL, NOINVERT
+    "X",            IDS_ACTION_EDITCUT,     VIRTKEY, CONTROL, NOINVERT
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Cursor
+//
+
+IDC_CURSOR_NUMBER       CURSOR                  "res\\cursor_n.cur"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE 
+BEGIN
+    IDS_ACTION_NEWOBJECT    "ObjectNew\nNew Element...\nEdit\nCreate a new element in the active document\nNew Element"
+    IDS_ACTION_SELECTOBJECT "ObjectSelect\nSelect Element\nEdit\nSelect the existing element\nSelect Element"
+    IDS_ACTION_DELETEOBJECT "ObjectDelete\nDelete Selected Element(s)\nEdit\nDelete elements selected in Context Viewer\nDelete Selected Elements"
+    IDS_ACTION_RENAMEOBJECT "ObjectRename\nRename Element...\nEdit\nRename the active element\nRename Element"
+    IDS_ACTION_OBJECTPROPS  "ObjectProperties\nElement Properties\nEdit\nElement properties\nElement Properties"
+    IDS_ACTION_SAVEOBJECT   "ObjectSave\nSave Element as...\nFile\nSave single element with a different file name or location\nSave Element as"
+    IDS_ACTION_LOADOBJECT   "ObjectLoad\nLoad Element...\nFile\nLoad new element\nLoad Element"
+    IDS_ACTION_ORGANIZE     "ObjectOrganize\nOrganize Elements\nEdit\nOrganize  elements\nOrganize Elements"
+    IDS_ACTION_TODOC        "ObjectMoveToDoc\nMove Element to Document\nEdit\nMove the element from application to the document\nMove Element to Document"
+    IDS_ACTION_TOAPP        "ObjectMoveToApp\nMove Element to Application\nEdit\nMove the element from document to the application\nMove Element to  Application"
+    IDS_ACTION_EDITCOPY     "EditCopy\nCopy\nEdit\nCopy the element to the clipboard\nCopy"
+    IDS_ACTION_EDITCUT      "EditCut\nCut\nEdit\nCut the element to the clipboard\nCut"
+    IDS_ACTION_EDITPASTE    "EditPaste\nPaste\nEdit\nPaste the element from the clipboard\nPaste"
+    IDS_ACTION_OBJECT_DRAG  "ObjectDrag"
+    IDS_ACTION_OBJECT_DROP  "ObjectDrop"
+    IDS_ACTION_OBJECT_DELETE 
+                            "ObjectDeleteSelection\nDelete Active Object\nEdit\nDelete the active object\nDelete Active Object"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_MENU_EDIT           "anydoc\\Edit\nContext Viewer"
+    IDS_MENU_VIEW           "anydoc\\View\nContext Viewer"
+    IDS_MENU_EDIT_DUC       "anydoc\\Edit"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_TB_DATA             "Data"
+    IDS_ERR_OBJECTNAME_EXISTS_S 
+                            "'%s' element already exists. Enter another name for the new element or delete the name.\nIn this case new element will be named by default."
+    IDS_OBJECT_NEWNAME_REQUIRED "You must enter new name for selected element"
+    IDS_FILE_OPEN_DLG_TITLE "Select File to Load..."
+    IDS_FILE_SAVE_DLG_TITLE "Save element to..."
+    IDS_NEW_OBJECT          "New element"
+    IDS_ALL_SELECTED_OBJECTS "All selected objects"
+    IDS_CREATE_IN_DOCUMENT  "Create in document"
+    IDS_SEND_SELECTED_OBJECTS "Send selected element to:"
+    IDS_SEND_OBJECT_TO      "Send *%s* to:"
+    IDS_CREATE_IN_NEW_DOC   "New Document"
+    IDS_SEND_TO_PREFIX      "Send"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_OBJECT_REQUIRED     "Element required"
+    IDS_ACTIVATE_OBJECT     "Activate Element"
+    IDS_BOUND_TITLE         "Select the element to activate"
+    IDS_OBJECT_TITLE        "Available elements"
+    IDS_DOC_NOTFOUND        "Document not found"
+    IDS_ERROR_PASTING       "Error pasting element from clipboard"
+    IDS_INCORRECT_OBJTYPE   "Incorrect element type"
+    IDS_INCORRECT_OBJECT    "Incorrect element for assign"
+    IDS_NO_FILE_FILTER      "Can't get file filter for this object!"
+    IDS_NOTFOUND_IN_ACTIVEDOC "Element not found in the active document"
+    IDS_INCORRECT_OBJNAME   "Element with the specified name not found in the open documents!"
+    IDS_NO_FILTER           "This element can't be saved!"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_ACTION_CONTENT      "DataShowContents\nShow Data Content...\nFor Developers\nDisplay the data\nShow Data Content"
+    IDS_ACTION_UNSELECT     "DataUnselect\nUnselect All Objects\nInternal Actions\nUnselect all objects\nUnselect All Objects"
+    IDS_ACTION_SHOWCONTEXT  "ShowContext\nShow Context Viewer\nView\nShow the Context Viewer box\nShow Context Viewer"
+    IDS_SEND_TO             "SendTo\nSend to...\nTools\nSend the active element to another open document\nSend to..."
+    IDS_ACTION_CREATE_IMAGE_BY_VIEW 
+                            "CreateImageByView\nMerge Views\nImage\nMerge views in the split document window\nMerge Views"
+    IDS_RESTORE_DATA_FILE_FROM_BACKUP 
+                            "File %s is corrupted. Backup file %s found on disk. Restore file from backup?"
+    IDS_CAN_NOT_RESTORE_FROM_BACKUP "Can not restore file from backup"
+    IDS_ACTION_TOUCHOBJECT  "ObjectTouch\nMake object last in type\nEdit\nMake object last in type\nMake object last in type"
+    IDS_ACTION_DATA_TO_EXCEL_AVAIL 
+                            "DataToExcelAvail\nDataToExcelAvail\nEdit\nDataToExcelAvail\nDataToExcelAvail"
+    IDS_BUTTON_OBJECTS_BY_TYPE "Sort by Type"
+    IDS_BUTTON_OBJECTS_BY_OBJ "Sort by Belonging"
+    IDS_BUTTON_OBJECTS_ABC  "Sort Alphabetically"
+    IDS_BUTTON_OBJECTS_NUM  "Sort by Creation Time"
+    IDS_BUTTON_OBJECTS_NUMBERS_ON "Switch on Numbering"
+    IDS_BUTTON_OBJECTS_NUMBERS_OFF "Switch off Numbering"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_SEND_TO_POSTFIX     "to"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_CONTEXT_NEWOBJECT   "New element *%s*"
+    IDS_CONTEXT_SELECTOBJECT "Select element *%s*"
+    IDS_CONTEXT_DELETEOBJECT "Delete element(s) *%s*"
+    IDS_CONTEXT_RENAMEOBJECT "Rename element *%s*"
+    IDS_CONTEXT_OBJECTPROPS "*%s* properties"
+    IDS_CONTEXT_SAVEOBJECT  "Save *%s*"
+    IDS_CONTEXT_LOADOBJECT  "Load *%s*"
+    IDS_CONTEXT_EDITCOPY    "Copy *%s*"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_WARNING_OBJECT_EXIST "Replace object?"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_NO_ACTIVEVIEW       "No active view has been found in document!"
+    IDS_CONTEXT_TITLE       "Context Viewer"
+    IDS_NO_OBJECT_SELECTED  "No object has been selected!"
+    IDS_NAME_EXIST          "Object with this name exists!"
+    IDS_ERROR_CREATE        "Error while creating object!"
+    IDS_ERROR_DIF_TYPE      "Object %s can't be send to %s. The object types are different(%s, %s)."
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_ACTION_CLIPBOARDAVAIL 
+                            "ClipboardAvail\nClipboard Is Available\nEdit\nClipboard Is Available\nClipboard Is Available"
+    IDS_OBJECT_LOAD_NO_FILTER "Can't load this element to document"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_ALLFILTER_NAME_FORMAT "All %s files ("
+END
+
+STRINGTABLE 
+BEGIN
+    AFX_IDS_ALLFILTER       "All Files (*.*)"
+END
+
+#endif    // English (U.S.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE 9, 1
+#pragma code_page(1252)
+#endif //_WIN32
+#include "res\Data.rc2"  // non-Microsoft Visual C++ edited resources
+#include "afxres.rc"         // Standard components
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

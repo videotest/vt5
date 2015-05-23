@@ -1,0 +1,76 @@
+// StdSplitter.odl : type library source for StdSplitter.dll
+
+// This file will be processed by the MIDL compiler to produce the
+// type library (StdSplitter.tlb).
+
+[ uuid(AC8FC6C6-27A1-11D3-A5DC-0000B493FF1B), version(1.0) ]
+library StdSplitter
+{
+	importlib("stdole32.tlb");
+	importlib("stdole2.tlb");
+
+
+
+
+	//  Primary dispatch interface for CSplitterWindow
+	
+	[ uuid(AC8FC6D3-27A1-11D3-A5DC-0000B493FF1B) ]
+	dispinterface ISplitterStandart
+	{
+		properties:
+			// NOTE - ClassWizard will maintain property information here.
+			//    Use extreme caution when editing this section.
+			//{{AFX_ODL_PROP(CSplitterStandart)
+			//}}AFX_ODL_PROP
+			
+		methods:
+			// NOTE - ClassWizard will maintain method information here.
+			//    Use extreme caution when editing this section.
+			//{{AFX_ODL_METHOD(CSplitterStandart)
+			//}}AFX_ODL_METHOD
+
+	};
+
+	//  Class information for CSplitterWindow
+
+	//[ uuid(AC8FC6D5-27A1-11D3-A5DC-0000B493FF1B) ]
+	[ uuid(a8902372-27ae-11d3-a5dc-0000b493ff1b) ]
+	coclass SplitterStandart
+	{
+		[default] dispinterface ISplitterStandart;
+	};
+	
+	//  Primary dispatch interface for CSplitterTabbed
+	
+
+
+	//  Primary dispatch interface for CSplitterCompare
+	
+	[ uuid(FDF4B577-3B45-446A-B8D3-962E269A1C23) ]
+	dispinterface ISplitterCompare
+	{
+		properties:
+			// NOTE - ClassWizard will maintain property information here.
+			//    Use extreme caution when editing this section.
+			//{{AFX_ODL_PROP(CSplitterCompare)
+			//}}AFX_ODL_PROP
+			
+		methods:
+			// NOTE - ClassWizard will maintain method information here.
+			//    Use extreme caution when editing this section.
+			//{{AFX_ODL_METHOD(CSplitterCompare)
+			//}}AFX_ODL_METHOD
+
+	};
+
+	//  Class information for CSplitterCompare
+
+	[ uuid(20EA12E2-8691-4AEF-9F1B-0488B56708C4) ]
+	coclass SplitterCompare
+	{
+		[default] dispinterface ISplitterCompare;
+	};
+
+	//{{AFX_APPEND_ODL}}
+	//}}AFX_APPEND_ODL}}
+};

@@ -1,0 +1,100 @@
+// ContextAX.odl : type library source for ActiveX Control project.
+
+// This file will be processed by the Make Type Library (mktyplib) tool to
+// produce the type library (ContextAX.tlb) that will become a resource in
+// ContextAX.ocx.
+
+
+[ uuid(CEABC196-CD93-49CC-A07E-CDF17A7D816D), version(1.0),
+  helpfile("ContextAX.hlp"),
+  helpstring("ContextAX ActiveX Control module"),
+  control ]
+library CONTEXTAXLib
+{
+#include <olectl.h>
+#include <idispids.h>
+	importlib(STDOLE_TLB);
+	importlib(STDTYPE_TLB);
+
+	//  Primary dispatch interface for CContextAXCtrl
+
+	[ uuid(18C5F51C-98B6-4656-A4D8-4BA680BEB8D5),
+	  helpstring("Dispatch interface for ContextAX Control"), hidden ]
+	dispinterface _DContextAX
+	{
+		properties:
+			// NOTE - ClassWizard will maintain property information here.
+			//    Use extreme caution when editing this section.
+			//{{AFX_ODL_PROP(CContextAXCtrl)
+			[id(12)] IDispatch* View;
+			[id(DISPID_ENABLED), bindable, requestedit] boolean Enabled;
+			[id(DISPID_BACKCOLOR), bindable, requestedit] OLE_COLOR BackColor;
+			[id(DISPID_FONT), bindable] IFontDisp* Font;
+			[id(DISPID_FORECOLOR), bindable, requestedit] OLE_COLOR ForeColor;
+			[id(13)] short ReadOnly;
+			[id(1)] boolean EnableTitleTips;
+			[id(2)] boolean Editable;
+			[id(3)] short Border;
+			[id(4)] short IconSize;
+			[id(5)] short ImageOffset;
+			[id(6)] short Indent;
+			[id(7)] short Margin;
+			[id(8)] short NumberOffset;
+			[id(9)] boolean ShowButtons;
+			[id(10)] boolean Tracking;
+			[id(11)] boolean ViewType;
+			[id(14)] IDispatch* SelectedObject;
+			[id(15)] OLE_COLOR TitleTipsColor;
+			[id(16)] OLE_COLOR TitleTipsBackColor;
+			//}}AFX_ODL_PROP
+
+		methods:
+			// NOTE - ClassWizard will maintain method information here.
+			//    Use extreme caution when editing this section.
+			//{{AFX_ODL_METHOD(CContextAXCtrl)
+			[id(17)] void Register(boolean bRegister);
+			[id(18)] IDispatch* GetButtonType();
+			[id(19)] IDispatch* GetButtonObj();
+			[id(20)] IDispatch* GetButtonAbc();
+			[id(21)] IDispatch* GetButtonTime();
+			[id(22)] IDispatch* GetButtonNumOn();
+			[id(23)] IDispatch* GetButtonNumOff();
+			[id(24)] IDispatch* GetButtonExpand();
+			[id(25)] IDispatch* GetButtonCollapse();
+			//}}AFX_ODL_METHOD
+
+			[id(DISPID_ABOUTBOX)] void AboutBox();
+	};
+
+	//  Event dispatch interface for CContextAXCtrl
+
+	[ uuid(A5F6A790-8463-4334-B30F-AABF4185EBFD),
+	  helpstring("Event interface for ContextAX Control") ]
+	dispinterface _DContextAXEvents
+	{
+		properties:
+			//  Event interface has no properties
+
+		methods:
+			// NOTE - ClassWizard will maintain event information here.
+			//    Use extreme caution when editing this section.
+			//{{AFX_ODL_EVENT(CContextAXCtrl)
+			[id(1)] void BeforeViewChange(IDispatch* pView);
+			[id(2)] void AfterViewChange(IDispatch* pView);
+			//}}AFX_ODL_EVENT
+	};
+
+	//  Class information for CContextAXCtrl
+
+	[ uuid(753B82D9-B5E3-4429-AFF8-0B4ACD0EB501),
+	  helpstring("ContextAX Control"), control ]
+	coclass ContextAX
+	{
+		[default] dispinterface _DContextAX;
+		[default, source] dispinterface _DContextAXEvents;
+	};
+
+
+	//{{AFX_APPEND_ODL}}
+	//}}AFX_APPEND_ODL}}
+};

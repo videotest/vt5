@@ -1,0 +1,10 @@
+; CCam.def : Declares the module parameters for the DLL.
+
+LIBRARY      "CCam"
+;DESCRIPTION  'CCam Windows Dynamic Link Library'
+
+EXPORTS
+    ; Explicit exports can go here
+	DllCanUnloadNow PRIVATE
+	DllGetClassObject PRIVATE
+	DllRegisterServer PRIVATE

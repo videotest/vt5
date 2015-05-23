@@ -1,0 +1,699 @@
+// VTControls.odl : type library source for ActiveX Control project.
+
+// This file will be processed by the Make Type Library (mktyplib) tool to
+// produce the type library (VTControls.tlb) that will become a resource in
+// VTControls.ocx.
+
+
+#include <olectl.h>
+#include <idispids.h>
+
+
+
+[ uuid(803AE1D7-961E-4881-9551-D1168E4384ED), version(1.0),
+  helpfile("VTControls.hlp"),
+  helpstring("VTControls ActiveX Control module"),
+  control ]
+library VTCONTROLSLib
+{
+	importlib(STDOLE_TLB);
+	importlib(STDTYPE_TLB);
+
+typedef enum
+{
+	[helpstring ("Align Up")]	caAlignUp = 0,
+	[helpstring ("Align Left")] caAlignDown = 1,
+
+} _CaptionAlignEnum;
+
+
+typedef enum
+{
+	[helpstring ("Align Left")]	iahLeft = 0,
+	[helpstring ("Align Center")] iahCenter = 1,
+	[helpstring ("Align Right")] iahRight= 2,
+
+} _ImageAlignHorzEnum;
+
+typedef enum
+{
+	[helpstring ("Align Top")]	iavTop = 0,
+	[helpstring ("Align Center")] iavCenter = 1,
+	[helpstring ("Align Bottom")] iavBottom= 2,
+
+} _ImageAlignVertEnum;
+
+
+typedef enum
+{
+	[helpstring ("String")]	dtTypeString = 0,
+	[helpstring ("Integer")] dtTypeInt = 1,
+	[helpstring ("Float")] dtTypeFloat = 2,
+
+} _DataTypeEnum;
+
+	//  Primary dispatch interface for CVTKeyButton
+
+	[ uuid(ADD6255F-8137-4EAA-967F-3AC5CA9A7607),
+	  helpstring("Dispatch interface for VTKeyButton"), hidden ]
+	dispinterface _DVTKeyButton
+	{
+		properties:
+			// NOTE - ClassWizard will maintain property information here.
+			//    Use extreme caution when editing this section.
+			//{{AFX_ODL_PROP(CVTKeyButton)
+			[id(1)] long VirtKey;
+			[id(2)] short ImageWidth;
+			[id(3)] short ImageHeight;
+			[id(4)] BSTR BmpFileName;
+			[id(5)] OLE_COLOR ImageMask;
+			[id(6)] short ImageIndex;
+			[id(7)] _ImageAlignHorzEnum ImageAlignHorz;
+			[id(8)] _ImageAlignVertEnum ImageAlignVert;
+			[id(9)] short ImageDeltaX;
+			[id(10)] short ImageDeltaY;			
+			[id(13)] BSTR ControlInfo;			
+			[id(14)] short IconDeltaX;
+			[id(15)] short IconDeltaY;
+			[id(16)] short TextDeltaX;
+			[id(17)] short TextDeltaY;
+			//}}AFX_ODL_PROP
+
+		methods:
+			// NOTE - ClassWizard will maintain method information here.
+			//    Use extreme caution when editing this section.
+			//{{AFX_ODL_METHOD(CVTKeyButton)
+			[id(11)] boolean SetImageList(BSTR pstrBmpFileName, short cx, short cy, OLE_COLOR clrMask);
+			[id(12)] boolean ReloadImageList();			
+			//}}AFX_ODL_METHOD
+			[id(DISPID_ABOUTBOX)] void AboutBox();
+
+	};
+
+	//  Event dispatch interface for CVTKeyButton
+
+	[ uuid(D6B94F54-FE1E-4D28-9B84-85F8BA853863),
+	  helpstring("Event interface for VTKeyButton") ]
+	dispinterface _DVTKeyButtonEvents
+	{
+		properties:
+			//  Event interface has no properties
+
+		methods:
+			// NOTE - ClassWizard will maintain event information here.
+			//    Use extreme caution when editing this section.
+			//{{AFX_ODL_EVENT(CVTKeyButton)
+			//}}AFX_ODL_EVENT
+	};
+
+	//  Class information for CVTKeyButton
+
+	[ uuid(6743979D-D00F-48A0-A036-DD7EE33A30B3),
+	  helpstring("VTKeyButton"), control ]
+	coclass VTKeyButton
+	{
+		[default] dispinterface _DVTKeyButton;
+		[default, source] dispinterface _DVTKeyButtonEvents;
+	};
+
+	//  Primary dispatch interface for CVTStaticText
+
+	[ uuid(B8E8ACA1-F32D-4D62-8EE0-28AF2684CA5D),
+	  helpstring("Dispatch interface for VTStaticText"), hidden ]
+	dispinterface _DVTStaticText
+	{
+		properties:
+			// NOTE - ClassWizard will maintain property information here.
+			//    Use extreme caution when editing this section.
+			//{{AFX_ODL_PROP(CVTStaticText)
+			[id(DISPID_FONT), bindable] IFontDisp* Font;
+			[id(DISPID_BACKCOLOR), bindable, requestedit] OLE_COLOR BackColor;
+			[id(1)] OLE_COLOR TextColor;
+			[id(2)] OLE_COLOR TextBackColor;
+			[id(3)] OLE_COLOR TransparentColor;
+			[id(4)] boolean TextAlignLeft;
+			[id(5)] boolean TextAlignRight;
+			[id(6)] boolean TextAlignTop;
+			[id(7)] boolean TextAlignBottom;
+			[id(8)] boolean PictAlignLeft;
+			[id(9)] boolean PictAlignRight;
+			[id(10)] boolean PictAlignTop;
+			[id(11)] boolean PictAlignBottom;
+			[id(12)] boolean Text2PictAlignLeft;
+			[id(13)] boolean Text2PictAlignRight;
+			[id(14)] boolean Text2PictAlignTop;
+			[id(15)] boolean Text2PictAlignBottom;
+			[id(16)] BSTR Text;
+			[id(17)] BSTR PictureFileName;
+			[id(18)] boolean InnerRaised;
+			[id(19)] boolean InnerSunken;
+			[id(20)] boolean OuterRaised;
+			[id(21)] boolean OuterSunken;
+			[id(22)] boolean CenterImage;
+			[id(23)] boolean TransparencyText;		
+			[id(27)] boolean Disabled;
+			[id(28)] boolean Visible;
+			[id(30)] OLE_COLOR TransparentChangeToColor;
+			[id(31)] boolean UseSystemFont;
+			[id(32)] boolean TextAlignCenter;
+			[id(33)] boolean TextAlignMiddle;
+			//}}AFX_ODL_PROP
+
+		methods:
+			// NOTE - ClassWizard will maintain method information here.
+			//    Use extreme caution when editing this section.
+			//{{AFX_ODL_METHOD(CVTStaticText)
+			[id(24)] boolean ReadPicture(BSTR pstrFileName);
+			[id(25)] boolean SetAutoSize();
+			[id(26)] boolean ReloadBitmap();
+			[id(29)] void SetFocus();
+			//}}AFX_ODL_METHOD
+
+			[id(DISPID_ABOUTBOX)] void AboutBox();
+	};
+
+	//  Event dispatch interface for CVTStaticText
+
+	[ uuid(9886E2C0-3CA3-4BCE-9712-5F884EA1EEF8),
+	  helpstring("Event interface for VTStaticText") ]
+	dispinterface _DVTStaticTextEvents
+	{
+		properties:
+			//  Event interface has no properties
+
+		methods:
+			// NOTE - ClassWizard will maintain event information here.
+			//    Use extreme caution when editing this section.
+			//{{AFX_ODL_EVENT(CVTStaticText)
+			//}}AFX_ODL_EVENT
+	};
+
+	//  Class information for CVTStaticText
+
+	[ uuid(D962DECE-FA07-47DC-A901-73DEE44FF021),
+	  helpstring("VTStaticText"), control ]
+	coclass VTStaticText
+	{
+		[default] dispinterface _DVTStaticText;
+		[default, source] dispinterface _DVTStaticTextEvents;
+	};
+
+	//  Primary dispatch interface for CVTEditor
+
+	[ uuid(19B862BF-87E2-42C7-9831-57B6A65C369E),
+	  helpstring("Dispatch interface for VTEditor"), hidden ]
+	dispinterface _DVTEditor
+	{
+		properties:
+			// NOTE - ClassWizard will maintain property information here.
+			//    Use extreme caution when editing this section.
+			//{{AFX_ODL_PROP(CVTEditor)
+			[id(1)] BSTR Name;
+			[id(2)] _CaptionAlignEnum CaptionPosition;
+			[id(3)] _DataTypeEnum DataType;
+			[id(4)] BSTR CaptionText;
+			[id(5)] short CaptionFieldWidth;
+			[id(6)] boolean SpinEnable;
+			[id(7)] float MinValue;
+			[id(8)] float MaxValue;
+			[id(9)] boolean ValidationEnable;
+			[id(10)] boolean CaptionEnable;
+			[id(11)] OLE_COLOR BackgroundColor;
+			[id(12)] OLE_COLOR CaptionBackColor;
+			[id(13)] OLE_COLOR CaptionTextColor;
+			[id(14)] OLE_COLOR EditBackColor;
+			[id(15)] OLE_COLOR EditTextColor;
+			[id(16)] IFontDisp* EditFont;
+			[id(17)] IFontDisp* CaptionFont;
+			[id(18)] boolean CaptionAutoWidth;
+			[id(19)] BSTR Key;
+			[id(20)] boolean AutoUpdate;
+			[id(21)] boolean AlignClient;
+			[id(22)] boolean MultiLine;
+			[id(23)] boolean InnerSunken;
+			[id(24)] boolean OuterRaised;
+			[id(25)] boolean OuterSunken;
+			[id(26)] boolean InnerRaised;
+			[id(27)] BSTR Text;
+			[id(28)] long ValueInt;
+			[id(29)] double ValueDouble;
+			[id(32)] boolean Disabled;
+			[id(33)] boolean Visible;
+			/*[id(35)] double SpinDelta;
+			[id(36)] boolean UseSystemFont;
+			[id(37)] boolean VT5StaticStyle;*/
+			[id(35)] boolean UseSystemFont;
+			[id(36)] boolean VT5StaticStyle;
+			[id(37)] long NumberCharAFP;
+			//}}AFX_ODL_PROP
+
+		methods:
+			// NOTE - ClassWizard will maintain method information here.
+			//    Use extreme caution when editing this section.
+			//{{AFX_ODL_METHOD(CVTEditor)
+			[id(30)] void StoreToData();
+			[id(31)] boolean SetAutoSize();
+			[id(34)] void SetFocus();
+			//}}AFX_ODL_METHOD
+
+			[id(DISPID_ABOUTBOX)] void AboutBox();
+	};
+
+	//  Event dispatch interface for CVTEditor
+
+	[ uuid(E96348B8-FA6A-4F9D-86B8-25792CDF4681),
+	  helpstring("Event interface for VTEditor") ]
+	dispinterface _DVTEditorEvents
+	{
+		properties:
+			//  Event interface has no properties
+
+		methods:
+			// NOTE - ClassWizard will maintain event information here.
+			//    Use extreme caution when editing this section.
+			//{{AFX_ODL_EVENT(CVTEditor)
+			[id(1)] void DataChange();
+			//}}AFX_ODL_EVENT
+	};
+
+	//  Class information for CVTEditor
+
+	[ uuid(6BDF8B84-C1B9-448E-8965-0E4557467FDA),
+	  helpstring("VTEditor"), control ]
+	coclass VTEditor
+	{
+		[default] dispinterface _DVTEditor;
+		[default, source] dispinterface _DVTEditorEvents;
+	};
+
+	//  Primary dispatch interface for CVTList
+
+	[ uuid(7850253B-44E2-44C5-A728-37DAAC031F2A),
+	  helpstring("Dispatch interface for VTList"), hidden ]
+	dispinterface _DVTList
+	{					
+		properties:
+			// NOTE - ClassWizard will maintain property information here.
+			//    Use extreme caution when editing this section.
+			//{{AFX_ODL_PROP(CVTList)
+			[id(1)] boolean UseGrid;
+			[id(2)] boolean UseFullRowSelect;
+			[id(3)] boolean AutoUpdate;
+			[id(4)] boolean Enabled;
+			[id(5)] BSTR Name;
+			[id(6)] boolean InnerRaised;
+			[id(7)] boolean InnerSunken;
+			[id(8)] boolean OuterRaised;
+			[id(9)] boolean OuterSunken;
+			[id(55)] boolean Disabled;
+			[id(56)] boolean Visible;
+			[id(58)] OLE_COLOR EditBackColor;
+			[id(59)] OLE_COLOR EditTextColor;
+			[id(62)] OLE_COLOR ListBkColor;
+			[id(63)] boolean UseSystemFont;
+			[id(70)] boolean UseSimpleFontType;
+			[id(71)] OLE_COLOR ActiveCellBackColor;
+			[id(72)] OLE_COLOR ActiveCellTextColor;
+			[id(73)] boolean EnableResizeColumns;
+			//}}AFX_ODL_PROP
+
+		methods:	 
+			// NOTE - ClassWizard will maintain method information here.
+			//    Use extreme caution when editing this section.
+			//{{AFX_ODL_METHOD(CVTList)
+			[id(10)] OLE_COLOR GetColumnBackColor(short nColumn);
+			[id(11)] OLE_COLOR GetColumnForeColor(short nColumn);
+			[id(12)] BSTR GetColumnCaption(short nColumn);
+			[id(13)] short GetColumnType(short nColumn);
+			[id(14)] short GetColumnAlign(short nColumn);
+			[id(15)] short GetColumnCount();
+			[id(16)] short GetColumnWidth(short nColumn);
+			[id(17)] VARIANT GetColumnFont(short nColumn);
+			[id(18)] void SetColumnAlign(short nColumn, short nAlign);
+			[id(19)] void SetColumnBackColor(short nColumn, OLE_COLOR color);
+			[id(20)] void SetColumnForeColor(short nColumn, OLE_COLOR color);
+			[id(21)] void SetColumnType(short nColumn, short nType);
+			[id(22)] void SetColumnWidth(short nColumn, short nWidth);
+			[id(23)] void SetColumnCaption(short nColumn, BSTR pstrCaption);
+			[id(24)] void SetColumnFont(short nColumn, VARIANT pFont);
+			[id(25)] void AddColumn(short nColumn);
+			[id(26)] void DeleteColumn(short nColumn);
+			[id(27)] short GetDisplayLogicalAsText(short nColumn);
+			[id(28)] void SetDisplayLogicalAsText(short nColumn, short nValue);
+			[id(29)] short GetCurentColumn();
+			[id(30)] short GetRowCount();
+			[id(31)] short IsColumnUseIcon(short nColumn);
+			[id(32)] void SetColumnUseIcon(short nColumn, short nValue);
+			[id(33)] BSTR GetCellAsString(short nColumn, short nRow);
+			[id(34)] void DeleteRow(short nRow);
+			[id(35)] void AddRow(short nRow);
+			[id(36)] void SetIcon(short nColumn, short nRow, BSTR pStrFileName);
+			[id(37)] void SetColumnLogicalIcon(short nColumn, BSTR pStrFileName, short b_forValue);
+			[id(38)] short CurColumnLeft();
+			[id(39)] short CurColumnRight();
+			[id(40)] void SetColumnReadOnly(short nColumn, short nValue);
+			[id(41)] short IsColumnReadOnly(short nColumn);
+			[id(42)] void SetCellValue(short nColumn, short nRow, BSTR pStrValue);
+			[id(43)] BSTR GetKeyValue(short nColumn, short nRow);
+			[id(44)] void SetKeyValue(short nColumn, short nRow, BSTR pStrKey);
+			[id(45)] BSTR GetCellKey(short nColumn, short nRow);
+			[id(46)] BSTR GetCellAsSubject(short nColumn, short nRow);
+			[id(47)] OLE_COLOR GetCellAsColor(short nColumn, short nRow);
+			[id(48)] short GetCellAsLogical(short nColumn, short nRow);
+			[id(49)] BSTR GetCellAsValue(short nColumn, short nRow);
+			[id(50)] void StoreToData();
+			[id(51)] short GetCurentRow();
+			[id(52)] void SetCurentRow(short nRow);
+			[id(53)] void SetCurentCol(short nCol);
+			[id(54)] void RestoreFromData();
+			[id(57)] void SetFocus();
+			[id(60)] void ForceEditCell( short nColumn, short nRow );
+			[id(61)] void SetCellAsLogical(short nColumn, short nRow, short bValue);			
+			[id(64)] void SetCellValueColor(short nColumn, short nRow, OLE_COLOR color);
+			[id(65)] void SetCellValueColorRGB( short nColumn, short nRow, LPCTSTR pbStrValue );
+			[id(66)] BSTR GetCellAsColorRGB( short nColumn, short nRow );
+			
+			[id(67)] void ClearCombo( short nColumn, short nRow );
+			[id(68)] boolean AddComboString( short nColumn, short nRow, BSTR pbStrValue );
+			[id(69)] boolean RemoveComboItem( short nColumn, short nRow, short nIndex );
+			
+			[id(74)] OLE_COLOR GetCellBackColor(short nColumn, short nRow );
+			[id(75)] OLE_COLOR GetCellForeColor(short nColumn, short nRow );
+
+			[id(76)] void SetCellBackColor(short nColumn, short nRow, OLE_COLOR color);
+			[id(77)] void SetCellForeColor(short nColumn, short nRow, OLE_COLOR color);
+
+			[id(78)] void ClearExtHeaders();
+			[id(79)] void SetUseExtHeader( short bUse );
+			[id(80)] long GetUseExtHeader();
+			[id(81)] long GetExtHeadersSize();
+
+			[id(82)] void SetExtHeaderData( short nLev, short nItem, BSTR pbstrName, short nAssignment, short lWidth, short nDel );
+			[id(83)] BSTR GetExtHeaderName( short nLev, short nItem );
+			[id(84)] long GetExtHeaderAssignment( short nLev, short nItem );
+			[id(85)] long GetExtHeadersColumnSize( short nLev );
+			[id(86)] long GetExtHeaderWidth( short nLev, short nItem );
+			
+			[id(87)] void SetHideHeader(boolean val);
+			[id(88)] void SetHideBorder(boolean val);
+			[id(89)] boolean GetHideHeader();
+			[id(90)] boolean GetHideBorder();
+
+			[id(91)] void SetCellTypeShading( short nColumn, short nRow, short shadingType);
+			[id(92)] short GetCellTypeShading(short nColumn, short nRow);
+			//}}AFX_ODL_METHOD
+
+			[id(DISPID_ABOUTBOX)] void AboutBox();
+	};
+
+			
+	//  Event dispatch interface for CVTList
+
+	[ uuid(BD593DDD-9B97-4717-A77A-402F0C4D223A),
+	  helpstring("Event interface for VTList") ]
+	dispinterface _DVTListEvents
+	{
+		properties:
+			//  Event interface has no properties
+
+		methods:
+			// NOTE - ClassWizard will maintain event information here.
+			//    Use extreme caution when editing this section.
+			//{{AFX_ODL_EVENT(CVTList)
+			[id(1)] void CurentColumnChange(short nColumn);
+			[id(2)] void CurentRowChange(short nRow);
+			[id(3)] void DataChange(short nColumn, short nRow);
+			[id(4)] void OnDeleteRow(short nRow);
+			[id(5)] void OnDblClick(short nColumn, short nRow);
+			//}}AFX_ODL_EVENT
+	};
+
+	//  Class information for CVTList
+
+	[ uuid(AD7C61B8-1356-432F-BEBA-1F94620A9F3D),
+	  helpstring("VTList"), control ]
+	coclass VTList
+	{
+		[default] dispinterface _DVTList;
+		[default, source] dispinterface _DVTListEvents;
+	};
+
+	//  Primary dispatch interface for CVTSlider
+
+	[ uuid(BF93DFCE-D919-4AB3-AC2E-AA7E75069D38),
+	  helpstring("Dispatch interface for VTSlider"), hidden ]
+	dispinterface _DVTSlider
+	{
+		properties:
+			// NOTE - ClassWizard will maintain property information here.
+			//    Use extreme caution when editing this section.
+			//{{AFX_ODL_PROP(CVTSlider)
+			[id(1)] long Min;
+			[id(2)] long Max;
+			[id(4)] boolean ShowTick;
+			[id(5)] short TickFreq;
+			[id(6)] long PosLo;
+			[id(7)] long PosHi;
+			[id(8)] boolean ShowNums;
+			[id(DISPID_FONT), bindable] IFontDisp* Font;
+			[id(DISPID_ENABLED), bindable, requestedit] boolean Enabled;
+			[id(3)] boolean Cycled;
+			[id(9)] boolean AutoUpdate;
+			[id(10)] BSTR LowKeyValue;
+			[id(11)] BSTR HighKeyValue;
+			[id(12)] BSTR Name;
+			[id(13)] boolean InnerRaised;
+			[id(14)] boolean InnerSunken;
+			[id(15)] boolean OuterRaised;
+			[id(16)] boolean OuterSunken;
+			[id(17)] boolean SingleSlide;
+			[id(20)] boolean Disabled;
+			[id(21)] boolean Visible;
+			[id(23)] boolean UseSystemFont;
+			//}}AFX_ODL_PROP
+
+		methods:
+			// NOTE - ClassWizard will maintain method information here.
+			//    Use extreme caution when editing this section.
+			//{{AFX_ODL_METHOD(CVTSlider)
+			[id(18)] void SetBothLimits(long nLow, long nHigh);
+			[id(19)] void StoreToData();
+			[id(22)] void SetFocus();
+			//}}AFX_ODL_METHOD
+
+			[id(DISPID_ABOUTBOX)] void AboutBox();
+	};
+
+	//  Event dispatch interface for CVTSlider
+
+	[ uuid(EDFD94E7-7B71-4251-9808-5C3BB3A5CC51),
+	  helpstring("Event interface for VTSlider") ]
+	dispinterface _DVTSliderEvents
+	{
+		properties:
+			//  Event interface has no properties
+
+		methods:
+			// NOTE - ClassWizard will maintain event information here.
+			//    Use extreme caution when editing this section.
+			//{{AFX_ODL_EVENT(CVTSlider)
+			[id(1)] void PosChanged();
+			//}}AFX_ODL_EVENT
+	};
+
+	//  Class information for CVTSlider
+
+	[ uuid(232343F7-5D35-475E-8FF7-F24E9118AB08),
+	  helpstring("VTSlider"), control ]
+	coclass VTSlider
+	{
+		[default] dispinterface _DVTSlider;
+		[default, source] dispinterface _DVTSliderEvents;
+	};
+
+
+
+
+	///////////////////////////////////////////////////////////////
+//  Primary dispatch interface for CPushButtonCtrl
+
+	[ uuid(54A0BF84-9A92-11D3-B1C5-EB19BDBABA39),
+	  helpstring("Dispatch interface for PushButton Control"), hidden ]
+	dispinterface _DPushButton
+	{
+		properties:
+			// NOTE - ClassWizard will maintain property information here.
+			//    Use extreme caution when editing this section.
+			//{{AFX_ODL_PROP(CPushButtonCtrl)
+			[id(1)] BSTR BMPFileName;
+			[id(2)] short ButtonWidth;
+			[id(3)] short ButtonHeight;
+			[id(4)] boolean AutoSize;
+			[id(5)] short ButtonDepth;
+			[id(6)] boolean DrawBorder;
+			[id(7)] boolean FlatButton;
+			[id(8)] boolean DefaultButton;
+			[id(9)] boolean ThreeStateButton;
+			[id(10)] boolean MouseInPicColor;
+			[id(11)] boolean MouseOutPicColor;
+			[id(12)] boolean MouseOutShadow;
+			[id(13)] boolean ButtonPressedPicColor;
+			[id(14)] boolean ButtonPressedShadow;
+			[id(15)] boolean MouseInShadow;
+			[id(38)] boolean Disabled;
+			[id(16)] boolean DrawFocusRect;
+			[id(17)] boolean Stretch;
+			[id(18)] BSTR ButtonText;
+			[id(19)] short TextAlign;
+			[id(20)] short OffsetTextFromBMP;
+			[id(21)] boolean DrawFigures;
+			[id(22)] short FigureType;
+			[id(23)] short FigureSize;
+			[id(24)] OLE_COLOR ColorTransparent;
+			[id(25)] OLE_COLOR ColorFigure;
+			[id(26)] OLE_COLOR ColorFillFigure;
+			[id(27)] boolean FillFigure;
+			[id(DISPID_FONT), bindable] IFontDisp* Font;
+			[id(28)] OLE_COLOR ActiveTextColor;
+			[id(29)] OLE_COLOR InactiveTextColor;
+			[id(30)] boolean InnerRaised;
+			[id(31)] boolean InnerSunken;
+			[id(32)] boolean OuterRaised;
+			[id(33)] boolean OuterSunken;
+			[id(34)] short FigureMaxSize;
+			[id(35)] short FigureBound;
+			[id(36)] boolean AdvancedShadow;
+			[id(37)] boolean DarkShadow;
+			[id(44)] BSTR ActionName;
+			[id(45)] boolean RunAction;
+			[id(46)] boolean AutoRepeat;
+			[id(47)] boolean Visible;
+			[id(49)] boolean DrawFocusedRect;
+			[id(50)] boolean SemiFlat;
+			[id(53)] boolean UseSystemFont;
+			[id(54)] boolean ShowToolTip;
+			[id(55)] BSTR ToolTip;
+			[id(56)] short LayoutTextAlign;
+			//}}AFX_ODL_PROP
+
+		methods:
+			// NOTE - ClassWizard will maintain method information here.
+			//    Use extreme caution when editing this section.
+			//{{AFX_ODL_METHOD(CPushButtonCtrl)
+			[id(39)] boolean ResetPressedState();
+			[id(40)] boolean SetPressedState();
+			[id(41)] boolean IsPressed();
+			[id(42)] boolean SetAutoSize();
+			[id(43)] boolean ReloadBitmap();
+			[id(48)] void SetFocus();
+			[id(51)] void CopyToClipboard();
+			[id(52)] void PasteFromClipboard();
+			[id(57)] long GetButtonLeft( );
+			[id(58)] void SetButtonLeft(long lLeft);
+			[id(59)] long GetButtonTop( );
+			[id(60)] void SetButtonTop(long lTop);
+			//}}AFX_ODL_METHOD
+	};
+
+
+
+
+
+
+	//  Event dispatch interface for CPushButtonCtrl
+
+	[ uuid(54A0BF85-9A92-11D3-B1C5-EB19BDBABA39),
+	  helpstring("Event interface for PushButton Control") ]
+	dispinterface _DPushButtonEvents
+	{
+		properties:
+			//  Event interface has no properties
+
+		methods:
+			// NOTE - ClassWizard will maintain event information here.
+			//    Use extreme caution when editing this section.
+			//{{AFX_ODL_EVENT(CPushButtonCtrl)
+			[id(DISPID_CLICK)] void Click();
+			//}}AFX_ODL_EVENT
+	};
+
+	//  Class information for CPushButtonCtrl
+
+	[ uuid(54A0BF86-9A92-11D3-B1C5-EB19BDBABA39),
+	  helpstring("PushButton Control"), control ]
+	coclass PushButton
+	{
+		[default] dispinterface _DPushButton;
+		[default, source] dispinterface _DPushButtonEvents;
+	};
+
+
+
+
+//  Primary dispatch interface for CVTCheckBoxCtrl
+
+	[ uuid(9899E4F1-0A5E-47F9-8AB4-8F9F09F507C1),
+	  helpstring("Dispatch interface for VTCheckBox Control"), hidden ]
+	dispinterface _DVTCheckBox
+	{
+		properties:
+			// NOTE - ClassWizard will maintain property information here.
+			//    Use extreme caution when editing this section.
+			//{{AFX_ODL_PROP(CVTCheckBoxCtrl)
+			[id(1)] IFontDisp* TextFont;
+			[id(2)] BSTR Caption;
+			[id(3)] OLE_COLOR UncheckTextColor;
+			[id(4)] OLE_COLOR CheckTextColor;
+			[id(5)] OLE_COLOR BackgroundColor;
+			[id(6)] boolean Disabled;
+			[id(7)] boolean Visible;
+			[id(8)] short Checked;
+			[id(9)] boolean InnerRaised;
+			[id(10)] boolean InnerSunken;
+			[id(11)] boolean OuterRaised;
+			[id(12)] boolean OuterSunken;
+			[id(13)] boolean NewDrawMode;
+			[id(14)] boolean Appearance3D;
+			[id(16)] boolean UseSystemFont;
+			//}}AFX_ODL_PROP
+
+		methods:
+			// NOTE - ClassWizard will maintain method information here.
+			//    Use extreme caution when editing this section.
+			//{{AFX_ODL_METHOD(CVTCheckBoxCtrl)
+			[id(15)] void SetFocus();
+			//}}AFX_ODL_METHOD
+
+			[id(DISPID_ABOUTBOX)] void AboutBox();
+	};
+
+	//  Event dispatch interface for CVTCheckBoxCtrl
+
+	[ uuid(B8C07E38-3C8F-41A5-9E3A-45B4F050DAC4),
+	  helpstring("Event interface for VTCheckBox Control") ]
+	dispinterface _DVTCheckBoxEvents
+	{
+		properties:
+			//  Event interface has no properties
+
+		methods:
+			// NOTE - ClassWizard will maintain event information here.
+			//    Use extreme caution when editing this section.
+			//{{AFX_ODL_EVENT(CVTCheckBoxCtrl)
+			[id(1)] void OnCheck(short nCheck);
+			//}}AFX_ODL_EVENT
+	};
+
+	//  Class information for CVTCheckBoxCtrl
+
+	[ uuid(F6188DC0-9F7F-4021-AA3C-395956D021F1),
+	  helpstring("VTCheckBox Control"), control ]
+	coclass VTCheckBox
+	{
+		[default] dispinterface _DVTCheckBox;
+		[default, source] dispinterface _DVTCheckBoxEvents;
+	};
+
+	//{{AFX_APPEND_ODL}}
+	//{{AFX_APPEND_ODL}}
+};

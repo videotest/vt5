@@ -1,0 +1,16 @@
+// oversect.odl : type library source for oversect.dll
+
+// This file will be processed by the MIDL compiler to produce the
+// type library (oversect.tlb).
+
+[ uuid(6D666072-69C5-4F1F-A88B-355D667E3FE0), version(1.0) ]
+library Oversect
+{
+	importlib("stdole32.tlb");
+	importlib("stdole2.tlb");
+
+
+
+	//{{AFX_APPEND_ODL}}
+	//}}AFX_APPEND_ODL}}
+};

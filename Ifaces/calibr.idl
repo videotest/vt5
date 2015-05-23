@@ -1,0 +1,75 @@
+import "wtypes.idl";
+
+
+[
+	uuid(61778A7B-15D1-4a58-A579-C24F84A17657),
+	version(1.0),
+	helpstring("VideoTesT 5 Calibration Type Library")
+]
+library CalibrationTypeLib
+{
+	[
+		uuid(384B4AA8-CDCA-4739-8B15-38823C87874C),
+		object,
+		local,
+	]
+	interface ICalibr : IUnknown
+	{
+		HRESULT GetCalibration( [out] double *pfPixelPerMeter, [out] GUID *pguidC );
+		HRESULT SetCalibration( [in] double fPixelPerMeter, [in] REFGUID guidC );
+	};
+
+	[
+		uuid(5E3579AC-4F69-4870-A948-1DC62955DDD7),
+		object,
+		local,
+	]
+	interface IMeasurementUnit : IUnknown
+	{
+		HRESULT GetUnitPerStdUnit( double *pf );
+		HRESULT SetUnitPerStdUnit( double f );
+	};
+
+	/*coclass MeasurementUnit
+	{
+		interface INamedObject2;
+		interface INumeredObjecy;
+	};*/
+
+
+/*	importlib("stdole32.tlb");
+	importlib("stdole2.tlb");
+
+	[
+		uuid(5751DC7D-BD52-403f-9417-E404D89132C5),
+		oleautomation,
+		dual,
+		helpstring("Named interface")
+	]
+	interface INamedObject : IDispatch
+	{
+		HRESULT GetName( BSTR *pbstrName );
+		HRESULT SetName( BSTR bstrName );
+	};
+        [
+		uuid(8ABF33B5-CE45-4675-A5C2-DEA74F0DAD64),
+		oleautomation,
+		dual,
+		helpstring("Numered interface")
+	]
+	interface INumeredObject : IDispatch
+	{
+		HRESULT GetNum(int *pn );
+		HRESULT SetNum( int n );
+	};
+	[
+		uuid(EE5099ED-038A-4751-8730-700111A26B0B),
+		helpstring("Calibration Class")
+	]
+	coclass Calibration
+	{
+		interface IUnknown;
+		interface ICalibration;
+		interface INamedObject;
+	};*/
+}

@@ -1,0 +1,10 @@
+; Charts.def : Declares the module parameters for the DLL.
+
+LIBRARY      "Charts"
+
+EXPORTS
+	DllCanUnloadNow PRIVATE
+	DllGetClassObject PRIVATE
+	DllRegisterServer PRIVATE
+	DllUnregisterServer PRIVATE
+

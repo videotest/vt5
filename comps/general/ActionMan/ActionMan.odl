@@ -1,0 +1,112 @@
+// ActionMan.odl : type library source for ActionMan.dll
+
+// This file will be processed by the MIDL compiler to produce the
+// type library (ActionMan.tlb).
+
+[ uuid(8069CA46-02B2-11D3-A5A0-0000B493FF1B), version(1.0) ]
+library ActionMan
+{
+	importlib("stdole32.tlb");
+	importlib("stdole2.tlb");
+
+	typedef enum
+	{
+		nfAction = 1,
+		nfDocument = 2,
+		nfCurrentDocOnly = 4
+		
+	} NotifyLevel;
+
+
+	//  Primary dispatch interface for CActionLogWindow
+	
+	[ uuid(A9386D07-221B-11D3-A5D6-0000B493FF1B) ]
+	dispinterface IActionLogWindow
+	{
+		properties:
+			// NOTE - ClassWizard will maintain property information here.
+			//    Use extreme caution when editing this section.
+			//{{AFX_ODL_PROP(CActionLogWindow)
+			//}}AFX_ODL_PROP
+			
+		methods:
+			// NOTE - ClassWizard will maintain method information here.
+			//    Use extreme caution when editing this section.
+			//{{AFX_ODL_METHOD(CActionLogWindow)
+			//}}AFX_ODL_METHOD
+
+	};
+
+	//  Class information for CActionLogWindow
+
+	[ uuid(A9386D08-221B-11D3-A5D6-0000B493FF1B) ]
+	coclass ActionLogWindow
+	{
+		[default] dispinterface IActionLogWindow;
+	};
+
+
+	//  Primary dispatch interface for CActionState
+	[ uuid(080118ED-98CC-47b6-B1A2-7D585C698FAA) ]
+	dispinterface IActionStateEvents
+	{
+		properties:
+		methods:
+			// NOTE - ClassWizard will maintain event information here.
+			//    Use extreme caution when editing this section.
+			//{{AFX_ODL_EVENT(CActionState)
+			[id(1)] void OnActionComplete(BSTR szAction, long lres);
+			[id(2)] void OnActionRunning(BSTR szAction);
+			//}}AFX_ODL_EVENT
+	};
+
+	[ uuid(C416B1E1-27D9-49A9-995C-D2986871C344) ]
+	dispinterface IActionState
+	{
+		properties:
+			// NOTE - ClassWizard will maintain property information here.
+			//    Use extreme caution when editing this section.
+			//{{AFX_ODL_PROP(CActionState)
+			[id(15)] bool EnableUndo;
+			//}}AFX_ODL_PROP
+			
+		methods:
+			// NOTE - ClassWizard will maintain method information here.
+			//    Use extreme caution when editing this section.
+			//{{AFX_ODL_METHOD(CActionState)
+			[id(1)] void TerminateCurrentAction();
+			[id(2)] BSTR GetCurrentAction();
+			[id(3)] long GetActionState(BSTR szAction);
+			[id(4)] void SetActionState(BSTR szAction, long dwNewState);
+			[id(5)] void ResetActionState(BSTR szAction);
+			[id(6)] void ResetAllActionStates();
+			[id(7)] boolean IsActionAvaible(BSTR szAction);
+			[id(8)] long RunInteractiveWait(BSTR szAction);
+			[id(9)] long BeginGroupUndo( BSTR bstrGroup );
+			[id(10)] void EndGroupUndo( long lAdd );
+			[id(11)] void ClearUndoList();
+			[id(12)] long RunInteractive( BSTR bstrAction );
+			[id(13)] void ClearRedoList();
+			[id(14)] boolean FireNotify( BSTR bstrNotifyDesc, long dwFlagLevel, VARIANT varValue );			
+			[id(16)] boolean TerminateLongOperation();
+			[id(17)] long RunInteractiveEx( BSTR bstrAction, BSTR bstrActionParam );
+			[id(18)] long RunInteractiveWaitEx( BSTR bstrAction, BSTR bstrActionParam );
+			[id(19)] long BeginGroupUndo2( BSTR bstrGroup, long dwStepsBack );
+			[id(20)] void DeleteLastUndo();
+			[id(21)] void EndGroupUndo2( BSTR bstrGroup, long lAdd );
+			//}}AFX_ODL_METHOD
+
+	};
+
+	//  Class information for CActionState
+
+	[ uuid(538D4938-AD2A-4D4B-BA2F-37477DA9FA3F) ]
+	coclass ActionState
+	{
+		[default] dispinterface IActionState;
+		[default, source] dispinterface IActionStateEvents;
+	};
+
+	//{{AFX_APPEND_ODL}}
+	//}}AFX_APPEND_ODL}}
+};

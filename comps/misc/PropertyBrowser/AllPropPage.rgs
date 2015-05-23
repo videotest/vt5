@@ -1,0 +1,23 @@
+HKCR
+{
+	PropertyBrowser.AllPropPage.1 = s 'AllPropPage Class'
+	{
+		CLSID = s '{2F143203-D876-11D3-A095-0000B493A187}'
+	}
+	PropertyBrowser.AllPropPage = s 'AllPropPage Class'
+	{
+		CLSID = s '{2F143203-D876-11D3-A095-0000B493A187}'
+		CurVer = s 'PropertyBrowser.AllPropPage.1'
+	}
+	NoRemove CLSID
+	{
+		ForceRemove {2F143203-D876-11D3-A095-0000B493A187} = s 'AllPropPage Class'
+		{
+			ForceRemove 'Programmable'
+			InprocServer32 = s '%MODULE%'
+			{
+				val ThreadingModel = s 'Apartment'
+			}
+		}
+	}
+}

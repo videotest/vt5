@@ -1,0 +1,120 @@
+//{{NO_DEPENDENCIES}}
+// Microsoft Developer Studio generated include file.
+// Used by MV5Drv.rc
+//
+#define IDS_VERSION_INFO                119
+#define IDD_VIDEO_CAP                   120
+#define IDS_MANUFACTURER                120
+#define IDS_PRODFAMILY                  121
+#define IDS_PRODNAME                    122
+#define IDS_NO_MEMORY_FOR_VCAP          123
+#define IDS_AVI_PLACED                  124
+#define IDC_PREVIEW                     1000
+#define IDD_PREVIEW                     1000
+#define ID_RESET                        1000
+#define IDD_SOURCE                      1001
+#define ID_FRAMERATE                    1001
+#define IDC_RADIO_NTSC                  1001
+#define IDC_FORMAT                      1002
+#define IDD_FORMAT                      1002
+#define IDC_RADIO_PAL                   1002
+#define IDD_SOURCE1                     1003
+#define IDC_SOURCE                      1003
+#define IDC_RED                         1004
+#define IDD_SOURCE2                     1004
+#define IDC_GREEN                       1005
+#define IDC_BLUE                        1006
+#define IDC_SVIDEO                      1007
+#define IDC_1STSVIDEO                   1008
+#define IDC_2NDSVIDEO                   1009
+#define IDC_ANALOG                      1010
+#define IDC_2SVIDEO                     1011
+#define IDC_VCR                         1012
+#define IDC_AGC                         1013
+#define IDC_E_BRIGHTNESS                1014
+#define IDC_S_BRIGHTNESS                1015
+#define IDC_E_CONTRAST                  1016
+#define IDC_S_CONTRAST                  1017
+#define IDC_E_HUE                       1018
+#define IDC_S_HUE                       1019
+#define IDC_E_SATURATION                1020
+#define IDC_S_SATURATION                1021
+#define IDC_DEFAULT                     1022
+#define IDC_E_GWX                       1023
+#define IDC_S_GWX                       1024
+#define IDC_E_GWY                       1025
+#define IDC_S_GWY                       1026
+#define IDC_E_GWDX                      1027
+#define IDC_S_GWDY                      1030
+#define IDC_E_GWDY                      1031
+#define IDC_S_GWDX                      1032
+#define IDC_FPS                         1033
+#define IDC_STANDARD_NTSC               1033
+#define IDC_TIME_LIM                    1034
+#define IDC_STANDARD_PAL                1034
+#define IDC_STANDARD_SECAM              1035
+#define IDC_FILE                        1036
+#define IDC_STANDARD_NTSC44             1036
+#define IDC_STANDARD_PALM               1037
+#define IDC_STANDARD_PALN               1038
+#define IDC_STANDARD                    1039
+#define IDC_STANDARD_NTSCCOMB           1040
+#define IDC_RADIO9                      1041
+#define IDC_STANDARD_NTSCMONO           1042
+#define IDC_STANDARD_SECAMMONO          1043
+#define IDC_BLUE3                       1043
+#define IDC_STANDARD_PAL60              1044
+#define IDC_VERTICAL_MIRROR             1049
+#define IDC_GRAY_SCALE                  1050
+#define IDC_HORIZONTAL_MIRROR           1052
+#define IDC_CAPTURE_VIDEO               1053
+#define IDC_CAPTURE_MEMORY              1056
+#define IDC_MESSAGE                     1058
+#define IDC_PROGRESS_CONV               1059
+#define IDC_FRAMES                      1060
+#define IDC_E_SIZE_X                    1063
+#define IDC_S_SIZE_X                    1064
+#define IDC_E_SIZE_Y                    1065
+#define IDC_S_SIZE_Y                    1066
+#define IDC_GRAYSCALE                   1067
+#define IDC_STATIC_X                    1068
+#define IDC_STATIC_Y                    1069
+#define IDC_E_FRAME_SIZE                1078
+#define IDC_S_FRAME_SIZE                1079
+#define IDC_FPS_MESSAGE                 1081
+#define IDC_STATIC_FRAME_SIZE           1082
+#define IDC_STATIC_PROCENT              1083
+#define IDC_RED2                        1084
+#define IDC_GREEN2                      1085
+#define IDC_BLUE2                       1086
+#define IDC_CAPTURE_RATE_SCALE          1136
+#define IDC_PLAYBACK_FPS                1137
+#define IDC_PLAYBACK_RATE_SCALE         1138
+#define IDC_TIME                        1139
+#define IDC_BROWSE                      1289
+#define IDS_TIME_IN_SECONDS             61923
+#define IDS_TIME_IN_MINUTES             61924
+#define IDS_TIME_IN_HOURS               61925
+#define IDS_ERROR_DURING_DECOMPRESSION  61926
+#define IDS_NOT_ENOUGH_SPACE            61927
+#define IDS_FILE_MORE_2GB               61928
+#define IDS_RESET                       61929
+#define IDS_RESET_Q                     61930
+#define IDS_FILE_NOT_OPENED             61931
+#define IDS_PARTITION_NOT_FREE          61932
+#define IDS_CANNOT_FREE_PARTITION       61933
+#define IDS_FPS_MESSAGE_PAL             61934
+#define IDS_FPS_MESSAGE_NTSC            61935
+#define IDS_INPUT                       61936
+#define IDS_FRAMERATE                   61937
+
+// Next default values for new objects
+// 
+#ifdef APSTUDIO_INVOKED
+#ifndef APSTUDIO_READONLY_SYMBOLS
+#define _APS_NEXT_RESOURCE_VALUE        1002
+#define _APS_NEXT_COMMAND_VALUE         32771
+#define _APS_NEXT_CONTROL_VALUE         1030
+#define _APS_NEXT_SYMED_VALUE           1002
+#endif
+#endif

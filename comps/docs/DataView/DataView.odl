@@ -1,0 +1,54 @@
+// DataView.odl : type library source for DataView.dll
+
+// This file will be processed by the MIDL compiler to produce the
+// type library (DataView.tlb).
+
+[ uuid(3A7F1BE2-50A5-4888-9A56-AF7CE9143FE0), version(1.0) ]
+library DataView
+{
+	importlib("stdole32.tlb");
+	importlib("stdole2.tlb");
+
+
+
+
+	//  Primary dispatch interface for CGridView
+	[ uuid(000C6422-057F-4152-A94D-3E2F6AFBA5FA) ]
+	dispinterface IGridViewDisp
+	{
+		properties:
+			// NOTE - ClassWizard will maintain property information here.
+			//    Use extreme caution when editing this section.
+			//{{AFX_ODL_PROP(CGridView)
+			//}}AFX_ODL_PROP
+			
+		methods:
+			// NOTE - ClassWizard will maintain method information here.
+			//    Use extreme caution when editing this section.
+			//{{AFX_ODL_METHOD(CGridView)
+			//}}AFX_ODL_METHOD
+
+	};
+
+	//  Class information for CGridView
+
+	[ uuid(03E6BDBA-E120-4f0b-B7EF-0121C1C8877C) ]
+	coclass ClassView
+	{
+		[default] dispinterface IGridViewDisp;
+	};
+
+
+	
+	//  Class information for CMeasView
+
+	[ uuid(6FDA8C15-0959-4F25-971B-87FAE672A07A) ]
+	coclass MeasView
+	{
+		[default] dispinterface IGridViewDisp;
+	};
+
+	//{{AFX_APPEND_ODL}}
+	//}}AFX_APPEND_ODL}}
+};
+

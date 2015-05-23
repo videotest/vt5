@@ -1,0 +1,16 @@
+// Print.odl : type library source for Print.dll
+
+// This file will be processed by the MIDL compiler to produce the
+// type library (Print.tlb).
+
+[ uuid(9754F18C-13DA-49DD-AE9F-0B7BFF2A0C03), version(1.0) ]
+library Print
+{
+	importlib("stdole32.tlb");
+	importlib("stdole2.tlb");
+
+
+
+	//{{AFX_APPEND_ODL}}
+	//}}AFX_APPEND_ODL}}
+};

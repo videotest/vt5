@@ -1,0 +1,272 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// Russian resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_RUS)
+#ifdef _WIN32
+LANGUAGE LANG_RUSSIAN, SUBLANG_DEFAULT
+#pragma code_page(1251)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)\r\n"
+    "#ifdef _WIN32\r\n"
+    "LANGUAGE 9, 1\r\n"
+    "#pragma code_page(1252)\r\n"
+    "#endif //_WIN32\r\n"
+    "#include ""res\\AVIDocMan.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "#include ""afxres.rc""         // Standard components\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_VIDEO_DRIVERS_LIST DIALOGEX 0, 0, 230, 214
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Выбор драйвера для ввода видеоизображения"
+FONT 8, "MS Sans Serif", 0, 0, 0x0
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,65,194,50,14
+    PUSHBUTTON      "Отмена",IDCANCEL,118,194,50,14
+    LISTBOX         IDC_LIST_DRIVERS,5,3,217,187,LBS_NOINTEGRALHEIGHT | 
+                    WS_VSCROLL | WS_TABSTOP
+    PUSHBUTTON      "Справка",IDHELP,172,194,50,14
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO 
+BEGIN
+    IDD_VIDEO_DRIVERS_LIST, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 223
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 207
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE 
+BEGIN
+    IDS_TEMPLATE            "\nVideo\nВидео\nВидео\n\nVideo.Document\nImage Video"
+    IDS_ACTION_AVI_FIRST    "VideoFirst\nПервый кадр\nVideo\nПерейти к первому кадру\nПервый кадр"
+    IDS_ACTION_AVI_PREV     "VideoPrev\nПредыдущий кадр\nVideo\nПерейти к предыдущему кадру\nПредыдущий кадр"
+    IDS_ACTION_AVI_NEXT     "VideoNext\nСледующий кадр\nVideo\nПерейти к следующему кадру\nСледующий кадр"
+    IDS_ACTION_AVI_LAST     "VideoLast\nПоследний кадр\nVideo\nПерейти к последнему кадру\nПоследний кадр"
+    IDS_ACTION_AVI_CAPTURE  "VideoCapture\nЗахват кадра\nVideo\nВзять кадр\nЗахват кадра"
+    IDS_MENU_AVI            "Video\\Video"
+    IDS_TB_VIDEO            "Управление видео"
+    IDS_FILTERNAME          "Видео для Windows"
+    IDS_NO_VIDEO_DOCUMENT_OPENED "Нет открытого видеодокумента"
+    IDS_CREATE_NEW          "Создать новое видеоизображение?"
+    IDS_CAPTION_CREATE_NEW  "Видеоизображение"
+    IDS_FILTERNAME_MOV      "Файлы Quick Time"
+    IDS_FILTERNAME_MPG      "Файлы MPEG"
+    IDS_NO_DRIVER_SUPPORTS_AVI 
+                            "Не инсталлирован драйвер для ввода видеоизображения."
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_AMCTRL_ERROR_MESSAGE 
+                            "Ошибка элемента управления Direct Show. SCode = %x, Description %s, Source %s."
+    IDS_VIDEO_VIEW          "Видео"
+    IDS_VIDEO_TYPE          "Видео"
+END
+
+#endif    // Russian resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.S.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_VIDEO_DRIVERS_LIST DIALOGEX 0, 0, 230, 210
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Select Driver to Input Video File"
+FONT 8, "MS Sans Serif", 0, 0, 0x0
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,67,191,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,121,191,50,14
+    LISTBOX         IDC_LIST_DRIVERS,1,1,226,183,LBS_NOINTEGRALHEIGHT | 
+                    WS_VSCROLL | WS_TABSTOP
+    PUSHBUTTON      "Help",IDHELP,175,191,50,14
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO 
+BEGIN
+    IDD_VIDEO_DRIVERS_LIST, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 223
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 203
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Toolbar
+//
+
+IDR_TOOLBAR1 TOOLBAR  16, 15
+BEGIN
+    BUTTON      IDS_ACTION_AVI_FIRST
+    BUTTON      IDS_ACTION_AVI_PREV
+    BUTTON      IDS_ACTION_AVI_NEXT
+    BUTTON      IDS_ACTION_AVI_LAST
+    BUTTON      IDS_ACTION_AVI_CAPTURE
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDR_TOOLBAR1            BITMAP                  "res\\vtavityp.bmp"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDI_VIDEO               ICON                    "res\\icon1.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE 
+BEGIN
+    IDS_TEMPLATE            "\nVideo\nVideo\nVideo Document\n\nVideo.Document\nImage Video"
+    IDS_ACTION_AVI_FIRST    "VideoFirst\nFirst Frame\nVideo\nFirst frame\nFirst Frame"
+    IDS_ACTION_AVI_PREV     "VideoPrev\nPrevious Frame\nVideo\nPrevious frame\nPrevious Frame"
+    IDS_ACTION_AVI_NEXT     "VideoNext\nNext Frame\nVideo\nNext frame\nNext Frame"
+    IDS_ACTION_AVI_LAST     "VideoLast\nLast Frame\nVideo\nLast frame\nLast Frame"
+    IDS_ACTION_AVI_CAPTURE  "VideoCapture\nCapture Frame\nVideo\nCapture the frame\nCapture Frame"
+    IDS_MENU_AVI            "Video\\Video"
+    IDS_TB_VIDEO            "Video Operation"
+    IDS_FILTERNAME          "Video for Windows files"
+    IDS_NO_VIDEO_DOCUMENT_OPENED "No video document opened"
+    IDS_CREATE_NEW          "Create new video file?"
+    IDS_CAPTION_CREATE_NEW  "Video file"
+    IDS_FILTERNAME_MOV      "Quick Time files"
+    IDS_FILTERNAME_MPG      "MPEG files"
+    IDS_NO_DRIVER_SUPPORTS_AVI 
+                            "No drivers supporting video input are installed."
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_AMCTRL_ERROR_MESSAGE 
+                            "Direct Show control error. SCode = %x, Description %s, Source %s."
+    IDS_VIDEO_VIEW          "Video"
+    IDS_VIDEO_TYPE          "Video"
+END
+
+#endif    // English (U.S.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE 9, 1
+#pragma code_page(1252)
+#endif //_WIN32
+#include "res\AVIDocMan.rc2"  // non-Microsoft Visual C++ edited resources
+#include "afxres.rc"         // Standard components
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

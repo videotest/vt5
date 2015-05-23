@@ -1,0 +1,868 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// Chinese (P.R.C.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)
+#ifdef _WIN32
+LANGUAGE LANG_CHINESE, SUBLANG_CHINESE_SIMPLIFIED
+#pragma code_page(936)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_SHOWIDS DIALOG  0, 0, 186, 95
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "ПФКѕїШјю ID"
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "№Ш±Х",IDOK,77,78,50,14
+    GROUPBOX        "",IDC_CONTROLS_PLACE,4,1,178,73
+    PUSHBUTTON      "°пЦъ",IDHELP,131,78,50,14
+END
+
+IDD_PROPPAGE_INSERT DIALOGEX 0, 0, 246, 58
+STYLE DS_SETFONT | DS_CONTROL | WS_CHILD | WS_VISIBLE
+FONT 8, "MS Sans Serif", 0, 0, 0x0
+BEGIN
+    LTEXT           "",IDC_ST_NAME,1,33,164,9,SS_SUNKEN
+    PUSHBUTTON      "МнјУ(&A)...",IDC_BUTTON_ADD,169,32,33,12
+    PUSHBUTTON      "Йѕіэ(&D)",IDC_BUTTON_REMOVE,204,32,33,12
+END
+
+IDD_PAGE_WINDOW DIALOG  0, 0, 250, 110
+STYLE DS_SETFONT | WS_CHILD
+FONT 8, "MS Sans Serif"
+BEGIN
+    GROUPBOX        "",IDC_STATIC,4,3,242,30
+    LTEXT           "їШјюГыіЖ(&C)",IDC_STATIC,10,15,46,9
+    EDITTEXT        IDC_NAME,56,12,91,14,ES_AUTOHSCROLL
+    GROUPBOX        "СщКЅ",IDC_STATIC,4,40,98,57
+    CONTROL         "їЙјы(&V)",IDC_VISIBLE,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,7,57,36,10
+    CONTROL         "Чй(&G)",IDC_GROUP,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,
+                    54,57,35,10
+    CONTROL         "ЅыУГ(&D)",IDC_DISABLED,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,7,77,43,10
+    CONTROL         "ЦЖ±нО»(&T)",IDC_TABSTOP,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,54,77,41,10
+    GROUPBOX        "О»ЦГ",IDC_STATIC,107,40,63,57
+    LTEXT           "ЙП(&O)",IDC_STATIC,114,58,14,8
+    EDITTEXT        IDC_TOP,130,54,34,14,ES_AUTOHSCROLL
+    CONTROL         "Spin1",IDC_LEFT_SPIN,"msctls_updown32",UDS_WRAP | 
+                    UDS_SETBUDDYINT | UDS_ALIGNRIGHT | UDS_AUTOBUDDY | 
+                    UDS_ARROWKEYS,159,54,11,14
+    LTEXT           "Чу(&L)",IDC_STATIC,114,78,13,8
+    EDITTEXT        IDC_LEFT,130,77,34,14,ES_AUTOHSCROLL
+    CONTROL         "Spin1",IDC_TOP_SPIN,"msctls_updown32",UDS_WRAP | 
+                    UDS_SETBUDDYINT | UDS_ALIGNRIGHT | UDS_AUTOBUDDY | 
+                    UDS_ARROWKEYS,159,77,11,14
+    GROUPBOX        "ґуРЎ",IDC_STATIC,176,40,70,57
+    LTEXT           "їн¶И(&W)",IDC_STATIC,181,56,20,8
+    EDITTEXT        IDC_WIDTH,205,53,35,14,ES_AUTOHSCROLL
+    CONTROL         "Spin1",IDC_WIDTH_SPIN,"msctls_updown32",UDS_WRAP | 
+                    UDS_SETBUDDYINT | UDS_ALIGNRIGHT | UDS_AUTOBUDDY | 
+                    UDS_ARROWKEYS,234,53,11,14
+    LTEXT           "ёЯ¶И(&H)",IDC_STATIC,181,78,22,8
+    EDITTEXT        IDC_HEIGHT,205,77,35,14,ES_AUTOHSCROLL
+    CONTROL         "Spin1",IDC_HEIGHT_SPIN,"msctls_updown32",UDS_WRAP | 
+                    UDS_SETBUDDYINT | UDS_ALIGNRIGHT | UDS_AUTOBUDDY | 
+                    UDS_ARROWKEYS,234,77,11,14
+    LTEXT           "їШјю(&O) єЕ",IDC_STATIC,158,16,29,8
+    EDITTEXT        IDC_ID,191,12,48,14,ES_AUTOHSCROLL
+END
+
+IDD_PAGE_REPORT DIALOG  0, 0, 250, 110
+STYLE DS_SETFONT | WS_CHILD
+FONT 8, "MS Sans Serif"
+BEGIN
+    GROUPBOX        "О»ЦГ",IDC_STATIC,31,22,76,59
+    LTEXT           "ЙП(&O)",IDC_STATIC,41,40,14,8
+    EDITTEXT        IDC_TOP,61,36,34,14,ES_AUTOHSCROLL
+    CONTROL         "Spin1",IDC_TOP_SPIN,"msctls_updown32",UDS_WRAP | 
+                    UDS_SETBUDDYINT | UDS_ALIGNRIGHT | UDS_AUTOBUDDY | 
+                    UDS_ARROWKEYS,89,36,11,14
+    LTEXT           "Чу(&L)",IDC_STATIC,41,61,13,8
+    EDITTEXT        IDC_LEFT,61,59,34,14,ES_AUTOHSCROLL
+    CONTROL         "Spin1",IDC_LEFT_SPIN,"msctls_updown32",UDS_WRAP | 
+                    UDS_SETBUDDYINT | UDS_ALIGNRIGHT | UDS_AUTOBUDDY | 
+                    UDS_ARROWKEYS,89,58,11,14
+    GROUPBOX        "ґуРЎ",IDC_STATIC,134,22,80,59
+    LTEXT           "їн¶И(&W)",IDC_STATIC,143,40,20,8
+    EDITTEXT        IDC_WIDTH,167,36,35,14,ES_AUTOHSCROLL
+    CONTROL         "Spin1",IDC_WIDTH_SPIN,"msctls_updown32",UDS_WRAP | 
+                    UDS_SETBUDDYINT | UDS_ALIGNRIGHT | UDS_AUTOBUDDY | 
+                    UDS_ARROWKEYS,197,36,11,14
+    LTEXT           "ёЯ¶И(&H)",IDC_STATIC,143,61,22,8
+    EDITTEXT        IDC_HEIGHT,167,59,35,14,ES_AUTOHSCROLL
+    CONTROL         "Spin1",IDC_HEIGHT_SPIN,"msctls_updown32",UDS_WRAP | 
+                    UDS_SETBUDDYINT | UDS_ALIGNRIGHT | UDS_AUTOBUDDY | 
+                    UDS_ARROWKEYS,197,60,11,14
+    CONTROL         "Л®ЖЅ",IDC_HORZ_SCALE,"Button",BS_AUTOCHECKBOX | NOT 
+                    WS_VISIBLE | WS_TABSTOP,194,94,47,10
+    CONTROL         "ґ№Ц±",IDC_VERT_SCALE,"Button",BS_AUTOCHECKBOX | NOT 
+                    WS_VISIBLE | WS_TABSTOP,194,80,39,10
+    LTEXT           "DPI:",IDC_STATIC,18,96,15,8,NOT WS_VISIBLE
+    LTEXT           "Лх·Е±И:",IDC_STATIC,101,97,21,8,NOT WS_VISIBLE
+    EDITTEXT        IDC_DPI,39,90,40,14,ES_AUTOHSCROLL | NOT WS_VISIBLE
+    EDITTEXT        IDC_ZOOM,122,91,40,14,ES_AUTOHSCROLL | NOT WS_VISIBLE
+    CONTROL         "Spin1",IDC_DPI_SPIN,"msctls_updown32",UDS_WRAP | 
+                    UDS_SETBUDDYINT | UDS_ALIGNRIGHT | UDS_ARROWKEYS | NOT 
+                    WS_VISIBLE,80,92,11,14
+    CONTROL         "Spin1",IDC_ZOOM_SPIN,"msctls_updown32",UDS_WRAP | 
+                    UDS_SETBUDDYINT | UDS_ALIGNRIGHT | UDS_ARROWKEYS | NOT 
+                    WS_VISIBLE,161,89,11,14
+    CONTROL         "їЛВЎ¶ФПу",IDC_CLONE_OBJ,"Button",BS_AUTOCHECKBOX | NOT 
+                    WS_VISIBLE | WS_TABSTOP,194,62,55,10
+END
+
+IDD_INSERTCONTROL DIALOG  0, 0, 260, 119
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "ІеИлїШјю"
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "И·¶Ё",IDOK,203,7,50,14
+    PUSHBUTTON      "ИЎПы",IDCANCEL,203,24,50,14
+    PUSHBUTTON      "°пЦъ",IDHELP,203,41,50,14
+    LISTBOX         IDC_CONTROLS,7,7,187,105,LBS_SORT | LBS_MULTIPLESEL | 
+                    LBS_NOINTEGRALHEIGHT | WS_VSCROLL | WS_HSCROLL | 
+                    WS_TABSTOP
+END
+
+IDD_DIALOG_HANDLERS DIALOG  0, 0, 187, 98
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "КВјюѕд±ъ"
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "И·¶Ё",IDOK,131,7,50,14
+    PUSHBUTTON      "ИЎПы",IDCANCEL,131,24,50,14
+    PUSHBUTTON      "°пЦъ",IDCANCEL2,131,41,50,14
+    CONTROL         "List1",IDC_LIST_EVENTS,"SysListView32",LVS_REPORT | 
+                    LVS_SHOWSELALWAYS | LVS_NOCOLUMNHEADER | WS_BORDER | 
+                    WS_TABSTOP,6,7,118,84
+    PUSHBUTTON      "±ај­ґъВл",ID_BUTTON_EDIT_CODE,130,58,50,14
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO 
+BEGIN
+    IDD_SHOWIDS, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 179
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 88
+    END
+
+    IDD_PROPPAGE_INSERT, DIALOG
+    BEGIN
+        BOTTOMMARGIN, 50
+    END
+
+    IDD_INSERTCONTROL, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 253
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 112
+    END
+
+    IDD_DIALOG_HANDLERS, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 180
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 91
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE 
+BEGIN
+    IDS_ACTION_SHOW_AXLAYOUT 
+                            "ShowLayout\nПФКѕ ActiveX ІјѕЦ\nЙијЖ\nПФКѕ ActiveX їШјюµДІјѕЦ\nПФКѕІјѕЦ"
+    IDS_ACTION_INSERT_CONTROL 
+                            "AxInsertControl\nІеИл ActiveX їШјю...\nЙијЖ\nІеИлРВµД ActiveX їШјю\nІеИлїШјю"
+    IDS_ACTION_RESIZESIZE   "AxChangeSize\nµчХыґ°МеґуРЎ\nЙијЖ\nёД±дґ°МеґуРЎ\nµчХыґ°МеґуРЎ"
+    IDS_ACTION_MAKE_SAME_HEIGHT 
+                            "AxMakeSameHeight\nК№ЖдН¬ёЯ\nЙијЖ\nµчХыСЎЦРїШјюµДґуРЎЈ¬К№ЖдёЯ¶ИПаН¬\nК№ЖдН¬ёЯ"
+    IDS_ACTION_MAKE_SAME_WIDTH 
+                            "AxMakeSameWidth\nК№ЖдН¬їн\nЙијЖ\nµчХыСЎЦРїШјюµДґуРЎЈ¬К№Ждїн¶ИПаН¬\nК№ЖдН¬їн"
+    IDS_ACTION_SPACE_ACCROSS 
+                            "AxSpaceAccross\nЛ®ЖЅµИјдѕа\nЙијЖ\nК№СЎЦРїШјюЦ®јдµДЛ®ЖЅјдѕаПаµИ\nЛ®ЖЅµИјдѕа"
+    IDS_ACTION_SPACE_DOWN   "AxSpaceDown\nґ№Ц±µИјдѕа\nЙијЖ\nК№СЎЦРїШјюЦ®јдµДґ№Ц±јдѕаПаµИ\nґ№Ц±µИјдѕа"
+    IDS_ACTION_ALIGN_LEFT   "AxAlignLeft\nЧу¶ФЖл\nЙијЖ\nЅ«СЎЦРїШјю°ґЧу±ЯФµ¶ФЖл\nЧу¶ФЖл"
+    IDS_ACTION_ALIGN_TOP    "AxAlignTop\n¶Ґ¶Л¶ФЖл\nЙијЖ\nЅ«СЎЦРїШјю°ґ¶Ґ±Я¶ФЖл\n¶Ґ¶Л¶ФЖл"
+    IDS_ACTION_ALIGN_RIGHT  "AxAlignRight\nУТ¶ФЖл\nЙијЖ\nЅ«СЎЦРїШјю°ґУТ±ЯФµ¶ФЖл\nУТ¶ФЖл"
+    IDS_ACTION_ALIGN_BOTTOM "AxAlignBottom\nµЧ¶Л¶ФЖл\nЙијЖ\nЅ«СЎЦРїШјю°ґµЧ±Я¶ФЖл\nµЧ¶Л¶ФЖл"
+    IDS_ACTION_PROPERTIES   "AxControlProperties\nКфРФ\nЙијЖ\nёьёДїШјюКфРФ\nActiveX КфРФ"
+    IDS_ACTION_MAKE_SAME_SIZE 
+                            "AxMakeSameSize\n±ЈіЦПаН¬ґуРЎ\nЙијЖ\nµчХыСЎЦРїШјюµДґуРЎЈ¬К№ЖдґуРЎПаН¬\n±ЈіЦПаН¬ґуРЎ"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_SERVERNOTFOUND      "ХТІ»µЅ·юОсЖч"
+    IDS_PAGE_TITLE          "ґ°їЪ"
+    IDS_EVENTKILL_WARNIG_TITLE "ЧўТв"
+    IDS_EVENTKILL_WARNIG    "ДъЅ«ЙѕіэКВјюѕд±ъЈ¬И·¶ЁТЄЙѕіэВрЈї"
+    IDS_EVENTDLG_TITLE      "КВјюѕд±ъ"
+    IDS_PROPERTY_UNNAMED    "ОЮ·ЁРЮёДОґГьГыїШјюµДКфРФ"
+    IDS_REPORT_PAGE_TITLE   "О»ЦГ"
+    IDS_AXVIEW_NAME         "ActiveXView"
+    IDS_NAME_EXIST_WARNING  "ґЛГыіЖТСґжФЪЎЈТЄКдИлТ»ёцОЁТ»ГыіЖВрЈї"
+    IDS_SELECT_FORM         "ЗлСЎФс ActiveX ґ°Ме"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_ACTION_SETSIZE      "AxSetControlSize\nЙиЦГїШјюґуРЎ\nІјѕЦ\nЙиЦГїШјюґуРЎ\nЙиЦГїШјюґуРЎ"
+    IDS_PROPPAGE_INSERT     "ІеИлЙијЖФЄЛШ"
+    IDS_ACTION_ADD_EVENT_HANDLERS 
+                            "AxAddEventHandlers\nМнјУКВјюѕд±ъ\nЙијЖ\nМнјУКВјюѕд±ъ\nМнјУКВјюѕд±ъ"
+    IDS_ACTION_MOVESIZE     "AxIncMoveSize\nµчХыїШјюґуРЎ\nІјѕЦ\nµчХыїШјюґуРЎ\nµчХыїШјюґуРЎ"
+    IDS_ACTION_SHOWID       "AxShowControlID\nПФКѕїШјю ID\nЙијЖ\nПФКѕїШјюµД°пЦъ ID\nПФКѕїШјю ID"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_MENU_VIEW           "anydoc\\View\nEditorMenu"
+END
+
+#endif    // Chinese (P.R.C.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+/////////////////////////////////////////////////////////////////////////////
+// Russian resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_RUS)
+#ifdef _WIN32
+LANGUAGE LANG_RUSSIAN, SUBLANG_DEFAULT
+#pragma code_page(1251)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)\r\n"
+    "#ifdef _WIN32\r\n"
+    "LANGUAGE 9, 1\r\n"
+    "#pragma code_page(1252)\r\n"
+    "#endif //_WIN32\r\n"
+    "#include ""res\\axeditor.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "#include ""afxres.rc""         // Standard components\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_DIALOG_HANDLERS DIALOG  0, 0, 187, 98
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Обработчик событий"
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,130,7,50,14
+    PUSHBUTTON      "Отмена",IDCANCEL,130,24,50,14
+    PUSHBUTTON      "Справка",IDHELP,129,41,50,14
+    CONTROL         "List1",IDC_LIST_EVENTS,"SysListView32",LVS_REPORT | 
+                    LVS_SHOWSELALWAYS | LVS_NOCOLUMNHEADER | WS_BORDER | 
+                    WS_TABSTOP,7,7,119,84
+    PUSHBUTTON      "Код",ID_BUTTON_EDIT_CODE,129,58,50,14
+END
+
+IDD_INSERTCONTROL DIALOG  0, 0, 260, 119
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Добавление элемента управления"
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,203,7,50,14
+    PUSHBUTTON      "Отмена",IDCANCEL,203,24,50,14
+    PUSHBUTTON      "Справка",IDHELP,203,41,50,14
+    LISTBOX         IDC_CONTROLS,7,7,187,105,LBS_SORT | LBS_MULTIPLESEL | 
+                    LBS_NOINTEGRALHEIGHT | WS_VSCROLL | WS_HSCROLL | 
+                    WS_TABSTOP
+END
+
+IDD_PAGE_REPORT DIALOG  0, 0, 250, 110
+STYLE DS_SETFONT | WS_CHILD
+FONT 8, "MS Sans Serif"
+BEGIN
+    GROUPBOX        "Отступы",IDC_STATIC,29,26,82,59
+    LTEXT           "&Сверху:",IDC_STATIC,34,42,26,8
+    EDITTEXT        IDC_TOP,65,39,34,14,ES_AUTOHSCROLL
+    CONTROL         "Spin1",IDC_TOP_SPIN,"msctls_updown32",UDS_WRAP | 
+                    UDS_SETBUDDYINT | UDS_ALIGNRIGHT | UDS_AUTOBUDDY | 
+                    UDS_ARROWKEYS,93,39,11,14
+    LTEXT           "&Слева:",IDC_STATIC,35,65,22,8
+    EDITTEXT        IDC_LEFT,65,63,34,14,ES_AUTOHSCROLL
+    CONTROL         "Spin1",IDC_LEFT_SPIN,"msctls_updown32",UDS_WRAP | 
+                    UDS_SETBUDDYINT | UDS_ALIGNRIGHT | UDS_AUTOBUDDY | 
+                    UDS_ARROWKEYS,93,62,11,14
+    GROUPBOX        "Размер",IDC_STATIC,139,26,80,59
+    LTEXT           "&Ширина:",IDC_STATIC,143,41,29,8
+    EDITTEXT        IDC_WIDTH,173,39,35,14,ES_AUTOHSCROLL
+    CONTROL         "Spin1",IDC_WIDTH_SPIN,"msctls_updown32",UDS_WRAP | 
+                    UDS_SETBUDDYINT | UDS_ALIGNRIGHT | UDS_AUTOBUDDY | 
+                    UDS_ARROWKEYS,203,39,11,14
+    LTEXT           "&Высота:",IDC_STATIC,143,65,28,8
+    EDITTEXT        IDC_HEIGHT,173,63,35,14,ES_AUTOHSCROLL
+    CONTROL         "Spin1",IDC_HEIGHT_SPIN,"msctls_updown32",UDS_WRAP | 
+                    UDS_SETBUDDYINT | UDS_ALIGNRIGHT | UDS_AUTOBUDDY | 
+                    UDS_ARROWKEYS,203,63,11,14
+    CONTROL         "Горизонтально",IDC_HORZ_SCALE,"Button",BS_AUTOCHECKBOX | 
+                    NOT WS_VISIBLE | WS_TABSTOP,182,96,67,10
+    CONTROL         "Вертикально",IDC_VERT_SCALE,"Button",BS_AUTOCHECKBOX | 
+                    NOT WS_VISIBLE | WS_TABSTOP,182,82,60,10
+    LTEXT           "DPI:",IDC_STATIC,12,94,15,8,NOT WS_VISIBLE
+    LTEXT           "Масштаб:",IDC_STATIC,91,94,34,8,NOT WS_VISIBLE
+    EDITTEXT        IDC_DPI,33,90,40,14,ES_AUTOHSCROLL | NOT WS_VISIBLE
+    EDITTEXT        IDC_ZOOM,129,91,40,14,ES_AUTOHSCROLL | NOT WS_VISIBLE
+    CONTROL         "Spin1",IDC_DPI_SPIN,"msctls_updown32",UDS_WRAP | 
+                    UDS_SETBUDDYINT | UDS_ALIGNRIGHT | UDS_ARROWKEYS | NOT 
+                    WS_VISIBLE,74,92,11,14
+    CONTROL         "Spin1",IDC_ZOOM_SPIN,"msctls_updown32",UDS_WRAP | 
+                    UDS_SETBUDDYINT | UDS_ALIGNRIGHT | UDS_ARROWKEYS | NOT 
+                    WS_VISIBLE,168,89,11,14
+    CONTROL         "Дублировать объект",IDC_CLONE_OBJ,"Button",
+                    BS_AUTOCHECKBOX | NOT WS_VISIBLE | WS_TABSTOP,182,66,68,
+                    10
+END
+
+IDD_PAGE_WINDOW DIALOG  0, 0, 250, 110
+STYLE DS_SETFONT | WS_CHILD
+FONT 8, "MS Sans Serif"
+BEGIN
+    GROUPBOX        "",IDC_STATIC,4,4,239,30
+    LTEXT           "&Control Name",IDC_STATIC,10,16,46,9
+    EDITTEXT        IDC_NAME,56,13,91,14,ES_AUTOHSCROLL
+    GROUPBOX        "Стиль",IDC_STATIC,4,44,96,57
+    CONTROL         "&Visible",IDC_VISIBLE,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,7,61,36,10
+    CONTROL         "&Group",IDC_GROUP,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,
+                    54,61,35,10
+    CONTROL         "&Disabled",IDC_DISABLED,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,7,81,43,10
+    CONTROL         "&Tab Stop",IDC_TABSTOP,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,54,81,41,10
+    GROUPBOX        "Положение",IDC_STATIC,103,44,68,57
+    LTEXT           "&Сверху",IDC_STATIC,108,62,24,8
+    EDITTEXT        IDC_TOP,135,58,31,14,ES_AUTOHSCROLL
+    CONTROL         "Spin1",IDC_LEFT_SPIN,"msctls_updown32",UDS_WRAP | 
+                    UDS_SETBUDDYINT | UDS_ALIGNRIGHT | UDS_AUTOBUDDY | 
+                    UDS_ARROWKEYS,158,58,11,14
+    LTEXT           "С&лева",IDC_STATIC,108,82,22,8
+    EDITTEXT        IDC_LEFT,135,81,31,14,ES_AUTOHSCROLL
+    CONTROL         "Spin1",IDC_TOP_SPIN,"msctls_updown32",UDS_WRAP | 
+                    UDS_SETBUDDYINT | UDS_ALIGNRIGHT | UDS_AUTOBUDDY | 
+                    UDS_ARROWKEYS,158,81,11,14
+    GROUPBOX        "Размер",IDC_STATIC,174,44,69,57
+    LTEXT           "&Ширина",IDC_STATIC,178,60,27,8
+    EDITTEXT        IDC_WIDTH,206,57,31,14,ES_AUTOHSCROLL
+    CONTROL         "Spin1",IDC_WIDTH_SPIN,"msctls_updown32",UDS_WRAP | 
+                    UDS_SETBUDDYINT | UDS_ALIGNRIGHT | UDS_AUTOBUDDY | 
+                    UDS_ARROWKEYS,229,57,11,14
+    LTEXT           "&Высота",IDC_STATIC,178,82,26,8
+    EDITTEXT        IDC_HEIGHT,206,81,31,14,ES_AUTOHSCROLL
+    CONTROL         "Spin1",IDC_HEIGHT_SPIN,"msctls_updown32",UDS_WRAP | 
+                    UDS_SETBUDDYINT | UDS_ALIGNRIGHT | UDS_AUTOBUDDY | 
+                    UDS_ARROWKEYS,229,81,11,14
+    LTEXT           "C&ontrol #",IDC_STATIC,157,17,29,8
+    EDITTEXT        IDC_ID,190,13,48,14,ES_AUTOHSCROLL
+END
+
+IDD_PROPPAGE_INSERT DIALOG  0, 0, 227, 46
+STYLE DS_SETFONT | DS_CONTROL | WS_CHILD | WS_VISIBLE
+FONT 8, "MS Sans Serif"
+BEGIN
+    LTEXT           "",IDC_ST_NAME,1,33,141,9,SS_SUNKEN
+    PUSHBUTTON      "&Добавить",IDC_BUTTON_ADD,149,32,39,11
+    PUSHBUTTON      "&Удалить",IDC_BUTTON_REMOVE,189,32,33,11
+END
+
+IDD_SHOWIDS DIALOG  0, 0, 186, 95
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Показать идентификаторы справки"
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "Закрыть",IDOK,78,78,50,14
+    GROUPBOX        "",IDC_CONTROLS_PLACE,4,1,178,73
+    PUSHBUTTON      "Справка",IDHELP,131,78,50,14
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO 
+BEGIN
+    IDD_DIALOG_HANDLERS, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 180
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 91
+    END
+
+    IDD_INSERTCONTROL, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 253
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 112
+    END
+
+    IDD_PAGE_WINDOW, DIALOG
+    BEGIN
+        RIGHTMARGIN, 249
+    END
+
+    IDD_SHOWIDS, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 179
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 88
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE 
+BEGIN
+    IDS_ACTION_SHOW_AXLAYOUT 
+                            "ShowLayout\nПоказать расположение элементов оформления\nРасположение\nПоказать расположение элементов оформления\nПоказать расположение элементов оформления"
+    IDS_ACTION_INSERT_CONTROL 
+                            "AxInsertControl\nВставить элемент оформления\nРасположение\nВставить новый  элемент оформления\nВставить элемент оформления"
+    IDS_ACTION_RESIZESIZE   "AxChangeSize\nИзменить размер элемента оформления\nРасположение\nИзменить размер элемента оформления\nИзменить размер элемента оформления"
+    IDS_ACTION_MAKE_SAME_HEIGHT 
+                            "AxMakeSameHeight\nВыравнивание по высоте\nРасположение\nВыравнивание по высоте\nВыравнивание по высоте"
+    IDS_ACTION_MAKE_SAME_WIDTH 
+                            "AxMakeSameWidth\nВыравнивание по ширине\nРасположение\nВыравнивание по ширине\nВыравнивание по ширине"
+    IDS_ACTION_SPACE_ACCROSS 
+                            "AxSpaceAccross\nГоризонтальный интервал\nРасположение\nВыравнивание горизонтального интервала\nГоризонтальный интервал"
+    IDS_ACTION_SPACE_DOWN   "AxSpaceDown\nВертикальный интервал\nРасположение\nВыравнивание вертикального интервала\nВертикальный интервал"
+    IDS_ACTION_ALIGN_LEFT   "AxAlignLeft\nВыравнивание по левому краю\nРасположение\nВыравнивание по левому краю\nВыравнивание по левому краю"
+    IDS_ACTION_ALIGN_TOP    "AxAlignTop\nВыравнивание по верхнему краю\nРасположение\nВыравнивание по верхнему краю\nВыравнивание по верхнему краю"
+    IDS_ACTION_ALIGN_RIGHT  "AxAlignRight\nВыравнивание по правому краю\nРасположение\nВыравнивание по правому краю\nВыравнивание по правому краю"
+    IDS_ACTION_ALIGN_BOTTOM "AxAlignBottom\nВыравнивание по нижнему краю\nРасположение\nВыравнивание по нижнему краю\nВыравнивание по нижнему краю"
+    IDS_ACTION_PROPERTIES   "AxControlProperties\nСвойства\nРасположение\nИзменить свойства элемента оформления\nСвойства элемента оформления"
+    IDS_ACTION_MAKE_SAME_SIZE 
+                            "AxMakeSameSize\nВыравнивание по размеру\nРасположение\nВыравнивание по размеру\nВыравнивание по размеру"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_SERVERNOTFOUND      "Сервер не найден"
+    IDS_PAGE_TITLE          "Окно"
+    IDS_EVENTKILL_WARNIG_TITLE "Внимание"
+    IDS_EVENTKILL_WARNIG    "Для удаления были выбраны несколько обработчиков событий. Вы действительно хотите удалить их?"
+    IDS_EVENTDLG_TITLE      "Обработчик событий"
+    IDS_PROPERTY_UNNAMED    "Свойства элемента управления без имени не могут быть изменены"
+    IDS_REPORT_PAGE_TITLE   "Положение"
+    IDS_AXVIEW_NAME         "ActiveXView"
+    IDS_NAME_EXIST_WARNING  "Элемент управления с данными именем существует. Создать единый елемент?"
+    IDS_SELECT_FORM         "Выберите форму ActiveX "
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_ACTION_SETSIZE      "AxSetControlSize\nУстановить размер элемента оформления\nРасположение\nУстановить размер элемента оформления\nУстановить размер элемента оформления"
+    IDS_PROPPAGE_INSERT     "Вставка элемента оформления"
+    IDS_ACTION_ADD_EVENT_HANDLERS 
+                            "AxAddEventHandlers\nДобавить обработчика событий\nРасположение\nДобавить обработчика событий\nДобавить обработчика событий"
+    IDS_ACTION_MOVESIZE     "AxIncMoveSize\nИзменить размер элементов оформления\nРасположение\nИзменить размер элементов оформления\nИзменить размер элементов оформления"
+    IDS_ACTION_SHOWID       "AxShowControlID\nПоказать идентификаторы справки\nРасположение\nПоказать идентификаторы справки\nПоказать идентификаторы справки"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_MENU_VIEW           "anydoc\\View\nEditorMenu"
+END
+
+#endif    // Russian resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.S.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_PROPPAGE_INSERT DIALOG  0, 0, 227, 46
+STYLE DS_SETFONT | DS_CONTROL | WS_CHILD | WS_VISIBLE
+FONT 8, "MS Sans Serif"
+BEGIN
+    LTEXT           "",IDC_ST_NAME,1,33,164,9,SS_SUNKEN
+    PUSHBUTTON      "&Add...",IDC_BUTTON_ADD,170,32,25,11
+    PUSHBUTTON      "&Del",IDC_BUTTON_REMOVE,196,32,25,11
+END
+
+IDD_PAGE_WINDOW DIALOG  0, 0, 250, 110
+STYLE DS_SETFONT | WS_CHILD
+FONT 8, "MS Sans Serif"
+BEGIN
+    GROUPBOX        "",IDC_STATIC,4,3,242,30
+    LTEXT           "&Control Name",IDC_STATIC,10,15,46,9
+    EDITTEXT        IDC_NAME,56,12,91,14,ES_AUTOHSCROLL
+    GROUPBOX        "Styles",IDC_STATIC,4,40,98,57
+    CONTROL         "&Visible",IDC_VISIBLE,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,7,57,36,10
+    CONTROL         "&Group",IDC_GROUP,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,
+                    54,57,35,10
+    CONTROL         "&Disabled",IDC_DISABLED,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,7,77,43,10
+    CONTROL         "&Tab Stop",IDC_TABSTOP,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,54,77,41,10
+    GROUPBOX        "Position",IDC_STATIC,107,40,63,57
+    LTEXT           "T&op",IDC_STATIC,114,58,14,8
+    EDITTEXT        IDC_TOP,130,54,34,14,ES_AUTOHSCROLL
+    CONTROL         "Spin1",IDC_LEFT_SPIN,"msctls_updown32",UDS_WRAP | 
+                    UDS_SETBUDDYINT | UDS_ALIGNRIGHT | UDS_AUTOBUDDY | 
+                    UDS_ARROWKEYS,159,54,11,14
+    LTEXT           "&Left",IDC_STATIC,114,78,13,8
+    EDITTEXT        IDC_LEFT,130,77,34,14,ES_AUTOHSCROLL
+    CONTROL         "Spin1",IDC_TOP_SPIN,"msctls_updown32",UDS_WRAP | 
+                    UDS_SETBUDDYINT | UDS_ALIGNRIGHT | UDS_AUTOBUDDY | 
+                    UDS_ARROWKEYS,159,77,11,14
+    GROUPBOX        "Size",IDC_STATIC,176,40,70,57
+    LTEXT           "&Width",IDC_STATIC,181,56,20,8
+    EDITTEXT        IDC_WIDTH,205,53,35,14,ES_AUTOHSCROLL
+    CONTROL         "Spin1",IDC_WIDTH_SPIN,"msctls_updown32",UDS_WRAP | 
+                    UDS_SETBUDDYINT | UDS_ALIGNRIGHT | UDS_AUTOBUDDY | 
+                    UDS_ARROWKEYS,234,53,11,14
+    LTEXT           "&Height",IDC_STATIC,181,78,22,8
+    EDITTEXT        IDC_HEIGHT,205,77,35,14,ES_AUTOHSCROLL
+    CONTROL         "Spin1",IDC_HEIGHT_SPIN,"msctls_updown32",UDS_WRAP | 
+                    UDS_SETBUDDYINT | UDS_ALIGNRIGHT | UDS_AUTOBUDDY | 
+                    UDS_ARROWKEYS,234,77,11,14
+    LTEXT           "C&ontrol #",IDC_STATIC,158,16,29,8
+    EDITTEXT        IDC_ID,191,12,48,14,ES_AUTOHSCROLL
+END
+
+IDD_DIALOG_HANDLERS DIALOG  0, 0, 187, 98
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Event Handlers"
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,131,7,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,131,24,50,14
+    PUSHBUTTON      "Help",IDCANCEL2,131,41,50,14
+    CONTROL         "List1",IDC_LIST_EVENTS,"SysListView32",LVS_REPORT | 
+                    LVS_SHOWSELALWAYS | LVS_NOCOLUMNHEADER | WS_BORDER | 
+                    WS_TABSTOP,6,7,118,84
+    PUSHBUTTON      "EditCode",ID_BUTTON_EDIT_CODE,130,58,50,14
+END
+
+IDD_SHOWIDS DIALOG  0, 0, 186, 95
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Show Control ID's"
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "Close",IDOK,77,78,50,14
+    GROUPBOX        "",IDC_CONTROLS_PLACE,4,1,178,73
+    PUSHBUTTON      "Help",IDHELP,131,78,50,14
+END
+
+IDD_INSERTCONTROL DIALOG  0, 0, 260, 119
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Insert Control"
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,203,7,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,203,24,50,14
+    PUSHBUTTON      "Help",IDHELP,203,41,50,14
+    LISTBOX         IDC_CONTROLS,7,7,187,105,LBS_SORT | LBS_MULTIPLESEL | 
+                    LBS_NOINTEGRALHEIGHT | WS_VSCROLL | WS_HSCROLL | 
+                    WS_TABSTOP
+END
+
+IDD_PAGE_REPORT DIALOG  0, 0, 250, 110
+STYLE DS_SETFONT | WS_CHILD
+FONT 8, "MS Sans Serif"
+BEGIN
+    GROUPBOX        "Position",IDC_STATIC,31,22,76,59
+    LTEXT           "T&op",IDC_STATIC,41,40,14,8
+    EDITTEXT        IDC_TOP,61,36,34,14,ES_AUTOHSCROLL
+    CONTROL         "Spin1",IDC_TOP_SPIN,"msctls_updown32",UDS_WRAP | 
+                    UDS_SETBUDDYINT | UDS_ALIGNRIGHT | UDS_AUTOBUDDY | 
+                    UDS_ARROWKEYS,89,36,11,14
+    LTEXT           "&Left",IDC_STATIC,41,61,13,8
+    EDITTEXT        IDC_LEFT,61,59,34,14,ES_AUTOHSCROLL
+    CONTROL         "Spin1",IDC_LEFT_SPIN,"msctls_updown32",UDS_WRAP | 
+                    UDS_SETBUDDYINT | UDS_ALIGNRIGHT | UDS_AUTOBUDDY | 
+                    UDS_ARROWKEYS,89,58,11,14
+    GROUPBOX        "Size",IDC_STATIC,134,22,80,59
+    LTEXT           "&Width",IDC_STATIC,143,40,20,8
+    EDITTEXT        IDC_WIDTH,167,36,35,14,ES_AUTOHSCROLL
+    CONTROL         "Spin1",IDC_WIDTH_SPIN,"msctls_updown32",UDS_WRAP | 
+                    UDS_SETBUDDYINT | UDS_ALIGNRIGHT | UDS_AUTOBUDDY | 
+                    UDS_ARROWKEYS,197,36,11,14
+    LTEXT           "&Height",IDC_STATIC,143,61,22,8
+    EDITTEXT        IDC_HEIGHT,167,59,35,14,ES_AUTOHSCROLL
+    CONTROL         "Spin1",IDC_HEIGHT_SPIN,"msctls_updown32",UDS_WRAP | 
+                    UDS_SETBUDDYINT | UDS_ALIGNRIGHT | UDS_AUTOBUDDY | 
+                    UDS_ARROWKEYS,197,60,11,14
+    CONTROL         "Horizontal",IDC_HORZ_SCALE,"Button",BS_AUTOCHECKBOX | 
+                    NOT WS_VISIBLE | WS_TABSTOP,194,94,47,10
+    CONTROL         "Vertical",IDC_VERT_SCALE,"Button",BS_AUTOCHECKBOX | NOT 
+                    WS_VISIBLE | WS_TABSTOP,194,80,39,10
+    LTEXT           "DPI:",IDC_STATIC,18,96,15,8,NOT WS_VISIBLE
+    LTEXT           "Zoom:",IDC_STATIC,101,97,21,8,NOT WS_VISIBLE
+    EDITTEXT        IDC_DPI,39,90,40,14,ES_AUTOHSCROLL | NOT WS_VISIBLE
+    EDITTEXT        IDC_ZOOM,122,91,40,14,ES_AUTOHSCROLL | NOT WS_VISIBLE
+    CONTROL         "Spin1",IDC_DPI_SPIN,"msctls_updown32",UDS_WRAP | 
+                    UDS_SETBUDDYINT | UDS_ALIGNRIGHT | UDS_ARROWKEYS | NOT 
+                    WS_VISIBLE,80,92,11,14
+    CONTROL         "Spin1",IDC_ZOOM_SPIN,"msctls_updown32",UDS_WRAP | 
+                    UDS_SETBUDDYINT | UDS_ALIGNRIGHT | UDS_ARROWKEYS | NOT 
+                    WS_VISIBLE,161,89,11,14
+    CONTROL         "Clone object",IDC_CLONE_OBJ,"Button",BS_AUTOCHECKBOX | 
+                    NOT WS_VISIBLE | WS_TABSTOP,194,62,55,10
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO 
+BEGIN
+    IDD_DIALOG_HANDLERS, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 180
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 91
+    END
+
+    IDD_SHOWIDS, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 179
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 88
+    END
+
+    IDD_INSERTCONTROL, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 253
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 112
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Toolbar
+//
+
+IDR_EDITOR TOOLBAR  16, 15
+BEGIN
+    BUTTON      IDS_ACTION_SHOW_AXLAYOUT
+    BUTTON      IDS_ACTION_INSERT_CONTROL
+    BUTTON      IDS_ACTION_RESIZESIZE
+    BUTTON      IDS_ACTION_ALIGN_LEFT
+    BUTTON      IDS_ACTION_ALIGN_RIGHT
+    BUTTON      IDS_ACTION_ALIGN_TOP
+    BUTTON      IDS_ACTION_ALIGN_BOTTOM
+    BUTTON      IDS_ACTION_MAKE_SAME_WIDTH
+    BUTTON      IDS_ACTION_MAKE_SAME_HEIGHT
+    BUTTON      IDS_ACTION_MAKE_SAME_SIZE
+    BUTTON      IDS_ACTION_SPACE_ACCROSS
+    BUTTON      IDS_ACTION_SPACE_DOWN
+    BUTTON      IDS_ACTION_PROPERTIES
+    BUTTON      IDS_ACTION_ADD_EVENT_HANDLERS
+    BUTTON      IDS_ACTION_SHOWID
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDR_EDITOR              BITMAP                  "res\\axeditor.bmp"
+IDB_PATTERN_VIEW        BITMAP                  "res\\Pattern.bmp"
+IDB_BITMAP_NOTSPECIFIED BITMAP                  "res\\bitmap1.bmp"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Accelerator
+//
+
+IDR_ACCELERATOR1 ACCELERATORS 
+BEGIN
+    "W",            IDS_ACTION_ADD_EVENT_HANDLERS, VIRTKEY, CONTROL, 
+                                                    NOINVERT
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Cursor
+//
+
+IDC_CURSOR_ADD          CURSOR                  "arrow.cur"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE 
+BEGIN
+    IDS_ACTION_SHOW_AXLAYOUT 
+                            "ShowLayout\nShow ActiveX Layout\nDesign\nShow the layout of ActiveX controls\nShow Layout"
+    IDS_ACTION_INSERT_CONTROL 
+                            "AxInsertControl\nInsert ActiveX Control...\nDesign\nInsert a new ActiveX control\nInsert Control"
+    IDS_ACTION_RESIZESIZE   "AxChangeSize\nResize Form\nDesign\nChange the form size\nResize Form"
+    IDS_ACTION_MAKE_SAME_HEIGHT 
+                            "AxMakeSameHeight\nMake Same Height\nDesign\nResize the selected controls to make them  the same height\nMake Same Height"
+    IDS_ACTION_MAKE_SAME_WIDTH 
+                            "AxMakeSameWidth\nMake Same Width\nDesign\nResize the selected controls to make them  the same width\nMake Same Width"
+    IDS_ACTION_SPACE_ACCROSS 
+                            "AxSpaceAccross\nSpace Across\nDesign\nEvenly space the selected controls horizontally\nSpace Across"
+    IDS_ACTION_SPACE_DOWN   "AxSpaceDown\nSpace Down\nDesign\nEvenly space the selected controls vertically\nSpace Down"
+    IDS_ACTION_ALIGN_LEFT   "AxAlignLeft\nAlign Left\nDesign\nAlign the left edges of the selected controls\nAlign Left"
+    IDS_ACTION_ALIGN_TOP    "AxAlignTop\nAlign Top\nDesign\nAlign the top edges of the selected controls\nAlign Top"
+    IDS_ACTION_ALIGN_RIGHT  "AxAlignRight\nAlign Right\nDesign\nAlign the right edges of  the selected controls\nAlign Right"
+    IDS_ACTION_ALIGN_BOTTOM "AxAlignBottom\nAlign Bottom\nDesign\nAlign the bottom edges of the selected controls\nAlign Bottom"
+    IDS_ACTION_PROPERTIES   "AxControlProperties\nProperties\nDesign\nChange the control properties\nActiveX Properties"
+    IDS_ACTION_MAKE_SAME_SIZE 
+                            "AxMakeSameSize\nMake Same Size\nDesign\nResize the selected controls to make them  the same size\nMake Same Size"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_SERVERNOTFOUND      "Server not found"
+    IDS_PAGE_TITLE          "Window"
+    IDS_EVENTKILL_WARNIG_TITLE "Attention"
+    IDS_EVENTKILL_WARNIG    "You are going to delete event handlers. Are you sure you want to do it?"
+    IDS_EVENTDLG_TITLE      "Event handlers of "
+    IDS_PROPERTY_UNNAMED    "Can't modify properties of an unnamed control"
+    IDS_REPORT_PAGE_TITLE   "Position"
+    IDS_AXVIEW_NAME         "ActiveXView"
+    IDS_NAME_EXIST_WARNING  "This name already exists. Would you like to enter a unique one?"
+    IDS_SELECT_FORM         "Please select ActiveX Form"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_ACTION_SETSIZE      "AxSetControlSize\nSet Control Size\nLayout\nSet control size\nSet Control Size"
+    IDS_PROPPAGE_INSERT     "Insert Design Element"
+    IDS_ACTION_ADD_EVENT_HANDLERS 
+                            "AxAddEventHandlers\nAdd Event Handlers\nDesign\nAdd event handlers\nAdd Event Handlers"
+    IDS_ACTION_MOVESIZE     "AxIncMoveSize\nResize Controls\nLayout\nResize Controls\nResize Controls"
+    IDS_ACTION_SHOWID       "AxShowControlID\nShow Control ID\nDesign\nShow the help ID's for control\nShow Control IDs"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_MENU_VIEW           "anydoc\\View\nEditorMenu"
+END
+
+#endif    // English (U.S.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE 9, 1
+#pragma code_page(1252)
+#endif //_WIN32
+#include "res\axeditor.rc2"  // non-Microsoft Visual C++ edited resources
+#include "afxres.rc"         // Standard components
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+
