@@ -26,7 +26,7 @@ AS = ml
 LD = link
 AR = lib
 RC = rc
-CFLAGS  = -nologo -MD -W3 -O2 -Oy- -Zi -Fd"zlib" $(LOC)
+CFLAGS  = -nologo -MD -W3 -O2 -Oy- -Zi -Fd$(IMDIR)zlib $(LOC)
 WFLAGS  = -D_CRT_SECURE_NO_DEPRECATE -D_CRT_NONSTDC_NO_DEPRECATE
 ASFLAGS = -coff -Zi $(LOC)
 LDFLAGS = -nologo -debug -incremental:no -opt:ref
@@ -39,11 +39,22 @@ OBJA =
 
 OUTDIR =
 
+.PHONY: w32d
+
+w32d:
+	-md $(IMDIR) 
+	cd $(IMDIR)
+	echo nmake -D -f $(MAKEDIR)/win32/Makefile.msc LOC="$(LOC)" OBJA="$(OBJA)" OUTDIR=$(OUTDIR) IMDIR=$(IMDIR) zlib.lib
+
+	nmake -D -f $(MAKEDIR)\win32\Makefile.msc LOC="$(LOC)" OBJA="$(OBJA)" OUTDIR=$(OUTDIR) IMDIR=$(IMDIR) S=$(MAKEDIR) zlib.lib
+
+
 # targets
 all: $(STATICLIB) $(SHAREDLIB) $(IMPLIB) \
      example.exe minigzip.exe example_d.exe minigzip_d.exe
 
 $(STATICLIB): $(OBJS) $(OBJA)
+	cd $(IMDIR) 
 	$(AR) $(ARFLAGS) -out:$(OUTDIR)$@ $(OBJS) $(OBJA)
 
 $(IMPLIB): $(SHAREDLIB)
@@ -71,74 +82,73 @@ example_d.exe: example.obj $(IMPLIB)
 
 minigzip_d.exe: minigzip.obj $(IMPLIB)
 	$(LD) $(LDFLAGS) -out:$@ minigzip.obj $(IMPLIB)
-	if exist $@.manifest \
+	if exist $@.manifest \S
 	  mt -nologo -manifest $@.manifest -outputresource:$@;1
 
-{$(TOP)}.c.obj:
+{$(S)}.c.obj::
 	$(CC) -c $(WFLAGS) $(CFLAGS) $<
 
-{$(TOP)/test}.c.obj:
+{$(S)/test}.c.obj:
 	$(CC) -c -I$(TOP) $(WFLAGS) $(CFLAGS) $<
 
-{$(TOP)/contrib/masmx64}.c.obj:
+{$(S)/contrib/masmx64}.c.obj:
 	$(CC) -c $(WFLAGS) $(CFLAGS) $<
 
-{$(TOP)/contrib/masmx64}.asm.obj:
+{$(S)/contrib/masmx64}.asm.obj:
 	$(AS) -c $(ASFLAGS) $<
 
-{$(TOP)/contrib/masmx86}.asm.obj:
+{$(S)/contrib/masmx86}.asm.obj:
 	$(AS) -c $(ASFLAGS) $<
+adler32.obj: $(S)/adler32.c $(S)/zlib.h $(S)/zconf.h
 
-adler32.obj: $(TOP)/adler32.c $(TOP)/zlib.h $(TOP)/zconf.h
+compress.obj: $(S)/compress.c $(S)/zlib.h $(S)/zconf.h
 
-compress.obj: $(TOP)/compress.c $(TOP)/zlib.h $(TOP)/zconf.h
+crc32.obj: $(S)/crc32.c $(S)/zlib.h $(S)/zconf.h $(S)/crc32.h
 
-crc32.obj: $(TOP)/crc32.c $(TOP)/zlib.h $(TOP)/zconf.h $(TOP)/crc32.h
+deflate.obj: $(S)/deflate.c $(S)/deflate.h $(S)/zutil.h $(S)/zlib.h $(S)/zconf.h
 
-deflate.obj: $(TOP)/deflate.c $(TOP)/deflate.h $(TOP)/zutil.h $(TOP)/zlib.h $(TOP)/zconf.h
+gzclose.obj: $(S)/gzclose.c $(S)/zlib.h $(S)/zconf.h $(S)/gzguts.h
 
-gzclose.obj: $(TOP)/gzclose.c $(TOP)/zlib.h $(TOP)/zconf.h $(TOP)/gzguts.h
+gzlib.obj: $(S)/gzlib.c $(S)/zlib.h $(S)/zconf.h $(S)/gzguts.h
 
-gzlib.obj: $(TOP)/gzlib.c $(TOP)/zlib.h $(TOP)/zconf.h $(TOP)/gzguts.h
+gzread.obj: $(S)/gzread.c $(S)/zlib.h $(S)/zconf.h $(S)/gzguts.h
 
-gzread.obj: $(TOP)/gzread.c $(TOP)/zlib.h $(TOP)/zconf.h $(TOP)/gzguts.h
+gzwrite.obj: $(S)/gzwrite.c $(S)/zlib.h $(S)/zconf.h $(S)/gzguts.h
 
-gzwrite.obj: $(TOP)/gzwrite.c $(TOP)/zlib.h $(TOP)/zconf.h $(TOP)/gzguts.h
+infback.obj: $(S)/infback.c $(S)/zutil.h $(S)/zlib.h $(S)/zconf.h $(S)/inftrees.h $(S)/inflate.h \
+             $(S)/inffast.h $(S)/inffixed.h
 
-infback.obj: $(TOP)/infback.c $(TOP)/zutil.h $(TOP)/zlib.h $(TOP)/zconf.h $(TOP)/inftrees.h $(TOP)/inflate.h \
-             $(TOP)/inffast.h $(TOP)/inffixed.h
+inffast.obj: $(S)/inffast.c $(S)/zutil.h $(S)/zlib.h $(S)/zconf.h $(S)/inftrees.h $(S)/inflate.h \
+             $(S)/inffast.h
 
-inffast.obj: $(TOP)/inffast.c $(TOP)/zutil.h $(TOP)/zlib.h $(TOP)/zconf.h $(TOP)/inftrees.h $(TOP)/inflate.h \
-             $(TOP)/inffast.h
+inflate.obj: $(S)/inflate.c $(S)/zutil.h $(S)/zlib.h $(S)/zconf.h $(S)/inftrees.h $(S)/inflate.h \
+             $(S)/inffast.h $(S)/inffixed.h
 
-inflate.obj: $(TOP)/inflate.c $(TOP)/zutil.h $(TOP)/zlib.h $(TOP)/zconf.h $(TOP)/inftrees.h $(TOP)/inflate.h \
-             $(TOP)/inffast.h $(TOP)/inffixed.h
+inftrees.obj: $(S)/inftrees.c $(S)/zutil.h $(S)/zlib.h $(S)/zconf.h $(S)/inftrees.h
 
-inftrees.obj: $(TOP)/inftrees.c $(TOP)/zutil.h $(TOP)/zlib.h $(TOP)/zconf.h $(TOP)/inftrees.h
+trees.obj: $(S)/trees.c $(S)/zutil.h $(S)/zlib.h $(S)/zconf.h $(S)/deflate.h $(S)/trees.h
 
-trees.obj: $(TOP)/trees.c $(TOP)/zutil.h $(TOP)/zlib.h $(TOP)/zconf.h $(TOP)/deflate.h $(TOP)/trees.h
+uncompr.obj: $(S)/uncompr.c $(S)/zlib.h $(S)/zconf.h
 
-uncompr.obj: $(TOP)/uncompr.c $(TOP)/zlib.h $(TOP)/zconf.h
+zutil.obj: $(S)/zutil.c $(S)/zutil.h $(S)/zlib.h $(S)/zconf.h
 
-zutil.obj: $(TOP)/zutil.c $(TOP)/zutil.h $(TOP)/zlib.h $(TOP)/zconf.h
+gvmat64.obj: $(S)/contrib\masmx64\gvmat64.asm
 
-gvmat64.obj: $(TOP)/contrib\masmx64\gvmat64.asm
+inffasx64.obj: $(S)/contrib\masmx64\inffasx64.asm
 
-inffasx64.obj: $(TOP)/contrib\masmx64\inffasx64.asm
+inffas8664.obj: $(S)/contrib\masmx64\inffas8664.c $(S)/zutil.h $(S)/zlib.h $(S)/zconf.h \
+		$(S)/inftrees.h $(S)/inflate.h $(S)/inffast.h
 
-inffas8664.obj: $(TOP)/contrib\masmx64\inffas8664.c $(TOP)/zutil.h $(TOP)/zlib.h $(TOP)/zconf.h \
-		$(TOP)/inftrees.h $(TOP)/inflate.h $(TOP)/inffast.h
+inffas32.obj: $(S)/contrib\masmx86\inffas32.asm
 
-inffas32.obj: $(TOP)/contrib\masmx86\inffas32.asm
+match686.obj: $(S)/contrib\masmx86\match686.asm
 
-match686.obj: $(TOP)/contrib\masmx86\match686.asm
+example.obj: $(S)/test/example.c $(S)/zlib.h $(S)/zconf.h
 
-example.obj: $(TOP)/test/example.c $(TOP)/zlib.h $(TOP)/zconf.h
+minigzip.obj: $(S)/test/minigzip.c $(S)/zlib.h $(S)/zconf.h
 
-minigzip.obj: $(TOP)/test/minigzip.c $(TOP)/zlib.h $(TOP)/zconf.h
-
-zlib1.res: $(TOP)/win32/zlib1.rc
-	$(RC) $(RCFLAGS) /fo$@ $(TOP)/win32/zlib1.rc
+zlib1.res: $(S)/win32/zlib1.rc
+	$(RC) $(RCFLAGS) $(S)/win32/zlib1.rc
 
 # testing
 test: example.exe minigzip.exe
@@ -155,8 +165,8 @@ clean:
 	-del $(OUTDIR)$(STATICLIB)
 	-del $(SHAREDLIB)
 	-del $(IMPLIB)
-	-del *.obj
-	-del *.res
+	-del $(IMDIR)*.obj
+	-del $(IMDIR)*.res
 	-del *.exp
 	-del *.exe
 	-del *.pdb
