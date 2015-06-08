@@ -26,7 +26,7 @@ AS = ml
 LD = link
 AR = lib
 RC = rc
-CFLAGS  = -nologo -MD -W3 -O2 -Oy- -Zi -Fd$(IMDIR)zlib $(LOC)
+CFLAGS  = -nologo -MD -W3 -O2 -Oy- -Zi -Fd$(OUTDIR)zlib $(LOC)
 WFLAGS  = -D_CRT_SECURE_NO_DEPRECATE -D_CRT_NONSTDC_NO_DEPRECATE
 ASFLAGS = -coff -Zi $(LOC)
 LDFLAGS = -nologo -debug -incremental:no -opt:ref
@@ -37,25 +37,25 @@ OBJS = adler32.obj compress.obj crc32.obj deflate.obj gzclose.obj gzlib.obj gzre
        gzwrite.obj infback.obj inflate.obj inftrees.obj inffast.obj trees.obj uncompr.obj zutil.obj
 OBJA =
 
-OUTDIR =
+O = $(IMDIR)
 
-.PHONY: w32d
+S = $(MAKEDIR)
 
-w32d:
-	-md $(IMDIR) 
-	cd $(IMDIR)
-	echo nmake -D -f $(MAKEDIR)/win32/Makefile.msc LOC="$(LOC)" OBJA="$(OBJA)" OUTDIR=$(OUTDIR) IMDIR=$(IMDIR) zlib.lib
+.PHONY: $(STATICLIB)
+.PHONY: CHDIR
 
-	nmake -D -f $(MAKEDIR)\win32\Makefile.msc LOC="$(LOC)" OBJA="$(OBJA)" OUTDIR=$(OUTDIR) IMDIR=$(IMDIR) S=$(MAKEDIR) zlib.lib
+$(STATICLIB): CHDIR $(OUTDIR)$(STATICLIB)
 
+CHDIR:
+	-md $(O) 
+	cd $(O)
 
 # targets
 all: $(STATICLIB) $(SHAREDLIB) $(IMPLIB) \
      example.exe minigzip.exe example_d.exe minigzip_d.exe
 
-$(STATICLIB): $(OBJS) $(OBJA)
-	cd $(IMDIR) 
-	$(AR) $(ARFLAGS) -out:$(OUTDIR)$@ $(OBJS) $(OBJA)
+$(OUTDIR)$(STATICLIB): $(OBJS) $(OBJA)
+	$(AR) $(ARFLAGS) -out:$@ $(OBJS) $(OBJA)
 
 $(IMPLIB): $(SHAREDLIB)
 
@@ -86,7 +86,7 @@ minigzip_d.exe: minigzip.obj $(IMPLIB)
 	  mt -nologo -manifest $@.manifest -outputresource:$@;1
 
 {$(S)}.c.obj::
-	$(CC) -c $(WFLAGS) $(CFLAGS) $<
+	$(CC) $(WFLAGS) $(CFLAGS) -c $<
 
 {$(S)/test}.c.obj:
 	$(CC) -c -I$(TOP) $(WFLAGS) $(CFLAGS) $<
@@ -99,6 +99,7 @@ minigzip_d.exe: minigzip.obj $(IMPLIB)
 
 {$(S)/contrib/masmx86}.asm.obj:
 	$(AS) -c $(ASFLAGS) $<
+
 adler32.obj: $(S)/adler32.c $(S)/zlib.h $(S)/zconf.h
 
 compress.obj: $(S)/compress.c $(S)/zlib.h $(S)/zconf.h
