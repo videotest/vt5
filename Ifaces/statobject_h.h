@@ -4,7 +4,7 @@
 
 
  /* File created by MIDL compiler version 8.00.0603 */
-/* at Sun Apr 26 01:43:12 2015
+/* at Thu Feb 16 00:54:42 2017
  */
 /* Compiler settings for statobject.idl:
     Oicf, W1, Zp8, env=Win64 (32b run), target_arch=AMD64 8.00.0603 

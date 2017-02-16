@@ -281,7 +281,7 @@ void CTestManager::OnNotify( const char *pszEvent, IUnknown *punkHit, IUnknown *
 }
 
 // interface ITestManager
-HRESULT CTestManager::GetFirstTestPos( /*[in]*/ long lParentPos, /*[out, retval]*/ long *plPos )
+HRESULT CTestManager::GetFirstTestPos( /*[in]*/ TPOS lParentPos, /*[out, retval]*/ TPOS *plPos)
 {
 	if( !plPos )
 		return E_FAIL;
@@ -291,7 +291,7 @@ HRESULT CTestManager::GetFirstTestPos( /*[in]*/ long lParentPos, /*[out, retval]
 	return S_OK;
 }
 
-HRESULT CTestManager::GetNextTest( /*[in]*/ long lParentPos, /*[out]*/ long *plPos, /*[out]*/ IUnknown **ppunk )
+HRESULT CTestManager::GetNextTest( /*[in]*/ TPOS lParentPos, /*[out]*/ TPOS *plPos, /*[out]*/ IUnknown **ppunk)
 {
 	if( !ppunk )
 		return E_FAIL;
@@ -307,7 +307,7 @@ HRESULT CTestManager::GetNextTest( /*[in]*/ long lParentPos, /*[out]*/ long *plP
 	return S_OK;
 }
 
-HRESULT CTestManager::GetNextTest( /*[in]*/ long lParentPos, /*[out]*/ VARIANT *plPos, /*[out, retval]*/ IDispatch **ppunk )
+HRESULT CTestManager::GetNextTest( /*[in]*/ TPOS lParentPos, /*[out]*/ VARIANT *plPos, /*[out, retval]*/ IDispatch **ppunk)
 {
 	if( !ppunk )
 		return E_FAIL;
@@ -320,7 +320,7 @@ HRESULT CTestManager::GetNextTest( /*[in]*/ long lParentPos, /*[out]*/ VARIANT *
 
 	IUnknown *punk = 0;
 
-	if( GetNextTest( lParentPos, &plPos->lVal, &punk ) != S_OK )
+	if (GetNextTest(lParentPos, (TPOS*)plPos->plVal, &punk) != S_OK)
 		return E_FAIL;
 
 	if( !punk )
@@ -332,7 +332,7 @@ HRESULT CTestManager::GetNextTest( /*[in]*/ long lParentPos, /*[out]*/ VARIANT *
 	return S_OK;
 }
 
-HRESULT CTestManager::AddTest( /*[in]*/ long lParent, /*[in]*/ IUnknown *punk,  /*[out,retval]*/ long *plpos )
+HRESULT CTestManager::AddTest( /*[in]*/ TPOS lParent, /*[in]*/ IUnknown *punk,  /*[out,retval]*/ TPOS *plpos)
 {
 	if( !punk )
 		return E_FAIL;
@@ -340,7 +340,7 @@ HRESULT CTestManager::AddTest( /*[in]*/ long lParent, /*[in]*/ IUnknown *punk,  
 	if( !plpos )
 		return E_FAIL;
 
-	*plpos = m_treeTests.insert( punk, lParent ); 
+	*plpos = (TPOS)m_treeTests.insert( punk, (LONG_PTR)lParent ); 
 	
 	return S_OK;
 }
@@ -1144,7 +1144,7 @@ HRESULT CTestManager::_exec_var_cond( IUnknown *punkTest, long lPos, _bstr_t bst
 		return E_ABORT; // [vanek] - 03.09.2004
 	
 	static int iColumnIndex = -1; // Used for __RUN_BY_COLUMN;
-	static long lListPos = 0; // Used for __RUN_BY_COLUMN;
+	static TPOS lListPos = 0; // Used for __RUN_BY_COLUMN;
 	static _list_t< _list_t< _variant_t > *, &_fn_cleaner > lstLastData; // Used for __EXCLUDE_EQUAL;
 
 	if( !lPos )
@@ -1300,7 +1300,7 @@ HRESULT CTestManager::_exec_var_cond( IUnknown *punkTest, long lPos, _bstr_t bst
 		int iColumnIndexTmp = iColumnIndex;
 		iColumnIndex = -1;
 
-		long lListPosTmp = lListPos;
+		TPOS lListPosTmp = lListPos;
 		lListPos = 0;
 
 		{
@@ -1405,14 +1405,14 @@ HRESULT CTestManager::_exec_var_cond( IUnknown *punkTest, long lPos, _bstr_t bst
 				else if( dwFlag & __EXCLUDE_EQUAL )
 				{
 					bool bOK = true;
-					long lLastPos = 0;
+					TPOS lLastPos = 0;
 
 					bool bCreate = false;
 					if( lListPos )
 					{
 						_list_t< _variant_t > *pList = lstLastData.get( lListPos );
 
-						for( long _lpos = pList->head(); _lpos; _lpos = pList->next( _lpos ) )
+						for (TPOS _lpos = pList->head(); _lpos; _lpos = pList->next(_lpos))
 						{
 							_variant_t &var = pList->get( _lpos );
 
@@ -1526,13 +1526,13 @@ HRESULT CTestManager::_exec_var_cond( IUnknown *punkTest, long lPos, _bstr_t bst
 				else if( dwFlag & __EXCLUDE_EQUAL )
 				{
 					bool bOK = true;
-					long lLastPos = 0;
+					TPOS lLastPos = 0;
 
 					if( lListPos )
 					{
 						_list_t< _variant_t > *pList = lstLastData.get( lListPos );
 
-						for( long _lpos = pList->head(); _lpos; _lpos = pList->next( _lpos ) )
+						for (TPOS _lpos = pList->head(); _lpos; _lpos = pList->next(_lpos))
 						{
 							_variant_t &var = pList->get( _lpos );
 
@@ -1665,13 +1665,13 @@ HRESULT CTestManager::_exec_var_cond( IUnknown *punkTest, long lPos, _bstr_t bst
 					else if( dwFlag & __EXCLUDE_EQUAL )
 					{
 						bool bOK = true;
-						long lLastPos = 0;
+						TPOS lLastPos = 0;
 
 						if( lListPos )
 						{
 							_list_t< _variant_t > *pList = lstLastData.get( lListPos );
 
-							for( long _lpos = pList->head(); _lpos; _lpos = pList->next( _lpos ) )
+							for (TPOS _lpos = pList->head(); _lpos; _lpos = pList->next(_lpos))
 							{
 								_variant_t &var = pList->get( _lpos );
 
@@ -2038,7 +2038,7 @@ bool CTestManager::_compare_context( CString strCmpFile, CString strSaveFile, TE
 
 			long i = 0;
 
-			long lPos = listImageNames.head();
+			TPOS lPos = listImageNames.head();
 			while( lPos )
 			{
 				CString str = listImageNames.get( lPos );
@@ -2057,7 +2057,7 @@ bool CTestManager::_compare_context( CString strCmpFile, CString strSaveFile, TE
 	
 			long i = 0;
 
-			long lPos = listArrNames.head();
+			TPOS lPos = listArrNames.head();
 			while( lPos )
 			{
 				CString str = listArrNames.get( lPos );
@@ -2073,17 +2073,17 @@ bool CTestManager::_compare_context( CString strCmpFile, CString strSaveFile, TE
 }
 
 // interface ITestManErrorDescr
-HRESULT CTestManager::GetFirstErrorPos( /*[out, retval]*/ long *plPos )
+HRESULT CTestManager::GetFirstErrorPos( /*[out, retval]*/ LPOS *plPos)
 {
 	if( !plPos )
 		return E_FAIL;
 
-	*plPos = m_listErr.head();
+	*plPos = (LPOS)m_listErr.head();
 
 	return S_OK;
 }
 
-HRESULT CTestManager::GetNextError( /*[out]*/ long *plPos, /*[out]*/ TEST_ERR_DESCR **plDescr )
+HRESULT CTestManager::GetNextError( /*[out]*/ LPOS *plPos, /*[out]*/ TEST_ERR_DESCR **plDescr)
 {
 	if( !plPos )
 		return E_FAIL;
@@ -2091,8 +2091,8 @@ HRESULT CTestManager::GetNextError( /*[out]*/ long *plPos, /*[out]*/ TEST_ERR_DE
 	if( !plDescr )
 		return E_FAIL;
 
-	*plDescr = m_listErr.get( *plPos );
-	*plPos = m_listErr.next( *plPos );
+	*plDescr = m_listErr.get( (TPOS)*plPos );
+	*plPos = (LPOS)m_listErr.next( (TPOS)*plPos );
 
 	return S_OK;
 }

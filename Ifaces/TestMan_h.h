@@ -4,7 +4,7 @@
 
 
  /* File created by MIDL compiler version 8.00.0603 */
-/* at Sun Apr 26 01:43:14 2015
+/* at Thu Feb 16 00:51:10 2017
  */
 /* Compiler settings for TestMan.idl:
     Oicf, W1, Zp8, env=Win64 (32b run), target_arch=AMD64 8.00.0603 
@@ -111,6 +111,16 @@ extern "C"{
 #endif 
 
 
+/* interface __MIDL_itf_TestMan_0000_0000 */
+/* [local] */ 
+
+typedef LONG_PTR *TPOS;
+
+
+
+extern RPC_IF_HANDLE __MIDL_itf_TestMan_0000_0000_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_TestMan_0000_0000_v0_0_s_ifspec;
+
 #ifndef __ITestManagerDisp_INTERFACE_DEFINED__
 #define __ITestManagerDisp_INTERFACE_DEFINED__
 
@@ -127,21 +137,21 @@ EXTERN_C const IID IID_ITestManagerDisp;
     {
     public:
         virtual /* [helpstring][id] */ HRESULT STDMETHODCALLTYPE GetFirstTestPos( 
-            /* [in] */ long lParentPos,
-            /* [retval][out] */ long *plPos) = 0;
+            /* [in] */ TPOS ParentPos,
+            /* [retval][out] */ TPOS *plPos) = 0;
         
         virtual /* [helpstring][id] */ HRESULT STDMETHODCALLTYPE GetNextTest( 
-            /* [in] */ long lParentPos,
+            /* [in] */ TPOS lParentPos,
             /* [out] */ VARIANT *plPos,
             /* [retval][out] */ IDispatch **ppunk) = 0;
         
         virtual /* [helpstring][id] */ HRESULT STDMETHODCALLTYPE AddTest( 
-            /* [in] */ long lParent,
+            /* [in] */ TPOS lParent,
             /* [in] */ IDispatch *punk,
-            long *plpos) = 0;
+            TPOS *plpos) = 0;
         
         virtual /* [helpstring][id] */ HRESULT STDMETHODCALLTYPE DeleteTest( 
-            /* [in] */ long lPos) = 0;
+            /* [in] */ TPOS lPos) = 0;
         
         virtual /* [helpstring][id] */ HRESULT STDMETHODCALLTYPE RunTestCompare( void) = 0;
         
@@ -214,24 +224,24 @@ EXTERN_C const IID IID_ITestManagerDisp;
         
         /* [helpstring][id] */ HRESULT ( STDMETHODCALLTYPE *GetFirstTestPos )( 
             ITestManagerDisp * This,
-            /* [in] */ long lParentPos,
-            /* [retval][out] */ long *plPos);
+            /* [in] */ TPOS ParentPos,
+            /* [retval][out] */ TPOS *plPos);
         
         /* [helpstring][id] */ HRESULT ( STDMETHODCALLTYPE *GetNextTest )( 
             ITestManagerDisp * This,
-            /* [in] */ long lParentPos,
+            /* [in] */ TPOS lParentPos,
             /* [out] */ VARIANT *plPos,
             /* [retval][out] */ IDispatch **ppunk);
         
         /* [helpstring][id] */ HRESULT ( STDMETHODCALLTYPE *AddTest )( 
             ITestManagerDisp * This,
-            /* [in] */ long lParent,
+            /* [in] */ TPOS lParent,
             /* [in] */ IDispatch *punk,
-            long *plpos);
+            TPOS *plpos);
         
         /* [helpstring][id] */ HRESULT ( STDMETHODCALLTYPE *DeleteTest )( 
             ITestManagerDisp * This,
-            /* [in] */ long lPos);
+            /* [in] */ TPOS lPos);
         
         /* [helpstring][id] */ HRESULT ( STDMETHODCALLTYPE *RunTestCompare )( 
             ITestManagerDisp * This);
@@ -285,8 +295,8 @@ EXTERN_C const IID IID_ITestManagerDisp;
     ( (This)->lpVtbl -> Invoke(This,dispIdMember,riid,lcid,wFlags,pDispParams,pVarResult,pExcepInfo,puArgErr) ) 
 
 
-#define ITestManagerDisp_GetFirstTestPos(This,lParentPos,plPos)	\
-    ( (This)->lpVtbl -> GetFirstTestPos(This,lParentPos,plPos) ) 
+#define ITestManagerDisp_GetFirstTestPos(This,ParentPos,plPos)	\
+    ( (This)->lpVtbl -> GetFirstTestPos(This,ParentPos,plPos) ) 
 
 #define ITestManagerDisp_GetNextTest(This,lParentPos,plPos,ppunk)	\
     ( (This)->lpVtbl -> GetNextTest(This,lParentPos,plPos,ppunk) ) 

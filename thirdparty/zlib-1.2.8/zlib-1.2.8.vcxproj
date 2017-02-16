@@ -97,17 +97,17 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <NMakeBuildCommandLine>nmake -f win32/Makefile.msc zlib.lib AS=ml64 LOC="-DASMV -DASMINF -I." OBJA="inffasx64.obj gvmat64.obj inffas8664.obj"  OUTDIR=$(SolutionDir)common\$(PlatformName)\$(Configuration)\</NMakeBuildCommandLine>
-    <NMakeReBuildCommandLine>nmake -f win32/Makefile.msc AS=ml64 LOC="-DASMV -DASMINF -I." OBJA="inffasx64.obj gvmat64.obj inffas8664.obj"  OUTDIR=$(SolutionDir)common\$(PlatformName)\$(Configuration)\ clean zlib.lib</NMakeReBuildCommandLine>
-    <NMakeCleanCommandLine>nmake -f win32/Makefile.msc AS=ml64 LOC="-DASMV -DASMINF -I." OBJA="inffasx64.obj gvmat64.obj inffas8664.obj"  OUTDIR=$(SolutionDir)common\$(PlatformName)\$(Configuration)\ clean</NMakeCleanCommandLine>
+    <NMakeBuildCommandLine>nmake -f win32/Makefile.msc AS=ml64 LOC="-DASMV -DASMINF" OBJA="inffasx64.obj gvmat64.obj inffas8664.obj"  OUTDIR=$(SolutionDir)common\$(PlatformName)\$(Configuration)\ IMDIR=$(IntDir) zlib.lib</NMakeBuildCommandLine>
+    <NMakeReBuildCommandLine>nmake -f win32/Makefile.msc AS=ml64 LOC="-DASMV -DASMINF" OBJA="inffasx64.obj gvmat64.obj inffas8664.obj"  OUTDIR=$(SolutionDir)common\$(PlatformName)\$(Configuration)\ IMDIR=$(IntDir) clean zlib.lib</NMakeReBuildCommandLine>
+    <NMakeCleanCommandLine>nmake -f win32/Makefile.msc AS=ml64 LOC="-DASMV -DASMINF" OBJA="inffasx64.obj gvmat64.obj inffas8664.obj"  OUTDIR=$(SolutionDir)common\$(PlatformName)\$(Configuration)\ IMDIR=$(IntDir) clean</NMakeCleanCommandLine>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
-    <NMakeBuildCommandLine>nmake -f win32/Makefile.msc zlib.lib AS=ml64 LOC="-DASMV -DASMINF -I." OBJA="inffasx64.obj gvmat64.obj inffas8664.obj"  OUTDIR=$(SolutionDir)common\$(PlatformName)\$(Configuration)\</NMakeBuildCommandLine>
-    <NMakeReBuildCommandLine>nmake -f win32/Makefile.msc AS=ml64 LOC="-DASMV -DASMINF -I." OBJA="inffasx64.obj gvmat64.obj inffas8664.obj"  OUTDIR=$(SolutionDir)common\$(PlatformName)\$(Configuration)\ clean zlib.lib</NMakeReBuildCommandLine>
-    <NMakeCleanCommandLine>nmake -f win32/Makefile.msc AS=ml64 LOC="-DASMV -DASMINF -I." OBJA="inffasx64.obj gvmat64.obj inffas8664.obj"  OUTDIR=$(SolutionDir)common\$(PlatformName)\$(Configuration)\ clean</NMakeCleanCommandLine>
+    <NMakeBuildCommandLine>nmake -f win32/Makefile.msc zlib.lib AS=ml64 LOC="-DASMV -DASMINF" OBJA="inffasx64.obj gvmat64.obj inffas8664.obj"  OUTDIR=$(SolutionDir)common\$(PlatformName)\$(Configuration)\ IMDIR=$(IntDir) zlib/lib</NMakeBuildCommandLine>
+    <NMakeReBuildCommandLine>nmake -f win32/Makefile.msc AS=ml64 LOC="-DASMV -DASMINF" OBJA="inffasx64.obj gvmat64.obj inffas8664.obj"  OUTDIR=$(SolutionDir)common\$(PlatformName)\$(Configuration)\ IMDIR=$(IntDir) clean zlib.lib</NMakeReBuildCommandLine>
+    <NMakeCleanCommandLine>nmake -f win32/Makefile.msc AS=ml64 LOC="-DASMV -DASMINF" OBJA="inffasx64.obj gvmat64.obj inffas8664.obj"  OUTDIR=$(SolutionDir)common\$(PlatformName)\$(Configuration)\ IMDIR=$(IntDir) clean</NMakeCleanCommandLine>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-    <NMakeBuildCommandLine>nmake -D -f win32/Makefile.msc LOC="-DASMV -DASMINF" OBJA="inffas32.obj match686.obj" OUTDIR=$(SolutionDir)common\$(PlatformName)\$(Configuration)\ IMDIR=$(IntDir) zlib.lib</NMakeBuildCommandLine>
+    <NMakeBuildCommandLine>nmake -f win32/Makefile.msc LOC="-DASMV -DASMINF" OBJA="inffas32.obj match686.obj" OUTDIR=$(SolutionDir)common\$(PlatformName)\$(Configuration)\ IMDIR=$(IntDir) zlib.lib</NMakeBuildCommandLine>
     <NMakeCleanCommandLine>nmake -f win32/Makefile.msc LOC="-DASMV -DASMINF" OBJA="inffas32.obj match686.obj"  OUTDIR=$(SolutionDir)common\$(PlatformName)\$(Configuration)\ IMDIR=$(IntDir) clean</NMakeCleanCommandLine>
     <NMakeReBuildCommandLine>nmake -f win32/Makefile.msc LOC="-DASMV -DASMINF" OBJA="inffas32.obj match686.obj" OUTDIR=$(SolutionDir)common\$(PlatformName)\$(Configuration)\ IMDIR=$(IntDir) clean zlib.lib</NMakeReBuildCommandLine>
   </PropertyGroup>

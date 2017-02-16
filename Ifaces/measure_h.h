@@ -4,7 +4,7 @@
 
 
  /* File created by MIDL compiler version 8.00.0603 */
-/* at Sun Apr 26 01:43:05 2015
+/* at Thu Feb 16 00:54:31 2017
  */
 /* Compiler settings for measure.idl:
     Oicf, W1, Zp8, env=Win64 (32b run), target_arch=AMD64 8.00.0603 
@@ -1838,19 +1838,19 @@ EXTERN_C const IID IID_ICalcObject;
         virtual HRESULT STDMETHODCALLTYPE ClearValues( void) = 0;
         
         virtual HRESULT STDMETHODCALLTYPE GetFirstValuePos( 
-            long *plPos) = 0;
+            LONG_PTR *plPos) = 0;
         
         virtual HRESULT STDMETHODCALLTYPE GetNextValue( 
-            long *plPos,
+            LONG_PTR *plPos,
             long *plKey,
             double *pfValue) = 0;
         
         virtual HRESULT STDMETHODCALLTYPE GetValuePos( 
             long lKey,
-            long *plPos) = 0;
+            LONG_PTR *plPos) = 0;
         
         virtual HRESULT STDMETHODCALLTYPE RemoveValueByPos( 
-            long lPos) = 0;
+            LONG_PTR lPos) = 0;
         
     };
     
@@ -1892,22 +1892,22 @@ EXTERN_C const IID IID_ICalcObject;
         
         HRESULT ( STDMETHODCALLTYPE *GetFirstValuePos )( 
             ICalcObject * This,
-            long *plPos);
+            LONG_PTR *plPos);
         
         HRESULT ( STDMETHODCALLTYPE *GetNextValue )( 
             ICalcObject * This,
-            long *plPos,
+            LONG_PTR *plPos,
             long *plKey,
             double *pfValue);
         
         HRESULT ( STDMETHODCALLTYPE *GetValuePos )( 
             ICalcObject * This,
             long lKey,
-            long *plPos);
+            LONG_PTR *plPos);
         
         HRESULT ( STDMETHODCALLTYPE *RemoveValueByPos )( 
             ICalcObject * This,
-            long lPos);
+            LONG_PTR lPos);
         
         END_INTERFACE
     } ICalcObjectVtbl;
@@ -2274,22 +2274,22 @@ EXTERN_C const IID IID_ICalcObject2;
         
         HRESULT ( STDMETHODCALLTYPE *GetFirstValuePos )( 
             ICalcObject2 * This,
-            long *plPos);
+            LONG_PTR *plPos);
         
         HRESULT ( STDMETHODCALLTYPE *GetNextValue )( 
             ICalcObject2 * This,
-            long *plPos,
+            LONG_PTR *plPos,
             long *plKey,
             double *pfValue);
         
         HRESULT ( STDMETHODCALLTYPE *GetValuePos )( 
             ICalcObject2 * This,
             long lKey,
-            long *plPos);
+            LONG_PTR *plPos);
         
         HRESULT ( STDMETHODCALLTYPE *RemoveValueByPos )( 
             ICalcObject2 * This,
-            long lPos);
+            LONG_PTR lPos);
         
         HRESULT ( STDMETHODCALLTYPE *GetValueEx )( 
             ICalcObject2 * This,

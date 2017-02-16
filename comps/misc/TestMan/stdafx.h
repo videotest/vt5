@@ -13,6 +13,7 @@
 #endif						
 
 #include <windows.h>
+//#include <atlcoll.h>
 
 #define SIMPLE_TYPES_DEFINED
 #include "\vt5\awin\type_defs.h"
@@ -28,6 +29,7 @@
 //common2
 #include "com_main.h"
 #include "com_unknown.h"
+#include <atlcoll.h>
 
 //debug support
 #include "\vt5\com_base\debug_misc.h"			

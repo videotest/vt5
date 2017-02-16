@@ -41,7 +41,7 @@ HRESULT CTestDataArray::GetItem( /*[in]*/ UINT nID, /*[out]*/ VARIANT *lpvRetVal
 	if(!lpvRetVal) 
 		return E_INVALIDARG;
 
-	long pos = FindItem(nID);
+	TPOS pos = FindItem(nID);
 	if(!pos) 
 		return E_FAIL;
 
@@ -59,7 +59,7 @@ HRESULT CTestDataArray::GetItemName( /*[in]*/ UINT nID, /*[out]*/ BSTR *pbstrNam
 	if(!pbstrName) 
 		return E_INVALIDARG;
 
-	long pos = FindItem(nID);
+	TPOS pos = FindItem(nID);
 	if(!pos) 
 		return E_FAIL;
 
@@ -74,7 +74,7 @@ HRESULT CTestDataArray::GetItemName( /*[in]*/ UINT nID, /*[out]*/ BSTR *pbstrNam
 
 HRESULT CTestDataArray::SetItemCmpExpr( /*[in]*/ UINT nID, /*[in]*/ BSTR bstrCmpExpr)
 {
-	long pos = FindItem(nID);
+	TPOS pos = FindItem(nID);
 	if(!pos) 
 		return E_FAIL;
 
@@ -92,7 +92,7 @@ HRESULT CTestDataArray::GetItemCmpExpr( /*[in]*/ UINT nID, /*[out]*/ BSTR *pbstr
 	if( !pbstrCmpExpr )
 		return E_INVALIDARG;
 
-	long pos = FindItem(nID);
+	TPOS pos = FindItem(nID);
 	if(!pos) 
 		return E_FAIL;
 
@@ -111,7 +111,7 @@ HRESULT CTestDataArray::CompareItem( /*[in]*/ UINT nID, /*[in]*/ VARIANT vCmpDat
 		return E_INVALIDARG;
 
 	*plEqual = 0;
-	long pos = FindItem(nID);
+	TPOS pos = FindItem(nID);
 	if(!pos) 
 		return E_FAIL;
 
@@ -135,7 +135,7 @@ HRESULT CTestDataArray::GetItemCount( /*[out]*/ long *lplRet)
 
 HRESULT CTestDataArray::RemoveItem( /*[in]*/ UINT nID)
 {
-	long	lpos = 0;
+	TPOS	lpos = 0;
 	lpos = FindItem(nID);
 	if( !lpos )
 		return E_FAIL;
@@ -150,9 +150,9 @@ HRESULT CTestDataArray::RemoveAll()
 	return S_OK;
 }
 
-long CTestDataArray::FindItem(UINT nID)
+TPOS CTestDataArray::FindItem(UINT nID)
 {
-	long pos = m_items.head();
+	TPOS pos = m_items.head();
 	for(UINT i=0; (i<nID) && pos; i++)
 		pos = m_items.next(pos);
 	return pos;        
@@ -216,7 +216,7 @@ HRESULT CTestDataArray::Store( IStream *pStream, SerializeParams *pparams )
 	long lrec_count = m_items.count( );
 	pStream->Write( &lrec_count, sizeof( long ), &nWritten );
 
-	for( long lpos = m_items.head(); lpos; lpos = m_items.next( lpos ) )
+	for( TPOS lpos = m_items.head(); lpos; lpos = m_items.next( lpos ) )
 	{
 		XTestArrayItemInfo *pii = 0;
 		pii = m_items.get( lpos );

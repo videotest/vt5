@@ -35,7 +35,7 @@ typedef struct tag_HOOKFUNCDESCW
 
 // A useful macro.
 #define MakePtr( cast , ptr , AddValue ) \
-                                 (cast)( (DWORD)(ptr)+(DWORD)(AddValue))
+	(cast)((DWORD_PTR)(ptr)+(DWORD_PTR)(AddValue))
 #ifdef _DEBUG
 #define _assert(b)	_ASSERTE(b)
 #define _trace(s)	OutputDebugString( #s )

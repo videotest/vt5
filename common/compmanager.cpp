@@ -76,14 +76,14 @@ bool CCompManager::Init()
 		sa.Add( strSection );
 	}
 
-	for( int i = 0; i < sa.GetSize(); i++ )
+	for( int j = 0; j < sa.GetSize(); j++ )
 	{
-		CCompRegistrator	registrator( sa[i] );
+		CCompRegistrator	registrator( sa[j] );
 
 		DWORD	dwSize = 255;
 		char	sz[255];
 
-		for( int i = 0; ::RegEnumValue( registrator.m_hKey, i, sz, &dwSize, 0, 0, 0, 0 )==0; i++ )
+		for( int k = 0; ::RegEnumValue( registrator.m_hKey, k, sz, &dwSize, 0, 0, 0, 0 )==0; k++ )
 		{	
 			dwSize = 255;
 			CString	s = sz;
@@ -101,8 +101,12 @@ bool CCompManager::Init()
 
 			HRESULT hresult = ::CoCreateInstance( clsid, m_punkOuterUnknown, CLSCTX_INPROC_SERVER, IID_IUnknown, (void **)&punk );
 			
-			if( !TraceIfFailed( hresult ) )
+			if (FAILED(hresult))
+			{
+				GetLogFile() << sz;
+				TraceIfFailed(hresult);
 				continue;
+			}
 
 	//		punk->AddRef();
 			ASSERT( punk );

@@ -2320,10 +2320,10 @@ LONG_PTR CViewAXCtrl::GetFirstObjectPos()
 ////////////////////////////////////////////////////////////////////////////
 LONG_PTR CViewAXCtrl::GetNextObject(VARIANT FAR* varObjectName, VARIANT FAR* varActiveObject, VARIANT FAR* varObjectType, VARIANT FAR* varPos)
 {	
-	if (varPos->vt != VT_I8)
+	if (varPos->vt != VT_LONG_PTR)
 		return 0;
 
-	LONG_PTR lpos = varPos->llVal;
+	LONG_PTR lpos = varPos->LONG_PTR_VAL;
 	CString strObjectName, strObjectType;
 	bool bActiveObject = false;
 	_GetNextObject( strObjectName, bActiveObject, strObjectType, &lpos );

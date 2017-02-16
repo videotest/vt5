@@ -247,10 +247,10 @@ interface ICalcObject : IUnknown
 	com_call RemoveValue(long lParamKey);
 	com_call ClearValues();
 
-	com_call GetFirstValuePos(long * plPos);
-	com_call GetNextValue(long * plPos, long * plKey, double * pfValue);
-	com_call GetValuePos(long lKey, long * plPos);
-	com_call RemoveValueByPos(long lPos);
+	com_call GetFirstValuePos(LONG_PTR * plPos);
+	com_call GetNextValue(LONG_PTR * plPos, long * plKey, double * pfValue);
+	com_call GetValuePos(long lKey, LONG_PTR * plPos);
+	com_call RemoveValueByPos(LONG_PTR lPos);
 
 /*	com_call GetObjectClass(GUID	*plClassKey);
 	com_call SetObjectClass(GUID	lClassKey);*/

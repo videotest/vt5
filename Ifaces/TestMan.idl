@@ -1,6 +1,7 @@
 import "oaidl.idl";
 import "ocidl.idl";
 
+typedef LONG_PTR *TPOS;
 
 [
 	object,
@@ -10,10 +11,10 @@ import "ocidl.idl";
 ]
 interface ITestManagerDisp : IDispatch
 {
-	[id(0), helpstring("method GetFirstTestPos")] HRESULT GetFirstTestPos( [in] long lParentPos, [out, retval] long *plPos );
-	[id(1), helpstring("method GetNextTest")] HRESULT GetNextTest( [in] long lParentPos, [out] VARIANT *plPos, [out, retval] IDispatch **ppunk );
-	[id(2), helpstring("method AddTest")] HRESULT AddTest( [in] long lParent, [in] IDispatch *punk,  /*[out,retval]*/ long *plpos );
-	[id(3), helpstring("method DeleteTest")] HRESULT DeleteTest( [in] long lPos );
+	[id(0), helpstring("method GetFirstTestPos")] HRESULT GetFirstTestPos([in] TPOS ParentPos, [out, retval] TPOS *plPos);
+	[id(1), helpstring("method GetNextTest")] HRESULT GetNextTest([in] TPOS lParentPos, [out] VARIANT *plPos, [out, retval] IDispatch **ppunk);
+	[id(2), helpstring("method AddTest")] HRESULT AddTest([in] TPOS lParent, [in] IDispatch *punk,  /*[out,retval]*/ TPOS *plpos);
+	[id(3), helpstring("method DeleteTest")] HRESULT DeleteTest([in] TPOS lPos);
 
 	[id(4), helpstring("method RunTestCompare")] HRESULT RunTestCompare();
 	[id(5), helpstring("method RunTestSave")] HRESULT RunTestSave();

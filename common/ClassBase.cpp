@@ -241,7 +241,7 @@ HRESULT CCalcObjectImpl::XCalcObj::ClearValues()
 //	_catch_nested;
 }
 
-HRESULT CCalcObjectImpl::XCalcObj::GetFirstValuePos(long * plPos)
+HRESULT CCalcObjectImpl::XCalcObj::GetFirstValuePos(LPOS * plPos)
 {
 	METHOD_PROLOGUE_BASE(CCalcObjectImpl, CalcObj)
 //	_try_nested_base(CCalcObjectImpl, CalcObj, GetFirstValuePos)
@@ -253,7 +253,7 @@ HRESULT CCalcObjectImpl::XCalcObj::GetFirstValuePos(long * plPos)
 //	_catch_nested;
 }
 
-HRESULT CCalcObjectImpl::XCalcObj::GetNextValue(long * plPos, long * plKey, double * pfValue)
+HRESULT CCalcObjectImpl::XCalcObj::GetNextValue(LPOS * plPos, long * plKey, double * pfValue)
 {
 	METHOD_PROLOGUE_BASE(CCalcObjectImpl, CalcObj)
 //	_try_nested_base(CCalcObjectImpl, CalcObj, GetNextValue)
@@ -265,7 +265,7 @@ HRESULT CCalcObjectImpl::XCalcObj::GetNextValue(long * plPos, long * plKey, doub
 //	_catch_nested;
 }
 
-HRESULT CCalcObjectImpl::XCalcObj::GetValuePos(long lKey, long *plPos)
+HRESULT CCalcObjectImpl::XCalcObj::GetValuePos(long lKey, LPOS *plPos)
 {
 	METHOD_PROLOGUE_BASE(CCalcObjectImpl, CalcObj)
 //	_try_nested_base(CCalcObjectImpl, CalcObj, GetValuePos)
@@ -277,7 +277,7 @@ HRESULT CCalcObjectImpl::XCalcObj::GetValuePos(long lKey, long *plPos)
 //	_catch_nested;
 }
 
-HRESULT CCalcObjectImpl::XCalcObj::RemoveValueByPos(long lPos)
+HRESULT CCalcObjectImpl::XCalcObj::RemoveValueByPos(LPOS lPos)
 {
 	METHOD_PROLOGUE_BASE(CCalcObjectImpl, CalcObj)
 //	_try_nested_base(CCalcObjectImpl, CalcObj, RemoveValueByPos)
@@ -346,7 +346,7 @@ HRESULT CCalcObjectImpl::XCalcObj::SetObjectClass(GUID lClassKey)
 
 // inner function implementation
 
-bool CCalcObjectImpl::GetValuePos(long lKey, long * plPos)
+bool CCalcObjectImpl::GetValuePos(long lKey, LPOS * plPos)
 {
 	if (lKey == -1 || !plPos)
 		return false;
@@ -362,14 +362,14 @@ bool CCalcObjectImpl::GetValuePos(long lKey, long * plPos)
 		CCalcObjValue & value = m_ValueList.GetNext(pos);
 		if (value.GetKey() == lKey)
 		{
-			*plPos = (long)PrevPos;
+			*plPos = (LPOS)PrevPos;
 			return true;
 		}
 	}
 	return false;
 }
 
-bool CCalcObjectImpl::RemoveValueByPos(long lPos)
+bool CCalcObjectImpl::RemoveValueByPos(LPOS lPos)
 {
 	if (m_ValueList.IsEmpty())
 		return false;
@@ -409,7 +409,7 @@ bool CCalcObjectImpl::RemoveValue(long lParamKey)
 }
 
 
-bool CCalcObjectImpl::GetNextValue(long * plPos, long * plKey, double * pfValue)
+bool CCalcObjectImpl::GetNextValue(LPOS * plPos, long * plKey, double * pfValue)
 {
 	if (!plPos)
 		return false;
@@ -436,7 +436,7 @@ bool CCalcObjectImpl::GetNextValue(long * plPos, long * plKey, double * pfValue)
 	return true;	
 }
 
-bool CCalcObjectImpl::GetFirstValuePos(long * plPos)
+bool CCalcObjectImpl::GetFirstValuePos(LPOS * plPos)
 {	
 	if (!plPos)
 		return false;
@@ -446,7 +446,7 @@ bool CCalcObjectImpl::GetFirstValuePos(long * plPos)
 		return true;
 
 	POSITION pos = m_ValueList.GetHeadPosition();
-	*plPos = (long)pos;	
+	*plPos = (LPOS)pos;
 	
 	return true;	
 }

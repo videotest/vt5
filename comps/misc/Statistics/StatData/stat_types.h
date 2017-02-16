@@ -60,10 +60,10 @@ public:
 	com_call RemoveValue(long lParamKey){	return E_NOTIMPL; }
 	com_call ClearValues(){	return E_NOTIMPL; }
 
-	com_call GetFirstValuePos(long * plPos)	{	return E_NOTIMPL; }
-	com_call GetNextValue(long * plPos, long * plKey, double * pfValue){	return E_NOTIMPL; }
-	com_call GetValuePos(long lKey, long * plPos){	return E_NOTIMPL; }
-	com_call RemoveValueByPos(long lPos){	return E_NOTIMPL; }
+	com_call GetFirstValuePos(LPOS * plPos)	{ return E_NOTIMPL; }
+	com_call GetNextValue(LPOS * plPos, long * plKey, double * pfValue){ return E_NOTIMPL; }
+	com_call GetValuePos(long lKey, LPOS * plPos){ return E_NOTIMPL; }
+	com_call RemoveValueByPos(LPOS lPos){ return E_NOTIMPL; }
 
 	//data
 	map_value	m_map_value;

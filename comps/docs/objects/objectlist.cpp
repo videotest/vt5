@@ -420,7 +420,7 @@ void CopyCalcVals(ICalcObjectPtr sptrIn, ICalcObjectPtr sptrOut)
 	if(sptrIn == 0 || sptrOut == 0)
 		return;
 
-	long nPos = 0;
+	LPOS nPos = 0;
 	sptrIn->GetFirstValuePos(&nPos);
 	while(nPos)
 	{

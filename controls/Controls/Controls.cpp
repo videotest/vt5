@@ -75,7 +75,7 @@ BOOL CControlsApp::InitInstance()
 
 /////////////////////////////////////////////////////////////////////////////
 // Special entry points required for inproc servers
-/*
+
 STDAPI DllGetClassObject(REFCLSID rclsid, REFIID riid, LPVOID* ppv)
 {
 	AFX_MANAGE_STATE(AfxGetStaticModuleState());
@@ -86,8 +86,8 @@ STDAPI DllCanUnloadNow(void)
 {
 	AFX_MANAGE_STATE(AfxGetStaticModuleState());
 	return AfxDllCanUnloadNow();
-}
 
+}
 // by exporting DllRegisterServer, you can use regsvr.exe
 STDAPI DllRegisterServer(void)
 {
@@ -95,4 +95,9 @@ STDAPI DllRegisterServer(void)
 	COleObjectFactory::UpdateRegistryAll();
 	return S_OK;
 }
-*/
+
+STDAPI DllUnregisterServer(void)
+{
+	COleObjectFactory::UpdateRegistryAll( false );
+	return S_OK;
+}

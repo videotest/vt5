@@ -58,11 +58,11 @@ public:
 	{
 		return E_NOTIMPL;
 	}
-	com_call GetFirstViewPosition( long *plPos )
+	com_call GetFirstViewPosition( TPOS *plPos )
 	{
 		return E_NOTIMPL;
 	}
-	com_call GetNextView( IUnknown **ppunkView, long *plPos )
+	com_call GetNextView(IUnknown **ppunkView, TPOS *plPos)
 	{
 		return E_NOTIMPL;
 	}

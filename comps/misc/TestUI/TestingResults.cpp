@@ -49,7 +49,7 @@ void CTestingResults::InitRows(int nFilter)
 	ITestManErrorDescrPtr sptrTMED(punkTM);
 	if (sptrTMED)
 	{
-		long lPos;
+		LONG_PTR lPos;
 		int iItem = 0;
 		sptrTMED->GetFirstErrorPos(&lPos);
 		while (lPos)

@@ -18,11 +18,7 @@
 	"IUnknown", "IDispatch", "IEnumVARIANT", "IFont", "IPicture","IFontDisp")
 
 //ViewAX button referense
-#ifdef _DEBUG
-#import "..\\..\\..\\vt5\\debug\\comps\\VTControls.ocx" rename_namespace("OcxSpace") 
-#else
-#import "..\\..\\..\\vt5\\debug\\comps\\VTControls.ocx" rename_namespace("OcxSpace") 
-#endif //_DEBUG
+#import <VTControls.ocx> rename_namespace("OcxSpace") 
 
 using namespace OcxSpace; 
 

@@ -72,7 +72,7 @@ private:
 	static void _free_test_item_info( XTestArrayItemInfo *pdata ) { delete pdata; }
 	_list_t<XTestArrayItemInfo *, _free_test_item_info> m_items;
 
-	long FindItem(UINT nID);
+	TPOS FindItem(UINT nID);
 };
 
 //////////////////////////////////////////////////////////////////////

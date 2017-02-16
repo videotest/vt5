@@ -190,8 +190,17 @@ void CLogFile::Init()
 
 	if( m_lLoggingLevel )
 	{
-		m_file.Open( m_sFileName, CFile::modeCreate | CFile::modeWrite | CFile::typeText  );
-		Write( "start", m_sFileName );
+		CFileException pError;
+		m_file.Open(m_sFileName, CFile::modeCreate | CFile::modeWrite | CFile::typeText, &pError);
+		if (pError.m_cause == CFileException::none)
+		{
+			Write("start", m_sFileName);
+		}
+		else
+		{
+			pError.ReportError();
+			exit(1);
+		}
 	}
 }
 

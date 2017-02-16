@@ -468,12 +468,12 @@ HRESULT CTestItem::GetScript( /*[out, retval]*/ BSTR *pbstrScript )
 	return S_OK;
 }
 
-HRESULT CTestItem::GetFirstCondPos( /*[out, retval]*/ LONG_PTR *lpPos)
+HRESULT CTestItem::GetFirstCondPos( /*[out, retval]*/ LPOS *lpPos)
 {
 	if( !lpPos )
 		return E_FAIL;
 
-	*lpPos = m_lstCond.head();
+	*lpPos = (LPOS)m_lstCond.head();
 
 	return S_OK;
 }
@@ -489,7 +489,7 @@ HRESULT CTestItem::GetNextCond( /*[out]*/ VARIANT *plPos, /*[out, retval]*/ BSTR
 	return GetNextCond( &plPos->lVal, pbstr );
 }
 
-HRESULT CTestItem::GetNextCond( /*[out]*/ LONG_PTR *plPos, /*[out, retval]*/ BSTR *pbstr)
+HRESULT CTestItem::GetNextCond( /*[out]*/ LPOS *plPos, /*[out, retval]*/ BSTR *pbstr)
 {
 	if( !plPos )
 		return E_FAIL;
@@ -497,8 +497,8 @@ HRESULT CTestItem::GetNextCond( /*[out]*/ LONG_PTR *plPos, /*[out, retval]*/ BST
 		return E_FAIL;
 
 
-	CString str = m_lstCond.get( *plPos );
-	*plPos = m_lstCond.next( *plPos );
+	CString str = m_lstCond.get( (TPOS)*plPos );
+	*plPos = (LPOS)m_lstCond.next((TPOS)*plPos);
 	*pbstr = str.AllocSysString();
 
 	return S_OK;
@@ -514,12 +514,12 @@ HRESULT CTestItem::AddCond( /*[in]*/ BSTR bstrCond )
 	return S_OK;
 }
 
-HRESULT CTestItem::DeleteCond( /*[in]*/ long lPos )
+HRESULT CTestItem::DeleteCond( /*[in]*/ LPOS lPos)
 {
 	if( !lPos )
 		return E_FAIL;
 	
-	m_lstCond.remove( lPos );
+	m_lstCond.remove( (TPOS)lPos );
 
 	return S_OK;
 }
@@ -606,7 +606,8 @@ HRESULT CTestItem::KillThemselvesFromDisk()
 void CTestItem::_calc_excl_equal_count( _list_t< X_PARSED_DATA> *pLst, int nId, long *plCounter )
 {
 	static _list_t< _variant_t > vList;
-	for (LONG_PTR lPos = pLst->head(), i = 0; lPos; lPos = pLst->next(lPos), i++)
+	long i = 0;
+	for (TPOS lPos = pLst->head(); lPos; lPos = pLst->next(lPos), i++)
 	{
 		if( i == nId )
 		{
@@ -623,7 +624,7 @@ void CTestItem::_calc_excl_equal_count( _list_t< X_PARSED_DATA> *pLst, int nId, 
 				else
 				{
 					bool bFound = false;
-					for (LONG_PTR lPos2 = vList.head(); lPos2; lPos2 = vList.next(lPos2))
+					for (TPOS lPos2 = vList.head(); lPos2; lPos2 = vList.next(lPos2))
 					{
 						_variant_t var = vList.get( lPos2 );
 						if( Data.pvarArgs[q] == var )
@@ -810,7 +811,7 @@ HRESULT CTestItem::ParseCond()
 	m_lstParsedMultyCond.clear();
 	m_lstParsedSingleCond.clear();
 
-	LONG_PTR lPosCond = m_lstCond.head();
+	TPOS lPosCond = m_lstCond.head();
 
 	while( lPosCond )
 	{
@@ -911,7 +912,7 @@ HRESULT CTestItem::ParseCond()
 
 	_list_t< X_PARSED_DATA > lstLastData; // Used for __EXCLUDE_EQUAL;
 
-	for (LONG_PTR lPos = m_lstParsedMultyCond.head(); lPos; lPos = m_lstParsedMultyCond.next(lPos))
+	for (TPOS lPos = m_lstParsedMultyCond.head(); lPos; lPos = m_lstParsedMultyCond.next(lPos))
 	{
 		X_PARSED_DATA &data = m_lstParsedMultyCond.get( lPos ); 
 
@@ -1018,7 +1019,7 @@ HRESULT CTestItem::ParseExecCond()
 {
 	m_lstParsedExecCond.clear();
 
-	LONG_PTR lPosCond = m_lstExecCond.head();
+	TPOS lPosCond = m_lstExecCond.head();
 
 	while( lPosCond )
 	{
@@ -1126,7 +1127,7 @@ HRESULT CTestItem::VerifyExecCond( /*[out]*/ BOOL *pbCanExec )
 		return E_INVALIDARG;
 
 	*pbCanExec = TRUE;
-	for (LONG_PTR lpos_cond = m_lstParsedExecCond.head(); lpos_cond; lpos_cond = m_lstParsedExecCond.next(lpos_cond))
+	for (TPOS lpos_cond = m_lstParsedExecCond.head(); lpos_cond; lpos_cond = m_lstParsedExecCond.next(lpos_cond))
 	{
         X_PARSED_DATA &data = m_lstParsedExecCond.get( lpos_cond );         
 		if( data.strPath.IsEmpty() || data.strName.IsEmpty() )
@@ -1177,22 +1178,22 @@ HRESULT CTestItem::VerifyExecCond( /*[out]*/ BOOL *pbCanExec )
     return S_OK;
 }
 
-HRESULT CTestItem::GetFirstExecCondPos( /*[out]*/ LONG_PTR *lpPos)
+HRESULT CTestItem::GetFirstExecCondPos( /*[out]*/ LPOS *lpPos)
 {
     if( !lpPos )
 		return E_FAIL;
 
-	*lpPos = m_lstExecCond.head();
+		*lpPos = (LPOS)m_lstExecCond.head();
     return S_OK;
 }
 
-HRESULT CTestItem::GetNextExecCond( /*[out]*/ LONG_PTR *plPos, /*[in]*/ BSTR *pbstr)
+HRESULT CTestItem::GetNextExecCond( /*[out]*/ LPOS *plPos, /*[in]*/ BSTR *pbstr)
 {
 	if( !plPos || !pbstr )
 		return E_FAIL;
 
-	CString str = m_lstExecCond.get( *plPos );
-	*plPos = m_lstExecCond.next( *plPos );
+	CString str = m_lstExecCond.get((TPOS)*plPos);
+	*plPos = (LPOS)m_lstExecCond.next( (TPOS)*plPos );
 	*pbstr = str.AllocSysString();
 	return S_OK;
 }
@@ -1203,12 +1204,12 @@ HRESULT CTestItem::AddExecCond( /*[in]*/ BSTR bstrCond )
 	return S_OK;
 }
 
-HRESULT CTestItem::DeleteExecCond( /*[in]*/ long lPos )
+HRESULT CTestItem::DeleteExecCond( /*[in]*/ LONG_PTR lPos )
 {
 	if( !lPos )
 		return E_INVALIDARG;
 
-	m_lstExecCond.remove( lPos );
+	m_lstExecCond.remove( (TPOS)lPos );
 	return S_OK;
 }
 
@@ -1218,12 +1219,12 @@ HRESULT CTestItem::DeleteAllExecCond()
 	return S_OK;
 }
 	
-HRESULT CTestItem::GetFirstSingleCond( /*[out,retval]*/ LONG_PTR *lpPos)
+HRESULT CTestItem::GetFirstSingleCond( /*[out,retval]*/ LPOS *lpPos)
 {
 	if( !lpPos )
 		return E_FAIL;
 
-	*lpPos = m_lstParsedSingleCond.head();
+	*lpPos = (LPOS)m_lstParsedSingleCond.head();
 	return S_OK;
 }
 
@@ -1247,9 +1248,9 @@ HRESULT CTestItem::NextSingleCond( /*[out]*/ VARIANT *lpPos, /*[out]*/ VARIANT *
 	if( lpPos->vt != VT_I4 )
 		return E_FAIL;
 
-	X_PARSED_DATA &data = m_lstParsedSingleCond.get( lpPos->lVal ); 
+	X_PARSED_DATA &data = m_lstParsedSingleCond.get( (TPOS)lpPos->LONG_PTR_VAL ); 
 
-	lpPos->lVal = m_lstParsedSingleCond.next( lpPos->lVal );
+	lpPos->LONG_PTR_VAL = (LPOS)m_lstParsedSingleCond.next((TPOS)lpPos->LONG_PTR_VAL);
 
 	::VariantCopy( pVarName, &_variant_t( _bstr_t( data.strName ) ) );
 	::VariantCopy( pVarPath, &_variant_t( _bstr_t( data.strPath ) ) );
@@ -1260,12 +1261,12 @@ HRESULT CTestItem::NextSingleCond( /*[out]*/ VARIANT *lpPos, /*[out]*/ VARIANT *
 }
 
 
-HRESULT CTestItem::GetFirstMultyCond( /*[out,retval]*/ long *lpPos  )
+HRESULT CTestItem::GetFirstMultyCond( /*[out,retval]*/ LPOS *lpPos  )
 {
 	if( !lpPos )
 		return E_FAIL;
 
-	*lpPos = m_lstParsedMultyCond.head();
+	*lpPos = (LPOS)m_lstParsedMultyCond.head();
 	return S_OK;
 }
 
@@ -1304,9 +1305,9 @@ HRESULT CTestItem::NextMultyCond( /*[out]*/ VARIANT *lpPos, /*[out]*/ VARIANT *p
 	if( lpPos->vt != VT_I4 )
 		return E_FAIL;
 
-	X_PARSED_DATA &data = m_lstParsedMultyCond.get( lpPos->lVal ); 
+	X_PARSED_DATA &data = m_lstParsedMultyCond.get( (TPOS)lpPos->LONG_PTR_VAL ); 
 
-	lpPos->lVal = m_lstParsedMultyCond.next( lpPos->lVal );
+	lpPos->LONG_PTR_VAL = (LPOS)m_lstParsedMultyCond.next((TPOS)lpPos->LONG_PTR_VAL);
 
 	::VariantInit( pVarName );
 	::VariantInit( pVarPath );
@@ -1717,8 +1718,8 @@ HRESULT CTestItem::StoreContent()
 
 	if( sptrD->SetValue( _bstr_t( KEY_COND_CNT ), _variant_t( m_lstCond.count() ) ) != S_OK )
 		return E_FAIL;
-
-	for( long lPos = m_lstCond.head(), i = 0; lPos; lPos = m_lstCond.next( lPos ), i++ )
+	long i = 0;
+	for( TPOS lPos = m_lstCond.head(); lPos; lPos = m_lstCond.next( lPos ), i++ )
 	{
 		CString strCondName;
 		strCondName.Format( "%s%ld", KEY_COND, i );
@@ -1735,8 +1736,8 @@ HRESULT CTestItem::StoreContent()
 	sptrD->SetupSection( _bstr_t( SECTION_EXEC_COND ) );
 	if( sptrD->SetValue( _bstr_t( KEY_COND_CNT ), _variant_t( m_lstExecCond .count() ) ) != S_OK )
 		return E_FAIL;
-
-	for( long lPos = m_lstExecCond.head(), i = 0; lPos; lPos = m_lstExecCond.next( lPos ), i++ )
+	i = 0;
+	for( TPOS lPos = m_lstExecCond.head(); lPos; lPos = m_lstExecCond.next( lPos ), i++ )
 	{
 		CString strCondName;
 		strCondName.Format( "%s%ld", KEY_COND, i );
@@ -1817,7 +1818,7 @@ HRESULT CTestItem::Store( IStream *pStream, SerializeParams *pparams )
 
 	long lCount = m_lstCond.count();
 	pStream->Write( &lCount, sizeof( lCount ), &ulWritten );
-	for( long lPos = m_lstCond.head(); lPos; lPos = m_lstCond.next( lPos ) )
+	for( TPOS lPos = m_lstCond.head(); lPos; lPos = m_lstCond.next( lPos ) )
 		::StoreStringToStream( pStream, _bstr_t( m_lstCond.get( lPos ) )  );
 
 	// [vanek]: store state to stream - 13.07.2004
@@ -1827,7 +1828,7 @@ HRESULT CTestItem::Store( IStream *pStream, SerializeParams *pparams )
 	// [vanek]: store executing conditions to stream - 24.08.2004
 	lCount = m_lstExecCond.count();
 	pStream->Write( &lCount, sizeof( lCount ), &ulWritten );
-	for( long lPos = m_lstExecCond.head(); lPos; lPos = m_lstExecCond.next( lPos ) )
+	for( TPOS lPos = m_lstExecCond.head(); lPos; lPos = m_lstExecCond.next( lPos ) )
 		::StoreStringToStream( pStream, _bstr_t( m_lstExecCond.get( lPos ) )  );
 	
 	return S_OK;

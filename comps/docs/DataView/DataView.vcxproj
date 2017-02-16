@@ -272,18 +272,6 @@
     <None Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
-    <Midl Include="DataView.odl">
-      <TargetEnvironment Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Win32</TargetEnvironment>
-      <HeaderFileName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">DataView_h.h</HeaderFileName>
-      <TargetEnvironment Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Win32</TargetEnvironment>
-      <HeaderFileName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">DataView_h.h</HeaderFileName>
-      <TargetEnvironment Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Win32</TargetEnvironment>
-      <HeaderFileName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">DataView_h.h</HeaderFileName>
-      <TargetEnvironment Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Win32</TargetEnvironment>
-      <HeaderFileName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">DataView_h.h</HeaderFileName>
-    </Midl>
-  </ItemGroup>
-  <ItemGroup>
     <ResourceCompile Include="DataView.rc">
       <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(OUTDIR)</AdditionalIncludeDirectories>
       <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(OUTDIR)</AdditionalIncludeDirectories>

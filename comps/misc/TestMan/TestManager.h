@@ -87,10 +87,10 @@ protected:
 
 public:
 	// interface ITestManager
-	com_call GetFirstTestPos( /*[in]*/ long lParentPos, /*[out,retval]*/ long *plPos );
-	com_call GetNextTest( /*[in]*/ long lParentPos, /*[out]*/ long *plPos, /*[out]*/ IUnknown **ppunk );
-	com_call AddTest( /*[in]*/ long lParent, /*[in]*/ IUnknown *punk,  /*[out,retval]*/ long *plpos );
-	com_call DeleteTest( /*[in]*/ long lPos );
+	com_call GetFirstTestPos( /*[in]*/ TPOS lParentPos, /*[out,retval]*/ TPOS *plPos);
+	com_call GetNextTest( /*[in]*/ TPOS lParentPos, /*[out]*/ TPOS *plPos, /*[out]*/ IUnknown **ppunk);
+	com_call AddTest( /*[in]*/ TPOS lParent, /*[in]*/ IUnknown *punk,  /*[out,retval]*/ TPOS *plpos);
+	com_call DeleteTest( /*[in]*/ TPOS lPos);
 
 	com_call LoadTests( IStream *pStream, long lNewParentPos );
 	com_call StoreTests( IStream *pStream, long lFromParentPos );
@@ -104,8 +104,8 @@ public:
 
     // interface ITestManErrorDescr
 
-	com_call GetFirstErrorPos( /*[out,retval]*/ long *plPos );
-	com_call GetNextError( /*[out]*/ long *plPos, /*[out]*/ TEST_ERR_DESCR **plDescr );
+	com_call GetFirstErrorPos( /*[out,retval]*/ LPOS *plPos);
+	com_call GetNextError( /*[out]*/ LPOS *plPos, /*[out]*/ TEST_ERR_DESCR **plDescr);
 
 	// interface ITestProcess
 	com_call RunTestCompare();
@@ -115,8 +115,8 @@ public:
 	com_call PauseTesting( BOOL bPaused );
 
 	// ITestManagerDisp
-	com_call GetNextTest( /*[in]*/ long lParentPos, /*[out]*/ VARIANT *plPos, /*[out,retval]*/ IDispatch **ppunk );
-	com_call AddTest( /*[in]*/ long lParent, /*[in]*/ IDispatch *punk,  /*[out,retval]*/ long *plpos );
+	com_call GetNextTest( /*[in]*/ TPOS lParentPos, /*[out]*/ VARIANT *plPos, /*[out,retval]*/ IDispatch **ppunk);
+	com_call AddTest( /*[in]*/ TPOS lParent, /*[in]*/ IDispatch *punk,  /*[out,retval]*/ TPOS *plpos);
 	com_call GetRunningState( /*[out, retval]*/ long *plState );
 	com_call SetEditMode( bool bEnter );
 protected:

@@ -229,14 +229,14 @@ long CCompareImagesDlg::on_initdialog()
 	if( sptrWin2->CreateWnd( handle(), rcView2, WS_VISIBLE | WS_CHILD | WS_VISIBLE | WS_TABSTOP, IDC_VIEW_HERE2 ) != S_OK )
 		return 0;
 
-	long lPos = 0;
+	TPOS lPos = 0;
 	sptrContextTmp->GetFirstObjectPos( bstrImage, &lPos );
 
 	_list_t< IUnknownPtr > m_list;
 	while( lPos )
 	{
 		IUnknown *punkImage = 0;
-		sptrContextTmp->GetNextObject( bstrImage, &lPos, &punkImage );
+		sptrContextTmp->GetNextObject(bstrImage, (LPOS*)&lPos, &punkImage);
 
 		_bstr_t bstrName = ::GetObjectName( punkImage );
 

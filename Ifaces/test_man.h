@@ -1,5 +1,8 @@
 #pragma once
 
+typedef POSITION TPOS;
+typedef LONG_PTR LPOS;
+
 struct TEST_ERR_DESCR
 {
 	BSTR bstrPath;
@@ -18,9 +21,9 @@ struct TEST_ERR_DESCR
 interface ITestManager : public IUnknown
 {
 	com_call GetFirstTestPos( /*[in]*/ long lParentPos, /*[out]*/ long *plPos ) = 0;
-	com_call GetNextTest( /*[in]*/ long lParentPos, /*[out]*/ long *plPos, /*[out]*/ IUnknown **ppunk ) = 0;
+	com_call GetNextTest( /*[in]*/ TPOS lParentPos, /*[out]*/ VARIANT *plPos, /*[out]*/ IUnknown **ppunk) = 0;
 	com_call AddTest( /*[in]*/ long lParent, /*[in]*/ IUnknown *punk, /*[out]*/ long *plpos ) = 0;
-	com_call DeleteTest( /*[in]*/ long lPos ) = 0;
+	com_call DeleteTest( /*[in]*/ TPOS lPos) = 0;
 
 	com_call LoadTests( IStream *pStream, long lNewParentPos ) = 0;
 	com_call StoreTests( IStream *pStream, long lFromParentPos ) = 0;
@@ -36,8 +39,8 @@ interface ITestManager : public IUnknown
 
 interface ITestManErrorDescr : public IUnknown
 {
-	com_call GetFirstErrorPos( /*[out]*/ long *plPos ) = 0;
-	com_call GetNextError( /*[out]*/ long *plPos, /*[out]*/ TEST_ERR_DESCR **plDescr ) = 0;
+	com_call GetFirstErrorPos( /*[out]*/ LPOS *plPos ) = 0;
+	com_call GetNextError( /*[out]*/ LPOS *plPos, /*[out]*/ TEST_ERR_DESCR **plDescr) = 0;
 };
 
 interface ITestProcess : public IUnknown
@@ -66,10 +69,10 @@ interface ITestItem : public IUnknown
 	com_call SetPath( /*[in]*/ BSTR bstrPath ) = 0;
 	com_call GetPath( /*[out]*/ BSTR *pbstrPath ) = 0;
 
-	com_call GetFirstCondPos( /*[out]*/ long *lpPos ) = 0;
-	com_call GetNextCond( /*[out]*/ long *plPos, /*[in]*/ BSTR *pbstr ) = 0;
+	com_call GetFirstCondPos( /*[out]*/ LPOS *lpPos) = 0;
+	com_call GetNextCond( /*[out]*/ LPOS *plPos, /*[in]*/ BSTR *pbstr) = 0;
 	com_call AddCond( /*[in]*/ BSTR bstrCond ) = 0;
-	com_call DeleteCond( /*[in]*/ long lPos ) = 0;
+	com_call DeleteCond( /*[in]*/ LPOS lPos) = 0;
 	com_call DeleteAllCond() = 0;
 	com_call SetScript( /*[in]*/ BSTR bstrScript ) = 0;
 	com_call GetScript( /*[out]*/ BSTR *pbstrScript ) = 0;
@@ -101,10 +104,10 @@ interface ITestItem : public IUnknown
 	// [vanek] SBT:1105 - 24.08.2004
 	com_call ParseExecCond() = 0;
 	com_call VerifyExecCond( /*[out]*/ BOOL *pbCanExec ) = 0;
-	com_call GetFirstExecCondPos( /*[out]*/ long *lpPos ) = 0;
-	com_call GetNextExecCond( /*[out]*/ long *plPos, /*[in]*/ BSTR *pbstr ) = 0;
+	com_call GetFirstExecCondPos( /*[out]*/ LPOS *lpPos) = 0;
+	com_call GetNextExecCond( /*[out]*/ LPOS *plPos, /*[in]*/ BSTR *pbstr) = 0;
 	com_call AddExecCond( /*[in]*/ BSTR bstrCond ) = 0;
-	com_call DeleteExecCond( /*[in]*/ long lPos ) = 0;
+	com_call DeleteExecCond( /*[in]*/ LPOS lPos) = 0;
 	com_call DeleteAllExecCond() = 0;
 };
 

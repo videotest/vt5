@@ -4,7 +4,7 @@
 
 
  /* File created by MIDL compiler version 8.00.0603 */
-/* at Sun Apr 26 01:43:02 2015
+/* at Thu Feb 16 00:54:25 2017
  */
 /* Compiler settings for dataview.idl:
     Oicf, W1, Zp8, env=Win64 (32b run), target_arch=AMD64 8.00.0603 
@@ -60,23 +60,14 @@ extern "C"{
 #endif 
 
 
-/* interface __MIDL_itf_dataview_0000_0000 */
-/* [local] */ 
-
-typedef typedef /* [custom][public] */ __int3264 LONG_PTR;
-;
-
-
-
-extern RPC_IF_HANDLE __MIDL_itf_dataview_0000_0000_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_dataview_0000_0000_v0_0_s_ifspec;
-
 
 #ifndef __DataViewTypeLib_LIBRARY_DEFINED__
 #define __DataViewTypeLib_LIBRARY_DEFINED__
 
 /* library DataViewTypeLib */
 /* [helpstring][version][uuid] */ 
+
+typedef LONG_PTR TPOS;
 
 
 EXTERN_C const IID LIBID_DataViewTypeLib;

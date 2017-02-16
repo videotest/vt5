@@ -149,7 +149,7 @@
     </ResourceCompile>
     <Link>
       <AdditionalOptions>/MACHINE:I386 %(AdditionalOptions)</AdditionalOptions>
-      <OutputFile>\vt5\vt5\Debug\comps\Classes.dll</OutputFile>
+      <OutputFile>$(SolutionDir)vt5\$(PlatformName)\$(Configuration)\comps\$(TargetName)$(TargetExt)</OutputFile>
       <ModuleDefinitionFile>.\Classes.def</ModuleDefinitionFile>
       <SubSystem>Windows</SubSystem>
       <RandomizedBaseAddress>false</RandomizedBaseAddress>

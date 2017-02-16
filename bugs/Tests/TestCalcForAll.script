@@ -1,0 +1,63 @@
+' VBScript source code
+ActionManager.FileOpen "G:\Bugs\Tests\CalcForGroups.image", "Image"
+'''''''''''''''''''''''''''''''''''''
+minParamKey = 196610
+maxParamKey = 196657
+
+eps = 0.0000001
+Data.SetValue "\StatUI\CalcForGroups", ""
+ClassifyObjectList "", "1OL"
+ClassifyObjectList "", "2OL"
+ClassifyObjectList "", "3OL"
+
+CreateStatTable "1OL", "1TD"
+CreateStatTable "2OL", "2TD"
+CreateStatTable "3OL", "3TD"
+
+CreateStatTable "1OL", "All_TD"
+CreateStatTable "2OL", "All_TD"
+CreateStatTable "3OL", "All_TD"
+
+CreateStatObject "1TD",  "ST1"
+CreateStatObject "2TD",  "ST2"
+CreateStatObject "3TD",  "ST3"
+
+Data.SetValue "\StatUI\CalcForGroups", "0"
+CreateStatObject "All_TD",  "All_ST"
+
+Set objSt1 = Objects.GetObjectByName ("ST1")
+Set objSt_All = Objects.GetObjectByName ("All_ST")
+class_count = objSt1.GetClassCount()
+for i = 0 to class_count -1
+      for j = minParamKey to maxParamKey
+         if  abs ( objSt1.GetValue ( i, j ) - objSt_All.GetValue ( i, j ) ) > eps Then 
+             MsgBox "не сошлись значения у параметра " &  j &  ", класса  " &  i & ". Значения: " &  objSt1.GetValue ( i, j ) & " и " &  objSt_All.GetValue ( i, j )
+        end if
+      next
+next
+Set objSt1 = Nothing
+Set objSt_All = Nothing
+
+MsgBox "Для статистике по двум изображениям"
+
+Data.SetValue "\StatUI\CalcForGroups", ""
+CreateStatTable "1OL", "1_2_TD"
+CreateStatTable "2OL", "1_2_TD"
+
+CreateStatObject "1_2_TD",  "ST_1_2"
+
+Data.SetValue "\StatUI\CalcForGroups", "0,1"
+CreateStatObject "All_TD",  "All_ST"
+
+Set objSt1 = Objects.GetObjectByName ("ST_1_2")
+Set objSt_All = Objects.GetObjectByName ("All_ST")
+class_count = objSt1.GetClassCount()
+for i = 0 to class_count -1
+      for j = minParamKey to maxParamKey
+         if  abs ( objSt1.GetValue ( i, j ) - objSt_All.GetValue ( i, j ) ) > eps Then 
+             MsgBox "не сошлись значения у параметра " &  j &  ", класса  " &  i & ". Значения: " &  objSt1.GetValue ( i, j ) & " и " &  objSt_All.GetValue ( i, j )
+        end if
+      next
+next
+Set objSt1 = Nothing
+Set objSt_All = Nothing

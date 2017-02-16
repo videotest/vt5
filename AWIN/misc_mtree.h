@@ -52,9 +52,9 @@ public:
 	LONG_PTR root()												{ return 0; }
 	LONG_PTR first_parent_pos(LONG_PTR lpos_item)					{ multylink_item *p = _item_from_pos(lpos_item); return p->parents.head(); }
 	LONG_PTR next_parent( LONG_PTR lpos_item, LONG_PTR lpos )			{	multylink_item *p = _item_from_pos( lpos_item );return p->parents.next( lpos );}
-	LONG_PTR first_child_pos(LONG_PTR lpos_item)					{ multylink_item *p = _item_from_pos(lpos_item); return p->childs.head(); }
-	LONG_PTR next_child(LONG_PTR lpos_item, LONG_PTR lpos)			{ multylink_item *p = _item_from_pos(lpos_item); return p->childs.next(lpos); }
-	data_type	get( LONG_PTR lpos_item )						{	multylink_item *p = _item_from_pos( lpos_item );return p->data;}
+	TPOS first_child_pos(TPOS lpos_item)					{ multylink_item *p = _item_from_pos(lpos_item); return p->childs.head(); }
+	TPOS next_child(TPOS lpos_item, TPOS lpos)			{ multylink_item *p = _item_from_pos(lpos_item); return (LONG_PTR)p->childs.next(lpos); }
+	data_type	get(TPOS lpos_item)						{ multylink_item *p = _item_from_pos(lpos_item); return p->data; }
 	long parents_count( LONG_PTR lpos_item )					{	multylink_item *p = _item_from_pos( lpos_item );return p->parents.size();}
 	long childs_count( LONG_PTR lpos_item )						{	multylink_item *p = _item_from_pos( lpos_item );return p->childs.size();}
 
@@ -83,7 +83,7 @@ public:
 		pnew->data = data;
 		pnew->parents.insert_before( parent, 0 );
 		
-		LONG_PTR	lpos_item = parent->childs.insert_before( pnew, lpos_before );
+		TPOS	lpos_item = parent->childs.insert_before(pnew, (TPOS)lpos_before);
 
 		LONG_PTR	notify_params[2]={lpos_item, lpos_parent};
 		notify( mtn_ItemAdded, notify_params, 0 );
@@ -91,14 +91,14 @@ public:
 		return lpos_item;
 	}
 
-	virtual LONG_PTR reference(LONG_PTR lpos_item, LONG_PTR lpos_parent, LONG_PTR lpos_before = 0)
+	virtual TPOS reference(TPOS lpos_item, TPOS lpos_parent, TPOS lpos_before = 0)
 	{
 		if( !can_reference( lpos_item, lpos_parent, lpos_before ) )
 			return 0;
 
 		multylink_item	*pitem = _item_from_pos( lpos_item );
 		multylink_item	*pparent = _item_from_pos( lpos_parent );
-		lpos_item = pparent->childs.insert_before( pitem, lpos_before );
+		lpos_item = (LONG_PTR)pparent->childs.insert_before( pitem, (TPOS)lpos_before );
 		pitem->parents.insert_before( pparent, 0 );
 
 		LONG_PTR	notify_params[2] = { lpos_item, lpos_parent };
@@ -117,8 +117,8 @@ public:
 		multylink_item	*pitem = _item_from_pos( lpos_item );
 		multylink_item	*pparent = _item_from_pos( lpos_parent );
 
-		LONG_PTR	lpos_inparent = pitem->parents.find(pparent);
-		pparent->childs.remove( lpos_item );
+		TPOS lpos_inparent = pitem->parents.find(pparent);
+		pparent->childs.remove( (TPOS)lpos_item );
 		pitem->parents.remove( lpos_inparent );
 
 		if( pitem->parents.head() == 0 )
@@ -135,12 +135,12 @@ public:
 
 		multylink_item	*pitem = _item_from_pos( lpos_item );
 
-		LONG_PTR lpos1 = pitem->parents.head();
+		TPOS lpos1 = pitem->parents.head();
 		while( lpos1 )
 		{
-			multylink_item	*pparent = _item_from_pos( lpos1 );
+			multylink_item	*pparent = _item_from_pos( (LONG_PTR)lpos1 );
 			lpos1 = pitem->parents.next( lpos1 );
-			LONG_PTR	lpos2 = pparent->childs.find( pitem );
+			TPOS lpos2 = pparent->childs.find( pitem );
 			pparent->childs.remove( lpos2 );
 		}
 		_free_item( pitem );
@@ -160,16 +160,16 @@ protected:
 	multylink_item	*_item_from_pos( LONG_PTR lpos )
 	{
 		if( lpos == 0 )return &m_root;
-		return _list_t<multylink_item*>::get( lpos );
+		return _list_t<multylink_item*>::get( (TPOS)lpos );
 	}
 	bool _is_parent( multylink_item *pi, multylink_item *pp )
 	{
 		if( pp == pi )return true;
 
-		LONG_PTR	lpos = pp->childs.head();
+		TPOS lpos = pp->childs.head();
 		while( lpos )
 		{
-			multylink_item *ptest = _item_from_pos( lpos );
+			multylink_item *ptest = _item_from_pos( (LONG_PTR)lpos );
 			if( _is_parent( pi, ptest ) )return true;
 			lpos = pp->childs.next( lpos );
 		}
@@ -177,12 +177,12 @@ protected:
 	}
 	void _remove_item_childs( multylink_item *p )
 	{
-		while( LONG_PTR lpos1 = p->childs.head() )
+		while( TPOS lpos1 = p->childs.head() )
 		{
-			multylink_item *p_c = _item_from_pos( lpos1 );
+			multylink_item *p_c = _item_from_pos( (LONG_PTR)lpos1 );
 			p->childs.remove( lpos1 );
 
-			LONG_PTR	lpos_parent = p_c->parents.find( p );
+			TPOS lpos_parent = p_c->parents.find( p );
 			p_c->parents.remove( lpos_parent );
 
 			if( p_c->parents.head() == 0 )

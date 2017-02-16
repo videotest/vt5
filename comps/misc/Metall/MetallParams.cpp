@@ -439,7 +439,7 @@ HRESULT CMetallParams::DefineBorderParameters(IUnknown *punkContainer, bool bCal
 			{
 				if (sptrCO != 0)
 				{
-					long lpos = 0;
+					LPOS lpos = 0;
 					sptrCO->GetValuePos(pd->lKey, &lpos);
 					if (lpos == 0)
 						continue;

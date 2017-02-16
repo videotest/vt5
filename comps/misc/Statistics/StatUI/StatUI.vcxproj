@@ -84,10 +84,10 @@
     <CodeAnalysisRuleAssemblies Condition="'$(Configuration)|$(Platform)'=='Release|x64'" />
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <IncludePath>\WTL9\Include;$(IncludePath)</IncludePath>
+    <IncludePath>$(SystemDrive)\WTL9\Include;$(IncludePath)</IncludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-    <IncludePath>\WTL9\Include;$(IncludePath)</IncludePath>
+    <IncludePath>$(SystemDrive)\WTL9\Include;$(IncludePath)</IncludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <IncludePath>\WTL9\Include;$(IncludePath)</IncludePath>

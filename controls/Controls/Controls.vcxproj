@@ -131,6 +131,7 @@
       </DataExecutionPrevention>
       <AdditionalDependencies>atls.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <OutputFile>$(SolutionDir)vt5\$(PlatformName)\$(Configuration)\$(TargetName)$(TargetExt)</OutputFile>
+      <GenerateMapFile>true</GenerateMapFile>
     </Link>
     <Bscmake>
       <PreserveSbr>true</PreserveSbr>

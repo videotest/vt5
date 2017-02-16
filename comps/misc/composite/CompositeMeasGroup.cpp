@@ -66,7 +66,7 @@ void CCompositeMeasGroup::add_value(CTreeNode* tn, CList<double>* values)
 			i++;
 			continue;
 		}
-		long posValue;
+		LPOS posValue;
 		co->GetValuePos(par->BaseParamKey, &posValue);
 		if(posValue)
 		{

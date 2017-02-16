@@ -399,7 +399,7 @@ DWORD CManualMeasObject::GetNamedObjectFlags()
 	if( m_pParent )
 	{
 		ICalcObjectPtr	ptrCalc( m_pParent );
-		long	lExist = 0;
+		LPOS lExist = 0;
 		ptrCalc->GetFirstValuePos( &lExist );
 		if( lExist != 0 )ptrCalc->GetNextValue( &lExist, 0, 0 );
 

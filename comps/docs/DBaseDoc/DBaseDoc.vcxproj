@@ -106,7 +106,7 @@
     <ClCompile>
       <Optimization>MaxSpeed</Optimization>
       <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
-      <AdditionalIncludeDirectories>$(SolutionDir)zlib-1.2.8;$(SolutionDir)comps\misc\EditorView;$(SolutionDir)controls\Controls;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)thirdparty\zlib-1.2.8;$(SolutionDir)comps\misc\EditorView;$(SolutionDir)controls\Controls;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;_USRDLL;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <StringPooling>true</StringPooling>
       <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
@@ -144,7 +144,7 @@
     </Midl>
     <ClCompile>
       <Optimization>Disabled</Optimization>
-      <AdditionalIncludeDirectories>$(SolutionDir)zlib-1.2.8;$(SolutionDir)comps\misc\EditorView;$(SolutionDir)controls\Controls;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)thirdparty\zlib-1.2.8;$(SolutionDir)comps\misc\EditorView;$(SolutionDir)controls\Controls;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;_USRDLL;_AFX_SECURE_NO_DEPRECATE;_CRT_SECURE_NO_DEPRECATE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <BasicRuntimeChecks>Default</BasicRuntimeChecks>
       <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
@@ -185,7 +185,7 @@
     <ClCompile>
       <Optimization>MaxSpeed</Optimization>
       <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
-      <AdditionalIncludeDirectories>$(SolutionDir)zlib-1.2.8;$(SolutionDir)comps\misc\EditorView;$(SolutionDir)controls\Controls;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)thirdparty\zlib-1.2.8;$(SolutionDir)comps\misc\EditorView;$(SolutionDir)controls\Controls;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>_WIN64;_M_X64;_AFX_SECURE_NO_DEPRECATE;_CRT_SECURE_NO_DEPRECATE;NDEBUG;_WINDOWS;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <StringPooling>true</StringPooling>
       <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
@@ -231,7 +231,7 @@
       <BrowseInformation>true</BrowseInformation>
       <WarningLevel>Level3</WarningLevel>
       <CompileAs>Default</CompileAs>
-      <AdditionalIncludeDirectories>$(SolutionDir)zlib-1.2.8;$(SolutionDir)comps\misc\EditorView;$(SolutionDir)controls\Controls;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)thirdparty\zlib-1.2.8;$(SolutionDir)comps\misc\EditorView;$(SolutionDir)controls\Controls;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <ResourceCompile>
       <PreprocessorDefinitions>_AFXDLL;_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
@@ -302,8 +302,6 @@
     <ClInclude Include="types.h" />
     <ClInclude Include="VisualEdit.h" />
     <ClInclude Include="Wizards.h" />
-    <ClInclude Include="ZCONF.H" />
-    <ClInclude Include="ZLIB.H" />
     <ClInclude Include="UserInfo.h" />
   </ItemGroup>
   <ItemGroup>

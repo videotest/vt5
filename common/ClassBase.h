@@ -68,10 +68,10 @@ public:
 	virtual bool SetClassKey(GUID lClassKey)
 	{	m_lClassKey = lClassKey; return true;	}
 
-	virtual bool GetNextValue(long * plPos, long * plKey, double * pfValue);
-	virtual bool GetFirstValuePos(long * plPos);
-	virtual bool GetValuePos(long lKey, long * plPos);
-	virtual bool RemoveValueByPos(long lPos);
+	virtual bool GetNextValue(LPOS* plPos, long * plKey, double * pfValue);
+	virtual bool GetFirstValuePos(LPOS* plPos);
+	virtual bool GetValuePos(long lKey, LPOS * plPos);
+	virtual bool RemoveValueByPos(LPOS lPos);
 
 	virtual bool SetValue(long lParamKey, double fValue);
 	virtual bool GetValue(long lParamKey, double * pfValue);
@@ -96,10 +96,10 @@ protected:
 		com_call SetValue(long lParamKey, double fValue);
 		com_call RemoveValue(long lParamKey);
 		com_call ClearValues();
-		com_call GetFirstValuePos(long * plPos);
-		com_call GetNextValue(long * plPos, long * plKey, double * pfValue);
-		com_call GetValuePos(long lKey, long *plPos);
-		com_call RemoveValueByPos(long lPos);
+		com_call GetFirstValuePos(LPOS * plPos);
+		com_call GetNextValue(LPOS * plPos, long * plKey, double * pfValue);
+		com_call GetValuePos(long lKey, LPOS *plPos);
+		com_call RemoveValueByPos(LPOS lPos);
 		com_call GetObjectClass(GUID* plClassKey);
 		com_call SetObjectClass(GUID lClassKey);
 		// ICalcObject2

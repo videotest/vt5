@@ -8,6 +8,14 @@ typedef __POSITION* POSITION;
 typedef POSITION TPOS;
 typedef LONG_PTR LPOS;
 
+#if defined(_WIN64)
+#define LONG_PTR_VAL llVal
+#define VT_LONG_PTR VT_I8
+#else
+#define LONG_PTR_VAL lVal
+#define VT_LONG_PTR VT_I4
+#endif
+
 #define szContaintersStatesSection "\\ContainersStates"
 
 	enum NotifyCodes
