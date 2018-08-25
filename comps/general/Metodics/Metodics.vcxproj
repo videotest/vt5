@@ -302,10 +302,6 @@
     <ResourceCompile Include="Metodics.rc" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\..\controls\BCGControlBar\BCGControlBar.vcxproj">
-      <Project>{da9fd2cc-4075-4cdb-b395-ed524323d5ab}</Project>
-      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
-    </ProjectReference>
     <ProjectReference Include="..\..\misc\glib\glib.vcxproj">
       <Project>{4004cbe6-9a3f-4497-a8d8-b579c75d3ded}</Project>
       <ReferenceOutputAssembly>false</ReferenceOutputAssembly>

@@ -3,22 +3,22 @@
 #include "shelltoolbar.h"
 #include "resource.h"
 #include "CommandManager.h"
-#include "globals.h"
-#include "menuhash.h"
+//#include "globals.h"
+//#include "menuhash.h"
 #include "ShellFrame.h"
 #include "Shell.h"
 
 __declspec( dllimport )CMenuHash	g_menuHash;
 
-__declspec(dllimport) GLOBAL_DATA *pGlobalData;
+//__declspec(dllimport) GLOBAL_DATA *GetGlobalData();
 
 
 
-IMPLEMENT_SERIAL(CShellToolBar, CBCGToolBar, 1);
-IMPLEMENT_SERIAL(CShellFrameToolBar, CBCGToolBar, VERSIONABLE_SCHEMA | 1)
+IMPLEMENT_SERIAL(CShellToolBar, CMFCToolBar, 1);
+IMPLEMENT_SERIAL(CShellFrameToolBar, CMFCToolBar, VERSIONABLE_SCHEMA | 1)
 
 
-BEGIN_MESSAGE_MAP( CShellToolBar, CBCGToolBar )
+BEGIN_MESSAGE_MAP( CShellToolBar, CMFCToolBar )
 	//{{AFX_MSG_MAP(CShellToolBar)
 	ON_COMMAND(ID_TOOLBAR_MENUBUTTON, OnToolbarMenubutton)
 	ON_UPDATE_COMMAND_UI(ID_TOOLBAR_MENUBUTTON, OnUpdateToolbarMenubutton)
@@ -37,13 +37,13 @@ END_MESSAGE_MAP()
 
 long g_lAllowCustomize = -1;
 
-CShellToolBar::CShellToolBar() : CBCGToolBar()
+CShellToolBar::CShellToolBar() : CMFCToolBar()
 {
 	CString	strCustomize = ::LanguageLoadCString( IDS_CUSTOMIZE );
 	//strCustomize.LoadString( IDS_CUSTOMIZE );
 	int	nCustomizeCommand = g_CmdManager.GetActionCommand( "ToolsCustomize" );
 
-	m_bEnableDrag = ::GetValueInt( GetAppUnknown(), "\\General", "EnableDock", 1L ) != 0;
+	//m_bEnableDrag = ::GetValueInt( GetAppUnknown(), "\\General", "EnableDock", 1L ) != 0;
 
 	if( g_lAllowCustomize == -1 )
 		g_lAllowCustomize = ::GetValueInt( GetAppUnknown(), "\\MainFrame", "EnableCustomizeButton", 1L );
@@ -61,7 +61,7 @@ LRESULT CShellToolBar::OnHelpHitTest( WPARAM wParam, LPARAM lParam )
 	int nIndex = HitTest ((DWORD) lParam);
 	if (nIndex < 0)	return -1;
 
-	CBCGToolbarButton* pbutton = GetButton( nIndex );
+	CMFCToolBarButton* pbutton = GetButton( nIndex );
 	if( !pbutton )return -1;
 
 	// [vanek] : кнопка с m_nID, равным 0, является меню - 08.11.2004
@@ -78,7 +78,7 @@ LRESULT CShellToolBar::OnGetInterface( WPARAM wParam, LPARAM lParam )
 	if (nIndex < 0)	
 		return 0;
 
-	CBCGToolbarButton* pbutton = GetButton( nIndex );
+	CMFCToolBarButton* pbutton = GetButton( nIndex );
 	if( !pbutton )
 		return 0;
 
@@ -88,9 +88,9 @@ LRESULT CShellToolBar::OnGetInterface( WPARAM wParam, LPARAM lParam )
 	return (LRESULT)((CShellToolbarButton*)pbutton)->GetInterface( wParam );
 }
 
-CBCGToolbarButton* CShellToolBar::CreateDroppedButton (COleDataObject* pDataObject)
+CMFCToolBarButton* CShellToolBar::CreateDroppedButton (COleDataObject* pDataObject)
 {
-	CBCGToolbarButton* pButton = CBCGToolbarButton::CreateFromOleData (pDataObject);
+	CMFCToolBarButton* pButton = CMFCToolBarButton::CreateFromOleData (pDataObject);
 	ASSERT (pButton != NULL);
 
 	int iOffset = pButton->m_strText.Find (_T('\t'));
@@ -125,16 +125,16 @@ CBCGToolbarButton* CShellToolBar::CreateDroppedButton (COleDataObject* pDataObje
 		pButton->m_bImage = FALSE;
 	}
 
-	//CBCGToolbarButton* pButton  = CBCGToolBar::CreateDroppedButton( pDataObject );
+	//CMFCToolBarButton* pButton  = CMFCToolBar::CreateDroppedButton( pDataObject );
 
-	if( pButton->IsKindOf( RUNTIME_CLASS( CBCGToolbarMenuButton ) )
+	if( pButton->IsKindOf( RUNTIME_CLASS( CMFCToolBarMenuButton ) )
 		&&(pButton->m_nID == 0)||(pButton->m_nID == -1) )
 	{
 		if( pButton->IsKindOf( RUNTIME_CLASS( CShellToolbarButton ) ) )
 			return pButton;
 
 		int	nImageIndex = pButton->IsLocked () ? -1 : pButton->GetImage ();
-		CBCGToolbarMenuButton *pMenuButton = (CBCGToolbarMenuButton *)pButton;
+		CMFCToolBarMenuButton *pMenuButton = (CMFCToolBarMenuButton *)pButton;
 		CShellToolbarButton *pShellMenuButton = new CShellToolbarButton( pButton->m_nID, 
 			0,
 			nImageIndex, 
@@ -163,7 +163,7 @@ CBCGToolbarButton* CShellToolBar::CreateDroppedButton (COleDataObject* pDataObje
 	{
 		int	nImageIndex = pButton->IsLocked () ? -1 : pButton->GetImage ();
 
-		CBCGToolbarMenuButton *pMenuButton = (CBCGToolbarMenuButton *)pButton;
+		CMFCToolBarMenuButton *pMenuButton = (CMFCToolBarMenuButton *)pButton;
 
 		pComboButton = new CShellMenuComboBoxButton( 
 				pButton->m_nID,  
@@ -199,7 +199,7 @@ CBCGToolbarButton* CShellToolBar::CreateDroppedButton (COleDataObject* pDataObje
 			pButton->m_bUserButton 
 			/*pButton->IsLocked ()*/ );
 
-			pShellButton->CBCGToolbarButton::CopyFrom( *pButton );
+			pShellButton->CMFCToolBarButton::CopyFrom( *pButton );
 		/*if( nImageIndex == -1 )
 		{
 			pShellButton->m_bText = TRUE;
@@ -224,15 +224,15 @@ void CShellToolBar::DoPaint(CDC* pDC)
 
 	//m_dwStyle |= CBRS_ORIENT_HORZ;
 
-	CBCGToolBar::DoPaint( pDC );
+	CMFCToolBar::DoPaint( pDC );
 
 	if( !bHorz )
 		m_dwStyle &= ~CBRS_ORIENT_HORZ;
 }
 
-BOOL CShellToolBar::EnableContextMenuItems (CBCGToolbarButton* pButton, CMenu* pPopup)
+BOOL CShellToolBar::EnableContextMenuItems (CMFCToolBarButton* pButton, CMenu* pPopup)
 {
-	if( !CBCGToolBar::EnableContextMenuItems( pButton, pPopup ) )
+	if( !CMFCToolBar::EnableContextMenuItems( pButton, pPopup ) )
 		return false;
 
 	if( !pButton->IsKindOf( RUNTIME_CLASS( CShellToolbarButton ) ) )
@@ -321,7 +321,7 @@ CShellToolbarButton *CShellToolBar::GetSelectedButton()
 
 	if( m_iSelected == -1 )
 		return 0;
-	CBCGToolbarButton	*pbtn = GetButton( m_iSelected );
+	CMFCToolBarButton	*pbtn = GetButton( m_iSelected );
 	if( !pbtn )return 0;
 
 	if( !pbtn->IsKindOf( RUNTIME_CLASS(CShellToolbarButton)))
@@ -346,11 +346,11 @@ void CShellToolBar::SetSelectedButton( CShellToolbarButton *pbtn )
 
 BOOL CShellToolBar::PreCreateWindow(CREATESTRUCT& cs)
 {
-	if( !CBCGToolBar::PreCreateWindow( cs ) )
+	if( !CMFCToolBar::PreCreateWindow( cs ) )
 		return false;
 
-	if( CBCGToolbarButton::s_bInitProgMode )
-		cs.style &= ~WS_VISIBLE;
+	//if( CMFCToolBarButton::s_bInitProgMode )
+	//	cs.style &= ~WS_VISIBLE;
 
 	cs.style |= TBSTYLE_TRANSPARENT;
 
@@ -367,7 +367,7 @@ void CShellToolBar::OnShowAsText()
 {
 	for( int n = 0; n < GetCount (); n++ )
 	{
-		CBCGToolbarButton	*pbtn = GetButton( n );
+		CMFCToolBarButton	*pbtn = GetButton( n );
 		pbtn->m_bText = true;
 		pbtn->m_bImage = false;
 	}
@@ -378,7 +378,7 @@ void CShellToolBar::OnShowAsImage()
 {
 	for( int n = 0; n < GetCount (); n++ )
 	{
-		CBCGToolbarButton	*pbtn = GetButton( n );
+		CMFCToolBarButton	*pbtn = GetButton( n );
 		pbtn->m_bText = false;
 		pbtn->m_bImage = true;
 	}
@@ -389,7 +389,7 @@ void CShellToolBar::OnShowAsImageAndText()
 {
 	for( int n = 0; n < GetCount (); n++ )
 	{
-		CBCGToolbarButton	*pbtn = GetButton( n );
+		CMFCToolBarButton	*pbtn = GetButton( n );
 		pbtn->m_bText = true;
 		pbtn->m_bImage = true;
 	}
@@ -398,20 +398,20 @@ void CShellToolBar::OnShowAsImageAndText()
 
 void CShellToolBar::AdjustLocations()
 {
-	CBCGToolBar::AdjustLocations();
+	CMFCToolBar::AdjustLocations();
 
-	DWORD	dwbarStyle = GetBarStyle();
-	if(  dwbarStyle&CBRS_ALIGN_LEFT ||dwbarStyle&CBRS_ALIGN_RIGHT )
+	//DWORD	dwbarStyle = GetBarStyle();
+	//if(  dwbarStyle&CBRS_ALIGN_LEFT ||dwbarStyle&CBRS_ALIGN_RIGHT )
 	{
 		CClientDC dc (this);
-		dc.SelectObject (&pGlobalData->fontRegular);
+		dc.SelectObject (&GetGlobalData()->fontRegular);
 
 		POSITION pos = m_Buttons.GetHeadPosition();
 		CSize	sizeMax = CSize( 0, 0 );
 
 		while( pos )
 		{
-			CBCGToolbarButton	*pbtn = (CBCGToolbarButton*)m_Buttons.GetNext( pos );
+			CMFCToolBarButton	*pbtn = (CMFCToolBarButton*)m_Buttons.GetNext( pos );
 			CSize	sizeButton = pbtn->OnCalculateSize (&dc, CSize ( GetColumnWidth(), GetRowHeight()), true );
 
 			sizeMax.cx = max( sizeButton.cx, sizeMax.cx );
@@ -427,7 +427,7 @@ void CShellToolBar::AdjustLocations()
 		pos = m_Buttons.GetHeadPosition();
 		while( pos )
 		{
-			CBCGToolbarButton	*pbtn = (CBCGToolbarButton*)m_Buttons.GetNext( pos );
+			CMFCToolBarButton	*pbtn = (CMFCToolBarButton*)m_Buttons.GetNext( pos );
 			
 			CRect	rectButton = NORECT;
 			rectButton = CRect( 0, yOfs, size.cx, yOfs+size.cy );
@@ -437,7 +437,7 @@ void CShellToolBar::AdjustLocations()
 	}
 }
 
-int CShellToolBar::InsertButtonStoreImage(const CBCGToolbarButton& button, int iInsertAt)
+int CShellToolBar::InsertButtonStoreImage(const CMFCToolBarButton& button, int iInsertAt)
 {
 	int nReturnVal = InsertButton( button, iInsertAt );
 	int nImage = button.GetImage ();
@@ -461,7 +461,7 @@ int CShellToolBar::GetMyCommandButtons( UINT uiCmd, CObList *plistButtons )
 	int nbtn_count = 0;
     for (POSITION pos = m_Buttons.GetHeadPosition (); pos != NULL;)
 	{
-		CBCGToolbarButton* pButton = (CBCGToolbarButton*)(m_Buttons.GetNext (pos));
+		CMFCToolBarButton* pButton = (CMFCToolBarButton*)(m_Buttons.GetNext (pos));
 		ASSERT (pButton != NULL);
         if (pButton->m_nID == uiCmd)
 		{
@@ -479,7 +479,7 @@ void CShellToolBar::OnActionInfo()
 	if( m_iSelected == -1 )
 		return;
 
-	CBCGToolbarButton	*pbtn = GetButton( m_iSelected );
+	CMFCToolBarButton	*pbtn = GetButton( m_iSelected );
 
 	UINT	nID = pbtn->m_nID;
 	CActionInfoWrp	*pai = g_CmdManager.GetActionInfo( nID-ID_CMDMAN_BASE );
@@ -501,7 +501,7 @@ BOOL CShellToolBar::OnDrop(COleDataObject* pDataObject, DROPEFFECT dropEffect, C
 		if (!GetValueInt(GetAppUnknown(), "\\MainFrame\\EnableChangeToolbar", sName, TRUE))
 			return FALSE;
 	}*/
-	return CBCGToolBar::OnDrop(pDataObject,dropEffect,point);
+	return CMFCToolBar::OnDrop(pDataObject,dropEffect,point);
 }
 
 DROPEFFECT CShellToolBar::OnDragOver(COleDataObject* pDataObject, DWORD dwKeyState, CPoint point)
@@ -515,7 +515,7 @@ DROPEFFECT CShellToolBar::OnDragOver(COleDataObject* pDataObject, DWORD dwKeySta
 		if (!GetValueInt(GetAppUnknown(), "\\MainFrame\\EnableChangeToolbar", sName, TRUE))
 			return DROPEFFECT_NONE;
 	}*/
-	return CBCGToolBar::OnDragOver(pDataObject, dwKeyState, point);
+	return CMFCToolBar::OnDragOver(pDataObject, dwKeyState, point);
 }
 
 
@@ -537,7 +537,7 @@ bool CShellToolBar::CanDragDropButtons()
 void CShellToolBar::OnLButtonDown(UINT nFlags, CPoint point)
 {
 	// проапдейтим настройку возможности драга
-	m_bEnableDrag = ::GetValueInt( GetAppUnknown(), "\\General", "EnableDock", 1L ) != 0;
+	//m_bEnableDrag = ::GetValueInt( GetAppUnknown(), "\\General", "EnableDock", 1L ) != 0;
 
 	__super::OnLButtonDown(nFlags, point);
 }
@@ -589,12 +589,12 @@ void CShellOutlookToolBar::OnNcCalcSize(BOOL bCalcValidRects, NCCALCSIZE_PARAMS 
 
 void CShellOutlookToolBar::AdjustLocations()
 {
-	CBCGToolBar::AdjustLocations();
+	CMFCToolBar::AdjustLocations();
 
 	m_nMaxBtnHeight = CalcMaxButtonHeight ();
 
 	CClientDC dc (this);
-	dc.SelectObject (&pGlobalData->fontRegular);
+	dc.SelectObject (&GetGlobalData()->fontRegular);
 
 	POSITION pos = m_Buttons.GetHeadPosition();
 	CSize	sizeMax = CSize( 0, 0 );
@@ -611,7 +611,7 @@ void CShellOutlookToolBar::AdjustLocations()
 
 	while( pos )
 	{
-		CBCGToolbarButton	*pbtn = (CBCGToolbarButton*)m_Buttons.GetNext( pos );
+		CMFCToolBarButton	*pbtn = (CMFCToolBarButton*)m_Buttons.GetNext( pos );
 		CSize	sizeButton = pbtn->OnCalculateSize (&dc, CSize ( GetColumnWidth(), GetRowHeight()), true );
 
 		sizeMax.cx = max( sizeButton.cx, sizeMax.cx );
@@ -627,13 +627,13 @@ void CShellOutlookToolBar::AdjustLocations()
 	pos = m_Buttons.GetHeadPosition();
 	while( pos )
 	{
-		CBCGToolbarButton	*pbtn = (CBCGToolbarButton*)m_Buttons.GetNext( pos );
+		CMFCToolBarButton	*pbtn = (CMFCToolBarButton*)m_Buttons.GetNext( pos );
 		
 		if( pbtn->IsKindOf( RUNTIME_CLASS( CShellToolbarButton ) ) )
 		{
 			((CShellToolbarButton*)pbtn)->SetButtonStyle( 0 );
 			((CShellToolbarButton*)pbtn)->SetMenuMode( true );
-			((CShellToolbarButton*)pbtn)->SetDrawAccel( false );
+//			((CShellToolbarButton*)pbtn)->SetDrawAccel( false );
 
 		}
 
@@ -790,19 +790,19 @@ void CShellOutlookToolBar::DoPaint(CDC* pDC)
 	}
 }
 
-BOOL CShellOutlookToolBar::EnableContextMenuItems (CBCGToolbarButton* pButton, CMenu* pPopup)
+BOOL CShellOutlookToolBar::EnableContextMenuItems (CMFCToolBarButton* pButton, CMenu* pPopup)
 {
-	if( !CBCGToolBar::EnableContextMenuItems( pButton, pPopup ) )
+	if( !CMFCToolBar::EnableContextMenuItems( pButton, pPopup ) )
 		return false;
 
 	if( !pButton->IsKindOf( RUNTIME_CLASS( CShellToolbarButton ) ) )
 		return true;
 
 	CShellToolbarButton	*pshellButton = (CShellToolbarButton	*)pButton;
-	pPopup->RemoveMenu( ID_BCGBARRES_TOOLBAR_APPEARANCE, MF_BYCOMMAND );
-	pPopup->RemoveMenu( ID_BCGBARRES_TOOLBAR_TEXT, MF_BYCOMMAND );
-	pPopup->RemoveMenu( ID_BCGBARRES_TOOLBAR_IMAGE_AND_TEXT, MF_BYCOMMAND );
-	pPopup->RemoveMenu( ID_BCGBARRES_TOOLBAR_IMAGE, MF_BYCOMMAND );
+	pPopup->RemoveMenu(ID_AFXBARRES_TOOLBAR_APPEARANCE, MF_BYCOMMAND);
+	pPopup->RemoveMenu( ID_AFXBARRES_TOOLBAR_TEXT, MF_BYCOMMAND );
+	pPopup->RemoveMenu( ID_AFXBARRES_TOOLBAR_IMAGE_AND_TEXT, MF_BYCOMMAND );
+	pPopup->RemoveMenu( ID_AFXBARRES_TOOLBAR_IMAGE, MF_BYCOMMAND );
 
 	CMenu	menu;
 	menu.LoadMenu( IDR_TOOLBAR_APPEND );
@@ -862,7 +862,7 @@ END_MESSAGE_MAP()
 BOOL CShellFrameToolBar::PreTranslateMessage(MSG* pMsg)
 {
 	BOOL bRet = CShellToolBar::PreTranslateMessage( pMsg );
-//	CBCGToolBar::m_bShowTooltips = true;
+//	CMFCToolBar::m_bShowTooltips = true;
 	return bRet;
 }
 
@@ -906,7 +906,7 @@ void CShellFrameToolBar::AdjustLocations ()
 	CWnd* pWndParent = GetParent();
 	if( !pWndParent || !pWndParent->GetSafeHwnd() )
 	{
-		CBCGToolBar::AdjustLocations();
+		CMFCToolBar::AdjustLocations();
 		return;
 	}
 
@@ -923,41 +923,41 @@ void CShellFrameToolBar::AdjustLocations ()
 	MoveWindow( &rc );
 	*/
 
-	CBCGToolBar::AdjustLocations();
+	CMFCToolBar::AdjustLocations();
 	
 }
 
 /*/////////////////////////////////////////////////////////////////////////////
 BOOL CShellFrameToolBar::OnDrop(COleDataObject* pDataObject, DROPEFFECT dropEffect, CPoint point)
 {
-	return CBCGToolBar::OnDrop( pDataObject, dropEffect, point );
+	return CMFCToolBar::OnDrop( pDataObject, dropEffect, point );
 
 }
 
 /////////////////////////////////////////////////////////////////////////////
 DROPEFFECT CShellFrameToolBar::OnDragEnter(COleDataObject* pDataObject, DWORD dwKeyState, CPoint point)
 {
-	return CBCGToolBar::OnDragEnter( pDataObject, dwKeyState, point );
+	return CMFCToolBar::OnDragEnter( pDataObject, dwKeyState, point );
 
 }
 
 /////////////////////////////////////////////////////////////////////////////
 void CShellFrameToolBar::OnDragLeave()
 {
-	CBCGToolBar::OnDragLeave();
+	CMFCToolBar::OnDragLeave();
 }
 
 /////////////////////////////////////////////////////////////////////////////
 DROPEFFECT CShellFrameToolBar::OnDragOver(COleDataObject* pDataObject, DWORD dwKeyState, CPoint point)
 {
-	return CBCGToolBar::OnDragOver( pDataObject, dwKeyState, point );
+	return CMFCToolBar::OnDragOver( pDataObject, dwKeyState, point );
 }*/
 
 
 /////////////////////////////////menu bar
 
 
-BEGIN_MESSAGE_MAP(CShellMenuBar, CBCGMenuBar)
+BEGIN_MESSAGE_MAP(CShellMenuBar, CMFCMenuBar)
 	ON_MESSAGE(WM_HELPHITTEST, OnHelpHitTest)
 	ON_WM_NCHITTEST()
 	ON_WM_ERASEBKGND()
@@ -967,7 +967,7 @@ LRESULT CShellMenuBar::OnNcHitTest(CPoint point)
 {
 	// TODO: Add your message handler code here and/or call default
 	
-	return CBCGMenuBar::OnNcHitTest(point);
+	return CMFCMenuBar::OnNcHitTest(point);
 }
 
 BOOL CShellMenuBar::OnEraseBkgnd(CDC* pDC)
@@ -981,7 +981,7 @@ LRESULT CShellMenuBar::OnHelpHitTest( WPARAM wParam, LPARAM lParam )
 {
 	int nIndex = HitTest ((DWORD) lParam);
 	if (nIndex < 0)	return -1;
-	CBCGToolbarButton* pButton = GetButton (nIndex);
+	CMFCToolBarButton* pButton = GetButton (nIndex);
 
 	if( pButton->OnContextHelp(this ) )
 		return (DWORD)-2;
@@ -1024,7 +1024,7 @@ void CShellMenuBar::ReloadMenu()
 
 BOOL CShellMenuBar::PreCreateWindow(CREATESTRUCT& cs)
 {
-	if( !CBCGMenuBar::PreCreateWindow( cs ) )
+	if( !CMFCMenuBar::PreCreateWindow( cs ) )
 		return false;
 	
 	return true;
@@ -1069,7 +1069,7 @@ bool CShellMenuBar::CanDragDropButtons()
 BOOL CShellToolBar::OnEraseBkgnd(CDC* pDC) 
 {
 	return ::ProcessEraseBackground( pDC->GetSafeHdc(), GetSafeHwnd() );
-//	return CBCGToolBar::OnEraseBkgnd(pDC);
+//	return CMFCToolBar::OnEraseBkgnd(pDC);
 }
 ///////////////////////////////////////////////////////////////////////////////
 BOOL ProcessEraseBackground( HDC hdc, HWND hwnd )

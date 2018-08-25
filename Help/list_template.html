@@ -1,0 +1,98 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=windows-1251">
+	<title></title>
+
+<style>
+	BODY {BACKGROUND: #D6DEE6; COLOR: rgb(0,0,0); FONT-FAMILY: "MS Sans serif", verdana, 
+		sans-serif; FONT-SIZE: 10pt}
+
+	A:link {COLOR: #0000FF; TEXT-DECORATION: none}
+	A:visited {COLOR: #0000FF; TEXT-DECORATION: none}
+	A:hover {TEXT-DECORATION: underline}
+
+	H1 {FONT-FAMILY: "Times New Roman", "MS serif"; FONT-SIZE: 14pt; FONT-STYLE: normal; 
+	FONT-WEIGHT: bold; TEXT-ALIGN: left}
+
+	UL {MARGIN: 5 0 10 0}
+	UL LI {MARGIN: 5 0 0 20; list-style:square}
+	.developer {MARGIN: 0 0 10 0; DISPLAY:none}
+	VAR {COLOR: #005555; FONT-STYLE:normal; TEXT-DECORATION: none}
+</style>
+
+</head>
+
+<body>
+<ul id=new_list>
+</ul>
+
+<div id=source_list style="display:none">
+<hr>
+<!-- list start -->
+<ul>
+   <li><a href="ms-its:Master.chm::/shell/WindowTile.html">Расположить окна мозаикой</a></li>
+   <li><a href="ms-its:Master.chm::/shell/WindowCascade.html">Расположить окна каскадом</a></li>
+   <li><a href="ms-its:Master.chm::/shell/FileClose.html">Закрыть документ</a></li>
+   <li><a href="ms-its:Master.chm::/shell/FileCloseAll.html">Закрыть все документы</a></li>
+   <li><a href="ms-its:Master.chm::/shell/WindowActivate.html">Активизировать окно</a></li>
+</ul>
+
+<!-- list end -->
+</div>
+
+<script language=vbscript>
+Sub window_onLoad
+	txtNewList = ""
+	intCount = 1
+	Set source_div = source_list.all
+	For Each objItem In source_div.tags("a")
+		txtPath = objItem.href
+		txtPath = Replace(txtPath, "ms-its:", "")
+		txtInnerPath = Mid(objItem.href, InStr(objItem.href,"::") + 3)
+		If txtInnerPath > "" Then
+			txtTitle = objItem.innerText
+			intSep = InStr(txtInnerPath,"/")
+			txtTopic = Mid(txtInnerPath, intSep + 1)
+			txtAction = Left(txtTopic, InStr(txtTopic,".") - 1)
+			txtFolder = Left(txtInnerPath, intSep - 1)
+			txtNewList = txtNewList & "<li><a " & _
+				"href='VBScript:hhlink" & intCount & ".HHClick()'>" & _
+				txtTitle & "</a>" & _
+				"<object id='hhlink" & intCount & "' type='application/x-oleobject'" & _
+				"		classid='clsid:adb880a6-d8ff-11cf-9377-00aa003b7a11'>" & _
+				"	<param name='Command' value='related topics'>" & _
+				"	<param name='Item1' value=';" & txtPath & "'>" & _
+				"	<param name='Window' value='$GLOBAL_main'>" & _
+				"</object>" & _
+				"<div class=developer>"
+			If txtFolder = "as" & txtAction Or txtFolder = "Scripts" Then 
+				txtDev = "<var>script: </var>" & txtAction
+			Else
+				txtDev = "<var>action: </var>" & txtAction & _
+					"<br><var>Dll: </var>" & txtFolder
+			End If
+			txtNewList = txtNewList & txtDev & "</div> </li>"
+		End If
+		intCount = intCount + 1
+	Next
+	new_list.innerHTML = txtNewList
+End Sub
+
+Sub	document_onkeydown
+	On Error Resume Next
+	If window.event.keyCode = 107 And window.event.altKey And window.event.ctrlKey Then
+		txtcssText = document.styleSheets(0).cssText
+		txtcssText = Replace(txtcssText,"DISPLAY","ops")
+		document.styleSheets(0).cssText = txtcssText
+	End If
+	If window.event.keyCode = 111 And window.event.altKey And window.event.ctrlKey Then
+		source_list.style.display = ""
+	End If
+End Sub
+
+</script>
+
+</body>
+</html>

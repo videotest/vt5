@@ -11,6 +11,9 @@
 
 #include <afxwin.h>         // MFC core and standard components
 #include <afxext.h>         // MFC extensions
+#include <afxtoolbar.h>
+#include <afxpriv.h>
+#include <afxmenuimages.h>
 
 #ifndef _AFX_NO_OLE_SUPPORT
 #include <afxole.h>         // MFC OLE classes
@@ -30,7 +33,7 @@
 
 #include "common.h"
 #include "guard.h"
-#include "\vt5\controls\BCGControlBar\BCGCB.h"
+//#include "\vt5\controls\BCGControlBar\BCGCB.h"
 
 #define LOG_FILE "metodics.log"
 

@@ -1,0 +1,10 @@
+'resource:Stitch from Splitter#Image#Create new image by combining two split images#Stitch from splitter
+
+
+ActionManager.CompareScreen
+Set frame = MainWnd.ActiveFrame
+Set s = frame.GetSplitter
+s.Split 1, 1
+ActionManager.ObjectSelect "CompareScreen"
+s = Null
+

@@ -30,7 +30,7 @@ class CBCGMDIFrameWnd;
 // CBCGMainClientAreaWnd window
 
 //!!! andy modification - 2.06.99
-#include "bcgcontrolbar.h"
+//#include "bcgcontrolbar.h"
 
 class BCGCONTROLBARDLLEXPORT CBCGMainClientAreaWnd : public CWnd
 ///end modification

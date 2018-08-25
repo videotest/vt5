@@ -21,8 +21,8 @@ public:
 
 // Attributes
 public:
-	CBCGToolBar *AddFolderBar( const char *szName ); 
-	void		DeleteFolderBar( CBCGToolBar *pbar );
+	CMFCToolBar *AddFolderBar( const char *szName ); 
+	void		DeleteFolderBar(CMFCToolBar *pbar);
 	void		DeleteAllFolderBars();
 
 	CString	GetFolderName( int nFolder );

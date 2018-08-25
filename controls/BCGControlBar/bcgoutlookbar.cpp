@@ -20,7 +20,7 @@
 
 #include "stdafx.h"
 #include "bcgoutlookbar.h"
-#include "MenuImages.h"
+//#include "MenuImages.h"
 #include "bcgbarres.h"
 
 #ifdef _DEBUG

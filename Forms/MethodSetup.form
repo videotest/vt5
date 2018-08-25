@@ -1,0 +1,405 @@
+[AxForm]
+Version=1
+Size=406, 275
+Title=%Method Settings%
+
+[AXControls]
+Name=edtMeasuredArea
+ProgID=VTCONTROLS.VTEditor.1
+Rect=185, 154, 230, 175
+Style=50000000h
+ID=0
+Data=248 00 00 01 00 09 00 00 00 0c 00 00 00 09 00 00 00 00 00 00 00 00 00 00 00 90 01 00 00 00 00 00 01 00 02 02 02 4d 53 20 53 61 6e 73 20 53 65 72 69 66 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 0c 00 00 00 09 00 00 00 00 00 00 00 00 00 00 00 90 01 00 00 00 00 00 01 00 02 02 02 4d 53 20 53 61 6e 73 20 53 65 72 69 66 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 08 56 54 45 64 69 74 6f 72 01 00 15 ce e1 f0 e0 e1 ee f2 e0 ed ed e0 ff 20 ef eb ee f9 e0 e4 fc 20 00 00 00 00 02 00 01 30 2e 00 00 00 00 00 00 00 00 00 00 00 c8 42 00 00 00 00 08 00 00 80 05 00 00 80 08 00 00 80 0f 00 00 80 0f 00 00 80 01 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 01 00 00 00
+
+Name=edtImgCount
+ProgID=VTCONTROLS.VTEditor.1
+Rect=185, 129, 230, 150
+Style=50000000h
+ID=0
+Data=249 00 00 01 00 09 00 00 00 0c 00 00 00 09 00 00 00 00 00 00 00 00 00 00 00 90 01 00 00 00 00 00 01 00 02 02 02 4d 53 20 53 61 6e 73 20 53 65 72 69 66 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 0c 00 00 00 09 00 00 00 00 00 00 00 00 00 00 00 90 01 00 00 00 00 00 01 00 02 02 02 4d 53 20 53 61 6e 73 20 53 65 72 69 66 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 08 56 54 45 64 69 74 6f 72 01 00 16 ca ee eb e8 f7 e5 f1 f2 e2 ee 20 e8 e7 ee e1 f0 e0 e6 e5 ed e8 e9 00 00 00 00 01 00 01 30 82 00 01 00 00 00 01 00 00 00 00 00 7a 44 00 00 00 00 08 00 00 80 05 00 00 80 08 00 00 80 0f 00 00 80 0f 00 00 80 01 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 01 00 00 00
+
+Name=chkDataControl
+ProgID=VTCHECKBOX.VTCheckBoxCtrl.1
+Rect=25, 108, 132, 128
+Style=50000000h
+ID=0
+Data=122 00 00 00 00 04 00 00 00 00 00 00 00 0c cd e0 e1 ee f0 20 e4 e0 ed ed fb f5 08 00 00 80 0f 00 00 80 08 00 00 80 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 01 00 00 00 00 00 01 00 00 03 52 e3 0b 91 8f ce 11 9d e3 00 aa 00 4b b8 51 01 cc 00 00 90 01 44 42 01 00 0d 4d 53 20 53 61 6e 73 20 53 65 72 69 66
+
+Name=edtInput
+ProgID=VTCONTROLS.VTEditor.1
+Rect=46, 29, 295, 50
+Style=58000000h
+ID=0
+Data=237 00 00 01 00 09 00 00 00 0c 00 00 00 09 00 00 00 00 00 00 00 00 00 00 00 90 01 00 00 00 00 00 01 00 02 02 02 4d 53 20 53 61 6e 73 20 53 65 72 69 66 00 61 73 65 22 29 0a 09 09 45 6e 64 20 49 66 0a 09 45 6e 0c 00 00 00 09 00 00 00 00 00 00 00 00 00 00 00 90 01 00 00 00 00 00 01 00 02 02 02 4d 53 20 53 61 6e 73 20 53 65 72 69 66 00 61 73 65 22 29 0a 09 09 45 6e 64 20 49 66 0a 09 45 6e 08 56 54 45 64 69 74 6f 72 00 00 07 43 61 70 74 69 6f 6e 01 00 00 00 00 00 04 45 64 69 74 64 00 00 00 00 00 01 00 00 00 00 00 c8 42 00 00 00 00 08 00 00 80 05 00 00 80 08 00 00 80 0f 00 00 80 0f 00 00 80 01 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 01 00 00 00
+
+Name=btnInput
+ProgID=PUSHBUTTON.PushButtonCtrl.1
+Rect=297, 29, 323, 49
+Style=50000000h
+ID=0
+Data=151 0c 01 00 01 00 00 00 00 00 00 00 01 00 01 00 01 00 00 00 00 03 2e 2e 2e 00 00 05 00 05 00 00 00 00 00 00 01 00 00 00 00 00 00 00 00 00 00 14 04 01 01 14 00 00 00 45 00 00 00 04 00 00 00 00 03 52 e3 0b 91 8f ce 11 9d e3 00 aa 00 4b b8 51 01 cc 00 00 90 01 44 42 01 00 0d 4d 53 20 53 61 6e 73 20 53 65 72 69 66 00 00 00 00 00 00 00 00 00 05 00 00 80 08 00 00 80 08 00 00 80 08 00 00 80 08 00 00 80 00 00 00 00 01 00 00 00 01 00 00 00 00 00 00 00 00 01 00
+
+Name=rdbImageAreaDataCtrl
+ProgID=VTRADIOBTN.VTRadioBtnCtrl.1
+Rect=29, 135, 183, 197
+Style=50000000h
+ID=0
+Data=105 03 00 00 00 03 00 00 00 16 ca ee eb e8 f7 e5 f1 f2 e2 ee 20 e8 e7 ee e1 f0 e0 e6 e5 ed e8 e9 14 ce e1 f0 e0 e1 ee f2 e0 ed ed e0 ff 20 ef eb ee f9 e0 e4 fc 13 ca ee eb e8 f7 e5 f1 f2 e2 ee 20 ee e1 fa e5 ea f2 ee e2 ff ff ff ff 01 00 00 00 00 00 00 00 01 00 00 00 04 00 01 00 eb 0f 00 00 68 06 00 00 40 00 00 00 01
+
+Name=rdbInput
+ProgID=VTRADIOBTN.VTRadioBtnCtrl.1
+Rect=29, 31, 68, 73
+Style=50000000h
+ID=0
+Data=47 03 00 00 00 02 00 00 00 01 2d 03 41 56 49 ff ff ff ff 01 00 00 00 00 00 00 00 01 00 00 00 04 00 01 00 08 04 00 00 57 04 00 00 40 00 00 00 01
+
+Name=frmControl
+ProgID=VTDESIGN.VTD3DBarCtrl.1
+Rect=17, 101, 392, 210
+Style=50000000h
+ID=0
+Data=72 00 00 00 00 03 00 00 00 03 00 02 00 00 00 05 00 00 80 01 00 00 00 08 00 00 80 00 64 00 00 00 00 00 01 00 01 00 00 00 00 03 52 e3 0b 91 8f ce 11 9d e3 00 aa 00 4b b8 51 01 cc 00 00 90 01 44 42 01 00 05 41 72 69 61 6c
+
+Name=frmControl1
+ProgID=VTDESIGN.VTD3DBarCtrl.1
+Rect=13, 20, 388, 78
+Style=50000000h
+ID=0
+Data=72 00 00 00 00 03 00 00 00 03 00 02 00 00 00 05 00 00 80 01 00 00 00 08 00 00 80 00 64 00 00 00 00 00 01 00 01 00 00 00 00 03 52 e3 0b 91 8f ce 11 9d e3 00 aa 00 4b b8 51 01 cc 00 00 90 01 44 42 01 00 05 41 72 69 61 6c
+
+Name=txtControl
+ProgID=VTCONTROLS.VTStaticText.1
+Rect=21, 87, 81, 101
+Style=50000000h
+ID=0
+Data=325 05 00 00 00 0f 00 00 80 00 03 52 e3 0b 91 8f ce 11 9d e3 00 aa 00 4b b8 51 01 00 00 00 90 01 44 42 01 00 06 54 61 68 6f 6d 61 0b 00 00 00 08 00 00 80 0f 00 00 80 0f 00 00 80 01 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 01 00 00 00 00 00 00 00 01 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 09 ca ee ed f2 f0 ee eb fc 3a 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 ff ff ff ff 00 00 00 00 00 00 00 00 49 4c 01 01 00 00 02 00 04 00 01 00 01 00 ff ff ff ff 11 00 ff ff ff ff ff ff ff ff 42 4d 36 00 00 00 00 00 00 00 36 00 00 00 28 00 00 00 04 00 00 00 01 00 00 00 01 00 10 00 00 00 00 00 08 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 42 4d 3e 00 00 00 00 00 00 00 3e 00 00 00 28 00 00 00 04 00 00 00 01 00 00 00 01 00 01 00 00 00 00 00 04 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 ff ff ff 00 00 00 00 00 01 00 00 00 01 00 00 00 0f 00 00 80 01 00 00 00 00 00 00 00 01 00 00 00
+
+Name=edtObjCountCtrl
+ProgID=VTCONTROLS.VTEditor.1
+Rect=185, 176, 230, 201
+Style=50000000h
+ID=0
+Data=228 00 00 01 00 09 00 00 00 0c 00 00 00 09 00 00 00 00 00 00 00 00 00 00 00 90 01 00 00 00 00 00 01 00 02 02 02 4d 53 20 53 61 6e 73 20 53 65 72 69 66 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 0c 00 00 00 09 00 00 00 00 00 00 00 00 00 00 00 90 01 00 00 00 00 00 01 00 02 02 02 4d 53 20 53 61 6e 73 20 53 65 72 69 66 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 08 56 54 45 64 69 74 6f 72 01 00 01 20 00 00 00 00 01 00 01 30 00 00 00 00 00 00 01 00 00 00 00 24 74 49 00 00 00 00 08 00 00 80 05 00 00 80 08 00 00 80 0f 00 00 80 0f 00 00 80 01 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 01 00 00 00
+
+Name=edtDelay
+ProgID=VTCONTROLS.VTEditor.1
+Rect=108, 213, 153, 238
+Style=50000000h
+ID=0
+Data=228 00 00 01 00 09 00 00 00 0c 00 00 00 09 00 00 00 00 00 00 00 00 00 00 00 90 01 00 00 00 00 00 01 00 02 02 02 4d 53 20 53 61 6e 73 20 53 65 72 69 66 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 0c 00 00 00 09 00 00 00 00 00 00 00 00 00 00 00 90 01 00 00 00 00 00 01 00 02 02 02 4d 53 20 53 61 6e 73 20 53 65 72 69 66 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 08 56 54 45 64 69 74 6f 72 01 00 01 20 00 00 00 00 02 00 01 30 00 00 00 00 00 00 00 00 00 00 00 50 c3 47 00 00 00 00 08 00 00 80 05 00 00 80 08 00 00 80 0f 00 00 80 0f 00 00 80 01 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 01 00 00 00
+
+Name=chkDelImg
+ProgID=VTCHECKBOX.VTCheckBoxCtrl.1
+Rect=18, 241, 249, 261
+Style=50000000h
+ID=0
+Data=142 00 00 00 00 04 00 00 00 00 00 00 00 20 d3 e4 e0 eb ff f2 fc 20 ee e1 f0 e0 e1 ee f2 e0 ed ed fb e5 20 e8 e7 ee e1 f0 e0 e6 e5 ed e8 ff 08 00 00 80 0f 00 00 80 08 00 00 80 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 01 00 00 00 00 00 01 00 00 03 52 e3 0b 91 8f ce 11 9d e3 00 aa 00 4b b8 51 01 cc 00 00 90 01 44 42 01 00 0d 4d 53 20 53 61 6e 73 20 53 65 72 69 66
+
+Name=chkDelay
+ProgID=VTCHECKBOX.VTCheckBoxCtrl.1
+Rect=18, 215, 101, 235
+Style=50000000h
+ID=0
+Data=118 00 00 00 00 04 00 00 00 00 00 00 00 08 c7 e0 e4 e5 f0 e6 ea e0 08 00 00 80 0f 00 00 80 08 00 00 80 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 01 00 00 00 00 00 01 00 00 03 52 e3 0b 91 8f ce 11 9d e3 00 aa 00 4b b8 51 01 cc 00 00 90 01 44 42 01 00 0d 4d 53 20 53 61 6e 73 20 53 65 72 69 66
+
+Name=txtAcquireImage
+ProgID=VTCONTROLS.VTStaticText.1
+Rect=17, 6, 185, 20
+Style=50000000h
+ID=0
+Data=345 05 00 00 00 0f 00 00 80 00 03 52 e3 0b 91 8f ce 11 9d e3 00 aa 00 4b b8 51 01 00 00 00 90 01 44 42 01 00 06 54 61 68 6f 6d 61 0b 00 00 00 08 00 00 80 0f 00 00 80 0f 00 00 80 01 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 01 00 00 00 00 00 00 00 01 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 1d d1 ef ee f1 ee e1 20 ef ee eb f3 f7 e5 ed e8 ff 20 e8 e7 ee e1 f0 e0 e6 e5 ed e8 ff 3a 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 ff ff ff ff 00 00 00 00 00 00 00 00 49 4c 01 01 00 00 02 00 04 00 01 00 01 00 ff ff ff ff 11 00 ff ff ff ff ff ff ff ff 42 4d 36 00 00 00 00 00 00 00 36 00 00 00 28 00 00 00 04 00 00 00 01 00 00 00 01 00 10 00 00 00 00 00 08 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 42 4d 3e 00 00 00 00 00 00 00 3e 00 00 00 28 00 00 00 04 00 00 00 01 00 00 00 01 00 01 00 00 00 00 00 04 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 ff ff ff 00 00 00 00 00 01 00 00 00 01 00 00 00 0f 00 00 80 01 00 00 00 00 00 00 00 01 00 00 00
+
+Name=txtTimeUnit
+ProgID=VTCONTROLS.VTStaticText.1
+Rect=160, 219, 183, 233
+Style=50000000h
+ID=0
+Data=320 05 00 00 00 0f 00 00 80 00 03 52 e3 0b 91 8f ce 11 9d e3 00 aa 00 4b b8 51 01 00 00 00 90 01 44 42 01 00 06 54 61 68 6f 6d 61 0b 00 00 00 08 00 00 80 0f 00 00 80 0f 00 00 80 01 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 01 00 00 00 00 00 00 00 01 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 04 f1 e5 ea 2e 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 ff ff ff ff 00 00 00 00 00 00 00 00 49 4c 01 01 00 00 02 00 04 00 01 00 01 00 ff ff ff ff 11 00 ff ff ff ff ff ff ff ff 42 4d 36 00 00 00 00 00 00 00 36 00 00 00 28 00 00 00 04 00 00 00 01 00 00 00 01 00 10 00 00 00 00 00 08 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 42 4d 3e 00 00 00 00 00 00 00 3e 00 00 00 28 00 00 00 04 00 00 00 01 00 00 00 01 00 01 00 00 00 00 00 04 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 ff ff ff 00 00 00 00 00 01 00 00 00 01 00 00 00 0f 00 00 80 01 00 00 00 00 00 00 00 01 00 00 00
+
+Name=chkShownfoCtrl
+ProgID=VTCHECKBOX.VTCheckBoxCtrl.1
+Rect=139, 108, 253, 128
+Style=50000000h
+ID=0
+Data=123 00 00 00 00 04 00 00 00 00 00 00 00 0d cf ee ea e0 e7 e0 f2 fc 20 ee ea ed ee 08 00 00 80 0f 00 00 80 08 00 00 80 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 01 00 00 00 00 00 01 00 00 03 52 e3 0b 91 8f ce 11 9d e3 00 aa 00 4b b8 51 01 cc 00 00 90 01 44 42 01 00 0d 4d 53 20 53 61 6e 73 20 53 65 72 69 66
+
+Name=chkInClass
+ProgID=VTCHECKBOX.VTCheckBoxCtrl.1
+Rect=241, 179, 262, 199
+Style=50000000h
+ID=0
+Data=110 00 00 00 00 04 00 00 00 00 00 00 00 00 08 00 00 80 0f 00 00 80 08 00 00 80 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 01 00 00 00 00 00 01 00 00 03 52 e3 0b 91 8f ce 11 9d e3 00 aa 00 4b b8 51 01 cc 00 00 90 01 44 42 01 00 0d 4d 53 20 53 61 6e 73 20 53 65 72 69 66
+
+Name=txtInClass
+ProgID=VTCONTROLS.VTStaticText.1
+Rect=266, 181, 316, 198
+Style=50000000h
+ID=0
+Data=332 05 00 00 00 0f 00 00 80 00 03 52 e3 0b 91 8f ce 11 9d e3 00 aa 00 4b b8 51 01 cc 00 00 90 01 44 42 01 00 0d 4d 53 20 53 61 6e 73 20 53 65 72 69 66 0b 00 00 00 08 00 00 80 0f 00 00 80 0f 00 00 80 01 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 01 00 00 00 00 00 00 00 01 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 09 c2 20 ea eb e0 f1 f1 e5 3a 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 ff ff ff ff 00 00 00 00 00 00 00 00 49 4c 01 01 00 00 02 00 04 00 01 00 01 00 ff ff ff ff 11 00 ff ff ff ff ff ff ff ff 42 4d 36 00 00 00 00 00 00 00 36 00 00 00 28 00 00 00 04 00 00 00 01 00 00 00 01 00 10 00 00 00 00 00 08 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 42 4d 3e 00 00 00 00 00 00 00 3e 00 00 00 28 00 00 00 04 00 00 00 01 00 00 00 01 00 01 00 00 00 00 00 04 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 ff ff ff 00 00 00 00 00 01 00 00 00 01 00 00 00 0f 00 00 80 01 00 00 00 00 00 00 00 01 00 00 00
+
+Name=cbbInClass
+ProgID=VTCONTROLS2.VTComboBoxCtrl.1
+Rect=320, 179, 386, 200
+Style=50000000h
+ID=0
+Data=65 00 00 01 00 00 00 00 00 04 00 01 00 d2 06 00 00 2c 02 00 00 44 00 00 00 00 03 52 e3 0b 91 8f ce 11 9d e3 00 aa 00 4b b8 51 01 cc 00 00 90 01 44 42 01 00 0c 4d 53 20 53 68 65 6c 6c 20 44 6c 67 01
+
+
+[Script]
+id = "StatInfo"
+Dim global, fso, sStatPath, sSP
+Set fso = CreateObject("Scripting.FileSystemObject")
+Set global = Application.GetGlobalScript("")
+sStatPath = Data.Getvalue ("\Paths\Stat")
+sSP = "\StatUI\StatParams\"
+
+'***************************************************************
+'Form event handlers.
+'***************************************************************
+Sub Form_OnShow()
+End Sub
+
+Sub Form_OnInitialize()	
+	Data.Setvalue "\Input\Device",Data.Getvalue ("\Input\MethodicDevice")
+	txtAcquireImage.Text = Docs.LoadString ("Method of Image Input:")
+	txtControl.Text = Docs.LoadString ("Control:")
+	chkDataControl.Caption = Docs.LoadString ("A set of data")
+	chkShownfoCtrl.Caption = Docs.LoadString ("Show window")
+	txtInClass.Text = Docs.LoadString ("In class:")
+	chkDelImg.Caption = Docs.LoadString ("Delete processed images")
+	chkDelay.Caption = Docs.LoadString ("Delay")
+	txtTimeUnit.Text = Docs.LoadString ("sec.")
+'	txtConfig.Text = Docs.LoadString ("Statistics Configuration:")
+
+	rdbImageAreaDataCtrl.DeleteAll
+	rdbImageAreaDataCtrl.AddItem Docs.LoadString ("Number of images")
+	rdbImageAreaDataCtrl.AddItem Docs.LoadString ("Processed area")
+	rdbImageAreaDataCtrl.AddItem Docs.LoadString ("Number of objects")
+	rdbImageAreaDataCtrl.ReCreate
+
+	edtInput.Text = InputDriverManager.CurrentDeviceName
+	chkDataControl.Checked = Data.Getvalue ("\StatCfg\CtrlData")
+	chkDelImg.Checked = Data.Getvalue ("\Methods\DelImg")
+	rdbImageAreaDataCtrl.ItemChecked = Data.Getvalue ("\StatCfg\CtrlImageAreaData")
+	edtImgCount.ValueInt = Data.Getvalue ("\StatCfg\CtrlImgCount")
+	edtMeasuredArea.ValueDouble = Data.Getvalue ("\StatCfg\CtrlMeasuredArea")	
+	edtObjCountCtrl.ValueInt = Data.Getvalue ("\StatCfg\CtrlObjCount")
+	chkShownfoCtrl.Checked Data.Getvalue ("\StatCfg\ShowInfoCtrl")
+	chkShownfoCtrl_OnCheck(chkShownfoCtrl.Checked)	
+	chkInClass.Checked = Data.Getvalue ("\StatCfg\CheckClass")
+	
+	edtDelay.ValueDouble = Data.Getvalue ("\StatCfg\Delay")
+	chkDelay.Checked Data.Getvalue ("\StatCfg\DelayOn")
+
+	rdbInput.ItemChecked = Data.GetDefvalue ("\Methods\Input",0)
+	rdbInput_OnChangeCheck(rdbInput.ItemChecked)
+	EnableDisable()
+	rdbImageAreaDataCtrl_OnChangeCheck(rdbImageAreaDataCtrl.ItemChecked)
+	LoadClasses()
+'	FillListStatCfg()
+End Sub
+
+Sub Form_OnOK()
+	Data.Setvalue "\StatCfg\CtrlData" ,chkDataControl.Checked
+	Data.Setvalue "\Methods\DelImg" ,chkDelImg.Checked
+	Data.Setvalue "\StatCfg\CtrlImageAreaData",rdbImageAreaDataCtrl.ItemChecked
+	Data.Setvalue "\StatCfg\ShowInfoCtrl", chkShownfoCtrl.Checked 
+	Data.Setvalue "\StatCfg\CtrlImgCount",edtImgCount.ValueInt
+	Data.Setvalue "\StatCfg\CtrlMeasuredArea",edtMeasuredArea.ValueDouble
+	Data.Setvalue "\StatCfg\CtrlObjCount", edtObjCountCtrl.ValueInt
+	Data.Setvalue "\Methods\Input", rdbInput.ItemChecked
+
+	Data.Setvalue "\StatCfg\Delay", edtDelay.ValueDouble
+	Data.Setvalue "\StatCfg\DelayOn", chkDelay.Checked
+
+	Data.Setvalue "\StatCfg\CheckClass", chkInClass.Checked	
+	
+	global.SetImageData "ImageCountFinished", 0
+	If cbbInClass.GetSel() = cbbInClass.GetStringsCount()-1 Then
+		Data.Setvalue "\StatCfg\InClass", -1
+	Else
+		Data.Setvalue "\StatCfg\InClass", cbbInClass.GetSel()
+	End If
+'	If global.NeedControl() Then
+'		global.CheckData()
+'	Else
+'		global.frmInfoCtrl.txtMsg.Text = Docs.LoadString ("No control")
+'	End If
+
+'	str = sStatPath + cbbCfg.GetText + ".StatCfg"
+'	global.copy_entry_to_shelldata str, "\StatUI"
+'	global.copy_entry_to_shelldata str, "\Classes"
+'	Data.Setvalue "\Methods\StatCfg" , str
+	
+'	Set objStat = global.GetStatObj()
+'	If not Docs.IsPointerNull(objStat) Then
+'		Set objData = objStat.GetPrivateNamedData		
+'		objData.CopyNamedData Data, "\StatUI", "\StatUI", 1
+'		objData.CopyNamedData Data, "\Classes", "\Classes", 1
+'		Set objData = Nothing
+'	End If	
+'	Set objStat = Nothing
+	
+End Sub
+
+Sub Form_OnDestroy()
+	Set fso = Nothing
+	Set global = Nothing
+End Sub
+
+'***************************************************************
+'chkDataControl event handlers.
+'***************************************************************
+sub chkDataControl_OnCheck(nCheck)
+	EnabledDataControl 1 - nCheck
+	If nCheck=0 Then chkShownfoCtrl.Checked 0
+	rdbImageAreaDataCtrl_OnChangeCheck(rdbImageAreaDataCtrl.ItemChecked)
+end sub
+
+Sub EnabledDataControl(show)
+	rdbImageAreaDataCtrl.Enabled 1-show
+	cbbInClass.Enabled 1-show
+	chkInClass.Disabled show
+	edtObjCountCtrl.Disabled show
+	edtImgCount.Disabled show
+	edtMeasuredArea.Disabled show
+	txtInClass.Disabled show
+End Sub
+
+Sub LoadClasses()
+	Dim arrCls
+	cbbInClass.DeleteContents()
+	str = Data.Getvalue ("\Classes\ClassFile")
+	If str = "" Then Exit Sub
+	N = CInt(Application.GetPrivateProfileString(str,"Classes","ClassCount","0"))
+	If N = 0 Then Exit Sub
+	For i=0 to N-1
+		StrFromINI = Application.GetPrivateProfileString(str,"Classes",CStr(i),"-")
+		StrFromINI = Mid(StrFromINI, InStr(StrFromINI,")," )+2,255)
+		cbbInClass.InsertString i, StrFromINI
+	Next
+	cbbInClass.InsertString i, Docs.LoadString("Total")
+	x = Data.Getvalue ("\StatCfg\InClass")
+	If x <= N+1 Then
+		cbbInClass.SetSel x
+	End If
+	If x= -1 Then cbbInClass.SetSel cbbInClass.GetStringsCount()-1
+End Sub
+
+
+'***************************************************************
+'btnInput event handlers.
+'***************************************************************
+sub btnInput_Click()
+	SelectInputMethod
+	edtInput.Text = InputDriverManager.CurrentDeviceName
+end sub
+
+'***************************************************************
+'rdbInput event handlers.
+'***************************************************************
+sub rdbInput_OnChangeCheck(lItem)
+	If lItem=1 Then 
+		chkDataControl.Checked 0
+		chkShownfoCtrl.Checked 0
+		chkShownfoCtrl_OnCheck 0
+	End If
+	rdbImageAreaDataCtrl_OnChangeCheck(rdbImageAreaDataCtrl.ItemChecked)
+	EnableDisable()
+end sub
+
+Sub EnableDisable()
+	If rdbInput.ItemChecked=1 or ActionState.GetActionState("MtdRunStop")=8 Then
+		chkDataControl.Disabled = 1
+		rdbImageAreaDataCtrl.Enabled = 0
+		chkDelImg.Disabled = 1
+		edtImgCount.Disabled = 1
+		edtMeasuredArea.Disabled = 1
+		edtObjCountCtrl.Disabled = 1
+		cbbInClass.Enabled = 0
+		chkShownfoCtrl.Disabled = 1
+		chkInClass.Disabled = 1
+		txtInClass.Disabled = 1
+		chkDelay.Disabled = 1
+		edtDelay.Disabled = 1
+		txtTimeUnit.Disabled = 1
+	else
+		edtDelay.Disabled = 0
+		txtTimeUnit.Disabled = 0
+		chkDelay.Disabled = 0
+		chkDataControl.Disabled = 0
+		rdbImageAreaDataCtrl.Enabled = 1
+		chkDelImg.Disabled = 0
+		edtImgCount.Disabled = 0
+		edtMeasuredArea.Disabled = 0
+		edtObjCountCtrl.Disabled = 0
+		cbbInClass.Enabled = 1
+		chkInClass.Disabled = 0
+		txtInClass.Disabled = 0
+		chkShownfoCtrl.Disabled = 0
+	EnabledDataControl 1 - chkDataControl.Checked
+	End If
+End Sub
+'***************************************************************
+'rdbImageAreaDataCtrl event handlers.
+'***************************************************************
+sub rdbImageAreaDataCtrl_OnChangeCheck(lItem)
+	If rdbInput.ItemChecked=1 Then Exit Sub
+	Select Case lItem
+		Case 0
+			edtImgCount.Disabled = 0
+			edtMeasuredArea.Disabled = 1
+			edtObjCountCtrl.Disabled = 1
+			chkInClass.Disabled = 1
+			txtInClass.Disabled = 1
+			cbbInClass.Enabled = 0
+		Case 1
+			edtImgCount.Disabled = 1
+			edtMeasuredArea.Disabled = 0
+			edtObjCountCtrl.Disabled = 1
+			chkInClass.Disabled = 1
+			txtInClass.Disabled = 1
+			cbbInClass.Enabled = 0
+		Case 2
+			edtImgCount.Disabled = 1
+			edtMeasuredArea.Disabled = 1
+			edtObjCountCtrl.Disabled = 0
+			chkInClass.Disabled = 0
+			txtInClass.Disabled = 0
+			cbbInClass.Enabled = 1
+	End Select
+end sub
+
+
+Sub FillListStatCfg()
+	Dim f, flist, objf, fso, strName, i, n
+	Set fso = CreateObject("Scripting.FileSystemObject")
+
+	If fso.FolderExists(sStatPath) Then
+		Set f = fso.GetFolder(sStatPath)
+		Set flist = f.Files
+		i = 0
+		For Each objf In flist
+			If instr(objf.Name,".StatCfg") Then
+				strName = global.GetFileName(objf.Name)
+				If strName <> ""  Then
+					cbbCfg.InsertString -1,strName
+					If global.GetFileName(Data.Getvalue ("\Methods\StatCfg")) = strName Then n = i
+					i=i+1
+				End If
+			End If
+		Next
+	End If
+	cbbCfg.SetSel n
+	Set fso = Nothing
+End Sub
+'***************************************************************
+'chkShownfoCtrl event handlers.
+'***************************************************************
+sub chkShownfoCtrl_OnCheck(nCheck)
+	If nCheck Then 
+		ToolBars.ShowDockBar ToolBars.FindDockNo("InfoCtrl"), 1
+	Else
+		ToolBars.ShowDockBar ToolBars.FindDockNo("InfoCtrl"), 0
+	End If
+end sub

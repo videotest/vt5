@@ -41,7 +41,7 @@ END_MESSAGE_MAP()
 
 /////////////////////////////////////////////////////////////////////////////
 // COutlookBar message handlers
-CBCGToolBar *COutlookBar::AddFolderBar( const char *szName )
+CMFCToolBar *COutlookBar::AddFolderBar( const char *szName )
 {
 	CShellOutlookToolBar	*pbar1 = new CShellOutlookToolBar;
 	pbar1->Create( this, WS_CHILD|WS_VISIBLE, GetFolderCount()+100 );
@@ -54,7 +54,7 @@ CBCGToolBar *COutlookBar::AddFolderBar( const char *szName )
 }
 
 
-void COutlookBar::DeleteFolderBar( CBCGToolBar *pbar )
+void COutlookBar::DeleteFolderBar( CMFCToolBar *pbar )
 {
 	for (int t = 0; t < arFolder.GetSize(); t++)
 	{

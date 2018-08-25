@@ -13,7 +13,7 @@
 // [vanek] : register message WM_SETCANCLOSEWND - 22.10.2004
 UINT WM_SETCANCLOSEWND = RegisterWindowMessage("SET_CAN_CLOSE_WINDOW");
 
-__declspec(dllimport) GLOBAL_DATA *pGlobalData;
+//__declspec(dllimport) GLOBAL_DATA *pGlobalData;
 
 IMPLEMENT_DYNAMIC(CShellDockBar, classDockBarBase);
 /////////////////////////////////////////////////////////////////////////////
@@ -46,15 +46,15 @@ CShellDockBar::CShellDockBar( IUnknown *punkBar )
 	BOOL bFixed = false;
 	if( m_sptrDockClient  )
 		m_sptrDockClient->GetFixed(&bFixed);
-	if( bFixed )
-	{
-		m_szMaxT = m_szMinT = m_szMin= CalcFrameSizeForFixedBar();
-	}
-	else
-	{
-		m_szMinT = m_szMin= CSize(100, 100);
-		m_szMaxT = CSize( 400, 400 );
-	}
+	//if( bFixed )
+	//{
+	//	m_szMaxT = m_szMinT = m_szMin= CalcFrameSizeForFixedBar();
+	//}
+	//else
+	//{
+	//	m_szMinT = m_szMin= CSize(100, 100);
+	//	m_szMaxT = CSize( 400, 400 );
+	//}
 
 	m_bcan_close = true;
 	m_nEnableDock = -1;
@@ -65,10 +65,10 @@ void CShellDockBar::CommitSize( CSize size )
 	if( IsFixed() )
 		return;
 
-	if( IsHorzDocked() )
-		m_szHorz = size;
-	else
-		m_szVert = size;
+	//if( IsHorzDocked() )
+	//	m_szHorz = size;
+	//else
+	//	m_szVert = size;
 
 }
 
@@ -102,29 +102,29 @@ void CShellDockBar::OnBarStyleChange(DWORD dwOldStyle, DWORD dwStyle)
 	if( m_pDockBar->FindBar(this) == -1 )
 		return;
 	
-	classBarArray arrSCBars;
-	GetRowSizingBars(arrSCBars);
+	//classBarArray arrSCBars;
+	//GetRowSizingBars(arrSCBars);
 
 	arrSCBars.Add( this );
 
-	BOOL bHorz = IsHorzDocked();
-	CSize sizeNew = (bHorz ? m_szHorz : m_szVert);
+	//BOOL bHorz = IsHorzDocked();
+	//CSize sizeNew = (bHorz ? m_szHorz : m_szVert);
 	
 	{
 		int	nNewSize = 0;
-		for (int i = 0; i < arrSCBars.GetSize(); i++)
-		{
-			classDockBarBaseRoot* pBar = arrSCBars[i];
-			(bHorz ? pBar->m_szHorz.cy : pBar->m_szVert.cx) =
-                bHorz ? sizeNew.cy : sizeNew.cx;
-			CSize	size = pBar->CalcDynamicLayout( bHorz ? sizeNew.cy:sizeNew.cx, bHorz ? LM_LENGTHY:0 );
-			nNewSize = max( bHorz?size.cy:size.cx, nNewSize );
-		}
-		for ( i = 0; i < arrSCBars.GetSize(); i++)
-		{
-			classDockBarBaseRoot * pBar = arrSCBars[i];
-			(bHorz ? pBar->m_szHorz.cy : pBar->m_szVert.cx) = nNewSize;
-		}
+		//for (int i = 0; i < arrSCBars.GetSize(); i++)
+		//{
+		//	classDockBarBaseRoot* pBar = arrSCBars[i];
+		//	(bHorz ? pBar->m_szHorz.cy : pBar->m_szVert.cx) =
+  //              bHorz ? sizeNew.cy : sizeNew.cx;
+		//	CSize	size = pBar->CalcDynamicLayout( bHorz ? sizeNew.cy:sizeNew.cx, bHorz ? LM_LENGTHY:0 );
+		//	nNewSize = max( bHorz?size.cy:size.cx, nNewSize );
+		//}
+		//for ( i = 0; i < arrSCBars.GetSize(); i++)
+		//{
+		//	classDockBarBaseRoot * pBar = arrSCBars[i];
+		//	(bHorz ? pBar->m_szHorz.cy : pBar->m_szVert.cx) = nNewSize;
+		//}
 	}
 
 	
@@ -489,7 +489,7 @@ void CShellDockBar::OnNcCalcSize(BOOL bCalcValidRects, NCCALCSIZE_PARAMS FAR* lp
 		int nEnableClose = GetValueInt( GetAppUnknown(), "\\MainFrame\\EnableDockCloseButton", strName, 1 );
 		if(!nEnableClose)
 		{
-			for(int i=CBCGSIZINGCONTROLBAR_BUTTONS_NUM-1; i>0; i--)
+			for(int i=CDockablePane_BUTTONS_NUM-1; i>0; i--)
 			{
 				CRect rc = m_Buttons[i-1].GetRect();
 				m_Buttons[i].Move(rc.TopLeft());
@@ -499,9 +499,9 @@ void CShellDockBar::OnNcCalcSize(BOOL bCalcValidRects, NCCALCSIZE_PARAMS FAR* lp
 		}
 
 		int nEnableMaximize = GetValueInt( GetAppUnknown(), "\\MainFrame", "EnableDockMaximizeButton", 1 );
-		if(!nEnableMaximize && CBCGSIZINGCONTROLBAR_BUTTONS_NUM>1)
+		if(!nEnableMaximize && CDockablePane_BUTTONS_NUM>1)
 		{
-			for(int i=CBCGSIZINGCONTROLBAR_BUTTONS_NUM-1; i>1; i--)
+			for(int i=CDockablePane_BUTTONS_NUM-1; i>1; i--)
 			{
 				CRect rc = m_Buttons[i-1].GetRect();
 				m_Buttons[i].Move(rc.TopLeft());
@@ -731,7 +731,7 @@ void CShellDockBar::OnTrackUpdateSize(CPoint& point)
 		int	nNewSize = bHorz ? sizeNew.cy : sizeNew.cx;
 		for (int i = 0; i < arrSCBars.GetSize(); i++)
 		{
-			CBCGSizingControlBar* pBar = arrSCBars[i];
+			CDockablePane* pBar = arrSCBars[i];
 
 			if( !pBar->IsKindOf( RUNTIME_CLASS( CShellDockBar ) ) )
 				continue;
@@ -747,7 +747,7 @@ void CShellDockBar::OnTrackUpdateSize(CPoint& point)
 		}
 		for ( i = 0; i < arrSCBars.GetSize(); i++)
 		{
-			CBCGSizingControlBar * pBar = arrSCBars[i];
+			CDockablePane * pBar = arrSCBars[i];
 			(bHorz ? pBar->m_szHorz.cy : pBar->m_szVert.cx) = nNewSize;
 		}
 	}
@@ -755,7 +755,7 @@ void CShellDockBar::OnTrackUpdateSize(CPoint& point)
 	{
 		for (int i = 0; i < arrSCBars.GetSize(); i++)
 		{
-			CBCGSizingControlBar* pBar = NULL;
+			CDockablePane* pBar = NULL;
 
 			{   // adjust the neighbour's size too
 				if (arrSCBars[i] != this) continue;
@@ -821,7 +821,7 @@ void CShellDockBar::SetMiniFrameCaption( bool bMiniFrameCaption )
 {
 	m_bMiniFrameCaption = bMiniFrameCaption;
 	if(!m_bMiniFrameCaption) m_cyGripper = 0;
-	else m_cyGripper = max (12, pGlobalData->GetTextHeight ());
+	else m_cyGripper = max (12, GetGlobalData()->GetTextHeight ());
 }
 
 bool CShellDockBar::GetMiniFrameCaption( )
@@ -963,7 +963,7 @@ CSize CShellToolDockBar::CalcFixedLayout(BOOL bStretch, BOOL bHorz)
 			arrMenus.Add( pbar );
 			m_arrBars[n] = 0;
 		}
-		else if( pbar->IsKindOf( RUNTIME_CLASS( CBCGSizingControlBar ) ) )
+		else if( pbar->IsKindOf( RUNTIME_CLASS( CDockablePane ) ) )
 		{
 			// A.M. BT4102
 			bool bInserted = false;

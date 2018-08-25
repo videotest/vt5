@@ -119,11 +119,11 @@ protected:
 	virtual LRESULT on_destroy()							{ return call_default(); };
 	virtual LRESULT on_paint();
 	virtual LRESULT on_ncdestroy();
-	virtual LRESULT on_size(short cx, short cy, ulong fSizeType)	{ return call_default(); }
-	virtual LRESULT on_show(bool bShow, long status)		{ return call_default(); }
+	virtual LRESULT on_size(short cx, short cy, UINT_PTR fSizeType)	{ return call_default(); }
+	virtual LRESULT on_show(bool bShow, LPARAM status)		{ return call_default(); }
 	virtual long on_initdialog()						{return 0;};
-	virtual LRESULT on_timer(ulong lEvent)				{ return call_default(); };
-	virtual LRESULT on_command(uint cmd)					{ return call_default(); };
+	virtual LRESULT on_timer(UINT_PTR lEvent)				{ return call_default(); };
+	virtual LRESULT on_command(UINT_PTR cmd)					{ return call_default(); };
 	virtual LRESULT on_syscommand(uint cmd)				{ return call_default(); };
 	virtual LRESULT on_mousemove(const _point &point)	{ return call_default(); };
 	virtual LRESULT on_lbuttondown(const _point &point)	{ return call_default(); };
@@ -354,14 +354,14 @@ LRESULT	win_impl::handle_message(UINT m, WPARAM w, LPARAM l)
 	case WM_COMMAND:		lres = on_command( w );break;
 	case WM_SYSCOMMAND:		lres = on_syscommand( LOWORD(w) );break;
 	case WM_TIMER:			lres = on_timer( w );break;
-	case WM_LBUTTONDOWN:	lres = on_lbuttondown( _point( l ) );break;
-	case WM_LBUTTONUP:		lres = on_lbuttonup( _point( l ) );break;
-	case WM_RBUTTONDOWN:	lres = on_rbuttondown( _point( l ) );break;
-	case WM_RBUTTONUP:		lres = on_rbuttonup( _point( l ) );break;
-	case WM_MOUSEMOVE:		lres = on_mousemove( _point( l ) );break;
+	case WM_LBUTTONDOWN:	lres = on_lbuttondown( _point( (long)l ) );break;
+	case WM_LBUTTONUP:		lres = on_lbuttonup(_point((long)l)); break;
+	case WM_RBUTTONDOWN:	lres = on_rbuttondown(_point((long)l)); break;
+	case WM_RBUTTONUP:		lres = on_rbuttonup(_point((long)l)); break;
+	case WM_MOUSEMOVE:		lres = on_mousemove(_point((long)l)); break;
 	case WM_GETMINMAXINFO:	lres = on_getminmaxinfo( (MINMAXINFO *)l );break;
 	case WM_GETINTERFACE:	lres = on_getinterface();break;
-	case WM_NOTIFY:			lres = on_notify( w, (NMHDR*)l );break;
+	case WM_NOTIFY:			lres = on_notify( (uint)w, (NMHDR*)l );break;
 	case WM_DROPFILES:		lres = on_dropfiles( (HANDLE)w );break;
 	case WM_NOTYFYREFLECT:	lres = handle_reflect_message( (MSG*)l, (long*)w );break;
 	case WM_SETFOCUS:		lres = on_setfocus( (HWND)w );break;
@@ -381,9 +381,9 @@ LRESULT	win_impl::handle_message(UINT m, WPARAM w, LPARAM l)
 	case WM_WINDOWFOCUSED:	lres = on_windowfocused( (HWND)l );break;
 	case WM_ACTIVATE:		lres = on_activate( LOWORD(w), (HWND)l );break;
 	case WM_MOUSEACTIVATE:	lres = on_mouseactivate( LOWORD(l), HIWORD(l) );break;
-	case WM_LBUTTONDBLCLK:	lres = on_lbuttondblclk( _point( l ) );break;
-	case WM_RBUTTONDBLCLK:	lres = on_rbuttondblclk( _point( l ) );break;
-	case WM_CONTEXTMENU:	lres = on_contextmenu( _point( l ) );break;
+	case WM_LBUTTONDBLCLK:	lres = on_lbuttondblclk( _point((long)l) );break;
+	case WM_RBUTTONDBLCLK:	lres = on_rbuttondblclk( _point((long)l) );break;
+	case WM_CONTEXTMENU:	lres = on_contextmenu( _point((long)l) );break;
 	case WM_CANCELMODE:		lres = on_cancelmode();break;
 
 	default:lres = call_default();

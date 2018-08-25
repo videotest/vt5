@@ -40,7 +40,7 @@
 #include "BCGMenuBar.h"
 #include "menupage.h"
 #include "MenuHash.h"
-#include "MenuImages.h"
+//#include "MenuImages.h"
 #include "BCGShowAllButton.h"
 #include "BCGUserToolsManager.h"
 #include "BCGUserTool.h"

@@ -1,0 +1,1199 @@
+[AxForm]
+Version=1
+Size=893, 158
+Title=%Thresholding by Brightness%
+
+[AXControls]
+Name=sldThreshold
+ProgID=VTCONTROLS.VTSlider.1
+Rect=182, 118, 387, 141
+Style=50000000h
+ID=1011
+Data=128 00 00 01 00 44 00 00 00 00 03 52 e3 0b 91 8f ce 11 9d e3 00 aa 00 4b b8 51 01 cc 00 00 90 01 44 42 01 00 0d 4d 53 20 53 61 6e 73 20 53 65 72 69 66 01 00 00 00 03 00 00 00 00 00 00 00 01 00 00 00 14 00 00 00 0c 00 00 00 00 00 00 00 00 00 00 00 ff 00 00 00 00 00 00 00 00 01 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 01 00 00 00
+
+Name=edtFrom
+ProgID=VTCONTROLS.VTEditor.1
+Rect=443, 50, 492, 71
+Style=50000000h
+ID=1013
+Data=227 00 00 01 00 09 00 00 00 f5 ff ff ff 00 00 00 00 00 00 00 00 00 00 00 00 90 01 00 00 00 00 00 01 00 00 00 00 54 61 68 6f 6d 61 00 20 53 65 72 69 66 00 09 00 00 00 30 75 64 02 34 00 00 00 50 09 7d 02 2c 05 f5 ff ff ff 00 00 00 00 00 00 00 00 00 00 00 00 90 01 00 00 00 00 00 01 00 00 00 00 54 61 68 6f 6d 61 00 20 53 65 72 69 66 00 09 00 00 00 30 75 64 02 34 00 00 00 50 09 7d 02 2c 05 08 56 54 45 64 69 74 6f 72 01 00 00 00 00 00 00 01 00 01 30 1e 00 01 00 00 00 01 00 00 00 00 00 7f 43 00 00 00 00 08 00 00 80 05 00 00 80 08 00 00 80 0f 00 00 80 0f 00 00 80 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+
+Name=txtFrom
+ProgID=VTCONTROLS.VTStaticText.1
+Rect=406, 53, 440, 69
+Style=50000000h
+ID=0
+Data=321 05 00 00 00 0f 00 00 80 00 03 52 e3 0b 91 8f ce 11 9d e3 00 aa 00 4b b8 51 01 cc 00 00 90 01 44 42 01 00 06 54 61 68 6f 6d 61 0b 00 00 00 08 00 00 80 0f 00 00 80 0f 00 00 80 00 00 00 00 01 00 00 00 01 00 00 00 00 00 00 00 01 00 00 00 00 00 00 00 01 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 05 46 72 6f 6d 3a 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 ff ff ff ff 00 00 00 00 00 00 00 00 49 4c 01 01 00 00 02 00 04 00 01 00 01 00 ff ff ff ff 11 00 ff ff ff ff ff ff ff ff 42 4d 36 00 00 00 00 00 00 00 36 00 00 00 28 00 00 00 04 00 00 00 01 00 00 00 01 00 10 00 00 00 00 00 08 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 42 4d 3e 00 00 00 00 00 00 00 3e 00 00 00 28 00 00 00 04 00 00 00 01 00 00 00 01 00 01 00 00 00 00 00 04 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 ff ff ff 00 00 00 00 00 01 00 00 00 01 00 00 00 0f 00 00 80 00 00 00 00 00 00 00 00 00 00 00 00
+
+Name=edtTo
+ProgID=VTCONTROLS.VTEditor.1
+Rect=443, 76, 492, 97
+Style=50000000h
+ID=1014
+Data=227 00 00 01 00 09 00 00 00 f5 ff ff ff 00 00 00 00 00 00 00 00 00 00 00 00 90 01 00 00 00 00 00 01 00 00 00 00 54 61 68 6f 6d 61 00 20 53 65 72 69 66 00 09 00 00 00 30 75 64 02 34 00 00 00 50 09 7d 02 2c 05 f5 ff ff ff 00 00 00 00 00 00 00 00 00 00 00 00 90 01 00 00 00 00 00 01 00 00 00 00 54 61 68 6f 6d 61 00 20 53 65 72 69 66 00 09 00 00 00 30 75 64 02 34 00 00 00 50 09 7d 02 2c 05 08 56 54 45 64 69 74 6f 72 01 00 00 00 00 00 00 01 00 01 31 0f 00 01 00 00 00 01 00 00 00 00 00 80 43 00 00 80 3f 08 00 00 80 05 00 00 80 08 00 00 80 0f 00 00 80 0f 00 00 80 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+
+Name=txtTo
+ProgID=VTCONTROLS.VTStaticText.1
+Rect=421, 79, 440, 95
+Style=50000000h
+ID=0
+Data=319 05 00 00 00 0f 00 00 80 00 03 52 e3 0b 91 8f ce 11 9d e3 00 aa 00 4b b8 51 01 cc 00 00 90 01 44 42 01 00 06 54 61 68 6f 6d 61 0b 00 00 00 08 00 00 80 0f 00 00 80 0f 00 00 80 00 00 00 00 01 00 00 00 01 00 00 00 00 00 00 00 01 00 00 00 00 00 00 00 01 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 03 54 6f 3a 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 ff ff ff ff 00 00 00 00 00 00 00 00 49 4c 01 01 00 00 02 00 04 00 01 00 01 00 ff ff ff ff 11 00 ff ff ff ff ff ff ff ff 42 4d 36 00 00 00 00 00 00 00 36 00 00 00 28 00 00 00 04 00 00 00 01 00 00 00 01 00 10 00 00 00 00 00 08 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 42 4d 3e 00 00 00 00 00 00 00 3e 00 00 00 28 00 00 00 04 00 00 00 01 00 00 00 01 00 01 00 00 00 00 00 04 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 ff ff ff 00 00 00 00 00 01 00 00 00 01 00 00 00 0f 00 00 80 00 00 00 00 00 00 00 00 00 00 00 00
+
+Name=btnSplit
+ProgID=PUSHBUTTON.PushButtonCtrl.1
+Rect=738, 114, 760, 136
+Style=50000000h
+ID=0
+Data=979 0c 01 01 01 01 00 00 00 00 20 45 3a 5c 50 53 44 5c 76 74 35 5c 6d 61 73 74 65 72 5c 62 6d 70 5c 77 69 6e 64 69 76 2e 62 6d 70 20 45 3a 5c 50 53 44 5c 76 74 35 5c 6d 61 73 74 65 72 5c 62 6d 70 5c 77 69 6e 64 69 76 2e 62 6d 70 01 00 01 00 01 00 00 01 00 00 00 00 05 00 05 00 00 00 00 00 00 01 00 00 00 00 00 00 00 00 00 00 14 04 01 01 16 00 00 00 16 00 00 00 04 00 00 00 00 03 52 e3 0b 91 8f ce 11 9d e3 00 aa 00 4b b8 51 01 cc 00 00 90 01 44 42 01 00 06 54 61 68 6f 6d 61 00 00 00 00 00 00 00 00 00 ff 00 ff 00 08 00 00 80 08 00 00 80 08 00 00 80 08 00 00 80 00 00 00 00 00 00 00 00 00 00 00 00 01 00 00 00 00 01 00 42 4d 06 03 00 00 00 00 00 00 36 00 00 00 28 00 00 00 10 00 00 00 0f 00 00 00 01 00 18 00 00 00 00 00 d0 02 00 00 12 0b 00 00 12 0b 00 00 00 00 00 00 00 00 00 00 ff 00 ff c0 ce d0 9f a8 aa 90 98 99 90 98 99 90 98 99 90 98 99 90 98 99 90 98 99 90 98 99 90 98 99 90 98 99 90 98 99 90 98 99 a2 ac ae ff 00 ff ca de e5 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 90 98 99 c0 ce d0 b9 d7 e5 00 00 00 f5 d6 ba f4 d3 b6 f3 d1 b2 f3 d0 b0 69 55 42 1c 94 f7 69 55 42 f4 d6 b9 f4 d4 b7 f4 d2 b4 f3 d1 b2 00 00 00 90 98 99 c0 ce d0 a9 d2 e9 00 00 00 f6 db c2 f5 d7 bc f4 d4 b7 f3 d2 b3 69 55 42 1c 94 f7 69 55 42 f6 da c1 f5 d8 bd f5 d6 ba f4 d4 b7 00 00 00 90 98 99 c0 ce d0 9d d0 ee 00 00 00 f7 e0 ca f6 dc c4 f5 d9 be f4 d5 b9 69 55 42 1c 94 f7 69 55 42 f7 df c9 f6 dd c5 f6 da c2 f5 d8 be 00 00 00 90 98 99 c0 ce d0 96 cf f3 00 00 00 f8 e5 d4 f7 e1 cd f6 dd c7 f6 da c1 69 55 42 1c 94 f7 69 55 42 f8 e4 d2 f8 e2 ce f7 df ca f6 dd c6 00 00 00 90 98 99 c0 ce d0 92 d0 f6 00 00 00 fa eb dd f9 e7 d6 f8 e3 d0 f7 df c9 69 55 42 1c 94 f7 69 55 42 fa ea db f9 e7 d7 f8 e5 d3 f8 e2 cf 00 00 00 90 98 99 c0 ce d0 91 cf f7 00 00 00 fb f0 e6 fa ec df f9 e8 d9 f8 e4 d2 69 55 42 1c 94 f7 69 55 42 fb ef e4 fa ed e0 fa ea dc f9 e8 d8 00 00 00 90 98 99 c0 ce d0 91 cf f7 00 00 00 fc f5 ee fc f2 e8 fb ee e2 fa ea db 69 55 42 1c 94 f7 69 55 42 fc f4 ed fc f2 e9 fb f0 e5 fa ed e1 00 00 00 90 98 99 c0 ce d0 91 cf f7 00 00 00 fe fa f6 fd f6 f1 fc f3 eb fb ef e5 69 55 42 1c 94 f7 69 55 42 fd f9 f4 fd f7 f1 fc f5 ed fc f2 ea 00 00 00 90 98 99 c0 ce d0 91 cf f7 00 00 00 ff fd fc fe fb f8 fd f8 f3 fc f4 ed 69 55 42 1c 94 f7 69 55 42 fe fc fa fe fb f8 fd f9 f5 fd f7 f2 00 00 00 90 98 99 c0 ce d0 91 cf f7 00 00 00 ff ff ff ff fe fd fe fc f9 fd f9 f5 69 55 42 1c 94 f7 69 55 42 ff ff ff ff fe fd fe fd fb fe fb f8 00 00 00 90 98 99 c0 ce d0 91 cf f7 69 55 42 69 55 42 69 55 42 69 55 42 69 55 42 69 55 42 69 55 42 69 55 42 69 55 42 69 55 42 69 55 42 69 55 42 69 55 42 a1 ab ad c6 d5 d7 91 cf f7 a9 88 6b ff d8 b7 a9 88 6b a9 88 6b a9 88 6b a9 88 6b a9 88 6b a9 88 6b a9 88 6b a9 88 6b a9 88 6b a9 88 6b a9 88 6b c4 d2 d5 ff 00 ff 91 cf f7 91 cf f7 91 cf f7 91 cf f7 91 cf f7 91 cf f7 91 cf f7 91 cf f7 91 cf f7 93 cf f5 9d cf ef ad d2 e6 c4 da e3 ff 00 ff ff 00 ff ff 00 ff
+
+Name=edtZoomValue
+ProgID=VTCONTROLS.VTEditor.1
+Rect=677, 113, 720, 135
+Style=58000000h
+ID=0
+Data=230 00 00 01 00 09 00 00 00 f5 ff ff ff 00 00 00 00 00 00 00 00 00 00 00 00 90 01 00 00 00 00 00 01 00 00 00 00 54 61 68 6f 6d 61 00 20 53 65 72 69 66 00 09 09 09 09 09 09 09 09 0a 09 09 09 73 74 72 53 70 65 f5 ff ff ff 00 00 00 00 00 00 00 00 00 00 00 00 90 01 00 00 00 00 00 01 00 00 00 00 54 61 68 6f 6d 61 00 20 53 65 72 69 66 00 09 09 09 09 09 09 09 09 0a 09 09 09 73 74 72 53 70 65 08 56 54 45 64 69 74 6f 72 00 00 00 00 00 00 00 00 00 04 45 64 69 74 64 00 00 00 00 00 01 00 00 00 00 00 c8 42 00 00 00 00 08 00 00 80 0f 00 00 80 08 00 00 80 0f 00 00 80 0f 00 00 80 01 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+
+Name=sldZoom
+ProgID=VTCONTROLS.VTSlider.1
+Rect=573, 115, 678, 135
+Style=50000000h
+ID=0
+Data=121 00 00 01 00 44 00 00 00 00 03 52 e3 0b 91 8f ce 11 9d e3 00 aa 00 4b b8 51 01 cc 00 00 90 01 44 42 01 00 06 54 61 68 6f 6d 61 01 00 00 00 03 00 00 00 00 00 00 00 00 00 00 00 19 00 00 00 10 00 00 00 00 00 00 00 0a 00 00 00 c8 00 00 00 38 ff ff ff c8 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 01 00 00 00 01 00 00 00
+
+Name=btnFitToScreen
+ProgID=PUSHBUTTON.PushButtonCtrl.1
+Rect=548, 114, 570, 136
+Style=50000000h
+ID=0
+Data=973 0c 01 01 01 00 00 00 00 00 1d 45 3a 5c 50 53 44 5c 76 74 35 5c 6d 61 73 74 65 72 5c 62 6d 70 5c 77 69 6e 2e 62 6d 70 1d 45 3a 5c 50 53 44 5c 76 74 35 5c 6d 61 73 74 65 72 5c 62 6d 70 5c 77 69 6e 2e 62 6d 70 01 00 01 00 01 00 00 00 00 00 00 00 05 00 05 00 00 00 00 00 00 01 00 00 00 00 00 00 00 00 00 00 14 04 01 01 16 00 00 00 16 00 00 00 04 00 00 00 00 03 52 e3 0b 91 8f ce 11 9d e3 00 aa 00 4b b8 51 01 cc 00 00 90 01 44 42 01 00 06 54 61 68 6f 6d 61 00 00 00 00 00 00 00 00 00 ff 00 ff 00 08 00 00 80 08 00 00 80 08 00 00 80 08 00 00 80 00 00 00 00 00 00 00 00 00 00 00 00 01 00 00 00 00 01 00 42 4d 06 03 00 00 00 00 00 00 36 00 00 00 28 00 00 00 10 00 00 00 0f 00 00 00 01 00 18 00 00 00 00 00 d0 02 00 00 12 0b 00 00 12 0b 00 00 00 00 00 00 00 00 00 00 ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ce de e1 a5 b2 b4 00 00 00 a5 b2 b4 ce de e1 ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ce de e1 a5 b2 b4 a9 88 6b f3 ce ae 00 00 00 a5 b2 b4 ce de e1 ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff c4 d3 d6 a9 88 6b a9 88 6b a9 88 6b a9 88 6b a9 88 6b c4 d3 d6 ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ce de e1 ba c8 cb af bd c0 af bd c0 af bd c0 ba c8 cb ce de e1 ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ce de e1 c4 d3 d6 c0 e1 ef 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 ce de e1 c4 d3 d6 ce de e1 ff 00 ff ce de e1 a5 b2 b4 00 00 00 b4 dc f1 00 00 00 fc f9 f6 fc f9 f6 fb f6 f1 fa ee e3 f7 e4 d2 f5 d9 c1 00 00 00 ba c8 cb 00 00 00 a5 b2 b4 ce de e1 a5 b2 b4 00 00 00 8b 70 58 a6 d7 f4 00 00 00 fc f9 f6 fc f9 f6 fc f9 f6 fb f2 eb f9 e9 db f6 de c9 00 00 00 af bd c0 a9 88 6b 00 00 00 a5 b2 b4 a9 88 6b f3 ce ae 8b 70 58 9a d2 f6 00 00 00 fc f9 f6 fc f9 f6 fc f9 f6 fb f6 f1 fa ee e3 f7 e4 d2 00 00 00 af bd c0 a9 88 6b f3 ce ae 00 00 00 a5 b2 b4 a9 88 6b a9 88 6b 91 cf f7 00 00 00 fc f9 f6 fc f9 f6 fc f9 f6 fc f9 f6 fb f2 eb f9 e9 db 00 00 00 af bd c0 a9 88 6b a9 88 6b a5 b2 b4 ce de e1 a5 b2 b4 a9 88 6b 91 cf f7 7d 65 4f 7d 65 4f 7d 65 4f 7d 65 4f 7d 65 4f 7d 65 4f 7d 65 4f 7d 65 4f ba c8 cb a9 88 6b a5 b2 b4 ce de e1 ff 00 ff ce de e1 c4 d3 d6 91 cf f7 a9 88 6b a9 88 6b a9 88 6b a9 88 6b a9 88 6b a9 88 6b a9 88 6b a9 88 6b ce de e1 c4 d3 d6 ce de e1 ff 00 ff ff 00 ff ff 00 ff ff 00 ff 91 cf f7 91 cf f7 91 cf f7 91 cf f7 91 cf f7 91 cf f7 a2 d5 f4 b8 de f1 c9 e4 ee ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff c4 d3 d6 a9 88 6b 00 00 00 00 00 00 00 00 00 00 00 00 c4 d3 d6 ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ce de e1 a5 b2 b4 a9 88 6b f3 ce ae 00 00 00 a5 b2 b4 ce de e1 ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ce de e1 a5 b2 b4 a9 88 6b a5 b2 b4 ce de e1 ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff
+
+Name=btnZoom0
+ProgID=PUSHBUTTON.PushButtonCtrl.1
+Rect=523, 114, 545, 136
+Style=50000000h
+ID=0
+Data=977 0c 01 01 01 00 00 00 00 00 1f 45 3a 5c 50 53 44 5c 76 74 35 5c 6d 61 73 74 65 72 5c 62 6d 70 5c 7a 6f 6f 6d 31 2e 62 6d 70 1f 45 3a 5c 50 53 44 5c 76 74 35 5c 6d 61 73 74 65 72 5c 62 6d 70 5c 7a 6f 6f 6d 31 2e 62 6d 70 01 00 01 00 01 00 00 00 00 00 00 00 05 00 05 00 00 00 00 00 00 01 00 00 00 00 00 00 00 00 00 00 14 04 01 01 16 00 00 00 16 00 00 00 04 00 00 00 00 03 52 e3 0b 91 8f ce 11 9d e3 00 aa 00 4b b8 51 01 cc 00 00 90 01 44 42 01 00 06 54 61 68 6f 6d 61 00 00 00 00 00 00 00 00 00 ff 00 ff 00 08 00 00 80 08 00 00 80 08 00 00 80 08 00 00 80 00 00 00 00 00 00 00 00 00 00 00 00 01 00 00 00 00 01 00 42 4d 06 03 00 00 00 00 00 00 36 00 00 00 28 00 00 00 10 00 00 00 0f 00 00 00 01 00 18 00 00 00 00 00 d0 02 00 00 12 0b 00 00 12 0b 00 00 00 00 00 00 00 00 00 00 ff 00 ff ff 00 ff ff 00 ff 00 00 00 00 00 00 00 00 00 ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff d1 e2 e5 c4 d3 d6 c4 d3 d6 ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff 00 00 00 ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff d1 e2 e5 b7 c5 c8 96 a2 a4 9d a9 ab c4 d3 d6 ff 00 ff ff 00 ff 5f 66 68 9d a9 ab 00 00 00 ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff d1 e2 e5 b7 c5 c8 17 7b bb 5f 66 68 96 a2 a4 c4 d3 d6 ff 00 ff ff 00 ff ff 00 ff 00 00 00 00 00 00 ff 00 ff ff 00 ff ff 00 ff ff 00 ff d1 e2 e5 b7 c5 c8 17 7b bb 91 cf f7 04 05 06 b7 c5 c8 d1 e2 e5 ff 00 ff ff 00 ff d1 e2 e5 c4 d3 d6 00 00 00 bd cc cf bd cc cf bd cc cf bd cc cf b0 be c0 17 7b bb 91 cf f7 04 05 06 b7 c5 c8 d1 e2 e5 ff 00 ff ff 00 ff d1 e2 e5 b7 c5 c8 96 a2 a4 89 93 95 89 93 95 89 93 95 89 93 95 89 93 95 17 7b bb 91 cf f7 3b 48 51 b7 c5 c8 d1 e2 e5 ff 00 ff ff 00 ff d3 e4 e7 bb c9 cc 8b 70 53 68 49 2e 57 38 1e 4d 2c 14 56 35 1c 60 40 25 17 7b bb 91 cf f7 3b 48 51 b0 be c0 d1 e2 e5 ff 00 ff ff 00 ff ff 00 ff ca d9 dc 8e 74 59 8b 71 54 ad 96 80 ba a5 92 c2 b0 9d 9b 81 68 4c 2c 14 21 06 00 02 03 03 89 93 95 bd cc cf ff 00 ff ff 00 ff ff 00 ff ff 00 ff a1 90 7e 9c 83 6a cd bd ae d0 c0 b2 c8 b7 a6 c7 e4 f7 c7 e4 f7 ad 97 80 59 3b 21 96 7b 62 89 93 95 bd cc cf ff 00 ff ff 00 ff ff 00 ff ff 00 ff 98 88 76 c2 b0 9e de d3 c9 d5 c8 b9 ce be ae cf bf b0 c7 e4 f7 d8 cc c0 7b 5f 43 61 40 26 89 93 95 bd cc cf ff 00 ff ff 00 ff ff 00 ff ff 00 ff 9e 90 7d d3 c5 b7 e9 e0 d9 db cf c2 d4 c7 b8 ce bd ae ca b8 a8 c9 b8 a8 88 6a 51 5b 3c 21 89 93 95 bd cc cf ff 00 ff ff 00 ff ff 00 ff ff 00 ff ac a0 8f d3 c4 b7 ed e6 e0 e4 da cf db cf c3 d5 c8 b8 cd bb ac c1 ad 9a 8a 6f 54 6f 50 35 96 a2 a4 c4 d3 d6 ff 00 ff ff 00 ff ff 00 ff ff 00 ff b9 ac 9d c5 b4 a2 ed e7 e0 ee e8 e2 e5 dc d4 de d2 c6 da cf c2 c2 b0 9d 78 5b 41 9e 84 6c b7 c5 c8 d1 e2 e5 ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff bc a9 95 ca bb ab e1 d7 ce ea e2 dc e4 db d0 c8 b8 a7 90 76 5b 8c 70 55 b7 c5 c8 d1 e2 e5 ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff be a9 96 b1 9c 87 a8 91 7a 9b 83 6a 96 7d 64 a4 8b 74 c4 d3 d6 d1 e2 e5 ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff
+
+Name=txtZoom
+ProgID=VTCONTROLS.VTStaticText.1
+Rect=523, 90, 588, 101
+Style=50000000h
+ID=0
+Data=326 05 00 00 00 0f 00 00 80 00 03 52 e3 0b 91 8f ce 11 9d e3 00 aa 00 4b b8 51 01 00 00 00 90 01 44 42 01 00 06 54 61 68 6f 6d 61 0b 00 00 00 08 00 00 80 0f 00 00 80 0f 00 00 80 01 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 01 00 00 00 00 00 00 00 01 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 0a d3 e2 e5 eb e8 f7 e5 ed e8 e5 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 ff ff ff ff 00 00 00 00 00 00 00 00 49 4c 01 01 00 00 02 00 04 00 01 00 01 00 ff ff ff ff 11 00 ff ff ff ff ff ff ff ff 42 4d 36 00 00 00 00 00 00 00 36 00 00 00 28 00 00 00 04 00 00 00 01 00 00 00 01 00 10 00 00 00 00 00 08 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 42 4d 3e 00 00 00 00 00 00 00 3e 00 00 00 28 00 00 00 04 00 00 00 01 00 00 00 01 00 01 00 00 00 00 00 04 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 ff ff ff 00 00 00 00 00 01 00 00 00 01 00 00 00 0f 00 00 80 00 00 00 00 00 00 00 00 00 00 00 00
+
+Name=Control1265
+ProgID=VTDESIGN.VTD3DBarCtrl.1
+Rect=515, 104, 727, 148
+Style=58000000h
+ID=0
+Data=72 00 00 00 00 03 00 00 00 03 00 02 00 00 00 05 00 00 80 01 00 00 00 08 00 00 80 00 64 00 00 00 00 00 01 00 01 00 00 00 00 03 52 e3 0b 91 8f ce 11 9d e3 00 aa 00 4b b8 51 01 cc 00 00 90 01 44 42 01 00 05 41 72 69 61 6c
+
+Name=Control1265
+ProgID=VTDESIGN.VTD3DBarCtrl.1
+Rect=515, 27, 759, 77
+Style=58000000h
+ID=0
+Data=72 00 00 00 00 03 00 00 00 03 00 02 00 00 00 05 00 00 80 01 00 00 00 08 00 00 80 00 64 00 00 00 00 00 01 00 01 00 00 00 00 03 52 e3 0b 91 8f ce 11 9d e3 00 aa 00 4b b8 51 01 cc 00 00 90 01 44 42 01 00 05 41 72 69 61 6c
+
+Name=Hist
+ProgID=HISTAX.HistAXCtrl.1
+Rect=188, 40, 379, 117
+Style=50000000h
+ID=1007
+Data=16 01 00 00 01 09 00 00 00 ff ff 00 00 93 94 96 00
+
+Name=cpkBinColor
+ProgID=VTCONTROLS2.VTColorPickerCtrl.1
+Rect=596, 38, 636, 60
+Style=50000000h
+ID=0
+Data=20 04 00 01 00 22 04 00 00 ca 02 00 00 40 00 00 00 01 00 00 00
+
+Name=txtBinColor
+ProgID=VTCONTROLS.VTStaticText.1
+Rect=523, 40, 591, 56
+Style=50000000h
+ID=0
+Data=327 05 00 00 00 0f 00 00 80 00 03 52 e3 0b 91 8f ce 11 9d e3 00 aa 00 4b b8 51 01 00 00 00 90 01 44 42 01 00 06 54 61 68 6f 6d 61 0b 00 00 00 08 00 00 80 0f 00 00 80 0f 00 00 80 00 00 00 00 01 00 00 00 01 00 00 00 00 00 00 00 01 00 00 00 00 00 00 00 01 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 0b d6 e2 e5 f2 20 ec e0 f1 ea e8 3a 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 ff ff ff ff 00 00 00 00 00 00 00 00 49 4c 01 01 00 00 02 00 04 00 01 00 01 00 ff ff ff ff 11 00 ff ff ff ff ff ff ff ff 42 4d 36 00 00 00 00 00 00 00 36 00 00 00 28 00 00 00 04 00 00 00 01 00 00 00 01 00 10 00 00 00 00 00 08 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 42 4d 3e 00 00 00 00 00 00 00 3e 00 00 00 28 00 00 00 04 00 00 00 01 00 00 00 01 00 01 00 00 00 00 00 04 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 ff ff ff 00 00 00 00 00 01 00 00 00 01 00 00 00 0f 00 00 80 00 00 00 00 00 00 00 00 01 00 00 00
+
+Name=chkTrans
+ProgID=VTCHECKBOX.VTCheckBoxCtrl.1
+Rect=656, 40, 752, 60
+Style=50000000h
+ID=0
+Data=113 00 00 00 00 04 00 00 00 00 00 00 00 0a cf f0 ee e7 f0 e0 f7 ed fb e9 08 00 00 80 0f 00 00 80 08 00 00 80 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 01 00 00 03 52 e3 0b 91 8f ce 11 9d e3 00 aa 00 4b b8 51 01 cc 00 00 90 01 44 42 01 00 06 54 61 68 6f 6d 61
+
+Name=btnUndo
+ProgID=PUSHBUTTON.PushButtonCtrl.1
+Rect=441, 112, 463, 134
+Style=50000000h
+ID=0
+Data=975 0c 01 01 01 00 00 00 00 00 1e 45 3a 5c 50 53 44 5c 76 74 35 5c 6d 61 73 74 65 72 5c 62 6d 70 5c 75 6e 64 6f 2e 62 6d 70 1e 45 3a 5c 50 53 44 5c 76 74 35 5c 6d 61 73 74 65 72 5c 62 6d 70 5c 75 6e 64 6f 2e 62 6d 70 01 00 01 00 01 00 00 00 00 00 00 00 05 00 05 00 00 00 00 00 00 01 00 00 00 00 00 00 00 00 00 00 14 04 01 01 16 00 00 00 16 00 00 00 04 00 00 00 00 03 52 e3 0b 91 8f ce 11 9d e3 00 aa 00 4b b8 51 01 cc 00 00 90 01 44 42 01 00 06 54 61 68 6f 6d 61 00 00 00 00 00 00 00 00 00 ff 00 ff 00 08 00 00 80 08 00 00 80 08 00 00 80 08 00 00 80 01 00 00 00 00 00 00 00 00 00 00 00 01 00 00 00 00 01 00 42 4d 06 03 00 00 00 00 00 00 36 00 00 00 28 00 00 00 10 00 00 00 0f 00 00 00 01 00 18 00 00 00 00 00 d0 02 00 00 12 0b 00 00 12 0b 00 00 00 00 00 00 00 00 00 00 ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff c4 d3 d6 a5 b2 b5 a5 b2 b5 ba c8 cb ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff cb da dd c3 d2 d5 ce de e1 ff 00 ff ff 00 ff ff 00 ff 8b 70 58 b0 bd c0 87 92 94 7e 88 89 a5 b2 b5 ff 00 ff ff 00 ff ff 00 ff ff 00 ff d1 e2 e5 ac ba bc 8b 96 98 a5 b2 b5 ce de e1 ff 00 ff ff 00 ff ff 00 ff 8b 70 58 64 51 3f 74 7d 7e 74 7d 7e a5 b2 b5 ff 00 ff ff 00 ff ff 00 ff c0 d7 df 64 51 3f 5a 61 62 6a 72 73 a5 b2 b5 ce de e1 ff 00 ff ff 00 ff ff 00 ff 8b 70 58 64 51 3f 74 7d 7e 74 7d 7e a5 b2 b5 ff 00 ff ff 00 ff ae cf df 64 51 3f 64 51 3f 6a 72 73 6a 72 73 a5 b2 b5 ce de e1 ff 00 ff ff 00 ff ff 00 ff 8b 70 58 64 51 3f 74 7d 7e 74 7d 7e a5 b2 b5 ff 00 ff 9f cb e5 64 51 3f 8b 70 58 64 51 3f 6a 72 73 6a 72 73 a5 b2 b5 ce de e1 ff 00 ff ff 00 ff ff 00 ff 8b 70 58 64 51 3f 5f 67 68 74 7d 7e ff 00 ff 96 cd ef 64 51 3f 8b 70 58 8b 70 58 64 51 3f 6a 72 73 6a 72 73 a5 b2 b5 ff 00 ff ff 00 ff ff 00 ff ff 00 ff 8b 70 58 64 51 3f 5f 67 68 ff 00 ff 91 cf f7 64 51 3f ff e9 d3 ca a3 81 8b 70 58 64 51 3f 5f 67 68 91 9d 9f ff 00 ff ff 00 ff ff 00 ff ff 00 ff 8b 70 58 64 51 3f 5f 67 68 ff 00 ff 91 cf f7 64 51 3f ff e9 d3 8b 70 58 8b 70 58 8b 70 58 64 51 3f b0 bd c0 ff 00 ff ff 00 ff ff 00 ff ff 00 ff 8b 70 58 64 51 3f 74 7d 7e ff 00 ff 91 cf f7 64 51 3f 8b 70 58 8b 70 58 8b 70 58 5f 67 68 74 7d 7e a5 b2 b5 ff 00 ff ff 00 ff ff 00 ff ff 00 ff 8b 70 58 64 51 3f 9b a7 aa ff 00 ff 91 cf f7 64 51 3f 8b 70 58 91 cf f7 8b 70 58 8b 70 58 74 7d 7e 74 7d 7e 9b a7 aa b0 bd c0 b0 bd c0 9b a7 aa 8b 70 58 7e 88 89 ba c8 cb ff 00 ff 91 cf f7 64 51 3f 91 cf f7 a5 b2 b5 ce de e1 8b 70 58 8b 70 58 74 7d 7e 5f 67 68 5f 67 68 5f 67 68 8b 70 58 8b 70 58 a5 b2 b5 ff 00 ff ff 00 ff 91 cf f7 91 cf f7 ba c8 cb ce de e1 ff 00 ff ff 00 ff 8b 70 58 8b 70 58 8b 70 58 8b 70 58 8b 70 58 8b 70 58 a5 b2 b5 ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff 8b 70 58 8b 70 58 8b 70 58 8b 70 58 ba c8 cb ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff
+
+Name=btnClear
+ProgID=PUSHBUTTON.PushButtonCtrl.1
+Rect=466, 112, 488, 134
+Style=50000000h
+ID=0
+Data=973 0c 01 01 01 00 00 00 00 00 1d 45 3a 5c 50 53 44 5c 76 74 35 5c 6d 61 73 74 65 72 5c 62 6d 70 5c 64 65 6c 2e 62 6d 70 1d 45 3a 5c 50 53 44 5c 76 74 35 5c 6d 61 73 74 65 72 5c 62 6d 70 5c 64 65 6c 2e 62 6d 70 01 00 01 00 01 00 00 00 00 00 00 00 05 00 05 00 00 00 00 00 00 01 00 00 00 00 00 00 00 00 00 00 14 04 01 01 16 00 00 00 16 00 00 00 04 00 00 00 00 03 52 e3 0b 91 8f ce 11 9d e3 00 aa 00 4b b8 51 01 cc 00 00 90 01 44 42 01 00 06 54 61 68 6f 6d 61 00 00 00 00 00 00 00 00 00 ff 00 ff 00 08 00 00 80 08 00 00 80 08 00 00 80 08 00 00 80 01 00 00 00 00 00 00 00 00 00 00 00 01 00 00 00 00 01 00 42 4d 06 03 00 00 00 00 00 00 36 00 00 00 28 00 00 00 0f 00 00 00 0f 00 00 00 01 00 18 00 00 00 00 00 d0 02 00 00 12 0b 00 00 12 0b 00 00 00 00 00 00 00 00 00 00 ff 00 ff ff 00 ff ce de e1 c4 d3 d6 ce de e1 ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff 00 00 00 ff 00 ff ce de e1 a5 b2 b4 87 91 93 a5 b2 b4 ce de e1 ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ce de e1 c4 d3 d6 ce de e1 ff 00 ff 00 00 00 ff 00 ff ba c8 cb 00 00 ff 4b 50 51 73 7c 7e ba c8 cb ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff c4 d3 d6 af bd c0 c4 d3 d6 ff 00 ff 00 00 00 ff 00 ff 00 00 00 00 00 ff 00 00 ff 55 5b 5d 9b a7 a9 ce de e1 ff 00 ff ff 00 ff ce de e1 c4 d3 d6 00 00 80 c4 d3 d6 ce de e1 ff 00 ff 00 00 00 ff 00 ff 00 00 00 00 00 ff 00 00 ff 4b 50 51 69 71 73 a5 b2 b4 ce de e1 ce de e1 a5 b2 b4 91 9c 9e ba c8 cb ff 00 ff ff 00 ff ff 00 ff 00 00 00 ff 00 ff ff 00 ff 00 00 00 00 00 ff 00 00 ff 4b 50 51 69 71 73 9b a7 a9 9b a7 a9 00 00 80 7d 87 89 ba c8 cb ff 00 ff ff 00 ff ff 00 ff 00 00 00 ff 00 ff ff 00 ff ff 00 ff 00 00 00 00 00 ff 00 00 ff 4b 50 51 55 5b 5d 00 00 80 00 00 80 a5 b2 b4 ce de e1 ff 00 ff ff 00 ff ff 00 ff 00 00 00 ff 00 ff ff 00 ff ff 00 ff ff 00 ff 00 00 00 00 00 ff 00 00 ff 00 00 80 00 00 80 87 91 93 c4 d3 d6 ff 00 ff ff 00 ff ff 00 ff ff 00 ff 00 00 00 ff 00 ff ff 00 ff ff 00 ff ce de e1 a5 b2 b4 00 00 00 00 00 80 00 00 80 5f 66 68 73 7c 7e a5 b2 b4 ce de e1 ff 00 ff ff 00 ff ff 00 ff 00 00 00 ff 00 ff ce de e1 ba c8 cb 9b a7 a9 00 00 00 00 00 ff 00 00 ff 00 00 80 00 00 80 7d 87 89 87 91 93 af bd c0 ce de e1 ff 00 ff ff 00 ff 00 00 00 ce de e1 a5 b2 b4 73 7c 7e 00 00 00 00 00 ff 00 00 ff a5 b2 b4 ce de e1 00 00 80 00 00 80 a5 b2 b4 9b a7 a9 af bd c0 ce de e1 ff 00 ff 00 00 00 ba c8 cb 00 00 00 00 00 00 00 00 ff 00 00 ff a5 b2 b4 ce de e1 ff 00 ff ff 00 ff ff 00 ff 00 00 80 af bd c0 a5 b2 b4 c4 d3 d6 ff 00 ff 00 00 00 00 00 00 00 00 ff 00 00 ff 00 00 ff ba c8 cb ce de e1 ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff 00 00 80 c4 d3 d6 ce de e1 ff 00 ff 00 00 00 00 00 00 00 00 ff ba c8 cb ce de e1 ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff 00 00 00 ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff 00 00 00
+
+Name=txtFormCaption
+ProgID=VTCONTROLS.VTStaticText.1
+Rect=7, -1, 239, 14
+Style=50000000h
+ID=0
+Data=349 05 00 00 00 0f 00 00 80 00 03 52 e3 0b 91 8f ce 11 9d e3 00 aa 00 4b b8 51 01 00 00 00 bc 02 44 42 01 00 06 54 61 68 6f 6d 61 0b 00 00 00 08 00 00 80 0f 00 00 80 0f 00 00 80 01 00 00 00 00 00 00 00 01 00 00 00 00 00 00 00 01 00 00 00 00 00 00 00 01 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 21 c2 fb e4 e5 eb e5 ed e8 e5 20 ec e0 f1 ee ea 20 ef ee 20 ef ee f0 ee e3 f3 20 ff f0 ea ee f1 f2 e8 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 ff ff ff ff 00 00 00 00 00 00 00 00 49 4c 01 01 00 00 02 00 04 00 01 00 01 00 ff ff ff ff 11 00 ff ff ff ff ff ff ff ff 42 4d 36 00 00 00 00 00 00 00 36 00 00 00 28 00 00 00 04 00 00 00 01 00 00 00 01 00 10 00 00 00 00 00 08 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 42 4d 3e 00 00 00 00 00 00 00 3e 00 00 00 28 00 00 00 04 00 00 00 01 00 00 00 01 00 01 00 00 00 00 00 04 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 ff ff ff 00 00 00 00 00 01 00 00 00 01 00 00 00 0f 00 00 80 00 00 00 00 00 00 00 00 00 00 00 00
+
+Name=Control656
+ProgID=VTDESIGN.VTD3DBarCtrl.1
+Rect=3, 13, 759, 18
+Style=50000000h
+ID=123
+Data=73 00 00 00 00 03 00 00 00 03 00 02 00 00 00 05 00 00 80 01 00 00 00 08 00 00 80 00 64 00 00 00 00 00 01 00 01 00 00 00 00 03 52 e3 0b 91 8f ce 11 9d e3 00 aa 00 4b b8 51 01 00 00 00 90 01 44 42 01 00 06 54 61 68 6f 6d 61
+
+Name=optAutoFinding
+ProgID=VTRADIOBTN.VTRadioBtnCtrl.1
+Rect=26, 47, 148, 125
+Style=50000000h
+ID=0
+Data=83 03 00 00 00 03 00 00 00 0e d2 e5 ec ed fb e5 20 ee e1 fa e5 ea f2 fb 0f d1 e2 e5 f2 eb fb e5 20 ee e1 fa e5 ea f2 fb 0a c1 e5 e7 20 ef ee e8 f1 ea e0 ff ff ff ff 01 00 00 00 00 00 00 00 01 00 00 00 04 00 01 00 9c 0c 00 00 83 06 00 00 40 00 00 00 01
+
+Name=txtRange
+ProgID=VTCONTROLS.VTStaticText.1
+Rect=185, 21, 300, 34
+Style=50000000h
+ID=0
+Data=334 05 00 00 00 0f 00 00 80 00 03 52 e3 0b 91 8f ce 11 9d e3 00 aa 00 4b b8 51 01 00 00 00 90 01 44 42 01 00 06 54 61 68 6f 6d 61 0b 00 00 00 08 00 00 80 0f 00 00 80 0f 00 00 80 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 01 00 00 00 00 00 00 00 01 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 12 df f0 ea ee f1 f2 ed ee e9 20 e4 e8 e0 ef e0 e7 ee ed 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 ff ff ff ff 00 00 00 00 00 00 00 00 49 4c 01 01 00 00 02 00 04 00 01 00 01 00 ff ff ff ff 11 00 ff ff ff ff ff ff ff ff 42 4d 36 00 00 00 00 00 00 00 36 00 00 00 28 00 00 00 04 00 00 00 01 00 00 00 01 00 10 00 00 00 00 00 08 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 42 4d 3e 00 00 00 00 00 00 00 3e 00 00 00 28 00 00 00 04 00 00 00 01 00 00 00 01 00 01 00 00 00 00 00 04 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 ff ff ff 00 00 00 00 00 01 00 00 00 01 00 00 00 0f 00 00 80 00 00 00 00 01 00 00 00 00 00 00 00
+
+Name=txtFindCaption
+ProgID=VTCONTROLS.VTStaticText.1
+Rect=20, 21, 115, 34
+Style=50000000h
+ID=0
+Data=330 05 00 00 00 0f 00 00 80 00 03 52 e3 0b 91 8f ce 11 9d e3 00 aa 00 4b b8 51 01 00 00 00 90 01 44 42 01 00 06 54 61 68 6f 6d 61 0b 00 00 00 08 00 00 80 0f 00 00 80 0f 00 00 80 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 01 00 00 00 00 00 00 00 01 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 0e cf ee e8 f1 ea 20 ee e1 fa e5 ea f2 ee e2 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 ff ff ff ff 00 00 00 00 00 00 00 00 49 4c 01 01 00 00 02 00 04 00 01 00 01 00 ff ff ff ff 11 00 ff ff ff ff ff ff ff ff 42 4d 36 00 00 00 00 00 00 00 36 00 00 00 28 00 00 00 04 00 00 00 01 00 00 00 01 00 10 00 00 00 00 00 08 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 42 4d 3e 00 00 00 00 00 00 00 3e 00 00 00 28 00 00 00 04 00 00 00 01 00 00 00 01 00 01 00 00 00 00 00 04 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 ff ff ff 00 00 00 00 00 01 00 00 00 01 00 00 00 0f 00 00 80 00 00 00 00 01 00 00 00 00 00 00 00
+
+Name=Control12651
+ProgID=VTDESIGN.VTD3DBarCtrl.1
+Rect=11, 26, 159, 148
+Style=58000000h
+ID=0
+Data=72 00 00 00 00 03 00 00 00 03 00 02 00 00 00 05 00 00 80 01 00 00 00 08 00 00 80 00 64 00 00 00 00 00 01 00 01 00 00 00 00 03 52 e3 0b 91 8f ce 11 9d e3 00 aa 00 4b b8 51 01 cc 00 00 90 01 44 42 01 00 05 41 72 69 61 6c
+
+Name=Control1265
+ProgID=VTDESIGN.VTD3DBarCtrl.1
+Rect=176, 26, 504, 148
+Style=58000000h
+ID=0
+Data=72 00 00 00 00 03 00 00 00 03 00 02 00 00 00 05 00 00 80 01 00 00 00 08 00 00 80 00 64 00 00 00 00 00 01 00 01 00 00 00 00 03 52 e3 0b 91 8f ce 11 9d e3 00 aa 00 4b b8 51 01 cc 00 00 90 01 44 42 01 00 05 41 72 69 61 6c
+
+Name=chkPreview
+ProgID=VTCHECKBOX.VTCheckBoxCtrl.1
+Rect=770, 95, 883, 114
+Style=50000000h
+ID=0
+Data=118 00 00 00 00 04 00 00 00 00 00 00 00 0f cf ee ea e0 e7 fb e2 e0 f2 fc 20 ee ea ed ee 08 00 00 80 0f 00 00 80 08 00 00 80 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 01 00 00 03 52 e3 0b 91 8f ce 11 9d e3 00 aa 00 4b b8 51 01 cc 00 00 90 01 44 42 01 00 06 54 61 68 6f 6d 61
+
+Name=btnHelp
+ProgID=PUSHBUTTON.PushButtonCtrl.1
+Rect=770, 65, 845, 86
+Style=50000000h
+ID=0
+Data=150 0c 01 00 01 00 00 00 00 00 00 00 01 00 01 00 01 00 00 00 00 02 6f 6b 00 00 05 00 05 00 00 00 00 00 00 01 00 00 00 00 00 00 00 00 00 00 14 00 01 01 12 00 00 00 0e 00 00 00 04 00 00 00 00 03 52 e3 0b 91 8f ce 11 9d e3 00 aa 00 4b b8 51 01 cc 00 00 90 01 44 42 01 00 0d 4d 53 20 53 61 6e 73 20 53 65 72 69 66 00 00 00 00 00 00 00 00 00 05 00 00 80 08 00 00 80 08 00 00 80 08 00 00 80 08 00 00 80 00 00 00 00 01 00 00 00 01 00 00 00 00 00 00 00 00 01 00
+
+Name=btnCancel
+ProgID=PUSHBUTTON.PushButtonCtrl.1
+Rect=770, 40, 845, 61
+Style=50000000h
+ID=0
+Data=150 0c 01 00 01 00 00 00 00 00 00 00 01 00 01 00 01 00 00 00 00 02 6f 6b 00 00 05 00 05 00 00 00 00 00 00 01 00 00 00 00 00 00 00 00 00 00 14 00 01 01 12 00 00 00 0e 00 00 00 04 00 00 00 00 03 52 e3 0b 91 8f ce 11 9d e3 00 aa 00 4b b8 51 01 cc 00 00 90 01 44 42 01 00 0d 4d 53 20 53 61 6e 73 20 53 65 72 69 66 00 00 00 00 00 00 00 00 00 05 00 00 80 08 00 00 80 08 00 00 80 08 00 00 80 08 00 00 80 00 00 00 00 01 00 00 00 01 00 00 00 00 00 00 00 00 01 00
+
+Name=btnOk
+ProgID=PUSHBUTTON.PushButtonCtrl.1
+Rect=770, 15, 845, 36
+Style=50000000h
+ID=0
+Data=150 0c 01 00 01 00 00 00 00 00 00 00 01 00 01 00 01 00 00 00 00 02 6f 6b 00 00 05 00 05 00 00 00 00 00 00 01 00 00 00 00 00 00 00 00 00 00 14 00 01 01 12 00 00 00 0e 00 00 00 04 00 00 00 00 03 52 e3 0b 91 8f ce 11 9d e3 00 aa 00 4b b8 51 01 cc 00 00 90 01 44 42 01 00 0d 4d 53 20 53 61 6e 73 20 53 65 72 69 66 00 00 00 00 00 00 00 00 00 05 00 00 80 08 00 00 80 08 00 00 80 08 00 00 80 08 00 00 80 00 00 00 00 01 00 00 00 01 00 00 00 00 00 00 00 00 01 00
+
+Name=btnHistZoomNormal
+ProgID=PUSHBUTTON.PushButtonCtrl.1
+Rect=379, 91, 394, 116
+Style=50000000h
+ID=0
+Data=581 0c 01 00 01 00 00 00 00 00 19 45 3a 5c 50 53 44 5c 69 63 6f 6e 73 5c 6d 65 74 61 6c 6c 5c 32 2e 62 6d 70 19 45 3a 5c 50 53 44 5c 69 63 6f 6e 73 5c 6d 65 74 61 6c 6c 5c 32 2e 62 6d 70 01 00 01 00 01 00 00 00 00 00 00 00 05 00 05 00 00 00 00 00 00 01 00 00 00 00 00 00 00 00 00 00 14 04 01 01 11 00 00 00 0e 00 00 00 04 00 00 00 00 03 52 e3 0b 91 8f ce 11 9d e3 00 aa 00 4b b8 51 01 cc 00 00 90 01 44 42 01 00 06 54 61 68 6f 6d 61 00 00 00 00 00 00 00 00 00 ff 00 ff 00 08 00 00 80 08 00 00 80 08 00 00 80 08 00 00 80 00 00 00 00 01 00 00 00 00 00 00 00 01 00 00 00 00 01 00 42 4d 86 01 00 00 00 00 00 00 36 00 00 00 28 00 00 00 09 00 00 00 0c 00 00 00 01 00 18 00 00 00 00 00 50 01 00 00 12 0b 00 00 12 0b 00 00 00 00 00 00 00 00 00 00 ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff 00 ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff 00 ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff 00 ff 80 80 ff 80 80 ff 80 80 ff 80 80 ff 80 80 ff 80 80 ff 80 80 ff 80 80 ff 80 80 00 ff 00 ff ff 80 80 ff 80 80 ff 80 80 ff 80 80 ff 80 80 ff 80 80 ff 80 80 ff 00 ff 00 ff 00 ff ff 80 80 ff 00 ff ff 80 80 ff 80 80 ff 80 80 ff 00 ff ff 80 80 ff 00 ff 00 ff 00 ff ff 00 ff ff 00 ff ff 80 80 ff 80 80 ff 80 80 ff 00 ff ff 00 ff ff 00 ff 00 ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 80 80 ff 00 ff ff 00 ff ff 00 ff ff 00 ff 00 ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 80 80 ff 00 ff ff 00 ff ff 00 ff ff 00 ff 00 ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff 00 ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff 00 ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff 00
+
+Name=btnHistZoomMore
+ProgID=PUSHBUTTON.PushButtonCtrl.1
+Rect=379, 42, 394, 67
+Style=50000000h
+ID=0
+Data=749 0c 01 00 01 00 00 00 00 00 19 45 3a 5c 50 53 44 5c 69 63 6f 6e 73 5c 6d 65 74 61 6c 6c 5c 31 2e 62 6d 70 19 45 3a 5c 50 53 44 5c 69 63 6f 6e 73 5c 6d 65 74 61 6c 6c 5c 31 2e 62 6d 70 01 00 01 00 01 00 00 00 00 00 00 00 05 00 05 00 00 00 00 00 00 01 00 00 00 00 00 00 00 00 00 00 14 04 01 01 17 00 00 00 0e 00 00 00 04 00 00 00 00 03 52 e3 0b 91 8f ce 11 9d e3 00 aa 00 4b b8 51 01 cc 00 00 90 01 44 42 01 00 06 54 61 68 6f 6d 61 00 00 00 00 00 00 00 00 00 ff 00 ff 00 08 00 00 80 08 00 00 80 08 00 00 80 08 00 00 80 00 00 00 00 01 00 00 00 00 00 00 00 01 00 00 00 00 01 00 42 4d 2e 02 00 00 00 00 00 00 36 00 00 00 28 00 00 00 09 00 00 00 12 00 00 00 01 00 18 00 00 00 00 00 f8 01 00 00 12 0b 00 00 12 0b 00 00 00 00 00 00 00 00 00 00 ff 80 80 ff 80 80 ff 80 80 ff 80 80 ff 80 80 ff 80 80 ff 80 80 ff 80 80 ff 80 80 00 ff 80 80 ff 80 80 ff 80 80 ff 80 80 ff 80 80 ff 80 80 ff 80 80 ff 80 80 ff 80 80 00 ff 80 80 ff 80 80 ff 80 80 ff 80 80 ff 80 80 ff 80 80 ff 80 80 ff 80 80 ff 80 80 00 ff 00 ff ff 80 80 ff 80 80 ff 80 80 ff 80 80 ff 80 80 ff 80 80 ff 80 80 ff 00 ff 00 ff 00 ff ff 80 80 ff 80 80 ff 80 80 ff 80 80 ff 80 80 ff 80 80 ff 80 80 ff 00 ff 00 ff 00 ff ff 80 80 ff 00 ff ff 80 80 ff 80 80 ff 80 80 ff 00 ff ff 80 80 ff 00 ff 00 ff 00 ff ff 80 80 ff 00 ff ff 80 80 ff 80 80 ff 80 80 ff 00 ff ff 80 80 ff 00 ff 00 ff 00 ff ff 80 80 ff 00 ff ff 80 80 ff 80 80 ff 80 80 ff 00 ff ff 80 80 ff 00 ff 00 ff 00 ff ff 00 ff ff 00 ff ff 80 80 ff 80 80 ff 80 80 ff 00 ff ff 00 ff ff 00 ff 00 ff 00 ff ff 00 ff ff 00 ff ff 80 80 ff 80 80 ff 80 80 ff 00 ff ff 00 ff ff 00 ff 00 ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 80 80 ff 00 ff ff 00 ff ff 00 ff ff 00 ff 00 ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 80 80 ff 00 ff ff 00 ff ff 00 ff ff 00 ff 00 ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 80 80 ff 00 ff ff 00 ff ff 00 ff ff 00 ff 00 ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff 00 ff 00 ff ff ff ff ff 00 00 ff 00 00 ff 00 00 ff 00 00 80 00 00 00 00 00 ff 00 ff 00 ff 00 ff ff 00 ff ff ff ff ff 00 00 ff 00 00 80 00 00 00 00 00 ff 00 ff ff 00 ff 00 ff 00 ff ff 00 ff ff 00 ff ff ff ff 80 00 00 00 00 00 ff 00 ff ff 00 ff ff 00 ff 00 ff 00 ff ff 00 ff ff 00 ff ff 00 ff 00 00 00 ff 00 ff ff 00 ff ff 00 ff ff 00 ff 00
+
+Name=btnHistZoomLess
+ProgID=PUSHBUTTON.PushButtonCtrl.1
+Rect=379, 66, 394, 91
+Style=50000000h
+ID=0
+Data=749 0c 01 00 01 00 00 00 00 00 19 45 3a 5c 50 53 44 5c 69 63 6f 6e 73 5c 6d 65 74 61 6c 6c 5c 33 2e 62 6d 70 19 45 3a 5c 50 53 44 5c 69 63 6f 6e 73 5c 6d 65 74 61 6c 6c 5c 33 2e 62 6d 70 01 00 01 00 01 00 00 00 00 00 00 00 05 00 05 00 00 00 00 00 00 01 00 00 00 00 00 00 00 00 00 00 14 04 01 01 17 00 00 00 0e 00 00 00 04 00 00 00 00 03 52 e3 0b 91 8f ce 11 9d e3 00 aa 00 4b b8 51 01 cc 00 00 90 01 44 42 01 00 06 54 61 68 6f 6d 61 00 00 00 00 00 00 00 00 00 ff 00 ff 00 08 00 00 80 08 00 00 80 08 00 00 80 08 00 00 80 00 00 00 00 01 00 00 00 00 00 00 00 01 00 00 00 00 01 00 42 4d 2e 02 00 00 00 00 00 00 36 00 00 00 28 00 00 00 09 00 00 00 12 00 00 00 01 00 18 00 00 00 00 00 f8 01 00 00 12 0b 00 00 12 0b 00 00 00 00 00 00 00 00 00 00 ff 80 80 ff 80 80 ff 80 80 ff 80 80 ff 80 80 ff 80 80 ff 80 80 ff 80 80 ff 80 80 00 ff 80 80 ff 80 80 ff 80 80 ff 80 80 ff 80 80 ff 80 80 ff 80 80 ff 80 80 ff 80 80 00 ff 80 80 ff 80 80 ff 80 80 ff 80 80 ff 80 80 ff 80 80 ff 80 80 ff 80 80 ff 80 80 00 ff 00 ff ff 80 80 ff 80 80 ff 80 80 ff 80 80 ff 80 80 ff 80 80 ff 80 80 ff 00 ff 00 ff 00 ff ff 80 80 ff 80 80 ff 80 80 ff 80 80 ff 80 80 ff 80 80 ff 80 80 ff 00 ff 00 ff 00 ff ff 80 80 ff 00 ff ff 80 80 ff 80 80 ff 80 80 ff 00 ff ff 80 80 ff 00 ff 00 ff 00 ff ff 00 ff ff 00 ff ff 80 80 ff 80 80 ff 80 80 ff 00 ff ff 00 ff ff 00 ff 00 ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 80 80 ff 00 ff ff 00 ff ff 00 ff ff 00 ff 00 ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 80 80 ff 00 ff ff 00 ff ff 00 ff ff 00 ff 00 ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 80 80 ff 00 ff ff 00 ff ff 00 ff ff 00 ff 00 ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff 00 ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff 00 ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff 00 ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff 00 ff 00 ff ff 00 ff ff 00 ff ff 00 ff 00 00 00 ff 00 ff ff 00 ff ff 00 ff ff 00 ff 00 ff 00 ff ff 00 ff ff 00 ff ff ff ff 80 00 00 00 00 00 ff 00 ff ff 00 ff ff 00 ff 00 ff 00 ff ff 00 ff ff ff ff ff 00 00 ff 00 00 80 00 00 00 00 00 ff 00 ff ff 00 ff 00 ff 00 ff ff ff ff ff 00 00 ff 00 00 ff 00 00 ff 00 00 80 00 00 00 00 00 ff 00 ff 00
+
+
+[Script]
+' Описание фазы //
+Class GreyPhase
+	Dim Min
+	Dim Max
+	Dim Specified
+End Class
+
+' Запись Undo //
+Class UndoItem
+	Dim Min
+	Dim Max
+	Dim Active
+	Dim Specified
+End Class
+
+' Незанятая область на гистограмме //
+Class Hole
+	Dim Min
+	Dim Max
+	Public Property Get Length()
+		Length = Max - Min
+	End Property
+End Class
+
+' Текстовые константы //
+'Dim 
+
+Const ZoomStep = 0.5	' Шаг масштабирования гистограммы //
+
+Dim strFormOptSec		' Секция shell.data с установками формы //
+
+Dim colPh				' Коллекция фаз. key = № столбца vtList-a //
+Dim colUndo				' Коллекция для формирования Undo //
+Dim colHoles			' Коллекция незанятых областей на гистограмме (при первом определении области фазы) //
+
+Dim iPhaseN				' Номер активной фазы //
+
+Dim objPrimaryImg			' Исходное изображение //
+Dim strPrimaryBin			' Исходное бинарное //
+Dim objTargetHistImg		' GrayScale изображение для гистограммы //
+Dim strTempGrayImgName		' Имя GrayScale изображения //
+strTempGrayImgName = "_tmp_gray_image"
+Dim strTempOLName			' Имя временного списка объектов //
+strTempOLName = "_tmp_ol"
+Dim strEmptyBinName			' Имя временного бинарного //
+strEmptyBinName = "_tmp_empty_bin"
+Dim strSelectionMask		' Бинарное по рамке для переноса рамки на Gray изображение //
+strSelectionMask = "_Selection_Mask"
+
+Dim UndoPos		' Позиция текущего Undo в коллекции //
+UndoPos = -1
+
+Dim bSkipActionsHandling	' Флаг запрета обработки завершения акций при мигании фаз //
+bSkipActionsHandling = False
+Dim bFormDestroy			' Флаг закрытия формы для предотвращения запуска интерактивных акций //
+bFormDestroy = False
+Dim bSkipUndo				' Отмена формирования записи Undo при его обработке //
+bSkipUndo = True
+Dim bCreateNewUndoItem		' Флаг создания новой записи Undo при следующей операции //
+bCreateNewUndoItem = True
+
+Dim iEndUndoMode			' Флаг завершения EndGroupUndo (0|1) //
+iEndUndoMode = 0
+
+Dim bInitFinish				' Флаг завершения инициализации формы //
+bInitFinish = False
+
+Dim bErrorOnInit			' Флаг наличия ошибок при инициализации формы //
+bErrorOnInit = False
+
+Dim sOldPhase1Color
+
+Dim iDeleteFilterArgsOld	' Флаг удаления аргуметов //
+
+Dim sLastUsedBinaryView		' Последнее бинарное вью //
+
+Dim bSplitInProcessing		' предотвращение рекурсии при активизации вью //
+bSplitInProcessing = False
+
+Dim gl_Script
+
+'***************************************************************
+'Form event handlers.
+'***************************************************************
+Sub Form_OnInitialize()
+	Set gl_Script = Application.GetGlobalScript("")
+	Set colPh = CreateObject("Scripting.Dictionary")
+	Set colUndo = CreateObject("Scripting.Dictionary")
+	Data.SetValue "\Form\WasPressOk", 0
+
+	ActionState.BeginGroupUndo "vt"
+
+	Form.ShowButtons 0
+	btnOk.ButtonText = Docs.LoadString ("OK")	
+	btnCancel.ButtonText = Docs.LoadString ("ButtonCancel")
+	btnHelp.ButtonText = Docs.LoadString ("Help")
+	chkPreview.Caption = Docs.LoadString ("Show Window")
+
+	txtFormCaption.Text = Docs.LoadString ("Mask Thresholding by Brightness Range")
+	txtFindCaption.Text = Docs.LoadString ("Objects Search")
+	
+	optAutoFinding.DeleteAll
+	optAutoFinding.AddItem Docs.LoadString ("Dark Objects")
+	optAutoFinding.AddItem Docs.LoadString ("Light Objects")
+	optAutoFinding.AddItem Docs.LoadString ("Without Search")
+	optAutoFinding.ReCreate
+
+	txtFrom.Text = Docs.LoadString ("From:")
+	txtTo.Text = Docs.LoadString ("To:")
+	txtRange.Text = Docs.LoadString ("Brightness Range")
+	'btnUndo.ButtonText = " " & Docs.LoadString ("Undo")
+	btnUndo.ToolTip = Docs.LoadString ("Undo")
+	'btnClear.ButtonText = " " & Docs.LoadString ("Clear")
+	btnClear.ToolTip = Docs.LoadString ("Clear Brightness Range")
+	chkTrans.Caption = Docs.LoadString ("Transparent")
+	txtBinColor.Text = Docs.LoadString ("Mask color:")
+	btnSplit.ToolTip = Docs.LoadString ("Split Window")
+	txtZoom.Text = Docs.LoadString ("Zoom")
+	btnFitToScreen.ToolTip = Docs.LoadString ("Fit Image to Screen")
+	btnZoom0.ToolTip = Docs.LoadString ("Zoom 1:1")
+	btnHistZoomMore.ToolTip = Docs.LoadString ("Zoom in Brightness Histogram")
+	btnHistZoomNormal.ToolTip = Docs.LoadString ("Brightness Histogram Zoom 1:1")
+	btnHistZoomLess.ToolTip = Docs.LoadString ("Zoom out Brightness Histogram")
+
+	btnUndo.Disabled = True
+
+	iDeleteFilterArgsOld = Data.GetDefValue ("\General\DeleteFilterArgs", 1)
+	Data.SetValue "\General\DeleteFilterArgs", 0
+
+	'Чтобы пипетка работала //
+	Data.SetValue "\Editor\PickColorWorksOnBinary", 1
+
+	strFormOptSec = "\Thresholding\Gray\"
+
+	ActionState.TerminateCurrentAction
+
+	strPrimaryBin = gl_Script.GetNameActivBinary()
+
+	sLastUsedBinaryView = Data.GetValue("\General\LastUsedBinaryView")
+
+	'ShowContext
+	Set objPrimaryImg = Objects.ActiveImage
+	Set objTargetHistImg = Objects.ActiveImage
+	If objPrimaryImg.GetColorSystem <> "GRAY" Then
+		' Перенос рамки на Gray изображение //
+		If TypeName(Objects.ActiveImage.GetParent) <> "Nothing" Then
+			ShowSource
+			CreateBinaryBySelection "", "", strSelectionMask
+		End If
+		If ConvertImage ("GRAY", 0, "", strTempGrayImgName) = 0 Then
+			bErrorOnInit = True
+			Exit Sub
+		End If
+		If TypeName(Objects.GetObjectByName(strSelectionMask)) <> "Nothing" Then
+			CreateSelectionByBinary strTempGrayImgName, strSelectionMask
+		End If
+	End If
+	Set objTargetHistImg = Objects.ActiveImage
+
+	'Снимаем выделение со всех бинарных //
+	ObjectNew "Binary", strEmptyBinName, 1
+
+	' Создание временного списка оъектов для ObjectEditor-а //
+	If strTempOLName <> "" Then ObjectDelete strTempOLName
+	MeasureBin "", "", 1, strTempOLName
+
+	ShowPhase
+
+	For i = 0 To 0
+		iPhaseN = i
+		colPh.Add i, ""
+		Set colPh.item(i) = New GreyPhase
+		strSec = "Phase" & CStr(i) & "\"
+		colPh.item(i).Specified = GetFormSettings(strSec & "Specified", 0)
+		colPh.item(i).Min = GetFormSettings(strSec & "Min", 0)
+		colPh.item(i).Max = GetFormSettings(strSec & "Max", 0)
+		
+		Data.SetValue "\Phase\Phase" & CStr(i + 1) & "Low", colPh.item(i).Min
+		Data.SetValue "\Phase\Phase" & CStr(i + 1) & "High", colPh.item(i).Max
+	Next
+		
+	With colPh.item(0)
+		sldThreshold.PosHi = .Min	'обход ситуации new_min > old_max //
+		sldThreshold.PosLo = .Min
+		sldThreshold.PosHi = .Max
+		edtFrom.ValueInt = sldThreshold.PosLo
+		edtTo.ValueInt = sldThreshold.PosHi
+	End With
+
+	'Автопоиск объектов //
+	optAutoFinding.ItemChecked = GetFormSettings ("AutoFindingObjectsMode", 0)
+	If optAutoFinding.ItemChecked < 2 Then
+		Call optAutoFinding_OnChangeCheck(optAutoFinding.ItemChecked)
+	End If
+
+	Form.InitializePreview
+
+	'Если форма не показывется, не делим окно //
+	If Data.GetValue ("\FormManager\DisableFormShow") = 0 Then
+		If GetFormSettings("SplitWindow", 0) Then btnSplit.SetPressedState
+	End If
+	Call btnSplit_Click()
+	Call btnFitToScreen_Click
+
+	chkTrans.Checked GetFormSettings("Transparent", 0)			'полупрозрачные маски //
+	Call chkTrans_OnCheck(chkTrans.Checked)
+
+	sOldPhase1Color = Data.GetValue ("\Phase\Phase1Color")
+'	cpkBinColor.SetColorRGB GetFormSettings("BinColor", "(255,255,0)")
+	cpkBinColor.SetColorRGB Data.GetValue ("\Binary\SyncColor")
+
+	' Инициализация установок ObjectEditor-а //
+	Call gl_Script.save_entry_ex(Data, "\ObjectEditor", "\ObjectEditor_\last")
+	Data.SetValue "\ObjectEditor\MergePenWidth", 3
+	Data.SetValue "\ObjectEditor\SeparatePenWidth", 1
+	Data.SetValue "\ObjectEditor\MinSize", 0
+	Data.SetValue "\measurement\MinObjectSize", 1
+	
+	Data.SetValue "\Phase\PhasesCount", 1
+
+	bSkipUndo = False
+
+	If TypeName(objTargetHistImg) <> "Nothing" Then
+		Hist.SetTarget(objTargetHistImg)
+		Hist.SetPane(0)
+		Hist.SetNumPhases 1
+		Hist.SetPhaseColor 0, gl_Script.ConvertColorStrToBin(cpkBinColor.GetColorRGB)
+	End If
+
+	bInitFinish = True
+
+	optAutoFinding.ItemChecked = GetFormSettings ("AutoFindingObjectsMode", 0)
+	If optAutoFinding.ItemChecked = 2 Then
+		Call sldThreshold_PosChanged()
+	Else
+		Call optAutoFinding_OnChangeCheck(optAutoFinding.ItemChecked)
+	End If
+	If MethodMan.IsRunning() Then
+		If MethodMan.GetCurrentStepFlags() and  2 = 2 Then chkPreview.Checked 1
+	Else
+		chkPreview.Visible 0
+	End If
+
+	bCreateNewUndoItem = True
+End Sub
+
+Sub Form_OnShow()
+	If bErrorOnInit Then FormManager.PressCancel
+'	Form.ShowButtons 11
+End Sub
+
+Sub Form_OnChangePreview()
+	If bSplitInProcessing Then Exit Sub
+	ActionHelper.GrayThresholdingAllPhases
+	ActionState.TerminateCurrentAction
+End Sub
+
+Sub Form_OnOK()
+	Data.SetValue "\tmp\GrayThresh", 0
+	bFormDestroy = True
+
+	Data.RemoveValue strFormOptSec
+
+	If Not Docs.IsPointerNull(MethodMan) Then MethodMan.StartSetValueLogging
+
+	For i = 0 To colPh.Count - 1
+		strSec = "Phase" & CStr(i) & "\"
+		SetFormSettings strSec & "Specified", colPh.item(i).Specified
+		SetFormSettings strSec & "Min", colPh.item(i).Min
+		SetFormSettings strSec & "Max", colPh.item(i).Max
+	Next
+
+	SetFormSettings "Transparent", Abs(chkTrans.Checked)
+
+	SetFormSettings "AutoFindingObjectsMode", optAutoFinding.ItemChecked
+
+	'Form.ApplyPreview
+	Form.CancelPreview
+
+	'Gray картинка или рамка //
+	strThreshImage = Objects.ActiveImage.Name
+	Objects.SetObjectActive objPrimaryImg
+
+	'предотвращение мигания гистограммы //
+	Hist.Lock 1
+	Hist.RemovePane(0)
+
+	If strPrimaryBin <> "" Then ObjectDelete strPrimaryBin
+
+	GrayThresholdingBin CInt(Data.GetValue("\Phase\Phase1Low")), _
+	                    CInt(Data.GetValue("\Phase\Phase1High")), strThreshImage, "", -1 'strTempGrayImgName
+
+	iEndUndoMode = 1
+
+	'Не запоминаем деление окна если форма не показывется //
+	If Data.GetValue ("\FormManager\DisableFormShow") = 0 Then 
+		SetFormSettings "SplitWindow", btnSplit.IsPressed
+	End If
+
+	If Not Docs.IsPointerNull(MethodMan) Then MethodMan.FinishSetValueLogging
+
+	Data.Setvalue "\measurement\UseLightObjects" ,0
+
+	ShowBinaryFore
+	Data.SetValue "\General\LastView", ""	'отменяем восстановление вью //
+
+	Data.SetValue "\Form\WasPressOk", 1
+End Sub
+
+Sub Form_OnCancel()
+	Data.SetValue "\tmp\GrayThresh", 0
+	bFormDestroy = True
+	Form.CancelPreview
+	'Стираем память о фазовом вью //
+	Data.SetValue "\General\LastUsedBinaryView", sLastUsedBinaryView
+End Sub
+
+Sub Form_OnDestroy()
+	ActionState.TerminateCurrentAction
+	
+	Data.SetValue "\General\DeleteFilterArgs", iDeleteFilterArgsOld
+
+	If strSelectionMask <> "" Then ObjectDelete strSelectionMask
+	If strEmptyBinName <> "" Then ObjectDelete strEmptyBinName
+	If Not (Objects.ActiveImage Is objPrimaryImg) Then Objects.SetObjectActive objPrimaryImg
+
+	'Возвращаем активность бинарному при выходе по Cancel //
+	Set objPrimaryBin = Objects.GetObjectByName(strPrimaryBin)
+	If TypeName(objPrimaryBin) <> "Nothing" Then Objects.SetObjectActive objPrimaryBin
+
+	If strTempGrayImgName <> "" Then ObjectDelete strTempGrayImgName
+	If strTempOLName <> "" Then ObjectDelete strTempOLName
+
+	Data.SetValue "\Phase\Phase1Color", sOldPhase1Color
+'	SetFormSettings "BinColor", cpkBinColor.GetColorRGB
+
+	Call gl_Script.save_entry_ex(Data, "\ObjectEditor_\last", "\ObjectEditor")
+	Data.RemoveValue "\ObjectEditor_\last"
+
+	Set objPrimaryImg = Nothing
+	Set objTargetHistImg = Nothing
+
+	Set gl_Script = Nothing
+	bFormDestroy = True
+
+	'кнопки деления окна //
+	Set f = MainWnd.ActiveFrame
+	If TypeName(f) <> "Nothing" Then
+		f.GetSplitter.EnableButton -1, -1, 31, 31
+	End If
+	Set f = Nothing
+
+	ActionState.EndGroupUndo iEndUndoMode
+End Sub
+
+'===============================================================
+'
+'	Изменение порогов //
+'
+'***************************************************************
+'edtFrom event handlers.
+'***************************************************************
+Sub edtFrom_DataChange()
+	Dim iVal
+	iVal = edtFrom.ValueInt
+	If iVal > edtTo.ValueInt Then
+		edtTo.ValueInt = iVal
+		sldThreshold.PosHi = iVal
+		sldThreshold.PosLo = iVal
+	Else
+		sldThreshold.PosLo = iVal
+	End If
+	Call sldThreshold_PosChanged()	
+End Sub
+
+'***************************************************************
+'edtTo event handlers.
+'***************************************************************
+Sub edtTo_DataChange()
+	sldThreshold.PosHi = edtTo.ValueInt
+	Call sldThreshold_PosChanged()	
+End Sub
+
+'***************************************************************
+'sldThreshold event handlers.
+'***************************************************************
+Sub sldThreshold_PosChanged()
+	Dim iMin, iMax
+	If colPh.Exists(iPhaseN) Then
+		iMin = sldThreshold.PosLo
+		iMax = sldThreshold.PosHi
+
+		'Сброс фазы при сдвигании обоих регуляторов влево //
+		If iMin = 0 And iMax = 0 And iMax <> colPh.item(iPhaseN).Max Then Call btnClear_Click
+
+		' Если двигаем правый движок, и фаза еще не определена //
+		If colPh.item(iPhaseN).Min = colPh.item(iPhaseN).Max And _
+		  iMin = colPh.item(iPhaseN).Min And _
+		  ( sldThreshold.PosHi <> edtTo.ValueInt Or edtFrom.ValueInt = edtTo.ValueInt ) Then
+			sldThreshold.PosLo = sldThreshold.PosHi
+			iMin = sldThreshold.PosLo
+		End If
+		colPh.item(iPhaseN).Min = iMin
+		colPh.item(iPhaseN).Max = iMax
+		If iMin <> iMax Then colPh.item(iPhaseN).Specified = 1
+		btnClear.Disabled = 1 - colPh.item(iPhaseN).Specified
+		edtFrom.ValueInt = iMin
+		edtTo.MinValue = iMin
+		edtTo.ValueInt = iMax
+		For i = 0 To colPh.Count - 1
+			If colPh.item(i).Specified Then
+				Data.SetValue "\Phase\Phase" & CStr(i + 1) & "Low", colPh.item(i).Min
+				Data.SetValue "\Phase\Phase" & CStr(i + 1) & "High", colPh.item(i).Max
+			Else
+				Data.SetValue "\Phase\Phase" & CStr(i + 1) & "Low", -1
+				Data.SetValue "\Phase\Phase" & CStr(i + 1) & "High", -1
+			End If
+			Hist.SetPhaseLowThreshold i, colPh.item(i).Min
+			Hist.SetPhaseHighThreshold i, colPh.item(i).Max
+		Next
+		ActionHelper.GrayThresholdingAllPhases
+		Call update_undo_list
+	End If
+End Sub
+
+
+'===============================================================
+'
+'	Работа с Undo //
+'
+'***************************************************************
+'btnUndo event handlers.
+'***************************************************************
+Sub btnUndo_Click()
+	colUndo.Remove UndoPos
+	UndoPos = UndoPos - 1
+	If UndoPos <= 0 Then btnUndo.Disabled = True
+	bSkipUndo = True
+	n = colUndo.Item(UndoPos).Count
+
+	Data.SetValue "\Phase\PhasesCount", n
+	Hist.SetNumPhases n
+
+	iActivateN = 0
+	For i = 0 To n - 1
+		iPhaseN = i		'активизация фазы для авт. заполнения контрола из процедуры класса GreyPhase //
+		With colUndo.Item(UndoPos).Item(i)
+			colPh.Item(i).Min = .Min
+			colPh.Item(i).Max = .Max
+			colPh.Item(i).Specified = .Specified
+			If .Active Then iActivateN = i
+		End With
+	Next
+	iPhaseN = iActivateN
+	UpdatePos  0
+	bSkipUndo = False
+End Sub
+
+'---------------------------------------------------------------
+' Сохранение текущего состояния в Undo //
+'---------------------------------------------------------------
+Sub update_undo_list
+	If bSkipUndo Then Exit Sub
+	If bCreateNewUndoItem Then
+		UndoPos = UndoPos + 1
+		bCreateNewUndoItem = False
+		If UndoPos > 0 Then btnUndo.Disabled = False
+	End If
+	Set colUndo.Item(UndoPos) = CreateObject("Scripting.Dictionary")
+	For i = 0 To colPh.Count - 1
+'		colUndo.Item(colUndo.Count - 1).Add i, ""
+		Set colUndo.Item(UndoPos).Item(i) = New UndoItem
+		With colUndo.Item(UndoPos).Item(i)
+			.Min = colPh.Item(i).Min
+			.Max = colPh.Item(i).Max
+			.Specified = colPh.Item(i).Specified
+			.Active = (iPhaseN = i)
+		End With
+	Next
+End Sub
+
+
+'***************************************************************
+'btnClear event handlers.
+'***************************************************************
+Sub btnClear_Click()
+	Call clear_phase(iPhaseN)
+
+	sldThreshold.PosLo = colPh.item(iPhaseN).Min
+	sldThreshold.PosHi = colPh.item(iPhaseN).Max
+	sldThreshold.PosLo = colPh.item(iPhaseN).Min	'обход ситуации new min > old max //
+
+	bCreateNewUndoItem = True
+	Call sldThreshold_PosChanged()
+End Sub
+
+'---------------------------------------------------------------
+' Очистка фазы //
+'---------------------------------------------------------------
+Sub clear_phase(nPhase)
+	colPh.item(nPhase).Specified = 0
+	colPh.item(nPhase).Min = 0
+	colPh.item(nPhase).Max = 0
+End Sub
+
+'===============================================================
+'
+' Zoom
+'
+'***************************************************************
+'sldZoom event handlers.
+'***************************************************************
+Sub sldZoom_PosChanged()
+	Dim frame, s
+	Set frame = MainWnd.ActiveFrame
+	Set s = frame.GetSplitter	
+	
+	dZoom = s.GetViewZoom(0,0)
+	dNewZoom = Exp(sldZoom.PosLo / 100)
+	dz = dNewZoom - dZoom
+	cWidth = s.GetViewClientWidth(0,0)
+	cHeight = s.GetViewClientHeight(0,0)
+	ScrlX = s.GetViewXScroll(0,0)
+	ScrlY = s.GetViewYScroll(0,0)
+	dX = cWidth * dz * ( ScrlX + s.GetColWidth(0) / 2 ) / ( cWidth * dZoom )
+	dY = cHeight * dz * ( ScrlY + s.GetRowHeight(0) / 2 ) / ( cHeight * dZoom )
+	s.SetViewZoom 0, 0, dNewZoom
+	s.SetViewScroll 0, 0, ScrlX + dX, ScrlY + dY
+	edtZoomValue.Text = CStr(Round(dNewZoom * 100, 0)) & "%"
+	
+	Set s = Nothing
+	Set frame = Nothing
+End Sub
+
+'***************************************************************
+'btnZoom0 event handlers.
+'***************************************************************
+Sub btnZoom0_Click()
+	sldZoom.PosLo = 0
+	Call sldZoom_PosChanged()
+End Sub
+
+'***************************************************************
+'btnFitToScreen event handlers.
+'***************************************************************
+Sub btnFitToScreen_Click()
+	ActionState.TerminateCurrentAction
+	FitDoc2Screen
+	Call set_sldZoom
+End Sub
+
+'---------------------------------------------------------------
+' Установка движка по текущему Zoom //
+'---------------------------------------------------------------
+Sub set_sldZoom
+	Dim frame, s
+	Set frame = MainWnd.ActiveFrame
+	Set s = frame.GetSplitter	
+	sldZoom.PosLo = Log(s.GetViewZoom(0,0)) * 100
+	edtZoomValue.Text = CStr(Round(s.GetViewZoom(0,0) * 100, 0)) & "%"
+	Set s = Nothing
+	Set frame = Nothing
+End Sub
+
+
+
+'***************************************************************
+'btnSplit event handlers.
+'***************************************************************
+Sub btnSplit_Click()
+	bSplitInProcessing = True
+	Dim frame, s
+	Set frame = MainWnd.ActiveFrame
+	If TypeName(frame) <> "Nothing" Then
+		Set s = frame.GetSplitter	
+		If btnSplit.IsPressed Then
+			s.Split 2, 1
+			ActionState.TerminateCurrentAction
+			SyncZoom 1
+		Else
+			SyncZoom 0
+			s.Split 1, 1
+		End If
+		s.EnableButton -1, -1, 31, 0
+		Set s = Nothing
+		ActionHelper.GrayThresholdingAllPhases
+		ActionHelper.GrayThresholdingAllPhases
+	End If
+	Set frame = Nothing
+	
+	bSplitInProcessing = False
+'	Call print_undo_list	' для разработчиков //
+End Sub
+
+'---------------------------------------------------------------
+' Для разработчиков - выводит список Undo //
+'---------------------------------------------------------------
+sub print_undo_list()
+	s1 = "Undo count = " & UndoPos & vbNewLine
+	For i = 0 To UndoPos
+		s1 = s1 & i & "). "
+		For j = 0 To colUndo.Item(i).Count - 1
+			s1 = s1 & j & ": min=" & colUndo.Item(i).Item(j).Min & ", max=" & colUndo.Item(i).Item(j).Max & "; "
+		Next
+		s1 = s1 & vbNewLine
+	Next
+	MsgBox s1
+end sub
+
+
+
+'===============================================================
+' Обработка завершений акций //
+'===============================================================
+Sub ActionState_OnActionComplete(strActionName, intActionResult)
+	Dim bCorrectPhase, bLess, bMore
+	If bSkipActionsHandling Then Exit Sub
+	bCorrectPhase = False
+	If strActionName = "ObjectEditorSpec" Then
+		If intActionResult = 1 Then
+			Set objList = Objects.ActiveObjectList
+			Set objArea = objList.GetObjectByIdx( ObjList.GetCount - 1).GetImage
+			objArea.CalcMinMaxBrightness
+			iBrightLo = objArea.GetMinBrightness
+			iBrightHi = objArea.GetMaxBrightness
+			Set objArea = Nothing
+			objList.RemoveObjectByIdx ObjList.GetCount - 1
+			Set objList = Nothing
+			bCorrectPhase = True
+			ActionHelper.GrayThresholdingAllPhases
+		End If
+	End If
+	
+	If bCorrectPhase Then
+
+		bCreateNewUndoItem = True
+		
+		If colPh.item(iPhaseN).Specified = 0 Then
+
+			If find_max_hole(iBrightLo, iBrightHi) Then
+				colPh.item(iPhaseN).Min = iBrightLo
+				colPh.item(iPhaseN).Max = iBrightHi
+				colPh.item(iPhaseN).Specified = 1
+'				MsgBox iBrightLo & ", " & iBrightHi
+			End If
+
+		Else
+
+			bLess = False
+			bMore = False
+			If colPh.item(iPhaseN).Min > iBrightLo Then bLess = True	'расширять влево //
+			If colPh.item(iPhaseN).Max < iBrightHi Then bMore = True	'расширять вправо //
+
+			bOver = False
+			For i = 0 To colPh.Count - 1
+				If i <> iPhaseN And colPh.item(i).Specified = 1 Then
+					If bLess Then
+						If colPh.item(i).Max < colPh.item(iPhaseN).Min Then
+							If iBrightLo <= colPh.item(i).Max Then
+								iBrightLo = colPh.item(i).Max + 1
+								iBrightHi = gl_Script.Max(iBrightLo, iBrightHi)
+								bOver = True
+								'Call blink_phase(i)
+							End If
+						End If
+					End If
+					If bMore Then
+						If colPh.item(i).Min > colPh.item(iPhaseN).Max Then
+							If iBrightHi >= colPh.item(i).Min Then
+								iBrightHi = colPh.item(i).Min - 1
+								iBrightLo = gl_Script.Min(iBrightLo, iBrightHi)
+								bOver = True
+								'Call blink_phase(i)
+							End If
+						End If
+					End If
+				End If
+			Next
+
+			If bLess Then colPh.item(iPhaseN).Min = iBrightLo
+			If bMore Then colPh.item(iPhaseN).Max = iBrightHi
+
+		End If
+
+		sldThreshold.PosLo = colPh.item(iPhaseN).Min
+		sldThreshold.PosHi = colPh.item(iPhaseN).Max
+		sldThreshold.PosLo = colPh.item(iPhaseN).Min	'обход ситуации new min > old max //
+
+		Call sldThreshold_PosChanged()
+		bCreateNewUndoItem = True
+	End If
+End Sub
+
+'==============================================================
+' Нахождение в заданном интервале (iLo...iHi) наибольшей области //
+' (по длине на гистограмме) не занятой ни одной фазой //
+' Используется при первом нанесении фазы //
+' Out: False, если пустой области не найдено //
+'==============================================================
+Function find_max_hole(iLo, iHi)
+	Dim arrBusy(256)	'массив уровней яркости (0...256), 1 - уровень занят фазой //
+	Set colHoles = CreateObject("Scripting.Dictionary")	'коллекция пустот //
+	find_max_hole = False
+	For i = 0 To colPh.Count - 1
+		If colPh.item(i).Specified Then
+			For j = colPh.item(i).Min To colPh.item(i).Max
+				arrBusy(j) = 1
+			Next
+		End If
+	Next
+	bNewHole = True
+	k = -1
+	For i = iLo To iHi
+		If arrBusy(i) <> 1 Then
+			If bNewHole Then
+				k = k + 1
+				colHoles.Add k, ""
+				Set colHoles.item(k) = New Hole
+				colHoles.item(k).Min = i
+				colHoles.item(k).Max = i
+				bNewHole = False
+			Else
+				colHoles.item(k).Max = i
+			End If
+		Else
+			bNewHole = True
+		End If
+	Next
+	
+	MaxLength = -1
+	For Each itemHole In colHoles
+		If colHoles.item(itemHole).Length > MaxLength Then
+			MaxLength = colHoles.item(itemHole).Length
+			iLo = colHoles.item(itemHole).Min
+			iHi = colHoles.item(itemHole).Max
+			find_max_hole = True
+		End If
+	Next
+	Set colHoles = Nothing
+End Function
+
+'***************************************************************
+'chkTrans event handlers.
+'***************************************************************
+sub chkTrans_OnCheck(nCheck)
+	Dim bTemp
+	If nCheck Then
+		Data.SetValue "\Phase\Transparency", 80
+	Else
+		Data.SetValue "\Phase\Transparency", 0
+	End If
+	bTemp = bSkipUndo
+	bSkipUndo = True
+	ActionState.TerminateCurrentAction
+	Call sldThreshold_PosChanged
+	bSkipUndo = bTemp
+end sub
+
+'***************************************************************
+'Histogram Zoom
+'***************************************************************
+Sub btnHistZoomMore_Click()
+	Hist.ZoomIn(ZoomStep)
+End Sub
+
+Sub btnHistZoomLess_Click()
+	Hist.ZoomOut(ZoomStep)
+End Sub
+
+Sub btnHistZoomNormal_Click()
+	Hist.YZoom = 1
+End Sub
+
+
+'==============================================================
+' Чтение и установка настроек формы //
+'==============================================================
+Function GetFormSettings(sSec, vDef)
+	Dim value
+	value = Data.GetDefValue(strFormOptSec & sSec, "Nothing")
+	If value = "Nothing" Then
+		Data.SetValue strFormOptSec & sSec, vDef
+		value = vDef
+	End If
+	GetFormSettings = value
+End Function
+
+Sub SetFormSettings(sSec, value)
+	Data.SetValue strFormOptSec & sSec, value
+End Sub
+
+Sub UpdatePos(nRow)
+	Dim bTemp
+	iPhaseN = nRow
+	If colPh.Exists(nRow) Then
+		With colPh.item(nRow)
+			sldThreshold.PosHi = .Min	'обход ситуации new_min > old_max //
+			sldThreshold.PosLo = .Min
+			sldThreshold.PosHi = .Max
+			edtFrom.ValueInt = sldThreshold.PosLo
+			edtTo.ValueInt = sldThreshold.PosHi
+		End With
+
+		bTemp = bSkipUndo
+		bSkipUndo = True
+		Call sldThreshold_PosChanged
+		bSkipUndo = bTemp
+	End If
+
+	bCreateNewUndoItem = True
+	Call update_undo_list
+	bCreateNewUndoItem = True
+End Sub
+
+
+'==============================================================
+' Устанавливаем активной правую половину окна //
+'==============================================================
+Sub Docs_OnActivateView(objDoc, nRow, nCol, bActivate)
+	Dim frame, s
+	Set frame = MainWnd.ActiveFrame
+	If TypeName(frame) <> "Nothing" Then
+		Set s = frame.GetSplitter
+		If s.GetColumnsCount = 2 Then
+			If nCol = 0 Then
+				s.ActivateView 1, 0, ""
+			End If
+		End If
+	End If
+End Sub
+
+
+'***************************************************************
+'cpkBinColor event handlers.
+'***************************************************************
+sub cpkBinColor_OnChange()
+	Data.SetValue "\Binary\SyncColor", cpkBinColor.GetColorRGB
+	Data.SetValue "\Phase\Phase1Color", cpkBinColor.GetColorRGB
+	If TypeName(objTargetHistImg) <> "Nothing" Then
+		Hist.SetPhaseColor 0, gl_Script.ConvertColorStrToBin(cpkBinColor.GetColorRGB)
+	End If
+	Form.UpdateSystemSettings
+end sub
+
+
+'***************************************************************
+'optAutoFinding event handlers.
+'***************************************************************
+sub optAutoFinding_OnChangeCheck(lItem)
+	strSec = "\FindPhasesGray\Result\"
+	Data.SetValue "\FindPhasesGray\Threshold", 1
+	Select Case lItem
+	  Case 0
+
+		'даем возможность запустить FindPhasesGray //
+		ActionState.TerminateCurrentAction
+		FindPhasesGray 0
+		sldThreshold.PosLo = 0
+		n = Data.GetValue(strSec & "Count")
+		'MsgBox n
+		If n > 2 Then
+			i = n - 1
+			s = 0
+			'движемся от самых светлых //
+			Do While i > 0
+				s = s + Data.GetValue( strSec & "Percent" & Cstr(i) )
+				i = i - 1
+				'выходим если набрали > 40% светлых //
+				If s > 0.4 Then Exit Do
+			Loop
+			If s > 0.99 Then
+				'если осталось < 1%, границу берем как середину между текущей и более яркой впадиной //
+				sldThreshold.PosHi = ( Data.GetValue( strSec & "Threshold" & Cstr(i) ) + _
+				  Data.GetDefValue( strSec & "Threshold" & Cstr(i + 1), 255 ) ) / 2
+			ElseIf s < 0.01 Then
+				'если осталось > 99%, границу берем как середину между текущей впадиной и 0 //
+				sldThreshold.PosHi = Data.GetValue( strSec & "Threshold" & Cstr(i) ) / 2
+			Else
+				sldThreshold.PosHi = Data.GetValue( strSec & "Threshold" & Cstr(i) )
+			End If
+		ElseIf n > 1 Then
+			sldThreshold.PosHi = Data.GetValue( strSec & "Threshold0" )
+		Else
+			sldThreshold.PosHi = 20
+		End If
+
+		If bInitFinish Then Call sldThreshold_PosChanged()
+
+	  Case 1
+
+		'даем возможность запустить FindPhasesGray //
+		ActionState.TerminateCurrentAction
+		FindPhasesGray 0
+		sldThreshold.PosHi = 256
+		n = Data.GetValue(strSec & "Count")
+		'MsgBox n
+		If n > 2 Then
+			i = -1
+			s = 0
+			Do While i < (n - 2)
+				i = i + 1
+				s = s + Data.GetValue( strSec & "Percent" & Cstr(i) )
+				If s > 0.4 Then Exit Do
+			Loop
+			If s > 0.99 Then
+				'если осталось < 1%, границу берем как середину между текущей и более темной впадиной //
+				sldThreshold.PosLo = ( Data.GetValue( strSec & "Threshold" & Cstr(i) ) + _
+				  Data.GetDefValue( strSec & "Threshold" & Cstr(i - 1), 0 ) ) / 2
+			ElseIf s < 0.01 Then
+				'если осталось > 99%, границу берем как середину между текущей впадиной и 255 //
+				sldThreshold.PosLo = ( Data.GetValue( strSec & "Threshold" & Cstr(i) ) + 255 ) / 2
+			Else
+				sldThreshold.PosLo = Data.GetValue( strSec & "Threshold" & Cstr(i) )
+			End If
+		ElseIf n > 1 Then
+			value = Data.GetValue(strSec & "Threshold" & CStr(n - 2))
+			If value > 255 Then value = 235
+			sldThreshold.PosLo = value
+			'MsgBox "Data.GetValue(" & strSec & "Threshold" & CStr(n - 2) & ")" & " = " & Data.GetValue(strSec & "Threshold" & CStr(n - 2))
+		Else
+			sldThreshold.PosLo = 235
+		End If
+
+		If bInitFinish Then Call sldThreshold_PosChanged()
+
+	  Case Else
+		
+		'nothing
+
+	End Select
+end sub
+
+'***************************************************************
+'chkPreview event handlers.
+'***************************************************************
+sub chkPreview_OnCheck(nCheck)
+	MethodMan.SetCurrentStepFlags MethodMan.GetCurrentStepFlags() and not 2
+end sub
+
+'***************************************************************
+'btnOk event handlers.
+'***************************************************************
+sub btnOk_Click()
+	FormManager.PressOk			
+end sub
+
+'***************************************************************
+'btnCancel event handlers.
+'***************************************************************
+Sub btnCancel_Click()
+	FormManager.PressCancel
+End Sub
+
+'***************************************************************
+'btnHelp event handlers.
+'***************************************************************
+Sub btnHelp_Click()
+	Application.OpenHelp "Forms", "GrayThresholding"
+End Sub
+

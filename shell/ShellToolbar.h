@@ -1,20 +1,20 @@
 #ifndef __shelltoolbar_h__
 #define __shelltoolbar_h__
 
-#include <BCGMenuBar.h>
+//#include <BCGMenuBar.h>
 
 class CShellToolbarButton;
 
-class CShellToolBar : public CBCGToolBar
+class CShellToolBar : public CMFCToolBar
 {
 	DECLARE_SERIAL(CShellToolBar)
 public:
 	CShellToolBar();
 	~CShellToolBar();
 protected:
-	virtual CBCGToolbarButton* CreateDroppedButton (COleDataObject* pDataObject);
+	virtual CMFCToolBarButton* CreateDroppedButton (COleDataObject* pDataObject);
 	virtual void DoPaint(CDC* pDC);
-	virtual BOOL EnableContextMenuItems (CBCGToolbarButton* pButton, CMenu* pPopup);
+	virtual BOOL EnableContextMenuItems (CMFCToolBarButton* pButton, CMenu* pPopup);
 	virtual CShellToolbarButton *GetSelectedButton();
 	virtual void SetSelectedButton( CShellToolbarButton *pbtn );
 	virtual BOOL PreCreateWindow(CREATESTRUCT& cs);
@@ -22,7 +22,7 @@ protected:
 
 public:
 	virtual void AdjustLocations ();
-	int InsertButtonStoreImage(const CBCGToolbarButton& button, int iInsertAt = -1);
+	int InsertButtonStoreImage(const CMFCToolBarButton& button, int iInsertAt = -1);
 	// [vanek] get tollbar's buttons by command's index - 20.10.2004
 	int GetMyCommandButtons (UINT uiCmd, CObList *plistButtons);
 protected:
@@ -65,7 +65,7 @@ public:
 public:
 	virtual void AdjustLocations ();
 	virtual BOOL IsMenuMode() const;
-	virtual BOOL EnableContextMenuItems (CBCGToolbarButton* pButton, CMenu* pPopup);
+	virtual BOOL EnableContextMenuItems(CMFCToolBarButton* pButton, CMenu* pPopup);
 	virtual void  OnFillBackground (CDC* /*pDC*/);
 
 
@@ -108,7 +108,7 @@ public:
 
 class CBCGMultiDocTemplate;
 
-class CShellMenuBar : public CBCGMenuBar
+class CShellMenuBar : public CMFCMenuBar
 {
 protected:
 	virtual HMENU LoadMainMenu();

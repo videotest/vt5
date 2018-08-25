@@ -218,7 +218,7 @@ CString LanguageLoadCString( UINT ui_id )
 
 	//if( g_bUseLanguageHooks )
 	{
-		LanguageLoadString( AfxGetApp()->m_hInstance, ui_id, sz_buf, sizeof(sz_buf) );
+		LoadString( AfxGetApp()->m_hInstance, ui_id, sz_buf, sizeof(sz_buf) );
 		str = sz_buf;
 	}
 	//else
@@ -1695,7 +1695,7 @@ BOOL CShellApp::InitInstance()
 	{
 		ForceIdleUpdate();
 		// AAM: SBT1001. Возможно, избыточно
-		// (см. также CActionToolsLoadSave::Invoke, CCommandManager::LoadState)
+		// (см. также CActionToolsLoadSave::Invoke, CommandManager::LoadState)
 		CMainFrame	*pmain = (CMainFrame	*)AfxGetMainWnd();
 
 		pmain->GetDockSite( AFX_IDW_DOCKBAR_LEFT )->CalcFixedLayout( false, false );
@@ -2887,7 +2887,7 @@ BOOL CShellApp::PumpMessage()
 		return true;
 	}*/
 
-	if( CBCGToolBar::IsCustomizeMode() )
+	if( CMFCToolBar::IsCustomizeMode() )
 	{
 		if (!::GetMessage(msgCur, NULL, NULL, NULL))
 			return FALSE;

@@ -1,0 +1,4 @@
+'resource:Mask Morphology...#Objects Masks#Morphological operations on the object masks on the image#Morphological Operations on the Object Masks
+'state:action=BinErode
+
+FormManager.ExecutePageModal "BinMorph"

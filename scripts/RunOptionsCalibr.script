@@ -1,0 +1,6 @@
+'resource:Select Calibration...#Measurement#Select calibration or change units of measure#Select Calibration
+
+FormManager.ExecuteModal "OptionsCalibr"
+If Data.GetDefValue("\Methods\SaveFormsSettingsToMethods", 0) Then
+	Call SetMethodSettings( "ActiveCalibr", Data.GetValue("\NewCalibr\Active") )
+End If

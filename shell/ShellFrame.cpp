@@ -21,7 +21,7 @@
 
 
 
-CBCGToolbarButton *_create_button_from_string( CStringArray &strings, int &ipos, bool bMenuBar );
+CMFCToolBarButton *_create_button_from_string( CStringArray &strings, int &ipos, bool bMenuBar );
 
 
 
@@ -190,7 +190,7 @@ void CChildFrameBar::StoreDockPosition()
 	CString	str1, str2;
 	str1.Format( "%d %d %d %d %d %d", 
 			rectPos.left, rectPos.top, rectPos.right, rectPos.bottom, nDockSite, nVisible );
-	str2.Format( "(%d %d) (%d %d) (%d %d)", m_szVert.cx, m_szVert.cy, m_szHorz.cx, m_szHorz.cy, m_szFloat.cx, m_szFloat.cy );
+//	str2.Format( "(%d %d) (%d %d) (%d %d)", m_szVert.cx, m_szVert.cy, m_szHorz.cx, m_szHorz.cy, m_szFloat.cx, m_szFloat.cy );
 
 
 	SetValue( GetAppUnknown(), strDocTemplate, "DockState1", str1 );
@@ -876,8 +876,8 @@ int CShellFrame::OnCreate(LPCREATESTRUCT lpCreateStruct)
 			return -1;      // fail to create
 		}
 		
-		m_pFrameDockBar->SetBarStyleEx( m_pFrameDockBar->GetBarStyle() |
-			CBRS_TOOLTIPS | CBRS_FLYBY | CBRS_SIZE_DYNAMIC );
+		//m_pFrameDockBar->SetBarStyleEx( m_pFrameDockBar->GetBarStyle() |
+		//	CBRS_TOOLTIPS | CBRS_FLYBY | CBRS_SIZE_DYNAMIC );
 
 		m_pFrameDockBar->EnableDocking( CBRS_ALIGN_ANY );
 		//pMainFrm->DockControlBar( m_pFrameDockBar, AFX_IDW_DOCKBAR_LEFT );
@@ -931,15 +931,15 @@ int CShellFrame::OnCreate(LPCREATESTRUCT lpCreateStruct)
 			CRect	rectDesktop;
 			GetDesktopWindow()->GetClientRect( &rectDesktop );
 
-			pbar->m_szVert = sizeVert;
-			pbar->m_szHorz = sizeHorz;
-			pbar->m_szFloat = sizeFloat;
+			//pbar->m_szVert = sizeVert;
+			//pbar->m_szHorz = sizeHorz;
+			//pbar->m_szFloat = sizeFloat;
 
 			if( !nDockSite )
 			{
 				//pmain->ClientToScreen( rectPos );
-				rectPos.right = rectPos.left+pbar->m_szFloat.cx;
-				rectPos.bottom = rectPos.top+pbar->m_szFloat.cy;
+				//rectPos.right = rectPos.left+pbar->m_szFloat.cx;
+				//rectPos.bottom = rectPos.top+pbar->m_szFloat.cy;
 
 				if( rectPos.left < rectDesktop.left )
 					rectPos.OffsetRect( rectDesktop.left-rectPos.left, 0 );
@@ -955,17 +955,17 @@ int CShellFrame::OnCreate(LPCREATESTRUCT lpCreateStruct)
 			}
 			else
 			{
-				if( nDockSite == AFX_IDW_DOCKBAR_LEFT ||
-					nDockSite == AFX_IDW_DOCKBAR_RIGHT )
-				{
-					rectPos.right = rectPos.left+pbar->m_szHorz.cx;
-					rectPos.bottom = rectPos.top+pbar->m_szHorz.cy;
-				}
-				else
-				{
-					rectPos.right = rectPos.left+pbar->m_szVert.cx;
-					rectPos.bottom = rectPos.top+pbar->m_szVert.cy;
-				}
+				//if( nDockSite == AFX_IDW_DOCKBAR_LEFT ||
+				//	nDockSite == AFX_IDW_DOCKBAR_RIGHT )
+				//{
+				//	rectPos.right = rectPos.left+pbar->m_szHorz.cx;
+				//	rectPos.bottom = rectPos.top+pbar->m_szHorz.cy;
+				//}
+				//else
+				//{
+				//	rectPos.right = rectPos.left+pbar->m_szVert.cx;
+				//	rectPos.bottom = rectPos.top+pbar->m_szVert.cy;
+				//}
 
 				pbar->m_pDockContext->m_rectMRUDockPos = rectPos;
 				CShellToolDockBar	*pshellDB = pMainFrm->GetDockSite( nDockSite );
@@ -975,9 +975,9 @@ int CShellFrame::OnCreate(LPCREATESTRUCT lpCreateStruct)
 			pMainFrm->ShowControlBar( pbar, nVisible, true );
 			pbar->SendMessage( WM_SHOWWINDOW, nVisible );
 
-			pbar->m_szVert = sizeVert;
-			pbar->m_szHorz = sizeHorz;
-			pbar->m_szFloat = sizeFloat;
+			//pbar->m_szVert = sizeVert;
+			//pbar->m_szHorz = sizeHorz;
+			//pbar->m_szFloat = sizeFloat;
 
 		}
 		else
@@ -1969,10 +1969,10 @@ void CShellFrame::DoRecalcLayout(UINT nType, int cx, int cy)
 	{
 		POSITION pos = GetFirstToolBarPos();
 		CShellFrameToolBar* ptb = GetNextToolBar( pos );
-		if( ptb && ptb->GetSafeHwnd() )
-		{						
-			ptb->MoveWindow( 0, 0, cx, nToolBarHeight );
-		}
+		//if( ptb && ptb->GetSafeHwnd() )
+		//{						
+		//	ptb->MoveWindow( 0, 0, cx, nToolBarHeight );
+		//}
 	}
 
 	rc.top += nToolBarHeight;	
@@ -2246,12 +2246,12 @@ CShellFrameToolBar* CShellFrame::CreateToolBar( CToolBarInfo* pti )
 
 
 	
-	DWORD dwTBStyle = pBar->GetBarStyle();
-	dwTBStyle |= CBRS_ORIENT_HORZ;
-	dwTBStyle &= ~CBRS_GRIPPER;
-	
+	//DWORD dwTBStyle = pBar->GetBarStyle();
+	//dwTBStyle |= CBRS_ORIENT_HORZ;
+	//dwTBStyle &= ~CBRS_GRIPPER;
+	//
 
-	pBar->SetBarStyleEx(  dwTBStyle );	
+	//pBar->SetBarStyleEx(  dwTBStyle );	
 
 	{
 #if _MSC_VER >= 1300		
@@ -2302,7 +2302,7 @@ CShellFrameToolBar* CShellFrame::CreateToolBar( CToolBarInfo* pti )
 				break;
 			}			
 		
-			CBCGToolbarButton	*pbtn = _create_button_from_string( pti->m_arBtnString, idx, false );
+			CMFCToolBarButton	*pbtn = _create_button_from_string( pti->m_arBtnString, idx, false );
 			if( pbtn )
 			{
 				pBar->InsertButton( *pbtn );
@@ -2445,7 +2445,7 @@ void CShellFrame::DestroyToolBarList()
 /////////////////////////////////////////////////////////////////////////////
 void CShellFrame::GetMessageString(UINT nID, CString& rMessage) const
 {
-	static CBCGToolbarButton button;
+	static CMFCToolBarButton button;
 	
 	button.m_nID = nID;
 	

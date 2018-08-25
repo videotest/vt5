@@ -133,7 +133,7 @@ protected:
 
 	BOOL			m_bClickedOnMenu;
 	BOOL			m_bHorz;
-	bool			m_bDrawAccel;	//andy
+//	bool			m_bDrawAccel;	//andy
 
 // diagnostics:
 

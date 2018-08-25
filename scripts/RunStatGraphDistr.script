@@ -1,0 +1,10 @@
+'resource:Statistics...#Statistics#Statistics#Statistics
+'state:function=ExistStatTableOrObject
+
+If Data.GetValue("\DockBars\PageInProcessing") Then Data.SetValue "\DockBars\isPass", True
+Data.Setvalue "\StatCfg\RunForm", "distr"
+If isDocImage() Then
+	RunStat
+Else
+	MsgBox Docs.LoadString ("Statistics cannot be changed in database!\nTo change send statistics to new document." ), vbInformation, sVT
+End If

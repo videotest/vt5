@@ -12,8 +12,8 @@
 /*#include "dockbar\\sizecbar.h"
 #include "dockbar\\scbarg.h"*/
 
-#define classDockBarBase		CBCGDialogBar
-#define classDockBarBaseRoot	CBCGSizingControlBar
+#define classDockBarBase		CDialogBar
+#define classDockBarBaseRoot	CDockablePane
 #define classBarArray			CSCBArray
 //#define classDockBarBase	CSizingControlBarG
 //#define classDockBarBase1	CSizingControlBar
@@ -60,7 +60,7 @@ public:
 	CSize	CalcFrameSizeForFixedBar();
 	CSize	ExpandSizes( CSize sizeOrg );
 
-	CSize	GetMinSize()	{return m_szMin;}
+//	CSize	GetMinSize()	{return m_szMin;}
 	void	CommitSize( CSize size );
 
 
@@ -136,7 +136,7 @@ protected:
 	virtual void DelayShow(BOOL bShow);
 };
 
-class CShellToolDockBar : public CBCGToolDockBar
+class CShellToolDockBar : public CDockBar
 {
 	DECLARE_DYNCREATE(CShellToolDockBar);
 public:

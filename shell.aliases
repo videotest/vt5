@@ -1,0 +1,360 @@
+VideoTest aliases file
+Format:
+Entry=Value
+New line delimiter is '#'
+
+[Actions]
+AppExit
+AutoBC
+BinAnd
+BinEditFreeLine=Правка масок#Маски объектов#Левая кнопка мыши-рисование, правая-стирание#Правка масок произвольной линией
+BinMeas
+BinNot
+BinOr
+BinXor
+Burn
+Collect
+CombineHSB
+CombineRGB
+CombineYUV
+Comment
+CompareImages
+ConvertImage=Цветовая модель...#Изображение#Перевести изображение в другую цветовую модель#Цветовая модель
+CreateImageByList
+CreateTD
+Crop
+DataTableToExcel
+DataToExcel
+Dodge
+DriverDlg
+EditArrow
+EditCircle
+EditCopy
+EditCut
+EditFreeLine
+EditLine
+EditMarker
+EditPaste=Вставить в активный#Правка#Вставить элемент из буфера обмена в активный  документ#Вставить в активный
+EditPolyline
+EditRect
+EditSplainLine
+EqualHists
+Expansion
+ExportStatTable
+FileClose
+FileCloseAll
+FileOpen
+FileSave
+FileSaveAs
+FileSaveViewScript
+FileSendEMail
+FileSendView
+Fit2Image
+FitDoc2Screen
+FloodFill
+FreeTransformation=Трансформация#Изображение#Свободное преобразование изображения#Трансформация
+HelpAbout
+HelpContext
+HelpIndex
+ImageAdd
+ImageBySel
+ImageDiff
+ImageDiv
+ImageMul
+ImageSub
+ImageSubLight
+ImportVTI
+InputVideo
+InteractiveScroll
+InteractiveZoom
+LocalContrast
+MagickStick
+MasterModeDataBase
+MasterModeMethod
+MeasManualAngle2Line
+MeasManualAngle3Point
+MeasManualBrokenLine
+MeasManualCount
+MeasManualCycle2
+MeasManualCycle3
+MeasManualFreeLine
+MeasManualLine
+MeasManualSpline
+MirrorHorz
+MirrorVert
+MtdClearMethod
+MtdCopyMethod
+MtdCreateMethod
+MtdDeleteMethod
+MtdList
+MtdRunStop
+Negative
+NewDoc
+ObjectCutFrame=Отброс от рамки#Правка#Отброс объектов от рамки#Отброс объектов от рамки
+ObjectDeleteSelection
+ObjectEditor
+ObjectEllipse
+ObjectEllipseDirect
+ObjectEllipseFixed
+ObjectFree
+ObjectLoad
+ObjectMagickStick
+ObjectRect
+ObjectRectDirect
+ObjectRectFixed
+ObjectSave
+ObjectScissors
+ObjectSpline
+ObjectsRemove=Удалить все объекты выбранного класса#Правка#Удалить все объекты выбранного класса#Удалить все объекты выбранного класса
+OptionsMaster
+PasteAsNew=Вставить в новый#Правка#Вставить в новый документ#Вставить в новый документ
+PickColor
+PrinterSetup
+Redo
+RemoveMMObjects
+RemoveParam
+RemoveUnknClass
+RenameMethod
+Rotate180
+Rotate270
+Rotate90
+RunBinMorph
+RunBrightnessContrastLight
+RunCalibrXYRatio
+RunClass
+RunColorAutoThresholding
+RunColorBalance
+RunColorManualThresholding
+RunColorPhaseThresholding
+RunCreateEmptyImage
+RunCreateParam
+RunDivide
+RunEdgeDetection
+RunEqualize
+RunEven
+RunGrayThresholding
+RunInfo
+RunLookUp=Кривые яркости#Преобразования#Расширенные возможности настройки яркости и контрастности изображения#Кривые яркости
+RunMarker
+RunMeasParameters
+RunMethodSetup
+RunMorphology
+RunNewCalibr
+RunODensity
+RunOptionsCalibr
+RunOptionsStitch
+RunPrintPanelMaster
+RunResize
+RunSetupBorders
+RunSmooth
+RunStatGraphAxis
+RunStatGraphCompare
+RunStatGraphDepend
+RunStatGraphDistr
+RunStatGraphDistrOptions
+RunStatSelect
+RunSupport
+RunTemplatesManagerMaster
+RunTimerInput
+RunUnsharpen
+RunUserMeasParamEdit
+SelectAll
+SelectArea
+SelectEllipse
+SelectInvert
+SelectRect
+SendSrcImageToDB=Исходное изображение#Сервис#Отправить исходное изображение в базу данных по настройкам взаимодействия#Отправить исходное изображение в БД
+SendTo
+SendToDB=Активные элементы#Сервис#Отправить активные элементы в базу данных по настройкам взаимодействия#Отправить активные элементы в БД
+SendToDBAllTypes=Все элементы#Сервис#Отправить все элементы в базу данных по настройкам взаимодействия#Отправить все элементы в БД
+SendToDBToActiveField=В активное поле#Сервис#Отправить активный элемент в активное поле базы данных#Отправить в активное поле БД
+SewAuto
+SewAutoVert
+SewManual
+ShowBinaryBack=Маски на фоне#Вид#Показать маски на фоне#Маски на фоне
+ShowBinaryFore=Маски на изображении#Вид#Показать маски на исходном изображении#Маски на изображении
+ShowBinaryToolBar=Редактор бинарного#Сервис#Показать/спрятать панель Редактор бинарного#Редактор бинарного
+ShowCfg
+ShowContextscript
+ShowEdit
+ShowHistogram
+ShowImage=Контуры объектов#Вид#Показать изображение с контурами объектов#Контуры объектов
+ShowMasks=Объекты (фазы)#Вид#Показать изображение с объектами#Объекты (фазы)
+ShowMeas
+ShowMeasView
+ShowMethodPanel
+ShowMetodicsTab
+ShowObjects
+ShowPreview
+ShowPropertyBar
+ShowSelectionToolBar
+ShowSource
+ShowStatChartView
+ShowStatLegendView
+ShowStatTable
+ShowStatTableView
+ShowStatView
+SyncContext
+SyncContextAll
+SyncEdit=Синхронное редактирование#Окно#Синхронизировать операции редактирования#Синхронное редактирование
+SyncZoom
+TV1
+TV2=Ввод в новый...#Ввод#Ввод изображения в новый документ без выбора устройства#Ввод изображения в новый документ
+TV4=Ввод в активный...#Ввод#Ввод изображения в активный документ#Ввод изображения в активный документ
+TV5
+Undo
+WindowActivate
+WindowCascade
+WindowClose
+WindowNew
+WindowTile
+Wnd2Meas
+Zoom
+Zoom12
+Zoom13
+Zoom14
+Zoom21
+Zoom31
+Zoom41
+ZoomNormal
+
+[Objects]
+Binary=Маски
+Drawing Object List=Графика
+Image=Изображение
+Object List=Объекты
+OleObject=OLE объект
+Print Template=Шаблон отчета
+Query=Запрос
+StatObject=Статистика
+StatTable=Таблица
+
+[ActionArguments]
+AutoAssignClasses:AutoAssignClasses=
+Average:Average=Изображение
+FastAverage:Average=Изображение
+BinAnd:BinAnd=Маски
+MinBinaryThreshold=МаскиMinimum=Маски
+BinDilate:BinDilate=Маски
+BinClose:BinErode=Маски
+BinOpen	BinErode=Маски
+BinErode:BinErode=Маски
+CreateBinaryBySelection:BinImage=Маски
+BinMedian:BinMedian=Маски
+BinMorphDivision:BinMorphDivision=Маски
+BinNot:BinNot=Маски
+BinOr:BinOr=Маски
+BinReconstructBack:BinReconstructed=Маски
+BinReconstructFore:BinReconstructed=Маски
+UltimateErosion:BinResult=Маски
+MorphDivideExBin:BinResult=Маски
+FillHolesBin:BinResult=Маски
+BinDeleteSmallObjects:BinResult=Маски
+BinDilateObjects:BinResult=Маски
+NewPhasePacked:BinResult=Маски
+GrayThresholdingPhase:BinResult=Маски
+GrayThresholdingAllPhases:BinResult=Маски
+BinSmooth:BinSmooth=Маски
+BinXor:BinXor=Маски
+Boundary:Boundary=Изображение
+BoundsThreshold:BoundsEdge=Маски
+BrightContrast:BriContrast=Изображение
+ChowKaneko:ChowKaneko=Маски
+Cipher:Ciphered=Изображение
+Close:Close=Изображение
+CollectByPoints	CollectedByPoints=Изображение
+Merge:Combined=Изображение
+ConvertImage:Converted=Изображение
+Dilate:Dilate=Изображение
+DilateOnImage:DilateOnImage=Маски
+FindBorderObjects:DstList=Объекты
+ObjectCutFrame:DstList=Объекты
+Emboss:Emboss=Изображение
+EntropyThreshold:Entropy=Маски
+EqualHists:EqualHists=Изображение
+Equalize:Equalize=Изображение
+LocalEqualize:Equalize=Изображение
+Erode:Erode=Изображение
+Even:Even=Изображение
+Borders:Expanded=Изображение
+FindPhasesColor:FindPhasesColor=Изображение
+FindPhasesGray:FindPhasesGray=Маски
+MirrorHorz:FlipedHorz=Изображение
+MirrorVert:FlipedVert=Изображение
+CollectByMasks:Focus Result=Изображение
+CollectByDisp:Focus Result=Изображение
+FuzzySetsThreshold:FuzzySets=Маски
+CreateImageByList:Generated=Изображение
+FastGradient:Gradient=Изображение
+ApplyLookup:Img=Изображение
+Signature:ImgResult=Изображение
+Watermark:ImgResult=Изображение
+IterationThreshold:Iteration=Маски
+Kirsch:Kirsch=Изображение
+Laplas:Laplas=Изображение
+LocalMax:LocalMax=Маски
+LocalMin:LocalMin=Маски
+ObjectsMakeLight:MeasObjects light=Объекты
+MeasurePhasesLight:MeasureBin=Объекты
+MeasurePhases:MeasureBin=Объекты
+MeasureBin:MeasureBin=Объекты
+Median:Median=Изображение
+Negative:Negative=Изображение
+FileNew:NewDocName:string
+ObjectClassifyByLimits:ObjectClassifier=Объекты
+ObjectFilter:ObjectFilter=Объекты
+GrayThresholding:ObjectList=Объекты
+ExtractPhase:ObjectList=Объекты
+FilterObjectList:ObjectListNew=Объекты
+ObjectsMerge:ObjectsMerge=Объекты
+ObjectsRemove:ObjectsRemove=Объекты
+ObjectsSetClass:ObjectsSetClass=Объекты
+Open:Open=Изображение
+PeaksThreshold:Peaks=Маски
+BinaryExtractPhases:Phase=Маски
+ExtractPhases:Phases=Изображение
+Pyramid:Pyramid=Изображение
+Relaxation:Relaxation=Маски
+Resize:Resized=Изображение
+EqualContrasts:Result Equal=Изображение
+AreaSeg:Result=Маски
+ColorSeg:Result=Маски
+DoubleEdge:Result=Маски
+ImageSubEx:result=Изображение
+ImageMul:result=Изображение
+ImageDiv:result=Изображение
+ImageSubLight:result=Изображение
+ImageDiff:result=Изображение
+ImageSub:result=Изображение
+ImageAdd:result=Изображение
+ImageCombine:result=Изображение
+AutoBC:Result=Изображение
+FindNuclei:Result=Изображение
+EvenAAM:Result=Изображение
+CloseByReconstructionAAM:Result=Изображение
+OpenByReconstructionAAM:Result=Изображение
+Variance:Result=Изображение
+Gradient:Result=Изображение
+MeanKNV:Result=Изображение
+MeanEV:Result=Изображение
+AutoContrast:Result=Изображение
+ColorBalance:Result=Изображение
+CloseByReconstruction:Result=Изображение
+OpenByReconstruction:Result=Изображение
+Rotate:Rotated=Изображение
+Rotate180:Rotated180=Изображение
+Rotate270:Rotated270=Изображение
+Rotate90:Rotated90=Изображение
+SegmColorPhases:SegmColorPhases=Маски
+CreateSelectionByBinary:Selection=Изображение
+Sharping:Sharping=Изображение
+SewAuto2:Stitch Result=Изображение
+SewAutoVert:Stitch Result=Изображение
+SewAuto:Stitch Result=Изображение
+GrayThresholdingBin:ThresholdingGray=Маски
+TopHat:TopHat=Изображение
+JoinAllObjects:TotalObject=Объекты
+TransformColor1:TransformColor1=Изображение
+UnsharpenMask:UnsharpenMask=Изображение
+FastUnsharpenMask:UnsharpenMask=Изображение
+z:z=z

@@ -12,7 +12,7 @@
 #endif
 
 #include "BCGUserToolsManager.h"
-
+#if 0
 inline BOOL IsStandardCommand (UINT uiCmd)
 {
 	return	((uiCmd >= ID_FILE_MRU_FILE1 && 
@@ -22,5 +22,5 @@ inline BOOL IsStandardCommand (UINT uiCmd)
 			(uiCmd >= ID_OLE_VERB_FIRST && uiCmd <= ID_OLE_VERB_LAST) ||		// OLE commands
 			g_pUserToolsManager != NULL && uiCmd == g_pUserToolsManager->GetToolsEntryCmd ());
 }
-
+#endif
 #endif // __BCGCONTROLBAR_H

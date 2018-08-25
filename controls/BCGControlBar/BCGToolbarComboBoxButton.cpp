@@ -24,7 +24,7 @@
 #include "globals.h"
 #include "BCGToolbarComboBoxButton.h"
 #include "BCGToolbarMenuButton.h"
-#include "MenuImages.h"
+//#include "MenuImages.h"
 
 #ifdef _DEBUG
 #undef THIS_FILE

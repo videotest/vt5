@@ -1064,7 +1064,7 @@ int CMainFrame::OnCreate(LPCREATESTRUCT lpCreateStruct)
 	g_pclassToolbarMenuButtonRuntime = RUNTIME_CLASS( CShellToolbarButton );
 	g_pclassDockBarRuntime = RUNTIME_CLASS( CShellToolDockBar );
 
-	CBCGSizingControlBar::SetCaptionStyle( true, true );
+	CDockablePane::SetCaptionStyle( true, true );
 
 //	if( ::GetValueInt( ::GetAppUnknown(), "\\MainFrame", "EnableDragDropOpen", 1 ) != 0 )
 		m_target.Register( this );
@@ -1164,14 +1164,14 @@ int CMainFrame::OnCreate(LPCREATESTRUCT lpCreateStruct)
 	CPtrArray	m_tbs;
 	int			i;
 //add our images to toolbar
-	CBCGToolBar::GetImages()->SetTransparentColor( GetSysColor( COLOR_3DFACE ) );
+	CMFCToolBar::GetImages()->SetTransparentColor( GetSysColor( COLOR_3DFACE ) );
 
 	
 	for( i = 0; i < g_CmdManager.GetBitmapCount(); i++ )
 	{
-		CCommandManager::BitmapData	*pBitmapData = g_CmdManager.GetBitmapData( i );
-		pBitmapData->lImagesOffset = CBCGToolBar::GetImages()->GetCount();
-		CBCGToolBar::GetImages()->AddImage( pBitmapData->hBitmap );
+		CommandManager::BitmapData	*pBitmapData = g_CmdManager.GetBitmapData( i );
+		pBitmapData->lImagesOffset = CMFCToolBar::GetImages()->GetCount();
+		CMFCToolBar::GetImages()->AddImage( pBitmapData->hBitmap );
 	}
 //init user toolbars
 	CString strControlBarRegEntry = "Software\\VideoTest\\vt5\\dummies";
@@ -1260,7 +1260,7 @@ int CMainFrame::OnCreate(LPCREATESTRUCT lpCreateStruct)
 
 	for( i = 0; i < g_CmdManager.GetToolBarCount(); i++ )
 	{
-		CCommandManager::ToolBarData *pToolBarData = g_CmdManager.GetToolBarData( i );
+		CommandManager::ToolBarData *pToolBarData = g_CmdManager.GetToolBarData( i );
 
 		CShellToolBar	*ptoolbar = (CShellToolBar	*)CreateNewToolbar( pToolBarData->m_sGroupName );
 
@@ -1270,7 +1270,7 @@ int CMainFrame::OnCreate(LPCREATESTRUCT lpCreateStruct)
 		
 		for( int iCmdIdx = 0; iCmdIdx < pToolBarData->GetSize(); iCmdIdx++ )
 		{
-			CCommandManager::BitmapData	*pBitmapData = g_CmdManager.GetBitmapData( pToolBarData->m_arrBmps[iCmdIdx] );
+			CommandManager::BitmapData	*pBitmapData = g_CmdManager.GetBitmapData( pToolBarData->m_arrBmps[iCmdIdx] );
 
 			if( pBitmapData )
 			{
@@ -1298,11 +1298,11 @@ int CMainFrame::OnCreate(LPCREATESTRUCT lpCreateStruct)
 	DockControlBar( &m_wndOutlook, AFX_IDW_DOCKBAR_LEFT );
 
 	BOOL bEnableVert = GetValueInt(::GetAppUnknown(), "\\MainFrame", "EnableDockToolbarsVertically", TRUE);
-	CBCGToolBar	*pold = 0;
+	CMFCToolBar	*pold = 0;
 
 	for( i = 0; i < m_tbs.GetSize(); i++ )
 	{
-		CBCGToolBar	*ptoolbar = (CBCGToolBar	*)m_tbs[i];
+		CMFCToolBar	*ptoolbar = (CMFCToolBar	*)m_tbs[i];
 
 		if( !pold )
 			DockControlBar( ptoolbar, AFX_IDW_DOCKBAR_TOP );
@@ -1386,7 +1386,7 @@ int CMainFrame::OnCreate(LPCREATESTRUCT lpCreateStruct)
 	//place all bar to single line
 	for( i = 0; i < g_CmdManager.GetMenuCount(); i++ )
 	{
-		CCommandManager::MenuData *pdata = g_CmdManager.GetMenuData( i );
+		CommandManager::MenuData *pdata = g_CmdManager.GetMenuData( i );
 
 		if( pdata->bDocumentMenu )
 			continue;
@@ -1396,7 +1396,7 @@ int CMainFrame::OnCreate(LPCREATESTRUCT lpCreateStruct)
 		m_ContextMenuManager.AddMenu( pdata->strMenuName, pdata->idx, pdata->hMenu );
 	}
 
-	CBCGToolBar::EnableQuickCustomization ();
+	CMFCToolBar::EnableQuickCustomization ();
 
 	CLogoWnd::Lock( 0 );	
 
@@ -1544,7 +1544,7 @@ void CMainFrame::OnClose()
 
 	if( IsSDIMode() )
 		return;
-	if( CBCGToolBar::IsCustomizeMode() )
+	if( CMFCToolBar::IsCustomizeMode() )
 		return;
 
 	if( m_bInOleEditMode )
@@ -1927,7 +1927,7 @@ HRESULT CMainFrame::XToolbar::OnInitPopup(BSTR bstrMenuName, HMENU hMenu, HMENU 
 		int	nToolBar = 1;
 		for( pos = gAllToolbars.GetHeadPosition(); pos != NULL; )
 		{
-			CBCGToolBar* pToolBar = (CBCGToolBar*)gAllToolbars.GetNext(pos);
+			CMFCToolBar* pToolBar = (CMFCToolBar*)gAllToolbars.GetNext(pos);
 
 			if( pToolBar->IsKindOf( RUNTIME_CLASS(CBCGMenuBar) ) )
 				continue;
@@ -1971,7 +1971,7 @@ void CMainFrame::UpdateAllowCustomizeButton()
 		int	nCustomizeCommand = g_CmdManager.GetActionCommand( "ToolsCustomize" );
 		for( POSITION pos = gAllToolbars.GetHeadPosition(); pos != NULL; )
 		{
-			CBCGToolBar* pToolBar = (CBCGToolBar*)gAllToolbars.GetNext(pos);
+			CMFCToolBar* pToolBar = (CMFCToolBar*)gAllToolbars.GetNext(pos);
 			if( pToolBar->IsKindOf( RUNTIME_CLASS(CBCGMenuBar) ) )
 				continue;
 			if( pToolBar->IsKindOf( RUNTIME_CLASS(CShellOutlookToolBar) ) )
@@ -2059,7 +2059,7 @@ HRESULT CMainFrame::XMain::GetNextToolbar(HWND *phwnd, POSITION *plPosition)
 {
 	METHOD_PROLOGUE_EX(CMainFrame, Main)
 	POSITION	pos = *plPosition;
-	CBCGToolBar* pToolBar = (CBCGToolBar*)gAllToolbars.GetNext( pos );
+	CMFCToolBar* pToolBar = (CMFCToolBar*)gAllToolbars.GetNext( pos );
 	*phwnd = pToolBar->GetSafeHwnd();
 	*plPosition = pos;
 	return S_OK;
@@ -2966,7 +2966,7 @@ void CMainFrame::PostNcDestroy()
 	/*POSITION	pos = gAllToolbars.GetHeadPosition();
 	while( pos )
 	{
-		CBCGToolBar* pToolBar = (CBCGToolBar*)gAllToolbars.GetNext( pos );
+		CMFCToolBar* pToolBar = (CMFCToolBar*)gAllToolbars.GetNext( pos );
 
 		if( pToolBar->IsKindOf( RUNTIME_CLASS(CBCGMenuBar) ) )
 			continue;
@@ -3307,7 +3307,7 @@ void CMainFrame::OnShowToolBar( UINT nCmd )
 	POSITION	pos = gAllToolbars.GetHeadPosition();
 	while( pos )
 	{
-		CBCGToolBar* pToolBar = (CBCGToolBar*)gAllToolbars.GetNext( pos );
+		CMFCToolBar* pToolBar = (CMFCToolBar*)gAllToolbars.GetNext( pos );
 
 		if( pToolBar->IsKindOf( RUNTIME_CLASS(CBCGMenuBar) ) )
 			continue;
@@ -3865,7 +3865,7 @@ void CMainFrame::ResetUserButtonNames()
 }
 
 
-BOOL CMainFrame::GetToolbarButtonToolTipText( CBCGToolbarButton* pButton, CString& strTTText )
+BOOL CMainFrame::GetToolbarButtonToolTipText( CMFCToolBarButton* pButton, CString& strTTText )
 {
 	if( !pButton )return false;
 
@@ -4363,8 +4363,8 @@ void CMainFrame::CreateOleToolBarArray()
 
 	for (POSITION pos = gAllToolbars.GetHeadPosition (); pos != NULL;)
 		{
-			CBCGToolBar* pToolBar = (CBCGToolBar*)gAllToolbars.GetNext( pos );
-			if( pToolBar && pToolBar->IsKindOf( RUNTIME_CLASS(CBCGToolBar) ) )
+			CMFCToolBar* pToolBar = (CMFCToolBar*)gAllToolbars.GetNext( pos );
+			if( pToolBar && pToolBar->IsKindOf( RUNTIME_CLASS(CMFCToolBar) ) )
 			{
 				if( pToolBar->IsWindowVisible() )
 					m_arOleToolbar.Add( pToolBar->GetSafeHwnd() );
@@ -4641,7 +4641,7 @@ void CMainFrame::XPAddButton(long lpos, LPCTSTR pszAction, long nImage, long nSt
 		else
 		{
 			//add action to image list
-			CCommandManager::BitmapData *pBitmapData = pAI->m_pBmpData;
+			CommandManager::BitmapData *pBitmapData = pAI->m_pBmpData;
 			if( pBitmapData && pAI->GetPictureIdx() != -1 )
 			{
 				HDC	hdc = ::GetDC( GetSafeHwnd() );

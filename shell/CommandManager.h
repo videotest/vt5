@@ -9,7 +9,7 @@
 #include "ActionControlWrp.h"
 #include "aliaseint.h"
 #include "BitmapProviderAdv.h"
-#include "BCGToolBarImages.h"
+//#include "BCGToolBarImages.h"
 // CommandManager.h : header file
 //
 
@@ -18,10 +18,10 @@ class CTemplateInfo;
 class CShellDockBar;
 
 /////////////////////////////////////////////////////////////////////////////
-// CCommandManager command target
+// CommandManager command target
 //#define ID_CMDMAN_BASE	1000
 //#define ID_CMDMAN_MAX	2000
-class CVtToolBarImages : public CBCGToolBarImages
+class CVtToolBarImages : public CMFCToolBarImages
 {
 public:
 	void SetUserFlag( bool bSet );
@@ -30,17 +30,17 @@ public:
 	void SaveEx( LPCTSTR lpszBmpFileName, bool bsave_anyway = false );
 };
 
-class CBCGToolBar;
+//class CMFCToolBar;
 
-class CCommandManager : public CCmdTargetEx,
+class CommandManager : public CCmdTargetEx,
 						public CNamedObjectImpl
 {
-	DECLARE_DYNCREATE(CCommandManager)
+	DECLARE_DYNCREATE(CommandManager)
 	ENABLE_MULTYINTERFACE();
 
 public:
-	CCommandManager();           // protected constructor used by dynamic creation
-	virtual ~CCommandManager();
+	CommandManager();           // protected constructor used by dynamic creation
+	virtual ~CommandManager();
 // Attributes
 public:
 
@@ -155,7 +155,7 @@ public:
 
 // Overrides
 	// ClassWizard generated virtual function overrides
-	//{{AFX_VIRTUAL(CCommandManager)
+	//{{AFX_VIRTUAL(CommandManager)
 	public:
 	virtual void OnFinalRelease();
 	//}}AFX_VIRTUAL
@@ -165,13 +165,13 @@ public:
 // Implementation
 protected:
 
-	CBCGToolBar	*GetToolBarNo( int iNo );
+	CMFCToolBar	*GetToolBarNo( int iNo );
 	CShellDockBar	*GetDockBarNo( int nNo );
 
 	
 
 	// Generated message map functions
-	//{{AFX_MSG(CCommandManager)
+	//{{AFX_MSG(CommandManager)
 		// NOTE - the ClassWizard will add and remove member functions here.
 	//}}AFX_MSG
 	afx_msg void OnCommandAction( UINT nCmd );
@@ -183,7 +183,7 @@ protected:
 	DECLARE_MESSAGE_MAP()
 public:
 	// Generated OLE dispatch map functions
-	//{{AFX_DISPATCH(CCommandManager)
+	//{{AFX_DISPATCH(CommandManager)
 	afx_msg long GetBarsCount();
 	afx_msg BSTR GetBarName(long BarNo);
 	afx_msg long CreateNewBar(LPCTSTR BarName);
@@ -283,7 +283,7 @@ protected:
 
 };
 
-extern CCommandManager	g_CmdManager;
+extern CommandManager	g_CmdManager;
 
 /////////////////////////////////////////CActionInfo warper
 class CActionInfoWrp
@@ -340,7 +340,7 @@ public:
 	CString MakeHelpTooltip();
 
 	IActionInfo2	*m_pActionInfo;
-	CCommandManager::BitmapData	*m_pBmpData;
+	CommandManager::BitmapData	*m_pBmpData;
 protected:
 	CStringArray	m_sMenus,
 					m_sToolBars;
@@ -378,7 +378,7 @@ public:
 	CToolBarInfo( CString strName, CRect rc, UINT uiDocPos );
 	CToolBarInfo();
 	~CToolBarInfo();
-	void CreateContext( CBCGToolBar* ptb, CFrameWnd* pParent );
+	void CreateContext( CMFCToolBar* ptb, CFrameWnd* pParent );
 
 	bool Serialize( CStringArrayEx& strings, bool bLoad, int& idx );
 

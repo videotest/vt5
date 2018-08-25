@@ -1,0 +1,2702 @@
+NamedData file. Version 1.0a
+
+[Method]
+[Method\Data]
+StepCount:Long=12
+ActiveStep:Long=4
+[Method\Data\Step0]
+ActionName:String=RunMethodSetup
+ForcedName:String=RunMethodSetup
+Flags:Long=7
+ArgCount:Long=0
+[Method\Data\Step0\MethodStepData]
+[Method\Data\Step0\MethodStepData\StateBeforeAction]
+Image_0:Long=0
+Image_count:Long=1
+ActiveViewProgID:String=ImageDoc.ImageView
+
+[Method\Data\Step0\MethodStepData\StateAfterAction]
+ActiveViewProgID:String=ImageDoc.ImageView
+Image_0:Long=0
+Image_count:Long=1
+
+
+[Method\Data\Step0\FormManager]
+PageExecuted:Long=1
+EnableApply:2=1
+DisableFormShow:Long=0
+
+[Method\Data\Step0\Debugger]
+EnableDebugger:Long=0
+
+[Method\Data\Step0\ViewStatusText]
+ContourView:String=
+
+[Method\Data\Step0\ImageView]
+N_And_N_Color:String=(255, 255, 255)
+N_And_N_AsClassColor:2=1
+ShowClassName:2=1
+ShowClassNamePos:Long=0
+ShowObjectNumber:2=0
+ShowObjectNumberPos:2=0
+HilightEnabled:2=2
+ClassHilightEnabled:2=1
+ShowContours:Long=1
+ShowChildObjects:Long=1
+HighlightPhases:Long=0
+HilightColor:String=(233, 233, 233)
+HilightInteractiveColor:String=(233, 233, 233)
+HighlightOversectColor:String=(255, 255, 255)
+HilightPercent:2=0
+HilightInteractivePercent:Long=1
+HighlightOversectMethod:Long=0
+ShowColorSysPane:2=1
+
+[Method\Data\Step0\DrawImage]
+Gamma:Double=1
+HiBitNum:Long=16
+
+[Method\Data\Step0\Colors]
+Background:String=(255, 255, 255)
+
+[Method\Data\Step0\DrawDisabledImages]
+Enable:Long=1
+Alpha:Double=0.3
+
+[Method\Data\Step0\VTListControl]
+ControlVersion:Long=2
+
+[Method\Data\Step0\measurement]
+[Method\Data\Step0\measurement\parameters]
+[Method\Data\Step0\measurement\parameters\Extern Area]
+Key:Long=0
+Enable:2=1
+UserName:String=Площадь
+Format:String=%0.3f
+UsedPanes:String=
+UsedPhases:String=
+
+[Method\Data\Step0\measurement\parameters\Inner Area]
+Key:Long=1
+Enable:2=1
+UserName:String=Вн. площадь
+Format:String=%0.0f
+UsedPanes:String=
+UsedPhases:String=
+
+[Method\Data\Step0\measurement\parameters\Extern Perimeter]
+Key:Long=57
+Enable:2=1
+UserName:String=Внеш. периметр
+Format:String=%0.3f
+UsedPanes:String=
+UsedPhases:String=
+
+[Method\Data\Step0\measurement\parameters\Inner Perimeter]
+Key:Long=3
+Enable:2=1
+UserName:String=Вн. периметр
+Format:String=%0.3f
+UsedPanes:String=
+UsedPhases:String=
+
+[Method\Data\Step0\measurement\parameters\Big axis of ellipse]
+Key:Long=9
+Enable:2=1
+UserName:String=Эллипс макс.
+Format:String=%0.3f
+UsedPanes:String=
+UsedPhases:String=
+
+[Method\Data\Step0\measurement\parameters\Small axis of ellipse]
+Key:Long=10
+Enable:2=1
+UserName:String=Эллипс мин.
+Format:String=%0.3f
+UsedPanes:String=
+UsedPhases:String=
+
+[Method\Data\Step0\measurement\parameters\Height]
+Key:Long=12
+Enable:2=1
+UserName:String=Длина
+Format:String=%0.3f
+UsedPanes:String=
+UsedPhases:String=
+
+[Method\Data\Step0\measurement\parameters\Width]
+Key:Long=13
+Enable:2=1
+UserName:String=Ширина
+Format:String=%0.3f
+UsedPanes:String=
+UsedPhases:String=
+
+[Method\Data\Step0\measurement\parameters\Size by x]
+Key:Long=14
+Enable:2=1
+UserName:String=Размер по X
+Format:String=%0.3f
+UsedPanes:String=
+UsedPhases:String=
+
+[Method\Data\Step0\measurement\parameters\Size by y]
+Key:Long=15
+Enable:2=1
+UserName:String=Размер по Y
+Format:String=%0.3f
+UsedPanes:String=
+UsedPhases:String=
+
+[Method\Data\Step0\measurement\parameters\Average chord]
+Key:Long=16
+Enable:2=1
+UserName:String=Ср. хорда
+Format:String=%0.3f
+UsedPanes:String=
+UsedPhases:String=
+
+[Method\Data\Step0\measurement\parameters\Length(line)]
+Key:Long=17
+Enable:2=1
+UserName:String=Длина линии
+Format:String=%0.3f
+UsedPanes:String=
+UsedPhases:String=
+
+[Method\Data\Step0\measurement\parameters\Width(line)]
+Key:Long=18
+Enable:2=1
+UserName:String=Толщ. линии
+Format:String=%0.3f
+UsedPanes:String=
+UsedPhases:String=
+
+[Method\Data\Step0\measurement\parameters\Length(ribbon)]
+Key:Long=19
+Enable:2=1
+UserName:String=Длина ленты
+Format:String=%0.3f
+UsedPanes:String=
+UsedPhases:String=
+
+[Method\Data\Step0\measurement\parameters\Width(ribbon)]
+Key:Long=20
+Enable:2=1
+UserName:String=Шир. ленты
+Format:String=%0.3f
+UsedPanes:String=
+UsedPhases:String=
+
+[Method\Data\Step0\measurement\parameters\Center of object x]
+Key:Long=23
+Enable:2=1
+UserName:String=Коорд. X
+Format:String=%0.3f
+UsedPanes:String=
+UsedPhases:String=
+
+[Method\Data\Step0\measurement\parameters\Center of object y]
+Key:Long=24
+Enable:2=1
+UserName:String=Коорд. Y
+Format:String=%0.3f
+UsedPanes:String=
+UsedPhases:String=
+
+[Method\Data\Step0\measurement\parameters\Equivalent diameter]
+Key:Long=11
+Enable:2=1
+UserName:String=Экв. диаметр
+Format:String=%0.3f
+UsedPanes:String=
+UsedPhases:String=
+
+[Method\Data\Step0\measurement\parameters\Form Factor Circle]
+Key:Long=25
+Enable:2=1
+UserName:String=Фактор круга
+Format:String=%0.3f
+UsedPanes:String=
+UsedPhases:String=
+
+[Method\Data\Step0\measurement\parameters\Form Factor Ellipse]
+Key:Long=26
+Enable:2=1
+UserName:String=Ф. эллипса
+Format:String=%0.3f
+UsedPanes:String=
+UsedPhases:String=
+
+[Method\Data\Step0\measurement\parameters\Orientation]
+Key:Long=28
+Enable:2=1
+UserName:String=Ориентация
+Format:String=%0.3f
+UsedPanes:String=
+UsedPhases:String=
+
+[Method\Data\Step0\measurement\parameters\Average brightness]
+Key:Long=29
+Enable:2=1
+UserName:String=Ср. яркость
+Format:String=%0.3f
+UsedPanes:String=
+UsedPhases:String=
+
+[Method\Data\Step0\measurement\parameters\Deviation of brightness]
+Key:Long=30
+Enable:2=1
+UserName:String=Откл. ярк-ти
+Format:String=%0.3f
+UsedPanes:String=
+UsedPhases:String=
+
+[Method\Data\Step0\measurement\parameters\Min brightness]
+Key:Long=31
+Enable:2=1
+UserName:String=Мин. ярк.
+Format:String=%0.3f
+UsedPanes:String=
+UsedPhases:String=
+
+[Method\Data\Step0\measurement\parameters\Max brightness]
+Key:Long=32
+Enable:2=1
+UserName:String=Макс. ярк.
+Format:String=%0.3f
+UsedPanes:String=
+UsedPhases:String=
+
+[Method\Data\Step0\measurement\parameters\Brightness interval]
+Key:Long=33
+Enable:2=1
+UserName:String=Интерв. ярк.
+Format:String=%0.3f
+UsedPanes:String=
+UsedPhases:String=
+
+[Method\Data\Step0\measurement\parameters\Red]
+Key:Long=35
+Enable:2=1
+UserName:String=Красный
+Format:String=%0.3f
+UsedPanes:String=
+UsedPhases:String=
+
+[Method\Data\Step0\measurement\parameters\Green]
+Key:Long=36
+Enable:2=1
+UserName:String=Зеленый
+Format:String=%0.3f
+UsedPanes:String=
+UsedPhases:String=
+
+[Method\Data\Step0\measurement\parameters\Blue]
+Key:Long=37
+Enable:2=1
+UserName:String=Синий
+Format:String=%0.3f
+UsedPanes:String=
+UsedPhases:String=
+
+[Method\Data\Step0\measurement\parameters\Dimesion]
+Key:Long=22
+UserName:String=Ср. размер
+Enable:2=1
+Format:String=%0.3f
+UsedPanes:String=
+UsedPhases:String=
+
+[Method\Data\Step0\measurement\parameters\Full Perimeter]
+Enable:2=1
+UserName:String=Периметр
+Format:String=%0.3f
+UsedPanes:String=
+UsedPhases:String=
+
+[Method\Data\Step0\measurement\parameters\Form Factor Circle 2]
+Enable:2=0
+UserName:String=Фактор круга 2
+Format:String=%0.3f
+
+[Method\Data\Step0\measurement\parameters\Brightness integral]
+Enable:2=1
+UserName:String=Интегр. яркость
+Format:String=%0.3f
+UsedPanes:String=
+UsedPhases:String=
+
+[Method\Data\Step0\measurement\parameters\Ordered Brightness]
+Enable:2=0
+UserName:String=Ordered Brightness
+Format:String=%0.3f
+
+[Method\Data\Step0\measurement\parameters\Hue]
+Enable:2=0
+UserName:String=Hue
+Format:String=%0.3f
+
+[Method\Data\Step0\measurement\parameters\Saturation]
+Enable:2=0
+UserName:String=Saturation
+Format:String=%0.3f
+
+[Method\Data\Step0\measurement\parameters\Elongation]
+Enable:2=1
+UserName:String=Удлинен.
+Format:String=%0.3f
+UsedPanes:String=
+UsedPhases:String=
+
+[Method\Data\Step0\measurement\parameters\Skel.P.Ratio]
+Enable:2=0
+UserName:String=Skel.P.Ratio
+Format:String=%0.3f
+
+[Method\Data\Step0\measurement\parameters\Local Correlation]
+Enable:2=0
+UserName:String=Local Correlation
+Format:String=%0.3f
+
+[Method\Data\Step0\measurement\parameters\Minimal diameter Fere]
+Enable:2=1
+UserName:String=Мин. д.Фере
+Format:String=%0.3f
+UsedPanes:String=
+UsedPhases:String=
+
+[Method\Data\Step0\measurement\parameters\Maximal diameter Fere]
+Enable:2=1
+UserName:String=Макс. д.Фере
+Format:String=%0.3f
+UsedPanes:String=
+UsedPhases:String=
+
+[Method\Data\Step0\measurement\parameters\Average diameter Fere]
+Enable:2=1
+UserName:String=Ср. д.Фере
+Format:String=%0.3f
+UsedPanes:String=
+UsedPhases:String=
+
+[Method\Data\Step0\measurement\parameters\Roundness]
+Enable:2=1
+UserName:String=Округлость
+Format:String=%0.3f
+UsedPanes:String=
+UsedPhases:String=
+
+[Method\Data\Step0\measurement\parameters\Compactness]
+Enable:2=0
+UserName:String=Compactness
+Format:String=%0.3f
+
+[Method\Data\Step0\measurement\parameters\Optic density]
+Enable:2=1
+UserName:String=Опт. плотн.
+Format:String=%0.3f
+UsedPanes:String=
+UsedPhases:String=
+
+[Method\Data\Step0\measurement\parameters\Integral optic density]
+Enable:2=1
+UserName:String=Интегр. о.пл.
+Format:String=%0.3f
+UsedPanes:String=
+UsedPhases:String=
+
+[Method\Data\Step0\measurement\parameters\Phase128 Area]
+Enable:2=0
+UserName:String=Phase128 Area
+Format:String=%0.1f
+
+[Method\Data\Step0\measurement\parameters\Phase129 Area]
+Enable:2=0
+UserName:String=Phase129 Area
+Format:String=%0.1f
+
+[Method\Data\Step0\measurement\parameters\Phase130 Area]
+Enable:2=0
+UserName:String=Phase130 Area
+Format:String=%0.1f
+
+[Method\Data\Step0\measurement\parameters\Average vertical chord]
+Enable:2=0
+UserName:String=Average vertical chord
+Format:String=%0.1f
+
+[Method\Data\Step0\measurement\parameters\Min vertical chord]
+Enable:2=0
+UserName:String=Min vertical chord
+Format:String=%0.1f
+
+[Method\Data\Step0\measurement\parameters\Max vertical chord]
+Enable:2=0
+UserName:String=Max vertical chord
+Format:String=%0.1f
+
+
+
+[Method\Data\Step0\LongOperation]
+ScriptNotify:Long=0
+ScriptFireStep:Long=10
+ScriptFireLag:Long=-1
+
+[Method\Data\Step0\ImageBar]
+UseSystemColors:Long=0
+BackColor:String=(212, 208, 200)
+HighlightColor:String=(128, 128, 128)
+DrawText:Long=1
+DrawIcon:Long=1
+ItemWidth:Long=50
+ItemHeight:Long=50
+IconPropName:String=ImageState
+FieldLeft:Long=10
+FieldRight:Long=10
+FieldTop:Long=10
+FieldBottom:Long=10
+FooterOffset:Long=5
+BarOffsetX:Long=0
+BarOffsetY:Long=0
+
+[Method\Data\Step0\MainFrame]
+EnableCustomizeButton:Long=1
+
+[Method\Data\Step0\ObjectCountPane]
+ImageSourceView:Long=0
+
+[Method\Data\Step0\ImagePane]
+Percent:Long=0
+
+[Method\Data\Step0\StatusBar]
+ShowMousePos:Long=1
+ShowClientSize:Long=1
+
+
+[Method\Data\Step1]
+ActionName:String=RunMeasParameters
+ForcedName:String=RunMeasParameters
+Flags:Long=4
+ArgCount:Long=0
+[Method\Data\Step1\MethodStepData]
+[Method\Data\Step1\MethodStepData\StateBeforeAction]
+Image_0:Long=0
+Image_count:Long=1
+ActiveViewProgID:String=ImageDoc.ImageView
+
+[Method\Data\Step1\MethodStepData\StateAfterAction]
+ActiveViewProgID:String=ImageDoc.ImageView
+Image_0:Long=0
+Image_count:Long=1
+
+
+[Method\Data\Step1\FormManager]
+PageExecuted:Long=0
+
+[Method\Data\Step1\DrawDisabledImages]
+Enable:Long=1
+Alpha:Double=0.3
+
+[Method\Data\Step1\Debugger]
+EnableDebugger:Long=0
+
+[Method\Data\Step1\VTListControl]
+ControlVersion:Long=2
+
+[Method\Data\Step1\measurement]
+MinArea:Long=36
+[Method\Data\Step1\measurement\groups]
+[Method\Data\Step1\measurement\groups\Площадь]
+Extern Area:2=1
+Inner Area:2=1
+Extern Perimeter:2=1
+Inner Perimeter:2=1
+Full Perimeter:2=1
+
+[Method\Data\Step1\measurement\groups\Размеры]
+Height:2=1
+Width:2=1
+Dimesion:2=1
+Size by x:2=1
+Size by y:2=1
+Average chord:2=1
+Minimal diameter Fere:2=1
+Maximal diameter Fere:2=1
+Average diameter Fere:2=1
+
+[Method\Data\Step1\measurement\groups\Размеры по моделям]
+Equivalent diameter:2=1
+Big axis of ellipse:2=1
+Small axis of ellipse:2=1
+Length(line):2=1
+Width(line):2=1
+Length(ribbon):2=1
+Width(ribbon):2=1
+
+[Method\Data\Step1\measurement\groups\Форма]
+Form Factor Circle:2=1
+Form Factor Ellipse:2=1
+Roundness:2=1
+Elongation:2=1
+
+[Method\Data\Step1\measurement\groups\Положение]
+Center of object x:2=1
+Center of object y:2=1
+Orientation:2=1
+
+[Method\Data\Step1\measurement\groups\Оптические]
+Average brightness:2=1
+Deviation of brightness:2=1
+Min brightness:2=1
+Max brightness:2=1
+Brightness interval:2=1
+Brightness integral:2=1
+Optic density:2=1
+Integral optic density:2=1
+
+[Method\Data\Step1\measurement\groups\Цвет]
+Red:2=1
+Green:2=1
+Blue:2=1
+
+[Method\Data\Step1\measurement\groups\Extend]
+Form Factor Circle 2:2=0
+Hue:2=0
+Saturation:2=0
+Skel.P.Ratio:2=0
+Local Correlation:2=0
+Compactness:2=0
+Ordered Brightness:2=0
+Phase128 Area:2=0
+Phase129 Area:2=0
+Phase130 Area:2=0
+Average vertical chord:2=0
+Min vertical chord:2=0
+Max vertical chord:2=0
+Фактор круга:2=0
+q:2=0
+
+
+[Method\Data\Step1\measurement\parameters]
+[Method\Data\Step1\measurement\parameters\Extern Area]
+Enable:2=1
+Format:String=%0.3f
+UserName:String=Площадь
+UsedPanes:String=
+UsedPhases:String=
+
+[Method\Data\Step1\measurement\parameters\Inner Area]
+Enable:2=1
+Format:String=%0.0f
+UserName:String=Вн. площадь
+UsedPanes:String=
+UsedPhases:String=
+
+[Method\Data\Step1\measurement\parameters\Extern Perimeter]
+Enable:2=1
+Format:String=%0.3f
+UserName:String=Внеш. периметр
+UsedPanes:String=
+UsedPhases:String=
+
+[Method\Data\Step1\measurement\parameters\Inner Perimeter]
+Enable:2=1
+Format:String=%0.3f
+UserName:String=Вн. периметр
+UsedPanes:String=
+UsedPhases:String=
+
+[Method\Data\Step1\measurement\parameters\Full Perimeter]
+Enable:2=1
+Format:String=%0.3f
+UserName:String=Периметр
+UsedPanes:String=
+UsedPhases:String=
+
+[Method\Data\Step1\measurement\parameters\Height]
+Enable:2=1
+Format:String=%0.3f
+UserName:String=Длина
+UsedPanes:String=
+UsedPhases:String=
+
+[Method\Data\Step1\measurement\parameters\Width]
+Enable:2=1
+Format:String=%0.3f
+UserName:String=Ширина
+UsedPanes:String=
+UsedPhases:String=
+
+[Method\Data\Step1\measurement\parameters\Dimesion]
+Enable:2=1
+Format:String=%0.3f
+UserName:String=Ср. размер
+UsedPanes:String=
+UsedPhases:String=
+
+[Method\Data\Step1\measurement\parameters\Size by x]
+Enable:2=1
+Format:String=%0.3f
+UserName:String=Размер по X
+UsedPanes:String=
+UsedPhases:String=
+
+[Method\Data\Step1\measurement\parameters\Size by y]
+Enable:2=1
+Format:String=%0.3f
+UserName:String=Размер по Y
+UsedPanes:String=
+UsedPhases:String=
+
+[Method\Data\Step1\measurement\parameters\Average chord]
+Enable:2=1
+Format:String=%0.3f
+UserName:String=Ср. хорда
+UsedPanes:String=
+UsedPhases:String=
+
+[Method\Data\Step1\measurement\parameters\Minimal diameter Fere]
+Enable:2=1
+Format:String=%0.3f
+UserName:String=Мин. д.Фере
+UsedPanes:String=
+UsedPhases:String=
+
+[Method\Data\Step1\measurement\parameters\Maximal diameter Fere]
+Enable:2=1
+Format:String=%0.3f
+UserName:String=Макс. д.Фере
+UsedPanes:String=
+UsedPhases:String=
+
+[Method\Data\Step1\measurement\parameters\Average diameter Fere]
+Enable:2=1
+Format:String=%0.3f
+UserName:String=Ср. д.Фере
+UsedPanes:String=
+UsedPhases:String=
+
+[Method\Data\Step1\measurement\parameters\Equivalent diameter]
+Enable:2=1
+Format:String=%0.3f
+UserName:String=Экв. диаметр
+UsedPanes:String=
+UsedPhases:String=
+
+[Method\Data\Step1\measurement\parameters\Big axis of ellipse]
+Enable:2=1
+Format:String=%0.3f
+UserName:String=Эллипс макс.
+UsedPanes:String=
+UsedPhases:String=
+
+[Method\Data\Step1\measurement\parameters\Small axis of ellipse]
+Enable:2=1
+Format:String=%0.3f
+UserName:String=Эллипс мин.
+UsedPanes:String=
+UsedPhases:String=
+
+[Method\Data\Step1\measurement\parameters\Length(line)]
+Enable:2=1
+Format:String=%0.3f
+UserName:String=Длина линии
+UsedPanes:String=
+UsedPhases:String=
+
+[Method\Data\Step1\measurement\parameters\Width(line)]
+Enable:2=1
+Format:String=%0.3f
+UserName:String=Толщ. линии
+UsedPanes:String=
+UsedPhases:String=
+
+[Method\Data\Step1\measurement\parameters\Length(ribbon)]
+Enable:2=1
+Format:String=%0.3f
+UserName:String=Длина ленты
+UsedPanes:String=
+UsedPhases:String=
+
+[Method\Data\Step1\measurement\parameters\Width(ribbon)]
+Enable:2=1
+Format:String=%0.3f
+UserName:String=Шир. ленты
+UsedPanes:String=
+UsedPhases:String=
+
+[Method\Data\Step1\measurement\parameters\Form Factor Circle]
+Enable:2=1
+Format:String=%0.3f
+UserName:String=Фактор круга
+UsedPanes:String=
+UsedPhases:String=
+
+[Method\Data\Step1\measurement\parameters\Form Factor Ellipse]
+Enable:2=1
+Format:String=%0.3f
+UserName:String=Ф. эллипса
+UsedPanes:String=
+UsedPhases:String=
+
+[Method\Data\Step1\measurement\parameters\Roundness]
+Enable:2=1
+Format:String=%0.3f
+UserName:String=Округлость
+UsedPanes:String=
+UsedPhases:String=
+
+[Method\Data\Step1\measurement\parameters\Elongation]
+Enable:2=1
+Format:String=%0.3f
+UserName:String=Удлинен.
+UsedPanes:String=
+UsedPhases:String=
+
+[Method\Data\Step1\measurement\parameters\Center of object x]
+Enable:2=1
+Format:String=%0.3f
+UserName:String=Коорд. X
+UsedPanes:String=
+UsedPhases:String=
+
+[Method\Data\Step1\measurement\parameters\Center of object y]
+Enable:2=1
+Format:String=%0.3f
+UserName:String=Коорд. Y
+UsedPanes:String=
+UsedPhases:String=
+
+[Method\Data\Step1\measurement\parameters\Orientation]
+Enable:2=1
+Format:String=%0.3f
+UserName:String=Ориентация
+UsedPanes:String=
+UsedPhases:String=
+
+[Method\Data\Step1\measurement\parameters\Average brightness]
+Enable:2=1
+Format:String=%0.3f
+UserName:String=Ср. яркость
+UsedPanes:String=
+UsedPhases:String=
+
+[Method\Data\Step1\measurement\parameters\Deviation of brightness]
+Enable:2=1
+Format:String=%0.3f
+UserName:String=Откл. ярк-ти
+UsedPanes:String=
+UsedPhases:String=
+
+[Method\Data\Step1\measurement\parameters\Min brightness]
+Enable:2=1
+Format:String=%0.3f
+UserName:String=Мин. ярк.
+UsedPanes:String=
+UsedPhases:String=
+
+[Method\Data\Step1\measurement\parameters\Max brightness]
+Enable:2=1
+Format:String=%0.3f
+UserName:String=Макс. ярк.
+UsedPanes:String=
+UsedPhases:String=
+
+[Method\Data\Step1\measurement\parameters\Brightness interval]
+Enable:2=1
+Format:String=%0.3f
+UserName:String=Интерв. ярк.
+UsedPanes:String=
+UsedPhases:String=
+
+[Method\Data\Step1\measurement\parameters\Brightness integral]
+Enable:2=1
+Format:String=%0.3f
+UserName:String=Интегр. яркость
+UsedPanes:String=
+UsedPhases:String=
+
+[Method\Data\Step1\measurement\parameters\Optic density]
+Enable:2=1
+Format:String=%0.3f
+UserName:String=Опт. плотн.
+UsedPanes:String=
+UsedPhases:String=
+
+[Method\Data\Step1\measurement\parameters\Integral optic density]
+Enable:2=1
+Format:String=%0.3f
+UserName:String=Интегр. о.пл.
+UsedPanes:String=
+UsedPhases:String=
+
+[Method\Data\Step1\measurement\parameters\Red]
+Enable:2=1
+Format:String=%0.3f
+UserName:String=Красный
+UsedPanes:String=
+UsedPhases:String=
+
+[Method\Data\Step1\measurement\parameters\Green]
+Enable:2=1
+Format:String=%0.3f
+UserName:String=Зеленый
+UsedPanes:String=
+UsedPhases:String=
+
+[Method\Data\Step1\measurement\parameters\Blue]
+Enable:2=1
+Format:String=%0.3f
+UserName:String=Синий
+UsedPanes:String=
+UsedPhases:String=
+
+[Method\Data\Step1\measurement\parameters\Form Factor Circle 2]
+Enable:2=0
+UserName:String=Фактор круга 2
+Format:String=%0.3f
+
+[Method\Data\Step1\measurement\parameters\Hue]
+Enable:2=0
+UserName:String=Hue
+Format:String=%0.3f
+
+[Method\Data\Step1\measurement\parameters\Saturation]
+Enable:2=0
+UserName:String=Saturation
+Format:String=%0.3f
+
+[Method\Data\Step1\measurement\parameters\Skel.P.Ratio]
+Enable:2=0
+UserName:String=Skel.P.Ratio
+Format:String=%0.3f
+
+[Method\Data\Step1\measurement\parameters\Local Correlation]
+Enable:2=0
+UserName:String=Local Correlation
+Format:String=%0.3f
+
+[Method\Data\Step1\measurement\parameters\Compactness]
+Enable:2=0
+UserName:String=Compactness
+Format:String=%0.3f
+
+[Method\Data\Step1\measurement\parameters\Ordered Brightness]
+Enable:2=0
+UserName:String=Ordered Brightness
+Format:String=%0.3f
+
+[Method\Data\Step1\measurement\parameters\Phase128 Area]
+Enable:2=0
+UserName:String=Phase128 Area
+Format:String=%0.1f
+
+[Method\Data\Step1\measurement\parameters\Phase129 Area]
+Enable:2=0
+UserName:String=Phase129 Area
+Format:String=%0.1f
+
+[Method\Data\Step1\measurement\parameters\Phase130 Area]
+Enable:2=0
+UserName:String=Phase130 Area
+Format:String=%0.1f
+
+[Method\Data\Step1\measurement\parameters\Average vertical chord]
+Enable:2=0
+UserName:String=Average vertical chord
+Format:String=%0.1f
+
+[Method\Data\Step1\measurement\parameters\Min vertical chord]
+Enable:2=0
+UserName:String=Min vertical chord
+Format:String=%0.1f
+
+[Method\Data\Step1\measurement\parameters\Max vertical chord]
+Enable:2=0
+UserName:String=Max vertical chord
+Format:String=%0.1f
+
+[Method\Data\Step1\measurement\parameters\Фактор круга]
+Enable:2=0
+
+[Method\Data\Step1\measurement\parameters\q]
+Enable:2=0
+
+
+
+[Method\Data\Step1\ViewStatusText]
+ContourView:String=
+
+[Method\Data\Step1\ImageBar]
+UseSystemColors:Long=0
+BackColor:String=(212, 208, 200)
+HighlightColor:String=(128, 128, 128)
+DrawText:Long=1
+DrawIcon:Long=1
+ItemWidth:Long=50
+ItemHeight:Long=50
+IconPropName:String=ImageState
+FieldLeft:Long=10
+FieldRight:Long=10
+FieldTop:Long=10
+FieldBottom:Long=10
+FooterOffset:Long=5
+BarOffsetX:Long=0
+BarOffsetY:Long=0
+
+[Method\Data\Step1\ImageView]
+ShowClassName:2=1
+ShowClassNamePos:Long=0
+ShowObjectNumber:2=0
+ShowObjectNumberPos:2=0
+HilightEnabled:2=2
+ClassHilightEnabled:2=1
+ShowContours:Long=1
+ShowChildObjects:Long=1
+HighlightPhases:Long=0
+HilightColor:String=(233, 233, 233)
+HilightInteractiveColor:String=(233, 233, 233)
+HighlightOversectColor:String=(255, 255, 255)
+HilightPercent:2=0
+HilightInteractivePercent:Long=1
+HighlightOversectMethod:Long=0
+ShowColorSysPane:2=1
+
+[Method\Data\Step1\ObjectCountPane]
+ImageSourceView:Long=0
+
+[Method\Data\Step1\ImagePane]
+Percent:Long=0
+
+[Method\Data\Step1\StatusBar]
+ShowMousePos:Long=1
+ShowClientSize:Long=1
+
+
+[Method\Data\Step2]
+ActionName:String=RunOptionsCalibr
+ForcedName:String=RunOptionsCalibr
+Flags:Long=4
+ArgCount:Long=0
+[Method\Data\Step2\MethodStepData]
+[Method\Data\Step2\MethodStepData\StateBeforeAction]
+Image_0:Long=0
+Image_count:Long=1
+ActiveViewProgID:String=ImageDoc.ImageView
+
+[Method\Data\Step2\MethodStepData\StateAfterAction]
+ActiveViewProgID:String=ImageDoc.ImageView
+Image_0:Long=0
+Image_count:Long=1
+
+
+[Method\Data\Step2\FormManager]
+PageExecuted:Long=0
+
+[Method\Data\Step2\DrawDisabledImages]
+Enable:Long=1
+Alpha:Double=0.3
+
+[Method\Data\Step2\Debugger]
+EnableDebugger:Long=0
+
+[Method\Data\Step2\VTListControl]
+ControlVersion:Long=2
+
+[Method\Data\Step2\Calibration]
+MeasPix:2=1
+
+[Method\Data\Step2\Interface]
+EnableSkin:Long=0
+
+[Method\Data\Step2\ImageView]
+N_And_N_Color:String=(255, 255, 255)
+N_And_N_AsClassColor:2=1
+ShowClassName:2=1
+ShowClassNamePos:Long=0
+ShowObjectNumber:2=0
+ShowObjectNumberPos:2=0
+HilightEnabled:2=2
+ClassHilightEnabled:2=1
+ShowContours:Long=1
+ShowChildObjects:Long=1
+HighlightPhases:Long=0
+HilightColor:String=(233, 233, 233)
+HilightInteractiveColor:String=(233, 233, 233)
+HighlightOversectColor:String=(255, 255, 255)
+HilightPercent:2=0
+HilightInteractivePercent:Long=1
+HighlightOversectMethod:Long=0
+ShowColorSysPane:2=1
+
+[Method\Data\Step2\DrawImage]
+Gamma:Double=1
+HiBitNum:Long=16
+
+[Method\Data\Step2\Colors]
+Background:String=(255, 255, 255)
+
+[Method\Data\Step2\measurement]
+[Method\Data\Step2\measurement\parameters]
+[Method\Data\Step2\measurement\parameters\Extern Area]
+Enable:2=1
+UserName:String=Площадь
+Format:String=%0.3f
+UsedPanes:String=
+UsedPhases:String=
+
+[Method\Data\Step2\measurement\parameters\Inner Area]
+Enable:2=1
+UserName:String=Вн. площадь
+Format:String=%0.0f
+UsedPanes:String=
+UsedPhases:String=
+
+[Method\Data\Step2\measurement\parameters\Full Perimeter]
+Enable:2=1
+UserName:String=Периметр
+Format:String=%0.3f
+UsedPanes:String=
+UsedPhases:String=
+
+[Method\Data\Step2\measurement\parameters\Inner Perimeter]
+Enable:2=1
+UserName:String=Вн. периметр
+Format:String=%0.3f
+UsedPanes:String=
+UsedPhases:String=
+
+[Method\Data\Step2\measurement\parameters\Extern Perimeter]
+Enable:2=1
+UserName:String=Внеш. периметр
+Format:String=%0.3f
+UsedPanes:String=
+UsedPhases:String=
+
+[Method\Data\Step2\measurement\parameters\Big axis of ellipse]
+Enable:2=1
+UserName:String=Эллипс макс.
+Format:String=%0.3f
+UsedPanes:String=
+UsedPhases:String=
+
+[Method\Data\Step2\measurement\parameters\Small axis of ellipse]
+Enable:2=1
+UserName:String=Эллипс мин.
+Format:String=%0.3f
+UsedPanes:String=
+UsedPhases:String=
+
+[Method\Data\Step2\measurement\parameters\Height]
+Enable:2=1
+UserName:String=Длина
+Format:String=%0.3f
+UsedPanes:String=
+UsedPhases:String=
+
+[Method\Data\Step2\measurement\parameters\Width]
+Enable:2=1
+UserName:String=Ширина
+Format:String=%0.3f
+UsedPanes:String=
+UsedPhases:String=
+
+[Method\Data\Step2\measurement\parameters\Size by x]
+Enable:2=1
+UserName:String=Размер по X
+Format:String=%0.3f
+UsedPanes:String=
+UsedPhases:String=
+
+[Method\Data\Step2\measurement\parameters\Size by y]
+Enable:2=1
+UserName:String=Размер по Y
+Format:String=%0.3f
+UsedPanes:String=
+UsedPhases:String=
+
+[Method\Data\Step2\measurement\parameters\Average chord]
+Enable:2=1
+UserName:String=Ср. хорда
+Format:String=%0.3f
+UsedPanes:String=
+UsedPhases:String=
+
+[Method\Data\Step2\measurement\parameters\Length(line)]
+Enable:2=1
+UserName:String=Длина линии
+Format:String=%0.3f
+UsedPanes:String=
+UsedPhases:String=
+
+[Method\Data\Step2\measurement\parameters\Width(line)]
+Enable:2=1
+UserName:String=Толщ. линии
+Format:String=%0.3f
+UsedPanes:String=
+UsedPhases:String=
+
+[Method\Data\Step2\measurement\parameters\Length(ribbon)]
+Enable:2=1
+UserName:String=Длина ленты
+Format:String=%0.3f
+UsedPanes:String=
+UsedPhases:String=
+
+[Method\Data\Step2\measurement\parameters\Width(ribbon)]
+Enable:2=1
+UserName:String=Шир. ленты
+Format:String=%0.3f
+UsedPanes:String=
+UsedPhases:String=
+
+[Method\Data\Step2\measurement\parameters\Center of object x]
+Enable:2=1
+UserName:String=Коорд. X
+Format:String=%0.3f
+UsedPanes:String=
+UsedPhases:String=
+
+[Method\Data\Step2\measurement\parameters\Center of object y]
+Enable:2=1
+UserName:String=Коорд. Y
+Format:String=%0.3f
+UsedPanes:String=
+UsedPhases:String=
+
+[Method\Data\Step2\measurement\parameters\Equivalent diameter]
+Enable:2=1
+UserName:String=Экв. диаметр
+Format:String=%0.3f
+UsedPanes:String=
+UsedPhases:String=
+
+[Method\Data\Step2\measurement\parameters\Form Factor Circle]
+Enable:2=1
+UserName:String=Фактор круга
+Format:String=%0.3f
+UsedPanes:String=
+UsedPhases:String=
+
+[Method\Data\Step2\measurement\parameters\Form Factor Circle 2]
+Enable:2=0
+UserName:String=Фактор круга 2
+Format:String=%0.3f
+
+[Method\Data\Step2\measurement\parameters\Form Factor Ellipse]
+Enable:2=1
+UserName:String=Ф. эллипса
+Format:String=%0.3f
+UsedPanes:String=
+UsedPhases:String=
+
+[Method\Data\Step2\measurement\parameters\Orientation]
+Enable:2=1
+UserName:String=Ориентация
+Format:String=%0.3f
+UsedPanes:String=
+UsedPhases:String=
+
+[Method\Data\Step2\measurement\parameters\Average brightness]
+Enable:2=1
+UserName:String=Ср. яркость
+Format:String=%0.3f
+UsedPanes:String=
+UsedPhases:String=
+
+[Method\Data\Step2\measurement\parameters\Deviation of brightness]
+Enable:2=1
+UserName:String=Откл. ярк-ти
+Format:String=%0.3f
+UsedPanes:String=
+UsedPhases:String=
+
+[Method\Data\Step2\measurement\parameters\Min brightness]
+Enable:2=1
+UserName:String=Мин. ярк.
+Format:String=%0.3f
+UsedPanes:String=
+UsedPhases:String=
+
+[Method\Data\Step2\measurement\parameters\Max brightness]
+Enable:2=1
+UserName:String=Макс. ярк.
+Format:String=%0.3f
+UsedPanes:String=
+UsedPhases:String=
+
+[Method\Data\Step2\measurement\parameters\Brightness interval]
+Enable:2=1
+UserName:String=Интерв. ярк.
+Format:String=%0.3f
+UsedPanes:String=
+UsedPhases:String=
+
+[Method\Data\Step2\measurement\parameters\Brightness integral]
+Enable:2=1
+UserName:String=Интегр. яркость
+Format:String=%0.3f
+UsedPanes:String=
+UsedPhases:String=
+
+[Method\Data\Step2\measurement\parameters\Ordered Brightness]
+Enable:2=0
+UserName:String=Ordered Brightness
+Format:String=%0.3f
+
+[Method\Data\Step2\measurement\parameters\Red]
+Enable:2=1
+UserName:String=Красный
+Format:String=%0.3f
+UsedPanes:String=
+UsedPhases:String=
+
+[Method\Data\Step2\measurement\parameters\Green]
+Enable:2=1
+UserName:String=Зеленый
+Format:String=%0.3f
+UsedPanes:String=
+UsedPhases:String=
+
+[Method\Data\Step2\measurement\parameters\Blue]
+Enable:2=1
+UserName:String=Синий
+Format:String=%0.3f
+UsedPanes:String=
+UsedPhases:String=
+
+[Method\Data\Step2\measurement\parameters\Hue]
+Enable:2=0
+UserName:String=Hue
+Format:String=%0.3f
+
+[Method\Data\Step2\measurement\parameters\Saturation]
+Enable:2=0
+UserName:String=Saturation
+Format:String=%0.3f
+
+[Method\Data\Step2\measurement\parameters\Dimesion]
+Enable:2=1
+UserName:String=Ср. размер
+Format:String=%0.3f
+UsedPanes:String=
+UsedPhases:String=
+
+[Method\Data\Step2\measurement\parameters\Elongation]
+Enable:2=1
+UserName:String=Удлинен.
+Format:String=%0.3f
+UsedPanes:String=
+UsedPhases:String=
+
+[Method\Data\Step2\measurement\parameters\Skel.P.Ratio]
+Enable:2=0
+UserName:String=Skel.P.Ratio
+Format:String=%0.3f
+
+[Method\Data\Step2\measurement\parameters\Local Correlation]
+Enable:2=0
+UserName:String=Local Correlation
+Format:String=%0.3f
+
+[Method\Data\Step2\measurement\parameters\Minimal diameter Fere]
+Enable:2=1
+UserName:String=Мин. д.Фере
+Format:String=%0.3f
+UsedPanes:String=
+UsedPhases:String=
+
+[Method\Data\Step2\measurement\parameters\Maximal diameter Fere]
+Enable:2=1
+UserName:String=Макс. д.Фере
+Format:String=%0.3f
+UsedPanes:String=
+UsedPhases:String=
+
+[Method\Data\Step2\measurement\parameters\Average diameter Fere]
+Enable:2=1
+UserName:String=Ср. д.Фере
+Format:String=%0.3f
+UsedPanes:String=
+UsedPhases:String=
+
+[Method\Data\Step2\measurement\parameters\Roundness]
+Enable:2=1
+UserName:String=Округлость
+Format:String=%0.3f
+UsedPanes:String=
+UsedPhases:String=
+
+[Method\Data\Step2\measurement\parameters\Compactness]
+Enable:2=0
+UserName:String=Compactness
+Format:String=%0.3f
+
+[Method\Data\Step2\measurement\parameters\Optic density]
+Enable:2=1
+UserName:String=Опт. плотн.
+Format:String=%0.3f
+UsedPanes:String=
+UsedPhases:String=
+
+[Method\Data\Step2\measurement\parameters\Integral optic density]
+Enable:2=1
+UserName:String=Интегр. о.пл.
+Format:String=%0.3f
+UsedPanes:String=
+UsedPhases:String=
+
+[Method\Data\Step2\measurement\parameters\Phase128 Area]
+Enable:2=0
+UserName:String=Phase128 Area
+Format:String=%0.1f
+
+[Method\Data\Step2\measurement\parameters\Phase129 Area]
+Enable:2=0
+UserName:String=Phase129 Area
+Format:String=%0.1f
+
+[Method\Data\Step2\measurement\parameters\Phase130 Area]
+Enable:2=0
+UserName:String=Phase130 Area
+Format:String=%0.1f
+
+[Method\Data\Step2\measurement\parameters\Average vertical chord]
+Enable:2=0
+UserName:String=Average vertical chord
+Format:String=%0.1f
+
+[Method\Data\Step2\measurement\parameters\Min vertical chord]
+Enable:2=0
+UserName:String=Min vertical chord
+Format:String=%0.1f
+
+[Method\Data\Step2\measurement\parameters\Max vertical chord]
+Enable:2=0
+UserName:String=Max vertical chord
+Format:String=%0.1f
+
+
+
+[Method\Data\Step2\ImageBar]
+UseSystemColors:Long=0
+BackColor:String=(212, 208, 200)
+HighlightColor:String=(128, 128, 128)
+DrawText:Long=1
+DrawIcon:Long=1
+ItemWidth:Long=50
+ItemHeight:Long=50
+IconPropName:String=ImageState
+FieldLeft:Long=10
+FieldRight:Long=10
+FieldTop:Long=10
+FieldBottom:Long=10
+FooterOffset:Long=5
+BarOffsetX:Long=0
+BarOffsetY:Long=0
+
+[Method\Data\Step2\ObjectCountPane]
+ImageSourceView:Long=0
+
+[Method\Data\Step2\ImagePane]
+Percent:Long=0
+
+[Method\Data\Step2\ViewStatusText]
+ContourView:String=
+
+[Method\Data\Step2\StatusBar]
+ShowMousePos:Long=1
+ShowClientSize:Long=1
+
+
+[Method\Data\Step3]
+ActionName:String=BeginMethodLoop
+ForcedName:String=BeginMethodLoop
+Flags:Long=4
+ArgCount:Long=0
+KeyCount:Long=0
+
+[Method\Data\Step4]
+ActionName:String=MethodStart
+ForcedName:String=Получение изображения
+Flags:Long=12
+ArgCount:Long=0
+KeyCount:Long=0
+
+[Method\Data\Step5]
+ActionName:String=ObjectEditor
+ForcedName:String=Измерения
+Flags:Long=4
+ArgCount:Long=0
+[Method\Data\Step5\MethodStepData]
+[Method\Data\Step5\MethodStepData\StateBeforeAction]
+Image_0:Long=0
+Image_count:Long=1
+ActiveViewProgID:String=ImageDoc.ImageView
+
+[Method\Data\Step5\MethodStepData\StateAfterAction]
+ActiveViewProgID:String=ImageDoc.ImageView
+Object List_0:Long=0
+Object List_count:Long=1
+Image_0:Long=0
+Image_count:Long=1
+
+
+[Method\Data\Step5\FormManager]
+PageExecuted:Long=0
+
+[Method\Data\Step5\ViewStatusText]
+ContourView:String=
+
+[Method\Data\Step5\ObjectEditor]
+SwitchView:Long=0
+SeparatePenWidth:Long=2
+MergePenWidth:Long=20
+DefineMode:2=0
+MinSize:Long=0
+[Method\Data\Step5\ObjectEditor\Page]
+Fore1:Long=100
+Fore2:Long=20
+Back1:Long=16
+Back2:Long=2
+ForeIdx:Long=1
+BackIdx:Long=1
+
+
+[Method\Data\Step5\Interface]
+EnableSkin:Long=0
+
+[Method\Data\Step5\Thumbnail]
+ImageRenderMinSize4Icon:Long=32
+
+[Method\Data\Step5\ImageView]
+N_And_N_Color:String=(255, 255, 255)
+N_And_N_AsClassColor:2=1
+ShowColorSysPane:2=1
+EnableObjectResize:Long=1
+EnableMoveOutside:Long=0
+EnableSelection:Long=1
+ImageSelectionOnSourceOnly:2=0
+
+[Method\Data\Step5\DrawImage]
+Gamma:Double=1
+HiBitNum:Long=16
+
+[Method\Data\Step5\Colors]
+Background:String=(255, 255, 255)
+
+[Method\Data\Step5\ObjectCountPane]
+ImageSourceView:Long=0
+
+[Method\Data\Step5\ImagePane]
+Percent:Long=0
+
+[Method\Data\Step5\StatusBar]
+ShowMousePos:Long=1
+ShowClientSize:Long=1
+
+[Method\Data\Step5\types]
+Object List:Long=0
+
+[Method\Data\Step5\Information]
+LastImageCX:Long=750
+LastImageCY:Long=539
+
+[Method\Data\Step5\measurement]
+DinamycRecalc:Long=1
+DefWidth:Long=80
+BriOrderRel:Double=0.5
+BriOrderAbs:Long=0
+VChordEnableNonVertical:Long=0
+[Method\Data\Step5\measurement\UserParamSettings]
+CalcUserParamsInCurrUnits:Long=0
+
+[Method\Data\Step5\measurement\parameters]
+[Method\Data\Step5\measurement\parameters\Extern Area]
+Key:Long=0
+
+[Method\Data\Step5\measurement\parameters\Inner Area]
+Key:Long=1
+
+[Method\Data\Step5\measurement\parameters\Extern Perimeter]
+Key:Long=57
+
+[Method\Data\Step5\measurement\parameters\Inner Perimeter]
+Key:Long=3
+
+[Method\Data\Step5\measurement\parameters\Big axis of ellipse]
+Key:Long=9
+
+[Method\Data\Step5\measurement\parameters\Small axis of ellipse]
+Key:Long=10
+
+[Method\Data\Step5\measurement\parameters\Height]
+Key:Long=12
+
+[Method\Data\Step5\measurement\parameters\Width]
+Key:Long=13
+
+[Method\Data\Step5\measurement\parameters\Size by x]
+Key:Long=14
+
+[Method\Data\Step5\measurement\parameters\Size by y]
+Key:Long=15
+
+[Method\Data\Step5\measurement\parameters\Average chord]
+Key:Long=16
+
+[Method\Data\Step5\measurement\parameters\Length(line)]
+Key:Long=17
+
+[Method\Data\Step5\measurement\parameters\Width(line)]
+Key:Long=18
+
+[Method\Data\Step5\measurement\parameters\Length(ribbon)]
+Key:Long=19
+
+[Method\Data\Step5\measurement\parameters\Width(ribbon)]
+Key:Long=20
+
+[Method\Data\Step5\measurement\parameters\Center of object x]
+Key:Long=23
+
+[Method\Data\Step5\measurement\parameters\Center of object y]
+Key:Long=24
+
+[Method\Data\Step5\measurement\parameters\Equivalent diameter]
+Key:Long=11
+
+[Method\Data\Step5\measurement\parameters\Form Factor Circle]
+Key:Long=25
+
+[Method\Data\Step5\measurement\parameters\Form Factor Ellipse]
+Key:Long=26
+
+[Method\Data\Step5\measurement\parameters\Orientation]
+Key:Long=28
+
+[Method\Data\Step5\measurement\parameters\Average brightness]
+Key:Long=29
+
+[Method\Data\Step5\measurement\parameters\Deviation of brightness]
+Key:Long=30
+
+[Method\Data\Step5\measurement\parameters\Min brightness]
+Key:Long=31
+
+[Method\Data\Step5\measurement\parameters\Max brightness]
+Key:Long=32
+
+[Method\Data\Step5\measurement\parameters\Brightness interval]
+Key:Long=33
+
+[Method\Data\Step5\measurement\parameters\Red]
+Key:Long=35
+
+[Method\Data\Step5\measurement\parameters\Green]
+Key:Long=36
+
+[Method\Data\Step5\measurement\parameters\Blue]
+Key:Long=37
+
+[Method\Data\Step5\measurement\parameters\Dimesion]
+Key:Long=22
+
+[Method\Data\Step5\measurement\parameters\Elongation]
+Key:Long=21
+
+[Method\Data\Step5\measurement\parameters\Minimal diameter Fere]
+Key:Long=6
+
+[Method\Data\Step5\measurement\parameters\Maximal diameter Fere]
+Key:Long=7
+
+[Method\Data\Step5\measurement\parameters\Average diameter Fere]
+Key:Long=8
+
+[Method\Data\Step5\measurement\parameters\Roundness]
+Key:Long=27
+
+[Method\Data\Step5\measurement\parameters\Optic density]
+Key:Long=50
+
+[Method\Data\Step5\measurement\parameters\Integral optic density]
+Key:Long=51
+
+[Method\Data\Step5\measurement\parameters\Full Perimeter]
+Key:Long=2
+
+[Method\Data\Step5\measurement\parameters\Form Factor Circle 2]
+Key:Long=54
+
+[Method\Data\Step5\measurement\parameters\Hue]
+Key:Long=38
+
+[Method\Data\Step5\measurement\parameters\Saturation]
+Key:Long=39
+
+[Method\Data\Step5\measurement\parameters\Skel.P.Ratio]
+Key:Long=53
+
+[Method\Data\Step5\measurement\parameters\Local Correlation]
+Key:Long=55
+
+[Method\Data\Step5\measurement\parameters\Compactness]
+Key:Long=56
+
+[Method\Data\Step5\measurement\parameters\Ordered Brightness]
+Key:Long=58
+
+[Method\Data\Step5\measurement\parameters\Brightness integral]
+Key:Long=34
+
+[Method\Data\Step5\measurement\parameters\Phase128 Area]
+Key:Long=400
+
+[Method\Data\Step5\measurement\parameters\Phase129 Area]
+Key:Long=401
+
+[Method\Data\Step5\measurement\parameters\Phase130 Area]
+Key:Long=402
+
+[Method\Data\Step5\measurement\parameters\Average vertical chord]
+Key:Long=500
+
+[Method\Data\Step5\measurement\parameters\Min vertical chord]
+Key:Long=501
+
+[Method\Data\Step5\measurement\parameters\Max vertical chord]
+Key:Long=502
+
+[Method\Data\Step5\measurement\parameters\Фактор круга]
+Key:Long=196610
+
+[Method\Data\Step5\measurement\parameters\q]
+Key:Long=196610
+
+
+
+[Method\Data\Step5\Classify]
+[Method\Data\Step5\Classify\AutomaticClassifier]
+Step:Double=20
+GeomStep:Double=0
+
+[Method\Data\Step5\Classify\Ср. размер.class]
+[Method\Data\Step5\Classify\Ср. размер.class\22]
+class0:String=3.000000e+001,5.000000e+001
+class1:String=5.000000e+001,7.000000e+001
+class2:String=7.000000e+001,9.000000e+001
+
+
+
+[Method\Data\Step5\Message]
+Message:String=Наносите объекты!
+InterAction:String=Измерения
+
+
+[Method\Data\Step6]
+ActionName:String=MeasManualLine
+ForcedName:String=Измерения
+Flags:Long=4
+ArgCount:Long=0
+[Method\Data\Step6\MethodStepData]
+[Method\Data\Step6\MethodStepData\StateBeforeAction]
+Object List_0:Long=0
+Object List_count:Long=1
+Image_0:Long=0
+Image_count:Long=1
+ActiveViewProgID:String=ImageDoc.ImageView
+
+[Method\Data\Step6\MethodStepData\StateAfterAction]
+ActiveViewProgID:String=ImageDoc.ImageView
+Object List_0:Long=0
+Object List_count:Long=1
+Image_0:Long=0
+Image_count:Long=1
+
+
+[Method\Data\Step6\FormManager]
+PageExecuted:Long=0
+
+[Method\Data\Step6\ViewStatusText]
+ContourView:String=
+
+[Method\Data\Step6\ManualMeasure]
+ManualMeasShiftMode:Long=1
+ManualMeasColor:String=(64, 128, 255)
+ManualMeasCrossOffset:Long=5
+ManualMeasArcSize:Long=15
+Name:String=Default Calibration
+MeasValue:String=32.56
+MeasParam:String=Линейные1
+Unit:String=пиксел
+
+[Method\Data\Step6\Interface]
+EnableSkin:Long=0
+
+[Method\Data\Step6\ImageView]
+N_And_N_Color:String=(255, 255, 255)
+N_And_N_AsClassColor:2=1
+
+[Method\Data\Step6\DrawImage]
+Gamma:Double=1
+HiBitNum:Long=16
+
+[Method\Data\Step6\Colors]
+Background:String=(255, 255, 255)
+
+[Method\Data\Step6\DrawDisabledImages]
+Enable:Long=1
+Alpha:Double=0.3
+
+[Method\Data\Step6\Message]
+Message:String=Проводите ручные измерения!
+InterAction:String=Измерения
+
+
+[Method\Data\Step7]
+ActionName:String=CreateTD
+ForcedName:String=CreateTD
+Flags:Long=4
+ArgCount:Long=0
+[Method\Data\Step7\MethodStepData]
+[Method\Data\Step7\MethodStepData\StateBeforeAction]
+Object List_0:Long=0
+Object List_count:Long=1
+Image_0:Long=0
+Image_count:Long=1
+ActiveViewProgID:String=ImageDoc.ImageView
+
+[Method\Data\Step7\MethodStepData\StateAfterAction]
+ActiveViewProgID:String=ImageDoc.ImageView
+Object List_0:Long=0
+Object List_count:Long=1
+Image_0:Long=0
+Image_count:Long=1
+StatTable_count:Long=0
+
+
+[Method\Data\Step7\FormManager]
+PageExecuted:Long=0
+
+[Method\Data\Step7\Classify]
+[Method\Data\Step7\Classify\AutomaticClassifier]
+Step:Double=20
+GeomStep:Double=0
+
+[Method\Data\Step7\Classify\Ср. размер.class]
+[Method\Data\Step7\Classify\Ср. размер.class\22]
+class0:String=3.000000e+001,5.000000e+001
+class1:String=5.000000e+001,7.000000e+001
+class2:String=7.000000e+001,9.000000e+001
+
+
+
+[Method\Data\Step7\Interface]
+EnableSkin:Long=0
+
+[Method\Data\Step7\StatDataTable]
+EnableUndo:Long=1
+
+[Method\Data\Step7\types]
+StatTable:Long=0
+
+
+[Method\Data\Step8]
+ActionName:String=EndMethodLoop
+ForcedName:String=EndMethodLoop
+Flags:Long=4
+ArgCount:Long=0
+KeyCount:Long=0
+
+[Method\Data\Step9]
+ActionName:String=RunClass
+ForcedName:String=RunClass
+Flags:Long=7
+ArgCount:Long=0
+[Method\Data\Step9\MethodStepData]
+[Method\Data\Step9\MethodStepData\StateBeforeAction]
+Object List_0:Long=0
+Object List_count:Long=1
+Image_0:Long=0
+Image_count:Long=1
+StatTable_count:Long=0
+ActiveViewProgID:String=ImageDoc.ImageView
+
+[Method\Data\Step9\MethodStepData\StateAfterAction]
+ActiveViewProgID:String=ImageDoc.ImageView
+Object List_0:Long=0
+Object List_count:Long=1
+Image_0:Long=0
+Image_count:Long=1
+StatTable_count:Long=0
+StatObject_count:Long=0
+
+
+[Method\Data\Step9\FormManager]
+PageExecuted:Long=1
+EnableApply:2=1
+DisableFormShow:Long=0
+
+[Method\Data\Step9\DockBars]
+PageInProcessing:11=0
+isPass:11=0
+Count:Long=11
+noAdvancedMode:2=1
+VisibleTBName:String=
+TBCount:Long=7
+CloseFishBar:2=0
+RestoreWindowSplit:2=1
+
+[Method\Data\Step9\ViewStatusText]
+ContourView:String=
+
+[Method\Data\Step9\MainFrame]
+ShowPopupMenu:2=0
+ShowPopupMenuOld:2=0
+EnableCustomizeButton:Long=1
+
+[Method\Data\Step9\Interface]
+EnableSkin:Long=0
+
+[Method\Data\Step9\ImageView]
+N_And_N_Color:String=(255, 255, 255)
+N_And_N_AsClassColor:2=1
+ShowColorSysPane:2=1
+ShowClassName:2=1
+ShowClassNamePos:Long=0
+ShowObjectNumber:2=0
+ShowObjectNumberPos:2=0
+HilightEnabled:2=2
+ClassHilightEnabled:2=1
+ShowContours:Long=1
+ShowChildObjects:Long=1
+HighlightPhases:Long=0
+HilightColor:String=(233, 233, 233)
+HilightInteractiveColor:String=(233, 233, 233)
+HighlightOversectColor:String=(255, 255, 255)
+HilightPercent:2=0
+HilightInteractivePercent:Long=1
+HighlightOversectMethod:Long=0
+
+[Method\Data\Step9\DrawImage]
+Gamma:Double=1
+HiBitNum:Long=16
+
+[Method\Data\Step9\Colors]
+Background:String=(255, 255, 255)
+
+[Method\Data\Step9\DrawDisabledImages]
+Enable:Long=1
+Alpha:Double=0.3
+
+[Method\Data\Step9\ObjectCountPane]
+ImageSourceView:Long=0
+
+[Method\Data\Step9\ImagePane]
+Percent:Long=0
+
+[Method\Data\Step9\StatusBar]
+ShowMousePos:Long=1
+ShowClientSize:Long=1
+
+[Method\Data\Step9\Debugger]
+EnableDebugger:Long=0
+
+[Method\Data\Step9\VTListControl]
+ControlVersion:Long=2
+
+[Method\Data\Step9\measurement]
+[Method\Data\Step9\measurement\parameters]
+[Method\Data\Step9\measurement\parameters\Extern Area]
+Key:Long=0
+UserName:String=Площадь
+Enable:2=1
+Format:String=%0.3f
+UsedPanes:String=
+UsedPhases:String=
+
+[Method\Data\Step9\measurement\parameters\Inner Area]
+Key:Long=1
+UserName:String=Вн. площадь
+Enable:2=1
+Format:String=%0.0f
+UsedPanes:String=
+UsedPhases:String=
+
+[Method\Data\Step9\measurement\parameters\Extern Perimeter]
+Key:Long=57
+UserName:String=Внеш. периметр
+Enable:2=1
+Format:String=%0.3f
+UsedPanes:String=
+UsedPhases:String=
+
+[Method\Data\Step9\measurement\parameters\Inner Perimeter]
+Key:Long=3
+UserName:String=Вн. периметр
+Enable:2=1
+Format:String=%0.3f
+UsedPanes:String=
+UsedPhases:String=
+
+[Method\Data\Step9\measurement\parameters\Big axis of ellipse]
+Key:Long=9
+UserName:String=Эллипс макс.
+Enable:2=1
+Format:String=%0.3f
+UsedPanes:String=
+UsedPhases:String=
+
+[Method\Data\Step9\measurement\parameters\Small axis of ellipse]
+Key:Long=10
+UserName:String=Эллипс мин.
+Enable:2=1
+Format:String=%0.3f
+UsedPanes:String=
+UsedPhases:String=
+
+[Method\Data\Step9\measurement\parameters\Height]
+Key:Long=12
+UserName:String=Длина
+Enable:2=1
+Format:String=%0.3f
+UsedPanes:String=
+UsedPhases:String=
+
+[Method\Data\Step9\measurement\parameters\Width]
+Key:Long=13
+UserName:String=Ширина
+Enable:2=1
+Format:String=%0.3f
+UsedPanes:String=
+UsedPhases:String=
+
+[Method\Data\Step9\measurement\parameters\Size by x]
+Key:Long=14
+UserName:String=Размер по X
+Enable:2=1
+Format:String=%0.3f
+UsedPanes:String=
+UsedPhases:String=
+
+[Method\Data\Step9\measurement\parameters\Size by y]
+Key:Long=15
+UserName:String=Размер по Y
+Enable:2=1
+Format:String=%0.3f
+UsedPanes:String=
+UsedPhases:String=
+
+[Method\Data\Step9\measurement\parameters\Average chord]
+Key:Long=16
+UserName:String=Ср. хорда
+Enable:2=1
+Format:String=%0.3f
+UsedPanes:String=
+UsedPhases:String=
+
+[Method\Data\Step9\measurement\parameters\Length(line)]
+Key:Long=17
+UserName:String=Длина линии
+Enable:2=1
+Format:String=%0.3f
+UsedPanes:String=
+UsedPhases:String=
+
+[Method\Data\Step9\measurement\parameters\Width(line)]
+Key:Long=18
+UserName:String=Толщ. линии
+Enable:2=1
+Format:String=%0.3f
+UsedPanes:String=
+UsedPhases:String=
+
+[Method\Data\Step9\measurement\parameters\Length(ribbon)]
+Key:Long=19
+UserName:String=Длина ленты
+Enable:2=1
+Format:String=%0.3f
+UsedPanes:String=
+UsedPhases:String=
+
+[Method\Data\Step9\measurement\parameters\Width(ribbon)]
+Key:Long=20
+UserName:String=Шир. ленты
+Enable:2=1
+Format:String=%0.3f
+UsedPanes:String=
+UsedPhases:String=
+
+[Method\Data\Step9\measurement\parameters\Center of object x]
+Key:Long=23
+UserName:String=Коорд. X
+Enable:2=1
+Format:String=%0.3f
+UsedPanes:String=
+UsedPhases:String=
+
+[Method\Data\Step9\measurement\parameters\Center of object y]
+Key:Long=24
+UserName:String=Коорд. Y
+Enable:2=1
+Format:String=%0.3f
+UsedPanes:String=
+UsedPhases:String=
+
+[Method\Data\Step9\measurement\parameters\Equivalent diameter]
+Key:Long=11
+UserName:String=Экв. диаметр
+Enable:2=1
+Format:String=%0.3f
+UsedPanes:String=
+UsedPhases:String=
+
+[Method\Data\Step9\measurement\parameters\Form Factor Circle]
+Key:Long=25
+UserName:String=Фактор круга
+Enable:2=1
+Format:String=%0.3f
+UsedPanes:String=
+UsedPhases:String=
+
+[Method\Data\Step9\measurement\parameters\Form Factor Ellipse]
+Key:Long=26
+UserName:String=Ф. эллипса
+Enable:2=1
+Format:String=%0.3f
+UsedPanes:String=
+UsedPhases:String=
+
+[Method\Data\Step9\measurement\parameters\Orientation]
+Key:Long=28
+UserName:String=Ориентация
+Enable:2=1
+Format:String=%0.3f
+UsedPanes:String=
+UsedPhases:String=
+
+[Method\Data\Step9\measurement\parameters\Average brightness]
+Key:Long=29
+UserName:String=Ср. яркость
+Enable:2=1
+Format:String=%0.3f
+UsedPanes:String=
+UsedPhases:String=
+
+[Method\Data\Step9\measurement\parameters\Deviation of brightness]
+Key:Long=30
+UserName:String=Откл. ярк-ти
+Enable:2=1
+Format:String=%0.3f
+UsedPanes:String=
+UsedPhases:String=
+
+[Method\Data\Step9\measurement\parameters\Min brightness]
+Key:Long=31
+UserName:String=Мин. ярк.
+Enable:2=1
+Format:String=%0.3f
+UsedPanes:String=
+UsedPhases:String=
+
+[Method\Data\Step9\measurement\parameters\Max brightness]
+Key:Long=32
+UserName:String=Макс. ярк.
+Enable:2=1
+Format:String=%0.3f
+UsedPanes:String=
+UsedPhases:String=
+
+[Method\Data\Step9\measurement\parameters\Brightness interval]
+Key:Long=33
+UserName:String=Интерв. ярк.
+Enable:2=1
+Format:String=%0.3f
+UsedPanes:String=
+UsedPhases:String=
+
+[Method\Data\Step9\measurement\parameters\Red]
+Key:Long=35
+UserName:String=Красный
+Enable:2=1
+Format:String=%0.3f
+UsedPanes:String=
+UsedPhases:String=
+
+[Method\Data\Step9\measurement\parameters\Green]
+Key:Long=36
+UserName:String=Зеленый
+Enable:2=1
+Format:String=%0.3f
+UsedPanes:String=
+UsedPhases:String=
+
+[Method\Data\Step9\measurement\parameters\Blue]
+Key:Long=37
+UserName:String=Синий
+Enable:2=1
+Format:String=%0.3f
+UsedPanes:String=
+UsedPhases:String=
+
+[Method\Data\Step9\measurement\parameters\Dimesion]
+Key:Long=22
+UserName:String=Ср. размер
+Enable:2=1
+Format:String=%0.3f
+UsedPanes:String=
+UsedPhases:String=
+
+[Method\Data\Step9\measurement\parameters\Elongation]
+Key:Long=21
+UserName:String=Удлинен.
+Enable:2=1
+Format:String=%0.3f
+UsedPanes:String=
+UsedPhases:String=
+
+[Method\Data\Step9\measurement\parameters\Minimal diameter Fere]
+Key:Long=6
+UserName:String=Мин. д.Фере
+Enable:2=1
+Format:String=%0.3f
+UsedPanes:String=
+UsedPhases:String=
+
+[Method\Data\Step9\measurement\parameters\Maximal diameter Fere]
+Key:Long=7
+UserName:String=Макс. д.Фере
+Enable:2=1
+Format:String=%0.3f
+UsedPanes:String=
+UsedPhases:String=
+
+[Method\Data\Step9\measurement\parameters\Average diameter Fere]
+Key:Long=8
+UserName:String=Ср. д.Фере
+Enable:2=1
+Format:String=%0.3f
+UsedPanes:String=
+UsedPhases:String=
+
+[Method\Data\Step9\measurement\parameters\Roundness]
+Key:Long=27
+UserName:String=Округлость
+Enable:2=1
+Format:String=%0.3f
+UsedPanes:String=
+UsedPhases:String=
+
+[Method\Data\Step9\measurement\parameters\Optic density]
+Key:Long=50
+UserName:String=Опт. плотн.
+Enable:2=1
+Format:String=%0.3f
+UsedPanes:String=
+UsedPhases:String=
+
+[Method\Data\Step9\measurement\parameters\Integral optic density]
+Key:Long=51
+UserName:String=Интегр. о.пл.
+Enable:2=1
+Format:String=%0.3f
+UsedPanes:String=
+UsedPhases:String=
+
+[Method\Data\Step9\measurement\parameters\Full Perimeter]
+Key:Long=2
+UserName:String=Периметр
+Enable:2=1
+Format:String=%0.3f
+UsedPanes:String=
+UsedPhases:String=
+
+[Method\Data\Step9\measurement\parameters\Form Factor Circle 2]
+Key:Long=54
+Enable:2=0
+UserName:String=Фактор круга 2
+Format:String=%0.3f
+
+[Method\Data\Step9\measurement\parameters\Hue]
+Key:Long=38
+Enable:2=0
+UserName:String=Hue
+Format:String=%0.3f
+
+[Method\Data\Step9\measurement\parameters\Saturation]
+Key:Long=39
+Enable:2=0
+UserName:String=Saturation
+Format:String=%0.3f
+
+[Method\Data\Step9\measurement\parameters\Skel.P.Ratio]
+Key:Long=53
+Enable:2=0
+UserName:String=Skel.P.Ratio
+Format:String=%0.3f
+
+[Method\Data\Step9\measurement\parameters\Local Correlation]
+Key:Long=55
+Enable:2=0
+UserName:String=Local Correlation
+Format:String=%0.3f
+
+[Method\Data\Step9\measurement\parameters\Compactness]
+Key:Long=56
+Enable:2=0
+UserName:String=Compactness
+Format:String=%0.3f
+
+[Method\Data\Step9\measurement\parameters\Ordered Brightness]
+Key:Long=58
+Enable:2=0
+UserName:String=Ordered Brightness
+Format:String=%0.3f
+
+[Method\Data\Step9\measurement\parameters\Brightness integral]
+Key:Long=34
+UserName:String=Интегр. яркость
+Enable:2=1
+Format:String=%0.3f
+UsedPanes:String=
+UsedPhases:String=
+
+[Method\Data\Step9\measurement\parameters\Phase128 Area]
+Enable:2=0
+UserName:String=Phase128 Area
+Format:String=%0.1f
+
+[Method\Data\Step9\measurement\parameters\Phase129 Area]
+Enable:2=0
+UserName:String=Phase129 Area
+Format:String=%0.1f
+
+[Method\Data\Step9\measurement\parameters\Phase130 Area]
+Enable:2=0
+UserName:String=Phase130 Area
+Format:String=%0.1f
+
+[Method\Data\Step9\measurement\parameters\Average vertical chord]
+Enable:2=0
+UserName:String=Average vertical chord
+Format:String=%0.1f
+
+[Method\Data\Step9\measurement\parameters\Min vertical chord]
+Enable:2=0
+UserName:String=Min vertical chord
+Format:String=%0.1f
+
+[Method\Data\Step9\measurement\parameters\Max vertical chord]
+Enable:2=0
+UserName:String=Max vertical chord
+Format:String=%0.1f
+
+
+
+[Method\Data\Step9\Classify]
+[Method\Data\Step9\Classify\AutomaticClassifier]
+Step:Double=70.8652
+GeomStep:Double=0
+
+[Method\Data\Step9\Classify\Ср. размер.class]
+[Method\Data\Step9\Classify\Ср. размер.class\22]
+class0:String=1.799894e+001,8.886415e+001
+class1:String=8.886415e+001,1.597294e+002
+class2:String=1.597294e+002,2.305946e+002
+
+
+
+[Method\Data\Step9\types]
+StatObject:Long=0
+
+[Method\Data\Step9\LongOperation]
+ScriptNotify:Long=0
+ScriptFireStep:Long=10
+ScriptFireLag:Long=-1
+
+[Method\Data\Step9\ImageBar]
+UseSystemColors:Long=0
+BackColor:String=(212, 208, 200)
+HighlightColor:String=(128, 128, 128)
+DrawText:Long=1
+DrawIcon:Long=1
+ItemWidth:Long=50
+ItemHeight:Long=50
+IconPropName:String=ImageState
+FieldLeft:Long=10
+FieldRight:Long=10
+FieldTop:Long=10
+FieldBottom:Long=10
+FooterOffset:Long=5
+BarOffsetX:Long=0
+BarOffsetY:Long=0
+
+[Method\Data\Step9\ImgViews]
+DBars0:String=ActionLogWindow
+DBarsV0:11=0
+DBars1:String=Histogram
+DBarsV1:11=0
+DBars2:String=InfoCtrl
+DBarsV2:11=0
+DBars3:String=ChooseColor
+DBarsV3:11=0
+DBars4:String=ChooseColor
+DBarsV4:11=0
+DBars5:String=ImageBar
+DBarsV5:11=0
+DBars6:String=AppWindow
+DBarsV6:11=0
+DBars7:String=PropertySheet
+DBarsV7:11=0
+DBars8:String=Message
+DBarsV8:11=0
+DBars9:String=Message
+DBarsV9:11=0
+
+
+[Method\Data\Step10]
+ActionName:String=RunStatGraphDistr
+ForcedName:String=RunStatGraphDistr
+Flags:Long=7
+ArgCount:Long=0
+[Method\Data\Step10\MethodStepData]
+[Method\Data\Step10\MethodStepData\StateBeforeAction]
+Object List_0:Long=0
+Object List_count:Long=1
+Image_0:Long=0
+Image_count:Long=1
+StatTable_count:Long=0
+StatObject_count:Long=0
+ActiveViewProgID:String=ImageDoc.ImageView
+
+[Method\Data\Step10\MethodStepData\StateAfterAction]
+ActiveViewProgID:String=StatUI.StatObjectView
+StatObject_0:Long=0
+StatObject_count:Long=1
+StatTable_count:Long=0
+Object List_0:Long=0
+Object List_count:Long=1
+Image_0:Long=0
+Image_count:Long=1
+
+
+[Method\Data\Step10\FormManager]
+PageExecuted:Long=1
+EnableApply:2=1
+DisableFormShow:Long=0
+
+[Method\Data\Step10\DockBars]
+PageInProcessing:11=0
+isPass:11=0
+Count:Long=11
+noAdvancedMode:2=1
+VisibleTBName:String=
+TBCount:Long=7
+CloseFishBar:2=0
+RestoreWindowSplit:2=1
+
+[Method\Data\Step10\ViewStatusText]
+ContourView:String=
+StatObjectView:String=
+
+[Method\Data\Step10\MainFrame]
+ShowPopupMenu:2=0
+ShowPopupMenuOld:2=0
+
+[Method\Data\Step10\Interface]
+EnableSkin:Long=0
+ScrollClass:String=SCROLLBAR
+
+[Method\Data\Step10\ImageView]
+N_And_N_Color:String=(255, 255, 255)
+N_And_N_AsClassColor:2=1
+ShowColorSysPane:2=1
+
+[Method\Data\Step10\DrawImage]
+Gamma:Double=1
+HiBitNum:Long=16
+
+[Method\Data\Step10\Colors]
+Background:String=(255, 255, 255)
+
+[Method\Data\Step10\DrawDisabledImages]
+Enable:Long=1
+Alpha:Double=0.3
+
+[Method\Data\Step10\ObjectCountPane]
+ImageSourceView:Long=0
+
+[Method\Data\Step10\ImagePane]
+Percent:Long=0
+
+[Method\Data\Step10\StatusBar]
+ShowMousePos:Long=1
+ShowClientSize:Long=1
+
+[Method\Data\Step10\Debugger]
+EnableDebugger:Long=0
+
+[Method\Data\Step10\VTListControl]
+ControlVersion:Long=2
+
+[Method\Data\Step10\IntelliMouse]
+Wheel enable:Long=0
+Wheel horz scroll key:String=Ctrl
+Wheel step:Long=10
+Invert wheel horz direction:Long=0
+Invert wheel vert direction:Long=0
+Scroll enable:Long=0
+Scroll key:String=Middle
+Invert scroll horz direction:Long=0
+Invert scroll invert vert direction:Long=0
+Enable key scroll:Long=0
+Key step:Long=10
+
+[Method\Data\Step10\Layout]
+ShowObjectNames:Long=0
+
+[Method\Data\Step10\measurement]
+[Method\Data\Step10\measurement\parameters]
+[Method\Data\Step10\measurement\parameters\Extern Area]
+Key:Long=0
+UserName:String=Площадь
+
+[Method\Data\Step10\measurement\parameters\Inner Area]
+Key:Long=1
+UserName:String=Вн. площадь
+
+[Method\Data\Step10\measurement\parameters\Extern Perimeter]
+Key:Long=57
+UserName:String=Внеш. периметр
+
+[Method\Data\Step10\measurement\parameters\Inner Perimeter]
+Key:Long=3
+UserName:String=Вн. периметр
+
+[Method\Data\Step10\measurement\parameters\Big axis of ellipse]
+Key:Long=9
+UserName:String=Эллипс макс.
+
+[Method\Data\Step10\measurement\parameters\Small axis of ellipse]
+Key:Long=10
+UserName:String=Эллипс мин.
+
+[Method\Data\Step10\measurement\parameters\Height]
+Key:Long=12
+UserName:String=Длина
+
+[Method\Data\Step10\measurement\parameters\Width]
+Key:Long=13
+UserName:String=Ширина
+
+[Method\Data\Step10\measurement\parameters\Size by x]
+Key:Long=14
+UserName:String=Размер по X
+
+[Method\Data\Step10\measurement\parameters\Size by y]
+Key:Long=15
+UserName:String=Размер по Y
+
+[Method\Data\Step10\measurement\parameters\Average chord]
+Key:Long=16
+UserName:String=Ср. хорда
+
+[Method\Data\Step10\measurement\parameters\Length(line)]
+Key:Long=17
+UserName:String=Длина линии
+
+[Method\Data\Step10\measurement\parameters\Width(line)]
+Key:Long=18
+UserName:String=Толщ. линии
+
+[Method\Data\Step10\measurement\parameters\Length(ribbon)]
+Key:Long=19
+UserName:String=Длина ленты
+
+[Method\Data\Step10\measurement\parameters\Width(ribbon)]
+Key:Long=20
+UserName:String=Шир. ленты
+
+[Method\Data\Step10\measurement\parameters\Center of object x]
+Key:Long=23
+UserName:String=Коорд. X
+
+[Method\Data\Step10\measurement\parameters\Center of object y]
+Key:Long=24
+UserName:String=Коорд. Y
+
+[Method\Data\Step10\measurement\parameters\Equivalent diameter]
+Key:Long=11
+UserName:String=Экв. диаметр
+
+[Method\Data\Step10\measurement\parameters\Form Factor Circle]
+Key:Long=25
+UserName:String=Фактор круга
+
+[Method\Data\Step10\measurement\parameters\Form Factor Ellipse]
+Key:Long=26
+UserName:String=Ф. эллипса
+
+[Method\Data\Step10\measurement\parameters\Orientation]
+Key:Long=28
+UserName:String=Ориентация
+
+[Method\Data\Step10\measurement\parameters\Average brightness]
+Key:Long=29
+UserName:String=Ср. яркость
+
+[Method\Data\Step10\measurement\parameters\Deviation of brightness]
+Key:Long=30
+UserName:String=Откл. ярк-ти
+
+[Method\Data\Step10\measurement\parameters\Min brightness]
+Key:Long=31
+UserName:String=Мин. ярк.
+
+[Method\Data\Step10\measurement\parameters\Max brightness]
+Key:Long=32
+UserName:String=Макс. ярк.
+
+[Method\Data\Step10\measurement\parameters\Brightness interval]
+Key:Long=33
+UserName:String=Интерв. ярк.
+
+[Method\Data\Step10\measurement\parameters\Red]
+Key:Long=35
+UserName:String=Красный
+
+[Method\Data\Step10\measurement\parameters\Green]
+Key:Long=36
+UserName:String=Зеленый
+
+[Method\Data\Step10\measurement\parameters\Blue]
+Key:Long=37
+UserName:String=Синий
+
+[Method\Data\Step10\measurement\parameters\Dimesion]
+Key:Long=22
+UserName:String=Ср. размер
+Format:String=%0.3f
+
+[Method\Data\Step10\measurement\parameters\Elongation]
+Key:Long=21
+UserName:String=Удлинен.
+
+[Method\Data\Step10\measurement\parameters\Minimal diameter Fere]
+Key:Long=6
+UserName:String=Мин. д.Фере
+
+[Method\Data\Step10\measurement\parameters\Maximal diameter Fere]
+Key:Long=7
+UserName:String=Макс. д.Фере
+
+[Method\Data\Step10\measurement\parameters\Average diameter Fere]
+Key:Long=8
+UserName:String=Ср. д.Фере
+
+[Method\Data\Step10\measurement\parameters\Roundness]
+Key:Long=27
+UserName:String=Округлость
+
+[Method\Data\Step10\measurement\parameters\Optic density]
+Key:Long=50
+UserName:String=Опт. плотн.
+
+[Method\Data\Step10\measurement\parameters\Integral optic density]
+Key:Long=51
+UserName:String=Интегр. о.пл.
+
+[Method\Data\Step10\measurement\parameters\Full Perimeter]
+Key:Long=2
+UserName:String=Периметр
+
+[Method\Data\Step10\measurement\parameters\Form Factor Circle 2]
+Key:Long=54
+
+[Method\Data\Step10\measurement\parameters\Hue]
+Key:Long=38
+
+[Method\Data\Step10\measurement\parameters\Saturation]
+Key:Long=39
+
+[Method\Data\Step10\measurement\parameters\Skel.P.Ratio]
+Key:Long=53
+
+[Method\Data\Step10\measurement\parameters\Local Correlation]
+Key:Long=55
+
+[Method\Data\Step10\measurement\parameters\Compactness]
+Key:Long=56
+
+[Method\Data\Step10\measurement\parameters\Ordered Brightness]
+Key:Long=58
+
+[Method\Data\Step10\measurement\parameters\Brightness integral]
+Key:Long=34
+UserName:String=Интегр. яркость
+
+
+
+[Method\Data\Step10\ImgViews]
+DBars0:String=ActionLogWindow
+DBarsV0:11=0
+DBars1:String=Histogram
+DBarsV1:11=0
+DBars2:String=InfoCtrl
+DBarsV2:11=0
+DBars4:String=ChooseColor
+DBarsV4:11=0
+DBars5:String=ImageBar
+DBarsV5:11=0
+DBars6:String=AppWindow
+DBarsV6:11=0
+DBars7:String=PropertySheet
+DBarsV7:11=0
+DBars9:String=Message
+DBarsV9:11=0
+
+
+[Method\Data\Step11]
+
+ActionName:MultiLineString=
+
+MsgStepTitleStr = Docs.LoadString("Message")
+MsgBox "Методика завершена!", vbInformation, MsgStepTitleStr
+/end of string
+
+ForcedName:String=Message
+Flags:Long=4
+ArgCount:Long=0
+[Method\Data\Step11\MethodStepData]
+[Method\Data\Step11\MethodStepData\StateBeforeAction]
+StatObject_0:Long=0
+StatObject_count:Long=1
+StatTable_count:Long=0
+Object List_0:Long=0
+Object List_count:Long=1
+Image_0:Long=0
+Image_count:Long=1
+ActiveViewProgID:String=StatUI.StatObjectView
+
+[Method\Data\Step11\MethodStepData\StateAfterAction]
+ActiveViewProgID:String=StatUI.StatObjectView
+StatObject_0:Long=0
+StatObject_count:Long=1
+StatTable_count:Long=0
+Object List_0:Long=0
+Object List_count:Long=1
+Image_0:Long=0
+Image_count:Long=1
+
+
+[Method\Data\Step11\FormManager]
+PageExecuted:Long=0
+
+
+
+
+
+__Context__Begin__
+__Context__End__

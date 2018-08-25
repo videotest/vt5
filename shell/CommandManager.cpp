@@ -26,23 +26,23 @@ extern UINT uiLastUserToolBarId;
 
 
 //button helper
-class CMyTBMenuBtn : public CBCGToolbarMenuButton
+class CMyTBMenuBtn : public CMFCToolBarMenuButton
 {
 public:
 	CObList	&GetCommand(){return m_listCommands;}
 };
 
 //ToolBarData helper
-CCommandManager::ToolBarData::ToolBarData( const char *sz )
+CommandManager::ToolBarData::ToolBarData( const char *sz )
 {
 	m_sGroupName = sz;
 }
 
-CCommandManager::ToolBarData::~ToolBarData()
+CommandManager::ToolBarData::~ToolBarData()
 {
 }
 
-void CCommandManager::ToolBarData::AddData( UINT nCmd, UINT nImageNo, UINT nBmpNo, const char *sz )
+void CommandManager::ToolBarData::AddData( UINT nCmd, UINT nImageNo, UINT nBmpNo, const char *sz )
 {
 	m_arrIDs.Add( nCmd );
 	m_arrPicts.Add( nImageNo );
@@ -50,7 +50,7 @@ void CCommandManager::ToolBarData::AddData( UINT nCmd, UINT nImageNo, UINT nBmpN
 	m_arrStrs.Add( sz );
 }
 
-long CCommandManager::ToolBarData::GetSize()
+long CommandManager::ToolBarData::GetSize()
 {
 	ASSERT( m_arrIDs.GetSize() == m_arrPicts.GetSize() );
 	ASSERT( m_arrIDs.GetSize() == m_arrBmps.GetSize() );
@@ -61,12 +61,12 @@ long CCommandManager::ToolBarData::GetSize()
 
 
 /////////////////////////////////////////////////////////////////////////////
-// CCommandManager
-CCommandManager	g_CmdManager;
+// CommandManager
+CommandManager	g_CmdManager;
 
-IMPLEMENT_DYNCREATE(CCommandManager, CCmdTargetEx)
+IMPLEMENT_DYNCREATE(CommandManager, CCmdTargetEx)
 
-CCommandManager::CCommandManager()
+CommandManager::CommandManager()
 {
 	EnableAutomation();
 
@@ -80,14 +80,14 @@ CCommandManager::CCommandManager()
 
 }
 
-CCommandManager::~CCommandManager()
+CommandManager::~CommandManager()
 {
 	DestroyTemplateInfoList();
 	DeInit();	
 }
 
 
-void CCommandManager::OnFinalRelease()
+void CommandManager::OnFinalRelease()
 {
 	// When the last reference for an automation object is released
 	// OnFinalRelease is called.  The base class will automatically
@@ -98,8 +98,8 @@ void CCommandManager::OnFinalRelease()
 }
 
 
-BEGIN_MESSAGE_MAP(CCommandManager, CCmdTargetEx)
-	//{{AFX_MSG_MAP(CCommandManager)
+BEGIN_MESSAGE_MAP(CommandManager, CCmdTargetEx)
+	//{{AFX_MSG_MAP(CommandManager)
 		// NOTE - the ClassWizard will add and remove mapping macros here.
 	//}}AFX_MSG_MAP
 	ON_COMMAND_RANGE(ID_CMDMAN_BASE, ID_CMDMAN_MAX, OnCommandAction)
@@ -109,34 +109,34 @@ BEGIN_MESSAGE_MAP(CCommandManager, CCmdTargetEx)
 	ON_UPDATE_COMMAND_UI_RANGE(ID_CMD_POPUP_MIN, ID_CMD_POPUP_MAX, OnUpdateCommandPopupMenu)
 END_MESSAGE_MAP()
 
-BEGIN_DISPATCH_MAP(CCommandManager, CCmdTargetEx)
-	//{{AFX_DISPATCH_MAP(CCommandManager)
-	DISP_FUNCTION(CCommandManager, "GetBarsCount", GetBarsCount, VT_I4, VTS_NONE)
-	DISP_FUNCTION(CCommandManager, "GetBarName", GetBarName, VT_BSTR, VTS_I4)
-	DISP_FUNCTION(CCommandManager, "CreateNewBar", CreateNewBar, VT_I4, VTS_BSTR)
-	DISP_FUNCTION(CCommandManager, "MakeEmpty", MakeEmpty, VT_EMPTY, VTS_I4)
-	DISP_FUNCTION(CCommandManager, "FindNo", FindNo, VT_I4, VTS_BSTR)
-	DISP_FUNCTION(CCommandManager, "AddButton", AddButton, VT_EMPTY, VTS_I4 VTS_BSTR)
-	DISP_FUNCTION(CCommandManager, "ShowBar", ShowBar, VT_EMPTY, VTS_I4 VTS_I4)
-	DISP_FUNCTION(CCommandManager, "InsertButton", InsertButton, VT_EMPTY, VTS_I4 VTS_BSTR VTS_I4)
-	DISP_FUNCTION(CCommandManager, "DeleteBar", DeleteBar, VT_EMPTY, VTS_I4)
-	DISP_FUNCTION(CCommandManager, "LoadState", LoadState, VT_EMPTY, VTS_BSTR)
-	DISP_FUNCTION(CCommandManager, "SaveState", SaveState, VT_EMPTY, VTS_BSTR)
-	DISP_FUNCTION(CCommandManager, "AddOutlookBar", AddOutlookBar, VT_I4, VTS_BSTR)
-	DISP_FUNCTION(CCommandManager, "IsBarVisible", IsBarVisible, VT_BOOL, VTS_I4)
-	DISP_FUNCTION(CCommandManager, "GetButtonCount", GetButtonCount, VT_I4, VTS_I4)
-	DISP_FUNCTION(CCommandManager, "GetButton", GetButton, VT_BSTR, VTS_I4 VTS_I4)
-	DISP_FUNCTION(CCommandManager, "IsOutlookToolBar", IsOutlookToolBar, VT_BOOL, VTS_I4)
-	DISP_FUNCTION(CCommandManager, "GetDockBarsCount", GetDockBarsCount, VT_I4, VTS_NONE)
-	DISP_FUNCTION(CCommandManager, "GetDockBarName", GetDockBarName, VT_BSTR, VTS_I4)
-	DISP_FUNCTION(CCommandManager, "IsDockBarVisible", IsDockBarVisible, VT_BOOL, VTS_I4)
-	DISP_FUNCTION(CCommandManager, "ShowDockBar", ShowDockBar, VT_EMPTY, VTS_I4 VTS_I2)
-	DISP_FUNCTION(CCommandManager, "FindDockNo", FindDockNo, VT_I4, VTS_BSTR)
-	DISP_FUNCTION(CCommandManager, "SetCanCloseDockBar", SetCanCloseDockBar, VT_EMPTY, VTS_I4 VTS_BOOL)
-	DISP_FUNCTION(CCommandManager, "CanCloseDockBar", CanCloseDockBar, VT_BOOL, VTS_I4)
-	DISP_FUNCTION(CCommandManager, "GetDockBarImplByName", GetDockBarImplByName, VT_DISPATCH, VTS_BSTR)
-	DISP_FUNCTION(CCommandManager, "SaveAsState", SaveAsState, VT_EMPTY, VTS_BSTR)
-    DISP_FUNCTION(CCommandManager, "HasAction", HasAction, VT_BOOL, VTS_I4 VTS_BSTR)
+BEGIN_DISPATCH_MAP(CommandManager, CCmdTargetEx)
+	//{{AFX_DISPATCH_MAP(CommandManager)
+	DISP_FUNCTION(CommandManager, "GetBarsCount", GetBarsCount, VT_I4, VTS_NONE)
+	DISP_FUNCTION(CommandManager, "GetBarName", GetBarName, VT_BSTR, VTS_I4)
+	DISP_FUNCTION(CommandManager, "CreateNewBar", CreateNewBar, VT_I4, VTS_BSTR)
+	DISP_FUNCTION(CommandManager, "MakeEmpty", MakeEmpty, VT_EMPTY, VTS_I4)
+	DISP_FUNCTION(CommandManager, "FindNo", FindNo, VT_I4, VTS_BSTR)
+	DISP_FUNCTION(CommandManager, "AddButton", AddButton, VT_EMPTY, VTS_I4 VTS_BSTR)
+	DISP_FUNCTION(CommandManager, "ShowBar", ShowBar, VT_EMPTY, VTS_I4 VTS_I4)
+	DISP_FUNCTION(CommandManager, "InsertButton", InsertButton, VT_EMPTY, VTS_I4 VTS_BSTR VTS_I4)
+	DISP_FUNCTION(CommandManager, "DeleteBar", DeleteBar, VT_EMPTY, VTS_I4)
+	DISP_FUNCTION(CommandManager, "LoadState", LoadState, VT_EMPTY, VTS_BSTR)
+	DISP_FUNCTION(CommandManager, "SaveState", SaveState, VT_EMPTY, VTS_BSTR)
+	DISP_FUNCTION(CommandManager, "AddOutlookBar", AddOutlookBar, VT_I4, VTS_BSTR)
+	DISP_FUNCTION(CommandManager, "IsBarVisible", IsBarVisible, VT_BOOL, VTS_I4)
+	DISP_FUNCTION(CommandManager, "GetButtonCount", GetButtonCount, VT_I4, VTS_I4)
+	DISP_FUNCTION(CommandManager, "GetButton", GetButton, VT_BSTR, VTS_I4 VTS_I4)
+	DISP_FUNCTION(CommandManager, "IsOutlookToolBar", IsOutlookToolBar, VT_BOOL, VTS_I4)
+	DISP_FUNCTION(CommandManager, "GetDockBarsCount", GetDockBarsCount, VT_I4, VTS_NONE)
+	DISP_FUNCTION(CommandManager, "GetDockBarName", GetDockBarName, VT_BSTR, VTS_I4)
+	DISP_FUNCTION(CommandManager, "IsDockBarVisible", IsDockBarVisible, VT_BOOL, VTS_I4)
+	DISP_FUNCTION(CommandManager, "ShowDockBar", ShowDockBar, VT_EMPTY, VTS_I4 VTS_I2)
+	DISP_FUNCTION(CommandManager, "FindDockNo", FindDockNo, VT_I4, VTS_BSTR)
+	DISP_FUNCTION(CommandManager, "SetCanCloseDockBar", SetCanCloseDockBar, VT_EMPTY, VTS_I4 VTS_BOOL)
+	DISP_FUNCTION(CommandManager, "CanCloseDockBar", CanCloseDockBar, VT_BOOL, VTS_I4)
+	DISP_FUNCTION(CommandManager, "GetDockBarImplByName", GetDockBarImplByName, VT_DISPATCH, VTS_BSTR)
+	DISP_FUNCTION(CommandManager, "SaveAsState", SaveAsState, VT_EMPTY, VTS_BSTR)
+    DISP_FUNCTION(CommandManager, "HasAction", HasAction, VT_BOOL, VTS_I4 VTS_BSTR)
 	//}}AFX_DISPATCH_MAP
 END_DISPATCH_MAP()
 
@@ -148,23 +148,23 @@ END_DISPATCH_MAP()
 static const IID IID_ICommandManagerDispatch =
 { 0xf49ae623, 0x446, 0x11d3, { 0xa5, 0xa3, 0x0, 0x0, 0xb4, 0x93, 0xff, 0x1b } };
 
-BEGIN_INTERFACE_MAP(CCommandManager, CCmdTargetEx)
-	INTERFACE_PART(CCommandManager, IID_ICommandManagerDispatch, Dispatch)
-	INTERFACE_PART(CCommandManager, IID_INamedObject2, Name)
-	INTERFACE_PART(CCommandManager, IID_ICommandManager, Man2)
-	INTERFACE_PART(CCommandManager, IID_ICommandManager2, Man2)
+BEGIN_INTERFACE_MAP(CommandManager, CCmdTargetEx)
+	INTERFACE_PART(CommandManager, IID_ICommandManagerDispatch, Dispatch)
+	INTERFACE_PART(CommandManager, IID_INamedObject2, Name)
+	INTERFACE_PART(CommandManager, IID_ICommandManager, Man2)
+	INTERFACE_PART(CommandManager, IID_ICommandManager2, Man2)
 END_INTERFACE_MAP()
 
-IMPLEMENT_UNKNOWN(CCommandManager, Man2);
+IMPLEMENT_UNKNOWN(CommandManager, Man2);
 
 // derived interface
 // execute context menu with customizing it by MenuCreator (if it's registered)
 
-HRESULT CCommandManager::XMan2::ExecuteContextMenu3( BSTR bstrTargetName, POINT point, DWORD dwFlag, UINT *puCmd )
+HRESULT CommandManager::XMan2::ExecuteContextMenu3( BSTR bstrTargetName, POINT point, DWORD dwFlag, UINT *puCmd )
 {
-	_try_nested(CCommandManager, Man2, ExecuteContextMenu2)
+	_try_nested(CommandManager, Man2, ExecuteContextMenu2)
 	{
-		if( CBCGToolBar::IsCustomizeMode() )return S_FALSE;
+		if( CMFCToolBar::IsCustomizeMode() )return S_FALSE;
 		UINT uCmd = 0;
 		
 		CString	strMenuName = bstrTargetName;
@@ -182,11 +182,11 @@ HRESULT CCommandManager::XMan2::ExecuteContextMenu3( BSTR bstrTargetName, POINT 
 	_catch_nested;
 }
 
-HRESULT CCommandManager::XMan2::ExecuteContextMenu2( BSTR bstrTargetName, POINT point, DWORD dwFlag )
+HRESULT CommandManager::XMan2::ExecuteContextMenu2( BSTR bstrTargetName, POINT point, DWORD dwFlag )
 {
-	_try_nested(CCommandManager, Man2, ExecuteContextMenu2)
+	_try_nested(CommandManager, Man2, ExecuteContextMenu2)
 	{
-		if( CBCGToolBar::IsCustomizeMode() )return S_FALSE;
+		if( CMFCToolBar::IsCustomizeMode() )return S_FALSE;
 
 		CString	strMenuName = bstrTargetName;
 		// menu helper not registered
@@ -200,11 +200,11 @@ HRESULT CCommandManager::XMan2::ExecuteContextMenu2( BSTR bstrTargetName, POINT 
 	_catch_nested;
 }
 
-HRESULT CCommandManager::XMan2::ExecuteContextMenu( BSTR bstrTargetName, POINT point )
+HRESULT CommandManager::XMan2::ExecuteContextMenu( BSTR bstrTargetName, POINT point )
 {
-	_try_nested(CCommandManager, Man2, ExecuteContextMenu)
+	_try_nested(CommandManager, Man2, ExecuteContextMenu)
 	{
-		if( CBCGToolBar::IsCustomizeMode() )return S_FALSE;
+		if( CMFCToolBar::IsCustomizeMode() )return S_FALSE;
 		CString	strMenuName = bstrTargetName;
 		// menu helper not registered
 		if (pThis->m_sptrMenuHelper == NULL)
@@ -217,9 +217,9 @@ HRESULT CCommandManager::XMan2::ExecuteContextMenu( BSTR bstrTargetName, POINT p
 	_catch_nested;
 }
 
-HRESULT CCommandManager::XMan2::AddAction( IUnknown *punkActionInfo )
+HRESULT CommandManager::XMan2::AddAction( IUnknown *punkActionInfo )
 {
-	_try_nested(CCommandManager, Man2, AddAction)
+	_try_nested(CommandManager, Man2, AddAction)
 	{
 		// [vanek] : catch action - 13.12.2004
 		pThis->m_advbmps.CatchActionInfo( punkActionInfo );
@@ -234,9 +234,9 @@ HRESULT CCommandManager::XMan2::AddAction( IUnknown *punkActionInfo )
 	_catch_nested;
 }
 
-HRESULT CCommandManager::XMan2::RemoveAction( IUnknown *punkActionInfo )
+HRESULT CommandManager::XMan2::RemoveAction( IUnknown *punkActionInfo )
 {
-	_try_nested(CCommandManager, Man2, RemoveAction)
+	_try_nested(CommandManager, Man2, RemoveAction)
 	{				   
 		/*INumeredObjectPtr	sptrN( punkActionInfo );
 
@@ -253,9 +253,9 @@ HRESULT CCommandManager::XMan2::RemoveAction( IUnknown *punkActionInfo )
 }
 
 		
-HRESULT CCommandManager::XMan2::RegisterMenuCreator( IUnknown *punk )
+HRESULT CommandManager::XMan2::RegisterMenuCreator( IUnknown *punk )
 {
-	_try_nested(CCommandManager, Man2, RegisterMenuCreator)
+	_try_nested(CommandManager, Man2, RegisterMenuCreator)
 	{	
 		// check argument to validity
 		if (!CheckInterface(punk, IID_IMenuInitializer))
@@ -274,9 +274,9 @@ HRESULT CCommandManager::XMan2::RegisterMenuCreator( IUnknown *punk )
 	_catch_nested;
 }
 
-HRESULT CCommandManager::XMan2::UnRegisterMenuCreator( IUnknown *punk )
+HRESULT CommandManager::XMan2::UnRegisterMenuCreator( IUnknown *punk )
 {
-	_try_nested(CCommandManager, Man2, UnRegisterMenuCreator)
+	_try_nested(CommandManager, Man2, UnRegisterMenuCreator)
 	{
 		// check pointer to validity
 		if (!CheckInterface(punk, IID_IMenuInitializer))
@@ -299,9 +299,9 @@ HRESULT CCommandManager::XMan2::UnRegisterMenuCreator( IUnknown *punk )
 }
 
 // get action name by action ID
-HRESULT CCommandManager::XMan2::GetActionName( BSTR *pbstrActionName, int nID )
+HRESULT CommandManager::XMan2::GetActionName( BSTR *pbstrActionName, int nID )
 {
-	_try_nested(CCommandManager, Man2, GetActionName)
+	_try_nested(CommandManager, Man2, GetActionName)
 	{	
 		// get index in actions array
 		int idx = nID - ID_CMDMAN_BASE;
@@ -326,9 +326,9 @@ HRESULT CCommandManager::XMan2::GetActionName( BSTR *pbstrActionName, int nID )
 }
 
 // get action nID by action name
-HRESULT CCommandManager::XMan2::GetActionID( BSTR bstrActionName, int *pnID )
+HRESULT CommandManager::XMan2::GetActionID( BSTR bstrActionName, int *pnID )
 {
-	_try_nested(CCommandManager, Man2, GetActionID)
+	_try_nested(CommandManager, Man2, GetActionID)
 	{	
 		// check action name on validity
 		CString	strActionName = bstrActionName;
@@ -368,7 +368,7 @@ TPM_VCENTERALIGN
 TPM_TOPALIGN
 */
 
-UINT CCommandManager::ExecuteContextMenu( const char *szMenuName, CPoint *ppt, CWnd *pwnd, DWORD dwFlag )
+UINT CommandManager::ExecuteContextMenu( const char *szMenuName, CPoint *ppt, CWnd *pwnd, DWORD dwFlag )
 {
 	CPoint	point;
 
@@ -407,7 +407,7 @@ bool g_bWaitingForCommandFlag;
 
 // extended execute context menu
 // this function is use IMenuInitializer to customize menu
-UINT CCommandManager::ExecuteContextMenuWithCreator( const char *szMenuName, CPoint *ppt, CWnd *pwnd, DWORD dwFlag )
+UINT CommandManager::ExecuteContextMenuWithCreator( const char *szMenuName, CPoint *ppt, CWnd *pwnd, DWORD dwFlag )
 {
 //	sptrIMenuInitializer m_sptrMenuHelper;
 
@@ -535,10 +535,10 @@ UINT CCommandManager::ExecuteContextMenuWithCreator( const char *szMenuName, CPo
 
 	
 /////////////////////////////////////////////////////////////////////////////
-// CCommandManager message handlers
-void CCommandManager::Init()
+// CommandManager message handlers
+void CommandManager::Init()
 {
-	_try(CCommandManager, Init);
+	_try(CommandManager, Init);
 	{
 		COLORREF	colorT = /*RGB( 192, 192, 192 );*/GetSysColor( COLOR_3DFACE );
 
@@ -565,7 +565,7 @@ void CCommandManager::Init()
 			0 != GetValueInt( GetAppUnknown(), szDrawDisImgsSect, szDrawDisImgsEnable, 0 ),
 			GetValueDouble( GetAppUnknown(), szDrawDisImgsSect, szDrawDisImgsAlpha, 0.5 ) );
 		
-		CBCGToolBar::SetUserImages( &m_UserImages );
+		CMFCToolBar::SetUserImages( &m_UserImages );
 	    m_UserImages.SetTransparentColor( colorT );
 
 
@@ -711,7 +711,7 @@ void CCommandManager::Init()
 	_catch;
 }
 
-void CCommandManager::DeInit()
+void CommandManager::DeInit()
 {
 	int	i;
 	for( i = 0; i < m_ptrsInfo.GetSize(); i++ )
@@ -745,16 +745,16 @@ void CCommandManager::DeInit()
 	m_ptrAliases = 0;
 }
 
-bool _remove_button( CBCGToolbarButton	*pbutton, UINT nIDCommand )
+bool _remove_button( CMFCToolBarButton	*pbutton, UINT nIDCommand )
 {
-	if( pbutton->IsKindOf( RUNTIME_CLASS(CBCGToolbarMenuButton) ) )
+	if( pbutton->IsKindOf( RUNTIME_CLASS(CMFCToolBarMenuButton) ) )
 	{
 		POSITION pos =((CMyTBMenuBtn*)pbutton)->GetCommand().GetHeadPosition();
 
 		while( pos )
 		{
 			POSITION	posOld = pos;
-			CBCGToolbarButton *pb = (CBCGToolbarButton *)((CMyTBMenuBtn*)pbutton)->GetCommand().GetNext( pos );
+			CMFCToolBarButton *pb = (CMFCToolBarButton *)((CMyTBMenuBtn*)pbutton)->GetCommand().GetNext( pos );
 			if( _remove_button( pb, nIDCommand ) )
 			{
 				((CMyTBMenuBtn*)pbutton)->GetCommand().RemoveAt( posOld );
@@ -766,7 +766,7 @@ bool _remove_button( CBCGToolbarButton	*pbutton, UINT nIDCommand )
 	return pbutton->m_nID == nIDCommand;
 }
 
-void CCommandManager::RemoveActionInfo( int idx )
+void CommandManager::RemoveActionInfo( int idx )
 {
 	UINT	nIDCommand = idx;
 
@@ -786,14 +786,14 @@ void CCommandManager::RemoveActionInfo( int idx )
 	//remove action from toolbars
 	for( POSITION pos = gAllToolbars.GetHeadPosition(); pos != NULL; )
 	{
-		CBCGToolBar* pToolBar = (CBCGToolBar*) gAllToolbars.GetNext(pos);
+		CMFCToolBar* pToolBar = (CMFCToolBar*) gAllToolbars.GetNext(pos);
 
 		if( pToolBar->IsKindOf( RUNTIME_CLASS(CBCGMenuBar) ) )
 			continue;
 
 		for( int nButton = pToolBar->GetCount()-1; nButton >=0 ; nButton-- )
 		{
-			CBCGToolbarButton	*pbutton = pToolBar->GetButton( nButton );
+			CMFCToolBarButton	*pbutton = pToolBar->GetButton( nButton );
 
 			if( _remove_button( pbutton, nIDCommand ) )
 				pToolBar->RemoveButton( nButton );
@@ -802,7 +802,7 @@ void CCommandManager::RemoveActionInfo( int idx )
 	//TRACE( "Action removed:%s\n\r", (LPCTSTR)s );
 }
 
-void CCommandManager::AddActionInfo( CActionInfoWrp *pinfo )
+void CommandManager::AddActionInfo( CActionInfoWrp *pinfo )
 {
 	for( int idx = 0; idx < m_ptrsInfo.GetSize(); idx++ )
 	{
@@ -829,7 +829,7 @@ void CCommandManager::AddActionInfo( CActionInfoWrp *pinfo )
 }
 
 //!!!todo : not implemented yet
-int CCommandManager::AddGroup( const char *sz )
+int CommandManager::AddGroup( const char *sz )
 {
 /*	for( int i = 0; i < m_strsGroups.GetSize(); i++ )
 		if( m_strsGroups[i] == sz )
@@ -838,7 +838,7 @@ int CCommandManager::AddGroup( const char *sz )
 	return -1;
 }
 			
-void CCommandManager::AddBitmap( CActionInfoWrp *pinfo )
+void CommandManager::AddBitmap( CActionInfoWrp *pinfo )
 {
 	if( pinfo->GetBitmapIdx() == -1 )
 		return;
@@ -881,7 +881,7 @@ void CCommandManager::AddBitmap( CActionInfoWrp *pinfo )
 	pinfo->m_pBmpData = pdata;
 }
 
-void CCommandManager::AddMenuData( CActionInfoWrp *pinfo )
+void CommandManager::AddMenuData( CActionInfoWrp *pinfo )
 {
 	for( int idxMenu = 0; idxMenu < pinfo->GetDefMenusCount(); idxMenu++ )
 	{
@@ -994,12 +994,12 @@ void CCommandManager::AddMenuData( CActionInfoWrp *pinfo )
 	}
 }
 
-CCommandManager::ToolBarData *CCommandManager::GetToolBarData( int idx )
+CommandManager::ToolBarData *CommandManager::GetToolBarData( int idx )
 {
 	return (ToolBarData *)m_ptrsToolBarInfo[idx];
 }
 
-void CCommandManager::AddToolBarData( CActionInfoWrp *pinfo )
+void CommandManager::AddToolBarData( CActionInfoWrp *pinfo )
 {
 	for( int idxTB = 0; idxTB < pinfo->GetDefToolBarsCount(); idxTB++ )
 	{
@@ -1029,7 +1029,7 @@ void CCommandManager::AddToolBarData( CActionInfoWrp *pinfo )
 	}
 }
 
-int CCommandManager::GetBitmapNo( CActionInfoWrp *pinfo )
+int CommandManager::GetBitmapNo( CActionInfoWrp *pinfo )
 {
 	for( int i = 0; i < m_ptrsBitmapInfo.GetSize(); i++ )
 	{
@@ -1042,19 +1042,19 @@ int CCommandManager::GetBitmapNo( CActionInfoWrp *pinfo )
 	return -1;
 }
 
-int	CCommandManager::GetMenuCount()
+int	CommandManager::GetMenuCount()
 {
 	return m_ptrsMenuInfo.GetSize();
 }
 
-CCommandManager::MenuData *
-	CCommandManager::GetMenuData( int idx )
+CommandManager::MenuData *
+	CommandManager::GetMenuData( int idx )
 {
 	return  (MenuData*)m_ptrsMenuInfo[idx];
 }
 
-CCommandManager::MenuData *
-	CCommandManager::GetMenuData( const char *szData )
+CommandManager::MenuData *
+	CommandManager::GetMenuData( const char *szData )
 {
 	for( int i = 0; i < m_ptrsMenuInfo.GetSize(); i++ )
 	{
@@ -1067,14 +1067,14 @@ CCommandManager::MenuData *
 }
 
 
-CCommandManager::BitmapData *
-	CCommandManager::GetBitmapData( CActionInfoWrp *pinfo )
+CommandManager::BitmapData *
+	CommandManager::GetBitmapData( CActionInfoWrp *pinfo )
 {
 	return pinfo->m_pBmpData;
 }
 
-CCommandManager::BitmapData *
-	CCommandManager::GetBitmapData( int idx )
+CommandManager::BitmapData *
+	CommandManager::GetBitmapData( int idx )
 {
 	if( idx == -1 )
 		return 0;
@@ -1082,7 +1082,7 @@ CCommandManager::BitmapData *
 }
 
 
-CString CCommandManager::ExtractMenuName( CString &strMenu )
+CString CommandManager::ExtractMenuName( CString &strMenu )
 {
 	int	idx = strMenu.Find( "\\" );
 
@@ -1098,7 +1098,7 @@ CString CCommandManager::ExtractMenuName( CString &strMenu )
 	return s;
 }
 
-HMENU	CCommandManager::GetMenu( const char *sz )
+HMENU	CommandManager::GetMenu( const char *sz )
 {
 	CString	sMenuName;
 
@@ -1121,7 +1121,7 @@ HMENU	CCommandManager::GetMenu( const char *sz )
 }
 
 //bool	g_bInsideInvoke = false;
-void CCommandManager::OnCommandAction( UINT nCmd )
+void CommandManager::OnCommandAction( UINT nCmd )
 {
 	int idx = nCmd - ID_CMDMAN_BASE;
 	if (idx < 0 || idx > m_ptrsInfo.GetUpperBound())
@@ -1159,7 +1159,7 @@ void CCommandManager::OnCommandAction( UINT nCmd )
 	theApp.OnIdle( 0 );
 }
 
-/*BOOL CCommandManager::OnCommandActionEx( UINT nCmd )
+/*BOOL CommandManager::OnCommandActionEx( UINT nCmd )
 {
 	int idx = nCmd - ID_CMDMAN_BASE;
 	if (idx < 0 || idx > m_ptrsInfo.GetUpperBound())
@@ -1203,7 +1203,7 @@ void CCommandManager::OnCommandAction( UINT nCmd )
 static bool benable = true;
 
 
-void CCommandManager::OnUpdateCommandAction( CCmdUI *pCmdUI )
+void CommandManager::OnUpdateCommandAction( CCmdUI *pCmdUI )
 {
 
 	int idx = pCmdUI->m_nID - ID_CMDMAN_BASE;
@@ -1235,7 +1235,7 @@ void CCommandManager::OnUpdateCommandAction( CCmdUI *pCmdUI )
 	pCmdUI->SetCheck( (dwFlags & afChecked) != 0);
 }
 
-void CCommandManager::OnUpdateCommandClassMenu( CCmdUI *pCmdUI )
+void CommandManager::OnUpdateCommandClassMenu( CCmdUI *pCmdUI )
 {
 	sptrIActionManager sptrAM( theApp.GetComponent( IID_IActionManager, false ) );
 	DWORD	dwFlags = 0;
@@ -1243,7 +1243,7 @@ void CCommandManager::OnUpdateCommandClassMenu( CCmdUI *pCmdUI )
 	pCmdUI->Enable( (dwFlags & afEnabled) != 0 );
 }
 
-void CCommandManager::OnUpdateCommandPopupMenu( CCmdUI *pCmdUI )
+void CommandManager::OnUpdateCommandPopupMenu( CCmdUI *pCmdUI )
 {
 	if (pCmdUI->m_pOther != 0 && pCmdUI->m_pOther->IsKindOf(RUNTIME_CLASS(CBCGPopupMenuBar)))
 	{
@@ -1254,17 +1254,17 @@ void CCommandManager::OnUpdateCommandPopupMenu( CCmdUI *pCmdUI )
 }
 
 
-int CCommandManager::GetToolBarCount()
+int CommandManager::GetToolBarCount()
 {
 	return m_ptrsToolBarInfo.GetSize();
 }
 
-int CCommandManager::GetBitmapCount()
+int CommandManager::GetBitmapCount()
 {
 	return m_ptrsBitmapInfo.GetSize();	
 }
 
-CActionInfoWrp *CCommandManager::GetActionInfo( const GUID guid )
+CActionInfoWrp *CommandManager::GetActionInfo( const GUID guid )
 {
 	for( int i =0; i < m_ptrsInfo.GetSize(); i++ )
 	{
@@ -1277,14 +1277,14 @@ CActionInfoWrp *CCommandManager::GetActionInfo( const GUID guid )
 	return 0;
 }
 
-CActionInfoWrp	*CCommandManager::GetActionInfo( int idx )
+CActionInfoWrp	*CommandManager::GetActionInfo( int idx )
 {
 	if( idx < 0 || idx >=m_ptrsInfo.GetSize() )
 		return 0;
 	return (CActionInfoWrp	*)m_ptrsInfo[idx];
 }
 
-CActionInfoWrp	*CCommandManager::GetActionInfo( const char *szName )
+CActionInfoWrp	*CommandManager::GetActionInfo( const char *szName )
 {
 	for( int i =0; i < m_ptrsInfo.GetSize(); i++ )
 	{
@@ -1297,7 +1297,7 @@ CActionInfoWrp	*CCommandManager::GetActionInfo( const char *szName )
 	return 0;
 }
 
-int CCommandManager::GetActionCommand( const char *szActionName )
+int CommandManager::GetActionCommand( const char *szActionName )
 {
 	for( int i =0; i < m_ptrsInfo.GetSize(); i++ )
 	{
@@ -1310,12 +1310,12 @@ int CCommandManager::GetActionCommand( const char *szActionName )
 	return -1;
 }
 
-int CCommandManager::GetActionInfoCount()
+int CommandManager::GetActionInfoCount()
 {
 	return m_ptrsInfo.GetSize();
 }
 
-bool CCommandManager::GetMessageString(UINT nID, CString& rMessage)
+bool CommandManager::GetMessageString(UINT nID, CString& rMessage)
 {
 	if( (int)nID < ID_CMDMAN_BASE )return false;
 	if( (int)nID >= ID_CMDMAN_BASE+GetActionInfoCount() )return false;
@@ -1339,7 +1339,7 @@ bool CCommandManager::GetMessageString(UINT nID, CString& rMessage)
 	return true;
 }
 
-bool CCommandManager::GetToolTipString(UINT nID, CString& rMessage)
+bool CommandManager::GetToolTipString(UINT nID, CString& rMessage)
 {
 	if( (int)nID < ID_CMDMAN_BASE )return false;
 	if( (int)nID >= ID_CMDMAN_BASE+GetActionInfoCount() )return false;
@@ -1357,11 +1357,11 @@ bool CCommandManager::GetToolTipString(UINT nID, CString& rMessage)
 }
 
 //dispatch interfac eand helpers
-CBCGToolBar	*CCommandManager::GetToolBarNo( int iNo )
+CMFCToolBar	*CommandManager::GetToolBarNo( int iNo )
 {
 	for( POSITION pos = gAllToolbars.GetHeadPosition(); pos != NULL; )
 	{
-		CBCGToolBar* pToolBar = (CBCGToolBar*)gAllToolbars.GetNext(pos);
+		CMFCToolBar* pToolBar = (CMFCToolBar*)gAllToolbars.GetNext(pos);
 		ASSERT_VALID(pToolBar);
 
 		if( !iNo-- )
@@ -1371,7 +1371,7 @@ CBCGToolBar	*CCommandManager::GetToolBarNo( int iNo )
 
 }
 
-CShellDockBar	*CCommandManager::GetDockBarNo( int nNo )
+CShellDockBar	*CommandManager::GetDockBarNo( int nNo )
 {
 	CMainFrame	*pmain = (CMainFrame*)AfxGetMainWnd();
 	if( !pmain )return 0;
@@ -1390,7 +1390,7 @@ CShellDockBar	*CCommandManager::GetDockBarNo( int nNo )
 	return 0;
 }
 
-bool CCommandManager::CheckIdx( int	idx )
+bool CommandManager::CheckIdx( int	idx )
 {
 	if( idx == -1 || idx >= GetBarsCount() )
 	{
@@ -1401,26 +1401,26 @@ bool CCommandManager::CheckIdx( int	idx )
 }
 
 //disp impl
-long CCommandManager::GetBarsCount() 
+long CommandManager::GetBarsCount() 
 {
 	return gAllToolbars.GetCount();
 }
 
-BSTR CCommandManager::GetBarName(long BarNo) 
+BSTR CommandManager::GetBarName(long BarNo) 
 {
 	if( !CheckIdx( BarNo ) )
 		return 0;
 
 	CString strResult;
 
-	CBCGToolBar	*ptoolBar = GetToolBarNo( BarNo );
+	CMFCToolBar	*ptoolBar = GetToolBarNo( BarNo );
 
 	ptoolBar->GetWindowText( strResult );
 
 	return strResult.AllocSysString();
 }
 
-long CCommandManager::CreateNewBar(LPCTSTR BarName) 
+long CommandManager::CreateNewBar(LPCTSTR BarName) 
 {
 	long idx = FindNo( BarName );
 
@@ -1430,7 +1430,7 @@ long CCommandManager::CreateNewBar(LPCTSTR BarName)
 		return idx;
 	}
 	CMainFrame	*pwnd = (CMainFrame	*)AfxGetMainWnd();
-	CBCGToolBar	*ptoolbar = (CBCGToolBar	*)pwnd->CreateNewToolbar( BarName );
+	CMFCToolBar	*ptoolbar = (CMFCToolBar	*)pwnd->CreateNewToolbar( BarName );
 
 	if( !ptoolbar )
 		return -1;
@@ -1442,30 +1442,30 @@ long CCommandManager::CreateNewBar(LPCTSTR BarName)
 	return idx = FindNo( BarName );
 }
 
-void CCommandManager::MakeEmpty(long BarNo) 
+void CommandManager::MakeEmpty(long BarNo) 
 {
 	if( !CheckIdx( BarNo ) )
 		return;
 
-	CBCGToolBar	*ptool = GetToolBarNo( BarNo );
+	CMFCToolBar	*ptool = GetToolBarNo( BarNo );
 	ptool->RemoveAllButtons();
 
 	CFrameWnd	*pwnd = ptool->GetParentFrame();
 	pwnd->RecalcLayout();
 }
 
-void CCommandManager::AddButton(long BarNo, LPCTSTR ActionName) 
+void CommandManager::AddButton(long BarNo, LPCTSTR ActionName) 
 {
 	InsertButton( BarNo, ActionName, -1 );
 }
 
-long CCommandManager::FindNo(LPCTSTR Name) 
+long CommandManager::FindNo(LPCTSTR Name) 
 {
 	long	idx = 0;
 
 	for( POSITION pos = gAllToolbars.GetHeadPosition(); pos != NULL; )
 	{
-		CBCGToolBar* pToolBar = (CBCGToolBar*)gAllToolbars.GetNext(pos);
+		CMFCToolBar* pToolBar = (CMFCToolBar*)gAllToolbars.GetNext(pos);
 		ASSERT_VALID(pToolBar);
 
 		CString	strText;
@@ -1481,13 +1481,13 @@ long CCommandManager::FindNo(LPCTSTR Name)
 	return -1;
 }
 
-void CCommandManager::ShowBar(long BarNo, long Visible) 
+void CommandManager::ShowBar(long BarNo, long Visible) 
 {
 	if( !CheckIdx( BarNo ) )
 		return;
 
 	CFrameWnd	*pwnd = (CFrameWnd	*)AfxGetMainWnd();
-	CBCGToolBar	*ptool = GetToolBarNo( BarNo );
+	CMFCToolBar	*ptool = GetToolBarNo( BarNo );
 
 	/*{
 		char szText[256];
@@ -1502,12 +1502,12 @@ void CCommandManager::ShowBar(long BarNo, long Visible)
 	pwnd->RecalcLayout();
 }
 
-void CCommandManager::InsertButton(long BarNo, LPCTSTR ActionName, long InsertAfter) 
+void CommandManager::InsertButton(long BarNo, LPCTSTR ActionName, long InsertAfter) 
 {
 	if( !CheckIdx( BarNo ) )
 		return;
 
-	CBCGToolBar	*ptool = GetToolBarNo( BarNo );
+	CMFCToolBar	*ptool = GetToolBarNo( BarNo );
 
 	if( !ptool )
 		return;
@@ -1542,12 +1542,12 @@ void CCommandManager::InsertButton(long BarNo, LPCTSTR ActionName, long InsertAf
 	pwnd->RecalcLayout();
 }
 
-void CCommandManager::DeleteBar(long BarNo) 
+void CommandManager::DeleteBar(long BarNo) 
 {
 	if( !CheckIdx( BarNo ) )
 		return;
 
-	CBCGToolBar	*ptool = GetToolBarNo( BarNo );
+	CMFCToolBar	*ptool = GetToolBarNo( BarNo );
 
 	if( !ptool )
 		return;
@@ -1558,7 +1558,7 @@ void CCommandManager::DeleteBar(long BarNo)
 	
 }
 
-void CCommandManager::AddAccel( CActionInfoWrp *pinfo )
+void CommandManager::AddAccel( CActionInfoWrp *pinfo )
 {
 	DWORD	dw;
 	BYTE	byte;
@@ -1608,11 +1608,11 @@ const char *szNotFound = "DockBar not found - it's very strange";
 const char *szFrameToolBar = "[FrameToolBars]";
 
 
-void _make_button_string( CBCGToolbarButton *pbutton, CStringArrayEx &strings )
+void _make_button_string( CMFCToolBarButton *pbutton, CStringArrayEx &strings )
 {
 
 	if( pbutton->m_nStyle & TBBS_SEPARATOR ||
-		(pbutton->IsKindOf(RUNTIME_CLASS(CBCGToolbarMenuButton))&&
+		(pbutton->IsKindOf(RUNTIME_CLASS(CMFCToolBarMenuButton))&&
 		pbutton->m_nID == 0 && pbutton->m_nStyle == 0 && pbutton->m_strText.IsEmpty() ) )
 	{
 		strings.Add( szSeparator );
@@ -1656,8 +1656,8 @@ void _make_button_string( CBCGToolbarButton *pbutton, CStringArrayEx &strings )
 		if( pbutton->IsKindOf( RUNTIME_CLASS( CShellToolbarButton ) ) )
 			pshellbtn = (CShellToolbarButton*)pbutton;
 
-		//( pbutton->IsKindOf( RUNTIME_CLASS(CBCGToolbarMenuButton) ) )
-		//	pbutton->CBCGToolbarButton::Serialize( ar );
+		//( pbutton->IsKindOf( RUNTIME_CLASS(CMFCToolBarMenuButton) ) )
+		//	pbutton->CMFCToolBarButton::Serialize( ar );
 		//else
 		if( pshellbtn )pshellbtn->EnableMenuSerialize( false );
 		pbutton->Serialize( ar );
@@ -1705,7 +1705,7 @@ void _make_button_string( CBCGToolbarButton *pbutton, CStringArrayEx &strings )
 	if( pbutton->m_bUserButton && nImage != -1 )
 		g_mapUserImages[strActionName] = nImage;
 
-	if( pbutton->IsKindOf( RUNTIME_CLASS(CBCGToolbarMenuButton) ) && strActionName.IsEmpty() )
+	if( pbutton->IsKindOf( RUNTIME_CLASS(CMFCToolBarMenuButton) ) && strActionName.IsEmpty() )
 	{
 		CMyTBMenuBtn	*pmenubtn = (CMyTBMenuBtn*)pbutton;
 
@@ -1714,7 +1714,7 @@ void _make_button_string( CBCGToolbarButton *pbutton, CStringArrayEx &strings )
 
 		while( pos )
 		{
-			CBCGToolbarButton *pb = (CBCGToolbarButton *)
+			CMFCToolBarButton *pb = (CMFCToolBarButton *)
 				pmenubtn->GetCommand().GetNext( pos );
 			_make_button_string( pb, strings );
 		}
@@ -1722,14 +1722,14 @@ void _make_button_string( CBCGToolbarButton *pbutton, CStringArrayEx &strings )
 	}
 }
 
-CBCGToolbarButton *_create_button_from_string( CStringArray &strings, int &ipos, bool bMenuBar )
+CMFCToolBarButton *_create_button_from_string( CStringArray &strings, int &ipos, bool bMenuBar )
 {
 	CString	strRuntime, strActionName, strBinData;
 	CString	str = strings[ipos++];
 
 	if( str == szSeparator )
 	{
-		CBCGToolbarButton	*p = new CBCGToolbarButton();
+		CMFCToolBarButton	*p = new CMFCToolBarButton();
 		p->m_nStyle = TBBS_SEPARATOR;
 		p->SetImage( 7 );
 		return p;
@@ -1739,7 +1739,7 @@ CBCGToolbarButton *_create_button_from_string( CStringArray &strings, int &ipos,
 
 	if( idx1 == -1 )
 	{
-		strRuntime = RUNTIME_CLASS(CBCGToolbarButton)->m_lpszClassName;
+		strRuntime = RUNTIME_CLASS(CMFCToolBarButton)->m_lpszClassName;
 		strActionName = str;
 	}
 	else
@@ -1791,16 +1791,16 @@ CBCGToolbarButton *_create_button_from_string( CStringArray &strings, int &ipos,
 
 
 	if( !pclass )
-		pclass = RUNTIME_CLASS(CBCGToolbarButton);
+		pclass = RUNTIME_CLASS(CMFCToolBarButton);
 
-	if( pclass == RUNTIME_CLASS(CBCGToolbarButton) )
+	if( pclass == RUNTIME_CLASS(CMFCToolBarButton) )
 		pclass = RUNTIME_CLASS(CShellToolbarButton);
 
 	//if( !bMenuBar )
-		if( pclass == RUNTIME_CLASS(CBCGToolbarMenuButton) )
+		if( pclass == RUNTIME_CLASS(CMFCToolBarMenuButton) )
 			pclass = RUNTIME_CLASS(CShellToolbarButton);
 
-	CBCGToolbarButton *pbtn = (CBCGToolbarButton*)pclass->CreateObject();
+	CMFCToolBarButton *pbtn = (CMFCToolBarButton*)pclass->CreateObject();
 
 	if( !pbtn )
 		return false;
@@ -1827,8 +1827,8 @@ CBCGToolbarButton *_create_button_from_string( CStringArray &strings, int &ipos,
 		_try(pbtn, Serialize)
 		{
 		CArchive	ar( &file, CArchive::load );
-			//if( pbtn->IsKindOf( RUNTIME_CLASS(CBCGToolbarMenuButton) ) )
-			//	pbtn->CBCGToolbarButton::Serialize( ar );
+			//if( pbtn->IsKindOf( RUNTIME_CLASS(CMFCToolBarMenuButton) ) )
+			//	pbtn->CMFCToolBarButton::Serialize( ar );
 			//else
 
 			
@@ -1836,8 +1836,8 @@ CBCGToolbarButton *_create_button_from_string( CStringArray &strings, int &ipos,
 		if( pbtn->IsKindOf( RUNTIME_CLASS( CShellToolbarButton ) ) )
 			pshellbtn = (CShellToolbarButton*)pbtn;
 
-		//( pbutton->IsKindOf( RUNTIME_CLASS(CBCGToolbarMenuButton) ) )
-		//	pbutton->CBCGToolbarButton::Serialize( ar );
+		//( pbutton->IsKindOf( RUNTIME_CLASS(CMFCToolBarMenuButton) ) )
+		//	pbutton->CMFCToolBarButton::Serialize( ar );
 		//else
 		if( pshellbtn )pshellbtn->EnableMenuSerialize( false );
 		pbtn->Serialize( ar );
@@ -1866,7 +1866,7 @@ CBCGToolbarButton *_create_button_from_string( CStringArray &strings, int &ipos,
 		pbtn->m_nID = pinfo->GetLocalID();
 
 
-		CCommandManager::BitmapData	*pBitmapData = g_CmdManager.GetBitmapData( pinfo );
+		CommandManager::BitmapData	*pBitmapData = g_CmdManager.GetBitmapData( pinfo );
 
 		if( pbtn->m_bUserButton )
 		{
@@ -1907,7 +1907,7 @@ CBCGToolbarButton *_create_button_from_string( CStringArray &strings, int &ipos,
 		pbtn->m_strText = pinfo->GetActionUserName();
 	}
 
-	if( pbtn->IsKindOf( RUNTIME_CLASS(CBCGToolbarMenuButton) ) && strActionName.IsEmpty() )
+	if( pbtn->IsKindOf( RUNTIME_CLASS(CMFCToolBarMenuButton) ) && strActionName.IsEmpty() )
 	{
 		CString	str = strings[ipos++];
 		CMyTBMenuBtn	*pmenubtn = (CMyTBMenuBtn*)pbtn;
@@ -1927,7 +1927,7 @@ CBCGToolbarButton *_create_button_from_string( CStringArray &strings, int &ipos,
 
 			
 
-			CBCGToolbarButton *p1 = _create_button_from_string( strings, ipos, bMenuBar );
+			CMFCToolBarButton *p1 = _create_button_from_string( strings, ipos, bMenuBar );
 
 			if( !p1 )
 				continue;
@@ -1935,7 +1935,7 @@ CBCGToolbarButton *_create_button_from_string( CStringArray &strings, int &ipos,
 			if( p1->m_nStyle == TBBS_SEPARATOR )
 			{
 				delete p1;
-				p1= new CBCGToolbarMenuButton();
+				p1= new CMFCToolBarMenuButton();
 			}
 
 			pmenubtn->GetCommand().AddTail( p1 );
@@ -2098,12 +2098,12 @@ static void _DockControlBar(CFrameWnd *pmain, CControlBar* ptool, UINT nDockBarI
 }
 
 
-void CCommandManager::LoadState(LPCTSTR FileName) 
+void CommandManager::LoadState(LPCTSTR FileName) 
 {
 	_load_state(FileName);
 }
 
-bool CCommandManager::_load_state(LPCTSTR FileName) 
+bool CommandManager::_load_state(LPCTSTR FileName) 
 {
 //	trace("LoadState %s\n", FileName);
 
@@ -2118,7 +2118,7 @@ bool CCommandManager::_load_state(LPCTSTR FileName)
 
 
 	CDockState state;
-	_try(CCommandManager, LoadState)
+	_try(CommandManager, LoadState)
 	{
 		bool	bMaximizedMode = false;
 
@@ -2181,7 +2181,7 @@ bool CCommandManager::_load_state(LPCTSTR FileName)
 
 
 //BCG 4.64 adapted
-		CBCGToolbarButton::s_bInitProgMode = true;
+		CMFCToolBarButton::s_bInitProgMode = true;
 
 //if we are here, let's destruct all toolbars
 		CMainFrame	*pmain = (CMainFrame	*)AfxGetMainWnd();
@@ -2192,7 +2192,7 @@ bool CCommandManager::_load_state(LPCTSTR FileName)
 
 		for( POSITION pos = gAllToolbars.GetHeadPosition(); pos != NULL; )
 		{
-			CBCGToolBar* pToolBar = (CBCGToolBar*)gAllToolbars.GetNext(pos);
+			CMFCToolBar* pToolBar = (CMFCToolBar*)gAllToolbars.GetNext(pos);
 			if(IsWindow(pToolBar->m_hWnd))
 				pmain->DeleteToolBar( pToolBar );
 		}
@@ -2276,7 +2276,7 @@ bool CCommandManager::_load_state(LPCTSTR FileName)
 				bool bVisible = strVisible.CompareNoCase( szVisible ) == 0;
 
 				//create				
-				CBCGToolBar *ptool = (CBCGToolBar *)pmain->CreateNewToolbar( strName );
+				CMFCToolBar *ptool = (CMFCToolBar *)pmain->CreateNewToolbar( strName );
 				if (!bEnableTBVert)
 					ptool->EnableDocking(CBRS_ALIGN_TOP|CBRS_ALIGN_BOTTOM);
 
@@ -2312,7 +2312,7 @@ bool CCommandManager::_load_state(LPCTSTR FileName)
 
 					idx--;	//step back
 
-					CBCGToolbarButton	*pbtn = _create_button_from_string( strings, idx, false );
+					CMFCToolBarButton	*pbtn = _create_button_from_string( strings, idx, false );
 
 					if( !pbtn )
 						continue;
@@ -2396,7 +2396,7 @@ bool CCommandManager::_load_state(LPCTSTR FileName)
 				//toolbar here
 				CString	strName = str;
 
-				CBCGToolBar *ptool = 0;
+				CMFCToolBar *ptool = 0;
 				ptool = pmain->CreateNewOutlookBar( strName );
 
 				while( true )
@@ -2413,7 +2413,7 @@ bool CCommandManager::_load_state(LPCTSTR FileName)
 
 					idx--;	//step back
 
-					CBCGToolbarButton	*pbtn = _create_button_from_string( strings, idx, false );
+					CMFCToolBarButton	*pbtn = _create_button_from_string( strings, idx, false );
 
 					if( !pbtn )
 						continue;
@@ -2493,7 +2493,7 @@ bool CCommandManager::_load_state(LPCTSTR FileName)
 
 				idx--;	//step back
 
-				CBCGToolbarButton	*pbtn = _create_button_from_string( strings, idx, true );
+				CMFCToolBarButton	*pbtn = _create_button_from_string( strings, idx, true );
 
 				if( !pbtn )
 					continue;
@@ -2938,7 +2938,7 @@ bool CCommandManager::_load_state(LPCTSTR FileName)
 	}
 	_catch return false;
 
-	CBCGToolbarButton::s_bInitProgMode = false;
+	CMFCToolBarButton::s_bInitProgMode = false;
 	m_bStateReady = true;
 
 	AfterStateLoad();
@@ -2947,7 +2947,7 @@ bool CCommandManager::_load_state(LPCTSTR FileName)
 }
 
 
-static CRect _GetToolbarRect(CDockBar* pDockBar, CBCGToolBar *pToolBar)
+static CRect _GetToolbarRect(CDockBar* pDockBar, CMFCToolBar *pToolBar)
 {
 	CRect	rc;
 	if( pToolBar->IsFloating() )
@@ -2962,9 +2962,9 @@ static CRect _GetToolbarRect(CDockBar* pDockBar, CBCGToolBar *pToolBar)
 
 static const char *pstrDockSites[] = {szLeft, szTop, szRight, szBottom, szFloating};
 
-void CCommandManager::SaveState(LPCTSTR FileName) 
+void CommandManager::SaveState(LPCTSTR FileName) 
 {
-	_try(CCommandManager, SaveState)
+	_try(CommandManager, SaveState)
 	 {
 		 _save_state( _bstr_t(FileName), false );
 	 }
@@ -2973,26 +2973,26 @@ void CCommandManager::SaveState(LPCTSTR FileName)
 
 
 
-int CCommandManager::GetDockWindowsCount()
+int CommandManager::GetDockWindowsCount()
 {
 	return m_compBars.GetComponentCount();
 }
 
-IUnknown *CCommandManager::GetDockWindow( int idx )
+IUnknown *CommandManager::GetDockWindow( int idx )
 {
 	return m_compBars.GetComponent( idx, false );
 }
 
-long CCommandManager::AddOutlookBar(LPCTSTR szName) 
+long CommandManager::AddOutlookBar(LPCTSTR szName) 
 {
 	CMainFrame	*pmain = (CMainFrame*)AfxGetMainWnd();
-	CBCGToolBar	*pbar = pmain->CreateNewOutlookBar( szName );
+	CMFCToolBar	*pbar = pmain->CreateNewOutlookBar( szName );
 
 	long	idx = 0;
 
 	for( POSITION pos = gAllToolbars.GetHeadPosition(); pos != NULL; )
 	{
-		CBCGToolBar* pToolBar = (CBCGToolBar*)gAllToolbars.GetNext(pos);
+		CMFCToolBar* pToolBar = (CMFCToolBar*)gAllToolbars.GetNext(pos);
 		ASSERT_VALID(pToolBar);
 
 		if( pbar == pToolBar )
@@ -3004,34 +3004,34 @@ long CCommandManager::AddOutlookBar(LPCTSTR szName)
 	return -1;
 }
 
-BOOL CCommandManager::IsBarVisible(long nBarNo) 
+BOOL CommandManager::IsBarVisible(long nBarNo) 
 {
 	if( !CheckIdx( nBarNo ) )
 		return false;
 
-	CBCGToolBar	*ptool = GetToolBarNo( nBarNo );
+	CMFCToolBar	*ptool = GetToolBarNo( nBarNo );
 	ASSERT( ptool );
 	return ptool->IsWindowVisible();
 }
 
-long CCommandManager::GetButtonCount(long nBarNo) 
+long CommandManager::GetButtonCount(long nBarNo) 
 {
 	if( !CheckIdx( nBarNo ) )
 		return 0;
 
-	CBCGToolBar	*ptool = GetToolBarNo( nBarNo );
+	CMFCToolBar	*ptool = GetToolBarNo( nBarNo );
 	ASSERT( ptool );
 	return ptool->GetCount();
 }
 
-BSTR CCommandManager::GetButton(long nBarNo, long nButtonNo) 
+BSTR CommandManager::GetButton(long nBarNo, long nButtonNo) 
 {
 	CString strResult;
 	
 	if( !CheckIdx( nBarNo ) )
 		return 0;
 
-	CBCGToolBar	*ptool = GetToolBarNo( nBarNo );
+	CMFCToolBar	*ptool = GetToolBarNo( nBarNo );
 	ASSERT( ptool );
 
 	if( nButtonNo < 0 || nButtonNo >= ptool->GetCount() )
@@ -3039,7 +3039,7 @@ BSTR CCommandManager::GetButton(long nBarNo, long nButtonNo)
 		AfxMessageBox( "invalid button index" );
 		return 0;
 	}
-	CBCGToolbarButton	*pbtn = ptool->GetButton( nButtonNo );
+	CMFCToolBarButton	*pbtn = ptool->GetButton( nButtonNo );
 	ASSERT( pbtn );
 
 	if( pbtn->m_nStyle == TBBS_SEPARATOR )
@@ -3055,17 +3055,17 @@ BSTR CCommandManager::GetButton(long nBarNo, long nButtonNo)
 	return strResult.AllocSysString();
 }
 
-BOOL CCommandManager::IsOutlookToolBar(long nBarNo) 
+BOOL CommandManager::IsOutlookToolBar(long nBarNo) 
 {
 	if( !CheckIdx( nBarNo ) )
 		return 0;
 
-	CBCGToolBar	*ptool = GetToolBarNo( nBarNo );
+	CMFCToolBar	*ptool = GetToolBarNo( nBarNo );
 	ASSERT( ptool );
 	return ptool->IsKindOf( RUNTIME_CLASS( CShellOutlookToolBar ) );
 }
 
-long CCommandManager::GetDockBarsCount() 
+long CommandManager::GetDockBarsCount() 
 {
 	CMainFrame	*pmain = (CMainFrame*)AfxGetMainWnd();
 	if( !pmain )return 0;
@@ -3076,7 +3076,7 @@ long CCommandManager::GetDockBarsCount()
 	return nCount;
 }
 
-BSTR CCommandManager::GetDockBarName(long nBarNo) 
+BSTR CommandManager::GetDockBarName(long nBarNo) 
 {
 	CString strResult;
 	CShellDockBar	*pbar = GetDockBarNo( nBarNo );
@@ -3086,7 +3086,7 @@ BSTR CCommandManager::GetDockBarName(long nBarNo)
 	return strResult.AllocSysString();
 }
 
-BOOL CCommandManager::IsDockBarVisible(long nBarNo) 
+BOOL CommandManager::IsDockBarVisible(long nBarNo) 
 {
 	CString strResult;
 	CShellDockBar	*pbar = GetDockBarNo( nBarNo );
@@ -3095,7 +3095,7 @@ BOOL CCommandManager::IsDockBarVisible(long nBarNo)
 	return pbar->IsWindowVisible();
 }
 
-void CCommandManager::ShowDockBar(long nBarNo, short bVisible) 
+void CommandManager::ShowDockBar(long nBarNo, short bVisible) 
 {
 	CString strResult;
 	CShellDockBar	*pbar = GetDockBarNo( nBarNo );
@@ -3106,7 +3106,7 @@ void CCommandManager::ShowDockBar(long nBarNo, short bVisible)
 	pbar->SendMessage( WM_SHOWWINDOW, bVisible );
 }
 
-void CCommandManager::SetCanCloseDockBar(long nBarNo, BOOL bCanClose)
+void CommandManager::SetCanCloseDockBar(long nBarNo, BOOL bCanClose)
 {
 	CShellDockBar* pbar = GetDockBarNo( nBarNo );
 	if( !pbar )	return;
@@ -3114,7 +3114,7 @@ void CCommandManager::SetCanCloseDockBar(long nBarNo, BOOL bCanClose)
 	pbar->SetCanClose( bCanClose == TRUE );
 }
 
-BOOL CCommandManager::CanCloseDockBar( long nBarNo )
+BOOL CommandManager::CanCloseDockBar( long nBarNo )
 {
 	CShellDockBar* pbar = GetDockBarNo( nBarNo );
 	if( !pbar )	return false;
@@ -3122,7 +3122,7 @@ BOOL CCommandManager::CanCloseDockBar( long nBarNo )
 	return pbar->GetCanClose( );
 }
 
-LPDISPATCH CCommandManager::GetDockBarImplByName(LPCTSTR szName)
+LPDISPATCH CommandManager::GetDockBarImplByName(LPCTSTR szName)
 {
 	CMainFrame	*pmain = (CMainFrame*)AfxGetMainWnd();
 	if( !pmain )return 0;
@@ -3143,9 +3143,9 @@ LPDISPATCH CCommandManager::GetDockBarImplByName(LPCTSTR szName)
 };
 
 // [vanek] - 16.07.2004
-void CCommandManager::SaveAsState(LPCTSTR FileName)
+void CommandManager::SaveAsState(LPCTSTR FileName)
 {
-	_try(CCommandManager, SaveAsState)
+	_try(CommandManager, SaveAsState)
 	 {
 		 _save_state( _bstr_t(FileName), true );
 	 }
@@ -3153,9 +3153,9 @@ void CCommandManager::SaveAsState(LPCTSTR FileName)
 }
 
 // [vanek] - 20.10.2004
-BOOL CCommandManager::HasAction(long BarNo, LPCTSTR ActionName)
+BOOL CommandManager::HasAction(long BarNo, LPCTSTR ActionName)
 {
-	_try(CCommandManager, HasAction)
+	_try(CommandManager, HasAction)
 	 {
         if( !CheckIdx( BarNo ) )
 			return FALSE;
@@ -3166,7 +3166,7 @@ BOOL CCommandManager::HasAction(long BarNo, LPCTSTR ActionName)
 		int naction_cmd = -1;
 		naction_cmd = GetActionCommand( (const char*)(_bstr_t(ActionName)) );
 		         
-		CBCGToolBar	*ptool = GetToolBarNo( BarNo );
+		CMFCToolBar	*ptool = GetToolBarNo( BarNo );
 		if( !ptool )
 			return	FALSE;
 
@@ -3178,7 +3178,7 @@ BOOL CCommandManager::HasAction(long BarNo, LPCTSTR ActionName)
 	 return FALSE;
 }
 
-bool	CCommandManager::_save_state( LPCSTR lpFileName, bool bsave_as /*= false*/ )
+bool	CommandManager::_save_state( LPCSTR lpFileName, bool bsave_as /*= false*/ )
 {
 //	trace("_save_state %s. MainWnd:%d\n", lpFileName, AfxGetMainWnd()->IsWindowVisible());
 	if( bsave_as && !_tcslen( lpFileName ) )
@@ -3245,7 +3245,7 @@ bool	CCommandManager::_save_state( LPCSTR lpFileName, bool bsave_as /*= false*/ 
 	CObList gAllToolbarsDock[5];
 	for( POSITION pos = gAllToolbars.GetHeadPosition(); pos != NULL; )
 	{
-		CBCGToolBar* pToolBar = (CBCGToolBar*)gAllToolbars.GetNext(pos);
+		CMFCToolBar* pToolBar = (CMFCToolBar*)gAllToolbars.GetNext(pos);
 		if( pToolBar->IsKindOf( RUNTIME_CLASS(CBCGMenuBar) ) )
 			continue;
 		if( !pToolBar->IsKindOf( RUNTIME_CLASS(CShellToolBar) ) )
@@ -3273,7 +3273,7 @@ bool	CCommandManager::_save_state( LPCSTR lpFileName, bool bsave_as /*= false*/ 
 		for (POSITION pos1 = pList->GetHeadPosition(); pos1 != NULL; )
 		{
 			POSITION posPrev = pos1;
-			CBCGToolBar* pToolBar1 = (CBCGToolBar*)pList->GetNext(pos1);
+			CMFCToolBar* pToolBar1 = (CMFCToolBar*)pList->GetNext(pos1);
 			CRect	rc1 = _GetToolbarRect(pDockBar, pToolBar1);
 			int nPos1 = bHorz?rc1.top:rc1.left;
 			if (nPos < nPos1)
@@ -3292,7 +3292,7 @@ bool	CCommandManager::_save_state( LPCSTR lpFileName, bool bsave_as /*= false*/ 
 		CShellToolDockBar *pDockBar = nPosType==0?pleft:nPosType==1?ptop:nPosType==2?pright:nPosType==3?pbottom:NULL;
 		for( POSITION pos =pList->GetHeadPosition(); pos != NULL; )
 		{
-			CBCGToolBar* pToolBar = (CBCGToolBar*)pList->GetNext(pos);
+			CMFCToolBar* pToolBar = (CMFCToolBar*)pList->GetNext(pos);
 			/*			if( pToolBar->IsKindOf( RUNTIME_CLASS(CBCGMenuBar) ) )
 			continue;
 			if( !pToolBar->IsKindOf( RUNTIME_CLASS(CShellToolBar) ) )
@@ -3347,7 +3347,7 @@ bool	CCommandManager::_save_state( LPCSTR lpFileName, bool bsave_as /*= false*/ 
 			strings.Add( "" );
 			for( int nButton = 0; nButton < pToolBar->GetCount(); nButton++ )
 			{
-				CBCGToolbarButton	*pbutton = pToolBar->GetButton( nButton );
+				CMFCToolBarButton	*pbutton = pToolBar->GetButton( nButton );
 
 				//				ASSERT( !pbutton->IsKindOf( RUNTIME_CLASS( CShellChooseToolbarButton ) ) );
 				_make_button_string( pbutton, strings );
@@ -3375,7 +3375,7 @@ bool	CCommandManager::_save_state( LPCSTR lpFileName, bool bsave_as /*= false*/ 
 		CString	str;
 		str = bar.GetFolderName( nFolderBar );
 
-		CBCGToolBar* pToolBar = (CBCGToolBar*)bar.GetFolderWindow( nFolderBar );
+		CMFCToolBar* pToolBar = (CMFCToolBar*)bar.GetFolderWindow( nFolderBar );
 		if( !pToolBar->IsKindOf( RUNTIME_CLASS(CShellOutlookToolBar) ) )
 			continue;
 
@@ -3385,7 +3385,7 @@ bool	CCommandManager::_save_state( LPCSTR lpFileName, bool bsave_as /*= false*/ 
 		strings.Add( "" );
 		for( int nButton = 0; nButton < pToolBar->GetCount(); nButton++ )
 		{
-			CBCGToolbarButton	*pbutton = pToolBar->GetButton( nButton );
+			CMFCToolBarButton	*pbutton = pToolBar->GetButton( nButton );
 			_make_button_string( pbutton, strings );
 		}
 		strings.Add( szEndmarker );
@@ -3398,27 +3398,27 @@ bool	CCommandManager::_save_state( LPCSTR lpFileName, bool bsave_as /*= false*/ 
 	//test purposes
 #ifdef _DEBUG		
 	{
-		for( int i=0;i<GetMenuCount()-1;i++ )
+		for (int i = 0; i < GetMenuCount() - 1; i++)
 		{
-			MenuData *pdata1 = GetMenuData( i);
-			if( !pdata1 )
+			MenuData *pdata1 = GetMenuData(i);
+			if (!pdata1)
 			{
-				ASSERT( false );
+				ASSERT(false);
 				continue;
 			}
 
-			for( int j=i+1;j<GetMenuCount();j++ )
+			for (int j = i + 1; j < GetMenuCount(); j++)
 			{
-				MenuData *pdata2 = GetMenuData( j );
-				if( !pdata2 )
+				MenuData *pdata2 = GetMenuData(j);
+				if (!pdata2)
 				{
-					ASSERT( false );
+					ASSERT(false);
 					continue;
 				}
 
-				if( pdata1->strMenuName == pdata2->strMenuName )
+				if (pdata1->strMenuName == pdata2->strMenuName)
 				{
-					ASSERT( false );
+					ASSERT(false);
 					continue;
 				}
 			}
@@ -3426,9 +3426,13 @@ bool	CCommandManager::_save_state( LPCSTR lpFileName, bool bsave_as /*= false*/ 
 	}
 #endif //_DEBUG
 
+	{
+		HMENU hm = pmain->m_wndMenuBar.GetDefaultMenu();
 
-	g_menuHash.SaveMenuBar((HMENU)*pmain->m_wndMenuBar.GetMenu(), &pmain->m_wndMenuBar);
-	strings.Add( szMenus );
+		g_menuHash.SaveMenuBar(*pmain->m_wndMenuBar.GetMenu(), &pmain->m_wndMenuBar);
+
+		strings.Add(szMenus);
+	}
 	for( int idx = 0; idx < GetMenuCount(); idx++ )
 	{
 		MenuData *pdata = GetMenuData( idx );
@@ -3467,7 +3471,7 @@ bool	CCommandManager::_save_state( LPCSTR lpFileName, bool bsave_as /*= false*/ 
 		for( int nButton = 0; nButton < bar.GetCount(); nButton++ )
 		{
 
-			CBCGToolbarButton	*pbutton = bar.GetButton( nButton );
+			CMFCToolBarButton	*pbutton = bar.GetButton( nButton );
 
 			_make_button_string( pbutton, strings );
 		}
@@ -3818,7 +3822,7 @@ bool	CCommandManager::_save_state( LPCSTR lpFileName, bool bsave_as /*= false*/ 
 	return true;
 }
 
-long CCommandManager::FindDockNo(LPCTSTR pszName) 
+long CommandManager::FindDockNo(LPCTSTR pszName) 
 {
 	CMainFrame	*pmain = (CMainFrame*)AfxGetMainWnd();
 	if( !pmain )return -1;
@@ -3839,7 +3843,7 @@ long CCommandManager::FindDockNo(LPCTSTR pszName)
 	return -1;
 }
 
-void CCommandManager::InitUserImages()
+void CommandManager::InitUserImages()
 {
 	//m_UserImages.DeleteAllImages();
 
@@ -3850,7 +3854,7 @@ void CCommandManager::InitUserImages()
 	m_UserImages.SetUserFlag( true );
 }
 
-CActionControlWrp	*CCommandManager::GetActionControl( UINT nID )
+CActionControlWrp	*CommandManager::GetActionControl( UINT nID )
 {
 	for( int i = 0; i < m_ptrsControl.GetSize(); i++ )
 	{
@@ -3868,7 +3872,7 @@ CActionControlWrp	*CCommandManager::GetActionControl( UINT nID )
 
 
 /////////////////////////////////////////////////////////////////////////////////////////
-LongOperationAction CCommandManager::SetLongOperationActionState( LongOperationAction loa )
+LongOperationAction CommandManager::SetLongOperationActionState( LongOperationAction loa )
 {
 	LongOperationAction loaOld = m_loActionState;
 	m_loActionState = loa;
@@ -3895,7 +3899,7 @@ LongOperationAction CCommandManager::SetLongOperationActionState( LongOperationA
 }
 
 /////////////////////////////////////////////////////////////////////////////////////////
-LongOperationAction CCommandManager::GetLongOperationActionState()
+LongOperationAction CommandManager::GetLongOperationActionState()
 {
 	return m_loActionState;
 }
@@ -4023,7 +4027,7 @@ void CActionInfoWrp::SetLocalID( int nID )
 
 
 /////////////////////////////////////////////////////////////////////////////
-void CCommandManager::DestroyTemplateInfoList()
+void CommandManager::DestroyTemplateInfoList()
 {
 	POSITION pos = m_ptrTemplateInfoList.GetHeadPosition();
 	while( pos )
@@ -4035,7 +4039,7 @@ void CCommandManager::DestroyTemplateInfoList()
 }
 
 /////////////////////////////////////////////////////////////////////////////
-void CCommandManager::CreateTemplateInfoList()
+void CommandManager::CreateTemplateInfoList()
 {
 
 	DestroyTemplateInfoList();
@@ -4065,7 +4069,7 @@ void CCommandManager::CreateTemplateInfoList()
 }
 
 /////////////////////////////////////////////////////////////////////////////
-void CCommandManager::AfterStateLoad()
+void CommandManager::AfterStateLoad()
 {
 	CWnd	*pwnd = AfxGetMainWnd();
 	if( !pwnd->IsKindOf( RUNTIME_CLASS(CMainFrame) ) )
@@ -4080,12 +4084,12 @@ void CCommandManager::AfterStateLoad()
 }
 
 /////////////////////////////////////////////////////////////////////////////
-void CCommandManager::BeforStateSave()
+void CommandManager::BeforStateSave()
 {
 	GatherShellFrameToolbarsInfo( NULL );
 }
 
-bool CCommandManager::IsFrameCanHaveToolbar( CShellFrame* pFrame )
+bool CommandManager::IsFrameCanHaveToolbar( CShellFrame* pFrame )
 {
 	CString strDocTemplate, strFrameType;
 	if( !GetFrameOptions( pFrame, strDocTemplate, strFrameType ) )
@@ -4116,7 +4120,7 @@ bool CCommandManager::IsFrameCanHaveToolbar( CShellFrame* pFrame )
 }
 
 /////////////////////////////////////////////////////////////////////////////
-CTemplateInfo* CCommandManager::FindTemplateInfo( CString strDocTemplate )
+CTemplateInfo* CommandManager::FindTemplateInfo( CString strDocTemplate )
 {
 	if( strDocTemplate.IsEmpty() )
 		return NULL;
@@ -4138,7 +4142,7 @@ CTemplateInfo* CCommandManager::FindTemplateInfo( CString strDocTemplate )
 }
 
 /////////////////////////////////////////////////////////////////////////////
-bool CCommandManager::GetFrameOptions( CShellFrame* pFrame, CString& strDocTemplate, CString& strFrameType )
+bool CommandManager::GetFrameOptions( CShellFrame* pFrame, CString& strDocTemplate, CString& strFrameType )
 {
 	if( !pFrame )
 		return false;
@@ -4186,7 +4190,7 @@ bool CCommandManager::GetFrameOptions( CShellFrame* pFrame, CString& strDocTempl
 }
 
 /////////////////////////////////////////////////////////////////////////////
-void CCommandManager::GatherShellFrameToolbarsInfo( CShellFrame* pFrameExcept )
+void CommandManager::GatherShellFrameToolbarsInfo( CShellFrame* pFrameExcept )
 {
 	CWnd	*pwnd = AfxGetMainWnd();
 	if( !pwnd->IsKindOf( RUNTIME_CLASS(CMainFrame) ) )
@@ -4206,7 +4210,7 @@ void CCommandManager::GatherShellFrameToolbarsInfo( CShellFrame* pFrameExcept )
 }
 
 /////////////////////////////////////////////////////////////////////////////
-void CCommandManager::UpdateShellFrameToolbarInfo( CShellFrame* pFrame )
+void CommandManager::UpdateShellFrameToolbarInfo( CShellFrame* pFrame )
 {	
 	if( !IsFrameCanHaveToolbar( pFrame ) )
 		return;
@@ -4236,7 +4240,7 @@ void CCommandManager::UpdateShellFrameToolbarInfo( CShellFrame* pFrame )
 }
 
 /////////////////////////////////////////////////////////////////////////////
-void CCommandManager::CreateShellFrameToolbars( CShellFrame* pFrame )
+void CommandManager::CreateShellFrameToolbars( CShellFrame* pFrame )
 {
 
 	if( !pFrame )
@@ -4362,7 +4366,7 @@ void CToolBarInfo::Init()
 }
 
 /////////////////////////////////////////////////////////////////////////////
-void CToolBarInfo::CreateContext( CBCGToolBar* ptb, CFrameWnd* pParent )
+void CToolBarInfo::CreateContext( CMFCToolBar* ptb, CFrameWnd* pParent )
 {
 	Init();
 
@@ -4423,7 +4427,7 @@ void CToolBarInfo::CreateContext( CBCGToolBar* ptb, CFrameWnd* pParent )
 
 	for( int nButton = 0; nButton < ptb->GetCount(); nButton++ )
 	{
-		CBCGToolbarButton	*pb = ptb->GetButton( nButton );
+		CMFCToolBarButton	*pb = ptb->GetButton( nButton );
 		_make_button_string( pb, m_arBtnString );
 	}
 }
@@ -4458,7 +4462,7 @@ bool CToolBarInfo::Serialize( CStringArrayEx& strings, bool bLoad, int& idx )
 
 			idx--;	//step back
 
-			CBCGToolbarButton	*pbtn = _create_button_from_string( strings, idx, false );
+			CMFCToolBarButton	*pbtn = _create_button_from_string( strings, idx, false );
 
 			if( !pbtn )
 				continue;

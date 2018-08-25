@@ -23,7 +23,7 @@
 #include "bcgcontrolbar.h"
 #include "BCGOutlookButton.h"
 #include "BCGOutlookBar.h"
-#include "MenuImages.h"
+//#include "MenuImages.h"
 
 #ifdef _DEBUG
 #undef THIS_FILE

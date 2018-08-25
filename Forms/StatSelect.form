@@ -1,0 +1,521 @@
+[AxForm]
+Version=1
+Size=549, 150
+Title=
+
+[AXControls]
+Name=btnOffTo
+ProgID=PUSHBUTTON.PushButtonCtrl.1
+Rect=234, 118, 303, 139
+Style=50000000h
+ID=0
+Data=154 0c 01 00 01 00 00 00 00 00 00 00 01 00 01 00 01 00 00 00 00 06 cd e8 f7 e5 e3 ee 00 00 05 00 05 00 00 00 00 00 00 01 00 00 00 00 00 00 00 00 00 00 14 00 01 01 15 00 00 00 45 00 00 00 04 00 00 00 00 03 52 e3 0b 91 8f ce 11 9d e3 00 aa 00 4b b8 51 01 cc 00 00 90 01 44 42 01 00 0d 4d 53 20 53 61 6e 73 20 53 65 72 69 66 00 00 00 00 00 00 00 00 00 05 00 00 80 08 00 00 80 08 00 00 80 08 00 00 80 08 00 00 80 00 00 00 00 01 00 00 00 01 00 00 00 00 00 00 00 00 01 00
+
+Name=btnOffImg
+ProgID=PUSHBUTTON.PushButtonCtrl.1
+Rect=380, 118, 449, 139
+Style=50000000h
+ID=0
+Data=154 0c 01 00 01 00 00 00 00 00 00 00 01 00 01 00 01 00 00 00 00 06 cd e8 f7 e5 e3 ee 00 00 05 00 05 00 00 00 00 00 00 01 00 00 00 00 00 00 00 00 00 00 14 00 01 01 15 00 00 00 45 00 00 00 04 00 00 00 00 03 52 e3 0b 91 8f ce 11 9d e3 00 aa 00 4b b8 51 01 cc 00 00 90 01 44 42 01 00 0d 4d 53 20 53 61 6e 73 20 53 65 72 69 66 00 00 00 00 00 00 00 00 00 05 00 00 80 08 00 00 80 08 00 00 80 08 00 00 80 08 00 00 80 00 00 00 00 01 00 00 00 01 00 00 00 00 00 00 00 00 01 00
+
+Name=btnOnImg
+ProgID=PUSHBUTTON.PushButtonCtrl.1
+Rect=311, 118, 380, 139
+Style=50000000h
+ID=0
+Data=151 0c 01 00 01 00 00 00 00 00 00 00 01 00 01 00 01 00 00 00 00 03 c2 f1 e5 00 00 05 00 05 00 00 00 00 00 00 01 00 00 00 00 00 00 00 00 00 00 14 00 01 01 15 00 00 00 45 00 00 00 04 00 00 00 00 03 52 e3 0b 91 8f ce 11 9d e3 00 aa 00 4b b8 51 01 cc 00 00 90 01 44 42 01 00 0d 4d 53 20 53 61 6e 73 20 53 65 72 69 66 00 00 00 00 00 00 00 00 00 05 00 00 80 08 00 00 80 08 00 00 80 08 00 00 80 08 00 00 80 00 00 00 00 01 00 00 00 01 00 00 00 00 00 00 00 00 01 00
+
+Name=btnOnTo
+ProgID=PUSHBUTTON.PushButtonCtrl.1
+Rect=166, 118, 234, 139
+Style=50000000h
+ID=0
+Data=151 0c 01 00 01 00 00 00 00 00 00 00 01 00 01 00 01 00 00 00 00 03 c2 f1 e5 00 00 05 00 05 00 00 00 00 00 00 01 00 00 00 00 00 00 00 00 00 00 14 00 01 01 15 00 00 00 44 00 00 00 04 00 00 00 00 03 52 e3 0b 91 8f ce 11 9d e3 00 aa 00 4b b8 51 01 cc 00 00 90 01 44 42 01 00 0d 4d 53 20 53 61 6e 73 20 53 65 72 69 66 00 00 00 00 00 00 00 00 00 05 00 00 80 08 00 00 80 08 00 00 80 08 00 00 80 08 00 00 80 00 00 00 00 01 00 00 00 01 00 00 00 00 00 00 00 00 01 00
+
+Name=btnOffFrom
+ProgID=PUSHBUTTON.PushButtonCtrl.1
+Rect=101, 118, 165, 139
+Style=50000000h
+ID=0
+Data=154 0c 01 00 01 00 00 00 00 00 00 00 01 00 01 00 01 00 00 00 00 06 cd e8 f7 e5 e3 ee 00 00 05 00 05 00 00 00 00 00 00 01 00 00 00 00 00 00 00 00 00 00 14 00 01 01 15 00 00 00 40 00 00 00 04 00 00 00 00 03 52 e3 0b 91 8f ce 11 9d e3 00 aa 00 4b b8 51 01 cc 00 00 90 01 44 42 01 00 0d 4d 53 20 53 61 6e 73 20 53 65 72 69 66 00 00 00 00 00 00 00 00 00 05 00 00 80 08 00 00 80 08 00 00 80 08 00 00 80 08 00 00 80 00 00 00 00 01 00 00 00 01 00 00 00 00 00 00 00 00 01 00
+
+Name=btnOnFrom
+ProgID=PUSHBUTTON.PushButtonCtrl.1
+Rect=40, 118, 101, 139
+Style=50000000h
+ID=0
+Data=151 0c 01 00 01 00 00 00 00 00 00 00 01 00 01 00 01 00 00 00 00 03 c2 f1 e5 00 00 05 00 05 00 00 00 00 00 00 01 00 00 00 00 00 00 00 00 00 00 14 00 01 01 15 00 00 00 3d 00 00 00 04 00 00 00 00 03 52 e3 0b 91 8f ce 11 9d e3 00 aa 00 4b b8 51 01 cc 00 00 90 01 44 42 01 00 0d 4d 53 20 53 61 6e 73 20 53 65 72 69 66 00 00 00 00 00 00 00 00 00 05 00 00 80 08 00 00 80 08 00 00 80 08 00 00 80 08 00 00 80 00 00 00 00 01 00 00 00 01 00 00 00 00 00 00 00 00 01 00
+
+Name=lstClasses
+ProgID=VTCONTROLS.VTList.1
+Rect=40, 24, 303, 117
+Style=50000000h
+ID=0
+Data=2190 00 00 01 00 01 01 00 01 05 56 4c 69 73 74 0a 00 00 00 07 00 00 00 49 4c 01 01 04 00 07 00 04 00 10 00 10 00 ff ff ff ff 05 10 ff ff ff ff ff ff ff ff 42 4d 76 00 00 00 00 00 00 00 76 00 00 00 28 00 00 00 40 00 00 00 20 00 00 00 01 00 04 00 00 00 00 00 00 04 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 80 00 00 80 00 00 00 80 80 00 80 00 00 00 80 00 80 00 80 80 00 00 c0 c0 c0 00 80 80 80 00 00 00 ff 00 00 ff 00 00 00 ff ff 00 ff 00 00 00 ff 00 ff 00 ff ff 00 00 ff ff ff 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 ff ff ff ff ff f0 00 00 ff ff ff ff ff f0 00 00 ff ff ff ff ff f0 00 00 ff ff ff ff ff f0 00 00 ff ff ff ff ff f0 00 00 ff ff ff ff ff f0 00 00 ff ff ff ff ff f0 00 00 ff ff ff ff ff f0 00 00 ff ff 4f ff ff f0 00 00 ff ff ff ff ff f0 00 00 ff ff 4f ff ff f0 00 00 ff ff ff ff ff f0 00 00 ff f4 44 ff ff f0 00 00 ff ff ff ff ff f0 00 00 ff f4 44 ff ff f0 00 00 ff ff ff ff ff f0 00 00 ff 44 44 4f ff f0 00 00 ff ff ff ff ff f0 00 00 ff 44 44 4f ff f0 00 00 ff ff ff ff ff f0 00 00 ff 44 f4 44 ff f0 00 00 ff ff ff ff ff f0 00 00 ff 44 f4 44 ff f0 00 00 ff ff ff ff ff f0 00 00 ff 4f ff 44 4f f0 00 00 ff ff ff ff ff f0 00 00 ff 4f ff 44 4f f0 00 00 ff ff ff ff ff f0 00 00 ff ff ff f4 4f f0 00 00 ff ff ff ff ff f0 00 00 ff ff ff f4 4f f0 00 00 ff ff ff ff ff f0 00 00 ff ff ff ff 4f f0 00 00 ff ff ff ff ff f0 00 00 ff ff ff ff 4f f0 00 00 ff ff ff ff ff f0 00 00 ff ff ff ff ff f0 00 00 ff ff ff ff ff f0 00 00 ff ff ff ff ff f0 00 00 ff ff ff ff ff f0 00 00 ff ff ff ff ff f0 00 00 ff ff ff ff ff f0 00 00 ff ff ff ff ff f0 00 00 ff ff ff ff ff f0 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 42 4d 3e 00 00 00 00 00 00 00 3e 00 00 00 28 00 00 00 40 00 00 00 20 00 00 00 01 00 01 00 00 00 00 00 00 01 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 ff ff ff 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 ff ff ff ff ff ff ff ff 80 03 80 03 80 03 80 03 80 03 80 03 80 03 80 03 80 03 80 03 80 03 80 03 80 03 80 03 80 03 80 03 80 03 80 03 80 03 80 03 80 03 80 03 80 03 80 03 80 03 80 03 80 03 80 03 80 03 80 03 80 03 80 03 80 03 80 03 80 03 80 03 80 03 80 03 80 03 80 03 80 03 80 03 80 03 80 03 80 03 80 03 80 03 80 03 80 03 80 03 80 03 80 03 ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 ff ff ff ff 00 00 00 00 00 00 00 00 04 00 00 00 04 00 ff ff 01 00 0b 00 43 42 61 73 65 43 6f 6c 75 6d 6e 00 00 05 00 00 00 0c 00 00 00 09 00 00 00 00 00 00 00 00 00 00 00 90 01 00 00 00 00 00 00 00 02 02 02 4d 53 20 53 61 6e 73 20 53 65 72 69 66 00 32 65 20 32 65 20 f4 bc 59 04 30 20 30 30 20 30 30 20 00 00 00 00 00 00 00 00 00 02 00 00 00 14 00 00 00 01 00 00 00 00 00 00 00 01 00 00 00 00 00 00 00 01 00 00 00 ff ff ff 00 01 00 00 00 00 00 00 00 01 00 00 00 00 00 00 00 01 00 00 00 ff ff ff ff 01 80 00 00 05 00 00 00 0c 00 00 00 09 00 00 00 00 00 00 00 00 00 00 00 90 01 00 00 00 00 00 00 00 02 02 02 4d 53 20 53 61 6e 73 20 53 65 72 69 66 00 00 00 38 00 00 00 07 00 00 00 20 00 00 00 17 00 00 00 00 00 00 00 00 00 00 00 05 56 61 6c 75 65 02 00 00 00 67 00 00 00 01 00 00 00 01 00 00 00 01 00 00 00 00 00 00 00 01 00 00 00 ff ff ff 00 01 00 00 00 00 00 00 00 04 00 00 00 ff ff ff ff ff ff ff ff ff ff ff ff 01 80 00 00 05 00 00 00 0c 00 00 00 09 00 00 00 00 00 00 00 00 00 00 00 90 01 00 00 00 00 00 00 00 02 02 02 4d 53 20 53 61 6e 73 20 53 65 72 69 66 00 00 00 38 00 00 00 07 00 00 00 20 00 00 00 17 00 00 00 00 00 00 00 00 00 00 00 00 02 00 00 00 14 00 00 00 01 00 00 00 00 00 00 00 01 00 00 00 00 00 00 00 01 00 00 00 ff ff ff 00 01 00 00 00 00 00 00 00 01 00 00 00 02 00 00 00 03 00 00 00 ff ff ff ff 01 80 00 00 05 00 00 00 0c 00 00 00 09 00 00 00 00 00 00 00 00 00 00 00 90 01 00 00 00 00 00 00 00 02 02 02 4d 53 20 53 61 6e 73 20 53 65 72 69 66 00 32 65 20 32 65 20 f4 bc 59 04 30 20 30 30 20 30 30 20 00 00 00 00 00 00 00 00 05 56 61 6c 75 65 02 00 00 00 67 00 00 00 01 00 00 00 01 00 00 00 01 00 00 00 00 00 00 00 01 00 00 00 ff ff ff 00 01 00 00 00 00 00 00 00 04 00 00 00 ff ff ff ff ff ff ff ff ff ff ff ff 0d 00 00 80 0e 00 00 80 0f 00 00 80 0d 00 00 80 0e 00 00 80 01 00 00 00 01 00 00 00 00 00 00 00 01 00 00 00 05 56 4c 69 73 74 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 01 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+
+Name=lstImages
+ProgID=VTCONTROLS.VTList.1
+Rect=311, 24, 449, 117
+Style=50000000h
+ID=0
+Data=1919 00 00 01 00 01 01 00 01 05 56 4c 69 73 74 0a 00 00 00 07 00 00 00 49 4c 01 01 02 00 07 00 04 00 10 00 10 00 ff ff ff ff 05 10 ff ff ff ff ff ff ff ff 42 4d 76 00 00 00 00 00 00 00 76 00 00 00 28 00 00 00 40 00 00 00 20 00 00 00 01 00 04 00 00 00 00 00 00 04 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 80 00 00 80 00 00 00 80 80 00 80 00 00 00 80 00 80 00 80 80 00 00 c0 c0 c0 00 80 80 80 00 00 00 ff 00 00 ff 00 00 00 ff ff 00 ff 00 00 00 ff 00 ff 00 ff ff 00 00 ff ff ff 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 ff ff ff ff ff f0 00 00 ff ff ff ff ff f0 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 ff ff ff ff ff f0 00 00 ff ff ff ff ff f0 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 ff ff 4f ff ff f0 00 00 ff ff ff ff ff f0 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 ff f4 44 ff ff f0 00 00 ff ff ff ff ff f0 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 ff 44 44 4f ff f0 00 00 ff ff ff ff ff f0 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 ff 44 f4 44 ff f0 00 00 ff ff ff ff ff f0 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 ff 4f ff 44 4f f0 00 00 ff ff ff ff ff f0 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 ff ff ff f4 4f f0 00 00 ff ff ff ff ff f0 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 ff ff ff ff 4f f0 00 00 ff ff ff ff ff f0 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 ff ff ff ff ff f0 00 00 ff ff ff ff ff f0 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 ff ff ff ff ff f0 00 00 ff ff ff ff ff f0 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 42 4d 3e 00 00 00 00 00 00 00 3e 00 00 00 28 00 00 00 40 00 00 00 20 00 00 00 01 00 01 00 00 00 00 00 00 01 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 ff ff ff 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 ff ff ff ff 00 00 00 00 80 03 80 03 00 00 00 00 80 03 80 03 00 00 00 00 80 03 80 03 00 00 00 00 80 03 80 03 00 00 00 00 80 03 80 03 00 00 00 00 80 03 80 03 00 00 00 00 80 03 80 03 00 00 00 00 80 03 80 03 00 00 00 00 80 03 80 03 00 00 00 00 80 03 80 03 00 00 00 00 80 03 80 03 00 00 00 00 80 03 80 03 00 00 00 00 80 03 80 03 00 00 00 00 ff ff ff ff 00 00 00 00 ff ff ff ff 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 ff ff ff ff 00 00 00 00 00 00 00 00 02 00 00 00 02 00 ff ff 01 00 0b 00 43 42 61 73 65 43 6f 6c 75 6d 6e 00 00 05 00 00 00 0c 00 00 00 09 00 00 00 00 00 00 00 00 00 00 00 90 01 00 00 00 00 00 00 00 02 02 02 4d 53 20 53 61 6e 73 20 53 65 72 69 66 00 32 65 20 32 65 20 f4 bc 59 04 30 20 30 30 20 30 30 20 00 00 00 00 00 00 00 00 00 02 00 00 00 14 00 00 00 01 00 00 00 00 00 00 00 01 00 00 00 00 00 00 00 01 00 00 00 ff ff ff 00 01 00 00 00 00 00 00 00 01 00 00 00 00 00 00 00 01 00 00 00 ff ff ff ff 01 80 00 00 05 00 00 00 0c 00 00 00 09 00 00 00 00 00 00 00 00 00 00 00 90 01 00 00 00 00 00 00 00 02 02 02 4d 53 20 53 61 6e 73 20 53 65 72 69 66 00 e9 e3 e7 e9 e3 e7 e9 e3 e7 e9 e3 e7 e9 e3 e7 e9 e3 e7 00 00 00 00 00 00 00 00 05 56 61 6c 75 65 02 00 00 00 64 00 00 00 01 00 00 00 01 00 00 00 01 00 00 00 00 00 00 00 01 00 00 00 ff ff ff 00 01 00 00 00 00 00 00 00 04 00 00 00 ff ff ff ff ff ff ff ff ff ff ff ff 0d 00 00 80 0e 00 00 80 0f 00 00 80 0d 00 00 80 0e 00 00 80 01 00 00 00 01 00 00 00 00 00 00 00 01 00 00 00 05 56 4c 69 73 74 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 01 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+
+Name=btnAxis
+ProgID=PUSHBUTTON.PushButtonCtrl.1
+Rect=7, 116, 30, 139
+Style=50000000h
+ID=0
+Data=1258 0c 01 01 01 01 00 00 00 00 18 45 3a 5c 50 53 44 5c 69 63 6f 6e 73 5c 53 74 61 74 5c 58 59 2e 62 6d 70 18 45 3a 5c 50 53 44 5c 69 63 6f 6e 73 5c 53 74 61 74 5c 58 59 2e 62 6d 70 01 00 01 00 01 00 00 00 00 00 00 00 05 00 05 00 00 00 00 00 00 01 00 00 00 00 00 00 00 00 00 00 14 00 01 01 17 00 00 00 17 00 00 00 04 00 00 00 00 03 52 e3 0b 91 8f ce 11 9d e3 00 aa 00 4b b8 51 01 cc 00 00 90 01 44 42 01 00 0d 4d 53 20 53 61 6e 73 20 53 65 72 69 66 00 00 00 00 00 00 00 00 00 ff 00 ff 00 08 00 00 80 08 00 00 80 08 00 00 80 08 00 00 80 00 00 00 00 00 00 00 00 01 00 00 00 01 00 00 00 00 01 00 42 4d 26 04 00 00 00 00 00 00 36 00 00 00 28 00 00 00 12 00 00 00 12 00 00 00 01 00 18 00 00 00 00 00 f0 03 00 00 12 0b 00 00 12 0b 00 00 00 00 00 00 00 00 00 00 ff 00 ff f0 c4 9d 6e 58 46 82 8c 8e aa b7 b9 bd cc cf bd cc cf bd cc cf bd cc cf bd cc cf bd cc cf bd cc cf bd cc cf bd cc cf 00 00 00 89 93 95 90 9a 9c b7 c5 c8 00 00 ff 00 ff f0 c4 9d 6e 58 46 75 7e 7f 82 8c 8e 89 93 95 89 93 95 89 93 95 89 93 95 89 93 95 89 93 95 89 93 95 89 93 95 89 93 95 6e 58 46 00 00 00 7c 85 86 a3 af b2 00 00 6e 58 46 6e 58 46 6e 58 46 6e 58 46 6e 58 46 6e 58 46 6e 58 46 6e 58 46 6e 58 46 6e 58 46 6e 58 46 6e 58 46 6e 58 46 6e 58 46 6e 58 46 f0 c4 9d 00 00 00 b7 c5 c8 00 00 ff 00 ff f0 c4 9d f0 c4 9d f0 c4 9d f0 c4 9d f0 c4 9d f0 c4 9d f0 c4 9d f0 c4 9d f0 c4 9d f0 c4 9d f0 c4 9d f0 c4 9d f0 c4 9d 6e 58 46 6e 58 46 b7 c5 c8 ff 00 ff 00 00 ff 00 ff f0 c4 9d 6e 58 46 89 93 95 bd cc cf ff 00 ff ff 00 ff b8 b8 b8 ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff 6e 58 46 cb db dd ff 00 ff ff 00 ff 00 00 ff 00 ff f0 c4 9d 6e 58 46 89 93 95 bd cc cf ff 00 ff ff 00 ff b8 b8 b8 ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff b8 b8 b8 ff 00 ff ff 00 ff ff 00 ff 00 00 ff 00 ff f0 c4 9d 6e 58 46 7b 7b 7b aa aa aa b8 b8 b8 b8 b8 b8 b8 b8 b8 b8 b8 b8 b8 b8 b8 b8 b8 b8 b8 b8 b8 b8 b8 b8 b8 b8 b8 00 00 00 ff e8 d4 00 00 00 b8 b8 b8 00 00 ff 00 ff f0 c4 9d 6e 58 46 89 93 95 bd cc cf ff 00 ff ff 00 ff b8 b8 b8 ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff 00 00 00 ff e8 d4 00 00 00 ff 00 ff 00 00 ff 00 ff f0 c4 9d 6e 58 46 89 93 95 bd cc cf ff 00 ff ff 00 ff b8 b8 b8 ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff e8 d4 00 00 00 ff e8 d4 ff 00 ff 00 00 ff 00 ff f0 c4 9d 6e 58 46 89 93 95 bd cc cf ff 00 ff ff 00 ff b8 b8 b8 ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff 00 00 00 ff e8 d4 00 00 00 ff 00 ff 00 00 ff 00 ff f0 c4 9d 6e 58 46 7b 7b 7b aa aa aa b8 b8 b8 b8 b8 b8 b8 b8 b8 b8 b8 b8 b8 b8 b8 b8 b8 b8 b8 b8 b8 b8 b8 b8 b8 b8 b8 00 00 00 ff e8 d4 00 00 00 b8 b8 b8 00 00 ff 00 ff f0 c4 9d 6e 58 46 89 93 95 bd cc cf ff 00 ff ff 00 ff b8 b8 b8 ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff b8 b8 b8 ff 00 ff ff 00 ff ff 00 ff 00 00 ff 00 ff f0 c4 9d 6e 58 46 89 93 95 bd cc cf ff 00 ff ff 00 ff b8 b8 b8 ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff b8 b8 b8 ff 00 ff ff 00 ff ff 00 ff 00 00 ff 00 ff f0 c4 9d 6e 58 46 82 8c 8e aa b7 b9 c4 d3 d6 ff 00 ff 00 00 00 00 00 00 95 95 95 ff 00 ff ff 00 ff ff 00 ff ff 00 ff b8 b8 b8 ff 00 ff ff 00 ff ff 00 ff 00 00 ff 00 ff f0 c4 9d 6e 58 46 69 69 69 7b 7b 7b 98 98 98 b6 b6 b6 b8 b8 b8 b8 b8 b8 00 00 00 b8 b8 b8 b8 b8 b8 b8 b8 b8 b8 b8 b8 b8 b8 b8 b8 b8 b8 b8 b8 b8 b8 b8 b8 00 00 6e 58 46 6e 58 46 6e 58 46 6e 58 46 00 00 00 b7 c5 c8 ff 00 ff 95 95 95 00 00 00 00 00 00 ff 00 ff ff 00 ff ff 00 ff ff 00 ff b8 b8 b8 ff 00 ff ff 00 ff ff 00 ff 00 00 ff 00 ff 6e 58 46 f0 c4 9d 00 00 00 b7 c5 c8 ff 00 ff ff 00 ff 00 00 00 ff e8 d4 00 00 00 ff 00 ff ff 00 ff ff 00 ff ff 00 ff b8 b8 b8 ff 00 ff ff 00 ff ff 00 ff 00 00 ff 00 ff ff 00 ff 00 00 00 ff 00 ff ff 00 ff ff 00 ff ff 00 ff 00 00 00 ff e8 d4 00 00 00 ff 00 ff ff 00 ff ff 00 ff ff 00 ff b8 b8 b8 ff 00 ff ff 00 ff ff 00 ff 00 00
+
+Name=btnSetup
+ProgID=PUSHBUTTON.PushButtonCtrl.1
+Rect=7, 93, 30, 116
+Style=50000000h
+ID=0
+Data=1265 0c 01 01 01 01 00 00 00 00 19 45 3a 5c 50 53 44 5c 69 63 6f 6e 73 5c 53 74 61 74 5c 54 69 74 2e 62 6d 70 19 45 3a 5c 50 53 44 5c 69 63 6f 6e 73 5c 53 74 61 74 5c 54 69 74 2e 62 6d 70 01 00 01 00 01 00 00 00 00 05 54 69 74 6c 65 00 00 05 00 05 00 00 00 00 00 00 01 00 00 00 00 00 00 00 00 00 00 14 00 01 01 17 00 00 00 17 00 00 00 04 00 00 00 00 03 52 e3 0b 91 8f ce 11 9d e3 00 aa 00 4b b8 51 01 cc 00 00 90 01 44 42 01 00 0d 4d 53 20 53 61 6e 73 20 53 65 72 69 66 00 00 00 00 00 00 00 00 00 ff 00 ff 00 08 00 00 80 08 00 00 80 08 00 00 80 08 00 00 80 00 00 00 00 00 00 00 00 01 00 00 00 01 00 00 00 00 01 00 42 4d 26 04 00 00 00 00 00 00 36 00 00 00 28 00 00 00 12 00 00 00 12 00 00 00 01 00 18 00 00 00 00 00 f0 03 00 00 12 0b 00 00 12 0b 00 00 00 00 00 00 00 00 00 00 6a 50 45 fb f6 f1 fb f6 f1 fb f6 f1 fb f7 f2 fb f4 ee fa f0 e7 f9 ec e0 f8 e6 d7 f6 e0 cc f5 da c2 f3 d5 b9 f2 cf b0 f1 ca a7 f0 c6 a0 f0 c4 9d f0 c4 9d f0 c4 9d 00 00 6a 50 45 fb f6 f1 fb f6 f1 fb f6 f1 fb f7 f2 fb f4 ee fa f0 e7 f9 ec e0 f8 e6 d7 f6 e0 cc f5 da c2 f3 d5 b9 f2 cf b0 f1 ca a7 f0 c6 a0 f0 c4 9d f0 c4 9d f0 c4 9d 00 00 6a 50 45 fb f6 f1 fb f6 f1 fb f6 f1 fb f6 f1 fb f6 f0 fb f2 ec f9 ee e5 f8 e9 dc f7 e3 d1 f6 dd c8 f5 d8 bf f3 d2 b5 f2 cc ac f1 c8 a5 f0 c5 9e f0 c3 9c f0 c4 9d 00 00 6a 50 45 fb f6 f1 fb f6 f1 fb f6 f1 fb f6 f1 fb f6 f2 fb f5 ef fa f1 ea f9 ed e1 f8 e7 d7 f7 e1 ce f6 dc c5 f4 d6 ba f3 d0 b0 f2 cb a9 f1 c7 a2 f0 c4 9d f0 c4 9d 00 00 6a 50 45 fb f6 f1 fb f6 f1 fb f6 f1 fb f6 f1 fb f6 f1 fb f6 f1 fb f4 ee fa f0 e7 11 11 11 11 11 11 f7 df cb 11 11 11 11 11 11 f2 ce ae 11 11 11 11 11 11 f0 c4 9d 00 00 6a 50 45 fb f6 f1 fb f6 f1 fb f6 f1 fb f6 f1 fb f6 f1 fb f6 f1 fb f6 f1 fa f3 eb 11 11 11 11 11 11 f8 e3 d2 11 11 11 11 11 11 f2 d1 b4 11 11 11 11 11 11 f0 c5 9e 00 00 6a 50 45 fb f6 f1 f3 ee ea e4 df db dc d8 d3 dc d8 d3 dc d8 d3 dc d8 d4 e3 de d8 f2 e9 e0 f9 eb e0 f8 e7 d8 f6 e1 cd f4 db c2 f3 d5 ba f2 d0 b0 f1 ca a7 f0 c7 a2 00 00 6a 50 45 fb f6 f1 ec e7 e2 c9 c5 c1 ae ab a7 a3 a0 9c a7 a3 a0 b6 b2 af cd c9 c4 eb e4 de f9 ee e5 f8 ea dd f7 e4 d4 f5 de c9 f4 d8 c0 f3 d3 b6 f1 cd ac f1 ca a7 00 00 6a 50 45 fb f6 f1 b6 93 74 b6 93 74 b6 93 74 6e 59 46 6e 59 46 6e 59 46 e4 e0 dc f3 ed e9 fa f2 e9 f9 ee e2 f8 e8 d9 f6 e2 ce f5 dc c5 f4 d7 bb f2 d0 b1 f2 cd ab 00 00 6a 50 45 fb f6 f1 fb f6 f1 bb d8 ea b6 93 74 6e 59 46 9f 9c 98 dc d8 d3 fb f6 f1 fb f6 f1 fb f4 ed f9 f0 e7 f8 eb de f8 e5 d4 f6 df cc f5 da c2 f3 d3 b6 f2 cf b0 00 00 6a 50 45 6a 50 45 6a 50 45 ad d3 ec b6 93 74 6e 59 46 43 33 2c 5d 46 3d 6a 50 45 6a 50 45 6a 50 45 6a 50 45 6a 50 45 6a 50 45 6a 50 45 6a 50 45 6a 50 45 6a 50 45 00 00 ff 00 ff ff 00 ff ff 00 ff 94 cf f4 b6 93 74 6e 59 46 89 93 95 bd cc cf ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff 00 00 d5 e5 e8 cb db dd c7 d7 da 91 cf f7 b6 93 74 6e 59 46 89 93 95 bd cc cf d1 e2 e5 cb db dd d1 e2 e5 ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff 00 00 cb db dd aa b7 b9 9c a8 aa 91 cf f7 b6 93 74 6e 59 46 82 8c 8e aa b7 b9 b0 be c0 aa b7 b9 c4 d3 d6 ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff 00 00 a9 cf e5 b6 93 74 78 81 83 91 cf f7 b6 93 74 6e 59 46 75 7e 7f 82 8c 8e 6e 59 46 90 9a 9c bd cc cf ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff 00 00 91 cf f7 b6 93 74 b6 93 74 b6 93 74 b6 93 74 b6 93 74 6e 59 46 6e 59 46 6e 59 46 97 a2 a4 c3 d2 d5 ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff 00 00 91 cf f7 b6 93 74 b6 93 74 b6 93 74 b6 93 74 b6 93 74 b6 93 74 b6 93 74 b6 93 74 b8 c6 c9 cf df e2 ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff 00 00 91 cf f7 91 cf f7 91 cf f7 91 cf f7 91 cf f7 91 cf f7 9a cf ef aa d1 e7 bf d9 e2 d2 e2 e5 ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff 00 00
+
+Name=btnClass
+ProgID=PUSHBUTTON.PushButtonCtrl.1
+Rect=7, 24, 30, 47
+Style=50000000h
+ID=0
+Data=1260 0c 01 01 01 01 00 00 00 00 19 45 3a 5c 50 53 44 5c 69 63 6f 6e 73 5c 53 74 61 74 5c 43 66 67 2e 62 6d 70 19 45 3a 5c 50 53 44 5c 69 63 6f 6e 73 5c 53 74 61 74 5c 43 66 67 2e 62 6d 70 01 01 01 00 01 01 00 00 00 00 00 00 05 00 05 00 00 00 00 00 00 01 00 00 00 00 00 00 00 00 00 00 14 00 01 01 17 00 00 00 17 00 00 00 04 00 00 00 00 03 52 e3 0b 91 8f ce 11 9d e3 00 aa 00 4b b8 51 01 cc 00 00 90 01 44 42 01 00 0d 4d 53 20 53 61 6e 73 20 53 65 72 69 66 00 00 00 00 00 00 00 00 00 ff 00 ff 00 08 00 00 80 08 00 00 80 08 00 00 80 08 00 00 80 00 00 00 00 00 00 00 00 01 00 00 00 01 00 00 00 00 01 00 42 4d 26 04 00 00 00 00 00 00 36 00 00 00 28 00 00 00 12 00 00 00 12 00 00 00 01 00 18 00 00 00 00 00 f0 03 00 00 12 0b 00 00 12 0b 00 00 00 00 00 00 00 00 00 00 c4 d3 d6 9d a9 ab 9d a9 ab 9d a9 ab 9d a9 ab 9d a9 ab 9d a9 ab 9d a9 ab 9d a9 ab 9d a9 ab 9d a9 ab c4 d3 d6 ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff 00 00 c3 e1 ef 71 5b 48 71 5b 48 71 5b 48 71 5b 48 71 5b 48 71 5b 48 71 5b 48 71 5b 48 71 5b 48 89 93 95 bd cc cf ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff 00 00 bc df f0 f8 e6 d7 f7 e5 d5 f7 e3 d3 f7 e2 d1 f6 e1 cf f6 e0 cd f6 de ca f6 dd c9 71 5b 48 89 93 95 bd cc cf ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff 00 00 b4 dc f1 f8 e8 da 71 5b 48 84 6b 54 a1 82 66 c0 9b 7b dd b2 8d f6 e0 cd f6 df cb 71 5b 48 89 93 95 bd cc cf ff 00 ff ff 00 ff c4 d3 d6 bd cc cf bd cc cf bd cc cf 00 00 ad d9 f3 f9 ec e1 f9 eb df f8 e9 dd f8 e8 da f8 e7 d8 f7 e6 d6 f7 e3 d2 f7 e2 d0 71 5b 48 89 93 95 bd cc cf ff 00 ff b7 c5 c8 96 a2 a4 89 93 95 89 93 95 89 93 95 00 00 a6 d7 f4 81 81 81 81 81 81 81 81 81 81 81 81 81 81 81 81 81 81 81 81 81 81 81 81 71 5b 48 89 93 95 b7 c5 c8 b7 c5 c8 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 9f d4 f5 f8 e6 d7 f7 e5 d5 f7 e3 d3 f7 e2 d1 f6 e1 cf f6 e0 cd f6 de ca f6 df cb 71 5b 48 82 8c 8e 9d a9 ab 00 00 00 ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff 00 00 9a d2 f6 f8 e8 da 71 5b 48 84 6b 54 a1 82 66 c0 9b 7b dd b2 8d f6 e0 cd f7 e2 d0 71 5b 48 75 7e 7f 00 00 00 00 00 00 00 00 00 ff ff ff ff ff ff ff ff ff ff ff ff 00 00 95 d0 f6 f9 ec e1 f9 eb df f8 e9 dd f8 e8 da f8 e7 d8 f7 e6 d6 f7 e3 d2 f7 e2 d0 71 5b 48 00 00 00 ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff 00 00 91 cf f7 81 81 81 81 81 81 81 81 81 81 81 81 81 81 81 81 81 81 81 81 81 0a 08 08 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 ff ff ff ff ff ff ff ff ff ff ff ff 00 00 91 cf f7 fa f2 eb fa f1 e9 fa f0 e7 fa ee e5 f9 ed e3 f9 ec e1 0a 09 08 ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff 00 00 91 cf f7 fb f4 ed 71 5b 48 84 6b 54 a1 82 66 c0 9b 7b dd b2 8d f9 eb e0 0a 09 09 0a 08 08 00 00 00 00 00 00 00 00 00 00 00 00 ff ff ff ff ff ff ff ff ff 00 00 00 00 00 91 cf f7 fb f7 f2 fb f6 f1 fb f5 ef fb f4 ee fb f3 ec fa f2 ea fa ef e6 f9 ee e4 71 5b 48 89 93 95 bd cc cf 00 00 00 ff ff ff ff ff ff 00 00 00 00 00 00 c4 d3 d6 00 00 91 cf f7 81 81 81 81 81 81 81 81 81 81 81 81 81 81 81 81 81 81 81 81 81 81 81 81 71 5b 48 89 93 95 bd cc cf 00 00 00 ff ff ff 00 00 00 b7 c5 c8 ff 00 ff ff 00 ff 00 00 91 cf f7 fc f9 f6 fc f8 f5 fc f8 f4 fc f7 f3 fb f6 f1 fb f5 f0 fb f3 ed fa f2 eb 71 5b 48 89 93 95 bd cc cf 00 00 00 00 00 00 c4 d3 d6 ff 00 ff ff 00 ff ff 00 ff 00 00 91 cf f7 fc f9 f6 71 5b 48 84 6b 54 a1 82 66 c0 9b 7b dd b2 8d fb f6 f2 fb f5 f0 71 5b 48 89 93 95 bd cc cf ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff 00 00 91 cf f7 fc f9 f6 fc f9 f6 fc f9 f6 fc f9 f6 fc f9 f6 fc f9 f6 fc f9 f6 fc f8 f5 71 5b 48 9d a9 ab c4 d3 d6 ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff 00 00 91 cf f7 91 cf f7 91 cf f7 91 cf f7 91 cf f7 91 cf f7 99 d2 f6 a4 d6 f4 b0 db f2 bb df f0 c4 d3 d6 ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff 00 00
+
+Name=btnSelection
+ProgID=PUSHBUTTON.PushButtonCtrl.1
+Rect=7, 47, 30, 70
+Style=50000000h
+ID=0
+Data=1260 0c 01 01 01 01 00 00 00 00 19 45 3a 5c 50 53 44 5c 69 63 6f 6e 73 5c 53 74 61 74 5c 53 65 6c 2e 62 6d 70 19 45 3a 5c 50 53 44 5c 69 63 6f 6e 73 5c 53 74 61 74 5c 53 65 6c 2e 62 6d 70 01 00 01 00 01 00 00 00 00 00 00 00 05 00 05 00 00 00 00 00 00 01 00 00 00 00 00 00 00 00 00 00 14 00 01 01 17 00 00 00 17 00 00 00 04 00 00 00 00 03 52 e3 0b 91 8f ce 11 9d e3 00 aa 00 4b b8 51 01 cc 00 00 90 01 44 42 01 00 0d 4d 53 20 53 61 6e 73 20 53 65 72 69 66 00 00 00 00 00 00 00 00 00 ff 00 ff 00 08 00 00 80 08 00 00 80 08 00 00 80 08 00 00 80 00 00 00 00 00 00 00 00 01 00 00 00 01 00 00 00 00 01 00 42 4d 26 04 00 00 00 00 00 00 36 00 00 00 28 00 00 00 12 00 00 00 12 00 00 00 01 00 18 00 00 00 00 00 f0 03 00 00 12 0b 00 00 12 0b 00 00 00 00 00 00 00 00 00 00 ff 00 ff c4 d3 d6 bd cc cf bd cc cf bd cc cf bd cc cf bd cc cf bd cc cf bd cc cf bd cc cf bd cc cf bd cc cf bd cc cf bd cc cf bd cc cf c4 d3 d6 ff 00 ff ff 00 ff 00 00 c4 d3 d6 9d a9 ab 89 93 95 89 93 95 89 93 95 89 93 95 89 93 95 89 93 95 89 93 95 89 93 95 89 93 95 89 93 95 89 93 95 89 93 95 89 93 95 96 a2 a4 b0 be c0 bd cc cf 00 00 c5 e2 ef 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 75 7e 7f 82 8c 8e 89 93 95 00 00 bf e0 f0 00 00 00 d3 c5 b7 d3 c5 b7 d3 c5 b7 71 5b 48 b9 df d0 b9 df d0 b9 df d0 b9 df d0 71 5b 48 ff bd ff ff bd ff ff bd ff 00 00 00 00 00 00 00 00 00 00 00 00 00 00 b8 de f1 00 00 00 d3 c5 b7 d3 c5 b7 d3 c5 b7 71 5b 48 b9 df d0 b9 df d0 b9 df d0 b9 df d0 71 5b 48 ff bd ff ff bd ff 00 00 00 ff ff ff ff ff ff ff ff ff ff ff ff 00 00 b1 db f2 00 00 00 d3 c5 b7 d3 c5 b7 d3 c5 b7 71 5b 48 b9 df d0 b9 df d0 b9 df d0 b9 df d0 71 5b 48 ff bd ff 00 00 00 00 00 00 00 00 00 ff ff ff ff ff ff ff ff ff 00 00 a9 d8 f3 00 00 00 d3 c5 b7 00 00 00 d3 c5 b7 71 5b 48 b9 df d0 b9 df d0 b9 df d0 b9 df d0 71 5b 48 00 00 00 ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff 00 00 a2 d5 f4 00 00 00 d3 c5 b7 d3 c5 b7 d3 c5 b7 71 5b 48 b9 df d0 b9 df d0 b9 df d0 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 ff ff ff ff ff ff ff ff ff 00 00 9b d3 f5 00 00 00 d3 c5 b7 d3 c5 b7 d3 c5 b7 71 5b 48 b9 df d0 b9 df d0 00 00 00 ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff 00 00 95 d1 f6 00 00 00 d3 c5 b7 d3 c5 b7 d3 c5 b7 71 5b 48 b9 df d0 b9 df d0 b9 df d0 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 ff ff ff ff ff ff ff ff ff 00 00 91 cf f7 00 00 00 d3 c5 b7 00 00 00 d3 c5 b7 71 5b 48 b9 df d0 ff ff ff b9 df d0 b9 df d0 71 5b 48 ff da ff ff da ff 00 00 00 ff ff ff ff ff ff 00 00 00 00 00 00 00 00 91 cf f7 00 00 00 d3 c5 b7 d3 c5 b7 d3 c5 b7 71 5b 48 ff ff ff b9 df d0 ff ff ff b9 df d0 71 5b 48 ff ff ff ff da ff 00 00 00 ff ff ff 00 00 00 b0 be c0 ff 00 ff 00 00 91 cf f7 00 00 00 d3 c5 b7 d3 c5 b7 d3 c5 b7 71 5b 48 ff ff ff ff ff ff b9 df d0 ff ff ff 71 5b 48 ff da ff ff ff ff ff da ff 00 00 00 89 93 95 bd cc cf ff 00 ff 00 00 91 cf f7 00 00 00 d3 c5 b7 d3 c5 b7 d3 c5 b7 71 5b 48 ff ff ff ff ff ff ff ff ff b9 df d0 71 5b 48 ff ff ff ff da ff ff ff ff 00 00 00 89 93 95 bd cc cf ff 00 ff 00 00 91 cf f7 00 00 00 71 5b 48 71 5b 48 71 5b 48 71 5b 48 71 5b 48 71 5b 48 71 5b 48 71 5b 48 71 5b 48 71 5b 48 71 5b 48 71 5b 48 00 00 00 89 93 95 bd cc cf ff 00 ff 00 00 91 cf f7 00 00 00 ff df bf ff df bf ff df bf 71 5b 48 ff df bf ff df bf ff df bf ff df bf 00 00 00 ff df bf ff df bf ff df bf 00 00 00 89 93 95 bd cc cf ff 00 ff 00 00 91 cf f7 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 9d a9 ab c4 d3 d6 ff 00 ff 00 00 91 cf f7 91 cf f7 91 cf f7 91 cf f7 91 cf f7 91 cf f7 91 cf f7 91 cf f7 91 cf f7 97 d1 f6 9f d4 f5 a8 d8 f3 b2 db f2 bb df f0 c3 e2 ef c4 d3 d6 ff 00 ff ff 00 ff 00 00
+
+Name=btnGraph
+ProgID=PUSHBUTTON.PushButtonCtrl.1
+Rect=7, 70, 30, 93
+Style=50000000h
+ID=0
+Data=1258 0c 01 01 01 01 00 00 00 00 18 45 3a 5c 50 53 44 5c 69 63 6f 6e 73 5c 53 74 61 74 5c 47 72 2e 62 6d 70 18 45 3a 5c 50 53 44 5c 69 63 6f 6e 73 5c 53 74 61 74 5c 47 72 2e 62 6d 70 01 00 01 00 01 00 00 00 00 00 00 00 05 00 05 00 00 00 00 00 00 01 00 00 00 00 00 00 00 00 00 00 14 00 01 01 17 00 00 00 17 00 00 00 04 00 00 00 00 03 52 e3 0b 91 8f ce 11 9d e3 00 aa 00 4b b8 51 01 cc 00 00 90 01 44 42 01 00 0d 4d 53 20 53 61 6e 73 20 53 65 72 69 66 00 00 00 00 00 00 00 00 00 ff 00 ff 00 08 00 00 80 08 00 00 80 08 00 00 80 08 00 00 80 00 00 00 00 00 00 00 00 01 00 00 00 01 00 00 00 00 01 00 42 4d 26 04 00 00 00 00 00 00 36 00 00 00 28 00 00 00 12 00 00 00 12 00 00 00 01 00 18 00 00 00 00 00 f0 03 00 00 12 0b 00 00 12 0b 00 00 00 00 00 00 00 00 00 00 6e 58 46 6e 58 46 6e 58 46 6e 58 46 6e 58 46 6e 58 46 6e 58 46 6e 58 46 6e 58 46 6e 58 46 6e 58 46 6e 58 46 6e 58 46 6e 58 46 6e 58 46 6e 58 46 6e 58 46 6e 58 46 00 00 6e 58 46 bb df f0 11 11 11 f5 dc c4 f4 d7 bd f4 d3 b5 11 11 11 f2 cb a7 f1 c7 a2 f0 c4 9d 11 11 11 f0 c2 99 f0 c2 99 f0 c2 99 11 11 11 ff 00 ff ff 00 ff ff 00 ff 00 00 6e 58 46 bb df f0 11 11 11 f7 e1 cd f6 dc c6 f5 d8 be 11 11 11 f3 cf af f2 cb a8 f1 c8 a2 11 11 11 f0 c2 9a f0 c2 99 f0 c2 99 11 11 11 ff 00 ff ff 00 ff ff 00 ff 00 00 6e 58 46 bb df f0 11 11 11 f8 e6 d6 f7 e2 cf f6 dd c7 11 11 11 f4 d4 b8 f3 d0 b0 f2 cc aa 11 11 11 f1 c5 9e f0 c3 9a f0 c2 99 11 11 11 ff 00 ff ff 00 ff ff 00 ff 00 00 6e 58 46 bb df f0 11 11 11 f9 eb de f8 e7 d7 f7 e2 d0 11 11 11 f5 d9 c0 f4 d5 b9 f3 d0 b1 11 11 11 f1 c9 a4 f1 c6 9f f0 c3 9b 11 11 11 ff 00 ff ff 00 ff ff 00 ff 00 00 6e 58 46 a4 d6 f4 11 11 11 fa ef e6 f9 ec df f8 e8 d9 11 11 11 f6 df ca f5 da c2 f4 d6 ba 11 11 11 f2 cd ac f2 c9 a5 f1 c6 a0 11 11 11 ff 00 ff ff 00 ff ff 00 ff 00 00 6e 58 46 a4 d6 f4 11 11 11 fa f0 e7 fa f0 e7 f9 ec e0 11 11 11 f7 e4 d2 f6 df cb f5 db c3 11 11 11 f3 d2 b4 f2 ce ad f2 ca a6 11 11 11 ff 00 ff ff 00 ff ff 00 ff 00 00 6e 58 46 91 cf f7 11 11 11 fa f3 ed fa f3 ed fa f0 e8 11 11 11 f8 e9 db f7 e5 d4 f6 e0 cc 11 11 11 11 11 11 11 11 11 11 11 11 11 11 11 ff 00 ff ff 00 ff ff 00 ff 00 00 6e 58 46 91 cf f7 11 11 11 fb f6 f1 fb f6 f1 fb f4 ed 11 11 11 f9 ed e3 f8 ea dc f7 e5 d5 11 11 11 ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff 00 00 6e 58 46 91 cf f7 11 11 11 fb f6 f1 fb f6 f1 fb f6 f1 11 11 11 fa f1 e9 f9 ee e4 f9 ea dd 11 11 11 ff 00 ff 11 11 11 11 11 11 11 11 11 11 11 11 11 11 11 ff 00 ff 00 00 6e 58 46 91 cf f7 11 11 11 11 11 11 11 11 11 11 11 11 11 11 11 fb f5 ef fa f2 ea f9 ef e5 11 11 11 ff 00 ff bb df f0 bb df f0 bb df f0 bb df f0 bb df f0 ff 00 ff 00 00 6e 58 46 91 cf f7 91 cf f7 91 cf f7 91 cf f7 91 cf f7 11 11 11 fb f6 f1 fb f5 ef fa f2 eb 11 11 11 ff 00 ff 11 11 11 11 11 11 11 11 11 11 11 11 11 11 11 ff 00 ff 00 00 6e 58 46 ff 00 ff ff 00 ff ff 00 ff ff 00 ff 91 cf f7 11 11 11 fb f6 f1 fb f6 f1 fb f5 f0 11 11 11 ff 00 ff bb df f0 bb df f0 bb df f0 bb df f0 bb df f0 ff 00 ff 00 00 6e 58 46 ff 00 ff ff 00 ff ff 00 ff ff 00 ff 91 cf f7 11 11 11 fb f6 f1 fb f6 f1 fb f6 f1 11 11 11 ff 00 ff 11 11 11 11 11 11 11 11 11 11 11 11 11 11 11 ff 00 ff 00 00 6e 58 46 ff 00 ff ff 00 ff ff 00 ff ff 00 ff 91 cf f7 11 11 11 fb f6 f1 fb f6 f1 fb f6 f1 11 11 11 ff 00 ff bb df f0 bb df f0 bb df f0 bb df f0 bb df f0 ff 00 ff 00 00 6e 58 46 ff 00 ff ff 00 ff ff 00 ff ff 00 ff 91 cf f7 11 11 11 fb f6 f1 fb f6 f1 fb f6 f1 11 11 11 ff 00 ff 11 11 11 11 11 11 11 11 11 11 11 11 11 11 11 ff 00 ff 00 00 6e 58 46 ff 00 ff ff 00 ff ff 00 ff ff 00 ff 91 cf f7 11 11 11 11 11 11 11 11 11 11 11 11 11 11 11 ff 00 ff bb df f0 bb df f0 bb df f0 bb df f0 bb df f0 ff 00 ff 00 00 6e 58 46 ff 00 ff ff 00 ff ff 00 ff ff 00 ff 91 cf f7 91 cf f7 a4 d6 f4 a4 d6 f4 bb df f0 bb df f0 ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff 00 00
+
+Name=Control753
+ProgID=VTDESIGN.VTDTextCtrl.1
+Rect=10, 1, 126, 16
+Style=50000000h
+ID=0
+Data=78 00 00 00 00 03 00 00 00 02 00 05 00 00 80 01 00 00 00 08 00 00 80 06 53 61 6d 70 6c 65 00 00 00 00 00 00 00 00 00 01 00 01 00 00 00 00 03 52 e3 0b 91 8f ce 11 9d e3 00 aa 00 4b b8 51 01 00 00 00 bc 02 44 42 01 00 06 54 61 68 6f 6d 61
+
+Name=Control771
+ProgID=VTDESIGN.VTD3DBarCtrl.1
+Rect=8, 15, 450, 20
+Style=50000000h
+ID=0
+Data=72 00 00 00 00 03 00 00 00 03 00 02 00 00 00 05 00 00 80 01 00 00 00 08 00 00 80 00 64 00 00 00 00 00 01 00 01 00 00 00 00 03 52 e3 0b 91 8f ce 11 9d e3 00 aa 00 4b b8 51 01 cc 00 00 90 01 44 42 01 00 05 41 72 69 61 6c
+
+Name=btnHelp
+ProgID=PUSHBUTTON.PushButtonCtrl.1
+Rect=464, 40, 539, 61
+Style=50000000h
+ID=0
+Data=154 0c 01 00 01 00 00 00 00 00 00 00 01 00 01 00 01 00 00 00 00 06 42 75 74 74 6f 6e 00 00 05 00 05 00 00 00 00 00 00 01 00 00 00 00 00 00 00 00 00 00 14 00 01 01 15 00 00 00 4b 00 00 00 04 00 00 00 00 03 52 e3 0b 91 8f ce 11 9d e3 00 aa 00 4b b8 51 01 cc 00 00 90 01 44 42 01 00 0d 4d 53 20 53 61 6e 73 20 53 65 72 69 66 00 00 00 00 00 00 00 00 00 05 00 00 80 08 00 00 80 08 00 00 80 08 00 00 80 08 00 00 80 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 01 00
+
+Name=btnOk
+ProgID=PUSHBUTTON.PushButtonCtrl.1
+Rect=464, 15, 539, 36
+Style=50000000h
+ID=0
+Data=154 0c 01 00 01 00 00 00 00 00 00 00 01 00 01 00 01 00 00 00 00 06 42 75 74 74 6f 6e 00 00 05 00 05 00 00 00 00 00 00 01 00 00 00 00 00 00 00 00 00 00 14 00 01 01 15 00 00 00 4b 00 00 00 04 00 00 00 00 03 52 e3 0b 91 8f ce 11 9d e3 00 aa 00 4b b8 51 01 cc 00 00 90 01 44 42 01 00 0d 4d 53 20 53 61 6e 73 20 53 65 72 69 66 00 00 00 00 00 00 00 00 00 05 00 00 80 08 00 00 80 08 00 00 80 08 00 00 80 08 00 00 80 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 01 00
+
+
+[Script]
+id = "StatSelect"
+Dim global
+Set global = Application.GetGlobalScript("")
+
+Form.ShowButtons 0
+
+'***************************************************************
+'Form event handlers.
+'***************************************************************
+Sub Form_OnShow()
+End Sub
+
+Sub Form_OnInitialize()
+	global.ShowHidePropertyZone 0
+
+	If global.ObjectGetValue (global.GetStatObj(), "\StatCfg\RebuildStat",0)=0 Then
+		global.RebuildStat()
+	End If
+	If InStr(global.GetCurrentView,"StatUI")=0 Then ShowStatView		
+	btnOk.ButtonText = Docs.LoadString ("ButtonClose")
+	btnHelp.ButtonText = Docs.LoadString ("Help")
+	btnClass.ResetPressedState
+	btnSetup.ResetPressedState
+	btnAxis.ResetPressedState
+	btnSelection.SetPressedState
+	btnGraph.ResetPressedState
+	btnSetup.ToolTip = Docs.LoadString ("Titles")
+	btnAxis.ToolTip = Docs.LoadString ("Axes")
+	btnSelection.ToolTip = Docs.LoadString ("Sample")
+	btnGraph.ToolTip = Docs.LoadString ("Statistics")
+	btnClass.ToolTip = Docs.LoadString ("Classifier")
+	btnOnFrom.ButtonText = Docs.LoadString ("SelectAllStatSelect")
+	btnOnTo.ButtonText = Docs.LoadString ("SelectAllStatSelect")
+	btnOnImg.ButtonText = Docs.LoadString ("SelectAllStatSelect")
+	btnOffFrom.ButtonText = Docs.LoadString ("Deselect All")
+	btnOffTo.ButtonText = Docs.LoadString ("Deselect All")
+	btnOffImg.ButtonText = Docs.LoadString ("Deselect All")
+	Control753.Text = Docs.LoadString ("Sample")
+	Data.SetValue "\DockBars\PageInProcessing", True
+	lstClasses.SetColumnCaption 0, Docs.LoadString (" ")
+	lstClasses.SetColumnCaption 1, Docs.LoadString ("Classes")
+	lstClasses.SetColumnCaption 2, Docs.LoadString (" ")
+	lstClasses.SetColumnCaption 3, Docs.LoadString ("By Classes")
+	lstImages.SetColumnCaption 0, Docs.LoadString (" ")
+	lstImages.SetColumnCaption 1, Docs.LoadString ("Images")
+	LoadClasses()
+	LoadImgs()
+	MainWnd.SetWindowLock False,True
+	Data.Setvalue "\StatCfg\RunForm", ""	
+	global.ObjectSetValue global.GetStatObj(), "\StatCfg\RunForm", ""
+	global.UnSplit()
+	EnableDisable()
+	Freeze 0
+End Sub
+
+Sub Form_OnDestroy()
+	Freeze 1
+	global.ShowHidePropertyZone 1
+	Data.SetValue "\DockBars\PageInProcessing", False
+	Set fso = Nothing
+	Set global = Nothing
+End Sub
+
+Sub FillListProFiles()
+End Sub
+
+Sub ClearClassesList()
+	rec = 1
+	For i=lstClasses.GetRowCount() to  0 step -1
+		lstClasses.DeleteRow i 
+	Next
+	rec = 0
+End Sub
+
+Sub ClearImagesList()
+	rec = 1
+	For i=lstImages.GetRowCount() to  0 step -1
+		lstImages.DeleteRow i 
+	Next
+	rec = 0
+End Sub
+
+Sub LoadClasses()
+	Dim arrCls
+	ClearClassesList()
+	str = Data.Getvalue ("\Classes\ClassFile")
+	If str = "" Then Exit Sub
+	N = CInt(Application.GetPrivateProfileString(str,"Classes","ClassCount","0"))
+	If N = 0 Then Exit Sub
+	For i=0 to N-1
+		lstClasses.AddRow(-1)
+		StrFromINI = Application.GetPrivateProfileString(str,"Classes",CStr(i),"-")
+		StrFromINI = Mid(StrFromINI, InStr(StrFromINI,")," )+2,255)
+		lstClasses.SetCellValue 1,i,StrFromINI
+		lstClasses.SetCellValue 3,i,StrFromINI
+	Next
+	
+	sWhat = global.ObjectGetValue (global.GetStatTable(),"\StatUI\CalcForAllClasses", "")
+	sOn = global.ObjectGetValue (global.GetStatTable(),"\StatUI\CalcForRelativeClasses", "")
+'	sWhat = Data.Getvalue ("\StatUI\CalcForAllClasses")
+'	sOn = Data.Getvalue ("\StatUI\CalcForRelativeClasses")
+	If len(sWhat)>0 Then
+		arrCls = Split(sWhat, ",")
+		For i=0 to UBound(arrCls)
+			lstClasses.SetCellAsLogical 0, cint(arrCls(i)), 1
+		Next
+	End If
+	If len(sOn)>0 Then
+		arrCls = Split(sOn, ",")
+		For i=0 to UBound(arrCls)
+			lstClasses.SetCellAsLogical 2, cint(arrCls(i)), 1 
+		Next
+	End If
+End Sub
+'***************************************************************
+'btnOnFrom event handlers.
+'***************************************************************
+sub btnOnFrom_Click()
+	For i=0 to lstClasses.GetRowCount()-1		
+		lstClasses.SetCellAsLogical 0, i, 1
+	Next
+	lstClasses_DataChange 0,0	
+end sub
+'***************************************************************
+'btnOffFrom event handlers.
+'***************************************************************
+sub btnOffFrom_Click()
+	For i=0 to lstClasses.GetRowCount()-1
+		lstClasses.SetCellAsLogical 0, i, 0
+	Next
+	lstClasses_DataChange 0,0	
+end sub
+'***************************************************************
+'btnOnTo event handlers.
+'***************************************************************
+sub btnOnTo_Click()
+	For i=0 to lstClasses.GetRowCount()-1		
+		lstClasses.SetCellAsLogical 2, i, 1
+	Next
+	lstClasses_DataChange 0,0	
+end sub
+'***************************************************************
+'btnOffTo event handlers.
+'***************************************************************
+sub btnOffTo_Click()
+	For i=0 to lstClasses.GetRowCount()-1		
+		lstClasses.SetCellAsLogical 2, i, 0
+	Next
+	lstClasses_DataChange 0,0
+end sub
+'***************************************************************
+'btnOnImg event handlers.
+'***************************************************************
+sub btnOnImg_Click()
+	For i=0 to lstImages.GetRowCount()-1		
+		lstImages.SetCellAsLogical 0, i, 1
+	Next
+	lstImages_DataChange 0,0
+end sub
+'***************************************************************
+'btnOffImg event handlers.
+'***************************************************************
+sub btnOffImg_Click()
+	For i=0 to lstImages.GetRowCount()-1		
+		lstImages.SetCellAsLogical 0, i, 0
+	Next
+	lstImages_DataChange 0,0
+end sub
+
+'***************************************************************
+'lstClasses event handlers.
+'***************************************************************
+sub lstClasses_DataChange(nColumn, nRow)
+	swhat = ""
+	sOn = ""
+	For i=0 to lstClasses.GetRowCount()-1
+		If lstClasses.GetCellAsLogical(0, i) Then 
+			If len(sWhat)>0 Then sWhat = sWhat + ","
+			sWhat = sWhat + Cstr(i)
+		End If
+		If lstClasses.GetCellAsLogical(2, i) Then 
+			If len(sOn)>0 Then sOn = sOn + ","
+			sOn = sOn + Cstr(i)
+		End If
+	Next
+	If sWhat = "" Then sWhat = "-2"
+	global.ObjectSetValue global.GetStatTable(),"\StatUI\CalcForAllClasses", sWhat 
+	global.ObjectSetValue global.GetStatTable(),"\StatUI\CalcForRelativeClasses", sOn
+	Data.Setvalue "\StatUI\CalcForAllClasses" ,swhat
+	Data.Setvalue "\StatUI\CalcForRelativeClasses" ,sOn
+	Application.WritePrivateProfileString Data.Getvalue ("\Classes\ClassFile"),"Select","What",sWhat 
+	Application.WritePrivateProfileString Data.Getvalue ("\Classes\ClassFile"),"Select","On",sOn
+	EnableDisable()
+	global.RebuildStat()
+end sub
+'***************************************************************
+'lstImages event handlers.
+'***************************************************************
+sub lstImages_DataChange(nColumn, nRow)
+	sImg = ""
+	For i=0 to lstImages.GetRowCount()-1
+		If lstImages.GetCellAsLogical(0, i) Then 
+			If len(sImg)>0 Then sImg = sImg + ","
+			sImg = sImg + Cstr(i)
+		End If
+	Next
+	If AllOff() Then 
+		Data.Setvalue "\StatUI\CalcForGroups" , "-2"
+		global.ObjectSetValue global.GetStatTable(),"\StatUI\CalcForGroups", "-2"
+	else
+		Data.Setvalue "\StatUI\CalcForGroups" , sImg	
+		global.ObjectSetValue global.GetStatTable(),"\StatUI\CalcForGroups", sImg
+	End If
+	EnableDisable()
+	global.RebuildStat()
+end sub
+
+Sub LoadImgs()
+	ClearImagesList()
+	Set objStatTable = global.GetStatTable()
+	If Docs.IsPointerNull(objStatTable) Then exit sub
+	Ntable = objStatTable.getGroupCount()
+	For i=0 to Ntable-1
+		lstImages.AddRow(-1)
+		lstImages.SetCellValue 1,i, Docs.LoadString ("Image") + cstr(i+1)
+	Next
+	sSelect = global.ObjectGetValue (global.GetStatTable(),"\StatUI\CalcForGroups", "")
+	If sSelect <> "" Then
+		arrImg = Split(sSelect, ",")
+		If UBound(arrImg)>=0 Then		
+			For i=0 to UBound(arrImg)
+				If cint(arrImg(i))<=Ntable-1 Then
+					lstImages.SetCellAsLogical 0, arrImg(i), 1
+				End If
+			Next
+		End If 		
+	End If	
+	Set objStatTable = Nothing
+	EnableDisable()
+'	If AllOff() Then AllOn
+End Sub
+
+Function AllOff()
+	AllOff = true
+	For i=0 to lstImages.GetRowCount()
+		If lstImages.GetCellAsLogical(0, i) Then 
+			AllOff = false
+			exit Function
+		End If
+	Next	
+End Function
+
+Sub AllOn()
+	For i=0 to lstImages.GetRowCount()
+		lstImages.SetCellAsLogical 0, i, 1
+	Next	
+End Sub
+
+Function AllClassOff()
+	AllClassOff = true
+	For i=0 to lstClasses.GetRowCount()
+		If lstClasses.GetCellAsLogical(0, i) Then 
+			AllClassOff = false
+			exit Function
+		End If
+	Next	
+End Function
+
+Sub AllClassOn()
+	For i=0 to lstClasses.GetRowCount()
+		lstClasses.SetCellAsLogical 0, i, 1
+	Next	
+End Sub
+
+sub Form_OnOK()
+	Data.SetValue "\General\LastView", ""
+	If Data.Getvalue ("\StatCfg\RunForm") = "" Then
+		MainWnd.SetWindowLock False,True
+	else
+		MainWnd.SetWindowLock True, False
+	End If	
+'	MethodMan.StoreStepAs Docs.LoadString ("Selection")
+end sub
+
+
+'***************************************************************
+'*****************   BUTTONS    ********************************
+Sub btnClass_Click()
+	Data.Setvalue "\StatCfg\RunForm", "class"
+	FormManager.PressOk	
+End Sub
+Sub btnSelection_Click()
+'	Data.Setvalue "\StatCfg\RunForm", "select"
+'	FormManager.PressOk
+	btnSelection.SetPressedState
+End Sub
+Sub btnGraph_Click()
+	Data.Setvalue "\StatCfg\RunForm", "distr"
+	FormManager.PressOk
+End Sub
+Sub btnSetup_Click()
+	Data.Setvalue "\StatCfg\RunForm", "distr_options"
+	FormManager.PressOk
+End Sub
+Sub btnAxis_Click()
+	Data.Setvalue "\StatCfg\RunForm", "axis"
+	FormManager.PressOk
+End Sub
+'*****************   BUTTONS    ********************************
+'***************************************************************
+
+'***************************************************************
+'btnOk event handlers.
+'***************************************************************
+Sub btnOk_Click()
+	FormManager.PressOk
+End Sub
+
+'***************************************************************
+'btnHelp event handlers.
+'***************************************************************
+Sub btnHelp_Click()
+	FormManager.PressHelp
+End Sub
+
+Function Classes1OnOff()
+	Dim n
+	n = 0
+	Classes1OnOff = 0
+	For i=0 to lstClasses.GetRowCount()-1
+		If lstClasses.GetCellAsLogical(0, i) Then n = n + 1
+	Next	
+	If n > 0 Then Classes1OnOff = 1
+	If n = lstClasses.GetRowCount() Then Classes1OnOff = 2	
+End Function
+
+Function Classes2OnOff()
+	Dim n
+	n = 0
+	Classes2OnOff = 0
+	For i=0 to lstClasses.GetRowCount()-1
+		If lstClasses.GetCellAsLogical(2, i) Then n = n + 1
+	Next	
+	If n > 0 Then Classes2OnOff = 1
+	If n = lstClasses.GetRowCount() Then Classes2OnOff = 2	
+End Function 
+
+Function ImagesOnOff()
+	Dim n
+	n = 0
+	ImagesOnOff = 0
+	For i=0 to lstImages.GetRowCount()-1
+		If lstImages.GetCellAsLogical(0, i) Then n = n + 1
+	Next	
+	If n > 0 Then ImagesOnOff = 1
+	If n = lstImages.GetRowCount() Then ImagesOnOff = 2	
+End Function 
+
+Sub EnableDisable()
+	Select Case Classes1OnOff()
+		Case 0 
+			btnOnFrom.Disabled = false
+			btnOffFrom.Disabled = true
+		Case 1
+			btnOnFrom.Disabled = false
+			btnOffFrom.Disabled = false
+		Case 2
+			btnOnFrom.Disabled = true
+			btnOffFrom.Disabled = False
+	End Select
+	Select Case Classes2OnOff()
+		Case 0 
+			btnOnTo.Disabled = false
+			btnOffTo.Disabled = true
+		Case 1
+			btnOnTo.Disabled = false
+			btnOffTo.Disabled = false
+		Case 2
+			btnOnTo.Disabled = true
+			btnOffTo.Disabled = False
+	End Select
+	
+	Select Case ImagesOnOff()
+		Case 0 
+			btnOnImg.Disabled = false
+			btnOffImg.Disabled = true
+		Case 1
+			btnOnImg.Disabled = false
+			btnOffImg.Disabled = false
+		Case 2
+			btnOnImg.Disabled = true
+			btnOffImg.Disabled = False
+	End Select
+End Sub

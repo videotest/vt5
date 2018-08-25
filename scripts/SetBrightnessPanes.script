@@ -1,0 +1,20 @@
+'info:Set Panes for Brightness#Internal Scripts#Set Panes for Brightness#Set Panes for Brightness
+Set img = Objects.ActiveImage
+ColorSystem = img.GetColorSystem
+Set img = Nothing
+Select Case  ColorSystem
+	case "RGB"
+		Data.SetValue "\ImagePane\RGB\Red",1
+		Data.SetValue "\ImagePane\RGB\Green",1
+		Data.SetValue "\ImagePane\RGB\Blue",1
+	case "HSB"
+		Data.SetValue "\ImagePane\HSB\Hue",0
+		Data.SetValue "\ImagePane\HSB\Saturation",0
+		Data.SetValue "\ImagePane\HSB\Brightness",1
+	case "YUV"
+		Data.SetValue "\ImagePane\YUV\Y",1
+		Data.SetValue "\ImagePane\YUV\U",0
+		Data.SetValue "\ImagePane\YUV\V",0
+	case "GRAY"
+		Data.SetValue "\ImagePane\GRAY\Gray",1
+End Select

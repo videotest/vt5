@@ -1,0 +1,31 @@
+'resource:Interaction with DB...#Database#Specify fields for interaction with database#Interaction with Database
+
+'Call RunOptionsDBMaster_script
+
+'Data.SetValue "\tmp\OptionsDB\OptionsMode", 1
+FormManager.ExecuteModal "OptionsDBMaster"
+
+Sub RunOptionsDBMaster_script
+	Dim objActiveDoc, objDBDoc
+	Set objActiveDoc = Docs.ActiveDocument
+	strDBDoc = Data.GetDefValue("\Methods\Database", "")
+	If strDBDoc = "" Then
+		MsgBox Docs.LoadString ("Select database in method settings!"), vbExclamation, sVT
+		Exit Sub
+	End If
+
+	Set objDBDoc = GetDocByName("Database", strDBDoc)
+	If Docs.IsPointerNull(objDBDoc) Then
+		If ActionManager.FileOpen(strDBDoc) = 0 Then Exit Sub
+	Else
+		Docs.ActiveDocument = objDBDoc
+	End If
+
+	ShowBlankPreview
+	FormManager.ExecuteModal "OptionsDBMaster"
+
+	'If TypeName(objActiveDoc) <> "Nothing" Then Docs.ActiveDocument = objActiveDoc
+
+	Set objDBDoc = Nothing
+	Set objActiveDoc = Nothing
+End Sub

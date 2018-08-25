@@ -1,0 +1,11 @@
+'resource:Histogram#Tools#Show/hide Histogram bar#Histogram
+'state:dock=Histogram
+
+BarNo = ToolBars.FindDockNo ( "Histogram" )
+If ToolBars.IsDockBarVisible( BarNo ) Then
+	ToolBars.ShowDockBar BarNo , 0
+Else
+	ToolBars.ShowDockBar BarNo , 1
+End If
+
+	

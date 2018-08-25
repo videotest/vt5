@@ -1,0 +1,11 @@
+'resource:Annotation#Tools#Show/hide Annotation toolbar#Annotation
+'state:function=IsAnnotationToolBarVisible
+
+ActionState.TerminateCurrentAction
+BarNo = ToolBars.FindNo ( Docs.LoadString ("Annotation"))
+ToolBars.ShowBar BarNo , 1- ToolBars.IsBarVisible( BarNo )
+If ToolBars.IsBarVisible( BarNo ) Then
+	ActionState.SetActionState "ShowImageAnnotation", 1
+Else
+	ActionState.SetActionState "ShowImageAnnotation", 3
+End If

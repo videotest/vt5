@@ -1,0 +1,4 @@
+'state:function=StateObjectScissorsScript
+
+MethodMan.RenameCurrentStep Docs.LoadString ("Object Editor")
+ActionState.RunInteractive "ObjectScissors"

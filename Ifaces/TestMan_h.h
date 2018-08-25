@@ -4,7 +4,7 @@
 
 
  /* File created by MIDL compiler version 8.00.0603 */
-/* at Thu Feb 16 00:51:10 2017
+/* at Sat Aug 25 14:43:05 2018
  */
 /* Compiler settings for TestMan.idl:
     Oicf, W1, Zp8, env=Win64 (32b run), target_arch=AMD64 8.00.0603 

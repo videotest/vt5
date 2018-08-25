@@ -1,0 +1,5 @@
+'info:EmptyFileOpen#Internal Scripts#EmptyFileOpen
+
+Sub FileOpen_OnBeforeExecute
+	FileOpen.Extentions "*.*"
+End Sub

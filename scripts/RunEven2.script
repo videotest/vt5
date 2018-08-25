@@ -1,0 +1,16 @@
+'resource:Background Correction...#Enhance#Adjust background correction image filter#Background Correction
+'state:action=Even
+
+Data.SetValue "\General\EnableDock", 0
+Data.SetValue "\DockBars\VisibleTBName", Data.GetValue("\DockBars\TB_FiltersName")
+If Data.GetValue("\DockBars\PageInProcessing") Then Data.SetValue "\DockBars\isPass", True
+
+If isMaster Then
+	FormManager.ExecutePageModal "EvenForm2"
+Else
+	FormManager.ExecutePage "EvenForm2" 
+End If
+
+If MethodMan.IsRecording() = False or MethodMan.IsRunning() = False Then
+	Data.SetValue "\General\EnableDock", 1
+End If

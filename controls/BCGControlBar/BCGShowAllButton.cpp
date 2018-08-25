@@ -24,7 +24,7 @@
 #include "BCGMenuBar.h"
 #include "BCGPopupMenuBar.h"
 #include "BCGPopupMenu.h"
-#include "MenuImages.h"
+//#include "MenuImages.h"
 #include "globals.h"
 #include "KeyHelper.h"
 #include "bcgbarres.h"

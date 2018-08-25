@@ -268,17 +268,42 @@
     <ClCompile Include="BCGMDIChildWnd.cpp" />
     <ClCompile Include="BCGMDIFrameWnd.cpp" />
     <ClCompile Include="BCGMenuBar.cpp" />
-    <ClCompile Include="BCGMenuButton.cpp" />
+    <ClCompile Include="BCGMenuButton.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </ClCompile>
     <ClCompile Include="BCGMouseManager.cpp" />
     <ClCompile Include="BCGOleIPFrameWnd.cpp" />
-    <ClCompile Include="bcgoutlookbar.cpp" />
+    <ClCompile Include="bcgoutlookbar.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </ClCompile>
     <ClCompile Include="BCGOutlookButton.cpp" />
-    <ClCompile Include="BCGPopupMenu.cpp" />
+    <ClCompile Include="BCGPopupMenu.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </ClCompile>
     <ClCompile Include="BCGPopupMenuBar.cpp" />
     <ClCompile Include="BCGPrintPreviewView.cpp" />
     <ClCompile Include="BCGRegistry.cpp" />
-    <ClCompile Include="BCGShowAllButton.cpp" />
-    <ClCompile Include="BCGSizingControlBar.cpp" />
+    <ClCompile Include="BCGShowAllButton.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="BCGSizingControlBar.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </ClCompile>
     <ClCompile Include="bcgsound.cpp" />
     <ClCompile Include="bcgtabwnd.cpp" />
     <ClCompile Include="BCGToolBar.cpp" />
@@ -288,7 +313,12 @@
     <ClCompile Include="BCGToolbarDropTarget.cpp" />
     <ClCompile Include="BCGToolbarEditBoxButton.cpp" />
     <ClCompile Include="BCGToolBarImages.cpp" />
-    <ClCompile Include="BCGToolbarMenuButton.cpp" />
+    <ClCompile Include="BCGToolbarMenuButton.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </ClCompile>
     <ClCompile Include="BCGToolbarMenuButtonsButton.cpp" />
     <ClCompile Include="BCGToolbarRegularMenuButton.cpp" />
     <ClCompile Include="BCGToolbarSystemMenuButton.cpp" />
@@ -313,8 +343,18 @@
     <ClCompile Include="KeyAssign.cpp" />
     <ClCompile Include="KeyboardPage.cpp" />
     <ClCompile Include="KeyHelper.cpp" />
-    <ClCompile Include="MenuHash.cpp" />
-    <ClCompile Include="MenuImages.cpp" />
+    <ClCompile Include="MenuHash.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="MenuImages.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </ClCompile>
     <ClCompile Include="MenuPage.cpp" />
     <ClCompile Include="MousePage.cpp" />
     <ClCompile Include="OptionsPage.cpp" />

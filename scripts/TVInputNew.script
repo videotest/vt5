@@ -1,0 +1,27 @@
+'resource:Input into New...#Acquire#Input image into a new document without device selection#Input into New Document
+'state:function=InputAvail
+
+Call TVI
+
+Sub TVI
+	Dim UseInputFrame, EditInputFrame
+	Dim img, x, y
+
+	Data.Setvalue "\Input\Device",Data.Getvalue ("\Input\MainDevice")
+	
+	If ActionManager.InputImage(0,1,1) <> 0 Then
+		UseInputFrame = InputDriverManager.GetValue("UseInputFrame")
+		EditInputFrame = InputDriverManager.GetValue("EditInputFrame")
+		If UseInputFrame = 1 Then
+			If EditInputFrame = 1 Then
+				FormManager.ExecutePage "Select"
+			Else
+				ActionManager.ImageBySel 1
+			End If
+		End If
+
+		Call XYImageCorrection
+	End If
+
+	ActionState.ClearUndoList
+End Sub

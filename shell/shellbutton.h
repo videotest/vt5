@@ -22,7 +22,7 @@ class CShellToolbarButton;
 
 
 /////////////////////////////////////////////////////////////////////////////
-class CShellPopupMenu : public CBCGPopupMenu
+class CShellPopupMenu : public CMFCPopupMenu
 {
 	DECLARE_SERIAL(CShellPopupMenu)
 public:
@@ -55,7 +55,7 @@ protected:
 };
 
 /////////////////////////////////////////////////////////////////////////////
-class CShellToolbarButton : public CBCGToolbarMenuButton, public  IHelpInfo
+class CShellToolbarButton : public CMFCToolBarMenuButton, public  IHelpInfo
 {
 	DECLARE_SERIAL(CShellToolbarButton);
 public:
@@ -70,7 +70,7 @@ public:
 	virtual void Serialize (CArchive& ar);
 	virtual IUnknown *GetInterface( long lHit );
 protected:
-	virtual void OnDraw (CDC* pDC, const CRect& rect, CBCGToolBarImages* pImages,
+	virtual void OnDraw (CDC* pDC, const CRect& rect, CMFCToolBarImages* pImages,
 					BOOL bHorz = TRUE, BOOL bCustomizeMode = FALSE,
 					BOOL bHighlight = FALSE,
 					BOOL bDrawBorder = TRUE,
@@ -86,7 +86,7 @@ public:
 	void SetButtonStyle( int nButtonStyle )				{m_nDrawStyle = (ShellButtonStyles)nButtonStyle;}
 	void SetAlignLeft( bool bSet )						{m_bAlignLeft = bSet;}
 	void SetMenuMode( bool bSet )						{m_bMenuMode = bSet;}
-	void SetDrawAccel( bool bSet )						{m_bDrawAccel = bSet;}
+//	void SetDrawAccel( bool bSet )						{m_bDrawAccel = bSet;}
 	void EnableMenuSerialize( bool bEnable )			{m_bMenuSerialize = bEnable;}
 public:
 	static void					SetButtonsStyle( int nButtonStyle )		{s_nButtonStyle = nButtonStyle;};
@@ -112,7 +112,7 @@ protected:
 	CString	m_strTopic;
 	static int s_nButtonStyle;
 	ShellButtonStyles	m_nDrawStyle;
-	CBCGToolBar			*m_pbar;
+	CMFCToolBar			*m_pbar;
 	bool				m_bAlignLeft;
 	bool				m_bMenuSerialize;
 	CActionControlWrp	*m_pChild;
@@ -132,11 +132,11 @@ public:
 	IUnknown* GetSubMenuPtr();
 
 public:
-	virtual CBCGPopupMenu* CreatePopupMenu ();
+	virtual CMFCPopupMenu* CreatePopupMenu ();
 
 	virtual BOOL OnClick (CWnd* pWnd, BOOL bDelay = TRUE);
 
-	virtual void CopyFrom (const CBCGToolbarButton& src);	
+	virtual void CopyFrom (const CMFCToolBarButton& src);	
 
 	void OnPopupCommand(UINT uiCommandID);
 
@@ -156,7 +156,7 @@ public:
 	CShellChooseToolbarButton();
 	void Initialize();
 protected:
-	virtual void OnDraw (CDC* pDC, const CRect& rect, CBCGToolBarImages* pImages,
+	virtual void OnDraw (CDC* pDC, const CRect& rect, CMFCToolBarImages* pImages,
 					BOOL bHorz = TRUE, BOOL bCustomizeMode = FALSE,
 					BOOL bHighlight = FALSE,
 						BOOL bDrawBorder = TRUE,
@@ -172,7 +172,7 @@ protected:
 
 	virtual void Serialize (CArchive& ar);
 
-	CBCGToolbarButton	*GetLastButton();
+	CMFCToolBarButton	*GetLastButton();
 protected:
 	int		m_nLastUsedCmd;
 	CRect	m_rectLastMenuBtn;
@@ -189,12 +189,12 @@ public:
 	CShellMenuButton(UINT uiID, int iImage, IUnknown *punkMenuProvider, LPCTSTR lpszText = NULL, BOOL bUserButton = FALSE);
 	~CShellMenuButton();
 
-	virtual void CopyFrom (const CBCGToolbarButton& src);
+	virtual void CopyFrom (const CMFCToolBarButton& src);
 
 	void Initialize();
 	virtual void Serialize (CArchive& ar);
 protected:
-	virtual void OnDraw (CDC* pDC, const CRect& rect, CBCGToolBarImages* pImages,
+	virtual void OnDraw (CDC* pDC, const CRect& rect, CMFCToolBarImages* pImages,
 					BOOL bHorz = TRUE, BOOL bCustomizeMode = FALSE,
 					BOOL bHighlight = FALSE,
 					BOOL bDrawBorder = TRUE,
@@ -260,7 +260,7 @@ public:
 //////////////////////////////////////////////////////////////////////
 		
 										//CShellToolbarButton
-class CShellMenuComboBoxButton : public CBCGToolbarComboBoxButton
+class CShellMenuComboBoxButton : public CMFCToolBarComboBoxButton
 {
 	DECLARE_SERIAL(CShellMenuComboBoxButton);	
 public:
@@ -271,7 +271,7 @@ public:
 							IUnknown *punkMenuProvider, 
 							DWORD dwStyle = CBS_DROPDOWNLIST, 
 							int iWidth = 0);	
-	virtual void CopyFrom (const CBCGToolbarButton& src);
+	virtual void CopyFrom (const CMFCToolBarButton& src);
 
 	virtual void Serialize(CArchive& ar);
 	

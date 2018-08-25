@@ -64,7 +64,7 @@
 #endif
 
 #include "bcgcontrolbar.h"
-#include "MenuImages.h"
+//#include "MenuImages.h"
 
 /////////////////////////////////////////////////////////////////////////
 // CSCBButton (button info) helper class

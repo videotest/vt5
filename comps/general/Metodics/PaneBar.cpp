@@ -625,7 +625,7 @@ void CPaneItem::create_from_info( IActionInfo *punkInfo )
 
 void CPaneItem::execute_cmd()
 {
-	if( m_bEmptyCommand || m_bbreaker || CBCGToolBar::IsCustomizeMode() )
+	if( m_bEmptyCommand || m_bbreaker || CMFCToolBar::IsCustomizeMode() )
 		return;
 
 	IApplicationPtr sptApp = ::GetAppUnknown();

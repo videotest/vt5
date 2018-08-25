@@ -1,0 +1,19 @@
+'resource:Настройка фона...#Измерения#Настройка фона оптической плотности#Настройка фона оптической плотности
+'state:function=StateImageInImageDoc
+
+If Data.GetDefValue("\ODensity\RunSettingsOnEachPass", 0) <> 0 Or gPassNo = 1 Then
+	bEnableApplyOld = Data.GetDefValue ("\FormManager\EnableApply", 1)
+	FormManager.ExecutePage "ODSetBackgr1"
+
+	Data.SetValue "\tmp\ODSetBackgr1", 1
+	SelectAdd 1
+	Do
+		ActionState.RunInteractiveWait "SelectArea"
+	Loop While Data.GetValue ("\tmp\ODSetBackgr1")
+	SelectAdd 0
+	FormManager.Finalize "ODSetBackgr1"
+	Data.RemoveValue "\tmp\ODSetBackgr1"
+	Data.SetValue "\FormManager\EnableApply", bEnableApplyOld
+
+	If Data.GetDefValue ("\ODensity\Backgr", -1) = -1 Then MethodMan.Stop
+End If

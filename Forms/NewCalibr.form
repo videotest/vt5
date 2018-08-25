@@ -1,0 +1,370 @@
+[AxForm]
+Version=1
+Size=573, 114
+Title=
+
+[AXControls]
+Name=Control53
+ProgID=VTDESIGN.VTD3DBarCtrl.1
+Rect=3, 20, 549, 25
+Style=50000000h
+ID=123
+Data=73 00 00 00 00 03 00 00 00 03 00 02 00 00 00 05 00 00 80 01 00 00 00 08 00 00 80 00 64 00 00 00 00 00 01 00 01 00 00 00 00 03 52 e3 0b 91 8f ce 11 9d e3 00 aa 00 4b b8 51 01 00 00 00 90 01 44 42 01 00 06 54 61 68 6f 6d 61
+
+Name=cbUnit
+ProgID=VTCONTROLS2.VTComboBoxCtrl2.1
+Rect=146, 29, 219, 50
+Style=50000000h
+ID=123
+Data=55 00 00 00 00 04 00 01 00 4e 06 00 00 2c 02 00 00 44 00 00 00 00 03 52 e3 0b 91 8f ce 11 9d e3 00 aa 00 4b b8 51 01 00 00 00 90 01 44 42 01 00 06 54 61 68 6f 6d 61 01
+
+Name=edtDistance
+ProgID=VTCONTROLS.VTEditor.1
+Rect=16, 25, 143, 50
+Style=50000000h
+ID=123
+Data=238 00 00 01 00 09 00 00 00 f5 ff ff ff 00 00 00 00 00 00 00 00 00 00 00 00 90 01 00 00 00 00 00 01 00 00 00 00 54 61 68 6f 6d 61 00 00 00 00 3d c7 00 78 d8 0f 00 00 ff ff ff ff b1 12 00 78 70 60 a0 00 60 f1 f5 ff ff ff 00 00 00 00 00 00 00 00 00 00 00 00 90 01 00 00 00 00 00 01 00 00 00 00 54 61 68 6f 6d 61 00 e6 82 00 bc e6 82 00 00 00 00 00 00 00 00 00 34 ab 72 81 0c 00 60 00 60 f1 08 56 54 45 64 69 74 6f 72 01 00 0b d0 e0 f1 f1 f2 ee ff ed e8 e5 3a 01 00 00 00 02 00 01 30 3f 00 01 00 00 00 01 00 00 00 00 40 1c 46 00 00 00 00 08 00 00 80 05 00 00 80 08 00 00 80 0f 00 00 80 0f 00 00 80 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+
+Name=txtName
+ProgID=VTCONTROLS.VTEditor.1
+Rect=16, 55, 217, 77
+Style=50000000h
+ID=123
+Data=239 00 00 01 00 09 00 00 00 f5 ff ff ff 00 00 00 00 00 00 00 00 00 00 00 00 90 01 00 00 00 00 00 01 00 00 00 00 54 61 68 6f 6d 61 00 00 00 00 3d c7 00 78 d8 0f 00 00 ff ff ff ff b1 12 00 78 70 60 a0 00 60 f1 f5 ff ff ff 00 00 00 00 00 00 00 00 00 00 00 00 90 01 00 00 00 00 00 01 00 00 00 00 54 61 68 6f 6d 61 00 e6 82 00 bc e6 82 00 00 00 00 00 00 00 00 00 34 ab 72 81 0c 00 60 00 60 f1 08 56 54 45 64 69 74 6f 72 01 00 09 cd e0 e7 e2 e0 ed e8 e5 3a 01 00 00 00 00 00 04 45 64 69 74 1c 00 00 00 00 00 01 00 00 00 00 00 c8 42 00 00 00 00 08 00 00 80 05 00 00 80 08 00 00 80 0f 00 00 80 0f 00 00 80 01 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+
+Name=txtCoeff
+ProgID=VTCONTROLS.VTStaticText.1
+Rect=334, 56, 459, 73
+Style=50000000h
+ID=2910
+Data=1269 05 00 00 00 0f 00 00 80 00 03 52 e3 0b 91 8f ce 11 9d e3 00 aa 00 4b b8 51 01 00 00 00 90 01 44 42 01 00 06 54 61 68 6f 6d 61 0a 00 00 00 00 00 00 00 c0 c0 c0 00 c0 c0 c0 00 01 00 00 00 00 00 00 00 01 00 00 00 00 00 00 00 01 00 00 00 00 00 00 00 01 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 07 30 2e 30 0d 0a 0d 0a 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 ff ff ff ff 00 00 00 00 00 00 00 00 49 4c 01 01 00 00 02 00 04 00 01 00 01 00 ff ff ff ff 08 00 ff ff ff ff ff ff ff ff 42 4d 36 04 00 00 00 00 00 00 36 04 00 00 28 00 00 00 04 00 00 00 01 00 00 00 01 00 08 00 00 00 00 00 04 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 80 00 00 80 00 00 00 80 80 00 80 00 00 00 80 00 80 00 80 80 00 00 c0 c0 c0 00 c0 dc c0 00 f0 ca a6 00 04 04 04 00 08 08 08 00 0c 0c 0c 00 11 11 11 00 16 16 16 00 1c 1c 1c 00 22 22 22 00 29 29 29 00 55 55 55 00 4d 4d 4d 00 42 42 42 00 39 39 39 00 80 7c ff 00 50 50 ff 00 93 00 d6 00 ff ec cc 00 c6 d6 ef 00 d6 e7 e7 00 90 a9 ad 00 00 00 33 00 00 00 66 00 00 00 99 00 00 00 cc 00 00 33 00 00 00 33 33 00 00 33 66 00 00 33 99 00 00 33 cc 00 00 33 ff 00 00 66 00 00 00 66 33 00 00 66 66 00 00 66 99 00 00 66 cc 00 00 66 ff 00 00 99 00 00 00 99 33 00 00 99 66 00 00 99 99 00 00 99 cc 00 00 99 ff 00 00 cc 00 00 00 cc 33 00 00 cc 66 00 00 cc 99 00 00 cc cc 00 00 cc ff 00 00 ff 66 00 00 ff 99 00 00 ff cc 00 33 00 00 00 33 00 33 00 33 00 66 00 33 00 99 00 33 00 cc 00 33 00 ff 00 33 33 00 00 33 33 33 00 33 33 66 00 33 33 99 00 33 33 cc 00 33 33 ff 00 33 66 00 00 33 66 33 00 33 66 66 00 33 66 99 00 33 66 cc 00 33 66 ff 00 33 99 00 00 33 99 33 00 33 99 66 00 33 99 99 00 33 99 cc 00 33 99 ff 00 33 cc 00 00 33 cc 33 00 33 cc 66 00 33 cc 99 00 33 cc cc 00 33 cc ff 00 33 ff 33 00 33 ff 66 00 33 ff 99 00 33 ff cc 00 33 ff ff 00 66 00 00 00 66 00 33 00 66 00 66 00 66 00 99 00 66 00 cc 00 66 00 ff 00 66 33 00 00 66 33 33 00 66 33 66 00 66 33 99 00 66 33 cc 00 66 33 ff 00 66 66 00 00 66 66 33 00 66 66 66 00 66 66 99 00 66 66 cc 00 66 99 00 00 66 99 33 00 66 99 66 00 66 99 99 00 66 99 cc 00 66 99 ff 00 66 cc 00 00 66 cc 33 00 66 cc 99 00 66 cc cc 00 66 cc ff 00 66 ff 00 00 66 ff 33 00 66 ff 99 00 66 ff cc 00 cc 00 ff 00 ff 00 cc 00 99 99 00 00 99 33 99 00 99 00 99 00 99 00 cc 00 99 00 00 00 99 33 33 00 99 00 66 00 99 33 cc 00 99 00 ff 00 99 66 00 00 99 66 33 00 99 33 66 00 99 66 99 00 99 66 cc 00 99 33 ff 00 99 99 33 00 99 99 66 00 99 99 99 00 99 99 cc 00 99 99 ff 00 99 cc 00 00 99 cc 33 00 66 cc 66 00 99 cc 99 00 99 cc cc 00 99 cc ff 00 99 ff 00 00 99 ff 33 00 99 cc 66 00 99 ff 99 00 99 ff cc 00 99 ff ff 00 cc 00 00 00 99 00 33 00 cc 00 66 00 cc 00 99 00 cc 00 cc 00 99 33 00 00 cc 33 33 00 cc 33 66 00 cc 33 99 00 cc 33 cc 00 cc 33 ff 00 cc 66 00 00 cc 66 33 00 99 66 66 00 cc 66 99 00 cc 66 cc 00 99 66 ff 00 cc 99 00 00 cc 99 33 00 cc 99 66 00 cc 99 99 00 cc 99 cc 00 cc 99 ff 00 cc cc 00 00 cc cc 33 00 cc cc 66 00 cc cc 99 00 cc cc cc 00 cc cc ff 00 cc ff 00 00 cc ff 33 00 99 ff 66 00 cc ff 99 00 cc ff cc 00 cc ff ff 00 cc 00 33 00 ff 00 66 00 ff 00 99 00 cc 33 00 00 ff 33 33 00 ff 33 66 00 ff 33 99 00 ff 33 cc 00 ff 33 ff 00 ff 66 00 00 ff 66 33 00 cc 66 66 00 ff 66 99 00 ff 66 cc 00 cc 66 ff 00 ff 99 00 00 ff 99 33 00 ff 99 66 00 ff 99 99 00 ff 99 cc 00 ff 99 ff 00 ff cc 00 00 ff cc 33 00 ff cc 66 00 ff cc 99 00 ff cc cc 00 ff cc ff 00 ff ff 33 00 cc ff 66 00 ff ff 99 00 ff ff cc 00 66 66 ff 00 66 ff 66 00 66 ff ff 00 ff 66 66 00 ff 66 ff 00 ff ff 66 00 21 00 a5 00 5f 5f 5f 00 77 77 77 00 86 86 86 00 96 96 96 00 cb cb cb 00 b2 b2 b2 00 d7 d7 d7 00 dd dd dd 00 e3 e3 e3 00 ea ea ea 00 f1 f1 f1 00 f8 f8 f8 00 f0 fb ff 00 a4 a0 a0 00 80 80 80 00 00 00 ff 00 00 ff 00 00 00 ff ff 00 ff 00 00 00 ff 00 ff 00 ff ff 00 00 ff ff ff 00 ec 16 d0 81 01 00 00 00 01 00 00 00 0f 00 00 80 00 00 00 00
+
+Name=txtCoefTitle
+ProgID=VTCONTROLS.VTStaticText.1
+Rect=251, 56, 329, 73
+Style=50000000h
+ID=2910
+Data=1285 05 00 00 00 0f 00 00 80 00 03 52 e3 0b 91 8f ce 11 9d e3 00 aa 00 4b b8 51 01 00 00 00 90 01 44 42 01 00 06 54 61 68 6f 6d 61 0b 00 00 00 00 00 00 00 c0 c0 c0 00 c0 c0 c0 00 01 00 00 00 00 00 00 00 01 00 00 00 00 00 00 00 01 00 00 00 00 00 00 00 01 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 0f 43 6f 65 66 66 69 63 69 65 6e 74 20 3d 0d 0a 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 ff ff ff ff 00 00 00 00 00 00 00 00 49 4c 01 01 00 00 02 00 04 00 01 00 01 00 ff ff ff ff 08 00 ff ff ff ff ff ff ff ff 42 4d 36 04 00 00 00 00 00 00 36 04 00 00 28 00 00 00 04 00 00 00 01 00 00 00 01 00 08 00 00 00 00 00 04 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 80 00 00 80 00 00 00 80 80 00 80 00 00 00 80 00 80 00 80 80 00 00 c0 c0 c0 00 c0 dc c0 00 f0 ca a6 00 04 04 04 00 08 08 08 00 0c 0c 0c 00 11 11 11 00 16 16 16 00 1c 1c 1c 00 22 22 22 00 29 29 29 00 55 55 55 00 4d 4d 4d 00 42 42 42 00 39 39 39 00 80 7c ff 00 50 50 ff 00 93 00 d6 00 ff ec cc 00 c6 d6 ef 00 d6 e7 e7 00 90 a9 ad 00 00 00 33 00 00 00 66 00 00 00 99 00 00 00 cc 00 00 33 00 00 00 33 33 00 00 33 66 00 00 33 99 00 00 33 cc 00 00 33 ff 00 00 66 00 00 00 66 33 00 00 66 66 00 00 66 99 00 00 66 cc 00 00 66 ff 00 00 99 00 00 00 99 33 00 00 99 66 00 00 99 99 00 00 99 cc 00 00 99 ff 00 00 cc 00 00 00 cc 33 00 00 cc 66 00 00 cc 99 00 00 cc cc 00 00 cc ff 00 00 ff 66 00 00 ff 99 00 00 ff cc 00 33 00 00 00 33 00 33 00 33 00 66 00 33 00 99 00 33 00 cc 00 33 00 ff 00 33 33 00 00 33 33 33 00 33 33 66 00 33 33 99 00 33 33 cc 00 33 33 ff 00 33 66 00 00 33 66 33 00 33 66 66 00 33 66 99 00 33 66 cc 00 33 66 ff 00 33 99 00 00 33 99 33 00 33 99 66 00 33 99 99 00 33 99 cc 00 33 99 ff 00 33 cc 00 00 33 cc 33 00 33 cc 66 00 33 cc 99 00 33 cc cc 00 33 cc ff 00 33 ff 33 00 33 ff 66 00 33 ff 99 00 33 ff cc 00 33 ff ff 00 66 00 00 00 66 00 33 00 66 00 66 00 66 00 99 00 66 00 cc 00 66 00 ff 00 66 33 00 00 66 33 33 00 66 33 66 00 66 33 99 00 66 33 cc 00 66 33 ff 00 66 66 00 00 66 66 33 00 66 66 66 00 66 66 99 00 66 66 cc 00 66 99 00 00 66 99 33 00 66 99 66 00 66 99 99 00 66 99 cc 00 66 99 ff 00 66 cc 00 00 66 cc 33 00 66 cc 99 00 66 cc cc 00 66 cc ff 00 66 ff 00 00 66 ff 33 00 66 ff 99 00 66 ff cc 00 cc 00 ff 00 ff 00 cc 00 99 99 00 00 99 33 99 00 99 00 99 00 99 00 cc 00 99 00 00 00 99 33 33 00 99 00 66 00 99 33 cc 00 99 00 ff 00 99 66 00 00 99 66 33 00 99 33 66 00 99 66 99 00 99 66 cc 00 99 33 ff 00 99 99 33 00 99 99 66 00 99 99 99 00 99 99 cc 00 99 99 ff 00 99 cc 00 00 99 cc 33 00 66 cc 66 00 99 cc 99 00 99 cc cc 00 99 cc ff 00 99 ff 00 00 99 ff 33 00 99 cc 66 00 99 ff 99 00 99 ff cc 00 99 ff ff 00 cc 00 00 00 99 00 33 00 cc 00 66 00 cc 00 99 00 cc 00 cc 00 99 33 00 00 cc 33 33 00 cc 33 66 00 cc 33 99 00 cc 33 cc 00 cc 33 ff 00 cc 66 00 00 cc 66 33 00 99 66 66 00 cc 66 99 00 cc 66 cc 00 99 66 ff 00 cc 99 00 00 cc 99 33 00 cc 99 66 00 cc 99 99 00 cc 99 cc 00 cc 99 ff 00 cc cc 00 00 cc cc 33 00 cc cc 66 00 cc cc 99 00 cc cc cc 00 cc cc ff 00 cc ff 00 00 cc ff 33 00 99 ff 66 00 cc ff 99 00 cc ff cc 00 cc ff ff 00 cc 00 33 00 ff 00 66 00 ff 00 99 00 cc 33 00 00 ff 33 33 00 ff 33 66 00 ff 33 99 00 ff 33 cc 00 ff 33 ff 00 ff 66 00 00 ff 66 33 00 cc 66 66 00 ff 66 99 00 ff 66 cc 00 cc 66 ff 00 ff 99 00 00 ff 99 33 00 ff 99 66 00 ff 99 99 00 ff 99 cc 00 ff 99 ff 00 ff cc 00 00 ff cc 33 00 ff cc 66 00 ff cc 99 00 ff cc cc 00 ff cc ff 00 ff ff 33 00 cc ff 66 00 ff ff 99 00 ff ff cc 00 66 66 ff 00 66 ff 66 00 66 ff ff 00 ff 66 66 00 ff 66 ff 00 ff ff 66 00 21 00 a5 00 5f 5f 5f 00 77 77 77 00 86 86 86 00 96 96 96 00 cb cb cb 00 b2 b2 b2 00 d7 d7 d7 00 dd dd dd 00 e3 e3 e3 00 ea ea ea 00 f1 f1 f1 00 f8 f8 f8 00 f0 fb ff 00 a4 a0 a0 00 80 80 80 00 00 00 ff 00 00 ff 00 00 00 ff ff 00 ff 00 00 00 ff 00 ff 00 ff ff 00 00 ff ff ff 00 ec 16 d0 81 01 00 00 00 01 00 00 00 0f 00 00 80 00 00 00 00 00 00 00 00 00 00 00 00
+
+Name=txtResult
+ProgID=VTCONTROLS.VTStaticText.1
+Rect=314, 35, 359, 52
+Style=50000000h
+ID=2905
+Data=1265 05 00 00 00 0a 00 00 80 00 03 52 e3 0b 91 8f ce 11 9d e3 00 aa 00 4b b8 51 01 00 00 00 90 01 44 42 01 00 06 54 61 68 6f 6d 61 0a 00 00 00 00 00 00 00 c0 c0 c0 00 c0 c0 c0 00 01 00 00 00 00 00 00 00 01 00 00 00 00 00 00 00 01 00 00 00 00 00 00 00 01 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 03 30 2e 30 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 ff ff ff ff 00 00 00 00 00 00 00 00 49 4c 01 01 00 00 02 00 04 00 01 00 01 00 ff ff ff ff 08 00 ff ff ff ff ff ff ff ff 42 4d 36 04 00 00 00 00 00 00 36 04 00 00 28 00 00 00 04 00 00 00 01 00 00 00 01 00 08 00 00 00 00 00 04 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 80 00 00 80 00 00 00 80 80 00 80 00 00 00 80 00 80 00 80 80 00 00 c0 c0 c0 00 c0 dc c0 00 f0 ca a6 00 04 04 04 00 08 08 08 00 0c 0c 0c 00 11 11 11 00 16 16 16 00 1c 1c 1c 00 22 22 22 00 29 29 29 00 55 55 55 00 4d 4d 4d 00 42 42 42 00 39 39 39 00 80 7c ff 00 50 50 ff 00 93 00 d6 00 ff ec cc 00 c6 d6 ef 00 d6 e7 e7 00 90 a9 ad 00 00 00 33 00 00 00 66 00 00 00 99 00 00 00 cc 00 00 33 00 00 00 33 33 00 00 33 66 00 00 33 99 00 00 33 cc 00 00 33 ff 00 00 66 00 00 00 66 33 00 00 66 66 00 00 66 99 00 00 66 cc 00 00 66 ff 00 00 99 00 00 00 99 33 00 00 99 66 00 00 99 99 00 00 99 cc 00 00 99 ff 00 00 cc 00 00 00 cc 33 00 00 cc 66 00 00 cc 99 00 00 cc cc 00 00 cc ff 00 00 ff 66 00 00 ff 99 00 00 ff cc 00 33 00 00 00 33 00 33 00 33 00 66 00 33 00 99 00 33 00 cc 00 33 00 ff 00 33 33 00 00 33 33 33 00 33 33 66 00 33 33 99 00 33 33 cc 00 33 33 ff 00 33 66 00 00 33 66 33 00 33 66 66 00 33 66 99 00 33 66 cc 00 33 66 ff 00 33 99 00 00 33 99 33 00 33 99 66 00 33 99 99 00 33 99 cc 00 33 99 ff 00 33 cc 00 00 33 cc 33 00 33 cc 66 00 33 cc 99 00 33 cc cc 00 33 cc ff 00 33 ff 33 00 33 ff 66 00 33 ff 99 00 33 ff cc 00 33 ff ff 00 66 00 00 00 66 00 33 00 66 00 66 00 66 00 99 00 66 00 cc 00 66 00 ff 00 66 33 00 00 66 33 33 00 66 33 66 00 66 33 99 00 66 33 cc 00 66 33 ff 00 66 66 00 00 66 66 33 00 66 66 66 00 66 66 99 00 66 66 cc 00 66 99 00 00 66 99 33 00 66 99 66 00 66 99 99 00 66 99 cc 00 66 99 ff 00 66 cc 00 00 66 cc 33 00 66 cc 99 00 66 cc cc 00 66 cc ff 00 66 ff 00 00 66 ff 33 00 66 ff 99 00 66 ff cc 00 cc 00 ff 00 ff 00 cc 00 99 99 00 00 99 33 99 00 99 00 99 00 99 00 cc 00 99 00 00 00 99 33 33 00 99 00 66 00 99 33 cc 00 99 00 ff 00 99 66 00 00 99 66 33 00 99 33 66 00 99 66 99 00 99 66 cc 00 99 33 ff 00 99 99 33 00 99 99 66 00 99 99 99 00 99 99 cc 00 99 99 ff 00 99 cc 00 00 99 cc 33 00 66 cc 66 00 99 cc 99 00 99 cc cc 00 99 cc ff 00 99 ff 00 00 99 ff 33 00 99 cc 66 00 99 ff 99 00 99 ff cc 00 99 ff ff 00 cc 00 00 00 99 00 33 00 cc 00 66 00 cc 00 99 00 cc 00 cc 00 99 33 00 00 cc 33 33 00 cc 33 66 00 cc 33 99 00 cc 33 cc 00 cc 33 ff 00 cc 66 00 00 cc 66 33 00 99 66 66 00 cc 66 99 00 cc 66 cc 00 99 66 ff 00 cc 99 00 00 cc 99 33 00 cc 99 66 00 cc 99 99 00 cc 99 cc 00 cc 99 ff 00 cc cc 00 00 cc cc 33 00 cc cc 66 00 cc cc 99 00 cc cc cc 00 cc cc ff 00 cc ff 00 00 cc ff 33 00 99 ff 66 00 cc ff 99 00 cc ff cc 00 cc ff ff 00 cc 00 33 00 ff 00 66 00 ff 00 99 00 cc 33 00 00 ff 33 33 00 ff 33 66 00 ff 33 99 00 ff 33 cc 00 ff 33 ff 00 ff 66 00 00 ff 66 33 00 cc 66 66 00 ff 66 99 00 ff 66 cc 00 cc 66 ff 00 ff 99 00 00 ff 99 33 00 ff 99 66 00 ff 99 99 00 ff 99 cc 00 ff 99 ff 00 ff cc 00 00 ff cc 33 00 ff cc 66 00 ff cc 99 00 ff cc cc 00 ff cc ff 00 ff ff 33 00 cc ff 66 00 ff ff 99 00 ff ff cc 00 66 66 ff 00 66 ff 66 00 66 ff ff 00 ff 66 66 00 ff 66 ff 00 ff ff 66 00 21 00 a5 00 5f 5f 5f 00 77 77 77 00 86 86 86 00 96 96 96 00 cb cb cb 00 b2 b2 b2 00 d7 d7 d7 00 dd dd dd 00 e3 e3 e3 00 ea ea ea 00 f1 f1 f1 00 f8 f8 f8 00 f0 fb ff 00 a4 a0 a0 00 80 80 80 00 00 00 ff 00 00 ff 00 00 00 ff ff 00 ff 00 00 00 ff 00 ff 00 ff ff 00 00 ff ff ff 00 44 18 cf 81 01 00 00 00 01 00 00 00 0f 00 00 80 00 00 00 00
+
+Name=txtResultTitle
+ProgID=VTCONTROLS.VTStaticText.1
+Rect=251, 35, 307, 52
+Style=50000000h
+ID=2905
+Data=1269 05 00 00 00 0f 00 00 80 00 03 52 e3 0b 91 8f ce 11 9d e3 00 aa 00 4b b8 51 01 00 00 00 90 01 44 42 01 00 06 54 61 68 6f 6d 61 0a 00 00 00 00 00 00 00 c0 c0 c0 00 c0 c0 c0 00 01 00 00 00 00 00 00 00 01 00 00 00 00 00 00 00 01 00 00 00 00 00 00 00 01 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 07 52 65 73 75 6c 74 3a 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 ff ff ff ff 00 00 00 00 00 00 00 00 49 4c 01 01 00 00 02 00 04 00 01 00 01 00 ff ff ff ff 08 00 ff ff ff ff ff ff ff ff 42 4d 36 04 00 00 00 00 00 00 36 04 00 00 28 00 00 00 04 00 00 00 01 00 00 00 01 00 08 00 00 00 00 00 04 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 80 00 00 80 00 00 00 80 80 00 80 00 00 00 80 00 80 00 80 80 00 00 c0 c0 c0 00 c0 dc c0 00 f0 ca a6 00 04 04 04 00 08 08 08 00 0c 0c 0c 00 11 11 11 00 16 16 16 00 1c 1c 1c 00 22 22 22 00 29 29 29 00 55 55 55 00 4d 4d 4d 00 42 42 42 00 39 39 39 00 80 7c ff 00 50 50 ff 00 93 00 d6 00 ff ec cc 00 c6 d6 ef 00 d6 e7 e7 00 90 a9 ad 00 00 00 33 00 00 00 66 00 00 00 99 00 00 00 cc 00 00 33 00 00 00 33 33 00 00 33 66 00 00 33 99 00 00 33 cc 00 00 33 ff 00 00 66 00 00 00 66 33 00 00 66 66 00 00 66 99 00 00 66 cc 00 00 66 ff 00 00 99 00 00 00 99 33 00 00 99 66 00 00 99 99 00 00 99 cc 00 00 99 ff 00 00 cc 00 00 00 cc 33 00 00 cc 66 00 00 cc 99 00 00 cc cc 00 00 cc ff 00 00 ff 66 00 00 ff 99 00 00 ff cc 00 33 00 00 00 33 00 33 00 33 00 66 00 33 00 99 00 33 00 cc 00 33 00 ff 00 33 33 00 00 33 33 33 00 33 33 66 00 33 33 99 00 33 33 cc 00 33 33 ff 00 33 66 00 00 33 66 33 00 33 66 66 00 33 66 99 00 33 66 cc 00 33 66 ff 00 33 99 00 00 33 99 33 00 33 99 66 00 33 99 99 00 33 99 cc 00 33 99 ff 00 33 cc 00 00 33 cc 33 00 33 cc 66 00 33 cc 99 00 33 cc cc 00 33 cc ff 00 33 ff 33 00 33 ff 66 00 33 ff 99 00 33 ff cc 00 33 ff ff 00 66 00 00 00 66 00 33 00 66 00 66 00 66 00 99 00 66 00 cc 00 66 00 ff 00 66 33 00 00 66 33 33 00 66 33 66 00 66 33 99 00 66 33 cc 00 66 33 ff 00 66 66 00 00 66 66 33 00 66 66 66 00 66 66 99 00 66 66 cc 00 66 99 00 00 66 99 33 00 66 99 66 00 66 99 99 00 66 99 cc 00 66 99 ff 00 66 cc 00 00 66 cc 33 00 66 cc 99 00 66 cc cc 00 66 cc ff 00 66 ff 00 00 66 ff 33 00 66 ff 99 00 66 ff cc 00 cc 00 ff 00 ff 00 cc 00 99 99 00 00 99 33 99 00 99 00 99 00 99 00 cc 00 99 00 00 00 99 33 33 00 99 00 66 00 99 33 cc 00 99 00 ff 00 99 66 00 00 99 66 33 00 99 33 66 00 99 66 99 00 99 66 cc 00 99 33 ff 00 99 99 33 00 99 99 66 00 99 99 99 00 99 99 cc 00 99 99 ff 00 99 cc 00 00 99 cc 33 00 66 cc 66 00 99 cc 99 00 99 cc cc 00 99 cc ff 00 99 ff 00 00 99 ff 33 00 99 cc 66 00 99 ff 99 00 99 ff cc 00 99 ff ff 00 cc 00 00 00 99 00 33 00 cc 00 66 00 cc 00 99 00 cc 00 cc 00 99 33 00 00 cc 33 33 00 cc 33 66 00 cc 33 99 00 cc 33 cc 00 cc 33 ff 00 cc 66 00 00 cc 66 33 00 99 66 66 00 cc 66 99 00 cc 66 cc 00 99 66 ff 00 cc 99 00 00 cc 99 33 00 cc 99 66 00 cc 99 99 00 cc 99 cc 00 cc 99 ff 00 cc cc 00 00 cc cc 33 00 cc cc 66 00 cc cc 99 00 cc cc cc 00 cc cc ff 00 cc ff 00 00 cc ff 33 00 99 ff 66 00 cc ff 99 00 cc ff cc 00 cc ff ff 00 cc 00 33 00 ff 00 66 00 ff 00 99 00 cc 33 00 00 ff 33 33 00 ff 33 66 00 ff 33 99 00 ff 33 cc 00 ff 33 ff 00 ff 66 00 00 ff 66 33 00 cc 66 66 00 ff 66 99 00 ff 66 cc 00 cc 66 ff 00 ff 99 00 00 ff 99 33 00 ff 99 66 00 ff 99 99 00 ff 99 cc 00 ff 99 ff 00 ff cc 00 00 ff cc 33 00 ff cc 66 00 ff cc 99 00 ff cc cc 00 ff cc ff 00 ff ff 33 00 cc ff 66 00 ff ff 99 00 ff ff cc 00 66 66 ff 00 66 ff 66 00 66 ff ff 00 ff 66 66 00 ff 66 ff 00 ff ff 66 00 21 00 a5 00 5f 5f 5f 00 77 77 77 00 86 86 86 00 96 96 96 00 cb cb cb 00 b2 b2 b2 00 d7 d7 d7 00 dd dd dd 00 e3 e3 e3 00 ea ea ea 00 f1 f1 f1 00 f8 f8 f8 00 f0 fb ff 00 a4 a0 a0 00 80 80 80 00 00 00 ff 00 00 ff 00 00 00 ff ff 00 ff 00 00 00 ff 00 ff 00 ff ff 00 00 ff ff ff 00 ec 16 d0 81 01 00 00 00 01 00 00 00 0f 00 00 80 00 00 00 00
+
+Name=txtUnit
+ProgID=VTCONTROLS.VTStaticText.1
+Rect=366, 35, 407, 52
+Style=50000000h
+ID=2905
+Data=1267 05 00 00 00 0a 00 00 80 00 03 52 e3 0b 91 8f ce 11 9d e3 00 aa 00 4b b8 51 01 00 00 00 90 01 44 42 01 00 06 54 61 68 6f 6d 61 0a 00 00 00 00 00 00 00 c0 c0 c0 00 c0 c0 c0 00 01 00 00 00 00 00 00 00 01 00 00 00 00 00 00 00 01 00 00 00 00 00 00 00 01 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 05 70 69 78 65 6c 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 ff ff ff ff 00 00 00 00 00 00 00 00 49 4c 01 01 00 00 02 00 04 00 01 00 01 00 ff ff ff ff 08 00 ff ff ff ff ff ff ff ff 42 4d 36 04 00 00 00 00 00 00 36 04 00 00 28 00 00 00 04 00 00 00 01 00 00 00 01 00 08 00 00 00 00 00 04 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 80 00 00 80 00 00 00 80 80 00 80 00 00 00 80 00 80 00 80 80 00 00 c0 c0 c0 00 c0 dc c0 00 f0 ca a6 00 04 04 04 00 08 08 08 00 0c 0c 0c 00 11 11 11 00 16 16 16 00 1c 1c 1c 00 22 22 22 00 29 29 29 00 55 55 55 00 4d 4d 4d 00 42 42 42 00 39 39 39 00 80 7c ff 00 50 50 ff 00 93 00 d6 00 ff ec cc 00 c6 d6 ef 00 d6 e7 e7 00 90 a9 ad 00 00 00 33 00 00 00 66 00 00 00 99 00 00 00 cc 00 00 33 00 00 00 33 33 00 00 33 66 00 00 33 99 00 00 33 cc 00 00 33 ff 00 00 66 00 00 00 66 33 00 00 66 66 00 00 66 99 00 00 66 cc 00 00 66 ff 00 00 99 00 00 00 99 33 00 00 99 66 00 00 99 99 00 00 99 cc 00 00 99 ff 00 00 cc 00 00 00 cc 33 00 00 cc 66 00 00 cc 99 00 00 cc cc 00 00 cc ff 00 00 ff 66 00 00 ff 99 00 00 ff cc 00 33 00 00 00 33 00 33 00 33 00 66 00 33 00 99 00 33 00 cc 00 33 00 ff 00 33 33 00 00 33 33 33 00 33 33 66 00 33 33 99 00 33 33 cc 00 33 33 ff 00 33 66 00 00 33 66 33 00 33 66 66 00 33 66 99 00 33 66 cc 00 33 66 ff 00 33 99 00 00 33 99 33 00 33 99 66 00 33 99 99 00 33 99 cc 00 33 99 ff 00 33 cc 00 00 33 cc 33 00 33 cc 66 00 33 cc 99 00 33 cc cc 00 33 cc ff 00 33 ff 33 00 33 ff 66 00 33 ff 99 00 33 ff cc 00 33 ff ff 00 66 00 00 00 66 00 33 00 66 00 66 00 66 00 99 00 66 00 cc 00 66 00 ff 00 66 33 00 00 66 33 33 00 66 33 66 00 66 33 99 00 66 33 cc 00 66 33 ff 00 66 66 00 00 66 66 33 00 66 66 66 00 66 66 99 00 66 66 cc 00 66 99 00 00 66 99 33 00 66 99 66 00 66 99 99 00 66 99 cc 00 66 99 ff 00 66 cc 00 00 66 cc 33 00 66 cc 99 00 66 cc cc 00 66 cc ff 00 66 ff 00 00 66 ff 33 00 66 ff 99 00 66 ff cc 00 cc 00 ff 00 ff 00 cc 00 99 99 00 00 99 33 99 00 99 00 99 00 99 00 cc 00 99 00 00 00 99 33 33 00 99 00 66 00 99 33 cc 00 99 00 ff 00 99 66 00 00 99 66 33 00 99 33 66 00 99 66 99 00 99 66 cc 00 99 33 ff 00 99 99 33 00 99 99 66 00 99 99 99 00 99 99 cc 00 99 99 ff 00 99 cc 00 00 99 cc 33 00 66 cc 66 00 99 cc 99 00 99 cc cc 00 99 cc ff 00 99 ff 00 00 99 ff 33 00 99 cc 66 00 99 ff 99 00 99 ff cc 00 99 ff ff 00 cc 00 00 00 99 00 33 00 cc 00 66 00 cc 00 99 00 cc 00 cc 00 99 33 00 00 cc 33 33 00 cc 33 66 00 cc 33 99 00 cc 33 cc 00 cc 33 ff 00 cc 66 00 00 cc 66 33 00 99 66 66 00 cc 66 99 00 cc 66 cc 00 99 66 ff 00 cc 99 00 00 cc 99 33 00 cc 99 66 00 cc 99 99 00 cc 99 cc 00 cc 99 ff 00 cc cc 00 00 cc cc 33 00 cc cc 66 00 cc cc 99 00 cc cc cc 00 cc cc ff 00 cc ff 00 00 cc ff 33 00 99 ff 66 00 cc ff 99 00 cc ff cc 00 cc ff ff 00 cc 00 33 00 ff 00 66 00 ff 00 99 00 cc 33 00 00 ff 33 33 00 ff 33 66 00 ff 33 99 00 ff 33 cc 00 ff 33 ff 00 ff 66 00 00 ff 66 33 00 cc 66 66 00 ff 66 99 00 ff 66 cc 00 cc 66 ff 00 ff 99 00 00 ff 99 33 00 ff 99 66 00 ff 99 99 00 ff 99 cc 00 ff 99 ff 00 ff cc 00 00 ff cc 33 00 ff cc 66 00 ff cc 99 00 ff cc cc 00 ff cc ff 00 ff ff 33 00 cc ff 66 00 ff ff 99 00 ff ff cc 00 66 66 ff 00 66 ff 66 00 66 ff ff 00 ff 66 66 00 ff 66 ff 00 ff ff 66 00 21 00 a5 00 5f 5f 5f 00 77 77 77 00 86 86 86 00 96 96 96 00 cb cb cb 00 b2 b2 b2 00 d7 d7 d7 00 dd dd dd 00 e3 e3 e3 00 ea ea ea 00 f1 f1 f1 00 f8 f8 f8 00 f0 fb ff 00 a4 a0 a0 00 80 80 80 00 00 00 ff 00 00 ff 00 00 00 ff ff 00 ff 00 00 00 ff 00 ff 00 ff ff 00 00 ff ff ff 00 c8 ab cf 81 01 00 00 00 01 00 00 00 0f 00 00 80 00 00 00 00
+
+Name=Msg
+ProgID=VTCONTROLS.VTStaticText.1
+Rect=6, 4, 519, 19
+Style=50000000h
+ID=123
+Data=1262 05 00 00 00 0a 00 00 80 00 03 52 e3 0b 91 8f ce 11 9d e3 00 aa 00 4b b8 51 01 00 00 00 bc 02 44 42 01 00 06 54 61 68 6f 6d 61 0a 00 00 00 00 00 00 00 c0 c0 c0 00 c0 c0 c0 00 01 00 00 00 00 00 00 00 01 00 00 00 00 00 00 00 01 00 00 00 00 00 00 00 01 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 ff ff ff ff 00 00 00 00 00 00 00 00 49 4c 01 01 00 00 02 00 04 00 01 00 01 00 ff ff ff ff 08 00 ff ff ff ff ff ff ff ff 42 4d 36 04 00 00 00 00 00 00 36 04 00 00 28 00 00 00 04 00 00 00 01 00 00 00 01 00 08 00 00 00 00 00 04 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 80 00 00 80 00 00 00 80 80 00 80 00 00 00 80 00 80 00 80 80 00 00 c0 c0 c0 00 c0 dc c0 00 f0 ca a6 00 04 04 04 00 08 08 08 00 0c 0c 0c 00 11 11 11 00 16 16 16 00 1c 1c 1c 00 22 22 22 00 29 29 29 00 55 55 55 00 4d 4d 4d 00 42 42 42 00 39 39 39 00 80 7c ff 00 50 50 ff 00 93 00 d6 00 ff ec cc 00 c6 d6 ef 00 d6 e7 e7 00 90 a9 ad 00 00 00 33 00 00 00 66 00 00 00 99 00 00 00 cc 00 00 33 00 00 00 33 33 00 00 33 66 00 00 33 99 00 00 33 cc 00 00 33 ff 00 00 66 00 00 00 66 33 00 00 66 66 00 00 66 99 00 00 66 cc 00 00 66 ff 00 00 99 00 00 00 99 33 00 00 99 66 00 00 99 99 00 00 99 cc 00 00 99 ff 00 00 cc 00 00 00 cc 33 00 00 cc 66 00 00 cc 99 00 00 cc cc 00 00 cc ff 00 00 ff 66 00 00 ff 99 00 00 ff cc 00 33 00 00 00 33 00 33 00 33 00 66 00 33 00 99 00 33 00 cc 00 33 00 ff 00 33 33 00 00 33 33 33 00 33 33 66 00 33 33 99 00 33 33 cc 00 33 33 ff 00 33 66 00 00 33 66 33 00 33 66 66 00 33 66 99 00 33 66 cc 00 33 66 ff 00 33 99 00 00 33 99 33 00 33 99 66 00 33 99 99 00 33 99 cc 00 33 99 ff 00 33 cc 00 00 33 cc 33 00 33 cc 66 00 33 cc 99 00 33 cc cc 00 33 cc ff 00 33 ff 33 00 33 ff 66 00 33 ff 99 00 33 ff cc 00 33 ff ff 00 66 00 00 00 66 00 33 00 66 00 66 00 66 00 99 00 66 00 cc 00 66 00 ff 00 66 33 00 00 66 33 33 00 66 33 66 00 66 33 99 00 66 33 cc 00 66 33 ff 00 66 66 00 00 66 66 33 00 66 66 66 00 66 66 99 00 66 66 cc 00 66 99 00 00 66 99 33 00 66 99 66 00 66 99 99 00 66 99 cc 00 66 99 ff 00 66 cc 00 00 66 cc 33 00 66 cc 99 00 66 cc cc 00 66 cc ff 00 66 ff 00 00 66 ff 33 00 66 ff 99 00 66 ff cc 00 cc 00 ff 00 ff 00 cc 00 99 99 00 00 99 33 99 00 99 00 99 00 99 00 cc 00 99 00 00 00 99 33 33 00 99 00 66 00 99 33 cc 00 99 00 ff 00 99 66 00 00 99 66 33 00 99 33 66 00 99 66 99 00 99 66 cc 00 99 33 ff 00 99 99 33 00 99 99 66 00 99 99 99 00 99 99 cc 00 99 99 ff 00 99 cc 00 00 99 cc 33 00 66 cc 66 00 99 cc 99 00 99 cc cc 00 99 cc ff 00 99 ff 00 00 99 ff 33 00 99 cc 66 00 99 ff 99 00 99 ff cc 00 99 ff ff 00 cc 00 00 00 99 00 33 00 cc 00 66 00 cc 00 99 00 cc 00 cc 00 99 33 00 00 cc 33 33 00 cc 33 66 00 cc 33 99 00 cc 33 cc 00 cc 33 ff 00 cc 66 00 00 cc 66 33 00 99 66 66 00 cc 66 99 00 cc 66 cc 00 99 66 ff 00 cc 99 00 00 cc 99 33 00 cc 99 66 00 cc 99 99 00 cc 99 cc 00 cc 99 ff 00 cc cc 00 00 cc cc 33 00 cc cc 66 00 cc cc 99 00 cc cc cc 00 cc cc ff 00 cc ff 00 00 cc ff 33 00 99 ff 66 00 cc ff 99 00 cc ff cc 00 cc ff ff 00 cc 00 33 00 ff 00 66 00 ff 00 99 00 cc 33 00 00 ff 33 33 00 ff 33 66 00 ff 33 99 00 ff 33 cc 00 ff 33 ff 00 ff 66 00 00 ff 66 33 00 cc 66 66 00 ff 66 99 00 ff 66 cc 00 cc 66 ff 00 ff 99 00 00 ff 99 33 00 ff 99 66 00 ff 99 99 00 ff 99 cc 00 ff 99 ff 00 ff cc 00 00 ff cc 33 00 ff cc 66 00 ff cc 99 00 ff cc cc 00 ff cc ff 00 ff ff 33 00 cc ff 66 00 ff ff 99 00 ff ff cc 00 66 66 ff 00 66 ff 66 00 66 ff ff 00 ff 66 66 00 ff 66 ff 00 ff ff 66 00 21 00 a5 00 5f 5f 5f 00 77 77 77 00 86 86 86 00 96 96 96 00 cb cb cb 00 b2 b2 b2 00 d7 d7 d7 00 dd dd dd 00 e3 e3 e3 00 ea ea ea 00 f1 f1 f1 00 f8 f8 f8 00 f0 fb ff 00 a4 a0 a0 00 80 80 80 00 00 00 ff 00 00 ff 00 00 00 ff ff 00 ff 00 00 00 ff 00 ff 00 ff ff 00 00 ff ff ff 00 2c 54 d1 81 01 00 00 00 01 00 00 00 0f 00 00 80 00 00 00 00
+
+Name=Control1765
+ProgID=VTDESIGN.VTD3DBarCtrl.1
+Rect=233, 28, 550, 81
+Style=50000000h
+ID=123
+Data=73 00 00 00 00 03 00 00 00 03 00 02 00 00 00 05 00 00 80 01 00 00 00 08 00 00 80 00 64 00 00 00 00 00 01 00 01 00 00 00 00 03 52 e3 0b 91 8f ce 11 9d e3 00 aa 00 4b b8 51 01 00 00 00 90 01 44 42 01 00 06 54 61 68 6f 6d 61
+
+Name=txtMsg
+ProgID=VTCONTROLS.VTStaticText.1
+Rect=21, 82, 302, 99
+Style=50000000h
+ID=0
+Data=354 05 00 00 00 0f 00 00 80 00 03 52 e3 0b 91 8f ce 11 9d e3 00 aa 00 4b b8 51 01 cc 00 00 90 01 44 42 01 00 0d 4d 53 20 53 61 6e 73 20 53 65 72 69 66 0b 00 00 00 ff 00 00 00 0f 00 00 80 0f 00 00 80 01 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 01 00 00 00 00 00 00 00 01 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 1f 54 68 69 73 20 63 6c 61 73 73 69 66 69 65 72 20 61 6c 72 65 61 64 79 20 65 78 69 73 74 73 21 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 ff ff ff ff 00 00 00 00 00 00 00 00 49 4c 01 01 00 00 02 00 04 00 01 00 01 00 ff ff ff ff 11 00 ff ff ff ff ff ff ff ff 42 4d 36 00 00 00 00 00 00 00 36 00 00 00 28 00 00 00 04 00 00 00 01 00 00 00 01 00 10 00 00 00 00 00 08 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 42 4d 3e 00 00 00 00 00 00 00 3e 00 00 00 28 00 00 00 04 00 00 00 01 00 00 00 01 00 01 00 00 00 00 00 04 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 ff ff ff 00 00 00 00 00 01 00 00 00 01 00 00 00 0f 00 00 80 01 00 00 00 00 00 00 00 00 00 00 00
+
+
+[Script]
+Dim szUnit()
+Dim fUnitCoeff()
+Dim iCountUnit, iCurrentUnit, rec
+Dim MeasReasult, Coeff, Unit,UnitCoeff, Current, Row, XYcoeff, FirstCall, MakeNew
+Dim CalibrName 
+Dim CalibrGUID 
+Dim BackColor, EditBackColor
+Dim sSection , sPixel
+sSection = "NewCalibr"
+Dim bFormClose
+bFormClose = False
+
+Dim CalibrObj
+Dim dXYRatio
+
+Dim sNewCalibr, sMsg1,sMsg2
+
+sNewCalibr = Docs.LoadString ("New calibration")
+sMsg1 = Docs.LoadString ("Enter distance and select unit of measure")
+sMsg2 = Docs.LoadString ("Measure test object!")
+edtDistance.CaptionText = Docs.LoadString ("Distance:")
+txtName.CaptionText = Docs.LoadString ("Name:")
+txtResultTitle.Text = Docs.LoadString ("Result:")
+txtCoefTitle.Text = Docs.LoadString ("Coefficient:")
+sPixel = Docs.LoadString ("pixel")
+
+' Удаление всех изм. объектов кроме активного //
+Sub ManualMeasure_BeforeManualMeasure(StrType)
+	Dim objList, iObjCount, i, o
+	Set objList = Objects.ActiveObjectList
+	If TypeName(objList) = "Nothing" Then Exit Sub
+	iObjCount = objList.GetCount
+	For i = iObjCount - 2 To 0 Step -1
+		objList.RemoveObjectByIdx( i )
+	Next
+	Set objList = Nothing
+End Sub
+
+Sub ManualMeasure_AfterManualMeasure(StrType, result)
+	MeasReasult = Data.Getvalue ("\ManualMeasure\LastPixelLength") 
+	
+	FormManager.EnableOk False
+	
+	If MeasReasult = 0 Then	Exit Sub
+	
+	txtName.Disabled = False	
+	txtResult.Text = FormatNumber(MeasReasult,2)
+	txtUnit.Text = sPixel
+	edtDistance.Disabled = 0
+	Msg.TextColor = &h000000 '&hFF0000
+	Msg.Text = sMsg1
+	'edtDistance.EditBackColor = &hFF0000	&hFF9428
+	'edtDistance.EditTextColor = &hFFFFFF	&hFFFFFF
+	edtDistance.Text = ""
+	edtDistance.SetFocus
+	'CalibrList.SetColumnBackColor 0,&hFFFFFF
+End Sub
+
+Sub LoadUnits()	
+	iCountUnit = Data.Getvalue ("\UnitList\CountUnit")
+	iCurrentUnit = Data.Getvalue ("\UnitList\CurrentUnit")
+	ReDim  szUnit(iCountUnit )
+	ReDim  fUnitCoeff(iCountUnit )
+	For i=0 To iCountUnit-1
+		Name = "\UnitList\C0R"+CStr(i)
+		s = Data.Getvalue (Name)
+		cbUnit.InsertString i,s
+		Name = "\UnitList\C1R"+CStr(i)
+		fUnitCoeff(i) = Application.VTDbl( Data.Getvalue (Name) )
+	Next
+	cbUnit.SetSel iCurrentUnit
+	UnitCoeff = fUnitCoeff(iCurrentUnit)
+	Unit = cbUnit.GetText()
+End Sub
+
+'***************************************************************
+'Form event handlers.
+'***************************************************************
+Dim obj_list
+bWasOk = False
+
+Sub Form_OnInitialize()
+	Set obj_list = Objects.ActiveObjectList
+	FirstCall = 1
+	'ActionManager.HideDockBars
+
+	'Активизация временного списка объектов без изменения вью //
+	ActionManager.ObjectNew "Object List", "_TmpResults1", 0
+	ActionManager.ObjectSelect "_TmpResults1", 2
+
+	Set CalibrObj = Objects.GetObjectByName( "_TmpResults1" )
+	Objects.ActiveObjectList = CalibrObj	
+	LoadUnits()
+	
+	sSec = "\Input\" & Data.GetDefValue ("\Input\Device", "Open File") & "\PixelAspectRatio"
+	dXYRatio = Data.GetDefValue (sSec, 1)
+
+	ActionManager.ShowImage
+
+	EditBackColor = edtDistance.EditBackColor
+	Msg.Text = sMsg2
+	edtDistance.Disabled = 1
+	'cbUnit.Disabled = 1
+	'MsgBox "Measure test object!"
+	NameAction = ActionState.GetCurrentAction
+
+	'3 строки перенести в Sub Form_OnShow()
+
+	'Блокируем контекстное меню для предотвращения завершения акции MeasManualLine //
+	ActionState.SetActionState "ShowSource", 0
+	ActionState.SetActionState "ShowImage", 0
+	ActionState.SetActionState "ShowMasks", 0
+	ActionState.SetActionState "ShowObjects", 0
+	ActionState.SetActionState "ShowBinaryFore", 0
+	ActionState.SetActionState "ShowBinaryBack", 0
+	ActionState.SetActionState "ShowMeasView", 0
+	ActionState.SetActionState "ShowStatView", 0
+	ActionState.SetActionState "ShowStatTable", 0
+	ActionState.SetActionState "ShowPropertyBar", 0
+	ActionState.SetActionState "SendTo", 0
+	
+	MakeNew = 1	
+	FirstCall = 0
+	txtUnit.Text = sPixel
+
+	txtName.Text = NewName()
+	txtName.Disabled = True
+'	txtName.Disabled = false
+	
+	FormManager.EnableOk False
+	FormManager.EnableApply False
+	
+	If NameAction <> "MeasManualLine" Then
+'		ActionManager.MeasManualLine
+		ActionState.RunInteractive "MeasManualLine"
+	End If
+	Data.RemoveValue "\tmp"
+	txtMsg.Text = ""	
+End Sub
+
+Sub Form_OnOK()
+	If cbUnit.GetSel() < 0 Then cbUnit.SetSel(iCurrentUnit)	
+	If txtName.Text = "" or Coeff = 0 Then Exit Sub
+	If MeasReasult = 0 Then Exit Sub
+	Data.Setvalue "\UnitList\CurrentUnit", cbUnit.GetSel()		
+	Data.Setvalue "\Units\Linear\Name", cbUnit.GetText()
+	Data.Setvalue "\Units\Linear\CoeffToUnit", fUnitCoeff(cbUnit.GetSel())
+	Data.Setvalue "\Calibration\MeasPix", 0
+	
+	Data.Setvalue "\Units\Velocity\Name", cbUnit.GetText() + Docs.LoadString ("/s")
+	Data.Setvalue "\Units\Velocity\CoeffToUnit", fUnitCoeff(cbUnit.GetSel())	
+
+	CalibrGUID = Docs.GenerateGUID
+	Data.Setvalue "\"+sSection+"\"+"Active", CalibrGUID
+	Data.Setvalue "\"+sSection+"\"+CalibrGUID+"\"+"Name", txtName.Text
+	Data.Setvalue "\"+sSection+"\"+CalibrGUID+"\"+"MeterPerPixel", Coeff/UnitCoeff
+	Data.Setvalue "\"+sSection+"\"+CalibrGUID+"\"+"Active", 1
+
+	ActionManager.ReCalcOnChangeCalibr
+	Form.UpdateSystemSettings
+	bWasOk = True
+	Data.SetValue "\tmp\FormOK", 1
+End Sub
+
+Sub Form_OnDestroy()
+	bFormClose = True
+	'ActionManager.ShowDockBars 
+	ActionState.TerminateCurrentAction
+	Objects.RemoveObject CalibrObj 
+	Set CalibrObj = Nothing
+	If TypeName(obj_list) <> "Nothing" Then Objects.ActiveObjectList = obj_list
+	Set obj_list = Nothing
+	If bWasOk Then ActionManager.CalcMeasResult
+
+	ActionState.ResetActionState "ShowSource"
+	ActionState.ResetActionState "ShowImage"
+	ActionState.ResetActionState "ShowMasks"
+	ActionState.ResetActionState "ShowObjects"
+	ActionState.ResetActionState "ShowBinaryFore"
+	ActionState.ResetActionState "ShowBinaryBack"
+	ActionState.ResetActionState "ShowMeasView"
+	ActionState.ResetActionState "ShowStatView"
+	ActionState.ResetActionState "ShowStatTable"
+	ActionState.ResetActionState "ShowPropertyBar"
+	ActionState.ResetActionState "SendTo"
+End Sub
+
+
+'***************************************************************
+'edtDistance event handlers.
+'***************************************************************
+Sub edtDistance_DataChange()
+	If 	edtDistance.ValueDouble > 0 and MeasReasult > 0 Then 		
+		Coeff = edtDistance.ValueDouble / MeasReasult 
+		txtCoeff.Text = FormatNumber(Coeff,6)+" "+Unit+"/"+sPixel
+		FormManager.EnableOk True
+	Else
+		FormManager.EnableOk False
+	End If
+End Sub
+
+'***************************************************************
+'txtName event handlers.
+'***************************************************************
+sub txtName_DataChange()
+	FormManager.EnableOk( Trim(txtName.Text) <> "" And Not NameExist(txtName.Text))
+	If NameExist(txtName.Text) Then 
+		txtMsg.Text Docs.LoadString ("The specified name already exists!")
+	Else
+		txtMsg.Text ""
+	End If
+end sub
+
+Sub Show(from)
+	Stroka = ""
+	Stroka = Stroka+"N="+CStr(CalibrCount)+" "+" From "+from+"  Current "+CStr(Current)+vbCrLf
+	For i=0 To CalibrCount-1 
+		Stroka = Stroka + CStr(i)+" "+CalibrName (i)+ " "+CStr(CalibrCoeff(i))+" "+CStr(CalibrGUID (i))+vbCrLf
+	Next
+	Stroka = Stroka + CStr(CalibrList.GetRowCount)
+
+	Stroka = Stroka+vbCrLf
+	For i=0 To CalibrCount-1 
+		Stroka = Stroka + CStr(i)+" "+CalibrList.GetCellAsString(0,i)+vbCrLf
+	Next
+End Sub
+'***************************************************************
+'cbUnit event handlers.
+'***************************************************************
+Sub cbUnit_OnChange()
+	cbUnit.SetSel(iCurrentUnit)	
+End Sub
+Sub cbUnit_OnSelectChange()
+	If FirstCall=0 Then 
+		Unit = cbUnit.GetText()
+		UnitCoeff = fUnitCoeff(cbUnit.GetSel())
+		txtCoeff.Text = FormatNumber(Coeff,6)+" "+Unit+"/"+sPixel
+		iCurrentUnit = cbUnit.GetSel()
+	End If
+End Sub
+
+'==========================================================
+' Отлавливаем завершение акций //
+'==========================================================
+Sub ActionState_OnActionComplete(strActionName, intActionResult)
+	If strActionName = "MeasManualLine" And intActionResult = 0 And Not bFormClose Then
+'	  MsgBox "MeasManualLine: " & intActionResult
+	  ActionState.RunInteractive "MeasManualLine"
+	End If
+End Sub
+
+Function NameExist(str)
+	NameExist = false
+	Data.SetSection +"\"+sSection
+	a = Data.GetEntriesCount 
+	For i=0 To a-1
+		sStr = Data.GetEntryName (i)
+		If Left (sStr,1) = "{" Then 
+			sName = Data.Getvalue ("\"+sSection+"\"+sStr+"\"+"Name")
+			If str = sName Then
+				NameExist = true
+				Exit Function
+			End If 
+		End If 
+	Next		
+End Function
+
+Function NewName()
+	Dim i,str
+	i = 0
+	str = sNewCalibr
+	While NameExist(str)
+		i = i + 1
+		str = sNewCalibr + CStr(i)
+	Wend
+	NewName = str
+End Function
+

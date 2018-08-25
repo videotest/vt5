@@ -1,0 +1,11 @@
+'resource:Main#Tools#Show/hide Main toolbar#Main
+'state:function=IsMainToolBarVisible
+
+ActionState.TerminateCurrentAction
+BarNo = ToolBars.FindNo ( Docs.LoadString ("MainBar"))
+ToolBars.ShowBar BarNo , 1- ToolBars.IsBarVisible( BarNo )
+If ToolBars.IsBarVisible( BarNo ) Then
+	ActionState.SetActionState "ShowMainToolBar", 1
+Else
+	ActionState.SetActionState "ShowMainToolBar", 3
+End If

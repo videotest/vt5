@@ -1,0 +1,30 @@
+[General]
+ClassifyName=Auto
+ClassifyProgID=ClassBase.AutomaticClassifier
+
+[ClassifierInfo]
+UseRange=0
+RangeMinVal=2.636270e-314
+RangeMaxVal=2.636270e-314
+DivisionType=0
+DivisionValue=1.14710833990879
+
+[Classes]
+ClassCount=5
+-1=(255, 0, 0),?
+0=(255,104,32),ядра тиреоидных клеток в норме
+1=(139,0,0),ядра тиреоидных клеток при зобе
+2=(0,255,0),ядра тиреоидных клеток при фолликулярной аденоме
+3=(255,255,0),ядра тиреоидных клеток при фолликулярном раке
+4=(255,0,255),ядра тиреоидных клеток при папиллярном раке
+LearningInfo=F:\Program Files\ВидеоТесТ\Размер 5.0\Classes\classes1.chtb
+5=(0,128,128),6
+6=(0,128,128),7
+7=(0,128,128),8
+
+[KeysInfo]
+KeysEnum=2
+
+[Select]
+What=0,1,2,3,4
+On=0,1

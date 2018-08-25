@@ -14,7 +14,8 @@
 #include "MdiClient.h"
 //#include "StatusBarMan.h"
 
-#include "BCGDockContext.h"
+//#include "BCGDockContext.h"
+//#include "DockContext.h"
 #include "OutlookBar.h"
 
 #include "wndmisc5.h"
@@ -26,7 +27,7 @@
 #include "XPBarMgr.h"
 #include "misc.h"
 
-#include "\vt5\controls\xpbar_ctrl\xp_bar.h"
+//#include "\vt5\controls\xpbar_ctrl\xp_bar.h"
 
 //#define IDS_MENU_TOOLBAR_CONTEXT ID_CMDMAN_BASE+555
 //#define IDS_MENU_TOOLBAR_APPWINDOW ID_CMDMAN_BASE+556
@@ -79,7 +80,7 @@ class CShellDockBar;
 //							MDI/PDI/DDI		support. START point			  |
 class CShellFrame;
 
-class CVTMiniDockFrameWnd : public CBCGMiniDockFrameWnd
+class CVTMiniDockFrameWnd : public CMiniDockFrameWnd
 {
 	DECLARE_DYNCREATE(CVTMiniDockFrameWnd)
 	CPoint m_ptStartDrag,m_ptStartPos;
@@ -244,11 +245,11 @@ public:
 inline long cmp_bstr_t( _bstr_t psz1, _bstr_t psz2 )
 {	return _tcsicmp( (char*)psz1, (char*)psz2 ); }
 
-#include <BCGMDIFrameWnd.h>
-#include <BCGContextMenuManager.h>
-#include <BCGKeyboardManager.h>
+//#include <BCGMDIFrameWnd.h>
+//#include "BCGContextMenuManager.h"
+//#include <MFCKeyboardManager.h>
 
-class CMainFrame : public CBCGMDIFrameWnd,
+class CMainFrame : public CMDIFrameWndEx,
 	public CWindow2Impl,
 	public CNamedObjectImpl,
 	public CNumeredObjectImpl,
@@ -286,8 +287,8 @@ public:
 
 	//outlook bar functions
 	//create a new toolbar inside shell outlook bar
-	CBCGToolBar *CreateNewOutlookBar( const char *szName )		{return m_wndOutlook.AddFolderBar( szName );}
-	void		DeleteOutlookBar( CBCGToolBar *pbar )			{m_wndOutlook.DeleteFolderBar( pbar );}
+	CMFCToolBar *CreateNewOutlookBar( const char *szName )		{return m_wndOutlook.AddFolderBar( szName );}
+	void		DeleteOutlookBar(CMFCToolBar *pbar)			{ m_wndOutlook.DeleteFolderBar(pbar); }
 
 	//SDI mode support
 	BOOL EnterSDIMode( );
@@ -406,8 +407,8 @@ public:
 	CShellMenuBar			m_wndMenuBar;
 	COutlookBar				m_wndOutlook;
 	CXPBarMgr               m_wndXPBarHolder;
-	CBCGContextMenuManager	m_ContextMenuManager;
-	CBCGKeyboardManager		m_KeyboardManager;
+	CContextMenuManager	m_ContextMenuManager;
+	CKeyboardManager		m_KeyboardManager;
 
 
 	CSettingsWindow		m_wndSettings;
@@ -617,12 +618,12 @@ protected:
 
 	void _CreateDockBar(IUnknown* punk, UINT nID, HWND* pHWND, bool bfloat = true, bool bCaption = true);
 	void _KillDockBar(CString strName = "");
-	//virtual BOOL OnMenuButtonToolHitTest (CBCGToolbarButton* /*pButton*/, TOOLINFO* /*pTI*/);
+	//virtual BOOL OnMenuButtonToolHitTest (CMFCToolBarButton* /*pButton*/, TOOLINFO* /*pTI*/);
 
 public:
 	bool IsInOleEditMode(){	return m_bInOleEditMode;}
 
-	virtual BOOL GetToolbarButtonToolTipText (CBCGToolbarButton* /*pButton*/, CString& /*strTTText*/);
+	virtual BOOL GetToolbarButtonToolTipText (CMFCToolBarButton* /*pButton*/, CString& /*strTTText*/);
 protected:	
 	
 
@@ -749,9 +750,10 @@ protected:
 	};
 };
 
-#include "menuhash.h"
-__declspec( dllimport )CObList		gAllToolbars;
-__declspec( dllimport )CImageHash	g_ImageHash;
+//#include "menuhash.h"
+//#include <ImageHash.h>
+//__declspec( dllimport )CObList		gAllToolbars;
+//__declspec( dllimport )CImageHash	g_ImageHash;
 __declspec( dllimport )CMenuHash	g_menuHash;
 
 /*POSITION GetFirstToolBarPosition();

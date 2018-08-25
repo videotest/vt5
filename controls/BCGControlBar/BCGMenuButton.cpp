@@ -19,7 +19,7 @@
 //
 
 #include "stdafx.h"
-#include "MenuImages.h"
+//#include "MenuImages.h"
 #include "bcgcontrolbar.h"
 #include "BCGMenuButton.h"
 

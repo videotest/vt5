@@ -121,7 +121,7 @@ bool CActionToolsCustomize::ExecuteSettings( CWnd *pwndParent )
 		}
 
 
-		CCommandManager::BitmapData	*pBitmapData = g_CmdManager.GetBitmapData( pinfo );
+		CommandManager::BitmapData	*pBitmapData = g_CmdManager.GetBitmapData( pinfo );
 
 		int	iBitmapIdx = -1;
 
@@ -175,7 +175,7 @@ bool CActionToolsCustomize::ExecuteSettings( CWnd *pwndParent )
 		}
 		else
 		{
-			CBCGToolbarButton	btn(
+			CMFCToolBarButton	btn(
 							pinfo->GetLocalID(),
 							iBitmapIdx,
 							pinfo->GetActionUserName(), 
@@ -242,11 +242,11 @@ bool CActionToolsCustomize::ExecuteSettings( CWnd *pwndParent )
 				lIdleCount = 0;
 			}
 
-			if( !CBCGToolBar::IsCustomizeMode() )
+			if( !CMFCToolBar::IsCustomizeMode() )
 				break;
 
 		} while (::PeekMessage(msgCur, NULL, NULL, NULL, PM_NOREMOVE));
-		if( !CBCGToolBar::IsCustomizeMode() )
+		if( !CMFCToolBar::IsCustomizeMode() )
 			break;
 	}
 
@@ -331,7 +331,7 @@ bool CActionToolsLoadSave::Invoke()
 {
  	CMainFrame* pframe = GetMainFrame();
 
-	if( CBCGToolBar::m_bPressed )
+	if( CMFCToolBar::m_bPressed )
 	{
 		int nLen = m_strFileName.GetLength();
 
@@ -351,7 +351,7 @@ bool CActionToolsLoadSave::Invoke()
 	pframe->SetLockRecalc( bold_lock );
 	if( !bold_lock )
 	{	// AAM: все, кроме RecalcLayout, добавлено в рамках фикса SBT1001. Возможно, избыточно
-		// (см. также CCommandManager::LoadState, CShellApp::InitInstance)
+		// (см. также CommandManager::LoadState, CShellApp::InitInstance)
 		theApp.OnIdle( 0 );
 		pframe->GetDockSite( AFX_IDW_DOCKBAR_LEFT )->CalcFixedLayout( false, false );
 		pframe->GetDockSite( AFX_IDW_DOCKBAR_TOP )->CalcFixedLayout( false, true );

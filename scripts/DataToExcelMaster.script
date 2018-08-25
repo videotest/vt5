@@ -1,0 +1,24 @@
+'resource:Send Data to MS Excel#Measurement#Send current Object List to MS Excel#Send Data to MS Excel
+'state:function=StateForObjectViews
+Option Explicit 
+On Error Resume Next
+
+Dim ExcelApp, sep
+
+If GetNameObjectList()<>"" Then
+	Set ExcelApp = Docs.GetActiveObject("Excel.Application")
+	If not Docs.IsPointerNull(ExcelApp) Then
+	If ExcelApp <> "Microsoft Excel" Then
+		Set ExcelApp = CreateObject( "Excel.Application" )
+	End If
+	ExcelApp.Workbooks.Add
+	ExcelApp.Visible = 1
+	ExcelApp.Interactive = False
+		ObjectsExport "","",1,1, "."
+	ExcelApp.ActiveSheet.Paste	
+	ExcelApp.Interactive = True
+	Set ExcelApp = Nothing
+	else
+		MsgBox Docs.LoadString("Microsoft Excel is not found!"), vbExclamation, sVT
+	End If
+End If

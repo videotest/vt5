@@ -1,0 +1,24 @@
+'resource:Open Database...#Database#Open existing database#Open Database
+
+Call OpenDataBase_script
+
+Sub OpenDataBase_script
+	Dim strLastTemplate, strLastExt, strLastShowAllFilter 
+	strLastTemplate = Data.GetValue("\FileOpenDialog\FilterTemplate")
+	strLastExt = Data.GetValue("\FileOpen\LastExt")
+	strLastShowAllFilter = Data.GetValue("\FileOpen\UseShowAllFilter")
+	Data.SetValue "\FileOpenDialog\FilterTemplate", "dbd"
+	Data.SetValue "\FileOpen\UseShowAllFilter", "0"
+	ActionManager.FileOpen
+	Data.SetValue "\FileOpenDialog\FilterTemplate", strLastTemplate
+	Data.SetValue "\FileOpen\LastExt", strLastExt
+	Data.SetValue "\FileOpen\UseShowAllFilter", strLastShowAllFilter
+End Sub
+
+Sub FileOpen_OnBeforeExecute
+	FileOpen.Title Docs.LoadString ("Open Database")
+End Sub
+
+Sub FileOpen_OnAfterExecute
+	ActionManager.EmptyFileOpenLight
+End Sub

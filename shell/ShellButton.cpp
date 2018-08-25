@@ -1,7 +1,7 @@
 #include "stdafx.h"
-#include "shellbutton.h"
 #include "ActionControlWrp.h"
 #include "CommandManager.h"
+#include "shellbutton.h"
 
 #include "resource.h"
 #include "MainFrm.h"
@@ -11,7 +11,7 @@
 
 int	CShellToolbarButton::s_nButtonStyle = 1;
 
-IMPLEMENT_SERIAL(CShellToolbarButton, CBCGToolbarMenuButton, 1)
+IMPLEMENT_SERIAL(CShellToolbarButton, CMFCToolBarMenuButton, 1)
 IMPLEMENT_SERIAL(CShellChooseToolbarButton, CShellToolbarButton, 1)
 IMPLEMENT_SERIAL(CShellMenuButton, CShellToolbarButton, 1)
 IMPLEMENT_SERIAL(CShellMenuComboBoxButton, CBCGToolbarComboBoxButton, 1)
@@ -42,9 +42,9 @@ void CShellToolbarButton::SetImage( int nImage )
 void CShellToolbarButton::Serialize (CArchive& ar)
 {
 	if( m_bMenuSerialize )
-		CBCGToolbarMenuButton::Serialize( ar );
+		CMFCToolBarMenuButton::Serialize( ar );
 	else
-		CBCGToolbarButton::Serialize( ar );
+		CMFCToolBarButton::Serialize( ar );
 
 	if( ar.IsLoading() )
 		_UpdateUI();
@@ -52,7 +52,7 @@ void CShellToolbarButton::Serialize (CArchive& ar)
 
 void CShellToolbarButton::OnClosePopupMenu( int nCmd )
 {
-	CBCGToolbarMenuButton::OnClosePopupMenu( nCmd );
+	CMFCToolBarMenuButton::OnClosePopupMenu( nCmd );
 
 	m_bClickedOnMenu = false;
 }
@@ -73,13 +73,13 @@ void CShellToolbarButton::SetButtonSize( CSize size )
 		sizeButton.cx += sizeButton.cx/2;
 		sizeButton.cy += sizeButton.cy/2;
 	}
-	CBCGToolBar::SetSizes( sizeButton, CSize (16, 15) );
-	CBCGToolBar::SetMenuSizes ( sizeButton, CSize (16, 15) );
+	CMFCToolBar::SetSizes( sizeButton, CSize (16, 15) );
+	CMFCToolBar::SetMenuSizes ( sizeButton, CSize (16, 15) );
 }
 
 ///button with sub-menu
 CShellToolbarButton::CShellToolbarButton() 
-	: CBCGToolbarMenuButton() 
+	: CMFCToolBarMenuButton() 
 {
 	m_pPopupParent = NULL;
 
@@ -93,7 +93,7 @@ CShellToolbarButton::CShellToolbarButton()
 	_UpdateUI();
 }
 CShellToolbarButton::CShellToolbarButton(UINT uiID, HMENU hMenu, int iImage, LPCTSTR lpszText, BOOL bUserButton) : 
-	CBCGToolbarMenuButton( uiID, hMenu, iImage, lpszText, bUserButton )
+	CMFCToolBarMenuButton( uiID, hMenu, iImage, lpszText, bUserButton )
 
 {
 	m_pPopupParent = NULL;
@@ -107,7 +107,7 @@ CShellToolbarButton::CShellToolbarButton(UINT uiID, HMENU hMenu, int iImage, LPC
 }
 
 CShellToolbarButton::CShellToolbarButton(UINT uiID, int iImage, LPCTSTR lpszText, BOOL bUserButton) :
-	CBCGToolbarMenuButton( uiID, 0, iImage, lpszText, bUserButton )
+	CMFCToolBarMenuButton( uiID, 0, iImage, lpszText, bUserButton )
 {
 	m_pPopupParent = NULL;
 
@@ -149,7 +149,7 @@ void CShellToolbarButton::OnDraw (CDC* pDC, const CRect& rect, CBCGToolBarImages
 	if( /*m_bMenuMode*/IsMenuMode() )
 	{
 		m_bClickedOnMenu = false;
-		CBCGToolbarMenuButton::OnDraw( pDC, rect, pImages, bHorz, bCustomizeMode, false, true, bGrayDisabledButtons );
+		CMFCToolBarMenuButton::OnDraw( pDC, rect, pImages, bHorz, bCustomizeMode, false, true, bGrayDisabledButtons );
 
 		if( bHighlight /*&& (!m_bClickedOnMenu || )*/)
 		{
@@ -170,7 +170,7 @@ void CShellToolbarButton::OnDraw (CDC* pDC, const CRect& rect, CBCGToolBarImages
 		pDC->SelectClipRgn( &rgn );
 	}
 
-	CBCGToolbarMenuButton::OnDraw( pDC, rect, pImages, true, bCustomizeMode, bHighlight, bDrawBorder, bGrayDisabledButtons );
+	CMFCToolBarMenuButton::OnDraw( pDC, rect, pImages, true, bCustomizeMode, bHighlight, bDrawBorder, bGrayDisabledButtons );
 
 	if( m_nDrawStyle == Round )
 		pDC->SelectClipRgn( 0 );
@@ -395,7 +395,7 @@ void CShellToolbarButton::StoreString( CStringArray &strs, int &idx, int level, 
 	POSITION	pos = m_listCommands.GetHeadPosition();
 	while( pos )
 	{
-		CBCGToolbarButton	*pbtn = (CBCGToolbarButton	*)m_listCommands.GetNext( pos );
+		CMFCToolBarButton	*pbtn = (CMFCToolBarButton	*)m_listCommands.GetNext( pos );
 
 		if( pbtn->IsKindOf( RUNTIME_CLASS(CShellToolbarButton)))
 			((CShellToolbarButton*)pbtn)->StoreString( strs, idx, level+1, bUseCollection );
@@ -405,7 +405,7 @@ void CShellToolbarButton::StoreString( CStringArray &strs, int &idx, int level, 
 BOOL CShellToolbarButton::OnContextHelp( CWnd *pwnd )
 {
 	if( (int)m_nID > 0  )
-		return CBCGToolbarMenuButton::OnContextHelp( pwnd );
+		return CMFCToolBarMenuButton::OnContextHelp( pwnd );
 
 
 	//get the help directory
@@ -477,7 +477,7 @@ SIZE CShellToolbarButton::OnCalculateSize (CDC* pDC, const CSize& sizeDefault, B
 			m_pChild->ShowWindow (SW_SHOWNOACTIVATE);
 		}
 
-		CSize	size = CBCGToolbarMenuButton::OnCalculateSize( pDC, sizeDefault, true );
+		CSize	size = CMFCToolBarMenuButton::OnCalculateSize( pDC, sizeDefault, true );
 		if( !m_pbar )
 			return size;
 		
@@ -489,18 +489,18 @@ SIZE CShellToolbarButton::OnCalculateSize (CDC* pDC, const CSize& sizeDefault, B
 		
 	}
 	else
-		return CBCGToolbarMenuButton::OnCalculateSize( pDC, sizeDefault, bHorz );
+		return CMFCToolBarMenuButton::OnCalculateSize( pDC, sizeDefault, bHorz );
 
 }
 
 void CShellToolbarButton::OnChangeParentWnd( CWnd* pwnd )
 {
-	if( pwnd->IsKindOf( RUNTIME_CLASS( CBCGToolBar ) ) )
-		m_pbar = (CBCGToolBar*)pwnd;
+	if( pwnd->IsKindOf( RUNTIME_CLASS( CMFCToolBar ) ) )
+		m_pbar = (CMFCToolBar*)pwnd;
 	else
 		m_pbar = 0;
 
-	CBCGToolbarMenuButton::OnChangeParentWnd( pwnd );
+	CMFCToolBarMenuButton::OnChangeParentWnd( pwnd );
 
 	if( !m_pChild )
 		m_pChild = g_CmdManager.GetActionControl( m_nID );
@@ -709,13 +709,13 @@ BOOL CShellToolbarButton::OnClick (CWnd* pWnd, BOOL bDelay)
 		return true;
 	}
 	CreatePopup( true );
-	return CBCGToolbarMenuButton::OnClick( pWnd, bDelay );
+	return CMFCToolBarMenuButton::OnClick( pWnd, bDelay );
 }
 
 /////////////////////////////////////////////////////////////////////////////
-void CShellToolbarButton::CopyFrom (const CBCGToolbarButton& src)
+void CShellToolbarButton::CopyFrom (const CMFCToolBarButton& src)
 {	
-	CBCGToolbarMenuButton::CopyFrom( src );
+	CMFCToolBarMenuButton::CopyFrom( src );
 	_UpdateUI();	
 }
 
@@ -798,7 +798,7 @@ int CShellPopupMenu::OnCreate(LPCREATESTRUCT lpCreateStruct)
 	int nButtonCount = GetMenuItemCount();
 	for( int i=0;i<nButtonCount;i++ )
 	{
-		CBCGToolbarMenuButton* pButton = GetMenuItem( i );
+		CMFCToolBarMenuButton* pButton = GetMenuItem( i );
 		if( pButton && pButton->IsKindOf( RUNTIME_CLASS( CShellToolbarButton ) ) )
 		{
 			CShellToolbarButton* pShellButton = (CShellToolbarButton*)pButton;
@@ -950,10 +950,10 @@ void CShellChooseToolbarButton::OnDraw (CDC* pDC, const CRect& rect, CBCGToolBar
 					   (m_pPopupMenu != 0)||
 					   (m_nStyle & TBBS_CHECKED);
 	bool	bDisabled = (m_nStyle & TBBS_DISABLED) == TBBS_DISABLED;
-	//CBCGToolbarMenuButton::OnDraw( pDC, rect, pImages, bHorz, bCustomizeMode, bHighlight, bDrawBorder, bGrayDisabledButtons );
+	//CMFCToolBarMenuButton::OnDraw( pDC, rect, pImages, bHorz, bCustomizeMode, bHighlight, bDrawBorder, bGrayDisabledButtons );
 	CRect	rectArrow = rect;
 
-	CBCGToolbarButton	*pButton = GetLastButton();
+	CMFCToolBarButton	*pButton = GetLastButton();
 	if( pButton  )
 	{
 
@@ -961,7 +961,7 @@ void CShellChooseToolbarButton::OnDraw (CDC* pDC, const CRect& rect, CBCGToolBar
 			CBCGToolBarImages::FillDitheredRect( pDC, rect );
 		
 		int nImage = GetImage();
-		//pImages = (pButton->m_bUserButton) ? (CBCGToolBar::GetUserImages()):(CBCGToolBar::GetImages());
+		//pImages = (pButton->m_bUserButton) ? (CMFCToolBar::GetUserImages()):(CMFCToolBar::GetImages());
 
 		//TRACE( "m_bUserButton = %d, Image = %d\n", pButton->m_bUserButton, nImage );
 
@@ -1148,14 +1148,14 @@ void CShellChooseToolbarButton::OnClosePopupMenu( int nCmd )
 	m_bMenu = false;
 }
 
-CBCGToolbarButton	*CShellChooseToolbarButton::GetLastButton()
+CMFCToolBarButton	*CShellChooseToolbarButton::GetLastButton()
 {
 	if( m_nLastUsedCmd == -1 )
 	{
 		if( m_listCommands.GetCount() == 0 )
 			return 0;
 
-		CBCGToolbarButton	*pbtn = (CBCGToolbarButton	*)m_listCommands.GetHead();
+		CMFCToolBarButton	*pbtn = (CMFCToolBarButton	*)m_listCommands.GetHead();
 		m_nID = m_nLastUsedCmd = pbtn->m_nID;
 	}
 
@@ -1166,7 +1166,7 @@ CBCGToolbarButton	*CShellChooseToolbarButton::GetLastButton()
 
 	while( pos )
 	{
-		CBCGToolbarButton	*pbtn = (CBCGToolbarButton	*)m_listCommands.GetNext( pos );
+		CMFCToolBarButton	*pbtn = (CMFCToolBarButton	*)m_listCommands.GetNext( pos );
 		if( m_nLastUsedCmd == pbtn->m_nID )
 		{
 //			pbtn->SetImage( -1 );
@@ -1213,7 +1213,7 @@ BOOL CShellChooseToolbarButton::OnPreClick (CWnd* pWnd )
 
 BOOL CShellChooseToolbarButton::OnClick (CWnd* pWnd, BOOL bDelay )
 {
-	if( m_bClickedOnMenu && !CBCGToolBar::IsCustomizeMode() )
+	if( m_bClickedOnMenu && !CMFCToolBar::IsCustomizeMode() )
 		return true;
 
 	return CShellToolbarButton::OnClick ( pWnd, bDelay );
@@ -1298,7 +1298,7 @@ void CShellMenuButton::OnDraw (CDC* pDC, const CRect& rect, CBCGToolBarImages* p
 		//m_bClickedOnMenu = true;
 		CBCGPopupMenu* pOldMenu = m_pPopupMenu;
 		m_pPopupMenu = NULL;
-		CBCGToolbarMenuButton::OnDraw( pDC, rect, pImages, bHorz, bCustomizeMode, false, true, bGrayDisabledButtons );		
+		CMFCToolBarMenuButton::OnDraw( pDC, rect, pImages, bHorz, bCustomizeMode, false, true, bGrayDisabledButtons );		
 		m_pPopupMenu = pOldMenu;
 
 		if( bHighlight /*&& (!m_bClickedOnMenu || )*/)
@@ -1317,7 +1317,7 @@ void CShellMenuButton::OnDraw (CDC* pDC, const CRect& rect, CBCGToolBarImages* p
 					   (m_pPopupMenu != 0)||
 					   (m_nStyle & TBBS_CHECKED);
 	bool	bDisabled = (m_nStyle & TBBS_DISABLED) == TBBS_DISABLED;
-	//CBCGToolbarMenuButton::OnDraw( pDC, rect, pImages, bHorz, bCustomizeMode, bHighlight, bDrawBorder, bGrayDisabledButtons );
+	//CMFCToolBarMenuButton::OnDraw( pDC, rect, pImages, bHorz, bCustomizeMode, bHighlight, bDrawBorder, bGrayDisabledButtons );
 	CRect	rectArrow = rect;
 	CRect	rectDraw = rect;
 
@@ -1614,7 +1614,7 @@ SIZE CShellMenuButton::OnCalculateSize ( CDC* pDC, const CSize& sizeDefault, BOO
 	else 
 	{
 		CSize sizeDefault1 = sizeDefault;
-		CSize szBase = CBCGToolbarMenuButton::OnCalculateSize(pDC, sizeDefault1, bHorz);
+		CSize szBase = CMFCToolBarMenuButton::OnCalculateSize(pDC, sizeDefault1, bHorz);
 		size.cx = max(size.cx, szBase.cx);
 	}
 
@@ -1669,7 +1669,7 @@ BOOL CShellMenuButton::OnPreClick (CWnd* pWnd )
 
 void CShellMenuButton::OnCancelMode ()
 {
-	CBCGToolbarMenuButton::OnCancelMode ();
+	CMFCToolBarMenuButton::OnCancelMode ();
 }
 
 void CShellMenuButton::Serialize( CArchive &ar )
@@ -1764,7 +1764,7 @@ void CShellMenuButton::OnSize( int iSize )
 }
 
 
-void CShellMenuButton::CopyFrom (const CBCGToolbarButton& src)
+void CShellMenuButton::CopyFrom (const CMFCToolBarButton& src)
 {
 	CShellToolbarButton::CopyFrom( src );
 	_UpdateUI();
@@ -1901,7 +1901,7 @@ CShellMenuComboBoxButton::~CShellMenuComboBoxButton()
 }
 
 //////////////////////////////////////////////////////////////////////
-void CShellMenuComboBoxButton::CopyFrom (const CBCGToolbarButton& src)
+void CShellMenuComboBoxButton::CopyFrom (const CMFCToolBarButton& src)
 {
 	CBCGToolbarComboBoxButton::CopyFrom(src);
 	_UpdateUI();

@@ -2842,6 +2842,7 @@ int CBCGToolBar::GetCommandButtons (UINT uiCmd, CObList& listButtons)
 			{
 				CBCGToolbarButton* pButton = (CBCGToolbarButton*) pToolBar->m_Buttons.GetNext (pos);
 				ASSERT (pButton != NULL);
+				ASSERT_KINDOF(CBCGToolbarButton, pButton);
 
 				if (pButton->m_nID == uiCmd)
 				{

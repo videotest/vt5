@@ -247,7 +247,7 @@ bool CWndClass::Register()
 
 	hInstance = App::handle();
 
-	m_bRegistred = ::RegisterClassEx( this ) != 0;
+	m_bRegistred = ::RegisterClassEx((WNDCLASSEXA*)this) != 0;
 	if( !m_bRegistred )
 		App::instance()->handle_error();
 

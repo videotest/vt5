@@ -25,7 +25,7 @@ void CMtdTabTarget::Register( CMetodicsTab* pWnd )
 DROPEFFECT CMtdTabTarget::OnDragEnter(CWnd* pWnd, COleDataObject* pDataObject,
 	DWORD dwKeyState, CPoint point)
 {
-	if( !pDataObject->IsDataAvailable( CBCGToolbarButton::m_cFormat ) )
+	if( !pDataObject->IsDataAvailable( CMFCToolBarButton::m_cFormat ) )
 		return DROPEFFECT_NONE;
 	else
 		m_pOwner->OnEnter( pWnd, pDataObject, dwKeyState, point );
@@ -36,7 +36,7 @@ DROPEFFECT CMtdTabTarget::OnDragEnter(CWnd* pWnd, COleDataObject* pDataObject,
 DROPEFFECT CMtdTabTarget::OnDragOver(CWnd* pWnd, COleDataObject* pDataObject,
 		DWORD dwKeyState, CPoint point)
 {
-	if( !pDataObject->IsDataAvailable( CBCGToolbarButton::m_cFormat ) )
+	if( !pDataObject->IsDataAvailable( CMFCToolBarButton::m_cFormat ) )
 		return DROPEFFECT_NONE;
 	
 	return DROPEFFECT_MOVE;
@@ -45,7 +45,7 @@ DROPEFFECT CMtdTabTarget::OnDragOver(CWnd* pWnd, COleDataObject* pDataObject,
 DROPEFFECT CMtdTabTarget::OnDragLeave(CWnd* pWnd, COleDataObject* pDataObject,
 		DWORD dwKeyState, CPoint point)
 {
-	if( !pDataObject->IsDataAvailable( CBCGToolbarButton::m_cFormat ) )
+	if( !pDataObject->IsDataAvailable( CMFCToolBarButton::m_cFormat ) )
 		return DROPEFFECT_NONE;
 	else
 	{
@@ -60,7 +60,7 @@ DROPEFFECT CMtdTabTarget::OnDragLeave(CWnd* pWnd, COleDataObject* pDataObject,
 BOOL CMtdTabTarget::OnDrop(CWnd* pWnd, COleDataObject* pDataObject,
 		DROPEFFECT dropEffect, CPoint point)
 {
-	if( pDataObject->IsDataAvailable( CBCGToolbarButton::m_cFormat ) )
+	if( pDataObject->IsDataAvailable( CMFCToolBarButton::m_cFormat ) )
 		return m_pOwner->OnDrop( pWnd, pDataObject, dropEffect, point );
 	
 	return FALSE;
@@ -404,7 +404,7 @@ BOOL CMetodicsTab::OnDrop(CWnd* pWnd, COleDataObject* pDataObject,
 
 	AFX_MODULE_STATE* pModuleState = AfxSetModuleState( 0 );
 
-	CBCGToolbarButton* pButton = CBCGToolbarButton::CreateFromOleData (pDataObject);
+	CMFCToolBarButton* pButton = CMFCToolBarButton::CreateFromOleData (pDataObject);
 
 	AfxSetModuleState( pModuleState );
 	
@@ -458,7 +458,7 @@ BOOL CMetodicsTab::OnEnter(CWnd* pWnd, COleDataObject* pDataObject,
 
 	AFX_MODULE_STATE* pModuleState = AfxSetModuleState( 0 );
 
-	CBCGToolbarButton* pButton = CBCGToolbarButton::CreateFromOleData (pDataObject);
+	CMFCToolBarButton* pButton = CMFCToolBarButton::CreateFromOleData (pDataObject);
 
 	AfxSetModuleState( pModuleState );
 	

@@ -1,0 +1,7 @@
+'resource:Customize...#Tools#Customize the program interface - toolbars, menus etc.#Customize
+
+Data.SetValue "\MainFrame\EnableCustomizeButton",1
+MainWnd.UpdateSystemSettings
+ToolsCustomize
+Data.SetValue "\MainFrame\EnableCustomizeButton",0
+MainWnd.UpdateSystemSettings

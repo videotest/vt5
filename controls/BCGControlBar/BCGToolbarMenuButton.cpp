@@ -33,7 +33,7 @@
 #include "BCGMDIFrameWnd.h"
 #include "BCGOleIPFrameWnd.h"
 
-#include "MenuImages.h"
+//#include "MenuImages.h"
 #include "BCGUserToolsManager.h"
 #include "BCGUserTool.h"
 
@@ -73,7 +73,7 @@ CBCGToolbarMenuButton::CBCGToolbarMenuButton (UINT uiID, HMENU hMenu,
 //*****************************************************************************************
 void CBCGToolbarMenuButton::Initialize ()
 {
-	m_bDrawAccel = true;
+//	m_bDrawAccel = true;
 	m_bDrawDownArrow = FALSE;
 	m_bMenuMode = FALSE;
 	m_pPopupMenu = NULL;
@@ -1063,7 +1063,7 @@ void CBCGToolbarMenuButton::DrawMenuItem (CDC* pDC, const CRect& rect, CBCGToolB
 	// Draw accelerator label:
 	//------------------------
 	
-	if (!strAccel.IsEmpty () && m_bDrawAccel )//andy
+	if (!strAccel.IsEmpty ()/* && m_bDrawAccel */)//andy
 	{
 		CRect rectAccel = rectText;
 		rectAccel.right -= TEXT_MARGIN + sizeImage.cx;

@@ -23,7 +23,7 @@
 #include "BCGToolbar.h"
 #include "globals.h"
 #include "BCGToolbarEditBoxButton.h"
-#include "MenuImages.h"
+//#include "MenuImages.h"
 
 #ifdef _DEBUG
 #undef THIS_FILE

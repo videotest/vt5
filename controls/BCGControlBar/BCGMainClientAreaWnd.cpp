@@ -19,6 +19,7 @@
 //
 
 #include "stdafx.h"
+#include "BCGToolbar.h"
 #include "BCGMainClientAreaWnd.h"
 #include "BCGMDIFrameWnd.h"
 

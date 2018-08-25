@@ -19,6 +19,7 @@
 #include <afxext.h>         // MFC extensions
 #include <afxdisp.h>        // MFC Automation classes
 #include <afxdtctl.h>		// MFC support for Internet Explorer 4 Common Controls
+#include <afxpopupmenu.h>
 #ifndef _AFX_NO_AFXCMN_SUPPORT
 #include <afxcmn.h>			// MFC support for Windows Common Controls
 #endif // _AFX_NO_AFXCMN_SUPPORT
@@ -30,6 +31,16 @@
 #pragma warning(disable: 4786)
 
 #include "afxtempl.h"
+#include <afxext.h>
+#include <afxtoolbar.h>
+#include <afxcontrolbars.h>
+#include <afxpriv.h>
+#include <afxtoolbarbutton.h>
+#include <afxMDIFrameWndEx.h>
+#include <afxtoolbarmenubutton.h>
+#include <afxtoolbarcomboboxbutton.h>
+#include <afxdockablepane.h>
+#include <afxmenuhash.h>
 
 #include <map>
 using std::map;
@@ -38,9 +49,9 @@ using std::map;
 #include "guard.h"
 #include "dbase.h"
 //#include "menueditor.h"
-#include "BCGCB.h"
-#include "BCGMultiDocTemplate.h"
-#include "BCGControlBarImpl.h"
+//#include "BCGCB.h"
+//#include "BCGMultiDocTemplate.h"
+//#include "BCGControlBarImpl.h"
 #include "\vt5\awin\type_defs.h"
 
 

@@ -1,0 +1,235 @@
+[AxForm]
+Version=1
+Size=316, 36
+Title=%Message%
+
+[AXControls]
+Name=edtText
+ProgID=VTCONTROLS.VTEditor.1
+Rect=1, 1, 178, 26
+Style=50000000h
+ID=0
+Data=248 00 00 01 00 09 00 00 00 0c 00 00 00 09 00 00 00 00 00 00 00 00 00 00 00 90 01 00 00 00 00 00 01 00 02 02 02 4d 53 20 53 61 6e 73 20 53 65 72 69 66 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 0c 00 00 00 09 00 00 00 00 00 00 00 00 00 00 00 90 01 00 00 00 00 00 01 00 02 02 02 4d 53 20 53 61 6e 73 20 53 65 72 69 66 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 08 56 54 45 64 69 74 6f 72 01 00 15 ce e1 f0 e0 e1 ee f2 e0 ed ed e0 ff 20 ef eb ee f9 e0 e4 fc 20 00 00 00 00 00 00 01 30 7c 00 00 00 00 00 00 00 00 00 00 00 c8 42 00 00 00 00 08 00 00 80 05 00 00 80 08 00 00 80 0f 00 00 80 0f 00 00 80 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 01 00 00 00
+
+Name=btnContinue
+ProgID=PUSHBUTTON.PushButtonCtrl.1
+Rect=258, 4, 306, 25
+Style=50000000h
+ID=0
+Data=153 0c 01 00 01 00 00 00 00 00 00 00 01 00 01 00 01 00 00 00 00 05 c4 e0 eb e5 e5 00 00 05 00 05 00 00 00 00 00 00 01 00 00 00 00 00 00 00 00 00 00 14 00 01 01 15 00 00 00 4b 00 00 00 04 00 00 00 00 03 52 e3 0b 91 8f ce 11 9d e3 00 aa 00 4b b8 51 01 cc 00 00 90 01 44 42 01 00 0d 4d 53 20 53 61 6e 73 20 53 65 72 69 66 00 00 00 00 00 00 00 00 00 05 00 00 80 08 00 00 80 08 00 00 80 08 00 00 80 08 00 00 80 00 00 00 00 01 00 00 00 01 00 00 00 00 00 00 00 00 01 00
+
+Name=btnRedo
+ProgID=PUSHBUTTON.PushButtonCtrl.1
+Rect=231, 4, 252, 25
+Style=50000000h
+ID=0
+Data=1024 0c 01 00 01 00 00 00 00 00 1b 44 3a 5c 49 6d 61 67 65 5c 76 74 35 5c 72 65 64 6f 20 73 6d 61 6c 6c 2e 62 6d 70 1b 44 3a 5c 49 6d 61 67 65 5c 76 74 35 5c 72 65 64 6f 20 73 6d 61 6c 6c 2e 62 6d 70 01 00 01 00 01 00 00 00 00 00 00 00 05 00 05 00 00 00 00 00 00 01 00 00 00 00 00 00 00 00 00 00 14 00 01 01 15 00 00 00 15 00 00 00 04 00 00 00 00 03 52 e3 0b 91 8f ce 11 9d e3 00 aa 00 4b b8 51 01 cc 00 00 90 01 44 42 01 00 0d 4d 53 20 53 61 6e 73 20 53 65 72 69 66 00 00 00 00 00 00 00 00 00 05 00 00 80 08 00 00 80 08 00 00 80 08 00 00 80 08 00 00 80 00 00 00 00 01 00 00 00 01 00 00 00 01 00 00 00 00 01 00 42 4d 36 03 00 00 00 00 00 00 36 00 00 00 28 00 00 00 10 00 00 00 10 00 00 00 01 00 18 00 00 00 00 00 00 03 00 00 c4 0e 00 00 c4 0e 00 00 00 00 00 00 00 00 00 00 c8 d0 d4 c8 d0 d4 c8 d0 d4 c8 d0 d4 c8 d0 d4 c8 d0 d4 c8 d0 d4 c8 d0 d4 c8 d0 d4 c8 d0 d4 c8 d0 d4 c8 d0 d4 c8 d0 d4 c8 d0 d4 c8 d0 d4 c8 d0 d4 c8 d0 d4 c8 d0 d4 c8 d0 d4 c8 d0 d4 c8 d0 d4 c8 d0 d4 c8 d0 d4 c8 d0 d4 c8 d0 d4 c8 d0 d4 c8 d0 d4 c8 d0 d4 c8 d0 d4 c8 d0 d4 c8 d0 d4 c8 d0 d4 c8 d0 d4 c8 d0 d4 c8 d0 d4 c8 d0 d4 c8 d0 d4 c8 d0 d4 00 00 00 c8 d0 d4 c8 d0 d4 c8 d0 d4 c8 d0 d4 c8 d0 d4 c8 d0 d4 c8 d0 d4 80 80 80 c8 d0 d4 c8 d0 d4 c8 d0 d4 c8 d0 d4 c8 d0 d4 00 00 00 00 00 00 c8 d0 d4 c8 d0 d4 c8 d0 d4 c8 d0 d4 c8 d0 d4 c8 d0 d4 c8 d0 d4 80 80 80 00 00 00 ff ff ff c8 d0 d4 c8 d0 d4 c8 d0 d4 00 00 00 00 00 00 c8 d0 d4 c8 d0 d4 c8 d0 d4 c8 d0 d4 c8 d0 d4 c8 d0 d4 c8 d0 d4 80 80 80 00 00 00 00 00 00 ff ff ff c8 d0 d4 c8 d0 d4 00 00 00 00 00 00 c8 d0 d4 c8 d0 d4 c8 d0 d4 c8 d0 d4 c8 d0 d4 c8 d0 d4 c8 d0 d4 80 80 80 00 00 00 00 00 00 00 00 00 ff ff ff c8 d0 d4 00 00 00 00 00 00 c8 d0 d4 c8 d0 d4 c8 d0 d4 c8 d0 d4 c8 d0 d4 c8 d0 d4 c8 d0 d4 80 80 80 00 00 00 00 00 00 00 00 00 00 00 00 ff ff ff c8 d0 d4 00 00 00 00 00 00 c8 d0 d4 c8 d0 d4 c8 d0 d4 c8 d0 d4 c8 d0 d4 c8 d0 d4 80 80 80 00 00 00 00 00 00 00 00 00 80 80 80 00 00 00 ff ff ff c8 d0 d4 00 00 00 00 00 00 c8 d0 d4 c8 d0 d4 c8 d0 d4 c8 d0 d4 c8 d0 d4 80 80 80 00 00 00 00 00 00 00 00 00 00 00 00 ff ff 00 00 00 00 ff ff ff c8 d0 d4 00 00 00 00 00 00 c8 d0 d4 c8 d0 d4 c8 d0 d4 c8 d0 d4 c8 d0 d4 c8 d0 d4 c8 d0 d4 c8 d0 d4 00 00 00 00 00 00 00 00 00 00 00 00 ff ff ff c8 d0 d4 c8 d0 d4 00 00 00 c8 d0 d4 c8 d0 d4 c8 d0 d4 c8 d0 d4 c8 d0 d4 c8 d0 d4 c8 d0 d4 00 00 00 00 00 00 ff ff ff 00 00 00 00 00 00 ff ff ff c8 d0 d4 c8 d0 d4 00 00 00 00 00 00 c8 d0 d4 c8 d0 d4 c8 d0 d4 c8 d0 d4 c8 d0 d4 00 00 00 00 00 00 ff ff ff c8 d0 d4 ff ff ff 00 00 00 ff ff ff c8 d0 d4 c8 d0 d4 c8 d0 d4 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 ff ff ff c8 d0 d4 c8 d0 d4 c8 d0 d4 ff ff ff ff ff ff c8 d0 d4 c8 d0 d4 c8 d0 d4 c8 d0 d4 ff ff ff 00 00 00 00 00 00 00 00 00 00 00 00 ff ff ff c8 d0 d4 c8 d0 d4 c8 d0 d4 c8 d0 d4 c8 d0 d4 c8 d0 d4 c8 d0 d4 c8 d0 d4 c8 d0 d4 c8 d0 d4 c8 d0 d4 ff ff ff ff ff ff ff ff ff ff ff ff c8 d0 d4 c8 d0 d4 c8 d0 d4 c8 d0 d4 c8 d0 d4 c8 d0 d4 c8 d0 d4 c8 d0 d4 c8 d0 d4 c8 d0 d4 c8 d0 d4 c8 d0 d4 c8 d0 d4 c8 d0 d4 c8 d0 d4 c8 d0 d4 c8 d0 d4 c8 d0 d4 c8 d0 d4 c8 d0 d4 c8 d0 d4 c8 d0 d4 c8 d0 d4
+
+Name=btnUndo
+ProgID=PUSHBUTTON.PushButtonCtrl.1
+Rect=210, 4, 231, 25
+Style=50000000h
+ID=0
+Data=1024 0c 01 00 01 00 00 00 00 00 1b 44 3a 5c 49 6d 61 67 65 5c 76 74 35 5c 75 6e 64 6f 20 73 6d 61 6c 6c 2e 62 6d 70 1b 44 3a 5c 49 6d 61 67 65 5c 76 74 35 5c 75 6e 64 6f 20 73 6d 61 6c 6c 2e 62 6d 70 01 00 01 00 01 00 00 00 00 00 00 00 05 00 05 00 00 00 00 00 00 01 00 00 00 00 00 00 00 00 00 00 14 00 01 01 15 00 00 00 15 00 00 00 04 00 00 00 00 03 52 e3 0b 91 8f ce 11 9d e3 00 aa 00 4b b8 51 01 cc 00 00 90 01 44 42 01 00 0d 4d 53 20 53 61 6e 73 20 53 65 72 69 66 00 00 00 00 00 00 00 00 00 05 00 00 80 08 00 00 80 08 00 00 80 08 00 00 80 08 00 00 80 00 00 00 00 01 00 00 00 01 00 00 00 01 00 00 00 00 01 00 42 4d 36 03 00 00 00 00 00 00 36 00 00 00 28 00 00 00 10 00 00 00 10 00 00 00 01 00 18 00 00 00 00 00 00 03 00 00 c4 0e 00 00 c4 0e 00 00 00 00 00 00 00 00 00 00 c8 d0 d4 c8 d0 d4 c8 d0 d4 c8 d0 d4 c8 d0 d4 c8 d0 d4 c8 d0 d4 c8 d0 d4 c8 d0 d4 c8 d0 d4 c8 d0 d4 c8 d0 d4 c8 d0 d4 c8 d0 d4 c8 d0 d4 c8 d0 d4 c8 d0 d4 c8 d0 d4 c8 d0 d4 c8 d0 d4 c8 d0 d4 c8 d0 d4 c8 d0 d4 c8 d0 d4 c8 d0 d4 c8 d0 d4 c8 d0 d4 c8 d0 d4 c8 d0 d4 c8 d0 d4 c8 d0 d4 c8 d0 d4 c8 d0 d4 80 80 80 c8 d0 d4 c8 d0 d4 c8 d0 d4 c8 d0 d4 c8 d0 d4 c8 d0 d4 c8 d0 d4 00 00 00 c8 d0 d4 c8 d0 d4 c8 d0 d4 c8 d0 d4 c8 d0 d4 c8 d0 d4 ff ff ff 00 00 00 80 80 80 c8 d0 d4 c8 d0 d4 c8 d0 d4 c8 d0 d4 c8 d0 d4 c8 d0 d4 c8 d0 d4 00 00 00 00 00 00 c8 d0 d4 c8 d0 d4 c8 d0 d4 c8 d0 d4 ff ff ff 00 00 00 00 00 00 80 80 80 c8 d0 d4 c8 d0 d4 c8 d0 d4 c8 d0 d4 c8 d0 d4 c8 d0 d4 c8 d0 d4 00 00 00 00 00 00 c8 d0 d4 c8 d0 d4 c8 d0 d4 ff ff ff 00 00 00 00 00 00 00 00 00 80 80 80 c8 d0 d4 c8 d0 d4 c8 d0 d4 c8 d0 d4 c8 d0 d4 c8 d0 d4 c8 d0 d4 00 00 00 00 00 00 c8 d0 d4 c8 d0 d4 ff ff ff 00 00 00 00 00 00 00 00 00 00 00 00 80 80 80 c8 d0 d4 c8 d0 d4 c8 d0 d4 c8 d0 d4 c8 d0 d4 c8 d0 d4 c8 d0 d4 00 00 00 00 00 00 c8 d0 d4 ff ff ff 00 00 00 80 80 80 00 00 00 00 00 00 00 00 00 80 80 80 c8 d0 d4 c8 d0 d4 c8 d0 d4 c8 d0 d4 c8 d0 d4 c8 d0 d4 00 00 00 00 00 00 c8 d0 d4 ff ff ff 00 00 00 ff ff 00 00 00 00 00 00 00 00 00 00 00 00 00 80 80 80 c8 d0 d4 c8 d0 d4 c8 d0 d4 c8 d0 d4 c8 d0 d4 00 00 00 00 00 00 c8 d0 d4 ff ff ff 00 00 00 00 00 00 00 00 00 00 00 00 c8 d0 d4 c8 d0 d4 c8 d0 d4 c8 d0 d4 c8 d0 d4 c8 d0 d4 c8 d0 d4 c8 d0 d4 00 00 00 00 00 00 c8 d0 d4 ff ff ff 00 00 00 00 00 00 ff ff ff 00 00 00 00 00 00 c8 d0 d4 c8 d0 d4 c8 d0 d4 c8 d0 d4 c8 d0 d4 c8 d0 d4 c8 d0 d4 00 00 00 c8 d0 d4 c8 d0 d4 ff ff ff 00 00 00 ff ff ff c8 d0 d4 ff ff ff 00 00 00 00 00 00 c8 d0 d4 c8 d0 d4 c8 d0 d4 c8 d0 d4 c8 d0 d4 00 00 00 00 00 00 c8 d0 d4 c8 d0 d4 ff ff ff ff ff ff c8 d0 d4 c8 d0 d4 c8 d0 d4 ff ff ff 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 c8 d0 d4 c8 d0 d4 c8 d0 d4 c8 d0 d4 c8 d0 d4 c8 d0 d4 c8 d0 d4 c8 d0 d4 c8 d0 d4 ff ff ff 00 00 00 00 00 00 00 00 00 00 00 00 ff ff ff c8 d0 d4 c8 d0 d4 c8 d0 d4 c8 d0 d4 c8 d0 d4 c8 d0 d4 c8 d0 d4 c8 d0 d4 c8 d0 d4 c8 d0 d4 c8 d0 d4 ff ff ff ff ff ff ff ff ff ff ff ff c8 d0 d4 c8 d0 d4 c8 d0 d4 c8 d0 d4 c8 d0 d4 c8 d0 d4 c8 d0 d4 c8 d0 d4 c8 d0 d4 c8 d0 d4 c8 d0 d4 c8 d0 d4 c8 d0 d4 c8 d0 d4 c8 d0 d4 c8 d0 d4 c8 d0 d4 c8 d0 d4 c8 d0 d4 c8 d0 d4 c8 d0 d4
+
+Name=btnProperty
+ProgID=PUSHBUTTON.PushButtonCtrl.1
+Rect=183, 4, 204, 25
+Style=50000000h
+ID=0
+Data=949 0c 01 00 01 01 00 00 00 00 00 1b 44 3a 5c 49 6d 61 67 65 5c 76 74 35 5c 75 6e 64 6f 20 73 6d 61 6c 6c 2e 62 6d 70 01 00 01 00 01 00 00 00 00 00 00 00 05 00 05 00 00 00 00 00 00 01 00 00 00 00 00 00 00 00 00 00 14 00 01 01 15 00 00 00 15 00 00 00 04 00 00 00 00 03 52 e3 0b 91 8f ce 11 9d e3 00 aa 00 4b b8 51 01 cc 00 00 90 01 44 42 01 00 0d 4d 53 20 53 61 6e 73 20 53 65 72 69 66 00 00 00 00 00 00 00 00 00 ff 00 ff 00 08 00 00 80 08 00 00 80 08 00 00 80 08 00 00 80 00 00 00 00 01 00 00 00 01 00 00 00 01 00 00 00 00 01 00 42 4d 06 03 00 00 00 00 00 00 36 00 00 00 28 00 00 00 10 00 00 00 0f 00 00 00 01 00 18 00 00 00 00 00 d0 02 00 00 13 0b 00 00 13 0b 00 00 00 00 00 00 00 00 00 00 ff 00 ff c4 d3 d6 bd cc cf bd cc cf bd cc cf bd cc cf bd cc cf bd cc cf bd cc cf bd cc cf bd cc cf bd cc cf bd cc cf bd cc cf c4 d3 d6 ff 00 ff c4 d3 d6 9d a9 ab 89 93 95 89 93 95 89 93 95 89 93 95 89 93 95 89 93 95 89 93 95 89 93 95 89 93 95 89 93 95 89 93 95 89 93 95 9d a9 ab c4 d3 d6 ff 00 ff 77 5a 4e 77 5a 4e 77 5a 4e 77 5a 4e 77 5a 4e 77 5a 4e 77 5a 4e 77 5a 4e 77 5a 4e 77 5a 4e 77 5a 4e 77 5a 4e 77 5a 4e 89 93 95 bd cc cf ff 00 ff 77 5a 4e ff ff fe ff fd fa ff fa f5 ff f7 ee ff f3 e7 ff f0 e0 ff ec d8 ff e8 d0 ff e1 c2 ff de bd ff dc b8 77 5a 4e 89 93 95 bd cc cf ff 00 ff 77 5a 4e ff ff ff 00 00 00 00 00 00 00 00 00 00 00 00 ff f2 e4 ff ee dc 00 00 00 00 00 00 00 00 00 ff dd ba 77 5a 4e 89 93 95 bd cc cf ff 00 ff 77 5a 4e ff ff ff ff ff ff ff fd fb ff fa f5 ff f7 ef ff f4 e8 ff f0 e0 ff ec d9 ff e5 ca ff e1 c3 ff df bd 77 5a 4e 89 93 95 bd cc cf c0 df f3 77 5a 4e ff ff ff 00 00 00 00 00 00 00 00 00 00 00 00 ff f6 ec ff f2 e5 ff ee dd ff e7 ce ff e3 c7 ff e0 c0 77 5a 4e 9d a9 ab c4 d3 d6 b6 db f4 77 5a 4e ff ff ff ff ff ff ff ff ff ff fd fb ff fb f6 ff f6 ec 77 5a 4e 00 00 00 77 5a 4e 77 5a 4e 77 5a 4e 77 5a 4e c4 d3 d6 ff 00 ff aa d8 f5 77 5a 4e fc fc fc ff fe fd 00 00 00 ff fe fd ff fe fd 77 5a 4e 00 00 00 ff ff ff 00 00 00 ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff a0 d4 f6 77 5a 4e ff ff ff 00 00 00 ff ff ff 00 00 00 ff fe fd 00 00 00 ff ff ff 00 00 00 ff ff ff 00 00 00 00 00 00 ff 00 ff 92 73 5e 92 73 5e 97 d1 f7 77 5a 4e ff ff ff ff fe fd 00 00 00 ff ff ff 00 00 00 ff ff ff 00 00 00 ff ff ff 89 89 89 ff ff ff cc cc cc 00 00 00 ac 88 6f 92 73 5e ff 00 ff 91 cf f7 77 5a 4e 77 5a 4e 77 5a 4e 00 00 00 ff ff ff 00 00 00 ff ff ff 89 89 89 ff ff ff ff ff ff ff ff ff ff ff ff ac 88 6f 92 73 5e ff 00 ff ff 00 ff 91 cf f7 91 cf f7 a0 d4 f6 c4 d3 d6 00 00 00 ff ff ff 89 89 89 ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ac 88 6f 92 73 5e ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff 00 00 00 ff ff ff ff ff ff ff ff ff ff ff ff cc cc cc 00 00 00 a6 83 6b 92 73 5e ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff 26 29 2a 26 29 2a 26 29 2a 26 29 2a 24 27 27 ff 00 ff ac 88 6f 92 73 5e
+
+
+[Script]
+id = "Message.form"
+
+Dim gbShow		'флаг отображения формы//
+gbShow = False
+Dim Global, rec, Str, strActionInteractionName
+Set Global = Application.GetGlobalScript("")
+Set global.frmMessage = Form.GetFormScript()
+
+'***************************************************************
+'btnContinue event handlers.
+'***************************************************************
+Sub btnContinue_Click()
+	Str = ""
+	If rec Then Exit Sub
+	rec = 1
+
+	'пишем в шаг методики //
+	MethodMan.StartSetValueLogging
+
+	If MethodMan.IsRecording() Then 
+		TBarCount = ToolBars.GetBarsCount
+		For i = 0 To TBarCount - 1
+			If ToolBars.IsBarVisible( i ) Then
+				If Len(Str)>0 Then Str = Str + ","
+				Str = Str + ToolBars.GetBarName(i)
+			End If
+		Next
+		Data.Setvalue "\Message\ToolBars" ,Str
+		MethodMan.RenameCurrentStep Data.Getvalue ("\Message\InterAction")
+	End If
+	ToolBars.ShowDockBar ToolBars.FindDockNo("Message") , 0
+	If edtText.Text <> "" Then
+		Data.Setvalue "\Message\Message", edtText.Text
+	End If
+	Data.SetValue "\Message\ShowProp", ToolBars.IsDockBarVisible( ToolBars.FindDockNo ( "PropertySheet" ))
+	'закончили писать в шаг методики //
+	MethodMan.FinishSetValueLogging
+
+	global.bNeedShowMtdPanel = true
+	global.gRec = 1
+	ActionState.TerminateCurrentAction
+
+	TBarCount = ToolBars.GetBarsCount
+	For i = 0 To TBarCount - 1								'Скрываем тулбары //
+		ToolBars.ShowBar i, 0
+	Next
+	TBarCount = ToolBars.GetDockBarsCount
+	For i = 0 To TBarCount - 1								'Скрываем докбары //
+		ToolBars.ShowDockBar i, 0
+	Next
+
+	If MethodMan.IsRecording()  Then
+		ToolBars.ShowDockBar ToolBars.FindDockNo ( "MethodPanel" ), 1
+		ToolBars.ShowDockBar ToolBars.FindDockNo ( "MetodicsTab" ), 1	
+		global.MethodMan_AfterRecordMethodStep("nothing else matters") 'Принудительный запуск _AfterRecordMethodStep для интерактивных скриптов//
+	End If
+'	If MethodMan.IsRunning() Then 
+
+	If ( MethodMan.IsRecording() or MethodMan.IsRunning() ) Then
+		If global.IsObjectListActive = False _
+			and ( strActionInteractionName = "ObjectRect" _
+			or strActionInteractionName = "ObjectEllipse" _
+			or strActionInteractionName = "ObjectFree" _
+			or strActionInteractionName = "ObjectSpline" _
+			or strActionInteractionName = "ObjectEllipseFixed" _
+			or strActionInteractionName = "ObjectRectFixed" _
+			or strActionInteractionName = "ObjectEllipseDirect" _
+			or strActionInteractionName = "ObjectRectDirect" _
+			or strActionInteractionName = "ObjectEditor" _
+			or strActionInteractionName = "ObjectMagickStick" _
+			or strActionInteractionName = "ObjectScissors" _
+			or strActionInteractionName = "MeasManualLine" _
+			or strActionInteractionName = "MeasManualFreeLine" _
+			or strActionInteractionName = "MeasManualSpline" _
+			or strActionInteractionName = "MeasManualCycle2" _
+			or strActionInteractionName = "MeasManualCycle3" _
+			or strActionInteractionName = "MeasManualAngle3Point" _
+			or strActionInteractionName = "MeasManualAngle2Line" ) Then
+			ObjectRect -1, -1, -1, -1
+		End If
+		If global.GetNameActivBinary = "" and strActionInteractionName = "BinEditFreeLine" Then
+			BinEditLine -1000, -1000, -1000, -1000
+		End If
+	End If
+
+	MethodMan.Resume()
+	rec = 0
+	global.SaveWndPos "Message"
+	global.gRec = 0
+End Sub
+
+'***************************************************************
+'Form event handlers.
+'***************************************************************
+Sub Form_OnInitialize()
+	btnUndo.ToolTip = Docs.LoadString ("Undo Operation")
+	btnRedo.ToolTip = Docs.LoadString ("Redo Operation")
+	btnProperty.ToolTip = Docs.LoadString ("Show/hide Properties page")
+End Sub
+
+Sub Enable()
+	If ActionState.GetActionState("Undo") and 3 Then
+		btnUndo.Disabled = false
+	Else
+		btnUndo.Disabled = true
+	End If
+	If ActionState.GetActionState("Redo") and 3 Then
+		btnRedo.Disabled = false
+	Else
+		btnRedo.Disabled = true
+	End If
+	Data.Setvalue "\General\SaveStateOnExit" , 1 
+	MainWnd.UpdateSystemSettings
+End Sub
+
+Sub Form_OnShow()
+	gbShow = True
+	rec = 0
+	Str = Data.Getvalue ("\Message\ToolBars")
+	If Len(Str) > 0 Then
+		TBarCount = ToolBars.GetBarsCount
+		arr = Split(Str,",")
+		For i = 0 To UBound(arr)
+			For j = 0 To TBarCount - 1
+				If ToolBars.GetBarName(j) = arr(i) Then
+					ToolBars.ShowBar j, 1
+					Exit For
+				End If
+			Next
+		Next
+	End If
+	edtText.Text = Data.Getvalue ("\Message\Message")
+	edtText.EditBackColor = global.ConvertColorStrToBin ("(197, 218, 244)")
+	MethodMan.Pause
+	global.bNeedShowMtdPanel = false
+	If Data.GetValue ("\Message\ShowProp") Then
+		btnProperty.SetPressedState
+		ToolBars.ShowDockBar ToolBars.FindDockNo ( "PropertySheet" ) , 1
+	Else
+		btnProperty.ResetPressedState
+		ToolBars.ShowDockBar ToolBars.FindDockNo ( "PropertySheet" ) , 0
+	End If
+	ActionState.ClearRedoList
+	ActionState.ClearUndoList
+	Enable()
+End Sub
+
+Sub Form_OnHide()	
+	gbShow = False
+	ActionState.TerminateCurrentAction
+	Data.SetValue "\General\EnableDock", 1
+	MethodMan.Resume()
+End Sub
+
+Sub Form_OnDestroy()
+	Set global.frmMessage = Nothing
+	Set global  = Nothing
+	'MethodMan.Stop
+End Sub
+
+'***************************************************************
+'btnUndo event handlers.
+'***************************************************************
+Sub btnUndo_Click()
+	ActionManager.Undo
+	Enable()
+End Sub
+
+'***************************************************************
+'btnRedo event handlers.
+'***************************************************************
+Sub btnRedo_Click()
+	ActionManager.Redo
+	Enable()
+End Sub
+
+'***************************************************************
+'btnProperty event handlers.
+'***************************************************************
+Sub btnProperty_Click()
+	If btnProperty.IsPressed Then
+		ToolBars.ShowDockBar ToolBars.FindDockNo ( "PropertySheet" ) , 1
+	Else
+		ToolBars.ShowDockBar ToolBars.FindDockNo ( "PropertySheet" ) , 0
+	End If
+End Sub
+
+Sub ActionState_OnActionComplete(strActionName, intActionResult)
+	strActionInteractionName = strActionName
+	If Not gbShow Then Exit Sub
+	Enable()
+End Sub

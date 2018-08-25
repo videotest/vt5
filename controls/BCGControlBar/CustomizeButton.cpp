@@ -23,7 +23,7 @@
 #include "CustomizeButton.h"
 #include "Globals.h"
 #include "BCGToolbar.h"
-#include "MenuImages.h"
+//#include "MenuImages.h"
 #include "BCGToolbarComboBoxButton.h"
 #include "bcgbarres.h"
 #include "bcglocalres.h"
