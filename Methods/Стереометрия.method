@@ -1,0 +1,3796 @@
+NamedData file. Version 1.0a
+
+[Method]
+[Method\Data]
+StepCount:Long=10
+ActiveStep:Long=9
+[Method\Data\Step0]
+ActionName:String=RunMethodSetup
+ForcedName:String=RunMethodSetup
+Flags:Long=7
+ArgCount:Long=0
+[Method\Data\Step0\MethodStepData]
+[Method\Data\Step0\MethodStepData\StateBeforeAction]
+Object List_count:Long=0
+StatObject_count:Long=0
+Image_0:Long=0
+Image_count:Long=1
+StatTable_count:Long=0
+ActiveViewProgID:String=ImageDoc.ImageView
+
+[Method\Data\Step0\MethodStepData\StateAfterAction]
+ActiveViewProgID:String=ImageDoc.ImageView
+Object List_count:Long=0
+StatObject_count:Long=0
+Image_0:Long=0
+Image_count:Long=1
+StatTable_count:Long=0
+
+
+[Method\Data\Step0\FormManager]
+PageExecuted:Long=1
+EnableApply:2=1
+DisableFormShow:Long=0
+
+[Method\Data\Step0\Debugger]
+EnableDebugger:Long=0
+
+[Method\Data\Step0\Classes]
+ClassFile:String=e:\vt5\Classes\FromDoc.class
+UnkClassColor:String=(127, 255, 212)
+UnkClassName:String=Unknown
+ResetManualClass:Long=1
+
+[Method\Data\Step0\ViewStatusText]
+ContourView:String=
+
+[Method\Data\Step0\ImageView]
+N_And_N_Color:String=(255, 255, 255)
+N_And_N_AsClassColor:Long=0
+ShowClassName:2=0
+ShowClassNamePos:Long=0
+ShowObjectNumber:2=0
+ShowObjectNumberPos:2=0
+HilightEnabled:2=2
+ClassHilightEnabled:2=1
+ShowContours:Long=1
+ShowChildObjects:Long=1
+HighlightPhases:Long=0
+HilightColor:String=(233, 233, 233)
+HilightInteractiveColor:String=(233, 233, 233)
+HighlightOversectColor:String=(255, 255, 255)
+HilightPercent:2=0
+HilightInteractivePercent:Long=1
+HighlightOversectMethod:Long=0
+EnableMoveOutside:Long=0
+ShowColorSysPane:2=1
+
+[Method\Data\Step0\DrawImage]
+Gamma:Double=1
+HiBitNum:Long=16
+
+[Method\Data\Step0\Colors]
+Background:String=(255, 255, 255)
+
+[Method\Data\Step0\DrawDisabledImages]
+Enable:Long=1
+Alpha:Double=0.3
+
+[Method\Data\Step0\VTListControl]
+ControlVersion:Long=2
+
+[Method\Data\Step0\measurement]
+[Method\Data\Step0\measurement\parameters]
+[Method\Data\Step0\measurement\parameters\Extern Area]
+Key:Long=0
+UserName:String=Площадь
+Enable:2=1
+Format:String=%0.3f
+UsedPanes:String=
+UsedPhases:String=
+
+[Method\Data\Step0\measurement\parameters\Inner Area]
+Key:Long=1
+UserName:String=Вн. площадь
+Enable:2=1
+Format:String=%0.0f
+UsedPanes:String=
+UsedPhases:String=
+
+[Method\Data\Step0\measurement\parameters\Extern Perimeter]
+Key:Long=57
+UserName:String=Внеш. периметр
+Enable:2=1
+Format:String=%0.3f
+UsedPanes:String=
+UsedPhases:String=
+
+[Method\Data\Step0\measurement\parameters\Inner Perimeter]
+Key:Long=3
+UserName:String=Вн. периметр
+Enable:2=1
+Format:String=%0.3f
+UsedPanes:String=
+UsedPhases:String=
+
+[Method\Data\Step0\measurement\parameters\Big axis of ellipse]
+Key:Long=9
+UserName:String=Эллипс макс.
+Enable:2=1
+Format:String=%0.3f
+UsedPanes:String=
+UsedPhases:String=
+
+[Method\Data\Step0\measurement\parameters\Small axis of ellipse]
+Key:Long=10
+UserName:String=Эллипс мин.
+Enable:2=1
+Format:String=%0.3f
+UsedPanes:String=
+UsedPhases:String=
+
+[Method\Data\Step0\measurement\parameters\Height]
+Key:Long=12
+UserName:String=Длина
+Enable:2=1
+Format:String=%0.3f
+UsedPanes:String=
+UsedPhases:String=
+
+[Method\Data\Step0\measurement\parameters\Width]
+Key:Long=13
+UserName:String=Ширина
+Enable:2=1
+Format:String=%0.3f
+UsedPanes:String=
+UsedPhases:String=
+
+[Method\Data\Step0\measurement\parameters\Size by x]
+Key:Long=14
+UserName:String=Размер по X
+Enable:2=1
+Format:String=%0.3f
+UsedPanes:String=
+UsedPhases:String=
+
+[Method\Data\Step0\measurement\parameters\Size by y]
+Key:Long=15
+UserName:String=Размер по Y
+Enable:2=1
+Format:String=%0.3f
+UsedPanes:String=
+UsedPhases:String=
+
+[Method\Data\Step0\measurement\parameters\Average chord]
+Key:Long=16
+UserName:String=Ср. хорда
+Enable:2=1
+Format:String=%0.3f
+UsedPanes:String=
+UsedPhases:String=
+
+[Method\Data\Step0\measurement\parameters\Length(line)]
+Key:Long=17
+UserName:String=Длина линии
+Enable:2=1
+Format:String=%0.3f
+UsedPanes:String=
+UsedPhases:String=
+
+[Method\Data\Step0\measurement\parameters\Width(line)]
+Key:Long=18
+UserName:String=Толщ. линии
+Enable:2=1
+Format:String=%0.3f
+UsedPanes:String=
+UsedPhases:String=
+
+[Method\Data\Step0\measurement\parameters\Length(ribbon)]
+Key:Long=19
+UserName:String=Длина ленты
+Enable:2=1
+Format:String=%0.3f
+UsedPanes:String=
+UsedPhases:String=
+
+[Method\Data\Step0\measurement\parameters\Width(ribbon)]
+Key:Long=20
+UserName:String=Шир. ленты
+Enable:2=1
+Format:String=%0.3f
+UsedPanes:String=
+UsedPhases:String=
+
+[Method\Data\Step0\measurement\parameters\Center of object x]
+Key:Long=23
+UserName:String=Коорд. X
+Enable:2=1
+Format:String=%0.3f
+UsedPanes:String=
+UsedPhases:String=
+
+[Method\Data\Step0\measurement\parameters\Center of object y]
+Key:Long=24
+UserName:String=Коорд. Y
+Enable:2=1
+Format:String=%0.3f
+UsedPanes:String=
+UsedPhases:String=
+
+[Method\Data\Step0\measurement\parameters\Equivalent diameter]
+Key:Long=11
+UserName:String=Экв. диаметр
+Enable:2=1
+Format:String=%0.3f
+UsedPanes:String=
+UsedPhases:String=
+
+[Method\Data\Step0\measurement\parameters\Form Factor Circle]
+Key:Long=25
+UserName:String=Фактор круга
+Enable:2=1
+Format:String=%0.3f
+UsedPanes:String=
+UsedPhases:String=
+
+[Method\Data\Step0\measurement\parameters\Form Factor Ellipse]
+Key:Long=26
+UserName:String=Ф. эллипса
+Enable:2=1
+Format:String=%0.3f
+UsedPanes:String=
+UsedPhases:String=
+
+[Method\Data\Step0\measurement\parameters\Orientation]
+Key:Long=28
+UserName:String=Ориентация
+Enable:2=1
+Format:String=%0.3f
+UsedPanes:String=
+UsedPhases:String=
+
+[Method\Data\Step0\measurement\parameters\Average brightness]
+Key:Long=29
+UserName:String=Ср. яркость
+Enable:2=1
+Format:String=%0.3f
+UsedPanes:String=
+UsedPhases:String=
+
+[Method\Data\Step0\measurement\parameters\Deviation of brightness]
+Key:Long=30
+UserName:String=Откл. ярк-ти
+Enable:2=1
+Format:String=%0.3f
+UsedPanes:String=
+UsedPhases:String=
+
+[Method\Data\Step0\measurement\parameters\Min brightness]
+Key:Long=31
+UserName:String=Мин. ярк.
+Enable:2=1
+Format:String=%0.3f
+UsedPanes:String=
+UsedPhases:String=
+
+[Method\Data\Step0\measurement\parameters\Max brightness]
+Key:Long=32
+UserName:String=Макс. ярк.
+Enable:2=1
+Format:String=%0.3f
+UsedPanes:String=
+UsedPhases:String=
+
+[Method\Data\Step0\measurement\parameters\Brightness interval]
+Key:Long=33
+UserName:String=Интерв. ярк.
+Enable:2=1
+Format:String=%0.3f
+UsedPanes:String=
+UsedPhases:String=
+
+[Method\Data\Step0\measurement\parameters\Red]
+Key:Long=35
+UserName:String=Красный
+Enable:2=1
+Format:String=%0.3f
+UsedPanes:String=
+UsedPhases:String=
+
+[Method\Data\Step0\measurement\parameters\Green]
+Key:Long=36
+UserName:String=Зеленый
+Enable:2=1
+Format:String=%0.3f
+UsedPanes:String=
+UsedPhases:String=
+
+[Method\Data\Step0\measurement\parameters\Blue]
+Key:Long=37
+UserName:String=Синий
+Enable:2=1
+Format:String=%0.3f
+UsedPanes:String=
+UsedPhases:String=
+
+[Method\Data\Step0\measurement\parameters\Dimesion]
+Key:Long=22
+UserName:String=Ср. размер
+Enable:2=1
+Format:String=%0.3f
+UsedPanes:String=
+UsedPhases:String=
+
+[Method\Data\Step0\measurement\parameters\Elongation]
+Key:Long=21
+UserName:String=Удлинен.
+Enable:2=1
+Format:String=%0.3f
+UsedPanes:String=
+UsedPhases:String=
+
+[Method\Data\Step0\measurement\parameters\Minimal diameter Fere]
+Key:Long=6
+UserName:String=Мин. д.Фере
+Enable:2=1
+Format:String=%0.3f
+UsedPanes:String=
+UsedPhases:String=
+
+[Method\Data\Step0\measurement\parameters\Maximal diameter Fere]
+Key:Long=7
+UserName:String=Макс. д.Фере
+Enable:2=1
+Format:String=%0.3f
+UsedPanes:String=
+UsedPhases:String=
+
+[Method\Data\Step0\measurement\parameters\Average diameter Fere]
+Key:Long=8
+UserName:String=Ср. д.Фере
+Enable:2=1
+Format:String=%0.3f
+UsedPanes:String=
+UsedPhases:String=
+
+[Method\Data\Step0\measurement\parameters\Roundness]
+Key:Long=27
+UserName:String=Округлость
+Enable:2=1
+Format:String=%0.3f
+UsedPanes:String=
+UsedPhases:String=
+
+[Method\Data\Step0\measurement\parameters\Optic density]
+Key:Long=50
+UserName:String=Опт. плотн.
+Enable:2=1
+Format:String=%0.3f
+UsedPanes:String=
+UsedPhases:String=
+
+[Method\Data\Step0\measurement\parameters\Integral optic density]
+Key:Long=51
+UserName:String=Интегр. о.пл.
+Enable:2=1
+Format:String=%0.3f
+UsedPanes:String=
+UsedPhases:String=
+
+[Method\Data\Step0\measurement\parameters\Full Perimeter]
+Key:Long=2
+UserName:String=Периметр
+Enable:2=1
+Format:String=%0.3f
+UsedPanes:String=
+UsedPhases:String=
+
+[Method\Data\Step0\measurement\parameters\Form Factor Circle 2]
+Key:Long=54
+Enable:2=0
+UserName:String=Фактор круга 2
+Format:String=%0.3f
+
+[Method\Data\Step0\measurement\parameters\Hue]
+Key:Long=38
+Enable:2=0
+UserName:String=Hue
+Format:String=%0.3f
+
+[Method\Data\Step0\measurement\parameters\Saturation]
+Key:Long=39
+Enable:2=0
+UserName:String=Saturation
+Format:String=%0.3f
+
+[Method\Data\Step0\measurement\parameters\Skel.P.Ratio]
+Key:Long=53
+Enable:2=0
+UserName:String=Skel.P.Ratio
+Format:String=%0.3f
+
+[Method\Data\Step0\measurement\parameters\Local Correlation]
+Key:Long=55
+Enable:2=0
+UserName:String=Local Correlation
+Format:String=%0.3f
+
+[Method\Data\Step0\measurement\parameters\Compactness]
+Key:Long=56
+Enable:2=0
+UserName:String=Compactness
+Format:String=%0.3f
+
+[Method\Data\Step0\measurement\parameters\Ordered Brightness]
+Key:Long=58
+Enable:2=0
+UserName:String=Ordered Brightness
+Format:String=%0.3f
+
+[Method\Data\Step0\measurement\parameters\Brightness integral]
+Key:Long=34
+UserName:String=Интегр. яркость
+Enable:2=1
+Format:String=%0.3f
+UsedPanes:String=
+UsedPhases:String=
+
+[Method\Data\Step0\measurement\parameters\Phase128 Area]
+Key:Long=400
+Enable:2=0
+UserName:String=Phase128 Area
+Format:String=%0.1f
+
+[Method\Data\Step0\measurement\parameters\Phase129 Area]
+Key:Long=401
+Enable:2=0
+UserName:String=Phase129 Area
+Format:String=%0.1f
+
+[Method\Data\Step0\measurement\parameters\Phase130 Area]
+Key:Long=402
+Enable:2=0
+UserName:String=Phase130 Area
+Format:String=%0.1f
+
+[Method\Data\Step0\measurement\parameters\Average vertical chord]
+Key:Long=500
+Enable:2=0
+UserName:String=Average vertical chord
+Format:String=%0.1f
+
+[Method\Data\Step0\measurement\parameters\Min vertical chord]
+Key:Long=501
+Enable:2=0
+UserName:String=Min vertical chord
+Format:String=%0.1f
+
+[Method\Data\Step0\measurement\parameters\Max vertical chord]
+Key:Long=502
+Enable:2=0
+UserName:String=Max vertical chord
+Format:String=%0.1f
+
+[Method\Data\Step0\measurement\parameters\Фактор круга]
+Key:Long=196610
+
+[Method\Data\Step0\measurement\parameters\q]
+Key:Long=196610
+
+
+
+[Method\Data\Step0\ImageBar]
+UseSystemColors:Long=0
+BackColor:String=(212, 208, 200)
+HighlightColor:String=(128, 128, 128)
+DrawText:Long=1
+DrawIcon:Long=1
+ItemWidth:Long=50
+ItemHeight:Long=50
+IconPropName:String=ImageState
+FieldLeft:Long=10
+FieldRight:Long=10
+FieldTop:Long=10
+FieldBottom:Long=10
+FooterOffset:Long=5
+BarOffsetX:Long=0
+BarOffsetY:Long=0
+
+[Method\Data\Step0\MainFrame]
+EnableCustomizeButton:Long=1
+
+[Method\Data\Step0\LongOperation]
+ScriptNotify:Long=0
+ScriptFireStep:Long=10
+ScriptFireLag:Long=-1
+
+[Method\Data\Step0\Classify]
+[Method\Data\Step0\Classify\AutomaticClassifier]
+Step:Double=875
+GeomStep:Double=0
+
+[Method\Data\Step0\Classify\FromDoc.class]
+[Method\Data\Step0\Classify\FromDoc.class\0]
+class0:String=3.000000e+003,3.875000e+003
+class1:String=3.875000e+003,4.750000e+003
+class2:String=4.750000e+003,5.625000e+003
+class3:String=5.625000e+003,6.500000e+003
+class4:String=6.500000e+003,7.375000e+003
+class5:String=7.375000e+003,8.250000e+003
+class6:String=8.250000e+003,9.125000e+003
+class7:String=9.125000e+003,1.000000e+004
+
+
+
+[Method\Data\Step0\Interface]
+EnableSkin:Long=0
+
+[Method\Data\Step0\types]
+StatObject:Long=0
+
+[Method\Data\Step0\ObjectCountPane]
+ImageSourceView:Long=0
+
+[Method\Data\Step0\ImagePane]
+Percent:Long=0
+
+[Method\Data\Step0\StatusBar]
+ShowMousePos:Long=1
+ShowClientSize:Long=1
+
+
+[Method\Data\Step1]
+ActionName:String=RunMeasParameters
+ForcedName:String=RunMeasParameters
+Flags:Long=4
+ArgCount:Long=0
+[Method\Data\Step1\MethodStepData]
+[Method\Data\Step1\MethodStepData\StateBeforeAction]
+Object List_0:Long=0
+Object List_count:Long=1
+Image_0:Long=0
+Image_count:Long=1
+Binary_count:Long=0
+StatObject_count:Long=0
+StatTable_count:Long=0
+ActiveViewProgID:String=ImageDoc.MaskView
+
+[Method\Data\Step1\MethodStepData\StateAfterAction]
+ActiveViewProgID:String=ImageDoc.MaskView
+Object List_0:Long=0
+Object List_count:Long=1
+Image_0:Long=0
+Image_count:Long=1
+Binary_count:Long=0
+StatObject_count:Long=0
+StatTable_count:Long=0
+
+
+[Method\Data\Step1\FormManager]
+PageExecuted:Long=0
+
+[Method\Data\Step1\Debugger]
+EnableDebugger:Long=0
+
+[Method\Data\Step1\VTListControl]
+ControlVersion:Long=2
+
+[Method\Data\Step1\ViewStatusText]
+MaskView:String=
+
+[Method\Data\Step1\Interface]
+EnableSkin:Long=0
+
+[Method\Data\Step1\Thumbnail]
+ImageRenderMinSize4Icon:Long=32
+
+[Method\Data\Step1\ImageView]
+N_And_N_Color:String=(255, 255, 255)
+N_And_N_AsClassColor:Long=0
+ShowClassName:2=0
+ShowClassNamePos:Long=0
+ShowObjectNumber:2=0
+ShowObjectNumberPos:2=0
+HilightEnabled:2=2
+ClassHilightEnabled:2=1
+ShowContours:Long=1
+ShowChildObjects:Long=1
+HighlightPhases:Long=0
+HilightColor:String=(233, 233, 233)
+HilightInteractiveColor:String=(233, 233, 233)
+HighlightOversectColor:String=(255, 255, 255)
+HilightPercent:2=0
+HilightInteractivePercent:Long=1
+HighlightOversectMethod:Long=0
+EnableMoveOutside:Long=0
+ShowColorSysPane:2=1
+
+[Method\Data\Step1\DrawImage]
+Gamma:Double=1
+HiBitNum:Long=16
+
+[Method\Data\Step1\Colors]
+Background:String=(255, 255, 255)
+
+[Method\Data\Step1\Units]
+[Method\Data\Step1\Units\Linear]
+Name:String=µm
+CoeffToUnit:Double=1e+006
+
+[Method\Data\Step1\Units\Relative]
+Name:String=отн. ед.
+CoeffToUnit:Double=1
+
+[Method\Data\Step1\Units\Angle]
+Name:String=градус
+CoeffToUnit:Double=57.2958
+
+[Method\Data\Step1\Units\Brightness]
+Name:String=ед. яркости
+CoeffToUnit:Double=0.0015259
+
+[Method\Data\Step1\Units\Color]
+Name:String=ед. яркости
+CoeffToUnit:Double=0.0015259
+
+[Method\Data\Step1\Units\Optical]
+Name:String=отн. ед.
+CoeffToUnit:Double=1
+
+
+[Method\Data\Step1\ImageBar]
+UseSystemColors:Long=0
+BackColor:String=(212, 208, 200)
+HighlightColor:String=(128, 128, 128)
+DrawText:Long=1
+DrawIcon:Long=1
+ItemWidth:Long=50
+ItemHeight:Long=50
+IconPropName:String=ImageState
+FieldLeft:Long=10
+FieldRight:Long=10
+FieldTop:Long=10
+FieldBottom:Long=10
+FooterOffset:Long=5
+BarOffsetX:Long=0
+BarOffsetY:Long=0
+
+[Method\Data\Step1\Selection]
+SelectionActionsWorkOnBinary:Long=0
+
+[Method\Data\Step1\ObjectCountPane]
+ImageSourceView:Long=0
+
+[Method\Data\Step1\ImagePane]
+Percent:Long=0
+
+[Method\Data\Step1\StatusBar]
+ShowMousePos:Long=1
+ShowClientSize:Long=1
+
+
+[Method\Data\Step2]
+ActionName:String=RunOptionsCalibr
+ForcedName:String=RunOptionsCalibr
+Flags:Long=4
+ArgCount:Long=0
+[Method\Data\Step2\MethodStepData]
+[Method\Data\Step2\MethodStepData\StateBeforeAction]
+Object List_count:Long=0
+StatObject_count:Long=0
+Image_0:Long=0
+Image_count:Long=1
+StatTable_count:Long=0
+ActiveViewProgID:String=ImageDoc.ImageView
+
+[Method\Data\Step2\MethodStepData\StateAfterAction]
+ActiveViewProgID:String=ImageDoc.ImageView
+Object List_count:Long=0
+StatObject_count:Long=0
+Image_0:Long=0
+Image_count:Long=1
+StatTable_count:Long=0
+
+
+[Method\Data\Step2\FormManager]
+PageExecuted:Long=0
+
+[Method\Data\Step2\DrawDisabledImages]
+Enable:Long=1
+Alpha:Double=0.3
+
+[Method\Data\Step2\Debugger]
+EnableDebugger:Long=0
+
+[Method\Data\Step2\VTListControl]
+ControlVersion:Long=2
+
+[Method\Data\Step2\Calibration]
+MeasPix:2=1
+
+[Method\Data\Step2\Interface]
+EnableSkin:Long=0
+
+[Method\Data\Step2\ImageView]
+N_And_N_Color:String=(255, 255, 255)
+N_And_N_AsClassColor:Long=0
+ShowClassName:2=0
+ShowClassNamePos:Long=0
+ShowObjectNumber:2=0
+ShowObjectNumberPos:2=0
+HilightEnabled:2=2
+ClassHilightEnabled:2=1
+ShowContours:Long=1
+ShowChildObjects:Long=1
+HighlightPhases:Long=0
+HilightColor:String=(233, 233, 233)
+HilightInteractiveColor:String=(233, 233, 233)
+HighlightOversectColor:String=(255, 255, 255)
+HilightPercent:2=0
+HilightInteractivePercent:Long=1
+HighlightOversectMethod:Long=0
+ShowColorSysPane:2=1
+
+[Method\Data\Step2\DrawImage]
+Gamma:Double=1
+HiBitNum:Long=16
+
+[Method\Data\Step2\Colors]
+Background:String=(255, 255, 255)
+
+[Method\Data\Step2\measurement]
+[Method\Data\Step2\measurement\parameters]
+[Method\Data\Step2\measurement\parameters\Extern Area]
+Enable:2=1
+UserName:String=Площадь
+Format:String=%0.3f
+UsedPanes:String=
+UsedPhases:String=
+
+[Method\Data\Step2\measurement\parameters\Inner Area]
+Enable:2=1
+UserName:String=Вн. площадь
+Format:String=%0.0f
+UsedPanes:String=
+UsedPhases:String=
+
+[Method\Data\Step2\measurement\parameters\Full Perimeter]
+Enable:2=1
+UserName:String=Периметр
+Format:String=%0.3f
+UsedPanes:String=
+UsedPhases:String=
+
+[Method\Data\Step2\measurement\parameters\Inner Perimeter]
+Enable:2=1
+UserName:String=Вн. периметр
+Format:String=%0.3f
+UsedPanes:String=
+UsedPhases:String=
+
+[Method\Data\Step2\measurement\parameters\Extern Perimeter]
+Enable:2=1
+UserName:String=Внеш. периметр
+Format:String=%0.3f
+UsedPanes:String=
+UsedPhases:String=
+
+[Method\Data\Step2\measurement\parameters\Big axis of ellipse]
+Enable:2=1
+UserName:String=Эллипс макс.
+Format:String=%0.3f
+UsedPanes:String=
+UsedPhases:String=
+
+[Method\Data\Step2\measurement\parameters\Small axis of ellipse]
+Enable:2=1
+UserName:String=Эллипс мин.
+Format:String=%0.3f
+UsedPanes:String=
+UsedPhases:String=
+
+[Method\Data\Step2\measurement\parameters\Height]
+Enable:2=1
+UserName:String=Длина
+Format:String=%0.3f
+UsedPanes:String=
+UsedPhases:String=
+
+[Method\Data\Step2\measurement\parameters\Width]
+Enable:2=1
+UserName:String=Ширина
+Format:String=%0.3f
+UsedPanes:String=
+UsedPhases:String=
+
+[Method\Data\Step2\measurement\parameters\Size by x]
+Enable:2=1
+UserName:String=Размер по X
+Format:String=%0.3f
+UsedPanes:String=
+UsedPhases:String=
+
+[Method\Data\Step2\measurement\parameters\Size by y]
+Enable:2=1
+UserName:String=Размер по Y
+Format:String=%0.3f
+UsedPanes:String=
+UsedPhases:String=
+
+[Method\Data\Step2\measurement\parameters\Average chord]
+Enable:2=1
+UserName:String=Ср. хорда
+Format:String=%0.3f
+UsedPanes:String=
+UsedPhases:String=
+
+[Method\Data\Step2\measurement\parameters\Length(line)]
+Enable:2=1
+UserName:String=Длина линии
+Format:String=%0.3f
+UsedPanes:String=
+UsedPhases:String=
+
+[Method\Data\Step2\measurement\parameters\Width(line)]
+Enable:2=1
+UserName:String=Толщ. линии
+Format:String=%0.3f
+UsedPanes:String=
+UsedPhases:String=
+
+[Method\Data\Step2\measurement\parameters\Length(ribbon)]
+Enable:2=1
+UserName:String=Длина ленты
+Format:String=%0.3f
+UsedPanes:String=
+UsedPhases:String=
+
+[Method\Data\Step2\measurement\parameters\Width(ribbon)]
+Enable:2=1
+UserName:String=Шир. ленты
+Format:String=%0.3f
+UsedPanes:String=
+UsedPhases:String=
+
+[Method\Data\Step2\measurement\parameters\Center of object x]
+Enable:2=1
+UserName:String=Коорд. X
+Format:String=%0.3f
+UsedPanes:String=
+UsedPhases:String=
+
+[Method\Data\Step2\measurement\parameters\Center of object y]
+Enable:2=1
+UserName:String=Коорд. Y
+Format:String=%0.3f
+UsedPanes:String=
+UsedPhases:String=
+
+[Method\Data\Step2\measurement\parameters\Equivalent diameter]
+Enable:2=1
+UserName:String=Экв. диаметр
+Format:String=%0.3f
+UsedPanes:String=
+UsedPhases:String=
+
+[Method\Data\Step2\measurement\parameters\Form Factor Circle]
+Enable:2=1
+UserName:String=Фактор круга
+Format:String=%0.3f
+UsedPanes:String=
+UsedPhases:String=
+
+[Method\Data\Step2\measurement\parameters\Form Factor Circle 2]
+Enable:2=0
+UserName:String=Фактор круга 2
+Format:String=%0.3f
+
+[Method\Data\Step2\measurement\parameters\Form Factor Ellipse]
+Enable:2=1
+UserName:String=Ф. эллипса
+Format:String=%0.3f
+UsedPanes:String=
+UsedPhases:String=
+
+[Method\Data\Step2\measurement\parameters\Orientation]
+Enable:2=1
+UserName:String=Ориентация
+Format:String=%0.3f
+UsedPanes:String=
+UsedPhases:String=
+
+[Method\Data\Step2\measurement\parameters\Average brightness]
+Enable:2=1
+UserName:String=Ср. яркость
+Format:String=%0.3f
+UsedPanes:String=
+UsedPhases:String=
+
+[Method\Data\Step2\measurement\parameters\Deviation of brightness]
+Enable:2=1
+UserName:String=Откл. ярк-ти
+Format:String=%0.3f
+UsedPanes:String=
+UsedPhases:String=
+
+[Method\Data\Step2\measurement\parameters\Min brightness]
+Enable:2=1
+UserName:String=Мин. ярк.
+Format:String=%0.3f
+UsedPanes:String=
+UsedPhases:String=
+
+[Method\Data\Step2\measurement\parameters\Max brightness]
+Enable:2=1
+UserName:String=Макс. ярк.
+Format:String=%0.3f
+UsedPanes:String=
+UsedPhases:String=
+
+[Method\Data\Step2\measurement\parameters\Brightness interval]
+Enable:2=1
+UserName:String=Интерв. ярк.
+Format:String=%0.3f
+UsedPanes:String=
+UsedPhases:String=
+
+[Method\Data\Step2\measurement\parameters\Brightness integral]
+Enable:2=1
+UserName:String=Интегр. яркость
+Format:String=%0.3f
+UsedPanes:String=
+UsedPhases:String=
+
+[Method\Data\Step2\measurement\parameters\Ordered Brightness]
+Enable:2=0
+UserName:String=Ordered Brightness
+Format:String=%0.3f
+
+[Method\Data\Step2\measurement\parameters\Red]
+Enable:2=1
+UserName:String=Красный
+Format:String=%0.3f
+UsedPanes:String=
+UsedPhases:String=
+
+[Method\Data\Step2\measurement\parameters\Green]
+Enable:2=1
+UserName:String=Зеленый
+Format:String=%0.3f
+UsedPanes:String=
+UsedPhases:String=
+
+[Method\Data\Step2\measurement\parameters\Blue]
+Enable:2=1
+UserName:String=Синий
+Format:String=%0.3f
+UsedPanes:String=
+UsedPhases:String=
+
+[Method\Data\Step2\measurement\parameters\Hue]
+Enable:2=0
+UserName:String=Hue
+Format:String=%0.3f
+
+[Method\Data\Step2\measurement\parameters\Saturation]
+Enable:2=0
+UserName:String=Saturation
+Format:String=%0.3f
+
+[Method\Data\Step2\measurement\parameters\Dimesion]
+Enable:2=1
+UserName:String=Ср. размер
+Format:String=%0.3f
+UsedPanes:String=
+UsedPhases:String=
+
+[Method\Data\Step2\measurement\parameters\Elongation]
+Enable:2=1
+UserName:String=Удлинен.
+Format:String=%0.3f
+UsedPanes:String=
+UsedPhases:String=
+
+[Method\Data\Step2\measurement\parameters\Skel.P.Ratio]
+Enable:2=0
+UserName:String=Skel.P.Ratio
+Format:String=%0.3f
+
+[Method\Data\Step2\measurement\parameters\Local Correlation]
+Enable:2=0
+UserName:String=Local Correlation
+Format:String=%0.3f
+
+[Method\Data\Step2\measurement\parameters\Minimal diameter Fere]
+Enable:2=1
+UserName:String=Мин. д.Фере
+Format:String=%0.3f
+UsedPanes:String=
+UsedPhases:String=
+
+[Method\Data\Step2\measurement\parameters\Maximal diameter Fere]
+Enable:2=1
+UserName:String=Макс. д.Фере
+Format:String=%0.3f
+UsedPanes:String=
+UsedPhases:String=
+
+[Method\Data\Step2\measurement\parameters\Average diameter Fere]
+Enable:2=1
+UserName:String=Ср. д.Фере
+Format:String=%0.3f
+UsedPanes:String=
+UsedPhases:String=
+
+[Method\Data\Step2\measurement\parameters\Roundness]
+Enable:2=1
+UserName:String=Округлость
+Format:String=%0.3f
+UsedPanes:String=
+UsedPhases:String=
+
+[Method\Data\Step2\measurement\parameters\Compactness]
+Enable:2=0
+UserName:String=Compactness
+Format:String=%0.3f
+
+[Method\Data\Step2\measurement\parameters\Optic density]
+Enable:2=1
+UserName:String=Опт. плотн.
+Format:String=%0.3f
+UsedPanes:String=
+UsedPhases:String=
+
+[Method\Data\Step2\measurement\parameters\Integral optic density]
+Enable:2=1
+UserName:String=Интегр. о.пл.
+Format:String=%0.3f
+UsedPanes:String=
+UsedPhases:String=
+
+[Method\Data\Step2\measurement\parameters\Phase128 Area]
+Enable:2=0
+UserName:String=Phase128 Area
+Format:String=%0.1f
+
+[Method\Data\Step2\measurement\parameters\Phase129 Area]
+Enable:2=0
+UserName:String=Phase129 Area
+Format:String=%0.1f
+
+[Method\Data\Step2\measurement\parameters\Phase130 Area]
+Enable:2=0
+UserName:String=Phase130 Area
+Format:String=%0.1f
+
+[Method\Data\Step2\measurement\parameters\Average vertical chord]
+Enable:2=0
+UserName:String=Average vertical chord
+Format:String=%0.1f
+
+[Method\Data\Step2\measurement\parameters\Min vertical chord]
+Enable:2=0
+UserName:String=Min vertical chord
+Format:String=%0.1f
+
+[Method\Data\Step2\measurement\parameters\Max vertical chord]
+Enable:2=0
+UserName:String=Max vertical chord
+Format:String=%0.1f
+
+
+
+[Method\Data\Step2\ImageBar]
+UseSystemColors:Long=0
+BackColor:String=(212, 208, 200)
+HighlightColor:String=(128, 128, 128)
+DrawText:Long=1
+DrawIcon:Long=1
+ItemWidth:Long=50
+ItemHeight:Long=50
+IconPropName:String=ImageState
+FieldLeft:Long=10
+FieldRight:Long=10
+FieldTop:Long=10
+FieldBottom:Long=10
+FooterOffset:Long=5
+BarOffsetX:Long=0
+BarOffsetY:Long=0
+
+[Method\Data\Step2\ObjectCountPane]
+ImageSourceView:Long=0
+
+[Method\Data\Step2\ImagePane]
+Percent:Long=0
+
+[Method\Data\Step2\ViewStatusText]
+ContourView:String=
+
+[Method\Data\Step2\StatusBar]
+ShowMousePos:Long=1
+ShowClientSize:Long=1
+
+
+[Method\Data\Step3]
+ActionName:String=BeginMethodLoop
+ForcedName:String=BeginMethodLoop
+Flags:Long=4
+ArgCount:Long=0
+KeyCount:Long=0
+
+[Method\Data\Step4]
+ActionName:String=MethodStart
+ForcedName:String=Получение изображения
+Flags:Long=12
+ArgCount:Long=0
+KeyCount:Long=0
+
+[Method\Data\Step5]
+ActionName:String=RunColorPhaseThresholding
+ForcedName:String=RunColorPhaseThresholding
+Flags:Long=7
+ArgCount:Long=0
+tmpPhasesThresh:2=0
+[Method\Data\Step5\MethodStepData]
+[Method\Data\Step5\MethodStepData\StateBeforeAction]
+Image_0:Long=0
+Image_count:Long=1
+Object List_count:Long=0
+StatObject_count:Long=0
+StatTable_count:Long=0
+ActiveViewProgID:String=ImageDoc.ImageView
+
+[Method\Data\Step5\MethodStepData\StateAfterAction]
+ActiveViewProgID:String=ImageDoc.MaskView
+Object List_0:Long=0
+Object List_count:Long=1
+Image_0:Long=0
+Image_count:Long=1
+Binary_count:Long=0
+StatObject_count:Long=0
+StatTable_count:Long=0
+
+
+[Method\Data\Step5\FormManager]
+PageExecuted:Long=1
+EnableApply:2=1
+DisableFormShow:Long=0
+
+[Method\Data\Step5\ViewStatusText]
+ContourView:String=
+BinaryForeView:String=
+PhaseView:String=
+MaskView:String=
+
+[Method\Data\Step5\DockBars]
+isPass:11=0
+Count:Long=11
+noAdvancedMode:2=1
+VisibleTBName:String=
+TBCount:Long=7
+CloseFishBar:2=0
+
+[Method\Data\Step5\Interface]
+EnableSkin:Long=0
+ScrollClass:String=SCROLLBAR
+
+[Method\Data\Step5\MainFrame]
+ShowPopupMenu:2=0
+ShowPopupMenuOld:2=0
+
+[Method\Data\Step5\NewCalibr]
+Active:String={6580B9DD-49C7-4E41-8ED9-D52A49908230}
+[Method\Data\Step5\NewCalibr\{6580B9DD-49C7-4E41-8ED9-D52A49908230}]
+MeterPerPixel:Double=3.71647e-008
+Name:String=100x
+Active:2=1
+
+
+[Method\Data\Step5\ImageView]
+N_And_N_Color:String=(255, 255, 255)
+N_And_N_AsClassColor:Long=0
+EnableSelection:Long=1
+ImageSelectionOnSourceOnly:2=0
+EnableObjectResize:Long=1
+EnableMoveOutside:Long=0
+ShowMarker:Long=0
+ShowColorSysPane:2=1
+ShowClassName:2=0
+ShowClassNamePos:Long=0
+ShowObjectNumber:2=0
+ShowObjectNumberPos:2=0
+HilightEnabled:2=2
+ClassHilightEnabled:2=1
+ShowContours:Long=1
+ShowChildObjects:Long=1
+HighlightPhases:Long=0
+HilightColor:String=(233, 233, 233)
+HilightInteractiveColor:String=(233, 233, 233)
+HighlightOversectColor:String=(255, 255, 255)
+HilightPercent:2=0
+HilightInteractivePercent:Long=1
+HighlightOversectMethod:Long=0
+
+[Method\Data\Step5\DrawImage]
+Gamma:Double=1
+HiBitNum:Long=16
+
+[Method\Data\Step5\Colors]
+Background:String=(255, 255, 255)
+
+[Method\Data\Step5\Debugger]
+EnableDebugger:Long=0
+
+[Method\Data\Step5\VTListControl]
+ControlVersion:Long=2
+
+[Method\Data\Step5\Phase]
+Phase1Color:String=(255,255,0)
+Phase2Color:String=(0,255,0)
+PhasesCount:2=2
+Phase3Color:String=(189,137,127)
+Phase4Color:String=(214,171,153)
+Phase5Color:String=(236,209,172)
+Transparency:2=0
+Phase11Color:String=(0,255,0)
+Phase12Color:String=(239,231,218)
+Phase13Color:String=(0,255,0)
+Phase14Color:String=(0,255,0)
+Phase6Color:String=(181,133,75)
+Phase7Color:String=(144,137,118)
+Phase8Color:String=(177,129,100)
+Phase9Color:String=(190,179,223)
+Phase10Color:String=(189,181,229)
+Phase15Color:String=(231,202,182)
+Phase16Color:String=(241,196,149)
+Phase17Color:String=(233,192,133)
+Phase18Color:String=(201,180,208)
+Phase19Color:String=(185,157,202)
+Phase20Color:String=(0,255,0)
+Phase21Color:String=(36,36,37)
+Phase22Color:String=(65,65,66)
+Phase23Color:String=(35, 35, 36)
+Phase24Color:String=(45, 45, 46)
+
+[Method\Data\Step5\Information]
+LastImageCX:Long=768
+LastImageCY:Long=570
+
+[Method\Data\Step5\types]
+Binary:Long=0
+Image:Long=0
+Object List:Long=0
+StatObject:Long=0
+StatTable:Long=0
+
+[Method\Data\Step5\Binary]
+IndexedColorsCount:Long=20
+Fore_0:String=(255, 255, 0)
+Fore_1:String=(128, 0, 0)
+Fore_2:String=(0, 128, 0)
+Fore_3:String=(128, 128, 0)
+Fore_4:String=(0, 0, 128)
+Fore_5:String=(128, 0, 128)
+Fore_6:String=(0, 128, 128)
+Fore_7:String=(192, 192, 192)
+Fore_8:String=(192, 220, 192)
+Fore_9:String=(166, 202, 240)
+Fore_10:String=(255, 251, 240)
+Fore_11:String=(160, 160, 164)
+Fore_12:String=(128, 128, 128)
+Fore_13:String=(255, 0, 0)
+Fore_14:String=(0, 255, 0)
+Fore_15:String=(255, 255, 0)
+Fore_16:String=(0, 0, 255)
+Fore_17:String=(255, 0, 255)
+Fore_18:String=(0, 255, 255)
+Fore_19:String=(255, 255, 255)
+SyncColor:String=(255,255,0)
+BackColor:String=(0, 0, 0)
+
+[Method\Data\Step5\statistics]
+ShowResultBar:Long=1
+LinearColor:String=(205, 255, 205)
+AngleColor:String=(205, 255, 255)
+CounterColor:String=(255, 205, 205)
+UndefineColor:String=(255, 255, 205)
+
+[Method\Data\Step5\Avi]
+ThumbnailWidth:Long=100
+ThumbnailHeight:Long=100
+GalleryFrameStep:Long=1
+
+[Method\Data\Step5\IntelliMouse]
+Wheel enable:Long=0
+Wheel horz scroll key:String=Ctrl
+Wheel step:Long=10
+Invert wheel horz direction:Long=0
+Invert wheel vert direction:Long=0
+Scroll enable:Long=0
+Scroll key:String=Middle
+Invert scroll horz direction:Long=0
+Invert scroll invert vert direction:Long=0
+Enable key scroll:Long=0
+Key step:Long=10
+
+[Method\Data\Step5\Layout]
+ShowObjectNames:Long=0
+
+[Method\Data\Step5\ImagePane]
+Percent:Long=0
+
+[Method\Data\Step5\StatusBar]
+ShowMousePos:Long=1
+ShowClientSize:Long=1
+
+[Method\Data\Step5\SegmColorPhases]
+DistMethod:Double=0.9
+Count:Long=4
+Color0:String=(216,205,203)
+Weight0:Double=1
+Color1:String=(239,231,218)
+Weight1:Double=1
+Color2:String=(178,124,197)
+Weight2:Double=1
+Color3:String=(193,158,204)
+Weight3:Double=1
+Phase0:2=128
+Phase1:2=128
+Phase2:2=129
+Phase3:2=129
+
+[Method\Data\Step5\FindPhasesColor]
+[Method\Data\Step5\FindPhasesColor\Result]
+Deviation:Double=7.44791
+DeviationRatio:Double=0.134253
+
+
+[Method\Data\Step5\Thresholding]
+[Method\Data\Step5\Thresholding\ColorPhases]
+ColorsCount:Long=4
+IgnoreBright:2=1
+Transparent:2=0
+ShowMode:Long=1
+BinName:String=
+SplitWindow:11=-1
+LastClassFile:String=Фазы
+
+
+[Method\Data\Step5\ObjectCountPane]
+ImageSourceView:Long=0
+
+
+[Method\Data\Step6]
+ActionName:String=CreateTD
+ForcedName:String=CreateTD
+Flags:Long=4
+ArgCount:Long=0
+[Method\Data\Step6\MethodStepData]
+[Method\Data\Step6\MethodStepData\StateBeforeAction]
+Object List_0:Long=0
+Object List_count:Long=1
+Image_0:Long=0
+Image_count:Long=1
+Binary_count:Long=0
+StatObject_count:Long=0
+StatTable_count:Long=0
+ActiveViewProgID:String=ImageDoc.MaskView
+
+[Method\Data\Step6\MethodStepData\StateAfterAction]
+ActiveViewProgID:String=ImageDoc.MaskView
+Object List_0:Long=0
+Object List_count:Long=1
+Image_0:Long=0
+Image_count:Long=1
+Binary_count:Long=0
+StatObject_count:Long=0
+StatTable_count:Long=0
+
+
+[Method\Data\Step6\FormManager]
+PageExecuted:Long=0
+
+[Method\Data\Step6\StatDataTable]
+EnableUndo:Long=1
+CompressImage:Long=1
+
+[Method\Data\Step6\NewCalibr]
+Active:String={6580B9DD-49C7-4E41-8ED9-D52A49908230}
+[Method\Data\Step6\NewCalibr\{6580B9DD-49C7-4E41-8ED9-D52A49908230}]
+MeterPerPixel:Double=3.71647e-008
+Name:String=100x
+Active:2=1
+
+
+[Method\Data\Step6\types]
+StatTable:Long=0
+
+[Method\Data\Step6\ActionManager]
+UndoListMaxSize:Long=5
+
+[Method\Data\Step6\StatUI]
+CalcForGroups:String=0,1,2
+ClassFile:String=e:\vt5\Classes\FromDoc.class
+OwnStatTable:String=
+CalcForAllClasses:String=
+CalcForRelativeClasses:String=
+SplitterType:Long=2
+Pane0_Data:Long=2
+Pane1_Data:Long=0
+Pane2_Data:Long=1
+StatParamArea_PropertyScript:String=RunStatGraphDistr
+ChartArea_PropertyScript:String=RunStatGraphDistr
+AxisArea_PropertyScript:String=RunStatGraphDistr
+X_ParamsArea_PropertyScript:String=RunStatGraphDistr
+Y_ParamsArea_PropertyScript:String=RunStatGraphDistr
+TableStatArea_PropertyScript:String=RunStatGraphDistr
+Views:Long=7
+HSplitter:Double=0.407095
+VSplitter:Double=0.395349
+ShowContext:Long=1
+ChartArea_ImgIndex:Long=0
+AxisArea_ImgIndex:Long=0
+Y_ParamsArea_ImgIndex:Long=0
+X_ParamsArea_ImgIndex:Long=0
+Enable_ChartArea:Long=1
+Enable_AxisArea:Long=0
+Enable_X_ParamsArea:Long=0
+Enable_Y_ParamsArea:Long=0
+Enable_StatParamArea:Long=1
+StatParamArea_ImgIndex:Long=0
+TableStatArea_ImgIndex:Long=0
+Enable_TableStatArea:Long=1
+Loaded:Long=1
+[Method\Data\Step6\StatUI\StatParams]
+NormalArea:Double=1
+Probability:Double=0.95
+[Method\Data\Step6\StatUI\StatParams\NormalArea]
+Visible:Long=3
+
+[Method\Data\Step6\StatUI\StatParams\Probability]
+Visible:Long=3
+
+[Method\Data\Step6\StatUI\StatParams\196610]
+UserName:String=Ср. арифметическое
+Format:String=%.3f
+Graphics:String=Ср.арифм.
+Units:String=
+Visible:Long=1
+TableOrder:Long=0
+LegendOrder:2=1
+CalcFrom:Long=0
+GreekSymbol:Long=-1
+Group:2=0
+
+[Method\Data\Step6\StatUI\StatParams\196611]
+UserName:String=Ср. геометрическое
+Format:String=%.3f
+Graphics:String=Ср.геом.
+Units:String=
+Visible:Long=0
+TableOrder:Long=2
+LegendOrder:2=2
+CalcFrom:Long=0
+GreekSymbol:Long=-1
+Group:2=0
+
+[Method\Data\Step6\StatUI\StatParams\196612]
+UserName:String=Ср. гармоническое
+Format:String=%.3f
+Graphics:String=Ср.гарм.
+Units:String=
+Visible:Long=0
+TableOrder:Long=2
+LegendOrder:2=3
+CalcFrom:Long=0
+GreekSymbol:Long=-1
+Group:2=0
+
+[Method\Data\Step6\StatUI\StatParams\196613]
+UserName:String=Минимум
+Format:String=%.3f
+Graphics:String=Min
+Units:String=
+Visible:Long=1
+TableOrder:Long=2
+LegendOrder:2=4
+CalcFrom:Long=0
+GreekSymbol:Long=-1
+Group:2=0
+
+[Method\Data\Step6\StatUI\StatParams\196614]
+UserName:String=Максимум
+Format:String=%.3f
+Graphics:String=Max
+Units:String=
+Visible:Long=1
+TableOrder:Long=2
+LegendOrder:2=5
+CalcFrom:Long=0
+GreekSymbol:Long=-1
+Group:2=0
+
+[Method\Data\Step6\StatUI\StatParams\196615]
+UserName:String=Размах вариации
+Format:String=%.3f
+Graphics:String=Разм.вар.
+Units:String=
+Visible:Long=0
+TableOrder:Long=2
+LegendOrder:2=6
+CalcFrom:Long=0
+GreekSymbol:Long=-1
+Group:2=0
+
+[Method\Data\Step6\StatUI\StatParams\196616]
+UserName:String=Дисперсия
+Format:String=%.3f
+Graphics:String=Дисп.
+Units:String=
+Visible:Long=0
+TableOrder:Long=2
+LegendOrder:2=7
+CalcFrom:Long=0
+GreekSymbol:Long=-1
+Group:2=0
+
+[Method\Data\Step6\StatUI\StatParams\196617]
+UserName:String=Ст. отклонение
+Format:String=%.3f
+Graphics:String=Ст.откл.
+Units:String=
+Visible:Long=0
+TableOrder:Long=2
+LegendOrder:2=8
+CalcFrom:Long=0
+GreekSymbol:Long=-1
+Group:2=0
+
+[Method\Data\Step6\StatUI\StatParams\196618]
+UserName:String=Мода
+Format:String=%.3f
+Graphics:String=Мода
+Units:String=
+Visible:Long=2
+TableOrder:Long=2
+LegendOrder:2=9
+CalcFrom:Long=0
+GreekSymbol:Long=-1
+Group:2=0
+
+[Method\Data\Step6\StatUI\StatParams\196619]
+UserName:String=Медиана
+Format:String=%.3f
+Graphics:String=Медиана
+Units:String=
+Visible:Long=0
+TableOrder:Long=2
+LegendOrder:2=10
+CalcFrom:Long=0
+GreekSymbol:Long=-1
+Group:2=0
+
+[Method\Data\Step6\StatUI\StatParams\196620]
+UserName:String=Асимметрия
+Format:String=%.3f
+Graphics:String=Асимм.
+Units:String=
+Visible:Long=1
+TableOrder:Long=2
+LegendOrder:2=11
+CalcFrom:Long=0
+GreekSymbol:Long=-1
+Group:2=0
+
+[Method\Data\Step6\StatUI\StatParams\196621]
+UserName:String=Эксцесс
+Format:String=%.3f
+Graphics:String=Эксц.
+Units:String=
+Visible:Long=0
+TableOrder:Long=2
+LegendOrder:2=12
+CalcFrom:Long=0
+GreekSymbol:Long=-1
+Group:2=0
+
+[Method\Data\Step6\StatUI\StatParams\196622]
+UserName:String=Коэф. вариации
+Format:String=%.3f
+Graphics:String=Коэф.вар.
+Units:String=
+Visible:Long=0
+TableOrder:Long=2
+LegendOrder:2=13
+CalcFrom:Long=0
+GreekSymbol:Long=-1
+Group:2=0
+
+[Method\Data\Step6\StatUI\StatParams\196623]
+UserName:String=Количество
+Format:String=%.3f
+Graphics:String=Кол-во
+Units:String=
+Visible:Long=1
+TableOrder:Long=2
+LegendOrder:2=14
+CalcFrom:Long=0
+GreekSymbol:Long=-1
+Group:2=0
+
+[Method\Data\Step6\StatUI\StatParams\196624]
+UserName:String=Площадь
+Format:String=%.3f
+Graphics:String=A
+Units:String=
+Visible:Long=0
+TableOrder:Long=2
+LegendOrder:2=15
+CalcFrom:Long=0
+GreekSymbol:Long=-1
+Group:2=0
+
+[Method\Data\Step6\StatUI\StatParams\196625]
+UserName:String=Длина
+Format:String=%.3f
+Graphics:String=L
+Units:String=
+Visible:Long=0
+TableOrder:Long=2
+LegendOrder:2=16
+CalcFrom:Long=0
+GreekSymbol:Long=-1
+Group:2=0
+
+[Method\Data\Step6\StatUI\StatParams\196626]
+UserName:String=Обр. площадь
+Format:String=%.3f
+Graphics:String=A_обр 
+Units:String=
+Visible:Long=2
+TableOrder:Long=2
+LegendOrder:2=17
+CalcFrom:Long=0
+GreekSymbol:Long=-1
+Group:2=0
+
+[Method\Data\Step6\StatUI\StatParams\196627]
+UserName:String=Удельная площадь
+Format:String=%.3f
+Graphics:String=A_уд
+Units:String=
+Visible:Long=0
+TableOrder:Long=2
+LegendOrder:2=18
+CalcFrom:Long=0
+GreekSymbol:Long=-1
+Group:2=1
+
+[Method\Data\Step6\StatUI\StatParams\196628]
+UserName:String=Ошибка уд. площади
+Format:String=%.3f
+Graphics:String=Ош.уд.площ.
+Units:String=
+Visible:Long=0
+TableOrder:Long=2
+LegendOrder:2=19
+CalcFrom:Long=0
+GreekSymbol:Long=-1
+Group:2=1
+
+[Method\Data\Step6\StatUI\StatParams\196629]
+UserName:String=% площади
+Format:String=%.3f
+Graphics:String=%A
+Units:String=
+Visible:Long=0
+TableOrder:Long=2
+LegendOrder:2=20
+CalcFrom:Long=0
+GreekSymbol:Long=-1
+Group:2=1
+
+[Method\Data\Step6\StatUI\StatParams\196630]
+UserName:String=Ошибка % площади
+Format:String=%.3f
+Graphics:String=Ош.%A
+Units:String=
+Visible:Long=0
+TableOrder:Long=2
+LegendOrder:2=21
+CalcFrom:Long=0
+GreekSymbol:Long=-1
+Group:2=1
+
+[Method\Data\Step6\StatUI\StatParams\196631]
+UserName:String=Нормир. площадь
+Format:String=%.3f
+Graphics:String=A_норм
+Units:String=
+Visible:Long=0
+TableOrder:Long=2
+LegendOrder:2=22
+CalcFrom:Long=0
+GreekSymbol:Long=-1
+Group:2=1
+
+[Method\Data\Step6\StatUI\StatParams\196632]
+UserName:String=Удельное кол-во
+Format:String=%.3f
+Graphics:String=Уд.кол-во
+Units:String=
+Visible:Long=0
+TableOrder:Long=2
+LegendOrder:2=23
+CalcFrom:Long=0
+GreekSymbol:Long=-1
+Group:2=1
+
+[Method\Data\Step6\StatUI\StatParams\196633]
+UserName:String=Ошибка уд. кол-ва
+Format:String=%.3f
+Graphics:String=Ош.уд.кол-ва
+Units:String=
+Visible:Long=0
+TableOrder:Long=2
+LegendOrder:2=24
+CalcFrom:Long=0
+GreekSymbol:Long=-1
+Group:2=1
+
+[Method\Data\Step6\StatUI\StatParams\196634]
+UserName:String=% количества
+Format:String=%.3f
+Graphics:String=%кол-ва
+Units:String=
+Visible:Long=0
+TableOrder:Long=2
+LegendOrder:2=25
+CalcFrom:Long=0
+GreekSymbol:Long=-1
+Group:2=1
+
+[Method\Data\Step6\StatUI\StatParams\196635]
+UserName:String=Ошибка % количества
+Format:String=%.3f
+Graphics:String=Ош.%кол-ва
+Units:String=
+Visible:Long=0
+TableOrder:Long=2
+LegendOrder:2=26
+CalcFrom:Long=0
+GreekSymbol:Long=-1
+Group:2=1
+
+[Method\Data\Step6\StatUI\StatParams\196636]
+UserName:String=Нормир. количество
+Format:String=%.3f
+Graphics:String=Нормир.кол-во
+Units:String=
+Visible:Long=0
+TableOrder:Long=2
+LegendOrder:2=27
+CalcFrom:Long=0
+GreekSymbol:Long=-1
+Group:2=1
+
+[Method\Data\Step6\StatUI\StatParams\196637]
+UserName:String=Удельная длина
+Format:String=%.3f
+Graphics:String=L_уд
+Units:String=
+Visible:Long=0
+TableOrder:Long=2
+LegendOrder:2=28
+CalcFrom:Long=0
+GreekSymbol:Long=-1
+Group:2=2
+
+[Method\Data\Step6\StatUI\StatParams\196638]
+UserName:String=Ошибка уд. длины
+Format:String=%.3f
+Graphics:String=Ош.L_уд
+Units:String=
+Visible:Long=0
+TableOrder:Long=2
+LegendOrder:2=29
+CalcFrom:Long=0
+GreekSymbol:Long=-1
+Group:2=2
+
+[Method\Data\Step6\StatUI\StatParams\196639]
+UserName:String=Объемная доля
+Format:String=%.3f
+Graphics:String=Vv
+Units:String=
+Visible:Long=0
+TableOrder:Long=2
+LegendOrder:2=30
+CalcFrom:Long=0
+GreekSymbol:Long=-1
+Group:2=2
+
+[Method\Data\Step6\StatUI\StatParams\196640]
+UserName:String=Ошибка среднего
+Format:String=%.3f
+Graphics:String=Ош.ср.
+Units:String=
+Visible:Long=2
+TableOrder:Long=2
+LegendOrder:2=31
+CalcFrom:Long=0
+GreekSymbol:Long=-1
+Group:2=0
+
+[Method\Data\Step6\StatUI\StatParams\196641]
+UserName:String=Доверит. интервал
+Format:String=%.3f
+Graphics:String=Дов.инт.
+Units:String=
+Visible:Long=3
+TableOrder:Long=2
+LegendOrder:2=32
+CalcFrom:Long=0
+GreekSymbol:Long=-1
+Group:2=0
+
+[Method\Data\Step6\StatUI\StatParams\196642]
+UserName:String=Хи-квадрат
+Format:String=%.3f
+Graphics:String=Хи^2
+Units:String=
+Visible:2=0
+TableOrder:Long=2
+LegendOrder:2=33
+CalcFrom:Long=0
+GreekSymbol:Long=-1
+Group:String=-1
+
+[Method\Data\Step6\StatUI\StatParams\196643]
+UserName:String=Хи-квадрат(log)
+Format:String=%.3f
+Graphics:String=Хи^2(log)
+Units:String=
+Visible:Long=0
+TableOrder:Long=2
+LegendOrder:2=34
+CalcFrom:Long=0
+GreekSymbol:Long=-1
+Group:2=-2
+
+[Method\Data\Step6\StatUI\StatParams\196644]
+UserName:String=Количество изображений
+Format:String=%.3f
+Graphics:String=Кол-во изобр.
+Units:String=
+Visible:Long=2
+TableOrder:Long=2
+LegendOrder:2=35
+CalcFrom:Long=0
+GreekSymbol:Long=-1
+Group:2=0
+
+[Method\Data\Step6\StatUI\StatParams\196645]
+UserName:String=Общая площадь
+Format:String=%.3f
+Graphics:String=A_общ
+Units:String=
+Visible:Long=3
+TableOrder:Long=2
+LegendOrder:2=36
+CalcFrom:Long=0
+GreekSymbol:Long=-1
+Group:2=0
+
+[Method\Data\Step6\StatUI\StatParams\196646]
+UserName:String=Периметр
+Format:String=%.3f
+Graphics:String=P
+Visible:Long=2
+TableOrder:Long=2
+LegendOrder:2=37
+CalcFrom:Long=0
+GreekSymbol:Long=-1
+Group:2=0
+
+[Method\Data\Step6\StatUI\StatParams\196647]
+UserName:String=Площ. поверхности
+Format:String=%.3f
+Graphics:String=Sv
+Visible:Long=0
+TableOrder:Long=2
+LegendOrder:2=38
+CalcFrom:Long=0
+GreekSymbol:Long=-1
+Group:2=2
+
+[Method\Data\Step6\StatUI\StatParams\196648]
+UserName:String=Средняя хорда
+Format:String=%.3f
+Graphics:String=Ср.хорда
+Visible:Long=0
+TableOrder:Long=2
+LegendOrder:2=39
+CalcFrom:Long=0
+GreekSymbol:Long=-1
+Group:2=2
+
+[Method\Data\Step6\StatUI\StatParams\196649]
+UserName:String=Ср. расстояние
+Format:String=%.3f
+Graphics:String=Ср.расст.
+Visible:Long=0
+TableOrder:Long=2
+LegendOrder:2=40
+CalcFrom:Long=0
+GreekSymbol:Long=-1
+Group:2=2
+
+[Method\Data\Step6\StatUI\StatParams\196650]
+UserName:String=% площ. поверхности
+Format:String=%.3f
+Graphics:String=%A_поверхн
+Visible:Long=0
+TableOrder:Long=2
+LegendOrder:2=41
+CalcFrom:Long=0
+GreekSymbol:Long=-1
+Group:2=2
+
+[Method\Data\Step6\StatUI\StatParams\196651]
+UserName:String=Уд. поверхность
+Format:String=%.3f
+Graphics:String=Уд.поверхн.
+Visible:Long=0
+TableOrder:Long=2
+LegendOrder:2=42
+CalcFrom:Long=0
+GreekSymbol:Long=-1
+Group:2=2
+
+[Method\Data\Step6\StatUI\StatParams\196652]
+UserName:String=% уд. поверхности
+Format:String=%.3f
+Graphics:String=%уд.поверхн.
+Visible:Long=0
+TableOrder:Long=2
+LegendOrder:2=43
+CalcFrom:Long=0
+GreekSymbol:Long=-1
+Group:2=2
+
+[Method\Data\Step6\StatUI\StatParams\196653]
+UserName:String=СКО(log)
+Format:String=%.3lf
+Graphics:String=СКО(log)
+Visible:Long=0
+TableOrder:Long=2
+LegendOrder:2=8
+CalcFrom:Long=0
+GreekSymbol:Long=-1
+Group:2=-2
+
+[Method\Data\Step6\StatUI\StatParams\196654]
+UserName:String=Ошибка среднего(log)
+Format:String=%.3lf
+Graphics:String=Ош.ср.(log)
+Visible:Long=0
+TableOrder:Long=2
+LegendOrder:2=31
+CalcFrom:Long=0
+GreekSymbol:Long=-1
+Group:2=-2
+
+[Method\Data\Step6\StatUI\StatParams\196655]
+UserName:String=Доверит. интервал(log)
+Format:String=%.3lf
+Graphics:String=Дов.инт.(log)
+Visible:Long=0
+TableOrder:Long=2
+LegendOrder:2=32
+CalcFrom:Long=0
+GreekSymbol:Long=-1
+Group:2=-2
+
+[Method\Data\Step6\StatUI\StatParams\196656]
+UserName:String=Мода(log)
+Format:String=%.3lf
+Graphics:String=Мода(log)
+Visible:Long=0
+TableOrder:Long=2
+LegendOrder:2=9
+CalcFrom:Long=0
+GreekSymbol:Long=-1
+Group:2=-2
+
+[Method\Data\Step6\StatUI\StatParams\196657]
+UserName:String=Асимметрия(log)
+Format:String=%.3lf
+Graphics:String=Асимм.(log)
+Visible:Long=0
+TableOrder:Long=2
+LegendOrder:2=11
+CalcFrom:Long=0
+GreekSymbol:Long=-1
+Group:2=-2
+
+[Method\Data\Step6\StatUI\StatParams\196658]
+UserName:String=Эксцесс(log)
+Format:String=%.3lf
+Graphics:String=Эксц.(log)
+Visible:Long=0
+TableOrder:Long=2
+LegendOrder:2=12
+CalcFrom:Long=0
+GreekSymbol:Long=-1
+Group:2=-2
+
+[Method\Data\Step6\StatUI\StatParams\196659]
+UserName:String=Коэфф. вариации(log)
+Format:String=%.3lf
+Graphics:String=Коэфф.вар.(log)
+Visible:Long=0
+TableOrder:Long=2
+LegendOrder:2=13
+CalcFrom:Long=0
+GreekSymbol:Long=-1
+Group:2=-2
+
+[Method\Data\Step6\StatUI\StatParams\196661]
+UserName:String=Ср. арифметическое(log)
+Format:String=%.3lf
+Graphics:String=Ср.арифм.(log)
+Visible:Long=0
+TableOrder:Long=0
+LegendOrder:2=1
+CalcFrom:Long=0
+GreekSymbol:Long=-1
+Group:2=-2
+
+[Method\Data\Step6\StatUI\StatParams\196660]
+UserName:String=Дисперсия(log)
+Format:String=%.3lf
+Graphics:String=Дисп.(log)
+Visible:Long=0
+TableOrder:Long=2
+LegendOrder:2=7
+CalcFrom:Long=0
+GreekSymbol:Long=-1
+Group:2=-2
+
+[Method\Data\Step6\StatUI\StatParams\Visible]
+Visible:Long=3
+
+[Method\Data\Step6\StatUI\StatParams\0]
+UserName:String=
+Format:String=%.3lf
+Visible:2=0
+GreekSymbol:Long=-1
+CalcFrom:Long=0
+TableOrder:Long=2
+LegendOrder:2=63
+Group:2=-1
+Graphics:String=
+
+[Method\Data\Step6\StatUI\StatParams\-196610]
+UserName:String=
+Format:String=%.3lf
+Visible:2=0
+GreekSymbol:Long=-1
+CalcFrom:Long=0
+TableOrder:Long=2
+LegendOrder:2=64
+Group:2=-1
+Graphics:String=
+
+
+[Method\Data\Step6\StatUI\ChartParams]
+XParamName:String=Ср. размер
+ChartType:Long=0
+ChartViewType:Long=0
+ChartColor:String=(0, 0, 0)
+ShowGrayScale:Long=0
+GrayScaleLevel:Long=195
+Title:String=Диаграмма распределения
+ShowLegend:Long=1
+ClassStep:Long=1
+MinClassIndex:Long=0
+ShowBeginEnd:Long=1
+ShowStep:Long=1
+ShowClassCount:Long=1
+ShowCheckModel:Long=1
+CheckModelType:Long=0
+Signature:String=(распределение по параметру)
+BarWidth:Double=1.04254e-005
+ShowCurve:Long=1
+UniformDistribution:Long=0
+CurveColor:String=(0, 0, 0)
+ShowParamsOnChart:Long=0
+ChartParamHeight:Long=10
+DistributionScript:String=
+HalfHotZone:Long=1
+TitleFont_Height:Long=-11
+TitleFont_Weight:Long=400
+TitleFont_Italic:Long=0
+TitleFont_Underline:Long=0
+TitleFont_StrikeOut:Long=0
+TitleFont_CharSet:Long=204
+TitleFont_PitchAndFamily:Long=34
+TitleFont_Location:String=
+AxisFont_Height:Long=-13
+AxisFont_Weight:Long=400
+AxisFont_Italic:Long=0
+AxisFont_Underline:Long=0
+AxisFont_StrikeOut:Long=0
+AxisFont_CharSet:Long=1
+AxisFont_PitchAndFamily:Long=0
+AxisFont_Location:String=
+ParamNameFont_Height:Long=-35
+ParamNameFont_Weight:Long=400
+ParamNameFont_Italic:Long=0
+ParamNameFont_Underline:Long=0
+ParamNameFont_StrikeOut:Long=0
+ParamNameFont_CharSet:Long=204
+ParamNameFont_PitchAndFamily:Long=34
+ParamNameFont_Location:String=
+YParamName:String=aaa
+Y_ShowAxisLabels:2=0
+X_UseLogaScale:2=0
+X_ShowAxisValues:2=1
+X_Grid:2=1
+ShowSingleColoredBar:Long=0
+BarSingleColor:String=(255, 0, 0)
+DrawEndChartGridLineX:Long=1
+DrawEndChartGridLineY:Long=1
+UseCustomIntervals:Long=1
+SignatureFont_Height:Long=-11
+SignatureFont_Weight:Long=700
+SignatureFont_Italic:Long=1
+SignatureFont_Underline:Long=0
+SignatureFont_StrikeOut:Long=0
+SignatureFont_CharSet:Long=1
+SignatureFont_PitchAndFamily:Long=0
+SignatureFont_Location:String=
+ShowUserCurve:Long=0
+UserCurveColor:String=(0, 0, 255)
+UserCurveMX:Double=0
+UserCurveDX:Double=1
+VisibleClass:String=
+[Method\Data\Step6\StatUI\ChartParams\TitleFont]
+Name:String=Arial
+Size:Long=12
+Bold:Long=1
+Italic:Long=0
+Underline:Long=0
+StrikeOut:Long=0
+TextColor:String=(0, 0, 128)
+
+[Method\Data\Step6\StatUI\ChartParams\AxisFont]
+Name:String=Arial
+Size:Long=10
+Bold:Long=0
+Italic:Long=0
+Underline:Long=0
+StrikeOut:Long=0
+TextColor:String=(0, 0, 0)
+
+[Method\Data\Step6\StatUI\ChartParams\ParamNameFont]
+Name:String=Arial
+Size:Long=12
+Bold:Long=0
+Italic:Long=0
+Underline:Long=0
+StrikeOut:Long=0
+TextColor:String=(0, 0, 0)
+
+[Method\Data\Step6\StatUI\ChartParams\SignatureFont]
+Name:String=Arial
+Size:Long=12
+Bold:Long=0
+Italic:Long=0
+Underline:Long=0
+StrikeOut:Long=0
+TextColor:String=(0, 0, 0)
+
+[Method\Data\Step6\StatUI\ChartParams\Axis]
+X_ParamKey:Long=22
+X_UseLogaScale:Long=0
+X_AxisType:Long=1
+Y_ParamKey:Long=196629
+X_Grid:Long=1
+Y_Grid:Long=1
+ConvertToCalibr:Long=1
+X_ScaleFactor:Double=5e-006
+Y_ScaleFactor:Double=5
+X_ScaleFactorValues:Double=5e-006
+Y_ScaleFactorValues:Double=10
+X_ScaleFactorGrid:Double=5e-006
+Y_ScaleFactorGrid:Double=10
+GridColor:String=(0, 0, 0)
+X_ShowAxisValues:Long=1
+Y_ShowAxisValues:Long=1
+X_ShowAxisLabels:Long=1
+Y_ShowAxisLabels:Long=1
+X_TextOffset:Long=0
+Y_TextOffset:Long=0
+X_Begin:Double=0
+X_End:Double=2.1e-005
+X_UseValueRange:Long=1
+DrawEndChartGridLineY:2=1
+DrawEndChartGridLineX:2=1
+Y_Begin:Double=0
+Y_End:Double=0
+Y_UseValueRange:Long=0
+X_UseExpFormat:Long=0
+Y_UseExpFormat:Long=0
+X_ExpFormat:String=%e
+Y_ExpFormat:String=%e
+X_UseCustomFormat:Long=1
+X_CustomFormat:String=%.1f
+Y_UseCustomFormat:Long=0
+Y_CustomFormat:String=%e
+[Method\Data\Step6\StatUI\ChartParams\Axis\StatCfg]
+CalcForGroups:String=
+
+
+[Method\Data\Step6\StatUI\ChartParams\LegendFont]
+Name:String=Arial
+Size:Long=10
+Bold:Long=0
+Italic:Long=0
+Underline:Long=0
+StrikeOut:Long=0
+TextColor:String=(0, 0, 0)
+
+[Method\Data\Step6\StatUI\ChartParams\HintFont]
+Name:String=Arial
+Size:Long=10
+Bold:Long=0
+Italic:Long=0
+Underline:Long=0
+StrikeOut:Long=0
+TextColor:String=(0, 0, 0)
+
+[Method\Data\Step6\StatUI\ChartParams\CustomIntervals]
+class0:String=7.327925e-008,1.049872e-005
+class1:String=1.049872e-005,2.092416e-005
+class2:String=3.640146e+001,3.976036e+001
+class3:String=3.976036e+001,4.311926e+001
+
+
+[Method\Data\Step6\StatUI\Legend]
+IncorrectColor:String=(255, 0, 0)
+Title:String=Данные статистики
+TitleFont_Height:Long=11
+TitleFont_Weight:Long=0
+TitleFont_Italic:Long=0
+TitleFont_Underline:Long=0
+TitleFont_StrikeOut:Long=0
+TitleFont_CharSet:Long=1
+TitleFont_PitchAndFamily:Long=0
+TitleFont_Location:String=
+Font_Height:Long=-27
+Font_Weight:Long=400
+Font_Italic:Long=0
+Font_Underline:Long=0
+Font_StrikeOut:Long=0
+Font_CharSet:Long=0
+Font_PitchAndFamily:Long=82
+Font_Location:String=
+SamplingColor:String=(0, 0, 0)
+SamplingName:String=
+[Method\Data\Step6\StatUI\Legend\TitleFont]
+Name:String=Arial
+Size:Long=12
+Bold:Long=1
+Italic:Long=0
+Underline:Long=0
+StrikeOut:Long=0
+TextColor:String=(0, 0, 128)
+
+[Method\Data\Step6\StatUI\Legend\Font]
+Name:String=Arial
+Size:Long=12
+Bold:Long=0
+Italic:Long=0
+Underline:Long=0
+StrikeOut:Long=0
+TextColor:String=(0, 0, 0)
+
+[Method\Data\Step6\StatUI\Legend\UserValues]
+EntryName0:String=Параметр
+EntryValue0:String=  Ср. размер
+EntryOrder0:Long=-1
+
+
+[Method\Data\Step6\StatUI\StatTable]
+IncorrectColor:String=(255, 0, 0)
+Title:String=Таблица статистики
+ClassColTitle:String=Название класса
+AllWordName:String=Всего
+TitleFont_Height:Long=-19
+TitleFont_Weight:Long=400
+TitleFont_Italic:Long=0
+TitleFont_Underline:Long=0
+TitleFont_StrikeOut:Long=0
+TitleFont_CharSet:Long=1
+TitleFont_PitchAndFamily:Long=0
+TitleFont_Location:String=
+TableAlign:Long=1
+Font_Height:Long=11
+Font_Weight:Long=0
+Font_Italic:Long=0
+Font_Underline:Long=0
+Font_StrikeOut:Long=0
+Font_CharSet:Long=1
+Font_PitchAndFamily:Long=0
+Font_Location:String=
+VisibleClass:String=
+TitleFont:String=Таблица
+Font:String=Axis
+[Method\Data\Step6\StatUI\StatTable\TitleFont]
+Name:String=Arial
+Size:Long=12
+Bold:Long=1
+Italic:Long=0
+Underline:Long=0
+StrikeOut:Long=0
+TextColor:String=(0, 0, 128)
+
+[Method\Data\Step6\StatUI\StatTable\Font]
+Name:String=Arial
+Size:Long=10
+Bold:Long=0
+Italic:Long=0
+Underline:Long=0
+StrikeOut:Long=0
+TextColor:String=(0, 0, 0)
+
+[Method\Data\Step6\StatUI\StatTable\Colors]
+Column0:String=(0, 0, 0)
+Column1:String=(0, 0, 0)
+Column2:String=(0, 0, 0)
+Column3:String=(0, 0, 0)
+Column4:String=(0, 0, 0)
+Column5:String=(0, 0, 0)
+Column6:String=(0, 0, 0)
+Column7:String=(0, 0, 0)
+Column8:String=(0, 0, 0)
+Column9:String=(0, 0, 0)
+Column10:String=(0, 0, 0)
+Column11:String=(0, 0, 0)
+Column12:String=(0, 0, 0)
+Column13:String=(0, 0, 0)
+Column14:String=(0, 0, 0)
+Column15:String=(0, 0, 0)
+Column16:String=(0, 0, 0)
+Column17:String=(0, 0, 0)
+Column18:String=(0, 0, 0)
+Column19:String=(0, 0, 0)
+Column20:String=(0, 0, 0)
+Column21:String=(0, 0, 0)
+Column22:String=(0, 0, 0)
+Column23:String=(0, 0, 0)
+Column24:String=(0, 0, 0)
+Column25:String=(0, 0, 0)
+Column26:String=(0, 0, 0)
+Column27:String=(0, 0, 0)
+Column28:String=(0, 0, 0)
+Column29:String=(0, 0, 0)
+Column30:String=(0, 0, 0)
+Column31:String=(0, 0, 0)
+Column32:String=(0, 0, 0)
+Column33:String=(0, 0, 0)
+Column34:String=(0, 0, 0)
+Column35:String=(0, 0, 0)
+Column36:String=(0, 0, 0)
+Column37:String=(0, 0, 0)
+Column38:String=(0, 0, 0)
+Column39:String=(0, 0, 0)
+Column40:String=(0, 0, 0)
+Column41:String=(0, 0, 0)
+Column42:String=(0, 0, 0)
+Column43:String=(0, 0, 0)
+Column44:String=(0, 0, 0)
+Column45:String=(0, 0, 0)
+Column46:String=(0, 0, 0)
+Column47:String=(0, 0, 0)
+Column48:String=(0, 0, 0)
+Column49:String=(0, 0, 0)
+Column50:String=(0, 0, 0)
+Column51:String=(0, 0, 0)
+Column52:String=(0, 0, 0)
+Column53:String=(0, 0, 0)
+Column54:String=(0, 0, 0)
+Column55:String=(0, 0, 0)
+Column56:String=(0, 0, 0)
+Column57:String=(0, 0, 0)
+Column58:String=(0, 0, 0)
+Column59:String=(0, 0, 0)
+Column60:String=(0, 0, 0)
+Column61:String=(0, 0, 0)
+Column62:String=(0, 0, 0)
+Column63:String=(0, 0, 0)
+Column64:String=(0, 0, 0)
+Column65:String=(0, 0, 0)
+Column66:String=(0, 0, 0)
+Column67:String=(0, 0, 0)
+Column68:String=(0, 0, 0)
+Column69:String=(0, 0, 0)
+Column70:String=(0, 0, 0)
+
+[Method\Data\Step6\StatUI\StatTable\Width]
+Column0:Long=100
+Column1:Long=100
+Column2:Long=100
+Column3:Long=100
+Column4:Long=100
+Column5:Long=100
+Column6:Long=100
+Column7:Long=100
+Column8:Long=100
+Column9:Long=100
+Column10:Long=100
+Column11:Long=100
+Column12:Long=100
+Column13:Long=100
+Column14:Long=100
+Column15:Long=100
+Column16:Long=100
+Column17:Long=100
+Column18:Long=100
+Column19:Long=100
+Column20:Long=100
+Column21:Long=100
+Column22:Long=100
+Column23:Long=100
+Column24:Long=100
+Column25:Long=100
+Column26:Long=100
+Column27:Long=100
+Column28:Long=100
+Column29:Long=100
+Column30:Long=100
+Column31:Long=100
+Column32:Long=100
+Column33:Long=100
+Column34:Long=100
+Column35:Long=100
+Column36:Long=100
+Column37:Long=100
+Column38:Long=100
+Column39:Long=100
+Column40:Long=100
+Column41:Long=100
+Column42:Long=100
+Column43:Long=100
+Column44:Long=100
+Column45:Long=100
+Column46:Long=100
+Column47:Long=100
+Column48:Long=100
+Column49:Long=100
+Column50:Long=100
+Column51:Long=100
+Column52:Long=100
+Column53:Long=100
+Column54:Long=100
+Column55:Long=100
+Column56:Long=100
+Column57:Long=100
+Column58:Long=100
+Column59:Long=100
+Column60:Long=100
+Column61:Long=100
+Column62:Long=100
+Column63:Long=100
+Column64:Long=100
+Column65:Long=100
+Column66:Long=100
+Column67:Long=100
+Column68:Long=100
+Column69:Long=100
+Column70:Long=100
+
+[Method\Data\Step6\StatUI\StatTable\HeaderFont]
+Name:String=Arial
+Size:Long=10
+Bold:Long=0
+Italic:Long=0
+Underline:Long=0
+StrikeOut:Long=0
+TextColor:String=(0, 0, 0)
+
+
+[Method\Data\Step6\StatUI\Groups]
+0:String=Общие
+1:String=Относительные
+2:String=Стереологические
+3:String=Пользовательские
+
+
+
+[Method\Data\Step7]
+ActionName:String=EndMethodLoop
+ForcedName:String=EndMethodLoop
+Flags:Long=4
+ArgCount:Long=0
+KeyCount:Long=0
+
+[Method\Data\Step8]
+ActionName:String=RunStatGraphDistr
+ForcedName:String=RunStatGraphDistr
+Flags:Long=7
+ArgCount:Long=0
+[Method\Data\Step8\MethodStepData]
+[Method\Data\Step8\MethodStepData\StateBeforeAction]
+Object List_0:Long=0
+Object List_count:Long=1
+Image_0:Long=0
+Image_count:Long=1
+Binary_count:Long=0
+StatObject_count:Long=0
+StatTable_count:Long=0
+ActiveViewProgID:String=ImageDoc.MaskView
+
+[Method\Data\Step8\MethodStepData\StateAfterAction]
+ActiveViewProgID:String=StatUI.StatObjectView
+Object List_0:Long=0
+Object List_count:Long=1
+Image_0:Long=0
+Image_count:Long=1
+Binary_count:Long=0
+StatObject_0:Long=0
+StatObject_count:Long=1
+StatTable_count:Long=0
+
+
+[Method\Data\Step8\FormManager]
+PageExecuted:Long=1
+EnableApply:2=1
+DisableFormShow:Long=0
+
+[Method\Data\Step8\DockBars]
+VisibleTBName:String=(Stat)
+PageInProcessing:11=0
+isPass:11=0
+Count:Long=11
+noAdvancedMode:2=1
+TBCount:Long=7
+CloseFishBar:2=0
+RestoreWindowSplit:2=1
+
+[Method\Data\Step8\ViewStatusText]
+MaskView:String=
+StatObjectView:String=
+
+[Method\Data\Step8\Selection]
+SelectionActionsWorkOnBinary:Long=0
+
+[Method\Data\Step8\MainFrame]
+ShowPopupMenu:2=0
+ShowPopupMenuOld:2=1
+
+[Method\Data\Step8\NewCalibr]
+Active:String={6580B9DD-49C7-4E41-8ED9-D52A49908230}
+[Method\Data\Step8\NewCalibr\{6580B9DD-49C7-4E41-8ED9-D52A49908230}]
+MeterPerPixel:Double=3.71647e-008
+Name:String=100x
+Active:2=1
+
+
+[Method\Data\Step8\ImageView]
+N_And_N_Color:String=(255, 255, 255)
+N_And_N_AsClassColor:Long=0
+ShowColorSysPane:2=1
+
+[Method\Data\Step8\DrawImage]
+Gamma:Double=1
+HiBitNum:Long=16
+
+[Method\Data\Step8\Colors]
+Background:String=(255, 255, 255)
+
+[Method\Data\Step8\ObjectCountPane]
+ImageSourceView:Long=0
+
+[Method\Data\Step8\ImagePane]
+Percent:Long=0
+
+[Method\Data\Step8\StatusBar]
+ShowMousePos:Long=1
+ShowClientSize:Long=1
+
+[Method\Data\Step8\Debugger]
+EnableDebugger:Long=0
+
+[Method\Data\Step8\VTListControl]
+ControlVersion:Long=2
+
+[Method\Data\Step8\Interface]
+ScrollClass:String=SCROLLBAR
+EnableSkin:Long=0
+
+[Method\Data\Step8\IntelliMouse]
+Wheel enable:Long=0
+Wheel horz scroll key:String=Ctrl
+Wheel step:Long=10
+Invert wheel horz direction:Long=0
+Invert wheel vert direction:Long=0
+Scroll enable:Long=0
+Scroll key:String=Middle
+Invert scroll horz direction:Long=0
+Invert scroll invert vert direction:Long=0
+Enable key scroll:Long=0
+Key step:Long=10
+
+[Method\Data\Step8\Layout]
+ShowObjectNames:Long=0
+
+[Method\Data\Step8\StatUI]
+Views:Long=7
+ClassFile:String=e:\vt5\Classes\FromDoc.class
+CalcForAllClasses:String=0,1
+CalcForRelativeClasses:String=0,1
+SplitterType:Long=2
+Pane0_Data:Long=2
+Pane1_Data:Long=0
+Pane2_Data:Long=1
+StatParamArea_PropertyScript:String=RunStatGraphDistr
+ChartArea_PropertyScript:String=RunStatGraphDistr
+AxisArea_PropertyScript:String=RunStatGraphDistr
+X_ParamsArea_PropertyScript:String=RunStatGraphDistr
+Y_ParamsArea_PropertyScript:String=RunStatGraphDistr
+TableStatArea_PropertyScript:String=RunStatGraphDistr
+HSplitter:Double=0.407095
+VSplitter:Double=0.395349
+ShowContext:Long=1
+ChartArea_ImgIndex:Long=0
+AxisArea_ImgIndex:Long=0
+Y_ParamsArea_ImgIndex:Long=0
+X_ParamsArea_ImgIndex:Long=0
+Enable_ChartArea:Long=1
+Enable_AxisArea:Long=0
+Enable_X_ParamsArea:Long=0
+Enable_Y_ParamsArea:Long=0
+Enable_StatParamArea:Long=1
+StatParamArea_ImgIndex:Long=0
+TableStatArea_ImgIndex:Long=0
+Enable_TableStatArea:Long=1
+CalcForGroups:String=0,1,2
+Loaded:Long=1
+OwnStatTable:String=
+[Method\Data\Step8\StatUI\StatParams]
+NormalArea:Double=1
+Probability:Double=0.95
+[Method\Data\Step8\StatUI\StatParams\NormalArea]
+Visible:Long=3
+
+[Method\Data\Step8\StatUI\StatParams\Probability]
+Visible:Long=3
+
+[Method\Data\Step8\StatUI\StatParams\Visible]
+Visible:Long=3
+
+[Method\Data\Step8\StatUI\StatParams\196610]
+Group:2=0
+UserName:String=Ср. арифметическое
+LegendOrder:2=1
+Visible:2=0
+Format:String=%.3f
+GreekSymbol:Long=-1
+CalcFrom:Long=0
+TableOrder:Long=0
+Graphics:String=Ср.арифм.
+Units:String=
+
+[Method\Data\Step8\StatUI\StatParams\196611]
+Group:2=0
+UserName:String=Ср. геометрическое
+Visible:Long=0
+Format:String=%.3f
+GreekSymbol:Long=-1
+CalcFrom:Long=0
+TableOrder:Long=2
+LegendOrder:2=2
+Graphics:String=Ср.геом.
+Units:String=
+
+[Method\Data\Step8\StatUI\StatParams\196612]
+Group:2=0
+UserName:String=Ср. гармоническое
+Visible:Long=0
+Format:String=%.3f
+GreekSymbol:Long=-1
+CalcFrom:Long=0
+TableOrder:Long=2
+LegendOrder:2=3
+Graphics:String=Ср.гарм.
+Units:String=
+
+[Method\Data\Step8\StatUI\StatParams\196613]
+Group:2=0
+UserName:String=Минимум
+Visible:2=0
+Format:String=%.3f
+GreekSymbol:Long=-1
+CalcFrom:Long=0
+TableOrder:Long=2
+LegendOrder:2=4
+Graphics:String=Min
+Units:String=
+
+[Method\Data\Step8\StatUI\StatParams\196614]
+Group:2=0
+UserName:String=Максимум
+Visible:2=0
+Format:String=%.3f
+GreekSymbol:Long=-1
+CalcFrom:Long=0
+TableOrder:Long=2
+LegendOrder:2=5
+Graphics:String=Max
+Units:String=
+
+[Method\Data\Step8\StatUI\StatParams\196615]
+Group:2=0
+UserName:String=Размах вариации
+Visible:Long=0
+Format:String=%.3f
+GreekSymbol:Long=-1
+CalcFrom:Long=0
+TableOrder:Long=2
+LegendOrder:2=6
+Graphics:String=Разм.вар.
+Units:String=
+
+[Method\Data\Step8\StatUI\StatParams\196616]
+Group:2=0
+UserName:String=Дисперсия
+LegendOrder:2=7
+Visible:Long=0
+Format:String=%.3f
+GreekSymbol:Long=-1
+CalcFrom:Long=0
+TableOrder:Long=2
+Graphics:String=Дисп.
+Units:String=
+
+[Method\Data\Step8\StatUI\StatParams\196617]
+Group:2=0
+UserName:String=Ст. отклонение
+LegendOrder:2=8
+Visible:Long=0
+Format:String=%.3f
+GreekSymbol:Long=-1
+CalcFrom:Long=0
+TableOrder:Long=2
+Graphics:String=Ст.откл.
+Units:String=
+
+[Method\Data\Step8\StatUI\StatParams\196618]
+Group:2=0
+UserName:String=Мода
+LegendOrder:2=9
+Visible:2=0
+Format:String=%.3f
+GreekSymbol:Long=-1
+CalcFrom:Long=0
+TableOrder:Long=2
+Graphics:String=Мода
+Units:String=
+
+[Method\Data\Step8\StatUI\StatParams\196619]
+Group:2=0
+UserName:String=Медиана
+Visible:Long=0
+Format:String=%.3f
+GreekSymbol:Long=-1
+CalcFrom:Long=0
+TableOrder:Long=2
+LegendOrder:2=10
+Graphics:String=Медиана
+Units:String=
+
+[Method\Data\Step8\StatUI\StatParams\196620]
+Group:2=0
+UserName:String=Асимметрия
+LegendOrder:2=11
+Visible:2=0
+Format:String=%.3f
+GreekSymbol:Long=-1
+CalcFrom:Long=0
+TableOrder:Long=2
+Graphics:String=Асимм.
+Units:String=
+
+[Method\Data\Step8\StatUI\StatParams\196621]
+Group:2=0
+UserName:String=Эксцесс
+LegendOrder:2=12
+Visible:Long=0
+Format:String=%.3f
+GreekSymbol:Long=-1
+CalcFrom:Long=0
+TableOrder:Long=2
+Graphics:String=Эксц.
+Units:String=
+
+[Method\Data\Step8\StatUI\StatParams\196622]
+Group:2=0
+UserName:String=Коэф. вариации
+LegendOrder:2=13
+Visible:Long=0
+Format:String=%.3f
+GreekSymbol:Long=-1
+CalcFrom:Long=0
+TableOrder:Long=2
+Graphics:String=Коэф.вар.
+Units:String=
+
+[Method\Data\Step8\StatUI\StatParams\196623]
+Group:2=0
+UserName:String=Количество
+Visible:2=0
+Graphics:String=Кол-во
+Format:String=%.3f
+GreekSymbol:Long=-1
+CalcFrom:Long=0
+TableOrder:Long=2
+LegendOrder:2=14
+Units:String=
+
+[Method\Data\Step8\StatUI\StatParams\196624]
+Group:2=0
+UserName:String=Площадь
+Visible:Long=0
+Format:String=%.3f
+GreekSymbol:Long=-1
+CalcFrom:Long=0
+TableOrder:Long=2
+LegendOrder:2=15
+Graphics:String=A
+Units:String=
+
+[Method\Data\Step8\StatUI\StatParams\196625]
+Group:2=0
+UserName:String=Длина
+Visible:Long=0
+Format:String=%.3f
+GreekSymbol:Long=-1
+CalcFrom:Long=0
+TableOrder:Long=2
+LegendOrder:2=16
+Graphics:String=L
+Units:String=
+
+[Method\Data\Step8\StatUI\StatParams\196626]
+Group:2=0
+UserName:String=Обр. площадь
+Visible:2=0
+Format:String=%.3f
+GreekSymbol:Long=-1
+CalcFrom:Long=0
+TableOrder:Long=2
+LegendOrder:2=17
+Graphics:String=A_обр 
+Units:String=
+
+[Method\Data\Step8\StatUI\StatParams\196627]
+Group:2=1
+UserName:String=Удельная площадь
+Format:String=%.3f
+Visible:Long=0
+GreekSymbol:Long=-1
+CalcFrom:Long=0
+TableOrder:Long=2
+LegendOrder:2=18
+Graphics:String=A_уд
+Units:String=
+
+[Method\Data\Step8\StatUI\StatParams\196628]
+Group:2=1
+UserName:String=Ошибка уд. площади
+Format:String=%.3f
+Visible:Long=0
+GreekSymbol:Long=-1
+CalcFrom:Long=0
+TableOrder:Long=2
+LegendOrder:2=19
+Graphics:String=Ош.уд.площ.
+Units:String=
+
+[Method\Data\Step8\StatUI\StatParams\196629]
+Group:2=1
+UserName:String=% площади
+Graphics:String=%A
+Format:String=%.3f
+Visible:Long=0
+GreekSymbol:Long=-1
+CalcFrom:Long=0
+TableOrder:Long=2
+LegendOrder:2=20
+Units:String=
+
+[Method\Data\Step8\StatUI\StatParams\196630]
+Group:2=1
+UserName:String=Ошибка % площади
+Format:String=%.3f
+Visible:Long=0
+GreekSymbol:Long=-1
+CalcFrom:Long=0
+TableOrder:Long=2
+LegendOrder:2=21
+Graphics:String=Ош.%A
+Units:String=
+
+[Method\Data\Step8\StatUI\StatParams\196631]
+Group:2=1
+UserName:String=Нормир. площадь
+Format:String=%.3f
+Visible:Long=0
+GreekSymbol:Long=-1
+CalcFrom:Long=0
+TableOrder:Long=2
+LegendOrder:2=22
+Graphics:String=A_норм
+Units:String=
+
+[Method\Data\Step8\StatUI\StatParams\196632]
+Group:2=1
+UserName:String=Удельное кол-во
+Format:String=%.3f
+Visible:Long=0
+GreekSymbol:Long=-1
+CalcFrom:Long=0
+TableOrder:Long=2
+LegendOrder:2=23
+Graphics:String=Уд.кол-во
+Units:String=
+
+[Method\Data\Step8\StatUI\StatParams\196633]
+Group:2=1
+UserName:String=Ошибка уд. кол-ва
+Format:String=%.3f
+Visible:Long=0
+GreekSymbol:Long=-1
+CalcFrom:Long=0
+TableOrder:Long=2
+LegendOrder:2=24
+Graphics:String=Ош.уд.кол-ва
+Units:String=
+
+[Method\Data\Step8\StatUI\StatParams\196634]
+Group:2=1
+UserName:String=% количества
+Graphics:String=%кол-ва
+Format:String=%.3f
+Visible:Long=0
+GreekSymbol:Long=-1
+CalcFrom:Long=0
+TableOrder:Long=2
+LegendOrder:2=25
+Units:String=
+
+[Method\Data\Step8\StatUI\StatParams\196635]
+Group:2=1
+UserName:String=Ошибка % количества
+Format:String=%.3f
+Visible:Long=0
+GreekSymbol:Long=-1
+CalcFrom:Long=0
+TableOrder:Long=2
+LegendOrder:2=26
+Graphics:String=Ош.%кол-ва
+Units:String=
+
+[Method\Data\Step8\StatUI\StatParams\196636]
+Group:2=1
+UserName:String=Нормир. количество
+Format:String=%.3f
+Visible:Long=0
+GreekSymbol:Long=-1
+CalcFrom:Long=0
+TableOrder:Long=2
+LegendOrder:2=27
+Graphics:String=Нормир.кол-во
+Units:String=
+
+[Method\Data\Step8\StatUI\StatParams\196637]
+Group:2=2
+UserName:String=Удельная длина
+Format:String=%.3f
+Visible:Long=0
+GreekSymbol:Long=-1
+CalcFrom:Long=0
+TableOrder:Long=2
+LegendOrder:2=28
+Graphics:String=L_уд
+Units:String=
+
+[Method\Data\Step8\StatUI\StatParams\196638]
+Group:2=2
+UserName:String=Ошибка уд. длины
+Format:String=%.3f
+Visible:Long=0
+GreekSymbol:Long=-1
+CalcFrom:Long=0
+TableOrder:Long=2
+LegendOrder:2=29
+Graphics:String=Ош.L_уд
+Units:String=
+
+[Method\Data\Step8\StatUI\StatParams\196639]
+Group:2=2
+UserName:String=Объемная доля
+Graphics:String=Vv
+Format:String=%.3f
+Visible:2=1
+GreekSymbol:Long=-1
+CalcFrom:Long=0
+TableOrder:Long=2
+LegendOrder:2=30
+Units:String=
+
+[Method\Data\Step8\StatUI\StatParams\196640]
+Group:2=0
+UserName:String=Ошибка среднего
+LegendOrder:2=31
+Visible:2=0
+Format:String=%.3f
+GreekSymbol:Long=-1
+CalcFrom:Long=0
+TableOrder:Long=2
+Graphics:String=Ош.ср.
+Units:String=
+
+[Method\Data\Step8\StatUI\StatParams\196641]
+Group:2=0
+UserName:String=Доверит. интервал
+LegendOrder:2=32
+Visible:2=0
+Format:String=%.3f
+GreekSymbol:Long=-1
+CalcFrom:Long=0
+TableOrder:Long=2
+Graphics:String=Дов.инт.
+Units:String=
+
+[Method\Data\Step8\StatUI\StatParams\196642]
+Group:String=-1
+UserName:String=Хи-квадрат
+Visible:2=0
+Format:String=%.3f
+GreekSymbol:Long=-1
+CalcFrom:Long=0
+TableOrder:Long=2
+LegendOrder:2=33
+Graphics:String=Хи^2
+Units:String=
+
+[Method\Data\Step8\StatUI\StatParams\196643]
+Group:2=-2
+UserName:String=Хи-квадрат(log)
+Format:String=%.3f
+Visible:Long=0
+GreekSymbol:Long=-1
+CalcFrom:Long=0
+TableOrder:Long=2
+LegendOrder:2=34
+Graphics:String=Хи^2(log)
+Units:String=
+
+[Method\Data\Step8\StatUI\StatParams\196644]
+Group:2=0
+UserName:String=Количество изображений
+Visible:2=0
+Format:String=%.3f
+GreekSymbol:Long=-1
+CalcFrom:Long=0
+TableOrder:Long=2
+LegendOrder:2=35
+Graphics:String=Кол-во изобр.
+Units:String=
+
+[Method\Data\Step8\StatUI\StatParams\196645]
+Group:2=0
+UserName:String=Общая площадь
+Visible:2=0
+Format:String=%.3f
+GreekSymbol:Long=-1
+CalcFrom:Long=0
+TableOrder:Long=2
+LegendOrder:2=36
+Graphics:String=A_общ
+Units:String=
+
+[Method\Data\Step8\StatUI\StatParams\196646]
+Group:2=0
+UserName:String=Периметр
+Visible:2=0
+LegendOrder:2=37
+Format:String=%.3f
+GreekSymbol:Long=-1
+CalcFrom:Long=0
+TableOrder:Long=2
+Graphics:String=P
+
+[Method\Data\Step8\StatUI\StatParams\196647]
+Group:2=2
+UserName:String=Площ. поверхности
+Visible:2=1
+LegendOrder:2=38
+Format:String=%.3f
+GreekSymbol:Long=-1
+CalcFrom:Long=0
+TableOrder:Long=2
+Graphics:String=Sv
+
+[Method\Data\Step8\StatUI\StatParams\196648]
+Group:2=2
+UserName:String=Средняя хорда
+Visible:Long=0
+LegendOrder:2=39
+Format:String=%.3f
+GreekSymbol:Long=-1
+CalcFrom:Long=0
+TableOrder:Long=2
+Graphics:String=Ср.хорда
+
+[Method\Data\Step8\StatUI\StatParams\196649]
+Group:2=2
+UserName:String=Ср. расстояние
+Visible:Long=0
+LegendOrder:2=40
+Format:String=%.3f
+GreekSymbol:Long=-1
+CalcFrom:Long=0
+TableOrder:Long=2
+Graphics:String=Ср.расст.
+
+[Method\Data\Step8\StatUI\StatParams\196650]
+Group:2=2
+UserName:String=% площ. поверхности
+Visible:2=1
+LegendOrder:2=41
+Format:String=%.3f
+GreekSymbol:Long=-1
+CalcFrom:Long=0
+TableOrder:Long=2
+Graphics:String=%A_поверхн
+
+[Method\Data\Step8\StatUI\StatParams\196651]
+Group:2=2
+UserName:String=Уд. поверхность
+Visible:2=1
+LegendOrder:2=42
+Format:String=%.3f
+GreekSymbol:Long=-1
+CalcFrom:Long=0
+TableOrder:Long=2
+Graphics:String=Уд.поверхн.
+
+[Method\Data\Step8\StatUI\StatParams\196652]
+Group:2=2
+UserName:String=% уд. поверхности
+Visible:2=1
+LegendOrder:2=43
+Format:String=%.3f
+GreekSymbol:Long=-1
+CalcFrom:Long=0
+TableOrder:Long=2
+Graphics:String=%уд.поверхн.
+
+[Method\Data\Step8\StatUI\StatParams\0]
+Group:2=-1
+UserName:String=
+Visible:2=0
+Format:String=%.3lf
+GreekSymbol:Long=-1
+CalcFrom:Long=0
+TableOrder:Long=2
+LegendOrder:2=63
+Graphics:String=
+
+[Method\Data\Step8\StatUI\StatParams\-196610]
+Group:2=-1
+UserName:String=
+Visible:2=0
+Format:String=%.3lf
+GreekSymbol:Long=-1
+CalcFrom:Long=0
+TableOrder:Long=2
+LegendOrder:2=64
+Graphics:String=
+
+[Method\Data\Step8\StatUI\StatParams\196661]
+Group:2=-2
+UserName:String=Ср. арифметическое(log)
+LegendOrder:2=1
+Format:String=%.3lf
+Visible:Long=0
+GreekSymbol:Long=-1
+CalcFrom:Long=0
+TableOrder:Long=0
+Graphics:String=Ср.арифм.(log)
+
+[Method\Data\Step8\StatUI\StatParams\196660]
+Group:2=-2
+UserName:String=Дисперсия(log)
+LegendOrder:2=7
+Format:String=%.3lf
+Visible:Long=0
+GreekSymbol:Long=-1
+CalcFrom:Long=0
+TableOrder:Long=2
+Graphics:String=Дисп.(log)
+
+[Method\Data\Step8\StatUI\StatParams\196653]
+Group:2=-2
+UserName:String=СКО(log)
+LegendOrder:2=8
+Format:String=%.3lf
+Visible:Long=0
+GreekSymbol:Long=-1
+CalcFrom:Long=0
+TableOrder:Long=2
+Graphics:String=СКО(log)
+
+[Method\Data\Step8\StatUI\StatParams\196654]
+Group:2=-2
+UserName:String=Ошибка среднего(log)
+LegendOrder:2=31
+Format:String=%.3lf
+Visible:Long=0
+GreekSymbol:Long=-1
+CalcFrom:Long=0
+TableOrder:Long=2
+Graphics:String=Ош.ср.(log)
+
+[Method\Data\Step8\StatUI\StatParams\196655]
+Group:2=-2
+UserName:String=Доверит. интервал(log)
+LegendOrder:2=32
+Format:String=%.3lf
+Visible:Long=0
+GreekSymbol:Long=-1
+CalcFrom:Long=0
+TableOrder:Long=2
+Graphics:String=Дов.инт.(log)
+
+[Method\Data\Step8\StatUI\StatParams\196656]
+Group:2=-2
+UserName:String=Мода(log)
+LegendOrder:2=9
+Format:String=%.3lf
+Visible:Long=0
+GreekSymbol:Long=-1
+CalcFrom:Long=0
+TableOrder:Long=2
+Graphics:String=Мода(log)
+
+[Method\Data\Step8\StatUI\StatParams\196657]
+Group:2=-2
+UserName:String=Асимметрия(log)
+LegendOrder:2=11
+Format:String=%.3lf
+Visible:Long=0
+GreekSymbol:Long=-1
+CalcFrom:Long=0
+TableOrder:Long=2
+Graphics:String=Асимм.(log)
+
+[Method\Data\Step8\StatUI\StatParams\196658]
+Group:2=-2
+UserName:String=Эксцесс(log)
+LegendOrder:2=12
+Format:String=%.3lf
+Visible:Long=0
+GreekSymbol:Long=-1
+CalcFrom:Long=0
+TableOrder:Long=2
+Graphics:String=Эксц.(log)
+
+[Method\Data\Step8\StatUI\StatParams\196659]
+Group:2=-2
+UserName:String=Коэфф. вариации(log)
+LegendOrder:2=13
+Format:String=%.3lf
+Visible:Long=0
+GreekSymbol:Long=-1
+CalcFrom:Long=0
+TableOrder:Long=2
+Graphics:String=Коэфф.вар.(log)
+
+
+[Method\Data\Step8\StatUI\ChartParams]
+UniformDistribution:Long=0
+ShowCurve:Long=1
+ShowParamsOnChart:Long=0
+ChartType:Long=0
+ShowGrayScale:Long=0
+CurveColor:String=(0,0,0)
+ChartColor:String=(0,0,0)
+BarWidth:Double=1.04254e-005
+XParamName:String=Classes
+ChartViewType:Long=0
+GrayScaleLevel:Long=195
+Title:String=Диаграмма распределения
+ShowLegend:Long=1
+ClassStep:Long=1
+MinClassIndex:Long=0
+ShowBeginEnd:Long=1
+ShowStep:Long=1
+ShowClassCount:Long=1
+ShowCheckModel:Long=1
+CheckModelType:Long=0
+Signature:String=(распределение по параметру)
+ChartParamHeight:Long=10
+DistributionScript:String=
+HalfHotZone:Long=1
+TitleFont_Height:Long=-11
+TitleFont_Weight:Long=400
+TitleFont_Italic:Long=0
+TitleFont_Underline:Long=0
+TitleFont_StrikeOut:Long=0
+TitleFont_CharSet:Long=204
+TitleFont_PitchAndFamily:Long=34
+TitleFont_Location:String=
+AxisFont_Height:Long=-13
+AxisFont_Weight:Long=400
+AxisFont_Italic:Long=0
+AxisFont_Underline:Long=0
+AxisFont_StrikeOut:Long=0
+AxisFont_CharSet:Long=1
+AxisFont_PitchAndFamily:Long=0
+AxisFont_Location:String=
+ParamNameFont_Height:Long=-35
+ParamNameFont_Weight:Long=400
+ParamNameFont_Italic:Long=0
+ParamNameFont_Underline:Long=0
+ParamNameFont_StrikeOut:Long=0
+ParamNameFont_CharSet:Long=204
+ParamNameFont_PitchAndFamily:Long=34
+ParamNameFont_Location:String=
+YParamName:String=aaa
+Y_ShowAxisLabels:2=0
+X_UseLogaScale:2=0
+X_ShowAxisValues:2=1
+X_Grid:2=1
+ShowSingleColoredBar:Long=0
+BarSingleColor:String=(255, 0, 0)
+DrawEndChartGridLineX:Long=1
+DrawEndChartGridLineY:Long=1
+UseCustomIntervals:2=0
+SignatureFont_Height:Long=-11
+SignatureFont_Weight:Long=700
+SignatureFont_Italic:Long=1
+SignatureFont_Underline:Long=0
+SignatureFont_StrikeOut:Long=0
+SignatureFont_CharSet:Long=1
+SignatureFont_PitchAndFamily:Long=0
+SignatureFont_Location:String=
+ShowUserCurve:Long=0
+UserCurveColor:String=(0, 0, 255)
+UserCurveMX:Double=0
+UserCurveDX:Double=1
+VisibleClass:String=
+[Method\Data\Step8\StatUI\ChartParams\Axis]
+Y_ParamKey:Long=196629
+X_AxisType:2=0
+X_ParamKey:Long=22
+X_ShowAxisValues:2=1
+X_ShowAxisLabels:2=1
+Y_ShowAxisValues:2=1
+Y_ShowAxisLabels:2=1
+Y_ScaleFactor:Double=5
+Y_ScaleFactorValues:2=10
+X_UseValueRange:2=0
+X_ScaleFactorValues:Double=1.04254e-005
+X_ScaleFactor:Double=1.04254e-005
+DrawEndChartGridLineX:2=1
+X_Grid:2=1
+X_ScaleFactorGrid:Double=1.04254e-005
+DrawEndChartGridLineY:2=1
+Y_Grid:2=1
+Y_ScaleFactorGrid:2=10
+X_UseLogaScale:Long=0
+ConvertToCalibr:Long=1
+GridColor:String=(0, 0, 0)
+X_TextOffset:Long=0
+Y_TextOffset:Long=0
+X_Begin:Double=0
+X_End:Double=2.1e-005
+Y_Begin:Double=0
+Y_End:Double=0
+Y_UseValueRange:Long=0
+X_UseExpFormat:Long=0
+Y_UseExpFormat:Long=0
+X_ExpFormat:String=%e
+Y_ExpFormat:String=%e
+X_UseCustomFormat:Long=1
+X_CustomFormat:String=%.1f
+Y_UseCustomFormat:Long=0
+Y_CustomFormat:String=%e
+[Method\Data\Step8\StatUI\ChartParams\Axis\StatCfg]
+CalcForGroups:String=
+
+
+[Method\Data\Step8\StatUI\ChartParams\TitleFont]
+Name:String=Arial
+Size:Long=12
+Bold:Long=1
+Italic:Long=0
+Underline:Long=0
+StrikeOut:Long=0
+TextColor:String=(0, 0, 128)
+
+[Method\Data\Step8\StatUI\ChartParams\AxisFont]
+Name:String=Arial
+Size:Long=10
+Bold:Long=0
+Italic:Long=0
+Underline:Long=0
+StrikeOut:Long=0
+TextColor:String=(0, 0, 0)
+
+[Method\Data\Step8\StatUI\ChartParams\ParamNameFont]
+Name:String=Arial
+Size:Long=12
+Bold:Long=0
+Italic:Long=0
+Underline:Long=0
+StrikeOut:Long=0
+TextColor:String=(0, 0, 0)
+
+[Method\Data\Step8\StatUI\ChartParams\SignatureFont]
+Name:String=Arial
+Size:Long=12
+Bold:Long=0
+Italic:Long=0
+Underline:Long=0
+StrikeOut:Long=0
+TextColor:String=(0, 0, 0)
+
+[Method\Data\Step8\StatUI\ChartParams\LegendFont]
+Name:String=Arial
+Size:Long=10
+Bold:Long=0
+Italic:Long=0
+Underline:Long=0
+StrikeOut:Long=0
+TextColor:String=(0, 0, 0)
+
+[Method\Data\Step8\StatUI\ChartParams\HintFont]
+Name:String=Arial
+Size:Long=10
+Bold:Long=0
+Italic:Long=0
+Underline:Long=0
+StrikeOut:Long=0
+TextColor:String=(0, 0, 0)
+
+[Method\Data\Step8\StatUI\ChartParams\CustomIntervals]
+class0:String=7.327925e-008,1.049872e-005
+class1:String=1.049872e-005,2.092416e-005
+class2:String=3.640146e+001,3.976036e+001
+class3:String=3.976036e+001,4.311926e+001
+
+
+[Method\Data\Step8\StatUI\Legend]
+SamplingColor:String=(0,0,0)
+IncorrectColor:String=(255, 0, 0)
+Title:String=Данные статистики
+TitleFont_Height:Long=11
+TitleFont_Weight:Long=0
+TitleFont_Italic:Long=0
+TitleFont_Underline:Long=0
+TitleFont_StrikeOut:Long=0
+TitleFont_CharSet:Long=1
+TitleFont_PitchAndFamily:Long=0
+TitleFont_Location:String=
+Font_Height:Long=-27
+Font_Weight:Long=400
+Font_Italic:Long=0
+Font_Underline:Long=0
+Font_StrikeOut:Long=0
+Font_CharSet:Long=0
+Font_PitchAndFamily:Long=82
+Font_Location:String=
+SamplingName:String=
+[Method\Data\Step8\StatUI\Legend\UserValues]
+EntryName0:String=Параметр
+EntryValue0:String=  Classes
+EntryOrder0:2=-1
+
+[Method\Data\Step8\StatUI\Legend\TitleFont]
+Name:String=Arial
+Size:Long=12
+Bold:Long=1
+Italic:Long=0
+Underline:Long=0
+StrikeOut:Long=0
+TextColor:String=(0, 0, 128)
+
+[Method\Data\Step8\StatUI\Legend\Font]
+Name:String=Arial
+Size:Long=12
+Bold:Long=0
+Italic:Long=0
+Underline:Long=0
+StrikeOut:Long=0
+TextColor:String=(0, 0, 0)
+
+
+[Method\Data\Step8\StatUI\StatTable]
+IncorrectColor:String=(255, 0, 0)
+Title:String=Таблица статистики
+ClassColTitle:String=Название класса
+AllWordName:String=Всего
+TitleFont_Height:Long=-19
+TitleFont_Weight:Long=400
+TitleFont_Italic:Long=0
+TitleFont_Underline:Long=0
+TitleFont_StrikeOut:Long=0
+TitleFont_CharSet:Long=1
+TitleFont_PitchAndFamily:Long=0
+TitleFont_Location:String=
+TableAlign:Long=1
+Font_Height:Long=11
+Font_Weight:Long=0
+Font_Italic:Long=0
+Font_Underline:Long=0
+Font_StrikeOut:Long=0
+Font_CharSet:Long=1
+Font_PitchAndFamily:Long=0
+Font_Location:String=
+VisibleClass:String=
+TitleFont:String=Таблица
+Font:String=Axis
+[Method\Data\Step8\StatUI\StatTable\TitleFont]
+Name:String=Arial
+Size:Long=12
+Bold:Long=1
+Italic:Long=0
+Underline:Long=0
+StrikeOut:Long=0
+TextColor:String=(0, 0, 128)
+
+[Method\Data\Step8\StatUI\StatTable\Font]
+Name:String=Arial
+Size:Long=10
+Bold:Long=0
+Italic:Long=0
+Underline:Long=0
+StrikeOut:Long=0
+TextColor:String=(0, 0, 0)
+
+[Method\Data\Step8\StatUI\StatTable\Colors]
+Column0:String=(0, 0, 0)
+Column1:String=(0, 0, 0)
+Column2:String=(0, 0, 0)
+Column3:String=(0, 0, 0)
+Column4:String=(0, 0, 0)
+Column5:String=(0, 0, 0)
+Column6:String=(0, 0, 0)
+Column7:String=(0, 0, 0)
+Column8:String=(0, 0, 0)
+Column9:String=(0, 0, 0)
+Column10:String=(0, 0, 0)
+Column11:String=(0, 0, 0)
+Column12:String=(0, 0, 0)
+Column13:String=(0, 0, 0)
+Column14:String=(0, 0, 0)
+Column15:String=(0, 0, 0)
+Column16:String=(0, 0, 0)
+Column17:String=(0, 0, 0)
+Column18:String=(0, 0, 0)
+Column19:String=(0, 0, 0)
+Column20:String=(0, 0, 0)
+Column21:String=(0, 0, 0)
+Column22:String=(0, 0, 0)
+Column23:String=(0, 0, 0)
+Column24:String=(0, 0, 0)
+Column25:String=(0, 0, 0)
+Column26:String=(0, 0, 0)
+Column27:String=(0, 0, 0)
+Column28:String=(0, 0, 0)
+Column29:String=(0, 0, 0)
+Column30:String=(0, 0, 0)
+Column31:String=(0, 0, 0)
+Column32:String=(0, 0, 0)
+Column33:String=(0, 0, 0)
+Column34:String=(0, 0, 0)
+Column35:String=(0, 0, 0)
+Column36:String=(0, 0, 0)
+Column37:String=(0, 0, 0)
+Column38:String=(0, 0, 0)
+Column39:String=(0, 0, 0)
+Column40:String=(0, 0, 0)
+Column41:String=(0, 0, 0)
+Column42:String=(0, 0, 0)
+Column43:String=(0, 0, 0)
+Column44:String=(0, 0, 0)
+Column45:String=(0, 0, 0)
+Column46:String=(0, 0, 0)
+Column47:String=(0, 0, 0)
+Column48:String=(0, 0, 0)
+Column49:String=(0, 0, 0)
+Column50:String=(0, 0, 0)
+Column51:String=(0, 0, 0)
+Column52:String=(0, 0, 0)
+Column53:String=(0, 0, 0)
+Column54:String=(0, 0, 0)
+Column55:String=(0, 0, 0)
+Column56:String=(0, 0, 0)
+Column57:String=(0, 0, 0)
+Column58:String=(0, 0, 0)
+Column59:String=(0, 0, 0)
+Column60:String=(0, 0, 0)
+Column61:String=(0, 0, 0)
+Column62:String=(0, 0, 0)
+Column63:String=(0, 0, 0)
+Column64:String=(0, 0, 0)
+Column65:String=(0, 0, 0)
+Column66:String=(0, 0, 0)
+Column67:String=(0, 0, 0)
+Column68:String=(0, 0, 0)
+Column69:String=(0, 0, 0)
+Column70:String=(0, 0, 0)
+
+[Method\Data\Step8\StatUI\StatTable\Width]
+Column0:Long=100
+Column1:Long=100
+Column2:Long=100
+Column3:Long=100
+Column4:Long=100
+Column5:Long=100
+Column6:Long=100
+Column7:Long=100
+Column8:Long=100
+Column9:Long=100
+Column10:Long=100
+Column11:Long=100
+Column12:Long=100
+Column13:Long=100
+Column14:Long=100
+Column15:Long=100
+Column16:Long=100
+Column17:Long=100
+Column18:Long=100
+Column19:Long=100
+Column20:Long=100
+Column21:Long=100
+Column22:Long=100
+Column23:Long=100
+Column24:Long=100
+Column25:Long=100
+Column26:Long=100
+Column27:Long=100
+Column28:Long=100
+Column29:Long=100
+Column30:Long=100
+Column31:Long=100
+Column32:Long=100
+Column33:Long=100
+Column34:Long=100
+Column35:Long=100
+Column36:Long=100
+Column37:Long=100
+Column38:Long=100
+Column39:Long=100
+Column40:Long=100
+Column41:Long=100
+Column42:Long=100
+Column43:Long=100
+Column44:Long=100
+Column45:Long=100
+Column46:Long=100
+Column47:Long=100
+Column48:Long=100
+Column49:Long=100
+Column50:Long=100
+Column51:Long=100
+Column52:Long=100
+Column53:Long=100
+Column54:Long=100
+Column55:Long=100
+Column56:Long=100
+Column57:Long=100
+Column58:Long=100
+Column59:Long=100
+Column60:Long=100
+Column61:Long=100
+Column62:Long=100
+Column63:Long=100
+Column64:Long=100
+Column65:Long=100
+Column66:Long=100
+Column67:Long=100
+Column68:Long=100
+Column69:Long=100
+Column70:Long=100
+
+[Method\Data\Step8\StatUI\StatTable\HeaderFont]
+Name:String=Arial
+Size:Long=10
+Bold:Long=0
+Italic:Long=0
+Underline:Long=0
+StrikeOut:Long=0
+TextColor:String=(0, 0, 0)
+
+
+[Method\Data\Step8\StatUI\Groups]
+0:String=Общие
+1:String=Относительные
+2:String=Стереологические
+3:String=Пользовательские
+
+
+[Method\Data\Step8\LongOperation]
+ScriptNotify:Long=0
+ScriptFireStep:Long=10
+ScriptFireLag:Long=-1
+
+[Method\Data\Step8\StatUI.StatObjectView]
+DBars0:String=ActionLogWindow
+DBarsV0:11=0
+DBars1:String=Histogram
+DBarsV1:11=0
+DBars2:String=InfoCtrl
+DBarsV2:11=0
+DBars4:String=ChooseColor
+DBarsV4:11=0
+DBars5:String=ImageBar
+DBarsV5:11=0
+DBars6:String=AppWindow
+DBarsV6:11=0
+DBars7:String=PropertySheet
+DBarsV7:11=0
+DBars9:String=Message
+DBarsV9:11=0
+DBars3:String=ChooseColor
+DBarsV3:11=0
+DBars8:String=Message
+DBarsV8:11=0
+
+
+[Method\Data\Step9]
+
+ActionName:MultiLineString=
+
+MsgStepTitleStr = Docs.LoadString("Message")
+MsgBox "Методика завершена!", vbInformation, MsgStepTitleStr
+/end of string
+
+ForcedName:String=Message
+Flags:Long=4
+ArgCount:Long=0
+[Method\Data\Step9\MethodStepData]
+[Method\Data\Step9\MethodStepData\StateBeforeAction]
+Object List_count:Long=0
+StatObject_count:Long=0
+Image_0:Long=0
+Image_count:Long=1
+StatTable_count:Long=0
+ActiveViewProgID:String=ImageDoc.ImageView
+
+[Method\Data\Step9\MethodStepData\StateAfterAction]
+ActiveViewProgID:String=ImageDoc.ImageView
+Object List_count:Long=0
+StatObject_count:Long=0
+Image_0:Long=0
+Image_count:Long=1
+StatTable_count:Long=0
+
+
+[Method\Data\Step9\FormManager]
+PageExecuted:Long=0
+
+
+
+
+
+__Context__Begin__
+__Context__End__

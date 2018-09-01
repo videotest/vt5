@@ -1,0 +1,15 @@
+'resource:Save View...#File#Save the current view as file#Save View
+'state:action=FileSaveView
+
+Data.SetValue "\tmp\StatSaveView", "Save"
+
+ If GetCurrentView() = "StatUI.StatObjectView" And not Docs.IsPointerNull(GetStatObj()) Then
+	iOldStatView = ObjectGetValue (GetStatObj(), "\StatUI\Views", "")
+	If iOldStatView = 1 or iOldStatView = 2 or iOldStatView = 3 or iOldStatView = 4 Then
+		FileSaveView
+	Else
+		FormManager.ExecuteModal "StatSaveView"
+	End If
+Else 
+	FileSaveView
+End If

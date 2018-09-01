@@ -533,7 +533,7 @@ void CBCGToolbarComboBoxButton::OnAddToCustomizePage ()
 	CBCGToolbarComboBoxButton* pOther = 
 		(CBCGToolbarComboBoxButton*) listButtons.GetHead ();
 	ASSERT_VALID (pOther);
-	ASSERT_KINDOF (CBCGToolbarComboBoxButton, pOther);
+	//ASSERT_KINDOF (CBCGToolbarComboBoxButton, pOther);
 
 	CopyFrom (*pOther);
 }

@@ -1,0 +1,12 @@
+'resource:Form Design...#Database#Form design and database editing#Form Design
+
+HideDockBars
+ShowBlankDesign
+bEnableApplyOld = Data.GetDefValue ("\FormManager\EnableApply", 1)
+Data.SetValue "\FormManager\EnableApply", 0
+
+FormManager.ExecutePageModal "DataBaseDesign"
+
+Data.SetValue "\FormManager\EnableApply", bEnableApplyOld
+ShowBlankPreview
+ShowDockBars

@@ -1,0 +1,404 @@
+[AxForm]
+Version=1
+Size=360, 95
+Title=%Form Design%
+
+[AXControls]
+Name=txtControlName
+ProgID=VTCONTROLS.VTStaticText.1
+Rect=21, 51, 226, 69
+Style=50000000h
+ID=0
+Data=316 05 00 00 00 0f 00 00 80 00 03 52 e3 0b 91 8f ce 11 9d e3 00 aa 00 4b b8 51 01 cc 00 00 90 01 44 42 01 00 06 54 61 68 6f 6d 61 0b 00 00 00 08 00 00 80 0f 00 00 80 0f 00 00 80 01 00 00 00 00 00 00 00 00 00 00 00 01 00 00 00 01 00 00 00 00 00 00 00 01 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 01 00 00 00 ff ff ff ff 00 00 00 00 00 00 00 00 49 4c 01 01 00 00 02 00 04 00 01 00 01 00 ff ff ff ff 11 00 ff ff ff ff ff ff ff ff 42 4d 36 00 00 00 00 00 00 00 36 00 00 00 28 00 00 00 04 00 00 00 01 00 00 00 01 00 10 00 00 00 00 00 08 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 42 4d 3e 00 00 00 00 00 00 00 3e 00 00 00 28 00 00 00 04 00 00 00 01 00 00 00 01 00 01 00 00 00 00 00 04 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 ff ff ff 00 00 00 00 00 01 00 00 00 01 00 00 00 0f 00 00 80 00 00 00 00 00 00 00 00 00 00 00 00
+
+Name=frmCtrls
+ProgID=VTDESIGN.VTD3DBarCtrl.1
+Rect=15, 3, 350, 84
+Style=58000000h
+ID=0
+Data=72 00 00 00 00 03 00 00 00 03 00 02 00 00 00 05 00 00 80 01 00 00 00 08 00 00 80 00 64 00 00 00 00 00 01 00 01 00 00 00 00 03 52 e3 0b 91 8f ce 11 9d e3 00 aa 00 4b b8 51 01 cc 00 00 90 01 44 42 01 00 05 41 72 69 61 6c
+
+Name=btnStatTable
+ProgID=PUSHBUTTON.PushButtonCtrl.1
+Rect=279, 15, 301, 37
+Style=50000000h
+ID=0
+Data=915 0c 01 01 01 01 00 00 00 00 00 00 01 00 01 00 01 00 00 00 00 00 00 00 05 00 05 00 00 00 00 00 00 01 00 00 00 00 00 00 00 00 00 00 14 56 01 01 16 00 00 00 16 00 00 00 04 00 00 00 00 03 52 e3 0b 91 8f ce 11 9d e3 00 aa 00 4b b8 51 01 00 00 00 90 01 44 42 01 00 06 54 61 68 6f 6d 61 00 00 00 00 00 00 00 00 00 ff 00 ff 00 08 00 00 80 08 00 00 80 08 00 00 80 08 00 00 80 00 00 00 00 01 00 00 00 00 00 00 00 01 00 00 00 00 01 00 42 4d 06 03 00 00 00 00 00 00 36 00 00 00 28 00 00 00 10 00 00 00 0f 00 00 00 01 00 18 00 00 00 00 00 d0 02 00 00 c4 0e 00 00 c4 0e 00 00 00 00 00 00 00 00 00 00 ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff 80 80 80 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff 80 80 80 ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff 00 00 00 ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff 80 80 80 ff ff ff 80 00 00 80 00 00 80 00 00 80 00 00 80 00 00 ff ff ff 00 00 00 ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff 80 80 80 ff ff ff ff ff ff 00 ff 00 ff ff ff ff ff 00 ff ff ff ff ff ff 00 00 00 ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff 80 80 80 ff ff ff 80 00 00 80 00 00 ff ff 00 ff ff ff 00 ff 00 ff ff ff 00 00 00 ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff 80 80 80 ff ff ff ff ff ff 00 ff 00 ff ff ff ff ff 00 ff ff ff ff ff ff 00 00 00 ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff 80 80 80 ff ff ff 80 00 00 80 00 00 80 00 00 80 00 00 80 00 00 ff ff ff 00 00 00 ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff 80 80 80 ff ff ff ff ff ff ff ff 00 ff ff ff 00 ff 00 ff ff ff ff ff ff 00 00 00 ff ff ff 00 00 00 00 00 00 00 00 00 00 00 00 ff ff ff ff ff ff 80 80 80 ff ff ff 80 00 00 80 00 00 80 00 00 80 00 00 ff ff 00 ff ff ff 00 00 00 00 00 00 ff ff 00 ff 00 00 ff 00 00 80 00 00 00 00 00 ff ff ff 80 80 80 ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff 00 00 00 00 00 00 ff ff 00 ff 00 00 ff 00 00 80 00 00 00 00 00 ff ff ff 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 ff ff ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff 00 00 00 00 ff ff 80 80 80 80 80 80 00 ff ff 00 00 00 ff ff ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff ff ff 00 00 00 00 00 00 00 00 00 00 00 00 ff ff ff ff ff ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff ff ff ff ff ff 80 80 80 80 80 80 ff ff ff ff ff ff ff ff ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff
+
+Name=btnUndo
+ProgID=PUSHBUTTON.PushButtonCtrl.1
+Rect=311, 16, 329, 38
+Style=50000000h
+ID=0
+Data=915 0c 01 01 01 00 00 00 00 00 00 00 01 00 00 00 01 00 00 00 00 00 00 00 05 00 05 00 00 00 00 00 00 01 00 00 00 00 00 00 00 00 00 00 14 20 01 01 16 00 00 00 16 00 00 00 04 00 00 00 00 03 52 e3 0b 91 8f ce 11 9d e3 00 aa 00 4b b8 51 01 cc 00 00 90 01 44 42 01 00 06 54 61 68 6f 6d 61 00 00 00 00 00 00 00 00 00 ff 00 ff 00 08 00 00 80 08 00 00 80 08 00 00 80 08 00 00 80 00 00 00 00 01 00 00 00 00 00 00 00 01 00 00 00 00 01 00 42 4d 06 03 00 00 00 00 00 00 36 00 00 00 28 00 00 00 10 00 00 00 0f 00 00 00 01 00 18 00 00 00 00 00 d0 02 00 00 12 0b 00 00 12 0b 00 00 00 00 00 00 00 00 00 00 ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff c4 d3 d6 a5 b2 b5 a5 b2 b5 ba c8 cb ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff cb da dd c3 d2 d5 ce de e1 ff 00 ff ff 00 ff ff 00 ff 8b 70 58 b0 bd c0 87 92 94 7e 88 89 a5 b2 b5 ff 00 ff ff 00 ff ff 00 ff ff 00 ff d1 e2 e5 ac ba bc 8b 96 98 a5 b2 b5 ce de e1 ff 00 ff ff 00 ff ff 00 ff 8b 70 58 64 51 3f 74 7d 7e 74 7d 7e a5 b2 b5 ff 00 ff ff 00 ff ff 00 ff c0 d7 df 64 51 3f 5a 61 62 6a 72 73 a5 b2 b5 ce de e1 ff 00 ff ff 00 ff ff 00 ff 8b 70 58 64 51 3f 74 7d 7e 74 7d 7e a5 b2 b5 ff 00 ff ff 00 ff ae cf df 64 51 3f 64 51 3f 6a 72 73 6a 72 73 a5 b2 b5 ce de e1 ff 00 ff ff 00 ff ff 00 ff 8b 70 58 64 51 3f 74 7d 7e 74 7d 7e a5 b2 b5 ff 00 ff 9f cb e5 64 51 3f 8b 70 58 64 51 3f 6a 72 73 6a 72 73 a5 b2 b5 ce de e1 ff 00 ff ff 00 ff ff 00 ff 8b 70 58 64 51 3f 5f 67 68 74 7d 7e ff 00 ff 96 cd ef 64 51 3f 8b 70 58 8b 70 58 64 51 3f 6a 72 73 6a 72 73 a5 b2 b5 ff 00 ff ff 00 ff ff 00 ff ff 00 ff 8b 70 58 64 51 3f 5f 67 68 ff 00 ff 91 cf f7 64 51 3f ff e9 d3 ca a3 81 8b 70 58 64 51 3f 5f 67 68 91 9d 9f ff 00 ff ff 00 ff ff 00 ff ff 00 ff 8b 70 58 64 51 3f 5f 67 68 ff 00 ff 91 cf f7 64 51 3f ff e9 d3 8b 70 58 8b 70 58 8b 70 58 64 51 3f b0 bd c0 ff 00 ff ff 00 ff ff 00 ff ff 00 ff 8b 70 58 64 51 3f 74 7d 7e ff 00 ff 91 cf f7 64 51 3f 8b 70 58 8b 70 58 8b 70 58 5f 67 68 74 7d 7e a5 b2 b5 ff 00 ff ff 00 ff ff 00 ff ff 00 ff 8b 70 58 64 51 3f 9b a7 aa ff 00 ff 91 cf f7 64 51 3f 8b 70 58 91 cf f7 8b 70 58 8b 70 58 74 7d 7e 74 7d 7e 9b a7 aa b0 bd c0 b0 bd c0 9b a7 aa 8b 70 58 7e 88 89 ba c8 cb ff 00 ff 91 cf f7 64 51 3f 91 cf f7 a5 b2 b5 ce de e1 8b 70 58 8b 70 58 74 7d 7e 5f 67 68 5f 67 68 5f 67 68 8b 70 58 8b 70 58 a5 b2 b5 ff 00 ff ff 00 ff 91 cf f7 91 cf f7 ba c8 cb ce de e1 ff 00 ff ff 00 ff 8b 70 58 8b 70 58 8b 70 58 8b 70 58 8b 70 58 8b 70 58 a5 b2 b5 ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff 8b 70 58 8b 70 58 8b 70 58 8b 70 58 ba c8 cb ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff
+
+Name=btnRedo
+ProgID=PUSHBUTTON.PushButtonCtrl.1
+Rect=311, 45, 333, 67
+Style=50000000h
+ID=0
+Data=915 0c 01 01 01 00 00 00 00 00 00 00 01 00 00 00 01 00 00 00 00 00 01 00 05 00 05 00 00 00 00 00 00 01 00 00 00 00 00 00 00 00 00 00 14 20 01 01 16 00 00 00 16 00 00 00 04 00 00 00 00 03 52 e3 0b 91 8f ce 11 9d e3 00 aa 00 4b b8 51 01 cc 00 00 90 01 44 42 01 00 06 54 61 68 6f 6d 61 00 00 00 00 00 00 00 00 00 ff 00 ff 00 08 00 00 80 08 00 00 80 08 00 00 80 08 00 00 80 00 00 00 00 01 00 00 00 00 00 00 00 01 00 00 00 00 01 00 42 4d 06 03 00 00 00 00 00 00 36 00 00 00 28 00 00 00 10 00 00 00 0f 00 00 00 01 00 18 00 00 00 00 00 d0 02 00 00 12 0b 00 00 12 0b 00 00 00 00 00 00 00 00 00 00 ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ba c8 cb a5 b2 b5 a5 b2 b5 c4 d3 d6 ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff a5 b2 b5 7e 88 89 87 92 94 b0 bd c0 8b 70 58 ff 00 ff ff 00 ff ff 00 ff ce de e1 c3 d2 d5 cb da dd ff 00 ff ff 00 ff ff 00 ff ff 00 ff a5 b2 b5 74 7d 7e 74 7d 7e 64 51 3f 8b 70 58 ff 00 ff ff 00 ff ff 00 ff ce de e1 a5 b2 b5 8b 96 98 ac ba bc d1 e2 e5 ff 00 ff ff 00 ff a5 b2 b5 74 7d 7e 74 7d 7e 64 51 3f 8b 70 58 ff 00 ff ff 00 ff ff 00 ff ce de e1 a5 b2 b5 6a 72 73 5a 61 62 64 51 3f c0 d7 df ff 00 ff a5 b2 b5 74 7d 7e 74 7d 7e 64 51 3f 8b 70 58 ff 00 ff ff 00 ff ff 00 ff ce de e1 a5 b2 b5 6a 72 73 6a 72 73 64 51 3f 64 51 3f ae cf df ff 00 ff 74 7d 7e 5f 67 68 64 51 3f 8b 70 58 ff 00 ff ff 00 ff ff 00 ff ce de e1 a5 b2 b5 6a 72 73 6a 72 73 64 51 3f 8b 70 58 64 51 3f 9f cb e5 ff 00 ff 5f 67 68 64 51 3f 8b 70 58 ff 00 ff ff 00 ff ff 00 ff ff 00 ff a5 b2 b5 6a 72 73 6a 72 73 64 51 3f 8b 70 58 8b 70 58 64 51 3f 96 cd ef ff 00 ff 5f 67 68 64 51 3f 8b 70 58 ff 00 ff ff 00 ff ff 00 ff ff 00 ff 91 9d 9f 5f 67 68 64 51 3f 8b 70 58 ca a3 81 ff e9 d3 64 51 3f 91 cf f7 ff 00 ff 74 7d 7e 64 51 3f 8b 70 58 ff 00 ff ff 00 ff ff 00 ff ff 00 ff b0 bd c0 64 51 3f 8b 70 58 8b 70 58 8b 70 58 ff e9 d3 64 51 3f 91 cf f7 ff 00 ff 9b a7 aa 64 51 3f 8b 70 58 ff 00 ff ff 00 ff ff 00 ff ff 00 ff a5 b2 b5 74 7d 7e 5f 67 68 8b 70 58 8b 70 58 8b 70 58 64 51 3f 91 cf f7 ff 00 ff ba c8 cb 7e 88 89 8b 70 58 9b a7 aa b0 bd c0 b0 bd c0 9b a7 aa 74 7d 7e 74 7d 7e 8b 70 58 8b 70 58 91 cf f7 8b 70 58 64 51 3f 91 cf f7 ff 00 ff ff 00 ff a5 b2 b5 8b 70 58 8b 70 58 5f 67 68 5f 67 68 5f 67 68 74 7d 7e 8b 70 58 8b 70 58 ce de e1 a5 b2 b5 91 cf f7 64 51 3f 91 cf f7 ff 00 ff ff 00 ff ff 00 ff a5 b2 b5 8b 70 58 8b 70 58 8b 70 58 8b 70 58 8b 70 58 8b 70 58 ff 00 ff ff 00 ff ce de e1 ba c8 cb 91 cf f7 91 cf f7 ff 00 ff ff 00 ff ff 00 ff ff 00 ff ba c8 cb 8b 70 58 8b 70 58 8b 70 58 8b 70 58 ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff
+
+Name=btnStatDiag
+ProgID=PUSHBUTTON.PushButtonCtrl.1
+Rect=253, 14, 276, 36
+Style=50000000h
+ID=0
+Data=915 0c 01 01 01 01 00 00 00 00 00 00 01 00 01 00 01 00 00 00 00 00 00 00 05 00 05 00 00 00 00 00 00 01 00 00 00 00 00 00 00 00 00 00 14 56 01 01 16 00 00 00 16 00 00 00 04 00 00 00 00 03 52 e3 0b 91 8f ce 11 9d e3 00 aa 00 4b b8 51 01 00 00 00 90 01 44 42 01 00 06 54 61 68 6f 6d 61 00 00 00 00 00 00 00 00 00 ff 00 ff 00 08 00 00 80 08 00 00 80 08 00 00 80 08 00 00 80 00 00 00 00 01 00 00 00 00 00 00 00 01 00 00 00 00 01 00 42 4d 06 03 00 00 00 00 00 00 36 00 00 00 28 00 00 00 10 00 00 00 0f 00 00 00 01 00 18 00 00 00 00 00 d0 02 00 00 c4 0e 00 00 c4 0e 00 00 00 00 00 00 00 00 00 00 ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff 80 80 80 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff 80 80 80 ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff 00 00 00 ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff 80 80 80 ff ff ff 80 00 00 80 00 00 80 00 00 80 00 00 80 00 00 ff ff ff 00 00 00 ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff 80 80 80 ff ff ff ff ff ff 00 ff 00 ff ff ff ff ff 00 ff ff ff ff ff ff 00 00 00 ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff 80 80 80 ff ff ff 80 00 00 80 00 00 ff ff 00 ff ff ff 00 ff 00 ff ff ff 00 00 00 ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff 80 80 80 ff ff ff ff ff ff 00 ff 00 ff ff ff ff ff 00 ff ff ff ff ff ff 00 00 00 ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff 80 80 80 ff ff ff 80 00 00 80 00 00 80 00 00 80 00 00 80 00 00 ff ff ff 00 00 00 ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff 80 80 80 ff ff ff ff ff ff ff ff 00 ff ff ff 00 ff 00 ff ff ff ff ff ff 00 00 00 ff ff ff 00 00 00 00 00 00 00 00 00 00 00 00 ff ff ff ff ff ff 80 80 80 ff ff ff 80 00 00 80 00 00 80 00 00 80 00 00 ff ff 00 ff ff ff 00 00 00 00 00 00 ff ff 00 ff 00 00 ff 00 00 80 00 00 00 00 00 ff ff ff 80 80 80 ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff 00 00 00 00 00 00 ff ff 00 ff 00 00 ff 00 00 80 00 00 00 00 00 ff ff ff 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 ff ff ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff 00 00 00 00 ff ff 80 80 80 80 80 80 00 ff ff 00 00 00 ff ff ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff ff ff 00 00 00 00 00 00 00 00 00 00 00 00 ff ff ff ff ff ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff ff ff ff ff ff 80 80 80 80 80 80 ff ff ff ff ff ff ff ff ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff
+
+Name=btnStatLegend
+ProgID=PUSHBUTTON.PushButtonCtrl.1
+Rect=229, 11, 252, 33
+Style=50000000h
+ID=0
+Data=915 0c 01 01 01 01 00 00 00 00 00 00 01 00 01 00 01 00 00 00 00 00 00 00 05 00 05 00 00 00 00 00 00 01 00 00 00 00 00 00 00 00 00 00 14 56 01 01 16 00 00 00 16 00 00 00 04 00 00 00 00 03 52 e3 0b 91 8f ce 11 9d e3 00 aa 00 4b b8 51 01 00 00 00 90 01 44 42 01 00 06 54 61 68 6f 6d 61 00 00 00 00 00 00 00 00 00 ff 00 ff 00 08 00 00 80 08 00 00 80 08 00 00 80 08 00 00 80 00 00 00 00 01 00 00 00 00 00 00 00 01 00 00 00 00 01 00 42 4d 06 03 00 00 00 00 00 00 36 00 00 00 28 00 00 00 10 00 00 00 0f 00 00 00 01 00 18 00 00 00 00 00 d0 02 00 00 c4 0e 00 00 c4 0e 00 00 00 00 00 00 00 00 00 00 ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff 80 80 80 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff 80 80 80 ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff 00 00 00 ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff 80 80 80 ff ff ff 80 00 00 80 00 00 80 00 00 80 00 00 80 00 00 ff ff ff 00 00 00 ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff 80 80 80 ff ff ff ff ff ff 00 ff 00 ff ff ff ff ff 00 ff ff ff ff ff ff 00 00 00 ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff 80 80 80 ff ff ff 80 00 00 80 00 00 ff ff 00 ff ff ff 00 ff 00 ff ff ff 00 00 00 ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff 80 80 80 ff ff ff ff ff ff 00 ff 00 ff ff ff ff ff 00 ff ff ff ff ff ff 00 00 00 ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff 80 80 80 ff ff ff 80 00 00 80 00 00 80 00 00 80 00 00 80 00 00 ff ff ff 00 00 00 ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff 80 80 80 ff ff ff ff ff ff ff ff 00 ff ff ff 00 ff 00 ff ff ff ff ff ff 00 00 00 ff ff ff 00 00 00 00 00 00 00 00 00 00 00 00 ff ff ff ff ff ff 80 80 80 ff ff ff 80 00 00 80 00 00 80 00 00 80 00 00 ff ff 00 ff ff ff 00 00 00 00 00 00 ff ff 00 ff 00 00 ff 00 00 80 00 00 00 00 00 ff ff ff 80 80 80 ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff 00 00 00 00 00 00 ff ff 00 ff 00 00 ff 00 00 80 00 00 00 00 00 ff ff ff 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 ff ff ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff 00 00 00 00 ff ff 80 80 80 80 80 80 00 ff ff 00 00 00 ff ff ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff ff ff 00 00 00 00 00 00 00 00 00 00 00 00 ff ff ff ff ff ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff ff ff ff ff ff 80 80 80 80 80 80 ff ff ff ff ff ff ff ff ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff
+
+Name=btnImage_ctrl
+ProgID=PUSHBUTTON.PushButtonCtrl.1
+Rect=204, 13, 226, 35
+Style=50000000h
+ID=0
+Data=986 0c 01 01 01 01 00 00 00 00 20 45 3a 5c 50 53 44 5c 76 74 35 5c 6d 61 73 74 65 72 5c 62 6d 70 5c 43 68 61 62 6c 45 2e 62 6d 70 20 45 3a 5c 50 53 44 5c 76 74 35 5c 6d 61 73 74 65 72 5c 62 6d 70 5c 43 68 61 62 6c 45 2e 62 6d 70 01 00 01 00 01 00 00 00 00 00 00 00 05 00 05 00 00 00 00 00 00 01 00 00 00 00 00 00 00 00 00 00 14 00 01 01 16 00 00 00 16 00 00 00 04 00 00 00 00 03 52 e3 0b 91 8f ce 11 9d e3 00 aa 00 4b b8 51 01 cc 00 00 90 01 44 42 01 00 0d 4d 53 20 53 61 6e 73 20 53 65 72 69 66 00 00 00 00 00 00 00 00 00 ff 00 ff 00 08 00 00 80 08 00 00 80 08 00 00 80 08 00 00 80 00 00 00 00 00 00 00 00 00 00 00 00 01 00 00 00 00 01 00 42 4d 06 03 00 00 00 00 00 00 36 00 00 00 28 00 00 00 10 00 00 00 0f 00 00 00 01 00 18 00 00 00 00 00 d0 02 00 00 12 0b 00 00 12 0b 00 00 00 00 00 00 00 00 00 00 cf bb a9 cf bb a9 cf bb a9 cf bb a9 cf bb a9 cf bb a9 cf bb a9 cf bb a9 cf bb a9 cf bb a9 cf bb a9 c0 ce d0 c0 ce d0 c0 ce d0 cf bb a9 cf bb a9 cf bb a9 cf bb a9 cf bb a9 cf bb a9 cf bb a9 cf bb a9 cf bb a9 cf bb a9 cf bb a9 cf bb a9 c0 ce d0 90 98 99 90 98 99 90 98 99 c0 ce d0 cf bb a9 cf bb a9 cf bb a9 cf bb a9 cf bb a9 cf bb a9 cf bb a9 cf bb a9 cf bb a9 cf bb a9 c0 ce d0 90 98 99 90 98 99 90 98 99 90 98 99 c0 ce d0 cf bb a9 cf bb a9 cf bb a9 cf bb a9 cf bb a9 cf bb a9 cf bb a9 cf bb a9 cf bb a9 cf bb a9 89 89 89 00 00 00 89 89 89 90 98 99 90 98 99 c0 ce d0 cf bb a9 cf bb a9 b0 97 84 cf bb a9 b0 97 84 cf bb a9 b0 97 84 cf bb a9 b0 97 84 cf bb a9 00 82 00 00 ff 00 00 00 00 90 98 99 c0 ce d0 cf bb a9 b0 97 84 95 80 70 cf bb a9 95 80 70 cf bb a9 95 80 70 cf bb a9 95 80 70 cf bb a9 95 80 70 00 82 00 00 ff 00 00 00 00 c0 ce d0 cf bb a9 95 80 70 cf bb a9 cf bb a9 95 80 70 cf bb a9 95 80 70 cf bb a9 95 80 70 cf bb a9 95 80 70 00 82 00 00 ff 00 00 ff 00 00 00 00 cf bb a9 95 80 70 cf bb a9 95 80 70 ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff 91 cf f7 00 82 00 00 82 00 00 ff 00 00 ff 00 00 00 00 ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff 91 cf f7 00 82 00 00 ff 00 00 ff 00 00 ff 00 00 ff 00 00 ff 00 00 00 00 ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff a8 d8 f3 a8 d8 f3 ff 00 ff 91 cf f7 00 82 00 00 ff 00 00 82 00 00 ff 00 00 ff 00 00 82 00 00 ff 00 00 00 00 ff 00 ff ff 00 ff ff 00 ff 91 cf f7 1c 94 f7 1c 94 f7 91 cf f7 ff 00 ff 91 cf f7 00 82 00 91 cf f7 00 82 00 00 ff 00 00 82 00 00 ff 00 00 00 00 ff 00 ff ff 00 ff a8 d8 f3 1c 94 f7 5e b2 f7 5e b2 f7 1c 94 f7 91 cf f7 ff 00 ff 91 cf f7 91 cf f7 00 82 00 00 ff 00 00 82 00 00 00 00 ff 00 ff ff 00 ff ff 00 ff a8 d8 f3 1c 94 f7 5e b2 f7 5e b2 f7 1c 94 f7 91 cf f7 ff 00 ff ff 00 ff 91 cf f7 00 82 00 00 ff 00 00 00 00 ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff 91 cf f7 1c 94 f7 1c 94 f7 91 cf f7 ff 00 ff ff 00 ff ff 00 ff ff 00 ff 91 cf f7 00 00 00 ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff a8 d8 f3 a8 d8 f3 ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff
+
+Name=btnLine_ctrl
+ProgID=PUSHBUTTON.PushButtonCtrl.1
+Rect=182, 11, 204, 33
+Style=50000000h
+ID=0
+Data=984 0c 01 01 01 01 00 00 00 00 1f 45 3a 5c 50 53 44 5c 76 74 35 5c 6d 61 73 74 65 72 5c 62 6d 70 5c 61 72 72 6f 77 2e 62 6d 70 1f 45 3a 5c 50 53 44 5c 76 74 35 5c 6d 61 73 74 65 72 5c 62 6d 70 5c 61 72 72 6f 77 2e 62 6d 70 01 00 01 00 01 00 00 00 00 00 01 00 05 00 05 00 00 00 00 00 00 01 00 00 00 00 00 00 00 00 00 00 14 56 01 01 16 00 00 00 16 00 00 00 04 00 00 00 00 03 52 e3 0b 91 8f ce 11 9d e3 00 aa 00 4b b8 51 01 cc 00 00 90 01 44 42 01 00 0d 4d 53 20 53 61 6e 73 20 53 65 72 69 66 00 00 00 00 00 00 00 00 00 ff 00 ff 00 08 00 00 80 08 00 00 80 08 00 00 80 08 00 00 80 00 00 00 00 00 00 00 00 00 00 00 00 01 00 00 00 00 01 00 42 4d 06 03 00 00 00 00 00 00 36 00 00 00 28 00 00 00 10 00 00 00 0f 00 00 00 01 00 18 00 00 00 00 00 d0 02 00 00 12 0b 00 00 12 0b 00 00 00 00 00 00 00 00 00 00 ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff b7 c5 c8 96 a2 a4 89 93 95 9d a9 ab c4 d3 d6 ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff c4 d3 d6 71 5b 48 71 5b 48 71 5b 48 89 93 95 bd cc cf ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff f0 c2 99 95 80 70 95 80 70 71 5b 48 96 a2 a4 c4 d3 d6 ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff b7 c5 c8 f0 c2 99 95 80 70 95 80 70 71 5b 48 b7 c5 c8 ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff b7 c5 c8 71 5b 48 95 80 70 f0 c2 99 f0 c2 99 c4 d3 d6 ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff b7 c5 c8 71 5b 48 95 80 70 f0 c2 99 b7 c5 c8 ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff b7 c5 c8 71 5b 48 95 80 70 f0 c2 99 b7 c5 c8 ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff 95 80 70 ff 00 ff ff 00 ff b7 c5 c8 71 5b 48 95 80 70 f0 c2 99 b7 c5 c8 ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff f0 c2 99 95 80 70 ff 00 ff 9d a9 ab 71 5b 48 95 80 70 f0 c2 99 b7 c5 c8 ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff f0 c2 99 95 80 70 9d a9 ab 71 5b 48 95 80 70 f0 c2 99 b7 c5 c8 ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff a8 d8 f3 f0 c2 99 95 80 70 71 5b 48 95 80 70 f0 c2 99 9d a9 ab ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff 91 cf f7 f0 c2 99 95 80 70 95 80 70 f0 c2 99 9d a9 ab ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff 91 cf f7 f0 c2 99 95 80 70 95 80 70 95 80 70 95 80 70 95 80 70 95 80 70 ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff 91 cf f7 f0 c2 99 f0 c2 99 f0 c2 99 f0 c2 99 f0 c2 99 f0 c2 99 ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff 91 cf f7 91 cf f7 91 cf f7 91 cf f7 a8 d8 f3 ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff
+
+Name=btnRectangl_ctrl
+ProgID=PUSHBUTTON.PushButtonCtrl.1
+Rect=161, 14, 183, 36
+Style=50000000h
+ID=0
+Data=984 0c 01 01 01 01 00 00 00 00 1f 45 3a 5c 50 53 44 5c 76 74 35 5c 6d 61 73 74 65 72 5c 62 6d 70 5c 52 65 63 74 31 2e 62 6d 70 1f 45 3a 5c 50 53 44 5c 76 74 35 5c 6d 61 73 74 65 72 5c 62 6d 70 5c 52 65 63 74 31 2e 62 6d 70 01 00 01 00 01 00 00 00 00 00 01 00 05 00 05 00 00 00 00 00 00 01 00 00 00 00 00 00 00 00 00 00 14 04 01 01 16 00 00 00 16 00 00 00 04 00 00 00 00 03 52 e3 0b 91 8f ce 11 9d e3 00 aa 00 4b b8 51 01 cc 00 00 90 01 44 42 01 00 0d 4d 53 20 53 61 6e 73 20 53 65 72 69 66 00 00 00 00 00 00 00 00 00 ff 00 ff 00 08 00 00 80 08 00 00 80 08 00 00 80 08 00 00 80 00 00 00 00 00 00 00 00 00 00 00 00 01 00 00 00 00 01 00 42 4d 06 03 00 00 00 00 00 00 36 00 00 00 28 00 00 00 10 00 00 00 0f 00 00 00 01 00 18 00 00 00 00 00 d0 02 00 00 12 0b 00 00 12 0b 00 00 00 00 00 00 00 00 00 00 ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff bd e0 f0 69 55 42 69 55 42 69 55 42 69 55 42 69 55 42 69 55 42 69 55 42 69 55 42 69 55 42 69 55 42 69 55 42 69 55 42 69 55 42 ff 00 ff ff 00 ff b4 dc f1 ad 96 80 95 80 70 95 80 70 95 80 70 95 80 70 95 80 70 95 80 70 95 80 70 95 80 70 95 80 70 95 80 70 95 80 70 69 55 42 ff 00 ff ff 00 ff aa d8 f3 ad 96 80 95 80 70 f0 c2 99 f0 c2 99 f0 c2 99 f0 c2 99 f0 c2 99 f0 c2 99 f0 c2 99 f0 c2 99 f0 c2 99 95 80 70 69 55 42 ff 00 ff ff 00 ff a0 d5 f5 ad 96 80 95 80 70 f0 c2 99 f0 c2 99 f0 c2 99 f0 c2 99 f0 c2 99 f0 c2 99 f0 c2 99 f0 c2 99 f0 c2 99 95 80 70 69 55 42 ff 00 ff ff 00 ff 97 d1 f6 ad 96 80 95 80 70 f0 c2 99 f0 c2 99 f0 c2 99 f0 c2 99 f0 c2 99 f0 c2 99 f0 c2 99 f0 c2 99 f0 c2 99 95 80 70 69 55 42 ff 00 ff ff 00 ff 91 cf f7 ad 96 80 95 80 70 f0 c2 99 f0 c2 99 f0 c2 99 f0 c2 99 f0 c2 99 f0 c2 99 f0 c2 99 f0 c2 99 f0 c2 99 95 80 70 69 55 42 ff 00 ff ff 00 ff 91 cf f7 ad 96 80 95 80 70 f0 c2 99 f0 c2 99 f0 c2 99 f0 c2 99 f0 c2 99 f0 c2 99 f0 c2 99 f0 c2 99 f0 c2 99 95 80 70 69 55 42 ff 00 ff ff 00 ff 91 cf f7 ad 96 80 95 80 70 f0 c2 99 f0 c2 99 f0 c2 99 f0 c2 99 f0 c2 99 f0 c2 99 f0 c2 99 f0 c2 99 f0 c2 99 95 80 70 69 55 42 ff 00 ff ff 00 ff 91 cf f7 ad 96 80 95 80 70 f0 c2 99 f0 c2 99 f0 c2 99 f0 c2 99 f0 c2 99 f0 c2 99 f0 c2 99 f0 c2 99 f0 c2 99 95 80 70 69 55 42 ff 00 ff ff 00 ff 91 cf f7 ad 96 80 95 80 70 95 80 70 95 80 70 95 80 70 95 80 70 95 80 70 95 80 70 95 80 70 95 80 70 95 80 70 95 80 70 69 55 42 ff 00 ff ff 00 ff 91 cf f7 ad 96 80 ad 96 80 ad 96 80 ad 96 80 ad 96 80 ad 96 80 ad 96 80 ad 96 80 ad 96 80 ad 96 80 ad 96 80 ad 96 80 69 55 42 ff 00 ff ff 00 ff 91 cf f7 91 cf f7 91 cf f7 91 cf f7 91 cf f7 91 cf f7 91 cf f7 91 cf f7 91 cf f7 97 d1 f6 a0 d5 f5 aa d8 f3 b4 dc f1 bd e0 f0 ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff
+
+Name=btnText_ctrl
+ProgID=PUSHBUTTON.PushButtonCtrl.1
+Rect=137, 16, 159, 38
+Style=50000000h
+ID=0
+Data=986 0c 01 01 01 01 00 00 00 00 20 45 3a 5c 50 53 44 5c 76 74 35 5c 6d 61 73 74 65 72 5c 62 6d 70 5c 43 68 61 62 6c 54 2e 62 6d 70 20 45 3a 5c 50 53 44 5c 76 74 35 5c 6d 61 73 74 65 72 5c 62 6d 70 5c 43 68 61 62 6c 54 2e 62 6d 70 01 00 01 00 01 00 00 00 00 00 00 00 05 00 05 00 00 00 00 00 00 01 00 00 00 00 00 00 00 00 00 00 14 56 01 01 16 00 00 00 16 00 00 00 04 00 00 00 00 03 52 e3 0b 91 8f ce 11 9d e3 00 aa 00 4b b8 51 01 cc 00 00 90 01 44 42 01 00 0d 4d 53 20 53 61 6e 73 20 53 65 72 69 66 00 00 00 00 00 00 00 00 00 ff 00 ff 00 08 00 00 80 08 00 00 80 08 00 00 80 08 00 00 80 00 00 00 00 00 00 00 00 00 00 00 00 01 00 00 00 00 01 00 42 4d 06 03 00 00 00 00 00 00 36 00 00 00 28 00 00 00 10 00 00 00 0f 00 00 00 01 00 18 00 00 00 00 00 d0 02 00 00 12 0b 00 00 12 0b 00 00 00 00 00 00 00 00 00 00 ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff c0 ce d0 c0 ce d0 c0 ce d0 c0 ce d0 c0 ce d0 ff 00 ff ff 00 ff ff 00 ff c0 ce d0 c0 ce d0 c0 ce d0 ff 00 ff ff 00 ff ff 00 ff ff 00 ff 90 98 99 90 98 99 90 98 99 90 98 99 90 98 99 90 98 99 c0 ce d0 ff 00 ff 90 98 99 90 98 99 90 98 99 90 98 99 c0 ce d0 ff 00 ff ff 00 ff a9 88 6b a9 88 6b a9 88 6b 71 5b 48 71 5b 48 71 5b 48 90 98 99 c0 ce d0 a9 88 6b a9 88 6b 71 5b 48 71 5b 48 90 98 99 c0 ce d0 ff 00 ff ff 00 ff ff 00 ff ff 00 ff a9 88 6b 71 5b 48 90 98 99 90 98 99 90 98 99 c0 ce d0 c0 ce d0 a9 88 6b 71 5b 48 90 98 99 90 98 99 c0 ce d0 ff 00 ff ff 00 ff ff 00 ff ff 00 ff a9 88 6b 71 5b 48 90 98 99 c0 ce d0 c0 ce d0 c0 ce d0 c0 ce d0 a9 88 6b 71 5b 48 90 98 99 c0 ce d0 c0 ce d0 ff 00 ff ff 00 ff ff 00 ff ff 00 ff a9 88 6b 71 5b 48 90 98 99 c0 ce d0 b2 db f2 a9 88 6b c0 ce d0 a9 88 6b 71 5b 48 90 98 99 71 5b 48 90 98 99 ff 00 ff ff 00 ff ff 00 ff ff 00 ff a9 88 6b 71 5b 48 90 98 99 c0 ce d0 91 cf f7 a9 88 6b a9 88 6b a9 88 6b a9 88 6b a9 88 6b a9 88 6b 90 98 99 ff 00 ff c0 ce d0 c0 ce d0 ff 00 ff a9 88 6b 71 5b 48 90 98 99 c0 ce d0 91 cf f7 91 cf f7 91 cf f7 91 cf f7 9f d4 f5 b2 db f2 c3 e2 ef ff 00 ff b2 db f2 a9 88 6b 90 98 99 c0 ce d0 a9 88 6b 71 5b 48 90 98 99 c0 ce d0 71 5b 48 ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff 9f d4 f5 a9 88 6b a9 88 6b 90 98 99 a9 88 6b 71 5b 48 90 98 99 71 5b 48 71 5b 48 ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff 91 cf f7 a9 88 6b a9 88 6b a9 88 6b a9 88 6b a9 88 6b a9 88 6b a9 88 6b a9 88 6b ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff 91 cf f7 91 cf f7 91 cf f7 91 cf f7 91 cf f7 9f d4 f5 9f d4 f5 b2 db f2 c3 e2 ef ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff
+
+Name=btnDateTime_ctrl
+ProgID=PUSHBUTTON.PushButtonCtrl.1
+Rect=113, 20, 135, 42
+Style=50000000h
+ID=0
+Data=915 0c 01 01 01 01 00 00 00 00 00 00 01 00 01 00 01 00 00 00 00 00 00 00 05 00 05 00 00 00 00 00 00 01 00 00 00 00 00 00 00 00 00 00 14 56 01 01 16 00 00 00 20 00 00 00 04 00 00 00 00 03 52 e3 0b 91 8f ce 11 9d e3 00 aa 00 4b b8 51 01 00 00 00 90 01 44 42 01 00 06 54 61 68 6f 6d 61 00 00 00 00 00 00 00 00 00 ff 00 ff 00 08 00 00 80 08 00 00 80 08 00 00 80 08 00 00 80 00 00 00 00 01 00 00 00 00 00 00 00 01 00 00 00 00 01 00 42 4d 06 03 00 00 00 00 00 00 36 00 00 00 28 00 00 00 10 00 00 00 0f 00 00 00 01 00 18 00 00 00 00 00 d0 02 00 00 12 0b 00 00 12 0b 00 00 00 00 00 00 00 00 00 00 b6 dd f1 95 80 70 ff 00 ff ff 00 ff 95 80 70 ff 00 ff ff 00 ff ff 00 ff b6 dd f1 95 80 70 95 80 70 95 80 70 00 00 00 95 80 70 95 80 70 00 00 00 95 80 70 95 80 70 95 80 70 95 80 70 95 80 70 95 80 70 95 80 70 ff 00 ff b6 dd f1 95 80 70 fb f6 f1 fb f6 f1 95 80 70 fb f6 f1 fb f6 f1 95 80 70 ff 00 ff b6 dd f1 95 80 70 ff 00 ff ff 00 ff 95 80 70 ff 00 ff ff 00 ff a8 d8 f3 95 80 70 95 80 70 95 80 70 00 00 00 95 80 70 95 80 70 00 00 00 ff 00 ff b6 dd f1 95 80 70 ff 00 ff ff 00 ff 95 80 70 ff 00 ff ff 00 ff 91 cf f7 95 80 70 fb f6 f1 fb f6 f1 95 80 70 fb f6 f1 fb f6 f1 95 80 70 ff 00 ff 95 80 70 95 80 70 95 80 70 95 80 70 95 80 70 95 80 70 95 80 70 91 cf f7 95 80 70 95 80 70 95 80 70 95 80 70 95 80 70 95 80 70 95 80 70 ff 00 ff 91 cf f7 91 cf f7 95 80 70 b6 dd f1 b6 dd f1 95 80 70 ff 00 ff 91 cf f7 91 cf f7 91 cf f7 91 cf f7 91 cf f7 91 cf f7 91 cf f7 91 cf f7 ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff 00 ff ff 00 ff b6 dd f1 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 ff 00 ff ff ff ff 00 00 00 00 00 00 00 00 00 00 00 00 ff ff ff ff ff ff ff 00 ff ff 00 ff b6 dd f1 84 82 84 fb f6 f1 00 00 00 fb f6 f1 84 82 84 ff 00 ff 00 00 00 cf bb a9 b0 97 84 95 80 70 59 4c 43 00 00 00 ff ff ff ff 00 ff b6 dd f1 84 82 84 fb f6 f1 fb f6 f1 00 00 00 fb f6 f1 fb f6 f1 84 82 84 00 00 00 cf bb a9 b0 97 84 95 80 70 59 4c 43 00 00 00 ff ff ff ff 00 ff b6 dd f1 84 82 84 fb f6 f1 fb f6 f1 00 00 00 fb f6 f1 fb f6 f1 84 82 84 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 ff ff ff ff 00 ff b6 dd f1 84 82 84 fb f6 f1 fb f6 f1 fb f6 f1 00 00 00 fb f6 f1 84 82 84 00 00 00 91 cf f7 80 80 80 80 80 80 91 cf f7 00 00 00 ff ff ff ff 00 ff ff 00 ff b6 dd f1 84 82 84 fb f6 f1 fb f6 f1 fb f6 f1 84 82 84 ff 00 ff ff ff ff 00 00 00 00 00 00 00 00 00 00 00 00 ff ff ff ff ff ff ff 00 ff ff 00 ff ff 00 ff b6 dd f1 84 82 84 84 82 84 84 82 84 ff 00 ff ff 00 ff ff ff ff ff ff ff 80 80 80 80 80 80 ff ff ff ff ff ff ff ff ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff
+
+Name=btnNumber_ctrl
+ProgID=PUSHBUTTON.PushButtonCtrl.1
+Rect=88, 18, 110, 40
+Style=50000000h
+ID=0
+Data=941 0c 01 01 01 01 00 00 00 00 00 1a 44 3a 5c 56 54 35 52 45 53 5c 69 63 6f 6e 73 5c 43 68 61 62 6c 36 2e 62 6d 70 01 00 01 00 01 00 00 00 00 00 00 00 05 00 05 00 00 00 00 00 00 01 00 00 00 00 00 00 00 00 00 00 14 04 01 01 16 00 00 00 16 00 00 00 04 00 00 00 00 03 52 e3 0b 91 8f ce 11 9d e3 00 aa 00 4b b8 51 01 00 00 00 90 01 44 42 01 00 06 54 61 68 6f 6d 61 00 00 00 00 00 00 00 00 00 ff 00 ff 00 08 00 00 80 08 00 00 80 08 00 00 80 08 00 00 80 00 00 00 00 01 00 00 00 00 00 00 00 01 00 00 00 00 01 00 42 4d 06 03 00 00 00 00 00 00 36 00 00 00 28 00 00 00 10 00 00 00 0f 00 00 00 01 00 18 00 00 00 00 00 d0 02 00 00 12 0b 00 00 12 0b 00 00 00 00 00 00 00 00 00 00 ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff 59 4c 43 ff 00 ff ff 00 ff 59 4c 43 59 4c 43 59 4c 43 59 4c 43 ff 00 ff ff 00 ff 59 4c 43 59 4c 43 ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff 59 4c 43 ff 00 ff ff 00 ff ff 00 ff 59 4c 43 ff 00 ff ff 00 ff ff 00 ff 59 4c 43 ff 00 ff ff 00 ff 59 4c 43 ff 00 ff ff 00 ff 00 00 00 ff 00 ff 59 4c 43 ff 00 ff ff 00 ff ff 00 ff ff 00 ff 59 4c 43 ff 00 ff ff 00 ff ff 00 ff ff 00 ff 59 4c 43 ff 00 ff ff 00 ff ff 00 ff ff 00 ff 59 4c 43 59 4c 43 ff 00 ff ff 00 ff 59 4c 43 ff 00 ff ff 00 ff 59 4c 43 ff 00 ff 59 4c 43 ff 00 ff ff 00 ff 59 4c 43 ff 00 ff ff 00 ff ff 00 ff ff 00 ff 59 4c 43 ff 00 ff ff 00 ff ff 00 ff 59 4c 43 59 4c 43 ff 00 ff ff 00 ff ff 00 ff 59 4c 43 59 4c 43 ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff ff ff 00 00 00 00 00 00 00 00 00 00 00 00 ff ff ff ff ff ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff 00 00 00 cf bb a9 b0 97 84 95 80 70 59 4c 43 00 00 00 ff ff ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff 00 00 00 cf bb a9 b0 97 84 95 80 70 59 4c 43 00 00 00 ff ff ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 ff ff ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff 00 00 00 91 cf f7 80 80 80 80 80 80 91 cf f7 00 00 00 ff ff ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff ff ff 00 00 00 00 00 00 00 00 00 00 00 00 ff ff ff ff ff ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff ff ff ff ff ff 80 80 80 80 80 80 ff ff ff ff ff ff ff ff ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff
+
+Name=btnDBText_ctrl
+ProgID=PUSHBUTTON.PushButtonCtrl.1
+Rect=63, 17, 85, 39
+Style=50000000h
+ID=0
+Data=941 0c 01 01 01 01 00 00 00 00 00 1a 44 3a 5c 56 54 35 52 45 53 5c 69 63 6f 6e 73 5c 43 68 61 62 6c 33 2e 62 6d 70 01 00 01 00 01 00 00 00 00 00 00 00 05 00 05 00 00 00 00 00 00 01 00 00 00 00 00 00 00 00 00 00 14 00 01 01 16 00 00 00 16 00 00 00 04 00 00 00 00 03 52 e3 0b 91 8f ce 11 9d e3 00 aa 00 4b b8 51 01 00 00 00 90 01 44 42 01 00 06 54 61 68 6f 6d 61 00 00 00 00 00 00 00 00 00 ff 00 ff 00 08 00 00 80 08 00 00 80 08 00 00 80 08 00 00 80 00 00 00 00 01 00 00 00 00 00 00 00 01 00 00 00 00 01 00 42 4d 06 03 00 00 00 00 00 00 36 00 00 00 28 00 00 00 10 00 00 00 0f 00 00 00 01 00 18 00 00 00 00 00 d0 02 00 00 12 0b 00 00 12 0b 00 00 00 00 00 00 00 00 00 00 ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff a9 88 6b a9 88 6b a9 88 6b 71 5b 48 71 5b 48 71 5b 48 a9 88 6b 71 5b 48 71 5b 48 ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff a9 88 6b 71 5b 48 ff 00 ff ff 00 ff ff 00 ff 71 5b 48 ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff a9 88 6b 71 5b 48 b2 db f2 a9 88 6b ff 00 ff 71 5b 48 ff 00 ff 71 5b 48 ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff a9 88 6b 71 5b 48 91 cf f7 a9 88 6b a9 88 6b a9 88 6b a9 88 6b a9 88 6b ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff a9 88 6b 71 5b 48 91 cf f7 91 cf f7 91 cf f7 9f d4 f5 b2 db f2 c3 e2 ef ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff b2 db f2 a9 88 6b ff 00 ff a9 88 6b 71 5b 48 ff 00 ff 71 5b 48 ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff 9f d4 f5 a9 88 6b ff 00 ff a9 88 6b 71 5b 48 ff 00 ff 71 5b 48 ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff 91 cf f7 a9 88 6b a9 88 6b a9 88 6b a9 88 6b a9 88 6b a9 88 6b ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff ff ff 00 00 00 00 00 00 00 00 00 00 00 00 91 cf f7 91 cf f7 91 cf f7 91 cf f7 9f d4 f5 9f d4 f5 c3 e2 ef ff 00 ff ff 00 ff ff 00 ff ff 00 ff 00 00 00 cf bb a9 b0 97 84 95 80 70 59 4c 43 00 00 00 ff ff ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff 00 00 00 cf bb a9 b0 97 84 95 80 70 59 4c 43 00 00 00 ff ff ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 ff ff ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff 00 00 00 91 cf f7 80 80 80 80 80 80 91 cf f7 00 00 00 ff ff ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff ff ff 00 00 00 00 00 00 00 00 00 00 00 00 ff ff ff ff ff ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff ff ff ff ff ff 80 80 80 80 80 80 ff ff ff ff ff ff ff ff ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff
+
+Name=btnObject_ctrl
+ProgID=PUSHBUTTON.PushButtonCtrl.1
+Rect=29, 17, 52, 39
+Style=50000000h
+ID=0
+Data=915 0c 01 01 01 01 00 00 00 00 00 00 01 00 01 00 01 00 00 00 00 00 00 00 05 00 05 00 00 00 00 00 00 01 00 00 00 00 00 00 00 00 00 00 14 56 01 01 16 00 00 00 16 00 00 00 04 00 00 00 00 03 52 e3 0b 91 8f ce 11 9d e3 00 aa 00 4b b8 51 01 00 00 00 90 01 44 42 01 00 06 54 61 68 6f 6d 61 00 00 00 00 00 00 00 00 00 ff 00 ff 00 08 00 00 80 08 00 00 80 08 00 00 80 08 00 00 80 00 00 00 00 01 00 00 00 00 00 00 00 01 00 00 00 00 01 00 42 4d 06 03 00 00 00 00 00 00 36 00 00 00 28 00 00 00 10 00 00 00 0f 00 00 00 01 00 18 00 00 00 00 00 d0 02 00 00 c4 0e 00 00 c4 0e 00 00 00 00 00 00 00 00 00 00 ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff 80 80 80 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff 80 80 80 ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff 00 00 00 ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff 80 80 80 ff ff ff 80 00 00 80 00 00 80 00 00 80 00 00 80 00 00 ff ff ff 00 00 00 ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff 80 80 80 ff ff ff ff ff ff 00 ff 00 ff ff ff ff ff 00 ff ff ff ff ff ff 00 00 00 ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff 80 80 80 ff ff ff 80 00 00 80 00 00 ff ff 00 ff ff ff 00 ff 00 ff ff ff 00 00 00 ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff 80 80 80 ff ff ff ff ff ff 00 ff 00 ff ff ff ff ff 00 ff ff ff ff ff ff 00 00 00 ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff 80 80 80 ff ff ff 80 00 00 80 00 00 80 00 00 80 00 00 80 00 00 ff ff ff 00 00 00 ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff 80 80 80 ff ff ff ff ff ff ff ff 00 ff ff ff 00 ff 00 ff ff ff ff ff ff 00 00 00 ff ff ff 00 00 00 00 00 00 00 00 00 00 00 00 ff ff ff ff ff ff 80 80 80 ff ff ff 80 00 00 80 00 00 80 00 00 80 00 00 ff ff 00 ff ff ff 00 00 00 00 00 00 ff ff 00 ff 00 00 ff 00 00 80 00 00 00 00 00 ff ff ff 80 80 80 ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff 00 00 00 00 00 00 ff ff 00 ff 00 00 ff 00 00 80 00 00 00 00 00 ff ff ff 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 ff ff ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff 00 00 00 00 ff ff 80 80 80 80 80 80 00 ff ff 00 00 00 ff ff ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff ff ff 00 00 00 00 00 00 00 00 00 00 00 00 ff ff ff ff ff ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff ff ff ff ff ff 80 80 80 80 80 80 ff ff ff ff ff ff ff ff ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff
+
+Name=txtInsertCaption
+ProgID=VTCONTROLS.VTStaticText.1
+Rect=19, 6, 145, 21
+Style=50000000h
+ID=123
+Data=261 05 00 00 00 0f 00 00 80 00 03 52 e3 0b 91 8f ce 11 9d e3 00 aa 00 4b b8 51 01 cc 00 00 bc 02 44 42 01 00 06 54 61 68 6f 6d 61 0b 00 00 00 12 00 00 80 0f 00 00 80 0f 00 00 80 00 00 00 00 00 00 00 00 01 00 00 00 00 00 00 00 01 00 00 00 00 00 00 00 01 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 0b 45 6c 65 6d 65 6e 74 0d 0a 0d 0a 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 ff ff ff ff 00 00 00 00 00 00 00 00 49 4c 01 01 00 00 02 00 04 00 01 00 01 00 ff ff ff ff 10 00 ff ff ff ff ff ff ff ff 42 4d 36 00 00 00 00 00 00 00 36 00 00 00 28 00 00 00 04 00 00 00 01 00 00 00 01 00 10 00 00 00 00 00 08 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 80 e3 ee 81 0c 60 ee 81 01 00 00 00 01 00 00 00 0f 00 00 80 00 00 00 00 01 00 00 00 00 00 00 00
+
+
+[Script]
+Dim sDate, sNumeric, sDBText, sObject, sRect, sLine, sText, sImage
+
+'***************************************************************
+'Form event handlers.
+'***************************************************************
+Sub Form_OnInitialize()
+
+	sDate = Docs.LoadString ("Database Date Field")
+	sNumeric = Docs.LoadString ("Database Numeric Field")
+	sDBText = Docs.LoadString ("Database Text Field")
+
+	Select Case Data.GetValue ("\General\ProgramName")
+	  Case "Karyo"
+		sObject = Docs.LoadString ("Image/Karyogram")
+	  Case "Metal"
+		sObject = Docs.LoadString ("Image/Statistics")
+	  Case Else
+		sObject = Docs.LoadString ("Image/Measurements/Statistics")
+	End Select
+
+	sRect = Docs.LoadString ("3D Rectangle Frame with Text")
+	sLine = Docs.LoadString ("Straight Line")
+	sText = Docs.LoadString ("Text (Form Design)")
+	sImage = Docs.LoadString ("Image")
+	
+	txtInsertCaption.Text = Docs.LoadString("Database Fields")
+	Select Case Data.GetValue ("\General\ProgramName")
+	  Case "Master"
+		MainWnd.XPSetDefaultStatusText Docs.LoadString("Form design and database editing")
+	  Case Else
+		MainWnd.XPSetDefaultStatusText Docs.LoadString("Database Form Design mode.\n\nYou can move database fields, insert new ones (use the buttons in the dialog box), delete the unnecessary ones (use the Delete key or the command in the field context menu).")
+	End Select
+
+	btnDateTime_ctrl.ToolTip = Docs.LoadString ("Database Date Field")
+	btnNumber_ctrl.ToolTip = Docs.LoadString ("Database Numeric Field")
+	
+	Select Case Data.GetValue ("\General\ProgramName")
+	  Case "Karyo"
+		btnObject_ctrl.ToolTip = Docs.LoadString ("Image/Karyogram")
+	  Case "Metal"
+		btnObject_ctrl.ToolTip = Docs.LoadString ("Image/Statistics")
+	  Case "Master"
+		btnObject_ctrl.ToolTip = Docs.LoadString ("Image/Measurements")
+		btnStatDiag.ToolTip = Docs.LoadString ("Statistics diagram")
+		btnStatTable.ToolTip = Docs.LoadString ("Statistics table")
+		btnStatLegend.ToolTip = Docs.LoadString ("Statistics legend")
+	  Case Else
+		btnObject_ctrl.ToolTip = Docs.LoadString ("Image/Measurement Table")
+	End Select
+	
+	btnDBText_ctrl.ToolTip = Docs.LoadString ("Database Text Field")
+	btnRectangl_ctrl.ToolTip = Docs.LoadString ("3D Rectangle Frame with Text")
+	btnLine_ctrl.ToolTip = Docs.LoadString ("Straight Line")
+	btnText_ctrl.ToolTip = Docs.LoadString ("Text (Form Design)")
+	btnImage_ctrl.ToolTip = Docs.LoadString ("Image")
+
+	btnUndo.ToolTip = Docs.LoadString ("Undo Operation")
+	btnRedo.ToolTip = Docs.LoadString ("Redo Operation")
+	
+	btnUndo.Disabled = True
+	btnRedo.Disabled = True
+
+	ActionState.ClearUndoList
+	
+	strDBToolbarName = LCase(Docs.LoadString("Database"))
+	For i = 0 To ToolBars.GetBarsCount - 1
+'		MsgBox "." & strDBToolbarName & ". = ." & LCase(ToolBars.GetBarName(i)) & "."
+		If LCase(Trim(ToolBars.GetBarName(i))) = strDBToolbarName Then
+'			MsgBox i
+			ToolBars.ShowBar i, 0
+		End If
+	Next
+End Sub
+
+Sub Form_OnDestroy()
+	MainWnd.XPSetDefaultStatusText " "
+
+	strDBToolbarName = LCase(Docs.LoadString("Database"))
+	For i = 0 To ToolBars.GetBarsCount - 1
+		If LCase(Trim(ToolBars.GetBarName(i))) = strDBToolbarName Then
+			ToolBars.ShowBar i, 1
+		End If
+	Next
+End Sub
+
+Sub Form_OnOK()
+End Sub
+
+Sub Form_OnCancel()
+	ActionState.TerminateCurrentAction
+	If a=0 Then
+		FormManager.PressCancel	
+		a=1
+	End If
+End Sub
+
+
+'***************************************************************
+'btnDateTime_ctrl event handlers.
+'***************************************************************
+Sub btnDateTime_ctrl_Click()
+	InsertAxControl("DateTime")
+End Sub
+'***************************************************************
+'btnNumber_ctrl event handlers.
+'***************************************************************
+Sub btnNumber_ctrl_Click()
+	InsertAxControl("Number")
+End Sub
+'***************************************************************
+'btnObject_ctrl event handlers.
+'***************************************************************
+Sub btnObject_ctrl_Click()
+	InsertAxControl("Object")
+End Sub
+Sub btnStatDiag_Click()
+	InsertAxControl("StatDiag")
+End Sub
+Sub btnStatLegend_Click()
+	InsertAxControl("StatLegend")
+End Sub
+Sub btnStatTable_Click()
+	InsertAxControl("StatTable")
+End Sub
+'***************************************************************
+'btnDBText_ctrl event handlers.
+'***************************************************************
+Sub btnDBText_ctrl_Click()
+	InsertAxControl("DBText")
+End Sub
+'***************************************************************
+'btnRectangl_ctrl event handlers.
+'***************************************************************
+Sub btnRectangl_ctrl_Click()
+	InsertAxControl("Rectangle")
+End Sub
+'***************************************************************
+'btnLine_ctrl event handlers.
+'***************************************************************
+Sub btnLine_ctrl_Click()
+	InsertAxControl("Line")
+End Sub
+'***************************************************************
+'btnText_ctrl event handlers.
+'***************************************************************
+Sub btnText_ctrl_Click()
+	InsertAxControl("Text")
+End Sub
+'***************************************************************
+'btnImage_ctrl event handlers.
+'***************************************************************
+Sub btnImage_ctrl_Click()
+	InsertAxControl("Image")
+End Sub
+
+Dim strActiveControl
+
+Function InsertAxControl(strType_ctrl)
+	'Прорисовка кнопки Undo на форме //
+	Dim Ctrl
+	Ctrl=1
+	ActionState.TerminateCurrentAction
+	Null_Action
+	
+	If strType_ctrl = strActiveControl Then
+		ActionState.TerminateCurrentAction
+		strActiveControl = ""
+		Exit Function
+	End If 
+	strActiveControl = strType_ctrl
+	btnDateTime_ctrl.ResetPressedState()
+	btnNumber_ctrl.ResetPressedState()
+	btnObject_ctrl.ResetPressedState()	
+	btnDBText_ctrl.ResetPressedState()
+	btnRectangl_ctrl.ResetPressedState()
+	btnLine_ctrl.ResetPressedState()
+	btnImage_ctrl.ResetPressedState()
+	btnText_ctrl.ResetPressedState()
+	btnObject_ctrl.ResetPressedState()
+	btnStatDiag.ResetPressedState()
+	btnStatLegend.ResetPressedState()
+	btnStatTable.ResetPressedState()
+	
+	msgBox 2
+
+	select case strType_ctrl
+		case "DateTime"
+			btnDateTime_ctrl.SetPressedState()
+			txtControlName.Text = sDate
+			AxInsertControl "DBCONTROLS.DBDateTimeCtrl.1"
+			btnDateTime_ctrl.ResetPressedState()
+		case "Number"
+			btnNumber_ctrl.SetPressedState()
+			txtControlName.Text = sNumeric
+			Call AxInsertControl ("DBCONTROLS.DBNumberCtrl.1")
+			btnNumber_ctrl.ResetPressedState()
+		case "Statistisc"
+			btnObject_ctrl.SetPressedState()
+			txtControlName.Text = sObject
+			Call AxInsertControl ("DBCONTROLS.DBObjectCtrl.1")
+			btnObject_ctrl.ResetPressedState()
+		case "Object"
+			btnObject_ctrl.SetPressedState()
+			txtControlName.Text = sObject
+			Call AxInsertControl ("DBCONTROLS.DBObjectCtrl.1")
+			btnObject_ctrl.ResetPressedState()
+		case "StatDiag"
+			btnStatDiag.SetPressedState()
+			txtControlName.Text = sObject
+			AxInsertControl "DBCONTROLS.DBObjectCtrl.1", CLng(1)
+			btnStatDiag.ResetPressedState()
+		case "StatLegend"
+			btnStatLegend.SetPressedState()
+			txtControlName.Text = sObject
+			AxInsertControl "DBCONTROLS.DBObjectCtrl.1", CLng(2)
+			btnStatLegend.ResetPressedState()
+		case "StatTable"
+			btnStatTable.SetPressedState()
+			txtControlName.Text = sObject
+			Call AxInsertControl ("DBCONTROLS.DBObjectCtrl.1", CLng(4))
+			btnStatTable.ResetPressedState()
+		case "DBText"
+			btnDBText_ctrl.SetPressedState()
+			txtControlName.Text = sDBText
+			Call AxInsertControl ("DBCONTROLS.DBTextCtrl.1")
+			btnDBText_ctrl.ResetPressedState()
+		case "Rectangle"
+			btnRectangl_ctrl.SetPressedState()
+			txtControlName.Text = sRect
+			Call AxInsertControl ("VTDESIGN.VTD3DBarCtrl.1")
+			btnRectangl_ctrl.ResetPressedState()
+		case "Line"
+			btnLine_ctrl.SetPressedState()
+			txtControlName.Text = sLine
+			Call AxInsertControl ("VTDESIGN.VTDLineCtrl.1")
+			btnLine_ctrl.ResetPressedState()
+		case "Text"
+			btnText_ctrl.SetPressedState()
+			txtControlName.Text = sText
+			Call AxInsertControl ("VTDESIGN.VTDTextCtrl.1")
+			btnText_ctrl.ResetPressedState()
+		case "Image"
+			btnImage_ctrl.SetPressedState()
+			txtControlName.Text = sImage
+			Call AxInsertControl ("VTDESIGN.VTDImageCtrl.1")
+			btnImage_ctrl.ResetPressedState()
+	End select
+	txtControlName.Text = " "
+	strActiveControl = ""
+	Null_Action		'Прорисовка кнопки Undo при нажатии Cancel когда активна кнопка AX-контрола //
+	InsertAxControl=Ctrl
+End Function
+
+'***************************************************************
+'btnUndo event handlers.
+'***************************************************************
+Sub btnUndo_Click()
+	ActionState.TerminateCurrentAction
+	ActionManager.Undo
+End Sub
+
+'***************************************************************
+'btnRedo event handlers.
+'***************************************************************
+Sub btnRedo_Click()
+	ActionState.TerminateCurrentAction
+	ActionManager.Redo
+End Sub
+
+Sub ActionState_OnActionComplete(strActionName, intActionResult)
+	If (ActionState.GetActionState("Undo") And 1) = 0 Then 
+		btnUndo.Disabled = True
+	Else 
+		btnUndo.Disabled = False
+	End If
+	If (ActionState.GetActionState("Redo") And 1) = 0 Then 
+		btnRedo.Disabled = True
+	Else 
+		btnRedo.Disabled = False
+	End If
+End Sub
+
+
+

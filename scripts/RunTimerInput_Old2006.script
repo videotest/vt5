@@ -1,0 +1,4 @@
+'resource:Timer Input#Acquire#Input a number of frames at specified intervals#Timer Input
+
+FileNew ("Image")	
+FormManager.ExecutePage "TimerInput"

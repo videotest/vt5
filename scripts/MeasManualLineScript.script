@@ -1,0 +1,4 @@
+'state:function=StateMeasManualLineScript
+
+MethodMan.RenameCurrentStep Docs.LoadString ("Manual Measurements")
+ActionState.RunInteractive "MeasManualLine"

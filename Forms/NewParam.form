@@ -1,0 +1,66 @@
+[AxForm]
+Version=1
+Size=201, 114
+Title=%New Parameter%
+
+[AXControls]
+Name=edtUserName
+ProgID=VTCONTROLS.VTEditor.1
+Rect=14, 13, 177, 38
+Style=50000000h
+ID=0
+Data=238 00 00 01 00 09 00 00 00 0c 00 00 00 09 00 00 00 00 00 00 00 00 00 00 00 90 01 00 00 00 00 00 01 00 02 02 02 4d 53 20 53 61 6e 73 20 53 65 72 69 66 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 0c 00 00 00 09 00 00 00 00 00 00 00 00 00 00 00 90 01 00 00 00 00 00 01 00 02 02 02 4d 53 20 53 61 6e 73 20 53 65 72 69 66 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 08 56 54 45 64 69 74 6f 72 01 00 08 cd e0 e7 e2 e0 ed e8 e5 01 00 00 00 00 00 04 45 64 69 74 7d 00 00 00 00 00 01 00 00 00 00 00 c8 42 00 00 00 00 08 00 00 80 05 00 00 80 08 00 00 80 0f 00 00 80 0f 00 00 80 01 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 01 00 00 00
+
+Name=edtGraphics
+ProgID=VTCONTROLS.VTEditor.1
+Rect=14, 54, 177, 79
+Style=50000000h
+ID=0
+Data=241 00 00 01 00 09 00 00 00 0c 00 00 00 09 00 00 00 00 00 00 00 00 00 00 00 90 01 00 00 00 00 00 01 00 02 02 02 4d 53 20 53 61 6e 73 20 53 65 72 69 66 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 0c 00 00 00 09 00 00 00 00 00 00 00 00 00 00 00 90 01 00 00 00 00 00 01 00 02 02 02 4d 53 20 53 61 6e 73 20 53 65 72 69 66 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 08 56 54 45 64 69 74 6f 72 01 00 0b ce e1 ee e7 ed e0 f7 e5 ed e8 e5 01 00 00 00 00 00 04 45 64 69 74 7d 00 00 00 00 00 01 00 00 00 00 00 c8 42 00 00 00 00 08 00 00 80 05 00 00 80 08 00 00 80 0f 00 00 80 0f 00 00 80 01 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 01 00 00 00
+
+
+[Script]
+
+Sub Form_OnShow()
+	edtUserName.SetFocus()
+End Sub
+Sub Form_OnInitialize()
+	
+	edtUserName.CaptionText = Docs.LoadString ("Name:")
+	edtGraphics.CaptionText = Docs.LoadString ("Symbol:")
+
+	Form.EnableButtons 26
+	edtUserName.Text = ""
+	edtGraphics.Text = ""
+	iModa = Data.Getvalue ("\StatCfg\tmp")
+	Data.Setvalue "\StatCfg\tmp" , ""
+	Data.Setvalue "\StatCfg\tmp1" , ""
+End Sub
+Sub Form_OnOK()
+	If edtUserName.Text <> "" and edtGraphics.Text <> "" Then
+		Data.Setvalue "\StatCfg\tmp" , edtUserName.Text 
+		Data.Setvalue "\StatCfg\tmp1" , edtGraphics.Text 
+	End If
+End Sub
+
+'***************************************************************
+'edtUserName event handlers.
+'***************************************************************
+Sub edtUserName_DataChange()
+	Call check_fields
+End Sub
+
+'***************************************************************
+'edtName event handlers.
+'***************************************************************
+Sub edtGraphics_DataChange()
+	Call check_fields
+End Sub
+
+Sub check_fields
+	If Trim(edtGraphics.Text) <> "" And Trim(edtUserName.Text) <> "" Then
+		Form.EnableButtons 27
+	Else
+		Form.EnableButtons 26
+	End If
+End Sub

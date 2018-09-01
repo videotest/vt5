@@ -1,0 +1,6 @@
+'resource:Mask Separation...#Objects Masks#Automatic object masks separation on image#Automatic Object Masks Separation
+'state:action=MorphDivideExBin
+
+HideDockBars 
+FormManager.ExecutePageModal "Divide"
+ShowDockBars

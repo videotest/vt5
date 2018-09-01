@@ -30,6 +30,17 @@
 #pragma warning(disable: 4786)
 
 #include "afxtempl.h"
+//#include <afxext.h>
+//#include <afxtoolbar.h>
+//#include <afxcontrolbars.h>
+//#include <afxpriv.h>
+//#include <afxtoolbarbutton.h>
+//#include <afxMDIFrameWndEx.h>
+//#include <afxtoolbarmenubutton.h>
+//#include <afxpopupmenu.h>
+//#include <afxtoolbarcomboboxbutton.h>
+//#include <afxdockablepane.h>
+//#include <afxmenuhash.h>
 
 #include <map>
 using std::map;

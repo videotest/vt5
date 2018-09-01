@@ -1,0 +1,6 @@
+'state:function=StateMeasManualAngle3PointScript
+
+MethodMan_BeforeInteractiveMethodStep "MeasManualAngle3PointScript", "group"
+ActionState.RunInteractive "MeasManualAngle3Point"
+MethodMan.StoreStepAs Docs.LoadString ("Manual Measurements")
+MethodMan.CancelStepStoring

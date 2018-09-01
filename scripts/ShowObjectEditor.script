@@ -1,0 +1,11 @@
+'resource:Object Editor#Tools#Show/hide Object Editor toolbar#Object Editor
+'state:function=IsObjectEditorToolBarVisible
+
+ActionState.TerminateCurrentAction
+BarNo = ToolBars.FindNo ( Docs.LoadString ("Object Editor"))
+ToolBars.ShowBar BarNo , 1- ToolBars.IsBarVisible( BarNo )
+If ToolBars.IsBarVisible( BarNo ) Then
+	ActionState.SetActionState "ShowObjectEditor", 1
+Else
+	ActionState.SetActionState "ShowObjectEditor", 3
+End If

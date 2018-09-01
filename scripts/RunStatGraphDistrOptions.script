@@ -1,0 +1,7 @@
+'resource:Titles...#Statistics#Titles#Titles
+'state:function=ExistStatTableOrObject
+
+If Data.GetValue("\DockBars\PageInProcessing") Then Data.SetValue "\DockBars\isPass", True
+Data.Setvalue "\StatCfg\RunForm", "distr_options"
+RunStat
+

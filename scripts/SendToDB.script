@@ -1,0 +1,12 @@
+'resource:Send to Database#Database#Send data to new database record#Send to New Database Record
+'state:function=StateImageWithActiveObjects
+
+Data.RemoveValue "\tmpDB\"
+Call send_to_db
+
+'ѕравильное название при записи методики //
+If Not Docs.IsPointerNull(MethodMan) Then
+	If MethodMan.IsRecording() Then
+		MethodMan.RenameCurrentStep  Docs.LoadString ("Send Active Elements to DB")
+	End If
+End If

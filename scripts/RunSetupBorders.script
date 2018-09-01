@@ -1,0 +1,4 @@
+'resource:Add Borders...#Image#Add borders to the image#Add Borders
+'state:action=Median
+
+FormManager.ExecuteModal  "Borders"

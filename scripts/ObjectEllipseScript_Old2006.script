@@ -1,0 +1,6 @@
+'state:function=StateObjectEllipseScript
+
+MethodMan_BeforeInteractiveMethodStep "ObjectEllipseScript", "group"
+ActionState.RunInteractive "ObjectEllipse"
+MethodMan.StoreStepAs Docs.LoadString ("Object Editor")
+MethodMan.CancelStepStoring

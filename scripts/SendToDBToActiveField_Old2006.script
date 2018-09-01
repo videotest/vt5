@@ -1,0 +1,15 @@
+'resource:To Active DB Field#Database#Send active element to active database field#Send to Active DB Field
+'state:function=StateSendToDBToActiveField
+
+Data.RemoveValue "\tmpDB\"
+Data.SetValue "\tmpDB\SendToActiveField", 1
+Data.SetValue "\tmpDB\SendToCurrent", 1
+Call send_to_db
+
+'ѕравильное название при записи методики //
+If Not Docs.IsPointerNull(MethodMan) Then
+	If MethodMan.IsRecording() Then
+		MethodMan.StoreStepAs Docs.LoadString ("Send to Active DB Field")
+		MethodMan.CancelStepStoring
+	End If
+End If

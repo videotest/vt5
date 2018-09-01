@@ -10,7 +10,7 @@
 #include <afxmt.h>
 #include "shlguid.h"
 #include "resource.h"
-#include "BCGCB.h"
+//#include "BCGCB.h"
 
 #ifdef _DEBUG
 #define new DEBUG_NEW

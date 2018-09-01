@@ -10,7 +10,7 @@
 #endif // _MSC_VER > 1000
 
 #include "DShow.h"
-//#include "qedit.h"
+#include "qedit.h"
 #include "Driver.h"
 #include "NewDocVT5Profile.h"
 

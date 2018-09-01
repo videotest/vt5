@@ -1,0 +1,20 @@
+'resource:Open Last Database...#Database#Open last used database#Open Last Database
+
+Set objDBDoc_ols = Docs.GetDocument(0, "Database")
+Set tmpFso = CreateObject("Scripting.FileSystemObject")
+
+If TypeName(objDBDoc_ols) = "Nothing" Then
+	strLastDB = Data.GetValue("\Database\LastFile")
+	If strLastDB <> "" Then
+		If tmpFso.FileExists(strLastDB) Then
+			ActionManager.FileOpen strLastDB
+		Else
+			ActionManager.OpenDataBase
+		End If
+	Else
+		ActionManager.OpenDataBase
+	End If
+End If
+
+Set objDBDoc_ols = Nothing
+Set tmpFso = Nothing

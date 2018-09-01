@@ -747,6 +747,8 @@ protected:
 	{
 		dispidShowProgress = 65L
 	};
+public:
+	afx_msg void OnNcDestroy();
 };
 
 #include "menuhash.h"

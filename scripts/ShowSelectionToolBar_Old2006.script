@@ -1,0 +1,10 @@
+'resource:Selection#Tools#Show/hide Selection bar#Selection
+
+ActionState.TerminateCurrentAction
+BarNo = ToolBars.FindNo ( Docs.LoadString ("SelectionBar"))
+ToolBars.ShowBar BarNo , 1- ToolBars.IsBarVisible( BarNo )
+If ToolBars.IsBarVisible( BarNo ) Then
+	ActionState.SetActionState "ShowSelectionToolBar", 1
+Else
+	ActionState.SetActionState "ShowSelectionToolBar", 3
+End If

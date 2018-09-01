@@ -1,0 +1,9 @@
+'resource:Fucntion Bar#Tools#Show/hide Fucntion bar#Fucntion Bar
+'state:dock=MetodicsTab
+
+BarNo = ToolBars.FindDockNo ( "MetodicsTab" )
+If ToolBars.IsDockBarVisible( BarNo ) Then
+	ToolBars.ShowDockBar BarNo , 0
+Else
+	ToolBars.ShowDockBar BarNo , 1
+End If	

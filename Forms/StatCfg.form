@@ -1,0 +1,252 @@
+[AxForm]
+Version=1
+Size=333, 165
+Title=%Configuration%
+
+[AXControls]
+Name=btnClose
+ProgID=PUSHBUTTON.PushButtonCtrl.1
+Rect=202, 111, 296, 132
+Style=50000000h
+ID=0
+Data=153 0c 01 00 01 00 00 00 00 00 00 00 01 00 01 00 01 00 00 00 00 05 c2 fb f5 ee e4 00 00 05 00 05 00 00 00 00 00 00 01 00 00 00 00 00 00 00 00 00 00 14 04 01 01 12 00 00 00 35 00 00 00 04 00 00 00 00 03 52 e3 0b 91 8f ce 11 9d e3 00 aa 00 4b b8 51 01 cc 00 00 90 01 44 42 01 00 0d 4d 53 20 53 61 6e 73 20 53 65 72 69 66 00 00 00 00 00 00 00 00 00 05 00 00 80 08 00 00 80 08 00 00 80 08 00 00 80 08 00 00 80 00 00 00 00 01 00 00 00 01 00 00 00 00 00 00 00 00 01 00
+
+Name=btnHelp
+ProgID=PUSHBUTTON.PushButtonCtrl.1
+Rect=202, 134, 296, 155
+Style=50000000h
+ID=0
+Data=155 0c 01 00 01 00 00 00 00 00 00 00 01 00 01 00 01 00 00 00 00 07 d1 ef f0 e0 e2 ea e0 00 00 05 00 05 00 00 00 00 00 00 01 00 00 00 00 00 00 00 00 00 00 14 04 01 01 12 00 00 00 35 00 00 00 04 00 00 00 00 03 52 e3 0b 91 8f ce 11 9d e3 00 aa 00 4b b8 51 01 cc 00 00 90 01 44 42 01 00 0d 4d 53 20 53 61 6e 73 20 53 65 72 69 66 00 00 00 00 00 00 00 00 00 05 00 00 80 08 00 00 80 08 00 00 80 08 00 00 80 08 00 00 80 00 00 00 00 01 00 00 00 01 00 00 00 00 00 00 00 00 01 00
+
+Name=btnDelete
+ProgID=PUSHBUTTON.PushButtonCtrl.1
+Rect=202, 82, 296, 103
+Style=50000000h
+ID=0
+Data=155 0c 01 00 01 00 00 00 00 00 00 00 01 00 01 00 01 00 00 00 00 07 d3 e4 e0 eb e8 f2 fc 00 00 05 00 05 00 00 00 00 00 00 01 00 00 00 00 00 00 00 00 00 00 14 04 01 01 12 00 00 00 35 00 00 00 04 00 00 00 00 03 52 e3 0b 91 8f ce 11 9d e3 00 aa 00 4b b8 51 01 cc 00 00 90 01 44 42 01 00 0d 4d 53 20 53 61 6e 73 20 53 65 72 69 66 00 00 00 00 00 00 00 00 00 05 00 00 80 08 00 00 80 08 00 00 80 08 00 00 80 08 00 00 80 00 00 00 00 01 00 00 00 01 00 00 00 00 00 00 00 00 01 00
+
+Name=btnLoad
+ProgID=PUSHBUTTON.PushButtonCtrl.1
+Rect=202, 58, 296, 79
+Style=50000000h
+ID=0
+Data=157 0c 01 00 01 00 00 00 00 00 00 00 01 00 01 00 01 00 00 00 00 09 c7 e0 e3 f0 f3 e7 e8 f2 fc 00 00 05 00 05 00 00 00 00 00 00 01 00 00 00 00 00 00 00 00 00 00 14 04 01 01 12 00 00 00 37 00 00 00 04 00 00 00 00 03 52 e3 0b 91 8f ce 11 9d e3 00 aa 00 4b b8 51 01 cc 00 00 90 01 44 42 01 00 0d 4d 53 20 53 61 6e 73 20 53 65 72 69 66 00 00 00 00 00 00 00 00 00 05 00 00 80 08 00 00 80 08 00 00 80 08 00 00 80 08 00 00 80 00 00 00 00 01 00 00 00 01 00 00 00 00 00 00 00 00 01 00
+
+Name=btnSave
+ProgID=PUSHBUTTON.PushButtonCtrl.1
+Rect=202, 34, 296, 55
+Style=50000000h
+ID=0
+Data=156 0c 01 00 01 00 00 00 00 00 00 00 01 00 01 00 01 00 00 00 00 08 c7 e0 ef e8 f1 e0 f2 fc 00 00 05 00 05 00 00 00 00 00 00 01 00 00 00 00 00 00 00 00 00 00 14 04 01 01 12 00 00 00 37 00 00 00 04 00 00 00 00 03 52 e3 0b 91 8f ce 11 9d e3 00 aa 00 4b b8 51 01 cc 00 00 90 01 44 42 01 00 0d 4d 53 20 53 61 6e 73 20 53 65 72 69 66 00 00 00 00 00 00 00 00 00 05 00 00 80 08 00 00 80 08 00 00 80 08 00 00 80 08 00 00 80 00 00 00 00 01 00 00 00 01 00 00 00 00 00 00 00 00 01 00
+
+Name=btnNew
+ProgID=PUSHBUTTON.PushButtonCtrl.1
+Rect=202, 10, 296, 31
+Style=50000000h
+ID=0
+Data=153 0c 01 00 01 00 00 00 00 00 00 00 01 00 01 00 01 00 00 00 00 05 cd ee e2 e0 ff 00 00 05 00 05 00 00 00 00 00 00 01 00 00 00 00 00 00 00 00 00 00 14 04 01 01 15 00 00 00 5e 00 00 00 04 00 00 00 00 03 52 e3 0b 91 8f ce 11 9d e3 00 aa 00 4b b8 51 01 cc 00 00 90 01 44 42 01 00 0d 4d 53 20 53 61 6e 73 20 53 65 72 69 66 00 00 00 00 00 00 00 00 00 05 00 00 80 08 00 00 80 08 00 00 80 08 00 00 80 08 00 00 80 00 00 00 00 01 00 00 00 01 00 00 00 00 00 00 00 00 01 00
+
+Name=lstProFile
+ProgID=VTCONTROLS.VTList.1
+Rect=34, 10, 186, 155
+Style=50000000h
+ID=0
+Data=1118 00 00 01 00 01 01 00 01 05 56 4c 69 73 74 08 00 00 00 07 00 00 00 49 4c 01 01 00 00 02 00 04 00 10 00 10 00 ff ff ff ff 05 00 ff ff ff ff ff ff ff ff 42 4d 76 00 00 00 00 00 00 00 76 00 00 00 28 00 00 00 40 00 00 00 10 00 00 00 01 00 04 00 00 00 00 00 00 02 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 80 00 00 80 00 00 00 80 80 00 80 00 00 00 80 00 80 00 80 80 00 00 c0 c0 c0 00 80 80 80 00 00 00 ff 00 00 ff 00 00 00 ff ff 00 ff 00 00 00 ff 00 ff 00 ff ff 00 00 ff ff ff 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 42 4d 3e 00 00 00 00 00 00 00 3e 00 00 00 28 00 00 00 40 00 00 00 10 00 00 00 01 00 01 00 00 00 00 00 80 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 ff ff ff 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 ff ff ff ff 00 00 00 00 00 00 00 00 01 00 00 00 01 00 ff ff 01 00 0b 00 43 42 61 73 65 43 6f 6c 75 6d 6e 00 00 05 00 00 00 0c 00 00 00 09 00 00 00 00 00 00 00 00 00 00 00 90 01 00 00 00 00 00 00 00 02 02 02 4d 53 20 53 61 6e 73 20 53 65 72 69 66 00 32 65 20 32 65 20 f4 bc 59 04 30 20 30 30 20 30 30 20 00 00 00 00 00 00 00 00 0c ca ee ed f4 e8 e3 f3 f0 e0 f6 e8 ff 02 00 00 00 87 00 00 00 01 00 00 00 00 00 00 00 01 00 00 00 00 00 00 00 01 00 00 00 ff ff ff 00 01 00 00 00 00 00 00 00 04 00 00 00 ff ff ff ff ff ff ff ff ff ff ff ff 0d 00 00 80 0e 00 00 80 0f 00 00 80 0d 00 00 80 0e 00 00 80 01 00 00 00 01 00 00 00 00 00 00 00 01 00 00 00 05 56 4c 69 73 74 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 01 00 00 00 00 00 00 00 01 00 00 00
+
+
+[Script]
+id = "StatCfg"
+Dim fso, global, sStatPath, strStatExt, rec, sDelete
+Dim NameCopy ()
+
+Set fso = CreateObject("Scripting.FileSystemObject")
+Set global = Application.GetGlobalScript("")
+sStatPath = Data.Getvalue ("\Paths\Stat")
+strStatExt = ".StatCfg"
+'***************************************************************
+'Form event handlers.
+'***************************************************************
+Sub Form_OnShow()
+End Sub
+
+Sub Form_OnInitialize()
+	Form.ShowButtons 0
+	Data.Setvalue "\SaveBackups\StatCfg" , 0
+	btnNew.ButtonText = Docs.LoadString ("Novaya")
+	btnSave.ButtonText = Docs.LoadString ("Save")
+	btnLoad.ButtonText = Docs.LoadString ("Load")
+	btnDelete.ButtonText = Docs.LoadString ("Delete")
+	btnClose.ButtonText = Docs.LoadString ("Exit")
+	btnHelp.ButtonText = Docs.LoadString ("Help")
+	sDelete = Docs.LoadString ("Delete configuration")
+
+	lstProFile.SetColumnCaption 0, Docs.LoadString ("Configuration")
+	FillListProFiles()
+End Sub
+
+Sub FillListProFiles()
+	Dim f, flist, objf 
+	Dim strName
+	rec = 1
+	ClearList()
+	If fso.FolderExists(sStatPath) Then
+		Set f = fso.GetFolder(sStatPath)
+		Set flist = f.Files
+		i = 0
+		For Each objf In flist
+			strName = global.GetNameNoExt(objf.Name)
+			If InStr(objf.Name,".StatCfg") Then
+				lstProFile.AddRow(-1)
+				lstProFile.SetCellValue 0,i, strName
+				i=i+1
+			End If
+		Next
+		ReDim NameCopy (lstProFile.GetRowCount())
+		For i=0 to  lstProFile.GetRowCount()-1
+			NameCopy(i) = lstProFile.GetCellAsString(0,i) 
+			If global.GetFileName(Data.Getvalue ("\Methods\StatCfg")) = lstProFile.GetCellAsString (0,i) Then 
+				lstProFile.SetCurentRow i
+			End If
+		Next
+	End If
+	Set f = Nothing
+	Set flist = Nothing
+	rec = 0
+End Sub
+
+Sub ClearList()
+	For i=lstProFile.GetRowCount() to  0 step -1
+		lstProFile.DeleteRow i 
+	Next
+End Sub
+'***************************************************************
+'btnSave event handlers.
+'***************************************************************
+Sub btnSave_Click()
+	strFileName = sStatPath+lstProFile.GetCellAsString (0,lstProFile.GetCurentRow())+strStatExt
+	copy_entry_to_file "\StatUI", strFileName
+	copy_entry_to_file "\StatCfg", strFileName
+	copy_entry_to_file "\Classes", strFileName	
+End Sub
+'***************************************************************
+'btnDelete event handlers.
+'***************************************************************
+sub btnDelete_Click()
+	str = lstProFile.GetCellAsString (0,lstProFile.GetCurentRow )
+	Answer = MsgBox(sDelete & " """ & str & """?", vbQuestion + vbYesNo, global.sVT)
+	If Answer = vbYes Then 			
+		str = sStatPath + str + strStatExt
+		If fso.FileExists(str) Then fso.DeleteFile str
+		FillListProFiles()
+	End If
+end sub
+
+Function copy_entry_to_file ( strSection, strFileName )
+	Dim objData
+	copy_entry_to_file = False
+
+	Set objData = CreateObject( "Data.NamedData" )
+	If fso.FileExists(strFileName) Then objData.ReadFile strFileName
+	objData.RemoveValue strSection
+	objData.CopyNamedData Data, strSection, strSection, 1
+	objData.WriteTextFile strFileName
+	Set objData = Nothing
+	copy_entry_to_file = True
+End Function
+
+'***************************************************************
+'btnNew event handlers.
+'***************************************************************
+Sub btnNew_Click()	
+	iNum = 1
+	rec = 1
+	do 
+		str = Docs.LoadString ("Novaya") + cstr(iNum)
+		iNum = iNum + 1
+	Loop While IfNameExist(str)
+	lstProFile.AddRow(-1)
+	lstProFile.SetCellValue 0,lstProFile.GetRowCount()-1, str
+	lstProFile.SetCurentRow lstProFile.GetRowCount()-1
+	btnSave_Click()
+	FillListProFiles()
+	lstProFile.SetCurentRow lstProFile.GetRowCount()-1
+	rec = 0
+End Sub
+
+'***************************************************************
+'lstProFile event handlers.
+'***************************************************************
+sub lstProFile_DataChange(nColumn, nRow)
+	Dim str
+	do While IfNameExist(lstProFile.GetCellAsString (0,nRow))
+		str = InputBox (Docs.LoadString ("This name already exist!\nPlease, change it."),Docs.LoadString ("Attention!"), lstProFile.GetCellAsString (0,nRow))
+		If str <> "" Then
+		lstProFile.SetCellValue 0,nRow, str
+		Else
+			FillListProFiles()
+			Exit Sub
+		End If		
+	Loop 
+	src = sStatPath + NameCopy(nRow) + strStatExt
+	tag = sStatPath + lstProFile.GetCellAsString (0,nRow) + strStatExt
+	global.FileCopy src,tag
+	If fso.FileExists(src) and fso.FileExists(tag) Then 
+		fso.DeleteFile src			
+		Data.Setvalue "\Methods\StatCfg" , tag
+	End If
+	FillListProFiles()
+end sub
+
+Function IfNameExist(str)
+	IfNameExist = false
+	For i=0 to lstProFile.GetRowCount()-1
+		If str = NameCopy(i) Then 
+			IfNameExist = true
+			exit for 
+		End If
+	Next	
+End Function
+
+Sub Form_OnDestroy()
+	Set fso = Nothing
+	Set global = Nothing
+End Sub
+
+
+
+'***************************************************************
+'btnLoad event handlers.
+'***************************************************************
+sub btnLoad_Click()
+	If rec = 1 Then exit sub
+	If lstProFile.GetRowCount()>0 Then	
+		str = sStatPath + lstProFile.GetCellAsString (0,lstProFile.GetCurentRow) + strStatExt
+		Data.Setvalue "\Methods\StatCfg" , str
+		global.copy_entry_to_shelldata str, "\StatUI"
+		global.copy_entry_to_shelldata str, "\StatCfg"
+		global.copy_entry_to_shelldata str, "\Classes"
+		
+		Set objStat = global.GetStatObj()
+		If not Docs.IsPointerNull(objStat) Then
+			Set objData = objStat.GetPrivateNamedData		
+			objData.CopyNamedData Data, "\StatUI", "\StatUI", 1
+			objData.CopyNamedData Data, "\StatCfg", "\StatCfg", 1
+			objData.CopyNamedData Data, "\Classes", "\Classes", 1
+			global.RebuildStat()
+			Set objData = Nothing
+		End If	
+		Set objStat = Nothing
+	End If	
+end sub
+'***************************************************************
+'btnHelp event handlers.
+'***************************************************************
+sub btnHelp_Click()
+	Application.OpenHelp "Forms", "StatCfg"
+end sub
+'***************************************************************
+'btnClose event handlers.
+'***************************************************************
+sub btnClose_Click()
+	FormManager.PressCancel
+end sub

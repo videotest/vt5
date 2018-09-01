@@ -93,12 +93,15 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <OutDir>$(SolutionDir)vt5\$(PlatformName)\$(Configuration)\</OutDir>
+    <TargetName>BCGCB464</TargetName>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <OutDir>$(SolutionDir)vt5\$(PlatformName)\$(Configuration)\</OutDir>
+    <TargetName>BCGCB464D</TargetName>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <OutDir>$(SolutionDir)vt5\$(PlatformName)\$(Configuration)\</OutDir>
+    <TargetName>BCGCB464</TargetName>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <Midl>

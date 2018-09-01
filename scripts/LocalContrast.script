@@ -1,0 +1,27 @@
+'resource:Local Contrast#Enhance#Local contrast#Local Contrast
+'state:action=AutoContrast
+
+Call LocalContrast
+
+Sub LocalContrast()
+ActionState.BeginGroupUndo "vt"
+
+MsgBox Docs.LoadString ("Click on the dark area!"), vbInformation, sVT
+
+	If ActionManager.PickColor = 0 Then
+		ActionState.EndGroupUndo 0
+		exit sub
+	End If
+	lo = data.GetValue( "\PickedColor\Value" )
+
+MsgBox Docs.LoadString ("Click on the light area!"), vbInformation, sVT
+
+	If ActionManager.PickColor = 0 Then
+		ActionState.EndGroupUndo 0
+		exit sub
+	End If
+	hi = data.GetValue( "\PickedColor\Value" )
+
+ActionManager.AutoContrast lo, hi
+ActionState.EndGroupUndo 1
+End Sub

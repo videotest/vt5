@@ -1,0 +1,8 @@
+[General]
+ClassifyProgID=ClassBase.ManualClassifier
+
+[Classes]
+ClassCount=2
+-1=(255, 255, 0),?
+0=(255,0,0),1
+1=(0,255,0),2

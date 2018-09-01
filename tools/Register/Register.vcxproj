@@ -263,6 +263,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="..\..\shell\APIHook.cpp" />
     <ClCompile Include="DirDlg.cpp" />
     <ClCompile Include="..\..\shell\Lang.cpp" />
     <ClCompile Include="..\..\common\nvskey64.c">

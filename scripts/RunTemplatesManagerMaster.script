@@ -1,0 +1,49 @@
+'resource:Print Template Manager...#Print#Manage print templates#Print Template Manager
+
+Call RunTemplatesManager_script
+
+Sub RunTemplatesManager_script
+	Dim objImageDocPrimary
+
+	Data.RemoveValue "\tmp"
+
+	Set objImageDocPrimary = Docs.GetActiveDocument("Image")
+	If TypeName(objImageDocPrimary) = "Nothing" Then
+		ActionManager.FileNew "Image"
+		Data.SetValue "\tmp\CreateImage", 1
+	Else
+		bPrimaryModifiedFlag = objImageDocPrimary.GetModifiedFlag
+	End If
+
+	HideDockBars
+
+	Call WindowSplitHor(1, "", "", -1)
+
+	bEnableApplyOld = Data.GetDefValue ("\FormManager\EnableApply", 1)
+	Data.SetValue "\FormManager\EnableApply", 0
+
+	MainWnd.SetWindowLock True, False
+	FormManager.ExecutePageModal "TemplatesManagerMaster"
+	Data.Setvalue "\FormManager\PageExecuted", 0
+	MainWnd.SetWindowLock False, True
+
+	Data.SetValue "\FormManager\EnableApply", bEnableApplyOld
+
+	ShowDockBars
+	
+	If TypeName(objImageDocPrimary) = "Nothing" Then
+		intPromtOld = Data.Getvalue("\General\PromtCloseModified")
+		Data.Setvalue "\General\PromtCloseModified", 0
+		ActionManager.FileClose
+		Data.Setvalue "\General\PromtCloseModified", intPromtOld
+	Else
+		objImageDocPrimary.SetModifiedFlag bPrimaryModifiedFlag
+		Docs.ActiveDocument = objImageDocPrimary
+		Set objImageDocPrimary = Nothing
+		
+		ActionState.ClearUndoList
+	End If
+
+	Data.RemoveValue "\tmp"
+
+End Sub

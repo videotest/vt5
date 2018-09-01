@@ -1,0 +1,11 @@
+'resource:Context Viewer#Tools#Show/hide Context Viewer#Context Viewer
+'state:dock=ContextViewer
+
+BarNo = ToolBars.FindDockNo ( "ContextViewer" )
+If ToolBars.IsDockBarVisible( BarNo ) Then
+	ToolBars.ShowDockBar BarNo , 0
+Else
+	ToolBars.ShowDockBar BarNo , 1
+End If
+
+	

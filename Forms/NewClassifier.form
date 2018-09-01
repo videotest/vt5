@@ -1,0 +1,113 @@
+[AxForm]
+Version=1
+Size=221, 157
+Title=%New Classifier%
+
+[AXControls]
+Name=frmType
+ProgID=VTDESIGN.VTD3DBarCtrl.1
+Rect=23, 24, 211, 92
+Style=50000000h
+ID=0
+Data=72 00 00 00 00 03 00 00 00 03 00 02 00 00 00 05 00 00 80 01 00 00 00 08 00 00 80 00 64 00 00 00 00 00 01 00 01 00 00 00 00 03 52 e3 0b 91 8f ce 11 9d e3 00 aa 00 4b b8 51 01 cc 00 00 90 01 44 42 01 00 05 41 72 69 61 6c
+
+Name=rdbType
+ProgID=VTRADIOBTN.VTRadioBtnCtrl.1
+Rect=37, 32, 151, 84
+Style=50000000h
+ID=0
+Data=72 03 00 00 00 03 00 00 00 04 41 75 74 6f 06 4d 61 6e 75 61 6c 12 57 69 74 68 6f 75 74 20 70 61 72 61 6d 65 74 65 72 73 ff ff ff ff 01 00 00 00 00 00 00 00 00 00 00 00 04 00 01 00 c8 0b 00 00 60 05 00 00 40 00 00 00 01
+
+Name=edtName
+ProgID=VTCONTROLS.VTEditor.1
+Rect=26, 99, 206, 121
+Style=50000000h
+ID=0
+Data=235 00 00 01 00 09 00 00 00 0c 00 00 00 09 00 00 00 00 00 00 00 00 00 00 00 90 01 00 00 00 00 00 01 00 02 02 02 4d 53 20 53 61 6e 73 20 53 65 72 69 66 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 0c 00 00 00 09 00 00 00 00 00 00 00 00 00 00 00 90 01 00 00 00 00 00 01 00 02 02 02 4d 53 20 53 61 6e 73 20 53 65 72 69 66 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 08 56 54 45 64 69 74 6f 72 01 00 05 4e 61 6d 65 3a 01 00 00 00 00 00 04 45 64 69 74 64 00 00 00 00 00 01 00 00 00 00 00 c8 42 00 00 00 00 08 00 00 80 05 00 00 80 08 00 00 80 0f 00 00 80 0f 00 00 80 01 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 01 00 00 00
+
+Name=txtSetType
+ProgID=VTCONTROLS.VTStaticText.1
+Rect=27, 9, 202, 23
+Style=50000000h
+ID=0
+Data=342 05 00 00 00 0f 00 00 80 00 03 52 e3 0b 91 8f ce 11 9d e3 00 aa 00 4b b8 51 01 cc 00 00 90 01 44 42 01 00 0d 4d 53 20 53 61 6e 73 20 53 65 72 69 66 0b 00 00 00 08 00 00 80 0f 00 00 80 0f 00 00 80 01 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 01 00 00 00 00 00 00 00 01 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 13 53 65 74 20 63 6c 61 73 73 69 66 69 65 72 20 74 79 70 65 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 ff ff ff ff 00 00 00 00 00 00 00 00 49 4c 01 01 00 00 02 00 04 00 01 00 01 00 ff ff ff ff 11 00 ff ff ff ff ff ff ff ff 42 4d 36 00 00 00 00 00 00 00 36 00 00 00 28 00 00 00 04 00 00 00 01 00 00 00 01 00 10 00 00 00 00 00 08 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 42 4d 3e 00 00 00 00 00 00 00 3e 00 00 00 28 00 00 00 04 00 00 00 01 00 00 00 01 00 01 00 00 00 00 00 04 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 ff ff ff 00 00 00 00 00 01 00 00 00 01 00 00 00 0f 00 00 80 01 00 00 00 00 00 00 00 01 00 00 00
+
+Name=txtMsg
+ProgID=VTCONTROLS.VTStaticText.1
+Rect=23, 130, 211, 147
+Style=50000000h
+ID=0
+Data=354 05 00 00 00 0f 00 00 80 00 03 52 e3 0b 91 8f ce 11 9d e3 00 aa 00 4b b8 51 01 cc 00 00 90 01 44 42 01 00 0d 4d 53 20 53 61 6e 73 20 53 65 72 69 66 0b 00 00 00 ff 00 00 00 0f 00 00 80 0f 00 00 80 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 01 00 00 00 00 00 00 00 01 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 1f 54 68 69 73 20 63 6c 61 73 73 69 66 69 65 72 20 61 6c 72 65 61 64 79 20 65 78 69 73 74 73 21 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 ff ff ff ff 00 00 00 00 00 00 00 00 49 4c 01 01 00 00 02 00 04 00 01 00 01 00 ff ff ff ff 11 00 ff ff ff ff ff ff ff ff 42 4d 36 00 00 00 00 00 00 00 36 00 00 00 28 00 00 00 04 00 00 00 01 00 00 00 01 00 10 00 00 00 00 00 08 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 42 4d 3e 00 00 00 00 00 00 00 3e 00 00 00 28 00 00 00 04 00 00 00 01 00 00 00 01 00 01 00 00 00 00 00 04 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 ff ff ff 00 00 00 00 00 01 00 00 00 01 00 00 00 0f 00 00 80 01 00 00 00 01 00 00 00 00 00 00 00
+
+
+[Script]
+
+Dim fso
+Dim global 
+Set global = Application.GetglobalScript("")
+Set fso = CreateObject("Scripting.FileSystemObject")
+
+'***************************************************************
+'Form event handlers.
+'***************************************************************
+Sub Form_OnDestroy()
+	Set global = Nothing
+	Set fso = Nothing
+End Sub
+Sub Form_OnInitialize()
+	Form.EnableButtons 26
+	rdbType.DeleteAll
+	rdbType.AddItem Docs.LoadString ("Auto")
+	rdbType.AddItem Docs.LoadString ("Manual")
+	rdbType.AddItem Docs.LoadString ("Without parameters")
+	rdbType.ReCreate
+	rdbType.ItemChecked 0
+	edtName.Text = ""
+	edtName.CaptionText Docs.LoadString ("Name:")
+	txtSetType.Text Docs.LoadString ("Set Classifier Type")
+	txtMsg.Text ""	
+End Sub
+
+Sub Form_OnShow()
+	edtName.SetFocus() 
+End Sub
+
+Sub Form_OnOK()
+	Data.Setvalue "\StatCfg\tmp", ""
+	If edtName.Text <> "" Then		
+		Str = Data.Getvalue ("\Paths\Classes") + Trim(edtName.Text) + ".class"
+		Data.Setvalue "\StatCfg\tmp", Str
+		Select Case rdbType.ItemChecked 
+			Case 0
+				global.FileCopy Data.Getvalue ("\Paths\Classes")+"a.cls", Str 
+			Case 1
+				global.FileCopy Data.Getvalue ("\Paths\Classes")+"m.cls", Str 
+			Case 2
+				global.FileCopy Data.Getvalue ("\Paths\Classes")+"wp.cls", Str 
+		End Select
+	End If
+End Sub
+
+
+
+sub rdbType_OnChangeCheck(lItem)
+	edtName.SetFocus() 
+End Sub
+
+'***************************************************************
+'edtName event handlers.
+'***************************************************************
+Sub edtName_DataChange()
+	Str = Data.Getvalue ("\Paths\Classes") + Trim(edtName.Text) + ".class"
+	If Not fso.FileExists(Str) Then
+		txtMsg.Text ""
+		If Trim(edtName.Text) = "" Then
+			Form.EnableButtons 26
+		Else
+		Form.EnableButtons 27
+		End If
+	Else
+		txtMsg.Text Docs.LoadString ("This classifier already exists!")
+		Form.EnableButtons 26
+	End If
+End Sub

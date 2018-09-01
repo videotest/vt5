@@ -1,0 +1,40 @@
+'resource:Free-Length Calibration Bar#Measurement#Free-Length Calibration Bar#Free-Length Calibration Bar
+'state:action=EditMarker
+
+
+EditMarker_Script()
+
+Sub EditMarker_Script()
+	Dim img,s,m,c
+
+	Set img = Objects.ActiveImage
+	If not Docs.IsPointerNull(img) Then 
+		If img.GetColorSystem = "RGB_AVI" Then
+		Else
+			set s = Objects.GetActiveObject( "Image" )
+			If TypeName(s.GetParent()) <> "Nothing" Then
+				Set c = s.GetParent()
+				Objects.SelectObject s, 0
+				Objects.SelectObject c, 1
+				m = 1
+			End If
+		End If			
+	End If	     
+
+	img.GetCalibration CurrentImageCoeff,CurrentImageGUID
+	UnitCoeff = Data.Getvalue ("\Units\Linear\CoeffToUnit")
+	ImgSizeX = FormatNumberEx( img.GetWidth * UnitCoeff * CurrentImageCoeff,3,0)
+
+	FloatLenght = Len(CStr(ImgSizeX - Fix(ImgSizeX))) - 2
+	intAccuracy = Data.GetDefValue("\EditMarker\Accuracy", 2)
+
+	If intAccuracy - FloatLenght < 0  Then
+		EditMarker 0, 0, 0 , FloatLenght
+	Else
+		EditMarker 0, 0, 0 , intAccuracy
+	End If
+	Set img = Nothing
+	If m Then SelectObjByName s.Name
+	set s = Nothing
+	set c = Nothing
+End Sub

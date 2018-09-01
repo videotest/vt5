@@ -14,7 +14,7 @@
 
 //#include "bcgcontrolbar.h"
 #include "bcglocalres.h"
-#include "BCGColorDialog.h"
+//#include "BCGColorDialog.h"
 #include "PropertySheetCtrl.h"
 #include "VTColorPickerCtl.h"
 #include "globals.h"

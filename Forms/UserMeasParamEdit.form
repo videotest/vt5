@@ -1,0 +1,1001 @@
+[AxForm]
+Version=1
+Size=655, 368
+Title=%User Defined Measurement Parameters%
+
+[AXControls]
+Name=btnEdit
+ProgID=PUSHBUTTON.PushButtonCtrl.1
+Rect=92, 2, 98, 7
+Style=50000000h
+ID=0
+Data=151 0c 00 01 01 00 00 00 00 00 00 00 01 00 01 00 01 00 00 00 00 03 2e 2e 2e 00 00 05 00 05 00 00 00 00 00 00 01 00 00 00 00 00 00 00 00 00 00 14 00 01 01 05 00 00 00 05 00 00 00 04 00 00 00 00 03 52 e3 0b 91 8f ce 11 9d e3 00 aa 00 4b b8 51 01 cc 00 00 90 01 44 42 01 00 0d 4d 53 20 53 61 6e 73 20 53 65 72 69 66 00 00 00 00 00 00 00 00 00 05 00 00 80 08 00 00 80 08 00 00 80 08 00 00 80 08 00 00 80 00 00 00 00 01 00 00 00 00 00 00 00 00 00 00 00 00 01 00
+
+Name=dupDispl
+ProgID=MEASCTRLS.DisplUserParamCtrl.1
+Rect=7, 8, 602, 50
+Style=50000000h
+ID=0
+Data=78 01 00 00 00 00 05 00 00 00 00 00 00 00 00 00 01 00 45 2a 00 00 34 03 00 00 0d 00 00 00 00 00 00 00 d4 d0 c8 00 00 03 52 e3 0b 91 8f ce 11 9d e3 00 aa 00 4b b8 51 01 cc 00 00 bc 02 dc 7c 01 00 0d 4d 53 20 53 61 6e 73 20 53 65 72 69 66
+
+Name=btnErase
+ProgID=PUSHBUTTON.PushButtonCtrl.1
+Rect=602, 8, 643, 50
+Style=50000000h
+ID=0
+Data=1766 0c 01 00 01 00 00 00 00 00 20 45 3a 5c 50 53 44 5c 69 63 6f 6e 73 5c 6d 61 73 74 65 72 5c 64 65 6c 50 61 72 61 6d 2e 62 6d 70 20 45 3a 5c 50 53 44 5c 69 63 6f 6e 73 5c 6d 61 73 74 65 72 5c 64 65 6c 50 61 72 61 6d 2e 62 6d 70 01 00 01 00 01 00 00 00 00 00 00 00 05 00 05 00 00 00 00 00 00 01 00 00 00 00 00 00 00 00 00 00 14 04 01 01 2a 00 00 00 29 00 00 00 04 00 00 00 00 03 52 e3 0b 91 8f ce 11 9d e3 00 aa 00 4b b8 51 01 cc 00 00 90 01 44 42 01 00 0d 4d 53 20 53 61 6e 73 20 53 65 72 69 66 00 00 00 00 00 00 00 00 00 ff 00 ff 00 08 00 00 80 08 00 00 80 08 00 00 80 08 00 00 80 00 00 00 00 01 00 00 00 01 00 00 00 01 00 00 00 00 01 00 42 4d 12 06 00 00 00 00 00 00 36 00 00 00 28 00 00 00 21 00 00 00 0f 00 00 00 01 00 18 00 00 00 00 00 dc 05 00 00 12 0b 00 00 12 0b 00 00 00 00 00 00 00 00 00 00 ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ce de e1 c4 d3 d6 ce de e1 ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff 00 ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ce de e1 a5 b2 b4 87 91 93 a5 b2 b4 ce de e1 ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ce de e1 c4 d3 d6 ce de e1 ff 00 ff 00 ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ba c8 cb 00 00 ff 4b 50 51 73 7c 7e ba c8 cb ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff c4 d3 d6 af bd c0 c4 d3 d6 ff 00 ff 00 ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff 00 00 00 00 00 ff 00 00 ff 55 5b 5d 9b a7 a9 ce de e1 ff 00 ff ff 00 ff ce de e1 c4 d3 d6 00 00 80 c4 d3 d6 ce de e1 ff 00 ff 00 ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff f3 f3 f3 bd bd bd ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff 00 00 00 00 00 ff 00 00 ff 4b 50 51 69 71 73 a5 b2 b4 ce de e1 ce de e1 a5 b2 b4 91 9c 9e ba c8 cb ff 00 ff ff 00 ff ff 00 ff 00 ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff f3 f3 f3 b4 b4 b4 78 78 78 39 39 39 00 00 00 00 00 00 ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff 00 00 00 00 00 ff 00 00 ff 4b 50 51 69 71 73 9b a7 a9 9b a7 a9 00 00 80 7d 87 89 ba c8 cb ff 00 ff ff 00 ff ff 00 ff 00 ff 00 ff f3 f3 f3 b4 b4 b4 78 78 78 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff 00 00 00 00 00 ff 00 00 ff 4b 50 51 55 5b 5d 00 00 80 00 00 80 a5 b2 b4 ce de e1 ff 00 ff ff 00 ff ff 00 ff 00 f3 f3 f3 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff 00 00 00 00 00 ff 00 00 ff 00 00 80 00 00 80 87 91 93 c4 d3 d6 ff 00 ff ff 00 ff ff 00 ff ff 00 ff 00 ff 00 ff ed ed ed ae ae ae 6f 6f 6f 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ce de e1 a5 b2 b4 00 00 00 00 00 80 00 00 80 5f 66 68 73 7c 7e a5 b2 b4 ce de e1 ff 00 ff ff 00 ff ff 00 ff 00 ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff e7 e7 e7 a8 a8 a8 66 66 66 21 21 21 00 00 00 00 00 00 ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ce de e1 ba c8 cb 9b a7 a9 00 00 00 00 00 ff 00 00 ff 00 00 80 00 00 80 7d 87 89 87 91 93 af bd c0 ce de e1 ff 00 ff ff 00 ff 00 ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff e1 e1 e1 ab ab ab ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ce de e1 a5 b2 b4 73 7c 7e 00 00 00 00 00 ff 00 00 ff a5 b2 b4 ce de e1 00 00 80 00 00 80 a5 b2 b4 9b a7 a9 af bd c0 ce de e1 ff 00 ff 00 ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ba c8 cb 00 00 00 00 00 00 00 00 ff 00 00 ff a5 b2 b4 ce de e1 ff 00 ff ff 00 ff ff 00 ff 00 00 80 af bd c0 a5 b2 b4 c4 d3 d6 ff 00 ff 00 ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff 00 00 00 00 00 ff 00 00 ff 00 00 ff ba c8 cb ce de e1 ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff 00 00 80 c4 d3 d6 ce de e1 ff 00 ff 00 ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff 00 00 00 00 00 ff ba c8 cb ce de e1 ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff 00 ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff ff 00 ff 00
+
+Name=txtSymbol
+ProgID=VTCONTROLS.VTStaticText.1
+Rect=20, 120, 89, 143
+Style=50000000h
+ID=0
+Data=327 05 00 00 00 0f 00 00 80 00 03 52 e3 0b 91 8f ce 11 9d e3 00 aa 00 4b b8 51 01 cc 00 00 90 01 44 42 01 00 05 41 72 69 61 6c 0b 00 00 00 08 00 00 80 0f 00 00 80 0f 00 00 80 01 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 01 00 00 00 00 00 00 00 01 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 0c ce e1 ee e7 ed e0 f7 e5 ed e8 e5 3a 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 ff ff ff ff 00 00 00 00 00 00 00 00 49 4c 01 01 00 00 02 00 04 00 01 00 01 00 ff ff ff ff 11 00 ff ff ff ff ff ff ff ff 42 4d 36 00 00 00 00 00 00 00 36 00 00 00 28 00 00 00 04 00 00 00 01 00 00 00 01 00 10 00 00 00 00 00 08 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 42 4d 3e 00 00 00 00 00 00 00 3e 00 00 00 28 00 00 00 04 00 00 00 01 00 00 00 01 00 01 00 00 00 00 00 04 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 ff ff ff 00 00 00 00 00 01 00 00 00 01 00 00 00 0f 00 00 80 01 00 00 00 00 00 00 00 01 00 00 00
+
+Name=Control2088
+ProgID=VTDESIGN.VTD3DBarCtrl.1
+Rect=13, 83, 311, 156
+Style=50000000h
+ID=0
+Data=72 00 00 00 00 03 00 00 00 03 00 02 00 00 00 05 00 00 80 01 00 00 00 08 00 00 80 00 64 00 00 00 00 00 01 00 01 00 00 00 00 03 52 e3 0b 91 8f ce 11 9d e3 00 aa 00 4b b8 51 01 cc 00 00 90 01 44 42 01 00 05 41 72 69 61 6c
+
+Name=btnInsert
+ProgID=PUSHBUTTON.PushButtonCtrl.1
+Rect=192, 121, 303, 144
+Style=50000000h
+ID=0
+Data=166 0c 01 00 01 00 00 00 00 00 00 00 01 00 01 00 01 00 00 00 00 12 c2 f1 f2 e0 e2 e8 f2 fc 20 e2 20 f4 ee f0 ec f3 eb f3 00 00 05 00 05 00 00 00 00 00 00 01 00 00 00 00 00 00 00 00 00 00 14 04 01 01 17 00 00 00 6f 00 00 00 04 00 00 00 00 03 52 e3 0b 91 8f ce 11 9d e3 00 aa 00 4b b8 51 01 cc 00 00 90 01 44 42 01 00 0d 4d 53 20 53 61 6e 73 20 53 65 72 69 66 00 00 00 00 00 00 00 00 00 05 00 00 80 08 00 00 80 08 00 00 80 08 00 00 80 08 00 00 80 00 00 00 00 01 00 00 00 01 00 00 00 01 00 00 00 00 01 00
+
+Name=txtSelectParam
+ProgID=VTDESIGN.VTDTextCtrl.1
+Rect=20, 95, 119, 111
+Style=50000000h
+ID=0
+Data=95 00 00 00 00 03 00 00 00 02 00 05 00 00 80 01 00 00 00 08 00 00 80 10 c2 fb e1 ee f0 20 ef e0 f0 e0 ec e5 f2 f0 e0 3a 00 00 00 00 00 00 00 00 00 01 00 01 00 00 00 00 03 52 e3 0b 91 8f ce 11 9d e3 00 aa 00 4b b8 51 01 cc 00 00 90 01 44 42 01 00 0d 4d 53 20 53 61 6e 73 20 53 65 72 69 66
+
+Name=Control2089
+ProgID=VTDESIGN.VTD3DBarCtrl.1
+Rect=14, 161, 310, 316
+Style=50000000h
+ID=0
+Data=72 00 00 00 00 03 00 00 00 03 00 02 00 00 00 05 00 00 80 01 00 00 00 08 00 00 80 00 64 00 00 00 00 00 01 00 01 00 00 00 00 03 52 e3 0b 91 8f ce 11 9d e3 00 aa 00 4b b8 51 01 cc 00 00 90 01 44 42 01 00 05 41 72 69 61 6c
+
+Name=btnLn
+ProgID=PUSHBUTTON.PushButtonCtrl.1
+Rect=222, 237, 255, 270
+Style=50000000h
+ID=0
+Data=150 0c 01 00 01 00 00 00 00 00 00 00 01 00 01 00 01 00 00 00 00 02 4c 6e 00 00 05 00 05 00 00 00 00 00 00 01 00 00 00 00 00 00 00 00 00 00 14 04 01 01 21 00 00 00 21 00 00 00 04 00 00 00 00 03 52 e3 0b 91 8f ce 11 9d e3 00 aa 00 4b b8 51 01 cc 00 00 90 01 44 42 01 00 0d 4d 53 20 53 61 6e 73 20 53 65 72 69 66 00 00 00 00 00 00 00 00 00 05 00 00 80 08 00 00 80 08 00 00 80 08 00 00 80 08 00 00 80 00 00 00 00 01 00 00 00 01 00 00 00 00 00 00 00 00 01 00
+
+Name=btnAtg
+ProgID=PUSHBUTTON.PushButtonCtrl.1
+Rect=189, 270, 222, 303
+Style=50000000h
+ID=0
+Data=151 0c 01 00 01 00 00 00 00 00 00 00 01 00 01 00 01 00 00 00 00 03 41 74 67 00 00 05 00 05 00 00 00 00 00 00 01 00 00 00 00 00 00 00 00 00 00 14 04 01 01 21 00 00 00 21 00 00 00 04 00 00 00 00 03 52 e3 0b 91 8f ce 11 9d e3 00 aa 00 4b b8 51 01 cc 00 00 90 01 44 42 01 00 0d 4d 53 20 53 61 6e 73 20 53 65 72 69 66 00 00 00 00 00 00 00 00 00 05 00 00 80 08 00 00 80 08 00 00 80 08 00 00 80 08 00 00 80 00 00 00 00 01 00 00 00 01 00 00 00 00 00 00 00 00 01 00
+
+Name=btnTg
+ProgID=PUSHBUTTON.PushButtonCtrl.1
+Rect=156, 270, 189, 303
+Style=50000000h
+ID=0
+Data=150 0c 01 00 01 00 00 00 00 00 00 00 01 00 01 00 01 00 00 00 00 02 54 67 00 00 05 00 05 00 00 00 00 00 00 01 00 00 00 00 00 00 00 00 00 00 14 04 01 01 21 00 00 00 21 00 00 00 04 00 00 00 00 03 52 e3 0b 91 8f ce 11 9d e3 00 aa 00 4b b8 51 01 cc 00 00 90 01 44 42 01 00 0d 4d 53 20 53 61 6e 73 20 53 65 72 69 66 00 00 00 00 00 00 00 00 00 05 00 00 80 08 00 00 80 08 00 00 80 08 00 00 80 08 00 00 80 00 00 00 00 01 00 00 00 01 00 00 00 00 00 00 00 00 01 00
+
+Name=btnCos
+ProgID=PUSHBUTTON.PushButtonCtrl.1
+Rect=189, 237, 222, 270
+Style=50000000h
+ID=0
+Data=151 0c 01 00 01 00 00 00 00 00 00 00 01 00 01 00 01 00 00 00 00 03 43 6f 73 00 00 05 00 05 00 00 00 00 00 00 01 00 00 00 00 00 00 00 00 00 00 14 04 01 01 21 00 00 00 21 00 00 00 04 00 00 00 00 03 52 e3 0b 91 8f ce 11 9d e3 00 aa 00 4b b8 51 01 cc 00 00 90 01 44 42 01 00 0d 4d 53 20 53 61 6e 73 20 53 65 72 69 66 00 00 00 00 00 00 00 00 00 05 00 00 80 08 00 00 80 08 00 00 80 08 00 00 80 08 00 00 80 00 00 00 00 01 00 00 00 01 00 00 00 00 00 00 00 00 01 00
+
+Name=btnSin
+ProgID=PUSHBUTTON.PushButtonCtrl.1
+Rect=156, 237, 189, 270
+Style=50000000h
+ID=0
+Data=151 0c 01 00 01 00 00 00 00 00 00 00 01 00 01 00 01 00 00 00 00 03 53 69 6e 00 00 05 00 05 00 00 00 00 00 00 01 00 00 00 00 00 00 00 00 00 00 14 04 01 01 21 00 00 00 21 00 00 00 04 00 00 00 00 03 52 e3 0b 91 8f ce 11 9d e3 00 aa 00 4b b8 51 01 cc 00 00 90 01 44 42 01 00 0d 4d 53 20 53 61 6e 73 20 53 65 72 69 66 00 00 00 00 00 00 00 00 00 05 00 00 80 08 00 00 80 08 00 00 80 08 00 00 80 08 00 00 80 00 00 00 00 01 00 00 00 01 00 00 00 00 00 00 00 00 01 00
+
+Name=btnSqrt
+ProgID=PUSHBUTTON.PushButtonCtrl.1
+Rect=255, 204, 288, 237
+Style=50000000h
+ID=0
+Data=152 0c 01 00 01 00 00 00 00 00 00 00 01 00 01 00 01 00 00 00 00 04 56 27 27 27 00 00 05 00 05 00 00 00 00 00 00 01 00 00 00 00 00 00 00 00 00 00 14 04 01 01 21 00 00 00 21 00 00 00 04 00 00 00 00 03 52 e3 0b 91 8f ce 11 9d e3 00 aa 00 4b b8 51 01 cc 00 00 90 01 44 42 01 00 0d 4d 53 20 53 61 6e 73 20 53 65 72 69 66 00 00 00 00 00 00 00 00 00 05 00 00 80 08 00 00 80 08 00 00 80 08 00 00 80 08 00 00 80 00 00 00 00 01 00 00 00 01 00 00 00 00 00 00 00 00 01 00
+
+Name=btnExp
+ProgID=PUSHBUTTON.PushButtonCtrl.1
+Rect=222, 204, 255, 237
+Style=50000000h
+ID=0
+Data=151 0c 01 00 01 00 00 00 00 00 00 00 01 00 01 00 01 00 00 00 00 03 45 78 70 00 00 05 00 05 00 00 00 00 00 00 01 00 00 00 00 00 00 00 00 00 00 14 04 01 01 21 00 00 00 21 00 00 00 04 00 00 00 00 03 52 e3 0b 91 8f ce 11 9d e3 00 aa 00 4b b8 51 01 cc 00 00 90 01 44 42 01 00 0d 4d 53 20 53 61 6e 73 20 53 65 72 69 66 00 00 00 00 00 00 00 00 00 05 00 00 80 08 00 00 80 08 00 00 80 08 00 00 80 08 00 00 80 00 00 00 00 01 00 00 00 01 00 00 00 00 00 00 00 00 01 00
+
+Name=btnRBr
+ProgID=PUSHBUTTON.PushButtonCtrl.1
+Rect=189, 204, 222, 237
+Style=50000000h
+ID=0
+Data=152 0c 01 00 01 00 00 00 00 00 00 00 01 00 01 00 01 00 00 00 00 04 2e 2e 2e 29 00 00 05 00 05 00 00 00 00 00 00 01 00 00 00 00 00 00 00 00 00 00 14 04 01 01 21 00 00 00 21 00 00 00 04 00 00 00 00 03 52 e3 0b 91 8f ce 11 9d e3 00 aa 00 4b b8 51 01 cc 00 00 90 01 44 42 01 00 0d 4d 53 20 53 61 6e 73 20 53 65 72 69 66 00 00 00 00 00 00 00 00 00 05 00 00 80 08 00 00 80 08 00 00 80 08 00 00 80 08 00 00 80 00 00 00 00 01 00 00 00 01 00 00 00 00 00 00 00 00 01 00
+
+Name=btnLBr
+ProgID=PUSHBUTTON.PushButtonCtrl.1
+Rect=156, 204, 189, 237
+Style=50000000h
+ID=0
+Data=152 0c 01 00 01 00 00 00 00 00 00 00 01 00 01 00 01 00 00 00 00 04 28 2e 2e 2e 00 00 05 00 05 00 00 00 00 00 00 01 00 00 00 00 00 00 00 00 00 00 14 04 01 01 21 00 00 00 21 00 00 00 04 00 00 00 00 03 52 e3 0b 91 8f ce 11 9d e3 00 aa 00 4b b8 51 01 cc 00 00 90 01 44 42 01 00 0d 4d 53 20 53 61 6e 73 20 53 65 72 69 66 00 00 00 00 00 00 00 00 00 05 00 00 80 08 00 00 80 08 00 00 80 08 00 00 80 08 00 00 80 00 00 00 00 01 00 00 00 01 00 00 00 00 00 00 00 00 01 00
+
+Name=btnPlus
+ProgID=PUSHBUTTON.PushButtonCtrl.1
+Rect=156, 171, 189, 204
+Style=50000000h
+ID=0
+Data=141 0c 01 00 01 00 00 00 00 00 00 00 01 00 01 00 01 00 00 00 00 01 2b 00 00 05 00 05 00 00 00 00 00 00 01 00 00 00 00 00 00 00 00 00 00 14 04 01 01 21 00 00 00 21 00 00 00 04 00 00 00 00 03 52 e3 0b 91 8f ce 11 9d e3 00 aa 00 4b b8 51 01 00 00 00 bc 02 3c 67 02 00 05 41 72 69 61 6c 00 00 00 00 00 00 00 00 00 05 00 00 80 08 00 00 80 08 00 00 80 08 00 00 80 08 00 00 80 00 00 00 00 01 00 00 00 01 00 00 00 00 00 00 00 00 01 00
+
+Name=btnMinus
+ProgID=PUSHBUTTON.PushButtonCtrl.1
+Rect=189, 171, 222, 204
+Style=50000000h
+ID=0
+Data=149 0c 01 00 01 00 00 00 00 00 00 00 01 00 01 00 01 00 00 00 00 01 2d 00 00 05 00 05 00 00 00 00 00 00 01 00 00 00 00 00 00 00 00 00 00 14 04 01 01 21 00 00 00 21 00 00 00 04 00 00 00 00 03 52 e3 0b 91 8f ce 11 9d e3 00 aa 00 4b b8 51 01 cc 00 00 90 01 44 42 01 00 0d 4d 53 20 53 61 6e 73 20 53 65 72 69 66 00 00 00 00 00 00 00 00 00 05 00 00 80 08 00 00 80 08 00 00 80 08 00 00 80 08 00 00 80 00 00 00 00 01 00 00 00 01 00 00 00 00 00 00 00 00 01 00
+
+Name=btnMultiply
+ProgID=PUSHBUTTON.PushButtonCtrl.1
+Rect=222, 171, 255, 204
+Style=50000000h
+ID=0
+Data=149 0c 01 00 01 00 00 00 00 00 00 00 01 00 01 00 01 00 00 00 00 01 2a 00 00 05 00 05 00 00 00 00 00 00 01 00 00 00 00 00 00 00 00 00 00 14 04 01 01 21 00 00 00 21 00 00 00 04 00 00 00 00 03 52 e3 0b 91 8f ce 11 9d e3 00 aa 00 4b b8 51 01 cc 00 00 90 01 44 42 01 00 0d 4d 53 20 53 61 6e 73 20 53 65 72 69 66 00 00 00 00 00 00 00 00 00 05 00 00 80 08 00 00 80 08 00 00 80 08 00 00 80 08 00 00 80 00 00 00 00 01 00 00 00 01 00 00 00 00 00 00 00 00 01 00
+
+Name=btnDivide
+ProgID=PUSHBUTTON.PushButtonCtrl.1
+Rect=255, 171, 288, 204
+Style=50000000h
+ID=0
+Data=149 0c 01 00 01 00 00 00 00 00 00 00 01 00 01 00 01 00 00 00 00 01 2f 00 00 05 00 05 00 00 00 00 00 00 01 00 00 00 00 00 00 00 00 00 00 14 04 01 01 21 00 00 00 21 00 00 00 04 00 00 00 00 03 52 e3 0b 91 8f ce 11 9d e3 00 aa 00 4b b8 51 01 cc 00 00 90 01 58 0f 02 00 0d 4d 53 20 53 61 6e 73 20 53 65 72 69 66 00 00 00 00 00 00 00 00 00 05 00 00 80 08 00 00 80 08 00 00 80 08 00 00 80 08 00 00 80 00 00 00 00 01 00 00 00 01 00 00 00 00 00 00 00 00 01 00
+
+Name=btn0
+ProgID=PUSHBUTTON.PushButtonCtrl.1
+Rect=39, 270, 105, 303
+Style=50000000h
+ID=0
+Data=149 0c 01 00 01 00 00 00 00 00 00 00 01 00 01 00 01 00 00 00 00 01 30 00 00 05 00 05 00 00 00 00 00 00 01 00 00 00 00 00 00 00 00 00 00 14 04 01 01 21 00 00 00 21 00 00 00 04 00 00 00 00 03 52 e3 0b 91 8f ce 11 9d e3 00 aa 00 4b b8 51 01 cc 00 00 90 01 44 42 01 00 0d 4d 53 20 53 61 6e 73 20 53 65 72 69 66 00 00 00 00 00 00 00 00 00 05 00 00 80 08 00 00 80 08 00 00 80 08 00 00 80 08 00 00 80 00 00 00 00 01 00 00 00 01 00 00 00 00 00 00 00 00 01 00
+
+Name=btn2
+ProgID=PUSHBUTTON.PushButtonCtrl.1
+Rect=72, 171, 105, 204
+Style=50000000h
+ID=0
+Data=149 0c 01 00 01 00 00 00 00 00 00 00 01 00 01 00 01 00 00 00 00 01 32 00 00 05 00 05 00 00 00 00 00 00 01 00 00 00 00 00 00 00 00 00 00 14 04 01 01 21 00 00 00 21 00 00 00 04 00 00 00 00 03 52 e3 0b 91 8f ce 11 9d e3 00 aa 00 4b b8 51 01 cc 00 00 90 01 44 42 01 00 0d 4d 53 20 53 61 6e 73 20 53 65 72 69 66 00 00 00 00 00 00 00 00 00 05 00 00 80 08 00 00 80 08 00 00 80 08 00 00 80 08 00 00 80 00 00 00 00 01 00 00 00 01 00 00 00 00 00 00 00 00 01 00
+
+Name=btn1
+ProgID=PUSHBUTTON.PushButtonCtrl.1
+Rect=39, 171, 72, 204
+Style=50000000h
+ID=0
+Data=149 0c 01 00 01 00 00 00 00 00 00 00 01 00 01 00 01 00 00 00 00 01 31 00 00 05 00 05 00 00 00 00 00 00 01 00 00 00 00 00 00 00 00 00 00 14 04 01 01 21 00 00 00 21 00 00 00 04 00 00 00 00 03 52 e3 0b 91 8f ce 11 9d e3 00 aa 00 4b b8 51 01 cc 00 00 90 01 44 42 01 00 0d 4d 53 20 53 61 6e 73 20 53 65 72 69 66 00 00 00 00 00 00 00 00 00 05 00 00 80 08 00 00 80 08 00 00 80 08 00 00 80 08 00 00 80 00 00 00 00 01 00 00 00 01 00 00 00 00 00 00 00 00 01 00
+
+Name=btn4
+ProgID=PUSHBUTTON.PushButtonCtrl.1
+Rect=39, 204, 72, 237
+Style=50000000h
+ID=0
+Data=149 0c 01 00 01 00 00 00 00 00 00 00 01 00 01 00 01 00 00 00 00 01 34 00 00 05 00 05 00 00 00 00 00 00 01 00 00 00 00 00 00 00 00 00 00 14 04 01 01 21 00 00 00 21 00 00 00 04 00 00 00 00 03 52 e3 0b 91 8f ce 11 9d e3 00 aa 00 4b b8 51 01 cc 00 00 90 01 44 42 01 00 0d 4d 53 20 53 61 6e 73 20 53 65 72 69 66 00 00 00 00 00 00 00 00 00 05 00 00 80 08 00 00 80 08 00 00 80 08 00 00 80 08 00 00 80 00 00 00 00 01 00 00 00 01 00 00 00 00 00 00 00 00 01 00
+
+Name=btn5
+ProgID=PUSHBUTTON.PushButtonCtrl.1
+Rect=72, 204, 105, 237
+Style=50000000h
+ID=0
+Data=149 0c 01 00 01 00 00 00 00 00 00 00 01 00 01 00 01 00 00 00 00 01 35 00 00 05 00 05 00 00 00 00 00 00 01 00 00 00 00 00 00 00 00 00 00 14 04 01 01 21 00 00 00 21 00 00 00 04 00 00 00 00 03 52 e3 0b 91 8f ce 11 9d e3 00 aa 00 4b b8 51 01 cc 00 00 90 01 44 42 01 00 0d 4d 53 20 53 61 6e 73 20 53 65 72 69 66 00 00 00 00 00 00 00 00 00 05 00 00 80 08 00 00 80 08 00 00 80 08 00 00 80 08 00 00 80 00 00 00 00 01 00 00 00 01 00 00 00 00 00 00 00 00 01 00
+
+Name=btn7
+ProgID=PUSHBUTTON.PushButtonCtrl.1
+Rect=39, 237, 72, 270
+Style=50000000h
+ID=0
+Data=149 0c 01 00 01 00 00 00 00 00 00 00 01 00 01 00 01 00 00 00 00 01 37 00 00 05 00 05 00 00 00 00 00 00 01 00 00 00 00 00 00 00 00 00 00 14 04 01 01 21 00 00 00 21 00 00 00 04 00 00 00 00 03 52 e3 0b 91 8f ce 11 9d e3 00 aa 00 4b b8 51 01 cc 00 00 90 01 44 42 01 00 0d 4d 53 20 53 61 6e 73 20 53 65 72 69 66 00 00 00 00 00 00 00 00 00 05 00 00 80 08 00 00 80 08 00 00 80 08 00 00 80 08 00 00 80 00 00 00 00 01 00 00 00 01 00 00 00 00 00 00 00 00 01 00
+
+Name=btn6
+ProgID=PUSHBUTTON.PushButtonCtrl.1
+Rect=105, 204, 138, 237
+Style=50000000h
+ID=0
+Data=149 0c 01 00 01 00 00 00 00 00 00 00 01 00 01 00 01 00 00 00 00 01 36 00 00 05 00 05 00 00 00 00 00 00 01 00 00 00 00 00 00 00 00 00 00 14 04 01 01 21 00 00 00 21 00 00 00 04 00 00 00 00 03 52 e3 0b 91 8f ce 11 9d e3 00 aa 00 4b b8 51 01 cc 00 00 90 01 44 42 01 00 0d 4d 53 20 53 61 6e 73 20 53 65 72 69 66 00 00 00 00 00 00 00 00 00 05 00 00 80 08 00 00 80 08 00 00 80 08 00 00 80 08 00 00 80 00 00 00 00 01 00 00 00 01 00 00 00 00 00 00 00 00 01 00
+
+Name=btnComma
+ProgID=PUSHBUTTON.PushButtonCtrl.1
+Rect=105, 270, 138, 303
+Style=50000000h
+ID=0
+Data=149 0c 01 00 01 00 00 00 00 00 00 00 01 00 01 00 01 00 00 00 00 01 2c 00 00 05 00 05 00 00 00 00 00 00 01 00 00 00 00 00 00 00 00 00 00 14 04 01 01 21 00 00 00 21 00 00 00 04 00 00 00 00 03 52 e3 0b 91 8f ce 11 9d e3 00 aa 00 4b b8 51 01 cc 00 00 90 01 44 42 01 00 0d 4d 53 20 53 61 6e 73 20 53 65 72 69 66 00 00 00 00 00 00 00 00 00 05 00 00 80 08 00 00 80 08 00 00 80 08 00 00 80 08 00 00 80 00 00 00 00 01 00 00 00 01 00 00 00 00 00 00 00 00 01 00
+
+Name=btn8
+ProgID=PUSHBUTTON.PushButtonCtrl.1
+Rect=72, 237, 105, 270
+Style=50000000h
+ID=0
+Data=149 0c 01 00 01 00 00 00 00 00 00 00 01 00 01 00 01 00 00 00 00 01 38 00 00 05 00 05 00 00 00 00 00 00 01 00 00 00 00 00 00 00 00 00 00 14 04 01 01 21 00 00 00 21 00 00 00 04 00 00 00 00 03 52 e3 0b 91 8f ce 11 9d e3 00 aa 00 4b b8 51 01 cc 00 00 90 01 44 42 01 00 0d 4d 53 20 53 61 6e 73 20 53 65 72 69 66 00 00 00 00 00 00 00 00 00 05 00 00 80 08 00 00 80 08 00 00 80 08 00 00 80 08 00 00 80 00 00 00 00 01 00 00 00 01 00 00 00 00 00 00 00 00 01 00
+
+Name=btn9
+ProgID=PUSHBUTTON.PushButtonCtrl.1
+Rect=105, 237, 138, 270
+Style=50000000h
+ID=0
+Data=149 0c 01 00 01 00 00 00 00 00 00 00 01 00 01 00 01 00 00 00 00 01 39 00 00 05 00 05 00 00 00 00 00 00 01 00 00 00 00 00 00 00 00 00 00 14 04 01 01 21 00 00 00 21 00 00 00 04 00 00 00 00 03 52 e3 0b 91 8f ce 11 9d e3 00 aa 00 4b b8 51 01 cc 00 00 90 01 44 42 01 00 0d 4d 53 20 53 61 6e 73 20 53 65 72 69 66 00 00 00 00 00 00 00 00 00 05 00 00 80 08 00 00 80 08 00 00 80 08 00 00 80 08 00 00 80 00 00 00 00 01 00 00 00 01 00 00 00 00 00 00 00 00 01 00
+
+Name=btn3
+ProgID=PUSHBUTTON.PushButtonCtrl.1
+Rect=105, 171, 138, 204
+Style=50000000h
+ID=0
+Data=149 0c 01 00 01 00 00 00 00 00 00 00 01 00 01 00 01 00 00 00 00 01 33 00 00 05 00 05 00 00 00 00 00 00 01 00 00 00 00 00 00 00 00 00 00 14 04 01 01 21 00 00 00 21 00 00 00 04 00 00 00 00 03 52 e3 0b 91 8f ce 11 9d e3 00 aa 00 4b b8 51 01 cc 00 00 90 01 44 42 01 00 0d 4d 53 20 53 61 6e 73 20 53 65 72 69 66 00 00 00 00 00 00 00 00 00 05 00 00 80 08 00 00 80 08 00 00 80 08 00 00 80 08 00 00 80 00 00 00 00 01 00 00 00 01 00 00 00 00 00 00 00 00 01 00
+
+Name=btnLog
+ProgID=PUSHBUTTON.PushButtonCtrl.1
+Rect=222, 270, 255, 303
+Style=50000000h
+ID=0
+Data=151 0c 01 00 01 00 00 00 00 00 00 00 01 00 01 00 01 00 00 00 00 03 4c 6f 67 00 00 05 00 05 00 00 00 00 00 00 01 00 00 00 00 00 00 00 00 00 00 14 04 01 01 21 00 00 00 21 00 00 00 04 00 00 00 00 03 52 e3 0b 91 8f ce 11 9d e3 00 aa 00 4b b8 51 01 cc 00 00 90 01 44 42 01 00 0d 4d 53 20 53 61 6e 73 20 53 65 72 69 66 00 00 00 00 00 00 00 00 00 05 00 00 80 08 00 00 80 08 00 00 80 08 00 00 80 08 00 00 80 00 00 00 00 01 00 00 00 01 00 00 00 00 00 00 00 00 01 00
+
+Name=btnX2
+ProgID=PUSHBUTTON.PushButtonCtrl.1
+Rect=255, 237, 288, 270
+Style=50000000h
+ID=0
+Data=151 0c 01 00 01 00 00 00 00 00 00 00 01 00 01 00 01 00 00 00 00 03 58 5e 32 00 00 05 00 05 00 00 00 00 00 00 01 00 00 00 00 00 00 00 00 00 00 14 04 01 01 21 00 00 00 21 00 00 00 04 00 00 00 00 03 52 e3 0b 91 8f ce 11 9d e3 00 aa 00 4b b8 51 01 cc 00 00 90 01 44 42 01 00 0d 4d 53 20 53 61 6e 73 20 53 65 72 69 66 00 00 00 00 00 00 00 00 00 05 00 00 80 08 00 00 80 08 00 00 80 08 00 00 80 08 00 00 80 00 00 00 00 01 00 00 00 01 00 00 00 00 00 00 00 00 01 00
+
+Name=btnX2Y
+ProgID=PUSHBUTTON.PushButtonCtrl.1
+Rect=255, 270, 288, 303
+Style=50000000h
+ID=0
+Data=151 0c 01 00 01 00 00 00 00 00 00 00 01 00 01 00 01 00 00 00 00 03 58 5e 59 00 00 05 00 05 00 00 00 00 00 00 01 00 00 00 00 00 00 00 00 00 00 14 04 01 01 21 00 00 00 21 00 00 00 04 00 00 00 00 03 52 e3 0b 91 8f ce 11 9d e3 00 aa 00 4b b8 51 01 cc 00 00 90 01 44 42 01 00 0d 4d 53 20 53 61 6e 73 20 53 65 72 69 66 00 00 00 00 00 00 00 00 00 05 00 00 80 08 00 00 80 08 00 00 80 08 00 00 80 08 00 00 80 00 00 00 00 01 00 00 00 01 00 00 00 00 00 00 00 00 01 00
+
+Name=ulbList
+ProgID=USERPARAMSLISTBO.UserParamsListBoCtrl.1
+Rect=343, 84, 632, 311
+Style=50000000h
+ID=0
+Data=81 01 00 00 00 0a 00 00 00 ff ff ff ff 00 00 00 00 00 00 01 00 8f 1d 00 00 d9 0d 00 00 0d 00 00 00 00 00 00 00 d4 d0 c8 00 00 03 52 e3 0b 91 8f ce 11 9d e3 00 aa 00 4b b8 51 01 cc 00 00 90 01 dc 7c 01 00 0d 4d 53 20 53 61 6e 73 20 53 65 72 69 66
+
+Name=btnDelete
+ProgID=PUSHBUTTON.PushButtonCtrl.1
+Rect=492, 323, 606, 346
+Style=50000000h
+ID=0
+Data=155 0c 01 00 01 00 00 00 00 00 00 00 01 00 01 00 01 00 00 00 00 07 d3 e4 e0 eb e8 f2 fc 00 00 05 00 05 00 00 00 00 00 00 01 00 00 00 00 00 00 00 00 00 00 14 00 01 01 17 00 00 00 72 00 00 00 04 00 00 00 00 03 52 e3 0b 91 8f ce 11 9d e3 00 aa 00 4b b8 51 01 cc 00 00 90 01 44 42 01 00 0d 4d 53 20 53 61 6e 73 20 53 65 72 69 66 00 00 00 00 00 00 00 00 00 05 00 00 80 08 00 00 80 08 00 00 80 08 00 00 80 08 00 00 80 00 00 00 00 01 00 00 00 01 00 00 00 01 00 00 00 00 01 00
+
+Name=btnAdd
+ProgID=PUSHBUTTON.PushButtonCtrl.1
+Rect=75, 323, 232, 346
+Style=50000000h
+ID=0
+Data=172 0c 01 00 01 00 00 00 00 00 00 00 01 00 01 00 01 00 00 00 00 18 c8 e7 ec e5 ed e8 f2 fc 20 f4 ee f0 ec f3 eb f3 20 f0 e0 f1 f7 e5 f2 e0 00 00 05 00 05 00 00 00 00 00 00 01 00 00 00 00 00 00 00 00 00 00 14 00 01 01 17 00 00 00 9d 00 00 00 04 00 00 00 00 03 52 e3 0b 91 8f ce 11 9d e3 00 aa 00 4b b8 51 01 cc 00 00 90 01 44 42 01 00 0d 4d 53 20 53 61 6e 73 20 53 65 72 69 66 00 00 00 00 00 00 00 00 00 05 00 00 80 08 00 00 80 08 00 00 80 08 00 00 80 08 00 00 80 00 00 00 00 01 00 00 00 01 00 00 00 01 00 00 00 00 01 00
+
+Name=txtListParam
+ProgID=VTDESIGN.VTDTextCtrl.1
+Rect=333, 56, 538, 73
+Style=50000000h
+ID=0
+Data=113 00 00 00 00 03 00 00 00 02 00 05 00 00 80 01 00 00 00 08 00 00 80 22 d1 ef e8 f1 ee ea 20 ef ee eb fc e7 ee e2 e0 f2 e5 eb fc f1 ea e8 f5 20 ef e0 f0 e0 ec e5 f2 f0 ee e2 00 00 00 00 00 00 00 00 00 01 00 01 00 00 00 00 03 52 e3 0b 91 8f ce 11 9d e3 00 aa 00 4b b8 51 01 cc 00 00 90 01 44 42 01 00 0d 4d 53 20 53 61 6e 73 20 53 65 72 69 66
+
+Name=txtEditor
+ProgID=VTDESIGN.VTDTextCtrl.1
+Rect=6, 56, 211, 73
+Style=50000000h
+ID=0
+Data=102 00 00 00 00 03 00 00 00 02 00 05 00 00 80 01 00 00 00 08 00 00 80 17 d0 e5 e4 e0 ea f2 ee f0 20 f4 ee f0 ec f3 eb 20 f0 e0 f1 f7 e5 f2 e0 00 00 00 00 00 00 00 00 00 01 00 01 00 00 00 00 03 52 e3 0b 91 8f ce 11 9d e3 00 aa 00 4b b8 51 01 cc 00 00 90 01 44 42 01 00 0d 4d 53 20 53 61 6e 73 20 53 65 72 69 66
+
+Name=cbbMeasParams
+ProgID=VTCONTROLS2.VTComboBoxCtrl2.1
+Rect=127, 92, 304, 113
+Style=50000000h
+ID=0
+Data=65 00 00 01 00 00 00 00 00 04 00 01 00 66 0f 00 00 2c 02 00 00 44 00 00 00 00 03 52 e3 0b 91 8f ce 11 9d e3 00 aa 00 4b b8 51 01 cc 00 00 90 01 44 42 01 00 0c 4d 53 20 53 68 65 6c 6c 20 44 6c 67 01
+
+Name=cbbMeasParSymbol
+ProgID=VTCONTROLS2.VTComboBoxCtrl.1
+Rect=92, 122, 191, 143
+Style=50000000h
+ID=0
+Data=69 00 00 02 00 01 00 00 00 00 00 00 00 04 00 01 00 4b 12 00 00 2c 02 00 00 44 00 00 00 00 03 52 e3 0b 91 8f ce 11 9d e3 00 aa 00 4b b8 51 01 cc 00 00 90 01 44 42 01 00 0c 4d 53 20 53 68 65 6c 6c 20 44 6c 67 01
+
+Name=Control208
+ProgID=VTDESIGN.VTD3DBarCtrl.1
+Rect=3, 74, 321, 358
+Style=50000000h
+ID=0
+Data=80 00 00 00 00 03 00 00 00 03 00 02 00 00 00 05 00 00 80 01 00 00 00 08 00 00 80 00 64 00 00 00 00 00 01 00 01 00 00 00 00 03 52 e3 0b 91 8f ce 11 9d e3 00 aa 00 4b b8 51 01 cc 00 00 90 01 44 42 01 00 0d 4d 53 20 53 61 6e 73 20 53 65 72 69 66
+
+Name=Control208
+ProgID=VTDESIGN.VTD3DBarCtrl.1
+Rect=331, 74, 643, 358
+Style=50000000h
+ID=0
+Data=80 00 00 00 00 03 00 00 00 03 00 02 00 00 00 05 00 00 80 01 00 00 00 08 00 00 80 00 64 00 00 00 00 00 01 00 01 00 00 00 00 03 52 e3 0b 91 8f ce 11 9d e3 00 aa 00 4b b8 51 01 cc 00 00 90 01 44 42 01 00 0d 4d 53 20 53 61 6e 73 20 53 65 72 69 66
+
+Name=btnNew
+ProgID=PUSHBUTTON.PushButtonCtrl.1
+Rect=370, 323, 484, 346
+Style=50000000h
+ID=0
+Data=153 0c 01 00 01 00 00 00 00 00 00 00 01 00 01 00 01 00 00 00 00 05 cd ee e2 fb e9 00 00 05 00 05 00 00 00 00 00 00 01 00 00 00 00 00 00 00 00 00 00 14 04 01 01 17 00 00 00 72 00 00 00 04 00 00 00 00 03 52 e3 0b 91 8f ce 11 9d e3 00 aa 00 4b b8 51 01 cc 00 00 90 01 44 42 01 00 0d 4d 53 20 53 61 6e 73 20 53 65 72 69 66 00 00 00 00 00 00 00 00 00 05 00 00 80 08 00 00 80 08 00 00 80 08 00 00 80 08 00 00 80 00 00 00 00 01 00 00 00 01 00 00 00 01 00 00 00 00 01 00
+
+
+[Script]
+id = "UserParamEdit"
+Dim global, sMP, sMG, NewName,Graphics, NewKey, BeginEdit, iEditLine, iAddEnable, iNew
+Dim sFuncs, iEdit, sError
+sFuncs = Array( "Exp","Sqr","Sin","Cos","Log","Tan","Atn","Log","Lg" )
+sMP = "\measurement\parameters\"
+sMG = "\measurement\groups\"
+Set global = Application.GetGlobalScript("")
+Dim START_ID 
+START_ID = 131073
+
+'***************************************************************
+'Form event handlers.
+'***************************************************************
+sub Form_OnCancel()
+	
+end sub
+
+sub Form_OnDestroy()
+	Set global = Nothing
+end sub
+
+sub Form_OnInitialize()
+'	Form.ShowButtons 9
+	sError = ""
+	iEdit = 0
+	ulbList.FirstColumnsWidth = 60
+	LoadMeasParams()
+	NewName = ""
+	Graphics = ""
+	BeginEdit = 0
+	iEditLine = -1
+	iAddEnable = 0
+	iNew = 0
+	CheckEnable()
+
+	btnAdd.ButtonText = Docs.LoadString ("Apply Changes")
+	btnDelete.ButtonText = Docs.LoadString ("Delete")
+	btnNew.ButtonText = Docs.LoadString ("New Parameter")
+	btnInsert.ButtonText = Docs.LoadString ("Insert into Formula")
+
+	btnAdd.ToolTip = Docs.LoadString ("Update Formula in Parameters List")
+	btnDelete.ToolTip = Docs.LoadString ("Delete User Defined Parameter from the List")
+	btnNew.ToolTip = Docs.LoadString ("Creat New User Defined Parameter")
+	btnInsert.ToolTip = Docs.LoadString ("Insert Selected Parameter into Formula")
+	btnErase.ToolTip = Docs.LoadString ("Delete Last Character from Formula")
+	
+	txtSymbol.Text = Docs.LoadString ("Symbol:")
+	txtEditor.Text = Docs.LoadString ("Formula Editor")
+	txtListParam.Text = Docs.LoadString ("Parameters List")
+	txtSelectParam.Text = Docs.LoadString ("Select Parameter:")
+end sub
+
+sub Form_OnOK()
+	If iAddEnable Then
+		btnAdd_Click()
+	End If
+	ReCreateUserParam()
+	ActionManager.CalcMeasResult
+	MainWnd.UpdateSystemSettings
+	ActionManager.CalcMeasResult
+end sub
+'***************************************************************
+'cgsSymbol event handlers.
+'***************************************************************
+sub cgsSymbol_OnActiveItemChange(nIdx)
+	'Place here your event handler.
+end sub
+'***************************************************************
+'ulbList event handlers.
+'***************************************************************
+sub ulbList_OnActiveItemChange(nIdx)
+	BeginEdit = 0
+	iAddEnable = 0
+	iEditLine = nIdx
+	iNew = 0
+	str = ulbList.GetParamSection ( nIdx )
+	dupDispl.Expression = Data.Getvalue (str+"\ExprString")		
+	NewName = Data.Getvalue (str+"\Username")
+	CheckEnable()
+end sub
+
+
+'***************************************************************
+'btn1 event handlers.
+'***************************************************************
+sub btn1_Click()
+	dupDispl.Expression = dupDispl.Expression + "1"
+	drw()
+end sub
+'***************************************************************
+'btn2 event handlers.
+'***************************************************************
+sub btn2_Click()
+	dupDispl.Expression = dupDispl.Expression + "2"
+	drw()
+end sub
+'***************************************************************
+'btn3 event handlers.
+'***************************************************************
+sub btn3_Click()
+	dupDispl.Expression = dupDispl.Expression + "3"
+	drw()
+end sub
+'***************************************************************
+'btnPlus event handlers.
+'***************************************************************
+sub btnPlus_Click()
+	dupDispl.Expression = dupDispl.Expression + "+"
+	drw()
+end sub
+'***************************************************************
+'btn4 event handlers.
+'***************************************************************
+sub btn4_Click()
+	dupDispl.Expression = dupDispl.Expression + "4"
+	drw()
+end sub
+'***************************************************************
+'btn5 event handlers.
+'***************************************************************
+sub btn5_Click()
+	dupDispl.Expression = dupDispl.Expression + "5"
+	drw()
+end sub
+'***************************************************************
+'btn6 event handlers.
+'***************************************************************
+sub btn6_Click()
+	dupDispl.Expression = dupDispl.Expression + "6"
+	drw()
+end sub
+'***************************************************************
+'btnMinus event handlers.
+'***************************************************************
+sub btnMinus_Click()
+	dupDispl.Expression = dupDispl.Expression + "-"
+	drw()
+end sub
+'***************************************************************
+'btn7 event handlers.
+'***************************************************************
+sub btn7_Click()
+	dupDispl.Expression = dupDispl.Expression + "7"
+	drw()
+end sub
+'***************************************************************
+'btn8 event handlers.
+'***************************************************************
+sub btn8_Click()
+	dupDispl.Expression = dupDispl.Expression + "8"
+	drw()
+end sub
+'***************************************************************
+'btn9 event handlers.
+'***************************************************************
+sub btn9_Click()
+	dupDispl.Expression = dupDispl.Expression + "9"
+	drw()
+end sub
+'***************************************************************
+'btnMultiply event handlers.
+'***************************************************************
+sub btnMultiply_Click()
+	dupDispl.Expression = dupDispl.Expression + "*"
+	drw()
+end sub
+'***************************************************************
+'btn0 event handlers.
+'***************************************************************
+sub btn0_Click()
+	dupDispl.Expression = dupDispl.Expression + "0"
+	drw()
+end sub
+'***************************************************************
+'btnComma event handlers.
+'***************************************************************
+sub btnComma_Click()
+	dupDispl.Expression = dupDispl.Expression + "."
+	drw()
+end sub
+'***************************************************************
+'btnPlusMinus event handlers.
+'***************************************************************
+sub btnPlusMinus_Click()
+	dupDispl.Expression = dupDispl.Expression + "0"
+	drw()
+end sub
+'***************************************************************
+'btnDivide event handlers.
+'***************************************************************
+sub btnDivide_Click()
+	dupDispl.Expression = dupDispl.Expression + "/"
+	drw()
+end sub
+
+Sub drw()
+	BeginEdit = 0
+	iAddEnable = 1
+	CheckEnable()
+End Sub
+
+'***************************************************************
+'btnAdd event handlers.
+'***************************************************************
+sub btnAdd_Click()
+	str = dupDispl.GetLastError
+	If str <> Docs.LoadString("No errors") Then
+		MsgBox str, vbOkOnly, Docs.LoadString ("Error!")
+		exit sub
+	End If
+
+'	If NewName <> "" Then
+'		For i=0 to ulbList.GetItemCount-1
+'			str = ulbList.GetParamSection(i)
+'			gr = Data.Getvalue (str + "\UserName")
+'			If gr = NewName Then
+'				iEditLine = i
+'				exit for
+'			End If
+'		Next
+'	End If
+	If iEditLine >= 0 Then
+		str = ulbList.GetParamSection(iEditLine)
+		dupDispl.Draw()
+		Data.Setvalue str + "\ExprString", dupDispl.Expression
+		If iEdit = 1 Then 
+			dupDispl.Draw()
+			dupDispl.Expression = " "
+			dupDispl.Draw()
+			dupDispl.Expression = Data.Getvalue (str+"\ExprString")
+			iEdit = 0
+		End If		
+		ulbList.Refresh()
+		iAddEnable = 0
+		CheckEnable()
+		ReCreateUserParam()
+		LoadMeasParams()
+		exit sub
+	else
+		str = sMP + NewName 
+		Data.Setvalue sMP+ NewName + "\Key", CStr(NewKey)
+		Data.Setvalue sMP+ NewName + "\Enable",1
+		Data.Setvalue sMP+ NewName + "\UserName", NewName
+		Data.Setvalue sMP+ NewName + "\ExprString","{"+CStr( NewKey )+"}="
+		Data.Setvalue sMP+ NewName + "\GreekSymbol",-1
+		dupDispl.Expression = "{"+CStr( NewKey )+"}="
+	End If
+	ulbList.Refresh()
+	dupDispl.Draw()
+	ulbList.ActiveItem = ulbList.GetItemCount()-1
+	ulbList_OnActiveItemChange(ulbList.GetItemCount()-1)
+	iAddEnable = 0
+	CheckEnable()
+	LoadMeasParams()
+end sub
+
+'***************************************************************
+'btnNew event handlers.
+'***************************************************************
+sub btnNew_Click()
+	Data.Setvalue "\StatCfg\tmp",1
+	FormManager.ExecuteModal "NewParam"
+	NewName = Data.Getvalue ("\StatCfg\tmp")
+	Graphics = Data.Getvalue ("\StatCfg\tmp1")
+	If NewName = "" Then Exit Sub
+	If MeasParamExist(NewName,Graphics) Then Exit Sub
+	NewKey = NewID()
+	Data.Setvalue sMP+ NewName + "\Key", CStr(NewKey)
+	Data.Setvalue sMP+ NewName + "\Enable",1
+	Data.Setvalue sMP+ NewName + "\UserName", NewName
+	Data.Setvalue sMP+ NewName + "\Graphics", Graphics
+	Data.Setvalue sMP+ NewName + "\Format","%0.3f"
+	Data.Setvalue sMP+ NewName + "\ExprString","{"+CStr( NewKey )+"}="
+	Data.Setvalue sMP+ NewName + "\GreekSymbol",-1
+	dupDispl.Expression = "{"+CStr( NewKey )+"}="
+	dupDispl.Draw()
+	iNew = 1
+	drw()
+	ulbList.Refresh()
+	ulbList.ActiveItem = ulbList.GetItemCount()-1
+	iEditLine = ulbList.ActiveItem
+	LoadMeasParams()
+end sub
+
+sub LoadMeasParams()
+	tmp = Data.GetSection()
+	cbbMeasParams.DeleteContents
+	cbbMeasParSymbol.DeleteContents
+	Data.SetSection sMP
+	ItemsCount = Data.GetEntriesCount
+	n = 0
+	For i=ItemsCount-1 to 0 step -1
+		Data.SetSection sMP
+		ID = Data.GetEntryName(i)
+		If ID <> "" Then		
+			key = Data.Getvalue (sMP + ID + "\Key")
+			If key = START_ID-1 or key = "" Then
+				Data.RemoveValue sMP + ID 			
+				ItemsCount = ItemsCount - 1
+			End If
+		End If
+	next
+	n=0
+	Data.SetSection sMG
+	ItemsCount = Data.GetEntriesCount
+	For i=0 to ItemsCount -1 
+		Data.SetSection sMG
+		ID = Data.GetEntryName(i)
+		If ID <> "Extend" Then		
+			Data.SetSection sMG + ID
+			ItemsCountInside = Data.GetEntriesCount
+			For j=0 to ItemsCountInside-1
+				par = Data.GetEntryName(j)
+				UserName = Data.Getvalue (sMP + par+"\UserName")
+				key = Data.Getvalue (sMP + par+"\Key")
+				cbbMeasParams.InsertString n, UserName				
+				cbbMeasParSymbol.InsertString n, global.GetParamGraphicsName(key)
+				n = n + 1
+			Next	
+		End If
+	Next
+	
+	cbbMeasParams.SetSel 0
+	cbbMeasParSymbol.SetSel 0
+	cbbMeasParams_OnSelectChange()
+	ulbList.Refresh() 
+	Data.SetSection tmp
+	ReCreateUserParam()
+end sub
+
+'***************************************************************
+'cbbMeasParams event handlers.
+'***************************************************************
+sub cbbMeasParams_OnSelectChange()
+	key = global.GetParamKey (cbbMeasParams.GetString(cbbMeasParams.GetSel))
+	cbbMeasParSymbol.SetSel cbbMeasParams.GetSel()
+end sub
+
+'***************************************************************
+'btnInsert event handlers.
+'***************************************************************
+sub btnInsert_Click()
+	key = global.GetParamKey (cbbMeasParams.GetString(cbbMeasParams.GetSel))
+	dupDispl.Expression = dupDispl.Expression + "{"+cstr(key)+"}"
+	drw()
+end sub
+
+'***************************************************************
+'btnErase event handlers.
+'***************************************************************
+sub btnErase_Click()
+	s = dupDispl.Expression
+	l = len(s)
+	a = mid(s,l)
+
+	If a = "=" Then
+		BeginEdit = 1
+		CheckEnable()
+		exit sub
+	End If
+	For i=0 to UBound(sFuncs)
+		If l - InStrRev(s,sFuncs(i)) < 4 Then
+			s = left(s,l-Len(sFuncs(i))-1)
+			If s = "" Then s = " "
+			dupDispl.Expression = s
+		End If
+		GoOut = 1
+	Next
+	If not GoOut Then
+		If a <> "}" Then
+			s = left(s,l-1)
+			If s = "" Then s = " "
+			dupDispl.Expression = s
+		else
+			l = InStrRev(s, "{")
+			s = left(s,l-1)
+			If s = "" Then s = " "
+			dupDispl.Expression = s
+		End If
+	End If
+	l = len(s)
+	a = mid(s,l)
+	If a = "=" Then BeginEdit = 1
+	iAddEnable = 1
+	CheckEnable()
+end sub
+
+Sub CheckEnable()
+	sError = dupDispl.GetLastError
+'	If edtGraphics.Text = "" Then
+'		edtGraphics.Disabled = 1
+'		txtGrafics.Disabled = 1
+'	Else
+'		edtGraphics.Disabled = 0
+'		txtGrafics.Disabled = 0
+'	End If
+	If dupDispl.Expression = " " or dupDispl.Expression = "" or BeginEdit Then
+		btnErase.Disabled = 1
+		btnEdit.Disabled = 1
+	else
+		btnErase.Disabled = 0
+		btnEdit.Disabled = 0
+	End If
+	If iAddEnable and not BeginEdit and sError = Docs.LoadString("No errors") Then
+		btnAdd.Disabled = 0
+	Else
+		btnAdd.Disabled = 1
+	End If
+	If ulbList.ActiveItem = -1 Then
+		btnDelete.Disabled = 1
+	Else
+		btnDelete.Disabled = 0
+	End If
+	If iNew or iEditLine>=0 Then
+		btnInsert.Disabled = 0
+		btn0.Disabled = 0
+		btn1.Disabled = 0
+		btn2.Disabled = 0
+		btn3.Disabled = 0
+		btn4.Disabled = 0
+		btn5.Disabled = 0
+		btn6.Disabled = 0
+		btn7.Disabled = 0
+		btn8.Disabled = 0
+		btn9.Disabled = 0
+		btnTg.Disabled = 0
+		btnAtg.Disabled = 0
+		btnSin.Disabled = 0
+		btnCos.Disabled = 0
+		btnX2.Disabled = 0
+		btnLn.Disabled = 0
+		btnLog.Disabled = 0
+		btnSqrt.Disabled = 0
+		btnExp.Disabled = 0
+		btnRBr.Disabled = 0
+		btnLBr.Disabled = 0
+		btnPlus.Disabled = 0
+		btnMinus.Disabled = 0
+		btnMultiply.Disabled = 0
+		btnDivide.Disabled = 0
+		btnX2Y.Disabled = 0
+	Else
+		btnInsert.Disabled = 1
+		btn0.Disabled = 1
+		btn1.Disabled = 1
+		btn2.Disabled = 1
+		btn3.Disabled = 1
+		btn4.Disabled = 1
+		btn5.Disabled = 1
+		btn6.Disabled = 1
+		btn7.Disabled = 1
+		btn8.Disabled = 1
+		btn9.Disabled = 1
+		btnTg.Disabled = 1
+		btnAtg.Disabled = 1
+		btnSin.Disabled = 1
+		btnCos.Disabled = 1
+		btnX2.Disabled = 1
+		btnLn.Disabled = 1
+		btnLog.Disabled = 1
+		btnSqrt.Disabled = 1
+		btnExp.Disabled = 1
+		btnRBr.Disabled = 1
+		btnLBr.Disabled = 1
+		btnPlus.Disabled = 1
+		btnMinus.Disabled = 1
+		btnMultiply.Disabled = 1
+		btnDivide.Disabled = 1
+		btnX2Y.Disabled = 1
+	End If
+End Sub
+
+'***************************************************************
+'btnDelete event handlers.
+'***************************************************************
+sub btnDelete_Click()
+	str = ulbList.GetParamSection ( ulbList.ActiveItem )
+	name = Data.Getvalue (str+"\UserName")
+	str1 = (Docs.LoadString ("Parameter") + " """ + name + """ " + Docs.LoadString ("will be deleted!"))
+	Answer = MsgBox (str1 + vbLf + Docs.LoadString ("Are you sure?"), vbYesNo+vbDefaultButton2,Docs.LoadString ("Delete Parameter"))
+	If Answer = vbYes Then
+		Data.RemoveValue str
+		str = "\measurement\groups\"+Docs.LoadString("User Defined")+ "\"+name
+		Data.RemoveValue str
+		ulbList.Refresh()
+		ulbList.ActiveItem = ulbList.GetItemCount()-1
+		ulbList_OnActiveItemChange ulbList.GetItemCount()-1
+	End If
+	MainWnd.UpdateSystemSettings
+	CheckEnable()
+	LoadMeasParams()
+end sub
+
+'***************************************************************
+'btnLBr event handlers.
+'***************************************************************
+sub btnLBr_Click()
+	dupDispl.Expression = dupDispl.Expression + "("
+	drw()
+end sub
+'***************************************************************
+'btnRBr event handlers.
+'***************************************************************
+sub btnRBr_Click()
+	dupDispl.Expression = dupDispl.Expression + ")"
+	drw()
+end sub
+'***************************************************************
+'btnExp event handlers.
+'***************************************************************
+sub btnExp_Click()
+	dupDispl.Expression = dupDispl.Expression + "Exp("
+	drw()
+end sub
+'***************************************************************
+'btnSqrt event handlers.
+'***************************************************************
+sub btnSqrt_Click()
+	dupDispl.Expression = dupDispl.Expression + "Sqr("
+	drw()
+end sub
+'***************************************************************
+'btnSin event handlers.
+'***************************************************************
+sub btnSin_Click()
+	dupDispl.Expression = dupDispl.Expression + "Sin("
+	drw()
+end sub
+'***************************************************************
+'btnCos event handlers.
+'***************************************************************
+sub btnCos_Click()
+	dupDispl.Expression = dupDispl.Expression + "Cos("
+	drw()
+end sub
+'***************************************************************
+'btnX2 event handlers.
+'***************************************************************
+sub btnX2_Click()
+	dupDispl.Expression = dupDispl.Expression + "^2"
+	drw()
+end sub
+'***************************************************************
+'btnTg event handlers.
+'***************************************************************
+sub btnTg_Click()
+	dupDispl.Expression = dupDispl.Expression + "Tan("
+	drw()
+end sub
+'***************************************************************
+'btnAtg event handlers.
+'***************************************************************
+sub btnAtg_Click()
+	dupDispl.Expression = dupDispl.Expression + "Atn("
+	drw()
+end sub
+'***************************************************************
+'btnLn event handlers.
+'***************************************************************
+sub btnLn_Click()
+	dupDispl.Expression = dupDispl.Expression + "Log("
+	drw()
+end sub
+'***************************************************************
+'btnLog event handlers.
+'***************************************************************
+sub btnLog_Click()
+	dupDispl.Expression = dupDispl.Expression + "Lg("
+	drw()
+end sub
+'***************************************************************
+'btnX2Y event handlers.
+'***************************************************************
+sub btnX2Y_Click()
+	dupDispl.Expression = dupDispl.Expression + "^"
+	drw()
+end sub
+
+
+Function NewID()
+	tmp = Data.GetSection()
+	Data.SetSection sMP
+	iTotal = Data.GetEntriesCount
+	NewID = START_ID - 1
+	already = 0
+	do	
+		NewID = NewID + 1
+		already = 0
+		For i=0 To iTotal-1
+			pName = Data.GetEntryName(i)
+			key = Data.Getvalue (sMP + pName + "\Key")
+			If cstr(key) = cstr(NewID) Then 
+				already =1
+				Exit for
+			End If
+		Next
+	Loop while already = 1
+	Data.SetSection tmp
+End Function
+
+Function MeasParamExist(un,gr)
+	Data.SetSection sMP
+	pCount = Data.GetEntriesCount
+	For i=0 To pCount-1
+		id = Data.GetEntryName(i)
+		idgr = Data.Getvalue (sMP + id + "\Graphics")
+		If id = un Then
+			If idgr = "" Then
+				Data.RemoveValue sMP + id
+			else
+			MeasParamExist = true
+			MsgBox Docs.LoadString ("This parameter already exists!"), vbOkOnly, Docs.LoadString ("Error!")
+			Exit Function
+			End If
+		End If
+		If idgr = gr Then
+			MeasParamExist = true
+			MsgBox Docs.LoadString ("This parameter symbol already exists!"), vbOkOnly, Docs.LoadString ("Error!")
+			Exit Function
+		End If
+	next
+	MeasParamExist = false
+End Function
+
+Sub ReCreateUserParam()
+	tmp = Data.GetSection()
+	Data.RemoveValue "\measurement\groups\"+Docs.LoadString("User Defined")
+	MainWnd.UpdateSystemSettings
+	Data.SetSection sMP
+	ItemsCount = Data.GetEntriesCount
+	For i=0 to ItemsCount-1
+		Data.SetSection sMP
+		ID = Data.GetEntryName(i)
+		key = Data.Getvalue (sMP + ID + "\Key")
+		If key>=START_ID Then		
+		str = Data.Getvalue (sMP + ID + "\ExprString")
+		If CDbl(key)>=START_ID and CDbl(key)<196609 And InStr(str,"#")=0 Then
+			Data.Setvalue "\measurement\groups\" + Docs.LoadString("User Defined") + "\" + ID, 1
+			End If
+		End If
+	Next		
+	Data.SetSection tmp
+End Sub
+
+'***************************************************************
+'btnEdit event handlers.
+'***************************************************************
+sub btnEdit_Click()
+	dupDispl.Expression = inputbox (Docs.LoadString("Attention! Incorrect syntax..."), Docs.LoadString("Edit Formula"), dupDispl.Expression)
+	iAddEnable = 1
+	CheckEnable()
+end sub
+
+'***************************************************************
+'cbbMeasParSymbol event handlers.
+'***************************************************************
+sub cbbMeasParSymbol_OnSelectChange()
+	cbbMeasParams.SetSel cbbMeasParSymbol.GetSel()
+end sub
+sub cbbMeasParSymbol_OnChange()
+	Dim n
+	n = cbbMeasParams.GetSel()
+	If cbbMeasParSymbol.GetText() <> "" Then 	
+		iEdit = 1
+		key = global.GetParamKey (cbbMeasParams.GetString(cbbMeasParams.GetSel))
+		MainName = global.GetParamMainName(key)	
+		Data.Setvalue sMP + MainName + "\Graphics",cbbMeasParSymbol.GetText()
+		ulbList.Refresh()
+		dupDispl.Expression = Data.Getvalue (str+"\ExprString")		
+		dupDispl.Draw()
+		cbbMeasParSymbol.ReplaceString n, cbbMeasParSymbol.GetText()
+		cbbMeasParSymbol.SetSel n
+	End If
+end sub
+
+
+
+

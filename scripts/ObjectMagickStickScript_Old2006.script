@@ -1,0 +1,6 @@
+'state:function=StateObjectMagickStickScript
+
+MethodMan_BeforeInteractiveMethodStep "ObjectMagickStickScript", "group"
+ActionState.RunInteractive "ObjectMagickStick"
+MethodMan.StoreStepAs Docs.LoadString ("Object Editor")
+MethodMan.CancelStepStoring

@@ -1,0 +1,4 @@
+'resource:New Column...#Measurement#Add new column to measurement data table#New Column
+'state:function=ObjectListState
+
+FormManager.ExecutePage "CreateParam"

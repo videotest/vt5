@@ -1,0 +1,3 @@
+If ActionManager.InputImage (1,4,1) Then
+	Data.Setvalue "\Input\MethodicDevice",Data.Getvalue ("\Input\Device")
+End If

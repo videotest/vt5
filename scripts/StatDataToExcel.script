@@ -1,0 +1,144 @@
+'resource:Statistical Table to MS Excel#Measurement#Send active statistical table to MS Excel#Send Statistical Table to MS Excel
+'state:function=StatObjectView
+
+Option Explicit 
+Dim STAT_PARAMS_FIRST_KEY
+STAT_PARAMS_FIRST_KEY = &h30002
+Dim STAT_USER_PARAMS_LAST_KEY
+STAT_USER_PARAMS_LAST_KEY=&h50001
+Dim VISIBLE_IN_TABLE
+VISIBLE_IN_TABLE = 2
+
+Dim params
+Set params = CreateObject("Scripting.Dictionary")
+Dim stat
+Set stat=GetStatObj()
+dim ND
+set ND=stat.GetPrivateNamedData
+Dim LVisible, userName, key, TableOrder
+Dim noOrder
+noOrder=1
+ND.SetSection("\StatUI\StatParams")
+For i=0 To ND.GetEntriesCount-1
+	key=ND.GetEntryName(i)
+	On Error Resume Next
+	Dim iKey
+	iKey=CLng(key)
+	If(Err.Number) Then 
+		iKey=-1
+		Err.Clear
+	End If
+	On Error GoTo 0
+	If  Not IsEmpty(iKey) And _
+		STAT_PARAMS_FIRST_KEY<=iKey And iKey<=STAT_USER_PARAMS_LAST_KEY Then
+		LVisible=ND.GetValue(key&"\Visible")
+		If LVisible And VISIBLE_IN_TABLE Then
+			UserName=ND.GetValue(key&"\UserName")
+			TableOrder=ND.GetValue(key&"\TableOrder")
+			Dim NewTableOrder
+			If TableOrder<=0 Or params.Exists(TableOrder)  Then
+				NewTableOrder=NoOrder
+			Else
+				NewTableOrder=NoOrder+TableOrder*4000
+			End If
+			noOrder = noOrder+1
+			params.Add NewTableOrder,Array(key,UserName)
+		End If
+	End If
+Next
+
+Set ND=Nothing
+
+Dim Orders
+Orders=params.Keys
+SSort Orders
+
+Dim ExcelApp, v,ClassCount,ParamCount
+Dim par,p,i,cls
+
+Set ExcelApp = Docs.GetActiveObject("Excel.Application")
+If ExcelApp <> "Microsoft Excel" Then
+	Set ExcelApp = CreateObject( "Excel.Application" )
+End If
+If not Docs.IsPointerNull(ExcelApp) Then
+ExcelApp.Workbooks.Add
+ExcelApp.Visible = 1
+	ExcelApp.Interactive = False
+Dim cells
+Set cells=ExcelApp.ActiveSheet.Cells
+cells(1,1)= Docs.LoadString ("Class")
+ParamCount = params.Count
+Dim row,col
+row=1
+col=1
+For Each p in Orders
+	col=col+1
+	Cells(1,col)= params.Item(p)(1)
+Next
+
+ClassCount=stat.GetClassCount()
+For i=0 to ClassCount-1
+	cls = stat.GetClassValue(i)
+	Cells(i+2,1) = GetClassName(cls)
+	col=1
+	For Each p in Orders
+		par = params.Item(p)(0)
+		v = stat.GetValueInUnit (cls,par)
+		If v = "" Then v = "---"
+		col=col+1
+		Cells(i+2,col) = v
+	Next
+Next
+
+row=ClassCount+2
+Cells(row,1)=Docs.LoadString ("Total")
+col=1
+For Each p in Orders
+	par = params.Item(p)(0)
+	v = stat.GetValueGlobalInUnit(par)
+	If v = "" Then v = "---"
+	col=col+1
+	Cells(row,col) = v
+next
+
+Set cells=Nothing
+Set params=Nothing
+	ExcelApp.Interactive = True
+Set ExcelApp = Nothing
+Set stat=Nothing
+else
+	MsgBox Docs.LoadString("Microsoft Excel is not found!"), vbExclamation, sVT
+End If
+
+Function GetClassName(n)
+	Dim StrFromINI
+	StrFromINI = Application.GetPrivateProfileString(Data.Getvalue ("\Classes\ClassFile"),"Classes",CStr(n),"-")
+	GetClassName = Mid(StrFromINI, InStr(StrFromINI,")," )+2,255)
+End Function
+
+' Shell sorting (from Knuth)
+Sub SSort(v())
+	Dim n
+	n=UBound(v)-LBound(v)+1
+	dim gap
+	gap=CLng(n/2)
+	while 0<gap
+		dim i
+		for i=gap to n-1
+			dim j
+			j=i-gap
+			while 0<=j
+				dim jgap
+				jgap=j+gap
+				if v(jgap) < v(j) then
+					dim temp
+					temp=v(j)
+					v(j)=v(jgap)
+					v(jgap)=temp
+				end if
+				j=j-gap
+			wend
+		next
+		gap=CLng(gap/2)
+	wend
+End Sub

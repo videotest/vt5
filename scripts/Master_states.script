@@ -1,0 +1,437 @@
+'**********************************************************
+' Функции управления состоянием скриптов //
+' (кнопка доступна/недоступна, нажата/ненажата) //
+
+'==========================================================
+' Состояние скриптов, доступных только на документе Image //
+'==========================================================
+Function StateImageOnly
+	If TypeName(Docs.ActiveDocument) <> "Nothing" Then
+		If Docs.ActiveDocument.GetDocType = "Image" Then
+			StateImageOnly = CLng(1)
+		Else
+			StateImageOnly = CLng(0)
+		End If
+	Else
+		StateImageOnly = CLng(0)
+	End If
+End Function
+
+'==========================================================
+' Состояние скриптов, доступных только на документе Image //
+' и только при активном изображении //
+'==========================================================
+Function StateImageInImageDoc
+	If Left( GetCurrentView(), 9 ) = "ImageDoc." _
+	  And Not Docs.IsPointerNull( Objects.ActiveImage ) Then
+		StateImageInImageDoc = StateImageOnly()
+	Else
+		StateImageInImageDoc = CLng(0)
+	End If
+End Function
+
+'==========================================================
+' Состояние скриптов, доступных только на непустом документе Image //
+'==========================================================
+Function StateImageNotEmpty
+	StateImageNotEmpty = CLng(0)
+	If TypeName(Docs.ActiveDocument) <> "Nothing" Then
+		If Docs.ActiveDocument.GetDocType = "Image" Then
+			If Objects.GetObjectCount("Image") > 0 Then StateImageNotEmpty = CLng(1): Exit Function
+			If Objects.GetObjectCount("Object List") > 0 Then StateImageNotEmpty = CLng(1): Exit Function
+			If Objects.GetObjectCount("StatTable") > 0 Then StateImageNotEmpty = CLng(1): Exit Function
+			If Objects.GetObjectCount("StatObject") > 0 Then StateImageNotEmpty = CLng(1): Exit Function
+		End If
+	End If
+End Function
+
+'==========================================================
+' Состояние скриптов, доступных только документе Image если есть заселекченные объекты //
+'==========================================================
+Function StateImageWithActiveObjects
+	StateImageWithActiveObjects = CLng(0)
+	If TypeName(Docs.ActiveDocument) <> "Nothing" Then
+		If Docs.ActiveDocument.GetDocType = "Image" Then
+			If Objects.GetSelectedObjectsCount("Image") > 0 Then StateImageWithActiveObjects = CLng(1): Exit Function
+			If Objects.GetSelectedObjectsCount("Object List") > 0 Then StateImageWithActiveObjects = CLng(1): Exit Function
+			If Objects.GetSelectedObjectsCount("StatTable") > 0 Then StateImageWithActiveObjects = CLng(1): Exit Function
+			If Objects.GetSelectedObjectsCount("StatObject") > 0 Then StateImageWithActiveObjects = CLng(1): Exit Function
+		End If
+	End If
+End Function
+
+'==========================================================
+' Состояние скриптов, недоступных на нефазовом ObjectList-е, //
+'==========================================================
+Function StateObjectEditorScript
+	StateObjectEditorScript = StateNonPhaseObjectList("ObjectEditor")
+End Function
+
+Function StateObjectEllipseDirectScript
+	StateObjectEllipseDirectScript = StateNonPhaseObjectList("ObjectEllipseDirect")
+End Function
+
+Function StateObjectEllipseFixedScript
+	StateObjectEllipseFixedScript = StateNonPhaseObjectList("ObjectEllipseFixed")
+End Function
+
+Function StateObjectEllipseScript
+	StateObjectEllipseScript = StateNonPhaseObjectList("ObjectEllipse")
+End Function
+
+Function StateObjectFreeScript
+	StateObjectFreeScript = StateNonPhaseObjectList("ObjectFree")
+End Function
+
+Function StateObjectMagickStickScript
+	StateObjectMagickStickScript = StateNonPhaseObjectList("ObjectMagickStick")
+End Function
+
+Function StateObjectRectDirectScript
+	StateObjectRectDirectScript = StateNonPhaseObjectList("ObjectRectDirect")
+End Function
+
+Function StateObjectRectFixedScript
+	StateObjectRectFixedScript = StateNonPhaseObjectList("ObjectRectFixed")
+End Function
+
+Function StateObjectRectScript
+	StateObjectRectScript = StateNonPhaseObjectList("ObjectRect")
+End Function
+
+Function StateObjectScissorsScript
+	StateObjectScissorsScript = StateNonPhaseObjectListWithObjects("ObjectScissors")
+End Function
+
+Function StateObjectSplineScript
+	StateObjectSplineScript = StateNonPhaseObjectList("ObjectSpline")
+End Function
+
+Function StateMeasManualLineScript
+	StateMeasManualLineScript = StateNonPhaseObjectList("MeasManualLine")
+End Function
+
+Function StateMeasManualFreeLineScript
+	StateMeasManualFreeLineScript = StateNonPhaseObjectList("MeasManualFreeLine")
+End Function
+
+Function StateMeasManualSplineScript
+	StateMeasManualSplineScript = StateNonPhaseObjectList("MeasManualSpline")
+End Function
+
+Function StateMeasManualCycle2Script
+	StateMeasManualCycle2Script = StateNonPhaseObjectList("MeasManualCycle2")
+End Function
+
+Function StateMeasManualCycle3Script
+	StateMeasManualCycle3Script = StateNonPhaseObjectList("MeasManualCycle3")
+End Function
+
+Function StateMeasManualAngle3PointScript
+	StateMeasManualAngle3PointScript = StateNonPhaseObjectList("MeasManualAngle3Point")
+End Function
+
+Function StateMeasManualAngle2LineScript
+	StateMeasManualAngle2LineScript = StateNonPhaseObjectList("MeasManualAngle2Line")
+End Function
+
+Function StateNonPhaseObjectList(sAction)
+	Dim objList
+	Set objList = Objects.ActiveObjectList
+	StateNonPhaseObjectList = ActionState.GetActionState(sAction)
+	If Not Docs.IsPointerNull(objList) Then
+		If ObjectGetValue (objList, "Phases", 0) = 1 Then
+			StateNonPhaseObjectList = CLng(0)
+		End If
+	End If
+End Function
+
+'==========================================================
+' Состояние скриптов, доступных только на нефазовом ObjectList-е, //
+' количество объектов которого > 0 //
+'==========================================================
+Function StateNonPhaseObjectListWithObjects(sAction)
+	Dim objList
+	Set objList = Objects.ActiveObjectList
+	StateNonPhaseObjectListWithObjects = CLng(0)
+	If Data.Getvalue ("\measurement\UseLightObjects")=1 Then Exit Function
+	If Not Docs.IsPointerNull(objList) Then
+		If GetObjectsCountEx(objList, -3) > 0 Then
+			If ObjectGetValue (objList, "Phases", 0) = 0 Then
+				StateNonPhaseObjectListWithObjects = ActionState.GetActionState(sAction)
+			End If
+		End If
+	End If
+End Function
+
+'==========================================================
+' Состояние скрипта SendToDBToActiveField //
+'==========================================================
+Function StateSendToDBToActiveField
+	If Docs.GetDocumentsCount("Database") > 0 Then 
+		StateSendToDBToActiveField = StateImageWithActiveObjects()
+	Else
+		StateSendToDBToActiveField = CLng(0)
+	End If
+End Function
+
+'==========================================================
+' Состояние скрипта No //
+'==========================================================
+Function StateNo
+	StateNo = CLng(0)
+End Function
+
+'==========================================================
+' Состояние скрипта //
+'==========================================================
+Function IsInfoCtrlVisible()
+	Bar = ToolBars.FindDockNo("InfoCtrl")
+	If Bar>0 Then	
+		If ToolBars.IsDockBarVisible(Bar) Then
+			IsInfoCtrlVisible = CLng(3)
+		else
+			IsInfoCtrlVisible = CLng(1)
+		End If
+	End If
+End Function
+
+'==========================================================
+' Состояние скриптов RunStat* //
+'==========================================================
+Function EnableStat()
+	If GetNameStatObj() <> "" Then
+			EnableStat = CLng(1)
+		else
+			EnableStat = CLng(0)
+	End If	
+End Function
+
+'==========================================================
+'==========================================================
+Function ExistStatTable()
+	If GetNameStatTable() <> "" Then
+			ExistStatTable = CLng(1)
+		else
+			ExistStatTable = CLng(0)
+	End If	
+End Function
+
+'==========================================================
+' Состояние скриптов, доступных на активной таблице данных //
+'==========================================================
+Function DataTableView()
+	If GetCurrentView() = "StatData.StatTableView" and GetNameStatTable() <> "" Then
+			DataTableView = CLng(1)
+		else
+			DataTableView = CLng(0)
+	End If	
+End Function
+
+'==========================================================
+' Состояние скриптов, доступных на активной статистике //
+'==========================================================
+Function StatObjectView()
+	If GetCurrentView() = "StatUI.StatObjectView" and GetNameStatObj() <> "" Then
+			StatObjectView = CLng(1)
+		else
+			StatObjectView = CLng(0)
+	End If	
+End Function
+
+'==========================================================
+' Состояние скриптов, доступных на вьюхах с объектами 
+'			или на таблице измерений  //
+'==========================================================
+Function StateForObjectViews()
+	If (GetCurrentView() = "ImageDoc.ImageView" or _
+		GetCurrentView() = "ImageDoc.MaskView" or _
+		GetCurrentView() = "ImageDoc.ObjectsView" or _
+		GetCurrentView() = "DataView.MeasView") and _
+		ActionState.GetActionState ("DataToExcelAvail") = 9 Then
+			StateForObjectViews = CLng(1)
+		else
+			StateForObjectViews = CLng(0)
+	End If	
+End Function
+
+Function ExistStatTableOrObject()
+	If GetNameStatTable() <> "" or GetNameStatObj() <> "" Then
+			ExistStatTableOrObject = CLng(1)
+		else
+			ExistStatTableOrObject = CLng(0)
+	End If	
+End Function
+
+'==========================================================
+' Состояние скрипта //
+'==========================================================
+Function IsMethodNoRecRun()
+	If MethodMan.IsRunning() or MethodMan.IsRecording() Then
+			IsMethodNoRecRun = CLng(0)
+		else
+			IsMethodNoRecRun = CLng(1)
+	End If	
+End Function
+
+
+'==============================================================
+' есть ли активный "Object List"
+'==============================================================
+Function ObjectListState()
+	ObjectListState = CLng(0)
+	Set ObjList = Objects.GetActiveObject( "Object List" )
+	If not Docs.IsPointerNull(ObjList) Then ObjectListState = CLng(1)
+	Set ObjList = Nothing
+End Function
+
+Function ClassifyAvail()
+	If GetNameStatTable() = "" and GetNameStatObj() <> "" Then
+			ClassifyAvail= CLng(0)
+		else
+			ClassifyAvail= CLng(1)
+	End If	
+End Function
+
+Function InputAvail()
+	If len(Data.Getvalue ("\Input\MainDevice"))>1 Then
+		InputAvail = CLng(1)
+	else
+		InputAvail = CLng(0)
+	End If
+End Function
+
+Function InputInCurrentAvail()
+	If len(Data.Getvalue ("\Input\MainDevice"))>1 and TypeName(Docs.ActiveDocument) <> "Nothing" Then
+		InputInCurrentAvail = CLng(1)
+	else
+		InputInCurrentAvail = CLng(0)
+	End If
+End Function
+
+Function LiveVideoAvail()
+	If InputDriverManager.GetValue("IsLiveVideo") Then
+		LiveVideoAvail = CLng(1)
+	else
+		LiveVideoAvail = CLng(0)
+	End If
+End Function
+
+'==========================================================
+' Состояние скрипта SaveImageFromDB //
+'==========================================================
+Function StateSaveImageFromDB
+	Dim f, s, view, col, row
+	StateSaveImageFromDB = CLng(0)
+
+	Set objDBDoc = Docs.GetActiveDocument("Database")
+	If TypeName(objDBDoc) = "Nothing" Then Exit Function
+
+	Set objDBData = objDBDoc.GetData()
+	iField = objDBData.GetValue("\RecordNamedData\QueryProperties\ActiveField")
+	sVTtype = objDBData.GetValue("\RecordNamedData\FieldsInfo\field" & CStr(iField) & "\VTtype")
+
+	If sVTtype = "Image" Then
+		sTable = objDBData.GetValue("\RecordNamedData\FieldsInfo\field" & CStr(iField) & "\Table")
+		sField = objDBData.GetValue("\RecordNamedData\FieldsInfo\field" & CStr(iField) & "\Field")
+		If Not Docs.IsPointerNull( Objects.GetObjectByName(sTable & "." & sField) ) Then
+		If Not Objects.GetObjectByName(sTable & "." & sField).IsEmpty Then _
+		  StateSaveImageFromDB = CLng(1)
+		End If
+	End If
+End Function
+
+'==========================================================
+' Состояние скрипта TV5 (включено живое видео) //
+'==========================================================
+Function LiveVideoOn()
+	If GetCurrentView = "PreviewDoc.PreviewView" Then
+		LiveVideoOn = CLng(1)
+	else
+		LiveVideoOn = CLng(0)
+	End If
+End Function
+
+'==========================================================
+' Состояние тулбара Главная //
+'==========================================================
+Function IsMainToolBarVisible()
+	Bar = ToolBars.FindNo ( Docs.LoadString ("MainBar"))
+	If Bar>0 Then	
+		If ToolBars.IsBarVisible(Bar) Then
+			IsMainToolBarVisible = CLng(3)
+		else
+			IsMainToolBarVisible = CLng(1)
+		End If
+	End If
+End Function
+
+'==========================================================
+' Состояние тулбара Список методик //
+'==========================================================
+Function IsMtdListToolBarVisible()
+	Bar = ToolBars.FindNo ( Docs.LoadString ("Method List"))
+	If Bar>0 Then	
+		If ToolBars.IsBarVisible(Bar) Then
+			IsMtdListToolBarVisible = CLng(3)
+		else
+			IsMtdListToolBarVisible = CLng(1)
+		End If
+	End If
+End Function
+
+'==========================================================
+' Состояние тулбара Редактор изображения //
+'==========================================================
+Function IsAnnotationToolBarVisible()
+	Bar = ToolBars.FindNo ( Docs.LoadString ("Annotation"))
+	If Bar>0 Then	
+		If ToolBars.IsBarVisible(Bar) Then
+			IsAnnotationToolBarVisible = CLng(3)
+		else
+			IsAnnotationToolBarVisible = CLng(1)
+		End If
+	End If
+End Function
+
+'==========================================================
+' Состояние тулбара Ручные измерения //
+'==========================================================
+Function IsMeasManualToolBarVisible()
+	Bar = ToolBars.FindNo ( Docs.LoadString ("Manual Measurements"))
+	If Bar>0 Then	
+		If ToolBars.IsBarVisible(Bar) Then
+			IsMeasManualToolBarVisible = CLng(3)
+		else
+			IsMeasManualToolBarVisible = CLng(1)
+		End If
+	End If
+End Function
+
+'==========================================================
+' Состояние тулбара Редактор объектов //
+'==========================================================
+Function IsObjectEditorToolBarVisible()
+	Bar = ToolBars.FindNo ( Docs.LoadString ("Object Editor"))
+	If Bar>0 Then	
+		If ToolBars.IsBarVisible(Bar) Then
+			IsObjectEditorToolBarVisible = CLng(3)
+		else
+			IsObjectEditorToolBarVisible = CLng(1)
+		End If
+	End If
+End Function
+
+'==========================================================
+' Состояние тулбара Редактор объектов //
+'==========================================================
+Function IsSelectionToolBarVisible()
+	Bar = ToolBars.FindNo ( Docs.LoadString ("SelectionBar"))
+	If Bar>0 Then	
+		If ToolBars.IsBarVisible(Bar) Then
+			IsSelectionToolBarVisible = CLng(3)
+		else
+			IsSelectionToolBarVisible = CLng(1)
+		End If
+	End If
+End Function

@@ -1,0 +1,848 @@
+NamedData file. Version 1.0a
+
+[Method]
+[Method\Data]
+StepCount:Long=6
+ActiveStep:Long=0
+[Method\Data\Step0]
+ActionName:String=RunOptionsDBMaster
+ForcedName:String=RunOptionsDBMaster
+Flags:Long=4
+ArgCount:Long=0
+[Method\Data\Step0\MethodStepData]
+[Method\Data\Step0\MethodStepData\StateBeforeAction]
+Image_0:Long=0
+Image_count:Long=1
+ActiveViewProgID:String=ImageDoc.ImageView
+
+[Method\Data\Step0\MethodStepData\StateAfterAction]
+ActiveViewProgID:String=ImageDoc.ImageView
+Image_0:Long=0
+Image_count:Long=1
+
+
+[Method\Data\Step0\FormManager]
+PageExecuted:Long=0
+
+[Method\Data\Step0\Debugger]
+EnableDebugger:Long=0
+
+[Method\Data\Step0\VTListControl]
+ControlVersion:Long=2
+
+[Method\Data\Step0\types]
+Query:Long=0
+
+[Method\Data\Step0\Settings]
+[Method\Data\Step0\Settings\DBLinks]
+[Method\Data\Step0\Settings\DBLinks\morphology.dbd]
+[Method\Data\Step0\Settings\DBLinks\morphology.dbd\Relations]
+SrcImage:String=image1
+Image:String=---
+Object List:String=object1
+DataTable:String=objeсt2
+StatGraph:String=object3
+
+[Method\Data\Step0\Settings\DBLinks\morphology.dbd\SendStates]
+SrcImage:2=1
+Image:2=0
+Object List:2=0
+DataTable:2=0
+StatGraph:2=0
+Const1:2=0
+Const2:2=0
+Const3:2=0
+
+[Method\Data\Step0\Settings\DBLinks\morphology.dbd\Constants]
+Const1_Caption:String=Константа 1
+Const2_Caption:String=Константа 2
+Const3_Caption:String=Константа 3
+Const1:String=---
+Const2:String=---
+Const3:String=---
+
+
+
+[Method\Data\Step0\Settings\DB]
+Database:String=E:\vt5\morphology.dbd
+SendToNewDBRecord:2=1
+
+
+[Method\Data\Step0\ViewStatusText]
+ContourView:String=
+
+[Method\Data\Step0\ObjectCountPane]
+ImageSourceView:Long=0
+
+[Method\Data\Step0\ImageView]
+ShowColorSysPane:2=1
+
+[Method\Data\Step0\ImagePane]
+Percent:Long=0
+
+[Method\Data\Step0\StatusBar]
+ShowMousePos:Long=1
+ShowClientSize:Long=1
+
+[Method\Data\Step0\Interface]
+EnableSkin:Long=0
+
+
+[Method\Data\Step1]
+ActionName:String=BeginMethodLoop
+ForcedName:String=BeginMethodLoop
+Flags:Long=4
+ArgCount:Long=0
+KeyCount:Long=0
+
+[Method\Data\Step2]
+ActionName:String=MethodStart
+ForcedName:String=Получение изображения
+Flags:Long=12
+ArgCount:Long=0
+KeyCount:Long=0
+
+[Method\Data\Step3]
+ActionName:String=SendSrcImageToDB
+ForcedName:String=SendSrcImageToDB
+Flags:Long=4
+ArgCount:Long=0
+[Method\Data\Step3\MethodStepData]
+[Method\Data\Step3\MethodStepData\StateBeforeAction]
+Image_0:Long=0
+Image_count:Long=1
+ActiveViewProgID:String=ImageDoc.ImageView
+
+[Method\Data\Step3\MethodStepData\StateAfterAction]
+ActiveViewProgID:String=ImageDoc.ImageView
+Image_0:Long=0
+Image_count:Long=1
+
+
+[Method\Data\Step3\FormManager]
+PageExecuted:Long=0
+
+[Method\Data\Step3\tmpDB]
+GetObjectsByName:2=1
+SrcImageName:String=Image5
+
+[Method\Data\Step3\Interface]
+EnableSkin:Long=0
+ScrollClass:String=SCROLLBAR
+
+[Method\Data\Step3\ImageView]
+N_And_N_Color:String=(255, 255, 255)
+N_And_N_AsClassColor:Long=0
+ShowColorSysPane:2=1
+EnableObjectResize:Long=1
+ShowClassName:2=0
+ShowClassNamePos:Long=0
+ShowObjectNumber:2=0
+ShowObjectNumberPos:2=0
+HilightEnabled:2=2
+ClassHilightEnabled:2=1
+ShowContours:Long=1
+ShowChildObjects:Long=1
+HighlightPhases:Long=0
+HilightColor:String=(233, 233, 233)
+HilightInteractiveColor:String=(233, 233, 233)
+HighlightOversectColor:String=(255, 255, 255)
+HilightPercent:2=0
+HilightInteractivePercent:Long=1
+HighlightOversectMethod:Long=0
+EnableSelection:Long=1
+ShowMarker:Long=0
+EnableMoveOutside:Long=0
+ImageSelectionOnSourceOnly:2=0
+PrintMarker:Long=0
+
+[Method\Data\Step3\DrawImage]
+Gamma:Double=1
+HiBitNum:Long=16
+
+[Method\Data\Step3\Colors]
+Background:String=(255, 255, 255)
+
+[Method\Data\Step3\ObjectCountPane]
+ImageSourceView:Long=0
+
+[Method\Data\Step3\ImagePane]
+Percent:Long=0
+
+[Method\Data\Step3\ViewStatusText]
+ContourView:String=
+GalleryView:String=
+BlankView:String=
+
+[Method\Data\Step3\StatusBar]
+ShowMousePos:Long=1
+ShowClientSize:Long=1
+
+[Method\Data\Step3\Signature]
+UpdateSignature:Long=0
+
+[Method\Data\Step3\Database]
+ShowUserNameInContext:Long=1
+AddRootFieldNameInContext:Long=0
+UserCount:Long=0
+DefaultView:String=DBaseDoc.BlankView
+UseServerSideCursor:Long=1
+LastFile:String=E:\vt5\morphology.dbd
+FrameType:String=MDI
+Flags:Long=0
+Splitter:String=StdSplitter.SplitterWindow
+EnableFrameToolbars:Long=1
+FrameTypeSupportedToolbars:String=MDI
+
+[Method\Data\Step3\types]
+Query:Long=0
+Image:Long=0
+Object List:Long=0
+StatTable:Long=0
+StatObject:Long=0
+
+[Method\Data\Step3\DBControls]
+[Method\Data\Step3\DBControls\Font]
+Face:String=Arial
+Size:Long=12
+Weight:Long=100
+Italic:Long=0
+Underline:Long=0
+Strikethrough:Long=0
+
+
+[Method\Data\Step3\SplitterWindow]
+EnableMenuButton:Long=1
+
+[Method\Data\Step3\IntelliMouse]
+Wheel enable:Long=0
+Wheel horz scroll key:String=Ctrl
+Wheel step:Long=10
+Invert wheel horz direction:Long=0
+Invert wheel vert direction:Long=0
+Scroll enable:Long=0
+Scroll key:String=Middle
+Invert scroll horz direction:Long=0
+Invert scroll invert vert direction:Long=0
+Enable key scroll:Long=0
+Key step:Long=10
+
+[Method\Data\Step3\Layout]
+ShowObjectNames:Long=0
+
+[Method\Data\Step3\Image]
+EnableFrameToolbars:Long=1
+FrameTypeSupportedToolbars:String=PDI
+
+[Method\Data\Step3\NewCalibr]
+Active:String={55D2F44D-1C07-4F7F-A54E-7426272A247C}
+[Method\Data\Step3\NewCalibr\{55D2F44D-1C07-4F7F-A54E-7426272A247C}]
+MeterPerPixel:2=1
+Name:String=Default Calibration
+Active:2=0
+
+
+[Method\Data\Step3\AXEditor]
+MinCtrlWidth:Long=2
+MinCtrlHeight:Long=2
+
+[Method\Data\Step3\Binary]
+IndexedColorsCount:Long=20
+Fore_0:String=(255, 255, 0)
+Fore_1:String=(128, 0, 0)
+Fore_2:String=(0, 128, 0)
+Fore_3:String=(128, 128, 0)
+Fore_4:String=(0, 0, 128)
+Fore_5:String=(128, 0, 128)
+Fore_6:String=(0, 128, 128)
+Fore_7:String=(192, 192, 192)
+Fore_8:String=(192, 220, 192)
+Fore_9:String=(166, 202, 240)
+Fore_10:String=(255, 251, 240)
+Fore_11:String=(160, 160, 164)
+Fore_12:String=(128, 128, 128)
+Fore_13:String=(255, 0, 0)
+Fore_14:String=(0, 255, 0)
+Fore_15:String=(255, 255, 0)
+Fore_16:String=(0, 0, 255)
+Fore_17:String=(255, 0, 255)
+Fore_18:String=(0, 255, 255)
+Fore_19:String=(255, 255, 255)
+SyncColor:String=(255,255,0)
+
+[Method\Data\Step3\Information]
+LastImageCX:Long=780
+LastImageCY:Long=582
+
+[Method\Data\Step3\Calibration]
+EnableForPrinting:Long=1
+
+[Method\Data\Step3\Methodics]
+LastActiveMtd:Long=2
+
+[Method\Data\Step3\Toolbars]
+Developer:Long=0
+
+[Method\Data\Step3\ZoomOutTable]
+MinFontHeight:Long=2
+
+[Method\Data\Step3\Editor]
+CommentText_Name:String=Arial
+
+[Method\Data\Step3\Thumbnail]
+ImageRenderMinSize4Icon:Long=32
+AdvancedMode:Long=0
+ImageRenderUseFile:Long=0
+ImageRenderFileName:String=
+
+[Method\Data\Step3\MainFrame]
+EnableCustomizeButton:Long=1
+[Method\Data\Step3\MainFrame\DockBarsInContextMenu]
+MethodPanel:2=0
+MetodicsTab:2=0
+Histogram:2=0
+
+
+[Method\Data\Step3\Settings]
+[Method\Data\Step3\Settings\DBLinks]
+[Method\Data\Step3\Settings\DBLinks\morphology.dbd]
+[Method\Data\Step3\Settings\DBLinks\morphology.dbd\Relations]
+SrcImage:String=image1
+Image:String=---
+Object List:String=object1
+DataTable:String=objeсt2
+StatGraph:String=object3
+
+
+
+
+[Method\Data\Step3\OverloadedIcons]
+VTObjectsIcons:String=Context.ini
+
+[Method\Data\Step3\StatUI]
+SplitterType:2=2
+Pane0_Data:2=2
+Pane1_Data:2=0
+Pane2_Data:2=1
+Views:Long=7
+HSplitter:Double=0.406953
+VSplitter:Double=0.389253
+ShowContext:Long=1
+ChartArea_PropertyScript:String=RunStatGraphDistr
+AxisArea_PropertyScript:String=RunStatGraphDistr
+Y_ParamsArea_PropertyScript:String=RunStatGraphDistr
+X_ParamsArea_PropertyScript:String=RunStatGraphDistr
+ChartArea_ImgIndex:Long=0
+AxisArea_ImgIndex:Long=0
+Y_ParamsArea_ImgIndex:Long=0
+X_ParamsArea_ImgIndex:Long=0
+Enable_ChartArea:Long=1
+Enable_AxisArea:Long=0
+Enable_X_ParamsArea:Long=0
+Enable_Y_ParamsArea:Long=0
+Enable_StatParamArea:Long=1
+StatParamArea_PropertyScript:String=RunStatGraphDistr
+StatParamArea_ImgIndex:Long=0
+TableStatArea_PropertyScript:String=RunStatGraphDistr
+TableStatArea_ImgIndex:Long=0
+Enable_TableStatArea:Long=1
+[Method\Data\Step3\StatUI\ChartParams]
+XParamName:String=Ср. размер
+ChartType:Long=0
+ChartViewType:2=0
+ChartColor:String=(0, 0, 0)
+ShowGrayScale:Long=0
+GrayScaleLevel:Long=195
+ShowSingleColoredBar:Long=0
+BarSingleColor:String=(255, 0, 0)
+Title:String=Диаграмма распределения
+ShowLegend:2=1
+ClassStep:Long=1
+MinClassIndex:Long=0
+ShowBeginEnd:Long=1
+ShowStep:Long=1
+ShowClassCount:Long=1
+ShowCheckModel:Long=1
+CheckModelType:Long=0
+Signature:String=(распределение по параметру)
+BarWidth:Double=67.8207
+ShowCurve:Long=1
+UniformDistribution:2=0
+CurveColor:String=(0, 0, 0)
+ShowParamsOnChart:Long=0
+ShowUserCurve:Long=0
+UserCurveColor:String=(0, 0, 255)
+UserCurveMX:Double=0
+UserCurveDX:Double=1
+VisibleClass:String=
+ChartParamHeight:Long=10
+DistributionScript:String=
+HalfHotZone:Long=1
+UseCustomIntervals:2=1
+[Method\Data\Step3\StatUI\ChartParams\Axis]
+X_UseCustomFormat:2=1
+Y_UseCustomFormat:Long=0
+X_CustomFormat:String=%.1f
+Y_CustomFormat:String=%e
+X_UseLogaScale:2=0
+X_AxisType:2=1
+X_ParamKey:String=22
+Y_ParamKey:Long=196629
+X_Grid:2=1
+Y_Grid:2=1
+ConvertToCalibr:Long=1
+X_ScaleFactor:2=20
+Y_ScaleFactor:Double=5
+X_ScaleFactorValues:2=20
+Y_ScaleFactorValues:2=10
+X_ScaleFactorGrid:2=20
+Y_ScaleFactorGrid:2=10
+GridColor:String=(0, 0, 0)
+X_ShowAxisValues:2=1
+Y_ShowAxisValues:2=1
+X_ShowAxisLabels:2=1
+Y_ShowAxisLabels:2=1
+X_TextOffset:Long=0
+Y_TextOffset:Long=0
+X_Begin:String=0
+X_End:String=154
+X_UseValueRange:2=1
+Y_Begin:Double=0
+Y_End:Double=0
+Y_UseValueRange:Long=0
+DrawEndChartGridLineX:2=1
+DrawEndChartGridLineY:2=1
+
+[Method\Data\Step3\StatUI\ChartParams\TitleFont]
+Name:String=Arial
+Size:Long=12
+Bold:Long=1
+Italic:Long=0
+Underline:Long=0
+StrikeOut:Long=0
+TextColor:String=(0, 0, 128)
+
+[Method\Data\Step3\StatUI\ChartParams\LegendFont]
+Name:String=Arial
+Size:Long=10
+Bold:Long=0
+Italic:Long=0
+Underline:Long=0
+StrikeOut:Long=0
+TextColor:String=(0, 0, 0)
+
+[Method\Data\Step3\StatUI\ChartParams\AxisFont]
+Name:String=Arial
+Size:Long=10
+Bold:Long=0
+Italic:Long=0
+Underline:Long=0
+StrikeOut:Long=0
+TextColor:String=(0, 0, 0)
+
+[Method\Data\Step3\StatUI\ChartParams\HintFont]
+Name:String=Arial
+Size:Long=10
+Bold:Long=0
+Italic:Long=0
+Underline:Long=0
+StrikeOut:Long=0
+TextColor:String=(0, 0, 0)
+
+[Method\Data\Step3\StatUI\ChartParams\ParamNameFont]
+Name:String=Arial
+Size:Long=12
+Bold:Long=0
+Italic:Long=0
+Underline:Long=0
+StrikeOut:Long=0
+TextColor:String=(0, 0, 0)
+
+[Method\Data\Step3\StatUI\ChartParams\SignatureFont]
+Name:String=Arial
+Size:Long=12
+Bold:Long=0
+Italic:Long=0
+Underline:Long=0
+StrikeOut:Long=0
+TextColor:String=(0, 0, 0)
+
+[Method\Data\Step3\StatUI\ChartParams\CustomIntervals]
+class0:String=1.799895e+001,8.581962e+001
+class1:String=8.581962e+001,1.536403e+002
+class2:String=3.640146e+001,3.976036e+001
+class3:String=3.976036e+001,4.311926e+001
+
+
+[Method\Data\Step3\StatUI\StatParams]
+[Method\Data\Step3\StatUI\StatParams\NormalArea]
+Visible:Long=3
+
+[Method\Data\Step3\StatUI\StatParams\Probability]
+Visible:Long=3
+
+[Method\Data\Step3\StatUI\StatParams\Visible]
+Visible:Long=3
+
+[Method\Data\Step3\StatUI\StatParams\196610]
+Visible:Long=1
+UserName:String=Ср. арифметическое
+Format:String=%.3f
+LegendOrder:2=1
+
+[Method\Data\Step3\StatUI\StatParams\196611]
+Visible:Long=0
+
+[Method\Data\Step3\StatUI\StatParams\196612]
+Visible:Long=0
+
+[Method\Data\Step3\StatUI\StatParams\196613]
+Visible:Long=1
+UserName:String=Минимум
+Format:String=%.3f
+LegendOrder:2=4
+
+[Method\Data\Step3\StatUI\StatParams\196614]
+Visible:Long=1
+UserName:String=Максимум
+Format:String=%.3f
+LegendOrder:2=5
+
+[Method\Data\Step3\StatUI\StatParams\196615]
+Visible:Long=0
+
+[Method\Data\Step3\StatUI\StatParams\196616]
+Visible:Long=0
+
+[Method\Data\Step3\StatUI\StatParams\196617]
+Visible:Long=0
+
+[Method\Data\Step3\StatUI\StatParams\196618]
+Visible:Long=2
+UserName:String=Мода
+Format:String=%.3f
+TableOrder:Long=2
+
+[Method\Data\Step3\StatUI\StatParams\196619]
+Visible:Long=0
+
+[Method\Data\Step3\StatUI\StatParams\196620]
+Visible:Long=1
+UserName:String=Асимметрия
+Format:String=%.3f
+LegendOrder:2=11
+
+[Method\Data\Step3\StatUI\StatParams\196621]
+Visible:Long=0
+
+[Method\Data\Step3\StatUI\StatParams\196622]
+Visible:Long=0
+
+[Method\Data\Step3\StatUI\StatParams\196623]
+Visible:Long=1
+UserName:String=Количество
+Format:String=%.3f
+LegendOrder:2=14
+
+[Method\Data\Step3\StatUI\StatParams\196624]
+Visible:Long=0
+
+[Method\Data\Step3\StatUI\StatParams\196625]
+Visible:Long=0
+
+[Method\Data\Step3\StatUI\StatParams\196626]
+Visible:Long=2
+UserName:String=Обр. площадь
+Format:String=%.3f
+TableOrder:Long=2
+
+[Method\Data\Step3\StatUI\StatParams\196627]
+Visible:Long=0
+
+[Method\Data\Step3\StatUI\StatParams\196628]
+Visible:Long=0
+
+[Method\Data\Step3\StatUI\StatParams\196629]
+Visible:Long=0
+
+[Method\Data\Step3\StatUI\StatParams\196630]
+Visible:Long=0
+
+[Method\Data\Step3\StatUI\StatParams\196631]
+Visible:Long=0
+
+[Method\Data\Step3\StatUI\StatParams\196632]
+Visible:Long=0
+
+[Method\Data\Step3\StatUI\StatParams\196633]
+Visible:Long=0
+
+[Method\Data\Step3\StatUI\StatParams\196634]
+Visible:Long=0
+
+[Method\Data\Step3\StatUI\StatParams\196635]
+Visible:Long=0
+
+[Method\Data\Step3\StatUI\StatParams\196636]
+Visible:Long=0
+
+[Method\Data\Step3\StatUI\StatParams\196637]
+Visible:Long=0
+
+[Method\Data\Step3\StatUI\StatParams\196638]
+Visible:Long=0
+
+[Method\Data\Step3\StatUI\StatParams\196639]
+Visible:Long=0
+
+[Method\Data\Step3\StatUI\StatParams\196640]
+Visible:Long=2
+UserName:String=Ошибка среднего
+Format:String=%.3f
+TableOrder:Long=2
+
+[Method\Data\Step3\StatUI\StatParams\196641]
+Visible:Long=3
+UserName:String=Доверит. интервал
+Format:String=%.3f
+LegendOrder:2=32
+TableOrder:Long=2
+
+[Method\Data\Step3\StatUI\StatParams\196642]
+Visible:2=0
+
+[Method\Data\Step3\StatUI\StatParams\196643]
+Visible:Long=0
+
+[Method\Data\Step3\StatUI\StatParams\196644]
+Visible:Long=2
+UserName:String=Количество изображений
+Format:String=%.3f
+TableOrder:Long=2
+
+[Method\Data\Step3\StatUI\StatParams\196645]
+Visible:Long=3
+UserName:String=Общая площадь
+Format:String=%.3f
+LegendOrder:2=36
+TableOrder:Long=2
+
+[Method\Data\Step3\StatUI\StatParams\196646]
+Visible:Long=2
+UserName:String=Периметр
+Format:String=%.3f
+TableOrder:Long=2
+
+[Method\Data\Step3\StatUI\StatParams\196647]
+Visible:Long=0
+
+[Method\Data\Step3\StatUI\StatParams\196648]
+Visible:Long=0
+
+[Method\Data\Step3\StatUI\StatParams\196649]
+Visible:Long=0
+
+[Method\Data\Step3\StatUI\StatParams\196650]
+Visible:Long=0
+
+[Method\Data\Step3\StatUI\StatParams\196651]
+Visible:Long=0
+
+[Method\Data\Step3\StatUI\StatParams\196652]
+Visible:Long=0
+
+[Method\Data\Step3\StatUI\StatParams\0]
+Visible:2=0
+
+[Method\Data\Step3\StatUI\StatParams\-196610]
+Visible:2=0
+
+[Method\Data\Step3\StatUI\StatParams\196661]
+Visible:Long=0
+
+[Method\Data\Step3\StatUI\StatParams\196660]
+Visible:Long=0
+
+[Method\Data\Step3\StatUI\StatParams\196653]
+Visible:Long=0
+
+[Method\Data\Step3\StatUI\StatParams\196654]
+Visible:Long=0
+
+[Method\Data\Step3\StatUI\StatParams\196655]
+Visible:Long=0
+
+[Method\Data\Step3\StatUI\StatParams\196656]
+Visible:Long=0
+
+[Method\Data\Step3\StatUI\StatParams\196657]
+Visible:Long=0
+
+[Method\Data\Step3\StatUI\StatParams\196658]
+Visible:Long=0
+
+[Method\Data\Step3\StatUI\StatParams\196659]
+Visible:Long=0
+
+
+[Method\Data\Step3\StatUI\Legend]
+IncorrectColor:String=(255, 0, 0)
+Title:String=Данные статистики
+[Method\Data\Step3\StatUI\Legend\Font]
+Name:String=Arial
+Size:Long=12
+Bold:Long=0
+Italic:Long=0
+Underline:Long=0
+StrikeOut:Long=0
+TextColor:String=(0, 0, 0)
+
+[Method\Data\Step3\StatUI\Legend\TitleFont]
+Name:String=Arial
+Size:Long=12
+Bold:Long=1
+Italic:Long=0
+Underline:Long=0
+StrikeOut:Long=0
+TextColor:String=(0, 0, 128)
+
+
+[Method\Data\Step3\StatUI\StatTable]
+IncorrectColor:String=(255, 0, 0)
+Title:String=Таблица статистики
+ClassColTitle:String=Название класса
+AllWordName:String=Всего
+VisibleClass:String=
+TableAlign:Long=1
+[Method\Data\Step3\StatUI\StatTable\Colors]
+Column0:String=(0, 0, 0)
+Column1:String=(0, 0, 0)
+Column2:String=(0, 0, 0)
+Column3:String=(0, 0, 0)
+Column4:String=(0, 0, 0)
+Column5:String=(0, 0, 0)
+Column6:String=(0, 0, 0)
+Column7:String=(0, 0, 0)
+
+[Method\Data\Step3\StatUI\StatTable\Width]
+Column0:Long=100
+Column1:Long=100
+Column2:Long=100
+Column3:Long=100
+Column4:Long=100
+Column5:Long=100
+Column6:Long=100
+Column7:Long=100
+
+[Method\Data\Step3\StatUI\StatTable\Font]
+Name:String=Arial
+Size:Long=10
+Bold:Long=0
+Italic:Long=0
+Underline:Long=0
+StrikeOut:Long=0
+TextColor:String=(0, 0, 0)
+
+[Method\Data\Step3\StatUI\StatTable\HeaderFont]
+Name:String=Arial
+Size:Long=10
+Bold:Long=0
+Italic:Long=0
+Underline:Long=0
+StrikeOut:Long=0
+TextColor:String=(0, 0, 0)
+
+[Method\Data\Step3\StatUI\StatTable\TitleFont]
+Name:String=Arial
+Size:Long=12
+Bold:Long=1
+Italic:Long=0
+Underline:Long=0
+StrikeOut:Long=0
+TextColor:String=(0, 0, 128)
+
+
+
+[Method\Data\Step3\StatDataTable]
+CompressImage:Long=1
+
+[Method\Data\Step3\ImageCompress]
+HideSignature:Long=1
+
+[Method\Data\Step3\FileFilters2]
+RGBBackground:String=(128, 128, 128)
+JPGCompressionLevel:Long=100
+
+[Method\Data\Step3\Units]
+[Method\Data\Step3\Units\Linear]
+Name:String=пиксел
+CoeffToUnit:2=1
+
+[Method\Data\Step3\Units\Relative]
+Name:String=отн. ед.
+CoeffToUnit:Double=1
+
+[Method\Data\Step3\Units\Angle]
+Name:String=градус
+CoeffToUnit:Double=57.2958
+
+[Method\Data\Step3\Units\Brightness]
+Name:String=ед. яркости
+CoeffToUnit:Double=0.0015259
+
+[Method\Data\Step3\Units\Color]
+Name:String=ед. яркости
+CoeffToUnit:Double=0.0015259
+
+[Method\Data\Step3\Units\Optical]
+Name:String=отн. ед.
+CoeffToUnit:Double=1
+
+
+[Method\Data\Step3\ImageBar]
+UseSystemColors:Long=0
+BackColor:String=(212, 208, 200)
+HighlightColor:String=(128, 128, 128)
+DrawText:Long=1
+DrawIcon:Long=1
+ItemWidth:Long=50
+ItemHeight:Long=50
+IconPropName:String=ImageState
+FieldLeft:Long=10
+FieldRight:Long=10
+FieldTop:Long=10
+FieldBottom:Long=10
+FooterOffset:Long=5
+BarOffsetX:Long=0
+BarOffsetY:Long=0
+
+[Method\Data\Step3\LongOperation]
+ScriptNotify:Long=0
+ScriptFireStep:Long=10
+ScriptFireLag:Long=-1
+
+
+[Method\Data\Step4]
+ActionName:String=EndMethodLoop
+ForcedName:String=EndMethodLoop
+Flags:Long=4
+ArgCount:Long=0
+KeyCount:Long=0
+
+[Method\Data\Step5]
+
+ActionName:MultiLineString=
+
+MsgStepTitleStr = Docs.LoadString("Message")
+MsgBox "Методика завершена!", vbInformation, MsgStepTitleStr
+/end of string
+
+ForcedName:String=Message
+Flags:Long=4
+ArgCount:Long=0
+
+
+
+
+__Context__Begin__
+__Context__End__

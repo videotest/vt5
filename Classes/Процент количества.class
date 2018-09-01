@@ -1,0 +1,27 @@
+[General]
+ClassifyName=Ручной классификатор
+ClassifyProgID=ClassBase.ManualClassifier
+
+[Classes]
+ClassCount=2
+-1=(255, 0, 0),?
+0=(255,0,0),Тромбоциты
+1=(0,0,255),Эритроциты
+
+[KeysInfo]
+KeysEnum=22,38
+
+[ParamInfo]
+0=Area
+22=Ср. размер
+38=Цвет
+
+[KeyData:0]
+0=0.000000e+000,1.000000e+000
+
+[KeyData:22]
+0=0.000000e+000,0.000000e+000
+1=0.000000e+000,0.000000e+000
+[KeyData:38]
+0=0.000000e+000,0.000000e+000
+1=3.000000e-002,1.300000e-001

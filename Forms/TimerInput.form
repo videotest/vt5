@@ -1,0 +1,93 @@
+[AxForm]
+Version=1
+Size=159, 106
+Title=%Timer Input%
+
+[AXControls]
+Name=edtInterval
+ProgID=VTCONTROLS.VTEditor.1
+Rect=14, 6, 137, 33
+Style=50000000h
+ID=0
+Data=241 00 00 01 00 09 00 00 00 0c 00 00 00 09 00 00 00 00 00 00 00 00 00 00 00 90 01 00 00 00 00 00 01 00 02 02 02 4d 53 20 53 61 6e 73 20 53 65 72 69 66 00 a7 02 00 66 00 00 7d 01 01 af 00 00 db 0c a4 a6 a7 02 f5 ff ff ff 00 00 00 00 00 00 00 00 00 00 00 00 90 01 00 00 00 00 00 01 00 00 00 00 54 61 68 6f 6d 61 00 20 53 65 72 69 66 00 a7 02 00 66 00 00 7d 01 01 af 00 00 db 0c a4 a6 a7 02 08 56 54 45 64 69 74 6f 72 01 00 0e c8 ed f2 e5 f0 e2 e0 eb 2c 20 f1 e5 ea 2e 01 00 00 00 01 00 01 31 4d 00 01 00 00 00 01 00 00 00 00 40 1c 46 00 00 00 00 08 00 00 80 05 00 00 80 08 00 00 80 0f 00 00 80 0f 00 00 80 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+
+Name=edtCount
+ProgID=VTCONTROLS.VTEditor.1
+Rect=14, 36, 137, 63
+Style=50000000h
+ID=0
+Data=232 00 00 01 00 09 00 00 00 0c 00 00 00 09 00 00 00 00 00 00 00 00 00 00 00 90 01 00 00 00 00 00 01 00 02 02 02 4d 53 20 53 61 6e 73 20 53 65 72 69 66 00 a7 02 00 66 00 00 7d 01 01 af 00 00 db 0c a4 a6 a7 02 f5 ff ff ff 00 00 00 00 00 00 00 00 00 00 00 00 90 01 00 00 00 00 00 01 00 00 00 00 54 61 68 6f 6d 61 00 20 53 65 72 69 66 00 a7 02 00 66 00 00 7d 01 01 af 00 00 db 0c a4 a6 a7 02 08 56 54 45 64 69 74 6f 72 01 00 05 ca e0 e4 f0 fb 01 00 00 00 01 00 01 31 4d 00 01 00 00 00 01 00 00 00 00 00 7a 44 00 00 80 3f 08 00 00 80 05 00 00 80 08 00 00 80 0f 00 00 80 0f 00 00 80 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+
+Name=chkClip
+ProgID=VTCHECKBOX.VTCheckBoxCtrl.1
+Rect=15, 73, 144, 94
+Style=50000000h
+ID=0
+Data=127 00 00 00 00 04 00 00 00 00 00 00 00 11 ce e1 f0 e5 e7 e0 f2 fc 20 ef ee 20 f0 e0 ec ea e5 08 00 00 80 0f 00 00 80 08 00 00 80 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 01 00 00 00 00 00 01 00 00 03 52 e3 0b 91 8f ce 11 9d e3 00 aa 00 4b b8 51 01 cc 00 00 90 01 44 42 01 00 0d 4d 53 20 53 61 6e 73 20 53 65 72 69 66
+
+
+[Script]
+
+'***************************************************************
+'Form event handlers.
+'***************************************************************
+Sub Form_OnDestroy()
+	Set frame = MainWnd.ActiveFrame
+	Set s = frame.GetSplitter	
+	s.Split 1, 1
+	s.SetViewType 0, 0, "ImageDoc.ImageView"
+	Set frame = Nothing
+	Set s = Nothing	
+End Sub
+Sub Form_OnInitialize()
+
+	edtInterval.CaptionText = Docs.LoadString ("Interval, sec.")
+	edtCount.CaptionText = Docs.LoadString ("Frames")
+
+	Set frame = MainWnd.ActiveFrame
+	Set s = frame.GetSplitter	
+	s.Split 1, 1
+	s.SetViewType 0, 0, "PreviewDoc.PreviewView"
+	ActionManager.ZoomNormal
+	Set frame = Nothing
+	Set s = Nothing	
+	
+	edtCount.ValueInt = Data.GetDefValue ("\TimeInput\Count",3)
+	edtInterval.ValueInt = Data.GetDefValue ("\TimeInput\Interval",3)
+	chkClip.Checked = Data.GetDefValue ("\TimeInput\Clip",0)
+	BarNo = ToolBars.FindDockNo ( "ContextViewer" )
+	ToolBars.ShowDockBar BarNo , 1
+End Sub
+
+Sub Form_OnOK()
+	Dim StartTime, EndTime
+	ShowSource
+	StartTime = Timer
+	EndTime = StartTime 
+	If ActionManager.InputImageInCurrentDoc (0,0,0)>0  Then	
+	ShowPreview
+		If chkClip.Checked Then ImageBySel 1		
+		Set img = Objects.ActiveImage
+		If not Docs.IsPointerNull(img) Then 
+			Objects.ActiveImage = img
+			Set img = Nothing
+			For i=2 To edtCount.ValueInt		
+				While EndTime - StartTime < edtInterval.ValueInt
+					EndTime = Timer		
+				Wend		
+				StartTime = Timer
+				ActionManager.InputImageInCurrentDoc 0,0,0
+				ShowPreview
+				If chkClip.Checked Then ImageBySel 1
+			Next
+			Data.SetValue "\TimeInput\Interval", edtInterval.ValueInt 
+			Data.SetValue "\TimeInput\Count", edtCount.ValueInt
+
+		End If
+	End If
+	Data.SetValue "\TimeInput\Clip", chkClip.Checked 
+End Sub
+
+
+
+

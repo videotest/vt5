@@ -1,0 +1,29 @@
+NamedData file. Version 1.0a
+
+[Method]
+[Method\Data]
+StepCount:Long=3
+ActiveStep:Long=1
+[Method\Data\Step0]
+ActionName:String=BeginMethodLoop
+ForcedName:String=BeginMethodLoop
+Flags:Long=4
+ArgCount:Long=0
+KeyCount:Long=0
+
+[Method\Data\Step1]
+ActionName:String=MethodStart
+ForcedName:String=Получение изображения
+Flags:Long=12
+ArgCount:Long=0
+KeyCount:Long=0
+
+[Method\Data\Step2]
+ActionName:String=EndMethodLoop
+ForcedName:String=EndMethodLoop
+Flags:Long=4
+ArgCount:Long=0
+KeyCount:Long=0
+
+__Context__Begin__
+__Context__End__

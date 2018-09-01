@@ -388,6 +388,7 @@ BEGIN_MESSAGE_MAP(CMainFrame, CBCGMDIFrameWnd)
 	ON_WM_DESTROY()
 	ON_WM_TIMER()
 	ON_WM_INITMENUPOPUP()
+	ON_WM_NCDESTROY()
 END_MESSAGE_MAP()
 
 static UINT indicators[] =
@@ -1670,9 +1671,39 @@ void CMainFrame::OnClose()
 //	AfxOleSetUserCtrl( FALSE );
 	m_DistrWnd.m_bRecreateOnDistr = false;
 
-	DestroyWindow();
-
 	//CBCGMDIFrameWnd::OnClose();
+	{
+		AFX_MODULE_STATE* pModuleState = AfxGetModuleState();
+		int incOleLock = 0;
+
+		// m_nObjectCount is telling how many mdi windows 
+		// that are open (I guess)
+
+		// This is called to make the objectCount go as low as possible.
+		AfxGetApp()->CloseAllDocuments(FALSE);
+		while (pModuleState->m_nObjectCount > 0)
+		{
+			// If we end up here then and object "hangs"
+
+			// This is called BEFORE OnClose to make the OnClose destroy the window
+			AfxOleUnlockApp();
+
+			// This tells us to remember to increment the object count
+			// AFTER the window is destroyed
+			incOleLock++;
+		}
+		__super::OnClose();
+		while (incOleLock)
+		{
+			// incerement ObjectCount to let the hanging object close
+			// down itself.
+			AfxOleLockApp();
+
+			incOleLock--;
+		}
+	}
+//	DestroyWindow();
+
 }	
 
 	
@@ -5765,4 +5796,12 @@ void CMainFrame::ShowProgress(LPCTSTR text, LONG percent)
 	m_wndStatusBar.SetWindowText(text);
 	m_wndShellProgress.SetPercent(percent);
 	m_wndShellProgress.LockUpdateText( true );
+}
+
+
+void CMainFrame::OnNcDestroy()
+{
+	__super::OnNcDestroy();
+
+	// TODO: Add your message handler code here
 }

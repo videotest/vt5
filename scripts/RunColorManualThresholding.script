@@ -1,0 +1,24 @@
+'resource:By Specified Points...#Objects Masks#Manual objects mask thresholding per color and brightness samples#Objects Mask Thresholding by Specified Points
+'state:action=Median
+
+HideDockBars
+bEnableApplyOld = Data.GetDefValue ("\FormManager\EnableApply", 1)
+Data.SetValue "\FormManager\EnableApply", 0
+
+FormManager.ExecutePage "ColorManualThresholding"
+
+Data.SetValue "\tmp\PhasesThresh", 1
+
+'Не запускаем интерактивную акцию если форма не показывается //
+If Data.GetDefValue ("\FormManager\DisableFormShow", 0) = 0 Then
+	Do
+		ActionState.RunInteractiveWait "PickColor" '"ObjectEditorSpec"
+	Loop While Data.GetValue ("\tmp\PhasesThresh")
+End If
+
+Data.SetValue "\FormManager\EnableApply", bEnableApplyOld
+
+FormManager.Finalize "ColorManualThresholding"
+Data.RemoveValue "\tmp\PhasesThresh"
+
+ShowDockBars

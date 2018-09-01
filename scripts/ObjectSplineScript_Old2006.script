@@ -1,0 +1,6 @@
+'state:function=StateObjectSplineScript
+
+MethodMan_BeforeInteractiveMethodStep "ObjectSplineScript", "group"
+ActionState.RunInteractive "ObjectSpline"
+MethodMan.StoreStepAs Docs.LoadString ("Object Editor")
+MethodMan.CancelStepStoring

@@ -1,0 +1,16 @@
+'resource:Unsharp Mask...#Enhance#Increase the overall sharpness of the image#Unsharp Mask
+'state:action=UnsharpenMask
+
+Data.SetValue "\General\EnableDock", 0
+Data.SetValue "\DockBars\VisibleTBName", Data.GetValue("\DockBars\TB_FiltersName")
+If Data.GetValue("\DockBars\PageInProcessing") Then Data.SetValue "\DockBars\isPass", True
+
+If isMaster Then
+	FormManager.ExecutePageModal "Unsharpen"
+Else
+	FormManager.ExecutePage "Unsharpen" 
+End If
+
+If MethodMan.IsRecording() = False or MethodMan.IsRunning() = False Then
+	Data.SetValue "\General\EnableDock", 1
+End If

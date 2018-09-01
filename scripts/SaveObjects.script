@@ -1,0 +1,15 @@
+strType = "Script"
+n = Objects.GetObjectCount( strType )
+MsgBox n
+lPos = Objects.GetFirstObjectPos( strType )
+s = ""
+FileName = ""
+StrAppPath = "c:\vt5\aa\"
+For i=0 To n-1
+	Set qq = Objects.GetObject ( szType, lPos)
+	FileName = StrAppPath + qq.Name + ".script"
+	ActionManager.ObjectSave qq.Name, FileName 
+	lPos = Objects.GetNextObjectPos(szType, lPos)	
+	s = s+ qq.Name + vbCrLf
+Next
+MsgBox s

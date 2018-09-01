@@ -1,0 +1,44 @@
+'resource:Measure Masks#Measurement#Measure object masks#Measure Masks
+'state:action=MeasureBin
+
+Call BinMeas_script
+
+Sub BinMeas_script
+	Dim ObjList
+	Dim a, TmpBin
+
+	ActionState.BeginGroupUndo "vt"
+
+	iDeleteFilterArgsOld = Data.GetDefValue ("\General\DeleteFilterArgs", 1)
+	Data.SetValue "\General\DeleteFilterArgs", 1
+
+	Freeze &H0
+	a = Data.Getvalue ("\measurement\MinArea")
+	If a > 0 Then
+		'создаем временный дубликат бинарного //
+		ShowBinaryFore
+		EditCopy
+		EditPaste
+		TmpBin = GetNameActivBinary()
+		BinDeleteSmallObjects a,-1,0,0,TmpBin,TmpBin,4
+		BinDeleteSmallObjects a,-1,0,255,TmpBin,TmpBin,4
+	End If
+	Set ObjList = Objects.GetActiveObject( "Object List" )
+	If not Docs.IsPointerNull(ObjList) Then 
+		Objects.RemoveObject ObjList
+		Set ObjList = Nothing
+	End If
+	
+	'включаем параметры, участвующие в расчете включенных пользовательских //
+	Call SetDependentParams()
+	
+	MeasureBin
+	If ExistObjectByName(TmpBin) Then ObjectDelete TmpBin	'удаляем временное бинарное //
+	ClassifyObjectList 
+	If Data.Getvalue ("\Objects\_Small\0\lo")>0 Then ObjectFilter "\Objects\_Small", 0
+	ShowImage
+	Data.SetValue "\General\DeleteFilterArgs", iDeleteFilterArgsOld
+	Freeze 0
+
+	ActionState.EndGroupUndo 1
+End Sub

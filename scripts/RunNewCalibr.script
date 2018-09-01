@@ -1,0 +1,61 @@
+'resource:New Calibration...#Measurement#Create new calibration#New Calibration
+'state:action=Median
+
+Call RunNewCalibr_script
+
+Sub RunNewCalibr_script
+	Dim bBreak
+	Dim ShowChildObjectsOld
+	bBreak = False
+
+	HideDockBars
+
+	'Убираем разделение окна //
+	Call WindowSplitHor(1, "ImageDoc.ImageView", "", -1)
+
+	'Выключаем разделение окна по акции MeasManualLine//
+	g_bSkipActionsEvent = True
+	
+	'Включаем показ изм. линий, если они выключены //
+	ShowChildObjectsOld = Data.GetValue ("\ImageView\ShowChildObjects")
+	Data.SetValue "\ImageView\ShowChildObjects", 1
+	MainWnd.UpdateSystemSettingsForCurrentDoc
+
+	'Цикл создания - тестирования калибровки //
+	Do
+		'Сохраняем активную калибровку //
+		strLastActiveCalibr = Data.GetValue("\NewCalibr\Active")
+
+		FormManager.ExecutePageModal "NewCalibr"
+		
+		'Сохраняем коэф. X/Y в созданной калибровке //
+		If Data.GetValue ("\tmp\FormOK") Then
+			'тестирование калибровки (можно запретить ключом TestNewCalibr в shell.data) //
+			If Data.GetDefValue("\NewCalibr\TestNewCalibr", 1) Then
+				FormManager.ExecutePageModal "TestNewCalibrLight"
+				If Data.GetValue("\tmp\FormOK") Then Exit Do
+				
+				'Удаляем калибровку, которая не прошла тест //
+				Data.RemoveValue "\NewCalibr\" & Data.GetValue("\NewCalibr\Active")
+				Data.SetValue "\NewCalibr\Active", strLastActiveCalibr
+				ActionManager.ReCalcOnChangeCalibr
+			Else
+				bBreak = True
+			End If
+		Else
+			bBreak = True
+		End If
+	Loop Until bBreak
+
+	'Восстанавливаем показ изм. линий //
+	Data.SetValue "\ImageView\ShowChildObjects", ShowChildObjectsOld
+	MainWnd.UpdateSystemSettingsForCurrentDoc
+
+	g_bSkipActionsEvent = False
+
+	ShowDockBars
+
+	If Data.GetDefValue("\Methods\SaveFormsSettingsToMethods", 0) Then
+		Call SetMethodSettings( "ActiveCalibr", Data.GetValue("\NewCalibr\Active") )
+	End If
+End Sub

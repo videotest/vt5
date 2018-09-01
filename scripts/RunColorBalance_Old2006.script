@@ -1,0 +1,17 @@
+'resource:Color Balance...#Enhance#Apply the Color Balance filter to the image#Color Balance
+'state:action=Median
+
+Set img = Objects.ActiveImage
+ColorSystem = img.GetColorSystem
+Set img = Nothing
+If ColorSystem <> "GRAY" Then  
+	Data.SetValue "\DockBars\VisibleTBName", Data.GetValue("\DockBars\TB_FiltersName")
+	If Data.GetValue("\DockBars\PageInProcessing") Then Data.SetValue "\DockBars\isPass", True
+		If isMaster Then
+			FormManager.ExecutePageModal "ColorBalance"
+		Else
+			FormManager.ExecutePage "ColorBalance"
+		End If
+Else
+	MsgBox Docs.LoadString ("It is not a color image!"), vbInformation, Docs.LoadString ("Information")
+End If

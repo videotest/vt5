@@ -295,6 +295,7 @@ BOOL CPeriodicDlg::OnInitDialog()
 		::EnableWindow(::GetDlgItem(m_hWnd, IDC_STOP1), FALSE);
 	}
 	Register(GetAppUnknown(), NULL);
+	AddRef();
 	m_clrText = ::GetValueColor(GetAppUnknown(), "Editor", "CommentText_Fore", RGB(0,255,0));
 	
 	return TRUE;  // return TRUE unless you set the focus to a control

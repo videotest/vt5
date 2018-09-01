@@ -1,0 +1,6 @@
+'state:function=StateObjectFreeScript
+
+MethodMan_BeforeInteractiveMethodStep "ObjectFreeScript", "group"
+ActionState.RunInteractive "ObjectFree"
+MethodMan.StoreStepAs Docs.LoadString ("Object Editor")
+MethodMan.CancelStepStoring

@@ -1,0 +1,4 @@
+'state:function=StateMeasManualAngle3PointScript
+
+MethodMan.RenameCurrentStep Docs.LoadString ("Manual Measurements")
+ActionState.RunInteractive "MeasManualAngle3Point"

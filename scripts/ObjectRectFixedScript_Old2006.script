@@ -1,0 +1,6 @@
+'state:function=StateObjectRectFixedScript
+
+MethodMan_BeforeInteractiveMethodStep "ObjectRectFixedScript", "group"
+ActionState.RunInteractive "ObjectRectFixed"
+MethodMan.StoreStepAs Docs.LoadString ("Object Editor")
+MethodMan.CancelStepStoring

@@ -1,0 +1,14 @@
+'resource:Capture#Acquire#Capture an image from video device#Capture
+'state:function=LiveVideoOn
+
+Set obj=Objects.GetActiveObject( "Image" )
+If IsNull(obj)="Nothing" Then ActionManager.FileNew  "Image" 
+ActionManager.InputImageInCurrentDoc 0,0,0
+
+Set frame = MainWnd.ActiveFrame
+If not Docs.IsPointerNull(frame) Then
+	Set s = frame.GetSplitter
+	s.SetViewType 0, 0, "ImageDoc.ImageView"
+	Call XYImageCorrection
+	ActionManager.FitDoc2Screen 1
+End If

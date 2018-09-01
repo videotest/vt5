@@ -1,0 +1,6 @@
+'state:function=StateMeasManualCycle3Script
+
+MethodMan_BeforeInteractiveMethodStep "MeasManualCycle3Script", "group"
+ActionState.RunInteractive "MeasManualCycle3"
+MethodMan.StoreStepAs Docs.LoadString ("Manual Measurements")
+MethodMan.CancelStepStoring

@@ -1,0 +1,16 @@
+'resource:Equalize...#Enhance#Equalize the active image#Equalize
+'state:action=Equalize
+
+Data.SetValue "\General\EnableDock", 0
+Data.SetValue "\DockBars\VisibleTBName", Data.GetValue("\DockBars\TB_FiltersName")
+If Data.GetValue("\DockBars\PageInProcessing") Then Data.SetValue "\DockBars\isPass", True
+
+If isMaster Then
+	FormManager.ExecutePageModal "Equalize"
+Else
+	FormManager.ExecutePage "Equalize"
+End If
+
+If MethodMan.IsRecording() = False or MethodMan.IsRunning() = False Then
+	Data.SetValue "\General\EnableDock", 1
+End If

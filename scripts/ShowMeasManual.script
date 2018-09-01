@@ -1,0 +1,11 @@
+'resource:Manual Measurements#Tools#Show/hide Manual Measurements toolbar#Manual Measurements
+'state:function=IsMeasManualToolBarVisible
+
+ActionState.TerminateCurrentAction
+BarNo = ToolBars.FindNo ( Docs.LoadString ("Manual Measurements"))
+ToolBars.ShowBar BarNo , 1- ToolBars.IsBarVisible( BarNo )
+If ToolBars.IsBarVisible( BarNo ) Then
+	ActionState.SetActionState "ShowMeasManual", 1
+Else
+	ActionState.SetActionState "ShowMeasManual", 3
+End If

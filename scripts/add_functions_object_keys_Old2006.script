@@ -1,0 +1,177 @@
+'==========================================================
+' Чтение BaseObjectKey //
+'==========================================================
+Function GetBaseObjectKey2(objArg)
+	Dim strType, objItem
+	If Docs.IsPointerNull(objArg) Then Exit Function
+	strType = objArg.GetType
+	GetBaseObjectKey2 = ""
+	lngPos = Objects.GetFirstObjectPos(strType)
+	Do Until lngPos = 0
+		Set objItem = Objects.GetObject(strType, lngPos)
+		If objItem Is objArg Then
+			GetBaseObjectKey2 = Objects.GetBaseObjectKey(strType, lngPos)
+			Exit Do
+		End If
+		lngPos = Objects.GetNextObjectPos(strType, lngPos)
+	Loop
+End Function
+
+'==========================================================
+' Установка BaseObjectKey //
+'==========================================================
+Sub SetBaseObjectKey2(objArg, strNewKey)
+	Dim strType, objItem
+	If Docs.IsPointerNull(objArg) Then Exit Sub
+	strType = objArg.GetType
+	lngPos = Objects.GetFirstObjectPos(strType)
+	Do Until lngPos = 0
+		Set objItem = Objects.GetObject(strType, lngPos)
+		If objItem Is objArg Then
+			Objects.SetBaseObjectKey strType, lngPos, strNewKey
+			Exit Do
+		End If
+		lngPos = Objects.GetNextObjectPos(strType, lngPos)
+	Loop
+End Sub
+
+'==========================================================
+' Определение наличия в документе объектов типа strType с заданным BaseObjectKey //
+'==========================================================
+Function FindBaseKey(sBaseKey, strType)
+	FindBaseKey = False
+	lngPos = Objects.GetFirstObjectPos(strType)
+	Do Until lngPos = 0
+		If sBaseKey = Objects.GetBaseObjectKey(strType, lngPos) Then
+			FindBaseKey = True
+			Exit Do
+		End If
+		lngPos = Objects.GetNextObjectPos(strType, lngPos)
+	Loop
+End Function
+
+'==========================================================
+' Возвращает имена объектов той же базовой группы, что и objImage //
+' Формат: "|_cgh_OL_01|_cgh_AvOL_01|Drawing Objects 1|" ("" если нет) //
+' iFlags(And):	1 - Object List
+'				2 - Drawing Objects
+'				4 - Binary
+'==========================================================
+Function GetChildObjects(objImage, ByVal iFlags)
+	GetChildObjects = ""
+	If Docs.IsPointerNull(objImage) Then Exit Function
+
+	GetChildObjects = "|"
+
+	lngPos = Objects.GetFirstObjectPos("Image")
+	Do Until lngPos = 0
+		Set obj1 = Objects.GetObject("Image", lngPos)
+		If objImage Is obj1 Then
+			BaseKey = Objects.GetBaseObjectKey("Image", lngPos)
+			Exit Do
+		End If
+		lngPos = Objects.GetNextObjectPos("Image", lngPos)
+	Loop
+
+	If ( iFlags And 1 ) Then
+		lngPos = Objects.GetFirstObjectPos("Object List")
+		Do Until lngPos = 0
+			If Objects.IsBaseObject("Object List", lngPos) = 0 Then
+				BaseOLKey = Objects.GetBaseObjectKey("Object List", lngPos)
+				If BaseOLKey = BaseKey Then
+					Set objOL = Objects.GetObject("Object List", lngPos)
+					GetChildObjects = GetChildObjects & objOL.Name & "|"
+				End If
+			End If
+			lngPos = Objects.GetNextObjectPos("Object List", lngPos)
+		Loop
+	End If
+
+	If ( iFlags And 2 ) Then
+		lngPos = Objects.GetFirstObjectPos("Drawing Object List")
+		Do Until lngPos = 0
+			If Objects.IsBaseObject("Drawing Object List", lngPos) = 0 Then
+				BaseOLKey = Objects.GetBaseObjectKey("Drawing Object List", lngPos)
+				If BaseOLKey = BaseKey Then
+					Set objOL = Objects.GetObject("Drawing Object List", lngPos)
+					GetChildObjects = GetChildObjects & objOL.Name & "|"
+				End If
+			End If
+			lngPos = Objects.GetNextObjectPos("Drawing Object List", lngPos)
+		Loop
+	End If
+
+	If ( iFlags And 4 ) Then
+		lngPos = Objects.GetFirstObjectPos("Binary")
+		Do Until lngPos = 0
+			If Objects.IsBaseObject("Binary", lngPos) = 0 Then
+				BaseOLKey = Objects.GetBaseObjectKey("Binary", lngPos)
+				If BaseOLKey = BaseKey Then
+					Set objOL = Objects.GetObject("Binary", lngPos)
+					GetChildObjects = GetChildObjects & objOL.Name & "|"
+				End If
+			End If
+			lngPos = Objects.GetNextObjectPos("Binary", lngPos)
+		Loop
+	End If
+
+	If GetChildObjects = "|" Then GetChildObjects = ""
+End Function
+
+'==========================================================
+' Возвращает имя первого заселекченного объекта той же //
+' базовой группы, что и objImage ("" если нет) //
+' iFlag:  1 - Object List
+'         2 - Drawing Objects
+'         4 - Binary
+' другие значения iFlag игнорируются //
+' out: iFlag = -2 - некорректное значение iFlag на входе //
+'      iFlag = -1 - объектов несколько, заселекченных нет //
+'      iFlag = 0 - объектов нет вообще //
+'      iFlag = 1 - объект один, его имя возвращается //
+'      iFlag = 2 - объектов несколько, заселекченный один, его имя возвращается //
+'==========================================================
+Function FindSelectedChildObject(objImage, ByRef iFlag)
+	Dim arrChildObjects, objSelObject
+
+	FindSelectedChildObject = ""
+
+	Select Case iFlag
+	  Case 1
+		sObjectType = "Object List"
+	  Case 2
+		sObjectType = "Drawing Object List"
+	  Case 4
+		sObjectType = "Binary"
+	  Case Else
+		iFlag = -2
+		Exit Function
+	End Select
+
+	arrChildObjects = Split( GetChildObjects(objImage, iFlag) , "|" )
+	Select Case UBound(arrChildObjects)
+	  Case -1
+		iFlag = 0
+	  Case 2
+		iFlag = 1
+		FindSelectedChildObject = arrChildObjects(1)
+	  Case Else
+		'для изображения objImage найдено несколько дочерних объектов //
+		'проверяем, есть ли среди них заселекченный //
+		Set objSelObject = Objects.GetSelectedByIndex(sObjectType, 0)
+		If Docs.IsPointerNull(objSelObject) Then
+			'заселекченных вообще нет //
+			iFlag = -1
+		Else
+			pos = FindInArray(arrChildObjects, objSelObject.Name)
+			If pos = -1 Then
+				'заселекченных среди дочерних не обнаружено //
+				iFlag = -1
+			Else
+				'заселекченный обнаружен //
+				FindSelectedChildObject = arrChildObjects(pos)
+				iFlag = 2
+			End If
+		End If
+	End Select
+End Function

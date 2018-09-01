@@ -1,0 +1,15 @@
+'resource:Send View...#File#Send the current view by E-Mail#Send View
+'state:action=FileSaveView
+
+Data.SetValue "\tmp\StatSaveView", "Send"
+
+If GetCurrentView() = "StatUI.StatObjectView" Then
+	iOldStatView = ObjectGetValue (GetStatObj(), "\StatUI\Views", "")
+	If iOldStatView = 1 or iOldStatView = 2 or iOldStatView = 3 or iOldStatView = 4 Then
+		FileSendView
+	Else
+		FormManager.ExecuteModal "StatSaveView"
+	End If
+Else 
+	FileSendView
+End If

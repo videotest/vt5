@@ -1,0 +1,10 @@
+'resource:Stitch Options...#Image#Stitch options#Stitch Options
+'state:action=Median
+
+If isMaster Then
+	FormManager.ExecutePageModal "OptionsStitch"
+Else
+	FormManager.ExecutePage "OptionsStitch"
+End If
+
+ActionState.ClearUndoList

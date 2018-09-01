@@ -1,0 +1,6 @@
+'state:function=StateObjectEditorScript
+
+MethodMan_BeforeInteractiveMethodStep "ObjectEditorScript", "group"
+ActionState.RunInteractive "ObjectEditor"
+MethodMan.StoreStepAs Docs.LoadString ("Object Editor")
+MethodMan.CancelStepStoring

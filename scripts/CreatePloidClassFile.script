@@ -1,0 +1,51 @@
+'resource:...#Measurement###Measurement
+
+Call CreatePloidClassFile_script
+
+Sub CreatePloidClassFile_script
+	bFailure = False
+	Set TD = GetStatTable()
+	If Not Docs.IsPointerNull(TD) Then
+		CreateStatObject TD.Name, "PloidStat", -1, 0, , 1
+		Set StatObj = Objects.GetObjectByName("PloidStat")
+		If Not Docs.IsPointerNull(StatObj) Then
+			'MsgBox StatObj.GetValueGlobal (196610)
+			IOD = StatObj.GetValueGlobal (196610)
+			If Data.GetDefValue ("\Ploid\CalibrCell", 2) = 2 Then IOD = IOD / 2
+			IOD = CDbl( FormatNumberEx(IOD, 3, 0) )
+
+			strClassFile = Data.GetValue("\Paths\Classes") & "Плоидность.class"
+
+			Application.WritePrivateProfileString strClassFile, "General", "ClassifyName", "Ручной классификатор"
+			Application.WritePrivateProfileString strClassFile, "General", "ClassifyProgID", "ClassBase.ManualClassifier"
+			Application.WritePrivateProfileString strClassFile, "KeysInfo", "KeysEnum", "51"
+
+			n = 13
+			Application.WritePrivateProfileString strClassFile, "Classes", "ClassCount", n
+			For i = 0 To n - 1
+				sOldValue = Application.GetPrivateProfileString(strClassFile, "Classes", CStr(i), "")
+				pos = InStr(sOldValue, ")")
+				If pos > 0 Then
+					sValue = Left(sOldValue, pos) & "," & CStr(i + 1) & "C"
+				Else
+					sValue = "(" & CInt(Rnd() * 255) & _
+					         "," & CInt(Rnd() * 255) & _
+							 "," & CInt(Rnd() * 255) & ")," & CStr(i + 1) & "C"
+				End If
+				Application.WritePrivateProfileString strClassFile, "Classes", CStr(i), sValue
+				
+				sValue = CStr2( IOD * (i + .5) ) & "," & CStr2( IOD * (i + 1.5) )
+				Application.WritePrivateProfileString strClassFile, "KeyData:51", CStr(i), sValue
+			Next
+		Else
+			bFailure = True
+		End If
+	Else
+		bFailure = True
+	End If
+
+	If bFailure Then
+		MsgBox Docs.LoadString ("Ошибка создания классификатора!"), vbCritical, sVT
+		MethodMan.Stop()
+	End If
+End Sub
