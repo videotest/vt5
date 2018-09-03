@@ -381,7 +381,7 @@ void CTriggerSeqDlg::SaveImages()
 		IDocumentSitePtr sptrDS = punkDoc;
 		if (sptrDS == 0)
 			continue;
-		long lPos = 0;
+		TPOS lPos = 0;
 		sptrDS->GetFirstViewPosition(&lPos);
 		while (lPos)
 		{

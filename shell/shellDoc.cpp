@@ -872,11 +872,12 @@ void CShellDoc::OnCloseDocument()
 
 	m_bAutoDelete = false;
 
-	while( POSITION	pos = m_viewList.GetHeadPosition() )
+	for (POSITION pos = m_viewList.GetHeadPosition(); 0!=pos;)
 	{
-		CView* pview = (CView*)m_viewList.GetNext( pos );
+		POSITION  posNext=pos;
+		CView* pview = (CView*)m_viewList.GetNext(posNext);
 		ASSERT_VALID(pview);
-		CFrameWnd* pFrame = pview->GetParentFrame();
+		CFrameWnd* pFrame = pview->GetParentFrame(); 
 
 		if( !pFrame )
 		{
@@ -892,6 +893,8 @@ void CShellDoc::OnCloseDocument()
 			if(::IsWindow(pFrame->m_hWnd))
 				pFrame->DestroyWindow();
 		}
+		m_viewList.RemoveAt(pos);
+		pos = posNext;
 	}
 
 	if( m_viewList.GetHeadPosition() )
@@ -931,7 +934,7 @@ long CShellDoc::GetViewsCount()
 	return nCounter;
 }
 
-LPDISPATCH CShellDoc::GetView(long nPos) 
+LPDISPATCH CShellDoc::GetView(POSITION nPos)
 {
 	POSITION pos = GetFirstViewPosition();
 
@@ -959,7 +962,7 @@ long CShellDoc::GetFramesCount()
 	return m_listFrames.GetCount();
 }
 
-LPDISPATCH CShellDoc::GetFrame(long nPos) 
+LPDISPATCH CShellDoc::GetFrame(POSITION nPos) 
 {
 	POSITION	pos = GetFirstFramePosition();
 

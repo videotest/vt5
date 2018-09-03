@@ -76,7 +76,7 @@ void CAviParams::DefineParameter(long lKey, BSTR bstrName, BSTR bstrDefFmt)
 	pdescr->bstrDefFormat = bstrDefFmt==0?0:SysAllocString(bstrDefFmt);
 	pdescr->lKey = lKey;
 	pdescr->lEnabled = 0;
-	pdescr->pos = m_Params.add_tail(pdescr);
+	pdescr->pos = (LONG_PTR)m_Params.add_tail(pdescr);
 	if (bstrName != 0)
 	{
 		_bstr_t sMainSection("\\measurement\\parameters\\");
@@ -106,7 +106,7 @@ void CAviParams::ReadParameterSettings(ParameterDescriptor *pdescr)
 
 void CAviParams::ReloadState()
 {
-	for (long lpos = m_Params.head(); lpos != 0; lpos = m_Params.next(lpos))
+	for (TPOS lpos = m_Params.head(); lpos != 0; lpos = m_Params.next(lpos))
 	{
 		ParameterDescriptor *pdescr = m_Params.get(lpos);
 		ReadParameterSettings(pdescr);
@@ -157,26 +157,26 @@ HRESULT CAviParams::GetParamsCount(long *plCount)
 
 HRESULT CAviParams::GetFirstPos(LONG_PTR *plPos)
 {
-	*plPos = m_Params.head();
+	*plPos = (LONG_PTR)m_Params.head();
 	return S_OK;
 }
 
 HRESULT CAviParams::GetNextParam(LONG_PTR *plPos, struct ParameterDescriptor **ppDescriptior )
 {
-	if (ppDescriptior) *ppDescriptior = m_Params.get(*plPos);
-	*plPos = m_Params.next(*plPos);
+	if (ppDescriptior) *ppDescriptior = m_Params.get((TPOS)*plPos);
+	*plPos = (LONG_PTR)m_Params.next((TPOS)*plPos);
 	return S_OK;
 }
 
 HRESULT CAviParams::GetPosByKey(long lKey, LONG_PTR *plPos)
 {
 	*plPos = 0;
-	for (LONG_PTR lpos = m_Params.head(); lpos != 0; lpos = m_Params.next(lpos))
+	for (TPOS lpos = m_Params.head(); lpos != 0; lpos = m_Params.next(lpos))
 	{
 		ParameterDescriptor *pdescr = m_Params.get(lpos);
 		if (pdescr->lKey == lKey)
 		{
-			*plPos = lpos;
+			*plPos = (LONG_PTR)lpos;
 			break;
 		}
 	}
@@ -186,7 +186,7 @@ HRESULT CAviParams::GetPosByKey(long lKey, LONG_PTR *plPos)
 HRESULT CAviParams::InitializeCalculation(IUnknown *punkContainer)
 {
 	m_ptrContainer = punkContainer;
-	for (long lpos = m_Params.head(); lpos != 0; lpos = m_Params.next(lpos))
+	for (TPOS lpos = m_Params.head(); lpos != 0; lpos = m_Params.next(lpos))
 	{
 		ParameterDescriptor *pdescr = m_Params.get(lpos);
 		if (pdescr->lEnabled)

@@ -61,7 +61,7 @@ UINT CStreamEx::Read(void* lpBuf, UINT nMax)
 	if( hr != S_OK )
 		CFileException::ThrowOsError( ::GetLastError() );
 
-	ASSERT( nMax == nRead );
+	ASSERT( nMax >= nRead );
 
 	if( nRead != nMax )
 		CFileException::ThrowErrno( CFileException::endOfFile );		

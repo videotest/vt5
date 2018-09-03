@@ -38,7 +38,7 @@ public:
 // Attributes
 public:
 	void RecalcLayout();
-	long GetPanesCount()				{return m_panes.GetSize();}
+	INT_PTR GetPanesCount()				{return m_panes.GetSize();}
 	PaneInfo *GetPaneInfo( int idx )	{return (PaneInfo*)m_panes[idx];}
 
 
