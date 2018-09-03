@@ -1725,11 +1725,11 @@ HRESULT CAviObj::XAviImageDisp::GetFirstChildPos( /*[in, out]*/ VARIANT *pvarPos
 		return E_INVALIDARG;
 
 	HRESULT hr_ret = S_OK;
-	TPOS lpos = 0;
-	if( (hr_ret = m_pmainclass->GetFirstChildPosition( &lpos )) != S_OK )
+	TPOS lpos = (TPOS)0;
+	if ((hr_ret = m_pmainclass->GetFirstChildPosition(&lpos)) != S_OK)
 		return hr_ret;
 
-	_variant_t var(lpos);
+	_variant_t var((LONG_PTR)lpos);
 	::VariantCopy( pvarPos, &var );
 	return S_OK;
 }
@@ -1746,7 +1746,7 @@ HRESULT CAviObj::XAviImageDisp::GetLastChildPos( /*[in, out]*/ VARIANT *pvarPos 
 	HRESULT hr_ret = S_OK;
 	::VariantClear( pvarPos );
 	pvarPos->vt = VT_I4;
-	if( (hr_ret = m_pmainclass->GetLastChildPosition( (LONG_PTR*)&pvarPos->LONG_PTR_VAL)) != S_OK )
+	if( (hr_ret = m_pmainclass->GetLastChildPosition( (TPOS*)&pvarPos->LONG_PTR_VAL)) != S_OK )
 		return hr_ret;
 
 	return S_OK;
@@ -1766,7 +1766,7 @@ HRESULT CAviObj::XAviImageDisp::GetNextChild( /*[in, out]*/ VARIANT *pvarPos, /*
 
 	HRESULT hr_ret = S_OK;
 	IUnknown *punk_child = 0;
-	if ((hr_ret = m_pmainclass->GetNextChild((LONG_PTR*)&pvarPos->LONG_PTR_VAL, &punk_child)) != S_OK)
+	if ((hr_ret = m_pmainclass->GetNextChild((TPOS*)&pvarPos->LONG_PTR_VAL, &punk_child)) != S_OK)
 		return hr_ret;
 
     hr_ret = punk_child->QueryInterface(IID_IDispatch, (void**)ppDisp);
@@ -1790,7 +1790,7 @@ HRESULT CAviObj::XAviImageDisp::GetPrevChild( /*[in, out]*/ VARIANT *pvarPos, /*
 
 	HRESULT hr_ret = S_OK;
 	IUnknown *punk_child = 0;
-	if ((hr_ret = m_pmainclass->GetPrevChild((LONG_PTR*)&pvarPos->LONG_PTR_VAL, &punk_child)) != S_OK)
+	if ((hr_ret = m_pmainclass->GetPrevChild((TPOS*)&pvarPos->LONG_PTR_VAL, &punk_child)) != S_OK)
 		return hr_ret;
 
     hr_ret = punk_child->QueryInterface(IID_IDispatch, (void**)ppDisp);

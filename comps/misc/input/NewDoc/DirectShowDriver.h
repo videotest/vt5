@@ -9,8 +9,12 @@
 #pragma once
 #endif // _MSC_VER > 1000
 
-#include "DShow.h"
-#include "qedit.h"
+#include <DShow.h>
+#define __IDxtCompositor_INTERFACE_DEFINED__
+#define __IDxtAlphaSetter_INTERFACE_DEFINED__
+#define __IDxtJpeg_INTERFACE_DEFINED__
+#define __IDxtKey_INTERFACE_DEFINED__
+#include <qeditMy.h>
 #include "Driver.h"
 #include "NewDocVT5Profile.h"
 

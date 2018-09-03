@@ -813,7 +813,7 @@ HRESULT CAviGallery::GetFirstVisibleObjectPosition(TPOS *plpos)
 	*plpos = 0;
 
 	if( m_ptrAvi != 0 )
-		*plpos = 1;
+		*plpos = (TPOS)1;
 	
 	return S_OK;
 }
@@ -821,12 +821,12 @@ HRESULT CAviGallery::GetFirstVisibleObjectPosition(TPOS *plpos)
 //////////////////////////////////////////////////////////////////////
 HRESULT CAviGallery::GetNextVisibleObject( IUnknown ** ppunkObject, TPOS *plPos )
 {	
-	long lPos		= *plPos;
+	TPOS lPos		= *plPos;
 	*ppunkObject	= 0;
 
 	*plPos			= 0;
 
-	if( lPos == 1 )
+	if( lPos == (TPOS)1 )
 	{
 		if( m_ptrAvi )
 		{

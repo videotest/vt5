@@ -430,7 +430,7 @@ IMPLEMENT_UNKNOWN(CShellFrame, Frm);
 
 LPUNKNOWN CShellFrame::GetInterfaceHook(const void*piidv)
 {
-	/*static bool bInsideHook = false;
+	static bool bInsideHook = false;
 
 	if( bInsideHook )
 		return false;
@@ -453,7 +453,7 @@ LPUNKNOWN CShellFrame::GetInterfaceHook(const void*piidv)
 
 		return punkInterface;
 	}
-	bInsideHook  = false;*/
+	bInsideHook  = false;
 
 	return 0;
 }

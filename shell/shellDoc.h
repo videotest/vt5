@@ -104,10 +104,10 @@ protected:
 	// Generated OLE dispatch map functions
 	//{{AFX_DISPATCH(CShellDoc)
 	afx_msg long GetViewsCount();
-	afx_msg LPDISPATCH GetView(long nPos);
+	afx_msg LPDISPATCH GetView(POSITION nPos);
 	afx_msg LPDISPATCH _GetActiveView();
 	afx_msg long GetFramesCount();
-	afx_msg LPDISPATCH GetFrame(long nPos);
+	afx_msg LPDISPATCH GetFrame(POSITION nPos);
 	afx_msg LPDISPATCH GetData();
 	afx_msg LPDISPATCH GetActiveDataContext();
 	afx_msg BSTR GetDocPathName();
