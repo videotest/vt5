@@ -101,7 +101,7 @@ static char THIS_FILE[] = __FILE__;
 
 //ViewAX button referense
 
-#import <ContextAX.ocx> rename_namespace("OcxSpace") 
+#import <ContextAX.dll> rename_namespace("OcxSpace") 
 
 using namespace OcxSpace; 
 

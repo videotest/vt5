@@ -7,9 +7,9 @@ public:
 	CJPGFileFilter();
 	virtual ~CJPGFileFilter();
 
-	//virtual bool InitNew(){return true;}
-	//virtual bool ReadFile( const char *pszFileName );
-	//virtual bool WriteFile( const char *pszFileName );
+	virtual bool InitNew(){return true;}
+	virtual bool ReadFile( const char *pszFileName );
+	virtual bool WriteFile( const char *pszFileName );
 	virtual void OnSetHandlers();
 };
 

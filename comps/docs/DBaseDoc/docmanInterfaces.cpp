@@ -384,7 +384,7 @@ HRESULT CDBaseDocument::XData::GetObject(	BSTR bstrName, BSTR bstrType, IUnknown
 
 
 ////////////////////////////////////////////////////////////////////////////////////////////
-HRESULT CDBaseDocument::XData::NotifyContexts( DWORD dwNotifyCode, IUnknown *punkNew, IUnknown *punkOld, DWORD dwData)
+HRESULT CDBaseDocument::XData::NotifyContexts( DWORD dwNotifyCode, IUnknown *punkNew, IUnknown *punkOld, GUID* dwData)
 {
 	_try_nested(CDBaseDocument, Data, NotifyContexts)
 	{	

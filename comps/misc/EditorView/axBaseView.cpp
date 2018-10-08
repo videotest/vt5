@@ -2071,7 +2071,7 @@ BOOL CAxBaseView::PreTranslateMessage(MSG* pMsg)
 
 	if( pMsg->message == WM_KEYDOWN )
 	{
-		return _OnKeyDown( pMsg->wParam, LOWORD( pMsg->lParam ), HIWORD( pMsg->lParam ) );
+		return _OnKeyDown( (UINT)pMsg->wParam, LOWORD( pMsg->lParam ), HIWORD( pMsg->lParam ) );
 	}
 
 					 

@@ -483,10 +483,10 @@ HRESULT CTestItem::GetNextCond( /*[out]*/ VARIANT *plPos, /*[out, retval]*/ BSTR
 	if( !plPos )
 		return E_FAIL;
 
-	if( plPos->vt != VT_I4 )
-		return E_FAIL;
+	//if( plPos->vt != VT_UINT_PTR )
+	//	return E_FAIL;
 
-	return GetNextCond( &plPos->lVal, pbstr );
+	return GetNextCond( (LPOS*)&plPos->pulVal, pbstr );
 }
 
 HRESULT CTestItem::GetNextCond( /*[out]*/ LPOS *plPos, /*[out, retval]*/ BSTR *pbstr)
@@ -1239,14 +1239,11 @@ HRESULT CTestItem::NextSingleCond( /*[out]*/ VARIANT *lpPos, /*[out]*/ VARIANT *
 	if( !pVarPath )
 		return E_FAIL;
 
-	if( !pVarPath )
-		return E_FAIL;
-
 	if( !pVarParams )
 		return E_FAIL;
 
-	if( lpPos->vt != VT_I4 )
-		return E_FAIL;
+	//if( lpPos->vt != VT_I4 )
+	//	return E_FAIL;
 
 	X_PARSED_DATA &data = m_lstParsedSingleCond.get( (TPOS)lpPos->LONG_PTR_VAL ); 
 

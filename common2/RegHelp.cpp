@@ -3,7 +3,6 @@
 #include "Helper.h"
 #include "stringEx.h"
 
-
 //////////////////////////////////////////////////////////////////////
 // Utility functions
 
@@ -15,7 +14,7 @@ bool RecursiveCreateBranch(HKEY hRoot, const char * szBranch)
 	if (!szBranch || !lstrlen(szBranch))
 		return true;
 
-	CRegKey reg;
+	::CRegKey reg;
 	
 	// if branch exists simply return true
 	if (reg.Open(hRoot, szBranch))
@@ -281,32 +280,32 @@ void CRegValue::SetData(DWORD dwtype, LPBYTE lpData, DWORD dwsize)
 /////////////////////////////////////////////////////////////////////////////////////////
 // class CRegKey
 
-CRegKey::CRegKey()
+::CRegKey::CRegKey()
 {
 	m_hKey = NULL;
 	m_hRoot = NULL;
 //	m_bstrKey = "";
 }
 
-CRegKey::CRegKey(HKEY hRoot, const char * szKey)
+::CRegKey::CRegKey(HKEY hRoot, const char * szKey)
 {
 	m_hKey = NULL;
 	m_hRoot = CheckRoot(hRoot) ? hRoot : NULL;
 	m_bstrKey = szKey ? szKey : "";
 }
 
-CRegKey::~CRegKey()
+::CRegKey::~CRegKey()
 {
 	Close();
 }
 
 
-CRegKey::operator HKEY() const
+::CRegKey::operator HKEY() const
 {
 	return m_hKey;
 }
 
-bool CRegKey::SetValue(CRegValue & val)
+bool ::CRegKey::SetValue(CRegValue & val)
 {
 	if (!m_hKey && !Create())
 		return false;
@@ -314,7 +313,7 @@ bool CRegKey::SetValue(CRegValue & val)
 	return (ERROR_SUCCESS == RegSetValueEx(m_hKey, val.GetName(), 0, val.GetType(), val.GetData(), val.GetDataSize()));
 }
 
-bool CRegKey::GetValue(CRegValue & val)
+bool ::CRegKey::GetValue(CRegValue & val)
 {
 	if (!m_hKey && !Open())
 		return false;
@@ -345,7 +344,7 @@ bool CRegKey::GetValue(CRegValue & val)
 	return true;
 }
 
-bool CRegKey::Create(HKEY hRoot, const char * szKey)
+bool ::CRegKey::Create(HKEY hRoot, const char * szKey)
 {
 	if (Open(hRoot, szKey))
 		return true;
@@ -360,7 +359,7 @@ bool CRegKey::Create(HKEY hRoot, const char * szKey)
 	return Open();
 }
 
-bool CRegKey::Open(HKEY hRoot, const char * szKey)
+bool ::CRegKey::Open(HKEY hRoot, const char * szKey)
 {
 	Close();
 
@@ -374,7 +373,7 @@ bool CRegKey::Open(HKEY hRoot, const char * szKey)
 	return (ERROR_SUCCESS == RegOpenKeyEx(m_hRoot, m_bstrKey, 0, KEY_ALL_ACCESS, &m_hKey));
 }
 
-bool CRegKey::CreateSubKey(const char * szKey)
+bool ::CRegKey::CreateSubKey(const char * szKey)
 {
 	if (!szKey || !strlen(szKey))
 		return false;
@@ -394,7 +393,7 @@ bool CRegKey::CreateSubKey(const char * szKey)
 }
 
 
-bool CRegKey::Close()
+bool ::CRegKey::Close()
 {
 	if (!m_hKey)
 		return true;
@@ -406,7 +405,7 @@ bool CRegKey::Close()
 	return bRet;
 }
 
-bool CRegKey::DeleteKey()
+bool ::CRegKey::DeleteKey()
 {
 	// get last subkey
 	_bstr_t bstrFirst;
@@ -425,7 +424,7 @@ bool CRegKey::DeleteKey()
 	return true;
 }
 
-bool CRegKey::EnumSubKeys(StringArray & sa)
+bool ::CRegKey::EnumSubKeys(StringArray & sa)
 {
 	if (!m_hKey && !Open())
 		return false;
@@ -459,7 +458,7 @@ bool CRegKey::EnumSubKeys(StringArray & sa)
 	return true;
 }
 
-bool CRegKey::EnumValues(StringArray & sa)
+bool ::CRegKey::EnumValues(StringArray & sa)
 {
 	if (!m_hKey && !Open())
 		return false;
@@ -497,7 +496,7 @@ bool CRegKey::EnumValues(StringArray & sa)
 
 
 
-bool CRegKey::DeleteValue(CRegValue & val)
+bool ::CRegKey::DeleteValue(CRegValue & val)
 {
 	if (!m_hKey && !Open())
 		return false;
@@ -506,7 +505,7 @@ bool CRegKey::DeleteValue(CRegValue & val)
 }
 
 
-bool CRegKey::DeleteAllValues()
+bool ::CRegKey::DeleteAllValues()
 {
 	StringArray sa;
 	if (!EnumValues(sa))
@@ -522,7 +521,7 @@ bool CRegKey::DeleteAllValues()
 	return bRet;
 }
 
-bool CRegKey::DeleteSubKey(const char * szSubKey)
+bool ::CRegKey::DeleteSubKey(const char * szSubKey)
 {
 	_bstr_t bstr(szSubKey);
 	if (!bstr.length())
@@ -546,7 +545,7 @@ bool CRegKey::DeleteSubKey(const char * szSubKey)
 	return (ERROR_SUCCESS == RegDeleteKey(m_hKey, szSubKey)) && bRet;
 }
 
-bool CRegKey::DeleteAllSubKeys()
+bool ::CRegKey::DeleteAllSubKeys()
 {
 	StringArray sa;
 	if (!EnumSubKeys(sa))
@@ -562,7 +561,7 @@ bool CRegKey::DeleteAllSubKeys()
 	return bRet;
 }
 
-bool CRegKey::IsExists()
+bool ::CRegKey::IsExists()
 {
 	if (m_hKey)
 		return true;
@@ -578,7 +577,7 @@ bool CRegKey::IsExists()
 	return true;
 }
 
-bool CRegKey::IsExists(HKEY hRootKey, const char * szPath)
+bool ::CRegKey::IsExists(HKEY hRootKey, const char * szPath)
 {
 	if (!hRootKey || !szPath)
 		return false;
@@ -590,7 +589,7 @@ bool CRegKey::IsExists(HKEY hRootKey, const char * szPath)
 	RegCloseKey(hKey);
 	return true;
 }
-bool CRegKey::IsEmpty()
+bool ::CRegKey::IsEmpty()
 {
 	// if not key is not can not be opened it's means key wasn't be created
 	if (!m_hKey && !Open())
@@ -611,7 +610,7 @@ bool CRegKey::IsEmpty()
 }
 
 
-bool CRegKey::CheckRoot(HKEY hRoot)
+bool ::CRegKey::CheckRoot(HKEY hRoot)
 {
 	if (hRoot == HKEY_CLASSES_ROOT)
 		return true;

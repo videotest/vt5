@@ -556,7 +556,7 @@ bool CFilter::CanDeleteArgument( CFilterArgument *pa )
 
 bool CFilter::NeedActivateResult( CFilterArgument *pa )
 {
-	return GetValueInt( GetAppUnknown(), "General", "ActivateFilterResult", 1 );
+	return GetValueInt( GetAppUnknown(), "General", "ActivateFilterResult", 1 )!=0;
 }
 
 IUnknown *CFilter::GetObjectArgument( const char *szType, int nCurrentPos, IDataContext2 *punkContext )

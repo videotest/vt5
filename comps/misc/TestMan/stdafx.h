@@ -9,7 +9,7 @@
 // Windows Header Files:
 
 #ifndef _WIN32_WINNT		// Allow use of features specific to Windows NT 4 or later.
-#define _WIN32_WINNT 0x0500	// Change this to the appropriate value to target Windows 2000 or later.
+#define _WIN32_WINNT 0x0501	// Change this to the appropriate value to target Windows 2000 or later.
 #endif						
 
 #include <windows.h>

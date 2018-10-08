@@ -46,23 +46,24 @@ CPCXFileFilter::~CPCXFileFilter()
 }
 
 
-void pcxErrorHandler(const unsigned int error,const char *message, const char *qualifier)
+void pcxErrorHandler(const MagickCore::ExceptionType severity
+										 ,const char *reason,const char *description)
 {
-  DestroyDelegateInfo();
-  AfxMessageBox(message);
+	AfxMessageBox(CString(reason)+' '+description);
 }
 
-
-void pcxMonitorHandler(const char *msg,const unsigned int curPos,const unsigned int maxPos)
+MagickBooleanType pcxMonitorHandler(const char *msg,const MagickOffsetType curPos,
+		const MagickSizeType maxPos,void * client_data)
 {
-	if(pcxFilter == NULL) return;
-	if(!pcxFilter->m_bEnableMonitoring) return;
+	if(pcxFilter == NULL) return MagickFalse;
+	if(!pcxFilter->m_bEnableMonitoring) return MagickFalse;
 	if (pcxFilter->m_bFirstTime)
 	{
 		pcxFilter->m_bFirstTime = false;
-		pcxFilter->StartNotification(maxPos, 2);
+		pcxFilter->StartNotification((int)maxPos, 2);
 	}
-	pcxFilter->Notify(curPos);
+	pcxFilter->Notify((int)curPos);
+	return MagickTrue;
 }
 
 
@@ -71,7 +72,7 @@ void CPCXFileFilter::OnSetHandlers()
 	//if(pcxFilter == NULL)
 		pcxFilter = this;
 	m_oldErrorHandle = SetErrorHandler(pcxErrorHandler);
-	m_oldMonitorHandle = SetMonitorHandler(pcxMonitorHandler);
+	m_oldMonitorHandle = SetImageInfoProgressMonitor(&m_image_info, pcxMonitorHandler, this);
 }
 
 

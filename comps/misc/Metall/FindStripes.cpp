@@ -7,6 +7,11 @@
 #include "aam_utils.h"
 #include <limits.h>
 #include "\vt5\awin\misc_ptr.h"
+namespace {
+	int  round(double num) {
+			return int((num > 0.0) ? floor(num + 0.5) : ceil(num - 0.5));
+	}
+}
 
 _ainfo_base::arg CFindStripesInfo::s_pargs[] =
 {

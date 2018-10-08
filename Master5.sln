@@ -316,6 +316,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "libtiff", "thirdparty\libti
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "zlib-1.2.8", "thirdparty\zlib-1.2.8\zlib-1.2.8.vcxproj", "{59035AED-7379-4A60-A14A-33F218A06203}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "FileFilters", "comps\misc\FileFilters\FileFilters.vcxproj", "{BDB52B1B-D3DF-47DB-A142-72FFEE02CA65}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Win32 = Debug|Win32
@@ -1332,6 +1334,14 @@ Global
 		{59035AED-7379-4A60-A14A-33F218A06203}.Release|Win32.Build.0 = Release|Win32
 		{59035AED-7379-4A60-A14A-33F218A06203}.Release|x64.ActiveCfg = Release|x64
 		{59035AED-7379-4A60-A14A-33F218A06203}.Release|x64.Build.0 = Release|x64
+		{BDB52B1B-D3DF-47DB-A142-72FFEE02CA65}.Debug|Win32.ActiveCfg = Debug|Win32
+		{BDB52B1B-D3DF-47DB-A142-72FFEE02CA65}.Debug|Win32.Build.0 = Debug|Win32
+		{BDB52B1B-D3DF-47DB-A142-72FFEE02CA65}.Debug|x64.ActiveCfg = Debug|x64
+		{BDB52B1B-D3DF-47DB-A142-72FFEE02CA65}.Debug|x64.Build.0 = Debug|x64
+		{BDB52B1B-D3DF-47DB-A142-72FFEE02CA65}.Release|Win32.ActiveCfg = Release|Win32
+		{BDB52B1B-D3DF-47DB-A142-72FFEE02CA65}.Release|Win32.Build.0 = Release|Win32
+		{BDB52B1B-D3DF-47DB-A142-72FFEE02CA65}.Release|x64.ActiveCfg = Release|x64
+		{BDB52B1B-D3DF-47DB-A142-72FFEE02CA65}.Release|x64.Build.0 = Release|x64
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -1473,6 +1483,7 @@ Global
 		{CE2CD7A2-73C7-4E32-8007-D938AF35464E} = {8D1BA4BA-5D71-47EF-96EE-9AE586E219BD}
 		{B522A67C-79B3-4F96-9EE8-25036032DAC6} = {8D1BA4BA-5D71-47EF-96EE-9AE586E219BD}
 		{59035AED-7379-4A60-A14A-33F218A06203} = {8D1BA4BA-5D71-47EF-96EE-9AE586E219BD}
+		{BDB52B1B-D3DF-47DB-A142-72FFEE02CA65} = {DC72D949-8BDF-42C6-8EC7-9609A490A82F}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		DPBuild = 5

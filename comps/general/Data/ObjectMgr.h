@@ -291,7 +291,7 @@ public:
 	CContextManager();
 
 	// notify all objects 
-	bool Notify(long cod, IUnknown * punkNew, IUnknown * punkOld, DWORD dwData = 0);
+	bool Notify(long cod, IUnknown * punkNew, IUnknown * punkOld, GUID* dwData = 0);
 	
 	IUnknown* GetActive()
 	{	return m_ptrs.GetSize() ? (IUnknown*)m_ptrs[0] : NULL;	}

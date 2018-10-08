@@ -1,9 +1,0 @@
-; DBControls.def : Declares the module parameters.
-
-LIBRARY      "DBCONTROLS.OCX"
-
-EXPORTS
-	DllCanUnloadNow     PRIVATE
-	DllGetClassObject   PRIVATE
-	DllRegisterServer   PRIVATE
-	DllUnregisterServer PRIVATE

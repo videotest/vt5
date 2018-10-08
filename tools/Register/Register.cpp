@@ -84,6 +84,7 @@ END_MESSAGE_MAP()
 
 CRegisterApp::CRegisterApp()
 {
+	_CrtSetDbgFlag(0);
 	m_strSuffix = szSuffix;
 	m_innerclsid = guidData;
 	m_dwImito = dwImito;

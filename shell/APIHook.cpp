@@ -288,7 +288,11 @@ HMODULE WINAPI CAPIHook::LoadLibraryA(PCSTR pszModulePath) {
 	if(!b_LoadLibraryRecursion){
 			SetRecursion(TRUE);
 			hmod = pfn_LoadLibraryA(pszModulePath);
-   FixupNewlyLoadedModule(hmod, 0);
+			int err;
+			if(0==hmod){
+				err=GetLastError();
+			}
+			FixupNewlyLoadedModule(hmod, 0);
 			SetRecursion(FALSE);
 	}else{
 		hmod=((PFN_LoadLibraryA)sm_LoadLibraryA.m_pfnOrig)(pszModulePath);

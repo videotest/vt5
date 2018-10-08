@@ -5,14 +5,10 @@
 #include "FileFilters.h"
 #include "Utils.h"
 
-#ifdef _DEBUG
-#define _LIBNAME_MAGICK	"magick++\\lib\\magick_d.lib"
-#else
-#define _LIBNAME_MAGICK	"magick++\\lib\\magick.lib"
-#endif //_DEBUG
+//#define _LIBNAME_MAGICK	"magick.lib"
 
-#pragma message( "ImageMagick library linking with " _LIBNAME_MAGICK )
-#pragma comment(lib, _LIBNAME_MAGICK)
+//#pragma message( "ImageMagick library linking with " _LIBNAME_MAGICK )
+//#pragma comment(lib, _LIBNAME_MAGICK)
 
 #ifdef _DEBUG
 #define new DEBUG_NEW

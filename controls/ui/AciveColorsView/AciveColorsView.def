@@ -1,6 +1,6 @@
 ; AciveColorsView.def : Declares the module parameters.
 
-LIBRARY      "ACIVECOLORSVIEW.OCX"
+LIBRARY      "ACIVECOLORSVIEW.DLL"
 
 EXPORTS
 	DllCanUnloadNow     PRIVATE

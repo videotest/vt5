@@ -9,8 +9,8 @@ class CSnapshotParamsDlg :
 public:
 	CSnapshotParamsDlg(void);
 	virtual ~CSnapshotParamsDlg(void);
-	virtual long on_initdialog();
-	virtual long on_destroy();
+	virtual LRESULT on_initdialog();
+	virtual LRESULT on_destroy();
 	bool m_bSelectTarget;
 	bool m_bScrollWindow;
 	char m_szResizeCX[20];

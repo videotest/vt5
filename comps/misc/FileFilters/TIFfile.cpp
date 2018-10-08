@@ -27,27 +27,29 @@ IMPLEMENT_DYNCREATE(CTIFileFilter, CCmdTargetEx)
 // {7FCAC27A-69A6-11D3-A4EC-0000B493A187}
 GUARD_IMPLEMENT_OLECREATE(CTIFileFilter, "FileFilters.TIFileFilter", 0x7fcac27a, 0x69a6, 0x11d3, 0xa4, 0xec, 0x0, 0x0, 0xb4, 0x93, 0xa1, 0x87)
 
+void TIFErrorHandler(const ExceptionType severity
+						, const char *reason,const char *description)
+{
+  AfxMessageBox(CString(reason)+' '+description);
+}
+
+
 CTIFileFilter* tifFilter;
 bool tifFirstTime;
 
-
-void TIFErrorHandler(const unsigned int error,const char *message, const char *qualifier)
+MagickBooleanType TIFMonitorHandler(const char *msg,const MagickOffsetType curPos,
+											 const MagickSizeType maxPos,void * client_data)
 {
-  DestroyDelegateInfo();
-  AfxMessageBox(message);
-}
-
-void TIFMonitorHandler(const char *msg,const unsigned int curPos,const unsigned int maxPos)
-{
-	if(tifFilter == NULL) return;
-	if(!tifFilter->m_bEnableMonitoring) return;
+	if(tifFilter == NULL) return MagickFalse;
+	if(!tifFilter->m_bEnableMonitoring) return MagickFalse;
 	if (tifFirstTime)
 	{
 		tifFirstTime = false;
-		tifFilter->StartNotification(maxPos);
+		tifFilter->StartNotification((int)maxPos);
 	}
 	if (curPos > 0)
-		tifFilter->Notify(curPos);
+		tifFilter->Notify((int)curPos);
+	return MagickTrue;
 }
 
 //////////////////////////////////////////////////////////////////////
@@ -90,15 +92,18 @@ bool CTIFileFilter::ReadFile( const char *pszFileName )
 	tifFirstTime = true;
 	m_bEnableMonitoring = true;
 
+//	ImageInfo image_info;
+
 	ErrorHandler oldErrorHandle = SetErrorHandler(TIFErrorHandler);
-	MonitorHandler oldMonitorHandle = SetMonitorHandler(TIFMonitorHandler);
+	MagickProgressMonitor oldMonitorHandle = 
+		SetImageInfoProgressMonitor(&m_image_info, &TIFMonitorHandler, this); 
 
-	ImageInfo image_info;
-	GetImageInfo(&image_info);
-	strcpy(image_info.filename,pszFileName);
-	image=ReadImage(&image_info);
+	GetImageInfo(&m_image_info);
+	strcpy(m_image_info.filename,pszFileName);
+	ExceptionInfo exceptionInfo;
+	image=ReadImage(&m_image_info, &exceptionInfo);
 
-	SetMonitorHandler(oldMonitorHandle);
+	SetImageInfoProgressMonitor(&m_image_info, oldMonitorHandle, NULL);
 	FinishNotification();
 
 	if (!image)
@@ -124,16 +129,16 @@ bool CTIFileFilter::ReadFile( const char *pszFileName )
 	tmpImg = image;
 	if (!idx) idx++;
 
-	m_nWidth = image->columns;
-	m_nHeight = image->rows;
-	if(!IsPseudoClass(image) && !IsGrayImage(image))
+	m_nWidth = (int)image->columns;
+	m_nHeight = (int)image->rows;
+	if(!(PseudoClass==image->storage_class) && !IsImageGray(image))
     {
-         m_nDepth=image->matte ? 32 : 24;
+         m_nDepth=image->depth ? 32 : 24;
     }
     else
     {
 		m_nDepth = 8;
-        if (IsMonochromeImage(image))
+		if (IsImageMonochrome(image))
         {
            m_nDepth = 1;
         }
@@ -159,7 +164,7 @@ bool CTIFileFilter::ReadFile( const char *pszFileName )
 	case LZWCompression:
 		m_strCompression.LoadString(IDS_LZWCompression);
 		break;
-	case RunlengthEncodedCompression:
+	case RLECompression:
 		m_strCompression.LoadString(IDS_RunlengthEncodedCompression);
 		break;
 	case ZipCompression:
@@ -177,7 +182,7 @@ bool CTIFileFilter::ReadFile( const char *pszFileName )
 	else
 		m_nNumPages = idx;
 
-	StartNotification(image->rows, idx, 1);
+	StartNotification((int)image->rows, idx, 1);
 
 	idx = 1;
 	do
@@ -223,7 +228,7 @@ bool CTIFileFilter::ReadFile( const char *pszFileName )
 			return false;
 		}
 	
-		if( !sptrI.CreateNew(image->columns, image->rows , strColorSpace) != S_OK )
+		if( !sptrI.CreateNew((int)image->columns, (int)image->rows , strColorSpace) != S_OK )
 			return false;
 	
 		int numPanes = 0;
@@ -372,14 +377,15 @@ bool CTIFileFilter::WriteFile( const char *pszFileName )
 	m_bEnableMonitoring = false;
 
 	ErrorHandler oldErrorHandle = SetErrorHandler(TIFErrorHandler);
-	MonitorHandler oldMonitorHandle = SetMonitorHandler(TIFMonitorHandler);
+	MagickProgressMonitor oldMonitorHandle 
+		= SetImageInfoProgressMonitor(&m_image_info, &TIFMonitorHandler, this); 
 
-	ImageInfo image_info;
-	GetImageInfo(&image_info);
-	strcpy(image_info.filename, "null:black");
-	image=ReadImage(&image_info);
+	GetImageInfo(&m_image_info);
+	strcpy(m_image_info.filename, "null:black");
+	ExceptionInfo exceptionInfo;
+	image=ReadImage(&m_image_info, &exceptionInfo);
 
-	SetMonitorHandler(oldMonitorHandle);
+	SetImageInfoProgressMonitor(&m_image_info, oldMonitorHandle, NULL);
 
 	if (!image)
 	{
@@ -432,7 +438,7 @@ bool CTIFileFilter::WriteFile( const char *pszFileName )
 	pColor = new color*[numPanes];
 
 	//NextNotificationStage();
-	StartNotification(image->rows, 1, 1);
+	StartNotification((int)image->rows, 1, 1);
 	
 	for (int i = 0; i < image->rows; i++)
 	{
@@ -448,9 +454,9 @@ bool CTIFileFilter::WriteFile( const char *pszFileName )
 			break;
 	}
 
-	strcpy(image_info.filename,pszFileName);
+	strcpy(m_image_info.filename,pszFileName);
 	strcpy(image->filename,pszFileName);
-	WriteImage(&image_info, image);
+	WriteImage(&m_image_info, image, &exceptionInfo);
 
 	SetErrorHandler(oldErrorHandle);
 

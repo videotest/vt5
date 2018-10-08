@@ -573,7 +573,7 @@ HOOKMACRO("USER32.DLL", int __stdcall, LoadStringA, (
 	nResult = ::WideCharToMultiByte( CP_ACP, 0, ptsz, nLen+1, p, length, 0, 0 );
 	nResult = min( nBufferMax, max( nResult, 0 ) );
 	memcpy( lpBuffer, p, nResult );
-	delete p;
+	delete []p;
 
 	if( nResult == 0 )
 	{

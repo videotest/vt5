@@ -87,18 +87,18 @@ protected:
 
 public:
 	// interface ITestManager
-	com_call GetFirstTestPos( /*[in]*/ TPOS lParentPos, /*[out,retval]*/ TPOS *plPos);
-	com_call GetNextTest( /*[in]*/ TPOS lParentPos, /*[out]*/ TPOS *plPos, /*[out]*/ IUnknown **ppunk);
-	com_call AddTest( /*[in]*/ TPOS lParent, /*[in]*/ IUnknown *punk,  /*[out,retval]*/ TPOS *plpos);
-	com_call DeleteTest( /*[in]*/ TPOS lPos);
+	com_call GetFirstTestPos( /*[in]*/ LPOS lParentPos, /*[out,retval]*/ LPOS *plPos);
+	com_call GetNextTest( /*[in]*/ LPOS lParentPos, /*[out]*/ LPOS *plPos, /*[out]*/ IUnknown **ppunk);
+	com_call AddTest( /*[in]*/ LPOS lParent, /*[in]*/ IUnknown *punk,  /*[out,retval]*/ LPOS *plpos);
+	com_call DeleteTest( /*[in]*/ LPOS lPos);
 
-	com_call LoadTests( IStream *pStream, long lNewParentPos );
-	com_call StoreTests( IStream *pStream, long lFromParentPos );
+	com_call LoadTests( IStream *pStream, LPOS lNewParentPos );
+	com_call StoreTests( IStream *pStream, LPOS lFromParentPos );
 
 	com_call GetDocument( IUnknown **punkDoc );
-	com_call GetCombinationCont( long lPos, long *plCount );
-	com_call GetTestCont( long lParentPos, long lPos, long *plCount );
-	com_call GetTestContR( long lParentPos, long lPos, long *plCount );
+	com_call GetCombinationCont( LPOS lPos, long *plCount );
+	com_call GetTestCont( LPOS lParentPos, LPOS lPos, long *plCount );
+	com_call GetTestContR( LPOS lParentPos, LPOS lPos, long *plCount );
 
 	com_call GetLang( /*out*/ BSTR *pbstrLang );
 
@@ -115,8 +115,8 @@ public:
 	com_call PauseTesting( BOOL bPaused );
 
 	// ITestManagerDisp
-	com_call GetNextTest( /*[in]*/ TPOS lParentPos, /*[out]*/ VARIANT *plPos, /*[out,retval]*/ IDispatch **ppunk);
-	com_call AddTest( /*[in]*/ TPOS lParent, /*[in]*/ IDispatch *punk,  /*[out,retval]*/ TPOS *plpos);
+	com_call GetNextTest( /*[in]*/ LPOS lParentPos, /*[out]*/ LPOS *plPos, /*[out,retval]*/ IDispatch **ppunk);
+	com_call AddTest( /*[in]*/ LPOS lParent, /*[in]*/ IDispatch *punk,  /*[out,retval]*/ LPOS *plpos);
 	com_call GetRunningState( /*[out, retval]*/ long *plState );
 	com_call SetEditMode( bool bEnter );
 protected:
@@ -125,9 +125,9 @@ protected:
 	// [vanek] - 18.08.2004
 	bool	_stop_testing( );
 
-	HRESULT _exec_var_cond( IUnknown *punkTest, long lPos, _bstr_t bstrScript, _bstr_t bstrPath, _bstr_t bstrRootPath, IUnknown *punkF, long *plCounter, bool bSave, long *plFailCounter, long lFlag, long lPrevPos );
-	HRESULT _load_db( CString lpstrFolder, long lParentPos );
-	HRESULT _recursive_scan( long lParentPos, bool bSave, long lFlag, long *plCounter );
+	HRESULT _exec_var_cond( IUnknown *punkTest, LPOS lPos, _bstr_t bstrScript, _bstr_t bstrPath, _bstr_t bstrRootPath, IUnknown *punkF, long *plCounter, bool bSave, long *plFailCounter, long lFlag, LPOS lPrevPos );
+	HRESULT _load_db( CString lpstrFolder, LPOS lParentPos );
+	HRESULT _recursive_scan( LPOS lParentPos, bool bSave, long lFlag, long *plCounter );
 
 	bool _compare_context(  CString strCmpFile, CString strSaveFile, TEST_ERR_DESCR *ted );
 

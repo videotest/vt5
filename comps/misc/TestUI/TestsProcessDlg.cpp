@@ -17,11 +17,11 @@ static char THIS_FILE[] = __FILE__;
 
 static BOOL DoIfAnyTestAvailable(ITestManager *pTestManager, long lParentPos)
 {
-	long lPos = 0;
+	LPOS lPos = 0;
 	pTestManager->GetFirstTestPos(lParentPos, &lPos);
 	while (lPos)
 	{
-		long lPosSaved = lPos;
+		LPOS lPosSaved = lPos;
 		IUnknownPtr punkTest;
 		pTestManager->GetNextTest(lParentPos, &lPos, &punkTest);
 		ITestRunningDataPtr sptrTRD = punkTest;

@@ -40,7 +40,7 @@ bool CActionAbacusConnect::s_bConnected = false;
 bool CActionAbacusConnect::s_bAutoExecute = true;
 static int s_nTimerId = 0;
 
-void CALLBACK EXPORT TimerProc(HWND hWnd, UINT nMsg, UINT nIDEvent, DWORD dwTime)
+void CALLBACK EXPORT TimerProc(HWND hWnd, UINT nMsg, UINT_PTR nIDEvent, DWORD dwTime)
 {
 	DO_LOCK();
 	AFX_MANAGE_STATE(AfxGetStaticModuleState());

@@ -35,8 +35,9 @@
 #include <afxcmn.h>			// MFC support for Windows Common Controls
 #endif // _AFX_NO_AFXCMN_SUPPORT
 
-#include "magick++\\magick.h"
-#include "magick++\\defines.h"
+#include <magick++.h>
+//#include <MagickCore/Magick-type.h>
+namespace mc = MagickCore;
 #include "common.h"
 #include "Guard.h"
 

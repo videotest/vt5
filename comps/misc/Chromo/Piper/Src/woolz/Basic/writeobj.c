@@ -512,6 +512,7 @@ struct irect *rdom;
  *
  */
 static writevector(fp, vec)
+FILE *fp;
 struct ivector *vec;
 {
 	switch (vec->type) {
@@ -530,6 +531,7 @@ struct ivector *vec;
  *
  */
 static writepoint(fp, pnt)
+FILE *fp;
 struct ipoint *pnt;
 {
 	switch (pnt->type) {

@@ -1,6 +1,6 @@
 ; PrintFieldAX.def : Declares the module parameters.
 
-LIBRARY      "PRINTFIELDAX.OCX"
+LIBRARY      ;"PRINTFIELDAX.DLL"
 
 EXPORTS
 	DllCanUnloadNow     PRIVATE

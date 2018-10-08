@@ -1,6 +1,6 @@
 #pragma once
 
-typedef POSITION TPOS;
+//typedef LONG_PTR LPOS;
 typedef LONG_PTR LPOS;
 
 struct TEST_ERR_DESCR
@@ -20,19 +20,19 @@ struct TEST_ERR_DESCR
 
 interface ITestManager : public IUnknown
 {
-	com_call GetFirstTestPos( /*[in]*/ long lParentPos, /*[out]*/ long *plPos ) = 0;
-	com_call GetNextTest( /*[in]*/ TPOS lParentPos, /*[out]*/ VARIANT *plPos, /*[out]*/ IUnknown **ppunk) = 0;
-	com_call AddTest( /*[in]*/ long lParent, /*[in]*/ IUnknown *punk, /*[out]*/ long *plpos ) = 0;
-	com_call DeleteTest( /*[in]*/ TPOS lPos) = 0;
+	com_call GetFirstTestPos( /*[in]*/ LPOS lParentPos, /*[out]*/ LPOS *plPos ) = 0;
+	com_call GetNextTest( /*[in]*/ LPOS lParentPos, /*[out]*/ LPOS *plPos, /*[out]*/ IUnknown **ppunk) = 0;
+	com_call AddTest( /*[in]*/ LPOS lParent, /*[in]*/ IUnknown *punk, /*[out]*/ LPOS *plpos ) = 0;
+	com_call DeleteTest( /*[in]*/ LPOS lPos) = 0;
 
-	com_call LoadTests( IStream *pStream, long lNewParentPos ) = 0;
-	com_call StoreTests( IStream *pStream, long lFromParentPos ) = 0;
+	com_call LoadTests( IStream *pStream, LPOS lNewParentPos ) = 0;
+	com_call StoreTests( IStream *pStream, LPOS lFromParentPos ) = 0;
 
 	com_call GetDocument( IUnknown **punkDoc ) = 0;
 
-	com_call GetCombinationCont( long lPos, long *plCount ) = 0;
-	com_call GetTestCont( long lParentPos, long lPos, long *plCount ) = 0;
-	com_call GetTestContR( long lParentPos, long lPos, long *plCount ) = 0;
+	com_call GetCombinationCont( LPOS lPos, long *plCount ) = 0;
+	com_call GetTestCont( LPOS lParentPos, LPOS lPos, long *plCount ) = 0;
+	com_call GetTestContR( LPOS lParentPos, LPOS lPos, long *plCount ) = 0;
 
 	com_call GetLang( /*out*/ BSTR *pbstrLang ) = 0;
 };
@@ -83,10 +83,10 @@ interface ITestItem : public IUnknown
 
 	com_call ParseCond() = 0;
 
-	com_call GetFirstSingleCond( /*[out,retval]*/ long *lpPos ) = 0;
+	com_call GetFirstSingleCond( /*[out,retval]*/ LPOS *lpPos ) = 0;
 	com_call NextSingleCond( /*[out]*/ VARIANT *lpPos, /*[out]*/ VARIANT *pVarName, /*[out]*/ VARIANT *pVarPath, /*[out]*/ VARIANT *pVarParams ) = 0;
 
-	com_call GetFirstMultyCond( /*[out,retval]*/ long *lpPos ) = 0;
+	com_call GetFirstMultyCond( /*[out,retval]*/ LPOS *lpPos ) = 0;
 
 	com_call NextMultyCond( /*[out]*/ VARIANT *lpPos, /*[out]*/ VARIANT *pVarName, /*[out]*/ VARIANT *pVarPath, /*[out]*/ VARIANT **pVarParams, /*[out]*/VARIANT *pVarFlag, /*[out]*/ long *plCount, VARIANT *pVarNameMain, /*[out]*/ VARIANT **pVarParamsMain, /*[out]*/ long *plCountMain ) = 0;
 

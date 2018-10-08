@@ -407,7 +407,7 @@ CContextManager::CContextManager()
 }
 
 // notify all contexts about event from NamedData
-bool CContextManager::Notify(long cod, IUnknown * punkNew, IUnknown * punkOld, DWORD dwData)
+bool CContextManager::Notify(long cod, IUnknown * punkNew, IUnknown * punkOld, GUID* dwData)
 {
 	bool flag = true;
 	_try(CContextManager, Notify)

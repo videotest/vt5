@@ -977,6 +977,13 @@ std_dll void SetValue( IUnknown *punkDoc, const char *pszSection, const char *ps
 	::SetValue( punkDoc, pszSection, pszEntry, var );
 }
 
+//set __int64 value to NamedData
+std_dll void SetValue( IUnknown *punkDoc, const char *pszSection, const char *pszEntry, __int64 lValue )
+{
+	_variant_t	var( lValue );
+	::SetValue( punkDoc, pszSection, pszEntry, var );
+}
+
 //set string value to NamedData
 std_dll void SetValue( IUnknown *punkDoc, const char *pszSection, const char *pszEntry, const char *pszValue )
 {

@@ -20,9 +20,9 @@ CInputMsgDlg::~CInputMsgDlg()
 }
 
 /////////////////////////////////////////////////////////////
-long	CInputMsgDlg::on_initdialog()
+LRESULT	CInputMsgDlg::on_initdialog()
 {
-    long lres = dlg_impl::on_initdialog();
+    LRESULT lres = dlg_impl::on_initdialog();
 
 	if( !m_str_caption.IsEmpty() )
 		::SetWindowText( handle(), m_str_caption );

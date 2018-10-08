@@ -54,7 +54,7 @@ public:
 	void			init();	
 
 //message handlers
-	virtual long	on_initdialog();
+	virtual LRESULT	on_initdialog();
 	virtual LRESULT	on_killfocus(HWND hwndOld);
 	virtual LRESULT	handle_message(UINT m, WPARAM w, LPARAM l);
 	virtual LRESULT	on_notify(uint idc, NMHDR *pnmhdr);

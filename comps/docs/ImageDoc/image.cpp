@@ -25,7 +25,7 @@ public:
 	}
 	~CImageRowHelper()
 	{
-		delete m_pdummyRow;
+		delete []m_pdummyRow;
 	}
 
 	static CImageRowHelper	CImageRowHelper::s_helper;

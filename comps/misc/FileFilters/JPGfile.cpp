@@ -42,23 +42,25 @@ CJPGFileFilter::~CJPGFileFilter()
 	jpgFilter = NULL;
 }
 
-void jpgErrorHandler(const unsigned int error,const char *message, const char *qualifier)
+
+void jpgErrorHandler(const MagickCore::ExceptionType severity
+										 ,const char *reason,const char *description)
 {
-  DestroyDelegateInfo();
-  AfxMessageBox(message);
+	AfxMessageBox(CString(reason)+' '+description);
 }
 
-
-void jpgMonitorHandler(const char *msg,const unsigned int curPos,const unsigned int maxPos)
+MagickBooleanType jpgMonitorHandler(const char *msg,const MagickOffsetType curPos,
+											 const MagickSizeType maxPos,void * client_data)
 {
-	if(jpgFilter == NULL) return;
-	if(!jpgFilter->m_bEnableMonitoring) return;
+	if(jpgFilter == NULL) return MagickFalse;
+	if(!jpgFilter->m_bEnableMonitoring) return MagickFalse;
 	if (jpgFilter->m_bFirstTime)
 	{
 		jpgFilter->m_bFirstTime = false;
-		jpgFilter->StartNotification(maxPos, 2);
+		jpgFilter->StartNotification((int)maxPos, 2);
 	}
-	jpgFilter->Notify(curPos);
+	jpgFilter->Notify((int)curPos);
+	return MagickTrue;
 }
 
 
@@ -67,46 +69,50 @@ void CJPGFileFilter::OnSetHandlers()
 	//if(jpgFilter == NULL)
 		jpgFilter = this;
 	m_oldErrorHandle = SetErrorHandler(jpgErrorHandler);
-	m_oldMonitorHandle = SetMonitorHandler(jpgMonitorHandler);
+	m_oldMonitorHandle = SetImageInfoProgressMonitor(&m_image_info, &jpgMonitorHandler, this);
 }
 
-/*
-void JPGErrorHandler(const unsigned int error,const char *message, const char *qualifier)
+void JPGErrorHandler(const MagickCore::ExceptionType severity
+										 ,const char *reason,const char *description)
 {
-  DestroyDelegateInfo();
-  AfxMessageBox(message);
+	AfxMessageBox(CString(reason)+' '+description);
 }
 
 
-void JPGMonitorHandler(const char *msg,const unsigned int curPos,const unsigned int maxPos)
+MagickBooleanType JPGMonitorHandler(const char *msg,const MagickOffsetType curPos,
+											 const MagickSizeType maxPos,void * client_data)
 {
-	if (jpgFirstTime)
+	CJPGFileFilter* jpgFilter=(CJPGFileFilter*)client_data;
+	if (jpgFilter->m_bFirstTime)
 	{
-		jpgFirstTime = false;
-		jpgFilter->StartNotification(maxPos, 2);
+		jpgFilter->m_bFirstTime = false;
+		jpgFilter->StartNotification((int)maxPos, 2);
 	}
-	jpgFilter->Notify(curPos);
+	jpgFilter->Notify((int)curPos);
+	return MagickTrue;
 }
 
 /////////////////////////////////////////////////////////////////////////////
 // CJPGFileFilter message handlers
-/*
+
 bool CJPGFileFilter::ReadFile( const char *pszFileName )
 {
 	//CTimeTest timeTest(true, pszFileName, false);
 
-	jpgFirstTime = true;
+	m_bFirstTime = true;
+	GetImageInfo(&m_image_info);
 
 	ErrorHandler oldErrorHandle = SetErrorHandler(JPGErrorHandler);
-	MonitorHandler oldMonitorHandle = SetMonitorHandler(JPGMonitorHandler);
+	MagickProgressMonitor oldMonitorHandle = 
+		SetImageInfoProgressMonitor(&m_image_info, JPGMonitorHandler, this);
 
 	Image* image;
-	ImageInfo image_info;
-	GetImageInfo(&image_info);
-	strcpy(image_info.filename,pszFileName);
-	image=ReadImage(&image_info);
+//	ImageInfo image_info;
+	strcpy(m_image_info.filename,pszFileName);
+	ExceptionInfo exceptionInfo;
+	image=ReadImage(&m_image_info, &exceptionInfo);
 
-	SetMonitorHandler(oldMonitorHandle);
+	SetImageInfoProgressMonitor(&m_image_info,oldMonitorHandle,NULL);
 
 	if (!image)
 	{
@@ -129,12 +135,6 @@ bool CJPGFileFilter::ReadFile( const char *pszFileName )
 	else if (image->colorspace == YUVColorspace) 
 		strColorSpace = "YUV";
 	
-
-	color* pColor1 = NULL;
-	color* pColor2 = NULL;
-	color* pColor3 = NULL;
-	color* pColor4 = NULL;
-
 	IUnknown	*punk = CreateNamedObject( GetDataObjectType(0) );
 
 	// get object name from path and check it's exists
@@ -147,7 +147,8 @@ bool CJPGFileFilter::ReadFile( const char *pszFileName )
 	if (!NameExists && punk)
 	{
 		// set this name to object
-		sptrINamedObject2 sptrObj(punk);
+		INamedObject2Ptr sptrObj(punk);
+		//sptrINamedObject2 sptrObj(punk);
 		sptrObj->SetName(bstrName);
 	}
 	
@@ -160,11 +161,12 @@ bool CJPGFileFilter::ReadFile( const char *pszFileName )
 		return false;
 	}
 
-	if( sptrI.CreateNew(image->columns, image->rows , strColorSpace) != S_OK )
+	if( sptrI.CreateNew((int)image->columns, (int)image->rows , strColorSpace) != S_OK )
 		return false;
 
 	int numPanes = 0;
 	numPanes = sptrI.GetColorsCount();
+	color*pColor [numPanes];
 
 	if (numPanes == 0)
 	{
@@ -177,23 +179,11 @@ bool CJPGFileFilter::ReadFile( const char *pszFileName )
 
 	for (int i = 0; i < image->rows; i++)
 	{
-		if (numPanes == 1)
-			pColor1 = sptrI.GetRow(i, 0);
-		else if (numPanes == 3)
+		for(int j = 0; j < numPanes; j++)
 		{
-			pColor1 = sptrI.GetRow(i, 0);
-			pColor2 = sptrI.GetRow(i, 1);
-			pColor3 = sptrI.GetRow(i, 2);
-		}	
-		else if (numPanes == 4)
-		{
-			pColor1 = sptrI.GetRow(i, 0);
-			pColor2 = sptrI.GetRow(i, 1);
-			pColor3 = sptrI.GetRow(i, 2);
-			pColor4 = sptrI.GetRow(i, 3);
+			pColor[j] = img.GetRow(i, j);
 		}
-	
-		FillVTImageRow(image, i, pColor1, pColor2, pColor3, pColor4);
+		FillVTImageRow(image, i, pColor, numPanes);
 		Notify(i);
 	}
 	
@@ -227,18 +217,20 @@ bool CJPGFileFilter::WriteFile( const char *pszFileName )
 	CImageWrp	img( punk, false );
 
 	
-	jpgFirstTime = true;
+	m_bFirstTime = true;
 
 	ErrorHandler oldErrorHandle = SetErrorHandler(JPGErrorHandler);
-	MonitorHandler oldMonitorHandle = SetMonitorHandler(JPGMonitorHandler);
+	MagickProgressMonitor oldMonitorHandle 
+		= SetImageInfoProgressMonitor(&m_image_info,JPGMonitorHandler,this);
 
 	Image* image;
-	ImageInfo image_info;
-	GetImageInfo(&image_info);
-	strcpy(image_info.filename, "null:black");
-	image=ReadImage(&image_info);
+//	ImageInfo image_info;
+	GetImageInfo(&m_image_info);
+	strcpy(m_image_info.filename, "null:black");
+	ExceptionInfo exceptionInfo;
+	image=ReadImage(&m_image_info,&exceptionInfo);
 
-	SetMonitorHandler(oldMonitorHandle);
+	SetImageInfoProgressMonitor(&m_image_info,oldMonitorHandle,NULL);
 
 	if (!image)
 	{
@@ -263,14 +255,15 @@ bool CJPGFileFilter::WriteFile( const char *pszFileName )
 		image->colorspace = YUVColorspace;
 
 
-	color* pColor1 = NULL;
+	/*color* pColor1 = NULL;
 	color* pColor2 = NULL;
 	color* pColor3 = NULL;
-	color* pColor4 = NULL;
+	color* pColor4 = NULL;*/
 
 
 	int numPanes = 0;
 	numPanes = img.GetColorsCount();
+	color*pColor [numPanes];
 
 	if (numPanes == 0)
 	{
@@ -283,30 +276,18 @@ bool CJPGFileFilter::WriteFile( const char *pszFileName )
 	
 	for (int i = 0; i < image->rows; i++)
 	{
-		if (numPanes == 1)
-			pColor1 = img.GetRow(i, 0);
-		else if (numPanes == 3)
+		for(int j = 0; j < numPanes; j++)
 		{
-			pColor1 = img.GetRow(i, 0);
-			pColor2 = img.GetRow(i, 1);
-			pColor3 = img.GetRow(i, 2);
-		}	
-		else if (numPanes == 4)
-		{
-			pColor1 = img.GetRow(i, 0);
-			pColor2 = img.GetRow(i, 1);
-			pColor3 = img.GetRow(i, 2);
-			pColor4 = img.GetRow(i, 3);
+			pColor[j] = img.GetRow(i, j);
 		}
-	
-		FillMagickImageRow(image, i, pColor1, pColor2, pColor3, pColor4);
+		FillMagickImageRow(image, i, pColor, numPanes);
 		Notify(i);
 	}
 	
 
-	strcpy(image_info.filename,pszFileName);
+	strcpy(m_image_info.filename,pszFileName);
 	strcpy(image->filename,pszFileName);
-	WriteImage(&image_info, image);
+	WriteImage(&m_image_info, image, &exceptionInfo);
 
 	SetErrorHandler(oldErrorHandle);
 	
@@ -314,4 +295,3 @@ bool CJPGFileFilter::WriteFile( const char *pszFileName )
 
 	return true;
 }
-*/

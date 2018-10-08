@@ -9,12 +9,6 @@
 #include "resource.h"
 
 
-
-//#include <Magick++.h>
-//using namespace std;
-//using namespace Magick;
-
-
 #ifdef _DEBUG
 #undef THIS_FILE
 static char THIS_FILE[]=__FILE__;
@@ -53,23 +47,25 @@ CGIFileFilter::~CGIFileFilter()
 }
 
 
-void gifErrorHandler(const unsigned int error,const char *message, const char *qualifier)
+void gifErrorHandler(const MagickCore::ExceptionType severity
+										 ,const char *reason,const char *description)
 {
-  DestroyDelegateInfo();
-  AfxMessageBox(message);
+	AfxMessageBox(CString(reason)+' '+description);
 }
 
 
-void gifMonitorHandler(const char *msg,const unsigned int curPos,const unsigned int maxPos)
+MagickBooleanType gifMonitorHandler(const char *msg,const MagickOffsetType curPos,
+											 const MagickSizeType maxPos,void * client_data)
 {
-	if(gifFilter == NULL) return;
-	if(!gifFilter->m_bEnableMonitoring) return;
+	if(gifFilter == NULL) return MagickFalse;
+	if(!gifFilter->m_bEnableMonitoring) return MagickFalse;
 	if (gifFilter->m_bFirstTime)
 	{
 		gifFilter->m_bFirstTime = false;
-		gifFilter->StartNotification(maxPos, 2);
+		gifFilter->StartNotification((int)maxPos, 2);
 	}
-	gifFilter->Notify(curPos);
+	gifFilter->Notify((int)curPos);
+	return MagickTrue;
 }
 
 
@@ -78,7 +74,7 @@ void CGIFileFilter::OnSetHandlers()
 	//if(gifFilter == NULL)
 		gifFilter = this;
 	m_oldErrorHandle = SetErrorHandler(gifErrorHandler);
-	m_oldMonitorHandle = SetMonitorHandler(gifMonitorHandler);
+	m_oldMonitorHandle = SetImageInfoProgressMonitor(&m_image_info, gifMonitorHandler, this);
 }
 
 

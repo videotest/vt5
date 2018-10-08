@@ -57,12 +57,12 @@ bool CImageFileFilterBase::ReadFile( const char *pszFileName )
 
 	OnSetHandlers();
 
-	ImageInfo image_info;
-	GetImageInfo(&image_info);
-	strcpy(image_info.filename,pszFileName);
-	image=ReadImage(&image_info);
+	GetImageInfo(&m_image_info);
+	strcpy(m_image_info.filename,pszFileName);
+	ExceptionInfo exceptionInfo;
+	image=ReadImage(&m_image_info,&exceptionInfo);
 
-	SetMonitorHandler(m_oldMonitorHandle);
+	SetImageInfoProgressMonitor(&m_image_info, m_oldMonitorHandle, this);
 
 	if (!image)
 	{
@@ -114,7 +114,7 @@ bool CImageFileFilterBase::ReadFile( const char *pszFileName )
 		return false;
 	}
 
-	if( sptrI.CreateNew(image->columns, image->rows , strColorSpace) != S_OK )
+	if( sptrI.CreateNew((int)image->columns, (int)image->rows , strColorSpace) != S_OK )
 		return false;
 
 	int numPanes = 0;
@@ -137,19 +137,19 @@ bool CImageFileFilterBase::ReadFile( const char *pszFileName )
 		return false;
 	}
 
-	m_nWidth = image->columns;
-	m_nHeight = image->rows;
+	m_nWidth = (int)image->columns;
+	m_nHeight = (int)image->rows;
 
 	pColor = new color*[numPanes];
 
-	if(!IsPseudoClass(image) && !IsGrayImage(image))
+	if(!(PseudoClass==image->storage_class) && !IsImageGray(image))
     {
-         m_nDepth=image->matte ? 32 : 24;
+         m_nDepth=image->depth ? 32 : 24;
     }
     else
     {
 		m_nDepth = 8;
-        if (IsMonochromeImage(image))
+        if (IsImageMonochrome(image))
         {
            m_nDepth = 1;
         }
@@ -179,7 +179,7 @@ bool CImageFileFilterBase::ReadFile( const char *pszFileName )
 	case LZWCompression:
 		m_strCompression.LoadString(IDS_LZWCompression);
 		break;
-	case RunlengthEncodedCompression:
+	case RLECompression:
 		m_strCompression.LoadString(IDS_RunlengthEncodedCompression);
 		break;
 	case ZipCompression:
@@ -308,12 +308,12 @@ bool CImageFileFilterBase::WriteFile( const char *pszFileName )
 
 	OnSetHandlers();
 	
-	ImageInfo image_info;
-	GetImageInfo(&image_info);
-	strcpy(image_info.filename, "null:black");
-	image=ReadImage(&image_info);
+	GetImageInfo(&m_image_info);
+	strcpy(m_image_info.filename, "null:black");
+	ExceptionInfo exceptionInfo;
+	image=ReadImage(&m_image_info, &exceptionInfo);
 
-	SetMonitorHandler(m_oldMonitorHandle);
+	SetImageInfoProgressMonitor(&m_image_info, m_oldMonitorHandle, this);
 
 	if (!image)
 	{
@@ -366,7 +366,7 @@ bool CImageFileFilterBase::WriteFile( const char *pszFileName )
 	pColor = new color*[numPanes];
 
 	//NextNotificationStage();
-	StartNotification(image->rows, 1, 1);
+	StartNotification((int)image->rows, 1, 1);
 	
 	for (int i = 0; i < image->rows; i++)
 	{
@@ -382,9 +382,9 @@ bool CImageFileFilterBase::WriteFile( const char *pszFileName )
 	}
 	
 
-	strcpy(image_info.filename,pszFileName);
+	strcpy(m_image_info.filename,pszFileName);
 	strcpy(image->filename,pszFileName);
-	WriteImage(&image_info, image);
+	WriteImage(&m_image_info, image, &exceptionInfo);
 
 	SetErrorHandler(m_oldErrorHandle);
 	

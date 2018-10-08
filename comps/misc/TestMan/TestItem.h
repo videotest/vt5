@@ -195,10 +195,10 @@ public:
 	com_call DeleteExecCond( /*[in]*/ LPOS lPos);
 	com_call DeleteAllExecCond();
 
-	com_call GetFirstSingleCond( /*[out,retval]*/ long *lpPos );
+	com_call GetFirstSingleCond( /*[out,retval]*/ LPOS *lpPos );
 	com_call NextSingleCond( /*[out]*/ VARIANT *lpPos, /*[out]*/ VARIANT *pVarName, /*[out]*/ VARIANT *pVarPath, /*[out]*/ VARIANT *pVarParams );
 
-	com_call GetFirstMultyCond( /*[out,retval]*/ long *lpPos );
+	com_call GetFirstMultyCond( /*[out,retval]*/ LPOS *lpPos );
 	com_call NextMultyCond( /*[out]*/ VARIANT *lpPos, /*[out]*/ VARIANT *pVarName, /*[out]*/ VARIANT *pVarPath, /*[out]*/ VARIANT **pVarParams,/*[out]*/ VARIANT *pVarFlag, /*[out]*/ long *plCount, VARIANT *pVarNameMain, /*[out]*/ VARIANT **pVarParamsMain, /*[out]*/ long *plCountMain  );
 
 	com_call Rename( /*[in]*/ BSTR bstrNewName );

@@ -1,104 +1,95 @@
-Microsoft Visual Studio Solution File, Format Version 8.00
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "a2r", "a2r\a2r.vcproj", "{D26CEC00-D189-4C46-87C2-BAA3BD8A5E29}"
-	ProjectSection(ProjectDependencies) = postProject
-	EndProjectSection
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "a2r", "a2r\a2r.vcproj", "{4D87409B-A034-465F-A421-A0A515015514}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ActionGen", "ActionGen\ActionGen.vcproj", "{D3298CE0-291A-4510-9F04-1D61773733CE}"
-	ProjectSection(ProjectDependencies) = postProject
-	EndProjectSection
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "helpreg", "helpreg\helpreg.vcproj", "{BA2E1C84-87C7-46CA-A51D-05358BE658DD}"
-	ProjectSection(ProjectDependencies) = postProject
-	EndProjectSection
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "memtrace", "memtrace\memtrace.vcproj", "{7F7A8BB9-B900-4663-8B61-6A7BF055D01D}"
-	ProjectSection(ProjectDependencies) = postProject
-	EndProjectSection
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "reg_info", "reg_info\reg_info.vcproj", "{A5D4E6D1-38DC-48F5-85AC-DFFB15DDA9E7}"
-	ProjectSection(ProjectDependencies) = postProject
-	EndProjectSection
-EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "regclean", "regclean\regclean.vcproj", "{10322D13-CD82-4921-B10A-236732379192}"
-	ProjectSection(ProjectDependencies) = postProject
-	EndProjectSection
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "DBComp", "DBComp\DBComp.vcproj", "{1CC9FF3B-E2F0-4B68-8433-621D9002DDB0}"
-	ProjectSection(ProjectDependencies) = postProject
-	EndProjectSection
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "dirlist", "dirlist\dirlist.vcproj", "{EEA6EF30-0619-4762-8ECB-25D170F2BBB8}"
-	ProjectSection(ProjectDependencies) = postProject
-	EndProjectSection
-EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Register", "Register\Register.vcproj", "{72E0298B-1A11-416B-9745-2FEEAAC0C9BD}"
-	ProjectSection(ProjectDependencies) = postProject
-	EndProjectSection
 EndProject
 Global
-	GlobalSection(SolutionConfiguration) = preSolution
-		Debug = Debug
-		Debug - Word = Debug - Word
-		Release = Release
+	GlobalSection(DPCodeReviewSolutionGUID) = preSolution
+		DPCodeReviewSolutionGUID = {00000000-0000-0000-0000-000000000000}
 	EndGlobalSection
-	GlobalSection(ProjectConfiguration) = postSolution
-		{D26CEC00-D189-4C46-87C2-BAA3BD8A5E29}.Debug.ActiveCfg = Debug|Win32
-		{D26CEC00-D189-4C46-87C2-BAA3BD8A5E29}.Debug.Build.0 = Debug|Win32
-		{D26CEC00-D189-4C46-87C2-BAA3BD8A5E29}.Debug - Word.ActiveCfg = Debug|Win32
-		{D26CEC00-D189-4C46-87C2-BAA3BD8A5E29}.Debug - Word.Build.0 = Debug|Win32
-		{D26CEC00-D189-4C46-87C2-BAA3BD8A5E29}.Release.ActiveCfg = Release|Win32
-		{D26CEC00-D189-4C46-87C2-BAA3BD8A5E29}.Release.Build.0 = Release|Win32
-		{D3298CE0-291A-4510-9F04-1D61773733CE}.Debug.ActiveCfg = Debug|Win32
-		{D3298CE0-291A-4510-9F04-1D61773733CE}.Debug.Build.0 = Debug|Win32
-		{D3298CE0-291A-4510-9F04-1D61773733CE}.Debug - Word.ActiveCfg = Debug - Word|Win32
-		{D3298CE0-291A-4510-9F04-1D61773733CE}.Debug - Word.Build.0 = Debug - Word|Win32
-		{D3298CE0-291A-4510-9F04-1D61773733CE}.Release.ActiveCfg = Release|Win32
-		{D3298CE0-291A-4510-9F04-1D61773733CE}.Release.Build.0 = Release|Win32
-		{BA2E1C84-87C7-46CA-A51D-05358BE658DD}.Debug.ActiveCfg = Debug|Win32
-		{BA2E1C84-87C7-46CA-A51D-05358BE658DD}.Debug.Build.0 = Debug|Win32
-		{BA2E1C84-87C7-46CA-A51D-05358BE658DD}.Debug - Word.ActiveCfg = Debug|Win32
-		{BA2E1C84-87C7-46CA-A51D-05358BE658DD}.Debug - Word.Build.0 = Debug|Win32
-		{BA2E1C84-87C7-46CA-A51D-05358BE658DD}.Release.ActiveCfg = Release|Win32
-		{BA2E1C84-87C7-46CA-A51D-05358BE658DD}.Release.Build.0 = Release|Win32
-		{7F7A8BB9-B900-4663-8B61-6A7BF055D01D}.Debug.ActiveCfg = Debug|Win32
-		{7F7A8BB9-B900-4663-8B61-6A7BF055D01D}.Debug.Build.0 = Debug|Win32
-		{7F7A8BB9-B900-4663-8B61-6A7BF055D01D}.Debug - Word.ActiveCfg = Debug|Win32
-		{7F7A8BB9-B900-4663-8B61-6A7BF055D01D}.Debug - Word.Build.0 = Debug|Win32
-		{7F7A8BB9-B900-4663-8B61-6A7BF055D01D}.Release.ActiveCfg = Release|Win32
-		{7F7A8BB9-B900-4663-8B61-6A7BF055D01D}.Release.Build.0 = Release|Win32
-		{A5D4E6D1-38DC-48F5-85AC-DFFB15DDA9E7}.Debug.ActiveCfg = Debug|Win32
-		{A5D4E6D1-38DC-48F5-85AC-DFFB15DDA9E7}.Debug.Build.0 = Debug|Win32
-		{A5D4E6D1-38DC-48F5-85AC-DFFB15DDA9E7}.Debug - Word.ActiveCfg = Debug|Win32
-		{A5D4E6D1-38DC-48F5-85AC-DFFB15DDA9E7}.Debug - Word.Build.0 = Debug|Win32
-		{A5D4E6D1-38DC-48F5-85AC-DFFB15DDA9E7}.Release.ActiveCfg = Release|Win32
-		{A5D4E6D1-38DC-48F5-85AC-DFFB15DDA9E7}.Release.Build.0 = Release|Win32
-		{10322D13-CD82-4921-B10A-236732379192}.Debug.ActiveCfg = Debug|Win32
-		{10322D13-CD82-4921-B10A-236732379192}.Debug.Build.0 = Debug|Win32
-		{10322D13-CD82-4921-B10A-236732379192}.Debug - Word.ActiveCfg = Debug|Win32
-		{10322D13-CD82-4921-B10A-236732379192}.Debug - Word.Build.0 = Debug|Win32
-		{10322D13-CD82-4921-B10A-236732379192}.Release.ActiveCfg = Release|Win32
-		{10322D13-CD82-4921-B10A-236732379192}.Release.Build.0 = Release|Win32
-		{1CC9FF3B-E2F0-4B68-8433-621D9002DDB0}.Debug.ActiveCfg = Debug|Win32
-		{1CC9FF3B-E2F0-4B68-8433-621D9002DDB0}.Debug.Build.0 = Debug|Win32
-		{1CC9FF3B-E2F0-4B68-8433-621D9002DDB0}.Debug - Word.ActiveCfg = Debug|Win32
-		{1CC9FF3B-E2F0-4B68-8433-621D9002DDB0}.Debug - Word.Build.0 = Debug|Win32
-		{1CC9FF3B-E2F0-4B68-8433-621D9002DDB0}.Release.ActiveCfg = Release|Win32
-		{1CC9FF3B-E2F0-4B68-8433-621D9002DDB0}.Release.Build.0 = Release|Win32
-		{EEA6EF30-0619-4762-8ECB-25D170F2BBB8}.Debug.ActiveCfg = Debug|Win32
-		{EEA6EF30-0619-4762-8ECB-25D170F2BBB8}.Debug.Build.0 = Debug|Win32
-		{EEA6EF30-0619-4762-8ECB-25D170F2BBB8}.Debug - Word.ActiveCfg = Debug - Word|Win32
-		{EEA6EF30-0619-4762-8ECB-25D170F2BBB8}.Debug - Word.Build.0 = Debug - Word|Win32
-		{EEA6EF30-0619-4762-8ECB-25D170F2BBB8}.Release.ActiveCfg = Release|Win32
-		{EEA6EF30-0619-4762-8ECB-25D170F2BBB8}.Release.Build.0 = Release|Win32
-		{72E0298B-1A11-416B-9745-2FEEAAC0C9BD}.Debug.ActiveCfg = Debug|Win32
-		{72E0298B-1A11-416B-9745-2FEEAAC0C9BD}.Debug.Build.0 = Debug|Win32
-		{72E0298B-1A11-416B-9745-2FEEAAC0C9BD}.Debug - Word.ActiveCfg = Debug|Win32
-		{72E0298B-1A11-416B-9745-2FEEAAC0C9BD}.Debug - Word.Build.0 = Debug|Win32
-		{72E0298B-1A11-416B-9745-2FEEAAC0C9BD}.Release.ActiveCfg = Release|Win32
-		{72E0298B-1A11-416B-9745-2FEEAAC0C9BD}.Release.Build.0 = Release|Win32
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug - Word|Win32 = Debug - Word|Win32
+		Debug - Word|x64 = Debug - Word|x64
+		Debug|Win32 = Debug|Win32
+		Debug|x64 = Debug|x64
+		Release|Win32 = Release|Win32
+		Release|x64 = Release|x64
 	EndGlobalSection
-	GlobalSection(ExtensibilityGlobals) = postSolution
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4D87409B-A034-465F-A421-A0A515015514}.Debug - Word|Win32.ActiveCfg = Debug|Win32
+		{4D87409B-A034-465F-A421-A0A515015514}.Debug - Word|Win32.Build.0 = Debug|Win32
+		{4D87409B-A034-465F-A421-A0A515015514}.Debug - Word|x64.ActiveCfg = Debug|Win32
+		{4D87409B-A034-465F-A421-A0A515015514}.Debug|Win32.ActiveCfg = Debug|Win32
+		{4D87409B-A034-465F-A421-A0A515015514}.Debug|x64.ActiveCfg = Debug|Win32
+		{4D87409B-A034-465F-A421-A0A515015514}.Release|Win32.ActiveCfg = Release|Win32
+		{4D87409B-A034-465F-A421-A0A515015514}.Release|x64.ActiveCfg = Release|Win32
+		{D3298CE0-291A-4510-9F04-1D61773733CE}.Debug - Word|Win32.ActiveCfg = Debug - Word|Win32
+		{D3298CE0-291A-4510-9F04-1D61773733CE}.Debug - Word|Win32.Build.0 = Debug - Word|Win32
+		{D3298CE0-291A-4510-9F04-1D61773733CE}.Debug - Word|x64.ActiveCfg = Debug - Word|Win32
+		{D3298CE0-291A-4510-9F04-1D61773733CE}.Debug|Win32.ActiveCfg = Debug|Win32
+		{D3298CE0-291A-4510-9F04-1D61773733CE}.Debug|Win32.Build.0 = Debug|Win32
+		{D3298CE0-291A-4510-9F04-1D61773733CE}.Debug|x64.ActiveCfg = Debug|Win32
+		{D3298CE0-291A-4510-9F04-1D61773733CE}.Release|Win32.ActiveCfg = Release|Win32
+		{D3298CE0-291A-4510-9F04-1D61773733CE}.Release|Win32.Build.0 = Release|Win32
+		{D3298CE0-291A-4510-9F04-1D61773733CE}.Release|x64.ActiveCfg = Release|Win32
+		{BA2E1C84-87C7-46CA-A51D-05358BE658DD}.Debug - Word|Win32.ActiveCfg = Debug|Win32
+		{BA2E1C84-87C7-46CA-A51D-05358BE658DD}.Debug - Word|Win32.Build.0 = Debug|Win32
+		{BA2E1C84-87C7-46CA-A51D-05358BE658DD}.Debug - Word|x64.ActiveCfg = Debug|Win32
+		{BA2E1C84-87C7-46CA-A51D-05358BE658DD}.Debug|Win32.ActiveCfg = Debug|Win32
+		{BA2E1C84-87C7-46CA-A51D-05358BE658DD}.Debug|Win32.Build.0 = Debug|Win32
+		{BA2E1C84-87C7-46CA-A51D-05358BE658DD}.Debug|x64.ActiveCfg = Debug|Win32
+		{BA2E1C84-87C7-46CA-A51D-05358BE658DD}.Release|Win32.ActiveCfg = Release|Win32
+		{BA2E1C84-87C7-46CA-A51D-05358BE658DD}.Release|Win32.Build.0 = Release|Win32
+		{BA2E1C84-87C7-46CA-A51D-05358BE658DD}.Release|x64.ActiveCfg = Release|Win32
+		{7F7A8BB9-B900-4663-8B61-6A7BF055D01D}.Debug - Word|Win32.ActiveCfg = Debug|Win32
+		{7F7A8BB9-B900-4663-8B61-6A7BF055D01D}.Debug - Word|Win32.Build.0 = Debug|Win32
+		{7F7A8BB9-B900-4663-8B61-6A7BF055D01D}.Debug - Word|x64.ActiveCfg = Debug|Win32
+		{7F7A8BB9-B900-4663-8B61-6A7BF055D01D}.Debug|Win32.ActiveCfg = Debug|Win32
+		{7F7A8BB9-B900-4663-8B61-6A7BF055D01D}.Debug|Win32.Build.0 = Debug|Win32
+		{7F7A8BB9-B900-4663-8B61-6A7BF055D01D}.Debug|x64.ActiveCfg = Debug|Win32
+		{7F7A8BB9-B900-4663-8B61-6A7BF055D01D}.Release|Win32.ActiveCfg = Release|Win32
+		{7F7A8BB9-B900-4663-8B61-6A7BF055D01D}.Release|Win32.Build.0 = Release|Win32
+		{7F7A8BB9-B900-4663-8B61-6A7BF055D01D}.Release|x64.ActiveCfg = Release|Win32
+		{A5D4E6D1-38DC-48F5-85AC-DFFB15DDA9E7}.Debug - Word|Win32.ActiveCfg = Debug|Win32
+		{A5D4E6D1-38DC-48F5-85AC-DFFB15DDA9E7}.Debug - Word|Win32.Build.0 = Debug|Win32
+		{A5D4E6D1-38DC-48F5-85AC-DFFB15DDA9E7}.Debug - Word|x64.ActiveCfg = Debug|Win32
+		{A5D4E6D1-38DC-48F5-85AC-DFFB15DDA9E7}.Debug|Win32.ActiveCfg = Debug|Win32
+		{A5D4E6D1-38DC-48F5-85AC-DFFB15DDA9E7}.Debug|Win32.Build.0 = Debug|Win32
+		{A5D4E6D1-38DC-48F5-85AC-DFFB15DDA9E7}.Debug|x64.ActiveCfg = Debug|Win32
+		{A5D4E6D1-38DC-48F5-85AC-DFFB15DDA9E7}.Release|Win32.ActiveCfg = Release|Win32
+		{A5D4E6D1-38DC-48F5-85AC-DFFB15DDA9E7}.Release|Win32.Build.0 = Release|Win32
+		{A5D4E6D1-38DC-48F5-85AC-DFFB15DDA9E7}.Release|x64.ActiveCfg = Release|Win32
+		{1CC9FF3B-E2F0-4B68-8433-621D9002DDB0}.Debug - Word|Win32.ActiveCfg = Debug|Win32
+		{1CC9FF3B-E2F0-4B68-8433-621D9002DDB0}.Debug - Word|Win32.Build.0 = Debug|Win32
+		{1CC9FF3B-E2F0-4B68-8433-621D9002DDB0}.Debug - Word|x64.ActiveCfg = Debug|Win32
+		{1CC9FF3B-E2F0-4B68-8433-621D9002DDB0}.Debug|Win32.ActiveCfg = Debug|Win32
+		{1CC9FF3B-E2F0-4B68-8433-621D9002DDB0}.Debug|Win32.Build.0 = Debug|Win32
+		{1CC9FF3B-E2F0-4B68-8433-621D9002DDB0}.Debug|x64.ActiveCfg = Debug|Win32
+		{1CC9FF3B-E2F0-4B68-8433-621D9002DDB0}.Release|Win32.ActiveCfg = Release|Win32
+		{1CC9FF3B-E2F0-4B68-8433-621D9002DDB0}.Release|Win32.Build.0 = Release|Win32
+		{1CC9FF3B-E2F0-4B68-8433-621D9002DDB0}.Release|x64.ActiveCfg = Release|Win32
+		{EEA6EF30-0619-4762-8ECB-25D170F2BBB8}.Debug - Word|Win32.ActiveCfg = Debug - Word|Win32
+		{EEA6EF30-0619-4762-8ECB-25D170F2BBB8}.Debug - Word|Win32.Build.0 = Debug - Word|Win32
+		{EEA6EF30-0619-4762-8ECB-25D170F2BBB8}.Debug - Word|x64.ActiveCfg = Debug - Word|Win32
+		{EEA6EF30-0619-4762-8ECB-25D170F2BBB8}.Debug|Win32.ActiveCfg = Debug|Win32
+		{EEA6EF30-0619-4762-8ECB-25D170F2BBB8}.Debug|Win32.Build.0 = Debug|Win32
+		{EEA6EF30-0619-4762-8ECB-25D170F2BBB8}.Debug|x64.ActiveCfg = Debug|Win32
+		{EEA6EF30-0619-4762-8ECB-25D170F2BBB8}.Release|Win32.ActiveCfg = Release|Win32
+		{EEA6EF30-0619-4762-8ECB-25D170F2BBB8}.Release|Win32.Build.0 = Release|Win32
+		{EEA6EF30-0619-4762-8ECB-25D170F2BBB8}.Release|x64.ActiveCfg = Release|Win32
 	EndGlobalSection
-	GlobalSection(ExtensibilityAddIns) = postSolution
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
 	EndGlobalSection
 EndGlobal

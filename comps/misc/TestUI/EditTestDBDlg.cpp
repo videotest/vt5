@@ -182,14 +182,14 @@ void CEditTestDBDlg::InitTestsWindow()
 		DoInitTestsWindow(TVI_ROOT, m_sptrTM, 0);				  
 }
 
-void CEditTestDBDlg::DoInitTestsWindow(HTREEITEM hti, ITestManager *pTestManager, long lParentPos)
+void CEditTestDBDlg::DoInitTestsWindow(HTREEITEM hti, ITestManager *pTestManager, LPOS lParentPos)
 {
-	long lPos = 0;
+	LPOS lPos = 0;
 	pTestManager->GetFirstTestPos(lParentPos, &lPos);
 	while (lPos)
 	{
 		IUnknownPtr punkTest;
-		long lPosSaved = lPos;
+		LPOS lPosSaved = lPos;
 		pTestManager->GetNextTest(lParentPos, &lPos, &punkTest);
 		ITestItemPtr sptrTI =  punkTest;
 		if (sptrTI == 0)
@@ -280,7 +280,7 @@ void CEditTestDBDlg::OnNMRclickTree1(NMHDR *pNMHDR, LRESULT *pResult)
 	*pResult = 0;
 }
 
-HTREEITEM	CEditTestDBDlg::AddTreeItem( HTREEITEM hti_parent, CString sName, long lparent_pos, long lpos)
+HTREEITEM	CEditTestDBDlg::AddTreeItem( HTREEITEM hti_parent, CString sName, LPOS lparent_pos, LPOS lpos)
 {
 	HTREEITEM htiNew = 0;
 	if( !hti_parent )
@@ -366,7 +366,7 @@ void	CEditTestDBDlg::SynchronizeCtrlsWithTestItem( TVITEM *pst_tvitem )
 		return;
 
 	IUnknownPtr sptrTest;
-	long lPos = pitem_info_ex->lpos;
+	LPOS lPos = pitem_info_ex->lpos;
 	m_sptrTM->GetNextTest( pitem_info_ex->lparent_pos, &lPos, &sptrTest);
 	ITestItemPtr sptrTI = sptrTest;
 	if( sptrTI == 0 )
@@ -374,7 +374,7 @@ void	CEditTestDBDlg::SynchronizeCtrlsWithTestItem( TVITEM *pst_tvitem )
 
 	// [vanek] : get executing conditions - 24.08.2004
     BSTR bstrCond = NULL;
-	long lCondPos = 0;
+	LPOS lCondPos = 0;
 	CString sConds( _T("") );
 	sptrTI->GetFirstExecCondPos(&lCondPos);
 	while (lCondPos)
@@ -473,7 +473,7 @@ void	CEditTestDBDlg::SynchronizeTestItemWithCtrls( TVITEM *pst_tvitem )
 		return;
 
 	IUnknownPtr sptrTest;
-	long lPos = pitem_info_ex->lpos;
+	LPOS lPos = pitem_info_ex->lpos;
 	m_sptrTM->GetNextTest( pitem_info_ex->lparent_pos, &lPos, &sptrTest);
 	ITestItemPtr sptrTI = sptrTest;
 	if( sptrTI == 0 )
@@ -658,7 +658,7 @@ BOOL	CEditTestDBDlg::GenerateUniqueTestName( HTREEITEM hti_parent, CString sbase
 	return TRUE;
 }
 
-HTREEITEM	CEditTestDBDlg::FindTestItemInTree( HTREEITEM hti_parent, long lpos_parent_test, long lpos_test )
+HTREEITEM	CEditTestDBDlg::FindTestItemInTree( HTREEITEM hti_parent, LPOS lpos_parent_test, LPOS lpos_test )
 {
 	if( !lpos_test )
 		return 0;
@@ -712,13 +712,13 @@ HTREEITEM	CEditTestDBDlg::FindItemByName( HTREEITEM hti_parent, CString str_item
 }
 
 
-void	CEditTestDBDlg::SetSelectedTestItem( long lpos_parent, long lpos )
+void	CEditTestDBDlg::SetSelectedTestItem( LPOS lpos_parent, LPOS lpos )
 {
 	m_selected_test.lparent_pos = lpos_parent;
 	m_selected_test.lpos = lpos;
 }
 
-void	CEditTestDBDlg::GetSelectedTestItem( long *plpos_parent, long *plpos )
+void	CEditTestDBDlg::GetSelectedTestItem( LPOS *plpos_parent, LPOS *plpos )
 {
 	if( !plpos_parent || !plpos )
 		return;
@@ -896,7 +896,7 @@ void	CEditTestDBDlg::OnAddNewTest( HTREEITEM hti_parent )
 	if( !pitem_info_ex )
 		return;
 
-	long lpos_saved = pitem_info_ex->lpos;
+	LPOS lpos_saved = pitem_info_ex->lpos;
 	IUnknownPtr sptr_parent;
 	m_sptrTM->GetNextTest( pitem_info_ex->lparent_pos, &lpos_saved, &sptr_parent);
 	ITestItemPtr sptr_test_parent = sptr_parent;
@@ -934,7 +934,7 @@ void	CEditTestDBDlg::OnAddNewTest( HTREEITEM hti_parent )
 
 
 	// add new test
-	long lpos_newtest = 0;
+	LPOS lpos_newtest = 0;
 	m_sptrTM->AddTest( pitem_info_ex->lpos, sptr_test_item, &lpos_newtest );
 	if( !lpos_newtest )
 		return;
@@ -980,7 +980,7 @@ void	CEditTestDBDlg::OnDeleteTest( HTREEITEM hti )
 		return;
 
 	IUnknownPtr sptrTest;
-	long lPos = pitem_info_ex->lpos;
+	LPOS lPos = pitem_info_ex->lpos;
 	m_sptrTM->GetNextTest( pitem_info_ex->lparent_pos, &lPos, &sptrTest);
 	ITestItemPtr sptrTI = sptrTest;
 	if( sptrTI == 0 )
@@ -1022,7 +1022,7 @@ void	CEditTestDBDlg::OnCopyTest( HTREEITEM hti )
 		return;
 
 	IUnknownPtr sptrTest;
-	long lpos = pitem_info_ex->lpos;
+	LPOS lpos = pitem_info_ex->lpos;
 	m_sptrTM->GetNextTest( pitem_info_ex->lparent_pos, &lpos, &sptrTest);
 	ISerializableObjectPtr sptrSO = sptrTest;
 	if( sptrSO == 0 )
@@ -1099,7 +1099,7 @@ void	CEditTestDBDlg::OnPasteTest( HTREEITEM hti_paste )
 	if( !pparent_item_info_ex )	 
 		return;
 	IUnknownPtr sptrParentTest;
-	long lpos = pparent_item_info_ex->lpos;
+	LPOS lpos = pparent_item_info_ex->lpos;
 	m_sptrTM->GetNextTest( pparent_item_info_ex->lparent_pos, &lpos, &sptrParentTest);
 	lpos = 0;
 	ITestItemPtr sptrParentTI = sptrParentTest;
@@ -1170,7 +1170,7 @@ void	CEditTestDBDlg::OnPasteTest( HTREEITEM hti_paste )
 	sptrLoadedTI->SetPath( bstrt_loaded_path );
 
 	// add loaded test to current test
-	long lpos_loaded_test = 0;
+	LPOS lpos_loaded_test = 0;
 	m_sptrTM->AddTest( pparent_item_info_ex->lpos, sptrLoadedTI, &lpos_loaded_test );
 	if( !lpos_loaded_test )
 	{
@@ -1263,7 +1263,7 @@ void CEditTestDBDlg::OnTvnEndlabeleditTree1(NMHDR *pNMHDR, LRESULT *pResult)
 		if( pitem_info_ex )	 
 		{
 			IUnknownPtr sptrTest;
-			long lpos = pitem_info_ex->lpos;
+			LPOS lpos = pitem_info_ex->lpos;
 			m_sptrTM->GetNextTest( pitem_info_ex->lparent_pos, &lpos, &sptrTest);
 			ITestItemPtr sptrTI = sptrTest;
 			if( sptrTI != 0 )
@@ -1342,7 +1342,7 @@ void CEditTestDBDlg::OnBnClickedButtonSaveEnv()
 		return;
 
     IUnknownPtr sptr_unk_test;
-	long lpos = pitem_info_ex->lpos;
+	LPOS lpos = pitem_info_ex->lpos;
 	m_sptrTM->GetNextTest( pitem_info_ex->lparent_pos, &lpos, &sptr_unk_test);
 
 	ITestEnvironmentPtr sptr_te;
@@ -1377,7 +1377,7 @@ void CEditTestDBDlg::OnTvnGetInfoTipTree1(NMHDR *pNMHDR, LRESULT *pResult)
 		return;
 	
 	IUnknownPtr sptrTest;
-	long lPos = pitem_info_ex->lpos;
+	LPOS lPos = pitem_info_ex->lpos;
 	m_sptrTM->GetNextTest( pitem_info_ex->lparent_pos, &lPos, &sptrTest);
 	ITestItemPtr sptrTI = sptrTest;
 	if( sptrTI == 0 )

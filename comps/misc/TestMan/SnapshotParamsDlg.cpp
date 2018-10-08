@@ -10,7 +10,7 @@ CSnapshotParamsDlg::~CSnapshotParamsDlg(void)
 {
 }
 
-long CSnapshotParamsDlg::on_initdialog()
+LRESULT CSnapshotParamsDlg::on_initdialog()
 {
 	set_dlg_item_text(IDC_RESIZECX, m_szResizeCX);
 	set_dlg_item_text(IDC_RESIZECY, m_szResizeCY);
@@ -19,7 +19,7 @@ long CSnapshotParamsDlg::on_initdialog()
 	return __super::on_initdialog();
 }
 
-long CSnapshotParamsDlg::on_destroy()
+LRESULT CSnapshotParamsDlg::on_destroy()
 {
 	get_dlg_item_text(IDC_RESIZECX, m_szResizeCX, sizeof(m_szResizeCX));
 	get_dlg_item_text(IDC_RESIZECY, m_szResizeCY, sizeof(m_szResizeCY));

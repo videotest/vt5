@@ -5,6 +5,7 @@
   <PropertyGroup>
     <OutDir>$(SolutionDir)vt5\$(PlatformName)\$(Configuration)\comps\</OutDir>
     <IntDir>$(SolutionDir)build\$(ProjectName)\$(Platform)\$(Configuration)\</IntDir>
+    <TargetExt>.dll</TargetExt>
   </PropertyGroup>
   <ItemDefinitionGroup>
     <ClCompile>

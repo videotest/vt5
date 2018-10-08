@@ -25,7 +25,7 @@ CDeleteObjectDlg::~CDeleteObjectDlg()
 }
 
 //////////////////////////////////////////////////////////////////////
-long CDeleteObjectDlg::on_initdialog()
+LRESULT CDeleteObjectDlg::on_initdialog()
 {
 	long lres = dlg_impl::on_initdialog();
 
@@ -190,7 +190,7 @@ void CCustomizeDlg::set_col_info( col_info* parr, size_t size )
 }
 
 //////////////////////////////////////////////////////////////////////
-long CCustomizeDlg::on_initdialog()
+LRESULT CCustomizeDlg::on_initdialog()
 {
 	long lres = dlg_impl::on_initdialog();
 
