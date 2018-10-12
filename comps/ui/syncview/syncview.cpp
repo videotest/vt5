@@ -277,15 +277,15 @@ void CSyncManager::OnNotify( const char *pszEvent, IUnknown *punkHit, IUnknown *
 
 void CSyncManager::_AttachToView( IUnknown *punkView )
 {
-	if( GetObjectKey( punkView  )== GetObjectKey( m_ptrActiveView ) )
-		return;
+	//if( GetObjectKey( punkView  )== GetObjectKey( m_ptrActiveView ) )
+	//	return;
 
-	if( m_ptrActiveView != 0 )
+	//if( m_ptrActiveView != 0 )
 	{
 		UnRegister( m_ptrActiveView );
 		m_ptrActiveView = 0;
 	}
-	if( punkView != 0 )
+	//if( punkView != 0 )
 	{
 		m_ptrActiveView = punkView;
 		Register( m_ptrActiveView );

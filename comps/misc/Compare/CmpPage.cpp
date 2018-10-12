@@ -271,7 +271,7 @@ public:
 		m_clockwise = true;
 	}
 
-	virtual long on_initdialog()
+	virtual LRESULT on_initdialog()
 	{
 		m_clockwise = ::GetValueInt( GetAppUnknown(), "\\Compare", "Clockwise", m_clockwise )!=0;
 		if( !m_clockwise && m_angle != 0 )

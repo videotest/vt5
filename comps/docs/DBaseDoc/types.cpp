@@ -1159,7 +1159,7 @@ bool CQueryField::KillNotSerializeChildGuid()
 	if( ptrND == NULL)
 		return_and_assert( false );
 
-	for( int i=m_arGuid.GetSize()-1;i>=0;i-- )
+	for( INT_PTR i=m_arGuid.GetSize()-1;i>=0;i-- )
 	{
 		IUnknown* punkObject = ::GetObjectByKey( ptrND, m_arGuid[i] );
 		if( !punkObject )
@@ -2522,7 +2522,7 @@ void CQueryField::OnNewObjectSet2Data( IUnknown* punkCtrl, IUnknown* punkObject,
 	INamedDataPtr ptrND( punkCtrl );	
 	if( ptrND )
 	{
-		ptrND->NotifyContexts(ncChangeKey, punkObject, 0, (LPARAM)&prevKey);
+		ptrND->NotifyContexts(ncChangeKey, punkObject, 0, &prevKey);
 	}
 	else
 	{

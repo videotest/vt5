@@ -9,13 +9,13 @@ class CSnapshotDlg :
 public:
 	CSnapshotDlg();
 	virtual ~CSnapshotDlg();
-	virtual long on_command( uint cmd );
-	virtual long on_mousemove( const _point &point );
-	virtual long on_lbuttondown( const _point &point );
-	virtual long on_lbuttonup( const _point &point );
-	virtual long on_initdialog();
-	virtual long on_destroy();
-	virtual long on_timer( ulong lEvent );
+	virtual LRESULT on_command( uint cmd );
+	virtual LRESULT on_mousemove( const _point &point );
+	virtual LRESULT on_lbuttondown( const _point &point );
+	virtual LRESULT on_lbuttonup( const _point &point );
+	virtual LRESULT on_initdialog();
+	virtual LRESULT on_destroy();
+	virtual LRESULT on_timer( ulong lEvent );
 
 	virtual void on_ok();
 

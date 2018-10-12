@@ -55,7 +55,7 @@ HRESULT CSnapshot::DoInvoke()
 		strncpy( dlg.m_szResizeCY, GetArgString("ResizeCY"), sizeof(dlg.m_szResizeCY) );
 		dlg.m_bSelectTarget = (nShowTargetDialog & 1) != 0;
 		dlg.m_bScrollWindow = GetArgLong("ScrollWindow") != 0;
-		uint result = dlg.do_modal( ::GetActiveWindow() );
+		INT_PTR result = dlg.do_modal( ::GetActiveWindow() );
 		if(result != IDOK) return S_FALSE;
 		_variant_t var;
 		var = dlg.m_szResizeCX;
@@ -93,7 +93,7 @@ HRESULT CSnapshot::DoInvoke()
 	if(bShowTargetDialog)
 	{
 		CSnapshotDlg dlg;
-		uint result = dlg.do_modal( ::GetActiveWindow() );
+		INT_PTR result = dlg.do_modal( ::GetActiveWindow() );
 		if(result != IDOK) return S_FALSE;
 
 		hwnd = dlg.m_hWndLastFound;

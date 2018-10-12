@@ -1352,7 +1352,7 @@ HRESULT CNamedData::XData::GetObject( BSTR bstrName, BSTR bstrType, IUnknown **p
 	}
 }
 
-HRESULT CNamedData::XData::NotifyContexts( DWORD dwNotifyCode, IUnknown *punkNew, IUnknown *punkOld, DWORD dwData)
+HRESULT CNamedData::XData::NotifyContexts( DWORD dwNotifyCode, IUnknown *punkNew, IUnknown *punkOld, GUID* dwData)
 {
 	METHOD_PROLOGUE_EX(CNamedData, Data)
 	{
@@ -2786,7 +2786,7 @@ POSITION CBaseGroup::FindBase(GuidKey & key)
 }
 
 //notify contexts, if enabled
-void CNamedData::NotifyContexts(NotifyCodes nc, IUnknown * punkNew, IUnknown * punkOld, LPARAM lParam)
+void CNamedData::NotifyContexts(NotifyCodes nc, IUnknown * punkNew, IUnknown * punkOld, GUID* lParam)
 {
 	INamedDataObject2Ptr sptrNew = punkNew;
 	INamedDataObject2Ptr sptrOld = punkOld;

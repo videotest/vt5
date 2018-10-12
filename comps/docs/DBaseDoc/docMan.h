@@ -188,7 +188,7 @@ protected:
 		com_call NameExists( BSTR bstrName, long* Exists );
 		com_call GetObject( BSTR bstrName, BSTR bstrType, IUnknown **punk );
 
-		com_call NotifyContexts( DWORD dwNotifyCode, IUnknown *punkNew, IUnknown *punkOld, DWORD dwData);
+		com_call NotifyContexts( DWORD dwNotifyCode, IUnknown *punkNew, IUnknown *punkOld, GUID* dwData);
 		com_call EnableBinaryStore( BOOL bBinary );
 		
 		com_call GetCurrentSection( BSTR* pbstrSection );

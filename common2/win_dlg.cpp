@@ -241,14 +241,14 @@ public:
 		 //= bstrWindowClass;
 		wchar_t	lpstrAxWndClassNameW[128];
 		//MultiByteToWideChar( 1, 0, szAxContainerWinClassName, strlen( szAxContainerWinClassName )+1, lpstrAxWndClassNameW, 128 );
-		MultiByteToWideChar( 1, 0, szAxContainerWinClassName, strlen( szAxContainerWinClassName )+1, lpstrAxWndClassNameW, 128 );
+		MultiByteToWideChar( 1, 0, szAxContainerWinClassName, (int)strlen( szAxContainerWinClassName )+1, lpstrAxWndClassNameW, 128 );
 
 		 _bstr_t	bstrTest=  lpstrAxWndClassNameW;
 
 		// Calculate the size of the DLGTEMPLATE for allocating the new one
 		DLGITEMTEMPLATE* pFirstItem = FindFirstDlgItem(pTemplate);
-		ULONG cbHeader = (BYTE*)pFirstItem - (BYTE*)pTemplate;
-		ULONG cbNewTemplate = cbHeader;
+		ULONGLONG cbHeader = (BYTE*)pFirstItem - (BYTE*)pTemplate;
+		ULONGLONG cbNewTemplate = cbHeader;
 
 		BOOL bDialogEx = IsDialogEx(pTemplate);
 

@@ -56,9 +56,9 @@ CCompareImagesDlg::~CCompareImagesDlg()
 		delete []m_pframe2; m_pframe2 = 0;
 }
 
-long CCompareImagesDlg::on_initdialog()
+LRESULT CCompareImagesDlg::on_initdialog()
 {
-	long lRes = __super::on_initdialog();
+	LRESULT lRes = __super::on_initdialog();
 
 	m_pframe->SetScroll( get_dlg_item( IDC_SCROLLBAR1 ), SB_VERT );
 	m_pframe->SetScroll( get_dlg_item( IDC_SCROLLBAR2 ), SB_HORZ );
@@ -229,7 +229,7 @@ long CCompareImagesDlg::on_initdialog()
 	if( sptrWin2->CreateWnd( handle(), rcView2, WS_VISIBLE | WS_CHILD | WS_VISIBLE | WS_TABSTOP, IDC_VIEW_HERE2 ) != S_OK )
 		return 0;
 
-	TPOS lPos = 0;
+	LPOS lPos = 0;
 	sptrContextTmp->GetFirstObjectPos( bstrImage, &lPos );
 
 	_list_t< IUnknownPtr > m_list;
@@ -275,9 +275,9 @@ long CCompareImagesDlg::on_initdialog()
 	m_pbShowStates = new bool[m_lMaxImage];
 	::ZeroMemory( m_pbShowStates, sizeof( bool ) * m_lMaxImage );
 
-	for( lPos = m_list.head(); lPos; lPos = m_list.next( lPos ) )
+	for( lPos = (LPOS)m_list.head(); lPos; lPos = (LPOS)m_list.next( (TPOS)lPos ) )
 	{
-		IUnknownPtr sptrO = m_list.get( lPos );
+		IUnknownPtr sptrO = m_list.get( (TPOS)lPos );
 		::SetValue( sptrDoc, 0, 0, _variant_t( ( IUnknown *)sptrO ) );
 	}
 
@@ -344,7 +344,7 @@ void CCompareImagesDlg::_redraw_images()
 
 	if( !m_pbShowStates[m_lCurrentImage] )
 	{
-		long lPos = 0;
+		LPOS lPos = 0;
 
 		IDataContext2Ptr sptrContext = m_pframe->GetContext();
  		sptrContext->GetFirstObjectPos( bstrImage, &lPos );
@@ -685,7 +685,7 @@ void CCompareImagesDlg::_redraw_images()
 		IDataContext2Ptr sptrContext = m_pframe->GetContext();
 		IDataContext2Ptr sptrContext2 = m_pframe2->GetContext();
 
-		long lPos = 0;
+		LPOS lPos = 0;
  		sptrContext->GetFirstObjectPos( bstrImage, &lPos );
 
 		bool bFound = false;
@@ -869,7 +869,7 @@ void CCompareImagesDlg::_check_sizes( )
 	}	
 }
 
-long CCompareImagesDlg::on_destroy()
+LRESULT CCompareImagesDlg::on_destroy()
 {
 	m_pframe->de_init();
 	m_pframe2->de_init();

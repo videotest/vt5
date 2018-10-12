@@ -1,7 +1,7 @@
 ; ChooseColor.def : Declares the module parameters for the DLL.
 
 LIBRARY      "ChooseColor"
-DESCRIPTION  'ChooseColor Windows Dynamic Link Library'
+;DESCRIPTION  'ChooseColor Windows Dynamic Link Library'
 
 EXPORTS
     ; Explicit exports can go here

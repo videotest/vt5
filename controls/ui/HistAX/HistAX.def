@@ -1,6 +1,6 @@
 ; HistAX.def : Declares the module parameters.
 
-LIBRARY      "HISTAX.OCX"
+LIBRARY      "HISTAX.DLL"
 
 EXPORTS
 	DllCanUnloadNow     PRIVATE

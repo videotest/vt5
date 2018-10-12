@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="windows-1251"?>
+<VisualStudioPropertySheet
+	ProjectType="Visual C++"
+	Version="8.00"
+	Name="CommonEnv"
+	OutputDirectory="$SolutionDir)vt5\$(PlatformName)\$(ConfigurationName)\$(ProjectName)"
+	IntermediateDirectory="$SolutionDir)build\$(PlatformName)\$(ConfigurationName)\$(ProjectName)"
+	>
+	<Tool
+		Name="VCCLCompilerTool"
+		AdditionalIncludeDirectories="&quot;$(SolutionDir)common&quot;;&quot;$(SolutionDir)vt5\$(PlatformName)\$(ConfigurationName)\comps&quot;;&quot;$(SolutionDir)IFaces&quot;"
+		PreprocessorDefinitions="$(SolutionDir)common;$(SolutionDir)\vt5\$(PlatformName)\$(ConfigurationName)"
+	/>
+	<Tool
+		Name="VCLinkerTool"
+		OutputFile="$(SolutionDir)bin\$(PlatformName)\$(ConfigurationName)\$(ProjectName).dll"
+		AdditionalLibraryDirectories="$(SolutionDir)lib\$(PlatformName)\$(ConfigurationName)"
+		ProgramDatabaseFile="$(TargetDir)..\pdb\$(TargetName).pdb"
+		ImportLibrary="$(SolutionDir)lib\$(PlatformName)\$(ConfigurationName)\$(ProjectName).lib"
+	/>
+	<Tool
+		Name="VCMIDLTool"
+		OutputDirectory="$SolutionDir)vt5\$(PlatformName)\$(ConfigurationName)\$(ProjectName)\comps"
+	/>
+</VisualStudioPropertySheet>

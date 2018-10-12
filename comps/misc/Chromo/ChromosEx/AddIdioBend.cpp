@@ -1864,7 +1864,7 @@ public:
 	}
 	CString _get_str() { return m_strNum; }
 
-	virtual long on_initdialog()
+	virtual LRESULT on_initdialog()
 	{
 		::SendMessage( ::GetDlgItem( handle(), IDC_SPIN1 ), UDM_SETRANGE, 0, MAKELPARAM( 4, 1 ) );
 		::SendMessage( ::GetDlgItem( handle(), IDC_SPIN2 ), UDM_SETRANGE, 0, MAKELPARAM( 99, 1) );
@@ -1898,7 +1898,7 @@ public:
 			
 			if( token.GetLength() - 1 > 0 )
 			{
-				CString str = CString( token ).Right( strlen( token ) - 1 );
+				CString str = CString( token ).Right( (int)strlen( token ) - 1 );
 				::SetWindowText( ::GetDlgItem( handle(), IDC_EDIT2 ),  str );
 				::SendMessage(   ::GetDlgItem( handle(), IDC_CHECK_N2 ), BM_SETCHECK, 1, 0);
 

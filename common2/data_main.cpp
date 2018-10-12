@@ -292,7 +292,7 @@ HRESULT CObjectBase::SetBaseKey(GUID * pBaseKey)
 	{
 		INamedDataPtr ptrData( m_punkNamedData );
 		if( ptrData )
-			ptrData->NotifyContexts( ncChangeBase, Unknown(), 0, (LPARAM)&prevKey );
+			ptrData->NotifyContexts( ncChangeBase, Unknown(), 0, &prevKey );
 	}
 
 
@@ -375,8 +375,8 @@ HRESULT CObjectBase::Load( IStream *pStream, SerializeParams *pparams )
 		INamedDataPtr ptrData( m_punkNamedData );
 		if( ptrData )
 		{
-			ptrData->NotifyContexts( ncChangeKey, Unknown(), 0, (LPARAM)&guidPrev );
-			ptrData->NotifyContexts( ncChangeBase, Unknown(), 0, (LPARAM)&guidPrevBase );
+			ptrData->NotifyContexts( ncChangeKey, Unknown(), 0, &guidPrev );
+			ptrData->NotifyContexts( ncChangeBase, Unknown(), 0, &guidPrevBase );
 		}
 	}
 	

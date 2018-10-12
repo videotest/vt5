@@ -12,7 +12,7 @@ public:
 	CInputMsgDlg();
 	~CInputMsgDlg();
 
-	virtual long	on_initdialog();
+	virtual LRESULT	on_initdialog();
 	virtual void	on_ok();
 
 protected:

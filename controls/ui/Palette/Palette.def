@@ -1,6 +1,6 @@
 ; Palette.def : Declares the module parameters.
 
-LIBRARY      "PALETTE.OCX"
+LIBRARY      "PALETTE.DLL"
 
 EXPORTS
 	DllCanUnloadNow     PRIVATE

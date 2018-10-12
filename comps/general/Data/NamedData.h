@@ -177,7 +177,7 @@ public:
 	bool EnableContextNotification( bool bEnable = true );
 	bool EnableChildsNotification( bool bEnable = true );
 	//notify contexts, if enabled
-	void NotifyContexts(NotifyCodes nc, IUnknown * punkNew = 0, IUnknown * punkOld = 0, LPARAM lParam = 0);
+	void NotifyContexts(NotifyCodes nc, IUnknown * punkNew = 0, IUnknown * punkOld = 0, GUID* lParam = 0);
 	// set active context and sync namedData's context with it
 	bool SetActiveContext(IUnknown *punk);
 
@@ -243,7 +243,7 @@ public:
 		com_call RemoveContext( IUnknown *punk ); 
 		com_call NameExists( BSTR bstrName, long* Exists );
 		com_call GetObject(	BSTR bstrName, BSTR bstrType, IUnknown **punk );
-		com_call NotifyContexts( DWORD dwNotifyCode, IUnknown *punkNew, IUnknown *punkOld, DWORD dwData);
+		com_call NotifyContexts( DWORD dwNotifyCode, IUnknown *punkNew, IUnknown *punkOld, GUID* dwData);
 		com_call EnableBinaryStore( BOOL bBinary );
 		com_call GetCurrentSection( BSTR* pbstrSection );
 // base objects

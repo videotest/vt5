@@ -1,7 +1,7 @@
 ; CutArea.def : Declares the module parameters for the DLL.
 
 LIBRARY      "CutArea"
-DESCRIPTION  'CutArea Windows Dynamic Link Library'
+;DESCRIPTION  'CutArea Windows Dynamic Link Library'
 
 EXPORTS
     ; Explicit exports can go here

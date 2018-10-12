@@ -51,7 +51,7 @@ inline void add_debug_symbols( HWND hwnd )
 
 
 inline 
-int __stdcall subclass_dlg_proc(HWND hwnd, UINT m, WPARAM w, LPARAM l )
+LRESULT __stdcall subclass_dlg_proc(HWND hwnd, UINT m, WPARAM w, LPARAM l )
 {
 	if( m == WM_INITDIALOG )
 	{
@@ -71,7 +71,7 @@ public:
 	INT_PTR do_modal( HWND hwndParent );
 	int do_modeless( HWND hwndParent );
 public:
-	virtual long on_initdialog();
+	virtual LRESULT on_initdialog();
 	virtual void on_ok()				{end_dialog( IDOK );}
 	virtual void on_cancel()			{end_dialog( IDCANCEL );}
 	virtual void end_dialog( int idc )	{m_result = idc; EndDialog( handle(), idc );}
@@ -107,9 +107,9 @@ inline 	LRESULT dlg_impl::on_command( uint cmd )
 	return false;
 }
 
-inline long dlg_impl::on_initdialog()
+inline LRESULT dlg_impl::on_initdialog()
 {
-	long	lres = win_impl::on_initdialog();
+	LRESULT	lres = win_impl::on_initdialog();
 
 	//load from RT_INITDLG resource
 	HRSRC hrc = ::FindResource( module::hrc(), MAKEINTRESOURCE(m_idTemplate), RT_DLGINIT );

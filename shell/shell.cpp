@@ -158,7 +158,7 @@ _map_t<vt_type_info*, const char*, cmp_string_nocase, func_free_vt_type_info>	g_
 
 extern "C" _declspec(dllexport) INamedDataInfo* VTGetTypeInfo( BSTR bstrType )
 {
-	long lpos = g_map_types.find( (char*)_bstr_t( bstrType ) );
+	TPOS lpos = g_map_types.find( (char*)_bstr_t( bstrType ) );
 	if( lpos )
 	{
 		vt_type_info* pti = g_map_types.get( lpos );
@@ -286,7 +286,7 @@ HANDLER_STDAPI CoCreateInstanceShell(REFCLSID rclsid, LPUNKNOWN pUnkOuter, DWORD
 {
 	PROFILE_TEST( "shell.cpp\\CoCreateInstanceShell" )
 	
-	long lpos = g_map_fi.find( &rclsid );
+	TPOS lpos = g_map_fi.find( &rclsid );
 	if( lpos )
 	{
 		vt_factory_info* pfi = g_map_fi.get( lpos );
@@ -1578,7 +1578,7 @@ BOOL CShellApp::InitInstance()
 		
 		if( nType != -1 )
 		{
-			long	lpos = 0;
+			LONG_PTR	lpos = 0;
 
 			sptrN->GetObjectFirstPosition( nType, &lpos );
 
@@ -1959,7 +1959,7 @@ HRESULT CShellApp::XApp::GetTargetManager( IUnknown **punk )
 	_catch_nested;
 }
 
-HRESULT CShellApp::XApp::GetFirstDocTemplPosition( long *plPos )
+HRESULT CShellApp::XApp::GetFirstDocTemplPosition( LONG_PTR *plPos )
 {
 	_try_nested(CShellApp, App, GetFirstDocTemplPosition)
 	{
@@ -3079,7 +3079,7 @@ HRESULT CShellApp::XScriptSite::UnregisterScript( IUnknown *punk, DWORD dwFlags 
 		if( !punk )
 			return S_FALSE;
 
-		long lPos = pThis->m_arrScriptPUNK.find( CScriptDesc( punk, dwFlags ) );
+		TPOS lPos = pThis->m_arrScriptPUNK.find( CScriptDesc( punk, dwFlags ) );
 		if( lPos )
 			pThis->m_arrScriptPUNK.remove( lPos );
 		else
@@ -3107,7 +3107,7 @@ HRESULT CShellApp::XScriptSite::Invoke( BSTR bstrFuncName, VARIANT* pargs, int n
 			_trace_file( "Script.log", "%s", (const char*)strFuncName );
 		}
 
-		for( long lPos = pThis->m_arrScriptPUNK.head(); lPos != 0;  lPos = pThis->m_arrScriptPUNK.next( lPos ) )
+		for( TPOS lPos = pThis->m_arrScriptPUNK.head(); lPos != 0;  lPos = pThis->m_arrScriptPUNK.next( lPos ) )
 		{
 			CScriptDesc desc = pThis->m_arrScriptPUNK.get( lPos );
 			IActiveScriptPtr ptrAct = desc.GetScript();
@@ -3136,7 +3136,7 @@ HRESULT CShellApp::XScriptSite::Invoke( BSTR bstrFuncName, VARIANT* pargs, int n
 
 
 
-HRESULT CShellApp::XScriptSite::GetFirstPos(  long *dwPos )
+HRESULT CShellApp::XScriptSite::GetFirstPos(  LONG_PTR *dwPos )
 {
 	_try_nested( CShellApp, ScriptSite, GetFirstPos )
 	{

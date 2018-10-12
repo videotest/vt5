@@ -1,3 +1,4 @@
+LIBRARY "EditorView"
 EXPORTS
 	DllCanUnloadNow     PRIVATE
 	DllGetClassObject   PRIVATE

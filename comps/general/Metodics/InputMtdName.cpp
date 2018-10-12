@@ -24,9 +24,9 @@ CInputMtdNameDlg::~CInputMtdNameDlg()
 }
 
 /////////////////////////////////////////////////////////////
-long	CInputMtdNameDlg::on_initdialog()
+LRESULT	CInputMtdNameDlg::on_initdialog()
 {
-    long lres = dlg_impl::on_initdialog();
+    LRESULT lres = dlg_impl::on_initdialog();
 
 	if( !m_str_caption.IsEmpty() )
 		::SetWindowText( handle(), m_str_caption );
@@ -72,7 +72,7 @@ void CInputMtdNameDlg::on_ok()
 	hwnd_mtd_edit = ::GetDlgItem( handle(), IDC_EDIT_MTD_NAME );
 	if( hwnd_mtd_edit )
 	{
-		int ntext_length = 0;
+		LRESULT ntext_length = 0;
 		ntext_length = ::SendMessage( hwnd_mtd_edit, EM_LINELENGTH, (WPARAM)0, (LPARAM) 0);
 		if( ntext_length )
 		{
@@ -139,7 +139,7 @@ LRESULT CInputMtdNameDlg::on_command(uint cmd)
 void	CInputMtdNameDlg::update_ok( )
 {
     CString str( _T("") ); 
-	long llength = 0;
+	LRESULT llength = 0;
 	llength = ::SendMessage( get_dlg_item( IDC_EDIT_MTD_NAME ), EM_LINELENGTH, (WPARAM)(0), (LPARAM)(0) );
 	llength = llength + 1;
 	get_dlg_item_text( IDC_EDIT_MTD_NAME, str.GetBufferSetLength( llength ), llength);

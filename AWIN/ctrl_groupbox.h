@@ -12,8 +12,8 @@ public:
 	virtual ~group_box_ctrl();
 public:
 	virtual void handle_init();
-	virtual long on_paint();
-	virtual long on_destroy();
+	virtual LRESULT on_paint();
+	virtual LRESULT on_destroy();
 	virtual bool subclass( HWND hwnd, bool f_nccreate = false );
 
 	void set_text( HINSTANCE hrc, UINT nID );
@@ -77,7 +77,7 @@ void group_box_ctrl::handle_init()
 }
 
 inline
-long group_box_ctrl::on_destroy()
+LRESULT group_box_ctrl::on_destroy()
 {
 	if( m_font )
 		::DeleteObject( m_font );
@@ -98,7 +98,7 @@ bool group_box_ctrl::subclass( HWND hwnd, bool f_nccreate )
 };
 
 inline
-long group_box_ctrl::on_paint()
+LRESULT group_box_ctrl::on_paint()
 {
 	PAINTSTRUCT	ps;
 	HDC	hdc = ::BeginPaint( handle(), &ps );

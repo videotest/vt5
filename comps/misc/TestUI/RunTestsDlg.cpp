@@ -15,7 +15,7 @@ static char THIS_FILE[] = __FILE__;
 struct CTestInfo
 {
 	CItemInfo* m_pItemInfo;
-	long m_lPosSaved;
+	LPOS m_lPosSaved;
 	long m_lError;
 };
 
@@ -49,7 +49,7 @@ public:
 	}
 };
 
-static CTestInfo* MakeItemInfo(ITestManager *pTestManager, IUnknown *punkTest, long lPosSaved)
+static CTestInfo* MakeItemInfo(ITestManager *pTestManager, IUnknown *punkTest, LPOS lPosSaved)
 {
 	ITestItemPtr sptrTI = punkTest;
 	ITestRunningDataPtr sptrTRD = punkTest;
@@ -57,7 +57,7 @@ static CTestInfo* MakeItemInfo(ITestManager *pTestManager, IUnknown *punkTest, l
 		return NULL;
 	CItemInfo* lp = new CItemInfo();
 	// Set item icon
-	long lChildrenPos = 0;
+	LPOS lChildrenPos = 0;
 	pTestManager->GetFirstTestPos(lPosSaved, &lChildrenPos);
 	lp->SetImage(lChildrenPos==0?2:1);
 	// Obtain and set test values name:
@@ -160,11 +160,11 @@ void CRunTestsDlg::DoAddListItem(ITestManager *pTestManager, long lParentPos,
 	CSuperGridCtrl::CTreeItem *pBase)
 {
 	CTestsList List;
-	long lPos = 0;
+	LPOS lPos = 0;
 	pTestManager->GetFirstTestPos(lParentPos, &lPos);
 	while (lPos)
 	{
-		long lPosSaved = lPos;
+		LPOS lPosSaved = lPos;
 		IUnknownPtr punkTest;
 		pTestManager->GetNextTest(lParentPos, &lPos, &punkTest);
 		CTestInfo* pti = MakeItemInfo(pTestManager, punkTest, lPosSaved);

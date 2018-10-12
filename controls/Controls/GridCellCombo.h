@@ -150,7 +150,6 @@ protected:
 	afx_msg UINT OnGetDlgCode();
 	afx_msg HBRUSH CtlColor(CDC* pDC, UINT nCtlColor);
 	//}}AFX_MSG
-	//afx_msg void OnSelendOK();
 
 	DECLARE_MESSAGE_MAP()
 

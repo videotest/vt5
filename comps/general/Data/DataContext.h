@@ -196,7 +196,7 @@ protected:
 		com_call SetActiveObject(BSTR bstrType, IUnknown * punkObj, DWORD dwFlags );
 		com_call GetData(IUnknown ** ppunk);
 		com_call AttachData(IUnknown * punkNamedData);
-		com_call Notify(long cod, IUnknown * punkNew, IUnknown * punkOld, DWORD dwData);
+		com_call Notify(long cod, IUnknown * punkNew, IUnknown * punkOld, GUID* dwData);
 	// lock Update	
 		com_call LockUpdate(BOOL bLock, BOOL bUpdate);
 		com_call GetLockUpdate(BOOL * pbLock);

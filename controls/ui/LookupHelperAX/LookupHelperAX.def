@@ -1,6 +1,6 @@
 ; LookupHelperAX.def : Declares the module parameters.
 
-LIBRARY      "LOOKUPHELPERAX.OCX"
+LIBRARY      "LOOKUPHELPERAX.DLL"
 
 EXPORTS
 	DllCanUnloadNow     PRIVATE

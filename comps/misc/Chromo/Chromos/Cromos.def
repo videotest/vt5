@@ -1,7 +1,6 @@
 ; Cromos.def : Declares the module parameters for the DLL.
 
 LIBRARY      "Cromos"
-DESCRIPTION  'Cromos Windows Dynamic Link Library'
 
 EXPORTS
     ; Explicit exports can go here

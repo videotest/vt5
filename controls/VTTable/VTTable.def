@@ -1,6 +1,6 @@
 ; VTTable.def : Declares the module parameters.
 
-LIBRARY      "VTTable.OCX"
+LIBRARY      "VTTable.DLL"
 
 EXPORTS
 	DllCanUnloadNow     PRIVATE

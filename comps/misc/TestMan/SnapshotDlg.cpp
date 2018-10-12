@@ -13,7 +13,7 @@ CSnapshotDlg::~CSnapshotDlg()
 {
 }
 
-long CSnapshotDlg::on_initdialog()
+LRESULT CSnapshotDlg::on_initdialog()
 {
 	HWND hwnd = ::GetDlgItem(handle(), IDC_STATIC_ICON_FINDER_TOOL);
 	ShowWindow(hwnd, SW_SHOW);
@@ -22,7 +22,7 @@ long CSnapshotDlg::on_initdialog()
 	return __super::on_initdialog();
 }
 
-long CSnapshotDlg::on_destroy()
+LRESULT CSnapshotDlg::on_destroy()
 {
 	if (m_hWndLastFound)
 	{
@@ -31,7 +31,7 @@ long CSnapshotDlg::on_destroy()
 	return __super::on_destroy();
 }
 
-long CSnapshotDlg::on_command( uint cmd )
+LRESULT CSnapshotDlg::on_command( uint cmd )
 {
 	if( cmd == IDC_STATIC_ICON_FINDER_TOOL ||
 		cmd == IDC_STATIC_ICON_FINDER_TOOL_EMPTY )
@@ -55,7 +55,7 @@ long CSnapshotDlg::on_command( uint cmd )
 	return __super::on_command( cmd );
 }
 
-long CSnapshotDlg::on_mousemove( const _point &point )
+LRESULT CSnapshotDlg::on_mousemove( const _point &point )
 {
 	if( m_bSearchingWnd )
 	{
@@ -97,12 +97,12 @@ long CSnapshotDlg::on_mousemove( const _point &point )
 	return __super::on_mousemove( point );
 }
 
-long CSnapshotDlg::on_lbuttondown( const _point &point )
+LRESULT CSnapshotDlg::on_lbuttondown( const _point &point )
 {
 	return __super::on_lbuttondown( point );
 }
 
-long CSnapshotDlg::on_lbuttonup( const _point &point )
+LRESULT CSnapshotDlg::on_lbuttonup( const _point &point )
 {
 	if(m_bSearchingWnd )
 	{
@@ -122,7 +122,7 @@ long CSnapshotDlg::on_lbuttonup( const _point &point )
 
 #define TE_UPDATE_WND_INFO 1
 
-long CSnapshotDlg::on_timer( ulong lEvent )
+LRESULT CSnapshotDlg::on_timer( ulong lEvent )
 {
  	if(lEvent == TE_UPDATE_WND_INFO)
 	{

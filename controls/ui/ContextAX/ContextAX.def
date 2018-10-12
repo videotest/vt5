@@ -1,6 +1,6 @@
 ; ContextAX.def : Declares the module parameters.
 
-LIBRARY      "CONTEXTAX.OCX"
+LIBRARY      "CONTEXTAX.DLL"
 
 EXPORTS
 	DllCanUnloadNow     PRIVATE

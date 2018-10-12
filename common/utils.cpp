@@ -864,6 +864,26 @@ std_dll long GetValueInt( IUnknown *punkDoc, const char *pszSection, const char 
 	//	return lDefault;
 	//}
 }
+//get __int64 value from NamedData
+std_dll __int64 GetValueInt64( IUnknown *punkDoc, const char *pszSection, const char *pszEntry, __int64 lDefault )
+{
+	//	try
+	{
+		_variant_t	var( lDefault );
+		var = ::GetValue( punkDoc, pszSection, pszEntry, var );
+
+		_VarChangeType( var, VT_I8 );
+
+		if (var.vt == VT_I8)
+			return var.lVal;
+		else
+			return lDefault;
+	}
+	//catch( ... )
+	//{
+	//	return lDefault;
+	//}
+}
 
 //get string value from NamedData
 std_dll CString GetValueString( IUnknown *punkDoc, const char *pszSection, const char *pszEntry, const char *pszDefault )
@@ -972,6 +992,13 @@ std_dll void SetValue( IUnknown *punkDoc, const char *pszSection, const char *ps
 
 //set integer value to NamedData
 std_dll void SetValue( IUnknown *punkDoc, const char *pszSection, const char *pszEntry, long lValue )
+{
+	_variant_t	var( lValue );
+	::SetValue( punkDoc, pszSection, pszEntry, var );
+}
+
+//set __int64 value to NamedData
+std_dll void SetValue( IUnknown *punkDoc, const char *pszSection, const char *pszEntry, __int64 lValue )
 {
 	_variant_t	var( lValue );
 	::SetValue( punkDoc, pszSection, pszEntry, var );

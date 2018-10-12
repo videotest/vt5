@@ -924,7 +924,7 @@ bool CDataObjectBase::SetBaseObjectKey(GuidKey & BaseKey)
 	__m_lBaseObjKey = BaseKey;
 
 	if (sptrData != 0)
-		sptrData->NotifyContexts(ncChangeBase, GetControllingUnknown(), 0, (LPARAM)&PrevKey);
+		sptrData->NotifyContexts(ncChangeBase, GetControllingUnknown(), 0, &PrevKey);
 	
 	return true;
 }
@@ -937,7 +937,7 @@ void CDataObjectBase::ReplaceObjectKey(GuidKey & rKey)
 	m_key = rKey;
 
 	if (sptrData != 0)
-		sptrData->NotifyContexts(ncChangeKey, GetControllingUnknown(), 0, (LPARAM)&PrevKey);
+		sptrData->NotifyContexts(ncChangeKey, GetControllingUnknown(), 0, &PrevKey);
 }
 
 

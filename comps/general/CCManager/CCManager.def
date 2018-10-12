@@ -1,7 +1,7 @@
 ; CCManager.def : Declares the module parameters for the DLL.
 
 LIBRARY      "CCManager"
-DESCRIPTION  'CCManager Windows Dynamic Link Library'
+;DESCRIPTION  'CCManager Windows Dynamic Link Library'
 
 EXPORTS
     ; Explicit exports can go here

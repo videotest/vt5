@@ -157,7 +157,7 @@ interface INamedData : public IUnknown
 	com_call NameExists( BSTR bstrName, long* Exists ) = 0;
 	com_call GetObject( BSTR bstrName, BSTR bstrType, IUnknown **punk ) = 0;
 
-	com_call NotifyContexts( DWORD dwNotifyCode, IUnknown *punkNew, IUnknown *punkOld, DWORD dwData) = 0;
+	com_call NotifyContexts( DWORD dwNotifyCode, IUnknown *punkNew, IUnknown *punkOld, GUID* dwData) = 0;
 	com_call EnableBinaryStore( BOOL bBinary ) = 0;
 	
 	com_call GetCurrentSection( BSTR* pbstrSection ) = 0;
@@ -325,7 +325,7 @@ interface IDataContext : public IUnknown
 	com_call GetData( IUnknown **ppunk ) = 0;
 	com_call AttachData( IUnknown *punkNamedData ) = 0;
 
-	com_call Notify( long cod, IUnknown *punkNew, IUnknown *punkOld, DWORD dwData ) = 0;
+	com_call Notify( long cod, IUnknown *punkNew, IUnknown *punkOld, GUID* dwData ) = 0;
 
 	com_call LockUpdate(BOOL bLock, BOOL bNeedUpdate) = 0;
 	com_call GetLockUpdate(BOOL * pbLock) = 0;

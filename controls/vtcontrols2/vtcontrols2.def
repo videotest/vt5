@@ -1,6 +1,6 @@
 ; vtcontrols2.def : Declares the module parameters.
 
-LIBRARY      "VTCONTROLS2.OCX"
+LIBRARY      "VTCONTROLS2.DLL"
 
 EXPORTS
 	DllCanUnloadNow     PRIVATE

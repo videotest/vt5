@@ -19,17 +19,17 @@
 static char THIS_FILE[] = __FILE__;
 #endif
 
-BOOL	CheckTestBranch( ITestManager *ptest_man, long lpos_test_check, long lpos_start_parent /*= 0*/ )
+BOOL	CheckTestBranch( ITestManager *ptest_man, LPOS lpos_test_check, LPOS lpos_start_parent /*= 0*/ )
 {
 	if( !ptest_man )
 		return FALSE;
     
-	long lpos_test = 0;
+	LPOS lpos_test = 0;
 	ptest_man->GetFirstTestPos( lpos_start_parent, &lpos_test );
 	while( lpos_test )
 	{
 		IUnknownPtr punkTest;
-		long lpos_saved = lpos_test;
+		LPOS lpos_saved = lpos_test;
 		ptest_man->GetNextTest( lpos_start_parent, &lpos_test, &punkTest );
 
 		if( lpos_saved == lpos_test_check )
@@ -52,17 +52,17 @@ BOOL	CheckTestBranch( ITestManager *ptest_man, long lpos_test_check, long lpos_s
 	return FALSE;
 }
 
-BOOL	HasSavedChild( ITestManager *ptest_man, long lpos_parent )
+BOOL	HasSavedChild( ITestManager *ptest_man, LPOS lpos_parent )
 {
     if( !ptest_man || !lpos_parent )
 		return FALSE;
 
-	long lpos_test = 0;
+	LPOS lpos_test = 0;
 	ptest_man->GetFirstTestPos( lpos_parent, &lpos_test );
 	while( lpos_test )
 	{
 		IUnknownPtr punkTest;
-		long lpos_saved = lpos_test;
+		LPOS lpos_saved = lpos_test;
 		ptest_man->GetNextTest( lpos_parent, &lpos_test, &punkTest );
 
 		ITestRunningDataPtr sptrTRD = punkTest;
@@ -81,7 +81,7 @@ BOOL	HasSavedChild( ITestManager *ptest_man, long lpos_parent )
     return FALSE;
 }
 
-BOOL	ExecuteBranchTests( ITestManager *ptest_man, long lpos_test, long lexecution_parts )
+BOOL	ExecuteBranchTests( ITestManager *ptest_man, LPOS lpos_test, long lexecution_parts )
 {
 	if( !ptest_man || !lpos_test )
 		return FALSE;
@@ -130,7 +130,7 @@ BOOL	ExecuteBranchTests( ITestManager *ptest_man, long lpos_test, long lexecutio
 	return TRUE;
 }
 
-BOOL	DoOperationWithChildTests( ITestManager *ptest_man, DWORD dwoperations, long lpos_parent )
+BOOL	DoOperationWithChildTests( ITestManager *ptest_man, DWORD dwoperations, LPOS lpos_parent )
 {
     if( !ptest_man )
 		return FALSE;;
@@ -140,7 +140,7 @@ BOOL	DoOperationWithChildTests( ITestManager *ptest_man, DWORD dwoperations, lon
 	if( dwoperations & toUpdatePath )
 	{	// initialize info for parent test
         IUnknownPtr sptr_unk_test;
-		long lpos = lpos_parent;
+		LPOS lpos = lpos_parent;
 		ptest_man->GetNextTest( 0, &lpos, &sptr_unk_test );
 		sptr_parent_test = sptr_unk_test;
 		if( sptr_parent_test == 0 )
@@ -149,12 +149,12 @@ BOOL	DoOperationWithChildTests( ITestManager *ptest_man, DWORD dwoperations, lon
 		sptr_parent_test->GetPath( bstr_path_parent.GetAddress() );
 	}
     
-	long lpos_test = 0;
+	LPOS lpos_test = 0;
 	ptest_man->GetFirstTestPos( lpos_parent, &lpos_test );
 	while( lpos_test )
 	{
 		IUnknownPtr punkTest;
-		long lpos_saved = lpos_test;
+		LPOS lpos_saved = lpos_test;
 		ptest_man->GetNextTest( lpos_parent, &lpos_test, &punkTest );
 		ITestItemPtr sptrTI =  punkTest;
 		if (sptrTI == 0)
@@ -218,7 +218,7 @@ _bstr_t GetNewScript(_bstr_t bstrScript, IMacroHelper *pMacroHelper)
 	while (pwcLine)
 	{
 		const wchar_t *pwcNextLine = wcspbrk(pwcLine, L"\n\r");
-		int nLen = pwcNextLine?pwcNextLine-pwcLine:wcslen(pwcLine);
+		INT_PTR nLen = pwcNextLine?pwcNextLine-pwcLine:wcslen(pwcLine);
 		std::auto_ptr<wchar_t> CurLine(new wchar_t[nLen+1]);
 		wchar_t *pwcLine1 = CurLine.get();
 		wcsncpy(pwcLine1, pwcLine, nLen);
@@ -254,7 +254,7 @@ _bstr_t GetNewScript(_bstr_t bstrScript, IMacroHelper *pMacroHelper)
 		if (pwcNextLine)
 		{
 			bstrNewScript += NEW_LINE;
-			int n = wcsspn(pwcNextLine, L"\n\r");
+			INT_PTR n = wcsspn(pwcNextLine, L"\n\r");
 			pwcLine = pwcNextLine+n;
 		}
 		else
@@ -332,9 +332,9 @@ bool CActionEditTestDB::Invoke()
     sptr_test_process->SetEditMode( true );
 	
 	// read last selected test
-	long lpos_parent = 0, lpos_test = 0;
-	lpos_parent = GetValueInt( GetAppUnknown(), "\\EditTestDB", "LastParentPos", 0);
-	lpos_test = GetValueInt( GetAppUnknown(), "\\EditTestDB", "LastTestPos", 0);
+	LPOS lpos_parent = 0, lpos_test = 0;
+	lpos_parent = GetValueInt64( GetAppUnknown(), "\\EditTestDB", "LastParentPos", 0);
+	lpos_test = GetValueInt64( GetAppUnknown(), "\\EditTestDB", "LastTestPos", 0);
     
 	HWND	hwnd_main = 0;
 	IApplicationPtr	ptrA(GetAppUnknown());
@@ -342,7 +342,7 @@ bool CActionEditTestDB::Invoke()
 	CEditTestDBDlg dlg(CWnd::FromHandle(hwnd_main));
 	// set selected test
 	dlg.SetSelectedTestItem( lpos_parent, lpos_test );
-	int nres = 0;
+	INT_PTR nres = 0;
     while( nres = dlg.DoModal() ) // show window
 	{
 		if( nres == IDCLOSE || nres == IDOK || nres == IDCANCEL )
@@ -371,8 +371,8 @@ bool CActionEditTestDB::Invoke()
 
     // save last selected test
 	dlg.GetSelectedTestItem( &lpos_parent, &lpos_test);
-	SetValue( GetAppUnknown(), "\\EditTestDB", "LastParentPos", lpos_parent);
-	SetValue( GetAppUnknown(), "\\EditTestDB", "LastTestPos", lpos_test);
+	SetValue( GetAppUnknown(), "\\EditTestDB", "LastParentPos", (LONG_PTR)lpos_parent);
+	SetValue( GetAppUnknown(), "\\EditTestDB", "LastTestPos", (LONG_PTR)lpos_test);
 
 	// [vanek]: exit in edit mode
     sptr_test_process->SetEditMode( false );
@@ -427,12 +427,12 @@ public:
 
 			// update settings
 			::FireEvent( ptrA, szEventNewSettings, 0, 0, 0, 0 );
-            long	lposTempl = 0;
+            LPOS	lposTempl = 0;
 
 			ptrA->GetFirstDocTemplPosition( &lposTempl );
         	while( lposTempl )
 			{
-				long	lposDoc = 0;
+				LPOS	lposDoc = 0;
 				ptrA->GetFirstDocPosition( lposTempl, &lposDoc );
 
         		while( lposDoc )
@@ -454,13 +454,13 @@ public:
 };
 
 
-BOOL	CActionEditTestDB::_record_test_sequence( ITestManager *ptest_man, BOOL bfinal_sequence, IMacroManager *pmacro_man, HWND hwnd_main, long lpos_parent, long lpos_test )
+BOOL	CActionEditTestDB::_record_test_sequence( ITestManager *ptest_man, BOOL bfinal_sequence, IMacroManager *pmacro_man, HWND hwnd_main, LPOS lpos_parent, LPOS lpos_test )
 {
 	if( !pmacro_man || !hwnd_main || !lpos_test )
 		return FALSE;
 
 	IUnknownPtr spunkTest;
-	long lpos_saved = lpos_test;
+	LPOS lpos_saved = lpos_test;
 	ptest_man->GetNextTest( lpos_parent, &lpos_test, &spunkTest);
     lpos_test = lpos_saved;	 // restore tets's position
 	ITestItemPtr sptrTI =  spunkTest;
@@ -636,13 +636,13 @@ public:
 };
 
 BOOL	CActionEditTestDB::_edit_test_sequence( ITestManager *ptest_man, BOOL bfinal_sequence,
-	IMacroManager *pmacro_man, IMacroHelper *pMacroHelper, HWND hwnd_main, long lpos_parent, long lpos_test )
+	IMacroManager *pmacro_man, IMacroHelper *pMacroHelper, HWND hwnd_main, LPOS lpos_parent, LPOS lpos_test )
 {
 	if( !pmacro_man || !hwnd_main || !lpos_test )
 		return FALSE;
 
 	IUnknownPtr spunkTest;
-	long lpos_saved = lpos_test;
+	LPOS lpos_saved = lpos_test;
 	ptest_man->GetNextTest( lpos_parent, &lpos_test, &spunkTest);
     lpos_test = lpos_saved;	 // restore tets's position
 	ITestItemPtr sptrTI =  spunkTest;
@@ -715,7 +715,7 @@ BOOL	CActionEditTestDB::_edit_test_sequence( ITestManager *ptest_man, BOOL bfina
 
 
 
-BOOL	CActionEditTestDB::_input_condition( ITestManager *ptest_man, HWND hwnd_main, long lpos_parent, long lpos_test, XConditionType cond_type )
+BOOL	CActionEditTestDB::_input_condition( ITestManager *ptest_man, HWND hwnd_main, LPOS lpos_parent, LPOS lpos_test, XConditionType cond_type )
 {
     if( !ptest_man || !hwnd_main || !lpos_test )
 		return FALSE;

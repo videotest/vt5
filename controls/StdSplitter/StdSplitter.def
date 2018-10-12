@@ -1,7 +1,7 @@
 ; StdSplitter.def : Declares the module parameters for the DLL.
 
 LIBRARY      "StdSplitter"
-DESCRIPTION  'StdSplitter Windows Dynamic Link Library'
+; DESCRIPTION  'StdSplitter Windows Dynamic Link Library'
 
 EXPORTS
     ; Explicit exports can go here

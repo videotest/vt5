@@ -85,7 +85,7 @@ bool CWizardPool::QueryProperties( IUnknown* punkDoc, IUnknown* punkQ, bool bsho
 	m_wm = wmQueryProp;
 
 	ps.m_psh.dwFlags |= PSH_NOAPPLYNOW;
-	int nRes = ps.DoModal();	
+	INT_PTR nRes = ps.DoModal();	
 
 	m_wm = wmNotDefine;
 

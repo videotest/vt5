@@ -1192,7 +1192,7 @@ HRESULT CSewLIView::get_NextFragmentDirection(/*[out,retval]*/ double * pVal )
 {
 	if (m_sptrIP != 0)
 	{
-		*pVal = atan2(-m_ptLVOffs.y,m_ptLVOffs.x);
+		*pVal = atan2((double)-m_ptLVOffs.y,(double)m_ptLVOffs.x);
 	}
 	else
 	{
@@ -1201,7 +1201,7 @@ HRESULT CSewLIView::get_NextFragmentDirection(/*[out,retval]*/ double * pVal )
 		{
 			CPoint pt;
 			sptrSLI->CalcOrigFragOffset(NULL, &pt);
-			*pVal = atan2(-pt.y,pt.x);
+			*pVal = atan2((double)-pt.y,(double)pt.x);
 		}
 		else *pVal = 0.;
 	}

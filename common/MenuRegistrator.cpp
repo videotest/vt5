@@ -12,7 +12,7 @@
 #include "..\\common2\\com_main.h"
 #define __assert__( value )	dbg_assert( value )
 
-#define CVTRegKey CRegKey
+#define CVTRegKey ::CRegKey
 #define CVTRegValue CRegValue
 #define CStringArray StringArray
 #endif //_COMMON_LIB

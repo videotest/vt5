@@ -281,17 +281,17 @@ void CTestManager::OnNotify( const char *pszEvent, IUnknown *punkHit, IUnknown *
 }
 
 // interface ITestManager
-HRESULT CTestManager::GetFirstTestPos( /*[in]*/ TPOS lParentPos, /*[out, retval]*/ TPOS *plPos)
+HRESULT CTestManager::GetFirstTestPos( /*[in]*/ LPOS lParentPos, /*[out, retval]*/ LPOS *plPos)
 {
 	if( !plPos )
 		return E_FAIL;
 
-	*plPos = m_treeTests.first_child_pos( lParentPos );
+	*plPos = (LPOS)m_treeTests.first_child_pos( lParentPos );
 
 	return S_OK;
 }
 
-HRESULT CTestManager::GetNextTest( /*[in]*/ TPOS lParentPos, /*[out]*/ TPOS *plPos, /*[out]*/ IUnknown **ppunk)
+HRESULT CTestManager::GetNextTest( /*[in]*/ LPOS lParentPos, /*[out]*/ LPOS *plPos, /*[out]*/ IUnknown **ppunk)
 {
 	if( !ppunk )
 		return E_FAIL;
@@ -300,14 +300,14 @@ HRESULT CTestManager::GetNextTest( /*[in]*/ TPOS lParentPos, /*[out]*/ TPOS *plP
 		return E_FAIL;
 
 	*ppunk = m_treeTests.get( *plPos );
-	*plPos = m_treeTests.next_child( lParentPos, *plPos );
+	*plPos = (LPOS)m_treeTests.next_child( lParentPos, *plPos );
 
 	(*ppunk)->AddRef();
 
 	return S_OK;
 }
 
-HRESULT CTestManager::GetNextTest( /*[in]*/ TPOS lParentPos, /*[out]*/ VARIANT *plPos, /*[out, retval]*/ IDispatch **ppunk)
+HRESULT CTestManager::GetNextTest( /*[in]*/ LPOS lParentPos, /*[out]*/ LPOS *plPos, /*[out, retval]*/ IDispatch **ppunk)
 {
 	if( !ppunk )
 		return E_FAIL;
@@ -315,12 +315,12 @@ HRESULT CTestManager::GetNextTest( /*[in]*/ TPOS lParentPos, /*[out]*/ VARIANT *
 	if( !plPos )
 		return E_FAIL;
 	
-	if( plPos->vt != VT_I4 )
-		return E_FAIL;
+	//if( plPos->vt != VT_I4 )
+	//	return E_FAIL;
 
 	IUnknown *punk = 0;
 
-	if (GetNextTest(lParentPos, (TPOS*)plPos->plVal, &punk) != S_OK)
+	if (GetNextTest(lParentPos, plPos, &punk) != S_OK)
 		return E_FAIL;
 
 	if( !punk )
@@ -332,7 +332,7 @@ HRESULT CTestManager::GetNextTest( /*[in]*/ TPOS lParentPos, /*[out]*/ VARIANT *
 	return S_OK;
 }
 
-HRESULT CTestManager::AddTest( /*[in]*/ TPOS lParent, /*[in]*/ IUnknown *punk,  /*[out,retval]*/ TPOS *plpos)
+HRESULT CTestManager::AddTest( /*[in]*/ LPOS lParent, /*[in]*/ IUnknown *punk,  /*[out,retval]*/ LPOS *plpos)
 {
 	if( !punk )
 		return E_FAIL;
@@ -340,12 +340,12 @@ HRESULT CTestManager::AddTest( /*[in]*/ TPOS lParent, /*[in]*/ IUnknown *punk,  
 	if( !plpos )
 		return E_FAIL;
 
-	*plpos = (TPOS)m_treeTests.insert( punk, (LONG_PTR)lParent ); 
+	*plpos = m_treeTests.insert( punk, lParent ); 
 	
 	return S_OK;
 }
 
-HRESULT CTestManager::AddTest( /*[in]*/ long lParent, /*[in]*/ IDispatch *punk,  /*[out,retval]*/ long *plpos )
+HRESULT CTestManager::AddTest( /*[in]*/ LPOS lParent, /*[in]*/ IDispatch *punk,  /*[out,retval]*/ LPOS *plpos )
 {
 	if( !punk )
 		return E_FAIL;
@@ -367,7 +367,7 @@ HRESULT CTestManager::AddTest( /*[in]*/ long lParent, /*[in]*/ IDispatch *punk, 
 }
 
 
-HRESULT CTestManager::DeleteTest( /*[in]*/ long lPos )
+HRESULT CTestManager::DeleteTest( /*[in]*/ LPOS lPos )
 {
 	if( !m_treeTests.remove( lPos ) )
 		return E_FAIL;
@@ -504,7 +504,7 @@ HRESULT CTestManager::StopTesting()
 
 HRESULT CTestManager::PauseTesting( BOOL bPaused )
 {
-	m_bPaused = bPaused;
+	m_bPaused = (bool)bPaused;
 
 	while( m_bPaused )
 	{
@@ -527,7 +527,7 @@ HRESULT CTestManager::GetRunningState( /*[out, retval]*/ long *plState )
 
 
 //------------------------------------------------------------------------------------------
-HRESULT CTestManager::_recursive_scan( long lParentPos, bool bSave, long lFlag, long *plCounter )
+HRESULT CTestManager::_recursive_scan( LPOS lParentPos, bool bSave, long lFlag, long *plCounter )
 {
 	if( m_bInterrupt )
 		return E_ABORT; // [vanek] - 03.09.2004
@@ -544,7 +544,7 @@ HRESULT CTestManager::_recursive_scan( long lParentPos, bool bSave, long lFlag, 
 			IDataContext2Ptr sptrDocCXT = punkDoc;
 			punkDoc->Release(); punkDoc = 0;
 
-			LONG_PTR lPosDoc = 0;
+			LPOS lPosDoc = 0;
 			sptrDocCXT->GetFirstObjectPos( _bstr_t( szTypeImage ), &lPosDoc );
 
 			while( lPosDoc )
@@ -598,7 +598,7 @@ HRESULT CTestManager::_recursive_scan( long lParentPos, bool bSave, long lFlag, 
 		}
 	}
 
-	long lPos = 0;
+	LPOS lPos = 0;
 	if( GetFirstTestPos( lParentPos, &lPos ) != S_OK )
 		return E_FAIL;
 
@@ -625,7 +625,7 @@ HRESULT CTestManager::_recursive_scan( long lParentPos, bool bSave, long lFlag, 
 			TCHAR szFName[_MAX_FNAME];
 			_tsplitpath( strCD, NULL, NULL, szFName, NULL);
 
-			strCD = strCD.Left( strCD.GetLength() - strlen( szFName ) );
+			strCD = strCD.Left( strCD.GetLength() - (int)strlen( szFName ) );
 			if( strCD[strCD.GetLength() - 1] == '\\' )
 				strCD = strCD.Left( strCD.GetLength() - 1 );
 
@@ -659,7 +659,7 @@ HRESULT CTestManager::_recursive_scan( long lParentPos, bool bSave, long lFlag, 
 	{
 		IUnknown *punkTest = 0;
 
-		long lPrevPos = lPos;
+		LPOS lPrevPos = lPos;
 		if( GetNextTest( lParentPos, &lPos, &punkTest ) != S_OK )
 			return E_FAIL;
 
@@ -750,16 +750,16 @@ HRESULT CTestManager::_recursive_scan( long lParentPos, bool bSave, long lFlag, 
 		{
 			// установка постоянных условий
 			{
-				long lPosSingle = 0;
+				LPOS lPosSingle = 0;
 				sptrItem->GetFirstSingleCond( &lPosSingle );
 
 				while( lPosSingle )
 				{
 					_variant_t varName, varPath, varValue;
 
-					_variant_t varPosSingle( lPosSingle );
+					_variant_t varPosSingle( (LPOS)lPosSingle );
 					sptrItem->NextSingleCond( &varPosSingle, &varName, &varPath, &varValue );
-					lPosSingle = (long)varPosSingle;
+					lPosSingle = (LPOS)varPosSingle;
 
 					CString strName = varName.bstrVal;
 					CString strPath	= varPath.bstrVal;
@@ -820,7 +820,7 @@ HRESULT CTestManager::_recursive_scan( long lParentPos, bool bSave, long lFlag, 
 					_update_system_settings();
 			}
 
-			long lMultyPos = 0;
+			LPOS lMultyPos = 0;
 			sptrItem->GetFirstMultyCond( &lMultyPos );
 
 			if( !lMultyPos )
@@ -1133,7 +1133,7 @@ bool	CTestManager::_stop_testing( )
 	return true;
 }
 
-HRESULT CTestManager::_exec_var_cond( IUnknown *punkTest, long lPos, _bstr_t bstrScript, _bstr_t bstrPath, _bstr_t bstrRootPath, IUnknown *punkF, long *plCounter, bool bSave, long *plFailCounter, long lFlag, long lPrevPos )
+HRESULT CTestManager::_exec_var_cond( IUnknown *punkTest, LPOS lPos, _bstr_t bstrScript, _bstr_t bstrPath, _bstr_t bstrRootPath, IUnknown *punkF, long *plCounter, bool bSave, long *plFailCounter, long lFlag, LPOS lPrevPos )
 {
 	{
 		IApplicationPtr	ptrA( GetAppUnknown() );
@@ -1368,7 +1368,7 @@ HRESULT CTestManager::_exec_var_cond( IUnknown *punkTest, long lPos, _bstr_t bst
 
 	sptrItem->NextMultyCond( &varPos, &varName, &varPath, &pvarValue, &varFlag, &lCount, &varNameMain, &pvarValueMain, &lCountMain );
 
-	lPos= (long)varPos;
+	lPos= (LPOS)varPos;
 
 	CString strName = varName.bstrVal;
 	CString strPath	= varPath.bstrVal;
@@ -1410,7 +1410,7 @@ HRESULT CTestManager::_exec_var_cond( IUnknown *punkTest, long lPos, _bstr_t bst
 					bool bCreate = false;
 					if( lListPos )
 					{
-						_list_t< _variant_t > *pList = lstLastData.get( lListPos );
+						_list_t< _variant_t > *pList = lstLastData.get( (TPOS)lListPos );
 
 						for (TPOS _lpos = pList->head(); _lpos; _lpos = pList->next(_lpos))
 						{
@@ -1759,7 +1759,7 @@ HRESULT CTestManager::_exec_var_cond( IUnknown *punkTest, long lPos, _bstr_t bst
 
 //------------------------------------------------------------------------------------------
 
-HRESULT CTestManager::_load_db( CString lpstrFolder, long lParentPos )
+HRESULT CTestManager::_load_db( CString lpstrFolder, LPOS lParentPos )
 {
 	if( m_strDBPath.IsEmpty() )
 		return S_FALSE;
@@ -1823,7 +1823,7 @@ HRESULT CTestManager::_load_db( CString lpstrFolder, long lParentPos )
 				if( sptrTest == 0 )
 					continue;
 
-				long lPos = m_treeTests.insert(	sptrTest, lParentPos );
+				LPOS lPos = m_treeTests.insert(	sptrTest, lParentPos );
 
 				if( sptrTest->SetPath( _bstr_t( cstrCurrentDir + CString(fd.cFileName) ) ) != S_OK )
 					continue;
@@ -2097,7 +2097,7 @@ HRESULT CTestManager::GetNextError( /*[out]*/ LPOS *plPos, /*[out]*/ TEST_ERR_DE
 	return S_OK;
 }
 
-HRESULT CTestManager::LoadTests( IStream *pStream, long lNewParentPos )
+HRESULT CTestManager::LoadTests( IStream *pStream, LPOS lNewParentPos )
 {
 	if( !pStream )
 		return E_FAIL;
@@ -2139,7 +2139,7 @@ HRESULT CTestManager::LoadTests( IStream *pStream, long lNewParentPos )
 
 			sptrSr->Load( pStream, 0 );
 
-			long lParentPos = m_treeTests.insert( punkTest, lNewParentPos ); 
+			LPOS lParentPos = m_treeTests.insert( punkTest, lNewParentPos ); 
 			
 			ITestItemPtr sptrTest = sptrSr;
 
@@ -2165,7 +2165,7 @@ HRESULT CTestManager::LoadTests( IStream *pStream, long lNewParentPos )
 	return S_OK;
 }
 
-HRESULT CTestManager::StoreTests( IStream *pStream, long lFromParentPos )
+HRESULT CTestManager::StoreTests( IStream *pStream, LPOS lFromParentPos )
 {
 	if( !pStream )
 		return E_FAIL;
@@ -2175,7 +2175,7 @@ HRESULT CTestManager::StoreTests( IStream *pStream, long lFromParentPos )
 	
 	pStream->Write( &lVer, sizeof( long ), &ulWritten );
 
-	long lPos = 0;
+	LPOS lPos = 0;
 	if( GetFirstTestPos( lFromParentPos, &lPos ) != S_OK )
 		return E_FAIL;
 
@@ -2185,7 +2185,7 @@ HRESULT CTestManager::StoreTests( IStream *pStream, long lFromParentPos )
 	{
 		IUnknown *punkTest = 0;
 
-		long lPrev = lPos;
+		LPOS lPrev = lPos;
 		if( GetNextTest( lFromParentPos, &lPos, &punkTest ) != S_OK )
 			return E_FAIL;
 
@@ -2796,7 +2796,7 @@ void CTestManager::_sync_context( IUnknown *punkDoc )
 	ptrContextDoc->LockUpdate( bOldLock, true );
 }
 
-HRESULT CTestManager::GetCombinationCont( long lPos, long *plCount )
+HRESULT CTestManager::GetCombinationCont( LPOS lPos, long *plCount )
 {
 	IUnknown *punkTRD = 0;
 	GetNextTest( 0, &lPos, &punkTRD);
@@ -2812,11 +2812,11 @@ HRESULT CTestManager::GetCombinationCont( long lPos, long *plCount )
 	return S_OK;
 }
 
-HRESULT CTestManager::GetTestCont( long lParentPos, long lPos, long *plCount )
+HRESULT CTestManager::GetTestCont( LPOS lParentPos, LPOS lPos, long *plCount )
 {
 	long lCount = 0;
 	IUnknown *punkTRD = 0;
-	long lCurPos = lPos;
+	LPOS lCurPos = lPos;
 	GetNextTest( 0, &lPos, &punkTRD);
 
 	ITestRunningDataPtr sptrTRD	=	punkTRD;
@@ -2830,7 +2830,7 @@ HRESULT CTestManager::GetTestCont( long lParentPos, long lPos, long *plCount )
 	if( !lCount )
 		lCount++;
 
-	long lChildPos = 0;
+	LPOS lChildPos = 0;
 	GetFirstTestPos( lCurPos, &lChildPos );
 
 	long lChildCnd = 0;
@@ -2861,12 +2861,12 @@ HRESULT CTestManager::GetTestCont( long lParentPos, long lPos, long *plCount )
 	return S_OK;
 }
 
-HRESULT CTestManager::GetTestContR( long lParentPos, long lPos, long *plCount )
+HRESULT CTestManager::GetTestContR( LPOS lParentPos, LPOS lPos, long *plCount )
 {
 	long lCount = 1;
 
-	long lCurPos = lPos;
-	long lChildPos = 0;
+	LPOS lCurPos = lPos;
+	LPOS lChildPos = 0;
 	GetFirstTestPos( lCurPos, &lChildPos );
 
 	long lChildCnd = 0;

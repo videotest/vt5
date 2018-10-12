@@ -19,7 +19,7 @@ public:
 
 protected:
 //message handlers
-	virtual long	on_initdialog();
+	virtual LRESULT	on_initdialog();
 	virtual LRESULT	on_command( uint cmd );
 	virtual void	on_ok();	
 
@@ -55,7 +55,7 @@ public:
 
 protected:
 //message handlers
-	virtual long	on_initdialog();
+	virtual LRESULT	on_initdialog();
 	virtual LRESULT	on_command(uint cmd);
 	virtual void	on_ok();	
 	virtual LRESULT	on_notify(uint idc, NMHDR *pnmhdr);

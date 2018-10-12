@@ -121,7 +121,7 @@ protected:
 	virtual LRESULT on_ncdestroy();
 	virtual LRESULT on_size(short cx, short cy, UINT_PTR fSizeType)	{ return call_default(); }
 	virtual LRESULT on_show(bool bShow, LPARAM status)		{ return call_default(); }
-	virtual long on_initdialog()						{return 0;};
+	virtual LRESULT on_initdialog()						{return 0;};
 	virtual LRESULT on_timer(UINT_PTR lEvent)				{ return call_default(); };
 	virtual LRESULT on_command(UINT_PTR cmd)					{ return call_default(); };
 	virtual LRESULT on_syscommand(uint cmd)				{ return call_default(); };
@@ -366,16 +366,16 @@ LRESULT	win_impl::handle_message(UINT m, WPARAM w, LPARAM l)
 	case WM_NOTYFYREFLECT:	lres = handle_reflect_message( (MSG*)l, (long*)w );break;
 	case WM_SETFOCUS:		lres = on_setfocus( (HWND)w );break;
 	case WM_KILLFOCUS:		lres = on_killfocus( (HWND)w );break;
-	case WM_CHAR:			lres = on_char( w );break;
-	case WM_KEYDOWN:		lres = on_keydown( w );break;
-	case WM_KEYUP:			lres = on_keyup( w );break;
+	case WM_CHAR:			lres = on_char( (long)w );break;
+	case WM_KEYDOWN:		lres = on_keydown( (long)w );break;
+	case WM_KEYUP:			lres = on_keyup( (long)w );break;
 	case WM_GETDLGCODE:		lres = on_getdlgcode( (MSG *)l );break;
 	case WM_ERASEBKGND:		lres = on_erasebkgnd( (HDC)w );break; 
 	case WM_HSCROLL:		lres = on_hscroll( LOWORD( w ), HIWORD( w ), (HWND)l );break;
 	case WM_VSCROLL:		lres = on_vscroll( LOWORD( w ), HIWORD( w ), (HWND)l );break;
-	case WM_DRAWITEM:		lres = on_drawitem( w, (DRAWITEMSTRUCT*)l );break;
-	case WM_MEASUREITEM:	lres = on_measureitem( w, (MEASUREITEMSTRUCT*)l );break;
-	case WM_COMPAREITEM:	lres = on_compareitem( w, (COMPAREITEMSTRUCT*)l );break;
+	case WM_DRAWITEM:		lres = on_drawitem( (int)w, (DRAWITEMSTRUCT*)l );break;
+	case WM_MEASUREITEM:	lres = on_measureitem( (int)w, (MEASUREITEMSTRUCT*)l );break;
+	case WM_COMPAREITEM:	lres = on_compareitem( (int)w, (COMPAREITEMSTRUCT*)l );break;
 	case WM_SETCURSOR:		lres = on_setcursor( HIWORD(l), LOWORD(l) );break;
 	case WM_HELP:			lres = on_helpinfo( (HELPINFO*)l );break;
 	case WM_WINDOWFOCUSED:	lres = on_windowfocused( (HWND)l );break;

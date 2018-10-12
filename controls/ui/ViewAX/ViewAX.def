@@ -1,6 +1,6 @@
 ; ViewAX.def : Declares the module parameters.
 
-LIBRARY      "VIEWAX.OCX"
+LIBRARY      "VIEWAX.DLL"
 
 EXPORTS
 	DllCanUnloadNow     PRIVATE

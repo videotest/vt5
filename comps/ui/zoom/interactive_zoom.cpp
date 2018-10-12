@@ -173,9 +173,9 @@ void slider_wnd::init()
 }
 
 //////////////////////////////////////////////////////////////////////
-long slider_wnd::on_initdialog()
+LRESULT slider_wnd::on_initdialog()
 {
-	long lres = dlg_impl::on_initdialog();
+	LRESULT lres = dlg_impl::on_initdialog();
 	return lres;
 }
 
@@ -183,7 +183,7 @@ long slider_wnd::on_initdialog()
 //////////////////////////////////////////////////////////////////////
 LRESULT slider_wnd::on_killfocus(HWND hwndOld)
 {
-	long lres = dlg_impl::on_killfocus( hwndOld );
+	LRESULT lres = dlg_impl::on_killfocus( hwndOld );
 	return lres;
 }
 
@@ -229,7 +229,7 @@ LRESULT slider_wnd::on_hscroll(unsigned code, unsigned pos, HWND hwndScroll)
 	HWND hwnd_slider = ::GetDlgItem( handle(), IDC_SLIDER );
 	if( hwnd_slider )
 	{
-		int npos = ::SendMessage( hwnd_slider, TBM_GETPOS, 0, 0 );
+		LRESULT npos = ::SendMessage( hwnd_slider, TBM_GETPOS, 0, 0 );
 		double fzoom = CZoomNavigatorPage::ConvertFromTickToDouble( (int)npos );
 		IScrollZoomSite2Ptr ptr_szs( get_active_view() );
 		if( ptr_szs )
@@ -644,7 +644,7 @@ LRESULT zoom_wnd::on_lbuttonup(const _point &point)
 //////////////////////////////////////////////////////////////////////
 LRESULT zoom_wnd::on_size(short cx, short cy, ulong fSizeType)
 {
-	long lres = win_impl::on_size( cx, cy, fSizeType );
+	LRESULT lres = win_impl::on_size( cx, cy, fSizeType );
 	recalc_layout( cx, cy );
 
 	return lres;

@@ -688,9 +688,9 @@ public:
 	IMPLEMENT_RESIZE( handle() );
 
 
-	virtual long on_initdialog();
+	virtual LRESULT on_initdialog();
 	
-	long on_hscroll( unsigned code, unsigned pos, HWND hwndScroll )
+	LRESULT on_hscroll( unsigned code, unsigned pos, HWND hwndScroll )
 	{
 		RECT	rcClient = {0};
  		::GetClientRect( get_dlg_item( IDC_VIEW_HERE ), &rcClient );
@@ -744,7 +744,7 @@ public:
 		return 0L;
 	}
 
-	long on_vscroll( unsigned code, unsigned pos, HWND hwndScroll )
+	LRESULT on_vscroll( unsigned code, unsigned pos, HWND hwndScroll )
 	{
 		RECT	rcClient = {0};
  		::GetClientRect( get_dlg_item( IDC_VIEW_HERE ), &rcClient );
@@ -817,9 +817,9 @@ public:
 	void _execute_script( IUnknown *punk, BSTR bstrScript );
 	void _redraw_images();
 	void _check_sizes( );  // [vanek] - 20.08.2004
-	long on_destroy();
+	LRESULT on_destroy();
 
-	long	handle_message( UINT m, WPARAM w, LPARAM l )
+	LRESULT	handle_message( UINT m, WPARAM w, LPARAM l )
 	{
 		if( m == WM_COMMAND && LOWORD( w ) == IDC_BUTTON1 && HIWORD( w ) == BN_CLICKED )
 		{

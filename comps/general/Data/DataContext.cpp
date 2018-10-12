@@ -337,7 +337,7 @@ HRESULT CDataContext::XContext::AttachData(IUnknown * punkNamedData)
 
 
 // Notify context by NamedData based on cod
-HRESULT CDataContext::XContext::Notify(long cod, IUnknown * punkNew, IUnknown * punkOld, DWORD dwData)
+HRESULT CDataContext::XContext::Notify(long cod, IUnknown * punkNew, IUnknown * punkOld, GUID* dwData)
 {
 	METHOD_PROLOGUE_EX(CDataContext, Context)
 	{
