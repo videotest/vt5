@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="windows-1251"?>
 <VisualStudioProject
 	ProjectType="Visual C++"
-	Version="9.00"
+	Version="9,00"
 	Name="MeasCtrls"
 	ProjectGUID="{8D5DBD83-A9A4-4ABA-BBCE-426C328B173D}"
 	RootNamespace="MeasCtrls"
@@ -44,8 +44,6 @@
 				Name="VCMIDLTool"
 				PreprocessorDefinitions="_DEBUG"
 				MkTypLibCompatible="true"
-				TypeLibraryName="$(IntDir)/$(ProjectName).tlb"
-				HeaderFileName="$(ProjectName)idl.h"
 			/>
 			<Tool
 				Name="VCCLCompilerTool"
@@ -137,8 +135,6 @@
 				PreprocessorDefinitions="_DEBUG"
 				MkTypLibCompatible="true"
 				TargetEnvironment="3"
-				TypeLibraryName="$(IntDir)/$(ProjectName).tlb"
-				HeaderFileName="$(ProjectName)idl.h"
 			/>
 			<Tool
 				Name="VCCLCompilerTool"
@@ -228,8 +224,6 @@
 				Name="VCMIDLTool"
 				PreprocessorDefinitions="NDEBUG"
 				MkTypLibCompatible="true"
-				TypeLibraryName="$(IntDir)/$(ProjectName).tlb"
-				HeaderFileName="$(ProjectName)idl.h"
 			/>
 			<Tool
 				Name="VCCLCompilerTool"
@@ -325,8 +319,6 @@
 				PreprocessorDefinitions="NDEBUG"
 				MkTypLibCompatible="true"
 				TargetEnvironment="3"
-				TypeLibraryName="$(IntDir)/$(ProjectName).tlb"
-				HeaderFileName="$(ProjectName)idl.h"
 			/>
 			<Tool
 				Name="VCCLCompilerTool"

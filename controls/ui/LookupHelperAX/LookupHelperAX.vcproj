@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="windows-1251"?>
 <VisualStudioProject
 	ProjectType="Visual C++"
-	Version="9.00"
+	Version="9,00"
 	Name="LookupHelperAX"
 	ProjectGUID="{5117C09C-F135-4A8D-9E58-4A9A539CBB44}"
 	RootNamespace="LookupHelperAX"
@@ -406,8 +406,6 @@
 					<Tool
 						Name="VCMIDLTool"
 						TargetEnvironment="1"
-						TypeLibraryName="\vt5\vt5\Debug\comps\LookupHelperAX.tlb"
-						HeaderFileName="LookupHelperAX_h.h"
 					/>
 				</FileConfiguration>
 				<FileConfiguration
@@ -416,8 +414,6 @@
 					<Tool
 						Name="VCMIDLTool"
 						TargetEnvironment="1"
-						TypeLibraryName="\vt5\vt5\Debug\comps\LookupHelperAX.tlb"
-						HeaderFileName="LookupHelperAX_h.h"
 					/>
 				</FileConfiguration>
 				<FileConfiguration
@@ -426,8 +422,6 @@
 					<Tool
 						Name="VCMIDLTool"
 						TargetEnvironment="1"
-						TypeLibraryName="\vt5\vt5\release\comps\LookupHelperAX.tlb"
-						HeaderFileName="LookupHelperAX_h.h"
 					/>
 				</FileConfiguration>
 				<FileConfiguration
@@ -436,8 +430,6 @@
 					<Tool
 						Name="VCMIDLTool"
 						TargetEnvironment="1"
-						TypeLibraryName="\vt5\vt5\release\comps\LookupHelperAX.tlb"
-						HeaderFileName="LookupHelperAX_h.h"
 					/>
 				</FileConfiguration>
 			</File>

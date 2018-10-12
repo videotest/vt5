@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="windows-1251"?>
 <VisualStudioProject
 	ProjectType="Visual C++"
-	Version="9.00"
+	Version="9,00"
 	Name="axform"
 	ProjectGUID="{678B0945-CCCC-4CAA-806B-E0AFBD742FED}"
 	RootNamespace="axform"
@@ -416,8 +416,6 @@
 					<Tool
 						Name="VCMIDLTool"
 						TargetEnvironment="1"
-						TypeLibraryName="\vt5\vt5\Debug\comps\axform.tlb"
-						HeaderFileName="axform_h.h"
 					/>
 				</FileConfiguration>
 				<FileConfiguration
@@ -426,8 +424,6 @@
 					<Tool
 						Name="VCMIDLTool"
 						TargetEnvironment="1"
-						TypeLibraryName="\vt5\vt5\Debug\comps\axform.tlb"
-						HeaderFileName="axform_h.h"
 					/>
 				</FileConfiguration>
 				<FileConfiguration
@@ -436,8 +432,6 @@
 					<Tool
 						Name="VCMIDLTool"
 						TargetEnvironment="1"
-						TypeLibraryName="\vt5\vt5\Release\comps\axform.tlb"
-						HeaderFileName="axform_h.h"
 					/>
 				</FileConfiguration>
 				<FileConfiguration
@@ -446,8 +440,6 @@
 					<Tool
 						Name="VCMIDLTool"
 						TargetEnvironment="1"
-						TypeLibraryName="\vt5\vt5\Release\comps\axform.tlb"
-						HeaderFileName="axform_h.h"
 					/>
 				</FileConfiguration>
 			</File>
@@ -702,10 +694,6 @@
 				>
 			</File>
 		</Filter>
-		<File
-			RelativePath=".\ReadMe.txt"
-			>
-		</File>
 	</Files>
 	<Globals>
 		<Global

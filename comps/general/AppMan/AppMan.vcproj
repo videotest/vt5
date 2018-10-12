@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="windows-1251"?>
 <VisualStudioProject
 	ProjectType="Visual C++"
-	Version="9.00"
+	Version="9,00"
 	Name="AppMan"
 	ProjectGUID="{9C41D45D-AC89-44FA-A5B7-D442594E27C8}"
 	RootNamespace="AppMan"
@@ -43,7 +43,6 @@
 				Name="VCMIDLTool"
 				PreprocessorDefinitions="NDEBUG"
 				MkTypLibCompatible="true"
-				SuppressStartupBanner="true"
 				TargetEnvironment="1"
 			/>
 			<Tool
@@ -136,7 +135,6 @@
 				Name="VCMIDLTool"
 				PreprocessorDefinitions="NDEBUG"
 				MkTypLibCompatible="true"
-				SuppressStartupBanner="true"
 				TargetEnvironment="3"
 			/>
 			<Tool
@@ -227,7 +225,6 @@
 				Name="VCMIDLTool"
 				PreprocessorDefinitions="_DEBUG"
 				MkTypLibCompatible="true"
-				SuppressStartupBanner="true"
 				TargetEnvironment="1"
 			/>
 			<Tool
@@ -321,7 +318,6 @@
 				Name="VCMIDLTool"
 				PreprocessorDefinitions="_DEBUG"
 				MkTypLibCompatible="true"
-				SuppressStartupBanner="true"
 				TargetEnvironment="3"
 			/>
 			<Tool
@@ -460,8 +456,6 @@
 					<Tool
 						Name="VCMIDLTool"
 						TargetEnvironment="1"
-						TypeLibraryName="\vt5\vt5\debug\comps\AppMan.tlb"
-						HeaderFileName="AppMan_h.h"
 					/>
 				</FileConfiguration>
 			</File>
@@ -628,10 +622,6 @@
 				>
 			</File>
 		</Filter>
-		<File
-			RelativePath=".\ReadMe.txt"
-			>
-		</File>
 	</Files>
 	<Globals>
 		<Global

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="windows-1251"?>
 <VisualStudioProject
 	ProjectType="Visual C++"
-	Version="9.00"
+	Version="9,00"
 	Name="MeasManual"
 	ProjectGUID="{27C442C1-F1A0-4778-A5FA-29396651B3CB}"
 	RootNamespace="MeasManual"
@@ -410,8 +410,6 @@
 					<Tool
 						Name="VCMIDLTool"
 						TargetEnvironment="1"
-						TypeLibraryName="\vt5\vt5\debug\comps\MeasManual.tlb"
-						HeaderFileName="MeasManual_h.h"
 					/>
 				</FileConfiguration>
 				<FileConfiguration
@@ -420,8 +418,6 @@
 					<Tool
 						Name="VCMIDLTool"
 						TargetEnvironment="1"
-						TypeLibraryName="\vt5\vt5\debug\comps\MeasManual.tlb"
-						HeaderFileName="MeasManual_h.h"
 					/>
 				</FileConfiguration>
 				<FileConfiguration
@@ -430,8 +426,6 @@
 					<Tool
 						Name="VCMIDLTool"
 						TargetEnvironment="1"
-						TypeLibraryName="\vt5\vt5\release\comps\MeasManual.tlb"
-						HeaderFileName="MeasManual_h.h"
 					/>
 				</FileConfiguration>
 				<FileConfiguration
@@ -440,8 +434,6 @@
 					<Tool
 						Name="VCMIDLTool"
 						TargetEnvironment="1"
-						TypeLibraryName="\vt5\vt5\release\comps\MeasManual.tlb"
-						HeaderFileName="MeasManual_h.h"
 					/>
 				</FileConfiguration>
 			</File>

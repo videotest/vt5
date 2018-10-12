@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="windows-1251"?>
 <VisualStudioProject
 	ProjectType="Visual C++"
-	Version="9.00"
+	Version="9,00"
 	Name="ContextAX"
 	ProjectGUID="{946B2B18-4A27-4E1C-BF01-B115235F2F70}"
 	RootNamespace="ContextAX"
@@ -48,7 +48,6 @@
 				MkTypLibCompatible="true"
 				SuppressStartupBanner="true"
 				TargetEnvironment="1"
-				TypeLibraryName="$(ProjectName).tlb"
 				OutputDirectory="$(SolutionDir)bin\$(PlatformName)\$(ConfigurationName)"
 			/>
 			<Tool
@@ -141,8 +140,6 @@
 				MkTypLibCompatible="true"
 				SuppressStartupBanner="true"
 				TargetEnvironment="3"
-				TypeLibraryName="$(ProjectName).tlb"
-				OutputDirectory="$(SolutionDir)bin\$(PlatformName)\$(ConfigurationName)"
 			/>
 			<Tool
 				Name="VCCLCompilerTool"
@@ -234,7 +231,6 @@
 				MkTypLibCompatible="true"
 				SuppressStartupBanner="true"
 				TargetEnvironment="1"
-				TypeLibraryName="$(ProjectName).tlb"
 				OutputDirectory="$(SolutionDir)bin\$(PlatformName)\$(ConfigurationName)"
 			/>
 			<Tool
@@ -327,7 +323,6 @@
 				MkTypLibCompatible="true"
 				SuppressStartupBanner="true"
 				TargetEnvironment="3"
-				TypeLibraryName="$(ProjectName).tlb"
 				OutputDirectory="$(SolutionDir)bin\$(PlatformName)\$(ConfigurationName)"
 			/>
 			<Tool

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="windows-1251"?>
 <VisualStudioProject
 	ProjectType="Visual C++"
-	Version="9.00"
+	Version="9,00"
 	Name="StatData"
 	ProjectGUID="{9805E38B-871B-4646-B2CC-5964EFF3EAD8}"
 	RootNamespace="StatData"
@@ -43,7 +43,7 @@
 			<Tool
 				Name="VCCLCompilerTool"
 				Optimization="0"
-				AdditionalIncludeDirectories="&quot;$(SolutionDir)AWIN&quot;;&quot;$(SolutionDir)comps\docs\DBaseDoc&quot;"
+				AdditionalIncludeDirectories="&quot;$(SolutionDir)comps\docs\DBaseDoc&quot;;d:\WTL9\Include;&quot;$(CommonProgramFiles)\System\ado&quot;;&quot;$(SolutionDir)AWIN&quot;"
 				PreprocessorDefinitions="WIN32;_DEBUG;_WINDOWS;_USRDLL;STATDATA_EXPORTS;_CRT_SECURE_NO_DEPRECATE"
 				IgnoreStandardIncludePath="false"
 				MinimalRebuild="false"
@@ -129,7 +129,7 @@
 			<Tool
 				Name="VCCLCompilerTool"
 				Optimization="0"
-				AdditionalIncludeDirectories="&quot;$(SolutionDir)comps\docs\DBaseDoc&quot;;C:\WTL9\Include;&quot;$(CommonProgramFiles)\System\ado&quot;;&quot;$(SolutionDir)AWIN&quot;"
+				AdditionalIncludeDirectories="&quot;$(SolutionDir)comps\docs\DBaseDoc&quot;;d:\WTL9\Include;&quot;$(CommonProgramFiles)\System\ado&quot;;&quot;$(SolutionDir)AWIN&quot;"
 				PreprocessorDefinitions="_DEBUG;_WINDOWS;_USRDLL;STATDATA_EXPORTS;_WIN64;_M_X64;_AFX_SECURE_NO_DEPRECATE;_CRT_SECURE_NO_DEPRECATE"
 				IgnoreStandardIncludePath="false"
 				MinimalRebuild="false"
@@ -215,7 +215,7 @@
 				Optimization="2"
 				InlineFunctionExpansion="1"
 				OmitFramePointers="false"
-				AdditionalIncludeDirectories="&quot;$(SolutionDir)AWIN&quot;;&quot;$(SolutionDir)comps\docs\DBaseDoc&quot;"
+				AdditionalIncludeDirectories="&quot;$(SolutionDir)comps\docs\DBaseDoc&quot;;d:\WTL9\Include;&quot;$(CommonProgramFiles)\System\ado&quot;;&quot;$(SolutionDir)AWIN&quot;"
 				PreprocessorDefinitions="WIN32;NDEBUG;_WINDOWS;_USRDLL;STATDATA_EXPORTS;_CRT_SECURE_NO_DEPRECATE"
 				StringPooling="true"
 				RuntimeLibrary="2"
@@ -304,7 +304,7 @@
 				Optimization="2"
 				InlineFunctionExpansion="1"
 				OmitFramePointers="false"
-				AdditionalIncludeDirectories="&quot;$(SolutionDir)AWIN&quot;;&quot;$(SolutionDir)comps\docs\DBaseDoc&quot;"
+				AdditionalIncludeDirectories="&quot;$(SolutionDir)comps\docs\DBaseDoc&quot;;d:\WTL9\Include;&quot;$(CommonProgramFiles)\System\ado&quot;;&quot;$(SolutionDir)AWIN&quot;"
 				PreprocessorDefinitions="_WIN64;_M_X64;_CRT_SECURE_NO_DEPRECATE;NDEBUG;_WINDOWS;_USRDLL;STATDATA_EXPORTS"
 				StringPooling="true"
 				RuntimeLibrary="2"

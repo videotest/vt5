@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="windows-1251"?>
 <VisualStudioProject
 	ProjectType="Visual C++"
-	Version="9.00"
+	Version="9,00"
 	Name="shell"
 	ProjectGUID="{F6428C6C-8CDE-4A7C-8CE6-90CDCBF98768}"
 	RootNamespace="shell"
@@ -182,8 +182,8 @@
 				OutputFile="$(SolutionDir)vt5\$(PlatformName)\$(ConfigurationName)\$(ProjectName).exe"
 				LinkIncremental="2"
 				AdditionalLibraryDirectories=" "
+				UACExecutionLevel="2"
 				ModuleDefinitionFile=" "
-				TypeLibraryFile="c:/$(ProjectName).tlb"
 				GenerateDebugInformation="true"
 				GenerateMapFile="false"
 				SubSystem="2"
@@ -196,6 +196,7 @@
 			/>
 			<Tool
 				Name="VCManifestTool"
+				EmbedManifest="false"
 			/>
 			<Tool
 				Name="VCXDCMakeTool"
@@ -548,8 +549,6 @@
 					<Tool
 						Name="VCMIDLTool"
 						TargetEnvironment="1"
-						TypeLibraryName="\vt5\vt5\Debug\shell.tlb"
-						HeaderFileName="shell_h.h"
 					/>
 				</FileConfiguration>
 				<FileConfiguration
@@ -558,8 +557,6 @@
 					<Tool
 						Name="VCMIDLTool"
 						TargetEnvironment="1"
-						TypeLibraryName="\vt5\vt5\Debug\shell.tlb"
-						HeaderFileName="shell_h.h"
 					/>
 				</FileConfiguration>
 				<FileConfiguration
@@ -568,8 +565,6 @@
 					<Tool
 						Name="VCMIDLTool"
 						TargetEnvironment="1"
-						TypeLibraryName="\vt5\vt5\release\shell.tlb"
-						HeaderFileName="shell_h.h"
 					/>
 				</FileConfiguration>
 				<FileConfiguration
@@ -578,8 +573,6 @@
 					<Tool
 						Name="VCMIDLTool"
 						TargetEnvironment="1"
-						TypeLibraryName="\vt5\vt5\release\shell.tlb"
-						HeaderFileName="shell_h.h"
 					/>
 				</FileConfiguration>
 			</File>
@@ -1007,7 +1000,30 @@
 			RelativePath=".\elevate.manifest"
 			>
 			<FileConfiguration
+				Name="Debug|Win32"
+				ExcludedFromBuild="true"
+				>
+				<Tool
+					Name="VCCustomBuildTool"
+				/>
+			</FileConfiguration>
+			<FileConfiguration
 				Name="Debug|x64"
+				>
+				<Tool
+					Name="VCCustomBuildTool"
+				/>
+			</FileConfiguration>
+			<FileConfiguration
+				Name="Release|Win32"
+				ExcludedFromBuild="true"
+				>
+				<Tool
+					Name="VCCustomBuildTool"
+				/>
+			</FileConfiguration>
+			<FileConfiguration
+				Name="Release|x64"
 				ExcludedFromBuild="true"
 				>
 				<Tool

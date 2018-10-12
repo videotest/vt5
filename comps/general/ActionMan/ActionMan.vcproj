@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="windows-1251"?>
 <VisualStudioProject
 	ProjectType="Visual C++"
-	Version="9.00"
+	Version="9,00"
 	Name="ActionMan"
 	ProjectGUID="{45C55DB3-E518-4464-A58A-206BAEA3BDAC}"
 	RootNamespace="ActionMan"
@@ -425,8 +425,6 @@
 					<Tool
 						Name="VCMIDLTool"
 						TargetEnvironment="1"
-						TypeLibraryName="\vt5\vt5\Debug\comps\ActionMan.tlb"
-						HeaderFileName="ActionMan_h.h"
 					/>
 				</FileConfiguration>
 				<FileConfiguration
@@ -637,10 +635,6 @@
 				>
 			</File>
 		</Filter>
-		<File
-			RelativePath=".\ReadMe.txt"
-			>
-		</File>
 	</Files>
 	<Globals>
 		<Global

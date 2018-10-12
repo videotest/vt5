@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="windows-1251"?>
 <VisualStudioProject
 	ProjectType="Visual C++"
-	Version="9.00"
+	Version="9,00"
 	Name="HistAX"
 	ProjectGUID="{7ADE0CC5-B7D3-4B57-8465-7E32256C89C5}"
 	RootNamespace="HistAX"
@@ -406,8 +406,6 @@
 					<Tool
 						Name="VCMIDLTool"
 						TargetEnvironment="1"
-						TypeLibraryName="\vt5\vt5\Debug\comps/HistAX.tlb"
-						HeaderFileName="HistAX_h.h"
 					/>
 				</FileConfiguration>
 				<FileConfiguration
@@ -416,8 +414,6 @@
 					<Tool
 						Name="VCMIDLTool"
 						TargetEnvironment="1"
-						TypeLibraryName="\vt5\vt5\Debug\comps/HistAX.tlb"
-						HeaderFileName="HistAX_h.h"
 					/>
 				</FileConfiguration>
 				<FileConfiguration
@@ -426,8 +422,6 @@
 					<Tool
 						Name="VCMIDLTool"
 						TargetEnvironment="1"
-						TypeLibraryName="\vt5\vt5\release\comps/HistAX.tlb"
-						HeaderFileName="HistAX_h.h"
 					/>
 				</FileConfiguration>
 				<FileConfiguration
@@ -436,8 +430,6 @@
 					<Tool
 						Name="VCMIDLTool"
 						TargetEnvironment="1"
-						TypeLibraryName="\vt5\vt5\release\comps/HistAX.tlb"
-						HeaderFileName="HistAX_h.h"
 					/>
 				</FileConfiguration>
 			</File>

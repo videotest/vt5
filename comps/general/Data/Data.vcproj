@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="windows-1251"?>
 <VisualStudioProject
 	ProjectType="Visual C++"
-	Version="9.00"
+	Version="9,00"
 	Name="Data"
 	ProjectGUID="{92AFDE39-31A2-4D4B-AC2A-1D15E5712D2E}"
 	RootNamespace="Data"
@@ -43,7 +43,6 @@
 				Name="VCMIDLTool"
 				PreprocessorDefinitions="NDEBUG"
 				MkTypLibCompatible="true"
-				SuppressStartupBanner="true"
 				TargetEnvironment="1"
 			/>
 			<Tool
@@ -132,7 +131,6 @@
 				Name="VCMIDLTool"
 				PreprocessorDefinitions="NDEBUG"
 				MkTypLibCompatible="true"
-				SuppressStartupBanner="true"
 				TargetEnvironment="3"
 			/>
 			<Tool
@@ -221,7 +219,6 @@
 				Name="VCMIDLTool"
 				PreprocessorDefinitions="_DEBUG"
 				MkTypLibCompatible="true"
-				SuppressStartupBanner="true"
 				TargetEnvironment="1"
 			/>
 			<Tool
@@ -288,7 +285,6 @@
 		</Configuration>
 		<Configuration
 			Name="Debug|x64"
-			IntermediateDirectory="$(PlatformName)\$(ConfigurationName)"
 			ConfigurationType="2"
 			InheritedPropertySheets="$(SolutionDir)props\CommonEnv.vsprops"
 			UseOfMFC="2"
@@ -311,7 +307,6 @@
 				Name="VCMIDLTool"
 				PreprocessorDefinitions="_DEBUG"
 				MkTypLibCompatible="true"
-				SuppressStartupBanner="true"
 				TargetEnvironment="3"
 			/>
 			<Tool
@@ -447,8 +442,6 @@
 					<Tool
 						Name="VCMIDLTool"
 						TargetEnvironment="1"
-						TypeLibraryName="\vt5\vt5\Release\comps/Data.tlb"
-						HeaderFileName="Data_h.h"
 					/>
 				</FileConfiguration>
 				<FileConfiguration
@@ -457,8 +450,6 @@
 					<Tool
 						Name="VCMIDLTool"
 						TargetEnvironment="1"
-						TypeLibraryName="\vt5\vt5\Release\comps/Data.tlb"
-						HeaderFileName="Data_h.h"
 					/>
 				</FileConfiguration>
 				<FileConfiguration
@@ -467,8 +458,6 @@
 					<Tool
 						Name="VCMIDLTool"
 						TargetEnvironment="1"
-						TypeLibraryName="\vt5\vt5\Debug\comps/Data.tlb"
-						HeaderFileName="Data_h.h"
 					/>
 				</FileConfiguration>
 				<FileConfiguration
@@ -477,8 +466,6 @@
 					<Tool
 						Name="VCMIDLTool"
 						TargetEnvironment="1"
-						TypeLibraryName="\vt5\vt5\Debug\comps/Data.tlb"
-						HeaderFileName="Data_h.h"
 					/>
 				</FileConfiguration>
 			</File>

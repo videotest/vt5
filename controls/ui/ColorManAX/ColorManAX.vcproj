@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="windows-1251"?>
 <VisualStudioProject
 	ProjectType="Visual C++"
-	Version="9.00"
+	Version="9,00"
 	Name="ColorManAX"
 	ProjectGUID="{897BFAB3-374C-470A-9AC7-303D1855859B}"
 	RootNamespace="ColorManAX"
@@ -400,8 +400,6 @@
 					<Tool
 						Name="VCMIDLTool"
 						TargetEnvironment="1"
-						TypeLibraryName="\vt5\vt5\Debug\comps/ColorManAX.tlb"
-						HeaderFileName="ColorManAX_h.h"
 					/>
 				</FileConfiguration>
 				<FileConfiguration
@@ -410,8 +408,6 @@
 					<Tool
 						Name="VCMIDLTool"
 						TargetEnvironment="1"
-						TypeLibraryName="\vt5\vt5\Debug\comps/ColorManAX.tlb"
-						HeaderFileName="ColorManAX_h.h"
 					/>
 				</FileConfiguration>
 				<FileConfiguration
@@ -420,8 +416,6 @@
 					<Tool
 						Name="VCMIDLTool"
 						TargetEnvironment="1"
-						TypeLibraryName="\vt5\vt5\release\comps/ColorManAX.tlb"
-						HeaderFileName="ColorManAX_h.h"
 					/>
 				</FileConfiguration>
 				<FileConfiguration
@@ -430,8 +424,6 @@
 					<Tool
 						Name="VCMIDLTool"
 						TargetEnvironment="1"
-						TypeLibraryName="\vt5\vt5\release\comps/ColorManAX.tlb"
-						HeaderFileName="ColorManAX_h.h"
 					/>
 				</FileConfiguration>
 			</File>

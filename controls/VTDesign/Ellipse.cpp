@@ -412,7 +412,7 @@ void CVTEllipse::DrawContext( HDC hDC, SIZE size )
 // Draw dotted ellipse border
 	pdc->BeginPath();
 	Line.MoveTo(EllipsePts[0]);
-	for (i = 1; i < 12; i+=3)
+	for (int i = 1; i < 12; i+=3)
 		Line.BezierTo( EllipsePts+i );
 	pdc->EndPath();	
 
