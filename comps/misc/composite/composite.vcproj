@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="windows-1251"?>
 <VisualStudioProject
 	ProjectType="Visual C++"
-	Version="9.00"
+	Version="9,00"
 	Name="composite"
 	ProjectGUID="{A8008BA8-F3EB-4C24-A118-1E38E49BF184}"
 	RootNamespace="composite"
@@ -508,7 +508,7 @@
 	<Globals>
 		<Global
 			Name="DevPartner_IsInstrumented"
-			Value="0"
+			Value="1"
 		/>
 	</Globals>
 </VisualStudioProject>

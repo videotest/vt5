@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="windows-1251"?>
 <VisualStudioProject
 	ProjectType="Visual C++"
-	Version="9.00"
+	Version="9,00"
 	Name="Editor"
 	ProjectGUID="{ECEF2CD4-5A84-40E1-835B-BE3467776EA4}"
 	RootNamespace="Editor"
@@ -857,11 +857,11 @@
 				>
 			</File>
 			<File
-				RelativePath=".\cursor1.cur"
+				RelativePath=".\res\cursor1.cur"
 				>
 			</File>
 			<File
-				RelativePath=".\res\cursor1.cur"
+				RelativePath=".\cursor1.cur"
 				>
 			</File>
 			<File
@@ -957,7 +957,7 @@
 	<Globals>
 		<Global
 			Name="DevPartner_IsInstrumented"
-			Value="0"
+			Value="1"
 		/>
 	</Globals>
 </VisualStudioProject>

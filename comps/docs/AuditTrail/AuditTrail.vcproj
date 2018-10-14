@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="windows-1251"?>
 <VisualStudioProject
 	ProjectType="Visual C++"
-	Version="9.00"
+	Version="9,00"
 	Name="AuditTrail"
 	ProjectGUID="{14931009-6540-49F2-9097-7DE605219349}"
 	RootNamespace="AuditTrail"
@@ -585,7 +585,7 @@
 	<Globals>
 		<Global
 			Name="DevPartner_IsInstrumented"
-			Value="0"
+			Value="1"
 		/>
 	</Globals>
 </VisualStudioProject>

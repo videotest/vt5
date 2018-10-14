@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="windows-1251"?>
 <VisualStudioProject
 	ProjectType="Visual C++"
-	Version="9.00"
+	Version="9,00"
 	Name="Storage"
 	ProjectGUID="{B6C88110-D071-4598-8A40-75B8EFDAF540}"
 	RootNamespace="Storage"
@@ -484,7 +484,7 @@
 	<Globals>
 		<Global
 			Name="DevPartner_IsInstrumented"
-			Value="0"
+			Value="1"
 		/>
 	</Globals>
 </VisualStudioProject>

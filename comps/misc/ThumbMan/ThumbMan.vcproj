@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="windows-1251"?>
 <VisualStudioProject
 	ProjectType="Visual C++"
-	Version="9.00"
+	Version="9,00"
 	Name="ThumbMan"
 	ProjectGUID="{DC640CC4-A0C5-407B-8C1C-1A72B75C41FA}"
 	RootNamespace="ThumbMan"
@@ -592,7 +592,7 @@
 	<Globals>
 		<Global
 			Name="DevPartner_IsInstrumented"
-			Value="0"
+			Value="1"
 		/>
 	</Globals>
 </VisualStudioProject>

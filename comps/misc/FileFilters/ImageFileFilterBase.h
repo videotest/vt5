@@ -1,11 +1,6 @@
 // ImageFileFilterBase.h: interface for the CImageFileFilterBase class.
 //
 //////////////////////////////////////////////////////////////////////
-#if MagickLibVersion > 0x679
-#else
-#error this version used new version of ImageMagick, if you want use previous version, please, pull older version from git 
-#endif
-using namespace MagickCore;
 extern "C"
 void FillVTImageRow(Image *image, unsigned int _y, unsigned short** pPane, unsigned short numPanes),
 	FillMagickImageRow(Image *image, unsigned int _y, unsigned short** pPane, unsigned short numPanes);

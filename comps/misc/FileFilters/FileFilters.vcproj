@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="windows-1251"?>
 <VisualStudioProject
 	ProjectType="Visual C++"
-	Version="9.00"
+	Version="9,00"
 	Name="FileFilters"
 	ProjectGUID="{BDB52B1B-D3DF-47DB-A142-72FFEE02CA65}"
 	RootNamespace="FileFilters"
@@ -144,7 +144,7 @@
 			<Tool
 				Name="VCCLCompilerTool"
 				Optimization="0"
-				AdditionalIncludeDirectories="&quot;$(SolutionDir)thirdparty\ImageMagick-7.0.8-11\ImageMagick\Magick++\lib&quot;;&quot;$(SolutionDir)thirdparty\ImageMagick-7.0.8-11\ImageMagick&quot;"
+				AdditionalIncludeDirectories="&quot;$(SolutionDir)thirdparty\ImageMagick-4.2.9&quot;"
 				PreprocessorDefinitions="_DEBUG;_WINDOWS;_USRDLL;_WIN64;_M_X64;_LIB;_AFX_SECURE_NO_DEPRECATE;_CRT_SECURE_NO_DEPRECATE"
 				BasicRuntimeChecks="3"
 				RuntimeLibrary="3"
@@ -172,9 +172,9 @@
 			/>
 			<Tool
 				Name="VCLinkerTool"
-				AdditionalDependencies="common.lib magick.lib libtiff.lib jpeg.lib zlib.lib"
+				AdditionalDependencies="common.lib magick.lib"
 				LinkIncremental="2"
-				AdditionalLibraryDirectories="&quot;$(SolutionDir)thirdparty\ImageMagick-7.0.8-11\VisualMagick\lib&quot;;&quot;%(AdditionalLibraryDirectories)&quot;"
+				AdditionalLibraryDirectories=""
 				IgnoreDefaultLibraryNames=""
 				GenerateDebugInformation="true"
 				SubSystem="2"
@@ -483,6 +483,19 @@
 				</FileConfiguration>
 			</File>
 			<File
+				RelativePath=".\FillImageRow.c"
+				>
+				<FileConfiguration
+					Name="Debug|x64"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						PreprocessorDefinitions="WIN32"
+						UsePrecompiledHeader="0"
+					/>
+				</FileConfiguration>
+			</File>
+			<File
 				RelativePath=".\GIFfile.cpp"
 				>
 			</File>
@@ -591,7 +604,7 @@
 	<Globals>
 		<Global
 			Name="DevPartner_IsInstrumented"
-			Value="0"
+			Value="1"
 		/>
 	</Globals>
 </VisualStudioProject>

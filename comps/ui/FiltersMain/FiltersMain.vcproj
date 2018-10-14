@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="windows-1251"?>
 <VisualStudioProject
 	ProjectType="Visual C++"
-	Version="9.00"
+	Version="9,00"
 	Name="FiltersMain"
 	ProjectGUID="{6680C1DF-6B8B-4E0A-9EAC-71D2D9FE1F32}"
 	RootNamespace="FiltersMain"
@@ -662,7 +662,7 @@
 	<Globals>
 		<Global
 			Name="DevPartner_IsInstrumented"
-			Value="0"
+			Value="1"
 		/>
 	</Globals>
 </VisualStudioProject>

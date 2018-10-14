@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="windows-1251"?>
 <VisualStudioProject
 	ProjectType="Visual C++"
-	Version="9.00"
+	Version="9,00"
 	Name="objects"
 	ProjectGUID="{A1EC055A-AB59-4DEE-8011-D5EA8F19065A}"
 	RootNamespace="objects"
@@ -966,11 +966,11 @@
 				>
 			</File>
 			<File
-				RelativePath=".\toolbar1.bmp"
+				RelativePath=".\res\toolbar1.bmp"
 				>
 			</File>
 			<File
-				RelativePath=".\res\toolbar1.bmp"
+				RelativePath=".\toolbar1.bmp"
 				>
 			</File>
 		</Filter>
@@ -982,7 +982,7 @@
 	<Globals>
 		<Global
 			Name="DevPartner_IsInstrumented"
-			Value="0"
+			Value="1"
 		/>
 	</Globals>
 </VisualStudioProject>

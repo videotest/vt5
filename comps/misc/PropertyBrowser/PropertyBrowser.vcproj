@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="windows-1251"?>
 <VisualStudioProject
 	ProjectType="Visual C++"
-	Version="9.00"
+	Version="9,00"
 	Name="PropertyBrowser"
 	ProjectGUID="{FFD2B531-89D7-45BB-8AEF-DF9F69E70219}"
 	RootNamespace="PropertyBrowser"
@@ -602,7 +602,7 @@
 	<Globals>
 		<Global
 			Name="DevPartner_IsInstrumented"
-			Value="0"
+			Value="1"
 		/>
 	</Globals>
 </VisualStudioProject>

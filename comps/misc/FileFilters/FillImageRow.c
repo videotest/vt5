@@ -1,5 +1,6 @@
 ﻿#include <stdio.h>
-#include <api.h>
+#include <magick/api.h>
+
 
 void FillVTImageRow(Image *image, unsigned int _y, unsigned short** pPane, unsigned short numPanes)
 {

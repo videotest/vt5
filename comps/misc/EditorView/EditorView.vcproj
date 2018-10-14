@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="windows-1251"?>
 <VisualStudioProject
 	ProjectType="Visual C++"
-	Version="9.00"
+	Version="9,00"
 	Name="EditorView"
 	ProjectGUID="{248FB385-6A02-4C84-BCB5-D6B5287A0ADD}"
 	RootNamespace="EditorView"
@@ -577,7 +577,7 @@
 	<Globals>
 		<Global
 			Name="DevPartner_IsInstrumented"
-			Value="0"
+			Value="1"
 		/>
 		<Global
 			Name="RESOURCE_FILE"

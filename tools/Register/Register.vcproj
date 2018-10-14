@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="windows-1251"?>
 <VisualStudioProject
 	ProjectType="Visual C++"
-	Version="9.00"
+	Version="9,00"
 	Name="Register"
 	ProjectGUID="{F993CFEE-D9BB-4DAE-B2BD-CCDB5ED696AA}"
 	RootNamespace="Register"
@@ -370,6 +370,7 @@
 				OutputFile="$(SolutionDir)vt5\$(PlatformName)\$(ConfigurationName)\$(ProjectName).exe"
 				LinkIncremental="2"
 				AdditionalLibraryDirectories=""
+				UACExecutionLevel="2"
 				ModuleDefinitionFile=" "
 				GenerateDebugInformation="true"
 				SubSystem="2"

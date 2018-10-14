@@ -3,8 +3,7 @@
 
 #include <stdio.h>
 #include <string.h>
-#include <api.h>
-#include <image.h>
+#include <magick/api.h>
 #include <stddef.h>
 #include <stdlib.h>
 #include <crtdbg.h>
@@ -45,7 +44,7 @@ void fill()
 	Image* image = 0;
 	color** pColor = 0;
 	color** pColorC = 0;
-	Image* clone, *clone2;
+	Image* clone;
 	int bUnImage, bUnClone;
 	int j = 0; 
 	unsigned i,k;

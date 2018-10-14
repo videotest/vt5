@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="windows-1251"?>
 <VisualStudioProject
 	ProjectType="Visual C++"
-	Version="9.00"
+	Version="9,00"
 	Name="DBaseDoc"
 	ProjectGUID="{CDE17349-1783-4398-B86E-0C9A505D3230}"
 	RootNamespace="DBaseDoc"
@@ -653,11 +653,11 @@
 				>
 			</File>
 			<File
-				RelativePath=".\bmp00001.bmp"
+				RelativePath=".\res\bmp00001.bmp"
 				>
 			</File>
 			<File
-				RelativePath=".\res\bmp00001.bmp"
+				RelativePath=".\bmp00001.bmp"
 				>
 			</File>
 			<File
@@ -1134,7 +1134,7 @@
 	<Globals>
 		<Global
 			Name="DevPartner_IsInstrumented"
-			Value="0"
+			Value="1"
 		/>
 	</Globals>
 </VisualStudioProject>

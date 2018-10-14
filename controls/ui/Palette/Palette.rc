@@ -183,7 +183,7 @@ END
 
 3 TEXTINCLUDE DISCARDABLE 
 BEGIN
-    "1 TYPELIB ""Palette.tlb""\r\n"
+    1 TYPELIB "Palette.tlb"
     "#include ""res\\Palette.rc2""\r\n"
     "\0"
 END

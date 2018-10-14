@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="windows-1251"?>
 <VisualStudioProject
 	ProjectType="Visual C++"
-	Version="9.00"
+	Version="9,00"
 	Name="xpbar_ctrl"
 	ProjectGUID="{F269DFB6-9C39-4D3C-B5E1-88F23504C97F}"
 	RootNamespace="xpbar_ctrl"
@@ -448,7 +448,7 @@
 	<Globals>
 		<Global
 			Name="DevPartner_IsInstrumented"
-			Value="0"
+			Value="1"
 		/>
 	</Globals>
 </VisualStudioProject>

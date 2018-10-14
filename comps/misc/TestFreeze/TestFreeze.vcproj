@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="windows-1251"?>
 <VisualStudioProject
 	ProjectType="Visual C++"
-	Version="9.00"
+	Version="9,00"
 	Name="Freeze"
 	ProjectGUID="{7AF94A17-F292-4652-904B-1CA0E38749D5}"
 	RootNamespace="Freeze"
@@ -21,10 +21,8 @@
 	<Configurations>
 		<Configuration
 			Name="Debug|Win32"
-			OutputDirectory="..\..\..\build\$(PlatformName)\$(ConfigurationName)\$(ProjectName)"
-			IntermediateDirectory="..\..\..\build\$(PlatformName)\$(ConfigurationName)\$(ProjectName)"
 			ConfigurationType="2"
-			InheritedPropertySheets="..\..\..\props\common2env.vsprops"
+			InheritedPropertySheets="$(SolutionDir)props\common2env.vsprops"
 			CharacterSet="2"
 			>
 			<Tool
@@ -102,10 +100,8 @@
 		</Configuration>
 		<Configuration
 			Name="Debug|x64"
-			OutputDirectory="..\..\..\build\$(PlatformName)\$(ConfigurationName)\$(ProjectName)"
-			IntermediateDirectory="..\..\..\build\$(PlatformName)\$(ConfigurationName)\$(ProjectName)"
 			ConfigurationType="2"
-			InheritedPropertySheets="..\..\..\props\common2env.vsprops"
+			InheritedPropertySheets="$(SolutionDir)props\common2env.vsprops"
 			CharacterSet="2"
 			>
 			<Tool
@@ -183,10 +179,8 @@
 		</Configuration>
 		<Configuration
 			Name="Release|Win32"
-			OutputDirectory="..\..\..\build\$(PlatformName)\$(ConfigurationName)\$(ProjectName)"
-			IntermediateDirectory="..\..\..\build\$(PlatformName)\$(ConfigurationName)\$(ProjectName)"
 			ConfigurationType="2"
-			InheritedPropertySheets="..\..\..\props\common2env.vsprops"
+			InheritedPropertySheets="$(SolutionDir)props\common2env.vsprops"
 			CharacterSet="2"
 			>
 			<Tool
@@ -267,10 +261,8 @@
 		</Configuration>
 		<Configuration
 			Name="Release|x64"
-			OutputDirectory="..\..\..\build\$(PlatformName)\$(ConfigurationName)\$(ProjectName)"
-			IntermediateDirectory="..\..\..\build\$(PlatformName)\$(ConfigurationName)\$(ProjectName)"
 			ConfigurationType="2"
-			InheritedPropertySheets="..\..\..\props\common2env.vsprops"
+			InheritedPropertySheets="$(SolutionDir)props\common2env.vsprops"
 			CharacterSet="2"
 			>
 			<Tool
@@ -441,7 +433,7 @@
 	<Globals>
 		<Global
 			Name="DevPartner_IsInstrumented"
-			Value="0"
+			Value="1"
 		/>
 	</Globals>
 </VisualStudioProject>
