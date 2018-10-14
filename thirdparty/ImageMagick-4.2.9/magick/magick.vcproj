@@ -21,8 +21,8 @@
 	<Configurations>
 		<Configuration
 			Name="Debug|Win32"
-			ConfigurationType="4"
-			InheritedPropertySheets="$(SolutionDir)Props\libs.vsprops"
+			ConfigurationType="2"
+			InheritedPropertySheets="$(SolutionDir)Props\CommonEnv.vsprops"
 			CharacterSet="2"
 			>
 			<Tool
@@ -62,10 +62,16 @@
 				Name="VCPreLinkEventTool"
 			/>
 			<Tool
-				Name="VCLibrarianTool"
+				Name="VCLinkerTool"
+				AdditionalDependencies="libtiff.lib jpeg.lib zlib.lib"
+				OutputFile="$(SolutionDir)vt5\$(PlatformName)\$(ConfigurationName)\$(ProjectName).dll"
+				ModuleDefinitionFile=""
 			/>
 			<Tool
 				Name="VCALinkTool"
+			/>
+			<Tool
+				Name="VCManifestTool"
 			/>
 			<Tool
 				Name="VCXDCMakeTool"
@@ -77,13 +83,16 @@
 				Name="VCFxCopTool"
 			/>
 			<Tool
+				Name="VCAppVerifierTool"
+			/>
+			<Tool
 				Name="VCPostBuildEventTool"
 			/>
 		</Configuration>
 		<Configuration
 			Name="Debug|x64"
-			ConfigurationType="4"
-			InheritedPropertySheets="$(SolutionDir)Props\libs.vsprops"
+			ConfigurationType="2"
+			InheritedPropertySheets="$(SolutionDir)Props\CommonEnv.vsprops"
 			CharacterSet="2"
 			>
 			<Tool
@@ -124,10 +133,16 @@
 				Name="VCPreLinkEventTool"
 			/>
 			<Tool
-				Name="VCLibrarianTool"
+				Name="VCLinkerTool"
+				AdditionalDependencies="libtiff.lib jpeg.lib zlib.lib"
+				OutputFile="$(SolutionDir)vt5\$(PlatformName)\$(ConfigurationName)\$(ProjectName).dll"
+				ModuleDefinitionFile=""
 			/>
 			<Tool
 				Name="VCALinkTool"
+			/>
+			<Tool
+				Name="VCManifestTool"
 			/>
 			<Tool
 				Name="VCXDCMakeTool"
@@ -139,13 +154,16 @@
 				Name="VCFxCopTool"
 			/>
 			<Tool
+				Name="VCAppVerifierTool"
+			/>
+			<Tool
 				Name="VCPostBuildEventTool"
 			/>
 		</Configuration>
 		<Configuration
 			Name="Release|Win32"
-			ConfigurationType="4"
-			InheritedPropertySheets="$(SolutionDir)Props\libs.vsprops"
+			ConfigurationType="2"
+			InheritedPropertySheets="$(SolutionDir)Props\CommonEnv.vsprops"
 			CharacterSet="2"
 			WholeProgramOptimization="1"
 			>
@@ -186,10 +204,16 @@
 				Name="VCPreLinkEventTool"
 			/>
 			<Tool
-				Name="VCLibrarianTool"
+				Name="VCLinkerTool"
+				AdditionalDependencies="libtiff.lib jpeg.lib zlib.lib"
+				OutputFile="$(SolutionDir)vt5\$(PlatformName)\$(ConfigurationName)\$(ProjectName).dll"
+				ModuleDefinitionFile=""
 			/>
 			<Tool
 				Name="VCALinkTool"
+			/>
+			<Tool
+				Name="VCManifestTool"
 			/>
 			<Tool
 				Name="VCXDCMakeTool"
@@ -201,13 +225,16 @@
 				Name="VCFxCopTool"
 			/>
 			<Tool
+				Name="VCAppVerifierTool"
+			/>
+			<Tool
 				Name="VCPostBuildEventTool"
 			/>
 		</Configuration>
 		<Configuration
 			Name="Release|x64"
-			ConfigurationType="4"
-			InheritedPropertySheets="$(SolutionDir)Props\libs.vsprops"
+			ConfigurationType="2"
+			InheritedPropertySheets="$(SolutionDir)Props\CommonEnv.vsprops"
 			CharacterSet="2"
 			WholeProgramOptimization="1"
 			>
@@ -249,10 +276,16 @@
 				Name="VCPreLinkEventTool"
 			/>
 			<Tool
-				Name="VCLibrarianTool"
+				Name="VCLinkerTool"
+				AdditionalDependencies="libtiff.lib jpeg.lib zlib.lib"
+				OutputFile="$(SolutionDir)vt5\$(PlatformName)\$(ConfigurationName)\$(ProjectName).dll"
+				ModuleDefinitionFile=""
 			/>
 			<Tool
 				Name="VCALinkTool"
+			/>
+			<Tool
+				Name="VCManifestTool"
 			/>
 			<Tool
 				Name="VCXDCMakeTool"
@@ -262,6 +295,9 @@
 			/>
 			<Tool
 				Name="VCFxCopTool"
+			/>
+			<Tool
+				Name="VCAppVerifierTool"
 			/>
 			<Tool
 				Name="VCPostBuildEventTool"
@@ -760,6 +796,10 @@
 			</File>
 			<File
 				RelativePath=".\widget.h"
+				>
+			</File>
+			<File
+				RelativePath=".\xwindows.h"
 				>
 			</File>
 		</Filter>
