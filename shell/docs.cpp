@@ -228,7 +228,7 @@ void CShellDocManager::SetDispatchImpl( CShellDocManagerDisp	* pimpl )
 //size of DocumentTemplate list
 long CShellDocManager::GetDocTemplateCount()
 {
-	return m_templateList.GetCount();
+	return (long)m_templateList.GetCount();
 }
 
 //return Document template by position
@@ -1452,7 +1452,7 @@ void CShellDocTemplate::AppendFilterSuffix( CString &strFilter, OPENFILENAME *po
 //return count of documents
 long CShellDocTemplate::GetDocumentCount()
 {
-	return m_docList.GetCount();
+	return (long)m_docList.GetCount();
 }
 
 //return document by no

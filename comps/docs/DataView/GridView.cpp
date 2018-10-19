@@ -700,7 +700,7 @@ void CGridViewBase::OnNotify( const char *pszEvent, IUnknown *punkHit, IUnknown 
 			if( !pcol )return;
 			long	col = pcol->col;
 			ParameterContainer	*pprev = 0;
-			long	lpos = p->lpos;
+			LPOS lpos = p->lpos;
 			m_container->GetPrevParameter( &lpos, 0 );
 			if( lpos )m_container->GetNextParameter( &lpos, &pprev );
 
@@ -1934,7 +1934,7 @@ void	CGridViewBase::_selection_from_range()
 				{
 					INamedDataObject2Ptr	ptrNP( punk );
 					punkParent->Release();
-					long	lposA;
+					LPOS lposA;
 					ptrN->GetObjectPosInParent( &lposA );
 					ptrNP->SetActiveChild( lposA );
 				}*/

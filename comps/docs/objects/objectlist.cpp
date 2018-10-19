@@ -719,7 +719,7 @@ bool CMeasureObjectList::SerializeObject( CStreamEx &ar, SerializeParams *pparam
 				ICompositeMeasureGroupPtr cmg(pParCont->pGroup);
 				if(cmg) 
 					cmg->UpdateClassName(pParCont);
-				pParCont->lpos = (long)m_params.AddTail( pParCont );
+				pParCont->lpos = (LONG_PTR)m_params.AddTail( pParCont );
 			}
 			else
 			{
@@ -2321,14 +2321,14 @@ HRESULT CCalcObjectContainerImpl::XCalcCntr::Move( long lDirection )
 HRESULT CCalcObjectContainerImpl::XCalcCntr::GetFirstParameterPos(LONG_PTR *plpos)
 {
 	METHOD_PROLOGUE_BASE(CCalcObjectContainerImpl, CalcCntr);
-	*plpos = (long)pThis->m_params.GetHeadPosition();
+	*plpos = (LONG_PTR)pThis->m_params.GetHeadPosition();
 	return S_OK;
 }
 
 HRESULT CCalcObjectContainerImpl::XCalcCntr::GetLastParameterPos(LONG_PTR *plpos)
 {
 	METHOD_PROLOGUE_BASE(CCalcObjectContainerImpl, CalcCntr);
-	*plpos = (long)pThis->m_params.GetTailPosition();
+	*plpos = (LONG_PTR)pThis->m_params.GetTailPosition();
 	return S_OK;
 }
 
@@ -2433,8 +2433,8 @@ HRESULT CCalcObjectContainerImpl::XCalcCntr::DefineParameter(long lKey, enum Par
 		}
 	}
 	
-	pi->lpos = (long)pThis->AddParameter(pi);
-//	pi->lpos = (long)pThis->m_params.AddTail( pi );
+	pi->lpos = (LONG_PTR)pThis->AddParameter(pi);
+//	pi->lpos = (LONG_PTR)pThis->m_params.AddTail( pi );
 
 	pThis->container_notify( cncAddParameter, lKey );
 
@@ -2482,8 +2482,8 @@ HRESULT CCalcObjectContainerImpl::XCalcCntr::DefineParameterFull( struct Paramet
 	}
 	else
 		p->pDescr = ps->pDescr;
-	p->lpos = (long)pThis->AddParameter(p);
-//	p->lpos = (long)pThis->m_params.AddTail( p );
+	p->lpos = (LONG_PTR)pThis->AddParameter(p);
+//	p->lpos = (LONG_PTR)pThis->m_params.AddTail( p );
 	pThis->container_notify( cncAddParameter, p->pDescr->lKey );
 
 	if( plpos )*plpos = p->lpos;

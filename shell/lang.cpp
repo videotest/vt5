@@ -534,7 +534,7 @@ HOOKMACRO("USER32.DLL", int __stdcall, LoadStringA, (
 		{
 			strncpy( lpBuffer, sz_app_title, nBufferMax );
 			lpBuffer[nBufferMax-1] = 0;
-			return strlen( lpBuffer );
+			return (int)strlen( lpBuffer );
 		}
 	}
 

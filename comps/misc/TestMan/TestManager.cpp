@@ -2120,7 +2120,7 @@ HRESULT CTestManager::LoadTests( IStream *pStream, LPOS lNewParentPos )
 
 	if( lChilds )
 	{
-		long lPos = 0;
+		LPOS lPos = 0;
 
 		do
 		{

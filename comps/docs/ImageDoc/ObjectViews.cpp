@@ -702,7 +702,7 @@ bool CObjectViewBase::CheckChildByPoint(CMeasObjListWrp* pObjects, IUnknown * pu
 	
 	while( lpos != lend )
 	{
-		//long	lposCur = lpos;
+		//LPOS lposCur = lpos;
 		IUnknown *punk = 0;
 		ptrNamedObject->GetNextChild( &lpos, &punk );
 		if( !punk )continue;

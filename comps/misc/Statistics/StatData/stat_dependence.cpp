@@ -70,7 +70,7 @@ namespace STAT_DEPENDENCE
 		CString strRet;
 
 		long lPrev = 0;
-		long lPos = str.Find( strA, lPrev );
+		LPOS lPos = str.Find( strA, lPrev );
 
 		while( lPos != -1 )
 		{
@@ -583,7 +583,7 @@ void stat_dependence_view::OnNotify( const char *pszEvent, IUnknown *punkHit, IU
 	//	m_wnd_data.berror = false;
 	//	_load_from_ndata( ::GetAppUnknown() );
 	//  
-	//	for( long lpos_lst = m_list_attached.head(); lpos_lst; lpos_lst = m_list_attached.next( lpos_lst ) )
+	//	for( LPOS lpos_lst = m_list_attached.head(); lpos_lst; lpos_lst = m_list_attached.next( lpos_lst ) )
 	//	{
 	//		IUnknownPtr ptr_object = m_list_attached.get( lpos_lst );
 	//		if( ptr_object )

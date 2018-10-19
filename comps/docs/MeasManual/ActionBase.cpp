@@ -1428,7 +1428,7 @@ bool CMMActionObjectBase::Initialize()
 			ptrCont->GetFirstParameterPos( &lpos );
 			while( lpos != 0 )
 			{
-				long	lposSave = lpos;
+				LPOS lposSave = lpos;
 				ParameterContainer* pp = 0;
 				ptrCont->GetNextParameter( &lpos, &pp );
 
@@ -1533,7 +1533,7 @@ bool CMMActionObjectBase::IsAvaible()
 	if (FAILED(sptrList->GetChildsCount(&lCount)) || !lCount)
 		return true;
 
-	long lPos = 0;
+	LPOS lPos = 0;
 	if (FAILED(sptrParam->GetActiveParamPos(&lPos)) || !lPos)
 		return true;
 

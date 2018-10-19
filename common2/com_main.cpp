@@ -1048,15 +1048,15 @@ HRESULT GetComponentInfo(void ** ppv)
 	{
 		return E_FAIL;
 	}
-	else if (pInfo->lpos == (DWORD)-1) // get first component
+	else if (pInfo->lpos == (TPOS)-1) // get first component
 	{
 		pComInfo = App::instance()->FirstComInfo();
-		pInfo->lpos = (DWORD)(pComInfo ? pComInfo->m_pnext : 0);
+		pInfo->lpos = (TPOS)(pComInfo ? pComInfo->m_pnext : 0);
 	}
 	else // get next component
 	{
 		pComInfo = (App::ComInfo*)pInfo->lpos;
-		pInfo->lpos = (DWORD)(pComInfo ? pComInfo->m_pnext : 0);
+		pInfo->lpos = (TPOS)(pComInfo ? pComInfo->m_pnext : 0);
 	}
 
 	if (!pComInfo)

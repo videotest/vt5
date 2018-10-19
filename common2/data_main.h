@@ -148,12 +148,12 @@ protected:
 		return S_OK;
 	}
 
-	com_call GetObjectPosInParent( long *plPos )
+	com_call GetObjectPosInParent( TPOS *plPos )
 	{	
 		*plPos = m_pos_parent;
 		return S_OK;
 	}
-	com_call SetObjectPosInParent( long lPos )
+	com_call SetObjectPosInParent( TPOS lPos )
 	{	
 		m_pos_parent = lPos;
 		return S_OK;	
@@ -167,7 +167,7 @@ protected:
 
 protected:
 	INamedDataObject2	*m_pndoParent;
-	long				m_pos_parent;
+	TPOS				m_pos_parent;
 };
 
 

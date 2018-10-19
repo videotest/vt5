@@ -7,7 +7,7 @@
 
 //IMPLEMENT_UNKNOWN_BASE(CNamedPropBagImpl, NamedPropBag);
 
-inline int CNamedPropBagImpl::CompareItem(long lpos, DWORD h2, BSTR bstr2)
+inline int CNamedPropBagImpl::CompareItem(LPOS lpos, DWORD h2, BSTR bstr2)
 { // сравнение двух пар хэш/строка
 	CNamedProperty *p = m_bag.ptr()+lpos;
 	dword h1 = p->dwHash;
@@ -74,7 +74,7 @@ inline bool CNamedPropBagImpl::Search(BSTR bstr, long *ppos)
 	*ppos=i1; return false;
 }
 
-inline int CNamedPropBagImpl::GetPropertyPos( BSTR bstrName, long *plos )
+inline int CNamedPropBagImpl::GetPropertyPos( BSTR bstrName, LPOS* plos )
 {
 	long pos;
 	if( Search(bstrName, &pos) )
@@ -331,7 +331,7 @@ inline HRESULT CNamedPropBagImpl::Store( IStream *pStream )
 	pStream->Write(&count, sizeof(count), &len1);
 	if(len1!=sizeof(count)) return E_FAIL;
 
-	for(long lPos = 0; lPos<count; lPos++)
+	for(LPOS lPos = 0; lPos<count; lPos++)
 	{
 		CNamedProperty* p = m_bag.ptr()+lPos;
 		BSTR b=p->bstrName;

@@ -22,7 +22,7 @@ void CColorsNames::UpdateColorsNames(const char *szClassifierShortName)
 	}
 }
 
-const char* CColorsNames::get_class_name(const long lpos)
+const char* CColorsNames::get_class_name(const LPOS lpos)
 {
 	const std::map<int,ColorName>::const_iterator it=_mapDscrClass.find(int(lpos));
 	if(it!=_mapDscrClass.end())
@@ -34,7 +34,7 @@ const char* CColorsNames::get_class_name(const long lpos)
 	}
 }
 
-const COLORREF CColorsNames::get_class_color(const long lpos)
+const COLORREF CColorsNames::get_class_color(const LPOS lpos)
 {
 	const std::map<int,ColorName>::const_iterator it=_mapDscrClass.find(int(lpos));
 	if(it!=_mapDscrClass.end())
@@ -43,7 +43,7 @@ const COLORREF CColorsNames::get_class_color(const long lpos)
 		return GetValueColor( GetAppUnknown(), "\\Classes", "UnkClassColor", RGB( 255, 255, 0 ) );;
 }
 
-bool CColorsNames::testClass(const long lpos)
+bool CColorsNames::testClass(const LPOS lpos)
 {
 	const std::map<int,ColorName>::const_iterator it=_mapDscrClass.find(int(lpos));
 	if(it!=_mapDscrClass.end())

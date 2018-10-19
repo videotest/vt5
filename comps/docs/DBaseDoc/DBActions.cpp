@@ -2948,14 +2948,14 @@ bool CActionCloseQuery::Invoke()
 
 #ifdef _DEBUG
 	{
-		long	lpos;
+		TPOS lpos;
 		INamedDataPtr	ptrNamedData( m_punkTarget );
 		ptrNamedData->GetBaseGroupFirstPos( &lpos );
 		while( lpos )
 		{
 			GUID guid;
 			ptrNamedData->GetNextBaseGroup( &guid, &lpos );
-			long	lpos1;
+			TPOS lpos1;
 			ptrNamedData->GetBaseGroupObjectFirstPos( &guid, &lpos1 );
 			while( lpos1 )
 			{
@@ -2981,14 +2981,14 @@ bool CActionCloseQuery::Invoke()
 	
 #ifdef _DEBUG
 	{
-		long	lpos;
+		TPOS lpos;
 		INamedDataPtr	ptrNamedData( m_punkTarget );
 		ptrNamedData->GetBaseGroupFirstPos( &lpos );
 		while( lpos )
 		{
 			GUID guid;
 			ptrNamedData->GetNextBaseGroup( &guid, &lpos );
-			long	lpos1;
+			TPOS lpos1;
 			ptrNamedData->GetBaseGroupObjectFirstPos( &guid, &lpos1 );
 			while( lpos1 )
 			{

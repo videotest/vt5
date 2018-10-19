@@ -2170,7 +2170,7 @@ LRESULT CListHeaderCtrl::WindowProc(UINT message, WPARAM wParam, LPARAM lParam)
 	{
 		if( m_pMan && !m_pMan->Find( this ) )
 		{
-			long lPos = m_pMan->GetFirstPos();
+			LPOS lPos = m_pMan->GetFirstPos();
 
 			while( lPos )
 			{
@@ -2220,7 +2220,7 @@ LRESULT CListHeaderCtrl::WindowProc(UINT message, WPARAM wParam, LPARAM lParam)
 	{
 		if( m_pMan && !m_pMan->Find( this ) )
 		{
-			long lPos = m_pMan->GetFirstPos();
+			LPOS lPos = m_pMan->GetFirstPos();
 
 			while( lPos )
 			{
@@ -2354,7 +2354,7 @@ void CListHeaderCtrl::OnNMCustomdraw(NMHDR *pNMHDR, LRESULT *pResult)
 						//	::LineTo( pNMCD->hdc,  rcItem.left-s_xy.x, rcItem.bottom );
 						/*if( m_pMan && !m_pMan->Find( this ) )
 						{
-							long lPos = m_pMan->GetFirstPos();
+							LPOS lPos = m_pMan->GetFirstPos();
 							while( lPos )
 							{
 								CHeaderCtrl *pCtrl = 0;

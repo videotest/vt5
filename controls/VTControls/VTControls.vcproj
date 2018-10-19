@@ -78,7 +78,6 @@
 			<Tool
 				Name="VCLinkerTool"
 				AdditionalDependencies="Comsupp.lib GdiPlus.lib"
-				OutputFile="$(SolutionDir)vt5\$(PlatformName)\$(ConfigurationName)\comps\$(ProjectName).ocx"
 				LinkIncremental="2"
 				AdditionalLibraryDirectories=""
 				GenerateDebugInformation="true"
@@ -171,7 +170,6 @@
 			<Tool
 				Name="VCLinkerTool"
 				AdditionalDependencies="Comsupp.lib GdiPlus.lib"
-				OutputFile="$(SolutionDir)vt5\$(PlatformName)\$(ConfigurationName)\comps\$(ProjectName).ocx"
 				LinkIncremental="2"
 				AdditionalLibraryDirectories=""
 				GenerateDebugInformation="true"
@@ -256,7 +254,6 @@
 			<Tool
 				Name="VCLinkerTool"
 				AdditionalDependencies="Comsupp.lib GdiPlus.lib"
-				OutputFile="$(SolutionDir)vt5\$(PlatformName)\$(ConfigurationName)\comps\$(ProjectName).ocx"
 				LinkIncremental="1"
 				AdditionalLibraryDirectories=""
 				GenerateDebugInformation="true"
@@ -345,7 +342,6 @@
 			<Tool
 				Name="VCLinkerTool"
 				AdditionalDependencies="Comsupp.lib GdiPlus.lib"
-				OutputFile="$(SolutionDir)vt5\$(PlatformName)\$(ConfigurationName)\comps\$(ProjectName).ocx"
 				LinkIncremental="1"
 				AdditionalLibraryDirectories=""
 				GenerateDebugInformation="true"

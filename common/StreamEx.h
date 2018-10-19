@@ -33,6 +33,7 @@ public:
 	CStreamEx& operator<<(short w);
 	CStreamEx& operator<<(char ch);
 	CStreamEx& operator<<(unsigned u);	
+//	CStreamEx& operator<<(LONG_PTR l);	
 	
 
 	// extraction operations
@@ -47,6 +48,7 @@ public:
 	CStreamEx& operator>>(short& w);
 	CStreamEx& operator>>(char& ch);
 	CStreamEx& operator>>(unsigned& u);
+//	CStreamEx& operator>>(LONG_PTR& l);
 	
 
 		

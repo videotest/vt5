@@ -227,7 +227,7 @@ HCONTEXTITEM CContextWrpObject::AddBaseObject(GuidKey Key, bool bSort)
 	if (sptrBase == 0)
 	{
 		// try to get first object in group (oldest)
-		long lPos = 0;
+		TPOS lPos = 0;
 		if (FAILED(sptrData->GetBaseGroupObjectFirstPos(&Key, &lPos)) || !lPos)
 			return 0;
 
@@ -377,7 +377,7 @@ bool CContextWrpObject::AddAllObjects()
 		if (!nObjCount)
 			continue;
 	
-		long lObjPos = 0;
+		TPOS lObjPos = 0;
 		m_sptrContext->GetFirstChildPos(bstrT, 0, &lObjPos);
 		while (lObjPos)
 		{
@@ -467,7 +467,7 @@ bool CContextWrpObject::AddObject(HCONTEXTITEM hParent, IUnknown * punkObject, b
 	m_sptrContext->GetChildrenCount(bstrType, punkObject, &nCount);
 	if (nCount)
 	{
-		long lChildPos = 0;
+		TPOS lChildPos = 0;
 		m_sptrContext->GetFirstChildPos(bstrType, punkObject, &lChildPos);
 		while (lChildPos)
 		{
@@ -800,7 +800,7 @@ void CContextWrpObject::SetNumeric()
 
 	_try (CContextWrpObject, SetNumeric)
 	{
-		long lPos = 0;
+		TPOS lPos = 0;
 		sptrData->GetBaseGroupObjectFirstPos(&BaseKey, &lPos);
 		while (lPos)
 		{
@@ -1695,7 +1695,7 @@ bool CContextWrpType::AddAllObjects(HCONTEXTITEM hParent, BSTR bstrType, bool bE
 
 	if (nCount)
 	{
-		long lChildPos = 0;
+		TPOS lChildPos = 0;
 		m_sptrContext->GetFirstChildPos(bstrType, 0, &lChildPos);
 		while (lChildPos)
 		{
@@ -1766,7 +1766,7 @@ bool CContextWrpType::AddObject(HCONTEXTITEM hParent, IUnknown* punkObject, bool
 	if (nCount)
 	{
 		// for all children 
-		long lChildPos = 0;
+		TPOS lChildPos = 0;
 		m_sptrContext->GetFirstChildPos(bstrType, punkObject, &lChildPos);
 		while (lChildPos)
 		{

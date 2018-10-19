@@ -9,8 +9,7 @@ library Data
 	importlib("stdole32.tlb");
 	importlib("stdole2.tlb");
 
-
-
+	typedef LONG_PTR LPOS;
 
 	//  Primary dispatch interface for NamedData
 	
@@ -41,7 +40,7 @@ library Data
 			[id(12)] boolean ReadFile(BSTR fullPath);
 			[id(13)] boolean ExportEntry(BSTR pszEntry, BSTR pszFileName, long dwFlags);
 			[id(14)] boolean ImportEntry(BSTR pszEntry, BSTR pszFileName, long dwFlags);
-			[id(15)] LONG_PTR GetFirstObjectPos(long ltype);
+			[id(15)] LPOS GetFirstObjectPos(long ltype);
 			[id(16)] IDispatch* GetNextObject(long ltype, VARIANT* var_pos);
 			[id(17)] bool CopyNamedData(IDispatch* pDispSrc, BSTR pszSrcEntry, BSTR pszTargetEntry, long dwFlags);
 			[id(18)] BSTR GetSection();
@@ -75,10 +74,10 @@ library Data
 			[id(1)] IDispatch* GetActiveObject(BSTR szType);
 			[id(2)] void SetActiveObject(IDispatch* lpdispObj);
 			[id(3)] long GetObjectCount(BSTR szType);
-			[id(4)] long GetFirstObjectPos(BSTR szType);
-			[id(5)] IDispatch* GetNextObject(BSTR szType, long* plPos);
-			[id(6)] long GetLastObjectPos(BSTR szType);
-			[id(7)] LPDISPATCH GetPrevObject(BSTR szType, long* plPos);
+			[id(4)] LPOS GetFirstObjectPos(BSTR szType);
+			[id(5)] IDispatch* GetNextObject(BSTR szType, LPOS* plPos);
+			[id(6)] LPOS GetLastObjectPos(BSTR szType);
+			[id(7)] LPDISPATCH GetPrevObject(BSTR szType, LPOS* plPos);
 			//}}AFX_ODL_METHOD
 
 	};
@@ -147,26 +146,26 @@ library Data
 			[id(10)] void SetObjectActive(IDispatch* pdispObject);
 			[id(11)] IDispatch* CreateNewObject(BSTR szType);
 			[id(12)] IDispatch* GetObjectByName(BSTR szName);
-			[id(13)] long GetFirstObjectPos(BSTR szType);
-			[id(14)] long GetNextObjectPos(BSTR szType, long lPos);
-			[id(15)] long GetLastObjectPos(BSTR szType);
-			[id(16)] long GetPrevObjectPos(BSTR szType, long lPos);
-			[id(17)] IDispatch* GetObject(BSTR szType, long lPos);
+			[id(13)] LPOS GetFirstObjectPos(BSTR szType);
+			[id(14)] LPOS GetNextObjectPos(BSTR szType, LPOS lPos);
+			[id(15)] LPOS GetLastObjectPos(BSTR szType);
+			[id(16)] LPOS GetPrevObjectPos(BSTR szType, LPOS lPos);
+			[id(17)] IDispatch* GetObject(BSTR szType, LPOS lPos);
 			[id(18)] void GetFirstSelectedObjectPos(BSTR szType, VARIANT* pvarPos);
 			[id(19)] void GetLastSelectedObjectPos(BSTR szType, VARIANT* pvarPos);
 			[id(20)] IDispatch* GetNextSelectedObject(BSTR szType, VARIANT* pvarPos);
 			[id(21)] IDispatch* GetPrevSelectedObject(BSTR szType, VARIANT* pvarPos);
 			[id(22)] long GetSelectedObjectsCount(BSTR szType);
 			[id(23)] void SelectObject(IDispatch* pObject, boolean bSelect);
-			[id(24)] IDispatch* GetSelectedObject(BSTR szType, long lPos);
+			[id(24)] IDispatch* GetSelectedObject(BSTR szType, LPOS lPos);
 			[id(25)] IDispatch* GetSelectedByIndex(BSTR szType, long nIndex);
 			[id(26)] long SetToActiveDocument(IDispatch* pobj);
 			[id(27)] IDispatch* CloneObject(IDispatch* obj);
 			[id(28)] BSTR GenerateNewKey();
-			[id(29)] boolean SetBaseObjectKey(BSTR szType, long lPos, BSTR lpctVal );
-			[id(30)] BSTR GetBaseObjectKey(BSTR szType, long lPos );
-			[id(31)] boolean IsBaseObject(BSTR szType, long lPos );
-			[id(32)] BSTR GetObjectKey(BSTR szType, long lPos );
+			[id(29)] boolean SetBaseObjectKey(BSTR szType, LPOS lPos, BSTR lpctVal );
+			[id(30)] BSTR GetBaseObjectKey(BSTR szType, LPOS lPos );
+			[id(31)] boolean IsBaseObject(BSTR szType, LPOS lPos );
+			[id(32)] BSTR GetObjectKey(BSTR szType, LPOS lPos );
 			[id(33)] IDispatch* GetLastActiveObject(BSTR bstrTypes);
 			//}}AFX_ODL_METHOD
 

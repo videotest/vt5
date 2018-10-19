@@ -2768,7 +2768,7 @@ void CMainFrame::SetWindowPos(short X, short Y, short CX, short CY)
 
 long CMainFrame::GetFramesCount() 
 {
-	return m_ptrChildWindows.GetCount();
+	return (long)m_ptrChildWindows.GetCount();
 
 	return 0;
 }
@@ -3724,19 +3724,19 @@ bool CMainFrame::ProcessHelpMessage( MSG *pmsg, IUnknown **ppunkHelpInfo )
 						if( !lResult )return false;
 					}*/
 
-					DWORD	dw;
+					LRESULT	dw;
 
 					//else try to send MFC message			
 					dw = ::SendMessage( hWndHit, WM_HELPHITTEST, pmsg->wParam, MAKELONG(pointClient.x, pointClient.y ) );
-					if( dw == (DWORD)-2 )
+					if( dw == -2 )
 					{
 						*ppunkHelpInfo = 0;
 						return false;
 					}
 
-					if( dw != (DWORD)-1 && dw >= ID_CMDMAN_BASE && dw < ID_CMDMAN_MAX )
+					if( dw != -1 && dw >= ID_CMDMAN_BASE && dw < ID_CMDMAN_MAX )
 					{
-						CActionInfoWrp	*pwrp = g_CmdManager.GetActionInfo( dw-ID_CMDMAN_BASE );
+						CActionInfoWrp	*pwrp = g_CmdManager.GetActionInfo( int(dw-ID_CMDMAN_BASE) );
 						if( !pwrp )
 							return false;
 						*ppunkHelpInfo = pwrp->m_pActionInfo;
@@ -4496,7 +4496,7 @@ void CMainFrame::ShowXPBar(BOOL bShow)
 			WS_CHILD|WS_VISIBLE|WS_CLIPSIBLINGS|WS_CLIPCHILDREN, 0, 0, 100, 100, GetSafeHwnd(),
 			(HMENU)1002, theApp.m_hInstance, 0 );
 
-		m_nXPWidth = ::SendMessage( m_hwndXPBar, XPB_GETDEFPARAMS, 0, 0 );
+		m_nXPWidth = (long)::SendMessage( m_hwndXPBar, XPB_GETDEFPARAMS, 0, 0 );
 
 
 		XP_TIMER_PARAMS	params;
@@ -5143,7 +5143,7 @@ LRESULT CMainFrame::OnIdleUpdateCmdUI( WPARAM w, LPARAM l )
 {
 	if( m_hwndXPBar )
 	{
-		for( long lpos = ::SendMessage( m_hwndXPBar, XPB_GETFIRSTITEM, 0, 0 );
+		for( LPOS lpos = ::SendMessage( m_hwndXPBar, XPB_GETFIRSTITEM, 0, 0 );
 			lpos; lpos = ::SendMessage( m_hwndXPBar, XPB_GETNEXTITEM, lpos, 0 ) )
 		{
 				XPPANEITEM	item;
@@ -5152,7 +5152,7 @@ LRESULT CMainFrame::OnIdleUpdateCmdUI( WPARAM w, LPARAM l )
 
 				if( item.style == XPPS_TOOLBAR )
 				{
-					for( long lpos_b = ::SendMessage( m_hwndXPBar, XPB_GETFIRSTBUTTON, lpos, 0 );
+					for( LPOS lpos_b = ::SendMessage( m_hwndXPBar, XPB_GETFIRSTBUTTON, lpos, 0 );
 						lpos_b; lpos_b = ::SendMessage( m_hwndXPBar, XPB_GETNEXTBUTTON, lpos, lpos_b ) )
 					{
 						XPBUTTON	button;
@@ -5251,11 +5251,11 @@ LRESULT CMainFrame::OnSetSheetButton( WPARAM id, LPARAM code )
 			return 0;
 
 	XP_CAPTION_BUTTON	button;
-	button.nCmd = id;
+	button.nCmd = (UINT)id;
 	if( code == SHEET_BUTTON_CREATED )
 	{ 
 		button.mask = XPCBM_IMAGE;
-		button.iImage = __image_from_button( id );
+		button.iImage = __image_from_button( (unsigned)id );
 
 		if( button.iImage != -1 )
 		{
@@ -5608,7 +5608,7 @@ void		CMainFrame::_init_script_notify( )
 	m_lLag =  ::GetValueInt( ::GetAppUnknown( ), "LongOperation", "ScriptFireLag", -1 );
 }
 
-HRESULT		CMainFrame::_fire_script_event( LPCTSTR lpctstrEvent, LPCTSTR lpctstrActionName, BOOL bSetPos /*= FALSE*/, long lPos /*= 0*/ )
+HRESULT		CMainFrame::_fire_script_event( LPCTSTR lpctstrEvent, LPCTSTR lpctstrActionName, BOOL bSetPos /*= FALSE*/, LPOS lPos /*= 0*/ )
 {
 	if( !lpctstrActionName || !lpctstrEvent )
 		return S_FALSE;
@@ -5726,11 +5726,11 @@ long	CMainFrame::xppane_pos_int2ext( TPOS lpos_int )
 	return lpos_found ? m_map_xppanename2extpos.get( lpos_found ): 0;
 }
 
-TPOS	CMainFrame::xppane_find_by_pos(long lpos_find, _bstr_t *pbstr_found_name)
+TPOS	CMainFrame::xppane_find_by_pos(long idx_find, _bstr_t *pbstr_found_name)
 {
 	for (TPOS lpos = m_map_xppanename2extpos.head(); lpos; lpos = m_map_xppanename2extpos.next(lpos))
 	{
-		if (lpos_find == m_map_xppanename2extpos.get(lpos))
+		if (idx_find == m_map_xppanename2extpos.get(lpos))
 		{
 			if (pbstr_found_name)
 				*pbstr_found_name = m_map_xppanename2intpos.get_key(lpos);

@@ -572,7 +572,7 @@ sptrIBlankView CDBControlImpl::GetBlankView( CWnd* pCtrlWnd )
 	sptrIDocumentSite spDocSite( pUnkActiveDoc );
 	pUnkActiveDoc->Release();
 
-	long	lPos = 0;
+	LPOS lPos = 0;
 	spDocSite->GetFirstViewPosition( &lPos );
 
 	while( lPos )

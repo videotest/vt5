@@ -50,7 +50,7 @@ protected:
 class CWaitDlg : public CDialog
 {
 	DECLARE_DYNAMIC(CWaitDlg)
-	UINT m_timerID;
+	UINT_PTR m_timerID;
 	CRect m_rectAnime;
 	CRect m_drawRect, m_redrawRect;
 	HBITMAP m_hBitmap;

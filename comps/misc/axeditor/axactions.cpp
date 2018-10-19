@@ -45,7 +45,7 @@ IUnknown *CAxActionBase::GetNext( POSITION &pos )
 
 int CAxActionBase::GetControlsCount()
 {
-	return m_ptrList.GetCount();
+	return (int)m_ptrList.GetCount();
 }
 
 bool CAxActionBase::InitList()
@@ -706,7 +706,7 @@ bool CActionAddEventHandlers::Invoke()
 					punkScript->Release();
 				long nLineCount = 0;
 				//sptrScript->GetLinesCount(&nLineCount);
-				int nEventsCount = dlg.m_arrEvents.GetSize();
+				int nEventsCount = (int)dlg.m_arrEvents.GetSize();
 				for(int i = 0; i < nEventsCount; i++)
 				{
 					if(dlg.m_arrEvents[i] != "")

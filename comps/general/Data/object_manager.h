@@ -99,9 +99,9 @@ protected:
 
 	// Generated OLE dispatch map functions
 	//{{AFX_DISPATCH(object_manager)
-	afx_msg long GetFirstObjectTypePos();
-	afx_msg long GetNextObjectTypePos(long lPos);
-	afx_msg BSTR GetObjectType(long lPos);
+	afx_msg TPOS GetFirstObjectTypePos();
+	afx_msg TPOS GetNextObjectTypePos(TPOS lPos);
+	afx_msg BSTR GetObjectType(TPOS lPos);
 	afx_msg LONG_PTR GetNextObjectPos(LPCTSTR pszType, LONG_PTR lPos);
 	afx_msg LONG_PTR GetFirstObjectPos(LPCTSTR pszType);
 	afx_msg BSTR GetObjectName(LPCTSTR pszType, LONG_PTR lPos);
@@ -118,8 +118,8 @@ protected:
 
 	BEGIN_INTERFACE_PART(ObjectManager, IObjectManager)
 		//enum types
-		com_call GetFirstObjectTypePos( long* plPos );
-		com_call GetNextObjectType( long* plPos, BSTR* pbstrTypeName );
+		com_call GetFirstObjectTypePos( TPOS *plPos );
+		com_call GetNextObjectType( TPOS *plPos, BSTR* pbstrTypeName );
 
 		//enum names
 		com_call GetFirstObjectNamePos( BSTR bstrType, LONG_PTR * plPos );

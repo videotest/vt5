@@ -1600,7 +1600,7 @@ INT_PTR CBCGToolBar::OnToolHitTest(CPoint point, TOOLINFO* pTI) const
 	}
 
 	// check child windows first by calling CControlBar
-	int nHit = CControlBar::OnToolHitTest(point, pTI);
+	INT_PTR nHit = CControlBar::OnToolHitTest(point, pTI);
 	if (nHit != -1)
 		return nHit;
 

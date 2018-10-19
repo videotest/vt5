@@ -62,7 +62,7 @@ void CPrioritiesMgr::ReadPriority(LPCTSTR lpstrSec, LPCTSTR lpstrEntry, int nDef
 
 void CPrioritiesMgr::Reposition()
 {
-	for (int i = GetSize()-1; i >= 0; i--)
+	for (int i = (int)GetSize()-1; i >= 0; i--)
 	{
 		CPriorityArr *p = GetAt(i);
 		if (p)

@@ -2174,7 +2174,7 @@ void CManualMeasObject::CalcParallelLinesMatrix(IUnknown *punkParent, IUnknown *
 	ICalcObjectContainerPtr sptrCOCObjLst(sptrObjList);
 	int k;
 	// Check for existance of necessary keys in container
-	long lpos = 0;
+	LPOS lpos = 0;
 	int nKeys = min(arrLines.GetSize(), m_arrKeys.GetSize());
 	IUnknownPtr pgroup(GetMeasManualGroup(),false);
 	IMeasParamGroupPtr	ptrGroup = pgroup;

@@ -345,7 +345,7 @@ bool CQueryObject::ClearUndoRedoList()
 		return;
 
 	
-	long lPos = 0;
+	LPOS lPos = 0;
 	ptrDS->GetFirstViewPosition( &lPos );
 	while( lPos )
 	{
@@ -447,7 +447,7 @@ bool CQueryObject::ClearUndoRedoList()
 					punkTestObj->Release();
 
 				
-				long lPosGrp = -1;
+				LPOS lPosGrp = -1;
 				ptrND->GetBaseGroupFirstPos( &lPosGrp );
 				while( lPosGrp )
 				{

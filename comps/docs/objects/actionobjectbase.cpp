@@ -59,7 +59,7 @@ IMPLEMENT_UNKNOWN(CActionObjectBase, DrAction)
 HRESULT CActionObjectBase::XDrAction::GetFirstObjectPosition(LONG_PTR *plpos)
 {
 	METHOD_PROLOGUE_EX(CActionObjectBase, DrAction);
-	(*plpos) = (long)pThis->m_listToDocument.GetHeadPosition();
+	(*plpos) = (LONG_PTR)pThis->m_listToDocument.GetHeadPosition();
 	return S_OK;
 }
 HRESULT CActionObjectBase::XDrAction::GetNextObject(IUnknown **ppunkObject, LONG_PTR *plpos)
@@ -68,7 +68,7 @@ HRESULT CActionObjectBase::XDrAction::GetNextObject(IUnknown **ppunkObject, LONG
 
 	POSITION	pos = (POSITION)*plpos;
 	*ppunkObject = (IUnknown*)pThis->m_listToDocument.GetNext( pos );
-	*plpos = (long)pos;
+	*plpos = (LONG_PTR)pos;
 	if( *ppunkObject )(*ppunkObject)->AddRef();
 
 	return S_OK;

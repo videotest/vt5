@@ -231,8 +231,8 @@ private:
 	long m_lVirtClasses;
 public:
 	void GetVirtualClasses(bool& bVirtualClasses, long& lVirtClasses);
-	COLORREF get_class_color( long lpos );
-	const char* get_class_name( long lpos );
+	COLORREF get_class_color( LPOS lpos );
+	const char* get_class_name( LPOS lpos );
 };
 
 	//////////////////////////////////////////////////////////////////////

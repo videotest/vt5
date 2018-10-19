@@ -552,7 +552,7 @@ bool CActionMtdExportMethod::Invoke()
 
 	if( str_mtd_name.IsEmpty() )
 	{
-		long lpos_active_mtd = 0;
+		LPOS lpos_active_mtd = 0;
 		if( S_OK != sptr_mtd_man->GetActiveMethodPos( &lpos_active_mtd ) )
 			return false;			
 
@@ -566,7 +566,7 @@ bool CActionMtdExportMethod::Invoke()
 	}
 	else
 	{	
-        long lpos_mtd = 0;
+        LPOS lpos_mtd = 0;
 		sptr_mtd_man->GetFirstMethodPos( &lpos_mtd );
 		while( lpos_mtd )
 		{

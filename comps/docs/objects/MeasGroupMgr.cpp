@@ -138,9 +138,9 @@ long	CMeasurementManager::get_groups_priority( IUnknown *punk_group )
 void	CMeasurementManager::sort_groups( )
 {	// sort groups by Desc
 
-    long lCount = m_ptrs.GetCount( );
+    long lCount = (long)m_ptrs.GetCount( );
 
-	if( lCount != m_strs.GetCount( ) )
+	if( lCount != (long)m_strs.GetCount( ) )
 		return;
 
 	for( long i = 0; i < lCount; i++ )

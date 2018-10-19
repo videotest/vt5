@@ -122,6 +122,16 @@ CStreamEx& CStreamEx::operator<<(LONG l)
 }
 
 //////////////////////////////////////////////////////////////////////
+//CStreamEx& CStreamEx::operator<<(LONG_PTR l)
+//{
+//	Verify();
+//
+//	Write( (void*)&l, sizeof(LONG_PTR) );
+//
+//	return *this;
+//}
+
+//////////////////////////////////////////////////////////////////////
 CStreamEx& CStreamEx::operator<<(DWORD dw)
 {
 	Verify();
@@ -224,6 +234,16 @@ CStreamEx& CStreamEx::operator>>(LONG& l)
 
 	return *this;
 }
+
+//////////////////////////////////////////////////////////////////////
+//CStreamEx& CStreamEx::operator>>(LONG_PTR& l)
+//{
+//	Verify();
+//
+//	Read( (void*)&l, sizeof(LONG_PTR) );	
+//
+//	return *this;
+//}
 
 //////////////////////////////////////////////////////////////////////
 CStreamEx& CStreamEx::operator>>(float& f)

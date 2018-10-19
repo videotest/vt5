@@ -1400,7 +1400,7 @@ void CActionHelper::AttachActivesObjectFromContext( bool bAttach )
 
 			if (nCount)
 			{
-				long lPos = 0;
+				TPOS lPos = 0;
 				ptrSrc->GetFirstChildPos(bstrType, 0, &lPos);
 				while (lPos)
 				{

@@ -110,7 +110,7 @@ public:
 	int GetSplitterColCount(){ return m_nSplitterColCount; }
 	CSize GetSplitterWndSize(){ return m_sizeSplitterWnd; }
 
-	int GetSplitterViewDescriptionCount();
+	INT_PTR GetSplitterViewDescriptionCount();
 	CViewDescription* GetSplitterViewDescriptionItem( int nIndex );
 
 protected:
@@ -128,7 +128,7 @@ protected:
 	//	Active object
 public:
 	bool CreateActiveObjectList();
-	int GetActiveObjectListCount();
+	INT_PTR GetActiveObjectListCount();
 	CViewObjectList* GetActiveObjectListItem( int nIndex );
 
 protected:

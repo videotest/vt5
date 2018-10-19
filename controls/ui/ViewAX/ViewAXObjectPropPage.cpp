@@ -484,7 +484,7 @@ BOOL CViewAXObjectPropPage::OnNotify(WPARAM wParam, LPARAM lParam, LRESULT* pRes
 
 						bstrObjectName = bstrObjectType = 0;
 
-						long nSavePos = lPos;
+						LONG_PTR nSavePos = lPos;
 						sptrV->GetNextObject( &bstrObjectName, &bActiveObject, &bstrObjectType, &lPos );
 
 						CString strObjectName, strObjectType;

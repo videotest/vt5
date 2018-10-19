@@ -431,14 +431,14 @@ BOOL CShellToolbarButton::OnContextHelp( CWnd *pwnd )
 	if( strs.GetSize() == 0 )
 		return true;
 
-	int	idx1 = strs.Find( "<!-- list start -->" );
-	int	idx2 = strs.Find( "<!-- list end -->" );
+	INT_PTR	idx1 = strs.Find( "<!-- list start -->" );
+	INT_PTR	idx2 = strs.Find( "<!-- list end -->" );
 
 	if( idx1 == -1 || idx2 == -1 || idx2 < idx1+1 )
 		return true;
 
 	strs.RemoveAt( idx1+1, idx2-idx1-2 );
-	int	idx = idx1+1;
+	int	idx = (int)idx1+1;
 
 	strs.InsertAt( idx++, "<ul>" );
 

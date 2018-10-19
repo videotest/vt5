@@ -356,7 +356,7 @@ bool data_context_ctrl::fill_control( HWND hwnd )
 
 	CString str_name;
 
-	long lpos = 0;
+	LPOS lpos = 0;
 	_bstr_t bstr_type = get_object_type();
 	ptr_dc->GetFirstObjectPos( bstr_type, &lpos );
 	while( lpos )
@@ -501,7 +501,7 @@ CString	data_context_ctrl::get_active_object_name_from_context()
 
 					
 					GUID guid_group = guid_base;
-					long lpos_group = 0;					
+					LPOS lpos_group = 0;					
 					ptr_nd->GetBaseGroupObjectFirstPos( &guid_group, &lpos_group );
 					while( lpos_group )
 					{
@@ -622,7 +622,7 @@ HRESULT data_context_ctrl::XDataContextCtrl::OnSelChange( HWND hwnd_combo )
 			return S_FALSE;
 
 
-		int nidx = ::SendMessage( hwnd_combo, CB_GETCURSEL, 0, 0 );
+		int nidx = (int)::SendMessage( hwnd_combo, CB_GETCURSEL, 0, 0 );
 		if( nidx == -1 ) 
 			return S_FALSE;
 
@@ -683,7 +683,7 @@ long data_context_ctrl::GetItemCount()
 	if( !m_ar_combo.GetSize() )
 		return 0;
 	
-	return ::SendMessage( m_ar_combo[0], CB_GETCOUNT, 0, 0 );
+	return (long)::SendMessage( m_ar_combo[0], CB_GETCOUNT, 0, 0 );
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////
@@ -705,7 +705,7 @@ BSTR data_context_ctrl::GetItemString(long idx)
 long data_context_ctrl::GetItemData(long idx) 
 {
 	if( m_ar_combo.GetSize() != 0 )
-		return ::SendMessage( m_ar_combo[0], CB_GETITEMDATA, idx, 0 );	
+		return (long)::SendMessage( m_ar_combo[0], CB_GETITEMDATA, idx, 0 );	
 
 	return -1;
 }
@@ -727,10 +727,10 @@ long data_context_ctrl::AddItem(LPCTSTR str_item, long data, long idx)
 	if( !m_ar_combo.GetSize() )
 		return -1;
 
-	int lpos = ::SendMessage( m_ar_combo[0], CB_INSERTSTRING, idx, (LPARAM)str_item );
+	INT_PTR lpos = ::SendMessage( m_ar_combo[0], CB_INSERTSTRING, idx, (LPARAM)str_item );
 	::SendMessage( m_ar_combo[0], CB_SETITEMDATA, lpos, data );	
 
-	return lpos;
+	return (long)lpos;
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////
@@ -739,7 +739,7 @@ long data_context_ctrl::GetCurSel()
 	if( !m_ar_combo.GetSize() )
 		return -1;
 
-	return ::SendMessage( m_ar_combo[0], CB_GETCURSEL, 0, 0 );
+	return (long)::SendMessage( m_ar_combo[0], CB_GETCURSEL, 0, 0 );
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////

@@ -592,7 +592,7 @@ bool CActionSewMoveFragment::DoRButtonUp( _point point )
 		// 2. Find base fragment.
 		ISewFragmentPtr sptrFragFound = GetLastFragByPoint(lposLast,m_sptrSLI,point);
 		/*ISewFragmentPtr sptrFragFound;
-		long lPos = lposLast;
+		LPOS lPos = lposLast;
 		while (lPos)
 		{
 			ISewFragmentPtr sptrFrag;

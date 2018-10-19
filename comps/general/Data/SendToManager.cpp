@@ -613,7 +613,7 @@ static bool IsBaseObject(INamedDataPtr ptrND, GuidKey guidObj)
 		if( punkParent != 0)
 			return false;
 	}
-	long lGroupPos = 0;
+	TPOS lGroupPos = 0;
 	ptrND->GetBaseGroupFirstPos( &lGroupPos );
 	while( lGroupPos )
 	{
@@ -1029,7 +1029,7 @@ HRESULT CSendToManager::XSendToManager::GetSourceDocGuid( GUID* pDocGuid )
 }
 
 /////////////////////////////////////////////////////////////////////////////
-HRESULT CSendToManager::XSendToManager::GetFirstObjectPos( long* plPos )
+HRESULT CSendToManager::XSendToManager::GetFirstObjectPos( TPOS *plPos )
 {
 	_try_nested(CSendToManager, SendToManager, GetFirstObjectPos)
 	{				
@@ -1041,7 +1041,7 @@ HRESULT CSendToManager::XSendToManager::GetFirstObjectPos( long* plPos )
 }
 
 /////////////////////////////////////////////////////////////////////////////
-HRESULT CSendToManager::XSendToManager::GetNextObjectPos( GUID* pObjGuid, long* plPos )
+HRESULT CSendToManager::XSendToManager::GetNextObjectPos( GUID* pObjGuid, TPOS *plPos )
 {
 	_try_nested(CSendToManager, SendToManager, GetNextObjectPos)
 	{				

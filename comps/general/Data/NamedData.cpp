@@ -379,7 +379,7 @@ bool CNamedData::XEntry::Serialize( CStreamEx &ar )
 
 int CNamedData::XEntry::GetEntriesCount()
 {
-	return m_arrChildEntries.GetSize();
+	return (int)m_arrChildEntries.GetSize();
 }
 
 CNamedData::XEntry *
@@ -650,7 +650,7 @@ void CNamedData::XType::UnRegisterObject( IUnknown *punk )
 //returns count of objects give type in given named data
 long CNamedData::XType::GetObjectsCount()
 {
-	return m_objects.GetCount();
+	return (long)m_objects.GetCount();
 }
 
 //returns first object position
@@ -1027,7 +1027,7 @@ BSTR CNamedData::GetEntryName(long index)
 
 long CNamedData::GetTypesCount() 
 {
-	return m_ptrsTypes.GetSize();
+	return (long)m_ptrsTypes.GetSize();
 }
 
 	//get type by index
@@ -1183,7 +1183,7 @@ HRESULT CNamedData::XData::DeleteEntry( BSTR bstrName )
 			pEntry = pEntry->m_pparent;
 		}
 
-		for( int i=arEntry.GetSize()-1;i>=0;i-- )
+		for( int i=(int)arEntry.GetSize()-1;i>=0;i-- )
 		{
 			if( arEntry[i].IsEmpty() )
 				continue;
@@ -1392,24 +1392,24 @@ HRESULT CNamedData::XData::GetBaseGroupCount(int * pnCount)
 		if (!pnCount)
 			return E_INVALIDARG;
 
-		*pnCount = pThis->m_mapBase.GetCount();
+		*pnCount = (int)pThis->m_mapBase.GetCount();
 		return S_OK;
 	}
 }
 
-HRESULT CNamedData::XData::GetBaseGroupFirstPos(long * plPos)
+HRESULT CNamedData::XData::GetBaseGroupFirstPos(TPOS *plPos)
 {
 	METHOD_PROLOGUE_EX(CNamedData, Data)
 	{
 		if (!plPos)
 			return E_INVALIDARG;
 
-		*plPos = (long)pThis->m_mapBase.GetStartPosition();
+		*plPos = pThis->m_mapBase.GetStartPosition();
 		return S_OK;
 	}
 }
 
-HRESULT CNamedData::XData::GetNextBaseGroup(GUID * pKey, long * plPos)
+HRESULT CNamedData::XData::GetNextBaseGroup(GUID * pKey, TPOS *plPos)
 {
 	METHOD_PROLOGUE_EX(CNamedData, Data)
 	{
@@ -1424,7 +1424,7 @@ HRESULT CNamedData::XData::GetNextBaseGroup(GUID * pKey, long * plPos)
 
 		CBaseGroup * pData = 0;
 		pThis->m_mapBase.GetNextAssoc(pos, *pKey, pData);
-		*plPos = (long)pos;
+		*plPos = pos;
 		return S_OK;
 	}
 }
@@ -1465,7 +1465,7 @@ HRESULT CNamedData::XData::GetBaseGroupBaseObject(GUID * pKey, IUnknown ** ppunk
 	}
 }
 
-HRESULT CNamedData::XData::GetBaseGroupObjectFirstPos(GUID * pKey, long * plPos)
+HRESULT CNamedData::XData::GetBaseGroupObjectFirstPos(GUID * pKey, TPOS *plPos)
 {
 	METHOD_PROLOGUE_EX(CNamedData, Data)
 	{
@@ -1478,13 +1478,13 @@ HRESULT CNamedData::XData::GetBaseGroupObjectFirstPos(GUID * pKey, long * plPos)
 			return E_INVALIDARG;
 
 		if (pData && pData->list.GetCount())
-			*plPos = (long)(pData->list.GetHeadPosition());
+			*plPos = (pData->list.GetHeadPosition());
 
 		return S_OK;
 	}
 }
 
-HRESULT CNamedData::XData::GetBaseGroupNextObject(GUID * pKey, long * plPos, IUnknown ** ppunkObject)
+HRESULT CNamedData::XData::GetBaseGroupNextObject(GUID * pKey, TPOS *plPos, IUnknown ** ppunkObject)
 {
 	METHOD_PROLOGUE_EX(CNamedData, Data)
 	{
@@ -1498,7 +1498,7 @@ HRESULT CNamedData::XData::GetBaseGroupNextObject(GUID * pKey, long * plPos, IUn
 
 		POSITION pos = (POSITION)*plPos;
 		*ppunkObject = (IUnknown*)pData->list.GetNext(pos);
-		*plPos = (long)pos;
+		*plPos = pos;
 
 		if (*ppunkObject)
 			(*ppunkObject)->AddRef();
@@ -1520,7 +1520,7 @@ HRESULT CNamedData::XData::GetBaseGroupObjectsCount(GUID * pKey, int * pnCount)
 			return E_INVALIDARG;
 
 		if (pData)
-			*pnCount = pData->list.GetCount();
+			*pnCount = (int)pData->list.GetCount();
 
 		return S_OK;
 	}
@@ -1605,7 +1605,7 @@ IUnknown* GetObjectByNameAndType(IUnknown * pNamedData, LPCTSTR szObjName, LPCTS
 			::SysFreeString(bstrType);
 
 			// else try to find object
-			long lpos = 0;
+			LPOS lpos = 0;
 			sptrMgr->GetObjectFirstPosition(index, &lpos);
 			// looking for object with requested name
 			while (lpos)
@@ -1747,7 +1747,7 @@ HRESULT CNamedData::XTypes::GetObjectFirstPosition( long nType, LONG_PTR *plpos 
 	METHOD_PROLOGUE_EX(CNamedData, Types)
 
 	XType	*pT = pThis->GetType( nType );
-	(*plpos) = (long)pT->GetFirstObjectPosition();
+	(*plpos) = (LONG_PTR)pT->GetFirstObjectPosition();
 	return S_OK;
 }
 
@@ -2299,7 +2299,7 @@ void StoreEntryToText( CNamedData *pdata, CNamedData::XEntry *pe, CStringArrayEx
 		{
 			str.Format( "%s:%s=\n%s\n%s", (const char *)pe->m_strEntry, (const char *)strType, (const char *)strValue, (const char *)END_OF_MLS );
 			str.Remove('\r'); // удалим все CR - хватит и LF
-			if( !sa[sa.GetSize()-1].IsEmpty() )
+			if( !sa[(int)sa.GetSize()-1].IsEmpty() )
 				sa.Add( "" );
 			sa.Add( str );
 			sa.Add( "" );
@@ -2362,7 +2362,7 @@ void StoreEntryToText( CNamedData *pdata, CNamedData::XEntry *pe, CStringArrayEx
 					GetHGlobalFromStream( ptrStream, &h );
 					if( h )
 					{
-						DWORD  dwLen = GlobalSize( h );
+						long dwLen = (long)GlobalSize( h );
 
 						sa.Add( METHOD_BINARY );
 

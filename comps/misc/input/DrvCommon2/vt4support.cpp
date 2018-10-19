@@ -5,7 +5,7 @@
 
 void _addsubdir( char *pszResName, const char *szName, const char *szSubdirName )
 {
-	int	ilen = ::strlen( szName );
+	int	ilen = (int)::strlen( szName );
 	if( !ilen )
 	{
 		::strcpy( pszResName, szSubdirName );
@@ -24,7 +24,7 @@ void _addsubdir( char *pszResName, const char *szName, const char *szSubdirName 
 
 void _deletesubdir( char *pszResName, const char *szName, const int iCount )
 {
-	int	ilen = ::strlen( szName );
+	int	ilen = (int)::strlen( szName );
 
 	::strcpy( pszResName, szName );
 

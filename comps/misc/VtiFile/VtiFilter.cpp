@@ -723,7 +723,7 @@ void CVtiFileFilter::InitObjectsList(const char *pszFileName)
 			IUnknownPtr ptrGroup;
 			sptrCManMMan->GetComponentUnknownByIdx(iGroup, &ptrGroup);
 			IMeasParamGroupPtr sptrMPGr(ptrGroup);
-			long lPosParam;
+			LPOS lPosParam;
 			sptrMPGr->GetFirstPos(&lPosParam);
 			while (lPosParam)
 			{

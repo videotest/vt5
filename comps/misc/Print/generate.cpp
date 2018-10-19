@@ -594,7 +594,7 @@ BOOL ProcessReport( IUnknown** ppunkReport, IUnknown* punkDoc )
 
 		if (nObjCountOfType)
 		{
-			long lPos = 0;
+			TPOS lPos = 0;
 			sptrC->GetFirstChildPos(bstrType, 0, &lPos);
 			while (lPos)
 			{

@@ -1404,7 +1404,7 @@ LRESULT CFuncMethodListCtrl::on_mousemove(const _point &point)
 			{
 				int ndrop_to = st_lvhittest.iItem;		
 				int ndrag_item_old = m_ndrag_item;
-				long lpos_drag = 0;
+				LPOS lpos_drag = 0;
 				CMethodStep step_data_drag,
 					step_data_dropto;
 

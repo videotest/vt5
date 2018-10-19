@@ -115,10 +115,10 @@ bool CStatGrid::fill_grid( bool bload_from_shell_data )
 	{
 		std::sort(m_list_col.begin(), m_list_col.end(), less_col_info );
 
-		//for( long lpos1=m_list_col.head(); lpos1; lpos1=m_list_col.next(lpos1) )
+		//for( LPOS lpos1=m_list_col.head(); lpos1; lpos1=m_list_col.next(lpos1) )
 		//{
 		//	stat_col_info* pinfo1 = m_list_col.get( lpos1 );
-		//	for( long lpos2=lpos1; lpos2; lpos2=m_list_col.next(lpos2) )
+		//	for( LPOS lpos2=lpos1; lpos2; lpos2=m_list_col.next(lpos2) )
 		//	{
 		//		stat_col_info* pinfo2 = m_list_col.get( lpos2 );
 		//		if( pinfo1->m_order > pinfo2->m_order && 
@@ -502,7 +502,7 @@ bool CStatGrid::save_state( long lflags )
 		ListColumnInfo lci;
 		lci.uiMask	= LSTINF_ORDER|LSTINF_WIDTH;
 		GetColumnProp( ncol, &lci );
-//		long lpos_map = m_map_col.find( ncol );
+//		LPOS lpos_map = m_map_col.find( ncol );
 		CMapColInfo::const_iterator itCol = m_map_pcol->find( ncol );
 		if( m_map_pcol->end()==itCol )
 		{

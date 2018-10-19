@@ -661,13 +661,13 @@ LONG_PTR CObjectsDisp::GetFirstObjectPos(LPCTSTR szType)
 	if (sptrContext == 0)
 		return 0;
 	
-	long lPos = 0;
+	TPOS lPos = 0;
 	sptrContext->GetFirstChildPos(_bstr_t(szType), 0, &lPos);
 
-	return lPos;
+	return (LONG_PTR)lPos;
 }
 
-long CObjectsDisp::GetNextObjectPos(LPCTSTR szType, long lPos) 
+LPOS CObjectsDisp::GetNextObjectPos(LPCTSTR szType, LPOS lPos) 
 {
 	// TODO: Add your dispatch handler code here
 	if(!CheckType(szType))
@@ -687,12 +687,12 @@ long CObjectsDisp::GetNextObjectPos(LPCTSTR szType, long lPos)
 		return 0;
 	
 	IUnknownPtr sptrObj;
-	sptrContext->GetNextChild(_bstr_t(szType), 0, &lPos, &sptrObj);
+	sptrContext->GetNextChild(_bstr_t(szType), 0, (TPOS*)&lPos, &sptrObj);
 
 	return lPos;
 }
 
-long CObjectsDisp::GetLastObjectPos(LPCTSTR szType) 
+LPOS CObjectsDisp::GetLastObjectPos(LPCTSTR szType) 
 {
 	// TODO: Add your dispatch handler code here
 	if(!CheckType(szType))
@@ -705,14 +705,14 @@ long CObjectsDisp::GetLastObjectPos(LPCTSTR szType)
 	if (sptrContext == 0)
 		return 0;
 	
-	long lPos = 0;
+	LPOS lPos = 0;
 	IUnknownPtr sptrObj;
-	sptrContext->GetLastChildPos(_bstr_t(szType), 0, &lPos);
+	sptrContext->GetLastChildPos(_bstr_t(szType), 0, (TPOS*)&lPos);
 
 	return lPos;
 }
 
-long CObjectsDisp::GetPrevObjectPos(LPCTSTR szType, long lPos) 
+LPOS CObjectsDisp::GetPrevObjectPos(LPCTSTR szType, LPOS lPos) 
 {
 	if(!CheckType(szType))
 	{
@@ -731,12 +731,12 @@ long CObjectsDisp::GetPrevObjectPos(LPCTSTR szType, long lPos)
 		return 0;
 
 	IUnknownPtr sptrObj;
-	sptrContext->GetPrevChild(_bstr_t(szType), 0, &lPos, &sptrObj);
+	sptrContext->GetPrevChild(_bstr_t(szType), 0, (TPOS*)&lPos, &sptrObj);
 
 	return lPos;
 }
 
-LPDISPATCH CObjectsDisp::GetObject(LPCTSTR szType, long lPos) 
+LPDISPATCH CObjectsDisp::GetObject(LPCTSTR szType, LPOS lPos) 
 {
 	if(!CheckType(szType))
 	{
@@ -755,7 +755,7 @@ LPDISPATCH CObjectsDisp::GetObject(LPCTSTR szType, long lPos)
 		return 0;
 	
 	IUnknownPtr sptrObj;
-	sptrContext->GetNextChild(_bstr_t(szType), 0, &lPos, &sptrObj);
+	sptrContext->GetNextChild(_bstr_t(szType), 0, (TPOS*)&lPos, &sptrObj);
 
 	IDispatch* pdisp = 0;
 
@@ -821,7 +821,7 @@ void CObjectsDisp::GetLastSelectedObjectPos(LPCTSTR szType, VARIANT FAR* pvarPos
 	LONG_PTR lPos = 0;	
 	sptrContext->GetLastSelectedPos(_bstr_t(szType), &lPos );	
 
-	*pvarPos = _variant_t( (long)lPos );	
+	*pvarPos = _variant_t( lPos );	
 	
 }
 
@@ -893,7 +893,7 @@ LPDISPATCH CObjectsDisp::GetPrevSelectedObject(LPCTSTR szType, VARIANT FAR* pvar
 		punk->Release();
 	}		
 
-	*pvarPos = _variant_t( (long)lPos );	
+	*pvarPos = _variant_t( lPos );	
 
 	return pdisp;
 }
@@ -1052,7 +1052,7 @@ BSTR CObjectsDisp::GenerateNewKey()
 	return _guid_to_bstr( &guid );
 }
 
-BSTR CObjectsDisp::GetBaseObjectKey( LPCTSTR szType, long lPos )
+BSTR CObjectsDisp::GetBaseObjectKey( LPCTSTR szType, LPOS lPos )
 {
 	if(!CheckType(szType))
 	{
@@ -1071,7 +1071,7 @@ BSTR CObjectsDisp::GetBaseObjectKey( LPCTSTR szType, long lPos )
 		return 0;
 	
 	IUnknownPtr sptrObj;
-	sptrContext->GetNextChild(_bstr_t(szType), 0, &lPos, &sptrObj);
+	sptrContext->GetNextChild(_bstr_t(szType), 0, (TPOS*)&lPos, &sptrObj);
 
 	if( sptrObj == 0 )
 		return 0;
@@ -1105,7 +1105,7 @@ BSTR CObjectsDisp::_guid_to_bstr( LPGUID lpGuid )
 	return bstrGuid.copy();
 }
 
-BOOL CObjectsDisp::SetBaseObjectKey( LPCTSTR szType, long lPos, LPCTSTR lpctVal )
+BOOL CObjectsDisp::SetBaseObjectKey( LPCTSTR szType, LPOS lPos, LPCTSTR lpctVal )
 {
 	if(!CheckType(szType))
 	{
@@ -1124,7 +1124,7 @@ BOOL CObjectsDisp::SetBaseObjectKey( LPCTSTR szType, long lPos, LPCTSTR lpctVal 
 		return false;
 	
 	IUnknownPtr sptrObj;
-	sptrContext->GetNextChild(_bstr_t(szType), 0, &lPos, &sptrObj);
+	sptrContext->GetNextChild(_bstr_t(szType), 0, (TPOS*)&lPos, &sptrObj);
 
 	if( sptrObj == 0 )
 		return false;
@@ -1148,7 +1148,7 @@ BOOL CObjectsDisp::SetBaseObjectKey( LPCTSTR szType, long lPos, LPCTSTR lpctVal 
 
 }
 
-BOOL CObjectsDisp::IsBaseObject( LPCTSTR szType, long lPos )
+BOOL CObjectsDisp::IsBaseObject( LPCTSTR szType, LPOS lPos )
 {
 	if(!CheckType(szType))
 	{
@@ -1167,7 +1167,7 @@ BOOL CObjectsDisp::IsBaseObject( LPCTSTR szType, long lPos )
 		return false;
 	
 	IUnknownPtr sptrObj;
-	sptrContext->GetNextChild(_bstr_t(szType), 0, &lPos, &sptrObj);
+	sptrContext->GetNextChild(_bstr_t(szType), 0, (TPOS*)&lPos, &sptrObj);
 
 	if( sptrObj == 0 )
 		return false;
@@ -1192,7 +1192,7 @@ void CObjectsDisp::_bstr_to_guid( LPCTSTR lpctVal, LPGUID lpGuid )
 	::CLSIDFromString( _bstr_t(lpctVal), lpGuid );
 }
 
-BSTR CObjectsDisp::GetObjectKey( LPCTSTR szType, long lPos )
+BSTR CObjectsDisp::GetObjectKey( LPCTSTR szType, LPOS lPos )
 {
 	if(!CheckType(szType))
 	{
@@ -1211,7 +1211,7 @@ BSTR CObjectsDisp::GetObjectKey( LPCTSTR szType, long lPos )
 		return 0;
 	
 	IUnknownPtr sptrObj;
-	sptrContext->GetNextChild(_bstr_t(szType), 0, &lPos, &sptrObj);
+	sptrContext->GetNextChild(_bstr_t(szType), 0, (TPOS*)&lPos, &sptrObj);
 
 	if( sptrObj == 0 )
 		return 0;

@@ -1813,13 +1813,13 @@ bool CFilterStatTable::filter_table( IStatTable* pi_table )
 		list_classes.add_tail( lclass );
 	}
 
-	long lpos = 0;
+	LPOS lpos = 0;
 	pi_table->GetFirstRowPos( &lpos );
 	while( lpos )
 	{
 		bool bneed_remove = false;
 
-		long lpos_save = lpos;
+		LPOS lpos_save = lpos;
 		
 		stat_row* prow = 0;
 		pi_table->GetNextRow( &lpos, &prow );
@@ -1827,7 +1827,7 @@ bool CFilterStatTable::filter_table( IStatTable* pi_table )
 		//lookup in params
 		if( list_params.count() )
 		{
-			for( long lpos_param=list_params.head(); lpos_param; lpos_param=list_params.next(lpos_param) )
+			for( LPOS lpos_param=list_params.head(); lpos_param; lpos_param=list_params.next(lpos_param) )
 			{
 				filter_param* pparam = list_params.get( lpos_param );
 				stat_value* pvalue = 0;
@@ -1849,7 +1849,7 @@ bool CFilterStatTable::filter_table( IStatTable* pi_table )
 		//lookup in classes
 		if( list_classes.count() && !bneed_remove )
 		{			
-			long lpos_calc = lpos_save;
+			LPOS lpos_calc = lpos_save;
 			IUnknown* punk_child = 0;
 			ptr_ndo->GetNextChild( &lpos_calc, &punk_child );
 			if( punk_child )
@@ -1861,7 +1861,7 @@ bool CFilterStatTable::filter_table( IStatTable* pi_table )
 				{
 					bool bfound_class = false;
 					long lclass = get_object_class( ptr_calc, bstr_classes_file.length() ? (char*)bstr_classes_file : 0 );
-					for( long lpos_class=list_classes.head(); lpos_class; lpos_class=list_classes.next(lpos_class) )
+					for( LPOS lpos_class=list_classes.head(); lpos_class; lpos_class=list_classes.next(lpos_class) )
 					{
 						if( lclass == list_classes.get( lpos_class ) )
 						{

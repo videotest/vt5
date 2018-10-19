@@ -3,10 +3,6 @@
 
 //#include "utils.h"
 #include "defs.h"
-//struct __POSITION {};
-typedef __POSITION* POSITION;
-typedef POSITION TPOS;
-typedef LONG_PTR LPOS;
 
 #if defined(_WIN64)
 #define LONG_PTR_VAL llVal
@@ -163,14 +159,14 @@ interface INamedData : public IUnknown
 	com_call GetCurrentSection( BSTR* pbstrSection ) = 0;
 
 	com_call GetBaseGroupCount(int * pnCount) = 0;
-	com_call GetBaseGroupFirstPos(long * plPos) = 0;
-	com_call GetNextBaseGroup(GUID * pKey, long * plPos) = 0;
+	com_call GetBaseGroupFirstPos(TPOS *plPos) = 0;
+	com_call GetNextBaseGroup(GUID * pKey, TPOS *plPos) = 0;
 	com_call GetIsBaseGroup(GUID * pKey, BOOL * pbBase) = 0;
 	com_call GetBaseGroupBaseObject(GUID * pKey, IUnknown ** ppunkObject) = 0;
 
 	com_call GetBaseGroupObjectsCount(GUID * pKey, int * pnCount) = 0;
-	com_call GetBaseGroupObjectFirstPos(GUID * pKey, long * plPos) = 0;
-	com_call GetBaseGroupNextObject(GUID * pKey, long * plPos, IUnknown ** ppunkObject) = 0;
+	com_call GetBaseGroupObjectFirstPos(GUID * pKey, TPOS *plPos) = 0;
+	com_call GetBaseGroupNextObject(GUID * pKey, TPOS *plPos, IUnknown ** ppunkObject) = 0;
 	com_call SetEmptySection( BSTR* bstrSectionName ) = 0;
 };
 
@@ -355,11 +351,11 @@ interface IDataContext2 : public IDataContext
 
 // child objects
 	com_call GetChildrenCount(BSTR bstrType, IUnknown * punkParent, long * plCount) = 0;
-	com_call GetFirstChildPos(BSTR bstrType, IUnknown * punkParent, long * plPos) = 0;
-	com_call GetNextChild(BSTR bstrType, IUnknown * punkParent, long * plPos, IUnknown ** ppunkChild) = 0;
-	com_call GetLastChildPos(BSTR bstrType, IUnknown * punkParent, long * plPos) = 0;
-	com_call GetPrevChild(BSTR bstrType, IUnknown * punkParent, long * plPos, IUnknown ** ppunkChild) = 0;
-	com_call GetChildPos(BSTR bstrType, IUnknown * punkParent, IUnknown * punkChild, long * plPos) = 0;
+	com_call GetFirstChildPos(BSTR bstrType, IUnknown * punkParent, TPOS *plPos) = 0;
+	com_call GetNextChild(BSTR bstrType, IUnknown * punkParent, TPOS *plPos, IUnknown ** ppunkChild) = 0;
+	com_call GetLastChildPos(BSTR bstrType, IUnknown * punkParent, TPOS *plPos) = 0;
+	com_call GetPrevChild(BSTR bstrType, IUnknown * punkParent, TPOS *plPos, IUnknown ** ppunkChild) = 0;
+	com_call GetChildPos(BSTR bstrType, IUnknown * punkParent, IUnknown * punkChild, TPOS *plPos) = 0;
 
 // selected objects
 	com_call GetObjectSelect(IUnknown * punkObject, BOOL * pbFlag) = 0;

@@ -7,31 +7,31 @@
 //#include "misc5.h"
 
 /*
-// moveParam and insertParam has long lPosAfter variable that can be 0 (it's means param lists's head) || -1 (it's means param lists's tail)
+// moveParam and insertParam has LPOS lPosAfter variable that can be 0 (it's means param lists's head) || -1 (it's means param lists's tail)
 interface IMeasParamGroup2 : public IMeasParamGroup
 {
-	com_call GetLastPos(long *plPos) = 0;
-	com_call GetPrevPos(long *plPos) = 0;
+	com_call GetLastPos(TPOS *plPos) = 0;
+	com_call GetPrevPos(TPOS *plPos) = 0;
 //	com_call AddParam(long lKey, BSTR bstrName, BSTR bstrFormat, DWORD dwFlag) = 0;
-	com_call InsertParam(long lKey, BSTR bstrName, BSTR bstrFormat, DWORD dwFlag, DWORD dwType, BSTR bstrAction, long lPosAfter) = 0;
-	com_call RemoveParam(long lPos) = 0;
+	com_call InsertParam(long lKey, BSTR bstrName, BSTR bstrFormat, DWORD dwFlag, DWORD dwType, BSTR bstrAction, LPOS lPosAfter) = 0;
+	com_call RemoveParam(LPOS lPos) = 0;
 //	com_call RemoveParamByKey(long lKey) = 0;
-	com_call MoveParam(long lPos, long lPosAfter) = 0;
+	com_call MoveParam(LPOS lPos, LPOS lPosAfter) = 0;
 
-	com_call GetParamInfo2(long lPos, long *plKey, BSTR *pbstrName, BSTR *pbstrFormat, DWORD *pdwFlag, DWORD * pdwType, BSTR * pbstrActionName) = 0;
-	com_call SetParamInfo2(long lPos, long *plKey, BSTR *pbstrName, BSTR *pbstrFormat, DWORD *pdwFlag, DWORD * pdwType, BSTR * pbstrActionName) = 0;
+	com_call GetParamInfo2(LPOS lPos, long *plKey, BSTR *pbstrName, BSTR *pbstrFormat, DWORD *pdwFlag, DWORD * pdwType, BSTR * pbstrActionName) = 0;
+	com_call SetParamInfo2(LPOS lPos, long *plKey, BSTR *pbstrName, BSTR *pbstrFormat, DWORD *pdwFlag, DWORD * pdwType, BSTR * pbstrActionName) = 0;
 
-//	com_call IsManualParam(long lPos, BOOL *bFlag) = 0;
-//	com_call SetManualParam(long lPos, BOOL bFlag) = 0;
+//	com_call IsManualParam(LPOS lPos, BOOL *bFlag) = 0;
+//	com_call SetManualParam(LPOS lPos, BOOL bFlag) = 0;
 
-//	com_call GetParamType(long lPos, DWORD * pdwType) = 0;
-//	com_call SetParamType(long lPos, DWORD dwType) = 0;
+//	com_call GetParamType(LPOS lPos, DWORD * pdwType) = 0;
+//	com_call SetParamType(LPOS lPos, DWORD dwType) = 0;
 
-//	com_call GetParamAction(long lPos, BSTR * pbstrActionName) = 0;
-//	com_call SetParamAction(long lPos, BSTR bstrActionName) = 0;
+//	com_call GetParamAction(LPOS lPos, BSTR * pbstrActionName) = 0;
+//	com_call SetParamAction(LPOS lPos, BSTR bstrActionName) = 0;
 
-	com_call GetActiveParamPos(long * plPos) = 0;
-	com_call SetActiveParamPos(long lPos) = 0;
+	com_call GetActiveParamPos(TPOS *plPos) = 0;
+	com_call SetActiveParamPos(LPOS lPos) = 0;
 
 	com_call RestoreState() = 0;
 	com_call SaveState() = 0;
@@ -39,13 +39,13 @@ interface IMeasParamGroup2 : public IMeasParamGroup
 
 interface IParamGroupManager : public IUnknown
 {
-	com_call ExcludeGroup(long *plPos) = 0;
+	com_call ExcludeGroup(TPOS *plPos) = 0;
 	com_call ExcludeGroup(IUnknown* punkGroup) = 0;
-	com_call IncludeGroup(IUnknown* punkGroup, long *plPos) = 0;
+	com_call IncludeGroup(IUnknown* punkGroup, TPOS *plPos) = 0;
 
-	com_call GetFirstPos(long *plPos) = 0;
-	com_call GetNextGroup(long *plPos, IUnknown **ppunk) = 0;
-	com_call GetGroupPos(IUnknown* punkGroup, long *plPos) = 0; //???
+	com_call GetFirstPos(TPOS *plPos) = 0;
+	com_call GetNextGroup(TPOS *plPos, IUnknown **ppunk) = 0;
+	com_call GetGroupPos(IUnknown* punkGroup, TPOS *plPos) = 0; //???
 	com_call GetGroupCount(int *pnCount) = 0;
 
 	com_call SaveState(IUnknown* punkNamedData) = 0;

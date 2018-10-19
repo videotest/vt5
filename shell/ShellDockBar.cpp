@@ -941,7 +941,7 @@ CSize CShellToolDockBar::CalcFixedLayout(BOOL bStretch, BOOL bHorz)
 	// prepare for layout
 	AFX_SIZEPARENTPARAMS layout;
 	layout.hDWP = m_bLayoutQuery ?
-		NULL : ::BeginDeferWindowPos(m_arrBars.GetSize());
+		NULL : ::BeginDeferWindowPos((int)m_arrBars.GetSize());
 	int cxBorder = 2;//afxData.cxBorder2; 
 	int cyBorder = 2;//afxData.cyBorder2;
 

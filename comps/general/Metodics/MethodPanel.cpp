@@ -555,7 +555,7 @@ BOOL	CMethodPanel::on_create_new_mtd(void)
 	if( sptr_mtd_man != 0 )
 	{	
 
-		long lpos_mtd = 0;
+		LPOS lpos_mtd = 0;
 		sptr_mtd_man->GetFirstMethodPos( &lpos_mtd );
 		if( lpos_mtd )
 		{

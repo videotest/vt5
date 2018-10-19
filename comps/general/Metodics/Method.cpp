@@ -699,7 +699,7 @@ HRESULT CMethod::XMethodData::UpdateActiveStep()
 		//{ // !!! debug // если разрешить - будет SBT 1385
 		//	long nIndex=-1;
 		//	GetStepIndexByPos(pThis->m_lActiveStepPos, &nIndex);
-		//	long lPos1 = pThis->m_lActiveStepPos;
+		//	LPOS lPos1 = pThis->m_lActiveStepPos;
 		//	CMethodStep* pStep=0;
 		//	GetNextStepPtr( &lPos1, &pStep );
 		//	CString s;

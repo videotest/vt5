@@ -839,7 +839,7 @@ HRESULT	CStatisticObject::_calculate_object( IUnknown *punkTable, long lClassDiv
 	if( m_setClassesForAll.size() == 1 && *m_setClassesForAll.begin() == -2 )
 		return E_FAIL;
 
-	long lPos = 0;
+	LPOS lPos = 0;
 
 	_bstr_t bstrClassFile = m_strClassFile;
 	long lClassC = 0;
@@ -1165,7 +1165,7 @@ HRESULT	CStatisticObject::_calculate_object( IUnknown *punkTable, long lClassDiv
 
 	//{
 	//	long lMeasKey = GetValueInt( ::GetAppUnknown(), SECT_STATUI_CHART_AXIS_ROOT, X_PARAM_KEY, 0 ); 
-	//	long lpos_map = m_map_meas_params.find( lMeasKey );
+	//	LPOS lpos_map = m_map_meas_params.find( lMeasKey );
 	//	if( lpos_map )
 	//	{
 	//		ParameterDescriptor_ex* pmp = m_map_meas_params.get( lpos_map );
@@ -2373,7 +2373,7 @@ void CStatisticObject::GetVirtualClasses(bool& bVirtualClasses, long& lVirtClass
 	lVirtClasses = -2;
 }
 
-COLORREF CStatisticObject::get_class_color( long lpos )
+COLORREF CStatisticObject::get_class_color( LPOS lpos )
 {
 	bool bVirtualClasses;
 	long lVirtClasses;
@@ -2384,7 +2384,7 @@ COLORREF CStatisticObject::get_class_color( long lpos )
 	return CColorsNames::get_class_color(lpos);
 }
 
-const char *CStatisticObject::get_class_name( long lpos )
+const char *CStatisticObject::get_class_name( LPOS lpos )
 {
 	bool bVirtualClasses;
 	long lVirtClasses;

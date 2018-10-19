@@ -464,7 +464,7 @@ CSmartLogDoubleEdit::CSmartLogDoubleEdit(int nIdEdit, int nIdSpin, int nIdSlider
 			m_arrValues.Add(d*i);
 		d *= 10.;
 	}
-	m_nMax = m_arrValues.GetSize()-1;
+	m_nMax = (int)m_arrValues.GetSize()-1;
 	m_nDef = PosByDValue(dDef);
 }
 

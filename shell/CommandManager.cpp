@@ -55,7 +55,7 @@ long CCommandManager::ToolBarData::GetSize()
 	ASSERT( m_arrIDs.GetSize() == m_arrPicts.GetSize() );
 	ASSERT( m_arrIDs.GetSize() == m_arrBmps.GetSize() );
 
-	return m_arrIDs.GetSize();
+	return (long)m_arrIDs.GetSize();
 }
 
 
@@ -589,7 +589,7 @@ void CCommandManager::Init()
 			pdata->hMenu = hMenu;
 			pdata->bPopupMenu = false;
 			pdata->strMenuName = strMenuTitle;
-			pdata->idx = m_ptrsMenuInfo.GetSize();
+			pdata->idx = (int)m_ptrsMenuInfo.GetSize();
 
 			m_ptrsMenuInfo.Add( pdata );
 
@@ -628,7 +628,7 @@ void CCommandManager::Init()
 					pdata->bDocumentMenu = false;
 					pdata->hMenu = menu.Detach();
 					pdata->strMenuName = (LPCSTR)pbstrUserNames[i];
-					pdata->idx = m_ptrsMenuInfo.GetSize();
+					pdata->idx = (int)m_ptrsMenuInfo.GetSize();
 					pdata->bPopupMenu = true;
 
 					m_ptrsMenuInfo.Add( pdata );
@@ -688,7 +688,7 @@ void CCommandManager::Init()
 		
 
 		//construct accelerator table
-		int	nAccelSize = m_ptrsAccel.GetSize();
+		int	nAccelSize = (int)m_ptrsAccel.GetSize();
 
 		if( nAccelSize != 0 )
 		{
@@ -927,7 +927,7 @@ void CCommandManager::AddMenuData( CActionInfoWrp *pinfo )
 				pdata->bDocumentMenu = false;
 				pdata->hMenu = menu.Detach();
 				pdata->strMenuName = sMenuName;
-				pdata->idx = m_ptrsMenuInfo.GetSize();
+				pdata->idx = (int)m_ptrsMenuInfo.GetSize();
 				pdata->bPopupMenu = bPopup;
 
 				m_ptrsMenuInfo.Add( pdata );
@@ -943,7 +943,7 @@ void CCommandManager::AddMenuData( CActionInfoWrp *pinfo )
 			menu.Attach( hMenu );
 			hMenu = 0;
 
-			UINT nCurrentCmd = ID_CMDMAN_BASE+m_ptrsInfo.GetSize()-1;
+			UINT nCurrentCmd = (UINT)ID_CMDMAN_BASE+m_ptrsInfo.GetSize()-1;
 			CString	s;
 
 			int idx = 0;
@@ -1044,7 +1044,7 @@ int CCommandManager::GetBitmapNo( CActionInfoWrp *pinfo )
 
 int	CCommandManager::GetMenuCount()
 {
-	return m_ptrsMenuInfo.GetSize();
+	return (int)m_ptrsMenuInfo.GetSize();
 }
 
 CCommandManager::MenuData *
@@ -1256,12 +1256,12 @@ void CCommandManager::OnUpdateCommandPopupMenu( CCmdUI *pCmdUI )
 
 int CCommandManager::GetToolBarCount()
 {
-	return m_ptrsToolBarInfo.GetSize();
+	return (int)m_ptrsToolBarInfo.GetSize();
 }
 
 int CCommandManager::GetBitmapCount()
 {
-	return m_ptrsBitmapInfo.GetSize();	
+	return (int)m_ptrsBitmapInfo.GetSize();	
 }
 
 CActionInfoWrp *CCommandManager::GetActionInfo( const GUID guid )
@@ -1312,7 +1312,7 @@ int CCommandManager::GetActionCommand( const char *szActionName )
 
 int CCommandManager::GetActionInfoCount()
 {
-	return m_ptrsInfo.GetSize();
+	return (int)m_ptrsInfo.GetSize();
 }
 
 bool CCommandManager::GetMessageString(UINT nID, CString& rMessage)
@@ -1403,7 +1403,7 @@ bool CCommandManager::CheckIdx( int	idx )
 //disp impl
 long CCommandManager::GetBarsCount() 
 {
-	return gAllToolbars.GetCount();
+	return (int)gAllToolbars.GetCount();
 }
 
 BSTR CCommandManager::GetBarName(long BarNo) 
@@ -1987,7 +1987,7 @@ void _make_controlbar_string( CControlBarInfo *pCBInfo, CStringArrayEx &strings 
 #ifdef _AFX_BYTESWAP
 			if (!ar.IsByteSwapping())
 #endif
-			ar.Write(&pCBInfo->m_arrBarID.ElementAt(0),	pCBInfo->m_arrBarID.GetSize()*sizeof(DWORD));
+			ar.Write(&pCBInfo->m_arrBarID.ElementAt(0),	(UINT)pCBInfo->m_arrBarID.GetSize()*sizeof(DWORD));
 #ifdef _AFX_BYTESWAP
 			else
 			{
@@ -2070,7 +2070,7 @@ CControlBarInfo *_create_control_from_string( CStringArray &strings, int &ipos  
 		pCBInfo->m_arrBarID.SetSize(w);
 		if (w != 0)
 		{
-			ar.Read(&pCBInfo->m_arrBarID.ElementAt(0), pCBInfo->m_arrBarID.GetSize()*sizeof(DWORD));
+			ar.Read(&pCBInfo->m_arrBarID.ElementAt(0), (UINT)pCBInfo->m_arrBarID.GetSize()*sizeof(DWORD));
 #ifdef _AFX_BYTESWAP
 			if (ar.IsByteSwapping())
 			{
@@ -2210,7 +2210,7 @@ bool CCommandManager::_load_state(LPCTSTR FileName)
 		
 		g_mapUserImages.RemoveAll();
 
-		idx = strings.Find( szUserImageMapping );
+		idx = (int)strings.Find( szUserImageMapping );
 		if( idx != -1 )
 		{
 			while( idx  <strings.GetSize() )
@@ -2236,7 +2236,7 @@ bool CCommandManager::_load_state(LPCTSTR FileName)
 		}
 //goto toolbars section
 		BOOL bEnableTBVert = GetValueInt(::GetAppUnknown(), "\\MainFrame", "EnableDockToolbarsVertically", TRUE);
-		idx = strings.Find( szToolbars );
+		idx = (int)strings.Find( szToolbars );
 
 		if( idx != -1 )
 		{
@@ -2373,7 +2373,7 @@ bool CCommandManager::_load_state(LPCTSTR FileName)
 			}
 		}
 
-		idx = strings.Find( szOutlookToolbars );
+		idx = (int)strings.Find( szOutlookToolbars );
 
 		if( idx != -1 )
 		{
@@ -2426,7 +2426,7 @@ bool CCommandManager::_load_state(LPCTSTR FileName)
 		}
 
 
-		idx = strings.Find( szMenus );
+		idx = (int)strings.Find( szMenus );
 
 		idx++;
 
@@ -2517,7 +2517,7 @@ bool CCommandManager::_load_state(LPCTSTR FileName)
 //////////////////////////////////////////////////
 //restore controlbars settings
 //////////////////////////////////////////////////
-		idx = strings.Find( szControlBarsNew );
+		idx = (int)strings.Find( szControlBarsNew );
 
 		// [vanek] : забиваем на всех, кто был до этого виден - 18.10.2004
 		pmain->GetDockSite( AFX_IDW_DOCKBAR_LEFT )->ResetLastVisibleDockBars( );
@@ -2821,7 +2821,7 @@ bool CCommandManager::_load_state(LPCTSTR FileName)
 
 
 //restore accelerators
-		idx = strings.Find( szKeyboard );
+		idx = (int)strings.Find( szKeyboard );
 		idx++;
 
 		ACCEL	*paccel;
@@ -2858,7 +2858,7 @@ bool CCommandManager::_load_state(LPCTSTR FileName)
 			idx++;
 		}
 		//construct accelerator table
-		int	nAccelSize = ptrsAccel.GetSize();
+		int	nAccelSize = (int)ptrsAccel.GetSize();
 
 		if( nAccelSize != 0 )
 		{
@@ -2900,7 +2900,7 @@ bool CCommandManager::_load_state(LPCTSTR FileName)
 				CTemplateInfo* pi = (CTemplateInfo*)m_ptrTemplateInfoList.GetNext( pos );				
 				CString strSection;
 				strSection.Format( "%s Template:%s", szFrameToolBar, pi->m_strDocTemplate );
-				idx = strings.Find( strSection );
+				idx = (int)strings.Find( strSection );
 				if( idx != -1 )
 				{
 					idx++;

@@ -580,7 +580,7 @@ bool CActionShowViewBase::Invoke()
 		BSTR	bstrType = 0;
 		ptrContext->GetObjectTypeName( lType, &bstrType );
 
-		long	lpos = 0;
+		LPOS lpos = 0;
 		ptrContext->GetFirstSelectedPos( bstrType, &lpos );
 
 		while( lpos )
@@ -592,7 +592,7 @@ bool CActionShowViewBase::Invoke()
 
 		}
 	}
-	long	lpos;*/
+	LPOS lpos;*/
 
 
 	

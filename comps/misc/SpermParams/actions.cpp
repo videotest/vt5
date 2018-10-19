@@ -185,7 +185,7 @@ bool CActionCalcPartResult::Invoke()
 		while( lposParam )
 		{
 			ParameterContainer *pContainer = 0;
-			long	lPosRemove = lposParam;
+			LPOS lPosRemove = lposParam;
 			ptrContainer->GetNextParameter( &lposParam, &pContainer );
 
 			if( pContainer->pDescr->pos == 0 )

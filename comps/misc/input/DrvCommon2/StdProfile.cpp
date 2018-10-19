@@ -1,12 +1,12 @@
 #include "StdAfx.h"
-#include "StdProfile.h"
 #include "StdLib.h"
 #if !defined(COMMON1)
 #include <ComDef.h>
-#include "com_main.h"
 #include "misc_utils.h"
 #include "data5.h"
+#include "com_main.h"
 #endif
+#include "StdProfile.h"
 
 #ifdef _DEBUG
 #undef THIS_FILE
@@ -40,7 +40,7 @@ LPCTSTR CStdProfileManager::_MakeIniFileName(LPCTSTR lpstrAdd)
 		{
 			TCHAR szIniPath[_MAX_PATH];
 			_tcsncpy(szIniPath, bstrPath, _MAX_PATH);
-			int n = _tcslen(szIniPath);
+			int n = (int)_tcslen(szIniPath);
 			if (szIniPath[n-1] != _T('\\') && szIniPath[n-1] != _T('/'))
 				_tcsncat(szIniPath, _T("\\"), _MAX_PATH);
 			LPCTSTR lpDir = _tcschr(szIniPath, _T(':'));
@@ -58,7 +58,7 @@ LPCTSTR CStdProfileManager::_MakeIniFileName(LPCTSTR lpstrAdd)
 					_tcscpy(szDir, lpDir);
 				else
 				{
-					int n = _tcslen(szDir);
+					int n = (int)_tcslen(szDir);
 					if (szDir[n-1] != '\\' && szDir[n-1] != '/')
 						_tcsncat(szDir, _T("\\"), _MAX_DIR);
 					_tcsncat(szDir, lpDir, _MAX_DIR);
@@ -166,6 +166,7 @@ LPCTSTR CStdProfileManager::GetIniName(bool bIgnoreMethodic)
    {
       
 	  e->ReportError();
+	  return 0;
    }
 }
 

@@ -15,9 +15,9 @@ private:
 public:
 	virtual ~CColorsNames(){}
 	void UpdateColorsNames(const char *szClassifierShortName);
-	const char *get_class_name(const long lpos);
-	const COLORREF get_class_color(const long lpos);
-	bool testClass(const long lpos);
+	const char *get_class_name(const LPOS lpos);
+	const COLORREF get_class_color(const LPOS lpos);
+	bool testClass(const LPOS lpos);
 	bool ParseClassifier(const char *szClassifierName=0);
 	bool LoadColorsNames(INamedData* pNamedData=0);
 	bool Save();

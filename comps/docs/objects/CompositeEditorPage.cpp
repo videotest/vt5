@@ -71,7 +71,7 @@ BOOL CCompositeEditorPage::OnInitDialog()
 	DWORD data;
 	for(i=0;i<classCount;i++)
 	{
-		data = cmb->GetItemData(i);
+		data = (DWORD)cmb->GetItemData(i);
 		if(data==level) 
 		{
 			cmb->SetCurSel(i);
@@ -192,7 +192,7 @@ BOOL CPhaseEditorPage::OnInitDialog()
 		}
 	}
 	cmb->SetCurSel(nTemp);
-	n =cmb->GetItemData(nTemp);
+	n = (long)cmb->GetItemData(nTemp);
 	::SetValue( GetAppUnknown(), "ObjectEditor", "EditorClassNum", (long)n );
 	::SetValue( GetAppUnknown(), "ObjectEditor", "EditorColor",(long)strData[n].color );
 	UpdateAction();
@@ -246,7 +246,7 @@ void CPhaseEditorPage::OnDrawItem(int nIDCtl, LPDRAWITEMSTRUCT lpDrawItemStruct)
 			rect.top = lpDrawItemStruct->rcItem.top;
 			rect.bottom = lpDrawItemStruct->rcItem.bottom;
 			rect.right = lpDrawItemStruct->rcItem.right-20;
-			int l = cmb->GetItemData(lpDrawItemStruct->itemID);
+			int l = (int)cmb->GetItemData(lpDrawItemStruct->itemID);
 			if(l>=0)
 			{
 				COLORREF clr = strData[l].color;
@@ -273,7 +273,7 @@ void CPhaseEditorPage::OnDrawItem(int nIDCtl, LPDRAWITEMSTRUCT lpDrawItemStruct)
 
 void CPhaseEditorPage::clear_strData()
 {
-	int n = strData.size();
+	int n = (int)strData.size();
 	for(int i=0;i<n;i++)
 	{
 		delete[] strData[i].name;

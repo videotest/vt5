@@ -49,8 +49,8 @@ protected:
 		com_call OnCommand( UINT uiCommand );
 
 		//com_call GetSourceDocGuid( GUID* pDocGuid );
-		//com_call GetFirstObjectPos( long* plPos );
-		//com_call GetNextObjectPos( GUID* pObjGuid, long* plPos );
+		//com_call GetFirstObjectPos( TPOS *plPos );
+		//com_call GetNextObjectPos( GUID* pObjGuid, TPOS *plPos );
 
 		//Info
 		//com_call GetItemInfo( UINT uiItemID, CItemInfo** ppii );

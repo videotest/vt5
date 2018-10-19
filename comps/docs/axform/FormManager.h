@@ -162,11 +162,11 @@ public:
 	afx_msg BOOL GetModalMode();
 	afx_msg void SetModalMode(BOOL bNewValue);
 	afx_msg long ExecutePage(LPCTSTR szFormName);
-	afx_msg long ExecuteModal(LPCTSTR szFormName);
+	afx_msg INT_PTR ExecuteModal(LPCTSTR szFormName);
 	afx_msg long ExecuteDockBar(LPCTSTR szFormName);
 	afx_msg long ExecuteDockBar2(LPCTSTR szFormName, LONG lDockSite, BOOL bCaption);
 	afx_msg void Finalize(LPCTSTR nPageID);
-	afx_msg long ExecuteOptions();
+	afx_msg INT_PTR ExecuteOptions();
 	afx_msg void ResetOptions();
 	afx_msg void LoadCategoryImage(LPCTSTR szFileName);
 	afx_msg void AddOptionsCategory(short nImageIdx, LPCTSTR szTitle);

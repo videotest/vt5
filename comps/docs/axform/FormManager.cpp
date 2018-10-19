@@ -465,7 +465,7 @@ public:
 	}
 };
 
-long CFormManager::ExecuteModal(LPCTSTR szFormName) 
+INT_PTR CFormManager::ExecuteModal(LPCTSTR szFormName) 
 {
 	IUnknown	*punk = CFormManager::_GetFormByName( szFormName );
 
@@ -483,7 +483,7 @@ long CFormManager::ExecuteModal(LPCTSTR szFormName)
 	CManageDlgPointer ManageDlgPointer(&m_pFormDialog, &dialog);
 
 	CTempValue<bool> tmp(&m_bModalMode, true); // на время выполнения поставить m_bModalMode = true;
-	int nRet = dialog.DoModal();
+	INT_PTR nRet = dialog.DoModal();
 
 	punk->Release();
 
@@ -716,7 +716,7 @@ IUnknown *CFormManager::_GetFormByName( const char *szName )
 
 	return 0;
 }
-long CFormManager::ExecuteOptions() 
+INT_PTR CFormManager::ExecuteOptions() 
 {
 	// TODO: Add your dispatch handler code here
 	IApplicationPtr	ptrA( GetAppUnknown() );
@@ -853,7 +853,7 @@ void CFormManager::OnPageApply()
 
 void CFormManager::_ProcessStackPages()
 {
-	int nStackSize = m_strStackPages.GetSize();
+	INT_PTR nStackSize = m_strStackPages.GetSize();
 	if(nStackSize > 0)
 	{
 		ExecutePage(m_strStackPages[nStackSize-1]);

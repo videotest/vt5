@@ -64,7 +64,7 @@ void CCmpStatObjectView::default_init()
 
 void CCmpStatObjectView::set_modify()
 {
-	//for( long lpos_lst = m_list_attached.head(); lpos_lst; lpos_lst = m_list_attached.next( lpos_lst ) )
+	//for( LPOS lpos_lst = m_list_attached.head(); lpos_lst; lpos_lst = m_list_attached.next( lpos_lst ) )
 	//{
 	//	IUnknownPtr ptr_object = m_list_attached.get( lpos_lst );
 	//	if( ptr_object )
@@ -75,7 +75,7 @@ void CCmpStatObjectView::set_modify()
 //////////////////////////////////////////////////////////////////////
 CCmpStatObjectView::~CCmpStatObjectView()
 {
-	//for( long lpos_lst = m_list_attached.head(); lpos_lst; lpos_lst = m_list_attached.next( lpos_lst ) )
+	//for( LPOS lpos_lst = m_list_attached.head(); lpos_lst; lpos_lst = m_list_attached.next( lpos_lst ) )
 	//{
 	//	IUnknownPtr ptr_object = m_list_attached.get( lpos_lst );
 	//	if( ptr_object )
@@ -108,7 +108,7 @@ void CCmpStatObjectView::DoAttachObjects()
 		return;
 
 
-	//for( long lpos_lst = m_list_attached.head(); lpos_lst; lpos_lst = m_list_attached.next( lpos_lst ) )
+	//for( LPOS lpos_lst = m_list_attached.head(); lpos_lst; lpos_lst = m_list_attached.next( lpos_lst ) )
 	//{
 	//	IUnknown *punk_lst = m_list_attached.get( lpos_lst );
 

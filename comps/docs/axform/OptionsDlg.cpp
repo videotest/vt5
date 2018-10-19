@@ -639,7 +639,7 @@ LRESULT COptionsDlg::OnOutbarNotify(WPARAM wParam, LPARAM lParam)
 		{
 			if(lParam != m_nActiveItem)
 			{
-				m_nActiveItem = lParam;
+				m_nActiveItem = (int)lParam;
 				m_strActiveCategory = m_pOutBarCtrl->GetItemText(m_nActiveItem);
 				_SetSheetByCategory(m_strActiveCategory);
 			}

@@ -319,9 +319,9 @@ protected:
 
 	
 	BEGIN_INTERFACE_PART_EXPORT(GroupMan, IParamGroupManager)
-		com_call ExcludeGroup(long *plPos);
+		com_call ExcludeGroup(TPOS *plPos);
 		com_call ExcludeGroup(IUnknown* punkGroup);
-		com_call IncludeGroup(IUnknown* punkGroup, long *plPos);
+		com_call IncludeGroup(IUnknown* punkGroup, TPOS *plPos);
 
 		com_call GetFirstPos(LONG_PTR *plPos);
 		com_call GetNextGroup(long *LONG_PTR, IUnknown **ppunk);

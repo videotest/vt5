@@ -151,7 +151,7 @@ public:
 	HCONTEXTITEM	GetChild(POSITION pos);
 	POSITION		FindChild(HCONTEXTITEM hItem);
 
-	int				GetChildrenCount()				{	return m_listChildren.GetCount();		}
+	int				GetChildrenCount()				{	return (int)m_listChildren.GetCount();		}
 	bool			HasChildren()					{	return m_listChildren.GetCount() != 0;	}
 	bool			IsChild(HCONTEXTITEM hItem)		{	return FindChild(hItem) != 0;			}
 

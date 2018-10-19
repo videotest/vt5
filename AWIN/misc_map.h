@@ -72,11 +72,11 @@ public:
 /*
 	void		remove( key_type key );
 	long head();
-	long next( long lpos );
+	long next( LPOS lpos );
 	long tail();
-	long prev( long lpos );
-	data_type	get( long lpos );
-	key_type	get_key( long lpos );
+	long prev( LPOS lpos );
+	data_type	get( LPOS lpos );
+	key_type	get_key( LPOS lpos );
 	long		set( key_type key, data_type data );
 	long		find( key_type key );
 
@@ -586,11 +586,11 @@ public:
 /*
 	void		remove( key_type key );
 	long head();
-	long next( long lpos );
+	long next( LPOS lpos );
 	long tail();
-	long prev( long lpos );
-	data_type	get( long lpos );
-	key_type	get_key( long lpos );
+	long prev( LPOS lpos );
+	data_type	get( LPOS lpos );
+	key_type	get_key( LPOS lpos );
 	long		set( key_type key, data_type data );
 	long		find( key_type key );
 

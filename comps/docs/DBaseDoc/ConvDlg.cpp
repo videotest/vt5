@@ -1140,7 +1140,7 @@ bool CConvDlg::start_convert()
 						}
 						else if( pfi->m_strVTObjectType == szTypeObjectList )
 						{
-							long lpos = find_vt4_prefix( pSrc, nsize );
+							LPOS lpos = find_vt4_prefix( pSrc, nsize );
 							if( lpos == -1 )
 								continue;
 							

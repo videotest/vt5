@@ -625,14 +625,14 @@ bool image_bar::sync_info( )
 			ppinfo = 0;
 		}
 	}
-	/*for( long lpos1=m_list_image.head(); lpos1; lpos1=m_list_image.next(lpos1) )
+	/*for( LPOS lpos1=m_list_image.head(); lpos1; lpos1=m_list_image.next(lpos1) )
 	{
 		if( lpos1 == m_list_image.tail() )
 			continue;
 
 		image_info* pinfo1 = m_list_image.get( lpos1 );
 
-		for( long lpos2=m_list_image.next(lpos1); lpos2; lpos2=m_list_image.next(lpos2) )
+		for( LPOS lpos2=m_list_image.next(lpos1); lpos2; lpos2=m_list_image.next(lpos2) )
 		{
 			image_info* pinfo2 = m_list_image.get( lpos2 );
 
@@ -1499,13 +1499,12 @@ BSTR image_bar::GetObjectInfoByIndex( long lIdx, VARIANT FAR* varStorageName, VA
 	if( ( lIdx < 0 ) || ( lIdx >= m_list_image.count() ) )
 		return sImageName.AllocSysString( );
 
-	long lListIdx = 0; TPOS lPos = 0;
+	TPOS lPos = 0;
 	for( lPos = m_list_image.head(); lPos; lPos = m_list_image.next( lPos )  )
 	{
+		long lListIdx = m_list_image.get(lPos)->m_licon_index;
 		if( lListIdx == lIdx )
 			break;
-		else
-		   lListIdx ++;
 	}
 
 	if( !lPos )

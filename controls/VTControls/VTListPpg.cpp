@@ -500,7 +500,7 @@ void CVTListPropPageCol::OnEndlabeleditList(NMHDR* pNMHDR, LRESULT* pResult)
 	
 	m_listCtrl.SetItemText( pDispInfo->item.iItem, 0, pDispInfo->item.pszText );
 
-	int num=m_HeaderAction.GetCount();
+	INT_PTR num=m_HeaderAction.GetCount();
 	m_HeaderAction.InsertAt(num,1);
 	m_bUpdNameHeader=1;
 }
@@ -620,7 +620,7 @@ void CVTListPropPageCol::OnButtonAdd()
 
 	UpdatePageAndScrollToNewItem( nColCount-1 );
 	
-	int num=m_HeaderAction.GetCount();
+	INT_PTR num=m_HeaderAction.GetCount();
 	m_HeaderAction.InsertAt(num,2);
 	m_bUpdNameHeader=2;
 }
@@ -655,7 +655,7 @@ void CVTListPropPageCol::OnButtonDelete()
 		UpdatePageAndScrollToNewItem( index );
 
 	m_bUpdNameHeader=3+index;
-	int num=m_HeaderAction.GetCount();
+	INT_PTR num=m_HeaderAction.GetCount();
 	m_HeaderAction.InsertAt(num,m_bUpdNameHeader);
 }
 

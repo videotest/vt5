@@ -323,7 +323,7 @@ void CContextViewer::PostNcDestroy()
 
 INT_PTR CContextViewer::OnToolHitTest(CPoint point, TOOLINFO* pTI) const
 {
-	int r = __super::OnToolHitTest(point,pTI);
+	INT_PTR r = __super::OnToolHitTest(point,pTI);
 //	if (r != -1)
 //		pTI->uFlags |= TTF_ALWAYSTIP;
 	if (r == 1)
@@ -338,7 +338,7 @@ BOOL CContextViewer::OnToolTipNotify(UINT id, NMHDR *pNMHDR,
    TOOLTIPTEXTA* pTTTA = (TOOLTIPTEXTA*)pNMHDR;
    TOOLTIPTEXTW* pTTTW = (TOOLTIPTEXTW*)pNMHDR;
    CString strTipText;
-   UINT nID = pNMHDR->idFrom;
+   UINT_PTR nID = pNMHDR->idFrom;
    if (pNMHDR->code == TTN_NEEDTEXTA && (pTTTA->uFlags & TTF_IDISHWND) ||
       pNMHDR->code == TTN_NEEDTEXTW && (pTTTW->uFlags & TTF_IDISHWND))
    {
@@ -1609,8 +1609,8 @@ bool CContextViewer::CreateButtons()
 
 	// set file name to button
 	m_btnType.SetBMPFileName(strName);
-	m_btnType.SetButtonHeight(m_ButtonSize.cy);
-	m_btnType.SetButtonWidth(m_ButtonSize.cx);
+	m_btnType.SetButtonHeight((short)m_ButtonSize.cy);
+	m_btnType.SetButtonWidth((short)m_ButtonSize.cx);
 	m_btnType.SetButtonText("");
 //	m_btnType.SetStretch(true);
 	m_btnType.SetMouseInPicColor(true);
@@ -1644,8 +1644,8 @@ bool CContextViewer::CreateButtons()
 
 	// set file name to button
 	m_btnObj.SetBMPFileName(strName);
-	m_btnObj.SetButtonHeight(m_ButtonSize.cy);
-	m_btnObj.SetButtonWidth(m_ButtonSize.cx);
+	m_btnObj.SetButtonHeight((short)m_ButtonSize.cy);
+	m_btnObj.SetButtonWidth((short)m_ButtonSize.cx);
 	m_btnObj.SetButtonText("");
 //	m_btnObj.SetStretch(true);
 	m_btnObj.SetMouseInPicColor(true);
@@ -1678,8 +1678,8 @@ bool CContextViewer::CreateButtons()
 
 	// set file name to button
 	m_btnAbc.SetBMPFileName(strName);
-	m_btnAbc.SetButtonHeight(m_ButtonSize.cy);
-	m_btnAbc.SetButtonWidth(m_ButtonSize.cx);
+	m_btnAbc.SetButtonHeight((short)m_ButtonSize.cy);
+	m_btnAbc.SetButtonWidth((short)m_ButtonSize.cx);
 	m_btnAbc.SetButtonText("");
 //	m_btnAbc.SetStretch(true);
 	m_btnAbc.SetMouseInPicColor(true);
@@ -1712,8 +1712,8 @@ bool CContextViewer::CreateButtons()
 
 	// set file name to button
 	m_btnTime.SetBMPFileName(strName);
-	m_btnTime.SetButtonHeight(m_ButtonSize.cy);
-	m_btnTime.SetButtonWidth(m_ButtonSize.cx);
+	m_btnTime.SetButtonHeight((short)m_ButtonSize.cy);
+	m_btnTime.SetButtonWidth((short)m_ButtonSize.cx);
 	m_btnTime.SetButtonText("");
 //	m_btnTime.SetStretch(true);
 	m_btnTime.SetMouseInPicColor(true);
@@ -1746,8 +1746,8 @@ bool CContextViewer::CreateButtons()
 
 	// set file name to button
 	m_btnNumOn.SetBMPFileName(strName);
-	m_btnNumOn.SetButtonHeight(m_ButtonSize.cy);
-	m_btnNumOn.SetButtonWidth(m_ButtonSize.cx);
+	m_btnNumOn.SetButtonHeight((short)m_ButtonSize.cy);
+	m_btnNumOn.SetButtonWidth((short)m_ButtonSize.cx);
 	m_btnNumOn.SetButtonText("");
 //	m_btnNumOn.SetStretch(true);
 	m_btnNumOn.SetMouseInPicColor(true);
@@ -1779,8 +1779,8 @@ bool CContextViewer::CreateButtons()
 	m_btnNumOff.ShowWindow(SW_HIDE);
 	// set file name to button
 	m_btnNumOff.SetBMPFileName(strName);
-	m_btnNumOff.SetButtonHeight(m_ButtonSize.cy);
-	m_btnNumOff.SetButtonWidth(m_ButtonSize.cx);
+	m_btnNumOff.SetButtonHeight((short)m_ButtonSize.cy);
+	m_btnNumOff.SetButtonWidth((short)m_ButtonSize.cx);
 	m_btnNumOff.SetButtonText("");
 //	m_btnNumOff.SetStretch(true);
 	m_btnNumOff.SetMouseInPicColor(true);
@@ -1962,8 +1962,8 @@ bool SaveBMPFile(UINT idRes, LPCTSTR szFile)
 //	 structures.)
  	if (cClrBits != 24)
 	{
-		pbmi = (PBITMAPINFO)new BYTE [sizeof(BITMAPINFOHEADER) + sizeof(RGBQUAD) * (1<<cClrBits)];
-		memset(pbmi, 0, sizeof(BITMAPINFOHEADER) + sizeof(RGBQUAD) * (1<<cClrBits));
+		pbmi = (PBITMAPINFO)new BYTE [sizeof(BITMAPINFOHEADER) + sizeof(RGBQUAD) * (UINT)(1<<cClrBits)];
+		memset(pbmi, 0, sizeof(BITMAPINFOHEADER) + sizeof(RGBQUAD) * (UINT)(1<<cClrBits));
 	}
 	else
 	{

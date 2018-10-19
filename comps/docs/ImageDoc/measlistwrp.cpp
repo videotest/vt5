@@ -245,7 +245,7 @@ IUnknown	*CMeasObjListWrp::GetNextObject( POSITION &rPos )
 	m_ptrObjectList->GetNextChild( &lpos, &punk );
 	rPos = lpos;
 
-//	long	lpos = m_sorted_list.GetNext( rPos );
+//	LPOS lpos = m_sorted_list.GetNext( rPos );
 //	IUnknown	*punk = 0;
 //	m_ptrObjectList->GetNextChild( &lpos, &punk );
 

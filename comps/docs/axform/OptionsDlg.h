@@ -37,7 +37,7 @@ public:
 	void Erase( CString Key );
 	void Erase( Type Page );
 	bool Lookup( CString Key, Type &Item );
-	int GetSize() { return m_Keys.size(); }
+	int GetSize() { return (int)m_Keys.size(); }
 	CString GetKey( int nID ) { if( nID < (int)m_Keys.size() ) return m_Keys[nID]; return ""; }
 	Type GetItem( int nID ) { if( nID < (int)m_Keys.size() ) return (Type)m_Items[nID]; return 0; }
 };

@@ -1415,7 +1415,7 @@ LRESULT CVTStaticText::DefWindowProc(UINT message, WPARAM wParam, LPARAM lParam)
 	if( message == WM_GETTEXT )
 	{
 		lstrcpyn((LPTSTR)lParam, (LPCTSTR)m_strCaption, wParam);
-		if ((int)wParam > m_strCaption.GetLength())
+		if (wParam > m_strCaption.GetLength())
 		wParam = m_strCaption.GetLength();
 		return TRUE;    
 	}

@@ -21,10 +21,8 @@
 	<Configurations>
 		<Configuration
 			Name="Release|Win32"
-			OutputDirectory="\vt5\comps\docs\objects\Release"
-			IntermediateDirectory="\vt5\comps\docs\objects\Release"
 			ConfigurationType="2"
-			InheritedPropertySheets="..\..\..\props\CommonEnv.vsprops"
+			InheritedPropertySheets="$(SolutionDir)props\CommonEnv.vsprops"
 			UseOfMFC="2"
 			ATLMinimizesCRunTimeLibraryUsage="false"
 			CharacterSet="2"
@@ -111,10 +109,8 @@
 		</Configuration>
 		<Configuration
 			Name="Release|x64"
-			OutputDirectory="$(PlatformName)\$(ConfigurationName)"
-			IntermediateDirectory="$(PlatformName)\$(ConfigurationName)"
 			ConfigurationType="2"
-			InheritedPropertySheets="..\..\..\props\CommonEnv.vsprops"
+			InheritedPropertySheets="$(SolutionDir)props\CommonEnv.vsprops"
 			UseOfMFC="2"
 			ATLMinimizesCRunTimeLibraryUsage="false"
 			CharacterSet="2"
@@ -201,10 +197,8 @@
 		</Configuration>
 		<Configuration
 			Name="Debug|Win32"
-			OutputDirectory="\vt5\comps\docs\objects\Debug"
-			IntermediateDirectory="\vt5\comps\docs\objects\Debug"
 			ConfigurationType="2"
-			InheritedPropertySheets="..\..\..\props\CommonEnv.vsprops"
+			InheritedPropertySheets="$(SolutionDir)props\CommonEnv.vsprops"
 			UseOfMFC="2"
 			ATLMinimizesCRunTimeLibraryUsage="false"
 			CharacterSet="2"
@@ -291,10 +285,8 @@
 		</Configuration>
 		<Configuration
 			Name="Debug|x64"
-			OutputDirectory="$(PlatformName)\$(ConfigurationName)"
-			IntermediateDirectory="$(PlatformName)\$(ConfigurationName)"
 			ConfigurationType="2"
-			InheritedPropertySheets="..\..\..\props\CommonEnv.vsprops"
+			InheritedPropertySheets="$(SolutionDir)props\CommonEnv.vsprops"
 			UseOfMFC="2"
 			ATLMinimizesCRunTimeLibraryUsage="false"
 			CharacterSet="2"
@@ -966,11 +958,11 @@
 				>
 			</File>
 			<File
-				RelativePath=".\res\toolbar1.bmp"
+				RelativePath=".\toolbar1.bmp"
 				>
 			</File>
 			<File
-				RelativePath=".\toolbar1.bmp"
+				RelativePath=".\res\toolbar1.bmp"
 				>
 			</File>
 		</Filter>

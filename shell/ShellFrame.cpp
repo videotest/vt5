@@ -2345,7 +2345,7 @@ void CShellFrame::_RecalcLayoyt( bool bOnlyIfToolbarExist )
 /////////////////////////////////////////////////////////////////////////////
 int CShellFrame::GetToolBarCount()
 {
-	return m_ptrToolBarList.GetCount();
+	return (int)m_ptrToolBarList.GetCount();
 }
 
 /////////////////////////////////////////////////////////////////////////////
@@ -2484,9 +2484,9 @@ LRESULT CShellFrame::OnSetMessageString(WPARAM wParam, LPARAM lParam)
 			CFrameWnd* pFrameWnd = pMessageBar->GetParentFrame();
 			// get message associated with the ID indicated by wParam
 			if( pFrameWnd )
-				pFrameWnd->GetMessageString(wParam, strMessage);
+				pFrameWnd->GetMessageString((UINT)wParam, strMessage);
 			else
-				GetMessageString(wParam, strMessage);
+				GetMessageString((UINT)wParam, strMessage);
 
 			lpsz = strMessage;
 		}

@@ -423,7 +423,7 @@ HRESULT CStatTableObject::AddRow(TPOS lpos_insert_after, stat_row* prow, TPOS* p
 		lpos_new = m_list_row.add_tail( pnew_row );
 
 	if( pl_pos_new )
-		long lpos_new = 0;
+		LPOS lpos_new = 0;
 	*pl_pos_new = lpos_new;
 
 	return S_OK;

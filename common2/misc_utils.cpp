@@ -469,7 +469,7 @@ IUnknown *GetObjectByName( IUnknown *punkFrom, const BSTR bstrObject, const BSTR
 
 			//paul 14.01.2003
 			/*
-			long	lpos = 0;
+			LPOS lpos = 0;
 			ptrN->GetFirstChildPosition( &lpos );
 
 			while( lpos )

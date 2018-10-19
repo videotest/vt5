@@ -220,11 +220,11 @@ interface IUnitManager
 	com_call GetCurrentUnit( const GUID guidSys, GUID *pguidUnit );
 	com_call SetCurrentUnit( const GUID guidSys, const GUID guidUnit );
 
-	com_call GetFirstSysUnitPos( long *plpos );
-	com_call GetNextSysUnit( GUID *pguidSys, long *plpos );
+	com_call GetFirstSysUnitPos( LONG_PTR *plpos );
+	com_call GetNextSysUnit( GUID *pguidSys, LONG_PTR *plpos );
 
-	com_call GetFirstUnitPos( long lposSys, long *plPos );
-	com_call GetNextUnitPos( long lposSys, GUID *pguidUnit, long *plPos );
+	com_call GetFirstUnitPos( LONG_PTR lposSys, LONG_PTR *plPos );
+	com_call GetNextUnitPos( LONG_PTR lposSys, GUID *pguidUnit, LONG_PTR *plPos );
 	
 	com_call RemoveUnit( const GUID guidUnit );
 	com_call SetUnitInfo( const GUID guidUnit, const GUID guidSys, BSTR bstrName, double fUnitToSysUnit, BSTR bstrFormat );

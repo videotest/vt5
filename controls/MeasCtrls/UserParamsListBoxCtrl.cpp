@@ -749,7 +749,7 @@ void	CUserParamsListBoxCtrl::InitDefault()
 
 /*void	CUserParamsListBoxCtrl::SetWorksModes( )
 {
-	for( long lPos = m_ParamList.head( ); lPos; lPos = m_ParamList.next( lPos ) )
+	for( LPOS lPos = m_ParamList.head( ); lPos; lPos = m_ParamList.next( lPos ) )
 		m_ParamList.get( lPos )->SetWorksMode( m_lWorksMode );
 
 }  */

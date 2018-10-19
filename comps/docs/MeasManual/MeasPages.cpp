@@ -14,7 +14,7 @@
 	"IUnknown", "IDispatch", "IEnumVARIANT", "IFont", "IPicture")
 
 //ViewAX button referense
-#import <vtcontrols.ocx> rename_namespace("OcxSpace") 
+#import <vtcontrols.dll> rename_namespace("OcxSpace") 
 using namespace OcxSpace; 
 
 /////////////////////////////////////////////////////////////////////////////

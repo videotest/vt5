@@ -416,7 +416,7 @@ public:
 			else
 			{
 				// Item is not an OLE control: copy it to the new template.
-				ULONG cbItem = (BYTE*)pNextItem - (BYTE*)pItem;
+				size_t cbItem = (BYTE*)pNextItem - (BYTE*)pItem;
 				dbg_assert(cbItem >= (size_t)(bDialogEx ?
 					sizeof(DLGITEMTEMPLATEEX) :
 					sizeof(DLGITEMTEMPLATE)));
@@ -437,7 +437,7 @@ public:
 	static bool CreateAXControls( DLGTEMPLATE* pTemplate, BYTE* pInitData, HWND hwndDialog )
 	{
 		DLGITEMTEMPLATE* pFirstItem = FindFirstDlgItem(pTemplate);
-		ULONG cbHeader = (BYTE*)pFirstItem - (BYTE*)pTemplate;
+		size_t cbHeader = (BYTE*)pFirstItem - (BYTE*)pTemplate;
 
 		BOOL bDialogEx = IsDialogEx(pTemplate);
 
@@ -676,7 +676,7 @@ void CDialogImpl::FreeTemplate()
 	m_pDialogTemplateSrc = 0;
 }
 
-int CDialogImpl::DoModal()
+INT_PTR CDialogImpl::DoModal()
 {
 	if(!LoadTemplate())
 		return -1;

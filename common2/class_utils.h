@@ -133,7 +133,7 @@ inline char *_class_buffer()
 	return sz;
 }
 
-inline const char *get_class_name( long lpos, const char *szClassifierName=0 )
+inline const char *get_class_name( LPOS lpos, const char *szClassifierName=0 )
 {
 	//if( lpos == -1 )
 	//{
@@ -162,7 +162,7 @@ inline const char *get_class_name( long lpos, const char *szClassifierName=0 )
 	return _class_buffer();
 }
 
-inline COLORREF get_class_color( long lpos, const char *szClassifierName=0 )
+inline COLORREF get_class_color( LPOS lpos, const char *szClassifierName=0 )
 {
 	//if( lpos == -1 )
 	//{
@@ -186,7 +186,7 @@ inline COLORREF get_class_color( long lpos, const char *szClassifierName=0 )
 	}
 }
 
-inline COLORREF get_smooth_class_color( long lpos, long nClassCount, char *szClassifierName=0 )
+inline COLORREF get_smooth_class_color( LPOS lpos, long nClassCount, char *szClassifierName=0 )
 {
 	int nClasses=class_count(szClassifierName);
 	if(nClassCount==0) nClassCount=nClasses;

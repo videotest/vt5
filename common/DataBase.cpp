@@ -1777,7 +1777,7 @@ void CDataObjectBase::disp_GetLastChildPos( VARIANT FAR* pvarPos )
 //////////////////////////////////////////////////////////////////////
 LPDISPATCH CDataObjectBase::disp_GetNextChild( VARIANT FAR* pvarPos )
 {
-	long lPos = 0;
+	LPOS lPos = 0;
 	IDispatch* pdisp = NULL;
 	
 	if( pvarPos )
@@ -1787,7 +1787,7 @@ LPDISPATCH CDataObjectBase::disp_GetNextChild( VARIANT FAR* pvarPos )
 		IUnknown* punk = 0;
 		punk = GetNextChild( (POSITION&)lPos );
 				
-		*pvarPos = _variant_t( (long)lPos ); 
+		*pvarPos = _variant_t( lPos ); 
 
 		if( punk )
 		{
@@ -1803,7 +1803,7 @@ LPDISPATCH CDataObjectBase::disp_GetNextChild( VARIANT FAR* pvarPos )
 //////////////////////////////////////////////////////////////////////
 LPDISPATCH CDataObjectBase::disp_GetPrevChild( VARIANT FAR* pvarPos )
 {
-	long lPos = 0;
+	LPOS lPos = 0;
 	IDispatch* pdisp = NULL;
 
 	if( pvarPos )
@@ -1813,7 +1813,7 @@ LPDISPATCH CDataObjectBase::disp_GetPrevChild( VARIANT FAR* pvarPos )
 		IUnknown* punk = 0;
 		punk = GetPrevChild((POSITION&)lPos);
 		
-		*pvarPos = _variant_t( (long)lPos ); 
+		*pvarPos = _variant_t( lPos ); 
 		
 		if( punk )
 		{

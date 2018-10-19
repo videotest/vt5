@@ -142,7 +142,7 @@ namespace ViewSpace
 		bool _check_for_error( IUnknownPtr sptrData );
 		//bool _check_for_error()
 		//{
-		//	for( long lpos_lst = m_list_attached.head(); lpos_lst; lpos_lst = m_list_attached.next( lpos_lst ) )
+		//	for( LPOS lpos_lst = m_list_attached.head(); lpos_lst; lpos_lst = m_list_attached.next( lpos_lst ) )
 		//	{
 		//		IUnknownPtr ptr_object = m_list_attached.get( lpos_lst );
 		//		if( ptr_object )

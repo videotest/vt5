@@ -1,5 +1,4 @@
 #include "StdAfx.h"
-#include "DrvPreview.h"
 #include "VT5Profile.h"
 #include <vfw.h>
 #include "ddib.h"
@@ -9,9 +8,10 @@
 #include "core5.h"
 #if !defined(COMMON1)
 #include <ComDef.h>
-#include "com_main.h"
 #include "misc_utils.h"
+#include "com_main.h"
 #endif
+#include "DrvPreview.h"
 #include "debug.h"
 
 const int DummyDX = 1280;

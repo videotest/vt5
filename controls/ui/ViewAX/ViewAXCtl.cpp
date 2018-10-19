@@ -147,10 +147,14 @@ BEGIN_DISPATCH_MAP(CViewAXCtrl, COleControl)
 	DISP_PROPERTY_EX(CViewAXCtrl, "ViewName", GetViewName, SetViewName, VT_BSTR)	
 	DISP_PROPERTY_EX(CViewAXCtrl, "UseObjectDPI", GetUseObjectDPI, SetUseObjectDPI, VT_BOOL)
 	DISP_PROPERTY_EX(CViewAXCtrl, "ObjectDPI", GetObjectDPI, SetObjectDPI, VT_R8)	
-	DISP_FUNCTION(CViewAXCtrl, "GetFirstObjectPos", GetFirstObjectPos, VT_I4, VTS_NONE)
-	DISP_FUNCTION(CViewAXCtrl, "GetNextObject", GetNextObject, VT_I4, VTS_PVARIANT VTS_PVARIANT VTS_PVARIANT VTS_PVARIANT)
+	DISP_FUNCTION(CViewAXCtrl, "GetFirstObjectPos", GetFirstObjectPos, VT_INT_PTR, VTS_NONE)
+	DISP_FUNCTION(CViewAXCtrl, "GetNextObject", GetNextObject, VT_INT_PTR, VTS_PVARIANT VTS_PVARIANT VTS_PVARIANT VTS_PVARIANT)
 	DISP_FUNCTION(CViewAXCtrl, "AddObject", AddObject, VT_BOOL, VTS_BSTR VTS_BOOL VTS_BSTR)
+#if defined(_WIN64)
+	DISP_FUNCTION(CViewAXCtrl, "DeleteObject", DeleteObject, VT_BOOL, VTS_I8)
+#else
 	DISP_FUNCTION(CViewAXCtrl, "DeleteObject", DeleteObject, VT_BOOL, VTS_I4)
+#endif
 	DISP_FUNCTION(CViewAXCtrl, "GetFirstPropertyPos", GetFirstPropertyPos, VT_I4, VTS_NONE)
 	DISP_FUNCTION(CViewAXCtrl, "GetNextProperty", GetNextProperty, VT_I4, VTS_PVARIANT VTS_PVARIANT VTS_PVARIANT)
 	DISP_FUNCTION(CViewAXCtrl, "SetProperty", SetProperty, VT_BOOL, VTS_BSTR VTS_VARIANT)
@@ -825,7 +829,7 @@ void CViewAXCtrl::Serialize(CArchive& ar)
 		SerializeBool( ar, m_bViewAutoAssigned );
 		ar<<m_strViewProgID;
 
-		DWORD dwObjectCount = m_ObjectList.GetCount();
+		DWORD dwObjectCount = (DWORD)m_ObjectList.GetCount();
 		ar<<dwObjectCount;
 
 		POSITION pos = m_ObjectList.GetHeadPosition();		
@@ -843,7 +847,7 @@ void CViewAXCtrl::Serialize(CArchive& ar)
 			((INamedPropBagSer*)this)->Store( punkStream );
 
 			COleStreamFile sfile( punkStream );
-			DWORD dwLen = sfile.GetLength();
+			UINT dwLen = (UINT)sfile.GetLength();
 			if( dwLen )
 			{
 				BYTE *lpBuf = new BYTE[dwLen];
@@ -1571,7 +1575,7 @@ bool CViewAXCtrl::Build()
 			return false;
 		}
 
-		long lPos = -1;
+		TPOS lPos = (TPOS)-1;
 		ptrD->GetBaseGroupFirstPos( &lPos );
 		while( lPos )
 		{
@@ -1816,7 +1820,7 @@ bool CViewAXCtrl::Build()
 
 			if( sptrBag2 != 0 )
 			{
-				long lPos = 0;
+				LPOS lPos = 0;
 
 				sptrBag2->GetFirstPropertyPos( &lPos );
 
@@ -1983,7 +1987,7 @@ void CViewAXCtrl::ResizeView()
 	{
 		DisplayCalibration dc;
 		double fPixelPerMM = dc.GetPixelPerMM();
-		nDPIX = fPixelPerMM * MeasureUnitTable::mmPerInch;
+		nDPIX = int(fPixelPerMM * MeasureUnitTable::mmPerInch);
 	}
 
 
@@ -2105,7 +2109,7 @@ void CViewAXCtrl::ResizeView()
 		{
 			CRect rcClient;
 			GetClientRect( &rcClient );
-			CSize sizeView( sizeV.cx*fZoom, sizeV.cy*fZoom ) ;
+			CSize sizeView( int(sizeV.cx*fZoom), int(sizeV.cy*fZoom) ) ;
 
 			CRect rcView = NORECT;
 
@@ -2343,7 +2347,7 @@ BOOL CViewAXCtrl::AddObject(LPCTSTR strObjectName, BOOL bActiveObject, LPCTSTR s
 }
 
 ////////////////////////////////////////////////////////////////////////////
-BOOL CViewAXCtrl::DeleteObject(long lPos) 
+BOOL CViewAXCtrl::DeleteObject(LPOS lPos) 
 {
 	return _RemoveAt( lPos );
 }
@@ -2351,9 +2355,9 @@ BOOL CViewAXCtrl::DeleteObject(long lPos)
 ////////////////////////////////////////////////////////////////////////////
 long CViewAXCtrl::GetFirstPropertyPos() 
 {	
-	long lpos = 0;
-	((INamedPropBagSer*)this)->GetFirstPropertyPos( &lpos );
-	return lpos;
+	long idx = 0;
+	((INamedPropBagSer*)this)->GetFirstPropertyPos( &idx );
+	return idx;
 }
 
 ////////////////////////////////////////////////////////////////////////////
@@ -2392,9 +2396,9 @@ BOOL CViewAXCtrl::SetProperty(LPCTSTR strName, const VARIANT FAR& varValue)
 }
 
 ////////////////////////////////////////////////////////////////////////////
-BOOL CViewAXCtrl::DeletePropery(long lPos) 
+BOOL CViewAXCtrl::DeletePropery(long idx) 
 {
-	return ( S_OK == ((INamedPropBagSer*)this)->DeleteProperty( lPos ) );
+	return ( S_OK == ((INamedPropBagSer*)this)->DeleteProperty( idx ) );
 }
 
 ////////////////////////////////////////////////////////////////////////////

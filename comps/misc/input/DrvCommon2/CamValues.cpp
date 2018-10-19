@@ -35,7 +35,7 @@ void CCamValue::AddControl(IDrvControl *pControl)
 
 void CCamValue::RemoveControl(IDrvControl *pControl)
 {
-	for (int i = m_arrCtrls.GetSize()-1; i >= 0; i--)
+	for (INT_PTR i = m_arrCtrls.GetSize()-1; i >= 0; i--)
 		if (m_arrCtrls[i] == pControl)
 			m_arrCtrls.RemoveAt(i);
 }
@@ -51,13 +51,13 @@ void CCamValue::GetValueInfo(VALUEINFOEX2 *pvie2)
 
 void CCamValue::ResetControls()
 {
-	for (int i = m_arrCtrls.GetSize()-1; i >= 0; i--)
+	for (INT_PTR i = m_arrCtrls.GetSize()-1; i >= 0; i--)
 		m_arrCtrls[i]->Reset();
 }
 
 void CCamValue::ReinitControls()
 {
-	for (int i = m_arrCtrls.GetSize()-1; i >= 0; i--)
+	for (INT_PTR i = m_arrCtrls.GetSize()-1; i >= 0; i--)
 		m_arrCtrls[i]->Reinit();
 }
 
@@ -362,11 +362,11 @@ CCamIntComboValue2::~CCamIntComboValue2()
 void CCamIntComboValue2::Add(int nVal, LPCTSTR lpstrString, int idString)
 {
 	m_Data.SetSize(m_Data.GetSize()+1);
-	int n = m_Data.GetSize()-1;
+	INT_PTR n = m_Data.GetSize()-1;
 	m_Data.ElementAt(n).nValue = nVal;
 	m_Data.ElementAt(n).lpstrValue = lpstrString==NULL?NULL:_tcsdup(lpstrString);
 	m_Data.ElementAt(n).idString = idString;
-	m_CBoxRData.nValues = m_Data.GetSize();
+	m_CBoxRData.nValues = (int)m_Data.GetSize();
 	m_CBoxRData.pnValues = m_Data.GetData();
 	m_vi.nMin = 0;
 	m_vi.nMax = m_Data.GetSize()-1;

@@ -103,7 +103,7 @@ inline bool	share_mem::create_new( const _char* psz_name, size_t size )
 	if( m_file_map )//exist
 		return false;
 
-	m_file_map = ::CreateFileMapping( (HANDLE)0xFFFFFFFF, 0, PAGE_READWRITE, 0, size, psz_name );
+	m_file_map = ::CreateFileMapping( (HANDLE)0xFFFFFFFF, 0, PAGE_READWRITE, 0, (DWORD)size, psz_name );
 	if( !m_file_map )
 		return false;
 

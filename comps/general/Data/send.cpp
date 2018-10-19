@@ -311,7 +311,7 @@ bool CBaseObject::IsChild( INamedDataPtr ptrND, GuidKey guidChild )
 	if( m_guidGroup == INVALID_KEY )
 		return false;
 
-	long lPos = 0;
+	TPOS lPos = 0;
 	ptrND->GetBaseGroupObjectFirstPos( &m_guidGroup, &lPos );
 	while( lPos )
 	{
@@ -645,7 +645,7 @@ bool CActionSendTo::CreateObjectList()
 	//Addition verify
 	{
 
-		int nCount = 0;
+		INT_PTR nCount = 0;
 		pos = m_arBaseObject.GetHeadPosition();	
 		while( pos )
 		{
@@ -730,7 +730,7 @@ GuidKey CActionSendTo::IsBaseObject( INamedDataPtr ptrND, GuidKey guidObj )
 	//CString strTest = ::GetObjectName( ptrTestObject );
 
 
-	long lGroupPos = 0;
+	TPOS lGroupPos = 0;
 	ptrND->GetBaseGroupFirstPos( &lGroupPos );
 	while( lGroupPos )
 	{
@@ -865,7 +865,7 @@ bool CActionSendTo::Invoke()
 	//Set base object and its childs
 	if( IsPutToDocument() )
 	{
-		StartNotification( m_arBaseObject.GetCount() + m_arGuidNotInGroup.GetCount(), 1, 1 );
+		StartNotification( int(m_arBaseObject.GetCount() + m_arGuidNotInGroup.GetCount()), 1, 1 );
 		int nIndex = 0;
 
 		POSITION pos = m_arBaseObject.GetHeadPosition();

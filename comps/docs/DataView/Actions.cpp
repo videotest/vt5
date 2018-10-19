@@ -594,7 +594,7 @@ bool CActionGridMoveParam::Invoke()
 		pprev = NULL;
 	m_lOldPrevParam = pprev?pprev->pDescr->lKey:-1;
 
-	long	lposAfter = 0;
+	LPOS lposAfter = 0;
 	ParameterContainer	*pnew = 0;
 	m_ptrC->ParamDefByKey( m_lNewPrevParam, &pnew );
 	if( pnew )lposAfter = pnew->lpos;
@@ -610,7 +610,7 @@ bool CActionGridMoveParam::DoUndo()
 	m_ptrC->ParamDefByKey( m_lParam, &p );
 	if( p == 0 )return false;
 
-	long	lposAfter = 0;
+	LPOS lposAfter = 0;
 	ParameterContainer	*pnew = 0;
 	m_ptrC->ParamDefByKey( m_lOldPrevParam, &pnew );
 	if( pnew )lposAfter = pnew->lpos;
@@ -626,7 +626,7 @@ bool CActionGridMoveParam::DoRedo()
 	m_ptrC->ParamDefByKey( m_lParam, &p );
 	if( p == 0 )return false;
 
-	long	lposAfter = 0;
+	LPOS lposAfter = 0;
 	ParameterContainer	*pnew = 0;
 	m_ptrC->ParamDefByKey( m_lNewPrevParam, &pnew );
 	if( pnew )lposAfter = pnew->lpos;
@@ -1168,7 +1168,7 @@ bool CActionSetParamValue::ExecuteSettings(CWnd *pwndParent)
 	if (m_lParamKey == -1)
 	{
 		IMeasParamGroup2Ptr sptrG = m_list;
-		long lPos = 0;
+		LPOS lPos = 0;
 		if (sptrG != 0 && SUCCEEDED(sptrG->GetActiveParamPos(&lPos)) && lPos)
 			sptrG->GetParamInfo(lPos, &m_lParamKey, 0, 0, 0);
 	}

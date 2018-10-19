@@ -205,11 +205,11 @@ protected:
 	afx_msg LONG_PTR GetFirstObjectPos();
 	afx_msg LONG_PTR GetNextObject(VARIANT FAR* varObjectName, VARIANT FAR* varActiveObject, VARIANT FAR* varObjectType, VARIANT FAR* varPos);
 	afx_msg BOOL AddObject(LPCTSTR strObjectName, BOOL bActiveObject, LPCTSTR strObjectType);
-	afx_msg BOOL DeleteObject(long lPos);
+	afx_msg BOOL DeleteObject(LPOS lPos);
 	afx_msg long GetFirstPropertyPos();
 	afx_msg long GetNextProperty(VARIANT FAR* varName, VARIANT FAR* varValue, VARIANT FAR* varPos);
 	afx_msg BOOL SetProperty(LPCTSTR strName, const VARIANT FAR& varValue);
-	afx_msg BOOL DeletePropery(long lPos);
+	afx_msg BOOL DeletePropery(long idx);
 	afx_msg BOOL Rebuild();
 	afx_msg BSTR GetViewProgID();
 	afx_msg void SetViewProgID(LPCTSTR lpszNewValue);

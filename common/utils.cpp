@@ -3503,7 +3503,7 @@ std_dll bool ChangeBaseKeyForDocument(IUnknown * punkDoc, GuidKey OldKey, GuidKe
 		_bstr_t bstrType(bstrtype, false);
 
 		// get object's count for given type
-		long lPos = 0;
+		LPOS lPos = 0;
 		if (FAILED(sptrC->GetFirstObjectPos(bstrType, &lPos)) || !lPos)
 		{
 			bRet = false;
@@ -4531,7 +4531,7 @@ std_dll long FindNextManualParam(IUnknown * punkList)
 
 		long lActivePos = 0;
 		sptr->GetActiveParamPos(&lActivePos);
-		long lPos = lActivePos;
+		LPOS lPos = lActivePos;
 	// try to find next manual param
 		while (lPos)
 		{
@@ -4632,7 +4632,7 @@ std_dll CString GetCalibrUnitName(LPCTSTR szGroupMgr, long lParamKey, long lMeas
 		if (!nCount)
 			return strOut;
 
-		long lPos = 0;
+		LPOS lPos = 0;
 		sptrM->GetFirstPos(&lPos);
 
 		int nNextPos = 0;

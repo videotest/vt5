@@ -133,7 +133,7 @@ static void MakeSmoothAxis(_dpoint *axis, int len,
 COLORREF trajectory::_get_class_color( long lClass )
 {
 	/*
-	long	lpos = ms_class_colors.find( lClass );
+	LPOS lpos = ms_class_colors.find( lClass );
 	if( !lpos )
 	{
 		COLORREF cr = ::get_class_color( lClass );
@@ -187,7 +187,7 @@ HRESULT trajectory::Paint( HDC hDC, RECT rectDraw, IUnknown *punkTarget, BITMAPI
 
 	/*
 	bool bActive = 0;
-	long lPos=0;
+	LPOS lPos=0;
 	ptrList->GetActiveChild(&lPos);
 	if(lPos!=0)
 	{

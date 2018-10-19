@@ -33,7 +33,7 @@ library StatDataLib
 		HRESULT getValueByParamPos([in]LONG_PTR lpos, [in]LONG_PTR lparam_pos, [out, retval]VARIANT* pv_value);
 
 		HRESULT getGroupCount( [out, retval]VARIANT* pv_count );
-		HRESULT getGroup([in]long lpos, [out, retval]VARIANT* pv_group_ret);
+		HRESULT getGroup([in]long pos, [out, retval]VARIANT* pv_group_ret);
 
 		HRESULT updateObject( long lflags );
 		HRESULT relloadSettings( long lflags );

@@ -51,7 +51,7 @@ HRESULT CLastFileMenu::XMenu::AppendMenuItems( HMENU hMenu, UINT nCommandBase )
 		CString	str;
 		char	szCurDir[255];
 		::GetCurrentDirectory( 255, szCurDir );
-		plist->GetDisplayName( str, n, szCurDir, strlen( szCurDir ) );
+		plist->GetDisplayName( str, n, szCurDir, (int)strlen( szCurDir ) );
 
 
 		if( !str.IsEmpty() )
@@ -703,7 +703,7 @@ bool CActionFileSave::IsNeedPrompt()
 	long lTypesCount = 0;
 	ptrContext->GetObjectTypeCount( &lTypesCount );
 
-	for( long lPos=0; lPos<lTypesCount; lPos++ )
+	for( LPOS lPos=0; lPos<lTypesCount; lPos++ )
 	{
 		BSTR bstrType = 0;
 		ptrContext->GetObjectTypeName( lPos, &bstrType );
@@ -1231,13 +1231,13 @@ bool CActionDumpMem::Invoke()
 		palloc->count++;
 	}
 
-	int	count = 0;
+	INT_PTR	count = 0;
 	int	size = 0;
 
-	int	alloc_count = allocations.count();
+	INT_PTR	alloc_count = allocations.count();
 
 	mem_alloc	**pall = (mem_alloc**)malloc( sizeof(mem_alloc*)*alloc_count );
-	int	idx = 0;
+	INT_PTR	idx = 0;
 
 	_trace_file( sz_heap_log, "----all CRT heap" );
 

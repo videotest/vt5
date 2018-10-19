@@ -95,8 +95,8 @@ LRESULT	CWinImpl::DoMessage( UINT nMsg, WPARAM wParam, LPARAM lParam )
 	{
 	case WM_CREATE:			return DoCreate( (CREATESTRUCT*)lParam );
 	case WM_PAINT:			DoPaint();return 1;
-	case WM_COMMAND:		DoCommand( wParam );return 1;
-	case WM_NOTIFY:			DoNotify( wParam, (NMHDR*)lParam );
+	case WM_COMMAND:		DoCommand( (UINT)wParam );return 1;
+	case WM_NOTIFY:			DoNotify( (UINT)wParam, (NMHDR*)lParam );
 	case WM_GETINTERFACE:	return (LRESULT)this;
 	}
 

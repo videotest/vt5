@@ -283,7 +283,7 @@ void CTemplateSetup::FillComboBoxes()
 
 					if (nCount)
 					{
-						long lPos = 0;
+						TPOS lPos = 0;
 						sptrC->GetFirstChildPos(bstrType, 0, &lPos);
 						while (lPos)
 						{
@@ -560,7 +560,7 @@ BOOL  CTemplateSetup::GenerateNewTemplate( CString strBaseTempl,
 
 					if (nObjCountOfType)
 					{
-						long lPos = 0;
+						TPOS lPos = 0;
 						sptrC->GetFirstChildPos(bstrType, 0, &lPos);
 						while (lPos)
 						{

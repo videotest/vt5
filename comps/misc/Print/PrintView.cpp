@@ -2528,7 +2528,7 @@ void CPrintView::OnNotify( const char *pszEvent, IUnknown *punkHit, IUnknown *pu
 								IViewCtrlPtr ptrV( pdata->ptrCtrl );
 								if( ptrV )
 								{
-									long lPos = 0;
+									LPOS lPos = 0;
 									ptrV->GetFirstObjectPosition( &lPos );
 									while( lPos )
 									{
@@ -5898,7 +5898,7 @@ long CPrintView::GetFirstCtrlPos( )
 }
 
 ////////////////////////////////////////////////////////////////////////////
-long CPrintView::GetNextCtrlPos( long lPos )
+long CPrintView::GetNextCtrlPos( LPOS lPos )
 {
 	if( m_sptrControls == 0 )
 		return 0;
@@ -5914,7 +5914,7 @@ long CPrintView::GetNextCtrlPos( long lPos )
 }
 
 ////////////////////////////////////////////////////////////////////////////
-LPDISPATCH CPrintView::GetCtrlDispatch( long lPos )
+LPDISPATCH CPrintView::GetCtrlDispatch( LPOS lPos )
 {
 	if( m_sptrControls == 0 )
 		return 0;
@@ -5946,7 +5946,7 @@ LPDISPATCH CPrintView::GetCtrlDispatch( long lPos )
 
 
 ////////////////////////////////////////////////////////////////////////////
-BSTR CPrintView::GetCtrlProgID( long lPos )
+BSTR CPrintView::GetCtrlProgID( LPOS lPos )
 {
 	if( m_sptrControls == 0 )
 		return 0;
@@ -6003,7 +6003,7 @@ long CPrintView::GetSelectedPos( )
 }
 
 ////////////////////////////////////////////////////////////////////////////
-void CPrintView::SetSelectedPos( long lPos )
+void CPrintView::SetSelectedPos( LPOS lPos )
 {
 	if( m_sptrControls == 0 )
 		return;
@@ -6020,7 +6020,7 @@ void CPrintView::SetSelectedPos( long lPos )
 
 
 ////////////////////////////////////////////////////////////////////////////
-void CPrintView::StoreCtrlData( long lPos )
+void CPrintView::StoreCtrlData( LPOS lPos )
 {
 	if( m_sptrControls == 0 )	return;
 

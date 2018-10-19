@@ -56,13 +56,13 @@ interface IViewCtrl : public Iunknown
 	com_call GetFirstObjectPosition( LONG_PTR* plPos ) = 0;
 	com_call GetNextObject( BSTR* pbstrObjectName, BOOL* pbActiveObject, 
 							BSTR* bstrObjectType, LONG_PTR *plPos ) = 0;
-	com_call InsertAfter( long lPos,  
+	com_call InsertAfter( LPOS lPos,  
 							BSTR bstrObjectName, BOOL bActiveObject, 
 							BSTR bstrObjectType ) = 0;
-	com_call EditAt( long lPos,  
+	com_call EditAt( LPOS lPos,  
 							BSTR bstrObjectName, BOOL bActiveObject, 
 							BSTR bstrObjectType ) = 0;
-	com_call RemoveAt( long lPos ) = 0;
+	com_call RemoveAt( LPOS lPos ) = 0;
 	
 };
 */

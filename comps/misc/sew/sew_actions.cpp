@@ -1645,5 +1645,4 @@ HRESULT CSewManual::NextImage()
 
 CAutoSewHorzInfo::CAutoSewHorzInfo()
 {
-	OutputDebugString( "qq\n" );
 }

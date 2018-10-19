@@ -1708,8 +1708,8 @@ bool SaveBMPFile(UINT idRes, LPCTSTR szFile)
 //	 structures.)
  	if (cClrBits != 24)
 	{
-		pbmi = (PBITMAPINFO)new BYTE [sizeof(BITMAPINFOHEADER) + sizeof(RGBQUAD) * (1<<cClrBits)];
-		memset(pbmi, 0, sizeof(BITMAPINFOHEADER) + sizeof(RGBQUAD) * (1<<cClrBits));
+		pbmi = (PBITMAPINFO)new BYTE [sizeof(BITMAPINFOHEADER) + sizeof(RGBQUAD) * (UINT)(1<<cClrBits)];
+		memset(pbmi, 0, sizeof(BITMAPINFOHEADER) + sizeof(RGBQUAD) * (UINT)(1<<cClrBits));
 	}
 	else
 	{

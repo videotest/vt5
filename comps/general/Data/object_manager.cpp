@@ -902,14 +902,14 @@ IUnknown* object_manager::get_active_view()
 //
 //
 ////////////////////////////////////////////////////////////////////////////////////////////
-HRESULT object_manager::XObjectManager::GetFirstObjectTypePos( long* plPos )
+HRESULT object_manager::XObjectManager::GetFirstObjectTypePos( TPOS *plPos )
 {
 	_try_nested(object_manager, ObjectManager, GetFirstObjectTypePos )
 	{	
 		if( !plPos )
 			return E_INVALIDARG;
 
-		*plPos = (long)pThis->m_listType.GetHeadPosition();
+		*plPos = pThis->m_listType.GetHeadPosition();
 
 		return S_OK;
 	}
@@ -917,7 +917,7 @@ HRESULT object_manager::XObjectManager::GetFirstObjectTypePos( long* plPos )
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////
-HRESULT object_manager::XObjectManager::GetNextObjectType( long* plPos, BSTR* pbstrTypeName )
+HRESULT object_manager::XObjectManager::GetNextObjectType( TPOS *plPos, BSTR* pbstrTypeName )
 {
 	_try_nested(object_manager, ObjectManager, GetNextObjectType )
 	{	
@@ -931,7 +931,7 @@ HRESULT object_manager::XObjectManager::GetNextObjectType( long* plPos, BSTR* pb
 		if( pbstrTypeName )
 			*pbstrTypeName = pti->m_strTypeName.AllocSysString();
 
-		 *plPos = (long)pos;
+		 *plPos = pos;
 
 		return S_OK;
 	}
@@ -1178,22 +1178,22 @@ HRESULT object_manager::XObjectManager::GetObjectDocument( BSTR bstrType, BSTR b
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////
-long object_manager::GetFirstObjectTypePos() 
+TPOS object_manager::GetFirstObjectTypePos() 
 {
-	long lPos = 0;
+	TPOS lPos = 0;
 	m_xObjectManager.GetFirstObjectTypePos( &lPos );
 	return lPos;
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////
-long object_manager::GetNextObjectTypePos(long lPos) 
+TPOS object_manager::GetNextObjectTypePos(TPOS lPos) 
 {
 	m_xObjectManager.GetNextObjectType( &lPos, 0 );
 	return lPos;
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////
-BSTR object_manager::GetObjectType(long lPos) 
+BSTR object_manager::GetObjectType(TPOS lPos) 
 {
 	BSTR bstr = 0;
 	m_xObjectManager.GetNextObjectType( &lPos, &bstr );

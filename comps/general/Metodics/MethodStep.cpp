@@ -164,9 +164,9 @@ void CMethodStep::CopyFrom(CMethodStep& x)
 	{
 		//m_NamedDataKeys.clear();
 		//m_NamedDataValues.clear();
-		//for(long lpos = x.m_NamedDataKeys.head(); lpos; lpos = x.m_NamedDataKeys.next(lpos) )
+		//for(LPOS lpos = x.m_NamedDataKeys.head(); lpos; lpos = x.m_NamedDataKeys.next(lpos) )
 		//	m_NamedDataKeys.add_tail(x.m_NamedDataKeys.get(lpos));
-		//for(long lpos = x.m_NamedDataValues.head(); lpos; lpos = x.m_NamedDataValues.next(lpos) )
+		//for(LPOS lpos = x.m_NamedDataValues.head(); lpos; lpos = x.m_NamedDataValues.next(lpos) )
 		//	m_NamedDataValues.add_tail(x.m_NamedDataValues.get(lpos));
 		CopyNamedData(m_ptrNamedData, x.m_ptrNamedData);
 	}
@@ -347,7 +347,7 @@ _bstr_t CMethodStep::GetScript(bool bWithSetValue)
 		bstr = bstr + "\' SetValues in script not implemented.\r";
 
 		/*
-		long lpos1, lpos2;
+		LPOS lpos1, lpos2;
 		for(lpos1=m_NamedDataKeys.head(), lpos2=m_NamedDataValues.head();
 			lpos1 && lpos2;
 			lpos1=m_NamedDataKeys.next(lpos1), lpos2=m_NamedDataValues.next(lpos2))

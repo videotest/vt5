@@ -621,7 +621,7 @@ void CReportConstructor::DeInitSplitterViewDescription()
 }
 
 //////////////////////////////////////////////////////////////////////
-int CReportConstructor::GetSplitterViewDescriptionCount()
+INT_PTR CReportConstructor::GetSplitterViewDescriptionCount()
 {
 	return m_arSplitterViewDescription.GetSize();
 }
@@ -715,7 +715,7 @@ void CReportConstructor::DeInitActiveObjectList()
 }
 
 //////////////////////////////////////////////////////////////////////
-int CReportConstructor::GetActiveObjectListCount()
+INT_PTR CReportConstructor::GetActiveObjectListCount()
 {
 	return m_arActiveObject.GetSize();
 }
@@ -740,7 +740,7 @@ public:
 //////////////////////////////////////////////////////////////////////
 bool CReportConstructor::CreateGroupViewObjectList( CArray<CViewObjectList*, CViewObjectList*>& arOL )
 {
-	int nObjectCount = g_ReportConstructor.GetActiveObjectListCount();
+	INT_PTR nObjectCount = g_ReportConstructor.GetActiveObjectListCount();
 	if( nObjectCount < 1 )
 		return false;
 
@@ -794,7 +794,7 @@ bool CReportConstructor::CreateGroupViewObjectList( CArray<CViewObjectList*, CVi
 			arTemp.Add( vp );
 		}
 		
-		int nFirstObjectEntryCount = arProgID.GetSize();
+		INT_PTR nFirstObjectEntryCount = arProgID.GetSize();
 		
 		arProgID.RemoveAll();		
 
@@ -846,7 +846,7 @@ bool CReportConstructor::CreateGroupViewObjectList( CArray<CViewObjectList*, CVi
 		{
 			int nCurSupportedCount = 0;
 			CString strProgID = arTemp[j].strViewProgID;
-			for( int k=nFirstObjectEntryCount;k<arTemp.GetSize();k++ )
+			for( INT_PTR k=nFirstObjectEntryCount;k<arTemp.GetSize();k++ )
 			{
 				if( strProgID == arTemp[k].strViewProgID )
 					nCurSupportedCount++;
@@ -894,9 +894,9 @@ bool CReportConstructor::CreateGroupViewObjectListUseBaseGroup( CArray<CViewObje
 	if( ptrData == 0 )
 		return false;
 
-	int nObjectCount = g_ReportConstructor.GetActiveObjectListCount();
+	INT_PTR nObjectCount = g_ReportConstructor.GetActiveObjectListCount();
 
-	for( int i=0;i<nObjectCount;i++ )
+	for( INT_PTR i=0;i<nObjectCount;i++ )
 	{
 		CViewObjectList* pvo = g_ReportConstructor.GetActiveObjectListItem( i );
 		if( pvo->m_bUse )
@@ -913,7 +913,7 @@ bool CReportConstructor::CreateGroupViewObjectListUseBaseGroup( CArray<CViewObje
 
 		GuidKey guidGroup = INVALID_KEY;
 
-		long lGroupPos = 0;
+		TPOS lGroupPos = 0;
 		ptrData->GetBaseGroupFirstPos( &lGroupPos );
 		while( lGroupPos )
 		{
@@ -943,7 +943,7 @@ bool CReportConstructor::CreateGroupViewObjectListUseBaseGroup( CArray<CViewObje
 		pvol_base_group->m_bUse			= true;
 
 
-		long lPos = 0;
+		TPOS lPos = 0;
 		ptrData->GetBaseGroupObjectFirstPos( &guidGroup, &lPos );
 		while( lPos )
 		{
@@ -1453,7 +1453,7 @@ bool CReportConstructor::ProcessExistReport( IUnknown* punkReport )
 					BOOL bActiveObject = FALSE;
 					bstrObjectName = bstrObjectType = NULL;
 					
-					long nPosSave = lVPos;
+					LONG_PTR nPosSave = lVPos;
 					ptrAX->GetNextObject( &bstrObjectName, &bActiveObject, 
 											&bstrObjectType, &lVPos );
 
@@ -2040,7 +2040,7 @@ bool CReportConstructor::FillOut_Gallery( sptrIReportForm form )
 	if( nHorzItemCount < 1 )
 		nHorzItemCount = 2;
 
-	int nVertItemCount	= arVD.GetSize() / nHorzItemCount +
+	LONG_PTR nVertItemCount	= arVD.GetSize() / nHorzItemCount +
 		( ( (arVD.GetSize() ) % nHorzItemCount ) ? 1 : 0 );
 
 	if( nVertItemCount < 1 )
@@ -2135,7 +2135,7 @@ bool CReportConstructor::FillOut_FromSplitter( sptrIReportForm form )
 	}
 
 
-	int nViewCount = g_ReportConstructor.GetSplitterViewDescriptionCount();
+	LONG_PTR nViewCount = g_ReportConstructor.GetSplitterViewDescriptionCount();
 	
 	int nSplitterRowCount = g_ReportConstructor.GetSplitterRowCount();
 	int nSplitterColCount = g_ReportConstructor.GetSplitterColCount();	

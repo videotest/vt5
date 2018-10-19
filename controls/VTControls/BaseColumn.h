@@ -102,7 +102,7 @@ public:
 	COLORREF m_crFontColor;
 
 	int GetComboSize() {
-		return m_strComboValue.GetSize();
+		return (int)m_strComboValue.GetSize();
 	}
 
 	CString GetComboValue( int nItem ) {

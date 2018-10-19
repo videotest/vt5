@@ -72,13 +72,13 @@ public:
 	}
 	long find_by_command( unsigned cmd )
 	{
-		for( long lpos = head(); lpos; lpos = next( lpos ) )
+		for( LPOS lpos = head(); lpos; lpos = next( lpos ) )
 			if( get( lpos )->m_command == cmd )
 				return lpos;
 		return 0;
 	}
 
-	void set_active_view( long lpos )
+	void set_active_view( LPOS lpos )
 	{
 		_activate_vi( lpos );
 	}
@@ -99,7 +99,7 @@ protected:
 	{
 		SetFocus( handle() );
 
-		long	lpos = _from_point( pt );
+		LPOS lpos = _from_point( pt );
 		if( lpos )_activate_vi( lpos );
 		return win_impl::on_lbuttondown( pt );
 	}
@@ -116,7 +116,7 @@ protected:
 		::SetBkMode( hdc, TRANSPARENT );
 		::SelectObject( hdc, GetStockObject( DEFAULT_GUI_FONT ) );
 
-		for( long	lpos = head(); lpos; lpos = next( lpos ) )
+		for( LPOS lpos = head(); lpos; lpos = next( lpos ) )
 		{
 			view_info	*p = get( lpos );
 			_draw_view_info( hdc, p );
@@ -132,7 +132,7 @@ protected:
 		_rect	rect;
 		GetClientRect( handle(), &rect );
 
-		long	lpos = tail();
+		LPOS lpos = tail();
 
 		if( lpos )
 		{
@@ -158,7 +158,7 @@ protected:
 
 	virtual long on_keydown( long nVirtKey )			
 	{
-		long	lpos = m_lpos_active;
+		LPOS lpos = m_lpos_active;
 
 		if( nVirtKey == VK_LEFT )lpos = prev( lpos )?prev( lpos ):tail();
 		else if( nVirtKey == VK_RIGHT )lpos = next( lpos )?next( lpos ):head();
@@ -174,7 +174,7 @@ protected:
 protected:
 	long _from_point( const _point &pt )
 	{
-		for( long lpos = head(); lpos; lpos = next( lpos ) )
+		for( LPOS lpos = head(); lpos; lpos = next( lpos ) )
 		{
 			view_info	*p = get( lpos );
 			if( p->rect.left < pt.x &&
@@ -184,7 +184,7 @@ protected:
 		return 0;
 	}
 
-	void _activate_vi( long lpos )
+	void _activate_vi( LPOS lpos )
 	{
 		if( m_lpos_active == lpos )return;
 
@@ -208,7 +208,7 @@ protected:
 		}
 	}
 
-	void _redraw_vi( long lpos )
+	void _redraw_vi( LPOS lpos )
 	{
 		if( !lpos )return;
 
@@ -227,7 +227,7 @@ protected:
 		::GetClientRect( handle(), &rect_client );
 
 		int	current_x = 0, text_width = 80;
-		for( long	lpos = head(); lpos; lpos = next( lpos ) )
+		for( LPOS lpos = head(); lpos; lpos = next( lpos ) )
 		{
 			view_info	*p = get( lpos );
 

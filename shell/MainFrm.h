@@ -686,7 +686,7 @@ protected:
 	DWORD		m_dwScriptSetPosTime;
 	
 	void		_init_script_notify( );
-	HRESULT		_fire_script_event( LPCTSTR lpctstrEvent, LPCTSTR lpctstrActionName, BOOL bSetPos = FALSE, long lPos = 0 );
+	HRESULT		_fire_script_event( LPCTSTR lpctstrEvent, LPCTSTR lpctstrActionName, BOOL bSetPos = FALSE, LPOS lPos = 0 );
 	BOOL		_get_action_name( IUnknown *punk, CString *pstrActionName );
     
 public:
@@ -697,7 +697,7 @@ public:
 
 	void		SetAccelTable( HACCEL haccel );
 
-	UINT		m_nTimerID;
+	UINT_PTR		m_nTimerID;
 	afx_msg void OnDestroy();
 	afx_msg void OnTimer(UINT_PTR nIDEvent);
 protected:

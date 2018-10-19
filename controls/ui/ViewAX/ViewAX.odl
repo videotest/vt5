@@ -42,10 +42,10 @@ library VIEWAXLib
 			// NOTE - ClassWizard will maintain method information here.
 			//    Use extreme caution when editing this section.
 			//{{AFX_ODL_METHOD(CViewAXCtrl)
-			[id(10)] long GetFirstObjectPos();
-			[id(11)] long GetNextObject(VARIANT* varObjectName, VARIANT* varActiveObject, VARIANT* varObjectType, VARIANT* varPos);
+			[id(10)] LONG_PTR GetFirstObjectPos();
+			[id(11)] LONG_PTR GetNextObject(VARIANT* varObjectName, VARIANT* varActiveObject, VARIANT* varObjectType, VARIANT* varPos);
 			[id(12)] boolean AddObject(BSTR strObjectName, boolean bActiveObject, BSTR strObjectType);
-			[id(13)] boolean DeleteObject(long lPos);
+			[id(13)] boolean DeleteObject(LONG_PTR lPos);
 			[id(14)] long GetFirstPropertyPos();
 			[id(15)] long GetNextProperty(VARIANT* varName, VARIANT* varValue, VARIANT* valPos);
 			[id(16)] boolean SetProperty(BSTR strName, VARIANT varValue);

@@ -9,8 +9,8 @@
 interface IObjectManager : public IUnknown
 {
 	//enum types
-	com_call GetFirstObjectTypePos( long* plPos ) = 0;
-	com_call GetNextObjectType( long* plPos, BSTR* pbstrTypeName ) = 0;	
+	com_call GetFirstObjectTypePos( TPOS *plPos ) = 0;
+	com_call GetNextObjectType( TPOS *plPos, BSTR* pbstrTypeName ) = 0;	
 
 	//enum names
 	com_call GetFirstObjectNamePos( BSTR bstrType, LONG_PTR* plPos ) = 0;

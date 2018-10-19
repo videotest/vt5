@@ -1213,7 +1213,7 @@ BOOL check_disk_space(CMainFrame* mf)
 
 	if(GetDiskFreeSpaceEx(path, &free_for_user, &total, &total_free))
 	{
-		fp = free_for_user.QuadPart/(1<<20);
+		fp = long(free_for_user.QuadPart/(1<<20));
 		min_free = ::GetValueInt(::GetAppUnknown(), "General", "MinimumDiskAvailableMb",100);
 		if( fp >= min_free) return TRUE;
 	}
@@ -1308,7 +1308,7 @@ BOOL CShellApp::InitInstance()
 				char	sz_module[MAX_PATH];	sz_module[0] = 0;
 				fgets( sz_module, sizeof( sz_module ), pfile );
 
-				int nlen = strlen( sz_module );
+				int nlen = (int)strlen( sz_module );
 				if( !nlen )continue;
 
 				if( sz_module[nlen-1] == '\n' )
@@ -2526,7 +2526,7 @@ bool CShellApp::ReadGuardInfo(LPCTSTR szFile)
 		{
 		case CFileException::tooManyOpenFiles:
 
-		case CFileException::generic:
+		case CFileException::genericException:
 		case CFileException::hardIO:
 			GuardSetErrorCode(guardInvalidGuardFile);
 			break;

@@ -2379,7 +2379,7 @@ bool CActionObjectMultiLine::DoChangeObjects()
 	CPen	pen( PS_SOLID, m_nLineWidth, RGB( 255, 255, 255 ) );
 	CPen	*ppenOld = 
 	pdc->SelectObject( &pen );
-	pdc->Polyline( &m_points[0], m_points.GetSize() );
+	pdc->Polyline( &m_points[0], (int)m_points.GetSize() );
 	pdc->SelectObject( ppenOld );
 
 	wfi.AttachMasksToImage( image );
@@ -2472,7 +2472,7 @@ void CActionObjectMultiLine::SetLastPoint( CPoint point )
 	CPen	*ppenOld = 
 	pdc->SelectObject( &pen );
 	if( m_points.GetSize() )
-		pdc->Polyline( &m_points[0], m_points.GetSize() );
+		pdc->Polyline( &m_points[0], (int)m_points.GetSize() );
 	pdc->SelectObject( ppenOld );
 
 
@@ -5148,7 +5148,7 @@ bool CActionCalcMeasResult::Invoke()
 	ptrList->GetObjectUpdateLock( &bLock );
 	ptrList->LockObjectUpdate( true );
 
-	int	nCount = objects.GetSize();
+	int	nCount = (int)objects.GetSize();
 
 	for( int i = 0; i < nCount; i++ )
 	{
@@ -5268,7 +5268,7 @@ bool CActionRecalcOnChangeCalibr::Invoke()
 		GUID guidKey;
 		ptrNamed->GetBaseKey( &guidKey );
 		INamedDataPtr	ptrData( m_punkTarget );
-		long	lpos = 0;
+		TPOS lpos = 0;
 		ptrData->GetBaseGroupObjectFirstPos( &guidKey, &lpos );
 		while( lpos )
 		{

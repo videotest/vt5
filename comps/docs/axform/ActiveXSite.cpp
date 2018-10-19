@@ -854,7 +854,7 @@ IUnknown* CActiveXSite::_GetAppComponent( int nPos )
 
 int	CActiveXSite::_GetControlComponentsCount()
 {
-	return m_windows.GetCount();
+	return (int)m_windows.GetCount();
 }
 
 IUnknown* CActiveXSite::_GetControlComponent( int nPos )

@@ -1,6 +1,6 @@
 #include "stdafx.h"
-#include "com_unknown.h"
 #include "com_main.h"
+#include "com_unknown.h"
 
 //com object base
 ComObjectBase::ComObjectBase()

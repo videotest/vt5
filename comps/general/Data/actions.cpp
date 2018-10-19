@@ -1047,7 +1047,7 @@ bool CActionObjectDrop::Invoke()
 
 										if( !strcmp( strT, strContainer ) )
 										{
-											long	lpos_o;
+											LPOS lpos_o;
 											ptrTM->GetObjectFirstPosition( type, &lpos_o );
 
 											if( lpos_o )

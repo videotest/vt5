@@ -1588,7 +1588,7 @@ void CPrintPreview::FillTemplateCombo()
 
 					if (nCount)
 					{
-						long lPos = 0;
+						TPOS lPos = 0;
 						sptrC->GetFirstChildPos(bstrType, 0, &lPos);
 						while (lPos)
 						{

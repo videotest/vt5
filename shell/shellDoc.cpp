@@ -597,7 +597,7 @@ BOOL CShellDoc::OnSaveDocument(LPCTSTR lpszPathName)
 	ASSERT( CheckInterface( punkView, IID_IDataContext ) );
 //init FileFilter
 	sptrIFilter->AttachNamedData( sptrD, punkView );
-	::FireEvent( GetAppUnknown(), szEventBeforeSave, GetControllingUnknown(), 0, (void *)lpszPathName, strlen(lpszPathName)+1 );
+	::FireEvent( GetAppUnknown(), szEventBeforeSave, GetControllingUnknown(), 0, (void *)lpszPathName, (long)strlen(lpszPathName)+1 );
 //check the base key
 	IFileFilter2Ptr	ptrFF2( sptrIFilter );
 	if( ptrFF2 != 0 && m_guidLoadedObject != INVALID_KEY && 
@@ -650,7 +650,7 @@ BOOL CShellDoc::OnSaveDocument(LPCTSTR lpszPathName)
 	//don't set last file if not native format
 	//pdocTemplate->SetLastDocumentFileName( lpszPathName );
 
-	::FireEvent( GetAppUnknown(), szEventAfterSave, GetControllingUnknown(), 0, (void *)lpszPathName, strlen(lpszPathName)+1 );
+	::FireEvent( GetAppUnknown(), szEventAfterSave, GetControllingUnknown(), 0, (void *)lpszPathName, (long)strlen(lpszPathName)+1 );
 	SetModifiedFlag( false );
 
 	return true;
@@ -671,7 +671,7 @@ BOOL CShellDoc::OnOpenDocument(LPCTSTR lpszPathName)
 //try to save native document format
 	sptrIDocument sptrDoc( GetDocumentInterface( false ) );
 
-	::FireEvent( GetAppUnknown(), szEventBeforeOpen, GetControllingUnknown(), 0, (void *)lpszPathName, strlen(lpszPathName)+1 );
+	::FireEvent( GetAppUnknown(), szEventBeforeOpen, GetControllingUnknown(), 0, (void *)lpszPathName, (long)strlen(lpszPathName)+1 );
 
 	if( sptrDoc->LoadNativeFormat( bstrFileName ) == S_OK )
 		return TRUE;
@@ -700,7 +700,7 @@ BOOL CShellDoc::OnOpenDocument(LPCTSTR lpszPathName)
 
 		pdocTemplate->SetLastDocumentFileName( lpszPathName );
 
-		::FireEvent( GetAppUnknown(), szEventAfterOpen, GetControllingUnknown(), 0, (void *)lpszPathName, strlen(lpszPathName)+1 );
+		::FireEvent( GetAppUnknown(), szEventAfterOpen, GetControllingUnknown(), 0, (void *)lpszPathName, (long)strlen(lpszPathName)+1 );
 
 		return true;
 	}
@@ -774,7 +774,7 @@ BOOL CShellDoc::OnOpenDocument(LPCTSTR lpszPathName)
 	//no native format
 	//pdocTemplate->SetLastDocumentFileName( lpszPathName );
 
-	::FireEvent( GetAppUnknown(), szEventAfterOpen, GetControllingUnknown(), 0, (void *)lpszPathName, strlen(lpszPathName)+1 );
+	::FireEvent( GetAppUnknown(), szEventAfterOpen, GetControllingUnknown(), 0, (void *)lpszPathName, (long)strlen(lpszPathName)+1 );
 
 	return true;
 }
@@ -959,7 +959,7 @@ LPDISPATCH CShellDoc::_GetActiveView()
 
 long CShellDoc::GetFramesCount() 
 {
-	return m_listFrames.GetCount();
+	return (long)m_listFrames.GetCount();
 }
 
 LPDISPATCH CShellDoc::GetFrame(POSITION nPos) 
@@ -1259,7 +1259,7 @@ bool IsNeedPrompt(LPCTSTR lpstrFileName, CDocument *pdoc, CString *pstrExt)
 	long lTypesCount = 0;
 	ptrContext->GetObjectTypeCount( &lTypesCount );
 
-	for( long lPos=0; lPos<lTypesCount; lPos++ )
+	for( LPOS lPos=0; lPos<lTypesCount; lPos++ )
 	{
 		BSTR bstrType = 0;
 		ptrContext->GetObjectTypeName( lPos, &bstrType );

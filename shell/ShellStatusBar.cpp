@@ -165,7 +165,7 @@ void CShellStatusBar::RecalcLayout()
 
 	int	*pnWidths = new int[m_panes.GetSize()];
 
-	for( int n = m_panes.GetSize()-1; n >= 0; n-- )
+	for( int n = (int)m_panes.GetSize()-1; n >= 0; n-- )
 	{
 		PaneInfo	*pPaneInfo = (PaneInfo*)m_panes[n];
 		if( pPaneInfo->cx != -1 )
@@ -177,7 +177,7 @@ void CShellStatusBar::RecalcLayout()
 			pnWidths[n] = nWidth;
 	}
 
-	ctrl.SetParts( m_panes.GetSize(), pnWidths );
+	ctrl.SetParts( (int)m_panes.GetSize(), pnWidths );
 
 	for( n = 0; n < m_panes.GetSize(); n++ )
 	{
@@ -314,7 +314,7 @@ TPOS CShellStatusBar::SetXPBar( HWND hwnd )
 		lposStatus_ = (TPOS)::SendMessage(m_hwndXPBar, XPB_INSERTITEM, 0, (LPARAM)&insert);
 
 		//load all panes
-		long	nCount = GetPanesCount();
+		long	nCount = (long)GetPanesCount();
 		
 		for( long n = 0; n < nCount; n++ )
 		{
@@ -343,7 +343,7 @@ TPOS CShellStatusBar::SetXPBar( HWND hwnd )
 	else
 	{
 		//load all panes
-		long	nCount = GetPanesCount();
+		long	nCount = (long)GetPanesCount();
 		
 		for( long n = 0; n < nCount; n++ )
 		{

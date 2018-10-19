@@ -95,7 +95,7 @@ enum {
 	};
 	//{{AFX_EVENT(xxx)
 	//}}AFX_EVENT
-6. implement oel typelib
+6. implement ole typelib
 	IMPLEMENT_OLETYPELIB(CAButtonDispatch, IID_ITypeLibID, 1, 0)
 7. generate two guid - 
 	m_piidEvents = &IID_IAButtonEvents;

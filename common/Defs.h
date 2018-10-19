@@ -176,11 +176,14 @@ public:
 	{	__int64	*pl = (__int64*)&guid;	lo_guid(this) = pl[0];	hi_guid(this) = pl[1];	return *this;}
 };
 
+//struct __POSITION {};
+typedef struct __POSITION* POSITION;
+typedef POSITION TPOS;
+typedef LONG_PTR LPOS;
 
 
 #define INVALID_KEY	GuidKey()
 
-#define _FILE_OPEN_SIZE_ OPENFILENAME_SIZE_VERSION_400
-
+#define _FILE_OPEN_SIZE_ sizeof(OPENFILENAME)
 
 #endif //__defs_h__

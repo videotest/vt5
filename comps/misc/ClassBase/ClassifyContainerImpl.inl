@@ -556,7 +556,7 @@ inline HRESULT CClassifyContainerImpl::GetObjectClass( /*[in]*/ IUnknown *punkOb
 	return S_OK;
 
 	/*
-	for( long lPos = m_arObjectList.head(); lPos; lPos = m_arObjectList.next( lPos ) )
+	for( LPOS lPos = m_arObjectList.head(); lPos; lPos = m_arObjectList.next( lPos ) )
 	{
 		XObjectItem* pitem = m_arObjectList.get( lPos );
 		if( pitem->guidKey == guidKey )

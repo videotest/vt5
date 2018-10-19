@@ -3883,7 +3883,7 @@ void CImageSourceView::SetObjectOffset( IUnknown *punkObj, CPoint ptOffset )
 			m_rcPrevClass.SetRectEmpty();
 		}
 
-	long lPos = m_object_coords.find( (long)punkObj );
+	LPOS lPos = m_object_coords.find( (long)punkObj );
 	if( lPos )
 		m_rcPrevClass = m_object_coords.get( lPos );
 
@@ -5706,7 +5706,7 @@ HRESULT CImageSourceView::XMenuInitializer::OnInitPopup(
 
 		m_ptrSubMenu->SetSingleObjectName( _bstr_t( m_strText ) );
 
-		long lPos = 0;	
+		LPOS lPos = 0;	
 		m_ptrSubMenu->GetFirstItemPos( &lPos );
 		
 		
@@ -5722,7 +5722,7 @@ HRESULT CImageSourceView::XMenuInitializer::OnInitPopup(
 			BSTR bstrText	= 0;
 			UINT uiItemID	= 0;
 			UINT uiParentID	= -1;
-			//long lCurPos	= lPos;
+			//LONG_PTR lCurPos	= lPos;
 
 			m_ptrSubMenu->GetNextItem( &uiFlags, &uiItemID, &bstrText, &uiParentID, &lPos );
 			CString strText = bstrText;

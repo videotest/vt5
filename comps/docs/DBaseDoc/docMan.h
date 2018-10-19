@@ -194,14 +194,14 @@ protected:
 		com_call GetCurrentSection( BSTR* pbstrSection );
 
 		com_call GetBaseGroupCount(int * pnCount);
-		com_call GetBaseGroupFirstPos(long * plPos);
-		com_call GetNextBaseGroup(GUID * pKey, long * plPos);
+		com_call GetBaseGroupFirstPos(TPOS *plPos);
+		com_call GetNextBaseGroup(GUID * pKey, TPOS *plPos);
 		com_call GetIsBaseGroup(GUID * pKey, BOOL * pbBase);
 		com_call GetBaseGroupBaseObject(GUID * pKey, IUnknown ** ppunkObject);
 
 		com_call GetBaseGroupObjectsCount(GUID * pKey, int * pnCount);
-		com_call GetBaseGroupObjectFirstPos(GUID * pKey, long * plPos);
-		com_call GetBaseGroupNextObject(GUID * pKey, long * plPos, IUnknown ** ppunkObject);
+		com_call GetBaseGroupObjectFirstPos(GUID * pKey, TPOS *plPos);
+		com_call GetBaseGroupNextObject(GUID * pKey, TPOS *plPos, IUnknown ** ppunkObject);
 		com_call SetEmptySection( BSTR* bstrSectionName );
 	END_INTERFACE_PART(Data);
 

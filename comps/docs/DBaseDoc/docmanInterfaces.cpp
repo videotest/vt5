@@ -464,7 +464,7 @@ HRESULT CDBaseDocument::XData::GetBaseGroupCount(int * pnCount)
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////
-HRESULT CDBaseDocument::XData::GetBaseGroupFirstPos(long * plPos)
+HRESULT CDBaseDocument::XData::GetBaseGroupFirstPos(TPOS *plPos)
 {
 	_try_nested(CDBaseDocument, Data, GetBaseGroupFirstPos )
 	{		
@@ -476,7 +476,7 @@ HRESULT CDBaseDocument::XData::GetBaseGroupFirstPos(long * plPos)
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////
-HRESULT CDBaseDocument::XData::GetNextBaseGroup(GUID * pKey, long * plPos)
+HRESULT CDBaseDocument::XData::GetNextBaseGroup(GUID * pKey, TPOS *plPos)
 {
 	_try_nested(CDBaseDocument, Data, GetNextBaseGroup )
 	{		
@@ -524,7 +524,7 @@ HRESULT CDBaseDocument::XData::GetBaseGroupObjectsCount(GUID * pKey, int * pnCou
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////
-HRESULT CDBaseDocument::XData::GetBaseGroupObjectFirstPos(GUID * pKey, long * plPos)
+HRESULT CDBaseDocument::XData::GetBaseGroupObjectFirstPos(GUID * pKey, TPOS *plPos)
 {
 	_try_nested(CDBaseDocument, Data, GetBaseGroupObjectFirstPos )
 	{		
@@ -536,7 +536,7 @@ HRESULT CDBaseDocument::XData::GetBaseGroupObjectFirstPos(GUID * pKey, long * pl
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////
-HRESULT CDBaseDocument::XData::GetBaseGroupNextObject(GUID * pKey, long * plPos, IUnknown ** ppunkObject)
+HRESULT CDBaseDocument::XData::GetBaseGroupNextObject(GUID * pKey, TPOS *plPos, IUnknown ** ppunkObject)
 {
 	_try_nested(CDBaseDocument, Data, GetBaseGroupNextObject )
 	{		

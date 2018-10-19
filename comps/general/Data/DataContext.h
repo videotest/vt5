@@ -223,11 +223,11 @@ protected:
 
 	// child objects
 		com_call GetChildrenCount(BSTR bstrType, IUnknown * punkParent, long * pnCount);
-		com_call GetFirstChildPos(BSTR bstrType, IUnknown * punkParent, long * plPos);
-		com_call GetNextChild(BSTR bstrType, IUnknown * punkParent, long * plPos, IUnknown ** ppunkChild);
-		com_call GetLastChildPos(BSTR bstrType, IUnknown * punkParent, long * plPos);
-		com_call GetPrevChild(BSTR bstrType, IUnknown * punkParent, long * plPos, IUnknown ** ppunkChild);
-		com_call GetChildPos(BSTR bstrType, IUnknown * punkParent, IUnknown * punkChild, long * plPos);
+		com_call GetFirstChildPos(BSTR bstrType, IUnknown * punkParent, TPOS *plPos);
+		com_call GetNextChild(BSTR bstrType, IUnknown * punkParent, TPOS *plPos, IUnknown ** ppunkChild);
+		com_call GetLastChildPos(BSTR bstrType, IUnknown * punkParent, TPOS *plPos);
+		com_call GetPrevChild(BSTR bstrType, IUnknown * punkParent, TPOS *plPos, IUnknown ** ppunkChild);
+		com_call GetChildPos(BSTR bstrType, IUnknown * punkParent, IUnknown * punkChild, TPOS *plPos);
 
 	// selected objects
 		com_call GetObjectSelect(IUnknown * punkObject, BOOL * pbFlag);

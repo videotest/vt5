@@ -71,7 +71,7 @@ bool CAXFileFilter::ReadFile( const char *pszFileName )
 
 	char	szSign[20];
 	DWORD	dwRead = 0;
-	::ReadFile( hFile, &szSign, strlen( c_szAX ), &dwRead, 0 ); 
+	::ReadFile( hFile, &szSign, (DWORD)strlen( c_szAX ), &dwRead, 0 ); 
 	
 	bool	bReadText = false;
 	if( !strncmp( szSign, c_szAX, strlen( c_szAX ) ) )
@@ -429,7 +429,7 @@ bool CAXFileFilter::WriteFile( const char *pszFileName )
 				char	*psz = new char[20+dwDataSize*3];
 				sprintf( psz, "Data=%d", dwDataSize );
 				char	*p = psz+strlen( psz );
-				for( int n = 0; n < dwDataSize; n++, p+=3 )
+				for( DWORD n = 0; n < dwDataSize; n++, p+=3 )
 					::sprintf( p, " %02x", pdata[n] );
 				strs.Add( psz );
 				delete pdata;

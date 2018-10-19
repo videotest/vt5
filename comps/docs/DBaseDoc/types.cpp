@@ -2365,7 +2365,7 @@ bool CQueryField::IsChild( IUnknown* punkChild )
 	//At first find group guid
 	GuidKey guidGroup = INVALID_KEY;
 	
-	long lGroupPos = 0;
+	TPOS lGroupPos = 0;
 	ptrPrivND->GetBaseGroupFirstPos( &lGroupPos );
 	while( lGroupPos )
 	{
@@ -2386,7 +2386,7 @@ bool CQueryField::IsChild( IUnknown* punkChild )
 		return false;
 
 	
-	long lPos = 0;
+	TPOS lPos = 0;
 	ptrPrivND->GetBaseGroupObjectFirstPos( &guidGroup, &lPos );
 	while( lPos )
 	{

@@ -9,7 +9,7 @@ library Shell
 {
 	importlib("stdole32.tlb");
 	importlib("stdole2.tlb");
-	typedef LONG_PTR TPOS;
+	typedef LONG_PTR LPOS;
 
 	//  Primary dispatch interface for CShellDoc
 	
@@ -206,34 +206,34 @@ library Shell
 			[id(26)] void XPSetPaneParam(long lpos, long param);
 			[id(27)] long XPGetPaneParam(long lpos);
 			[id(28)] long XPGetFirstPane();
-			[id(29)] long XPGetNextPane(long lpos);
+			[id(29)] long XPGetNextPane(LPOS lpos);
 			[id(30)] void XPSetImageList(long lImageList);
-			[id(31)] void LogFontSetBold(long lpos, long fBold);
-			[id(32)] void LogFontSetFace(long lpos, BSTR pszFaceName);
-			[id(33)] void LogFontSetColor(long lpos, long color);
-			[id(34)] void LogFontSetHeight(long lpos, long nHeight);
-			[id(35)] void RenderSetLayout(long lpos, long left, long top, long right, long bottom);
-			[id(36)] void RenderSetRect(long lpos, long left, long top, long right, long bottom);
-			[id(37)] TPOS RectCreate(TPOS lpos_parent);
-			[id(38)] void RectSetColor(long lpos, long color);
-			[id(39)] TPOS PageCreate(TPOS lpos_parent);
-			[id(40)] TPOS TipCreate(TPOS lpos_parent);
-			[id(41)] void TipAddText(long lpos, BSTR psz);
-			[id(42)] void TipSetIcon(long lpos, BSTR pszFileName);
-			[id(43)] TPOS ImageCreate(TPOS lpos_parent);
-			[id(44)] void ImageSetBitmap(long lpos, BSTR psz_filename);
-			[id(45)] void ImageSetTransparent(long lpos, long color);
-			[id(46)] TPOS TextCreate(TPOS lpos_parent);
-			[id(47)] void TextAddText(long lpos, BSTR psz);
-			[id(48)] TPOS MenuCreate(TPOS lpos_parent);
-			[id(49)] void MenuAddItem(TPOS lpos, BSTR pszAction);
+			[id(31)] void LogFontSetBold(LPOS lpos, long fBold);
+			[id(32)] void LogFontSetFace(LPOS lpos, BSTR pszFaceName);
+			[id(33)] void LogFontSetColor(LPOS lpos, long color);
+			[id(34)] void LogFontSetHeight(LPOS lpos, long nHeight);
+			[id(35)] void RenderSetLayout(LPOS lpos, long left, long top, long right, long bottom);
+			[id(36)] void RenderSetRect(LPOS lpos, long left, long top, long right, long bottom);
+			[id(37)] LPOS RectCreate(LPOS lpos_parent);
+			[id(38)] void RectSetColor(LPOS lpos, long color);
+			[id(39)] LPOS PageCreate(LPOS lpos_parent);
+			[id(40)] LPOS TipCreate(LPOS lpos_parent);
+			[id(41)] void TipAddText(LPOS lpos, BSTR psz);
+			[id(42)] void TipSetIcon(LPOS lpos, BSTR pszFileName);
+			[id(43)] LPOS ImageCreate(LPOS lpos_parent);
+			[id(44)] void ImageSetBitmap(LPOS lpos, BSTR psz_filename);
+			[id(45)] void ImageSetTransparent(LPOS lpos, long color);
+			[id(46)] LPOS TextCreate(LPOS lpos_parent);
+			[id(47)] void TextAddText(LPOS lpos, BSTR psz);
+			[id(48)] LPOS MenuCreate(LPOS lpos_parent);
+			[id(49)] void MenuAddItem(LPOS lpos, BSTR pszAction);
 			[id(50)] void DeleteAllDrawing();
 			[id(51)] void MDIClientUpdate();
 			[id(52)] void IdleUpdate();
 			[id(53)] void UpdateSystemSettings();
 			[id(54)] BOOL GetWindowLock();
 			[id(55)] void SetWindowLock(BOOL bWindowLock, BOOL bRecalcLayout);
-			[id(56)] BSTR  XPCreateStatusItem(BSTR pszItem);
+			[id(56)] BSTR XPCreateStatusItem(BSTR pszItem);
 			[id(57)] void XPSetStatusItem(BSTR pszGUID, BSTR pszText);
 			[id(58)] void XPRemoveStatusItem(BSTR pszGUID);
 			[id(59)] void XPSetDefaultStatusText(BSTR sz);

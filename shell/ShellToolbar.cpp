@@ -85,7 +85,7 @@ LRESULT CShellToolBar::OnGetInterface( WPARAM wParam, LPARAM lParam )
 	if( !pbutton->IsKindOf(RUNTIME_CLASS(CShellToolbarButton)) )
 		return 0;
 
-	return (LRESULT)((CShellToolbarButton*)pbutton)->GetInterface( wParam );
+	return (LRESULT)((CShellToolbarButton*)pbutton)->GetInterface( (long)wParam );
 }
 
 CBCGToolbarButton* CShellToolBar::CreateDroppedButton (COleDataObject* pDataObject)
@@ -471,7 +471,7 @@ int CShellToolBar::GetMyCommandButtons( UINT uiCmd, CObList *plistButtons )
 		}
 	}
 
-	return plistButtons ? plistButtons->GetCount() : nbtn_count;
+	return plistButtons ? (int)plistButtons->GetCount() : nbtn_count;
 }
 
 void CShellToolBar::OnActionInfo() 
