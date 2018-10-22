@@ -885,6 +885,7 @@ Task:<filename>\t-Specify the file with list of dlls to register" );
 	}
 	m_pTable->SetKey(GuidKey(m_innerclsid), 0);
 	m_pTable->Load(strFilePath);
+	m_pTable->LoadText("shell.grd.txt");
 
 	// set our functions instead standard
 
@@ -964,6 +965,7 @@ Task:<filename>\t-Specify the file with list of dlls to register" );
 	SaveRegisterData(m_regData);
 	// save table
 	VERIFY(m_pTable->Save(strFilePath));
+	VERIFY(m_pTable->SaveText("shell.grd.txt"));
 
 	// remove table 
 	delete m_pTable, m_pTable = 0;

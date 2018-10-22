@@ -190,6 +190,7 @@ bool App::Deinit()
 	while( m_pclass )
 	{
 		CWndClass	*p = m_pclass->m_pnext;
+		UnregisterClass(m_pclass->GetClassName(),  handle());
 		delete m_pclass;
 		m_pclass = p;
 	}

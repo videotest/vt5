@@ -161,7 +161,7 @@ etAngle };
 struct ParameterContainer
 {
 	long	cbSize;
-	long	lpos;	//initialized by container
+	TPOS	lpos;	//initialized by container
 
 	IMeasParamGroup				*pGroup;
 	struct ParameterDescriptor	*pDescr;

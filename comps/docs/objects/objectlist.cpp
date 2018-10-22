@@ -566,7 +566,7 @@ bool CMeasureObjectList::SerializeObject( CStreamEx &ar, SerializeParams *pparam
 			m_ci.Serialize(ar);
 		}
 		
-		long lCount = m_params.GetCount();
+		long lCount = m_params.GetCount(); int idx = 0;
 		ar << lCount;
 		
 		POSITION	pos = m_params.GetHeadPosition();
@@ -575,7 +575,7 @@ bool CMeasureObjectList::SerializeObject( CStreamEx &ar, SerializeParams *pparam
 			ParameterContainer	*pParCont = m_params.GetNext( pos );
 
 			ar << pParCont->cbSize;
-			ar << pParCont->lpos;
+			ar << idx++; // pParCont->lpos; // write any 4 bytes;
 			CLSID clsidGroup = INVALID_KEY;
 			if( pParCont->pGroup )
 			{
@@ -655,7 +655,8 @@ bool CMeasureObjectList::SerializeObject( CStreamEx &ar, SerializeParams *pparam
 			::ZeroMemory( pParCont, sizeof(ParameterContainer) );
 
 			ar >> pParCont->cbSize;
-			ar >> pParCont->lpos;
+			ar >> (long&)pParCont->lpos;
+			pParCont->lpos=i;
 
 			CLSID clsidGroup = INVALID_KEY;
 			ar.Read( &clsidGroup, sizeof(CLSID) );

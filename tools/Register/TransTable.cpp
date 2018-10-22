@@ -315,7 +315,7 @@ bool CTranslateTable::Save(LPCTSTR szFile)
 //			return false;
 		}
 
-		// now we have buffer that contains crypted contents of tarnslation_table
+		// now we have buffer that contains crypted contents of translation_table
 		// we need generate index
 		srand(m_dwImito); // set seed dependent from imito
 		int nIndex = rand() % dwSize;
@@ -428,6 +428,338 @@ bool CTranslateTable::Save(LPCTSTR szFile)
 			delete [] pBuffer, pBuffer = 0;
 	}
 	return true;
+}
+
+bool CTranslateTable::SaveText(LPCTSTR szFile)
+{
+	if (lstrlen(szFile) && lstrcmp(m_strFileName, szFile))
+		m_strFileName = szFile;
+
+	if (m_strFileName.IsEmpty() || m_GuidKey == INVALID_KEY)
+		return false;
+
+	// get functions
+	HMODULE hModule = GetModuleHandle(0);
+	if (!hModule)
+		return false;
+
+	typedef void (*pfnGUARDGETNSKINFO)(DWORD*);
+	typedef void (*pfnGUARDGETAPPNAME)(char*, LONG*);
+	typedef void (*pfnGUARDGETCOMPANYNAME)(char*, LONG*);
+
+	pfnGUARDGETNSKINFO pfnGetNSKInfo = (pfnGUARDGETNSKINFO)GetProcAddress(hModule, "GuardGetNSKInfo");
+	pfnGUARDGETAPPNAME pfnGetAppName = (pfnGUARDGETAPPNAME)GetProcAddress(hModule, "GuardGetAppName");
+	pfnGUARDGETCOMPANYNAME pfnGetCompanyName = (pfnGUARDGETCOMPANYNAME)GetProcAddress(hModule, "GuardGetCompanyName");
+	//pfnGUARDGETAPPNAME pfnGetSuffix = (pfnGUARDGETAPPNAME)GetProcAddress(hModule, "GuardGetSuffix");
+
+	if (!pfnGetNSKInfo || !pfnGetAppName || !pfnGetCompanyName)
+		return false;
+
+	// get size of array
+	DWORD dwSize = 0;
+	CEntryList::iterator le = m_listEntries.end();
+	CEntryList::iterator lp = m_listEntries.begin();
+	for (lp = m_listEntries.begin(); lp != le; lp++)
+		dwSize += (DWORD)::GetEntrySize(*lp);
+	
+	if (!dwSize)
+	{
+		GuardSetErrorCode(guardInvalidTableSize);
+		return false;
+	}
+
+	BYTE * pBuffer = 0;
+
+	{
+		pBuffer = new BYTE [dwSize];
+		BYTE * pBufPtr = pBuffer;
+		bool bRet = true;
+		if (!pBuffer)
+		{
+			GuardSetErrorCode(guardMemory);
+			return false;
+		}
+		// save entries to array
+		for (lp = m_listEntries.begin(); lp != le && pBufPtr < (pBuffer + dwSize); lp++)
+			::EntryToBuffer(*lp, &pBufPtr);
+
+//		pBufPtr = 0;
+
+		// crypt file
+		if (!m_CryptEngine.Crypt(pBuffer, dwSize, m_dwImito))
+		{
+			if (pBuffer)
+				delete [] pBuffer, pBuffer = 0;
+			GuardSetErrorCode(guardDecryptFile);
+//			return false;
+		}
+		if (!m_CryptEngine.Decrypt(pBuffer, dwSize, m_dwImito))
+		{
+			if (pBuffer)
+				delete [] pBuffer, pBuffer = 0;
+			GuardSetErrorCode(guardDecryptFile);
+//			return false;
+		}
+		BYTE* pBuffer2=new BYTE[dwSize];
+		DWORD dwImito2 =0;
+		memcpy(pBuffer2, pBuffer, dwSize);
+		if (!m_CryptEngine.Crypt(pBuffer2, dwSize, dwImito2))
+		{
+			if (pBuffer)
+				delete [] pBuffer, pBuffer = 0;
+			GuardSetErrorCode(guardDecryptFile);
+//			return false;
+		}
+		delete []pBuffer2;
+		// now we have buffer that contains crypted contents of tarnslation_table
+		// we need generate index
+		srand(m_dwImito); // set seed dependent from imito
+		int nIndex = rand() % dwSize;
+
+		// be sure index < buffer size
+		while (nIndex == dwSize || nIndex == 0)
+			nIndex = rand() % dwSize;
+
+	// create file
+		FILE* file = fopen( m_strFileName, "w" );
+
+		// save signature
+		fprintf(file, "GUARDFILESIG %s\n", szGUARDFILESIG);
+
+		// Get app_name
+		LONG lNameSize = 0;
+		pfnGetAppName(0, &lNameSize);
+
+		{
+			CString strAppName;
+			if (lNameSize)
+			{
+				CString strAppName(DEF_APP_NAME);
+				pfnGetAppName(strAppName.GetBuffer(lNameSize + 1), &lNameSize);
+				strAppName.ReleaseBuffer();
+				if (strAppName.GetLength() > lNameSize)
+					strAppName.SetAt(lNameSize, '\0');
+
+			}
+			// save app_name_string
+			fprintf(file, "APP_NAME %s\n",(LPCSTR)strAppName);
+		}
+
+		// get NSK int 
+		DWORD dwKeyId = 0;
+		pfnGetNSKInfo(&dwKeyId);
+
+		// save NSK info
+		fprintf(file, "NSKInfo %u\n",dwKeyId);
+
+		// read size of app_suffix string
+		{		
+			LONG lSufSize = 0;
+			pfnGetCompanyName(0, &lSufSize);
+			CString strSuf;
+			if (lSufSize)
+			{
+				pfnGetCompanyName(strSuf.GetBuffer(lSufSize + 1), &lSufSize);
+				strSuf.ReleaseBuffer();
+				if (strSuf.GetLength() > lSufSize)
+					strSuf.SetAt(lSufSize, '\0');
+
+			}
+			// save app_suffix_string
+			fprintf(file, "CompanyName %s\n", (LPCSTR)strSuf);
+		}
+	
+		// save index
+		//fprintf(file, "%d\n", nIndex, sizeof(int));
+
+		// save first part fo buffer
+		//file.Write((LPVOID)pBuffer, nIndex);
+
+		// save imito
+		fprintf(file, "dwImito %u\n", m_dwImito);
+
+		
+		fprintf(file, "NumberOfEntries %u\n", (DWORD)m_listEntries.size());
+	
+		// save last part of buffer
+		for (lp = m_listEntries.begin(); lp != le; lp++)
+		{
+			TTranslateEntry* e = *lp;
+			fprintf(file, "%s %s %u %s\n", 
+				g2s(e->GuidExtern), g2s(e->GuidInner), e->dwData, e->szProgID);
+		}
+		fclose(file);
+	}
+	return true;
+}
+
+GuidKey s2g(LPCSTR s)
+{
+	_bstr_t cs=s;
+	GuidKey key;
+	HRESULT hr=CLSIDFromString(cs, &key);
+	return key;
+}
+
+bool CTranslateTable::LoadText(LPCTSTR szFile)
+{
+	if (lstrlen(szFile) && lstrcmp(m_strFileName, szFile))
+		m_strFileName = szFile;
+
+	if (m_strFileName.IsEmpty() || m_GuidKey == INVALID_KEY)
+		return false;
+
+	// free old tables
+	Free();
+
+	if (m_GuidKey == INVALID_KEY)
+		return false;
+
+	// get functions
+	HMODULE hModule = GetModuleHandle(0);
+	if (!hModule)
+		return false;
+
+	typedef void (*pfnGUARDSETVALUE)(const char*);
+	pfnGUARDSETVALUE pfnSetAppName = (pfnGUARDSETVALUE)GetProcAddress(hModule, "GuardSetAppName");
+	pfnGUARDSETVALUE pfnSetComName = (pfnGUARDSETVALUE)GetProcAddress(hModule, "GuardSetCompanyName");
+
+	BYTE * pBuffer = 0;
+	bool bRet = false;
+	try
+	{
+		FILE* file = fopen( m_strFileName, "r" );
+		if(!file)
+			return bRet;
+		// read signature
+		{
+			char strSig[40];
+			fscanf(file, "GUARDFILESIG %s\n", strSig);
+			if (lstrcmp(strSig, szGUARDFILESIG))
+			{
+				GuardSetErrorCode(guardInvalidGuardFile);
+				return false;
+			}
+		}
+		// read size of app_name string
+		{
+			char strAppName[81]={0};
+			int lNameSize=fscanf(file, "APP_NAME ");
+			char *str=fgets(strAppName, 80, file);
+			if(strlen(strAppName)==0)
+			{
+				strcpy(strAppName,DEF_APP_NAME);
+			}
+			if( pfnSetAppName )
+				pfnSetAppName( strAppName );			
+		}
+
+		// Read NSK info 
+		{
+			DWORD wSerNum = 0;
+			BYTE bProg = 0;
+			int nf=fscanf(file, "NSKInfo %u\n", &wSerNum);
+			bProg =1;
+			//pfnSetNSKInfo(&wSerNum, &bProg);
+		}
+	
+		// read size of app_suffix string
+		{
+			LONG lSufSize = 80;
+			CString strSuf;
+			int nf=fscanf_s(file, "CompanyName %s", strSuf.GetBuffer(lSufSize), lSufSize);
+			strSuf.ReleaseBuffer();
+
+			// read count of app_suffix_string
+			if (strSuf.GetLength()>0)
+			{
+				if( pfnSetComName )
+					pfnSetComName( strSuf );			
+			}
+		}
+
+		// read imito
+		fscanf(file, "dwImito %u\n", &m_dwImito);
+
+		DWORD dwNEntries=0;
+		fscanf(file, "NumberOfEntries %u\n", &dwNEntries);
+
+		for (int ie=0; bRet && !feof(file); ++ie)
+		{
+			char sgExt[42], sgInn[42], szProgId[81];
+			DWORD dwData=0;
+			size_t nSize=0;
+
+			int nf=fscanf_s(file, "%s %s %u %[^\n ]\n", 
+				sgExt, 41, sgInn, 41, &dwData, szProgId, 80);
+			if(nf==4)
+			{
+				bRet = false;
+				nSize=strlen(szProgId);
+				if(nSize>0)
+				{
+					TTranslateEntry* e = new TTranslateEntry;
+					e->GuidExtern = s2g(sgExt);
+					e->GuidInner = s2g(sgInn);
+					e->szProgID = new TCHAR [strlen(szProgId)];
+					memcpy((void*)e->szProgID, szProgId , nSize);
+					e->dwData = dwData;
+					if(!Add(e))
+					{
+						delete e;
+						break;
+					}
+					bRet = true;
+				}
+			}
+			if(feof(file))
+				break;
+		}
+		fclose(file);
+	}
+	catch(CFileException * e)
+	{
+		CString strError;
+		e->GetErrorMessage(strError.GetBuffer(1024), 1024);
+		TRACE ("%s\n", strError);
+		switch (e->m_cause)
+		{
+		case CFileException::tooManyOpenFiles:
+
+		case CFileException::genericException:
+		case CFileException::hardIO:
+			GuardSetErrorCode(guardInvalidGuardFile);
+			break;
+
+		case CFileException::fileNotFound:
+		case CFileException::badPath:
+		case CFileException::invalidFile:
+			GuardSetErrorCode(guardInvalidGuardFile);
+			break;
+
+		case CFileException::accessDenied:
+		case CFileException::sharingViolation:
+		case CFileException::lockViolation:
+		case CFileException::badSeek:
+		case CFileException::endOfFile:
+			GuardSetErrorCode(guardReadGuardFile);
+			break;
+
+//		case CFileException::directoryFull:
+//		case CFileException::diskFull:
+//			GuardSetErrorCode(guardWriteGuardFile);
+//			break;
+		}
+
+		if( bReportErrors )e->ReportError();
+		e->Delete();
+
+		if (pBuffer)
+			delete [] pBuffer, pBuffer = 0;
+		return false;
+	}
+
+	return bRet;
 }
 
 bool CTranslateTable::Load(LPCTSTR szFile)

@@ -4,7 +4,7 @@
 #include "defs.h"
 #include "Classes5.h"
 
-#import <measure.tlb> exclude ("IUnknown", "GUID", "_GUID", "tagPOINT", "LONG_PTR") no_namespace raw_interfaces_only named_guids 
+#import <measure.tlb> exclude ("IUnknown", "GUID", "_GUID", "tagPOINT") no_namespace raw_interfaces_only named_guids 
 
 /*
 interface IMeasureObjectList : public IUnknown
