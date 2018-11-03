@@ -186,4 +186,6 @@ typedef LONG_PTR LPOS;
 
 #define _FILE_OPEN_SIZE_ sizeof(OPENFILENAME)
 
+//#define NOGUARD
+
 #endif //__defs_h__

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="windows-1251"?>
 <VisualStudioProject
 	ProjectType="Visual C++"
-	Version="9,00"
+	Version="9.00"
 	Name="ChooseColor"
 	ProjectGUID="{3DD957D4-1E01-4518-B17E-D0C5E56ED7C7}"
 	RootNamespace="ChooseColor"
@@ -289,7 +289,6 @@
 		</Configuration>
 		<Configuration
 			Name="Debug|x64"
-			IntermediateDirectory="$(PlatformName)\$(ConfigurationName)"
 			ConfigurationType="2"
 			InheritedPropertySheets="$(SolutionDir)props\CommonEnv.vsprops"
 			UseOfMFC="2"

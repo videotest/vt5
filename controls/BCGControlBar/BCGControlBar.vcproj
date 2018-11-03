@@ -147,7 +147,6 @@
 				PrecompiledHeaderThrough="stdafx.h"
 				BrowseInformation="1"
 				WarningLevel="3"
-				DebugInformationFormat="3"
 			/>
 			<Tool
 				Name="VCManagedResourceCompilerTool"
@@ -162,7 +161,7 @@
 			/>
 			<Tool
 				Name="VCLinkerTool"
-				AdditionalDependencies="winmm.lib GdiPlus.lib"
+				AdditionalDependencies="GdiPlus.lib"
 				OutputFile="$(SolutionDir)vt5\$(PlatformName)\$(ConfigurationName)\BCGCB464d.dll"
 				AdditionalLibraryDirectories=""
 				ModuleDefinitionFile=""

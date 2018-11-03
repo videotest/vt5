@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="windows-1251"?>
 <VisualStudioProject
 	ProjectType="Visual C++"
-	Version="9,00"
+	Version="9.00"
 	Name="MV5Drv"
 	ProjectGUID="{7937C593-B8C4-4243-950D-320D14B7300C}"
 	RootNamespace="MV5Drv"
@@ -21,9 +21,8 @@
 	<Configurations>
 		<Configuration
 			Name="Release|Win32"
-			OutputDirectory=".\Release"
-			IntermediateDirectory=".\Release"
 			ConfigurationType="2"
+			InheritedPropertySheets="$(SolutionDir)props\CommonEnv.vsprops"
 			UseOfMFC="2"
 			ATLMinimizesCRunTimeLibraryUsage="false"
 			CharacterSet="2"
@@ -120,9 +119,8 @@
 		</Configuration>
 		<Configuration
 			Name="Release|x64"
-			OutputDirectory="$(PlatformName)\$(ConfigurationName)"
-			IntermediateDirectory="$(PlatformName)\$(ConfigurationName)"
 			ConfigurationType="2"
+			InheritedPropertySheets="$(SolutionDir)props\CommonEnv.vsprops"
 			UseOfMFC="2"
 			ATLMinimizesCRunTimeLibraryUsage="false"
 			CharacterSet="2"
@@ -216,9 +214,8 @@
 		</Configuration>
 		<Configuration
 			Name="Debug|Win32"
-			OutputDirectory=".\Debug"
-			IntermediateDirectory=".\Debug"
 			ConfigurationType="2"
+			InheritedPropertySheets="$(SolutionDir)props\CommonEnv.vsprops"
 			UseOfMFC="2"
 			ATLMinimizesCRunTimeLibraryUsage="false"
 			CharacterSet="2"
@@ -316,9 +313,8 @@
 		</Configuration>
 		<Configuration
 			Name="Debug|x64"
-			OutputDirectory="$(PlatformName)\$(ConfigurationName)"
-			IntermediateDirectory="$(PlatformName)\$(ConfigurationName)"
 			ConfigurationType="2"
+			InheritedPropertySheets="$(SolutionDir)props\CommonEnv.vsprops"
 			UseOfMFC="2"
 			ATLMinimizesCRunTimeLibraryUsage="false"
 			CharacterSet="2"
@@ -413,9 +409,8 @@
 		</Configuration>
 		<Configuration
 			Name="Release 9x|Win32"
-			OutputDirectory=".\MV5Drv___Win32_Release_9x"
-			IntermediateDirectory=".\MV5Drv___Win32_Release_9x"
 			ConfigurationType="2"
+			InheritedPropertySheets="$(SolutionDir)props\CommonEnv.vsprops"
 			UseOfMFC="2"
 			ATLMinimizesCRunTimeLibraryUsage="false"
 			CharacterSet="2"
@@ -511,9 +506,8 @@
 		</Configuration>
 		<Configuration
 			Name="Release 9x|x64"
-			OutputDirectory="$(PlatformName)\$(ConfigurationName)"
-			IntermediateDirectory="$(PlatformName)\$(ConfigurationName)"
 			ConfigurationType="2"
+			InheritedPropertySheets="$(SolutionDir)props\CommonEnv.vsprops"
 			UseOfMFC="2"
 			ATLMinimizesCRunTimeLibraryUsage="false"
 			CharacterSet="2"
@@ -606,9 +600,8 @@
 		</Configuration>
 		<Configuration
 			Name="Debug 9x|Win32"
-			OutputDirectory=".\MV5Drv___Win32_Debug_9x"
-			IntermediateDirectory=".\MV5Drv___Win32_Debug_9x"
 			ConfigurationType="2"
+			InheritedPropertySheets="$(SolutionDir)props\CommonEnv.vsprops"
 			UseOfMFC="2"
 			ATLMinimizesCRunTimeLibraryUsage="false"
 			CharacterSet="2"
@@ -706,9 +699,8 @@
 		</Configuration>
 		<Configuration
 			Name="Debug 9x|x64"
-			OutputDirectory="$(PlatformName)\$(ConfigurationName)"
-			IntermediateDirectory="$(PlatformName)\$(ConfigurationName)"
 			ConfigurationType="2"
+			InheritedPropertySheets="$(SolutionDir)props\CommonEnv.vsprops"
 			UseOfMFC="2"
 			ATLMinimizesCRunTimeLibraryUsage="false"
 			CharacterSet="2"

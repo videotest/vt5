@@ -38,6 +38,8 @@
 
 #include "Utils.h"
 
+#include "APIHook.h"
+
 bool	bReportErrors = true;
 BOOL	g_bUseLanguageHooks = true;
 
@@ -156,6 +158,14 @@ void func_free_vt_type_info( void* pdata )
 
 _map_t<vt_type_info*, const char*, cmp_string_nocase, func_free_vt_type_info>	g_map_types;
 
+namespace{
+	DWORD Index_HeapAllocRecursion=TlsAlloc();
+	BOOL bGetRecursion(){return (BOOL)TlsGetValue(Index_HeapAllocRecursion);}
+	void SetRecursion(BOOL b){
+		TlsSetValue(Index_HeapAllocRecursion,(LPVOID)b);
+	}
+}
+
 extern "C" _declspec(dllexport) INamedDataInfo* VTGetTypeInfo( BSTR bstrType )
 {
 	TPOS lpos = g_map_types.find( (char*)_bstr_t( bstrType ) );
@@ -216,13 +226,13 @@ CString LanguageLoadCString( UINT ui_id )
 	CString str;	
 	char sz_buf[1024];	sz_buf[0] = 0;
 
-	//if( g_bUseLanguageHooks )
+	if( g_bUseLanguageHooks )
 	{
 		LoadString( AfxGetApp()->m_hInstance, ui_id, sz_buf, sizeof(sz_buf) );
 		str = sz_buf;
 	}
-	//else
-	//	str.LoadString( ui_id );
+	else
+		str.LoadString( ui_id );
 
 	return str;
 }
@@ -282,7 +292,29 @@ long cmp_guid( const GUID *p1, const GUID *p2 )
 
 _map_t<vt_factory_info*, const GUID*, cmp_guid, free_vt_factory_info>	g_map_fi;
 
-HANDLER_STDAPI CoCreateInstanceShell(REFCLSID rclsid, LPUNKNOWN pUnkOuter, DWORD dwClsContext, REFIID riid, LPVOID FAR* ppv)
+HOOKMACRO("OLEAUT32.DLL", BSTR __stdcall, SysAllocString, (const OLECHAR * oleChar))
+{
+	BSTR bstr;
+	BOOL b_HeapAllocRecursion=bGetRecursion();
+	if(!b_HeapAllocRecursion){
+		SetRecursion(TRUE);
+		bstr=((PFN_SysAllocString)(PROC)g_SysAllocString)(oleChar);
+		if(bstr){
+//			add_mem(MI_BSTR, bstr, wcslen(oleChar)+2);
+		}
+		SetRecursion(FALSE);
+	}else{
+		bstr=((PFN_SysAllocString)(PROC)g_SysAllocString)(oleChar);
+	}
+	return bstr;
+}
+
+//WINOLEAPI CoCreateInstance(IN REFCLSID rclsid, IN LPUNKNOWN pUnkOuter,
+//                    IN DWORD dwClsContext, IN REFIID riid, OUT LPVOID FAR* ppv);
+//HANDLER_STDAPI CoCreateInstanceShell(REFCLSID rclsid, LPUNKNOWN pUnkOuter, DWORD dwClsContext, REFIID riid, LPVOID FAR* ppv)
+
+HOOKMACRO("OLE32.DLL", HRESULT STDAPICALLTYPE, CoCreateInstance, (IN REFCLSID rclsid, IN LPUNKNOWN pUnkOuter,
+                    IN DWORD dwClsContext, IN REFIID riid, OUT LPVOID FAR* ppv))
 {
 	PROFILE_TEST( "shell.cpp\\CoCreateInstanceShell" )
 	
@@ -342,27 +374,29 @@ HANDLER_STDAPI CoCreateInstanceShell(REFCLSID rclsid, LPUNKNOWN pUnkOuter, DWORD
 	// if entry not founded
 	if (!pEntry || FAILED(hr)) // not own control  // 
 	{
-		BYTE * pCode = (BYTE*)GetDataCreateInstance();
-		DWORD dw = 0;
-		memcpy(&dw, &pCode[8], sizeof(DWORD));
-		if (dw)
-		{
-			// restore original handler
-			memcpy((BYTE*)dw, &pCode[1], 7);
+		//BYTE * pCode = (BYTE*)GetDataCreateInstance();
+		//DWORD dw = 0;
+		//memcpy(&dw, &pCode[8], sizeof(DWORD));
+		//if (dw)
+		//{
+		//	// restore original handler
+		//	memcpy((BYTE*)dw, &pCode[1], 7);
 
-			// simply call CoCreateInstance function
-			typedef HRESULT (_stdcall *PFN)(REFCLSID, LPUNKNOWN, DWORD, REFIID, LPVOID FAR* );
-			PFN pfn = (PFN)dw;
-			hr = pfn(rclsid, pUnkOuter, dwClsContext, riid, ppv);
+		//	// simply call CoCreateInstance function
+		//	typedef HRESULT (_stdcall *PFN)(REFCLSID, LPUNKNOWN, DWORD, REFIID, LPVOID FAR* );
+		//	PFN pfn = (PFN)dw;
+		//	hr = pfn(rclsid, pUnkOuter, dwClsContext, riid, ppv);
 
-			// set new handler again
-			BYTE * ptr = (BYTE*)dw;
-			*ptr = 0xB8;ptr++; // mov eax, &data
-			memcpy(ptr, &pCode[12], sizeof(DWORD));
-			ptr += 4;
-			*ptr = 0xFF;ptr++; // jmp eax
-			*ptr = 0xE0;ptr++; // 
-		}
+		//	// set new handler again
+		//	BYTE * ptr = (BYTE*)dw;
+		//	*ptr = 0xB8;ptr++; // mov eax, &data
+		//	memcpy(ptr, &pCode[12], sizeof(DWORD));
+		//	ptr += 4;
+		//	*ptr = 0xFF;ptr++; // jmp eax
+		//	*ptr = 0xE0;ptr++; // 
+		//}
+
+		hr = ((PFN_CoCreateInstance)(PROC)g_CoCreateInstance)(rclsid, pUnkOuter, dwClsContext, riid, ppv);
 	
 		if (SUCCEEDED(hr))
 			return hr;
@@ -389,7 +423,7 @@ HANDLER_STDAPI CoCreateInstanceShell(REFCLSID rclsid, LPUNKNOWN pUnkOuter, DWORD
 	if (!bstrModule.length())
 		return REGDB_E_READREGDB;
 
-	HINSTANCE hDll = ::CoLoadLibrary(bstrModule, true);
+	HINSTANCE hDll = ::LoadLibraryExW(bstrModule, 0, 0);
 	if (!hDll)
 		return TYPE_E_CANTLOADLIBRARY;
 
@@ -480,7 +514,15 @@ HANDLER_STDAPI CoCreateInstanceShell(REFCLSID rclsid, LPUNKNOWN pUnkOuter, DWORD
 }
 
 #if (_WIN32_WINNT >= 0x0400 ) || defined(_WIN32_DCOM) // DCOM
-HANDLER_STDAPI CoCreateInstanceExShell(REFCLSID rclsid, LPUNKNOWN punkOuter, DWORD dwClsCtx, COSERVERINFO * pServerInfo, ULONG cmq, MULTI_QI * pResults)
+//WINOLEAPI CoCreateInstanceEx(
+//    IN REFCLSID                    Clsid,
+//    IN IUnknown    *               punkOuter, // only relevant locally
+//    IN DWORD                       dwClsCtx,
+//    IN COSERVERINFO *              pServerInfo,
+//    IN DWORD                       dwCount,
+//    IN OUT MULTI_QI    *           pResults );
+//HANDLER_STDAPI CoCreateInstanceExShell(REFCLSID rclsid, LPUNKNOWN punkOuter, DWORD dwClsCtx, COSERVERINFO * pServerInfo, ULONG cmq, MULTI_QI * pResults)
+HOOKMACRO("OLE32.DLL", HRESULT STDAPICALLTYPE, CoCreateInstanceEx, (REFCLSID rclsid, LPUNKNOWN punkOuter, DWORD dwClsCtx, COSERVERINFO * pServerInfo, ULONG cmq, MULTI_QI* pResults))
 {
 	//PROFILE_TEST( "shell.cpp\\CoCreateInstanceExShell" )
 
@@ -527,27 +569,29 @@ HANDLER_STDAPI CoCreateInstanceExShell(REFCLSID rclsid, LPUNKNOWN punkOuter, DWO
 	// if entry not founded
 	if (!pEntry || FAILED(hr)) // not own control
 	{
-		BYTE * pCode = (BYTE*)GetDataCreateInstanceEx();
-		DWORD dw = 0;
-		memcpy(&dw, &pCode[8], sizeof(DWORD));
-		if (dw)
-		{
-			// restore original handler
-			memcpy((BYTE*)dw, &pCode[1], 7);
+		//BYTE * pCode = (BYTE*)GetDataCreateInstanceEx();
+		//DWORD dw = 0;
+		//memcpy(&dw, &pCode[8], sizeof(DWORD));
+		//if (dw)
+		//{
+		//	// restore original handler
+		//	memcpy((BYTE*)dw, &pCode[1], 7);
 
-			// simply call CoCreateInstanceEx function
-			typedef HRESULT (_stdcall *PFN)(REFCLSID, LPUNKNOWN, DWORD, COSERVERINFO*, ULONG, MULTI_QI*);
-			PFN pfn = (PFN)dw;
-			hr = pfn(rclsid, punkOuter, dwClsCtx, pServerInfo, cmq, pResults);
+		//	// simply call CoCreateInstanceEx function
+		//	typedef HRESULT (_stdcall *PFN)(REFCLSID, LPUNKNOWN, DWORD, COSERVERINFO*, ULONG, MULTI_QI*);
+		//	PFN pfn = (PFN)dw;
+		//	hr = pfn(rclsid, punkOuter, dwClsCtx, pServerInfo, cmq, pResults);
 
-			// set new handler again
-			BYTE * ptr = (BYTE*)dw;
-			*ptr = 0xB8;ptr++; // mov eax, &data
-			memcpy(ptr, &pCode[12], sizeof(DWORD));
-			ptr += 4;
-			*ptr = 0xFF;ptr++; // jmp eax
-			*ptr = 0xE0;ptr++; // 
-		}
+		//	// set new handler again
+		//	BYTE * ptr = (BYTE*)dw;
+		//	*ptr = 0xB8;ptr++; // mov eax, &data
+		//	memcpy(ptr, &pCode[12], sizeof(DWORD));
+		//	ptr += 4;
+		//	*ptr = 0xFF;ptr++; // jmp eax
+		//	*ptr = 0xE0;ptr++; // 
+		//}
+
+		hr = ((PFN_CoCreateInstanceEx)(PROC)g_CoCreateInstanceEx)(rclsid, punkOuter, dwClsCtx, pServerInfo, cmq, pResults);
 		return hr;
 	}
 //////////////////////}
@@ -555,7 +599,8 @@ HANDLER_STDAPI CoCreateInstanceExShell(REFCLSID rclsid, LPUNKNOWN punkOuter, DWO
 		return E_INVALIDARG;
 
 	IUnknown * punk = 0;
-	hr = CoCreateInstanceShell(rclsid, punkOuter, dwClsCtx, IID_IUnknown, (LPVOID*)&punk);
+//	hr = CoCreateInstanceShell(rclsid, punkOuter, dwClsCtx, IID_IUnknown, (LPVOID*)&punk);
+	hr = CoCreateInstance(rclsid, punkOuter, dwClsCtx, IID_IUnknown, (LPVOID*)&punk);
 	if (FAILED(hr) || !punk)
 		return hr;
 
@@ -572,7 +617,8 @@ HANDLER_STDAPI CoCreateInstanceExShell(REFCLSID rclsid, LPUNKNOWN punkOuter, DWO
 }
 #endif // DCOM
 
-HANDLER_STDAPI CoGetClassObjectShell(REFCLSID rclsid, DWORD dwClsContext, LPVOID pvReserved, REFIID riid, LPVOID FAR* ppv)
+//HANDLER_STDAPI CoGetClassObjectShell(REFCLSID rclsid, DWORD dwClsContext, LPVOID pvReserved, REFIID riid, LPVOID FAR* ppv)
+HOOKMACRO("OLE32.DLL", HRESULT STDAPICALLTYPE, CoGetClassObject, (REFCLSID rclsid, DWORD dwClsContext, LPVOID pvReserved, REFIID riid, LPVOID FAR* ppv))
 {
 	//PROFILE_TEST( "shell.cpp\\CoGetClassObjectShell" )
 
@@ -620,27 +666,30 @@ HANDLER_STDAPI CoGetClassObjectShell(REFCLSID rclsid, DWORD dwClsContext, LPVOID
 	// if entry not founded
 	if (!pEntry || FAILED(hr)) // not own control
 	{
-		BYTE * pCode = (BYTE*)GetDataGetClassObject();
-		DWORD dw = 0;
-		memcpy(&dw, &pCode[8], sizeof(DWORD));
-		if (dw)
-		{
-			// restore original handler
-			memcpy((BYTE*)dw, &pCode[1], 7);
+		//BYTE * pCode = (BYTE*)GetDataGetClassObject();
+		//DWORD dw = 0;
+		//memcpy(&dw, &pCode[8], sizeof(DWORD));
+		//if (dw)
+		//{
+		//	// restore original handler
+		//	memcpy((BYTE*)dw, &pCode[1], 7);
 
-			// simply call CoGetClassObject function
-			typedef HRESULT (_stdcall *PFN)(REFCLSID, DWORD, LPVOID, REFIID, LPVOID*) ;
-			PFN pfn = (PFN)dw;
-			hr = pfn(rclsid, dwClsContext, pvReserved, riid, ppv);
+		//	// simply call CoGetClassObject function
+		//	typedef HRESULT (_stdcall *PFN)(REFCLSID, DWORD, LPVOID, REFIID, LPVOID*) ;
+		//	PFN pfn = (PFN)dw;
+		//	hr = pfn(rclsid, dwClsContext, pvReserved, riid, ppv);
 
-			// set new handler again
-			BYTE * ptr = (BYTE*)dw;
-			*ptr = 0xB8;ptr++; // mov eax, &data
-			memcpy(ptr, &pCode[12], sizeof(DWORD));
-			ptr += 4;
-			*ptr = 0xFF;ptr++; // jmp eax
-			*ptr = 0xE0;ptr++; // 
-		}
+		//	// set new handler again
+		//	BYTE * ptr = (BYTE*)dw;
+		//	*ptr = 0xB8;ptr++; // mov eax, &data
+		//	memcpy(ptr, &pCode[12], sizeof(DWORD));
+		//	ptr += 4;
+		//	*ptr = 0xFF;ptr++; // jmp eax
+		//	*ptr = 0xE0;ptr++; // 
+		//}
+
+		hr = ((PFN_CoGetClassObject)(PROC)g_CoGetClassObject)(rclsid, dwClsContext, pvReserved, riid, ppv);
+
 		return hr;
 	}
 //////////////////////////}
@@ -699,7 +748,8 @@ HANDLER_STDAPI CoGetClassObjectShell(REFCLSID rclsid, DWORD dwClsContext, LPVOID
 	return REGDB_E_CLASSNOTREG;
 }
 
-HANDLER_STDAPI ProgIDFromCLSIDShell(REFCLSID rclsid, LPOLESTR FAR* lplpszProgID)
+//HANDLER_STDAPI ProgIDFromCLSIDShell(REFCLSID rclsid, LPOLESTR FAR* lplpszProgID)
+HOOKMACRO("OLE32.DLL", HRESULT STDAPICALLTYPE, ProgIDFromCLSID, (REFCLSID rclsid, LPOLESTR FAR* lplpszProgID))
 {
 	//PROFILE_TEST( "shell.cpp\\ProgIDFromCLSIDShell" )
 
@@ -766,7 +816,8 @@ HANDLER_STDAPI ProgIDFromCLSIDShell(REFCLSID rclsid, LPOLESTR FAR* lplpszProgID)
 	return hr;
 }
 
-HANDLER_STDAPI CLSIDFromProgIDShell(LPCOLESTR lpszProgID, LPCLSID lpclsid)
+//HANDLER_STDAPI CLSIDFromProgIDShell(LPCOLESTR lpszProgID, LPCLSID lpclsid)
+HOOKMACRO("OLE32.DLL", HRESULT STDAPICALLTYPE, CLSIDFromProgID, (LPCOLESTR lpszProgID, LPCLSID lpclsid))
 {
 	//PROFILE_TEST( "shell.cpp\\CLSIDFromProgIDShell" )
 
@@ -790,28 +841,33 @@ HANDLER_STDAPI CLSIDFromProgIDShell(LPCOLESTR lpszProgID, LPCLSID lpclsid)
 		}
 	}
 
-	hr = REGDB_E_CLASSNOTREG;
-	BYTE * pCode = (BYTE*)GetDataCLSIDFromProgID();
-	DWORD dw = 0;
-	memcpy(&dw, &pCode[8], sizeof(DWORD));
-	if (dw)
-	{
-		// restore original handler
-		memcpy((BYTE*)dw, &pCode[1], 7);
+	hr=((PFN_CLSIDFromProgID)(PROC)g_CLSIDFromProgID)(lpszProgID, lpclsid);
 
-		// simply call CLSIDFromProgID function
-		typedef HRESULT (_stdcall *PFN)(LPCOLESTR, LPCLSID);
-		PFN pfn = (PFN)dw;
-		hr = pfn(lpszProgID, lpclsid);
-
-		// set new handler again
-		BYTE * ptr = (BYTE*)dw;
-		*ptr = 0xB8;ptr++; // mov eax, &data
-		memcpy(ptr, &pCode[12], sizeof(DWORD));
-		ptr += 4;
-		*ptr = 0xFF;ptr++; // jmp eax
-		*ptr = 0xE0;ptr++; // 
-	}
+//	hr = REGDB_E_CLASSNOTREG;
+//	BYTE * pCode = (BYTE*)GetDataCLSIDFromProgID();
+//	DWORD_PTR dw = 0;
+//	memcpy(&dw, &pCode[8], sizeof(DWORD_PTR));
+//	if (dw)
+//	{
+//		// restore original handler
+//		memcpy((BYTE*)dw, &pCode[1], 7);
+//
+//		// simply call CLSIDFromProgID function
+//		typedef HRESULT (_stdcall *PFN)(LPCOLESTR, LPCLSID);
+//		PFN pfn = (PFN)dw;
+//
+//
+////		hr = pfn(lpszProgID, lpclsid);
+//
+//
+//		// set new handler again
+//		BYTE * ptr = (BYTE*)dw;
+//		*ptr = 0xB8;ptr++; // mov eax, &data
+//		memcpy(ptr, &pCode[12], sizeof(DWORD));
+//		ptr += 4;
+//		*ptr = 0xFF;ptr++; // jmp eax
+//		*ptr = 0xE0;ptr++; // 
+//	}
 	
 	return hr;
 }
@@ -910,7 +966,7 @@ void ShellInitLanguages()
 	char	*p = strrchr( szIniFileName, '\\' );
 	strcpy( p, "\\shell.data" );
 
-	char	sz[10] = "en";
+	char	sz[10] = "ru";
 	::GetPrivateProfileString( "General", "Language:String", sz, sz, 10, szIniFileName );
 	::WritePrivateProfileString( "General", "Language:String", sz, szIniFileName );
 
@@ -940,7 +996,7 @@ void ShellInitLanguages()
 
 	if( g_bUseLanguageHooks )
 	{
-		InitLanguageSupport( lid );
+//		InitLanguageSupport( lid );
 	}
 	/*
 	else
@@ -1157,7 +1213,7 @@ BOOL check_disk_space(CMainFrame* mf)
 
 	if(GetDiskFreeSpaceEx(path, &free_for_user, &total, &total_free))
 	{
-		fp = free_for_user.QuadPart/(1<<20);
+		fp = long(free_for_user.QuadPart/(1<<20));
 		min_free = ::GetValueInt(::GetAppUnknown(), "General", "MinimumDiskAvailableMb",100);
 		if( fp >= min_free) return TRUE;
 	}
@@ -1230,12 +1286,12 @@ BOOL CShellApp::InitInstance()
 
 	_try(CShellApp, InitInstance)
 	{
-/*		if (!IsUserAnAdmin())
+		if (!IsUserAnAdmin())
 		{
 			int r = AfxMessageBox(IDS_USER_NOT_ADMIN, MB_YESNO);
 			if (r != IDYES)
 				return FALSE;
-		}*/
+		}
 
 		//регистрируем dll из списка		
 		char	sz_file[MAX_PATH];
@@ -1252,7 +1308,7 @@ BOOL CShellApp::InitInstance()
 				char	sz_module[MAX_PATH];	sz_module[0] = 0;
 				fgets( sz_module, sizeof( sz_module ), pfile );
 
-				int nlen = strlen( sz_module );
+				int nlen = (int)strlen( sz_module );
 				if( !nlen )continue;
 
 				if( sz_module[nlen-1] == '\n' )
@@ -1396,16 +1452,16 @@ BOOL CShellApp::InitInstance()
 	// such as the name of your company or organization.
 	SetRegistryKey(m_strGuardCompanyName);
 
-	m_bCreateInstance = InstallCreateInstance((LPVOID)&CoCreateInstanceShell);
+	m_bCreateInstance = false;//InstallCreateInstance((LPVOID)&CoCreateInstanceShell);
 
-	m_bGetClassObject = InstallGetClassObject((LPVOID)&CoGetClassObjectShell);
+	m_bGetClassObject = false;//InstallGetClassObject((LPVOID)&CoGetClassObjectShell);
 
-	m_bCLSIDFromProgID = InstallCLSIDFromProgID((LPVOID)&CLSIDFromProgIDShell);
+	m_bCLSIDFromProgID = false;//InstallCLSIDFromProgID((LPVOID)&CLSIDFromProgIDShell);
 
-	m_bProgIDFromCLSID = InstallProgIDFromCLSID((LPVOID)&ProgIDFromCLSIDShell);
+	m_bProgIDFromCLSID = false;//InstallProgIDFromCLSID((LPVOID)&ProgIDFromCLSIDShell);
 
 #if (_WIN32_WINNT >= 0x0400 ) || defined(_WIN32_DCOM) // DCOM
-	m_bCreateInstanceEx = InstallCreateInstanceEx((LPVOID)&CoCreateInstanceExShell);
+	m_bCreateInstanceEx = false;//InstallCreateInstanceEx((LPVOID)&CoCreateInstanceExShell);
 #endif // DCOM
 
 	AddOwnComponents();
@@ -1647,12 +1703,12 @@ BOOL CShellApp::InitInstance()
 		::ExecuteScript( _bstr_t( _T("MainWnd.RestoreState(\"\")") ), "CShellApp::InitInstance" );
 
 		CString	strLastState = ::GetValueString( ::GetAppUnknown(), "\\General", "CurrentState", "default.state" );
-		if( !strLastState.IsEmpty() )
-			::ExecuteAction( "ToolsLoadState", CString( "\"" )+strLastState+CString( "\"" ), aefNoShowInterfaceAnyway );
+		//if( !strLastState.IsEmpty() )
+		//	::ExecuteAction( "ToolsLoadState", CString( "\"" )+strLastState+CString( "\"" ), aefNoShowInterfaceAnyway );
 	}
 
 	//Execute AutoExec script	
-	g_script.ExecuteAppScript( ENTRY_AUTOEXEC );
+	//g_script.ExecuteAppScript( ENTRY_AUTOEXEC );
 	
 //	if( ::GetValueInt( ::GetAppUnknown(), "\\MainFrame", "EnableDragDropOpen", 1 ) != 0 )
 		m_pMainWnd->DragAcceptFiles();
@@ -1963,7 +2019,7 @@ HRESULT CShellApp::XApp::GetFirstDocTemplPosition( LONG_PTR *plPos )
 {
 	_try_nested(CShellApp, App, GetFirstDocTemplPosition)
 	{
-		*plPos = (long)theApp.GetFirstDocTemplatePosition();
+		*plPos = (LONG_PTR)theApp.GetFirstDocTemplatePosition();
 		return S_OK;
 	}
 	_catch_nested;
@@ -2470,7 +2526,7 @@ bool CShellApp::ReadGuardInfo(LPCTSTR szFile)
 		{
 		case CFileException::tooManyOpenFiles:
 
-		case CFileException::generic:
+		case CFileException::genericException:
 		case CFileException::hardIO:
 			GuardSetErrorCode(guardInvalidGuardFile);
 			break;
@@ -2971,7 +3027,7 @@ BOOL CShellApp::OnIdle(LONG lCount)
 	m_last_idle_count	= lCount;
 
 	//FireScriptEvent( "Application_OnIdle" );
-	::FireEvent( GetControllingUnknown(), szEventAppOnIdle);
+	//::FireEvent( GetControllingUnknown(), szEventAppOnIdle);
 
 	return CWinApp::OnIdle(lCount);
 
@@ -3136,7 +3192,7 @@ HRESULT CShellApp::XScriptSite::Invoke( BSTR bstrFuncName, VARIANT* pargs, int n
 
 
 
-HRESULT CShellApp::XScriptSite::GetFirstPos(  LONG_PTR *dwPos )
+HRESULT CShellApp::XScriptSite::GetFirstPos(TPOS *dwPos )
 {
 	_try_nested( CShellApp, ScriptSite, GetFirstPos )
 	{
@@ -3149,7 +3205,7 @@ HRESULT CShellApp::XScriptSite::GetFirstPos(  LONG_PTR *dwPos )
 	_catch_nested;
 }
 
-HRESULT CShellApp::XScriptSite::GetNextPos( long *dwPos, IUnknown **punk, DWORD *dwFlags )
+HRESULT CShellApp::XScriptSite::GetNextPos( TPOS *dwPos, IUnknown **punk, DWORD *dwFlags )
 {
 	_try_nested( CShellApp, ScriptSite, GetNextPos )
 	{

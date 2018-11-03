@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="windows-1251"?>
 <VisualStudioProject
 	ProjectType="Visual C++"
-	Version="9,00"
+	Version="9.00"
 	Name="CGH_Chromos"
 	ProjectGUID="{3D010CF3-7335-463C-8F0D-493811543C04}"
 	RootNamespace="CGH_Chromos"
@@ -21,8 +21,6 @@
 	<Configurations>
 		<Configuration
 			Name="Release|Win32"
-			OutputDirectory=".\Release"
-			IntermediateDirectory=".\Release"
 			ConfigurationType="2"
 			InheritedPropertySheets="$(SolutionDir)props\CommonEnv.vsprops"
 			UseOfMFC="2"
@@ -80,16 +78,11 @@
 			<Tool
 				Name="VCLinkerTool"
 				AdditionalOptions="/MACHINE:I386"
-				OutputFile="\vt5\vt5\Release\comps\CGH_Chromos.dll"
 				LinkIncremental="1"
-				SuppressStartupBanner="true"
 				AdditionalLibraryDirectories="\vt5\common\release,\vt5\common"
-				ModuleDefinitionFile=".\CGH_Chromos.def"
-				ProgramDatabaseFile="\vt5\vt5\release\pdb\CGH_Chromos.pdb"
 				SubSystem="2"
 				RandomizedBaseAddress="1"
 				DataExecutionPrevention="0"
-				ImportLibrary=".\Release/CGH_Chromos.lib"
 			/>
 			<Tool
 				Name="VCALinkTool"
@@ -115,8 +108,6 @@
 		</Configuration>
 		<Configuration
 			Name="Release|x64"
-			OutputDirectory="$(PlatformName)\$(ConfigurationName)"
-			IntermediateDirectory="$(PlatformName)\$(ConfigurationName)"
 			ConfigurationType="2"
 			InheritedPropertySheets="$(SolutionDir)props\CommonEnv.vsprops"
 			UseOfMFC="2"
@@ -173,16 +164,11 @@
 			/>
 			<Tool
 				Name="VCLinkerTool"
-				OutputFile="\vt5\vt5\$(OutDir)\comps\$(ProjectName).dll"
 				LinkIncremental="1"
-				SuppressStartupBanner="true"
 				AdditionalLibraryDirectories="\vt5\common\$(OutDir),\vt5\common"
-				ModuleDefinitionFile=".\CGH_Chromos.def"
-				ProgramDatabaseFile="\vt5\vt5\release\pdb\CGH_Chromos.pdb"
 				SubSystem="2"
 				RandomizedBaseAddress="1"
 				DataExecutionPrevention="0"
-				ImportLibrary="$(OutDir)\$(TargetName).lib"
 				TargetMachine="17"
 			/>
 			<Tool
@@ -209,8 +195,6 @@
 		</Configuration>
 		<Configuration
 			Name="Debug|Win32"
-			OutputDirectory=".\Debug"
-			IntermediateDirectory=".\Debug"
 			ConfigurationType="2"
 			InheritedPropertySheets="$(SolutionDir)props\CommonEnv.vsprops"
 			UseOfMFC="2"
@@ -267,17 +251,12 @@
 			<Tool
 				Name="VCLinkerTool"
 				AdditionalOptions="/MACHINE:I386"
-				OutputFile="\vt5\vt5\Debug\comps\CGH_Chromos.dll"
 				LinkIncremental="2"
-				SuppressStartupBanner="true"
 				AdditionalLibraryDirectories="\vt5\common\debug,\vt5\common"
-				ModuleDefinitionFile=".\CGH_Chromos.def"
 				GenerateDebugInformation="true"
-				ProgramDatabaseFile="\vt5\vt5\debug\pdb\CGH_Chromos.pdb"
 				SubSystem="2"
 				RandomizedBaseAddress="1"
 				DataExecutionPrevention="0"
-				ImportLibrary=".\Debug/CGH_Chromos.lib"
 			/>
 			<Tool
 				Name="VCALinkTool"
@@ -303,8 +282,6 @@
 		</Configuration>
 		<Configuration
 			Name="Debug|x64"
-			OutputDirectory="$(PlatformName)\$(ConfigurationName)"
-			IntermediateDirectory="$(PlatformName)\$(ConfigurationName)"
 			ConfigurationType="2"
 			InheritedPropertySheets="$(SolutionDir)props\CommonEnv.vsprops"
 			UseOfMFC="2"
@@ -360,17 +337,12 @@
 			/>
 			<Tool
 				Name="VCLinkerTool"
-				OutputFile="\vt5\vt5\$(OutDir)\comps\$(ProjectName).dll"
 				LinkIncremental="2"
-				SuppressStartupBanner="true"
 				AdditionalLibraryDirectories="\vt5\common\$(OutDir),\vt5\common"
-				ModuleDefinitionFile=".\CGH_Chromos.def"
 				GenerateDebugInformation="true"
-				ProgramDatabaseFile="\vt5\vt5\debug\pdb\CGH_Chromos.pdb"
 				SubSystem="2"
 				RandomizedBaseAddress="1"
 				DataExecutionPrevention="0"
-				ImportLibrary="$(OutDir)\$(TargetName).lib"
 				TargetMachine="17"
 			/>
 			<Tool

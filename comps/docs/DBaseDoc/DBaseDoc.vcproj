@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="windows-1251"?>
 <VisualStudioProject
 	ProjectType="Visual C++"
-	Version="9,00"
+	Version="9.00"
 	Name="DBaseDoc"
 	ProjectGUID="{CDE17349-1783-4398-B86E-0C9A505D3230}"
 	RootNamespace="DBaseDoc"
@@ -87,11 +87,9 @@
 				AdditionalLibraryDirectories=""
 				ModuleDefinitionFile=".\DBaseDoc.def"
 				GenerateDebugInformation="true"
-				ProgramDatabaseFile="\vt5\vt5\release\pdb\DBaseDoc.pdb"
 				SubSystem="2"
 				RandomizedBaseAddress="1"
 				DataExecutionPrevention="0"
-				ImportLibrary="\VT5\comps\docs\Dbasedoc\Release/DBaseDoc.lib"
 			/>
 			<Tool
 				Name="VCALinkTool"
@@ -182,11 +180,9 @@
 				AdditionalLibraryDirectories=""
 				ModuleDefinitionFile=".\DBaseDoc.def"
 				GenerateDebugInformation="true"
-				ProgramDatabaseFile="\vt5\vt5\release\pdb\DBaseDoc.pdb"
 				SubSystem="2"
 				RandomizedBaseAddress="1"
 				DataExecutionPrevention="0"
-				ImportLibrary="$(OutDir)\$(ProjectName).lib"
 				TargetMachine="17"
 			/>
 			<Tool
@@ -300,7 +296,6 @@
 		</Configuration>
 		<Configuration
 			Name="Debug|x64"
-			IntermediateDirectory="$(PlatformName)\$(ConfigurationName)"
 			ConfigurationType="2"
 			InheritedPropertySheets="$(SolutionDir)props\CommonEnv.vsprops"
 			UseOfMFC="2"
@@ -653,11 +648,11 @@
 				>
 			</File>
 			<File
-				RelativePath=".\res\bmp00001.bmp"
+				RelativePath=".\bmp00001.bmp"
 				>
 			</File>
 			<File
-				RelativePath=".\bmp00001.bmp"
+				RelativePath=".\res\bmp00001.bmp"
 				>
 			</File>
 			<File

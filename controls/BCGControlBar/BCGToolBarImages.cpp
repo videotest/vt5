@@ -1164,7 +1164,7 @@ static BOOL WriteDIB( LPCTSTR szFile, HANDLE hDIB)
 
 	// Fill in the fields of the file header 
 	hdr.bfType		= ((WORD) ('M' << 8) | 'B');	// is always "BM"
-	hdr.bfSize		= GlobalSize (hDIB) + sizeof( hdr );
+	hdr.bfSize		= (DWORD)GlobalSize (hDIB) + sizeof( hdr );
 	hdr.bfReserved1 	= 0;
 	hdr.bfReserved2 	= 0;
 	hdr.bfOffBits		= (DWORD) (sizeof( hdr ) + lpbi->biSize +
@@ -1174,7 +1174,7 @@ static BOOL WriteDIB( LPCTSTR szFile, HANDLE hDIB)
 	file.Write( &hdr, sizeof(hdr) );
 
 	// Write the DIB header and the bits 
-	file.Write( lpbi, GlobalSize(hDIB) );
+	file.Write( lpbi, (UINT)GlobalSize(hDIB) );
 
 	return TRUE;
 }

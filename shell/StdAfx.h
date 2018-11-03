@@ -30,6 +30,7 @@
 #pragma warning(disable: 4786)
 
 #include "afxtempl.h"
+#include <../src/mfc/stdafx.h>
 //#include <afxext.h>
 //#include <afxtoolbar.h>
 //#include <afxcontrolbars.h>

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="windows-1251"?>
 <VisualStudioProject
 	ProjectType="Visual C++"
-	Version="9,00"
+	Version="9.00"
 	Name="idio"
 	ProjectGUID="{ACBBBAD4-C609-43FA-BEB7-E9541A79297D}"
 	RootNamespace="idio"
@@ -20,9 +20,8 @@
 	<Configurations>
 		<Configuration
 			Name="Debug|Win32"
-			OutputDirectory=".\Debug"
-			IntermediateDirectory=".\Debug"
 			ConfigurationType="2"
+			InheritedPropertySheets="$(SolutionDir)props\common2env.vsprops"
 			UseOfMFC="0"
 			ATLMinimizesCRunTimeLibraryUsage="false"
 			CharacterSet="2"
@@ -83,8 +82,8 @@
 				LinkIncremental="2"
 				SuppressStartupBanner="true"
 				AdditionalLibraryDirectories="\vt5\common2\debug,\vt5\common\"
-				IgnoreDefaultLibraryNames="libcmtd.lib"
-				ModuleDefinitionFile=".\idio.def"
+				IgnoreDefaultLibraryNames=""
+				ModuleDefinitionFile=""
 				GenerateDebugInformation="true"
 				ProgramDatabaseFile="\vt5\vt5\debug\pdb\idio.pdb"
 				RandomizedBaseAddress="1"
@@ -115,9 +114,8 @@
 		</Configuration>
 		<Configuration
 			Name="Debug|x64"
-			OutputDirectory="$(PlatformName)\$(ConfigurationName)"
-			IntermediateDirectory="$(PlatformName)\$(ConfigurationName)"
 			ConfigurationType="2"
+			InheritedPropertySheets="$(SolutionDir)props\common2env.vsprops"
 			UseOfMFC="0"
 			ATLMinimizesCRunTimeLibraryUsage="false"
 			CharacterSet="2"
@@ -145,7 +143,7 @@
 			<Tool
 				Name="VCCLCompilerTool"
 				Optimization="0"
-				AdditionalIncludeDirectories="\vt5\common2,\vt5\ifaces,\vt5\common,\vt5\awin\"
+				AdditionalIncludeDirectories=""
 				PreprocessorDefinitions="_WIN64;_M_X64;_CRT_SECURE_NO_DEPRECATE;_DEBUG;_WINDOWS;_USRDLL;IDIO_EXPORTS"
 				BasicRuntimeChecks="0"
 				RuntimeLibrary="3"
@@ -154,8 +152,6 @@
 				UsePrecompiledHeader="2"
 				PrecompiledHeaderThrough="stdafx.h"
 				BrowseInformation="1"
-				WarningLevel="3"
-				SuppressStartupBanner="true"
 				DebugInformationFormat="3"
 				CompileAs="0"
 			/>
@@ -173,12 +169,11 @@
 			<Tool
 				Name="VCLinkerTool"
 				AdditionalDependencies="common2.lib"
-				OutputFile="\vt5\vt5\Debug\comps\idio.dll"
 				LinkIncremental="2"
 				SuppressStartupBanner="true"
-				AdditionalLibraryDirectories="\vt5\common2\debug,\vt5\common\"
-				IgnoreDefaultLibraryNames="libcmtd.lib"
-				ModuleDefinitionFile=".\idio.def"
+				AdditionalLibraryDirectories=""
+				IgnoreDefaultLibraryNames=""
+				ModuleDefinitionFile=""
 				GenerateDebugInformation="true"
 				ProgramDatabaseFile="\vt5\vt5\debug\pdb\idio.pdb"
 				RandomizedBaseAddress="1"
@@ -210,9 +205,8 @@
 		</Configuration>
 		<Configuration
 			Name="Release|Win32"
-			OutputDirectory=".\Release"
-			IntermediateDirectory=".\Release"
 			ConfigurationType="2"
+			InheritedPropertySheets="$(SolutionDir)props\common2env.vsprops"
 			UseOfMFC="0"
 			ATLMinimizesCRunTimeLibraryUsage="false"
 			CharacterSet="2"
@@ -273,8 +267,8 @@
 				LinkIncremental="1"
 				SuppressStartupBanner="true"
 				AdditionalLibraryDirectories="\vt5\common2\Release,\vt5\common\"
-				IgnoreDefaultLibraryNames="libcmt.lib"
-				ModuleDefinitionFile=".\idio.def"
+				IgnoreDefaultLibraryNames=""
+				ModuleDefinitionFile=""
 				GenerateDebugInformation="true"
 				ProgramDatabaseFile="\vt5\vt5\release\pdb\idio.pdb"
 				RandomizedBaseAddress="1"
@@ -305,9 +299,8 @@
 		</Configuration>
 		<Configuration
 			Name="Release|x64"
-			OutputDirectory="$(PlatformName)\$(ConfigurationName)"
-			IntermediateDirectory="$(PlatformName)\$(ConfigurationName)"
 			ConfigurationType="2"
+			InheritedPropertySheets="$(SolutionDir)props\common2env.vsprops"
 			UseOfMFC="0"
 			ATLMinimizesCRunTimeLibraryUsage="false"
 			CharacterSet="2"
@@ -368,8 +361,8 @@
 				LinkIncremental="1"
 				SuppressStartupBanner="true"
 				AdditionalLibraryDirectories="\vt5\common2\Release,\vt5\common\"
-				IgnoreDefaultLibraryNames="libcmt.lib"
-				ModuleDefinitionFile=".\idio.def"
+				IgnoreDefaultLibraryNames=""
+				ModuleDefinitionFile=""
 				GenerateDebugInformation="true"
 				ProgramDatabaseFile="\vt5\vt5\release\pdb\idio.pdb"
 				RandomizedBaseAddress="1"

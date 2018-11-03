@@ -193,7 +193,7 @@ STDMETHODIMP CBlotOb::Find(void)
 //	_fout<<"--------start Find"<<endl;
 	map<GUID,pair<NumImg,Gdiplus::PointF>,LessGUID> mapGuidGroup2Img;
 	{
-		LONG_PTR lPosGroup = 0;
+		TPOS lPosGroup = 0;
 		_sptrTable->GetFirstGroupPos( &lPosGroup );
 
 		while( lPosGroup )
@@ -265,12 +265,12 @@ STDMETHODIMP CBlotOb::Find(void)
 	_sptrTable->GetParamPosByKey( 23, &lPos_XParam );	
 	_sptrTable->GetParamPosByKey( 24, &lPos_YParam );	
 
-	LONG_PTR lPosRow = 0; 
+	TPOS lPosRow = 0; 
 	_sptrTable->GetFirstRowPos( &lPosRow ); 
 	while( lPosRow ) 
 	{ 
 		stat_row *pRow = 0; 
-		LONG_PTR lChild = lPosRow;
+		TPOS lChild = lPosRow;
 		_sptrTable->GetNextRow( &lPosRow, &pRow );	
 
 		IUnknown *punkO = 0;
@@ -295,7 +295,7 @@ STDMETHODIMP CBlotOb::Find(void)
 
 			stat_value *pvalue;
 			pvalue = 0;
-			_sptrTable->GetValue( lChild, (LONG_PTR)lPos_AreaParam, &pvalue );
+			_sptrTable->GetValue( lChild, lPos_AreaParam, &pvalue );
 
 			bool bValidData=false;
 			if(pvalue && pvalue->bwas_defined)
@@ -303,13 +303,13 @@ STDMETHODIMP CBlotOb::Find(void)
 				fArea = pvalue->fvalue;
 
 				pvalue = 0;
-				_sptrTable->GetValue(lChild, (LONG_PTR)lPos_XParam, &pvalue);
+				_sptrTable->GetValue(lChild, lPos_XParam, &pvalue);
 				if(pvalue && pvalue->bwas_defined)
 				{
 					fx = pvalue->fvalue;
 
 					pvalue = 0;
-					_sptrTable->GetValue(lChild, (LONG_PTR)lPos_YParam, &pvalue);
+					_sptrTable->GetValue(lChild, lPos_YParam, &pvalue);
 					if(pvalue && pvalue->bwas_defined)
 					{
 						fy = pvalue->fvalue;

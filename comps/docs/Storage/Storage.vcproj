@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="windows-1251"?>
 <VisualStudioProject
 	ProjectType="Visual C++"
-	Version="9,00"
+	Version="9.00"
 	Name="Storage"
 	ProjectGUID="{B6C88110-D071-4598-8A40-75B8EFDAF540}"
 	RootNamespace="Storage"
@@ -21,8 +21,6 @@
 	<Configurations>
 		<Configuration
 			Name="Debug|Win32"
-			OutputDirectory="Debug"
-			IntermediateDirectory="Debug"
 			ConfigurationType="2"
 			InheritedPropertySheets="$(SolutionDir)props\common2env.vsprops"
 			CharacterSet="2"
@@ -71,17 +69,14 @@
 			<Tool
 				Name="VCLinkerTool"
 				AdditionalDependencies="atlsd.lib"
-				OutputFile="\vt5\vt5\Debug\comps\Storage.dll"
 				LinkIncremental="2"
-				AdditionalLibraryDirectories="\vt5\common2\debug,\vt5\common\"
+				AdditionalLibraryDirectories=""
 				IgnoreDefaultLibraryNames="libcd.lib,libcmt.lib"
-				ModuleDefinitionFile="\vt5\common2\com_export.def"
+				ModuleDefinitionFile="$(SolutionDir)common2\com_export.def"
 				GenerateDebugInformation="true"
-				ProgramDatabaseFile="\vt5\vt5\debug\pdb\Storage.pdb"
 				SubSystem="2"
 				RandomizedBaseAddress="1"
 				DataExecutionPrevention="0"
-				ImportLibrary="$(OutDir)/Storage.lib"
 				TargetMachine="1"
 			/>
 			<Tool
@@ -108,8 +103,6 @@
 		</Configuration>
 		<Configuration
 			Name="Debug|x64"
-			OutputDirectory="$(PlatformName)\$(ConfigurationName)"
-			IntermediateDirectory="$(PlatformName)\$(ConfigurationName)"
 			ConfigurationType="2"
 			InheritedPropertySheets="$(SolutionDir)props\common2env.vsprops"
 			CharacterSet="2"
@@ -133,7 +126,7 @@
 			<Tool
 				Name="VCCLCompilerTool"
 				Optimization="0"
-				AdditionalIncludeDirectories="\vt5\common;\vt5\ifaces;\vt5\common2;\vt5\AWIN"
+				AdditionalIncludeDirectories="&quot;$(SolutionDir)AWIN&quot;"
 				PreprocessorDefinitions="_WIN64;_M_X64;_CRT_SECURE_NO_DEPRECATE;WINVER=0x0400;_DEBUG;_WINDOWS;_USRDLL;STORAGE_EXPORTS"
 				MinimalRebuild="true"
 				BasicRuntimeChecks="0"
@@ -143,8 +136,6 @@
 				RuntimeTypeInfo="false"
 				UsePrecompiledHeader="2"
 				BrowseInformation="1"
-				WarningLevel="3"
-				Detect64BitPortabilityProblems="false"
 				DebugInformationFormat="3"
 			/>
 			<Tool
@@ -159,17 +150,14 @@
 			<Tool
 				Name="VCLinkerTool"
 				AdditionalDependencies="atlsd.lib"
-				OutputFile="\vt5\vt5\$(OutDir)\comps\$(ProjectName).dll"
 				LinkIncremental="2"
-				AdditionalLibraryDirectories="\vt5\common\$(OutDir),\vt5\common"
+				AdditionalLibraryDirectories=""
 				IgnoreDefaultLibraryNames="libcd.lib,libcmt.lib"
-				ModuleDefinitionFile="\vt5\common2\com_export.def"
+				ModuleDefinitionFile="$(SolutionDir)common2\com_export.def"
 				GenerateDebugInformation="true"
-				ProgramDatabaseFile="\vt5\vt5\debug\pdb\Storage.pdb"
 				SubSystem="2"
 				RandomizedBaseAddress="1"
 				DataExecutionPrevention="0"
-				ImportLibrary="$(OutDir)\$(ProjectName).lib"
 				TargetMachine="17"
 			/>
 			<Tool
@@ -196,8 +184,6 @@
 		</Configuration>
 		<Configuration
 			Name="Release|Win32"
-			OutputDirectory="Release"
-			IntermediateDirectory="Release"
 			ConfigurationType="2"
 			InheritedPropertySheets="$(SolutionDir)props\common2env.vsprops"
 			CharacterSet="2"
@@ -246,19 +232,16 @@
 			<Tool
 				Name="VCLinkerTool"
 				AdditionalDependencies="atls.lib"
-				OutputFile="\vt5\vt5\Release\comps\Storage.dll"
 				LinkIncremental="1"
-				AdditionalLibraryDirectories="\vt5\common2\debug,\vt5\common\"
+				AdditionalLibraryDirectories=""
 				IgnoreDefaultLibraryNames="libc.lib"
-				ModuleDefinitionFile="\vt5\common2\com_export.def"
+				ModuleDefinitionFile="$(SolutionDir)common2\com_export.def"
 				GenerateDebugInformation="true"
-				ProgramDatabaseFile="\vt5\vt5\release\pdb\$(ProjectName).pdb"
 				SubSystem="2"
 				OptimizeReferences="2"
 				EnableCOMDATFolding="2"
 				RandomizedBaseAddress="1"
 				DataExecutionPrevention="0"
-				ImportLibrary="$(OutDir)/Storage.lib"
 				TargetMachine="1"
 			/>
 			<Tool
@@ -285,8 +268,6 @@
 		</Configuration>
 		<Configuration
 			Name="Release|x64"
-			OutputDirectory="$(PlatformName)\$(ConfigurationName)"
-			IntermediateDirectory="$(PlatformName)\$(ConfigurationName)"
 			ConfigurationType="2"
 			InheritedPropertySheets="$(SolutionDir)props\common2env.vsprops"
 			CharacterSet="2"
@@ -336,19 +317,16 @@
 			<Tool
 				Name="VCLinkerTool"
 				AdditionalDependencies="atls.lib"
-				OutputFile="\vt5\vt5\$(OutDir)\comps\$(ProjectName).dll"
 				LinkIncremental="1"
-				AdditionalLibraryDirectories="\vt5\common\$(OutDir),\vt5\common"
+				AdditionalLibraryDirectories=""
 				IgnoreDefaultLibraryNames="libc.lib"
-				ModuleDefinitionFile="\vt5\common2\com_export.def"
+				ModuleDefinitionFile="$(SolutionDir)common2\com_export.def"
 				GenerateDebugInformation="true"
-				ProgramDatabaseFile="\vt5\vt5\release\pdb\$(ProjectName).pdb"
 				SubSystem="2"
 				OptimizeReferences="2"
 				EnableCOMDATFolding="2"
 				RandomizedBaseAddress="1"
 				DataExecutionPrevention="0"
-				ImportLibrary="$(OutDir)\$(ProjectName).lib"
 				TargetMachine="17"
 			/>
 			<Tool

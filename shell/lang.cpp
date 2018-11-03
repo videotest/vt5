@@ -407,7 +407,7 @@ HOOKMACRO("KERNEL32.DLL", HRSRC __stdcall, FindResourceA, (
 	if( hrsrc )return hrsrc;
 	return 0;
 }
-
+/*
 HOOKMACRO("USER32.DLL", HMENU __stdcall, LoadMenuA, (
     HINSTANCE hInstance,
     LPCSTR lpMenuName))
@@ -423,7 +423,7 @@ HOOKMACRO("USER32.DLL", HMENU __stdcall, LoadMenuA, (
 
 	return hmenu;
 }
-
+*/
 	//HOOKMACRO("KERNEL32.DLL", int __stdcall, MultiByteToWideChar, (
 int __stdcall LanguageMultiByteToWideChar(
 	UINT CodePage, DWORD dwFlags,

@@ -5,7 +5,7 @@
 #include "ImageUtil.h"
 #include "ExposureMask.h"
 #include "CamValues.h"
-#include "com_unknown.h"
+#include <../common2/com_unknown.h>
 #include "CritSecEx.h"
 
 extern CCamBoolValue g_VertMirror;

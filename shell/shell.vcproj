@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="windows-1251"?>
 <VisualStudioProject
 	ProjectType="Visual C++"
-	Version="9,00"
+	Version="9.00"
 	Name="shell"
 	ProjectGUID="{F6428C6C-8CDE-4A7C-8CE6-90CDCBF98768}"
 	RootNamespace="shell"
@@ -537,6 +537,10 @@
 				</FileConfiguration>
 			</File>
 			<File
+				RelativePath=".\MfcOleFix.cpp"
+				>
+			</File>
+			<File
 				RelativePath=".\misc.cpp"
 				>
 			</File>
@@ -559,22 +563,6 @@
 			<File
 				RelativePath=".\shell.cpp"
 				>
-				<FileConfiguration
-					Name="Debug|x64"
-					ExcludedFromBuild="true"
-					>
-					<Tool
-						Name="VCCLCompilerTool"
-					/>
-				</FileConfiguration>
-				<FileConfiguration
-					Name="Release|x64"
-					ExcludedFromBuild="true"
-					>
-					<Tool
-						Name="VCCLCompilerTool"
-					/>
-				</FileConfiguration>
 			</File>
 			<File
 				RelativePath=".\shell.odl"
@@ -645,26 +633,6 @@
 					<Tool
 						Name="VCResourceCompilerTool"
 						AdditionalIncludeDirectories="$(OUTDIR);$(NoInherit)"
-					/>
-				</FileConfiguration>
-			</File>
-			<File
-				RelativePath=".\shell64.cpp"
-				>
-				<FileConfiguration
-					Name="Debug|Win32"
-					ExcludedFromBuild="true"
-					>
-					<Tool
-						Name="VCCLCompilerTool"
-					/>
-				</FileConfiguration>
-				<FileConfiguration
-					Name="Release|Win32"
-					ExcludedFromBuild="true"
-					>
-					<Tool
-						Name="VCCLCompilerTool"
 					/>
 				</FileConfiguration>
 			</File>

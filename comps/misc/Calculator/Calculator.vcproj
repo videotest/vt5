@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="windows-1251"?>
 <VisualStudioProject
 	ProjectType="Visual C++"
-	Version="9,00"
+	Version="9.00"
 	Name="Calculator"
 	ProjectGUID="{3BC73A6F-BD37-4386-B332-0BAA00D8429B}"
 	RootNamespace="Calculator"
@@ -22,7 +22,7 @@
 		<Configuration
 			Name="Debug|Win32"
 			ConfigurationType="2"
-			InheritedPropertySheets="..\..\..\props\common2env.vsprops"
+			InheritedPropertySheets="$(SolutionDir)props\common2env.vsprops"
 			CharacterSet="2"
 			>
 			<Tool
@@ -76,8 +76,7 @@
 				AdditionalOptions="/MACHINE:I386  "
 				AdditionalDependencies="GdiPlus.lib"
 				LinkIncremental="2"
-				AdditionalLibraryDirectories="\vt5\common2\Debug;\vt5\common2"
-				ModuleDefinitionFile=".\calculator.def"
+				AdditionalLibraryDirectories=""
 				GenerateDebugInformation="true"
 				SubSystem="0"
 				RandomizedBaseAddress="1"
@@ -109,7 +108,7 @@
 		<Configuration
 			Name="Debug|x64"
 			ConfigurationType="2"
-			InheritedPropertySheets="..\..\..\props\common2env.vsprops"
+			InheritedPropertySheets="$(SolutionDir)props\common2env.vsprops"
 			CharacterSet="2"
 			>
 			<Tool
@@ -159,8 +158,7 @@
 				Name="VCLinkerTool"
 				AdditionalDependencies="GdiPlus.lib"
 				LinkIncremental="2"
-				AdditionalLibraryDirectories="&quot;\vt5\common2\$(OutDir)&quot;"
-				ModuleDefinitionFile=".\calculator.def"
+				AdditionalLibraryDirectories=""
 				GenerateDebugInformation="true"
 				SubSystem="0"
 				RandomizedBaseAddress="1"
@@ -192,7 +190,7 @@
 		<Configuration
 			Name="Release|Win32"
 			ConfigurationType="2"
-			InheritedPropertySheets="..\..\..\props\common2env.vsprops"
+			InheritedPropertySheets="$(SolutionDir)props\common2env.vsprops"
 			CharacterSet="2"
 			>
 			<Tool
@@ -251,9 +249,8 @@
 				AdditionalOptions="/MACHINE:I386"
 				AdditionalDependencies="GdiPlus.lib"
 				LinkIncremental="1"
-				AdditionalLibraryDirectories="\vt5\common2\Release,\vt5\common2"
+				AdditionalLibraryDirectories=""
 				IgnoreDefaultLibraryNames=""
-				ModuleDefinitionFile=".\calculator.def"
 				GenerateDebugInformation="true"
 				SubSystem="0"
 				OptimizeReferences="0"
@@ -287,7 +284,7 @@
 		<Configuration
 			Name="Release|x64"
 			ConfigurationType="2"
-			InheritedPropertySheets="..\..\..\props\common2env.vsprops"
+			InheritedPropertySheets="$(SolutionDir)props\common2env.vsprops"
 			CharacterSet="2"
 			>
 			<Tool
@@ -342,9 +339,8 @@
 				Name="VCLinkerTool"
 				AdditionalDependencies="GdiPlus.lib"
 				LinkIncremental="1"
-				AdditionalLibraryDirectories="&quot;\vt5\common2\$(OutDir)&quot;"
+				AdditionalLibraryDirectories=""
 				IgnoreDefaultLibraryNames=""
-				ModuleDefinitionFile=".\calculator.def"
 				GenerateDebugInformation="true"
 				SubSystem="0"
 				OptimizeReferences="0"

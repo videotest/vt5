@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="windows-1251"?>
 <VisualStudioProject
 	ProjectType="Visual C++"
-	Version="9,00"
+	Version="9.00"
 	Name="Stage"
 	ProjectGUID="{FFD1090D-6198-45BF-9A78-8EE49ABE3059}"
 	RootNamespace="Stage"
@@ -53,8 +53,6 @@
 				TreatWChar_tAsBuiltInType="false"
 				ForceConformanceInForLoopScope="false"
 				UsePrecompiledHeader="2"
-				WarningLevel="3"
-				Detect64BitPortabilityProblems="true"
 				DebugInformationFormat="4"
 			/>
 			<Tool
@@ -70,8 +68,7 @@
 				Name="VCLinkerTool"
 				AdditionalDependencies="atlsd.lib"
 				LinkIncremental="2"
-				AdditionalLibraryDirectories=" "
-				ModuleDefinitionFile="Stage.def"
+				AdditionalLibraryDirectories=""
 				GenerateDebugInformation="true"
 				SubSystem="2"
 				RandomizedBaseAddress="1"
@@ -102,8 +99,6 @@
 		</Configuration>
 		<Configuration
 			Name="Debug|x64"
-			OutputDirectory="$(PlatformName)\$(ConfigurationName)"
-			IntermediateDirectory="$(PlatformName)\$(ConfigurationName)"
 			ConfigurationType="2"
 			InheritedPropertySheets="$(SolutionDir)props\common2env.vsprops"
 			CharacterSet="2"
@@ -135,8 +130,6 @@
 				TreatWChar_tAsBuiltInType="false"
 				ForceConformanceInForLoopScope="false"
 				UsePrecompiledHeader="2"
-				WarningLevel="3"
-				Detect64BitPortabilityProblems="true"
 				DebugInformationFormat="3"
 			/>
 			<Tool
@@ -152,8 +145,7 @@
 				Name="VCLinkerTool"
 				AdditionalDependencies="atlsd.lib"
 				LinkIncremental="2"
-				AdditionalLibraryDirectories=" "
-				ModuleDefinitionFile="Stage.def"
+				AdditionalLibraryDirectories=""
 				GenerateDebugInformation="true"
 				SubSystem="2"
 				RandomizedBaseAddress="1"
@@ -218,8 +210,6 @@
 				TreatWChar_tAsBuiltInType="false"
 				ForceConformanceInForLoopScope="false"
 				UsePrecompiledHeader="2"
-				WarningLevel="3"
-				Detect64BitPortabilityProblems="true"
 				DebugInformationFormat="3"
 			/>
 			<Tool
@@ -235,8 +225,7 @@
 				Name="VCLinkerTool"
 				AdditionalDependencies="atls.lib"
 				LinkIncremental="1"
-				AdditionalLibraryDirectories=" "
-				ModuleDefinitionFile="Stage.def"
+				AdditionalLibraryDirectories=""
 				GenerateDebugInformation="true"
 				SubSystem="2"
 				OptimizeReferences="2"
@@ -304,8 +293,6 @@
 				TreatWChar_tAsBuiltInType="false"
 				ForceConformanceInForLoopScope="false"
 				UsePrecompiledHeader="2"
-				WarningLevel="3"
-				Detect64BitPortabilityProblems="true"
 				DebugInformationFormat="3"
 			/>
 			<Tool
@@ -321,8 +308,7 @@
 				Name="VCLinkerTool"
 				AdditionalDependencies="atls.lib"
 				LinkIncremental="1"
-				AdditionalLibraryDirectories=" "
-				ModuleDefinitionFile="Stage.def"
+				AdditionalLibraryDirectories=""
 				GenerateDebugInformation="true"
 				SubSystem="2"
 				OptimizeReferences="2"

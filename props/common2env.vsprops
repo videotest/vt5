@@ -12,6 +12,7 @@
 		UsePrecompiledHeader="2"
 		PrecompiledHeaderThrough="StdAfx.h"
 		PrecompiledHeaderFile="$(IntDir)\$(TargetName).pch"
+		WarningLevel="3"
 	/>
 	<Tool
 		Name="VCLibrarianTool"

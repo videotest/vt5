@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="windows-1251"?>
 <VisualStudioProject
 	ProjectType="Visual C++"
-	Version="9,00"
+	Version="9.00"
 	Name="CCam"
 	ProjectGUID="{14492B32-EE88-4BE1-8F5D-62193E8505F4}"
 	RootNamespace="CCam"
@@ -21,9 +21,8 @@
 	<Configurations>
 		<Configuration
 			Name="Release|Win32"
-			OutputDirectory=".\Release"
-			IntermediateDirectory=".\Release"
 			ConfigurationType="2"
+			InheritedPropertySheets="$(SolutionDir)props\commonEnv.vsprops"
 			UseOfMFC="2"
 			ATLMinimizesCRunTimeLibraryUsage="false"
 			CharacterSet="2"
@@ -52,7 +51,7 @@
 				Name="VCCLCompilerTool"
 				Optimization="2"
 				InlineFunctionExpansion="1"
-				AdditionalIncludeDirectories="..\DrvCommon2,..\vt4int,\vt5\ifaces,\vt5\common2,\vt5\common"
+				AdditionalIncludeDirectories="..\DrvCommon2;..\vt4int;&quot;$(SolutionDir)common2&quot;"
 				PreprocessorDefinitions="WIN32;NDEBUG;_WINDOWS;_USRDLL"
 				StringPooling="true"
 				RuntimeLibrary="2"
@@ -62,7 +61,6 @@
 				UsePrecompiledHeader="2"
 				PrecompiledHeaderThrough="stdafx.h"
 				WarningLevel="3"
-				SuppressStartupBanner="true"
 				DebugInformationFormat="3"
 				CompileAs="0"
 			/>
@@ -80,18 +78,12 @@
 			<Tool
 				Name="VCLinkerTool"
 				AdditionalOptions="/MACHINE:I386"
-				AdditionalDependencies="vfw32.lib winmm.lib ..\DrvCommon2\Release\DrvCommon.lib"
-				OutputFile="\vt5\vt5\release\comps\CCam.dll"
 				LinkIncremental="1"
-				SuppressStartupBanner="true"
-				AdditionalLibraryDirectories="\vt5\common2\Release,\vt5\common\"
-				ModuleDefinitionFile=".\CCam.def"
+				AdditionalLibraryDirectories=""
 				GenerateDebugInformation="true"
-				ProgramDatabaseFile="\vt5\vt5\release\pdb\CCam.pdb"
 				SubSystem="2"
 				RandomizedBaseAddress="1"
 				DataExecutionPrevention="0"
-				ImportLibrary=".\Release/CCam.lib"
 			/>
 			<Tool
 				Name="VCALinkTool"
@@ -117,9 +109,8 @@
 		</Configuration>
 		<Configuration
 			Name="Release|x64"
-			OutputDirectory="$(PlatformName)\$(ConfigurationName)"
-			IntermediateDirectory="$(PlatformName)\$(ConfigurationName)"
 			ConfigurationType="2"
+			InheritedPropertySheets="$(SolutionDir)props\commonEnv.vsprops"
 			UseOfMFC="2"
 			ATLMinimizesCRunTimeLibraryUsage="false"
 			CharacterSet="2"
@@ -148,7 +139,7 @@
 				Name="VCCLCompilerTool"
 				Optimization="2"
 				InlineFunctionExpansion="1"
-				AdditionalIncludeDirectories="..\DrvCommon2,..\vt4int,\vt5\ifaces,\vt5\common2,\vt5\common"
+				AdditionalIncludeDirectories="..\DrvCommon2;..\vt4int;&quot;$(SolutionDir)common2&quot;"
 				PreprocessorDefinitions="_WIN64;_M_X64;_AFX_SECURE_NO_DEPRECATE;_CRT_SECURE_NO_DEPRECATE;NDEBUG;_WINDOWS;_USRDLL"
 				StringPooling="true"
 				RuntimeLibrary="2"
@@ -158,7 +149,6 @@
 				UsePrecompiledHeader="2"
 				PrecompiledHeaderThrough="stdafx.h"
 				WarningLevel="3"
-				SuppressStartupBanner="true"
 				DebugInformationFormat="3"
 				CompileAs="0"
 			/>
@@ -175,18 +165,12 @@
 			/>
 			<Tool
 				Name="VCLinkerTool"
-				AdditionalDependencies="vfw32.lib winmm.lib ..\DrvCommon2\Release\DrvCommon.lib"
-				OutputFile="\vt5\vt5\release\comps\CCam.dll"
 				LinkIncremental="1"
-				SuppressStartupBanner="true"
-				AdditionalLibraryDirectories="\vt5\common2\Release,\vt5\common\"
-				ModuleDefinitionFile=".\CCam.def"
+				AdditionalLibraryDirectories=""
 				GenerateDebugInformation="true"
-				ProgramDatabaseFile="\vt5\vt5\release\pdb\CCam.pdb"
 				SubSystem="2"
 				RandomizedBaseAddress="1"
 				DataExecutionPrevention="0"
-				ImportLibrary=".\Release/CCam.lib"
 				TargetMachine="17"
 			/>
 			<Tool
@@ -213,9 +197,8 @@
 		</Configuration>
 		<Configuration
 			Name="Debug|Win32"
-			OutputDirectory=".\Debug"
-			IntermediateDirectory=".\Debug"
 			ConfigurationType="2"
+			InheritedPropertySheets="$(SolutionDir)props\commonEnv.vsprops"
 			UseOfMFC="2"
 			ATLMinimizesCRunTimeLibraryUsage="false"
 			CharacterSet="2"
@@ -243,7 +226,7 @@
 			<Tool
 				Name="VCCLCompilerTool"
 				Optimization="0"
-				AdditionalIncludeDirectories="..\DrvCommon2,..\vt4int,\vt5\ifaces,\vt5\common2,\vt5\common"
+				AdditionalIncludeDirectories="..\DrvCommon2;..\vt4int;&quot;$(SolutionDir)common2&quot;"
 				PreprocessorDefinitions="WIN32;_DEBUG;_WINDOWS;_USRDLL"
 				BasicRuntimeChecks="0"
 				RuntimeLibrary="3"
@@ -253,7 +236,6 @@
 				PrecompiledHeaderThrough="stdafx.h"
 				BrowseInformation="1"
 				WarningLevel="3"
-				SuppressStartupBanner="true"
 				DebugInformationFormat="4"
 				CompileAs="0"
 			/>
@@ -271,18 +253,12 @@
 			<Tool
 				Name="VCLinkerTool"
 				AdditionalOptions="/MACHINE:I386"
-				AdditionalDependencies="vfw32.lib winmm.lib ..\DrvCommon2\Debug\DrvCommon.lib"
-				OutputFile="\vt5\vt5\Debug\comps\CCam.dll"
 				LinkIncremental="2"
-				SuppressStartupBanner="true"
-				AdditionalLibraryDirectories="\vt5\common2\Debug,\vt5\common\"
-				ModuleDefinitionFile=".\CCam.def"
+				AdditionalLibraryDirectories=""
 				GenerateDebugInformation="true"
-				ProgramDatabaseFile="\vt5\vt5\debug\pdb\CCam.pdb"
 				SubSystem="2"
 				RandomizedBaseAddress="1"
 				DataExecutionPrevention="0"
-				ImportLibrary=".\Debug/CCam.lib"
 			/>
 			<Tool
 				Name="VCALinkTool"
@@ -308,9 +284,8 @@
 		</Configuration>
 		<Configuration
 			Name="Debug|x64"
-			OutputDirectory="$(PlatformName)\$(ConfigurationName)"
-			IntermediateDirectory="$(PlatformName)\$(ConfigurationName)"
 			ConfigurationType="2"
+			InheritedPropertySheets="$(SolutionDir)props\commonEnv.vsprops"
 			UseOfMFC="2"
 			ATLMinimizesCRunTimeLibraryUsage="false"
 			CharacterSet="2"
@@ -338,7 +313,7 @@
 			<Tool
 				Name="VCCLCompilerTool"
 				Optimization="0"
-				AdditionalIncludeDirectories="..\DrvCommon2,..\vt4int,\vt5\ifaces,\vt5\common2,\vt5\common"
+				AdditionalIncludeDirectories="..\DrvCommon2;..\vt4int;&quot;$(SolutionDir)common2&quot;"
 				PreprocessorDefinitions="_WIN64;_M_X64;_AFX_SECURE_NO_DEPRECATE;_CRT_SECURE_NO_DEPRECATE;_DEBUG;_WINDOWS;_USRDLL"
 				BasicRuntimeChecks="0"
 				RuntimeLibrary="3"
@@ -348,7 +323,6 @@
 				PrecompiledHeaderThrough="stdafx.h"
 				BrowseInformation="1"
 				WarningLevel="3"
-				SuppressStartupBanner="true"
 				DebugInformationFormat="3"
 				CompileAs="0"
 			/>
@@ -365,18 +339,12 @@
 			/>
 			<Tool
 				Name="VCLinkerTool"
-				AdditionalDependencies="vfw32.lib winmm.lib ..\DrvCommon2\Debug\DrvCommon.lib"
-				OutputFile="\vt5\vt5\Debug\comps\CCam.dll"
 				LinkIncremental="2"
-				SuppressStartupBanner="true"
-				AdditionalLibraryDirectories="\vt5\common2\Debug,\vt5\common\"
-				ModuleDefinitionFile=".\CCam.def"
+				AdditionalLibraryDirectories=""
 				GenerateDebugInformation="true"
-				ProgramDatabaseFile="\vt5\vt5\debug\pdb\CCam.pdb"
 				SubSystem="2"
 				RandomizedBaseAddress="1"
 				DataExecutionPrevention="0"
-				ImportLibrary=".\Debug/CCam.lib"
 				TargetMachine="17"
 			/>
 			<Tool

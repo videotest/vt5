@@ -12,6 +12,7 @@
 		UsePrecompiledHeader="2"
 		PrecompiledHeaderThrough="stdafx.h"
 		PrecompiledHeaderFile="$(IntDir)\$(TargetName).pch"
+		CompileAs="0"
 	/>
 	<Tool
 		Name="VCLibrarianTool"

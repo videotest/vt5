@@ -1,8 +1,8 @@
 #pragma once
 
 
-#include "com_unknown.h"
-#include "misc_templ.h"
+#include <../common2/com_unknown.h>
+#include <../common2/misc_templ.h>
 #include "DrvPreview.h"
 #include "Timer.h"
 

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="windows-1251"?>
 <VisualStudioProject
 	ProjectType="Visual C++"
-	Version="9,00"
+	Version="9.00"
 	Name="Baumer"
 	ProjectGUID="{700617C2-9632-40C3-8A4A-7B9F66C5809F}"
 	RootNamespace="Baumer"
@@ -21,8 +21,6 @@
 	<Configurations>
 		<Configuration
 			Name="Russian Release|Win32"
-			OutputDirectory=".\Russian_Release"
-			IntermediateDirectory=".\Russian_Release"
 			ConfigurationType="2"
 			InheritedPropertySheets="$(SolutionDir)props\CommonEnv.vsprops"
 			UseOfMFC="2"
@@ -115,8 +113,6 @@
 		</Configuration>
 		<Configuration
 			Name="Russian Release|x64"
-			OutputDirectory="$(PlatformName)\$(ConfigurationName)"
-			IntermediateDirectory="$(PlatformName)\$(ConfigurationName)"
 			ConfigurationType="2"
 			InheritedPropertySheets="$(SolutionDir)props\CommonEnv.vsprops"
 			UseOfMFC="2"
@@ -210,8 +206,6 @@
 		</Configuration>
 		<Configuration
 			Name="German Release|Win32"
-			OutputDirectory=".\Baumer___Win32_German_Release"
-			IntermediateDirectory=".\Baumer___Win32_German_Release"
 			ConfigurationType="2"
 			InheritedPropertySheets="$(SolutionDir)props\CommonEnv.vsprops"
 			UseOfMFC="2"
@@ -304,8 +298,6 @@
 		</Configuration>
 		<Configuration
 			Name="German Release|x64"
-			OutputDirectory="$(PlatformName)\$(ConfigurationName)"
-			IntermediateDirectory="$(PlatformName)\$(ConfigurationName)"
 			ConfigurationType="2"
 			InheritedPropertySheets="$(SolutionDir)props\CommonEnv.vsprops"
 			UseOfMFC="2"
@@ -399,8 +391,6 @@
 		</Configuration>
 		<Configuration
 			Name="Release|Win32"
-			OutputDirectory=".\Release"
-			IntermediateDirectory=".\Release"
 			ConfigurationType="2"
 			InheritedPropertySheets="$(SolutionDir)props\CommonEnv.vsprops"
 			UseOfMFC="2"
@@ -495,8 +485,6 @@
 		</Configuration>
 		<Configuration
 			Name="Release|x64"
-			OutputDirectory="$(PlatformName)\$(ConfigurationName)"
-			IntermediateDirectory="$(PlatformName)\$(ConfigurationName)"
 			ConfigurationType="2"
 			InheritedPropertySheets="$(SolutionDir)props\CommonEnv.vsprops"
 			UseOfMFC="2"
@@ -592,8 +580,6 @@
 		</Configuration>
 		<Configuration
 			Name="Debug|Win32"
-			OutputDirectory=".\Debug"
-			IntermediateDirectory=".\Debug"
 			ConfigurationType="2"
 			InheritedPropertySheets="$(SolutionDir)props\CommonEnv.vsprops"
 			UseOfMFC="2"
@@ -689,8 +675,6 @@
 		</Configuration>
 		<Configuration
 			Name="Debug|x64"
-			OutputDirectory="$(PlatformName)\$(ConfigurationName)"
-			IntermediateDirectory="$(PlatformName)\$(ConfigurationName)"
 			ConfigurationType="2"
 			InheritedPropertySheets="$(SolutionDir)props\CommonEnv.vsprops"
 			UseOfMFC="2"
@@ -787,8 +771,6 @@
 		</Configuration>
 		<Configuration
 			Name="English Release|Win32"
-			OutputDirectory=".\Baumer___Win32_English_Release"
-			IntermediateDirectory=".\Baumer___Win32_English_Release"
 			ConfigurationType="2"
 			InheritedPropertySheets="$(SolutionDir)props\CommonEnv.vsprops"
 			UseOfMFC="2"
@@ -881,8 +863,6 @@
 		</Configuration>
 		<Configuration
 			Name="English Release|x64"
-			OutputDirectory="$(PlatformName)\$(ConfigurationName)"
-			IntermediateDirectory="$(PlatformName)\$(ConfigurationName)"
 			ConfigurationType="2"
 			InheritedPropertySheets="$(SolutionDir)props\CommonEnv.vsprops"
 			UseOfMFC="2"
@@ -976,8 +956,6 @@
 		</Configuration>
 		<Configuration
 			Name="Release1|Win32"
-			OutputDirectory=".\Baumer___Win32_Release1"
-			IntermediateDirectory=".\Baumer___Win32_Release1"
 			ConfigurationType="2"
 			InheritedPropertySheets="$(SolutionDir)props\CommonEnv.vsprops"
 			UseOfMFC="2"
@@ -1070,8 +1048,6 @@
 		</Configuration>
 		<Configuration
 			Name="Release1|x64"
-			OutputDirectory="$(PlatformName)\$(ConfigurationName)"
-			IntermediateDirectory="$(PlatformName)\$(ConfigurationName)"
 			ConfigurationType="2"
 			InheritedPropertySheets="$(SolutionDir)props\CommonEnv.vsprops"
 			UseOfMFC="2"

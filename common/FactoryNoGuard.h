@@ -1,12 +1,6 @@
-#ifndef __GUARD_FACTORY_H
-#define __GUARD_FACTORY_H
+#ifndef __FACTORY_NOGUARD_H
+#define __FACTORY_NOGUARD_H
 
-
-#include "Defs.h"
-#include "GuardInt.h"
-#if defined(NOGUARD)
-#include "FactoryNoGuard.h"
-#else
 
 class std_dll CRuntimeInfoPatch
 {
@@ -88,25 +82,33 @@ public: \
 ////////////////////////////////////////////////////////////////////////////////
 
 
+/*
+#define BEGIN_OLEFACTORY(class_name)										\
+protected:																	\
+	class class_name##Factory : public COleObjectFactoryEx					\
+	{																		\
+	public:																	\
+		class_name##Factory(REFCLSID clsid, CRuntimeClass* pRuntimeClass,	\
+			BOOL bMultiInstance, LPCTSTR lpszProgID) :						\
+				COleObjectFactoryEx(clsid, pRuntimeClass, bMultiInstance,	\
+				lpszProgID) {}												
+		virtual BOOL UpdateRegistry(BOOL);
+*/
 
 #define GUARD_BEGIN_OLEFACTORY(class_name) 									\
-protected: 																	\
-	class class_name##Factory : public CVTFactory 							\
-	{ 																		\
-	public:																	\
-		class_name##Factory(REFCLSID clsid, CRuntimeClass* pRuntimeClass, 	\
-			BOOL bMultiInstance, LPCTSTR lpszProgID) : 						\
-				CVTFactory(clsid, pRuntimeClass, bMultiInstance, 			\
-				lpszProgID) {}												
+	BEGIN_OLEFACTORY(class_name)
 
-
+/*
+#define END_OLEFACTORY(class_name) \
+	}; \
+	friend class class_name##Factory; \
+	static class_name##Factory factory; \
+public: \
+	static const GUID guid; \
+	virtual HRESULT GetClassID(LPCLSID pclsid);
+*/
 #define GUARD_END_OLEFACTORY(class_name) 									\
-	}; 																		\
-	friend class class_name##Factory; 										\
-	static AFX_DATA class_name##Factory factory; 							\
-public: 																	\
-	static AFX_DATA const GUID guid; 										
-
+	END_OLEFACTORY(class_name)
 
 #define GUARD_END_OLEFACTORY_PROGID(class_name) 							\
 	}; 																		\
@@ -117,39 +119,45 @@ public: 																	\
 	virtual CString	GetProgID();  											
 
 
+/*
+#define DECLARE_OLECREATE(class_name) \
+public: \
+	static COleObjectFactory factory; \
+	static const GUID guid; \
+*/
 #define GUARD_DECLARE_OLECREATE(class_name)									\
-	GUARD_BEGIN_OLEFACTORY(class_name) 										\
-	GUARD_END_OLEFACTORY(class_name)
-
+	DECLARE_OLECREATE(class_name)
 
 #define GUARD_DECLARE_OLECREATE_PROGID(class_name)							\
-	GUARD_BEGIN_OLEFACTORY(class_name)										\
-	GUARD_END_OLEFACTORY_PROGID(class_name)
+	DECLARE_OLECREATE(class_name)
 
+/*
+#define IMPLEMENT_OLECREATE(class_name, external_name,						\
+			l, w1, w2, b1, b2, b3, b4, b5, b6, b7, b8) \
+	COleObjectFactory class_name::factory(class_name::guid, \
+		RUNTIME_CLASS(class_name), FALSE, _T(external_name)); \
+	AFX_COMDAT const GUID class_name::guid = \
+		{ l, w1, w2, { b1, b2, b3, b4, b5, b6, b7, b8 } }; \
 
+*/
 #define GUARD_IMPLEMENT_OLECREATE(class_name, external_name,				\
 			l, w1, w2, b1, b2, b3, b4, b5, b6, b7, b8)						\
-	const AFX_DATADEF GUID class_name::guid =								\
-		{ l, w1, w2, { b1, b2, b3, b4, b5, b6, b7, b8 } }; 					\
-	AFX_DATADEF class_name::class_name##Factory class_name::factory(		\
-		class_name::guid, RUNTIME_CLASS(class_name), FALSE,					\
-		external_name);											
+	IMPLEMENT_OLECREATE(class_name, external_name,							\
+			l, w1, w2, b1, b2, b3, b4, b5, b6, b7, b8)
+
+#define IMPLEMENT_OLECREATE_SHORT(class_name, external_name, clsid)	\
+	AFX_COMDAT const GUID class_name::guid = clsid;						\
+	COleObjectFactory class_name::factory(class_name::guid, \
+		RUNTIME_CLASS(class_name), FALSE, _T(external_name)); 
 
 #define GUARD_IMPLEMENT_OLECREATE_SHORT(class_name, external_name, clsid)	\
-	const AFX_DATADEF GUID class_name::guid = clsid;						\
-	AFX_DATADEF class_name::class_name##Factory class_name::factory(		\
-		class_name::guid, RUNTIME_CLASS(class_name), FALSE,					\
-		external_name);													
+	IMPLEMENT_OLECREATE_SHORT(class_name, external_name, clsid)	
+
 
 #define GUARD_IMPLEMENT_OLECREATE_PROGID(class_name, external_name,			\
 			l, w1, w2, b1, b2, b3, b4, b5, b6, b7, b8)						\
-	const AFX_DATADEF GUID class_name::guid = 								\
-		{ l, w1, w2, { b1, b2, b3, b4, b5, b6, b7, b8 } }; 					\
-	AFX_DATADEF class_name::class_name##Factory class_name::factory( 		\
-		class_name::guid, RUNTIME_CLASS(class_name), FALSE,					\
-		external_name);														\
-	CString class_name::GetProgID() 										\
-	{	return external_name;	} 
+	IMPLEMENT_OLECREATE(class_name, external_name,							\
+			l, w1, w2, b1, b2, b3, b4, b5, b6, b7, b8)
 
 #define GUARD_IMPLEMENT_OLECREATE_PROGID_SHORT(class_name, external_name, clsid) 	\
 	const AFX_DATADEF GUID class_name::guid = clsid; 								\
@@ -165,22 +173,23 @@ public: 																	\
 // Macros for ActiveX controls
 
 #define GUARD_DECLARE_OLECREATE_CTRL(class_name) 									\
-	GUARD_BEGIN_OLEFACTORY(class_name) 												\
-		virtual BOOL UpdateRegistry(BOOL);											\
-	GUARD_END_OLEFACTORY(class_name)												\
-public:																				\
-	virtual HRESULT GetClassID(LPCLSID pclsid); 
+	BEGIN_OLEFACTORY(class_name) 													\
+	END_OLEFACTORY(class_name)														
 
 
+#define IMPLEMENT_OLECREATE_CTRL(class_name, external_name,							\
+			l, w1, w2, b1, b2, b3, b4, b5, b6, b7, b8)								\
+	IMPLEMENT_OLECREATE_EX(class_name, external_name, 								\
+			l, w1, w2, b1, b2, b3, b4, b5, b6, b7, b8) 								
+
+//	HRESULT class_name::GetClassID(LPCLSID pclsid)	
+
+//	{ return factory.GetClassID(pclsid); }
 
 #define GUARD_IMPLEMENT_OLECREATE_CTRL(class_name, external_name,					\
 			l, w1, w2, b1, b2, b3, b4, b5, b6, b7, b8)								\
-		GUARD_IMPLEMENT_OLECREATE(class_name, external_name, 						\
-			l, w1, w2, b1, b2, b3, b4, b5, b6, b7, b8) 								\
-	HRESULT class_name::GetClassID(LPCLSID pclsid)									\
-	{ return factory.GetClassID(pclsid); }
+	IMPLEMENT_OLECREATE_CTRL(class_name, external_name,								\
+			l, w1, w2, b1, b2, b3, b4, b5, b6, b7, b8);
 
 
-#endif //NOGUARD
-
-#endif// __GUARD_FACTORY_H
+#endif// __FACTORY_NOGUARD_H

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="windows-1251"?>
 <VisualStudioProject
 	ProjectType="Visual C++"
-	Version="9,00"
+	Version="9.00"
 	Name="Metall"
 	ProjectGUID="{AEFAC442-10B6-4DFB-87EF-999A053E1159}"
 	RootNamespace="Metall"
@@ -21,8 +21,6 @@
 	<Configurations>
 		<Configuration
 			Name="Debug|Win32"
-			OutputDirectory="Debug"
-			IntermediateDirectory="Debug"
 			ConfigurationType="2"
 			InheritedPropertySheets="..\..\..\props\common2env.vsprops"
 			CharacterSet="2"
@@ -100,8 +98,6 @@
 		</Configuration>
 		<Configuration
 			Name="Debug|x64"
-			OutputDirectory="$(PlatformName)\$(ConfigurationName)"
-			IntermediateDirectory="$(PlatformName)\$(ConfigurationName)"
 			ConfigurationType="2"
 			InheritedPropertySheets="..\..\..\props\common2env.vsprops"
 			CharacterSet="2"
@@ -180,8 +176,6 @@
 		</Configuration>
 		<Configuration
 			Name="Release|Win32"
-			OutputDirectory="Release"
-			IntermediateDirectory="Release"
 			ConfigurationType="2"
 			InheritedPropertySheets="..\..\..\props\common2env.vsprops"
 			CharacterSet="2"
@@ -263,8 +257,6 @@
 		</Configuration>
 		<Configuration
 			Name="Release|x64"
-			OutputDirectory="$(PlatformName)\$(ConfigurationName)"
-			IntermediateDirectory="$(PlatformName)\$(ConfigurationName)"
 			ConfigurationType="2"
 			InheritedPropertySheets="..\..\..\props\common2env.vsprops"
 			CharacterSet="2"

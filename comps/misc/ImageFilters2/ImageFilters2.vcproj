@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="windows-1251"?>
 <VisualStudioProject
 	ProjectType="Visual C++"
-	Version="9,00"
+	Version="9.00"
 	Name="ImageFilters2"
 	ProjectGUID="{897DBABF-F165-465E-99DF-4D1F69CEF88B}"
 	RootNamespace="ImageFilters2"
@@ -84,7 +84,6 @@
 				GenerateManifest="false"
 				ManifestFile=""
 				IgnoreDefaultLibraryNames=" "
-				ProgramDatabaseFile="\vt5\vt5\debug\pdb\ImageFilters2.pdb"
 				RandomizedBaseAddress="1"
 				DataExecutionPrevention="0"
 			/>
@@ -112,8 +111,6 @@
 		</Configuration>
 		<Configuration
 			Name="Debug|x64"
-			OutputDirectory="$(PlatformName)\$(ConfigurationName)"
-			IntermediateDirectory="$(PlatformName)\$(ConfigurationName)"
 			ConfigurationType="2"
 			InheritedPropertySheets="..\..\..\props\common2env.vsprops"
 			UseOfMFC="0"
@@ -173,7 +170,6 @@
 				LinkIncremental="2"
 				AdditionalLibraryDirectories=""
 				IgnoreDefaultLibraryNames=" "
-				ProgramDatabaseFile="\vt5\vt5\debug\pdb\ImageFilters2.pdb"
 				RandomizedBaseAddress="1"
 				DataExecutionPrevention="0"
 				TargetMachine="17"
@@ -270,7 +266,6 @@
 				GenerateManifest="false"
 				ManifestFile=""
 				IgnoreDefaultLibraryNames=" "
-				ProgramDatabaseFile="\vt5\vt5\release\pdb\ImageFilters2.pdb"
 				GenerateMapFile="false"
 				RandomizedBaseAddress="1"
 				DataExecutionPrevention="0"
@@ -364,7 +359,6 @@
 				LinkIncremental="1"
 				AdditionalLibraryDirectories=""
 				IgnoreDefaultLibraryNames=" "
-				ProgramDatabaseFile="\vt5\vt5\release\pdb\ImageFilters2.pdb"
 				GenerateMapFile="false"
 				RandomizedBaseAddress="1"
 				DataExecutionPrevention="0"

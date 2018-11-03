@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="windows-1251"?>
 <VisualStudioProject
 	ProjectType="Visual C++"
-	Version="9,00"
+	Version="9.00"
 	Name="ContextAX"
 	ProjectGUID="{946B2B18-4A27-4E1C-BF01-B115235F2F70}"
 	RootNamespace="ContextAX"
@@ -699,6 +699,14 @@
 				>
 			</File>
 		</Filter>
+		<File
+			RelativePath=".\ClassDiagram1.cd"
+			>
+		</File>
+		<File
+			RelativePath=".\ClassDiagram2.cd"
+			>
+		</File>
 	</Files>
 	<Globals>
 		<Global

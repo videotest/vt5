@@ -439,7 +439,7 @@ protected:
 	//активизируем ячейку по позиции
 	bool			on_activate_object( IUnknown* punk );
 	//проверить на валидность и вернуть объект по координатам
-	chromo_object	*get_chromo_object( long line, long cell, LPOS lpos );
+	chromo_object	*get_chromo_object( long line, long cell, long lpos );
 	//если есть measure_object и chromo_jbject, инициализировать все поля последнего
 	bool			init_chromo_by_measure( chromo_object *pchromo, IUnknown *punkMeasure );
 	//просканить все кроме подвала и обновить классы

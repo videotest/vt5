@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="windows-1251"?>
 <VisualStudioProject
 	ProjectType="Visual C++"
-	Version="9,00"
+	Version="9.00"
 	Name="ProgRes"
 	ProjectGUID="{89F3848A-0737-4C60-9888-9C46316BD826}"
 	RootNamespace="ProgRes"
@@ -21,9 +21,8 @@
 	<Configurations>
 		<Configuration
 			Name="Debug|Win32"
-			OutputDirectory="Debug"
-			IntermediateDirectory="Debug"
 			ConfigurationType="2"
+			InheritedPropertySheets="$(SolutionDir)props\CommonEnv.vsprops"
 			UseOfMFC="2"
 			CharacterSet="2"
 			>
@@ -47,7 +46,7 @@
 			<Tool
 				Name="VCCLCompilerTool"
 				Optimization="0"
-				AdditionalIncludeDirectories="..\DrvCommon2,\vt5\ifaces,\vt5\common2,\vt5\common"
+				AdditionalIncludeDirectories="..\DrvCommon2;&quot;$(SolutionDir)common2&quot;"
 				PreprocessorDefinitions="__MEX;_CRT_SECURE_NO_DEPRECATE"
 				MinimalRebuild="true"
 				BasicRuntimeChecks="3"
@@ -79,11 +78,9 @@
 				AdditionalLibraryDirectories="\vt5\common2\Debug,\vt5\common\"
 				ModuleDefinitionFile=".\ProgRes.def"
 				GenerateDebugInformation="true"
-				ProgramDatabaseFile="\vt5\vt5\$(OutDir)\pdb\$(ProjectName).pdb"
 				SubSystem="2"
 				RandomizedBaseAddress="1"
 				DataExecutionPrevention="0"
-				ImportLibrary="$(OutDir)/ProgRes.lib"
 				TargetMachine="1"
 			/>
 			<Tool
@@ -110,9 +107,8 @@
 		</Configuration>
 		<Configuration
 			Name="Debug|x64"
-			OutputDirectory="$(PlatformName)\$(ConfigurationName)"
-			IntermediateDirectory="$(PlatformName)\$(ConfigurationName)"
 			ConfigurationType="2"
+			InheritedPropertySheets="$(SolutionDir)props\CommonEnv.vsprops"
 			UseOfMFC="2"
 			CharacterSet="2"
 			>
@@ -137,7 +133,7 @@
 			<Tool
 				Name="VCCLCompilerTool"
 				Optimization="0"
-				AdditionalIncludeDirectories="..\DrvCommon2,\vt5\ifaces,\vt5\common2,\vt5\common"
+				AdditionalIncludeDirectories="..\DrvCommon2;&quot;$(SolutionDir)common2&quot;"
 				PreprocessorDefinitions="_WIN64;_M_X64;_AFX_SECURE_NO_DEPRECATE;_CRT_SECURE_NO_DEPRECATE__MEX;_CRT_SECURE_NO_DEPRECATE"
 				MinimalRebuild="true"
 				BasicRuntimeChecks="3"
@@ -169,11 +165,9 @@
 				AdditionalLibraryDirectories="\vt5\common2\Debug,\vt5\common\"
 				ModuleDefinitionFile=".\ProgRes.def"
 				GenerateDebugInformation="true"
-				ProgramDatabaseFile="\vt5\vt5\$(OutDir)\pdb\$(ProjectName).pdb"
 				SubSystem="2"
 				RandomizedBaseAddress="1"
 				DataExecutionPrevention="0"
-				ImportLibrary="$(OutDir)/ProgRes.lib"
 				TargetMachine="17"
 			/>
 			<Tool
@@ -200,9 +194,8 @@
 		</Configuration>
 		<Configuration
 			Name="Release|Win32"
-			OutputDirectory="Release"
-			IntermediateDirectory="Release"
 			ConfigurationType="2"
+			InheritedPropertySheets="$(SolutionDir)props\CommonEnv.vsprops"
 			UseOfMFC="2"
 			CharacterSet="2"
 			>
@@ -228,7 +221,7 @@
 				Optimization="0"
 				InlineFunctionExpansion="1"
 				OmitFramePointers="true"
-				AdditionalIncludeDirectories="..\DrvCommon2,\vt5\ifaces,\vt5\common2,\vt5\common"
+				AdditionalIncludeDirectories="..\DrvCommon2;&quot;$(SolutionDir)common2&quot;"
 				PreprocessorDefinitions="__MEX;_CRT_SECURE_NO_DEPRECATE"
 				StringPooling="true"
 				RuntimeLibrary="2"
@@ -260,13 +253,11 @@
 				AdditionalLibraryDirectories="\vt5\common2\Release,\vt5\common\"
 				ModuleDefinitionFile=".\ProgRes.def"
 				GenerateDebugInformation="true"
-				ProgramDatabaseFile="\vt5\vt5\$(OutDir)\pdb\$(ProjectName).pdb"
 				SubSystem="2"
 				OptimizeReferences="2"
 				EnableCOMDATFolding="2"
 				RandomizedBaseAddress="1"
 				DataExecutionPrevention="0"
-				ImportLibrary="$(OutDir)/ProgRes.lib"
 				TargetMachine="1"
 			/>
 			<Tool
@@ -293,9 +284,8 @@
 		</Configuration>
 		<Configuration
 			Name="Release|x64"
-			OutputDirectory="$(PlatformName)\$(ConfigurationName)"
-			IntermediateDirectory="$(PlatformName)\$(ConfigurationName)"
 			ConfigurationType="2"
+			InheritedPropertySheets="$(SolutionDir)props\CommonEnv.vsprops"
 			UseOfMFC="2"
 			CharacterSet="2"
 			>
@@ -322,7 +312,7 @@
 				Optimization="0"
 				InlineFunctionExpansion="1"
 				OmitFramePointers="true"
-				AdditionalIncludeDirectories="..\DrvCommon2,\vt5\ifaces,\vt5\common2,\vt5\common"
+				AdditionalIncludeDirectories="..\DrvCommon2;&quot;$(SolutionDir)common2&quot;"
 				PreprocessorDefinitions="_WIN64;_M_X64;_AFX_SECURE_NO_DEPRECATE;_CRT_SECURE_NO_DEPRECATE;__MEX"
 				StringPooling="true"
 				RuntimeLibrary="2"
@@ -354,13 +344,11 @@
 				AdditionalLibraryDirectories="\vt5\common2\Release,\vt5\common\"
 				ModuleDefinitionFile=".\ProgRes.def"
 				GenerateDebugInformation="true"
-				ProgramDatabaseFile="\vt5\vt5\$(OutDir)\pdb\$(ProjectName).pdb"
 				SubSystem="2"
 				OptimizeReferences="2"
 				EnableCOMDATFolding="2"
 				RandomizedBaseAddress="1"
 				DataExecutionPrevention="0"
-				ImportLibrary="$(OutDir)/ProgRes.lib"
 				TargetMachine="17"
 			/>
 			<Tool

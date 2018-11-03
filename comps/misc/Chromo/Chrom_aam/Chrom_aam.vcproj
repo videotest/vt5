@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="windows-1251"?>
 <VisualStudioProject
 	ProjectType="Visual C++"
-	Version="9,00"
+	Version="9.00"
 	Name="Chrom_aam"
 	ProjectGUID="{2F009C27-F452-49D1-8B21-F47221D44EFD}"
 	RootNamespace="Chrom_aam"
@@ -20,9 +20,8 @@
 	<Configurations>
 		<Configuration
 			Name="Debug|Win32"
-			OutputDirectory=".\Debug"
-			IntermediateDirectory=".\Debug"
 			ConfigurationType="2"
+			InheritedPropertySheets="$(SolutionDir)props\common2env.vsprops"
 			UseOfMFC="0"
 			ATLMinimizesCRunTimeLibraryUsage="false"
 			CharacterSet="2"
@@ -50,7 +49,7 @@
 			<Tool
 				Name="VCCLCompilerTool"
 				Optimization="0"
-				AdditionalIncludeDirectories="\vt5\common2,\vt5\ifaces,\vt5\common,\vt5\comps\misc\imagefilters2\aphine"
+				AdditionalIncludeDirectories="&quot;$(SolutionDir)comps\misc\imagefilters2\aphine&quot;"
 				PreprocessorDefinitions="WIN32;_DEBUG;_WINDOWS;_USRDLL;CHROM_AAM_EXPORTS"
 				BasicRuntimeChecks="0"
 				RuntimeLibrary="3"
@@ -60,7 +59,6 @@
 				PrecompiledHeaderThrough="stdafx.h"
 				BrowseInformation="1"
 				WarningLevel="3"
-				SuppressStartupBanner="true"
 				DebugInformationFormat="4"
 				CompileAs="0"
 			/>
@@ -78,17 +76,12 @@
 			<Tool
 				Name="VCLinkerTool"
 				AdditionalOptions="/MACHINE:I386  /NODEFAULTLIB:LIBCD.lib  /FORCE:MULTIPLE"
-				AdditionalDependencies="odbc32.lib odbccp32.lib aphine.lib atlsd.lib"
-				OutputFile="\vt5\vt5\Debug\comps\Chromaam.dll"
+				AdditionalDependencies="aphine.lib"
 				LinkIncremental="2"
-				SuppressStartupBanner="true"
-				AdditionalLibraryDirectories="\vt5\common2\debug,\vt5\common,\vt5\common\debug"
-				ModuleDefinitionFile=".\Chrom_aam.def"
+				AdditionalLibraryDirectories=""
 				GenerateDebugInformation="true"
-				ProgramDatabaseFile="\vt5\vt5\debug\pdb\Chromaam.pdb"
 				RandomizedBaseAddress="1"
 				DataExecutionPrevention="0"
-				ImportLibrary=".\Debug/Chromaam.lib"
 			/>
 			<Tool
 				Name="VCALinkTool"
@@ -114,9 +107,8 @@
 		</Configuration>
 		<Configuration
 			Name="Debug|x64"
-			OutputDirectory="$(PlatformName)\$(ConfigurationName)"
-			IntermediateDirectory="$(PlatformName)\$(ConfigurationName)"
 			ConfigurationType="2"
+			InheritedPropertySheets="$(SolutionDir)props\common2env.vsprops"
 			UseOfMFC="0"
 			ATLMinimizesCRunTimeLibraryUsage="false"
 			CharacterSet="2"
@@ -144,9 +136,9 @@
 			<Tool
 				Name="VCCLCompilerTool"
 				Optimization="0"
-				AdditionalIncludeDirectories="\vt5\common2,\vt5\ifaces,\vt5\common,\vt5\comps\misc\imagefilters2\aphine"
+				AdditionalIncludeDirectories="&quot;$(SolutionDir)comps\misc\imagefilters2\aphine&quot;"
 				PreprocessorDefinitions="_WIN64;_M_X64;_CRT_SECURE_NO_DEPRECATE;_DEBUG;_WINDOWS;_USRDLL;CHROM_AAM_EXPORTS"
-				BasicRuntimeChecks="0"
+				BasicRuntimeChecks="3"
 				RuntimeLibrary="3"
 				TreatWChar_tAsBuiltInType="false"
 				ForceConformanceInForLoopScope="false"
@@ -154,7 +146,6 @@
 				PrecompiledHeaderThrough="stdafx.h"
 				BrowseInformation="1"
 				WarningLevel="3"
-				SuppressStartupBanner="true"
 				DebugInformationFormat="3"
 				CompileAs="0"
 			/>
@@ -172,17 +163,12 @@
 			<Tool
 				Name="VCLinkerTool"
 				AdditionalOptions="/NODEFAULTLIB:LIBCD.lib  /FORCE:MULTIPLE"
-				AdditionalDependencies="odbc32.lib odbccp32.lib aphine.lib atlsd.lib"
-				OutputFile="\vt5\vt5\Debug\comps\Chromaam.dll"
+				AdditionalDependencies="aphine.lib"
 				LinkIncremental="2"
-				SuppressStartupBanner="true"
-				AdditionalLibraryDirectories="\vt5\common2\debug,\vt5\common,\vt5\common\debug"
-				ModuleDefinitionFile=".\Chrom_aam.def"
+				AdditionalLibraryDirectories=""
 				GenerateDebugInformation="true"
-				ProgramDatabaseFile="\vt5\vt5\debug\pdb\Chromaam.pdb"
 				RandomizedBaseAddress="1"
 				DataExecutionPrevention="0"
-				ImportLibrary=".\Debug/Chromaam.lib"
 				TargetMachine="17"
 			/>
 			<Tool
@@ -209,9 +195,8 @@
 		</Configuration>
 		<Configuration
 			Name="Release|Win32"
-			OutputDirectory=".\Release"
-			IntermediateDirectory=".\Release"
 			ConfigurationType="2"
+			InheritedPropertySheets="$(SolutionDir)props\common2env.vsprops"
 			UseOfMFC="0"
 			ATLMinimizesCRunTimeLibraryUsage="false"
 			CharacterSet="2"
@@ -239,7 +224,7 @@
 			<Tool
 				Name="VCCLCompilerTool"
 				InlineFunctionExpansion="1"
-				AdditionalIncludeDirectories="\vt5\common2,\vt5\ifaces,\vt5\common,\vt5\comps\misc\imagefilters2\aphine"
+				AdditionalIncludeDirectories="&quot;$(SolutionDir)comps\misc\imagefilters2\aphine&quot;"
 				PreprocessorDefinitions="WIN32;NDEBUG;_WINDOWS;_USRDLL;CHROM_AAM_EXPORTS"
 				StringPooling="true"
 				RuntimeLibrary="2"
@@ -250,7 +235,6 @@
 				PrecompiledHeaderThrough="stdafx.h"
 				BrowseInformation="1"
 				WarningLevel="3"
-				SuppressStartupBanner="true"
 				DebugInformationFormat="3"
 				CompileAs="0"
 			/>
@@ -268,18 +252,13 @@
 			<Tool
 				Name="VCLinkerTool"
 				AdditionalOptions="/MACHINE:I386  /FORCE:MULTIPLE"
-				AdditionalDependencies="odbc32.lib odbccp32.lib aphine.lib atls.lib"
-				OutputFile="\vt5\vt5\Release\comps\Chromaam.dll"
+				AdditionalDependencies="aphine.lib"
 				LinkIncremental="1"
-				SuppressStartupBanner="true"
-				AdditionalLibraryDirectories="\vt5\common2\release,\vt5\common,\vt5\common\release"
+				AdditionalLibraryDirectories=""
 				IgnoreDefaultLibraryNames="libc.lib"
-				ModuleDefinitionFile=".\Chrom_aam.def"
 				GenerateDebugInformation="true"
-				ProgramDatabaseFile="\vt5\vt5\release\pdb\Chromaam.pdb"
 				RandomizedBaseAddress="1"
 				DataExecutionPrevention="0"
-				ImportLibrary=".\Release/Chromaam.lib"
 			/>
 			<Tool
 				Name="VCALinkTool"
@@ -305,9 +284,8 @@
 		</Configuration>
 		<Configuration
 			Name="Release|x64"
-			OutputDirectory="$(PlatformName)\$(ConfigurationName)"
-			IntermediateDirectory="$(PlatformName)\$(ConfigurationName)"
 			ConfigurationType="2"
+			InheritedPropertySheets="$(SolutionDir)props\common2env.vsprops"
 			UseOfMFC="0"
 			ATLMinimizesCRunTimeLibraryUsage="false"
 			CharacterSet="2"
@@ -335,7 +313,7 @@
 			<Tool
 				Name="VCCLCompilerTool"
 				InlineFunctionExpansion="1"
-				AdditionalIncludeDirectories="\vt5\common2,\vt5\ifaces,\vt5\common,\vt5\comps\misc\imagefilters2\aphine"
+				AdditionalIncludeDirectories="&quot;$(SolutionDir)comps\misc\imagefilters2\aphine&quot;"
 				PreprocessorDefinitions="_WIN64;_M_X64;_CRT_SECURE_NO_DEPRECATE;NDEBUG;_WINDOWS;_USRDLL;CHROM_AAM_EXPORTS"
 				StringPooling="true"
 				RuntimeLibrary="2"
@@ -346,7 +324,6 @@
 				PrecompiledHeaderThrough="stdafx.h"
 				BrowseInformation="1"
 				WarningLevel="3"
-				SuppressStartupBanner="true"
 				DebugInformationFormat="3"
 				CompileAs="0"
 			/>
@@ -364,18 +341,13 @@
 			<Tool
 				Name="VCLinkerTool"
 				AdditionalOptions="/FORCE:MULTIPLE"
-				AdditionalDependencies="odbc32.lib odbccp32.lib aphine.lib atls.lib"
-				OutputFile="\vt5\vt5\Release\comps\Chromaam.dll"
+				AdditionalDependencies="aphine.lib"
 				LinkIncremental="1"
-				SuppressStartupBanner="true"
-				AdditionalLibraryDirectories="\vt5\common2\release,\vt5\common,\vt5\common\release"
+				AdditionalLibraryDirectories=""
 				IgnoreDefaultLibraryNames="libc.lib"
-				ModuleDefinitionFile=".\Chrom_aam.def"
 				GenerateDebugInformation="true"
-				ProgramDatabaseFile="\vt5\vt5\release\pdb\Chromaam.pdb"
 				RandomizedBaseAddress="1"
 				DataExecutionPrevention="0"
-				ImportLibrary=".\Release/Chromaam.lib"
 				TargetMachine="17"
 			/>
 			<Tool

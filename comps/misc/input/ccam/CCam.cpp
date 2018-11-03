@@ -132,7 +132,7 @@ int CCCamApp::ExitInstance()
 	return CWinApp::ExitInstance();
 }
 
-void CCCamApp::WinHelpInternal(DWORD dwData, UINT nCmd) 
+void CCCamApp::WinHelpInternal(DWORD_PTR dwData, UINT nCmd) 
 {
 	if (CStdProfileManager::m_pMgr->GetProfileInt(_T("Settings"), _T("DisableHelp"), 0))
 		return;

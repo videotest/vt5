@@ -13,7 +13,9 @@
 	<Tool
 		Name="VCCLCompilerTool"
 		AdditionalIncludeDirectories="&quot;$(SolutionDir)common&quot;;&quot;$(SolutionDir)vt5\$(PlatformName)\$(ConfigurationName)\comps&quot;;&quot;$(SolutionDir)IFaces&quot;"
-		PreprocessorDefinitions="$(SolutionDir)common;$(SolutionDir)\vt5\$(PlatformName)\$(ConfigurationName)"
+		PreprocessorDefinitions="_WINDOWS;_AFX_SECURE_NO_DEPRECATE;_CRT_SECURE_NO_DEPRECATE"
+		WarningLevel="3"
+		CompileAs="0"
 	/>
 	<Tool
 		Name="VCLinkerTool"

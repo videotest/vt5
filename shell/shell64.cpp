@@ -966,7 +966,7 @@ void ShellInitLanguages()
 	char	*p = strrchr( szIniFileName, '\\' );
 	strcpy( p, "\\shell.data" );
 
-	char	sz[10] = "en";
+	char	sz[10] = "ru";
 	::GetPrivateProfileString( "General", "Language:String", sz, sz, 10, szIniFileName );
 	::WritePrivateProfileString( "General", "Language:String", sz, szIniFileName );
 

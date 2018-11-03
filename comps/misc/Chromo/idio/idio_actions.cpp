@@ -248,7 +248,7 @@ public:
 		return 1L;
 	}
 
-	long on_initdialog()
+	LRESULT on_initdialog()
 	{
 		char	sz_path[MAX_PATH];
 
@@ -276,7 +276,7 @@ public:
 			init_db( m_main_path + tch + ".dbi" );
 		}
 		
-		return 1L;
+		return 1;
 	}
 
 	LRESULT on_destroy()

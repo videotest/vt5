@@ -27,7 +27,15 @@ GUARD_IMPLEMENT_OLECREATE_CTRL(CViewAXStatUIPropPage, "VIEWAX.ViewAXStatUIPropPa
 
 BOOL CViewAXStatUIPropPage::CViewAXStatUIPropPageFactory::UpdateRegistry(BOOL bRegister)
 {
-	return UpdateRegistryPage( bRegister, AfxGetInstanceHandle(), IDS_VIEWAX_PPG );
+#if defined(NOGUARD)
+	if (bRegister)
+		return AfxOleRegisterPropertyPageClass(AfxGetInstanceHandle(),
+			m_clsid, IDS_VIEWAX_PPG);
+	else
+		return AfxOleUnregisterClass(m_clsid, NULL);
+#else
+	return UpdateRegistryPage(bRegister, AfxGetInstanceHandle(), IDS_VIEWAX_PPG);
+#endif
 }
 
 CViewAXStatUIPropPage::CViewAXStatUIPropPage() :

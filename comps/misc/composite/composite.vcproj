@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="windows-1251"?>
 <VisualStudioProject
 	ProjectType="Visual C++"
-	Version="9,00"
+	Version="9.00"
 	Name="composite"
 	ProjectGUID="{A8008BA8-F3EB-4C24-A118-1E38E49BF184}"
 	RootNamespace="composite"
@@ -21,8 +21,6 @@
 	<Configurations>
 		<Configuration
 			Name="Debug|Win32"
-			OutputDirectory="Debug"
-			IntermediateDirectory="Debug"
 			ConfigurationType="2"
 			InheritedPropertySheets="$(SolutionDir)props\CommonEnv.vsprops"
 			UseOfMFC="2"
@@ -45,13 +43,11 @@
 				PreprocessorDefinitions="_DEBUG"
 				MkTypLibCompatible="true"
 				TargetEnvironment="1"
-				TypeLibraryName="\vt5\comps\misc\composite\Debug/composite.tlb"
-				OutputDirectory=".\Debug"
 			/>
 			<Tool
 				Name="VCCLCompilerTool"
 				Optimization="0"
-				AdditionalIncludeDirectories="\vt5\comps\docs\objects\;\vt5\common;\vt5\ifaces;\vt5\Controls\controls"
+				AdditionalIncludeDirectories="&quot;$(SolutionDir)comps\docs\objects&quot;;&quot;$(SolutionDir)Controls\controls&quot;"
 				PreprocessorDefinitions="WIN32;_WINDOWS;_DEBUG;_USRDLL"
 				MinimalRebuild="true"
 				BasicRuntimeChecks="0"
@@ -59,8 +55,6 @@
 				TreatWChar_tAsBuiltInType="false"
 				ForceConformanceInForLoopScope="false"
 				UsePrecompiledHeader="2"
-				WarningLevel="3"
-				Detect64BitPortabilityProblems="true"
 				DebugInformationFormat="4"
 			/>
 			<Tool
@@ -68,25 +62,20 @@
 			/>
 			<Tool
 				Name="VCResourceCompilerTool"
-				PreprocessorDefinitions="_DEBUG"
 				Culture="1033"
-				AdditionalIncludeDirectories="$(IntDir)"
+				AdditionalIncludeDirectories="&quot;$(SolutionDir)vt5\$(PlatformName)\$(ConfigurationName)\comps&quot;"
 			/>
 			<Tool
 				Name="VCPreLinkEventTool"
 			/>
 			<Tool
 				Name="VCLinkerTool"
-				AdditionalDependencies="comsupp.lib"
-				OutputFile="\vt5\vt5\$(OutDir)\comps\$(ProjectName).dll"
 				LinkIncremental="2"
-				AdditionalLibraryDirectories="\vt5\common\$(OutDir),\vt5\common"
-				ModuleDefinitionFile=".\composite.def"
+				AdditionalLibraryDirectories=""
 				GenerateDebugInformation="true"
 				SubSystem="2"
 				RandomizedBaseAddress="1"
 				DataExecutionPrevention="0"
-				ImportLibrary="$(OutDir)\composite.lib"
 				TargetMachine="1"
 			/>
 			<Tool
@@ -113,8 +102,6 @@
 		</Configuration>
 		<Configuration
 			Name="Debug|x64"
-			OutputDirectory="$(PlatformName)\$(ConfigurationName)"
-			IntermediateDirectory="$(PlatformName)\$(ConfigurationName)"
 			ConfigurationType="2"
 			InheritedPropertySheets="$(SolutionDir)props\CommonEnv.vsprops"
 			UseOfMFC="2"
@@ -137,13 +124,11 @@
 				PreprocessorDefinitions="_DEBUG"
 				MkTypLibCompatible="true"
 				TargetEnvironment="3"
-				TypeLibraryName="\vt5\comps\misc\composite\Debug/composite.tlb"
-				OutputDirectory=".\Debug"
 			/>
 			<Tool
 				Name="VCCLCompilerTool"
 				Optimization="0"
-				AdditionalIncludeDirectories="\vt5\comps\docs\objects\;\vt5\common;\vt5\ifaces;\vt5\Controls\controls"
+				AdditionalIncludeDirectories="&quot;$(SolutionDir)comps\docs\objects&quot;;&quot;$(SolutionDir)Controls\controls&quot;"
 				PreprocessorDefinitions="_WIN64;_M_X64;_AFX_SECURE_NO_DEPRECATE;_CRT_SECURE_NO_DEPRECATE;_WINDOWS;_DEBUG;_USRDLL"
 				MinimalRebuild="true"
 				BasicRuntimeChecks="0"
@@ -151,8 +136,6 @@
 				TreatWChar_tAsBuiltInType="false"
 				ForceConformanceInForLoopScope="false"
 				UsePrecompiledHeader="2"
-				WarningLevel="3"
-				Detect64BitPortabilityProblems="true"
 				DebugInformationFormat="3"
 			/>
 			<Tool
@@ -160,25 +143,20 @@
 			/>
 			<Tool
 				Name="VCResourceCompilerTool"
-				PreprocessorDefinitions="_DEBUG"
 				Culture="1033"
-				AdditionalIncludeDirectories="$(IntDir)"
+				AdditionalIncludeDirectories="&quot;$(SolutionDir)vt5\$(PlatformName)\$(ConfigurationName)\comps&quot;"
 			/>
 			<Tool
 				Name="VCPreLinkEventTool"
 			/>
 			<Tool
 				Name="VCLinkerTool"
-				AdditionalDependencies="comsupp.lib"
-				OutputFile="\vt5\vt5\$(OutDir)\comps\$(ProjectName).dll"
 				LinkIncremental="2"
-				AdditionalLibraryDirectories="\vt5\common\$(OutDir),\vt5\common"
-				ModuleDefinitionFile=".\composite.def"
+				AdditionalLibraryDirectories=""
 				GenerateDebugInformation="true"
 				SubSystem="2"
 				RandomizedBaseAddress="1"
 				DataExecutionPrevention="0"
-				ImportLibrary="$(OutDir)\composite.lib"
 				TargetMachine="17"
 			/>
 			<Tool
@@ -205,8 +183,6 @@
 		</Configuration>
 		<Configuration
 			Name="Release|Win32"
-			OutputDirectory="Release"
-			IntermediateDirectory="Release"
 			ConfigurationType="2"
 			InheritedPropertySheets="$(SolutionDir)props\CommonEnv.vsprops"
 			UseOfMFC="2"
@@ -229,14 +205,13 @@
 				PreprocessorDefinitions="NDEBUG"
 				MkTypLibCompatible="false"
 				TargetEnvironment="1"
-				TypeLibraryName="$(IntDir)/$(ProjectName).tlb"
 			/>
 			<Tool
 				Name="VCCLCompilerTool"
 				Optimization="2"
 				InlineFunctionExpansion="1"
 				OmitFramePointers="true"
-				AdditionalIncludeDirectories="\vt5\common;\vt5\ifaces;\vt5\controls\controls;\vt5\comps\docs\objects\"
+				AdditionalIncludeDirectories="&quot;$(SolutionDir)comps\docs\objects&quot;;&quot;$(SolutionDir)Controls\controls&quot;"
 				PreprocessorDefinitions="WIN32;_WINDOWS;NDEBUG;_USRDLL;_AFX_SECURE_NO_DEPRECATE;_CRT_SECURE_NO_DEPRECATE"
 				StringPooling="true"
 				RuntimeLibrary="2"
@@ -245,8 +220,6 @@
 				ForceConformanceInForLoopScope="false"
 				UsePrecompiledHeader="2"
 				BrowseInformation="1"
-				WarningLevel="3"
-				Detect64BitPortabilityProblems="true"
 				DebugInformationFormat="3"
 			/>
 			<Tool
@@ -254,27 +227,22 @@
 			/>
 			<Tool
 				Name="VCResourceCompilerTool"
-				PreprocessorDefinitions="NDEBUG"
 				Culture="1033"
-				AdditionalIncludeDirectories="$(IntDir)"
+				AdditionalIncludeDirectories="&quot;$(SolutionDir)vt5\$(PlatformName)\$(ConfigurationName)\comps&quot;"
 			/>
 			<Tool
 				Name="VCPreLinkEventTool"
 			/>
 			<Tool
 				Name="VCLinkerTool"
-				AdditionalDependencies="comsupp.lib"
-				OutputFile="\vt5\vt5\$(OutDir)\comps\$(ProjectName).dll"
 				LinkIncremental="1"
-				AdditionalLibraryDirectories="\vt5\common\$(OutDir),\vt5\common"
-				ModuleDefinitionFile=".\composite.def"
+				AdditionalLibraryDirectories=""
 				GenerateDebugInformation="true"
 				SubSystem="2"
 				OptimizeReferences="2"
 				EnableCOMDATFolding="2"
 				RandomizedBaseAddress="1"
 				DataExecutionPrevention="0"
-				ImportLibrary="$(OutDir)/composite.lib"
 				TargetMachine="1"
 			/>
 			<Tool
@@ -302,8 +270,6 @@
 		</Configuration>
 		<Configuration
 			Name="Release|x64"
-			OutputDirectory="$(PlatformName)\$(ConfigurationName)"
-			IntermediateDirectory="$(PlatformName)\$(ConfigurationName)"
 			ConfigurationType="2"
 			InheritedPropertySheets="$(SolutionDir)props\CommonEnv.vsprops"
 			UseOfMFC="2"
@@ -326,14 +292,13 @@
 				PreprocessorDefinitions="NDEBUG"
 				MkTypLibCompatible="false"
 				TargetEnvironment="3"
-				TypeLibraryName="$(IntDir)/$(ProjectName).tlb"
 			/>
 			<Tool
 				Name="VCCLCompilerTool"
 				Optimization="2"
 				InlineFunctionExpansion="1"
 				OmitFramePointers="true"
-				AdditionalIncludeDirectories="\vt5\common;\vt5\ifaces;\vt5\controls\controls;\vt5\comps\docs\objects\"
+				AdditionalIncludeDirectories="&quot;$(SolutionDir)comps\docs\objects&quot;;&quot;$(SolutionDir)Controls\controls&quot;"
 				PreprocessorDefinitions="_WIN64;_M_X64;_AFX_SECURE_NO_DEPRECATE;_CRT_SECURE_NO_DEPRECATE;_WINDOWS;NDEBUG;_USRDLL"
 				StringPooling="true"
 				RuntimeLibrary="2"
@@ -342,8 +307,6 @@
 				ForceConformanceInForLoopScope="false"
 				UsePrecompiledHeader="2"
 				BrowseInformation="1"
-				WarningLevel="3"
-				Detect64BitPortabilityProblems="true"
 				DebugInformationFormat="3"
 			/>
 			<Tool
@@ -351,27 +314,22 @@
 			/>
 			<Tool
 				Name="VCResourceCompilerTool"
-				PreprocessorDefinitions="NDEBUG"
 				Culture="1033"
-				AdditionalIncludeDirectories="$(IntDir)"
+				AdditionalIncludeDirectories="&quot;$(SolutionDir)vt5\$(PlatformName)\$(ConfigurationName)\comps&quot;"
 			/>
 			<Tool
 				Name="VCPreLinkEventTool"
 			/>
 			<Tool
 				Name="VCLinkerTool"
-				AdditionalDependencies="comsupp.lib"
-				OutputFile="\vt5\vt5\$(OutDir)\comps\$(ProjectName).dll"
 				LinkIncremental="1"
-				AdditionalLibraryDirectories="\vt5\common\$(OutDir),\vt5\common"
-				ModuleDefinitionFile=".\composite.def"
+				AdditionalLibraryDirectories=""
 				GenerateDebugInformation="true"
 				SubSystem="2"
 				OptimizeReferences="2"
 				EnableCOMDATFolding="2"
 				RandomizedBaseAddress="1"
 				DataExecutionPrevention="0"
-				ImportLibrary="$(OutDir)/composite.lib"
 				TargetMachine="17"
 			/>
 			<Tool
@@ -406,7 +364,7 @@
 			Filter="cpp;c;cxx;def;odl;idl;hpj;bat;asm"
 			>
 			<File
-				RelativePath="composite.cpp"
+				RelativePath=".\composite.cpp"
 				>
 			</File>
 			<File
@@ -418,11 +376,11 @@
 				>
 			</File>
 			<File
-				RelativePath="CompositeMeasGroup.cpp"
+				RelativePath=".\CompositeMeasGroup.cpp"
 				>
 			</File>
 			<File
-				RelativePath="MeasureComposite.cpp"
+				RelativePath=".\MeasureComposite.cpp"
 				>
 			</File>
 			<File
@@ -492,7 +450,7 @@
 			Filter="rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe"
 			>
 			<File
-				RelativePath="composite.rc"
+				RelativePath=".\composite.rc"
 				>
 			</File>
 			<File

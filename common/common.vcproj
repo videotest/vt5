@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="windows-1251"?>
 <VisualStudioProject
 	ProjectType="Visual C++"
-	Version="9,00"
+	Version="9.00"
 	Name="common"
 	ProjectGUID="{468FD704-0081-44F3-AE42-FE6AD043A5F6}"
 	RootNamespace="common"
@@ -817,6 +817,10 @@
 			</File>
 			<File
 				RelativePath=".\Factory.h"
+				>
+			</File>
+			<File
+				RelativePath=".\FactoryNoGuard.h"
 				>
 			</File>
 			<File

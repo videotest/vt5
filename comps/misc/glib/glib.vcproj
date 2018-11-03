@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="windows-1251"?>
 <VisualStudioProject
 	ProjectType="Visual C++"
-	Version="9,00"
+	Version="9.00"
 	Name="glib"
 	ProjectGUID="{4004CBE6-9A3F-4497-A8D8-B579C75D3DED}"
 	RootNamespace="glib"
@@ -21,10 +21,8 @@
 	<Configurations>
 		<Configuration
 			Name="Debug|Win32"
-			OutputDirectory="Debug"
-			IntermediateDirectory="Debug"
 			ConfigurationType="4"
-			InheritedPropertySheets="..\..\..\Props\libs.vsprops"
+			InheritedPropertySheets="$(SolutionDir)Props\libs.vsprops"
 			CharacterSet="2"
 			>
 			<Tool
@@ -72,7 +70,6 @@
 			<Tool
 				Name="VCLibrarianTool"
 				AdditionalDependencies="Gdiplus.lib"
-				OutputFile="$(OutDir)/glib.lib"
 				AdditionalLibraryDirectories=""
 			/>
 			<Tool
@@ -93,10 +90,8 @@
 		</Configuration>
 		<Configuration
 			Name="Debug|x64"
-			OutputDirectory="$(PlatformName)\$(ConfigurationName)"
-			IntermediateDirectory="$(PlatformName)\$(ConfigurationName)"
 			ConfigurationType="4"
-			InheritedPropertySheets="..\..\..\Props\libs.vsprops"
+			InheritedPropertySheets="$(SolutionDir)Props\libs.vsprops"
 			CharacterSet="2"
 			>
 			<Tool
@@ -144,7 +139,6 @@
 			<Tool
 				Name="VCLibrarianTool"
 				AdditionalDependencies="Gdiplus.lib"
-				OutputFile="$(OutDir)/glib.lib"
 				AdditionalLibraryDirectories=""
 			/>
 			<Tool
@@ -165,10 +159,8 @@
 		</Configuration>
 		<Configuration
 			Name="Release|Win32"
-			OutputDirectory="Release"
-			IntermediateDirectory="Release"
 			ConfigurationType="4"
-			InheritedPropertySheets="..\..\..\Props\libs.vsprops"
+			InheritedPropertySheets="$(SolutionDir)Props\libs.vsprops"
 			CharacterSet="2"
 			>
 			<Tool
@@ -214,7 +206,6 @@
 			/>
 			<Tool
 				Name="VCLibrarianTool"
-				OutputFile="$(OutDir)/glib.lib"
 			/>
 			<Tool
 				Name="VCALinkTool"
@@ -234,10 +225,8 @@
 		</Configuration>
 		<Configuration
 			Name="Release|x64"
-			OutputDirectory="$(PlatformName)\$(ConfigurationName)"
-			IntermediateDirectory="$(PlatformName)\$(ConfigurationName)"
 			ConfigurationType="4"
-			InheritedPropertySheets="..\..\..\Props\libs.vsprops"
+			InheritedPropertySheets="$(SolutionDir)Props\libs.vsprops"
 			CharacterSet="2"
 			>
 			<Tool
@@ -283,7 +272,6 @@
 			/>
 			<Tool
 				Name="VCLibrarianTool"
-				OutputFile="$(OutDir)/glib.lib"
 			/>
 			<Tool
 				Name="VCALinkTool"

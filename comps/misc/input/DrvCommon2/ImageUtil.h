@@ -4,7 +4,7 @@
 #include "ComDef.h"
 #include "Defs.h"
 #include "image5.h"
-#include "misc_templ.h"
+#include <../common2/misc_templ.h>
 
 struct BITMAPINFO256
 {

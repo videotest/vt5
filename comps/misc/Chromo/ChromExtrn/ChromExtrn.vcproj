@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="windows-1251"?>
 <VisualStudioProject
 	ProjectType="Visual C++"
-	Version="9,00"
+	Version="9.00"
 	Name="ChromExtrn"
 	ProjectGUID="{21841837-2D04-47A8-B694-682702107ADB}"
 	RootNamespace="ChromExtrn"
@@ -20,9 +20,8 @@
 	<Configurations>
 		<Configuration
 			Name="Debug|Win32"
-			OutputDirectory=".\Debug"
-			IntermediateDirectory=".\Debug"
 			ConfigurationType="2"
+			InheritedPropertySheets="$(SolutionDir)props\common2env.vsprops"
 			UseOfMFC="0"
 			ATLMinimizesCRunTimeLibraryUsage="false"
 			CharacterSet="2"
@@ -50,7 +49,7 @@
 			<Tool
 				Name="VCCLCompilerTool"
 				Optimization="0"
-				AdditionalIncludeDirectories="\vt5\common2,\vt5\ifaces,\vt5\common,..\piper\def,..\chromos,..\..\classifiers\common,\vt5\comps\misc\chromo\common"
+				AdditionalIncludeDirectories="..\piper\def;..\chromos;..\..\classifiers\common;&quot;$(SolutionDir)comps\misc\chromo\common&quot;"
 				PreprocessorDefinitions="_DEBUG;WIN32;_WINDOWS;_USRDLL;_CRT_SECURE_NO_DEPRECATE;CHROMEXTRN_EXPORTS;MIZAR;INTARITH"
 				BasicRuntimeChecks="0"
 				RuntimeLibrary="3"
@@ -79,16 +78,12 @@
 				Name="VCLinkerTool"
 				AdditionalOptions="/MACHINE:I386"
 				AdditionalDependencies="basic.lib subs.lib trans.lib chromlib.lib odbc32.lib atlsd.lib odbccp32.lib"
-				OutputFile="\vt5\vt5\Debug\comps\ChromExtrn.dll"
 				LinkIncremental="2"
 				SuppressStartupBanner="true"
-				AdditionalLibraryDirectories="\vt5\common2\debug,..\piper\lib\debug,\vt5\common,\vt5\common\debug"
-				ModuleDefinitionFile=".\ChromExtrn.def"
+				AdditionalLibraryDirectories=""
 				GenerateDebugInformation="true"
-				ProgramDatabaseFile="\vt5\vt5\debug\pdb\ChromExtrn.pdb"
 				RandomizedBaseAddress="1"
 				DataExecutionPrevention="0"
-				ImportLibrary=".\Debug/ChromExtrn.lib"
 			/>
 			<Tool
 				Name="VCALinkTool"
@@ -114,9 +109,8 @@
 		</Configuration>
 		<Configuration
 			Name="Debug|x64"
-			OutputDirectory="$(PlatformName)\$(ConfigurationName)"
-			IntermediateDirectory="$(PlatformName)\$(ConfigurationName)"
 			ConfigurationType="2"
+			InheritedPropertySheets="$(SolutionDir)props\common2env.vsprops"
 			UseOfMFC="0"
 			ATLMinimizesCRunTimeLibraryUsage="false"
 			CharacterSet="2"
@@ -144,7 +138,7 @@
 			<Tool
 				Name="VCCLCompilerTool"
 				Optimization="0"
-				AdditionalIncludeDirectories="\vt5\common2,\vt5\ifaces,\vt5\common,..\piper\def,..\chromos,..\..\classifiers\common,\vt5\comps\misc\chromo\common"
+				AdditionalIncludeDirectories="..\piper\def;..\chromos;..\..\classifiers\common;&quot;$(SolutionDir)comps\misc\chromo\common&quot;"
 				PreprocessorDefinitions="_DEBUG;_WINDOWS;_USRDLL;CHROMEXTRN_EXPORTS;MIZAR;_WIN64;_M_X64;_CRT_SECURE_NO_DEPRECATE;INTARITH"
 				BasicRuntimeChecks="0"
 				RuntimeLibrary="3"
@@ -172,16 +166,11 @@
 			<Tool
 				Name="VCLinkerTool"
 				AdditionalDependencies="basic.lib subs.lib trans.lib chromlib.lib odbc32.lib atlsd.lib odbccp32.lib"
-				OutputFile="\vt5\vt5\$(OutDir)\comps\$(ProjectName).dll"
 				LinkIncremental="2"
-				SuppressStartupBanner="true"
-				AdditionalLibraryDirectories="\vt5\common2\$(OutDir),..\piper\lib\$(OutDir),\vt5\common"
-				ModuleDefinitionFile=".\ChromExtrn.def"
+				AdditionalLibraryDirectories=""
 				GenerateDebugInformation="true"
-				ProgramDatabaseFile="\vt5\vt5\debug\pdb\ChromExtrn.pdb"
 				RandomizedBaseAddress="1"
 				DataExecutionPrevention="0"
-				ImportLibrary="$(OutDir)\$(ProjectName).lib"
 				TargetMachine="17"
 			/>
 			<Tool
@@ -208,9 +197,8 @@
 		</Configuration>
 		<Configuration
 			Name="Release|Win32"
-			OutputDirectory=".\Release"
-			IntermediateDirectory=".\Release"
 			ConfigurationType="2"
+			InheritedPropertySheets="$(SolutionDir)props\common2env.vsprops"
 			UseOfMFC="0"
 			ATLMinimizesCRunTimeLibraryUsage="false"
 			CharacterSet="2"
@@ -238,7 +226,7 @@
 			<Tool
 				Name="VCCLCompilerTool"
 				InlineFunctionExpansion="1"
-				AdditionalIncludeDirectories="\vt5\common2,\vt5\ifaces,\vt5\common,..\piper\def,..\chromos,..\..\classifiers\common,\vt5\comps\misc\chromo\common"
+				AdditionalIncludeDirectories="..\piper\def;..\chromos;..\..\classifiers\common;&quot;$(SolutionDir)comps\misc\chromo\common&quot;"
 				PreprocessorDefinitions="NDEBUG;WIN32;_WINDOWS;_USRDLL;CHROMEXTRN_EXPORTS;MIZAR;INTARITH"
 				StringPooling="true"
 				RuntimeLibrary="2"
@@ -267,16 +255,12 @@
 				Name="VCLinkerTool"
 				AdditionalOptions="/MACHINE:I386"
 				AdditionalDependencies="odbc32.lib odbccp32.lib basic.lib subs.lib trans.lib atls.lib chromlib.lib"
-				OutputFile="\vt5\vt5\release\comps\ChromExtrn.dll"
 				LinkIncremental="1"
 				SuppressStartupBanner="true"
-				AdditionalLibraryDirectories="\vt5\common2\release,..\piper\lib\release,\vt5\common"
-				ModuleDefinitionFile=".\ChromExtrn.def"
+				AdditionalLibraryDirectories=""
 				GenerateDebugInformation="true"
-				ProgramDatabaseFile="\vt5\vt5\release\pdb\$(ProjectName).pdb"
 				RandomizedBaseAddress="1"
 				DataExecutionPrevention="0"
-				ImportLibrary=".\Release/ChromExtrn.lib"
 			/>
 			<Tool
 				Name="VCALinkTool"
@@ -302,9 +286,8 @@
 		</Configuration>
 		<Configuration
 			Name="Release|x64"
-			OutputDirectory="$(PlatformName)\$(ConfigurationName)"
-			IntermediateDirectory="$(PlatformName)\$(ConfigurationName)"
 			ConfigurationType="2"
+			InheritedPropertySheets="$(SolutionDir)props\common2env.vsprops"
 			UseOfMFC="0"
 			ATLMinimizesCRunTimeLibraryUsage="false"
 			CharacterSet="2"
@@ -332,7 +315,7 @@
 			<Tool
 				Name="VCCLCompilerTool"
 				InlineFunctionExpansion="1"
-				AdditionalIncludeDirectories="\vt5\common2,\vt5\ifaces,\vt5\common,..\piper\def,..\chromos,..\..\classifiers\common,\vt5\comps\misc\chromo\common"
+				AdditionalIncludeDirectories="..\piper\def;..\chromos;..\..\classifiers\common;&quot;$(SolutionDir)comps\misc\chromo\common&quot;"
 				PreprocessorDefinitions="_WIN64;_M_X64;_CRT_SECURE_NO_DEPRECATE;NDEBUG;_WINDOWS;_USRDLL;CHROMEXTRN_EXPORTS;MIZAR;INTARITH"
 				StringPooling="true"
 				RuntimeLibrary="2"
@@ -360,16 +343,12 @@
 			<Tool
 				Name="VCLinkerTool"
 				AdditionalDependencies="odbc32.lib odbccp32.lib basic.lib subs.lib trans.lib chromlib.lib atlsd.lib"
-				OutputFile="\vt5\vt5\$(OutDir)\comps\$(ProjectName).dll"
 				LinkIncremental="1"
 				SuppressStartupBanner="true"
-				AdditionalLibraryDirectories="\vt5\common2\$(OutDir),..\piper\lib\$(OutDir),\vt5\common"
-				ModuleDefinitionFile=".\ChromExtrn.def"
+				AdditionalLibraryDirectories=""
 				GenerateDebugInformation="true"
-				ProgramDatabaseFile="\vt5\vt5\release\pdb\$(ProjectName).pdb"
 				RandomizedBaseAddress="1"
 				DataExecutionPrevention="0"
-				ImportLibrary="$(OutDir)\$(ProjectName).lib"
 				TargetMachine="17"
 			/>
 			<Tool

@@ -42,8 +42,15 @@ GUARD_IMPLEMENT_OLECREATE_CTRL(CFramesPropPage, "HistAX.CFramesPropPage",
 
 BOOL CFramesPropPage::CFramesPropPageFactory::UpdateRegistry(BOOL bRegister)
 {
-	// TODO: Define string resource for page type; replace '0' below with ID.
+#if defined(NOGUARD)
+	if (bRegister)
+		return AfxOleRegisterPropertyPageClass(AfxGetInstanceHandle(),
+			m_clsid, IDS_COLORMANAX_FRAMESPPG);
+	else
+		return AfxOleUnregisterClass(m_clsid, NULL);
+#else
 	return UpdateRegistryPage(bRegister, AfxGetInstanceHandle(), IDS_COLORMANAX_FRAMESPPG);
+#endif
 }
 
 

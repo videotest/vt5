@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="windows-1251"?>
 <VisualStudioProject
 	ProjectType="Visual C++"
-	Version="9,00"
+	Version="9.00"
 	Name="ChromosEx"
 	ProjectGUID="{98EE2BA2-CA13-46C4-A971-D86D6353CA59}"
 	RootNamespace="ChromosEx"
@@ -324,7 +324,7 @@
 			<Tool
 				Name="VCCLCompilerTool"
 				Optimization="0"
-				AdditionalIncludeDirectories="$(SolutionDir)common2"
+				AdditionalIncludeDirectories="&quot;$(SolutionDir)common2&quot;"
 				PreprocessorDefinitions="_DEBUG;_WINDOWS;_USRDLL;_WIN64;_M_X64;_AFX_SECURE_NO_DEPRECATE;_CRT_SECURE_NO_DEPRECATE"
 				BasicRuntimeChecks="0"
 				RuntimeLibrary="3"
@@ -352,7 +352,6 @@
 				Name="VCLinkerTool"
 				LinkIncremental="2"
 				AdditionalLibraryDirectories="\vt5\common\$(OutDir),\vt5\common"
-				ModuleDefinitionFile=".\ChromosEx.def"
 				GenerateDebugInformation="true"
 				SubSystem="2"
 				RandomizedBaseAddress="1"

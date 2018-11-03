@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="windows-1251"?>
 <VisualStudioProject
 	ProjectType="Visual C++"
-	Version="9,00"
+	Version="9.00"
 	Name="Data"
 	ProjectGUID="{92AFDE39-31A2-4D4B-AC2A-1D15E5712D2E}"
 	RootNamespace="Data"
@@ -225,7 +225,7 @@
 				Name="VCCLCompilerTool"
 				Optimization="0"
 				AdditionalIncludeDirectories=""
-				PreprocessorDefinitions="WIN32;_DEBUG;_WINDOWS;_USRDLL;_AFX_SECURE_NO_DEPRECATE;_CRT_SECURE_NO_DEPRECATE"
+				PreprocessorDefinitions="_CONVERSION_DONT_USE_THREAD_LOCALE;_AFX_SECURE_NO_DEPRECATE;_CRT_SECURE_NO_DEPRECATE_DEBUGWIN32;_DEBUG;_WINDOWS;_USRDLL"
 				BasicRuntimeChecks="0"
 				RuntimeLibrary="3"
 				TreatWChar_tAsBuiltInType="false"
@@ -313,7 +313,7 @@
 				Name="VCCLCompilerTool"
 				Optimization="0"
 				AdditionalIncludeDirectories=""
-				PreprocessorDefinitions="_DEBUG;_WINDOWS;_USRDLL;_WIN64;_M_X64;_AFX_SECURE_NO_DEPRECATE;_CRT_SECURE_NO_DEPRECATE"
+				PreprocessorDefinitions="_AFX_SECURE_NO_DEPRECATE;_CRT_SECURE_NO_DEPRECATE_DEBUG;_WINDOWS;_USRDLL;_WIN64;_M_X64"
 				BasicRuntimeChecks="0"
 				RuntimeLibrary="3"
 				TreatWChar_tAsBuiltInType="false"
