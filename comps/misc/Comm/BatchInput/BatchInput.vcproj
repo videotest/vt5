@@ -50,7 +50,7 @@
 			<Tool
 				Name="VCCLCompilerTool"
 				Optimization="0"
-				AdditionalIncludeDirectories="\vt5\ifaces,\vt5\common,\vt5\comps\misc\input\drvcommon,..\..\Classifiers\Classify"
+				AdditionalIncludeDirectories="&quot;$(SolutionDir)comps\misc\input\drvcommon&quot;;..\..\Classifiers\Classify"
 				PreprocessorDefinitions="WIN32;_DEBUG;_WINDOWS;_USRDLL"
 				BasicRuntimeChecks="0"
 				RuntimeLibrary="3"
@@ -59,8 +59,6 @@
 				UsePrecompiledHeader="2"
 				PrecompiledHeaderThrough="stdafx.h"
 				BrowseInformation="1"
-				WarningLevel="3"
-				SuppressStartupBanner="true"
 				DebugInformationFormat="4"
 				CompileAs="0"
 			/>
@@ -78,12 +76,9 @@
 			<Tool
 				Name="VCLinkerTool"
 				AdditionalOptions="/MACHINE:I386"
-				AdditionalDependencies="winmm.lib"
-				OutputFile="\vt5\vt5\Debug\comps\BatchInput.dll"
+				AdditionalDependencies="Winmm.lib"
 				LinkIncremental="2"
-				SuppressStartupBanner="true"
 				AdditionalLibraryDirectories="\vt5\common\debug,\vt5\common"
-				ModuleDefinitionFile=".\BatchInput.def"
 				GenerateDebugInformation="true"
 				ProgramDatabaseFile="\vt5\vt5\debug\pdb\BatchInput.pdb"
 				SubSystem="2"
@@ -144,7 +139,7 @@
 			<Tool
 				Name="VCCLCompilerTool"
 				Optimization="0"
-				AdditionalIncludeDirectories="\vt5\ifaces,\vt5\common,\vt5\comps\misc\input\drvcommon,..\..\Classifiers\Classify"
+				AdditionalIncludeDirectories="&quot;$(SolutionDir)comps\misc\input\drvcommon&quot;;..\..\Classifiers\Classify"
 				PreprocessorDefinitions="_WIN64;_M_X64;_AFX_SECURE_NO_DEPRECATE;_CRT_SECURE_NO_DEPRECATE;_DEBUG;_WINDOWS;_USRDLL"
 				BasicRuntimeChecks="0"
 				RuntimeLibrary="3"
@@ -153,8 +148,6 @@
 				UsePrecompiledHeader="2"
 				PrecompiledHeaderThrough="stdafx.h"
 				BrowseInformation="1"
-				WarningLevel="3"
-				SuppressStartupBanner="true"
 				DebugInformationFormat="3"
 				CompileAs="0"
 			/>
@@ -171,18 +164,13 @@
 			/>
 			<Tool
 				Name="VCLinkerTool"
-				AdditionalDependencies="winmm.lib"
-				OutputFile="\vt5\vt5\Debug\comps\BatchInput.dll"
+				AdditionalDependencies="Winmm.lib"
 				LinkIncremental="2"
-				SuppressStartupBanner="true"
-				AdditionalLibraryDirectories="\vt5\common\debug,\vt5\common"
-				ModuleDefinitionFile=".\BatchInput.def"
+				AdditionalLibraryDirectories=""
 				GenerateDebugInformation="true"
-				ProgramDatabaseFile="\vt5\vt5\debug\pdb\BatchInput.pdb"
 				SubSystem="2"
 				RandomizedBaseAddress="1"
 				DataExecutionPrevention="0"
-				ImportLibrary=".\Debug/BatchInput.lib"
 				TargetMachine="17"
 			/>
 			<Tool
@@ -238,7 +226,7 @@
 			<Tool
 				Name="VCCLCompilerTool"
 				InlineFunctionExpansion="1"
-				AdditionalIncludeDirectories="\vt5\ifaces,\vt5\common,\vt5\comps\misc\input\drvcommon,..\..\Classifiers\Classify"
+				AdditionalIncludeDirectories="&quot;$(SolutionDir)comps\misc\input\drvcommon&quot;;..\..\Classifiers\Classify"
 				PreprocessorDefinitions="WIN32;NDEBUG;_WINDOWS;_USRDLL"
 				StringPooling="true"
 				RuntimeLibrary="2"
@@ -247,8 +235,6 @@
 				ForceConformanceInForLoopScope="false"
 				UsePrecompiledHeader="2"
 				PrecompiledHeaderThrough="stdafx.h"
-				WarningLevel="3"
-				SuppressStartupBanner="true"
 				DebugInformationFormat="3"
 				CompileAs="0"
 			/>
@@ -266,12 +252,9 @@
 			<Tool
 				Name="VCLinkerTool"
 				AdditionalOptions="/MACHINE:I386"
-				AdditionalDependencies="winmm.lib"
-				OutputFile="\vt5\vt5\Release\Comps\BatchInput.dll"
+				AdditionalDependencies="Winmm.lib"
 				LinkIncremental="1"
-				SuppressStartupBanner="true"
 				AdditionalLibraryDirectories="\vt5\common\release,\vt5\common"
-				ModuleDefinitionFile=".\BatchInput.def"
 				GenerateDebugInformation="true"
 				ProgramDatabaseFile="\vt5\vt5\release\pdb\BatchInput.pdb"
 				SubSystem="2"
@@ -332,7 +315,7 @@
 			<Tool
 				Name="VCCLCompilerTool"
 				InlineFunctionExpansion="1"
-				AdditionalIncludeDirectories="\vt5\ifaces,\vt5\common,\vt5\comps\misc\input\drvcommon,..\..\Classifiers\Classify"
+				AdditionalIncludeDirectories="&quot;$(SolutionDir)comps\misc\input\drvcommon&quot;;..\..\Classifiers\Classify"
 				PreprocessorDefinitions="_WIN64;_M_X64;_AFX_SECURE_NO_DEPRECATE;_CRT_SECURE_NO_DEPRECATE;NDEBUG;_WINDOWS;_USRDLL"
 				StringPooling="true"
 				RuntimeLibrary="2"
@@ -341,8 +324,6 @@
 				ForceConformanceInForLoopScope="false"
 				UsePrecompiledHeader="2"
 				PrecompiledHeaderThrough="stdafx.h"
-				WarningLevel="3"
-				SuppressStartupBanner="true"
 				DebugInformationFormat="3"
 				CompileAs="0"
 			/>
@@ -359,12 +340,9 @@
 			/>
 			<Tool
 				Name="VCLinkerTool"
-				AdditionalDependencies="winmm.lib"
-				OutputFile="\vt5\vt5\Release\Comps\BatchInput.dll"
+				AdditionalDependencies="Winmm.lib"
 				LinkIncremental="1"
-				SuppressStartupBanner="true"
 				AdditionalLibraryDirectories="\vt5\common\release,\vt5\common"
-				ModuleDefinitionFile=".\BatchInput.def"
 				GenerateDebugInformation="true"
 				ProgramDatabaseFile="\vt5\vt5\release\pdb\BatchInput.pdb"
 				SubSystem="2"

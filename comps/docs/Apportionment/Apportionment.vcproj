@@ -78,10 +78,9 @@
 			<Tool
 				Name="VCLinkerTool"
 				AdditionalOptions="/MACHINE:I386"
-				AdditionalDependencies="odbc32.lib odbccp32.lib atlsd.lib"
 				LinkIncremental="2"
 				AdditionalLibraryDirectories=""
-				IgnoreDefaultLibraryNames="libcd.lib,libcmtd.lib"
+				IgnoreDefaultLibraryNames=""
 				ModuleDefinitionFile=".\com_export.def"
 				GenerateDebugInformation="true"
 				RandomizedBaseAddress="1"
@@ -167,10 +166,9 @@
 			/>
 			<Tool
 				Name="VCLinkerTool"
-				AdditionalDependencies="odbc32.lib odbccp32.lib atlsd.lib"
 				LinkIncremental="2"
 				AdditionalLibraryDirectories=""
-				IgnoreDefaultLibraryNames="libcd.lib,libcmtd.lib"
+				IgnoreDefaultLibraryNames=""
 				ModuleDefinitionFile=".\com_export.def"
 				GenerateDebugInformation="true"
 				RandomizedBaseAddress="1"
@@ -259,10 +257,9 @@
 			<Tool
 				Name="VCLinkerTool"
 				AdditionalOptions="/MACHINE:I386"
-				AdditionalDependencies="odbc32.lib odbccp32.lib atls.lib"
 				LinkIncremental="1"
 				AdditionalLibraryDirectories=""
-				IgnoreDefaultLibraryNames="libcd.lib,libcmt.lib"
+				IgnoreDefaultLibraryNames=""
 				ModuleDefinitionFile=".\com_export.def"
 				GenerateDebugInformation="true"
 				RandomizedBaseAddress="1"
@@ -348,10 +345,9 @@
 			/>
 			<Tool
 				Name="VCLinkerTool"
-				AdditionalDependencies="odbc32.lib odbccp32.lib atls.lib"
 				LinkIncremental="1"
 				AdditionalLibraryDirectories=""
-				IgnoreDefaultLibraryNames="libcd.lib,libcmt.lib"
+				IgnoreDefaultLibraryNames=""
 				ModuleDefinitionFile=".\com_export.def"
 				GenerateDebugInformation="true"
 				RandomizedBaseAddress="1"
