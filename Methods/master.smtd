@@ -4,7 +4,7 @@ NamedData file. Version 1.0a
 PaneCount:Long=7
 [General\Pane0]
 CustomIconBackColor:String=(236, 233, 216)
-Name:String=Получение изображения
+Name:String=????????? ???????????
 ImageFileName:String=input.bmp
 ItemCount:Long=12
 [General\Pane0\Item0]
@@ -58,7 +58,7 @@ CustomIconName:String=
 CustomIconBackColor:String=(0, 0, 0)
 
 [General\Pane0\Item10]
-Name:String=Сшивка
+Name:String=??????
 CustomIconName:String=
 CustomIconBackColor:String=(236, 233, 216)
 SubItemCount:Long=4
@@ -91,7 +91,7 @@ CustomIconBackColor:String=(236, 233, 216)
 
 [General\Pane1]
 CustomIconBackColor:String=(236, 233, 216)
-Name:String=Операции
+Name:String=????????
 ImageFileName:String=operation.bmp
 ItemCount:Long=9
 [General\Pane1\Item0]
@@ -105,7 +105,7 @@ CustomIconName:String=
 CustomIconBackColor:String=(236, 233, 216)
 
 [General\Pane1\Item2]
-Name:String=Рамки
+Name:String=?????
 CustomIconName:String=selection.bmp
 CustomIconBackColor:String=(236, 233, 216)
 SubItemCount:Long=6
@@ -146,7 +146,7 @@ CustomIconName:String=
 CustomIconBackColor:String=(236, 233, 216)
 
 [General\Pane1\Item4]
-Name:String=Трансформация
+Name:String=?????????????
 CustomIconName:String=
 CustomIconBackColor:String=(236, 233, 216)
 SubItemCount:Long=6
@@ -182,7 +182,7 @@ CustomIconBackColor:String=(236, 233, 216)
 
 
 [General\Pane1\Item5]
-Name:String=Редактор изображения
+Name:String=???????? ???????????
 CustomIconName:String=imgeditor.bmp
 CustomIconBackColor:String=(236, 233, 216)
 SubItemCount:Long=10
@@ -248,7 +248,7 @@ CustomIconName:String=
 CustomIconBackColor:String=(236, 233, 216)
 
 [General\Pane1\Item8]
-Name:String=Арифметика изображений
+Name:String=?????????? ???????????
 CustomIconName:String=
 CustomIconBackColor:String=(236, 233, 216)
 SubItemCount:Long=5
@@ -281,11 +281,11 @@ CustomIconBackColor:String=(236, 233, 216)
 
 [General\Pane2]
 CustomIconBackColor:String=(236, 233, 216)
-Name:String=Преобразования
+Name:String=??????????????
 ImageFileName:String=enhance.bmp  
 ItemCount:Long=16
 [General\Pane2\Item0]
-Name:String=Яркость и контраст
+Name:String=??????? ? ????????
 CustomIconName:String=
 CustomIconBackColor:String=(236, 233, 216)
 SubItemCount:Long=4
@@ -376,7 +376,7 @@ CustomIconName:String=
 CustomIconBackColor:String=(236, 233, 216)
 
 [General\Pane2\Item14]
-Name:String=Цветовые каналы
+Name:String=???????? ??????
 CustomIconName:String=
 CustomIconBackColor:String=(236, 233, 216)
 SubItemCount:Long=4
@@ -409,11 +409,11 @@ CustomIconBackColor:String=(236, 233, 216)
 
 [General\Pane3]
 CustomIconBackColor:String=(236, 233, 216)
-Name:String=Объекты и измерения
+Name:String=??????? ? ?????????
 ImageFileName:String=measure.bmp
 ItemCount:Long=19
 [General\Pane3\Item0]
-Name:String=Выделение масок
+Name:String=????????? ?????
 CustomIconName:String=
 CustomIconBackColor:String=(236, 233, 216)
 SubItemCount:Long=3
@@ -454,7 +454,7 @@ CustomIconName:String=
 CustomIconBackColor:String=(236, 233, 216)
 
 [General\Pane3\Item5]
-Name:String=Логика
+Name:String=??????
 CustomIconName:String=
 CustomIconBackColor:String=(236, 233, 216)
 SubItemCount:Long=4
@@ -490,7 +490,7 @@ CustomIconName:String=
 CustomIconBackColor:String=(0, 0, 0)
 
 [General\Pane3\Item8]
-Name:String=Редактор объектов
+Name:String=???????? ????????
 CustomIconName:String=objecteditor.bmp
 CustomIconBackColor:String=(236, 233, 216)
 SubItemCount:Long=11
@@ -551,7 +551,7 @@ CustomIconBackColor:String=(236, 233, 216)
 
 
 [General\Pane3\Item9]
-Name:String=Ручные измерения
+Name:String=?????? ?????????
 CustomIconName:String=measmanual.bmp
 CustomIconBackColor:String=(236, 233, 216)
 SubItemCount:Long=9
@@ -637,7 +637,7 @@ CustomIconName:String=
 CustomIconBackColor:String=(0, 0, 0)
 
 [General\Pane3\Item17]
-Name:String=Калибровка
+Name:String=??????????
 CustomIconName:String=
 CustomIconBackColor:String=(236, 233, 216)
 SubItemCount:Long=3
@@ -658,7 +658,7 @@ CustomIconBackColor:String=(236, 233, 216)
 
 
 [General\Pane3\Item18]
-Name:String=Калибровочный маркер
+Name:String=????????????? ??????
 CustomIconName:String=
 CustomIconBackColor:String=(236, 233, 216)
 SubItemCount:Long=2
@@ -676,7 +676,7 @@ CustomIconBackColor:String=(236, 233, 216)
 
 [General\Pane4]
 CustomIconBackColor:String=(236, 233, 216)
-Name:String=Обработка данных
+Name:String=????????? ??????
 ImageFileName:String=process.bmp
 ItemCount:Long=8
 [General\Pane4\Item0]
@@ -722,7 +722,7 @@ CustomIconBackColor:String=(236, 233, 216)
 
 [General\Pane5]
 CustomIconBackColor:String=(236, 233, 216)
-Name:String=Результат
+Name:String=?????????
 ImageFileName:String=result.bmp
 ItemCount:Long=11
 [General\Pane5\Item0]
@@ -756,7 +756,7 @@ CustomIconName:String=
 CustomIconBackColor:String=(0, 0, 0)
 
 [General\Pane5\Item6]
-Name:String=Отправить в БД
+Name:String=????????? ? ??
 CustomIconName:String=
 CustomIconBackColor:String=(236, 233, 216)
 SubItemCount:Long=4
@@ -804,7 +804,7 @@ CustomIconBackColor:String=(236, 233, 216)
 
 [General\Pane6]
 CustomIconBackColor:String=(236, 233, 216)
-Name:String=Сервис
+Name:String=??????
 ImageFileName:String=service.bmp  
 ItemCount:Long=2
 [General\Pane6\Item0]

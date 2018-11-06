@@ -107,9 +107,8 @@ struct T##class_orig##method_orig##ord: public class_orig \
 	ret Hook params; \
 }; \
  \
-CAPIHookMethod<ord,ret (class_orig::*) params, T##class_orig##method_orig##ord::TMethodHook>* \
-	p##class_orig##method_orig##ord = new \
 CAPIHookMethod<ord,ret (class_orig::*) params, T##class_orig##method_orig##ord::TMethodHook> \
+	g_##class_orig##method_orig##ord \
 (dll, &T##class_orig##method_orig##ord::Hook, FALSE); \
 ret T##class_orig##method_orig##ord::Hook params
 
