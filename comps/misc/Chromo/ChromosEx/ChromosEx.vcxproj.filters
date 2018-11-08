@@ -2,114 +2,140 @@
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
     <Filter Include="Source Files">
-      <UniqueIdentifier>{ed333d07-519c-441b-aa5e-a6460ceee77a}</UniqueIdentifier>
+      <UniqueIdentifier>{4db87443-479c-442c-a15f-ecf61fb39264}</UniqueIdentifier>
       <Extensions>cpp;c;cxx;rc;def;r;odl;idl;hpj;bat</Extensions>
     </Filter>
     <Filter Include="Header Files">
-      <UniqueIdentifier>{6308d87b-23c1-43ae-a462-c9943828f6dc}</UniqueIdentifier>
+      <UniqueIdentifier>{8a457bd3-fb8c-417a-9098-25247b3c2e1c}</UniqueIdentifier>
       <Extensions>h;hpp;hxx;hm;inl</Extensions>
     </Filter>
     <Filter Include="Resource Files">
-      <UniqueIdentifier>{5934089e-9710-4158-b20c-0ffec4fd13af}</UniqueIdentifier>
+      <UniqueIdentifier>{9c03a2d4-ec9f-4f90-b67c-89892ba97dc4}</UniqueIdentifier>
       <Extensions>ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe</Extensions>
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="chromaxis2.c">
+    <ClCompile Include="AddIdioBend.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="ChromExtrn.cpp">
+    <ClCompile Include="CarioAnalizeView.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Compare.cpp">
+    <ClCompile Include="CarioImpl.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="FilterPropBase.cpp">
+    <ClCompile Include="CarioObj.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="mfeatures.c">
+    <ClCompile Include="CarioView.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="RectFilter.cpp">
+    <ClCompile Include="chromo_utils.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ChromoActions.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ChromosEx.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="EditCtrl.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="StdAfx.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="WoolzFilter.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="WoolzObject.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="ChromExtrn.def">
+    <None Include="ChromosEx.def">
       <Filter>Source Files</Filter>
     </None>
-    <None Include="allres.bmp">
+    <None Include="arrowcop.cur">
       <Filter>Resource Files</Filter>
     </None>
-    <None Include="res\ChromExtrn.rc2">
+    <None Include="cario.ico">
       <Filter>Resource Files</Filter>
     </None>
-    <None Include="pclass.ico">
+    <None Include="chromos_ex_tb.bmp">
       <Filter>Resource Files</Filter>
     </None>
-    <None Include="pipercla.ico">
+    <None Include="res\ChromosEx.rc2">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="cur00001.cur">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="cursor1.cur">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="cursor2.cur">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="cursor_c.cur">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="idio_edi.cur">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="idio_edit.cur">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="move_cro.cur">
       <Filter>Resource Files</Filter>
     </None>
     <None Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
-    <ResourceCompile Include="ChromExtrn.rc">
+    <Midl Include="ChromosEx.odl">
+      <Filter>Source Files</Filter>
+    </Midl>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="ChromosEx.rc">
       <Filter>Source Files</Filter>
     </ResourceCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="ChildArray.h">
+    <ClInclude Include="AddIdioBend.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\Classifiers\Common\Classifiers.h">
+    <ClInclude Include="CarioAnalizeView.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Compare.h">
+    <ClInclude Include="CarioImpl.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="DebugObj.h">
+    <ClInclude Include="CarioObj.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="FilterPropBase.h">
+    <ClInclude Include="CarioView.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\chromos\ParamsKeys.h">
+    <ClInclude Include="..\utils\chromo_misc.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="RectFilter.h">
+    <ClInclude Include="chromo_utils.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="resource.h">
+    <ClInclude Include="ChromoActions.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ChromosEx.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="consts.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="EditCtrl.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ndata_api.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Resource.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="StdAfx.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="StdioFile.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Vcv.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="VcvData.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\common\woolz.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="WoolzFilter.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="WoolzObject.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

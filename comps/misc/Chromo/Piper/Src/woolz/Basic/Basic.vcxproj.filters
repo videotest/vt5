@@ -1,0 +1,158 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{2ceef16a-a855-4f99-bee0-429b8812eb9e}</UniqueIdentifier>
+      <Extensions>cpp;c;cxx;rc;def;r;odl;idl;hpj;bat</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{4f6aec36-2d67-4c7e-b068-b0b11263ec10}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="area.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="copy.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="copydomain.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="details.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="diffdom.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="dispnum.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="dispstring.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="frameobjnum.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="freespace.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="grey4val.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="greyscan.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="greyval.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="intcount.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="intdomscan.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="intendpoints.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="interp.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="linearea.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="makecompound.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="makeivtable.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="makestructs.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="move.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="picframe.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="qreadobj.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="readobj.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="seqsize.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="setval.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="showobjbox.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="standardidom.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="vreadobj.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="vwriteobj.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="writeobj.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\Def\chromanal.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Def\class.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Def\dispform.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Def\display.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Def\fileheaders.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Def\ideogram.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Def\interact.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Def\kcontrol.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Def\machdef.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Def\multip.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Def\seg_control.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Def\seqpar.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Def\slstatus.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Def\wstruct.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Def\wtcheck.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Def\wtcklims.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

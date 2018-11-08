@@ -1,0 +1,218 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{83ccb67f-23dc-456b-884a-b58f535dd965}</UniqueIdentifier>
+      <Extensions>cpp;c;cxx;rc;def;r;odl;idl;hpj;bat</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{c5a7c777-40f4-4958-82fa-3837387010af}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="compthr3.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="convhull.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="dilation.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="edgegv.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="erosion.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="erosion4.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="extractov.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="extremum.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="greyrange.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="h256norm.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="histinvert.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="histo.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="histonorm.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="histosmooth.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="histthsmooth.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="htnormalise.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="hullarea.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ibound.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="intersect2.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="intersectn.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="intrp8.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="invert.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="itrpoly.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="iuspace.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="label.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="mass.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="maxdiam.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="median.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="minwrect.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="mwrangle.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="normalise.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="octagon.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="polyinvert.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="polylength.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="polymult.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="polysmooth.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="polysplit.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="polysqueeze.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="polytoobj.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="rsupoly.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="seqpar.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="shift.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="skeleton.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="spin.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="threshlabel.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="threshold.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="threshset.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="union2.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="unionn.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="unitbound.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="unitspace.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\Def\chromanal.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Def\class.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Def\dispform.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Def\display.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Def\fileheaders.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Def\ideogram.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Def\interact.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Def\kcontrol.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Def\machdef.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Def\multip.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Def\seg_control.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Def\seqpar.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Def\slstatus.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Def\wstruct.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Def\wtcheck.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Def\wtcklims.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

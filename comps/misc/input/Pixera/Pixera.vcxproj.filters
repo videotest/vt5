@@ -2,115 +2,124 @@
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
     <Filter Include="Source Files">
-      <UniqueIdentifier>{ed333d07-519c-441b-aa5e-a6460ceee77a}</UniqueIdentifier>
+      <UniqueIdentifier>{d702275a-c839-417e-b6a2-3bbe7a7cd81f}</UniqueIdentifier>
       <Extensions>cpp;c;cxx;rc;def;r;odl;idl;hpj;bat</Extensions>
     </Filter>
     <Filter Include="Header Files">
-      <UniqueIdentifier>{6308d87b-23c1-43ae-a462-c9943828f6dc}</UniqueIdentifier>
+      <UniqueIdentifier>{0637d834-f2c6-4893-b56d-c8512533b8f2}</UniqueIdentifier>
       <Extensions>h;hpp;hxx;hm;inl</Extensions>
     </Filter>
     <Filter Include="Resource Files">
-      <UniqueIdentifier>{5934089e-9710-4158-b20c-0ffec4fd13af}</UniqueIdentifier>
+      <UniqueIdentifier>{fc105db9-0657-4675-84dc-ad9894f30a39}</UniqueIdentifier>
       <Extensions>ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe</Extensions>
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="chromaxis2.c">
+    <ClCompile Include="BaseDialog.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="ChromExtrn.cpp">
+    <ClCompile Include="ColorCurve.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Compare.cpp">
+    <ClCompile Include="DriverPixera.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="FilterPropBase.cpp">
+    <ClCompile Include="Histbox.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="mfeatures.c">
+    <ClCompile Include="HistoDlg.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="RectFilter.cpp">
+    <ClCompile Include="PixCtrls.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Pixera.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="PixHelp.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="PreviewDialog.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="PreviewStatic.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Settings.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="StdAfx.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="WoolzFilter.cpp">
+    <ClCompile Include="Vt4pixera.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="WoolzObject.cpp">
+    <ClCompile Include="WaitDlg.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="ChromExtrn.def">
+    <None Include="Pixera.def">
       <Filter>Source Files</Filter>
     </None>
-    <None Include="allres.bmp">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="res\ChromExtrn.rc2">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="pclass.ico">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="pipercla.ico">
+    <None Include="res\Pixera.rc2">
       <Filter>Resource Files</Filter>
     </None>
     <None Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
-    <ResourceCompile Include="ChromExtrn.rc">
+    <ResourceCompile Include="Pixera.rc">
       <Filter>Source Files</Filter>
     </ResourceCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="ChildArray.h">
+    <ClInclude Include="BaseDialog.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\Classifiers\Common\Classifiers.h">
+    <ClInclude Include="ColorCurve.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Compare.h">
+    <ClInclude Include="DriverPixera.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="DebugObj.h">
+    <ClInclude Include="Histbox.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="FilterPropBase.h">
+    <ClInclude Include="HistoDlg.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\chromos\ParamsKeys.h">
+    <ClInclude Include="PixCtrls.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="RectFilter.h">
+    <ClInclude Include="Pixera.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="resource.h">
+    <ClInclude Include="PixHelp.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="PixSDK.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="PreviewDialog.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="PreviewStatic.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Resource.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Settings.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="StdAfx.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="StdioFile.h">
+    <ClInclude Include="WaitDlg.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Vcv.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="VcvData.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\common\woolz.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="WoolzFilter.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="WoolzObject.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Library Include="PixSDK.lib" />
   </ItemGroup>
 </Project>

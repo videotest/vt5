@@ -1,0 +1,154 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{6a05889f-83a8-4501-aa5f-e7da63680398}</UniqueIdentifier>
+      <Extensions>cpp;c;cxx;rc;def;r;odl;idl;hpj;bat</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{dd40a135-3e4f-49ee-ad80-cb0973e3faa6}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{b52eff6e-6a96-49df-a1bd-740ef89739f5}</UniqueIdentifier>
+      <Extensions>ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="ActionBase.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Actions.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ManualObj.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="MeasGroup.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="MeasManager.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="MeasManual.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="MeasPages.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="OleEventProvider.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="StdAfx.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="MeasManual.def">
+      <Filter>Source Files</Filter>
+    </None>
+    <None Include="bitmap1.bmp">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\bmp00001.bmp">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\freeline.cur">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\icon1.ico">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\IDC_BRIG.cur">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\IDC_BROK.cur">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\IDC_COUN.cur">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\IDC_COUN1.cur">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\IDC_FREE1.cur">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\IDC_HLEN.cur">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\IDC_REPE.cur">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\IDC_VLEN.cur">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\MeasManual.rc2">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\ms_splin.cur">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\msangle.cur">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\mslength.cur">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\msradius.cur">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\parallel.cur">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\spline.cur">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\target.cur">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="ReadMe.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Midl Include="MeasManual.odl">
+      <Filter>Source Files</Filter>
+    </Midl>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="MeasManual.rc">
+      <Filter>Source Files</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="ActionBase.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Actions.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ManualObj.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="MeasGroup.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="MeasManager.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="MeasManual.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="MeasPages.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="OleEventProvider.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Resource.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="StdAfx.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

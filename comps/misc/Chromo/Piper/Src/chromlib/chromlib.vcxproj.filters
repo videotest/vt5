@@ -1,0 +1,197 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{3985d69e-b554-4cc5-ada4-450d5c46750d}</UniqueIdentifier>
+      <Extensions>cpp;c;cxx;rc;def;r;odl;idl;hpj;bat</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{c42c9cd7-83ac-4121-a1d1-24048a3804bf}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="axisslope.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="axissmooth.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="axoutside.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="centpoly.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="centvector.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="chrom_error.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="chromaxis.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="chromaxis2.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="cindexa.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="cindexl.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="cindexm.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="cmerefeat.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="cmerelocation.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="featvect.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="fipconvhull.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="getcellinfo.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ideogram.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="mahalanobis.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="massdiff.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="mfeatures.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="midptspoly.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="mirrorprof.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="modifytips.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="multiprofiles.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ncentromere.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="nprofile.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="pmsaxis.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="probotype.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="profslice.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="proplist.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="rearrange.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="removeblips.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="setnextpoint.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="shorten.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="skelaxis.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="skelsup.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="skelsupport.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="straight.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="uspaxis8.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="vertical.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="wdd.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="wddfeatures.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="xexcursion.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="xrange.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\Def\chromanal.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Def\class.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Def\dispform.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Def\display.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Def\fileheaders.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Def\ideogram.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Def\interact.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Def\kcontrol.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Def\machdef.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Def\multip.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Def\seg_control.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Def\seqpar.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Def\slstatus.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Def\wstruct.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Def\wtcheck.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Def\wtcklims.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

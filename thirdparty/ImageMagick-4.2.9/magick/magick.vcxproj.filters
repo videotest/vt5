@@ -1,0 +1,384 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="animate.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="annotate.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="avs.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="blob.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="bmp.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="cmyk.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="colors.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="compress.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="dcm.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="decorate.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="delegates.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="display.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="dps.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="draw.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="effects.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="enhance.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ept.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="error.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="fax.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="fits.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="fpx.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="gems.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="gif.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="gradation.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="gray.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="hdf.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="histogram.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="html.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="icc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="icon.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="image.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="iptc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="jbig.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="jpeg.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="label.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="logo.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="mac.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="magick.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="map.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="matte.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="memory.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="miff.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="monitor.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="mono.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="montage.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="mtv.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="nt.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="null.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="pcd.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="pcl.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="pcx.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="pdf.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="pict.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="pix.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="plasma.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="png.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="pnm.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="PreRvIcccm.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="preview.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ps.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ps2.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ps3.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="psd.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="pwp.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="quantize.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="rgb.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="rla.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="rle.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="sct.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="segment.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="sfw.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="sgi.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="shear.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="signature.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="stegano.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="sun.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="tga.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="tiff.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="tile.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="tim.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="transform.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ttf.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="txt.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="uil.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="utility.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="uyvy.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="vicar.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="vid.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="viff.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="vms.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="widget.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="x.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="xbm.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="xc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="xpm.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="xwd.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="xwindows.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="yuv.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="zoom.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="animate.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="api.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="blob.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="classify.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="compress.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="defines.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="delegates.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="display.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="error.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="gems.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="image.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="mac.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="magick.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="memory.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="mng.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="monitor.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="PreRvIcccm.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="quantize.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="utility.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="version.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="widget.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="xwindows.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

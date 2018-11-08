@@ -1,0 +1,197 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{839731a0-93f1-4192-9961-2972c488e7ee}</UniqueIdentifier>
+      <Extensions>cpp;c;cxx;rc;def;r;odl;idl;hpj;bat</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{7e3aa831-b2c7-40d4-9c39-a9dc31f07d8c}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="abel.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="airy.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="alloc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="antialias.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="bigmatrix.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="butterworth.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="chisquare.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="complex.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="convolution.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="cubicspline.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="dblas.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="dge.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="fdistr.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="frannor.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="franuni.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="gamma.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="hankel.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="hilbert.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="holbergd1.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ibeta.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="igamma.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="intcub.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="intl2b.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="intlin.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="intsinc8.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="inttable8.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="invibeta.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="invigamma.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="lngamma.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="mkdiff.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="mkhdiff.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="mksinc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="mnewt.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="normal.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="pfafft.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="polar.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="printerplot.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="quest.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ressinc8.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="rfwtva.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="rfwtvale.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="sblas.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="scaxis.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="sge.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="shfs8r.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="sinc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="sort.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="sqr.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="stoep.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="student.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="swapbyte.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="tridiagonal.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="vandermonde.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="xcor.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="xindex.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="yclip.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="yxtoxy.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="ap.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="cwp.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="fdistr.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

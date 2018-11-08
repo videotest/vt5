@@ -2,114 +2,109 @@
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
     <Filter Include="Source Files">
-      <UniqueIdentifier>{ed333d07-519c-441b-aa5e-a6460ceee77a}</UniqueIdentifier>
+      <UniqueIdentifier>{8090f948-10c5-4bcf-980e-ac41d1b988f0}</UniqueIdentifier>
       <Extensions>cpp;c;cxx;rc;def;r;odl;idl;hpj;bat</Extensions>
     </Filter>
     <Filter Include="Header Files">
-      <UniqueIdentifier>{6308d87b-23c1-43ae-a462-c9943828f6dc}</UniqueIdentifier>
+      <UniqueIdentifier>{1e624692-55df-410c-a9e3-68b9665a2c7a}</UniqueIdentifier>
       <Extensions>h;hpp;hxx;hm;inl</Extensions>
     </Filter>
     <Filter Include="Resource Files">
-      <UniqueIdentifier>{5934089e-9710-4158-b20c-0ffec4fd13af}</UniqueIdentifier>
+      <UniqueIdentifier>{dd562a53-12f1-4b5c-a3e3-8f2facc6f0ab}</UniqueIdentifier>
       <Extensions>ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe</Extensions>
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="chromaxis2.c">
+    <ClCompile Include="ActionLogWindow.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="ChromExtrn.cpp">
+    <ClCompile Include="ActionMan.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Compare.cpp">
+    <ClCompile Include="ActionManager.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="FilterPropBase.cpp">
+    <ClCompile Include="ActionState.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="mfeatures.c">
+    <ClCompile Include="dialogs.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="RectFilter.cpp">
+    <ClCompile Include="easytokenizer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ScriptEdit.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="StdAfx.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="WoolzFilter.cpp">
+    <ClCompile Include="toolactions.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="WoolzObject.cpp">
+    <ClCompile Include="undoactions.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="undolist.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="ChromExtrn.def">
+    <None Include="ActionMan.def">
       <Filter>Source Files</Filter>
     </None>
-    <None Include="allres.bmp">
+    <None Include="res\ActionMan.rc2">
       <Filter>Resource Files</Filter>
     </None>
-    <None Include="res\ChromExtrn.rc2">
+    <None Include="toolbar1.bmp">
       <Filter>Resource Files</Filter>
     </None>
-    <None Include="pclass.ico">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="pipercla.ico">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
-    <ResourceCompile Include="ChromExtrn.rc">
+    <Midl Include="ActionMan.odl">
+      <Filter>Source Files</Filter>
+    </Midl>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="ActionMan.rc">
       <Filter>Source Files</Filter>
     </ResourceCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="ChildArray.h">
+    <ClInclude Include="ActionLogWindow.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\Classifiers\Common\Classifiers.h">
+    <ClInclude Include="ActionMan.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Compare.h">
+    <ClInclude Include="ActionManager.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="DebugObj.h">
+    <ClInclude Include="ActionState.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="FilterPropBase.h">
+    <ClInclude Include="dialogs.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\chromos\ParamsKeys.h">
+    <ClInclude Include="easytokenizer.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="RectFilter.h">
+    <ClInclude Include="Resource.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="resource.h">
+    <ClInclude Include="ScriptEdit.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="StdAfx.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="StdioFile.h">
+    <ClInclude Include="toolactions.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Vcv.h">
+    <ClInclude Include="undoactions.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="VcvData.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\common\woolz.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="WoolzFilter.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="WoolzObject.h">
+    <ClInclude Include="undolist.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

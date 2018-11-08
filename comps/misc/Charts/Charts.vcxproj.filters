@@ -2,114 +2,102 @@
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
     <Filter Include="Source Files">
-      <UniqueIdentifier>{ed333d07-519c-441b-aa5e-a6460ceee77a}</UniqueIdentifier>
+      <UniqueIdentifier>{9623f941-492c-4b96-b5f4-4aeb1ff8e7d6}</UniqueIdentifier>
       <Extensions>cpp;c;cxx;rc;def;r;odl;idl;hpj;bat</Extensions>
     </Filter>
     <Filter Include="Header Files">
-      <UniqueIdentifier>{6308d87b-23c1-43ae-a462-c9943828f6dc}</UniqueIdentifier>
+      <UniqueIdentifier>{1f0b59f2-475e-4c3e-875e-94e6509a52c3}</UniqueIdentifier>
       <Extensions>h;hpp;hxx;hm;inl</Extensions>
     </Filter>
     <Filter Include="Resource Files">
-      <UniqueIdentifier>{5934089e-9710-4158-b20c-0ffec4fd13af}</UniqueIdentifier>
+      <UniqueIdentifier>{fbe681df-9150-4d10-87fa-58bfa19d2f92}</UniqueIdentifier>
       <Extensions>ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe</Extensions>
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="chromaxis2.c">
+    <ClCompile Include="ChartDataSite.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="ChromExtrn.cpp">
+    <ClCompile Include="ChartDrawer.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Compare.cpp">
+    <ClCompile Include="Charts.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="FilterPropBase.cpp">
+    <ClCompile Include="GDIPlusManager.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="mfeatures.c">
+    <ClCompile Include="GuardChartDrawer.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="RectFilter.cpp">
+    <ClCompile Include="IChartAttributesImpl.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="IChartDrawerImpl.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ISmartChartDrawerImpl.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="IUnknowImpl.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="StdAfx.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="WoolzFilter.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="WoolzObject.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="ChromExtrn.def">
+    <None Include="Charts.def">
       <Filter>Source Files</Filter>
     </None>
-    <None Include="allres.bmp">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="res\ChromExtrn.rc2">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="pclass.ico">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="pipercla.ico">
+    <None Include="res\charts.rc2">
       <Filter>Resource Files</Filter>
     </None>
     <None Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
-    <ResourceCompile Include="ChromExtrn.rc">
+    <ResourceCompile Include="Charts.rc">
       <Filter>Source Files</Filter>
     </ResourceCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="ChildArray.h">
+    <ClInclude Include="ChartDataSite.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\Classifiers\Common\Classifiers.h">
+    <ClInclude Include="ChartDrawer.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Compare.h">
+    <ClInclude Include="GDIPlusManager.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="DebugObj.h">
+    <ClInclude Include="GuardChartDrawer.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="FilterPropBase.h">
+    <ClInclude Include="IChartAttributesImpl.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\chromos\ParamsKeys.h">
+    <ClInclude Include="IChartDrawerImpl.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="RectFilter.h">
+    <ClInclude Include="ifaces.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ISmartChartDrawerImpl.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="IUnknowImpl.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="misc.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="misc_fn.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="resource.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="StdAfx.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="StdioFile.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Vcv.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="VcvData.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\common\woolz.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="WoolzFilter.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="WoolzObject.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

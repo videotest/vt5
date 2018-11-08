@@ -2,114 +2,137 @@
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
     <Filter Include="Source Files">
-      <UniqueIdentifier>{ed333d07-519c-441b-aa5e-a6460ceee77a}</UniqueIdentifier>
+      <UniqueIdentifier>{53a18a42-c284-408e-a384-1c2fb8fbc31b}</UniqueIdentifier>
       <Extensions>cpp;c;cxx;rc;def;r;odl;idl;hpj;bat</Extensions>
     </Filter>
     <Filter Include="Header Files">
-      <UniqueIdentifier>{6308d87b-23c1-43ae-a462-c9943828f6dc}</UniqueIdentifier>
+      <UniqueIdentifier>{f150b146-1c3b-4918-ac19-379a5bf80ef1}</UniqueIdentifier>
       <Extensions>h;hpp;hxx;hm;inl</Extensions>
     </Filter>
     <Filter Include="Resource Files">
-      <UniqueIdentifier>{5934089e-9710-4158-b20c-0ffec4fd13af}</UniqueIdentifier>
+      <UniqueIdentifier>{42f2c179-711f-40c3-a1de-00647188e76c}</UniqueIdentifier>
       <Extensions>ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe</Extensions>
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="chromaxis2.c">
+    <ClCompile Include="BranchSplit.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="ChromExtrn.cpp">
+    <ClCompile Include="DocBySel.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Compare.cpp">
+    <ClCompile Include="fastactions.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="FilterPropBase.cpp">
+    <ClCompile Include="FillHoles.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="mfeatures.c">
+    <ClCompile Include="filteractions.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="RectFilter.cpp">
+    <ClCompile Include="FiltersMain.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="imgfilterbase.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="MorphDivEx.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="morphology.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ResizeBin.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="SelBinConv.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="SmoothContourBin.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="StdAfx.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="WoolzFilter.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="WoolzObject.cpp">
+    <ClCompile Include="thactions.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="ChromExtrn.def">
+    <None Include="FiltersMain.def">
       <Filter>Source Files</Filter>
     </None>
-    <None Include="allres.bmp">
+    <None Include="imagefilterbase.inl">
+      <Filter>Header Files</Filter>
+    </None>
+    <None Include="res\ed_pickc.cur">
       <Filter>Resource Files</Filter>
     </None>
-    <None Include="res\ChromExtrn.rc2">
+    <None Include="res\FiltersMain.rc2">
       <Filter>Resource Files</Filter>
     </None>
-    <None Include="pclass.ico">
+    <None Include="res\freeline.cur">
       <Filter>Resource Files</Filter>
     </None>
-    <None Include="pipercla.ico">
+    <None Include="toolbar1.bmp">
       <Filter>Resource Files</Filter>
     </None>
     <None Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
-    <ResourceCompile Include="ChromExtrn.rc">
+    <Midl Include="FiltersMain.odl">
+      <Filter>Source Files</Filter>
+    </Midl>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="FiltersMain.rc">
       <Filter>Source Files</Filter>
     </ResourceCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="ChildArray.h">
+    <ClInclude Include="BranchSplit.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\Classifiers\Common\Classifiers.h">
+    <ClInclude Include="DocBySel.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Compare.h">
+    <ClInclude Include="fastactions.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="DebugObj.h">
+    <ClInclude Include="FillHoles.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="FilterPropBase.h">
+    <ClInclude Include="filteractions.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\chromos\ParamsKeys.h">
+    <ClInclude Include="FiltersMain.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="RectFilter.h">
+    <ClInclude Include="imgfilterbase.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="resource.h">
+    <ClInclude Include="MorphDivEx.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="morphology.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ResizeBin.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Resource.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="SelBinConv.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="SmoothContourBin.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="StdAfx.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="StdioFile.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Vcv.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="VcvData.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\common\woolz.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="WoolzFilter.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="WoolzObject.h">
+    <ClInclude Include="thactions.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

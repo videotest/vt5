@@ -1,0 +1,370 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{e270dfd4-9a4f-48e7-a7fc-30af6d20f245}</UniqueIdentifier>
+      <Extensions>cpp;c;cxx;rc;def;r;odl;idl;hpj;bat</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{eb21277b-6345-46dc-98e4-9b6b9044c781}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{f126adc6-eb65-473e-a112-c65e6d518477}</UniqueIdentifier>
+      <Extensions>ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="action_comment.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="actions.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ArrowPage.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Circle1PropPage.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ColorPickerPropPage.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ColourPicker.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ColourPopup.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="comments.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CommonPropPage.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Dodge1PropPage.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="EditComment.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Editor.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="FloodFillPropPage.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="font.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="FontPropPage.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="FontViewer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Line1PropPage.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="LineBinPropPage.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="marker.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="pushbutton.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Rect1PropPage.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="SelectBinary.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="StdAfx.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="TextPropPage.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="vtcolorpicker.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="vtwidth.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Editor.def">
+      <Filter>Source Files</Filter>
+    </None>
+    <None Include="res\all.bmp">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\arrow.ico">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="bitmap1.bmp">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="bitmap10.bmp">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="bitmap11.bmp">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="bitmap12.bmp">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="bitmap13.bmp">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="bitmap14.bmp">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="bitmap15.bmp">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="bitmap16.bmp">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="bitmap17.bmp">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="bitmap18.bmp">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="bitmap19.bmp">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="bitmap2.bmp">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="bitmap20.bmp">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="bitmap21.bmp">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="bitmap22.bmp">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="bitmap23.bmp">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\bitmap24.bmp">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\bitmap25.bmp">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\bitmap26.bmp">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\bitmap27.bmp">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\bitmap28.bmp">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\bitmap29.bmp">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="bitmap3.bmp">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\bitmap30.bmp">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\bitmap31.bmp">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\bitmap32.bmp">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="bitmap4.bmp">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="bitmap5.bmp">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="bitmap6.bmp">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="bitmap7.bmp">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="bitmap8.bmp">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="bitmap9.bmp">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\cur00001.cur">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\cursor1.cur">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="cursor1.cur">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\drawobje.ico">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\ed_edit_.cur">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\ed_edita.cur">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\ed_editc.cur">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\ed_editf.cur">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\ed_editl.cur">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\ed_editp.cur">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\ed_editr.cur">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\ed_edits.cur">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\ed_editt.cur">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\ed_flood.cur">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\ed_pickc.cur">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\ed_polyg.cur">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\Editor.rc2">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\ico00001.ico">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\icon1.ico">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\icon2.ico">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\icon3.ico">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\marker.ico">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\target.cur">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\toolbar1.bmp">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="ReadMe.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Midl Include="Editor.odl">
+      <Filter>Source Files</Filter>
+    </Midl>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="Editor.rc">
+      <Filter>Source Files</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="action_comment.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="actions.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ArrowPage.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Circle1PropPage.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ColorPickerPropPage.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ColourPicker.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ColourPopup.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="comments.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CommonPropPage.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Dodge1PropPage.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="EditComment.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Editor.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="FloodFillPropPage.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="font.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="FontPropPage.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="FontViewer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Line1PropPage.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="LineBinPropPage.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="marker.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="pushbutton.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Rect1PropPage.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Resource.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="SelectBinary.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="StdAfx.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="TextPropPage.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="vtcolorpicker.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="vtwidth.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
