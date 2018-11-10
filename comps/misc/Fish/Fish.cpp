@@ -4,7 +4,7 @@
 #include "stdafx.h"
 #include "Fish.h"
 #include "MenuRegistrator.h"
-#include "Settings.h"
+#include "FishSettings.h"
 
 #ifdef _DEBUG
 #define new DEBUG_NEW

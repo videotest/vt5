@@ -5,7 +5,7 @@
 #include "PropBag.h"
 #include "ScriptNotifyInt.h"
 #include "color.h"
-#include "Settings.h"
+#include "FishSettings.h"
 
 const int nScrollW = 15;
 

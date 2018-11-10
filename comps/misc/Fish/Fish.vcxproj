@@ -158,7 +158,6 @@
     <ResourceCompile>
       <PreprocessorDefinitions>_AFXDLL;_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <Culture>0x0419</Culture>
-      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Link>
       <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
@@ -250,7 +249,7 @@
     <ClCompile Include="ChildWnd.cpp" />
     <ClCompile Include="color.cpp" />
     <ClCompile Include="CustomStatic.cpp" />
-    <ClCompile Include="dlgs.cpp" />
+    <ClCompile Include="FishDlgs.cpp" />
     <ClCompile Include="Fish.cpp" />
     <ClCompile Include="FishContextViewer.cpp" />
     <ClCompile Include="StdAfx.cpp">
@@ -275,11 +274,11 @@
     <ClInclude Include="ChildWnd.h" />
     <ClInclude Include="color.h" />
     <ClInclude Include="CustomStatic.h" />
-    <ClInclude Include="dlgs.h" />
     <ClInclude Include="Fish.h" />
     <ClInclude Include="FishContextViewer.h" />
+    <ClInclude Include="FishDlgs.h" />
     <ClInclude Include="Resource.h" />
-    <ClInclude Include="Settings.h" />
+    <ClInclude Include="FishSettings.h" />
     <ClInclude Include="StdAfx.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

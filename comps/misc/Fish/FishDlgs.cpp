@@ -3,12 +3,12 @@
 
 #include "stdafx.h"
 #include "Fish.h"
-#include "dlgs.h"
+#include "FishDlgs.h"
 #include "fishcontextviewer.h"
 #include "PropBag.h"
 #include "utils.h"
 #include "MenuRegistrator.h"
-#include "Settings.h"
+#include "FishSettings.h"
 
 void ExecuteContextMenu(CPoint point)
 {

@@ -974,7 +974,7 @@ void ShellInitLanguages()
 	// - если \General\UseLanguage=2 - то локализуемся по SetThreadLocale
 	//g_bUseLanguageHooks = ::GetPrivateProfileInt( "General", "UseLanguage:Long", 1, szIniFileName );
 	//::WritePrivateProfileInt( "General", "UseLanguage:Long", g_bUseLanguageHooks, szIniFileName );
-	long nUseLanguage = ::GetPrivateProfileInt( "General", "UseLanguage:Long", 1, szIniFileName );
+	long nUseLanguage = ::GetPrivateProfileInt( "General", "UseLanguage:Long", 2, szIniFileName );
 	::WritePrivateProfileInt( "General", "UseLanguage:Long", nUseLanguage, szIniFileName );
 
 	LANGID lid = MAKELANGID(LANG_ENGLISH, SUBLANG_ENGLISH_US);

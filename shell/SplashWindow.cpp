@@ -306,7 +306,7 @@ bool CLogoWnd::LoadSettings()
 
 	//is logo enable
 	char sz_buf[1024];	sz_buf[0] = 0;
-	::GetPrivateProfileString( LOGO_SECTION, "EnableLogo:Long", "", sz_buf, sizeof(sz_buf), str_ini );
+	::GetPrivateProfileString( LOGO_SECTION, "EnableLogo:Long", "0", sz_buf, sizeof(sz_buf), str_ini );
 	if( strcmp( sz_buf, "1" ) )
 		return false;
 
