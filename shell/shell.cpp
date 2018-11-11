@@ -1765,7 +1765,7 @@ BOOL CShellApp::InitInstance()
 
 	// AAM: проверяем несколько DLL на вшивость
 #ifdef _DEBUG
-	CheckDllSignature("common_d.dll");
+	CheckDllSignature("common.dll");
 #else
 	CheckDllSignature("common.dll");
 #endif

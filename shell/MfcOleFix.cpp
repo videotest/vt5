@@ -521,7 +521,7 @@ HOOK_METHOD(MFCXXD_DLL,CWnd_CreateControl_4RECT_Ordinal,BOOL,CWnd,CreateControl,
 	  pParentWnd, nID, pPersist, bStorage, bstrLicKey ) );
 }
 // 	mfc90d.dll!CWnd::CreateControl(const char * lpszClass=0x000000000a766a28, const char * lpszWindowName=0x000000006be1a140, unsigned long dwStyle=0x58000000, const tagRECT & rect={...}, CWnd * pParentWnd=0x000000000bb137f8, unsigned int nID=0x00000000, CFile * pPersist=0x0000000000000000, int bStorage=0x00000000, wchar_t * bstrLicKey=0x0000000000000000)  Line 35	C++
-HOOK_METHOD(MFCXXD_DLL,CWnd_CreateControl_Ordinal_1char,BOOL,CWnd,CreateControl,
+HOOK_METHOD(MFCXXD_DLL,CWnd_CreateControl_1char_Ordinal,BOOL,CWnd,CreateControl,
 	(LPCTSTR lpszClass, LPCTSTR lpszWindowName, 
 	DWORD dwStyle, const RECT& rect, CWnd* pParentWnd, UINT nID, 
 	CFile* pPersist, BOOL bStorage, BSTR bstrLicKey))

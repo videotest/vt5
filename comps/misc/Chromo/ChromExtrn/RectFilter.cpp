@@ -36,7 +36,7 @@ IUnknown* _CreateNamedObject(LPCTSTR szType, IUnknown *punkParent = NULL)
 {
 	IUnknown *punkObject = NULL;
 #ifdef _DEBUG
-	HINSTANCE hDll_Common = GetModuleHandle("common_d.dll");
+	HINSTANCE hDll_Common = GetModuleHandle("common.dll");
 #else
 	HINSTANCE hDll_Common = GetModuleHandle("common.dll");
 #endif

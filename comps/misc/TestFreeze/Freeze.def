@@ -1,4 +1,4 @@
-LIBRARY	TestFreeze
+LIBRARY	Freeze
 
 EXPORTS
 	DllCanUnloadNow PRIVATE

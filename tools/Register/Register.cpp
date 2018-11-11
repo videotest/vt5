@@ -1350,7 +1350,7 @@ bool CRegisterApp::ReadGuardInfo(LPCTSTR szFile)
 		{
 		case CFileException::tooManyOpenFiles:
 
-		case CFileException::generic:
+		case CFileException::genericException:
 		case CFileException::hardIO:
 			GuardSetErrorCode(guardInvalidGuardFile);
 			break;

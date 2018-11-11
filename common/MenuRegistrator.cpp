@@ -85,7 +85,7 @@ _bstr_t GetRegistryPath()
 	if (!punkAppUnknown)
 	{
 	#ifdef _DEBUG
-		HINSTANCE hDll_Common = GetModuleHandle("common_d.dll");
+		HINSTANCE hDll_Common = GetModuleHandle("common.dll");
 	#else
 		HINSTANCE hDll_Common = GetModuleHandle("common.dll");
 	#endif

@@ -3,7 +3,7 @@
 #pragma once
 #include "resource.h"       // main symbols
 
-#include "Blot.h"
+#include "Blot_h.h"
 
 
 inline float sqr(float x){return x*x;}

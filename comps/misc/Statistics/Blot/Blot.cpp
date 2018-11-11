@@ -4,7 +4,7 @@
 #include "resource.h"
 #include "\vt5\awin\misc_module.h"
 #include <com_main.h>
-#include "Blot.h"
+#include "Blot_h.h"
 
 class CBlotModule : public CAtlDllModuleT< CBlotModule >
 {
