@@ -124,8 +124,6 @@
     <Link>
       <AdditionalOptions>/MACHINE:I386 %(AdditionalOptions)</AdditionalOptions>
       <AdditionalDependencies>gdiplus.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <OutputFile>\vt5\vt5\Release\comps\Charts.dll</OutputFile>
-      <AdditionalLibraryDirectories>\vt5\common\release;\vt5\common;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <RandomizedBaseAddress>false</RandomizedBaseAddress>
       <DataExecutionPrevention>
@@ -161,8 +159,6 @@
     </ResourceCompile>
     <Link>
       <AdditionalDependencies>gdiplus.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <OutputFile>\vt5\vt5\$(OutDir)comps\$(ProjectName).dll</OutputFile>
-      <AdditionalLibraryDirectories>\vt5\common\$(OutDir);\vt5\common;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <RandomizedBaseAddress>false</RandomizedBaseAddress>
       <DataExecutionPrevention>
@@ -198,8 +194,6 @@
     <Link>
       <AdditionalOptions>/MACHINE:I386 %(AdditionalOptions)</AdditionalOptions>
       <AdditionalDependencies>gdiplus.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <OutputFile>\vt5\vt5\Debug\comps\Charts.dll</OutputFile>
-      <AdditionalLibraryDirectories>\vt5\common\debug;\vt5\common;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <RandomizedBaseAddress>false</RandomizedBaseAddress>
       <DataExecutionPrevention>
@@ -234,7 +228,6 @@
     </ResourceCompile>
     <Link>
       <AdditionalDependencies>gdiplus.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <RandomizedBaseAddress>false</RandomizedBaseAddress>
       <DataExecutionPrevention>

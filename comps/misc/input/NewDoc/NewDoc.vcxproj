@@ -101,7 +101,6 @@
       <MkTypLibCompatible>true</MkTypLibCompatible>
       <SuppressStartupBanner>true</SuppressStartupBanner>
       <TargetEnvironment>Win32</TargetEnvironment>
-      <TypeLibraryName>.\Release/NewDoc.tlb</TypeLibraryName>
     </Midl>
     <ClCompile>
       <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
@@ -141,7 +140,6 @@
       <MkTypLibCompatible>true</MkTypLibCompatible>
       <SuppressStartupBanner>true</SuppressStartupBanner>
       <TargetEnvironment>X64</TargetEnvironment>
-      <TypeLibraryName>.\Release/NewDoc.tlb</TypeLibraryName>
     </Midl>
     <ClCompile>
       <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
@@ -181,7 +179,6 @@
       <MkTypLibCompatible>true</MkTypLibCompatible>
       <SuppressStartupBanner>true</SuppressStartupBanner>
       <TargetEnvironment>Win32</TargetEnvironment>
-      <TypeLibraryName>.\Debug/NewDoc.tlb</TypeLibraryName>
     </Midl>
     <ClCompile>
       <Optimization>Disabled</Optimization>
@@ -221,7 +218,6 @@
       <MkTypLibCompatible>true</MkTypLibCompatible>
       <SuppressStartupBanner>true</SuppressStartupBanner>
       <TargetEnvironment>X64</TargetEnvironment>
-      <TypeLibraryName>.\Debug/NewDoc.tlb</TypeLibraryName>
     </Midl>
     <ClCompile>
       <Optimization>Disabled</Optimization>

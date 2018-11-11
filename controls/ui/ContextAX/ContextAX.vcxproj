@@ -106,7 +106,6 @@
       <MkTypLibCompatible>true</MkTypLibCompatible>
       <SuppressStartupBanner>true</SuppressStartupBanner>
       <TargetEnvironment>Win32</TargetEnvironment>
-      <OutputDirectory>$(SolutionDir)bin\$(Platform)\$(Configuration)</OutputDirectory>
     </Midl>
     <ClCompile>
       <Optimization>Disabled</Optimization>
@@ -193,7 +192,6 @@
       <MkTypLibCompatible>true</MkTypLibCompatible>
       <SuppressStartupBanner>true</SuppressStartupBanner>
       <TargetEnvironment>Win32</TargetEnvironment>
-      <OutputDirectory>$(SolutionDir)bin\$(Platform)\$(Configuration)</OutputDirectory>
     </Midl>
     <ClCompile>
       <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
@@ -237,7 +235,6 @@
       <MkTypLibCompatible>true</MkTypLibCompatible>
       <SuppressStartupBanner>true</SuppressStartupBanner>
       <TargetEnvironment>X64</TargetEnvironment>
-      <OutputDirectory>$(SolutionDir)bin\$(Platform)\$(Configuration)</OutputDirectory>
     </Midl>
     <ClCompile>
       <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
@@ -319,14 +316,8 @@
   <ItemGroup>
     <Midl Include="ContextAX.odl">
       <TargetEnvironment Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Win32</TargetEnvironment>
-      <TypeLibraryName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">\vt5\vt5\Debug\comps/ContextAX.tlb</TypeLibraryName>
-      <HeaderFileName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">ContextAX_h.h</HeaderFileName>
       <TargetEnvironment Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Win32</TargetEnvironment>
-      <TypeLibraryName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">\vt5\vt5\Release\comps/ContextAX.tlb</TypeLibraryName>
-      <HeaderFileName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">ContextAX_h.h</HeaderFileName>
       <TargetEnvironment Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Win32</TargetEnvironment>
-      <TypeLibraryName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">\vt5\vt5\Release\comps/ContextAX.tlb</TypeLibraryName>
-      <HeaderFileName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">ContextAX_h.h</HeaderFileName>
     </Midl>
   </ItemGroup>
   <ItemGroup>

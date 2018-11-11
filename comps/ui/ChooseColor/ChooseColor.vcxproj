@@ -101,7 +101,6 @@
       <MkTypLibCompatible>true</MkTypLibCompatible>
       <SuppressStartupBanner>true</SuppressStartupBanner>
       <TargetEnvironment>Win32</TargetEnvironment>
-      <TypeLibraryName>\vt5\comps\ui\ChooseColor\Release/ChooseColor.tlb</TypeLibraryName>
     </Midl>
     <ClCompile>
       <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
@@ -139,7 +138,6 @@
       <MkTypLibCompatible>true</MkTypLibCompatible>
       <SuppressStartupBanner>true</SuppressStartupBanner>
       <TargetEnvironment>X64</TargetEnvironment>
-      <TypeLibraryName>\vt5\comps\ui\ChooseColor\Release/ChooseColor.tlb</TypeLibraryName>
     </Midl>
     <ClCompile>
       <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
@@ -178,7 +176,6 @@
       <MkTypLibCompatible>true</MkTypLibCompatible>
       <SuppressStartupBanner>true</SuppressStartupBanner>
       <TargetEnvironment>Win32</TargetEnvironment>
-      <TypeLibraryName>.\Debug/ChooseColor.tlb</TypeLibraryName>
     </Midl>
     <ClCompile>
       <Optimization>Disabled</Optimization>
@@ -216,7 +213,6 @@
       <MkTypLibCompatible>true</MkTypLibCompatible>
       <SuppressStartupBanner>true</SuppressStartupBanner>
       <TargetEnvironment>X64</TargetEnvironment>
-      <TypeLibraryName>.\Debug/ChooseColor.tlb</TypeLibraryName>
     </Midl>
     <ClCompile>
       <Optimization>Disabled</Optimization>
@@ -271,13 +267,9 @@
   <ItemGroup>
     <Midl Include="ChooseColor.odl">
       <TargetEnvironment Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Win32</TargetEnvironment>
-      <HeaderFileName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">ChooseColor_h.h</HeaderFileName>
       <TargetEnvironment Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Win32</TargetEnvironment>
-      <HeaderFileName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">ChooseColor_h.h</HeaderFileName>
       <TargetEnvironment Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Win32</TargetEnvironment>
-      <HeaderFileName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">ChooseColor_h.h</HeaderFileName>
       <TargetEnvironment Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Win32</TargetEnvironment>
-      <HeaderFileName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">ChooseColor_h.h</HeaderFileName>
     </Midl>
   </ItemGroup>
   <ItemGroup>

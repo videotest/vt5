@@ -293,15 +293,9 @@
   <ItemGroup>
     <Midl Include="AppMan.odl">
       <TargetEnvironment Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Win32</TargetEnvironment>
-      <TypeLibraryName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">\vt5\vt5\debug\comps\AppMan.tlb</TypeLibraryName>
-      <HeaderFileName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">AppMan_h.h</HeaderFileName>
       <TargetEnvironment Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Win32</TargetEnvironment>
       <TargetEnvironment Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Win32</TargetEnvironment>
-      <TypeLibraryName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">\vt5\vt5\release\comps\AppMan.tlb</TypeLibraryName>
-      <HeaderFileName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">AppMan_h.h</HeaderFileName>
       <TargetEnvironment Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Win32</TargetEnvironment>
-      <TypeLibraryName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">\vt5\vt5\release\comps\AppMan.tlb</TypeLibraryName>
-      <HeaderFileName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">AppMan_h.h</HeaderFileName>
     </Midl>
   </ItemGroup>
   <ItemGroup>

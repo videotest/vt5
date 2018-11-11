@@ -101,7 +101,6 @@
       <MkTypLibCompatible>true</MkTypLibCompatible>
       <SuppressStartupBanner>true</SuppressStartupBanner>
       <TargetEnvironment>Win32</TargetEnvironment>
-      <TypeLibraryName>.\Release/DataUI.tlb</TypeLibraryName>
     </Midl>
     <ClCompile>
       <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
@@ -135,7 +134,6 @@
       <MkTypLibCompatible>true</MkTypLibCompatible>
       <SuppressStartupBanner>true</SuppressStartupBanner>
       <TargetEnvironment>X64</TargetEnvironment>
-      <TypeLibraryName>.\Release/DataUI.tlb</TypeLibraryName>
     </Midl>
     <ClCompile>
       <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
@@ -170,7 +168,6 @@
       <MkTypLibCompatible>true</MkTypLibCompatible>
       <SuppressStartupBanner>true</SuppressStartupBanner>
       <TargetEnvironment>Win32</TargetEnvironment>
-      <TypeLibraryName>.\Debug/DataUI.tlb</TypeLibraryName>
     </Midl>
     <ClCompile>
       <Optimization>Disabled</Optimization>
@@ -204,7 +201,6 @@
       <MkTypLibCompatible>true</MkTypLibCompatible>
       <SuppressStartupBanner>true</SuppressStartupBanner>
       <TargetEnvironment>X64</TargetEnvironment>
-      <TypeLibraryName>.\Debug/DataUI.tlb</TypeLibraryName>
     </Midl>
     <ClCompile>
       <Optimization>Disabled</Optimization>
@@ -254,13 +250,9 @@
   <ItemGroup>
     <Midl Include="DataUI.odl">
       <TargetEnvironment Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Win32</TargetEnvironment>
-      <HeaderFileName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">DataUI_h.h</HeaderFileName>
       <TargetEnvironment Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Win32</TargetEnvironment>
-      <HeaderFileName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">DataUI_h.h</HeaderFileName>
       <TargetEnvironment Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Win32</TargetEnvironment>
-      <HeaderFileName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">DataUI_h.h</HeaderFileName>
       <TargetEnvironment Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Win32</TargetEnvironment>
-      <HeaderFileName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">DataUI_h.h</HeaderFileName>
     </Midl>
   </ItemGroup>
   <ItemGroup>

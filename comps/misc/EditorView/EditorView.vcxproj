@@ -130,7 +130,9 @@
       <RandomizedBaseAddress>false</RandomizedBaseAddress>
       <DataExecutionPrevention>
       </DataExecutionPrevention>
-      <ModuleDefinitionFile> </ModuleDefinitionFile>
+      <ModuleDefinitionFile>
+      </ModuleDefinitionFile>
+      <OutputFile>$(SolutionDir)vt5\$(Platform)\$(Configuration)\$(ProjectName).dll</OutputFile>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -162,7 +164,8 @@
     <Link>
       <OutputFile>$(SolutionDir)vt5\$(Platform)\$(Configuration)\$(ProjectName).dll</OutputFile>
       <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <ModuleDefinitionFile> </ModuleDefinitionFile>
+      <ModuleDefinitionFile>
+      </ModuleDefinitionFile>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <SubSystem>Windows</SubSystem>
       <RandomizedBaseAddress>false</RandomizedBaseAddress>
@@ -206,7 +209,9 @@
       <RandomizedBaseAddress>false</RandomizedBaseAddress>
       <DataExecutionPrevention>
       </DataExecutionPrevention>
-      <ModuleDefinitionFile> </ModuleDefinitionFile>
+      <ModuleDefinitionFile>
+      </ModuleDefinitionFile>
+      <OutputFile>$(SolutionDir)vt5\$(Platform)\$(Configuration)\$(ProjectName).dll</OutputFile>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -244,7 +249,9 @@
       <DataExecutionPrevention>
       </DataExecutionPrevention>
       <TargetMachine>MachineX64</TargetMachine>
-      <ModuleDefinitionFile> </ModuleDefinitionFile>
+      <ModuleDefinitionFile>
+      </ModuleDefinitionFile>
+      <OutputFile>$(SolutionDir)vt5\$(Platform)\$(Configuration)\$(ProjectName).dll</OutputFile>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
