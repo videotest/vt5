@@ -21,6 +21,7 @@
 	<Configurations>
 		<Configuration
 			Name="Release|Win32"
+			OutputDirectory="$(SolutionDir)vt5\$(PlatformName)\$(ConfigurationName)\"
 			ConfigurationType="2"
 			InheritedPropertySheets="..\props\CommonEnv.vsprops"
 			UseOfMFC="2"
@@ -61,8 +62,6 @@
 				ForceConformanceInForLoopScope="false"
 				RuntimeTypeInfo="true"
 				UsePrecompiledHeader="2"
-				PrecompiledHeaderThrough="stdafx.h"
-				PrecompiledHeaderFile="\vt5\common\Release/common.pch"
 				AssemblerListingLocation="\vt5\common\Release/"
 				ObjectFile="\vt5\common\Release/"
 				ProgramDataBaseFileName="\vt5\common\Release/"
@@ -87,11 +86,9 @@
 				Name="VCLinkerTool"
 				AdditionalOptions="/MACHINE:I386"
 				AdditionalDependencies="HtmlHelp.lib"
-				OutputFile="\vt5\vt5\Release/common.dll"
-				LinkIncremental="1"
-				SuppressStartupBanner="true"
+				OutputFile="$(SolutionDir)vt5\$(PlatformName)\$(ConfigurationName)\$(ProjectName).dll"
 				AdditionalLibraryDirectories=""
-				ModuleDefinitionFile=".\common.def"
+				ModuleDefinitionFile=" "
 				GenerateDebugInformation="true"
 				SubSystem="2"
 				RandomizedBaseAddress="1"
@@ -121,6 +118,7 @@
 		</Configuration>
 		<Configuration
 			Name="Release|x64"
+			OutputDirectory="$(SolutionDir)vt5\$(PlatformName)\$(ConfigurationName)\"
 			ConfigurationType="2"
 			InheritedPropertySheets="..\props\CommonEnv.vsprops"
 			UseOfMFC="2"
@@ -148,6 +146,7 @@
 				RuntimeLibrary="2"
 				TreatWChar_tAsBuiltInType="false"
 				ForceConformanceInForLoopScope="false"
+				UsePrecompiledHeader="2"
 			/>
 			<Tool
 				Name="VCManagedResourceCompilerTool"
@@ -162,8 +161,9 @@
 				Name="VCLinkerTool"
 				AdditionalOptions="/MACHINE:X64"
 				AdditionalDependencies="HtmlHelp.lib"
-				OutputFile="$(SolutionDir)vt5\$(OutDir)\$(ProjectName).dll"
+				OutputFile="$(SolutionDir)vt5\$(PlatformName)\$(ConfigurationName)\$(ProjectName).dll"
 				AdditionalLibraryDirectories=""
+				ModuleDefinitionFile=" "
 				RandomizedBaseAddress="1"
 				DataExecutionPrevention="0"
 				TargetMachine="17"
@@ -192,6 +192,7 @@
 		</Configuration>
 		<Configuration
 			Name="Debug|Win32"
+			OutputDirectory="$(SolutionDir)vt5\$(PlatformName)\$(ConfigurationName)\"
 			ConfigurationType="2"
 			InheritedPropertySheets="..\props\CommonEnv.vsprops"
 			UseOfMFC="2"
@@ -230,15 +231,10 @@
 				ForceConformanceInForLoopScope="false"
 				RuntimeTypeInfo="true"
 				UsePrecompiledHeader="2"
-				PrecompiledHeaderThrough="stdafx.h"
-				PrecompiledHeaderFile=".\Debug/common.pch"
 				AssemblerListingLocation=".\Debug/"
 				ObjectFile=".\Debug/"
 				ProgramDataBaseFileName=".\Debug/"
 				BrowseInformation="1"
-				WarningLevel="3"
-				SuppressStartupBanner="true"
-				Detect64BitPortabilityProblems="false"
 				DebugInformationFormat="4"
 				CompileAs="0"
 			/>
@@ -257,11 +253,9 @@
 				Name="VCLinkerTool"
 				AdditionalOptions="/MACHINE:I386"
 				AdditionalDependencies="HtmlHelp.lib"
-				OutputFile="\vt5\vt5\Debug/common_d.dll"
-				LinkIncremental="2"
-				SuppressStartupBanner="true"
+				OutputFile="$(SolutionDir)vt5\$(PlatformName)\$(ConfigurationName)\$(ProjectName).dll"
 				AdditionalLibraryDirectories=""
-				ModuleDefinitionFile=".\Commond.def"
+				ModuleDefinitionFile=" "
 				GenerateDebugInformation="true"
 				SubSystem="2"
 				RandomizedBaseAddress="1"
@@ -291,6 +285,7 @@
 		</Configuration>
 		<Configuration
 			Name="Debug|x64"
+			OutputDirectory="$(SolutionDir)vt5\$(PlatformName)\$(ConfigurationName)\"
 			ConfigurationType="2"
 			InheritedPropertySheets="..\props\CommonEnv.vsprops"
 			UseOfMFC="2"
@@ -318,6 +313,7 @@
 				RuntimeLibrary="3"
 				TreatWChar_tAsBuiltInType="false"
 				ForceConformanceInForLoopScope="false"
+				UsePrecompiledHeader="2"
 				Detect64BitPortabilityProblems="false"
 				DebugInformationFormat="3"
 			/>
@@ -335,6 +331,7 @@
 				AdditionalDependencies="HtmlHelp.lib"
 				OutputFile="$(SolutionDir)vt5\$(PlatformName)\$(ConfigurationName)\$(ProjectName).dll"
 				AdditionalLibraryDirectories=""
+				ModuleDefinitionFile=" "
 				GenerateDebugInformation="true"
 				RandomizedBaseAddress="1"
 				DataExecutionPrevention="0"
@@ -412,10 +409,6 @@
 			</File>
 			<File
 				RelativePath=".\common.rc"
-				>
-			</File>
-			<File
-				RelativePath=".\Commond.def"
 				>
 			</File>
 			<File
@@ -528,10 +521,12 @@
 				>
 				<FileConfiguration
 					Name="Release|Win32"
-					ExcludedFromBuild="true"
 					>
 					<Tool
 						Name="VCCLCompilerTool"
+						UsePrecompiledHeader="0"
+						PrecompiledHeaderThrough=" "
+						PrecompiledHeaderFile=" "
 					/>
 				</FileConfiguration>
 				<FileConfiguration
@@ -540,14 +535,16 @@
 					<Tool
 						Name="VCCLCompilerTool"
 						UsePrecompiledHeader="0"
+						PrecompiledHeaderThrough=" "
+						PrecompiledHeaderFile=" "
 					/>
 				</FileConfiguration>
 				<FileConfiguration
 					Name="Debug|Win32"
-					ExcludedFromBuild="true"
 					>
 					<Tool
 						Name="VCCLCompilerTool"
+						UsePrecompiledHeader="0"
 					/>
 				</FileConfiguration>
 				<FileConfiguration
@@ -556,6 +553,8 @@
 					<Tool
 						Name="VCCLCompilerTool"
 						UsePrecompiledHeader="0"
+						PrecompiledHeaderThrough=" "
+						PrecompiledHeaderFile=" "
 					/>
 				</FileConfiguration>
 			</File>

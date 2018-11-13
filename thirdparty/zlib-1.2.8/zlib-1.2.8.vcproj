@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="windows-1251"?>
 <VisualStudioProject
 	ProjectType="Visual C++"
-	Version="9,00"
+	Version="9.00"
 	Name="zlib-1.2.8"
 	ProjectGUID="{3CF40548-1F1D-4DA7-9BD8-93D9C4C60643}"
 	RootNamespace="zlib-1.2.8"
@@ -40,26 +40,6 @@
 			/>
 		</Configuration>
 		<Configuration
-			Name="Debug|x64"
-			OutputDirectory="$(SolutionDir)lib\$(PlatformName)\$(ConfigurationName)\"
-			IntermediateDirectory="$(SolutionDir)build\$(PlatformName)\$(ConfigurationName)\$(ProjectName)\"
-			ConfigurationType="0"
-			>
-			<Tool
-				Name="VCNMakeTool"
-				BuildCommandLine="nmake -f win32/Makefile.msc AS=ml64 LOC=&quot;-DASMV -DASMINF&quot; OBJA=&quot;inffasx64.obj gvmat64.obj inffas8664.obj&quot; OUTDIR=$(OutDir)\ IMDIR=$(IntDir)\ zlib.lib"
-				ReBuildCommandLine="nmake -f win32/Makefile.msc AS=ml64 LOC=&quot;-DASMV -DASMINF&quot; OBJA=&quot;inffasx64.obj gvmat64.obj inffas8664.obj&quot; OUTDIR=$(OutDir)\ IMDIR=$(IntDir)\ clean zlib.lib"
-				CleanCommandLine="nmake -f win32/Makefile.msc AS=ml64 LOC=&quot;-DASMV -DASMINF&quot; OBJA=&quot;inffasx64.obj gvmat64.obj inffas8664.obj&quot; OUTDIR=$(OutDir)\ IMDIR=$(IntDir)\ clean"
-				Output=" "
-				PreprocessorDefinitions="WIN32;_DEBUG"
-				IncludeSearchPath=""
-				ForcedIncludes=""
-				AssemblySearchPath=""
-				ForcedUsingAssemblies=""
-				CompileAsManaged=""
-			/>
-		</Configuration>
-		<Configuration
 			Name="Release|Win32"
 			OutputDirectory="$(SolutionDir)lib\$(PlatformName)\$(ConfigurationName)\"
 			IntermediateDirectory="$(SolutionDir)build\$(PlatformName)\$(ConfigurationName)\$(ProjectName)\"
@@ -72,6 +52,26 @@
 				CleanCommandLine="nmake -f win32/Makefile.msc LOC=&quot;-DASMV -DASMINF&quot; OBJA=&quot;inffas32.obj match686.obj&quot; OUTDIR=$(OutDir)\ IMDIR=$(IntDir)\ clean"
 				Output=" "
 				PreprocessorDefinitions="WIN32;NDEBUG"
+				IncludeSearchPath=""
+				ForcedIncludes=""
+				AssemblySearchPath=""
+				ForcedUsingAssemblies=""
+				CompileAsManaged=""
+			/>
+		</Configuration>
+		<Configuration
+			Name="Debug|x64"
+			OutputDirectory="$(SolutionDir)lib\$(PlatformName)\$(ConfigurationName)\"
+			IntermediateDirectory="$(SolutionDir)build\$(PlatformName)\$(ConfigurationName)\$(ProjectName)\"
+			ConfigurationType="0"
+			>
+			<Tool
+				Name="VCNMakeTool"
+				BuildCommandLine="nmake -f win32/Makefile.msc AS=ml64 LOC=&quot;-DASMV -DASMINF&quot; OBJA=&quot;inffasx64.obj gvmat64.obj inffas8664.obj&quot; OUTDIR=$(OutDir)\ IMDIR=$(IntDir)\ zlib.lib"
+				ReBuildCommandLine="nmake -f win32/Makefile.msc AS=ml64 LOC=&quot;-DASMV -DASMINF&quot; OBJA=&quot;inffasx64.obj gvmat64.obj inffas8664.obj&quot; OUTDIR=$(OutDir)\ IMDIR=$(IntDir)\ clean zlib.lib"
+				CleanCommandLine="nmake -f win32/Makefile.msc AS=ml64 LOC=&quot;-DASMV -DASMINF&quot; OBJA=&quot;inffasx64.obj gvmat64.obj inffas8664.obj&quot; OUTDIR=$(OutDir)\ IMDIR=$(IntDir)\ clean"
+				Output=" "
+				PreprocessorDefinitions="WIN32;_DEBUG"
 				IncludeSearchPath=""
 				ForcedIncludes=""
 				AssemblySearchPath=""
@@ -237,7 +237,7 @@
 	<Globals>
 		<Global
 			Name="DevPartner_IsInstrumented"
-			Value="1"
+			Value="0"
 		/>
 	</Globals>
 </VisualStudioProject>

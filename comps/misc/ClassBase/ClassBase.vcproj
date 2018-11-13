@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="windows-1251"?>
 <VisualStudioProject
 	ProjectType="Visual C++"
-	Version="9,00"
+	Version="9.00"
 	Name="ClassBase"
 	ProjectGUID="{65B7AFC6-B6ED-410C-A391-6CE8A96CBEB5}"
 	RootNamespace="ClassBase"
@@ -150,7 +150,6 @@
 				UsePrecompiledHeader="0"
 				WarningLevel="3"
 				DebugInformationFormat="3"
-				CompileAs="0"
 			/>
 			<Tool
 				Name="VCManagedResourceCompilerTool"
@@ -240,7 +239,6 @@
 				BrowseInformation="1"
 				WarningLevel="3"
 				DebugInformationFormat="4"
-				CompileAs="0"
 			/>
 			<Tool
 				Name="VCManagedResourceCompilerTool"
@@ -328,8 +326,6 @@
 				BrowseInformation="1"
 				WarningLevel="3"
 				DebugInformationFormat="3"
-				CompileAs="0"
-				ShowIncludes="true"
 			/>
 			<Tool
 				Name="VCManagedResourceCompilerTool"
@@ -493,7 +489,7 @@
 	<Globals>
 		<Global
 			Name="DevPartner_IsInstrumented"
-			Value="1"
+			Value="0"
 		/>
 	</Globals>
 </VisualStudioProject>

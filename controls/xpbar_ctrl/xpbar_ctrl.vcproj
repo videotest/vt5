@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="windows-1251"?>
 <VisualStudioProject
 	ProjectType="Visual C++"
-	Version="9,00"
+	Version="9.00"
 	Name="xpbar_ctrl"
 	ProjectGUID="{F269DFB6-9C39-4D3C-B5E1-88F23504C97F}"
 	RootNamespace="xpbar_ctrl"
@@ -20,8 +20,9 @@
 	<Configurations>
 		<Configuration
 			Name="Release|Win32"
+			OutputDirectory="$(SolutionDir)lib\$(PlatformName)\$(ConfigurationName)\"
 			ConfigurationType="2"
-			InheritedPropertySheets="$(SolutionDir)props\common2env.vsprops"
+			InheritedPropertySheets="..\..\props\common2env.vsprops"
 			UseOfMFC="0"
 			ATLMinimizesCRunTimeLibraryUsage="false"
 			CharacterSet="2"
@@ -75,6 +76,7 @@
 			<Tool
 				Name="VCLinkerTool"
 				AdditionalOptions="/MACHINE:I386"
+				OutputFile="$(SolutionDir)vt5/$(PlatformName)/$(ConfigurationName)/$(ProjectName).dll"
 				LinkIncremental="1"
 				AdditionalLibraryDirectories=""
 				ModuleDefinitionFile=""
@@ -106,8 +108,9 @@
 		</Configuration>
 		<Configuration
 			Name="Release|x64"
+			OutputDirectory="$(SolutionDir)lib\$(PlatformName)\$(ConfigurationName)\"
 			ConfigurationType="2"
-			InheritedPropertySheets="$(SolutionDir)props\common2env.vsprops"
+			InheritedPropertySheets="..\..\props\common2env.vsprops"
 			UseOfMFC="0"
 			ATLMinimizesCRunTimeLibraryUsage="false"
 			CharacterSet="2"
@@ -160,6 +163,7 @@
 			/>
 			<Tool
 				Name="VCLinkerTool"
+				OutputFile="$(SolutionDir)vt5/$(PlatformName)/$(ConfigurationName)/$(ProjectName).dll"
 				LinkIncremental="1"
 				AdditionalLibraryDirectories=""
 				ModuleDefinitionFile=""
@@ -192,8 +196,9 @@
 		</Configuration>
 		<Configuration
 			Name="Debug|Win32"
+			OutputDirectory="$(SolutionDir)lib\$(PlatformName)\$(ConfigurationName)\"
 			ConfigurationType="2"
-			InheritedPropertySheets="$(SolutionDir)props\common2env.vsprops"
+			InheritedPropertySheets="..\..\props\common2env.vsprops"
 			UseOfMFC="0"
 			ATLMinimizesCRunTimeLibraryUsage="false"
 			CharacterSet="2"
@@ -247,6 +252,7 @@
 			<Tool
 				Name="VCLinkerTool"
 				AdditionalOptions="/MACHINE:I386"
+				OutputFile="$(SolutionDir)vt5/$(PlatformName)/$(ConfigurationName)/$(ProjectName).dll"
 				LinkIncremental="2"
 				AdditionalLibraryDirectories=""
 				ModuleDefinitionFile=""
@@ -278,8 +284,9 @@
 		</Configuration>
 		<Configuration
 			Name="Debug|x64"
-			ConfigurationType="4"
-			InheritedPropertySheets="$(SolutionDir)props\libs.vsprops"
+			OutputDirectory="$(SolutionDir)lib\$(PlatformName)\$(ConfigurationName)\"
+			ConfigurationType="2"
+			InheritedPropertySheets="..\..\props\common2env.vsprops"
 			UseOfMFC="0"
 			ATLMinimizesCRunTimeLibraryUsage="false"
 			CharacterSet="2"
@@ -331,10 +338,14 @@
 				Name="VCPreLinkEventTool"
 			/>
 			<Tool
-				Name="VCLibrarianTool"
+				Name="VCLinkerTool"
+				OutputFile="$(SolutionDir)vt5/$(PlatformName)/$(ConfigurationName)/$(ProjectName).dll"
 			/>
 			<Tool
 				Name="VCALinkTool"
+			/>
+			<Tool
+				Name="VCManifestTool"
 			/>
 			<Tool
 				Name="VCXDCMakeTool"
@@ -344,6 +355,9 @@
 			/>
 			<Tool
 				Name="VCFxCopTool"
+			/>
+			<Tool
+				Name="VCAppVerifierTool"
 			/>
 			<Tool
 				Name="VCPostBuildEventTool"
@@ -448,7 +462,7 @@
 	<Globals>
 		<Global
 			Name="DevPartner_IsInstrumented"
-			Value="1"
+			Value="0"
 		/>
 	</Globals>
 </VisualStudioProject>

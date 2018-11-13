@@ -49,7 +49,7 @@
 			<Tool
 				Name="VCCLCompilerTool"
 				Optimization="0"
-				AdditionalIncludeDirectories="\vt5\common2,\vt5\ifaces,\vt5\common,\vt5\awin\"
+				AdditionalIncludeDirectories="&quot;$(Inherit)&quot;;&quot;$(SolutionDir)AWIN\&quot;"
 				PreprocessorDefinitions="WIN32;_DEBUG;_WINDOWS;_USRDLL;_CRT_SECURE_NO_DEPRECATE;IDIO_EXPORTS"
 				BasicRuntimeChecks="0"
 				RuntimeLibrary="3"
@@ -58,8 +58,6 @@
 				UsePrecompiledHeader="2"
 				PrecompiledHeaderThrough="stdafx.h"
 				BrowseInformation="1"
-				WarningLevel="3"
-				SuppressStartupBanner="true"
 				DebugInformationFormat="4"
 				CompileAs="0"
 			/>
@@ -78,17 +76,11 @@
 				Name="VCLinkerTool"
 				AdditionalOptions="/MACHINE:I386"
 				AdditionalDependencies="common2.lib"
-				OutputFile="\vt5\vt5\Debug\comps\idio.dll"
-				LinkIncremental="2"
-				SuppressStartupBanner="true"
-				AdditionalLibraryDirectories="\vt5\common2\debug,\vt5\common\"
+				AdditionalLibraryDirectories=""
 				IgnoreDefaultLibraryNames=""
-				ModuleDefinitionFile=""
 				GenerateDebugInformation="true"
-				ProgramDatabaseFile="\vt5\vt5\debug\pdb\idio.pdb"
 				RandomizedBaseAddress="1"
 				DataExecutionPrevention="0"
-				ImportLibrary=".\Debug/idio.lib"
 			/>
 			<Tool
 				Name="VCALinkTool"
@@ -143,7 +135,7 @@
 			<Tool
 				Name="VCCLCompilerTool"
 				Optimization="0"
-				AdditionalIncludeDirectories=""
+				AdditionalIncludeDirectories="&quot;$(Inherit)&quot;;&quot;$(SolutionDir)AWIN\&quot;"
 				PreprocessorDefinitions="_WIN64;_M_X64;_CRT_SECURE_NO_DEPRECATE;_DEBUG;_WINDOWS;_USRDLL;IDIO_EXPORTS"
 				BasicRuntimeChecks="0"
 				RuntimeLibrary="3"
@@ -170,15 +162,11 @@
 				Name="VCLinkerTool"
 				AdditionalDependencies="common2.lib"
 				LinkIncremental="2"
-				SuppressStartupBanner="true"
 				AdditionalLibraryDirectories=""
 				IgnoreDefaultLibraryNames=""
-				ModuleDefinitionFile=""
 				GenerateDebugInformation="true"
-				ProgramDatabaseFile="\vt5\vt5\debug\pdb\idio.pdb"
 				RandomizedBaseAddress="1"
 				DataExecutionPrevention="0"
-				ImportLibrary=".\Debug/idio.lib"
 				TargetMachine="17"
 			/>
 			<Tool
@@ -234,7 +222,7 @@
 			<Tool
 				Name="VCCLCompilerTool"
 				InlineFunctionExpansion="1"
-				AdditionalIncludeDirectories="\vt5\common2,\vt5\ifaces,\vt5\common,\vt5\awin\"
+				AdditionalIncludeDirectories="&quot;$(Inherit)&quot;;&quot;$(SolutionDir)AWIN\&quot;"
 				PreprocessorDefinitions="WIN32;NDEBUG;_WINDOWS;_USRDLL;_CRT_SECURE_NO_DEPRECATE;IDIO_EXPORTS"
 				StringPooling="true"
 				RuntimeLibrary="2"
@@ -243,8 +231,6 @@
 				ForceConformanceInForLoopScope="false"
 				UsePrecompiledHeader="2"
 				PrecompiledHeaderThrough="stdafx.h"
-				WarningLevel="3"
-				SuppressStartupBanner="true"
 				DebugInformationFormat="3"
 				CompileAs="0"
 			/>
@@ -263,17 +249,12 @@
 				Name="VCLinkerTool"
 				AdditionalOptions="/MACHINE:I386"
 				AdditionalDependencies="common2.lib"
-				OutputFile="\vt5\vt5\Release\comps\idio.dll"
 				LinkIncremental="1"
-				SuppressStartupBanner="true"
-				AdditionalLibraryDirectories="\vt5\common2\Release,\vt5\common\"
+				AdditionalLibraryDirectories=""
 				IgnoreDefaultLibraryNames=""
-				ModuleDefinitionFile=""
 				GenerateDebugInformation="true"
-				ProgramDatabaseFile="\vt5\vt5\release\pdb\idio.pdb"
 				RandomizedBaseAddress="1"
 				DataExecutionPrevention="0"
-				ImportLibrary=".\Release/idio.lib"
 			/>
 			<Tool
 				Name="VCALinkTool"
@@ -328,7 +309,7 @@
 			<Tool
 				Name="VCCLCompilerTool"
 				InlineFunctionExpansion="1"
-				AdditionalIncludeDirectories="\vt5\common2,\vt5\ifaces,\vt5\common,\vt5\awin\"
+				AdditionalIncludeDirectories="&quot;$(Inherit)&quot;;&quot;$(SolutionDir)AWIN\&quot;"
 				PreprocessorDefinitions="_WIN64;_M_X64;_CRT_SECURE_NO_DEPRECATE;NDEBUG;_WINDOWS;_USRDLL;IDIO_EXPORTS"
 				StringPooling="true"
 				RuntimeLibrary="2"
@@ -337,8 +318,6 @@
 				ForceConformanceInForLoopScope="false"
 				UsePrecompiledHeader="2"
 				PrecompiledHeaderThrough="stdafx.h"
-				WarningLevel="3"
-				SuppressStartupBanner="true"
 				DebugInformationFormat="3"
 				CompileAs="0"
 			/>
@@ -357,17 +336,12 @@
 				Name="VCLinkerTool"
 				AdditionalOptions="/MACHINE:I386"
 				AdditionalDependencies="common2.lib"
-				OutputFile="\vt5\vt5\Release\comps\idio.dll"
 				LinkIncremental="1"
-				SuppressStartupBanner="true"
-				AdditionalLibraryDirectories="\vt5\common2\Release,\vt5\common\"
+				AdditionalLibraryDirectories=""
 				IgnoreDefaultLibraryNames=""
-				ModuleDefinitionFile=""
 				GenerateDebugInformation="true"
-				ProgramDatabaseFile="\vt5\vt5\release\pdb\idio.pdb"
 				RandomizedBaseAddress="1"
 				DataExecutionPrevention="0"
-				ImportLibrary=".\Release/idio.lib"
 				TargetMachine="17"
 			/>
 			<Tool
@@ -503,7 +477,7 @@
 	<Globals>
 		<Global
 			Name="DevPartner_IsInstrumented"
-			Value="1"
+			Value="0"
 		/>
 	</Globals>
 </VisualStudioProject>
