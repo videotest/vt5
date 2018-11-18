@@ -79,7 +79,7 @@
 				OutputFile="$(SolutionDir)vt5/$(PlatformName)/$(ConfigurationName)/$(ProjectName).dll"
 				LinkIncremental="1"
 				AdditionalLibraryDirectories=""
-				ModuleDefinitionFile=""
+				ModuleDefinitionFile=" "
 				GenerateDebugInformation="true"
 				RandomizedBaseAddress="1"
 				DataExecutionPrevention="0"
@@ -166,7 +166,7 @@
 				OutputFile="$(SolutionDir)vt5/$(PlatformName)/$(ConfigurationName)/$(ProjectName).dll"
 				LinkIncremental="1"
 				AdditionalLibraryDirectories=""
-				ModuleDefinitionFile=""
+				ModuleDefinitionFile=" "
 				GenerateDebugInformation="true"
 				RandomizedBaseAddress="1"
 				DataExecutionPrevention="0"
@@ -255,7 +255,7 @@
 				OutputFile="$(SolutionDir)vt5/$(PlatformName)/$(ConfigurationName)/$(ProjectName).dll"
 				LinkIncremental="2"
 				AdditionalLibraryDirectories=""
-				ModuleDefinitionFile=""
+				ModuleDefinitionFile=" "
 				GenerateDebugInformation="true"
 				RandomizedBaseAddress="1"
 				DataExecutionPrevention="0"
@@ -340,6 +340,7 @@
 			<Tool
 				Name="VCLinkerTool"
 				OutputFile="$(SolutionDir)vt5/$(PlatformName)/$(ConfigurationName)/$(ProjectName).dll"
+				ModuleDefinitionFile=" "
 			/>
 			<Tool
 				Name="VCALinkTool"
