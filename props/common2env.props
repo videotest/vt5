@@ -22,6 +22,7 @@
       <AdditionalLibraryDirectories>$(SolutionDir)lib\$(Platform)\$(Configuration)</AdditionalLibraryDirectories>
       <ProgramDatabaseFile>$(TargetDir)..\pdb\$(TargetName).pdb</ProgramDatabaseFile>
       <ModuleDefinitionFile>$(ProjectName).def</ModuleDefinitionFile>
+      <ImportLibrary>$(SolutionDir)lib\$(Platform)\$(Configuration)\$(ProjectName).lib</ImportLibrary>
     </Link>
   </ItemDefinitionGroup>
 </Project>
