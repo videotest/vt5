@@ -78,7 +78,7 @@ App::~App()
 //	OutputDebugString( "\n" );
 
 
-	delete m_pszModuleFileName;
+	delete[] m_pszModuleFileName;
 }
 
 const char *App::module_filename()

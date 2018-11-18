@@ -299,6 +299,9 @@ EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "magick", "thirdparty\ImageMagick-4.2.9\magick\magick.vcxproj", "{48868F4F-7FDD-407B-9568-D9E1D6CAC5D1}"
 EndProject
 Global
+	GlobalSection(DPCodeReviewSolutionGUID) = preSolution
+		DPCodeReviewSolutionGUID = {00000000-0000-0000-0000-000000000000}
+	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Win32 = Debug|Win32
 		Debug|x64 = Debug|x64
@@ -1010,6 +1013,7 @@ Global
 		{5D9301CB-9B75-4CCF-A488-2290A1DF286B}.Release|x64.Build.0 = Release|x64
 		{D03988CD-1C2C-4350-B474-86CE88455558}.Debug|Win32.ActiveCfg = Debug|Win32
 		{D03988CD-1C2C-4350-B474-86CE88455558}.Debug|x64.ActiveCfg = Debug|x64
+		{D03988CD-1C2C-4350-B474-86CE88455558}.Debug|x64.Build.0 = Debug|x64
 		{D03988CD-1C2C-4350-B474-86CE88455558}.Release|Win32.ActiveCfg = Release|Win32
 		{D03988CD-1C2C-4350-B474-86CE88455558}.Release|x64.ActiveCfg = Release|x64
 		{D03988CD-1C2C-4350-B474-86CE88455558}.Release|x64.Build.0 = Release|x64
@@ -1070,6 +1074,7 @@ Global
 		{426DBB54-9BCA-40E2-8E63-EE765BA89479}.Release|x64.ActiveCfg = Release|x64
 		{AEFAC442-10B6-4DFB-87EF-999A053E1159}.Debug|Win32.ActiveCfg = Debug|Win32
 		{AEFAC442-10B6-4DFB-87EF-999A053E1159}.Debug|x64.ActiveCfg = Debug|x64
+		{AEFAC442-10B6-4DFB-87EF-999A053E1159}.Debug|x64.Build.0 = Debug|x64
 		{AEFAC442-10B6-4DFB-87EF-999A053E1159}.Release|Win32.ActiveCfg = Release|Win32
 		{AEFAC442-10B6-4DFB-87EF-999A053E1159}.Release|x64.ActiveCfg = Release|x64
 		{AEFAC442-10B6-4DFB-87EF-999A053E1159}.Release|x64.Build.0 = Release|x64
@@ -1185,6 +1190,7 @@ Global
 		{65FC2665-3DFE-4C97-BC0B-17F6CD295E8C}.Release|x64.ActiveCfg = Release|x64
 		{F0CA4019-C8B1-4AA4-801E-3262E75D8C09}.Debug|Win32.ActiveCfg = Debug|Win32
 		{F0CA4019-C8B1-4AA4-801E-3262E75D8C09}.Debug|x64.ActiveCfg = Debug|x64
+		{F0CA4019-C8B1-4AA4-801E-3262E75D8C09}.Debug|x64.Build.0 = Debug|x64
 		{F0CA4019-C8B1-4AA4-801E-3262E75D8C09}.Release|Win32.ActiveCfg = Release|Win32
 		{F0CA4019-C8B1-4AA4-801E-3262E75D8C09}.Release|x64.ActiveCfg = Release|x64
 		{7AF33065-4C86-4C85-8E9C-FD19327CD38C}.Debug|Win32.ActiveCfg = Debug|Win32
@@ -1197,6 +1203,7 @@ Global
 		{CFF9863E-CA58-4DCC-AD8F-FBF88DC2157B}.Debug|Win32.ActiveCfg = Debug|Win32
 		{CFF9863E-CA58-4DCC-AD8F-FBF88DC2157B}.Debug|Win32.Build.0 = Debug|Win32
 		{CFF9863E-CA58-4DCC-AD8F-FBF88DC2157B}.Debug|x64.ActiveCfg = Debug|x64
+		{CFF9863E-CA58-4DCC-AD8F-FBF88DC2157B}.Debug|x64.Build.0 = Debug|x64
 		{CFF9863E-CA58-4DCC-AD8F-FBF88DC2157B}.Release|Win32.ActiveCfg = Release|Win32
 		{CFF9863E-CA58-4DCC-AD8F-FBF88DC2157B}.Release|x64.ActiveCfg = Release|x64
 		{7AF94A17-F292-4652-904B-1CA0E38749D5}.Debug|Win32.ActiveCfg = Debug|Win32
@@ -1340,6 +1347,7 @@ Global
 		{7743DB9B-2A9C-4C1E-9E40-BBB743266E93}.Debug|Win32.ActiveCfg = Debug|Win32
 		{7743DB9B-2A9C-4C1E-9E40-BBB743266E93}.Debug|Win32.Build.0 = Debug|Win32
 		{7743DB9B-2A9C-4C1E-9E40-BBB743266E93}.Debug|x64.ActiveCfg = Debug|x64
+		{7743DB9B-2A9C-4C1E-9E40-BBB743266E93}.Debug|x64.Build.0 = Debug|x64
 		{7743DB9B-2A9C-4C1E-9E40-BBB743266E93}.Release|Win32.ActiveCfg = Release|Win32
 		{7743DB9B-2A9C-4C1E-9E40-BBB743266E93}.Release|Win32.Build.0 = Release|Win32
 		{7743DB9B-2A9C-4C1E-9E40-BBB743266E93}.Release|x64.ActiveCfg = Release|x64
@@ -1363,8 +1371,5 @@ Global
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		DPBuild = 5
-	EndGlobalSection
-	GlobalSection(DPCodeReviewSolutionGUID) = preSolution
-		DPCodeReviewSolutionGUID = {00000000-0000-0000-0000-000000000000}
 	EndGlobalSection
 EndGlobal
