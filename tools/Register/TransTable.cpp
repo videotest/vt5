@@ -500,17 +500,6 @@ bool CTranslateTable::SaveText(LPCTSTR szFile)
 			GuardSetErrorCode(guardDecryptFile);
 //			return false;
 		}
-		BYTE* pBuffer2=new BYTE[dwSize];
-		DWORD dwImito2 =0;
-		memcpy(pBuffer2, pBuffer, dwSize);
-		if (!m_CryptEngine.Crypt(pBuffer2, dwSize, dwImito2))
-		{
-			if (pBuffer)
-				delete [] pBuffer, pBuffer = 0;
-			GuardSetErrorCode(guardDecryptFile);
-//			return false;
-		}
-		delete []pBuffer2;
 		// now we have buffer that contains crypted contents of tarnslation_table
 		// we need generate index
 		srand(m_dwImito); // set seed dependent from imito
@@ -531,10 +520,9 @@ bool CTranslateTable::SaveText(LPCTSTR szFile)
 		pfnGetAppName(0, &lNameSize);
 
 		{
-			CString strAppName;
+			CString strAppName(DEF_APP_NAME);
 			if (lNameSize)
 			{
-				CString strAppName(DEF_APP_NAME);
 				pfnGetAppName(strAppName.GetBuffer(lNameSize + 1), &lNameSize);
 				strAppName.ReleaseBuffer();
 				if (strAppName.GetLength() > lNameSize)
@@ -603,11 +591,11 @@ GuidKey s2g(LPCSTR s)
 
 bool CTranslateTable::LoadText(LPCTSTR szFile)
 {
-	if (lstrlen(szFile) && lstrcmp(m_strFileName, szFile))
-		m_strFileName = szFile;
+	//if (lstrlen(szFile) && lstrcmp(m_strFileName, szFile))
+	//	m_strFileName = szFile;
 
-	if (m_strFileName.IsEmpty() || m_GuidKey == INVALID_KEY)
-		return false;
+	//if (m_strFileName.IsEmpty() || m_GuidKey == INVALID_KEY)
+	//	return false;
 
 	// free old tables
 	Free();
@@ -624,11 +612,11 @@ bool CTranslateTable::LoadText(LPCTSTR szFile)
 	pfnGUARDSETVALUE pfnSetAppName = (pfnGUARDSETVALUE)GetProcAddress(hModule, "GuardSetAppName");
 	pfnGUARDSETVALUE pfnSetComName = (pfnGUARDSETVALUE)GetProcAddress(hModule, "GuardSetCompanyName");
 
-	BYTE * pBuffer = 0;
 	bool bRet = false;
+	int nf;
 	try
 	{
-		FILE* file = fopen( m_strFileName, "r" );
+		FILE* file = fopen( szFile, "r" );
 		if(!file)
 			return bRet;
 		// read signature
@@ -643,15 +631,17 @@ bool CTranslateTable::LoadText(LPCTSTR szFile)
 		}
 		// read size of app_name string
 		{
-			char strAppName[81]={0};
-			int lNameSize=fscanf(file, "APP_NAME ");
-			char *str=fgets(strAppName, 80, file);
-			if(strlen(strAppName)==0)
-			{
-				strcpy(strAppName,DEF_APP_NAME);
-			}
-			if( pfnSetAppName )
-				pfnSetAppName( strAppName );			
+			LONG lstrAppName = 81;
+			char szAppName[81];
+			CString strAppName;
+			fgets(szAppName,lstrAppName,file);
+			nf=sscanf(szAppName,"APP_NAME%s\n", strAppName.GetBuffer(lstrAppName));
+			strAppName.ReleaseBuffer();
+			strAppName.Trim();
+			if(strAppName.IsEmpty())
+				strAppName=DEF_APP_NAME;
+
+			pfnSetAppName( strAppName );			
 		}
 
 		// Read NSK info 
@@ -667,7 +657,7 @@ bool CTranslateTable::LoadText(LPCTSTR szFile)
 		{
 			LONG lSufSize = 80;
 			CString strSuf;
-			int nf=fscanf_s(file, "CompanyName %s", strSuf.GetBuffer(lSufSize), lSufSize);
+			nf=fscanf_s(file, "CompanyName %s\n", strSuf.GetBuffer(lSufSize), lSufSize);
 			strSuf.ReleaseBuffer();
 
 			// read count of app_suffix_string
@@ -679,41 +669,39 @@ bool CTranslateTable::LoadText(LPCTSTR szFile)
 		}
 
 		// read imito
-		fscanf(file, "dwImito %u\n", &m_dwImito);
+		nf=fscanf(file, "dwImito %u\n", &m_dwImito);
 
 		DWORD dwNEntries=0;
-		fscanf(file, "NumberOfEntries %u\n", &dwNEntries);
+		nf=fscanf(file, "NumberOfEntries %u\n", &dwNEntries);
 
-		for (int ie=0; bRet && !feof(file); ++ie)
+		for (int ie=0; ie < dwNEntries; ++ie)
 		{
 			char sgExt[42], sgInn[42], szProgId[81];
 			DWORD dwData=0;
 			size_t nSize=0;
 
-			int nf=fscanf_s(file, "%s %s %u %[^\n ]\n", 
+			bRet=false;
+			nf=fscanf_s(file, "%s %s %u %[^\n ]\n", 
 				sgExt, 41, sgInn, 41, &dwData, szProgId, 80);
 			if(nf==4)
 			{
-				bRet = false;
 				nSize=strlen(szProgId);
 				if(nSize>0)
 				{
 					TTranslateEntry* e = new TTranslateEntry;
 					e->GuidExtern = s2g(sgExt);
 					e->GuidInner = s2g(sgInn);
-					e->szProgID = new TCHAR [strlen(szProgId)];
-					memcpy((void*)e->szProgID, szProgId , nSize);
+					e->szProgID = new TCHAR [nSize+1];
+					memcpy((void*)e->szProgID, szProgId , nSize+1);
 					e->dwData = dwData;
 					if(!Add(e))
 					{
 						delete e;
 						break;
 					}
-					bRet = true;
+					bRet=true;
 				}
 			}
-			if(feof(file))
-				break;
 		}
 		fclose(file);
 	}
@@ -744,18 +732,11 @@ bool CTranslateTable::LoadText(LPCTSTR szFile)
 		case CFileException::endOfFile:
 			GuardSetErrorCode(guardReadGuardFile);
 			break;
-
-//		case CFileException::directoryFull:
-//		case CFileException::diskFull:
-//			GuardSetErrorCode(guardWriteGuardFile);
-//			break;
 		}
 
 		if( bReportErrors )e->ReportError();
 		e->Delete();
 
-		if (pBuffer)
-			delete [] pBuffer, pBuffer = 0;
 		return false;
 	}
 

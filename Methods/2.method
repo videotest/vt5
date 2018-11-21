@@ -42,7 +42,7 @@ SizeButtonCX:2=23
 SizeButtonCY:2=23
 StatCfg:String=Ср. размер
 TimeLogging:Long=0
-UseLanguage:Long=1
+UseLanguage:Long=2
 UseOverloadedIcons:Long=1
 OEM:String=
 WriteUncheckedFiles:Long=1
@@ -53,7 +53,7 @@ RestoreFromBackups:Long=1
 [Logo]
 BackColor:String=(5,74,167)
 EnableIndicator:Long=1
-EnableLogo:Long=1
+EnableLogo:Long=0
 FileName:String=apps\MasterLogo.desktop
 HighColor:String=(199,213,245)
 IndicatorHeight:Long=7

@@ -736,7 +736,7 @@ Task:<filename>\t-Specify the file with list of dlls to register" );
 		char	sz[10] = "en";
 		::GetPrivateProfileString( "General", "Language:String", sz, sz, 10, szIniFileName );		
 		
-		if( ::GetPrivateProfileInt( "General", "UseLanguage:Long", 1, szIniFileName ) )
+		if( ::GetPrivateProfileInt( "General", "UseLanguage:Long", 2, szIniFileName ) )
 		{		
 			if( !stricmp( sz, "ru" ) )langid = MAKELANGID(LANG_RUSSIAN, SUBLANG_DEFAULT);
 			else if( !stricmp( sz, "en" ) )langid = MAKELANGID(LANG_ENGLISH, SUBLANG_ENGLISH_US);
@@ -885,7 +885,7 @@ Task:<filename>\t-Specify the file with list of dlls to register" );
 	}
 	m_pTable->SetKey(GuidKey(m_innerclsid), 0);
 	m_pTable->Load(strFilePath);
-	m_pTable->LoadText("shell.grd.txt");
+
 
 	// set our functions instead standard
 

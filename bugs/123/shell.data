@@ -40,7 +40,7 @@ SaveStateOnExit:2=1
 SizeButtonCX:2=23
 SizeButtonCY:2=23
 TimeLogging:Long=0
-UseLanguage:Long=1
+UseLanguage:Long=2
 UseOverloadedIcons:Long=1
 ForceOpenFiles:Long=0
 WriteUncheckedFiles:Long=0
@@ -51,7 +51,7 @@ DeleteFilterArgs:2=1
 [Logo]
 BackColor:String=(5,74,167)
 EnableIndicator:Long=1
-EnableLogo:Long=1
+EnableLogo:Long=0
 FileName:String=apps\MasterLogo.desktop
 HighColor:String=(199,213,245)
 IndicatorHeight:Long=7

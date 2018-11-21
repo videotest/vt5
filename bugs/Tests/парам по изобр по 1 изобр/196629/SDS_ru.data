@@ -21,7 +21,7 @@ LastUsedBinaryView:String=ImageDoc.BinaryFore
 ContextShowMode:Long=1
 ObjectsShowErrorMsgs:Long=1
 Language:String=ru
-UseLanguage:Long=1
+UseLanguage:Long=2
 EnableDock:Long=1
 LoadStateOnStartup:Long=1
 SaveStateOnExit:Long=1
@@ -42,7 +42,7 @@ ForceOpenFiles:Long=1
 deleteFilterArgs:2=0
 
 [Logo]
-EnableLogo:Long=1
+EnableLogo:Long=0
 FileName:String=LogoVT5-Size.bmp
 EnableIndicator:Long=1
 IndicatorType:Long=0

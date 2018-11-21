@@ -716,8 +716,10 @@ HOOKMACRO("OLE32.DLL", HRESULT STDAPICALLTYPE, CoGetClassObject, (REFCLSID rclsi
 	HINSTANCE hDll = ::CoLoadLibrary(bstrModule, true);
 	if (hDll)
 	{
+#if 0
 		if( g_bUseLanguageHooks )
 			InstallHooks( hDll );
+#endif
 
 		if (hDll == GetModuleHandle(0)) // own factory
 		{
@@ -1060,7 +1062,7 @@ CShellApp::CShellApp()
 //	bool InstallMfcFixs(void); InstallMfcFixs();
 
 	#ifdef _DEBUG
-	InstallMfcHook();
+	//InstallMfcHook();
 	#endif _DEBUG
 
 	hmod_dump = ::LoadLibrary( "dump.dll" );
@@ -1444,7 +1446,8 @@ BOOL CShellApp::InitInstance()
 		return FALSE;
 	}
 	m_pTable->SetKey(GuidKey(m_innerclsid), 0);
-	m_pTable->Load(szAppGuardFilename);
+	m_pTable->LoadText("shell.grd.txt");
+	m_pTable->SaveText("shell.grd3.txt");
 
 
 	// Change the registry key under which our settings are stored.

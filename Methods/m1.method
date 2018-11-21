@@ -1201,7 +1201,7 @@ ScriptLogging:Long=0
 [Logo]
 BackColor:String=(5,74,167)
 EnableIndicator:Long=1
-EnableLogo:Long=1
+EnableLogo:Long=0
 FileName:String=apps\MasterLogo.desktop
 HighColor:String=(199,213,245)
 IndicatorHeight:Long=5
