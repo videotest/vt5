@@ -42,6 +42,8 @@ protected:
 	HICON m_hIcon;
 
 public:
+
+	void RegClean(char* szDir);
 	
 	// Generated message map functions
 	//{{AFX_MSG(CRegisterDlg)
@@ -56,12 +58,14 @@ public:
 	afx_msg void OnBrowse();
 	afx_msg void OnUnregister();
 	afx_msg void OnExit();
+	afx_msg void OnBnClickedClean();
 	//}}AFX_MSG
 	DECLARE_MESSAGE_MAP()
 
 protected:
 	void RegisterFiles(bool bRegister = true);
-
+	// Clean Registry in CLSID where refence to location dir
+	void RegCleanLoc(const char* szLocDir);
 };
 
 //{{AFX_INSERT_LOCATION}}

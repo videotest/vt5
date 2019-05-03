@@ -660,8 +660,9 @@ void CCommandManager::Init()
 
 			if( pActionInfo->Init() )
 				AddActionInfo( pActionInfo );			
-			else
+			else{
 				delete pActionInfo;
+			}
 
 			punk->Release();
 		}
@@ -3913,8 +3914,9 @@ CActionInfoWrp::CActionInfoWrp( IUnknown *punk )
 }
 CActionInfoWrp::~CActionInfoWrp()
 {
-	ASSERT( m_pActionInfo );
-	m_pActionInfo->Release();
+	//ASSERT( m_pActionInfo );
+	if(m_pActionInfo)
+		m_pActionInfo->Release();
 }
 
 	//load information from action

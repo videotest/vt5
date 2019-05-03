@@ -222,7 +222,7 @@ bool CMenuRegistrator::UnRegisterMenu( const char* szViewName, const char* szObj
 
 	if( ::RegDeleteValue( m_hKey, (LPCTSTR)bstrKeyName ) != ERROR_SUCCESS )
 	{
-		__assert__( FALSE );
+		__assert__(!"No KeyName");
 		return false;
 	}
 

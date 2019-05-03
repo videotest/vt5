@@ -7,6 +7,7 @@
 #include "MfcFix.h"
 #include "MfcOleFix.h"
 
+#if 1
 #define GetInterfacePtr(pTarget, pEntry) \
 	((LPUNKNOWN)((BYTE*)pTarget + pEntry->nOffset))
 
@@ -119,6 +120,7 @@ HOOK_METHOD(MFCXXD_DLL,GetInterface_CCmdTarget_Ordinal,LPUNKNOWN,CCmdTarget,GetI
 	// interface ID not found, fail the call
 	return NULL;
 }
+#endif
 
 HOOK_METHOD(MFCXXD_DLL,InvokeHelperV_COleDispatchDriver_Ordinal,void,COleDispatchDriver,InvokeHelperV,
 	(DISPID dwDispID, WORD wFlags,

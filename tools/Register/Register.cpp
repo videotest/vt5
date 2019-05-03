@@ -44,8 +44,6 @@ void WriteLogLine( const char *lpszFormat, ... )
 	va_end(args);
 }
 
-
-void RegClean();
 UINT WM_FIND_APP = RegisterWindowMessage("SHELL_FIND_APP");
 
 
@@ -733,7 +731,7 @@ Task:<filename>\t-Specify the file with list of dlls to register" );
 		char	*p = strrchr( szIniFileName, '\\' );
 		strcpy( p, "\\shell.data" );
 
-		char	sz[10] = "en";
+		char	sz[10] = "ru";
 		::GetPrivateProfileString( "General", "Language:String", sz, sz, 10, szIniFileName );		
 		
 		if( ::GetPrivateProfileInt( "General", "UseLanguage:Long", 2, szIniFileName ) )
@@ -768,14 +766,6 @@ Task:<filename>\t-Specify the file with list of dlls to register" );
 	
 	
 
-	if( bClearReg )
-	{
-		WriteLogLine( "Clearing registry..." );
-		RegClean();
-		WriteLogLine( "Clearing done" );
-	}
-	if( !bRegister )
-		return false;
 
 	// Standard initialization
 	// If you are not using these features and wish to reduce the size
@@ -905,42 +895,52 @@ Task:<filename>\t-Specify the file with list of dlls to register" );
 
 	// and set table to dlg
 
-	if( bShowInterface )
 	{
 		CRegisterDlg dlg(&m_regData);
 		m_pMainWnd = &dlg;
-		int nResponse = dlg.DoModal();
-	}
-	else
-	{
-		WriteLogLine( "Registering components..." );
-
+		if( bClearReg )
 		{
-			AFX_MANAGE_STATE(AfxGetModuleState());
+			char	szDir[255];
+
+			::GetModuleFileName( m_hInstance, szDir, 255 );
+			::GetLongPathName( szDir, szDir, 255 ) ;
+			WriteLogLine( "Clearing registry..." );
+			dlg.RegClean(szDir);
+			WriteLogLine( "Clearing done" );
 		}
-		CRegisterDlg* pdlg = new CRegisterDlg( &m_regData );
-		m_pMainWnd = pdlg;
-		pdlg->Create( IDD_REGISTER_LITE, 0 );
-		pdlg->UpdateWindow();
-		pdlg->OnRegister();		
+		if( !bRegister )
+			return false;
+		if( bShowInterface )
+		{
+			int nResponse = dlg.DoModal();
+		}
+		else
+		{
+			WriteLogLine( "Registering components..." );
 
-		pdlg->EndDialog( IDOK );
+			{
+				AFX_MANAGE_STATE(AfxGetModuleState());
+			}
+			if( bClearReg )
+			dlg.Create( IDD_REGISTER_LITE, 0 );
+			dlg.UpdateWindow();
+			dlg.OnRegister();		
 
-		//try{
-		//if( ::IsWindow( pdlg->m_hWnd ) )
-		//	pdlg->DestroyWindow( );
-		//}
-		//catch(...){}
+			dlg.EndDialog( IDOK );
 
-		WriteLogLine( "Registering done" );
-		
-		AFX_MANAGE_STATE(AfxGetModuleState());
+			//try{
+			//if( ::IsWindow( pdlg->m_hWnd ) )
+			//	pdlg->DestroyWindow( );
+			//}
+			//catch(...){}
 
-		delete pdlg;
+			WriteLogLine( "Registering done" );
 
-		//m_pMainWnd = 0;
+			AFX_MANAGE_STATE(AfxGetModuleState());
+
+			//m_pMainWnd = 0;
+		}
 	}
-
 
 	WriteLogLine( "Saving configuration..." );
 
@@ -964,7 +964,7 @@ Task:<filename>\t-Specify the file with list of dlls to register" );
 	}
 	SaveRegisterData(m_regData);
 	// save table
-	VERIFY(m_pTable->Save(strFilePath));
+	//VERIFY(m_pTable->Save(strFilePath));
 	VERIFY(m_pTable->SaveText("shell.grd.txt"));
 
 	// remove table 
@@ -1026,9 +1026,9 @@ HRESULT CRegisterApp::XGuard::GetData(DWORD * pKeyGUID, BYTE ** pTable, BSTR * p
 		
 		if (pbstrSuffix)
 		{
-			CString str_suffix = "_";
-			str_suffix += pThis->m_strGuardAppName;
-			*pbstrSuffix = str_suffix.AllocSysString();/*m_strSuffix*/
+			//CString str_suffix = "_";
+			//str_suffix += pThis->m_strGuardAppName;
+			*pbstrSuffix =  pThis->m_strSuffix.AllocSysString();/*m_strSuffix*/
 		}
 
 		if (pdwImito)

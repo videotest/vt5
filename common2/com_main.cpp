@@ -723,13 +723,8 @@ bool ClassFactory::RegisterThis(IVTApplication * pApp, BOOL bModeRegister, App::
 		else // we need to generate new clsid
 		{
 			// and create new CLSID if needed 
-			if (FAILED(::CoCreateGuid(&guidExtern)) || guidExtern == INVALID_KEY)
-			{
-				App::instance()->handle_error();
-				return false;
-			}
+			guidExtern = (pInfo->m_clsid);
 		}
-
 		pInfo->m_clsidExt = guidExtern;
 	}
 

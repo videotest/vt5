@@ -228,7 +228,7 @@ bool CAdvancedBitmapProvider::CatchActionInfo( IUnknown *punkActionInfo )
     if( S_OK != sptr_ai3->SetBitmapHelper( GetControllingUnknown() ) )
 		return false;
     
-	// store module and resource indetifiers
+	// store module and resource identifiers
 	sptr_ai->GetRuntimeInformaton( &pinfo->m_dwDllCode, &pinfo->m_dwResCmd );
 	return true;
 }

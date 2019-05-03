@@ -1648,6 +1648,17 @@ void CMainFrame::OnClose()
 	if( m_pAM )
 		m_pAM->Release();	m_pAM = 0;
 
+	//delete plug-in windows
+	//for(POSITION pos = GetFirstDockBarPos(); pos; )
+	//{
+	//	CControlBar	*pbar = GetNextDockBar( pos );
+	//	if(pbar && pbar->IsKindOf( RUNTIME_CLASS( CShellDockBar ) ) )
+	//	{
+	//		delete pbar;
+	//		pbar = 0;
+	//	}
+	//}
+
 	theApp.FreeComponents();
 
 	if( !b )

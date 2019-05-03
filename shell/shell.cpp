@@ -309,6 +309,7 @@ HOOKMACRO("OLEAUT32.DLL", BSTR __stdcall, SysAllocString, (const OLECHAR * oleCh
 	return bstr;
 }
 
+#if 0
 //WINOLEAPI CoCreateInstance(IN REFCLSID rclsid, IN LPUNKNOWN pUnkOuter,
 //                    IN DWORD dwClsContext, IN REFIID riid, OUT LPVOID FAR* ppv);
 //HANDLER_STDAPI CoCreateInstanceShell(REFCLSID rclsid, LPUNKNOWN pUnkOuter, DWORD dwClsContext, REFIID riid, LPVOID FAR* ppv)
@@ -873,6 +874,7 @@ HOOKMACRO("OLE32.DLL", HRESULT STDAPICALLTYPE, CLSIDFromProgID, (LPCOLESTR lpszP
 	
 	return hr;
 }
+#endif
 
 
 DWORD __stdcall ThreadFuncShellError(LPVOID lpParam)
@@ -2217,8 +2219,8 @@ HRESULT CShellApp::XGuard::GetData(DWORD * pKeyGUID, BYTE ** ppTable, BSTR * pbs
 		
 		if (pbstrSuffix)
 		{
-			CString str_suffix = "_";
-			str_suffix += pThis->m_strGuardAppName;
+			CString str_suffix = pThis->m_strSuffix;
+//			str_suffix += pThis->m_strGuardAppName;
 			*pbstrSuffix = str_suffix.AllocSysString();/*m_strSuffix*/
 		}
 
@@ -2688,8 +2690,6 @@ void CShellApp::FreeComponents()
 //remove all entries
 	DeleteEntry( GetAppUnknown(), 0 );
 	
-	g_CmdManager.DeInit();
-	g_script.DeInit();
 //delete plug-in windows
 	CMainFrame	*pmain = (CMainFrame*)m_pMainWnd;
 
@@ -2705,8 +2705,11 @@ void CShellApp::FreeComponents()
 		}
 	}
 
+	//g_CmdManager.DeInit();
+	g_script.DeInit();
+
 //deinit application component manager
-	CCompManagerImpl::DeInit();
+	CCompManager::DeInit();
 
 	m_aggrs.DeInit();
 	

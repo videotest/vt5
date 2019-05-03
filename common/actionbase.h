@@ -237,7 +237,7 @@ protected:
 	int		m_nLocalID;
 
 	// [vanek] : support IActionInfo3 interface - 13.12.2004
-	IUnknownPtr	m_spunkBmpHelper;
+	IUnknown*	m_spunkBmpHelper;
 
 	virtual void Init();
 	virtual CRuntimeClass *GetActionRuntime() = 0;
