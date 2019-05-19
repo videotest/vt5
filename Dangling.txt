@@ -1,0 +1,120 @@
+Dangling Pointer: Pointer 0x0DAD4560, allocated by global_operator_new, has already been freed.
+
+Current Call Stack - Thread 0 [0x1BB0]
+_list_t2<class _bstr_t * __ptr64,&void __cdecl FreeEmpty	c:\vt5\common2\misc_list.h	44
+_list_t2<class _bstr_t * __ptr64,&void __cdecl FreeEmpty	c:\vt5\common2\misc_list.inl	27
+Init	c:\vt5\comps\docs\oleserver\factorymanager.cpp	121
+CFactoryManager	c:\vt5\comps\docs\oleserver\factorymanager.cpp	17
+CreateObject	c:\vt5\common2\misc_templ.h	10
+CreateInstance	c:\vt5\common2\com_main.cpp	260
+CreateInstance	c:\vt5\common2\com_main.cpp	514
+	F:\Windows\System32\ole32.dll!0x0001235f	
+	F:\Windows\System32\ole32.dll!0x00011697	
+	F:\Windows\System32\ole32.dll!0x00011929	
+	F:\Windows\System32\ole32.dll!0x0001199b	
+	F:\Windows\System32\ole32.dll!0x00036e7f	
+	F:\Windows\System32\ole32.dll!0x00036e14	
+	F:\Windows\System32\ole32.dll!0x00012564	
+	F:\Windows\System32\ole32.dll!0x00011697	
+	F:\Windows\System32\ole32.dll!0x000117a4	
+	F:\Windows\System32\ole32.dll!0x00011697	
+	F:\Windows\System32\ole32.dll!0x0001208d	
+	F:\Windows\System32\ole32.dll!0x00027606	
+@ILT+0(?DestroyWindow@XWnd@CWindowImpl@@UEAAJXZ)	C:\vt5\vt5\x64\Debug\common.dll!0x8045cc4b	
+
+
+Allocation Call Stack - Thread 0 [0x1BB0]
+Init	c:\vt5\comps\docs\oleserver\factorymanager.cpp	71
+CFactoryManager	c:\vt5\comps\docs\oleserver\factorymanager.cpp	17
+CreateObject	c:\vt5\common2\misc_templ.h	10
+CreateInstance	c:\vt5\common2\com_main.cpp	260
+CreateInstance	c:\vt5\common2\com_main.cpp	514
+
+
+Deallocation Call Stack - Thread 0 [0x1BB0]
+`scalar deleting destructor'	C:\vt5\vt5\x64\Debug\comps\OleServer.dll!0x000000a4	
+Init	c:\vt5\comps\docs\oleserver\factorymanager.cpp	118
+CFactoryManager	c:\vt5\comps\docs\oleserver\factorymanager.cpp	17
+CreateObject	c:\vt5\common2\misc_templ.h	10
+CreateInstance	c:\vt5\common2\com_main.cpp	260
+
+Dangling Pointer: Pointer 0x0DAD4560, allocated by global_operator_new, has already been freed.
+
+Current Call Stack - Thread 0 [0x1BB0]
+_list_t2<class _bstr_t * __ptr64,&void __cdecl FreeEmpty	c:\vt5\common2\misc_list.h	44
+_list_t2<class _bstr_t * __ptr64,&void __cdecl FreeEmpty	c:\vt5\common2\misc_list.inl	27
+Init	c:\vt5\comps\docs\oleserver\factorymanager.cpp	121
+CFactoryManager	c:\vt5\comps\docs\oleserver\factorymanager.cpp	17
+CreateObject	c:\vt5\common2\misc_templ.h	10
+CreateInstance	c:\vt5\common2\com_main.cpp	260
+CreateInstance	c:\vt5\common2\com_main.cpp	514
+	F:\Windows\System32\ole32.dll!0x0001235f	
+	F:\Windows\System32\ole32.dll!0x00011697	
+	F:\Windows\System32\ole32.dll!0x00011929	
+	F:\Windows\System32\ole32.dll!0x0001199b	
+	F:\Windows\System32\ole32.dll!0x00036e7f	
+	F:\Windows\System32\ole32.dll!0x00036e14	
+	F:\Windows\System32\ole32.dll!0x00012564	
+	F:\Windows\System32\ole32.dll!0x00011697	
+	F:\Windows\System32\ole32.dll!0x000117a4	
+	F:\Windows\System32\ole32.dll!0x00011697	
+	F:\Windows\System32\ole32.dll!0x0001208d	
+	F:\Windows\System32\ole32.dll!0x00027606	
+@ILT+0(?DestroyWindow@XWnd@CWindowImpl@@UEAAJXZ)	C:\vt5\vt5\x64\Debug\common.dll!0x8045cc4b	
+
+
+Allocation Call Stack - Thread 0 [0x1BB0]
+Init	c:\vt5\comps\docs\oleserver\factorymanager.cpp	71
+CFactoryManager	c:\vt5\comps\docs\oleserver\factorymanager.cpp	17
+CreateObject	c:\vt5\common2\misc_templ.h	10
+CreateInstance	c:\vt5\common2\com_main.cpp	260
+CreateInstance	c:\vt5\common2\com_main.cpp	514
+
+
+Deallocation Call Stack - Thread 0 [0x1BB0]
+`scalar deleting destructor'	C:\vt5\vt5\x64\Debug\comps\OleServer.dll!0x000000a4	
+Init	c:\vt5\comps\docs\oleserver\factorymanager.cpp	118
+CFactoryManager	c:\vt5\comps\docs\oleserver\factorymanager.cpp	17
+CreateObject	c:\vt5\common2\misc_templ.h	10
+CreateInstance	c:\vt5\common2\com_main.cpp	260
+
+----------------------------------------------------
+Dangling Pointer: Pointer 0x0DAD4560, allocated by global_operator_new, has already been freed.
+
+Current Call Stack - Thread 0 [0x1BB0]
+_list_t2<class _bstr_t * __ptr64,&void __cdecl FreeEmpty	c:\vt5\common2\misc_list.h	44
+_list_t2<class _bstr_t * __ptr64,&void __cdecl FreeEmpty	c:\vt5\common2\misc_list.inl	27
+Init	c:\vt5\comps\docs\oleserver\factorymanager.cpp	121
+CFactoryManager	c:\vt5\comps\docs\oleserver\factorymanager.cpp	17
+CreateObject	c:\vt5\common2\misc_templ.h	10
+CreateInstance	c:\vt5\common2\com_main.cpp	260
+CreateInstance	c:\vt5\common2\com_main.cpp	514
+	F:\Windows\System32\ole32.dll!0x0001235f	
+	F:\Windows\System32\ole32.dll!0x00011697	
+	F:\Windows\System32\ole32.dll!0x00011929	
+	F:\Windows\System32\ole32.dll!0x0001199b	
+	F:\Windows\System32\ole32.dll!0x00036e7f	
+	F:\Windows\System32\ole32.dll!0x00036e14	
+	F:\Windows\System32\ole32.dll!0x00012564	
+	F:\Windows\System32\ole32.dll!0x00011697	
+	F:\Windows\System32\ole32.dll!0x000117a4	
+	F:\Windows\System32\ole32.dll!0x00011697	
+	F:\Windows\System32\ole32.dll!0x0001208d	
+	F:\Windows\System32\ole32.dll!0x00027606	
+@ILT+0(?DestroyWindow@XWnd@CWindowImpl@@UEAAJXZ)	C:\vt5\vt5\x64\Debug\common.dll!0x8045cc4b	
+
+
+Allocation Call Stack - Thread 0 [0x1BB0]
+Init	c:\vt5\comps\docs\oleserver\factorymanager.cpp	71
+CFactoryManager	c:\vt5\comps\docs\oleserver\factorymanager.cpp	17
+CreateObject	c:\vt5\common2\misc_templ.h	10
+CreateInstance	c:\vt5\common2\com_main.cpp	260
+CreateInstance	c:\vt5\common2\com_main.cpp	514
+
+
+Deallocation Call Stack - Thread 0 [0x1BB0]
+`scalar deleting destructor'	C:\vt5\vt5\x64\Debug\comps\OleServer.dll!0x000000a4	
+Init	c:\vt5\comps\docs\oleserver\factorymanager.cpp	118
+CFactoryManager	c:\vt5\comps\docs\oleserver\factorymanager.cpp	17
+CreateObject	c:\vt5\common2\misc_templ.h	10
+CreateInstance	c:\vt5\common2\com_main.cpp	260

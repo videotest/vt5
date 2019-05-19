@@ -1,0 +1,728 @@
+ActionName	UserName	GroupName	Help	Type	FileName	ArgIn	ArgOut
+Redo	Повторить	Правка	Повторить последнюю ранее отмененную операцию Повторить					
+Undo	Отменить	Правка	Отменить последнюю выполненную операцию Отменить					
+EnumActions	Список акций...	For Developers	Список акций Список акций					
+RunScript	Командная строка...	Сервис	Run the script Командная строка					
+ShowLayout	Показать расположение элементов оформления	Расположение	Показать расположение элементов оформления Показать расположение элементов оформления					
+AxInsertControl	Вставить элемент оформления	Расположение	Вставить новый  элемент оформления Вставить элемент оформления	 (interactive)		ProgID:string; Views:int=0		
+AxChangeSize	Изменить размер элемента оформления	Расположение	Изменить размер элемента оформления Изменить размер элемента оформления			width:int=-1; height:int=-1		
+AxControlProperties	Свойства	Расположение	Изменить свойства элемента оформления Свойства элемента оформления					
+AxAlignLeft	Выравнивание по левому краю	Расположение	Выравнивание по левому краю Выравнивание по левому краю					
+AxAlignTop	Выравнивание по верхнему краю	Расположение	Выравнивание по верхнему краю Выравнивание по верхнему краю					
+AxAlignRight	Выравнивание по правому краю	Расположение	Выравнивание по правому краю Выравнивание по правому краю					
+AxAlignBottom	Выравнивание по нижнему краю	Расположение	Выравнивание по нижнему краю Выравнивание по нижнему краю					
+AxSpaceAccross	Горизонтальный интервал	Расположение	Выравнивание горизонтального интервала Горизонтальный интервал					
+AxSpaceDown	Вертикальный интервал	Расположение	Выравнивание вертикального интервала Вертикальный интервал					
+AxMakeSameWidth	Выравнивание по ширине	Расположение	Выравнивание по ширине Выравнивание по ширине					
+AxMakeSameHeight	Выравнивание по высоте	Расположение	Выравнивание по высоте Выравнивание по высоте					
+AxMakeSameSize	Выравнивание по размеру	Расположение	Выравнивание по размеру Выравнивание по размеру					
+AxSetControlSize	Установить размер элемента оформления	Расположение	Установить размер элемента оформления Установить размер элемента оформления			left:int=10; top:int=10; right:int=110; bottom:int=110		
+AxAddEventHandlers	Добавить обработчика событий	Расположение	Добавить обработчика событий Добавить обработчика событий					
+AxIncMoveSize	Изменить размер элементов оформления	Расположение	Изменить размер элементов оформления Изменить размер элементов оформления			dx:int=0; dy:int=0; dcx:int=0; dcy:int=0		
+AxShowControlID	Показать идентификаторы справки	Расположение	Показать идентификаторы справки Показать идентификаторы справки					
+FormPressCancel	Form Press Cancel	Layout	Form Press Cancel Form Press Cancel					
+FormPressOK	Form Press OK	Layout	Form Press OK Form Press OK					
+CalcStat	Статистический анализ	Classification	Статистический анализ Статистический анализ					
+ObjectSetClass	Назначить класс	Classification	Назначить класс для выбранного обекта Назначить класс			ClassName:string		
+ClassRename	Переименовать класс	Classification	Переименовать класс Переименовать класс			OldName:string; NewName:string		
+ClassRecolor	Изменить цвет класса	Classification	Изменить цвета класса Изменить цвет класса			ClassName:string; Color:int=0		
+ClassCreate	Создать класс	Classification	Создать новый класс Создать класс			ClassName:string		
+ClassDelete	Удалить класс	Classification	Удалить выбранный класс Удалить класс			ClassName:string		
+ObjectSetClassDirect	Назначить класс для объекта	Classification	Назначить активный класс для выбранного объекта Назначить класс для объекта			ObjectName:string; ClassName:string		
+SetActiveClass	Активизировать класс	Classification	Выбрать класс и активизировать его Активизировать класс			ClassName:string		
+AlignImages	Выравнивание изображений	Internal Actions	Выровнять изображения по совпадающим частям Выравнивание изображений	 (filter)		Image0:Image; Image1:Image; Image2:Image; Image3:Image; Image4:Image; Image5:Image; Image6:Image; Image7:Image; Image8:Image; Image9:Image; Image10:Image; Image11:Image; Image12:Image; Image13:Image; Image14:Image; Image15:Image; Image16:Image; Image17:Image; Image18:Image; Image19:Image; Image20:Image		
+CollectByDisp	Расширенный фокус по Disp	Internal Actions	Создать результирующее изображение по Disp Расширенный фокус по Disp	 (filter)		Image0:Image; Image1:Image; Image2:Image; Image3:Image; Image4:Image; Image5:Image; Image6:Image; Image7:Image; Image8:Image; Image9:Image; Image10:Image; Image11:Image; Image12:Image; Image13:Image; Image14:Image; Image15:Image; Image16:Image; Image17:Image; Image18:Image; Image19:Image; Image20:Image	Focus Result:Image	
+CollectByPoints	Расширенный фокус  по точкам	Internal Actions	Создать результирующее изображение по точкам Расширенный фокус  по точкам	 (filter)		Image0:Image; Image1:Image; Image2:Image; Image3:Image; Image4:Image; Image5:Image; Image6:Image; Image7:Image; Image8:Image; Image9:Image; Image10:Image; Image11:Image; Image12:Image; Image13:Image; Image14:Image; Image15:Image; Image16:Image; Image17:Image; Image18:Image; Image19:Image; Image20:Image	CollectedByPoints:Image	
+CollectByMasks	Расширенный фокус по маскам	Internal Actions	Создать результирующее изображение по маскам Расширенный фокус по маскам	 (filter)		Image0:Image; Image1:Image; Image2:Image; Image3:Image; Image4:Image; Image5:Image; Image6:Image; Image7:Image; Image8:Image; Image9:Image; Image10:Image; Image11:Image; Image12:Image; Image13:Image; Image14:Image; Image15:Image; Image16:Image; Image17:Image; Image18:Image; Image19:Image; Image20:Image	Focus Result:Image	
+CompareImages	Сравнить изображения	Изображение	Поворот: PgDn, PgUp; перемещение: Ctrl+стрелки; изменение размера: Shift+стрелки, выход: Esc Сравнить изображения	 (interactive)				
+FreeTransformation	Свободное преобразование	Изображение	Поворот: PgDn, PgUp; перемещение: Ctrl+стрелки; изменение размера: Shift+стрелки, выход: Esc Свободное преобразование	 (interactive)				
+TransformationByPoints	Совместить точки на изображениях	Изображение	Совместить реперные точки на изображениях. Установите на каждом изображении соответствующие точки. Двойное нажатие - завершение операции Совмещение точек	 (interactive)				
+NormalizeParameters	Нормализация параметров	Классификация	Нормализация параметров Нормализация параметров					
+Scissors	Ножницы	Карио	Разделение хромосом. Рисовать при нажатой левой кнопке мыши, отпустить кнопку - завершение. Separate objects	 (interactive)				
+ImposingDivision	Разделение наложений	Карио	Обведите контур хромосомы при нажатой левой кнопке мыши, по завершении отпустите кнопку Разделение наложений	 (interactive)				
+SendTo	Отправить в...	Сервис	Отправить активный элемент в другой открытый документ Отправить в			SourceDocGuid:string; TargetDocGuid:string; PutToDocument:int=1; DBaseFieldName:string; NewDocument:int=0; SingleObjectName:string		
+DataToExcelAvail	DataToExcelAvail	Правка	DataToExcelAvail DataToExcelAvail					
+ObjectTouch	Make object last in type	Edit	Make object last in type Make object last in type			Object:string		
+ClipboardAvail	Буфер обмена доступен	Правка	Буфер обмена доступен Буфер обмена доступен					
+CreateImageByView	Объединить видимые элементы	Изображение	Объединить элементы из активной части окна документа Объединить видимые элементы			ImageName:string		
+ObjectNew	Новый элемент...	Правка	Создание нового элемента в активном документе Новый элемент			Type:string; Name:string; ActivateObject:int=1		
+ObjectSelect	Выбрать элемент	Правка	Выбор существующего элемента Выбрать элемент			Object:string; ActivateType:int=0		
+ObjectDelete	Удалить элемент(ы)	Правка	Удаление элементов, выбранных в окне Содержание Удалить выбранные элементы			Object:string		
+ObjectRename	Переименовать элемент...	Правка	Переименование элемента Переименовать элемент			OldName:string; NewName:string		
+ObjectProperties	Свойства элемента	Правка	Свойства элемента Свойства элемента			Object:string		
+ObjectLoad	Загрузить элемент	Файл	Загрузить новый элемент Загрузить элемент			Type:string; Path:string; ActivateObject:int=1		
+ObjectSave	Сохранить элемент как...	Файл	Сохранение элемента в отдельном файле Сохранить элемент как			ObjectName:string; Path:string		
+ObjectOrganize	Организовать элементы	Правка	Организовать элементы Организовать элементы					
+ObjectMoveToApp	Переместить элемент в приложение	Правка	Перемещение элемента из документа в приложение Переместить элемент в приложение			ObjectName:string		
+ObjectMoveToDoc	Переместить элемент в документ	Правка	Перемещение элемента из приложения в документ Переместить элемент в документ			ObjectName:string		
+EditPaste	Вставить	Правка	Вставить элемент из буфера обмена Вставить					
+EditCut	Вырезать	Правка	Переместить  элемент в буфер обмена Вырезать			ObjectName:string		
+EditCopy	Копировать	Правка	Копирование элемента в буфер обмена Копировать			ObjectName:string		
+ObjectDrag	ObjectDrag	По умолчанию	ObjectDrag ObjectDrag			xOffset:int=0; yOffset:int=0		
+ObjectDrop	ObjectDrop	По умолчанию	ObjectDrop ObjectDrop			PositionX:int=0; PositionY:int=0; Copy:int=0		
+ObjectDeleteSelection	Удалить активный объект	Правка	Удаление активного объекта Удалить активный объект					
+DataShowContents	Показать сожержание данных...	For Developers	Показать сожержание данных Показать сожержание данных					
+DataUnselect	Снять выделение всех объектов	Internal Actions	Снять выделение всех объектов Снять выделение всех объектов					
+ShowContext	Окно Содержание	Вид	Показать окно Содержание документа Окно Содержание					
+ChooseObject	Выбрать объект...	Правка	Выбрать объект Выбрать объект					
+GridObjectHeight	Высота строки	---	Высота строки Высота строки			ObjectRow:int=-1; Height:int=100		
+CopyAllMeasCell	Копировать все ячейкиl	Измерения	Копировать все ячейки Копировать все ячейки					
+CopySelectedMeasCell	Копировать выбранные ячейкиl	Измерения	Копировать выбранные ячейки Копировать выбранные ячейки					
+AlignGridByImage	Выровнять сетку по изображению	Измерения	Выровнять сетку по изображению Выровнять сетку по изображению					
+RemoveParam	Удалить столбец ручных измерений	Измерения	Удаление выбранных результатов ручных измерений из списка объектов Удалить столбец ручных измерений			ParamKey:int=-1		
+CreateNewParam	Создать новый параметр измерений	Internal Actions	Создать новый параметр для ручных измерений Создать новый параметр измерений			ParamType:string; ParamName:string; Number:int=1		
+ShowClassView	Показать классы	Вид	Показать классы Показать классы					
+ShowMeasView	Таблица измерений	Вид	Показать результаты измерений Таблица измерений					
+ZoomInTable	Увеличить на 10 %	Вид	Увеличить на 10 % Увеличить на 10%					
+ZoomOutTable	Уменьшить на 10 %	Вид	Уменьшить на 10 % Уменьшить на 10 %					
+RemoveMMObjects	Удалить все	Измерения	Удаление всех результатов ручных измерений из активного списка Удалить все			ObjList:string		
+AlignGridByCell	Выравнивание по выделенной ячейке	Вид	Выравнивание размера всех ячеек таблицы по выделенной Выравнивание по выделенной ячейке			CellRow:int=-1; CellCol:int=-1		
+AlignGridDefault	Выравнивание по умолчанию	Вид	Выравнивание размера всех ячеек таблицы по умолчанию Выравнивание по умолчанию					
+GridMoveParam	Переместить колонку	---	Переместить колонку Переместить колонку			ParamKey:int=-1; ParamKeyAfter:int=100		
+GridParamWidth	Ширина колонки	---	Ширина колонки Ширина колонки			ParamKey:int=-1; Width:int=100		
+GridRenameParam	Переименовать параметр	---	Переименовать параметр Переименовать параметр			ParamKey:int=-1; Name:string=NewName		
+NewDBFromTemplate	Новая база из активной...	База данных	Создать новую базу на основе активной Новая база из активной					
+EmptyDBField	Очистить поле	База данных	Удалить данные из поля Очистить поле					
+UpdateRecordsetInfo	UpdateRecordsetInfo	База данных	UpdateRecordsetInfo UpdateRecordsetInfo					
+DeleteRecords	Удалить записи	База данных	Удалить Удалить записи			Question:int=1		
+FieldProperties	Свойства поля...	База данных	Свойства поля Свойства поля					
+RecordInfo	Информация о записи	База данных	Информация о записи Информация о записи					
+RemoveAllSortFields	Отменить все сортировки	База данных	Отменить все сортировки Отменить все сортировки					
+AddSortFieldDesc	Добавить сортировку по убыванию	База данных	Добавить сортировку по убыванию Добавить сортировку по убыванию					
+AddSortFieldAsc	Добавить сортировку по возрастанию	База данных	Добавить сортировку по возрастанию Добавить сортировку по возрастанию					
+AdvanceConnection	Расширенное подключение	База данных	Расширенное подключение Расширенное подключение					
+LoadDatabase	Загрузить новую базу данных	База данных	Загрузить новую базу данных Загрузить новую базу данных					
+TableWizard	Структура базы данных...	База данных	Структура базы данных Структура базы данных					
+MoveFirst	Первая запись	База данных	Первая запись Первая запись					
+MoveLast	Последняя запись	База данных	Последняя запись Последняя запись					
+MoveNext	Следующая запись	База данных	Следующая запись Следующая запись					
+MovePrev	Предыдущая запись	База данных	Предыдущая запись Предыдущая запись					
+DeleteRecord	Удалить запись	База данных	Удалить запись Удалить запись					
+InsertRecord	Добавить запись	База данных	Добавить запись Добавить запись					
+EditRecord	Редактировать запись	База данных	Редактировать запись Редактировать запись					
+Update	Обновить	База данных	Обновить базу данных Обновить					
+Cancel	Отмена	База данных	Отмена Отмена					
+ChoiceQuery	Выбрать запрос	База данных	Выбрать запрос Выбрать запрос					
+ShowBlankDesign	Конструктор бланка	База данных	Конструктор бланка Конструктор бланка					
+ShowBlankPreview	Бланк	База данных	Показать записи в виде бланков Показать бланк					
+ShowGallery	Галерея	База данных	Показать записи в виде галереи Показать галерею					
+BackUpDatabase	Создать копию базы данных	База данных	Создать копию базы данных Создать копию базы данных			TargetFileName:string		
+RestoreDatabase	Восстановить базу данных	База данных	Восстановить базу данных Восстановить базу данных			SourceFileName:string		
+DBFindText	Поиск текста...	База данных	Поиск текста Поиск текста					
+DBFindTextNext	Найти далее	База данных	Найти далее Найти далее					
+ShowDBGrid	Таблица	База данных	Показать запрос в виде таблицы Показать таблицу					
+Requery	Перезапустить запрос	База данных	Перезапустить запрос Перезапустить запрос					
+DBaseInfo	Свойства базы данных...	База данных	Свойства базы данных Свойства базы данных					
+GenerateReportByQuery	Создать отчет по запросу	База данных	Создать отчет по запросу Создать отчет по запросу			Landscape:int=0; Name:string		
+ExecuteSQL	Выполнить запрос на SQL	База данных	Выполнить запрос на SQL Выполнить запрос на SQL					
+ChooseFilter	Выбрать фильтр	База данных	Выбрать фильтр Выбрать фильтр			FilterName:string		
+CreateFilter	Добавить условие фильтра	База данных	Добавить новое условие фильтра по выбранному полю Добавить условие фильтра					
+ApplyFilter	Применить фильтр	База данных	Применить фильтр, повторное нажатие - отменить фильтр Применить фильтр					
+SaveFilter	Сохранить фильтр	База данных	Сохранить фильтр Сохранить фильтр					
+FilterOrganizer	Редактор фильтров...	База данных	Редактор фильтров Редактор фильтров					
+OpenQuery	Открыть запрос	База данных	Открыть запрос Открыть запрос					
+CloseQuery	Закрыть запрос	База данных	Закрыть запрос Закрыть запрос					
+GalleryOptions	Установки галереи...	База данных	Установки галереи Установки галереи					
+QueryWizard	Свойства запроса...	База данных	Свойства запроса Свойства запроса					
+ConvertVT4Dbase	Конвертировать базу данных VT4	База данных	Конвертировать базу данных VT4 в формат, используемый в VT5 Конвертировать базу данных VT4					
+EditMarker	Произвольный маркер	Измерения	Калибровочный маркер произвольной длины Произвольный маркер	 (interactive)		X:int=0; Y:int=0; Length:double=0; Precision:int=1		
+EditArrow	Стрелка	Редактор	Нанести стрелку на изображение: левая кнопка мыши Стрелка	 (interactive)				
+EditCircleArrow	Set Circle Arrow	Редактор	Set circle arrow to the image Circle arrow	 (interactive)				
+EditLine	Прямая линия	Редактор	Рисовать: левая или правая кнопка мыши. Shift-доп. возможности. Ctrl-Пипетка. Прямая линия	 (interactive)		X1:int=0; Y1:int=0; X2:int=0; Y2:int=0		
+EditFreeLine	Произвольная линия	Редактор	Рисовать: левая или правая кнопка мыши. Ctrl-Пипетка. Произвольная линия	 (interactive)				
+EditSplainLine	Линия сплайном	Редактор	Рисовать: левая или правая кнопка мыши. Ctrl-Пипетка. Завершение-двойное нажатие левой кнопки. Линия сплайном	 (interactive)				
+EditCircle	Окружность	Редактор	Рисовать: левая или правая кнопка мыши. Ctrl-Пипетка. Окружность	 (interactive)		X:int=0; Y:int=0; D:int=0		
+EditRect	Прямоугольник	Редактор	Рисовать: левая или правая кнопка мыши. Shift-доп. возможности. Ctrl-Пипетка. Прямоугольник	 (interactive)		Left:int=0; Top:int=0; Right:int=0; Bottom:int=0		
+AutoBack	Auto Background	Internal Actions	Auto background Auto background					
+PickColor	Пипетка	Редактор	Выбор цвета на изображении: правая или левая кнопки мыши Пипетка	 (interactive)		X:int=-1; Y:int=-1; SetBack:int=-1; SaveResult:int=1		
+FloodFill	Заливка	Редактор	Заливка однородным цветом: правая или левая кнопка мыши. Ctrl-Пипетка. Заливка	 (interactive)		SetBack:int=-1		
+Dodge	Осветление	Преобразования	Осветлить участки изображения Осветление	 (interactive)				
+Burn	Затемнение	Преобразования	Затемнить участки изображения Затемнение	 (interactive)				
+BinEditLine	Прямая линия на бинарном изображении	Редактор бинарного	Нанести прямую линию на бинарное изображение. Shift - дополнительные возможности. Прямая линия на бинарном изображении	 (interactive)		X1:int=0; Y1:int=0; X2:int=0; Y2:int=0		
+BinEditFreeLine	Произвольная линия на бинарном изображении	Редактор бинарного	Нанести произвольную линию на бинарное изображение Произвольная линия на бинарном изображении	 (interactive)				
+BinEditSplainLine	Линия сплайном на бинарном изображении	Редактор бинарного	Линия сплайном на бинарном изображении. Завершение - двойное нажатие левой кнопки мыши Линия сплайном на бинарном изображении	 (interactive)				
+EditPolyline	Ломаная линия	Редактор	Рисовать: левая или правая кнопка мыши. Ctrl-Пипетка. Завершение-двойное нажатие левой кнопки. Ломаная линия	 (interactive)				
+BinEditPolyline	Линия полигоном на бинарном изображении	Редактор бинарного	Линия полигоном на бинарном изображении. Завершение - двойное нажатие левой кнопки мыши Линия полигоном на бинарном изображении	 (interactive)				
+Comment	Комментарий	Редактор	Нанести комментарий: левая кнопка мыши. Ctrl+Enter: переход строки. Enter: завершить. Комментарий	 (interactive)		X:int=-1; Y:int=-1; xArrow:int=-1; yArrow:int=-1; nCommentID:int=-1; Text:string		
+Even	Выравнивание фона	Internal Actions	Выравнивание фона Выравнивание фона	 (filter)		MaskSize:int=16; Contrast:bool=0; EvenColor:bool=0; Restriction:bool=0; Source:Image	Even:Image	
+FourierMode	Режим FFT	FFT	Начало и завершение режима быстрого преобразования Фурье Режим FFT					
+Fourier	Прямое преобразование Фурье	FFT	Провести прямое преобразование Фурье на активном изображении Прямое преобразование Фурье	 (filter)		Source:Image	FFT Image:Image	
+FourierBack	Обратное преобразование Фурье	FFT	Провести обратное преобразование Фурье на активном изображении Обратное преобразование Фурье	 (filter)		FFT:Image	RestoredFFT:Image	
+FourierRemove	Удалить области спектра	FFT	Удалить области со спектра Фурье Удалить области спектра	 (filter)		Inside:bool=1; SelectedArea:Image	ResImage:Image	
+FourierHilight	Выделить области спектра	FFT	Выделить области со спектра  Фурье Выделить области спектра	 (filter)		Inside:bool=1; SelectedArea:Image	ResImage:Image	
+GrayThresholdingBinAutoMute	Выделить маски на полутоновом	Фильтры	Выделить маски на полутоновом Выделить маски на полутоновом			LightOnDark:bool=0; PaneNum:int=-1; Image:Image		
+GrayThresholdingBinAuto	Выделить маски на полутоновом	Фильтры	Выделить маски на полутоновом Выделить маски на полутоновом	 (filter)		LightOnDark:bool=0; PaneNum:int=-1; Image:Image	ThresholdingGrayAuto:Binary	
+GrayThresholding	Выделение масок на полутоновом	Фильтры	Выделение масок на полутоновом Выделение масок на полутоновом	 (filter)		Low:int=96; High:int=192; Image:Image; PaneNum:int=-1	ObjectList:Object List	
+AddRemoveColor	Добавить/удалить цвет	Internal Actions	Добавить/удалить цвет Добавить/удалить цвет	 (interactive)		X:int=-1; Y:int=-1		
+AddRemoveColorInterval	Добавить/удалить цветовой интервал	Internal Actions	Добавить или удалить цветовой интервал Добавить/удалить цветовой интервал	 (interactive)				
+ExtractPhase	Выделить фазу	Internal Actions	Выделить фазу Выделить фазу	 (filter)		Class:int=-1; Image:Image	ObjectList:Object List	
+GrayThresholdingBin	Выделить маски на полутоновом	Фильтры	Выделить маски на полутоновом Выделить маски на полутоновом	 (filter)		Low:int=96; High:int=192; Image:Image; PaneNum:int=-1	ThresholdingGray:Binary	
+MeasurePhasesLight	Измерить фазы по маскам	Фильтры	Измерить фазы по маскам Измерить фазы по маскам	 (filter)		BaseImage:Image; BinImage:Binary; Calc:int=1; Phase:int=-1; CopyPhases:int=1; ClassifierName:string	MeasureBin:Object List	
+MeasurePhases	Измерить фазы по маскам	Фильтры	Измерить фазы по маскам Измерить фазы по маскам	 (filter)		BaseImage:Image; BinImage:Binary; Calc:int=1; Phase:int=-1; CopyPhases:int=0; ClassifierName:string	MeasureBin:Object List	
+MeasureBin	Измерить маски	Фильтры	Измерить маски Измерить маски	 (filter)		BaseImage:Image; BinImage:Binary; Calc:int=1; Phase:int=-1; CopyPhases:int=0	MeasureBin:Object List	
+SmoothMasks	Сглаживание контуров масок	Фильтры	Сгладить контуры масок объектов Сглаживание масок	 (filter)		Size:int=7; Image:Binary	SmoothedContours:Binary	
+CreateBinaryBySelection	Создать маски по рамке	Binary	Создать маски по рамке Создать маски по рамке	 (filter)		Selection:Image; Source:Image	BinImage:Binary	
+CreateSelectionByBinary	Создать рамку по маскам	Binary	Создать рамку по маскам Создать рамку по маскам			Source:Image; BinImage:Binary	Selection:Image	
+ResizeBin	ResizeBin	Binary	ResizeBin ResizeBin	 (filter)		cx:int=640; cy:int=480; BinImage:Binary	BinResult:Binary	
+Erode	Эрозия	Internal Actions	Применить фильтр Эрозия к активному изображению Эрозия	 (filter)		MaskSize:int=5; Source:Image	Erode:Image	
+Dilate	Дилатация	Internal Actions	Применить фильтр Дилатация к активному изображению Дилатация	 (filter)		MaskSize:int=5; Source:Image	Dilate:Image	
+Open	Открытие	Фильтры	Применить фильтр Открытие к активному изображению Открытие	 (filter)		MaskSize:int=5; Source:Image	Open:Image	
+Close	Закрытие	Internal Actions	Применить фильтр Закрытие к активному изображению Закрытие	 (filter)		MaskSize:int=5; Source:Image	Close:Image	
+Boundary	Границы	Internal Actions	Применить фильтр Усиление Границ к текущему изображению Границы	 (filter)		MaskSize:int=5; Power:int=3; Source:Image	Boundary:Image	
+UltimateErosion	UltimateErosion	Binary	UltimateErosion UltimateErosion	 (filter)		Method:int=3; Algorythm:int=1; BinImage:Binary	BinResult:Binary	
+MorphDivideExBin	Расширенное морфологическое разделение масок	Binary	Расширенное морфологическое разделение масок Расширенное морфологическое разделение масок	 (filter)		Method:int=3; Algorythm:int=1; BinImage:Binary	BinResult:Binary	
+BinaryExtractPhases	Выделить маски фаз	Internal Actions	Выделить маски фаз Выделить маски фаз	 (filter)		Source:Image	Phase:Binary	
+Negative	Негатив	Преобразования	Преобразовать активное изображение в негатив Негатив	 (filter)		Source:Image	Negative:Image	
+Emboss	Рельеф	Internal Actions	Создать рельефное изображение Рельеф	 (filter)		Source:Image	Emboss:Image	
+BrightContrast	Яркость&Контраст	Internal Actions	Изменить яркость и контраст активного изображения Яркость&Контраст	 (filter)		Brightness:int=0; Contrast:int=0; Gamma:double=0; Source:Image	BriContrast:Image	
+Sharping	Резкость	Фильтры	Применить фильтр Резкость к активному изображению Резкость	 (filter)		Strength:int=0; Source:Image	Sharping:Image	
+Median	Сглаживание по медиане	Фильтры	Применить сглаживание по медиане к активному изображению Сглаживание по медиане	 (filter)		MaskSize:int=5; Source:Image	Median:Image	
+Average	Сглаживание с усреднением	Internal Actions	Применить сглаживание с усреднением к активному изображению Сглаживание с усреднением	 (filter)		MaskSize:int=5; Source:Image	Average:Image	
+Laplas	Лаплас	Фильтры	Применить фильтрацию методом Лапласа к активному изображению Лаплас	 (filter)		Add:int=0; Source:Image	Laplas:Image	
+Equalize	Выравнивание	Internal Actions	Выровнять активное изображение Выравнивание	 (filter)		FullByFrame:int=0; Source:Image	Equalize:Image	
+LocalEqualize	Локальное выравнивание	Фильтры	Выровнять активное изображение с использованием локального фильтра Локальное выравнивание	 (filter)		MaskSize:int=5; Source:Image	Equalize:Image	
+Kirsch	Кирш	Фильтры	Применить фильтрацию по методу Кирша к активному изображению Кирш	 (filter)		Level:int=1; Add:int=0; Source:Image	Kirsch:Image	
+ExtractPhases	Выделить фазы	Internal Actions	Выделить фазы Выделить фазы	 (filter)		Source:Image	Phases:Image	
+UnsharpenMask	Усиление резкости	Фильтры	Усиление общей резкости изображения Усиление резкости	 (filter)		MaskSize:int=5; Threshold:int=0; Strength:int=100; Source:Image	UnsharpenMask:Image	
+EqualHists	Выравнивание гистограмм	Преобразования	Выравнивание гистограммы двух изображений Выравнивание гистограмм	 (filter)		Image0:Image; Image1:Image	EqualHists:Image	
+EqualContrasts	Выравнивание контраста	Преобразования	Выравнивание контраста двух изображений Выравнивание контраста	 (filter)		Image0:Image; Image1:Image	Result Equal:Image	
+FillHolesBin	Заполнение пустот в масках объектов	Binary	Заполнение пустот в масках объектов Заполнение пустот в масках объектов	 (filter)		Size:int=0; BinImage:Binary	BinResult:Binary	
+FastAverage	Быстрое сглаживание с усреднением	Internal Actions	Применить быстрое сглаживание с усреднением к изображению Быстрое сглаживание с усреднением	 (filter)		MaskSize:int=5; SourceImage:Image; MaskSizeY:int=-1	Average:Image	
+FastUnsharpenMask	Быстрое усиление резкости	Фильтры	Применить быстрое усиления резкости к активному изображению Быстрое усиление резкости	 (filter)		MaskSize:int=5; Threshold:int=0; Strength:int=100; Source:Image	UnsharpenMask:Image	
+FastGradient	Быстрый градиент	Фильтры	Применить фильтр Быстрый градиент к активному изображению Быстрый градиент	 (filter)		MaskSize:int=5; Power:int=3; Base:int=32000; SourceImage:Image	Gradient:Image	
+CutDocBySel	Обрезать данные в документе по рамке	Изображение	Обрезать данные в документе по рамке Обрезать данные в документе по рамке					
+BranchSplit	BranchSplit	Filters	BranchSplit BranchSplit	 (filter)		BinImage:Binary	BinResult:Binary; DbgResult:Image	
+Cipher	Cipher	Image	Cipher Image Cipher Image	 (filter)		NX:int=10; NY:int=10; Cipher:int=13; Image:Image	Ciphered:Image	
+ShowCalibr	Показать маркер	View	Показать калибровочный маркер на изображении Показать маркер			Show:int=-1; SetToShellData:int=0		
+ShowImage	Изображение с контурами	Вид	Показать изображение с контурами объектов Изображение с контурами					
+ImageTransform	Масштабирование и поворот изображения	Правка	Масштабирование и поворот изображения Масштабирование и поворот изображения			ZoomX:double=1; ZoomY:double=1; Angle:double=0; PosX:int=0; PosY:int=0		
+ShowObjects	Объекты на фоне	Вид	Показать изображение с обектами на фоне Объекты на фоне					
+ShowMasks	Маски объектов	Вид	Показать изображение с масками объектов Маски объектов					
+Resize	Изменить размер	Правка	Изменить размера изображения Изменить размер	 (filter)		Width:int=-1; Height:int=-1; Source:Image	Resized:Image	
+Rotate	Произвольный поворот...	Изображение	Произвольный поворот изображения Произвольный поворот	 (filter)		Angle:int=0; Source:Image	Rotated:Image	
+MirrorHorz	Горизонтальное отражение	Изображение	Горизонтальное отражение изображения Горизонтальное отражение	 (filter)		Source:Image	FlipedHorz:Image	
+MirrorVert	Вертикальное отражение	Изображение	Вертикальное отражение изображения Вертикальное отражение	 (filter)		Source:Image	FlipedVert:Image	
+Rotate90	Повернуть на 90	Изображение	Поворот изображения на 90 градусов Повернуть на 90	 (filter)		Source:Image	Rotated90:Image	
+Rotate180	Повернуть на 180	Изображение	Поворот изображения на 180 градусов Повернуть на 180	 (filter)		Source:Image	Rotated180:Image	
+Rotate270	Повернуть на 270	Изображение	Поворот изображения на 270 градусов Повернуть на 270	 (filter)		Source:Image	Rotated270:Image	
+Expansion	Выделить цветовые каналы	Изображение	Выделить отдельные цветовые каналы цветного изображения Выделить цветовые каналы					
+Merge	Объединить цветовые каналы	Правка	Объединить цветовые каналы изображения Объединить цветовые каналы	 (filter)		ColorSpace:string=RGB; Pane0Image:Image; Pane1Image:Image; Pane2Image:Image	Combined:Image	
+Clone	Дубликат изображения	Изображение	Создать дубликат изображения Дубликат изображения			Source:string		
+Borders	Добавить поля	Internal Actions	Нанести поля на изображение Добавить поля	 (filter)		Left:int=0; Top:int=0; Right:int=0; Bottom:int=0; Source:Image	Expanded:Image	
+Crop	Вырезать фрагмент	Изображение	Вырезать фрагмент изображения Вырезать фрагмент	 (interactive)		X:int=0; Y:int=0; Width:int=-1; Height:int=-1		
+ShowSource	Исходное изображение	Вид	Показать исходное изображение Исходное изображение					
+ShowPseudo	Цветокодированное изображение	Вид	Показать цветокодированное изображение Цветокодированное изображение					
+ShowPhase	Показать фазы	Вид	Показать фазы Показать фазы					
+ShowBinaryFore	Трейсы на исходном изображении	Вид	Показать трейсы на исходном изображении Трейсы на исходном изображении					
+ShowBinaryBack	Трейсы на фоне	Вид	Показать трейсы на фоне Трейсы на фоне					
+ShowBinary	Бинарное изображение	View	Показать бинарное изображение Бинарное изображение					
+ShowBinaryContour	Показать бинарное с контурами	View	Показать бинарное изображение с контурами Показать бинарное с контурами					
+ShowView	Показать вид с использованием программного идентификатора	View	Показать вид с использованием программного идентификатора Показать вид с использованием программного идентификатора			ViewProgID:string=ImageDoc.ImageView		
+CanConvertToGray	CanConvertToGray	Вид	CanConvertToGray CanConvertToGray					
+ConvertImage	Конвертирование изображения...	Изображение	Перевести изображение в другую цветовую модель Конвертирование изображения	 (filter)		newColorSystem:string; DeleteArg:int=-1; Source:Image	Converted:Image	
+MacroRecord	Записать новый макрос	Tools	Записать новый макрос Записать новый макрос					
+MeasManualFreeLine	Длина произвольной линии	Измерения	Измерить длину произвольной линии Длина произвольной линии	 (interactive)				
+MeasManualSpline	Длина линии сплайном	Измерения	Измерить длину линии сплайном Длина линии сплайном	 (interactive)				
+MeasManualCount	Подсчет количества	Измерения	Подсчет количества объектов. Левая кнопка мыши-подсчет, правая-завершение. Подсчет количества	 (interactive)				
+MeasManualLine	Длина прямой линии	Измерения	Измерить длину прямой линии Длина прямой линии	 (interactive)				
+MeasManualBrokenLine	Длина ломаной линии	Измерения	Измерить длину ломаной линии Длина ломаной линии	 (interactive)				
+MeasManualCycle2	Радиус по 2 точкам	Измерения	Измерить радиус по 2 точкам Радиус по 2 точкам	 (interactive)				
+MeasManualCycle3	Радиус по 3 точкам	Измерения	Измерить радиус по 3 точкам Радиус по 3 точкам	 (interactive)				
+MeasManualAngle3Point	Угол по 3 точкам	Измерения	Измерить угол по 3 точкам Угол по 3 точкам	 (interactive)				
+MeasManualAngle2Line	Угол по 2 линиям	Измерения	Измерить угол по двум линиям Угол по 2 линиям	 (interactive)				
+MeasManualParallel	Расстояние между параллельными линиями	Измерения	Расстояние между параллельными линиями. Левая кнопка мыши-измерить, правая-закончить. Расстояние между параллельными линиями	 (interactive)				
+MtdClearMethod	Удалить все шаги	Методика	Удаление всех шагов методики Удаление всех шагов методики			MethodName:string; ShowWarning:int=1		
+MtdInsertMsgStep	Вставить сообщение	Методика	Вставить сообщение в активную методику Вставить сообщение в активную методику			Message:string; ShowResult:int=1		
+ExportScript	ExportScript	Method	ExportScript ExportScript			FileName:string		
+MethodRedo	MethodRedo	Method	MethodRedo MethodRedo					
+MethodUndo	MethodUndo	Method	MethodUndo MethodUndo					
+MtdDeleteMethod	Удалить методику	Методика	Удалить методику Удалить методику			MethodName:string; ShowWarning:int=1		
+MtdCopyMethod	Копировать методику	Методика	Копировать методику Копировать методику			MethodName:string; Activate:int=1		
+MtdSaveMethod	MtdSaveMethod	Method	MtdSaveMethod MtdSaveMethod			MethodName:string		
+MtdCreateMethod	Новая методика	Методика	Новая методика Новая методика			MethodName:string; Activate:int=1		
+MtdRunStop	Старт методики	Методика	Запустить или остановить методику Старт методики					
+MtdList	Список методик	Методика	Список методик Список методик					
+MtdAddItem	MtdAddItemt	Method	MtdAddItem MtdAddItem					
+MethodOpen	MethodOpen	Method	MethodOpen MethodOpen			PanePath:string; Open:int=1		
+MtdRemoveItem	MtdRemoveItemt	Method	MtdRemoveItem MtdRemoveItem					
+StoreMtdContent	StoreMtdContent	Method	StoreMtdContent StoreMtdContent			FileName:string		
+LoadMtdContent	LoadMtdContent	Method	LoadMtdContent LoadMtdContent			FileName:string		
+RemoveMtdPane	RemoveMtdPane	Method	RemoveMtdPane RemoveMtdPane					
+AddMtdPane	AddMtdPane	Method	AddMtdPane AddMtdPane			PaneName:string		
+TriggerSequence	Последовательный ввод по внешнему сигналу	Ввод	Последовательный ввод по внешнему сигналу Последовательный ввод по внешнему сигналу					
+DoTrigger	Программный триггер	Ввод	Эмуляция срабатывания внешнего сигнала Программный триггер					
+TriggerMode	Ввод по триггеру	Ввод	Ввод изображения по внешнему сигналу Ввод по триггеру					
+DriverDlg	Настройки драйвера камеры	Ввод	Настройки драйвера камеры Настройки драйвера камеры			DialogName:string		
+ShowPreview	Видео	Вид	Просмотр "живого видео" с видеоустройства Видео					
+InputVideo	Видео	Ввод	Видео Видео			SelectDriver:int=1; DialogMode:int=1; Name:string; Configuration:string		
+InputImageInCurrentDoc	Ввод изображения в активный документ	По умолчанию	Ввести изображение в активный документ Ввод изображения в активный документ			SelectDriver:int=1; DialogMode:int=1; First:int=1; Name:string; Configuration:string		
+InputImage	Способ получения изображения	Ввод	Выбор способа получения изображения Способ получения изображения			SelectDriver:int=1; DialogMode:int=1; First:int=1; Name:string; Configuration:string		
+RestoreSel	restore selection	По умолчанию	restore selection RestoreSel					
+ImageBySel	Обрезать по рамке	Изображение	Обрезать изображение по рамке Обрезать по рамке			RestoreSel:bool=0		
+SetZOrder	SetZOrder	Edit	SetZOrder SetZOrder			ParamKey:int=1; Direction:int=0		
+ActiveObjectFillHoles	Заполнение дыр в активном объекте	Правка	Заполнение дыр в активном объекте Заполнение дыр в активном объекте			Size:int=0		
+ActiveObjectClose	Закрытие активного объекта	Правка	Закрытие активного объекта Закрытие активного объекта			OperationsCount:int=1; MinObject:int=5		
+ActiveObjectOpen	Открытие активного объекта	Правка	Открытие активного объекта Открытие активного объекта			OperationsCount:int=1; MinObject:int=5		
+ActiveObjectDilate	Дилатация активного объекта	Правка	Дилатация активного объекта Дилатация активного объекта			OperationsCount:int=1		
+ActiveObjectErode	Эрозия активного объекта	Правка	Эрозия активного объекта Эрозия активного объекта			OperationsCount:int=1; MinObject:int=5		
+ObjectsExport	Export objects list	Edit	Export objects list Export objects list			ObjectList:string; FileName:string; ExportType:int=0; AddParamNames:int=1; DecimalSeparator:string		
+MakeObjectsNonVirtual	MakeObjectsNonVirtual	Edit	MakeObjectsNonVirtual MakeObjectsNonVirtual					
+MakeObjectsVirtual	MakeObjectsVirtual	Правка	MakeObjectsVirtual MakeObjectsVirtual					
+MapObjectsToImage	MapObjectsToImage	Правка	MapObjectsToImage MapObjectsToImage					
+SetListZOrder	SetListZOrder	Измерения	SetListZOrder SetListZOrder			ZOrder:int=0; UsedClass:int=-1; ClassifierName:string; ListName:string		
+JoinAllObjects	Join all objects	Edit	Join all objects Join all objects	 (filter)		UseClasses:int=0; ClassifierName:string; InitContours:int=0; MeasObjects:Object List	TotalObject:Object List	
+ReCalcOnChangeCalibr	Перемерить объекты	Измерения	Перемерить объекты в соответствии с выбранной калибровкой Перемерить объекты			ObjList:string		
+CalcMeasResult	Измерить объекты	Измерения	Измерить или перемерить нанесенные объекты Измерить объекты			ObjectList:string		
+ObjectMagickStick	Волшебная палочка	Измерения	Shift-добавление, Alt-вычитание Волшебная палочка	 (interactive)				
+ObjectRect	Прямоугольный объект	Измерения	Shift-добавление, Alt-вычитание, Ctrl-перекрестье Прямоугольный объект	 (interactive)		Left:int=0; Top:int=0; Right:int=0; Bottom:int=0		
+ObjectEllipse	Круглый объект	Измерения	Shift-добавление, Alt-вычитание Круглый объект	 (interactive)		X:int=-1; Y:int=-1; R:int=-1		
+ObjectSpline	Объект сплайном	Измерения	Shift-добавление, Alt-вычитание, завершение-двойное нажатие левой кнопки Объект сплайном	 (interactive)				
+ObjectFree	Произвольный объект	Измерения	Shift-добавление, Alt-вычитание Произвольный объект	 (interactive)				
+ObjectRectFixed	Прямоугольный фиксированный объект	Измерения	Shift-добавление, Alt-вычитание Прямоугольный фиксированный объект	 (interactive)		X:double=-1; Y:double=-1; Width:double=0; Height:double=0; UseCalibration:int=0		
+ObjectRectDirect	Прямоугольный направленный объект	Измерения	Shift-добавление, Alt-вычитание Прямоугольный направленный объект 	 (interactive)		X1:int=-1; Y1:int=-1; X2:int=-1; Y2:int=-1; Width:int=-1		
+ObjectEllipseFixed	Эллиптический фиксированный объект	Измерения	Shift-добавление, Alt-вычитание Эллиптический фиксированный объект	 (interactive)		X:double=-1; Y:double=-1; Width:double=0; Height:double=0; UseCalibration:int=0		
+ObjectEllipseDirect	Эллиптический направленный объект	Измерения	Shift-добавление, Alt-вычитание Эллиптический направленный объект	 (interactive)		X1:int=-1; Y1:int=-1; X2:int=-1; Y2:int=-1; Width:int=-1		
+ObjectEditorSpec	Область на изображении	Измерения	Левая кнопка мыши-рисование Область на изображении	 (interactive)				
+ObjectEditor	Карандаш	Измерения	Левая кнопка мыши-рисование, правая-стирание Карандаш	 (interactive)				
+ObjectLine	Линейный объект	Измерения	Нанести линейный объект Линейный объект	 (interactive)				
+ObjectPolyLine	Объект ломаной линией	Измерения	Нанести объект в форме ломаной линии Объект ломаной линией	 (interactive)				
+ObjectsMakeLight	Облегчить объекты	Правка	Облегчить объекты Облегчить объекты	 (filter)		MeasObjects:Object List	MeasObjects light:Object List	
+ObjectsSplit	Разделить объекты на классы	Правка	Разделить объекты на классы Разделить объекты на классы	 (filter)		MeasObjects:Object List		
+ObjectsSetClass	Назначить класс для всех объектов в списке	Правка	Назначить класс для всех объектов в списке Назначить класс для всех объектов в списке	 (filter)		Class:string; MeasObjects:Object List	ObjectsSetClass:Object List	
+ObjectsMerge	Объединить два списка объектов	Измерения	Объединить два списка объектов Объединить два списка объектов	 (filter)		MeasObjects1:Object List; MeasObjects2:Object List; VerifyType:int=0	ObjectsMerge:Object List	
+ObjectsRemove	Удалить все объекты выбранного класса	Правка	Удалить все объекты выбранного класса Удалить все объекты выбранного класса	 (filter)		Class:int=-2; MeasObjects:Object List	ObjectsRemove:Object List	
+AutoAssignClasses	Автоматически разделить на классы по параметрам	Правка	Автоматически разделить на классы по параметрам Автоматически разделить на классы по параметрам	 (filter)		MeasObjects:Object List	AutoAssignClasses:Object List	
+ObjectScissors	Ножницы	Правка	Ножницы для разделения объектов Ножницы	 (interactive)				
+ObjectFilter	Фильтрация объектов	Правка	Фильтрация объектов Фильтрация объектов	 (filter)		SectionName:string=Objects\ObjectFilter; ShowInterface:int=1; MeasObjects:Object List	ObjectFilter:Object List	
+ObjectClassifyByLimits	Классифицировать объекты по пределам	Правка	Классифицировать объекты в соответствии с установленными пределами Классифицировать объекты по пределам	 (filter)		SectionName:string=Objects\ObjectLimitsClassifier; ShowInterface:int=1; MeasObjects:Object List	ObjectClassifier:Object List	
+FilterObjectList	FilterObjectList	Edit	FilterObjectList FilterObjectList	 (filter)		Action:string; Params:string; LeaveVirtual:int=0; ActiveObjectOnly:int=0; ObjectList:Object List	ObjectListNew:Object List	
+FindBorderObjects	Поиск объектов, граничащих с рамкой	Правка	Поиск объектов, граничащих с рамкой Поиск объектов, граничащих с рамкой	 (filter)		SrcList:Object List	DstList:Object List	
+ObjectCutFrame	Отброс объектов от рамки	Правка	Отброс объектов от рамки Отброс объектов от рамки	 (filter)		SrcList:Object List	DstList:Object List	
+CreateImageByList	Заливка фона	Правка	Заливка областей изображения, не являющихся объектами Заливка фона	 (filter)		Image:Image; Objects:Object List	Generated:Image	
+OverlaySectionHorz	Горизонтальный график по яркости	Измерения	Создать новый горизонтальный график по яркости на изображении Горизонтальный график по яркости	 (interactive)				
+OverlaySectionVert	Вертикальный график по яркости	Измерения	Создать новый вертикальный график по яркости на изображении Вертикальный график по яркости	 (interactive)				
+OverlaySection	График яркости от точки до точки	Измерения	Создать новый график яркости от точки до точки на изображении График яркости от точки до точки	 (interactive)				
+ReadCoords	read coords	File	read coords read coords					
+ReportEditText	Редактировать текст в выбранном поле	Печать	Редактировать текст в выбранном поле Редактировать текст в выбранном поле					
+Print	Печать	Печать	Печать активного документа Печать					
+PrintPreview	Предварительный просмотр...	Печать	Предварительный просмотр отчета перед печатью Предварительный просмотр					
+PrintDesignMode	Конструктор шаблона отчета...	Печать	Создать шаблон отчета Конструктор шаблона отчета					
+PageSetup	Параметры страницы...	Печать	Параметры страницы Параметры страницы					
+PrinterSetup	Настройка печати...	Печать	Настройка печати Настройка печати					
+FitToPage	По размеру окна	Печать	Установить размер шаблона отчета по размеру окна По размеру окна					
+FitToPageWidth	По ширине	Печать	Установить ширину шаблона отчета по ширине окна По ширине					
+TemplateSetup	Установки шаблона...	Печать	Установки шаблона Установки шаблона					
+PrintTemplateDelete	Удалить шаблон отчета...	Печать	Удалить шаблон отчета Удалить шаблон отчета					
+ShowPreviewIndirect	Просмотр отчета	Печать	Предварительный просмотр отчета перед печатью Просмотр отчета			ReadOnly:int=1		
+BeforePrintView	Сохранение контекста	Сохранение контекста	Сохранение контекста Сохранение контекста					
+ExportReportToJPEG	Экспорт в JPEG	Экспорт в JPEG	Экспорт активного документа в JPEG Экспорт в JPEG			VSize:int=0		
+RequestForPrintSD	Запрос данных для печати по ShellData	Edit	Запрос значений пользовательских полей для печати по ShellData Request Values For Printing from ShellData			ShowIfDataExist:int=1		
+StoreForPrint	Запись данных для печати	Edit	Запись значений пользовательских полей для печати Store Values For Printing			ShowIfDataExist:int=1		
+RequestForPrint	Запрос данных для печати	Edit	Запрос значений пользовательских полей для печати Request Values For Printing			ShowIfDataExist:int=1; UseReportPosition:int=0; DlgTitle:string		
+RequestForDB	Запрос данных для базы	Edit	Запрос значений пользовательских полей для базы данных Запрос данных для базы			ShowIfDataExist:int=1		
+ShowOptions	Установки...	Tools	Изменить установки программы Установки					
+ShowScript	Показать скрипт	View	Показать скрипт Показать скрипт					
+ScriptChange	Заменить скрипт	Edit	Заменить скрипт Заменить скрипт					
+ScriptTerminate	Остановить скрипт	Script	Остановить скрипт Остановить скрипт					
+ScriptExecute	Выполнить скрипт	Script	Выполнить скрипт Выполнить скрипт					
+BreakAtNextStatement	Точка останова на следующей строке	For Developers	Точка останова на следующей строке Точка останова на следующей строке					
+ToggleBreakpoint	Включить/выключить точку останова	Script	Включить/выключить точку останова Включить/выключить точку останова					
+StartDebugger	Запустить программу отладки	Script	Запустить внешнюю программу отладки Запустить программу отладки					
+SelectFixedRect	Фиксированная прямоугольная рамка	Рамки	Shift-добавление, Alt-вычитание, Ctrl-перекрестие Фиксированная прямоугольная рамка	 (interactive)		X:double=-1; Y:double=-1; Width:double=0; Height:double=0; UseCalibration:int=0		
+FourierSelectEllipse	Эллиптическая рамка на изображении Фурье	FFT	Нанести рамку эллиптической формы на изображение Фурье Эллиптическая рамка на изображении Фурье	 (interactive)				
+FourierSelectFree	Произвольная рамка на изображении Фурье	FFT	Нанести рамку произвольной формы на изображение Фурье Произвольная рамка на изображении Фурье	 (interactive)				
+FourierSelectCenter	Выделить центр изображения Фурье	FFT	Нанести рамку на центр изображения Фурье Выделить центр изображения Фурье	 (interactive)				
+MagickStick	Волшебная палочка	Рамки	Shift-добавление, Alt-вычитание Волшебная палочка	 (interactive)				
+SelectRect	Прямоугольная рамка	Рамки	Shift-добавление, Alt-вычитание, Ctrl-перекрестие Прямоугольная рамка	 (interactive)		Left:int=0; Top:int=0; Right:int=0; Bottom:int=0		
+SelectArea	Произвольная рамка	Рамки	Завершение-двойное нажатие левой кнопки мыши, Shift-добавление, Alt-вычитание Произвольная рамка	 (interactive)				
+SelectAdd	Добавить рамку	Рамки	Добавить новую рамку к активной Добавить рамку			Select:int=-1		
+SelectRemove	Удалить рамку	Рамки	Удалить новую рамку из активной Удалить рамку			Select:int=-1		
+SelectEllipse	Круглая рамка	Рамки	Используйте Shift для добавления и Alt для вычитания рамки Круглая рамка	 (interactive)		X:int=-1; Y:int=-1; R:int=-1		
+SelectInvert	Инвертировать рамку	Рамки	Инвертировать активную рамку Инвертировать рамку					
+SelectSmooth	Сглаживание рамки	Рамки	Сглаживание рамки Сглаживание рамки					
+SelectMakeVirtual	Виртуализировать рамку	Internal Actions	Виртуализировать рамку Виртуализировать рамку					
+SelectAll	Выделить все	Рамки	Нанести рамку на все изображение Выделить все					
+AddView	Добавить вид отображения в разделитель окна	Internal Actions	Добавить вид отображения в разделитель окна Добавить вид отображения в разделитель окна			Name:string		
+RemoveView	Удалить вид отображения из разделителя окна	Internal Actions	Удалить вид отображения из разделителя окна Удалить вид отображения из разделителя окна					
+RenameView	Переименовать вид отображения в разделителе окна	Internal Actions	Переименовать вид отображения в разделителе окна Переименовать вид отображения в разделителе окна			Name:string		
+LoadViewState	Загрузить сотояние вида отображения	Internal Actions	Загрузить сотояние вида отображения Загрузить сотояние вида отображения			FileName:string		
+SaveViewState	Сохранить сотояние вида отображения\Internal Actions	Сохранить сотояние вида отображения	Сохранить сотояние вида отображения Сохранить сотояние вида отображения			FileName:string		
+CompareScreen	Захватить вид сравнения	Internal Actions	Захват вида сравнения Захватить вид сравнения			ImageName:string=CompareScreen		
+SyncEdit	Синхронное редактирование	Вид	Синхронизировать операции редактирования Синхронное редактирование					
+SyncScroll	Синхронизация изображений	Окно	Синхронизация изображений (если окно документа разделено) Синхронизация изображений			Param:string		
+SyncZoom	Синхронизация изображений и увеличений	Окно	Синхронизация изображений и увеличений (если окно документа разделено) Синхронизация изображений и увеличений			Param:string		
+SyncScrollRelative	Относительная синхронизация изображений	Окно	Относительная синхронизация изображений (если окно документа разделено) Относительная синхронизация изображений			Param:string		
+SyncContextAll	Синхронизация содержания	Окно	Синхронизация содержания и видов отображения Синхронизация содержания			Param:string		
+SyncContext	Синхронизация содержания	Окно	Синхронизация содержания и видов отображения Синхронизация содержания			Param:string		
+RunTestWindow	RunTestWindow	Tests	run test window RunTestWindow					
+EditTestDB	EditTestDB	Tests	edit tests database EditTestDB					
+ShowThumbnail	Показать кадр	Data	Показать кадр Показать кадр					
+InteractiveZoom	Интерактиваная лупа	Вид	Левой кнопкой мыши открыть выпадающий список, движком изменить увеличение Интерактиваная лупа					
+ZoomFit	Set Fit to Window On	View	Set Fit to Window On Set Fit to Window On					
+ZoomIn	Увеличение	Вид	Увеличить изображение Увеличение					
+ZoomOut	Уменьшение	Вид	Уменьшение изображения Уменьшение					
+Zoom41	Уменьшение 4:1	Вид	Уменьшить изображение 4:1 Уменьшение 4:1					
+Zoom31	Уменьшение 3:1	Вид	Уменьшить изображение 3:1 Уменьшение 3:1					
+Zoom21	Уменьшение 2:1	Вид	Уменьшить изображения 2:1 Уменьшение 2:1					
+Zoom12	Увеличение 1:2	Вид	Увеличить изображение 1:2 Увеличение 1:2					
+Zoom13	Увеличение 1:3	Вид	Увеличить изображение 1:3 Увеличение 1:3					
+Zoom14	Увеличение 1:4	Вид	Увеличить изображение 1:4 Увеличение 1:4					
+ZoomNormal	Увеличение 1:1	Вид	Увеличить изображение 1:1 Увеличение 1:1					
+Zoom	Лупа	Вид	Левая кнопка мыши: увеличение, +Shift: уменьшение, правая кнопка: исх. изображение Лупа	 (interactive)		Zoom:double=0		
+FitDoc2Screen	Размер изображения по экрану	Вид	Устанавить размер изображения по размеру экрана Размер изображения по экрану			MaxZoom:double=100.0		
+Fit2Image	Размер окна по изображению	Вид	Установить размер окна документа по изображению Размер окна по изображению					
+InteractiveScroll	Прокрутка изображения	Вид	Удерживая левую кнопку мыши, просматривайте изображение в любом направлении Прокрутка изображения	 (interactive)				
+ClassesArrange	Упорядочить классы	Classification	Упорядочить классы			ClassList:Class List		
+ShowApportionment	Показать распределение	Вид	Показать распределение					
+AviSignature	AviSignature	AVI	AviSignature					
+ShowAviGallery	Показать галерею AVI	AVI	Показать галерею AVI					
+AviStop	Стоп	AVI	Стоп					
+AviPlay	Показать AVI файл	AVI	Показать AVI файл	 (interactive)				
+AviMoveTo	Перейти	AVI	Перейти			FrameNum:int=1		
+AviMovePrev	Предыдущий	AVI	Показать предыдущий кадр					
+AviMoveLast	Последний	AVI	Показать последний кадр					
+AviMoveNext	Следующий	AVI	Показать следующий кадр					
+AviMoveFirst	Первый	AVI	Показать первый кадр					
+InsertAviObject	Добавить AVI-объект	AVI	Добавление AVI-объекта			AviFileName:string; LinkToFile:int=1		
+GetObjectDescription	Информация	ClassBase	Информация			ObjectListName:string; Class:int=0		
+TrainClassifier	TrainClassifier	ClassBase	TrainClassifier			ClassFile:string; ObjectName:string		
+ClassifyObjectList	ClassifyObjectList	ClassBase	ClassifyObjectList			ClassFile:string; ObjectName:string; PrevClassFile:string; PrevClasses:string		
+SetClass	Назначить класс	Правка	Назначить класс для выбранного объекта			Class:int=-1; ClassFile:string; Deselect:int=0		
+AddAllObjectsToTeach	Добавить все объекты для обучения	Классификация	Добавить все объекты на активном изображении в обучающую базу					
+AddObjectToTeach	Добавить объект для обучения	Классификация	Добавить объект в обучающую базу - левая кнопка мыши	 (interactive)				
+EmptyClassifier	Очистить обучающую базу	Классификация	Очистка обучающей базы классификатора					
+TeachClassifier	Обучить классификатор	Классификация	Обучение классификатора по обучающей базе			ShowMessage:int		
+ManualClassifyObjects	Ручная классификация	Классификация	Ручная классификация объектов. Укажите класс выбранного объекта	 (interactive)				
+ClassifyObjects	Классифицировать объекты	Классификация	Автоматическая классификация всех объектов на активном изображении					
+CopyImageToObjects	Обновить список объектов	Преобразования	Обновить список объектов с изображения	 (filter)		Img:Image; ObjOld:Object List	Obj:Object List	
+EqualizeAllObj	Контраст хромосом	Преобразования	Контрастирование всех хромосом			Name:string		
+UnEqualizeObj	Отменить контраст	Преобразования	Отменить контрастирование выбранной хромосомы - левая кнопка мыши, выход - Esc.	 (interactive)				
+EqualizeObj	Контраст хромосомы	Преобразования	Контрастирование указанной хромосомы - левая кнопка мыши	 (interactive)				
+Freeze	Заморозка окна	For Developers	Заморозить окно программы			WantToFreeze:int=1; Name:string		
+SmoothContour	Сглаживание контуров масок	Filters	Сглаживание контуров масок	 (filter)		MaskSize:int=3; BinImage:Binary	SmoothContour:Binary	
+BinMorphDivision2	Binary Division	Binary	Division of the binary image	 (filter)		BinImage:Binary	BinMorphDivision2:Binary	
+BinMorphDivision	Разделение масок	Binary	Разделение масок	 (filter)		BinImage:Binary	BinMorphDivision:Binary	
+BinDeleteSmallObjects	Удаление мелких масок объектов	Binary	Удаление мелких масок объектов	 (filter)		MinSize:int=5; MinSize2:int=-1; FormThreshold:double=0.3; FillValue:int=0; BinSource:Binary; Flags:int=0	BinResult:Binary	
+BinReconstructBack	BinReconstructBack	Binary	BinReconstructBack	 (filter)		BinSource:Binary; BinSeed:Binary	BinReconstructed:Binary	
+BinReconstructFore	BinReconstructFore	Binary	BinReconstructFore	 (filter)		BinSource:Binary; BinSeed:Binary	BinReconstructed:Binary	
+BinDilateObjects	Дилатация масок без слияния объектов	Binary	Дилатация масок без слияния объектов	 (filter)		DilateCount:int=0; BinImage:Binary	BinResult:Binary	
+BinSmooth	Сглаживание масок	Filters	Сглаживание масок	 (filter)		MaskSize:int=9; Level:int=3; BinImage:Binary	BinSmooth:Binary	
+BinCustomLogic	BinCustomLogic	Binary	BinCustomLogic	 (filter)		Combinations:int=11; BinSource1:Binary; BinSource2:Binary	CustomLogic:Binary	
+BinXor	Объединение масок без пересечения	Маски объектов	Объединение масок без пересечения	 (filter)		BinSource1:Binary; BinSource2:Binary	BinXor:Binary	
+BinAnd	Пересечение масок	Маски объектов	Пересечение масок	 (filter)		BinSource1:Binary; BinSource2:Binary	BinAnd:Binary	
+BinOr	Объединение масок	Маски объектов	Объединение масок	 (filter)		BinSource1:Binary; BinSource2:Binary	BinOr:Binary	
+BinNot	Инвертировать маски	Маски объектов	Инвертировать маски объектов	 (filter)		BinSource1:Binary	BinNot:Binary	
+BinClose	Закрытие масок	Binary	Закрытие масок	 (filter)		MaskSize:int=3; BinImage:Binary	BinErode:Binary	
+BinOpen	Открытие масок	Binary	Открытие масок	 (filter)		MaskSize:int=3; BinImage:Binary	BinErode:Binary	
+BinDilate	Дилатация масок	Binary	Дилатация масок	 (filter)		MaskSize:int=3; BinImage:Binary	BinDilate:Binary	
+BinErode	Эрозия масок	Binary	Эрозия масок	 (filter)		MaskSize:int=3; BinImage:Binary	BinErode:Binary	
+BinMedian	Медиана масок	Binary	Медиана масок	 (filter)		MaskSize:int=3; BinImage:Binary	BinMedian:Binary	
+BinCleanV4	BinCleanV4	Binary	BinCleanV4	 (filter)		BinImage:Binary	CleanV4:Binary	
+ImageSubEx	Вычитание изображений	Преобразования	Вычитание изображений	 (filter)		img1:Image; img2:Image	result:Image	
+ImageMul	Умножение изображений	Преобразования	Умножение изображений	 (filter)		mul:double=1; img1:Image; img2:Image	result:Image	
+ImageDiv	Деление изображений	Преобразования	Деление изображений	 (filter)		mul:double=1; img1:Image; img2:Image	result:Image	
+ImageSubLight	Вычитание фона	Преобразования	Устранение неровностей фона на изображении	 (filter)		img1:Image; img2:Image	result:Image	
+ImageDiff	Разность изображений	Преобразования	Разность изображений	 (filter)		img1:Image; img2:Image	result:Image	
+ImageSub	Вычитание изображений	Преобразования	Вычитание изображений	 (filter)		img1:Image; img2:Image	result:Image	
+ImageAdd	Сложение изображений	Преобразования	Сложение изображений	 (filter)		img1:Image; img2:Image	result:Image	
+ImageCombine	Комбинировать изображения	Filters	Комбинировать два изображения	 (filter)		ShowInterface:int=1; A:double=1; B:double=0; C:double=0; img1:Image; img2:Image	result:Image	
+ApplyLookup	Применить таблицу преобразования цветов к изображению	Internal Actions	Применить таблицу преобразования цветов к изображению	 (filter)		Result:Image	Img:Image	
+AutoBC	Автоконтраст	Преобразования	Автоматическое контрастирование изображения	 (filter)		InputBlackLevel:int=0; InputWhiteLevel:int=0; OutputBlackLevel:int=0; OutputWhiteLevel:int=100; Img:Image	Result:Image	
+CleanFrame	CleanFrame	Filters	CleanFrame	 (filter)		Mask:int=7; Level:int=8192; CurrentFrame:Image; PrevFrame:Image	Clear:Image	
+Sharpness	Sharpness	Фильтры	Sharpness	 (filter)		Strengthening:int=10; Noise:int=0; Img:Image	Sharpness:Image	
+MeanEVV	Сглаживание	Преобразования	Сглаживание	 (filter)		mask_size:int=20; nParam:int=100; Img:Image	Result:Image	
+EvenV	Выравнивание фона	Преобразования	Выравнивание фона	 (filter)		sqr_number:int=10; even_method:int=0; background_type:int=0; even_brightness:int=0; contrast:int=0; Img:Image	Result:Image	
+DilateOnImage	DilateOnImage	Filters	DilateOnImage	 (filter)		Quantity:double=100.0; Tolerance:double=20.0; Image:Image; Seed:Binary	DilateOnImage:Binary	
+Signature	Signature	Security	Signature	 (filter)		ImgSrc:Image	ImgResult:Image	
+Watermark	Watermark	Security	Watermark	 (filter)		Mark:int=1; ImgSrc:Image; ImgMark:Image	ImgResult:Image	
+TopHat	TopHat	Filters	TopHat	 (filter)		Mask:int=15; FindDark:int=1; Img:Image	TopHat:Image	
+FindNuclei	FindNuclei	Filters	Find Nuclei	 (filter)		Img:Image	Result:Image	
+AreaSeg	AreaSeg	Filters	Area Segmentation	 (filter)		smooth:int=4; k9:double=3; min_obj_size:double=1.0; bg_selection_method:int=3; bg_expand_method:int=2; bg_expand_level:double=0.1; Img:Image	Result:Binary	
+ColorSeg	ColorSeg	Filters	Color Segmentation	 (filter)		preset:int=1; seg_colors:int=0; radius:int=5; n_min:int=400; n_min1:int=200; n_con:int=30; count_lim:int=5; Img:Image	Result:Binary	
+EvenAAM	Выравнивание фона	Преобразования	Выравнивание фона	 (filter)		sqr_size:int=32; even_method:int=4; background_type:int=0; even_brightness:int=0; max_contrast:double=1; auto_contrast:int=0; Img:Image	Result:Image	
+CloseByReconstructionAAM	Закрытие с реконструкцией	Преобразования	Закрытие с реконструкцией	 (filter)		Seed:Image; Img:Image	Result:Image	
+OpenByReconstructionAAM	Открытие с реконструкцией	Преобразования	Открытие с реконструкцией	 (filter)		Seed:Image; Img:Image	Result:Image	
+DoubleEdge	DoubleEdge thresholding	Filters	DoubleEdge thresholding	 (filter)		Tmin:int=30000; Tmax:int=50000; Img:Image	Result:Binary	
+Variance	Вариации	Filters	Вариации	 (filter)		AddToSource:int=0; Img:Image	Result:Image	
+Gradient	Градиент	Filters	Градиент	 (filter)		AddToSource:int=0; Img:Image	Result:Image	
+MeanKNV	Сглаживание по размеру	Filters	Сглаживание по размеру	 (filter)		nMaskSize:int=20; nParam:int=100; Img:Image	Result:Image	
+MeanEV	Сглаживание по яркости	Filters	Сглаживание по яркости	 (filter)		mask_size:int=20; nParam:int=10000; Img:Image	Result:Image	
+AutoContrast	Автоконтраст	Filters	Автоконтраст	 (filter)		string_values1:string; string_values2:string; Img:Image	Result:Image	
+ColorBalance	Цветовой баланс	Filters	Коррекция цвета изображения	 (filter)		string_valeus:string; Img:Image	Result:Image	
+CloseByReconstruction	Close by Reconstruction	Filters	Close by reconstruction	 (filter)		mask_size:int=5; mask_type:int=1; color_epsilon:int=0; Img:Image	Result:Image	
+OpenByReconstruction	Open by Reconstruction	Filters	Open by reconstruction	 (filter)		mask_size:int=5; mask_type:int=1; color_epsilon:int=0; Img:Image	Result:Image	
+AdjustParams	AdjustParams	neuro	AdjustParams			LearningInfo:string; Passes:int=5000; ObjectList:Object List		
+TeachNeuro	TeachNeuro	neuro	TeachNeuro			LearningInfo:string; ClassifyInfo:string		
+ClassifyNeuro	ClassifyNeuro	neuro	ClassifyNeuro	 (filter)		ClassifyInfo:string; ObjectList:Object List		
+UpdateOleObject	Обновить OLE объект	OLE объект	Обновить OLE объект					
+ShowOleObjectContent	О создании OLE объекта	OLE объект	Информация о создании OLE объекта					
+ShowOleObject	Показать OLE объект	OLE объект	Показать OLE объект					
+DeactivateOleObject	Сделать неактивным OLE объект	OLE объект	Сделать неактивным OLE объект					
+ActivateOleObject	Активизировать OLE объект	OLE объект	Активизировать OLE объект					
+InsertOleObjectFromClipboardToExist	Вставить OLE объект из буфера	OLE объект	Вставить OLE объект из буфера					
+InsertOleObjectFromClipboard	Вставить OLE объект из буфера в документ	OLE объект	Вставить OLE объект из буфера в документ					
+InsertOleObjectToExist	Вставить OLE объект	OLE объект	Вставить  OLE объект			InputFileName:string		
+InsertOleObject	Вставить OLE объект в документ	OLE объект	Вставить OLE объект в документ			InputFileName:string		
+TakeObjectsRects	TakeObjectsRects	Particles	TakeObjectsRects	 (filter)		cx:int=100; cy:int=100; Image:Image; Objects:Object List	ObjectsWithRects:Object List	
+TailEdit	Редактирование хвоста	Particles	Редактирование хвоста (левая кнопка мыши) и средней части (Shift+лев. кнопка мыши)	 (interactive)				
+SegmLines	SegmLines	Particles	SegmLines	 (filter)		Src:Image; SrcParticles:Object List; SrcStopZone:Image	ResParticles:Object List	
+SegmObjects	SegmObjects	Particles	SegmObjects	 (filter)		Threshold:double=0.5; Dilate:int=5; Src:Object List	Res:Object List	
+ParticlesAddFrame	ParticlesAddFrame	Particles	ParticlesAddFrame			Current:Object List	Total:Object List	
+SpermSegm	SpermSegm	Particles	SpermSegm	 (filter)		BackTolerance:double=6; Img:Image; ForeMethod:int=-1	Binary:Binary	
+SegmSmallObjects	SegmSmallObjects	Particles	SegmSmallObjects			Image:Image; Binary:Binary; MinArea:int=5; Border:int=0; MinCX:int=16; MinCY:int=16	Objects:Object List	
+UnpackPhase	unpack phase	Phase analysis	unpack phase			UnpackedName:string; PackedName:string; Phase:int		
+PackPhase	pack phase	Phase analysis	pack phase			PackedName:string; UnpackedName:string; Phase:string=-1		
+UpdateWindow	UpdateWindow	For Developers	UpdateWindow			Invalidate:int=0; UpdateChildren:int=0		
+Sleep	sleep	For Developers	sleep			TimeMsec:int=1000		
+NewPhasePacked	Make new phase from background on single binary	Phase analysis	Make new phase from backgroundfrom background on single binary	 (filter)		NewPhase:int=-1; BinImage:Binary	BinResult:Binary	
+NewPhase	Сделать фон новой фазой	Фазовый анализ	Сделать фон новой фазой			PhaseNumber:int=-1; Name:string		
+SwitchPhase	Переключение фазы на активном фазовом изображении	Фазовый анализ	Переключение фазы на активном фазовом изображении			Phase:int=-1		
+GrayThresholdingPhase	Полутоновая бинаризация с получением фазы	Фазовый анализ	Полутоновая бинаризация с получением фазы	 (filter)		Low:int=0; High:int=256; Phase:int=0; BinImage:Image	BinResult:Binary	
+GrayThresholdingAllPhases	threshold all phases on image	Phase analysis	threshold all phases on image	 (filter)		Image:Image	BinResult:Binary	
+SewManual	Ручная сшивка	Изображение	Перемещение: Shift+стрелки курсора. Быстрое перемещение: Сtrl + стрелки курсора. Выход: Esc.	 (interactive)				
+SewAuto2	Auto Stitch	Image	Stitch selected images automatically	 (filter)		Img0:Image; Img1:Image	Stitch Result:Image	
+SewAutoVert	Автоматическая вертикальная сшивка	Изображение	Автоматическая сшивка пронумерованных  изображений сверху вниз	 (filter)		Img0:Image; Img1:Image; Img2:Image; Img3:Image; Img4:Image; Img5:Image; Img6:Image; Img7:Image; Img8:Image; Img9:Image; Img10:Image; Img11:Image; Img12:Image; Img13:Image; Img14:Image; Img15:Image; Img16:Image; Img17:Image; Img18:Image; Img19:Image	Stitch Result:Image	
+SewAuto	Автоматическая горизонтальная сшивка	Изображение	Автоматическая сшивка пронумерованных  изображений слева на право	 (filter)		Img0:Image; Img1:Image; Img2:Image; Img3:Image; Img4:Image; Img5:Image; Img6:Image; Img7:Image; Img8:Image; Img9:Image; Img10:Image; Img11:Image; Img12:Image; Img13:Image; Img14:Image; Img15:Image; Img16:Image; Img17:Image; Img18:Image; Img19:Image	Stitch Result:Image	
+ShowStatTableDependence	Зависимость	Вид	Показать зависимость					
+CustomizeStatTable	Customize Statistics Table	Statistics	Customize statatistics table					
+ShowAllStatTableColumns	Show All Statistics Table Columns	Statistics	Show all statatistics table columns					
+HideStatTableColumn	Hide Statistics Table Column	Statistics	Hide statatistics table column					
+SewStatTable	Sew Statistics Table	Statistics	Sew statatistics table			StatTable1:string; StatTable2:string; StatTableNew:string; ActivateTable:int=1; OvewriteType:int=0		
+FilterStatTable	Filter Statistics Table	Statistics	Filter statatistics table			StatTable:string; StatTableNew:string; ActivateTable:int=1; UseParamsFilter:int=1; Classes:string; ClassesFile:string		
+DeleteObjectsFromStatTable	Delete Objects From Statistics Table	Statistics	Delete objects from statatistics table			StatTable:string; ObjectListName:string; ImageName:string		
+ExportStatTable	Сохранить таблицу данных в текстовом формате	Измерения	Сохранить таблицу данных в текстовом формате			StatTable:string; FileName:string; ExportType:int=0; AddParamNames:int=1; DecimalSeparator:string		
+ShowStatTable	Таблица данных	Вид	Показать таблицу данных					
+CreateStatTable	Create Statistics Table	Statistics	Create statatistics table			ObjectList:string; TableName:string; ActivateTable:int=1; SendImages:int=0; VerifyType:int=0; AskOverWrite:int=1; EnableUndo:int=1		
+ShowStatTableCmp	Show/Hide comparison table	Statistics	Show/Hide statistic comparison table			Show:int=-1		
+ShowStatLegendCmp	Show/Hide comparison legend	Statistics	Show/hide statistic legend			Show:int=-1		
+ShowStatChartCmp	Show/Hide Compare Chart	Statistics	Show/Hide statistics comparison chart			Show:int=-1		
+ShowCompareView	Сравнение статистик	Вид сравнеия	Показать сравнение					
+ShowVirtualClasses	ShowVirtualClasses	Statistics	ShowVirtualClasses			bShow:int=-1		
+AssignVirtualClasses	AssignVirtualClasses	Statistics	AssignVirtualClasses			ObjectListName:string; StatObjectName:string		
+CreateStatObject	CreateStatObject	Статистика	CreateStatObject			StatDataName:string; OutputObjectName:string; ClassForDivision:int=-1; ActivateAfterCreate:int=1; ValidateAfterCreate:int=1; Flags:int=0		
+ShowStatTableView	Показать таблицу	Статистика	Включить/выключить отображение таблицы			Show:int=-1		
+ShowStatLegendView	Показать легенду	Статистика	Включить/выключить отображение легенды			Show:int=-1		
+ShowStatChartView	Показать диаграмму	Статистика	Включить/выключить отображение столбцовой диаграммы			Show:int=-1		
+ShowStatView	Статистика	Вид	Показать статистику					
+Snapshot	Snapshot	Tests	Snapshot			ShowTargetDialog:int=0; ResizeCX:int=0; ResizeCY:int=0; ScrollWindow:int=0; WndPhoto:string=WndPhoto; SnapParents:int=0; SnapX:int=-1; SnapY:int=-1		
+FastFindPhasesColor	FastFindPhasesColor	Thresholding	FastFindPhasesColor	 (filter)		nPhases:int=3; CreateResult:int=1; Img:Image	FindPhasesColor:Image	
+SegmSerial3	SegmSerial3	Thresholding	SegmSerial3	 (filter)		Tolerance:double=10.0; DistTolerance:double=1.0; Img:Image	Sequence:Image	
+SegmSerial2	SegmSerial2	Thresholding	SegmSerial2	 (filter)		Colors:int=10; Img:Image	Sequence:Image	
+SegmSerial	SegmSerial	Thresholding	SegmSerial	 (filter)		dc:double=40.0; Img:Image	Sequence:Image	
+EvenByEdge	EvenByEdge	Filters	EvenByEdge	 (filter)		Img:Image; Bin:Binary	EvenByEdge:Image	
+LinesThreshold	LinesThreshold	Thresholding	LinesThreshold	 (filter)		Threshold:int=32; Mask:int=7; Img:Image	Lines:Binary	
+ContinueCurves	ContinueCurves	Thresholding	ContinueCurves	 (filter)		r_min:double=10.0; r_max:double=40.0; threshold:double=0.5; Bin:Binary	Curves:Binary	
+ThresholdByEdges	ThresholdByEdges	Thresholding	ThresholdByEdges	 (filter)		Smooth:int=7; Img:Image; Edges:Binary	Binary:Binary	
+FindCurves	FindCurves	Thresholding	FindCurves	 (filter)		r_min:double=10.0; r_max:double=40.0; threshold:double=0.5; Bin:Binary	Curves:Binary	
+Canny	CannyThreshold	Thresholding	CannyThreshold	 (filter)		Threshold:int=32; Kind:int=0; Img:Image	Canny:Binary	
+FindCircles3	FindCircles3	Filters	FindCircles3	 (filter)		MinRadius:int=16; MaxRadius:int=32; MinDistance:int=16; MaxDistortion:double=0.25; Threshold:double=0.5; Img:Image	Objects:Object List	
+ProcessPairs	ProcessPairs	Filters	ProcessPairs	 (filter)		MaxDistance:int=2; SizeRatio:double=0.5; Flags:int=3; Source:Object List	ProcessPairs:Object List	
+FindCircles2	FindCircles2	Filters	FindCircles2	 (filter)		Radius:int=32; Img:Image; Bin:Binary; ShowDebugImage:int=0	Objects:Object List	
+TransformColor1	TransformColor1	Color	TransformColor1	 (filter)		Flags:int=0; Img:Image	TransformColor1:Image	
+SegmColorPhases	Поиск цветовых диапазонов	Filters	Поиск цветовых диапазонов	 (filter)		Img:Image; TestPointX:int=-1; TestPointY:int=-1	SegmColorPhases:Binary	
+FindPhasesColor	FindPhasesColor	Filters	FindPhasesColor	 (filter)		nPhases:int=3; CreateResult:int=1; Img:Image	FindPhasesColor:Image	
+FindPhasesGray	Поиск фаз на grayscale	Filters	FindPhasesGray	 (filter)		CreateResult:int=1; Img:Image	FindPhasesGray:Binary	
+LocalMin	Бинаризация локального минимума	Filters	Бинаризация локального минимума	 (filter)		Img:Image	LocalMin:Binary	
+LocalMax	Бинаризация локального максимума	Filters	Бинаризация локального максимума	 (filter)		Img:Image	LocalMax:Binary	
+ChowKaneko	Бинаризация Шов/Канеко	Filters	Бинаризация Шов/Канеко	 (filter)		Param:int=64; Type:int=0; Img:Image	ChowKaneko:Binary	
+Relaxation	Бинаризация с релаксацией	Filters	Бинаризация с релаксацией	 (filter)		Param:int=100; Img:Image	Relaxation:Binary	
+Pyramid	Пирамидальная сегментация	Filters	Пирамидальная сегментация	 (filter)		Param:int=1; Img:Image	Pyramid:Image	
+MinBinaryThreshold	Бинаризация по минимизации	Filters	Бинаризация по минимизации ошибки	 (filter)		Img:Image	BinaryMinimum:Binary	
+BoundsThreshold	Бинаризация по границам	Filters	Бинаризация по границам	 (filter)		Img:Image	BoundsEdge:Binary	
+PeaksThreshold	Бинаризация по пикам	Filters	Бинаризация по пикам гистограммы	 (filter)		Img:Image	Peaks:Binary	
+EntropyThreshold	Бинаризация по энтропии	Filters	Бинаризация по критерию минимума энтропии	 (filter)		Img:Image	Entropy:Binary	
+FuzzySetsThreshold	Бинаризация нечетких множеств	Filters	Бинаризация по границе нечетких множеств	 (filter)		Img:Image	FuzzySets:Binary	
+IterationThreshold	Итерационная бинаризация	Filters	Бинаризация с использованием итерационной границы	 (filter)		Img:Image	Iteration:Binary	
+add_functions	add_functions	Скрипты	add_functions 					
+add_functions_db	add_functions_db	Скрипты	add_functions_db 					
+add_functions_db_Old2006	add_functions_db_Old2006	Скрипты	add_functions_db_Old2006 					
+add_functions_object_keys	add_functions_object_keys	Скрипты	add_functions_object_keys 					
+add_functions_object_keys_Old2006	add_functions_object_keys_Old2006	Скрипты	add_functions_object_keys_Old2006 					
+add_functions_Old2006	add_functions_Old2006	Скрипты	add_functions_Old2006 					
+BinMeas	Measure Masks	Measurement	Measure object masks Measure Masks					
+BinMeas_Old2006	Measure Masks	Measurement	Measure object masks Measure Masks					
+blot	blot	Скрипты	blot 					
+Collect	Focus Enhancement	Enhance	Focus Enhancement Focus Enhancement					
+CompareResut	Stitch from Splitter	Image	Create new image by combining two split images Stitch from splitter					
+CreatePloidClassFile	...	Measurement	Measurement 					
+CreateTD	Add to Statistics	Measurement	Add data to statistics Add Data to Statistics					
+CreateTD_Old2006	Add to Statistics	Measurement	Add data to statistics Add Data to Statistics					
+DataTableToExcel	Data Table to Excel	Measurement	Send current Data Table to MS Excel Send Data Table to MS					
+DataTableToExcel1	Data Table to Excel	Measurement	Send current Data Table to MS Excel Send Data Table to MS					
+DataToExcelMaster	Send Data to MS Excel	Measurement	Send current Object List to MS Excel Send Data to MS Excel					
+EmptyFileOpen	EmptyFileOpen	Internal Scripts	EmptyFileOpen 					
+EmptyFileOpenLight	EmptyFileOpenLight	Internal Scripts	EmptyFileOpenLight 					
+FileSaveViewScript	Save View...	File	Save the current view as file Save View					
+FileSaveViewScript_Old2006	Save View...	File	Save the current view as file Save View					
+FileSendViewScript	Send View...	File	Send the current view by E-Mail Send View					
+FileSendViewScript_Old2006	Send View...	File	Send the current view by E-Mail Send View					
+HideDockBars	Hide Dockbars	Internal Scripts	Hide dockbars 					
+HideDockBars_Old2006	Hide Dockbars	Internal Scripts	Hide dockbars 					
+Init_Master	Init_Master	Скрипты	Init_Master 					
+Init_Master0	Init_Master0	Скрипты	Init_Master0 					
+Init_Master_Old2006	Init_Master_Old2006	Скрипты	Init_Master_Old2006 					
+LocalContrast	Local Contrast	Enhance	Local contrast Local Contrast					
+MasterModeDataBase	Database	Tools	Switch to Database mode Switch to Database					
+MasterModeDataBase_Old2006	Database	Tools	Switch to Database mode Switch to Database					
+MasterModeMethod	Method	Tools	Switch to Method mode Switch to Method					
+Master_states	Master_states	Скрипты	Master_states 					
+Master_states_Old2006	Master_states_Old2006	Скрипты	Master_states_Old2006 					
+MeasManualAngle2LineScript	MeasManualAngle2LineScript	Скрипты	MeasManualAngle2LineScript 					
+MeasManualAngle2LineScript_Old2006	MeasManualAngle2LineScript_Old2006	Скрипты	MeasManualAngle2LineScript_Old2006 					
+MeasManualAngle3PointScript	MeasManualAngle3PointScript	Скрипты	MeasManualAngle3PointScript 					
+MeasManualAngle3PointScript_Old2006	MeasManualAngle3PointScript_Old2006	Скрипты	MeasManualAngle3PointScript_Old2006 					
+MeasManualCycle2Script	MeasManualCycle2Script	Скрипты	MeasManualCycle2Script 					
+MeasManualCycle2Script_Old2006	MeasManualCycle2Script_Old2006	Скрипты	MeasManualCycle2Script_Old2006 					
+MeasManualCycle3Script	MeasManualCycle3Script	Скрипты	MeasManualCycle3Script 					
+MeasManualCycle3Script_Old2006	MeasManualCycle3Script_Old2006	Скрипты	MeasManualCycle3Script_Old2006 					
+MeasManualFreeLineScript	MeasManualFreeLineScript	Скрипты	MeasManualFreeLineScript 					
+MeasManualFreeLineScript_Old2006	MeasManualFreeLineScript_Old2006	Скрипты	MeasManualFreeLineScript_Old2006 					
+MeasManualLineScript	MeasManualLineScript	Скрипты	MeasManualLineScript 					
+MeasManualLineScript_Old2006	MeasManualLineScript_Old2006	Скрипты	MeasManualLineScript_Old2006 					
+MeasManualSplineScript	MeasManualSplineScript	Скрипты	MeasManualSplineScript 					
+MeasManualSplineScript_Old2006	MeasManualSplineScript_Old2006	Скрипты	MeasManualSplineScript_Old2006 					
+MethodStart	MethodStart	Скрипты	MethodStart 					
+MethodStart_Old2006	MethodStart_Old2006	Скрипты	MethodStart_Old2006 					
+NewDataBase	New Database...	Database	Create new database New Database					
+NewDoc	New Document	File	Create a new document New Document					
+NewQueryScript	New Query...	Database	Create new query New Query					
+NewQueryScript_Old2006	New Query...	Database	Create new query New Query					
+Null_Action	Null	---	Null Null					
+ObjectEditorScript	ObjectEditorScript	Скрипты	ObjectEditorScript 					
+ObjectEditorScript_Old2006	ObjectEditorScript_Old2006	Скрипты	ObjectEditorScript_Old2006 					
+ObjectEllipseDirectScript	ObjectEllipseDirectScript	Скрипты	ObjectEllipseDirectScript 					
+ObjectEllipseDirectScript_Old2006	ObjectEllipseDirectScript_Old2006	Скрипты	ObjectEllipseDirectScript_Old2006 					
+ObjectEllipseFixedScript	ObjectEllipseFixedScript	Скрипты	ObjectEllipseFixedScript 					
+ObjectEllipseFixedScript_Old2006	ObjectEllipseFixedScript_Old2006	Скрипты	ObjectEllipseFixedScript_Old2006 					
+ObjectEllipseScript	ObjectEllipseScript	Скрипты	ObjectEllipseScript 					
+ObjectEllipseScript_Old2006	ObjectEllipseScript_Old2006	Скрипты	ObjectEllipseScript_Old2006 					
+ObjectFreeScript	ObjectFreeScript	Скрипты	ObjectFreeScript 					
+ObjectFreeScript_Old2006	ObjectFreeScript_Old2006	Скрипты	ObjectFreeScript_Old2006 					
+ObjectMagickStickScript	ObjectMagickStickScript	Скрипты	ObjectMagickStickScript 					
+ObjectMagickStickScript_Old2006	ObjectMagickStickScript_Old2006	Скрипты	ObjectMagickStickScript_Old2006 					
+ObjectRectDirectScript	ObjectRectDirectScript	Скрипты	ObjectRectDirectScript 					
+ObjectRectDirectScript_Old2006	ObjectRectDirectScript_Old2006	Скрипты	ObjectRectDirectScript_Old2006 					
+ObjectRectFixedScript	ObjectRectFixedScript	Скрипты	ObjectRectFixedScript 					
+ObjectRectFixedScript_Old2006	ObjectRectFixedScript_Old2006	Скрипты	ObjectRectFixedScript_Old2006 					
+ObjectRectScript	ObjectRectScript	Скрипты	ObjectRectScript 					
+ObjectRectScript_Old2006	ObjectRectScript_Old2006	Скрипты	ObjectRectScript_Old2006 					
+ObjectScissorsScript	ObjectScissorsScript	Скрипты	ObjectScissorsScript 					
+ObjectScissorsScript_Old2006	ObjectScissorsScript_Old2006	Скрипты	ObjectScissorsScript_Old2006 					
+ObjectSplineScript	ObjectSplineScript	Скрипты	ObjectSplineScript 					
+ObjectSplineScript_Old2006	ObjectSplineScript_Old2006	Скрипты	ObjectSplineScript_Old2006 					
+OpenDataBase	Open Database...	Database	Open existing database Open Database					
+OpenLastDB	Open Last Database...	Database	Open last used database Open Last Database					
+OptionsMaster	Options...	Tools	Main program options Main Options					
+PasteAsNew	Paste into New Document	Edit	Paste into new document Paste into New Document					
+RemoveUnknClass	Delete Unknown	Measurement	Delete all unknown objects Delete All Unknown Objects					
+RenameMethod	Rename Method	Method	Rename the selected method Rename Method					
+RenameMethod_Old2006	Rename Method	Method	Rename the selected method Rename Method					
+RunBinMorph	Mask Morphology...	Objects Masks	Morphological operations on the object masks on the image Morphological Operations on the Object Masks					
+RunBrightnessContrastLight	Brightness and Contrast...	Enhance	Adjust brightness and contrast of the active image Brightness and Contrast					
+RunBrightnessContrastLight_Old2006	Brightness and Contrast...	Enhance	Adjust brightness and contrast of the active image Brightness and Contrast					
+RunCalibrXYRatio	Input Device X/Y Ratio...	Measurement	Specify X/Y pixel ratio for active input device Input Device X/Y Ratio					
+RunClass	Classifier...	Statistics	Classifier Classifier					
+RunColorAutoThresholding	Automatic...	Objects Masks	Automatic objects masks thresholding on image Automatic Objects Masks Thresholding					
+RunColorBalance	Color Balance...	Enhance	Apply the Color Balance filter to the image Color Balance					
+RunColorBalance_Old2006	Color Balance...	Enhance	Apply the Color Balance filter to the image Color Balance					
+RunColorManualThresholding	By Specified Points...	Objects Masks	Manual objects mask thresholding per color and brightness samples Objects Mask Thresholding by Specified Points					
+RunColorPhaseThresholding	Phase Detection...	Objects Masks	Automatic phase detection on image Automatic Phase Detection					
+RunCreateEmptyImage	Create Empty Image...	File	Create an empty image in the active document Create Empty Image					
+RunCreateParam	New Column...	Measurement	Add new column to measurement data table New Column					
+RunDataBaseDesign	Form Design...	Database	Form design and database editing Form Design					
+RunDataBaseDesign_Old2006	Form Design...	Database	Form design and database editing Form Design					
+RunDivide	Mask Separation...	Objects Masks	Automatic object masks separation on image Automatic Object Masks Separation					
+RunEdgeDetection	Edge Detection...	Enhance	Apply the Edge Detection filter to the image Edge Detection					
+RunEdgeDetection_Old2006	Edge Detection...	Enhance	Apply the Edge Detection filter to the image Edge Detection					
+RunEditMarker	Free-Length Calibration Bar	Measurement	Free-Length Calibration Bar Free-Length Calibration Bar					
+RunEnchancedFocus	RunEnchancedFocus	Скрипты	RunEnchancedFocus 					
+RunEqualize	Equalize...	Enhance	Equalize the active image Equalize					
+RunEqualize_Old2006	Equalize...	Enhance	Equalize the active image Equalize					
+RunEven2	Background Correction...	Enhance	Adjust background correction image filter Background Correction					
+RunEven2_Old2006	Background Correction...	Enhance	Adjust background correction image filter Background Correction					
+RunFocus	RunFocus	Скрипты	RunFocus 					
+RunFocus_Old2006	RunFocus_Old2006	Скрипты	RunFocus_Old2006 					
+RunGrayThresholding	By Brightness...	Objects Masks	Objects masks thresholding by brightness Objects Masks Thresholding by Brightness					
+RunInfo	Image Information...	Image	Image Information Image Information					
+RunMarker	Fixed-Length Calibration Bar...	Measurement	Fixed-length calibration bar Fixed-Length Calibration Bar					
+RunMeasParameters	Measurement Parameters...	Measurement	Measurement parameters selection Measurement Parameters					
+RunMethodSetup	Method Settings...	Method	Method settings Method Settings					
+RunMorphology	Morphological Filters...	Image	Morphological operations on source image Morphological Filters					
+RunMorphology_Old2006	Morphological Filters...	Image	Morphological operations on source image Morphological Filters					
+RunNewCalibr	New Calibration...	Measurement	Create new calibration New Calibration					
+RunODSetBackgr1	Настройка фона...	Измерения	Настройка фона оптической плотности Настройка фона оптической плотности					
+RunODSetttings2	Настройка оптической плотности...	Измерения	Настройка оптической плотности Настройка оптической плотности					
+RunODSetttings3	Настройка оптической плотности...	Измерения	Настройка оптической плотности Настройка оптической плотности					
+RunOptionsCalibr	Select Calibration...	Measurement	Select calibration or change units of measure Select Calibration					
+RunOptionsDBMaster	Interaction with DB...	Database	Specify fields for interaction with database Interaction with Database					
+RunOptionsManualColor	RunOptionsManualColor	Скрипты	RunOptionsManualColor 					
+RunOptionsManualMeas	RunOptionsManualMeas	Скрипты	RunOptionsManualMeas 					
+RunOptionsManualMeasStat	RunOptionsManualMeasStat	Скрипты	RunOptionsManualMeasStat 					
+RunOptionsStitch	Stitch Options...	Image	Stitch options Stitch Options					
+RunOptionsStitch_Old2006	Stitch Options...	Image	Stitch options Stitch Options					
+RunResize	Resize...	Image	Resize the active image Resize Image					
+RunSelectCellPloidType	Выбор типа нормальных клеток...	Measurement	Выбор типа нормальных клеток Выбор типа нормальных клеток					
+RunSetupBorders	Add Borders...	Image	Add borders to the image Add Borders					
+RunSmooth	Smooth...	Enhance	Apply smoothing filter to the image Smooth					
+RunSmooth_Old2006	Smooth...	Enhance	Apply smoothing filter to the image Smooth					
+RunStat	RunStat	Скрипты	RunStat 					
+RunStat1	RunStat1	Скрипты	RunStat1 					
+RunStatGraphAxis	Axes...	Statistics	Axes Axes					
+RunStatGraphCompare	Compare...	Statistics	Compare Compare					
+RunStatGraphDepend	Dependence...	Statistics	Dependence Dependence					
+RunStatGraphDistr	Statistics...	Statistics	Statistics Statistics					
+RunStatGraphDistrOptions	Titles...	Statistics	Titles Titles					
+RunStatSelect	Sample...	Statistics	Sample Sample					
+RunStat_Old2006	RunStat_Old2006	Скрипты	RunStat_Old2006 					
+RunSupport	Technical Support	Help	Technical support Technical Support					
+RunTemplatesManagerDBMaster	Database Print Template Manager...	Print	Manage print templates Print Template Manager					
+RunTemplatesManagerMaster	Print Template Manager...	Print	Manage print templates Print Template Manager					
+RunTimerInput	Timer Input	Acquire	Input a number of frames at specified intervals Timer Input					
+RunTimerInput_Old2006	Timer Input	Acquire	Input a number of frames at specified intervals Timer Input					
+RunUnsharpen	Unsharp Mask...	Enhance	Increase the overall sharpness of the image Unsharp Mask					
+RunUnsharpen_Old2006	Unsharp Mask...	Enhance	Increase the overall sharpness of the image Unsharp Mask					
+RunUserMeasParamEdit	User Defined Parameters...	Measurements	User defined measurement parameters User Defined Parameters					
+SaveImageFromDB	Save Image...	File	Save source image to file Save Image					
+SaveObjects	SaveObjects	Скрипты	SaveObjects 					
+SelectInputDeviceMaster	Select Device and Input...	Acquire	Select device and input image into a new document Select Device and Input					
+SelectInputMethod	SelectInputMethod	Скрипты	SelectInputMethod 					
+SendSrcImageToDB	Source Image to DB	Database	Send sourse image to database by interaction settings Send Source Image to DB					
+SendSrcImageToDB_Old2006	Source Image to DB	Database	Send sourse image to database by interaction settings Send Source Image to DB					
+SendToDB	Send to Database	Database	Send data to new database record Send to New Database Record					
+SendToDBAllTypes	All Elements to DB	Database	Send all elements to database by interaction settings Send All Elements to DB					
+SendToDBAllTypes_Old2006	All Elements to DB	Database	Send all elements to database by interaction settings Send All Elements to DB					
+SendToDBToActiveField	To Active DB Field	Database	Send active element to active database field Send to Active DB Field					
+SendToDBToActiveField_Old2006	To Active DB Field	Database	Send active element to active database field Send to Active DB Field					
+SendToDB_Old2006	Send to Database	Database	Send data to new database record Send to New Database Record					
+SetBrightnessPanes	Set Panes for Brightness	Internal Scripts	Set Panes for Brightness Set Panes for Brightness					
+ShowCfg	Configuration	Statistics	Show/hide Configuration bar Show/hide Configuration bar					
+ShowClassLabels	Show Class Labels	Tools	Show/hide labels of classes Show Class Labels					
+ShowContextscript	Context Viewer	Tools	Show/hide Context Viewer Context Viewer					
+ShowDockBars	Show Dockbars	Internal Scripts	Show dockbars 					
+ShowDockBars_Old2006	Show Dockbars	Internal Scripts	Show dockbars 					
+ShowHistogram	Histogram	Tools	Show/hide Histogram bar Histogram					
+ShowHistogram_Old2006	Histogram	Tools	Show/hide Histogram Histogram					
+ShowImageAnnotation	Annotation	Tools	Show/hide Annotation toolbar Annotation					
+ShowImageAnnotation_Old2006	Annotation	Tools	Show/hide Annotation toolbar Annotation					
+ShowMainToolBar	Main	Tools	Show/hide Main toolbar Main					
+ShowMeasManual	Manual Measurements	Tools	Show/hide Manual Measurements toolbar Manual Measurements					
+ShowMeasManual_Old2006	Manual Measurements	Tools	Show/hide Manual Measurements toolbar Manual Measurements					
+ShowMethodPanel	Method Bar	Tools	Show/hide Method bar Method Bar					
+ShowMetodicsTab	Fucntion Bar	Tools	Show/hide Fucntion bar Fucntion Bar					
+ShowMtdListToolBar	Method List	Tools	Show/hide Method List toolbar Method List					
+ShowObjectEditor	Object Editor	Tools	Show/hide Object Editor toolbar Object Editor					
+ShowObjectEditor_Old2006	Object Editor	Tools	Show/hide Object Editor toolbar Object Editor					
+ShowPropertyBar	Properties Page	Tools	Show/hide Properties page Properties Page					
+ShowSelectionToolBar	Selection	Tools	Show/hide Selection toolbar Selection					
+ShowSelectionToolBar_Old2006	Selection	Tools	Show/hide Selection bar Selection					
+ShowStatInfo	Info	Statistics	Show/hide Info bar Show/hide Info bar					
+ShowToolsCustomize	Customize...	Tools	Customize the program interface - toolbars, menus etc. Customize					
+StatDataToExcel	Statistical Table to MS Excel	Measurement	Send active statistical table to MS Excel Send Statistical Table to MS Excel					
+StatDataToExcel_Old2006	Таблицу статистики в MS Excel	Измерения	Отправить активную таблицу статистики в MS Excel Отправить таблицу статистики в MS Excel					
+StatRemove	Delete Table	Statistics	Delete data table Delete Data Table					
+ToEn	ToEn	Скрипты	ToEn 					
+ToRu	ToRu	Скрипты	ToRu 					
+TV5	Capture	Acquire	Capture an image from video device Capture					
+TVInputCurrent	Input into Active...	Acquire	Input image into the active document Input Image into Active Document					
+TVInputNew	Input into New...	Acquire	Input image into a new document without device selection Input into New Document					
+Wnd2Meas	Split and Synchronize	Window	Split document window vertically, show image and its Measurement Data Split and Synchronize					

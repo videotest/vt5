@@ -296,12 +296,6 @@
     <None Include="DBaseDoc.def">
       <Filter>Source Files</Filter>
     </None>
-    <None Include="albom.progid" />
-    <None Include="msado15.tlh" />
-    <None Include="msado15.tli" />
-    <None Include="msadox.tlh" />
-    <None Include="msadox.tli" />
-    <None Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Albom.cpp">

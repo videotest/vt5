@@ -82,10 +82,10 @@ O = $(OBJ)
 
 all:	libtiff.lib $(DLLNAME)
 
-$(IMDIR)tif_config.h:	tif_config.vc.h
-	copy tif_config.vc.h $(IMDIR)tif_config.h
+tif_config.h:	tif_config.vc.h
+	copy tif_config.vc.h tif_config.h
 
-$(IMDIR)tiffconf.h:	tiffconf.vc.h
+tiffconf.h:	tiffconf.vc.h
 	copy tiffconf.vc.h tiffconf.h
 
 # .cpp.{$(IMDIR)*}obj:
@@ -98,7 +98,7 @@ $(IMDIR)tiffconf.h:	tiffconf.vc.h
 .cxx{$(IMDIR)}.obj:
    $(CC) $(CFLAGS) -Fo$(IMDIR) -I$(IMDIR) -c $<
    
-libtiff.lib:	$(IMDIR)tif_config.h $(IMDIR)tiffconf.h $(OBJ)
+libtiff.lib:	tif_config.h tiffconf.h $(OBJ)
 	$(AR) /out:$(OUTDIR)libtiff.lib $(OBJ) $(LIBS)
 
 
@@ -108,7 +108,7 @@ libtiff.lib:	$(IMDIR)tif_config.h $(IMDIR)tiffconf.h $(OBJ)
 
 
 clean:
-	-del $(IMDIR)tif_config.h $(IMDIR)tiffconf.h
+	-del tif_config.h tiffconf.h
 	-del $(IMDIR)*.obj
 	-del $(OUTDIR)libtiff.lib
 	-del $(OUTDIR)$(DLLNAME)
