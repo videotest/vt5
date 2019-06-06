@@ -563,5 +563,9 @@
 			Name="DevPartner_IsInstrumented"
 			Value="1"
 		/>
+		<Global
+			Name="RESOURCE_FILE"
+			Value="Register.rc"
+		/>
 	</Globals>
 </VisualStudioProject>

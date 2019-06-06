@@ -28,6 +28,7 @@ struct TCWndInitControlContainerCWnd_InitControlContainer_Ordinal: public CWnd
 	 }
 }; 
  
+#if 0
 CAPIHookMethod<CWnd_InitControlContainer_Ordinal,BOOL (CWnd::*) (BOOL bCreateFromResource), TCWndInitControlContainerCWnd_InitControlContainer_Ordinal::TMethodHook>
 	g_CWndInitControlContainerCWnd_InitControlContainer_Ordinal(MFCXXD_DLL, &TCWndInitControlContainerCWnd_InitControlContainer_Ordinal::Hook, FALSE); 
 BOOL TCWndInitControlContainerCWnd_InitControlContainer_Ordinal::Hook (BOOL bCreateFromResource)
@@ -69,7 +70,6 @@ BOOL TCWndInitControlContainerCWnd_InitControlContainer_Ordinal::Hook (BOOL bCre
 	
 	return (m_pCtrlCont != NULL);
 }
-
 HOOK_METHOD(MFCXXD_DLL,COleControlSite_InvokeHelperV_Ordinal,void,COleControlSite,InvokeHelperV,
 	(DISPID dwDispID, WORD wFlags,
 	VARTYPE vtRet, void* pvRet, const BYTE* pbParamInfo, va_list argList))
@@ -137,6 +137,7 @@ HOOK_METHOD(MFCXXD_DLL,COleControlSite_SetPropertyV_Ordinal,void,COleControlSite
 /*
  	7759 mfc90d.dll!COleControlSite::SafeSetProperty(long dwDispID=0xfffffdfa, unsigned short vtProp=0x0008, ...)  Line 1162	C++
 */
+
 HOOK_METHOD(MFCXXD_DLL,COleControlSite_SafeSetProperty_Ordinal,BOOL,COleControlSite,SafeSetProperty,
 (DISPID dwDispID, VARTYPE vtProp, ...))
 {
@@ -160,11 +161,13 @@ HOOK_METHOD(MFCXXD_DLL,COleControlSite_SafeSetProperty_Ordinal,BOOL,COleControlS
 	va_end(argList);
 	return bSuccess;
 }
+
 /*
 5909      0017B570 [NONAME] ?ModifyStyle@COleControlSite@@UEAAHKKI@Z 
 (public: virtual int __cdecl COleControlSite::ModifyStyle
 (unsigned long,unsigned long,unsigned int))
 */
+
 HOOK_METHOD(MFCXXD_DLL,COleControlSite_ModifyStyle_Ordinal,BOOL,COleControlSite,ModifyStyle,
 (DWORD dwRemove, DWORD dwAdd, UINT nFlags))
 {
@@ -224,6 +227,7 @@ HOOK_METHOD(MFCXXD_DLL,8605,void,COleControlSite,SetWindowText,
  int bStorage=0x00000000,
  wchar_t * bstrLicKey=0x0000000000000000)  Line 337	C++
 */
+
 HOOK_METHOD(MFCXXD_DLL,COleControlSite_CreateControlCommon_Ordinal,HRESULT,COleControlSite,CreateControlCommon,
 (CWnd* pWndCtrl, REFCLSID clsid,const CControlCreationInfo& creationInfo,
 	LPCTSTR lpszWindowName, DWORD dwStyle, const POINT* ppt, const SIZE* psize,
@@ -366,6 +370,7 @@ HOOK_METHOD(MFCXXD_DLL,COleControlSite_CreateControlCommon_Ordinal,HRESULT,COleC
 
 	return hr;
 }
+
 /* 	
 mfc90d.dll!COleControlSite::CreateControl(CWnd * pWndCtrl=0x000000000bb14450, const _GUID & clsid={...}, const char * lpszWindowName=0x000000006be1a140, unsigned long dwStyle=0x58000000, const tagPOINT * ppt=0x0000000000128700, const tagSIZE * psize=0x0000000000128708, unsigned int nID=0x00000000, CFile * pPersist=0x0000000000000000, int bStorage=0x00000000, wchar_t * bstrLicKey=0x0000000000000000)  Line 191	C++
 */
@@ -379,6 +384,7 @@ HOOK_METHOD(MFCXXD_DLL,COleControlSite_CreateControl_5POINT_Ordinal,HRESULT,COle
 		lpszWindowName, dwStyle, ppt, psize,
 		nID, pPersist, bStorage, bstrLicKey);
 }
+
 /*
 mfc90d.dll!COleControlContainer::CreateControlCommon(CWnd * pWndCtrl=0x000000000bb14450, const _GUID & clsid={...}, const CControlCreationInfo & creationInfo={...}, const char * lpszWindowName=0x000000006be1a140, unsigned long dwStyle=0x58000000, const tagPOINT * ppt=0x0000000000128700, const tagSIZE * psize=0x0000000000128708, unsigned int nID=0x00000000, CFile * pPersist=0x0000000000000000, int bStorage=0x00000000, wchar_t * bstrLicKey=0x0000000000000000, COleControlSite * * ppNewSite=0x0000000000000000)  Line 306 + 0x81 bytes	C++
 */
@@ -455,6 +461,7 @@ HOOK_METHOD(MFCXXD_DLL,COleControlContainer_CreateControlCommon_Ordinal,BOOL,COl
 //int bStorage=0x00000000,
 //wchar_t * bstrLicKey=0x0000000000000000,
 //COleControlSite * * ppNewSite=0x0000000000000000)  Line 342	C++
+
 HOOK_METHOD(MFCXXD_DLL,COleControlContainer_CreateControl_2GUID_5POINT_Ordinal,BOOL,COleControlContainer,CreateControl,
 (CWnd* pWndCtrl, REFCLSID clsid,
 	LPCTSTR lpszWindowName, DWORD dwStyle, const POINT* ppt, const SIZE* psize,
@@ -467,6 +474,7 @@ HOOK_METHOD(MFCXXD_DLL,COleControlContainer_CreateControl_2GUID_5POINT_Ordinal,B
 								dwStyle, ppt, psize,nID, pPersist, bStorage, bstrLicKey,
 								ppNewSite);
 }
+
 // 	mfc90d.dll!CWnd::CreateControl(const _GUID & clsid={...},
 //const char * lpszWindowName=0x000000006be1a140,
 //unsigned long dwStyle=0x58000000,
@@ -520,6 +528,7 @@ HOOK_METHOD(MFCXXD_DLL,CWnd_CreateControl_4RECT_Ordinal,BOOL,CWnd,CreateControl,
    return( CreateControl( clsid, lpszWindowName, dwStyle, &pt, &size,
 	  pParentWnd, nID, pPersist, bStorage, bstrLicKey ) );
 }
+
 // 	mfc90d.dll!CWnd::CreateControl(const char * lpszClass=0x000000000a766a28, const char * lpszWindowName=0x000000006be1a140, unsigned long dwStyle=0x58000000, const tagRECT & rect={...}, CWnd * pParentWnd=0x000000000bb137f8, unsigned int nID=0x00000000, CFile * pPersist=0x0000000000000000, int bStorage=0x00000000, wchar_t * bstrLicKey=0x0000000000000000)  Line 35	C++
 HOOK_METHOD(MFCXXD_DLL,CWnd_CreateControl_1char_Ordinal,BOOL,CWnd,CreateControl,
 	(LPCTSTR lpszClass, LPCTSTR lpszWindowName, 
@@ -536,6 +545,7 @@ HOOK_METHOD(MFCXXD_DLL,CWnd_CreateControl_1char_Ordinal,BOOL,CWnd,CreateControl,
 	return CreateControl(clsid, lpszWindowName, dwStyle, rect, pParentWnd, nID,
 		pPersist, bStorage, bstrLicKey);
 }
+
 /*
 5551      0017B230 [NONAME] ?InvokeHelper@COleControlSite@@UEAAXJGGPEAXPEBEZZ 
 (public: virtual void __cdecl COleControlSite::InvokeHelper
@@ -563,6 +573,7 @@ HOOK_METHOD(MFCXXD_DLL,COleControlSite_GetProperty_Ordinal,void,COleControlSite,
 	((TCOleControlSiteInvokeHelperCOleControlSite_GetProperty_Ordinal*)this)->Hook(dwDispID,
 		DISPATCH_PROPERTYGET, vtProp, pvProp, NULL);
 }
+
 /*
 3881      0017B4F0 [NONAME] ?GetExStyle@COleControlSite@@UEBAKXZ (public: virtual unsigned long __cdecl COleControlSite::GetExStyle(void)const )
 */   
@@ -582,6 +593,7 @@ HOOK_METHOD(MFCXXD_DLL,COleControlSite_GetExStyle_Ordinal,DWORD,COleControlSite,
 
 	return dwExStyle;
 }
+
 /*
 3882      000ADD80 [NONAME] ?GetExStyle@CWnd@@QEBAKXZ (public: unsigned long __cdecl CWnd::GetExStyle(void)const )
 */
@@ -595,3 +607,4 @@ HOOK_METHOD(MFCXXD_DLL,CWnd_GetExStyle_Ordinal,DWORD,CWnd,GetExStyle,
 	else
 		return ((TCOleControlSiteGetExStyleCOleControlSite_GetExStyle_Ordinal*)m_pCtrlSite)->Hook();
 }
+#endif
