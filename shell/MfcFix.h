@@ -80,6 +80,49 @@
 #define MFCXXD_DLL _T("mfc120d.dll")
 #define GetInterface_CCmdTarget_Ordinal 6630
 #define InvokeHelperV_COleDispatchDriver_Ordinal 9269
+#elif  _MFC_VER == 0x0E00
+#define MFCXXD_DLL _T("mfc140d.dll")
+#if defined(_WIN64)
+#define GetInterface_CCmdTarget_Ordinal 6727
+#define InvokeHelperV_COleDispatchDriver_Ordinal 9386
+#define CWnd_InitControlContainer_Ordinal 9190
+#define COleControlSite_InvokeHelperV_Ordinal 9385
+#define COleControlSite_SetPropertyV_Ordinal 15781
+#define COleControlSite_SafeSetProperty_Ordinal 14663
+#define COleControlSite_ModifyStyle_Ordinal 10152
+#define COleControlSite_SetWindowTextA_Ordinal 16136
+#define COleControlSite_CreateControlCommon_Ordinal 3789
+#define COleControlSite_CreateControl_5POINT_Ordinal 3783
+#define COleControlContainer_CreateControlCommon_Ordinal 3788
+#define COleControlContainer_CreateControl_2GUID_5POINT_Ordinal 3779
+#define CWnd_CreateControl_4POINT_Ordinal 3785
+#define CWnd_CreateControl_4RECT_Ordinal 3784
+#define CWnd_CreateControl_1char_Ordinal 3787
+#define COleControlSite_InvokeHelper_Ordinal 9382
+#define COleControlSite_GetProperty_Ordinal 7445
+#define COleControlSite_GetExStyle_Ordinal 6450
+#define CWnd_GetExStyle_Ordinal 6451
+#else
+#define GetInterface_CCmdTarget_Ordinal 
+#define InvokeHelperV_COleDispatchDriver_Ordinal
+#define CWnd_InitControlContainer_Ordinal
+#define COleControlSite_InvokeHelperV_Ordinal
+#define COleControlSite_SetPropertyV_Ordinal 
+#define COleControlSite_SafeSetProperty_Ordinal 
+#define COleControlSite_ModifyStyle_Ordinal
+#define COleControlSite_SetWindowTextA_Ordinal
+#define COleControlSite_CreateControlCommon_Ordinal
+#define COleControlSite_CreateControl_5POINT_Ordinal 
+#define COleControlContainer_CreateControlCommon_Ordinal 
+#define COleControlContainer_CreateControl_2GUID_5POINT_Ordinal 
+#define CWnd_CreateControl_4POINT_Ordinal 
+#define CWnd_CreateControl_4RECT_Ordinal  
+#define CWnd_CreateControl_1char_Ordinal 
+#define COleControlSite_InvokeHelper_Ordinal 
+#define COleControlSite_GetProperty_Ordinal 
+#define COleControlSite_GetExStyle_Ordinal 
+#define CWnd_GetExStyle_Ordinal 
+#endif
 #endif
 
 

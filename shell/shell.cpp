@@ -1395,7 +1395,7 @@ BOOL CShellApp::InitInstance()
 		return FALSE;
 	}
 	*/
-	if (!ReadGuardInfo(szAppGuardFilename))
+	if (!ReadGuardInfo(CString(szAppGuardFilename)+".txt"))
 	{
 		AfxMessageBox(IDS_GUARD_FILE_READ_FAILED);
 		return FALSE;

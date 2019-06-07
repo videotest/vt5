@@ -106,7 +106,7 @@ public:
 	virtual void OnCancelMode ()						{}
 	virtual BOOL IsEditable () const
 	{
-		return !IsStandardCommand (m_nID) && 
+		return !::IsStandardCommand (m_nID) && 
 				(m_lstProtectedCommands.Find (m_nID) == NULL);
 	}
 	

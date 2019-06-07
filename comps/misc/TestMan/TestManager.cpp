@@ -1145,7 +1145,7 @@ HRESULT CTestManager::_exec_var_cond( IUnknown *punkTest, LPOS lPos, _bstr_t bst
 	
 	static int iColumnIndex = -1; // Used for __RUN_BY_COLUMN;
 	static TPOS lListPos = 0; // Used for __RUN_BY_COLUMN;
-	static _list_t< _list_t< _variant_t > *, &_fn_cleaner > lstLastData; // Used for __EXCLUDE_EQUAL;
+	static _list_t< _list_t< _variant_t > *, _fn_cleaner > lstLastData; // Used for __EXCLUDE_EQUAL;
 
 	if( !lPos )
 	{

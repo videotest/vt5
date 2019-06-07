@@ -10,7 +10,9 @@
 #define _USE_MATH_DEFINES
 #define _WIN32_WINNT 0x501
 #define _WTL_NO_CSTRING
+#define _HAS_AUTO_PTR_ETC 1
 
+#include <memory>
 #include <math.h>
 
 // Windows Header Files:
@@ -67,7 +69,7 @@ using std::valarray;
 typedef valarray<double> dblArray;
 #include <map>
 using std::map;
-#include <hash_map>
+#include <unordered_map>
 //using std::hash_map;
 #include <vector>
 using std::vector;

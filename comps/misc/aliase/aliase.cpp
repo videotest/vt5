@@ -447,7 +447,7 @@ BOOL APIENTRY DllMain( HANDLE hModule,
 		_dyncreate_t<App>::CreateObject();
 		App::instance()->Init( (HINSTANCE)hModule );
 
-		App::instance()->ObjectInfo( _dyncreate_t<CAliaseMan>::CreateObject, clsidAliaseMan, pszAliaseManProgID, pszAppAggrSection );
+		App::instance()->ObjectInfo( _dyncreate_t<CAliaseMan>::CreateObject, clsidAliaseMan, pszAliaseManProgID, (char*)pszAppAggrSection );
 
 		ClassFactory * pfactory = (ClassFactory*)ClassFactory::CreateObject();
 		pfactory->LoadObjectInfo();

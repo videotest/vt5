@@ -14,11 +14,13 @@
 #define MAX_SCALE_FACTOR_VALUES_Y	   200
 #define MAX_SCALE_FACTOR_GRID_Y		   400
 
+#if _MSC_VER == 1500 
 namespace {
 	int  round(double num) {
-			return int((num > 0.0) ? floor(num + 0.5) : ceil(num - 0.5));
+		return int((num > 0.0) ? floor(num + 0.5) : ceil(num - 0.5));
 	}
 }
+#endif
 
 namespace ViewSpace 
 {

@@ -104,7 +104,7 @@ bool CCompManager::Init()
 			if (FAILED(hresult))
 			{
 				GetLogFile() << sz;
-				TraceIfFailed(hresult);
+				TraceIfFailed(hresult);                                                                                                                                                                                                                                      
 				continue;
 			}
 

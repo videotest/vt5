@@ -23,7 +23,7 @@
 #endif
 
 #ifndef _WIN32_IE			// Allow use of features specific to IE 4.0 or later.
-#define _WIN32_IE 0x0400	// Change this to the appropriate value to target IE 5.0 or later.
+#define _WIN32_IE 0x0600	// Change this to the appropriate value to target IE 5.0 or later.
 #endif
 
 #define _ATL_APARTMENT_THREADED
@@ -51,7 +51,7 @@ using std::map;
 using std::vector;
 #include <set>
 using std::set;
-#include <hash_map>
+#include <unordered_map>
 #if _MSC_VER >= 1400
 //using stdext::hash_map;
 using namespace stdext;

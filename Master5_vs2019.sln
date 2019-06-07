@@ -1,6 +1,6 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.28307.572
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.28803.452
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{19F8E3CD-976E-4A27-B0CA-EF570F1A2A78}"
 	ProjectSection(SolutionItems) = preProject
@@ -135,8 +135,6 @@ EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ViewAX", "controls\ui\ViewAX\ViewAX.vcxproj", "{6F3BCAE8-E477-4658-8E81-FC7918E76BBE}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "VtiFile", "comps\misc\VtiFile\VtiFile.vcxproj", "{819F8BBA-5B22-4CB4-98A0-1E95D4559BC3}"
-EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "aliase", "comps\misc\aliase\aliase.vcxproj", "{F297B2AF-2ADD-43D1-B1A2-471DBB0E2144}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "axeditor", "comps\misc\axeditor\axeditor.vcxproj", "{8DAB2DD8-E3DB-422F-A522-1A7869CAB462}"
 EndProject
@@ -299,6 +297,8 @@ EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "FillTest", "comps\misc\FileFilters\FillTest\FillTest.vcxproj", "{7743DB9B-2A9C-4C1E-9E40-BBB743266E93}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "magick", "thirdparty\ImageMagick-4.2.9\magick\magick.vcxproj", "{48868F4F-7FDD-407B-9568-D9E1D6CAC5D1}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "aliase", "comps\misc\aliase\aliase.vcxproj", "{4C0CDBAD-0305-4BE3-8D7C-3F8D2EE8C6F4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -2275,38 +2275,6 @@ Global
 		{819F8BBA-5B22-4CB4-98A0-1E95D4559BC3}.Russian Release|Win32.Build.0 = Release|Win32
 		{819F8BBA-5B22-4CB4-98A0-1E95D4559BC3}.Russian Release|x64.ActiveCfg = Release|x64
 		{819F8BBA-5B22-4CB4-98A0-1E95D4559BC3}.Russian Release|x64.Build.0 = Release|x64
-		{F297B2AF-2ADD-43D1-B1A2-471DBB0E2144}.Debug 9x|Win32.ActiveCfg = Debug|Win32
-		{F297B2AF-2ADD-43D1-B1A2-471DBB0E2144}.Debug 9x|Win32.Build.0 = Debug|Win32
-		{F297B2AF-2ADD-43D1-B1A2-471DBB0E2144}.Debug 9x|x64.ActiveCfg = Debug|x64
-		{F297B2AF-2ADD-43D1-B1A2-471DBB0E2144}.Debug 9x|x64.Build.0 = Debug|x64
-		{F297B2AF-2ADD-43D1-B1A2-471DBB0E2144}.Debug|Win32.ActiveCfg = Debug|Win32
-		{F297B2AF-2ADD-43D1-B1A2-471DBB0E2144}.Debug|Win32.Build.0 = Debug|Win32
-		{F297B2AF-2ADD-43D1-B1A2-471DBB0E2144}.Debug|x64.ActiveCfg = Debug|x64
-		{F297B2AF-2ADD-43D1-B1A2-471DBB0E2144}.Debug|x64.Build.0 = Debug|x64
-		{F297B2AF-2ADD-43D1-B1A2-471DBB0E2144}.English Release|Win32.ActiveCfg = Release|Win32
-		{F297B2AF-2ADD-43D1-B1A2-471DBB0E2144}.English Release|Win32.Build.0 = Release|Win32
-		{F297B2AF-2ADD-43D1-B1A2-471DBB0E2144}.English Release|x64.ActiveCfg = Release|x64
-		{F297B2AF-2ADD-43D1-B1A2-471DBB0E2144}.English Release|x64.Build.0 = Release|x64
-		{F297B2AF-2ADD-43D1-B1A2-471DBB0E2144}.German Release|Win32.ActiveCfg = Release|Win32
-		{F297B2AF-2ADD-43D1-B1A2-471DBB0E2144}.German Release|Win32.Build.0 = Release|Win32
-		{F297B2AF-2ADD-43D1-B1A2-471DBB0E2144}.German Release|x64.ActiveCfg = Release|x64
-		{F297B2AF-2ADD-43D1-B1A2-471DBB0E2144}.German Release|x64.Build.0 = Release|x64
-		{F297B2AF-2ADD-43D1-B1A2-471DBB0E2144}.Release 9x|Win32.ActiveCfg = Release|Win32
-		{F297B2AF-2ADD-43D1-B1A2-471DBB0E2144}.Release 9x|Win32.Build.0 = Release|Win32
-		{F297B2AF-2ADD-43D1-B1A2-471DBB0E2144}.Release 9x|x64.ActiveCfg = Release|x64
-		{F297B2AF-2ADD-43D1-B1A2-471DBB0E2144}.Release 9x|x64.Build.0 = Release|x64
-		{F297B2AF-2ADD-43D1-B1A2-471DBB0E2144}.Release|Win32.ActiveCfg = Release|Win32
-		{F297B2AF-2ADD-43D1-B1A2-471DBB0E2144}.Release|Win32.Build.0 = Release|Win32
-		{F297B2AF-2ADD-43D1-B1A2-471DBB0E2144}.Release|x64.ActiveCfg = Release|x64
-		{F297B2AF-2ADD-43D1-B1A2-471DBB0E2144}.Release|x64.Build.0 = Release|x64
-		{F297B2AF-2ADD-43D1-B1A2-471DBB0E2144}.Release1|Win32.ActiveCfg = Release|Win32
-		{F297B2AF-2ADD-43D1-B1A2-471DBB0E2144}.Release1|Win32.Build.0 = Release|Win32
-		{F297B2AF-2ADD-43D1-B1A2-471DBB0E2144}.Release1|x64.ActiveCfg = Release|x64
-		{F297B2AF-2ADD-43D1-B1A2-471DBB0E2144}.Release1|x64.Build.0 = Release|x64
-		{F297B2AF-2ADD-43D1-B1A2-471DBB0E2144}.Russian Release|Win32.ActiveCfg = Release|Win32
-		{F297B2AF-2ADD-43D1-B1A2-471DBB0E2144}.Russian Release|Win32.Build.0 = Release|Win32
-		{F297B2AF-2ADD-43D1-B1A2-471DBB0E2144}.Russian Release|x64.ActiveCfg = Release|x64
-		{F297B2AF-2ADD-43D1-B1A2-471DBB0E2144}.Russian Release|x64.Build.0 = Release|x64
 		{8DAB2DD8-E3DB-422F-A522-1A7869CAB462}.Debug 9x|Win32.ActiveCfg = Debug|Win32
 		{8DAB2DD8-E3DB-422F-A522-1A7869CAB462}.Debug 9x|Win32.Build.0 = Debug|Win32
 		{8DAB2DD8-E3DB-422F-A522-1A7869CAB462}.Debug 9x|x64.ActiveCfg = Debug|x64
@@ -4826,6 +4794,38 @@ Global
 		{48868F4F-7FDD-407B-9568-D9E1D6CAC5D1}.Russian Release|Win32.Build.0 = Release|Win32
 		{48868F4F-7FDD-407B-9568-D9E1D6CAC5D1}.Russian Release|x64.ActiveCfg = Release|x64
 		{48868F4F-7FDD-407B-9568-D9E1D6CAC5D1}.Russian Release|x64.Build.0 = Release|x64
+		{4C0CDBAD-0305-4BE3-8D7C-3F8D2EE8C6F4}.Debug 9x|Win32.ActiveCfg = Debug|Win32
+		{4C0CDBAD-0305-4BE3-8D7C-3F8D2EE8C6F4}.Debug 9x|Win32.Build.0 = Debug|Win32
+		{4C0CDBAD-0305-4BE3-8D7C-3F8D2EE8C6F4}.Debug 9x|x64.ActiveCfg = Debug|x64
+		{4C0CDBAD-0305-4BE3-8D7C-3F8D2EE8C6F4}.Debug 9x|x64.Build.0 = Debug|x64
+		{4C0CDBAD-0305-4BE3-8D7C-3F8D2EE8C6F4}.Debug|Win32.ActiveCfg = Debug|Win32
+		{4C0CDBAD-0305-4BE3-8D7C-3F8D2EE8C6F4}.Debug|Win32.Build.0 = Debug|Win32
+		{4C0CDBAD-0305-4BE3-8D7C-3F8D2EE8C6F4}.Debug|x64.ActiveCfg = Debug|x64
+		{4C0CDBAD-0305-4BE3-8D7C-3F8D2EE8C6F4}.Debug|x64.Build.0 = Debug|x64
+		{4C0CDBAD-0305-4BE3-8D7C-3F8D2EE8C6F4}.English Release|Win32.ActiveCfg = Release|Win32
+		{4C0CDBAD-0305-4BE3-8D7C-3F8D2EE8C6F4}.English Release|Win32.Build.0 = Release|Win32
+		{4C0CDBAD-0305-4BE3-8D7C-3F8D2EE8C6F4}.English Release|x64.ActiveCfg = Release|x64
+		{4C0CDBAD-0305-4BE3-8D7C-3F8D2EE8C6F4}.English Release|x64.Build.0 = Release|x64
+		{4C0CDBAD-0305-4BE3-8D7C-3F8D2EE8C6F4}.German Release|Win32.ActiveCfg = Release|Win32
+		{4C0CDBAD-0305-4BE3-8D7C-3F8D2EE8C6F4}.German Release|Win32.Build.0 = Release|Win32
+		{4C0CDBAD-0305-4BE3-8D7C-3F8D2EE8C6F4}.German Release|x64.ActiveCfg = Release|x64
+		{4C0CDBAD-0305-4BE3-8D7C-3F8D2EE8C6F4}.German Release|x64.Build.0 = Release|x64
+		{4C0CDBAD-0305-4BE3-8D7C-3F8D2EE8C6F4}.Release 9x|Win32.ActiveCfg = Release|Win32
+		{4C0CDBAD-0305-4BE3-8D7C-3F8D2EE8C6F4}.Release 9x|Win32.Build.0 = Release|Win32
+		{4C0CDBAD-0305-4BE3-8D7C-3F8D2EE8C6F4}.Release 9x|x64.ActiveCfg = Release|x64
+		{4C0CDBAD-0305-4BE3-8D7C-3F8D2EE8C6F4}.Release 9x|x64.Build.0 = Release|x64
+		{4C0CDBAD-0305-4BE3-8D7C-3F8D2EE8C6F4}.Release|Win32.ActiveCfg = Release|Win32
+		{4C0CDBAD-0305-4BE3-8D7C-3F8D2EE8C6F4}.Release|Win32.Build.0 = Release|Win32
+		{4C0CDBAD-0305-4BE3-8D7C-3F8D2EE8C6F4}.Release|x64.ActiveCfg = Release|x64
+		{4C0CDBAD-0305-4BE3-8D7C-3F8D2EE8C6F4}.Release|x64.Build.0 = Release|x64
+		{4C0CDBAD-0305-4BE3-8D7C-3F8D2EE8C6F4}.Release1|Win32.ActiveCfg = Release|Win32
+		{4C0CDBAD-0305-4BE3-8D7C-3F8D2EE8C6F4}.Release1|Win32.Build.0 = Release|Win32
+		{4C0CDBAD-0305-4BE3-8D7C-3F8D2EE8C6F4}.Release1|x64.ActiveCfg = Release|x64
+		{4C0CDBAD-0305-4BE3-8D7C-3F8D2EE8C6F4}.Release1|x64.Build.0 = Release|x64
+		{4C0CDBAD-0305-4BE3-8D7C-3F8D2EE8C6F4}.Russian Release|Win32.ActiveCfg = Release|Win32
+		{4C0CDBAD-0305-4BE3-8D7C-3F8D2EE8C6F4}.Russian Release|Win32.Build.0 = Release|Win32
+		{4C0CDBAD-0305-4BE3-8D7C-3F8D2EE8C6F4}.Russian Release|x64.ActiveCfg = Release|x64
+		{4C0CDBAD-0305-4BE3-8D7C-3F8D2EE8C6F4}.Russian Release|x64.Build.0 = Release|x64
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -4838,8 +4838,8 @@ Global
 		{48868F4F-7FDD-407B-9568-D9E1D6CAC5D1} = {08A760D9-809D-444E-BB89-60D256547492}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		DPBuild = 5
 		SolutionGuid = {6BA9CB05-F6D3-45A2-AA03-C8C357192F53}
+		DPBuild = 5
 	EndGlobalSection
 	GlobalSection(DPCodeReviewSolutionGUID) = preSolution
 		DPCodeReviewSolutionGUID = {00000000-0000-0000-0000-000000000000}

@@ -39,7 +39,7 @@ namespace ViewSpace
 
 		RECT m_rcPrev;
 
-		WTL::CRect m_rcChartView, m_rcLegendView, m_rcTableView;
+		CRect m_rcChartView, m_rcLegendView, m_rcTableView;
 
 		RECT m_rcVertSplitter;
 		RECT m_rcHorzSplitter;
