@@ -1394,12 +1394,12 @@ BOOL CShellApp::InitInstance()
 		// and exit
 		return FALSE;
 	}
-	*/
 	if (!ReadGuardInfo(CString(szAppGuardFilename)+".txt"))
 	{
 		AfxMessageBox(IDS_GUARD_FILE_READ_FAILED);
 		return FALSE;
 	}
+	*/
 
 	CoInitialize(0);
 	// Initialize OLE libraries
@@ -2484,11 +2484,11 @@ bool CShellApp::ReadGuardInfo(LPCTSTR szFile)
 		if (strSig.GetLength() > nSigSize)
 			strSig.SetAt(nSigSize, '\0');
 
-		if (lstrcmp(strSig, szGUARDFILESIG))
-		{
-			GuardSetErrorCode(guardInvalidGuardFile);
-			return false;
-		}
+		//if (lstrcmp(strSig, szGUARDFILESIG))
+		//{
+		//	GuardSetErrorCode(guardInvalidGuardFile);
+		//	return false;
+		//}
 		// read size of app_name string
 		LONG lNameSize = 0;
 		file.Read(&lNameSize, sizeof(LONG));
