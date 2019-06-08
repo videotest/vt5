@@ -15,14 +15,6 @@ bool _UnregisterObject(REFCLSID clsid, LPCTSTR szProgID);
 bool _RegisterObject(REFCLSID clsid, LPCTSTR szProgID);
 
 
-IMPLEMENT_DYNAMIC(CNoGuardFactory, COleObjectFactory);
-
-CNoGuardFactory::CNoGuardFactory(REFCLSID clsid, CRuntimeClass* pRuntimeClass, BOOL bMultiInstance, LPCTSTR lpszProgID)
-: CRuntimeInfoPatch( pRuntimeClass ), COleObjectFactory(clsid, pRuntimeClass, bMultiInstance, lpszProgID) 
-{
-}
-
-
 IMPLEMENT_DYNAMIC(CVTFactory, COleObjectFactory);
 CVTFactory::CVTFactory(REFCLSID clsid, CRuntimeClass* pRuntimeClass, BOOL bMultiInstance, LPCTSTR lpszProgID)
 : CRuntimeInfoPatch( pRuntimeClass ), COleObjectFactory(clsid, pRuntimeClass, bMultiInstance, lpszProgID) 
@@ -363,9 +355,7 @@ BOOL CVTFactory::RegisterThis()
 			sptrApp->RemoveEntry((DWORD*)&m_guidExtern, _bstr_t(m_lpszProgID));
 		else
 		{
-			// and create new CLSID if it's needed
-			if (FAILED(::CoCreateGuid(&m_guidExtern)) || m_guidExtern == INVALID_KEY)
-				return false;
+			m_guidExtern = m_clsid;
 		}
 	}
 
@@ -509,10 +499,7 @@ BOOL CVTFactory::UpdateRegistryCtrl(BOOL bRegister, HINSTANCE nInstance, UINT id
 			// second : we need remove old entry from table
 			sptrApp->RemoveEntry((DWORD*)&m_guidExtern, _bstr_t(m_lpszProgID));
 		}
-
-		// and create new CLSID
-		if (FAILED(::CoCreateGuid(&m_guidExtern)))
-			return false;
+		m_guidExtern = m_clsid;
 	}
 
 	if (m_guidExtern == INVALID_KEY)
@@ -602,10 +589,7 @@ BOOL CVTFactory::UpdateRegistryPage(BOOL bRegister, HINSTANCE nInstance, UINT id
 			// second : we need remove old entry from table
 			sptrApp->RemoveEntry((DWORD*)&m_guidExtern, _bstr_t(m_lpszProgID));
 		}
-
-		// and create new CLSID
-		if (FAILED(::CoCreateGuid(&m_guidExtern)))
-			return false;
+		m_guidExtern = m_clsid;
 	}
 
 	if (m_guidExtern == INVALID_KEY)

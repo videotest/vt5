@@ -251,6 +251,7 @@
       <DataExecutionPrevention>
       </DataExecutionPrevention>
       <TargetMachine>MachineX64</TargetMachine>
+      <IgnoreSpecificDefaultLibraries>odbccp32.lib</IgnoreSpecificDefaultLibraries>
     </Link>
     <Bscmake>
       <OutputFile>$(IntDir)$(ProjectName).bsc</OutputFile>
@@ -352,12 +353,6 @@
     <None Include="res\qury_ico.ico" />
     <None Include="toolbar1.bmp" />
     <None Include="DBaseDoc.def" />
-    <None Include="albom.progid" />
-    <None Include="msado15.tlh" />
-    <None Include="msado15.tli" />
-    <None Include="msadox.tlh" />
-    <None Include="msadox.tli" />
-    <None Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Albom.cpp" />

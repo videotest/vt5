@@ -309,6 +309,7 @@ HOOKMACRO("OLEAUT32.DLL", BSTR __stdcall, SysAllocString, (const OLECHAR * oleCh
 	return bstr;
 }
 
+#if 1
 //WINOLEAPI CoCreateInstance(IN REFCLSID rclsid, IN LPUNKNOWN pUnkOuter,
 //                    IN DWORD dwClsContext, IN REFIID riid, OUT LPVOID FAR* ppv);
 //HANDLER_STDAPI CoCreateInstanceShell(REFCLSID rclsid, LPUNKNOWN pUnkOuter, DWORD dwClsContext, REFIID riid, LPVOID FAR* ppv)
@@ -716,8 +717,10 @@ HOOKMACRO("OLE32.DLL", HRESULT STDAPICALLTYPE, CoGetClassObject, (REFCLSID rclsi
 	HINSTANCE hDll = ::CoLoadLibrary(bstrModule, true);
 	if (hDll)
 	{
+#if 0
 		if( g_bUseLanguageHooks )
 			InstallHooks( hDll );
+#endif
 
 		if (hDll == GetModuleHandle(0)) // own factory
 		{
@@ -871,6 +874,7 @@ HOOKMACRO("OLE32.DLL", HRESULT STDAPICALLTYPE, CLSIDFromProgID, (LPCOLESTR lpszP
 	
 	return hr;
 }
+#endif
 
 
 DWORD __stdcall ThreadFuncShellError(LPVOID lpParam)
@@ -1060,7 +1064,7 @@ CShellApp::CShellApp()
 //	bool InstallMfcFixs(void); InstallMfcFixs();
 
 	#ifdef _DEBUG
-	InstallMfcHook();
+	//InstallMfcHook();
 	#endif _DEBUG
 
 	hmod_dump = ::LoadLibrary( "dump.dll" );
@@ -1390,12 +1394,12 @@ BOOL CShellApp::InitInstance()
 		// and exit
 		return FALSE;
 	}
-	*/
-	if (!ReadGuardInfo(szAppGuardFilename))
+	if (!ReadGuardInfo(CString(szAppGuardFilename)+".txt"))
 	{
 		AfxMessageBox(IDS_GUARD_FILE_READ_FAILED);
 		return FALSE;
 	}
+	*/
 
 	CoInitialize(0);
 	// Initialize OLE libraries
@@ -1444,7 +1448,8 @@ BOOL CShellApp::InitInstance()
 		return FALSE;
 	}
 	m_pTable->SetKey(GuidKey(m_innerclsid), 0);
-	m_pTable->Load(szAppGuardFilename);
+	m_pTable->LoadText("shell.grd.txt");
+	m_pTable->SaveText("shell.grd3.txt");
 
 
 	// Change the registry key under which our settings are stored.
@@ -2214,8 +2219,8 @@ HRESULT CShellApp::XGuard::GetData(DWORD * pKeyGUID, BYTE ** ppTable, BSTR * pbs
 		
 		if (pbstrSuffix)
 		{
-			CString str_suffix = "_";
-			str_suffix += pThis->m_strGuardAppName;
+			CString str_suffix = pThis->m_strSuffix;
+//			str_suffix += pThis->m_strGuardAppName;
 			*pbstrSuffix = str_suffix.AllocSysString();/*m_strSuffix*/
 		}
 
@@ -2479,11 +2484,11 @@ bool CShellApp::ReadGuardInfo(LPCTSTR szFile)
 		if (strSig.GetLength() > nSigSize)
 			strSig.SetAt(nSigSize, '\0');
 
-		if (lstrcmp(strSig, szGUARDFILESIG))
-		{
-			GuardSetErrorCode(guardInvalidGuardFile);
-			return false;
-		}
+		//if (lstrcmp(strSig, szGUARDFILESIG))
+		//{
+		//	GuardSetErrorCode(guardInvalidGuardFile);
+		//	return false;
+		//}
 		// read size of app_name string
 		LONG lNameSize = 0;
 		file.Read(&lNameSize, sizeof(LONG));
@@ -2685,8 +2690,6 @@ void CShellApp::FreeComponents()
 //remove all entries
 	DeleteEntry( GetAppUnknown(), 0 );
 	
-	g_CmdManager.DeInit();
-	g_script.DeInit();
 //delete plug-in windows
 	CMainFrame	*pmain = (CMainFrame*)m_pMainWnd;
 
@@ -2702,8 +2705,11 @@ void CShellApp::FreeComponents()
 		}
 	}
 
+	//g_CmdManager.DeInit();
+	g_script.DeInit();
+
 //deinit application component manager
-	CCompManagerImpl::DeInit();
+	CCompManager::DeInit();
 
 	m_aggrs.DeInit();
 	

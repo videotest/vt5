@@ -35,7 +35,7 @@ inline CString _change_chars( CString str, CString strA, CString strB )
 	CString strRet;
 
 	long lPrev = 0;
-	LPOS lPos = str.Find( strA, lPrev );
+	long lPos = str.Find( strA, lPrev );
 
 	while( lPos != -1 )
 	{

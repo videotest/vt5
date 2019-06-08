@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="windows-1251"?>
 <VisualStudioProject
 	ProjectType="Visual C++"
-	Version="9,00"
+	Version="9.00"
 	Name="AuditTrail"
 	ProjectGUID="{14931009-6540-49F2-9097-7DE605219349}"
 	RootNamespace="AuditTrail"
@@ -64,7 +64,6 @@
 				ObjectFile="\vt5\comps\docs\AuditTrail\Release/"
 				ProgramDataBaseFileName="\vt5\comps\docs\AuditTrail\Release/"
 				BrowseInformation="1"
-				WarningLevel="3"
 				SuppressStartupBanner="true"
 				DebugInformationFormat="3"
 				CompileAs="0"
@@ -155,7 +154,6 @@
 				UsePrecompiledHeader="2"
 				PrecompiledHeaderThrough="stdafx.h"
 				BrowseInformation="1"
-				WarningLevel="3"
 				CompileAs="0"
 			/>
 			<Tool
@@ -246,7 +244,6 @@
 				ObjectFile=".\Debug/"
 				ProgramDataBaseFileName=".\Debug/"
 				BrowseInformation="1"
-				WarningLevel="3"
 				SuppressStartupBanner="true"
 				DebugInformationFormat="4"
 				CompileAs="0"
@@ -265,8 +262,7 @@
 			<Tool
 				Name="VCLinkerTool"
 				AdditionalOptions="/MACHINE:I386"
-				AdditionalDependencies="controls_d.lib"
-				LinkIncremental="2"
+				AdditionalDependencies="controls.lib"
 				AdditionalLibraryDirectories=""
 				GenerateDebugInformation="true"
 				SubSystem="2"
@@ -336,7 +332,6 @@
 				UsePrecompiledHeader="2"
 				PrecompiledHeaderThrough="stdafx.h"
 				BrowseInformation="1"
-				WarningLevel="3"
 				CompileAs="0"
 			/>
 			<Tool
@@ -352,6 +347,7 @@
 			/>
 			<Tool
 				Name="VCLinkerTool"
+				AdditionalDependencies="controls.lib"
 				LinkIncremental="2"
 				AdditionalLibraryDirectories=""
 				GenerateDebugInformation="true"
@@ -585,7 +581,7 @@
 	<Globals>
 		<Global
 			Name="DevPartner_IsInstrumented"
-			Value="1"
+			Value="0"
 		/>
 	</Globals>
 </VisualStudioProject>

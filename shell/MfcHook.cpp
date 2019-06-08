@@ -1,17 +1,18 @@
 #include "stdafx.h"
+#include "CmnHdr.h"
+#include <ImageHlp.h>
+#pragma comment(lib, "ImageHlp")
 #include "\vt5\awin\misc_map.h"
+#include "APIHook.h"
 #include "MfcFix.h"
+#include "MfcOleFix.h"
 
-class __CCmdTarget__ : public CCmdTarget{
-public:
-	LPUNKNOWN __GetInterface__(const void* iid);
-};
-
-#define __GetInterfacePtr__(pTarget, pEntry) \
+#if 1
+#define GetInterfacePtr(pTarget, pEntry) \
 	((LPUNKNOWN)((BYTE*)pTarget + pEntry->nOffset))
 
-
-LPUNKNOWN __CCmdTarget__::__GetInterface__(const void* iid)
+HOOK_METHOD(MFCXXD_DLL,GetInterface_CCmdTarget_Ordinal,LPUNKNOWN,CCmdTarget,GetInterface,
+	(const void* iid))
 {
 	// allow general hook first chance
 	LPUNKNOWN lpUnk;
@@ -42,7 +43,7 @@ LPUNKNOWN __CCmdTarget__::__GetInterface__(const void* iid)
 			while (pEntry->piid != NULL)
 			{
 				// check INTERFACE_ENTRY macro
-				LPUNKNOWN lpUnk = __GetInterfacePtr__(this, pEntry);
+				LPUNKNOWN lpUnk = GetInterfacePtr(this, pEntry);
 
 				// check vtable pointer (can be NULL)
 				if (*(DWORD*)lpUnk != 0)
@@ -87,7 +88,7 @@ LPUNKNOWN __CCmdTarget__::__GetInterface__(const void* iid)
 				((DWORD*)pEntry->piid)[3] == ((DWORD*)iid)[3])
 			{
 				// check INTERFACE_ENTRY macro
-				LPUNKNOWN lpUnk = __GetInterfacePtr__(this, pEntry);
+				LPUNKNOWN lpUnk = GetInterfacePtr(this, pEntry);
 
 				// check vtable pointer (can be NULL)
 				if (*(DWORD*)lpUnk != 0)
@@ -119,16 +120,11 @@ LPUNKNOWN __CCmdTarget__::__GetInterface__(const void* iid)
 	// interface ID not found, fail the call
 	return NULL;
 }
+#endif
 
-class __COleDispatchDriver__ : public COleDispatchDriver
-{
-public:
-	void __InvokeHelperV__( DISPID dwDispID, WORD wFlags,
-		VARTYPE vtRet, void* pvRet, const BYTE* pbParamInfo, va_list argList );
-};
-
-void __COleDispatchDriver__::__InvokeHelperV__(DISPID dwDispID, WORD wFlags,
-	VARTYPE vtRet, void* pvRet, const BYTE* pbParamInfo, va_list argList)
+HOOK_METHOD(MFCXXD_DLL,InvokeHelperV_COleDispatchDriver_Ordinal,void,COleDispatchDriver,InvokeHelperV,
+	(DISPID dwDispID, WORD wFlags,
+	VARTYPE vtRet, void* pvRet, const BYTE* pbParamInfo, va_list argList))
 {
 	USES_CONVERSION;
 
@@ -479,164 +475,9 @@ void __COleDispatchDriver__::__InvokeHelperV__(DISPID dwDispID, WORD wFlags,
 	}
 }
 
-
-BYTE __GetInterfaceOriginalCode[16]	= { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
-BYTE __InvokeDispHelperCode[16]	= { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
-
-
-#define C1(code,ftype)						\
-BYTE * pCode = (BYTE*)code;					\
-DWORD dw = 0;								\
-memcpy(&dw, &pCode[8], sizeof(DWORD));		\
-memcpy((BYTE*)dw, &pCode[1], 7);			\
-ftype pfn = (ftype)dw;						\
-
-#define C2()								\
-BYTE * ptr = (BYTE*)dw;						\
-*ptr = 0xB8;ptr++;							\
-memcpy(ptr, &pCode[12], sizeof(DWORD));		\
-ptr += 4;									\
-*ptr = 0xFF;ptr++;							\
-*ptr = 0xE0;ptr++; 							\
-
-
-
 bool _install_function_hook( BYTE* orig_code, LPVOID pfunc_addr_old, LPVOID pfunc_addr_new );
 
 bool InstallMfcHook()
 {
-	
-	//install CCmdTarget::GetInterface	
-	{
-		//old address
-		LPUNKNOWN (CCmdTarget::*  pint_old)(const void *) = &CCmdTarget::GetInterface;	
-		LPBYTE pfunc_addr_old = (LPBYTE)*(void**)&pint_old;
-		if(0xe9 == *pfunc_addr_old){
-			pfunc_addr_old += *((int*)(pfunc_addr_old+1))  + 5;
-		}
-		if(0xFF == *pfunc_addr_old && 0x25 == *(pfunc_addr_old+1) ){
-			int pb=*(int*)(pfunc_addr_old+2);
-			pfunc_addr_old = (LPBYTE)(*(int*)pb);
-		}
-
-		//new address
-		LPUNKNOWN (__CCmdTarget__::*  pint_new)(const void *) = &__CCmdTarget__::__GetInterface__;	
-		LPVOID pfunc_addr_new = *(void**)&pint_new;
-
-		HMODULE hmod = ::GetModuleHandle( MFCXXD_DLL );
-		if( hmod )
-		{
-//			pfunc_addr_old = ::GetProcAddress( hmod, (LPCSTR)3788 );	
-//			if( pfunc_addr_old )
-//				VERIFY( _install_function_hook( __GetInterfaceOriginalCode, pfunc_addr_old, pfunc_addr_new ) );
-		}
-	}
-	
-	//install __AfxThrowOleException	
-	if( 1 )
-	{
-		//old address
-		void (COleDispatchDriver::*pint_old)( DISPID dwDispID, WORD wFlags,
-			VARTYPE vtRet, void* pvRet, const BYTE* pbParamInfo, va_list argList ) = &COleDispatchDriver::InvokeHelperV;	
-		LPBYTE pfunc_addr_old = (LPBYTE)*(void**)&pint_old;
-		if(0xe9 == *pfunc_addr_old){
-			pfunc_addr_old += *((int*)(pfunc_addr_old+1))  + 5;
-		}
-		if(0xFF == *pfunc_addr_old && 0x25 == *(pfunc_addr_old+1) ){
-			int pb=*(int*)(pfunc_addr_old+2);
-			pfunc_addr_old = (LPBYTE)(*(int*)pb);
-		}
-
-		//new address
-		void (__COleDispatchDriver__::*pint_new)( DISPID dwDispID, WORD wFlags,
-			VARTYPE vtRet, void* pvRet, const BYTE* pbParamInfo, va_list argList ) = &__COleDispatchDriver__::__InvokeHelperV__;	
-		LPVOID pfunc_addr_new = *(void**)&pint_new;
-
-		HMODULE hmod = ::GetModuleHandle( MFCXXD_DLL );
-		if( hmod )
-		{
-			if( pfunc_addr_old )
-				VERIFY( _install_function_hook( __InvokeDispHelperCode, pfunc_addr_old, pfunc_addr_new ) );
-		}
-	}
-
-	return true;
-	
-}
-
-bool _install_function_hook( BYTE* orig_code, LPVOID pfunc_addr_old, LPVOID pfunc_addr_new )
-{
-	//original address
-	/*
-	{
-		LPVOID paddr_jmp = *(void**)&pint_old;
-		
-		//test for jump
-		{
-			BYTE* pbuf = (BYTE*)paddr_jmp;
-			if( pbuf[0] != 0xE9 )
-			{
-				ASSERT(false);
-				return false;
-			}
-
-			BYTE* pbuf_offest = pbuf + 1;
-			DWORD* pdw_offset = (DWORD*)pbuf_offest;
-
-			DWORD dw_address = (DWORD)pbuf + *pdw_offset + 5;
-			pfunc_addr_old = (void*)dw_address;
-		}
-	}	
-	*/
-
-	if( !orig_code || !pfunc_addr_old || !pfunc_addr_new )
-	{
-		ASSERT( false );
-		return false;
-	}
-
-	if (orig_code[0] != 0x90)
-	{
-		// set all NOP to saved code
-		memset(orig_code, 0x90, 16);
-		// and copy piece of original code to this place
-		memcpy(&orig_code[1], (BYTE*)pfunc_addr_old, 7);
-	
-		DWORD dw = (DWORD)pfunc_addr_old;
-		memcpy(&orig_code[8], &dw, sizeof(DWORD));
-
-		memcpy(&orig_code[12], &pfunc_addr_new, sizeof(DWORD));
-	}
-
-	// change protection for .dll mapping page if it's needed
-	/*LPVOID lpBase = 0;
-	LONG lSize = 0;
-	bool bNeedChangeProtect = false;
-	GetPageInfo(pfunc_addr_old, &lpBase, &lSize, &bNeedChangeProtect);
-	if (lpBase && lSize && bNeedChangeProtect)*/
-	{
-		SetLastError(0);
-		DWORD dwOldProtect = 0;
-		//BOOL b = VirtualProtect(lpBase, lSize, PAGE_EXECUTE_READWRITE, &dwOldProtect);
-		BOOL b = VirtualProtect(pfunc_addr_old, 32, PAGE_EXECUTE_READWRITE, &dwOldProtect);
-		//__GetPageInfo(lp, &lpBase, &lSize, &bNeedChangeProtect);
-
-		if (ERROR_SUCCESS != GetLastError())
-		{
-			AfxMessageBox( "InstallMfcHook:ERROR_SUCCESS != GetLastError()" );
-			return false;
-		}
-	}
-
-	// modify original code
-	BYTE * ptr = (BYTE*)pfunc_addr_old;
-	*ptr = 0xB8;ptr++; // mov eax, &data
-	memcpy(ptr, &pfunc_addr_new, sizeof(DWORD));
-	ptr += 4;
-	*ptr = 0xFF;ptr++; // jmp eax
-	*ptr = 0xE0;ptr++; // 
-
 	return true;
 }
-
-

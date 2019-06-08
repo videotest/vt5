@@ -394,10 +394,6 @@
 				>
 			</File>
 			<File
-				RelativePath="dlgs.cpp"
-				>
-			</File>
-			<File
 				RelativePath=".\Fish.cpp"
 				>
 			</File>
@@ -411,6 +407,10 @@
 			</File>
 			<File
 				RelativePath="FishContextViewer.cpp"
+				>
+			</File>
+			<File
+				RelativePath=".\FishDlgs.cpp"
 				>
 			</File>
 			<File
@@ -471,15 +471,15 @@
 				>
 			</File>
 			<File
-				RelativePath=".\dlgs.h"
-				>
-			</File>
-			<File
 				RelativePath=".\Fish.h"
 				>
 			</File>
 			<File
 				RelativePath="FishContextViewer.h"
+				>
+			</File>
+			<File
+				RelativePath=".\FishDlgs.h"
 				>
 			</File>
 			<File
@@ -520,7 +520,7 @@
 	<Globals>
 		<Global
 			Name="DevPartner_IsInstrumented"
-			Value="1"
+			Value="0"
 		/>
 	</Globals>
 </VisualStudioProject>

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="windows-1251"?>
 <VisualStudioProject
 	ProjectType="Visual C++"
-	Version="9,00"
+	Version="9.00"
 	Name="Register"
 	ProjectGUID="{F993CFEE-D9BB-4DAE-B2BD-CCDB5ED696AA}"
 	RootNamespace="Register"
@@ -21,6 +21,7 @@
 	<Configurations>
 		<Configuration
 			Name="Release|Win32"
+			OutputDirectory="$(SolutionDir)vt5\$(PlatformName)\$(ConfigurationName)\"
 			ConfigurationType="1"
 			InheritedPropertySheets="..\..\props\CommonEnv.vsprops"
 			UseOfMFC="2"
@@ -59,8 +60,6 @@
 				ForceConformanceInForLoopScope="false"
 				RuntimeTypeInfo="true"
 				UsePrecompiledHeader="2"
-				PrecompiledHeaderThrough="stdafx.h"
-				PrecompiledHeaderFile=".\Release/Register.pch"
 				AssemblerListingLocation=".\Release/"
 				ObjectFile=".\Release/"
 				ProgramDataBaseFileName=".\Release/"
@@ -84,10 +83,11 @@
 			<Tool
 				Name="VCLinkerTool"
 				AdditionalOptions="/MACHINE:I386"
-				AdditionalDependencies="xgost32s.lib"
-				OutputFile="\vt5\vt5\Release/Register.exe"
+				AdditionalDependencies="gost.lib"
+				OutputFile="$(SolutionDir)vt5\$(PlatformName)\$(ConfigurationName)\$(ProjectName).exe"
 				LinkIncremental="1"
 				AdditionalLibraryDirectories=""
+				ModuleDefinitionFile=" "
 				GenerateDebugInformation="true"
 				SubSystem="2"
 				RandomizedBaseAddress="1"
@@ -98,7 +98,7 @@
 			/>
 			<Tool
 				Name="VCManifestTool"
-				AdditionalManifestFiles="$(InputDir)\elevate.manifest"
+				AdditionalManifestFiles=" "
 			/>
 			<Tool
 				Name="VCXDCMakeTool"
@@ -118,6 +118,7 @@
 		</Configuration>
 		<Configuration
 			Name="Release|x64"
+			OutputDirectory="$(SolutionDir)vt5\$(PlatformName)\$(ConfigurationName)\"
 			ConfigurationType="1"
 			InheritedPropertySheets="..\..\props\CommonEnv.vsprops"
 			UseOfMFC="2"
@@ -156,7 +157,6 @@
 				ForceConformanceInForLoopScope="false"
 				RuntimeTypeInfo="true"
 				UsePrecompiledHeader="2"
-				PrecompiledHeaderThrough="stdafx.h"
 				BrowseInformation="1"
 				WarningLevel="3"
 				DebugInformationFormat="3"
@@ -178,9 +178,10 @@
 				Name="VCLinkerTool"
 				AdditionalOptions="/MACHINE:X64"
 				AdditionalDependencies="gost.lib"
-				OutputFile="\vt5\vt5\$(OutDir)\$(ProjectName).exe"
+				OutputFile="$(SolutionDir)vt5\$(PlatformName)\$(ConfigurationName)\$(ProjectName).exe"
 				LinkIncremental="1"
 				AdditionalLibraryDirectories=""
+				ModuleDefinitionFile=" "
 				GenerateDebugInformation="true"
 				SubSystem="2"
 				RandomizedBaseAddress="1"
@@ -192,6 +193,7 @@
 			/>
 			<Tool
 				Name="VCManifestTool"
+				AdditionalManifestFiles=" "
 			/>
 			<Tool
 				Name="VCXDCMakeTool"
@@ -211,6 +213,7 @@
 		</Configuration>
 		<Configuration
 			Name="Debug|Win32"
+			OutputDirectory="$(SolutionDir)vt5\$(PlatformName)\$(ConfigurationName)\"
 			ConfigurationType="1"
 			InheritedPropertySheets="..\..\props\CommonEnv.vsprops"
 			UseOfMFC="2"
@@ -248,13 +251,7 @@
 				ForceConformanceInForLoopScope="false"
 				RuntimeTypeInfo="true"
 				UsePrecompiledHeader="2"
-				PrecompiledHeaderThrough="stdafx.h"
-				PrecompiledHeaderFile=".\Debug/Register.pch"
-				AssemblerListingLocation=".\Debug/"
-				ObjectFile=".\Debug/"
-				ProgramDataBaseFileName=".\Debug/"
 				BrowseInformation="1"
-				WarningLevel="3"
 				DebugInformationFormat="4"
 				CompileAs="0"
 			/>
@@ -273,10 +270,11 @@
 			<Tool
 				Name="VCLinkerTool"
 				AdditionalOptions="/MACHINE:I386"
-				AdditionalDependencies="xgost32s.lib"
-				OutputFile="\vt5\vt5\Debug\Register.exe"
+				AdditionalDependencies="gost.lib"
+				OutputFile="$(SolutionDir)vt5\$(PlatformName)\$(ConfigurationName)\$(ProjectName).exe"
 				LinkIncremental="2"
 				AdditionalLibraryDirectories=""
+				ModuleDefinitionFile=" "
 				GenerateDebugInformation="true"
 				SubSystem="2"
 				RandomizedBaseAddress="1"
@@ -287,7 +285,7 @@
 			/>
 			<Tool
 				Name="VCManifestTool"
-				AdditionalManifestFiles="$(InputDir)\elevate.manifest"
+				AdditionalManifestFiles=" "
 			/>
 			<Tool
 				Name="VCXDCMakeTool"
@@ -307,7 +305,7 @@
 		</Configuration>
 		<Configuration
 			Name="Debug|x64"
-			OutputDirectory="$(SolutionDir)vt5\$(PlatformName)\$(ConfigurationName)"
+			OutputDirectory="$(SolutionDir)vt5\$(PlatformName)\$(ConfigurationName)\"
 			ConfigurationType="1"
 			InheritedPropertySheets="..\..\props\CommonEnv.vsprops"
 			UseOfMFC="2"
@@ -345,7 +343,6 @@
 				ForceConformanceInForLoopScope="false"
 				RuntimeTypeInfo="true"
 				UsePrecompiledHeader="2"
-				PrecompiledHeaderThrough="stdafx.h"
 				BrowseInformation="1"
 				WarningLevel="3"
 				DebugInformationFormat="3"
@@ -383,6 +380,7 @@
 			/>
 			<Tool
 				Name="VCManifestTool"
+				AdditionalManifestFiles=" "
 			/>
 			<Tool
 				Name="VCXDCMakeTool"
@@ -425,10 +423,10 @@
 				>
 				<FileConfiguration
 					Name="Release|Win32"
-					ExcludedFromBuild="true"
 					>
 					<Tool
 						Name="VCCLCompilerTool"
+						UsePrecompiledHeader="0"
 					/>
 				</FileConfiguration>
 				<FileConfiguration
@@ -437,16 +435,14 @@
 					<Tool
 						Name="VCCLCompilerTool"
 						UsePrecompiledHeader="0"
-						PrecompiledHeaderThrough=""
-						PrecompiledHeaderFile=""
 					/>
 				</FileConfiguration>
 				<FileConfiguration
 					Name="Debug|Win32"
-					ExcludedFromBuild="true"
 					>
 					<Tool
 						Name="VCCLCompilerTool"
+						UsePrecompiledHeader="0"
 					/>
 				</FileConfiguration>
 				<FileConfiguration
@@ -455,7 +451,6 @@
 					<Tool
 						Name="VCCLCompilerTool"
 						UsePrecompiledHeader="0"
-						PrecompiledHeaderThrough=""
 					/>
 				</FileConfiguration>
 			</File>

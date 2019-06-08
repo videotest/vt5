@@ -97,7 +97,7 @@ is dependent upon the notovr parameter.
 	int curlin,howmany,option;
 	int brdrp1,numbufs,kol1,linesize,kofset,lofset;
 	COORD *firstc,*lastco,*lastli,*itemp;
-	int nextli,inline,needed,curline,jtemp,minline;
+	int nextli,jnline,needed,curline,jtemp,minline;
 	/*
 	curbuf is the current line buffer.
 	llabuf is the array of line buffers needed to obtain neighbouring points.
@@ -220,12 +220,12 @@ is dependent upon the notovr parameter.
 	initgreyrasterscan(jobj,&piou1,&gva1,raster,1);
 	/*
 	curline is the line currently being processed
-	inline is the last line entered into the line buffers
+	jnline is the last line entered into the line buffers
 	initialize it to an imaginary line just before the first border line
 	*/
 	nextinterval(&piou0);
 	nextli=piou0.linpos;
-	inline=piou0.linpos-sppar.ldelta*(brdrsz+1);
+	jnline=piou0.linpos-sppar.ldelta*(brdrsz+1);
 
 	/*
 	process the next interval
@@ -240,12 +240,12 @@ is dependent upon the notovr parameter.
 		/*
 		next action depends which lines are aleady in the line buffers
 		*/
-		howmany=(needed-inline)*sppar.ldelta;
+		howmany=(needed-jnline)*sppar.ldelta;
 		if(howmany<0) {
 			/*
 			error if howmany<0:impossible to have input a line before needed
 			*/
-			fprintf(stderr,"seqpar error:inline%d :curline%d\n",inline,curline);
+			fprintf(stderr,"seqpar error:jnline%d :curline%d\n",jnline,curline);
 			return(NULL);
 		}
 		else if (howmany > 0) {
@@ -262,14 +262,14 @@ is dependent upon the notovr parameter.
 					/*
 					next line needed less far away than next line available from nxxint
 					fill required buffer lines with backgr and return
-					minline=pmod(inline,numbufs), i.e. the remainder of inline when divided
+					minline=pmod(jnline,numbufs), i.e. the remainder of jnline when divided
 					by numbufs. it thus can be used as the offset into the array of
 					logical line addresses to determine which line in the
-					circular buffer inline is being stored
+					circular buffer jnline is being stored
 					*/
-					while (inline != needed) {
-						inline+=sppar.ldelta;
-						minline=pmod(inline,numbufs);
+					while (jnline != needed) {
+						jnline+=sppar.ldelta;
+						minline=pmod(jnline,numbufs);
 						bkgset(llabuf[minline],linesize,backgr);
 					}
 					break;
@@ -278,9 +278,9 @@ is dependent upon the notovr parameter.
 				line(s) needed include some real lines, i.e. obtained from nxxiv
 				first fill buffer with backgr
 				*/
-				while ( inline != nextli ) {
-					inline+=sppar.ldelta;
-					minline=pmod(inline,numbufs);
+				while ( jnline != nextli ) {
+					jnline+=sppar.ldelta;
+					minline=pmod(jnline,numbufs);
 					bkgset(llabuf[minline],linesize,backgr);
 				}
 				/*

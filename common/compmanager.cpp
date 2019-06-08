@@ -99,12 +99,12 @@ bool CCompManager::Init()
 			::SysFreeString( bstr );
 
 
-			HRESULT hresult = ::CoCreateInstance( clsid, m_punkOuterUnknown, CLSCTX_INPROC_SERVER, IID_IUnknown, (void **)&punk );
-			
+			HRESULT hresult = ::CoCreateInstance( clsid, m_punkOuterUnknown
+				, CLSCTX_INPROC_HANDLER|CLSCTX_INPROC_SERVER/*|CLSCTX_FROM_DEFAULT_CONTEXT*/, IID_IUnknown, (void **)&punk );
 			if (FAILED(hresult))
 			{
 				GetLogFile() << sz;
-				TraceIfFailed(hresult);
+				TraceIfFailed(hresult);                                                                                                                                                                                                                                      
 				continue;
 			}
 
@@ -150,8 +150,8 @@ void CCompManager::FreeComponents()
 	{
 		IUnknown	*punk = (IUnknown	*)m_ptrs[i];
 
-//		TRACE( "%s ", GetObjectName( punk ) );
-//		_ReportCounter( punk );
+		TRACE( "%s ", GetObjectName( punk ) );
+		_ReportCounter( punk );
 		punk->Release();
 	}
 	m_ptrs.RemoveAll();

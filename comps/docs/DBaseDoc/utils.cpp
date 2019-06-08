@@ -1495,7 +1495,10 @@ CString GetWin32ErrorDescr( DWORD dw_error )
 
 //compact
 bool CompactMDB( const char* psz_file_name )
-{	    
+{	
+#if _WIN64
+	return false;
+#else
 	if( !psz_file_name )	return false;
 
 	char szDriver[] = "Microsoft Access Driver (*.mdb)";
@@ -1508,7 +1511,8 @@ bool CompactMDB( const char* psz_file_name )
 	BOOL bres = SQLConfigDataSource( 0, ODBC_ADD_DSN, szDriver, (const char*)str_connect );
 
 	return ( bres == TRUE );	
-}
+#endif
+}             
 
 //save DataBase document
 bool SaveDBaseDocument( IUnknown* punk_doc )

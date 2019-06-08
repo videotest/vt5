@@ -112,6 +112,10 @@
   <ItemGroup>
     <None Include="Makefile.vc" />
   </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="tif_aux.c" />
+    <ClCompile Include="tif_unix.c" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

@@ -21,9 +21,8 @@
 	<Configurations>
 		<Configuration
 			Name="Debug|Win32"
-			OutputDirectory="$(SolutionDir)$(ConfigurationName)"
-			IntermediateDirectory="$(ConfigurationName)"
 			ConfigurationType="2"
+			InheritedPropertySheets="..\..\..\..\props\CommonEnv.vsprops"
 			UseOfMFC="2"
 			CharacterSet="2"
 			>
@@ -47,7 +46,7 @@
 			<Tool
 				Name="VCCLCompilerTool"
 				Optimization="0"
-				AdditionalIncludeDirectories="..\DrvCommon2,\vt5\ifaces,\vt5\common2,\vt5\common"
+				AdditionalIncludeDirectories="..\DrvCommon2;&quot;$(SolutionDir)ifaces&quot;;&quot;$(SolutionDir)common2&quot;;&quot;$(SolutionDir)common&quot;"
 				PreprocessorDefinitions="WIN32;_WINDOWS;_DEBUG;_USRDLL"
 				MinimalRebuild="true"
 				BasicRuntimeChecks="3"
@@ -56,8 +55,6 @@
 				ForceConformanceInForLoopScope="false"
 				UsePrecompiledHeader="2"
 				ProgramDataBaseFileName="$(IntDir)/"
-				WarningLevel="3"
-				Detect64BitPortabilityProblems="false"
 				DebugInformationFormat="4"
 			/>
 			<Tool
@@ -75,17 +72,13 @@
 			<Tool
 				Name="VCLinkerTool"
 				AdditionalOptions="/MACHINE:I386 /FORCE:MULTIPLE"
-				AdditionalDependencies="vfw32.lib winmm.lib ..\DrvCommon2\Debug\DrvCommon.lib"
-				OutputFile="\vt5\vt5\debug\Comps\BaumerBx.dll"
+				AdditionalDependencies="vfw32.lib winmm.lib DrvCommon.lib"
 				LinkIncremental="2"
-				AdditionalLibraryDirectories="\vt5\common2\Debug,\vt5\common\"
-				ModuleDefinitionFile=".\BaumerBx.def"
+				AdditionalLibraryDirectories=""
 				GenerateDebugInformation="true"
-				ProgramDatabaseFile="\vt5\vt5\debug\pdb\$(ProjectName).pdb"
 				SubSystem="2"
 				RandomizedBaseAddress="1"
 				DataExecutionPrevention="0"
-				ImportLibrary="$(OutDir)/BaumerBx.lib"
 				TargetMachine="1"
 			/>
 			<Tool
@@ -113,7 +106,7 @@
 		<Configuration
 			Name="Debug|x64"
 			ConfigurationType="2"
-			InheritedPropertySheets="$(SolutionDir)props\CommonEnv.vsprops"
+			InheritedPropertySheets="..\..\..\..\props\CommonEnv.vsprops"
 			UseOfMFC="2"
 			CharacterSet="2"
 			>
@@ -138,7 +131,7 @@
 			<Tool
 				Name="VCCLCompilerTool"
 				Optimization="0"
-				AdditionalIncludeDirectories="..\DrvCommon2,\vt5\ifaces,\vt5\common2,\vt5\common"
+				AdditionalIncludeDirectories="..\DrvCommon2;&quot;$(SolutionDir)ifaces&quot;;&quot;$(SolutionDir)common2&quot;;&quot;$(SolutionDir)common&quot;"
 				PreprocessorDefinitions="_WIN64;_M_X64;_AFX_SECURE_NO_DEPRECATE;_CRT_SECURE_NO_DEPRECATE;_WINDOWS;_DEBUG;_USRDLL"
 				MinimalRebuild="true"
 				BasicRuntimeChecks="3"
@@ -147,8 +140,6 @@
 				ForceConformanceInForLoopScope="false"
 				UsePrecompiledHeader="2"
 				ProgramDataBaseFileName="$(IntDir)/"
-				WarningLevel="3"
-				Detect64BitPortabilityProblems="false"
 				DebugInformationFormat="3"
 			/>
 			<Tool
@@ -166,17 +157,13 @@
 			<Tool
 				Name="VCLinkerTool"
 				AdditionalOptions="/FORCE:MULTIPLE"
-				AdditionalDependencies="vfw32.lib winmm.lib ..\DrvCommon2\Debug\DrvCommon.lib"
-				OutputFile="\vt5\vt5\debug\Comps\BaumerBx.dll"
+				AdditionalDependencies="vfw32.lib winmm.lib DrvCommon.lib"
 				LinkIncremental="2"
-				AdditionalLibraryDirectories="\vt5\common2\Debug,\vt5\common\"
-				ModuleDefinitionFile=".\BaumerBx.def"
+				AdditionalLibraryDirectories=""
 				GenerateDebugInformation="true"
-				ProgramDatabaseFile="\vt5\vt5\debug\pdb\$(ProjectName).pdb"
 				SubSystem="2"
 				RandomizedBaseAddress="1"
 				DataExecutionPrevention="0"
-				ImportLibrary="$(OutDir)/BaumerBx.lib"
 				TargetMachine="17"
 			/>
 			<Tool
@@ -203,9 +190,8 @@
 		</Configuration>
 		<Configuration
 			Name="Release|Win32"
-			OutputDirectory="$(SolutionDir)$(ConfigurationName)"
-			IntermediateDirectory="$(ConfigurationName)"
 			ConfigurationType="2"
+			InheritedPropertySheets="..\..\..\..\props\CommonEnv.vsprops"
 			UseOfMFC="2"
 			CharacterSet="2"
 			>
@@ -231,7 +217,7 @@
 				Optimization="2"
 				InlineFunctionExpansion="1"
 				OmitFramePointers="true"
-				AdditionalIncludeDirectories="..\DrvCommon2,\vt5\ifaces,\vt5\common2,\vt5\common"
+				AdditionalIncludeDirectories="..\DrvCommon2;&quot;$(SolutionDir)ifaces&quot;;&quot;$(SolutionDir)common2&quot;;&quot;$(SolutionDir)common&quot;"
 				PreprocessorDefinitions="WIN32;_WINDOWS;NDEBUG;_USRDLL"
 				StringPooling="true"
 				RuntimeLibrary="2"
@@ -240,8 +226,6 @@
 				ForceConformanceInForLoopScope="false"
 				UsePrecompiledHeader="2"
 				ProgramDataBaseFileName="$(IntDir)/"
-				WarningLevel="3"
-				Detect64BitPortabilityProblems="false"
 				DebugInformationFormat="3"
 			/>
 			<Tool
@@ -259,19 +243,15 @@
 			<Tool
 				Name="VCLinkerTool"
 				AdditionalOptions="/MACHINE:I386 /FORCE:MULTIPLE"
-				AdditionalDependencies="vfw32.lib winmm.lib ..\DrvCommon2\Release\DrvCommon.lib"
-				OutputFile="\vt5\vt5\Release\Comps/BaumerBx.dll"
+				AdditionalDependencies="vfw32.lib winmm.lib DrvCommon.lib"
 				LinkIncremental="1"
-				AdditionalLibraryDirectories="\vt5\common2\Release,\vt5\common\"
-				ModuleDefinitionFile=".\BaumerBx.def"
+				AdditionalLibraryDirectories=""
 				GenerateDebugInformation="true"
-				ProgramDatabaseFile="\vt5\vt5\release\pdb\$(ProjectName).pdb"
 				SubSystem="2"
 				OptimizeReferences="2"
 				EnableCOMDATFolding="2"
 				RandomizedBaseAddress="1"
 				DataExecutionPrevention="0"
-				ImportLibrary="$(OutDir)/BaumerBx.lib"
 				TargetMachine="1"
 			/>
 			<Tool
@@ -298,9 +278,8 @@
 		</Configuration>
 		<Configuration
 			Name="Release|x64"
-			OutputDirectory="$(SolutionDir)$(PlatformName)\$(ConfigurationName)"
-			IntermediateDirectory="$(PlatformName)\$(ConfigurationName)"
 			ConfigurationType="2"
+			InheritedPropertySheets="..\..\..\..\props\CommonEnv.vsprops"
 			UseOfMFC="2"
 			CharacterSet="2"
 			>
@@ -327,7 +306,7 @@
 				Optimization="2"
 				InlineFunctionExpansion="1"
 				OmitFramePointers="true"
-				AdditionalIncludeDirectories="..\DrvCommon2,\vt5\ifaces,\vt5\common2,\vt5\common"
+				AdditionalIncludeDirectories="..\DrvCommon2;&quot;$(SolutionDir)ifaces&quot;;&quot;$(SolutionDir)common2&quot;;&quot;$(SolutionDir)common&quot;"
 				PreprocessorDefinitions="_WIN64;_M_X64;_AFX_SECURE_NO_DEPRECATE;_CRT_SECURE_NO_DEPRECATE;_WINDOWS;NDEBUG;_USRDLL"
 				StringPooling="true"
 				RuntimeLibrary="2"
@@ -336,8 +315,6 @@
 				ForceConformanceInForLoopScope="false"
 				UsePrecompiledHeader="2"
 				ProgramDataBaseFileName="$(IntDir)/"
-				WarningLevel="3"
-				Detect64BitPortabilityProblems="false"
 				DebugInformationFormat="3"
 			/>
 			<Tool
@@ -355,19 +332,15 @@
 			<Tool
 				Name="VCLinkerTool"
 				AdditionalOptions="/FORCE:MULTIPLE"
-				AdditionalDependencies="vfw32.lib winmm.lib ..\DrvCommon2\Release\DrvCommon.lib"
-				OutputFile="\vt5\vt5\Release\Comps/BaumerBx.dll"
+				AdditionalDependencies="vfw32.lib winmm.lib DrvCommon.lib"
 				LinkIncremental="1"
-				AdditionalLibraryDirectories="\vt5\common2\Release,\vt5\common\"
-				ModuleDefinitionFile=".\BaumerBx.def"
+				AdditionalLibraryDirectories=""
 				GenerateDebugInformation="true"
-				ProgramDatabaseFile="\vt5\vt5\release\pdb\$(ProjectName).pdb"
 				SubSystem="2"
 				OptimizeReferences="2"
 				EnableCOMDATFolding="2"
 				RandomizedBaseAddress="1"
 				DataExecutionPrevention="0"
-				ImportLibrary="$(OutDir)/BaumerBx.lib"
 				TargetMachine="17"
 			/>
 			<Tool
@@ -523,7 +496,7 @@
 	<Globals>
 		<Global
 			Name="DevPartner_IsInstrumented"
-			Value="1"
+			Value="0"
 		/>
 	</Globals>
 </VisualStudioProject>

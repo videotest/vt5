@@ -294,6 +294,9 @@
     <ClInclude Include="XPBarMgr.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="MfcOleFix.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="res\actions.bmp">

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="windows-1251"?>
 <VisualStudioProject
 	ProjectType="Visual C++"
-	Version="9,00"
+	Version="9.00"
 	Name="MacroRecorder"
 	ProjectGUID="{A30DE333-CC96-46D8-9445-043BD9CA63B1}"
 	RootNamespace="MacroRecorder"
@@ -43,7 +43,7 @@
 			<Tool
 				Name="VCCLCompilerTool"
 				Optimization="0"
-				AdditionalIncludeDirectories="&quot;$(SolutionDir)AWIN&quot;"
+				AdditionalIncludeDirectories="&quot;$(Inherit)&quot;;&quot;$(SolutionDir)AWIN&quot;"
 				PreprocessorDefinitions="WIN32;_DEBUG;_WINDOWS;_USRDLL;MACRORECORDER_EXPORTS;_CRT_SECURE_NO_WARNINGS"
 				MinimalRebuild="true"
 				BasicRuntimeChecks="0"
@@ -52,8 +52,6 @@
 				ForceConformanceInForLoopScope="false"
 				UsePrecompiledHeader="2"
 				BrowseInformation="1"
-				WarningLevel="3"
-				Detect64BitPortabilityProblems="false"
 				DebugInformationFormat="4"
 			/>
 			<Tool
@@ -67,7 +65,6 @@
 			/>
 			<Tool
 				Name="VCLinkerTool"
-				LinkIncremental="2"
 				AdditionalLibraryDirectories="$(Inherit)"
 				IgnoreDefaultLibraryNames=""
 				ModuleDefinitionFile="$(SolutionDir)common2\com_export.def"
@@ -134,8 +131,6 @@
 				ForceConformanceInForLoopScope="false"
 				UsePrecompiledHeader="2"
 				BrowseInformation="1"
-				WarningLevel="3"
-				Detect64BitPortabilityProblems="false"
 				DebugInformationFormat="3"
 			/>
 			<Tool
@@ -208,7 +203,7 @@
 				Optimization="2"
 				InlineFunctionExpansion="1"
 				OmitFramePointers="false"
-				AdditionalIncludeDirectories="&quot;$(SolutionDir)AWIN&quot;"
+				AdditionalIncludeDirectories="&quot;$(Inherit)&quot;;&quot;$(SolutionDir)AWIN&quot;"
 				PreprocessorDefinitions="WIN32;NDEBUG;_WINDOWS;_USRDLL;MACRORECORDER_EXPORTS;_CRT_SECURE_NO_WARNINGS"
 				StringPooling="true"
 				RuntimeLibrary="2"
@@ -216,8 +211,6 @@
 				TreatWChar_tAsBuiltInType="false"
 				ForceConformanceInForLoopScope="false"
 				UsePrecompiledHeader="2"
-				WarningLevel="3"
-				Detect64BitPortabilityProblems="false"
 				DebugInformationFormat="3"
 			/>
 			<Tool
@@ -291,7 +284,7 @@
 				Optimization="2"
 				InlineFunctionExpansion="1"
 				OmitFramePointers="false"
-				AdditionalIncludeDirectories="&quot;$(SolutionDir)AWIN&quot;"
+				AdditionalIncludeDirectories="&quot;$(Inherit)&quot;;&quot;$(SolutionDir)AWIN&quot;"
 				PreprocessorDefinitions="_WIN64;_M_X64;_CRT_SECURE_NO_DEPRECATE;NDEBUG;_WINDOWS;_USRDLL;MACRORECORDER_EXPORTS"
 				StringPooling="true"
 				RuntimeLibrary="2"
@@ -299,8 +292,6 @@
 				TreatWChar_tAsBuiltInType="false"
 				ForceConformanceInForLoopScope="false"
 				UsePrecompiledHeader="2"
-				WarningLevel="3"
-				Detect64BitPortabilityProblems="false"
 				DebugInformationFormat="3"
 			/>
 			<Tool
@@ -466,7 +457,7 @@
 	<Globals>
 		<Global
 			Name="DevPartner_IsInstrumented"
-			Value="1"
+			Value="0"
 		/>
 	</Globals>
 </VisualStudioProject>

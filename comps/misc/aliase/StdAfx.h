@@ -10,6 +10,9 @@
 #pragma once
 #endif // _MSC_VER > 1000
 
+#define WINVER 0x0501
+#define _WIN32_WINNT 0x501
+
 
 // Insert your headers here
 #define WIN32_LEAN_AND_MEAN		// Exclude rarely-used stuff from Windows headers

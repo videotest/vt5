@@ -124,6 +124,7 @@ BEGIN_MESSAGE_MAP(CRegisterDlg, CDialog)
 	ON_BN_CLICKED(IDC_EXIT, OnExit)
 	//}}AFX_MSG_MAP
 	ON_REGISTERED_MESSAGE(WM_FIND_APP, OnFindApp)
+	ON_BN_CLICKED(IDC_CLEAN, &CRegisterDlg::OnBnClickedClean)
 END_MESSAGE_MAP()
 
 /////////////////////////////////////////////////////////////////////////////
@@ -344,8 +345,8 @@ void CRegisterDlg::RegisterFiles(bool bRegister)
 
 	ASSERT (m_pData);
 	ASSERT (!m_pData->strPath.IsEmpty());
-	ASSERT (!m_pData->strProgramName.IsEmpty());
-	ASSERT (!m_pData->strSuffix.IsEmpty());
+	//ASSERT (!m_pData->strProgramName.IsEmpty());
+	//ASSERT (!m_pData->strSuffix.IsEmpty());
 
 	CRegisterApp * pApp = (CRegisterApp *)AfxGetApp();
 	if (pApp)
@@ -568,4 +569,14 @@ void CRegisterDlg::OnUnregister()
 void CRegisterDlg::OnExit() 
 {
 	CDialog::OnOK();
+}
+
+
+void CRegisterDlg::OnBnClickedClean()
+{
+	UpdateData(true);
+	m_pData->strProgramName = m_strAppName;
+	m_pData->strPath = m_strPath;
+	m_pData->strSuffix = m_strSuffix;
+	RegCleanLoc(m_pData->strPath);
 }

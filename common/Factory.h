@@ -64,31 +64,6 @@ protected:
 	GuidKey	m_guidExtern;
 };
 
-////////////////////////////////////////////////////////////////////////////////
-//	No Guard factory
-//
-class std_dll CNoGuardFactory : public CRuntimeInfoPatch, public COleObjectFactory
-{
-	DECLARE_DYNAMIC(CNoGuardFactory);
-public:
-	CNoGuardFactory(REFCLSID clsid, CRuntimeClass* pRuntimeClass, BOOL bMultiInstance, LPCTSTR lpszProgID);
-};
-
-#define NOGUARD_DECLARE_OLECREATE(class_name) \
-public: \
-	static CNoGuardFactory factory; \
-	static const GUID guid; \
-
-#define NOGUARD_IMPLEMENT_OLECREATE(class_name, external_name, l, w1, w2, b1, b2, b3, b4, b5, b6, b7, b8) \
-	CNoGuardFactory class_name::factory(class_name::guid, \
-		RUNTIME_CLASS(class_name), FALSE, _T(external_name)); \
-	AFX_COMDAT const GUID class_name::guid = \
-		{ l, w1, w2, { b1, b2, b3, b4, b5, b6, b7, b8 } }; \
-
-////////////////////////////////////////////////////////////////////////////////
-
-
-
 #define GUARD_BEGIN_OLEFACTORY(class_name) 									\
 protected: 																	\
 	class class_name##Factory : public CVTFactory 							\

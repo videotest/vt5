@@ -60,7 +60,6 @@
 				UsePrecompiledHeader="2"
 				PrecompiledHeaderThrough="stdafx.h"
 				BrowseInformation="1"
-				WarningLevel="3"
 				DebugInformationFormat="4"
 				CompileAs="0"
 			/>
@@ -79,7 +78,6 @@
 				Name="VCLinkerTool"
 				AdditionalOptions="/MACHINE:I386"
 				AdditionalDependencies="odbc32.lib odbccp32.lib atlsd.lib"
-				LinkIncremental="2"
 				AdditionalLibraryDirectories=""
 				IgnoreDefaultLibraryNames="libcd.lib,libcmtd.lib"
 				ModuleDefinitionFile=".\com_export.def"
@@ -150,7 +148,6 @@
 				UsePrecompiledHeader="2"
 				PrecompiledHeaderThrough="stdafx.h"
 				BrowseInformation="1"
-				WarningLevel="3"
 				DebugInformationFormat="3"
 				CompileAs="0"
 			/>
@@ -241,7 +238,6 @@
 				UsePrecompiledHeader="2"
 				PrecompiledHeaderThrough="stdafx.h"
 				BrowseInformation="1"
-				WarningLevel="3"
 				DebugInformationFormat="3"
 				CompileAs="0"
 			/>
@@ -331,7 +327,6 @@
 				UsePrecompiledHeader="2"
 				PrecompiledHeaderThrough="stdafx.h"
 				BrowseInformation="1"
-				WarningLevel="3"
 				DebugInformationFormat="3"
 				CompileAs="0"
 			/>
@@ -495,7 +490,7 @@
 	<Globals>
 		<Global
 			Name="DevPartner_IsInstrumented"
-			Value="1"
+			Value="0"
 		/>
 	</Globals>
 </VisualStudioProject>
