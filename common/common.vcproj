@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="windows-1251"?>
 <VisualStudioProject
 	ProjectType="Visual C++"
-	Version="9.00"
+	Version="9,00"
 	Name="common"
 	ProjectGUID="{468FD704-0081-44F3-AE42-FE6AD043A5F6}"
 	RootNamespace="common"
@@ -21,7 +21,7 @@
 	<Configurations>
 		<Configuration
 			Name="Release|Win32"
-			OutputDirectory="$(SolutionDir)vt5\$(PlatformName)\$(ConfigurationName)\"
+			OutputDirectory="$(SolutionDir)vt5\$(PlatformName)\$(ConfigurationName)"
 			ConfigurationType="2"
 			InheritedPropertySheets="..\props\CommonEnv.vsprops"
 			UseOfMFC="2"
@@ -62,6 +62,8 @@
 				ForceConformanceInForLoopScope="false"
 				RuntimeTypeInfo="true"
 				UsePrecompiledHeader="2"
+				PrecompiledHeaderThrough="stdafx.h"
+				PrecompiledHeaderFile="\vt5\common\Release/common.pch"
 				AssemblerListingLocation="\vt5\common\Release/"
 				ObjectFile="\vt5\common\Release/"
 				ProgramDataBaseFileName="\vt5\common\Release/"
@@ -87,6 +89,8 @@
 				AdditionalOptions="/MACHINE:I386"
 				AdditionalDependencies="HtmlHelp.lib"
 				OutputFile="$(SolutionDir)vt5\$(PlatformName)\$(ConfigurationName)\$(ProjectName).dll"
+				LinkIncremental="1"
+				SuppressStartupBanner="true"
 				AdditionalLibraryDirectories=""
 				ModuleDefinitionFile=" "
 				GenerateDebugInformation="true"
@@ -118,7 +122,7 @@
 		</Configuration>
 		<Configuration
 			Name="Release|x64"
-			OutputDirectory="$(SolutionDir)vt5\$(PlatformName)\$(ConfigurationName)\"
+			OutputDirectory="$(SolutionDir)vt5\$(PlatformName)\$(ConfigurationName)"
 			ConfigurationType="2"
 			InheritedPropertySheets="..\props\CommonEnv.vsprops"
 			UseOfMFC="2"
@@ -146,7 +150,6 @@
 				RuntimeLibrary="2"
 				TreatWChar_tAsBuiltInType="false"
 				ForceConformanceInForLoopScope="false"
-				UsePrecompiledHeader="2"
 			/>
 			<Tool
 				Name="VCManagedResourceCompilerTool"
@@ -163,7 +166,6 @@
 				AdditionalDependencies="HtmlHelp.lib"
 				OutputFile="$(SolutionDir)vt5\$(PlatformName)\$(ConfigurationName)\$(ProjectName).dll"
 				AdditionalLibraryDirectories=""
-				ModuleDefinitionFile=" "
 				RandomizedBaseAddress="1"
 				DataExecutionPrevention="0"
 				TargetMachine="17"
@@ -192,7 +194,7 @@
 		</Configuration>
 		<Configuration
 			Name="Debug|Win32"
-			OutputDirectory="$(SolutionDir)vt5\$(PlatformName)\$(ConfigurationName)\"
+			OutputDirectory="$(SolutionDir)vt5\$(PlatformName)\$(ConfigurationName)"
 			ConfigurationType="2"
 			InheritedPropertySheets="..\props\CommonEnv.vsprops"
 			UseOfMFC="2"
@@ -231,12 +233,14 @@
 				ForceConformanceInForLoopScope="false"
 				RuntimeTypeInfo="true"
 				UsePrecompiledHeader="2"
+				PrecompiledHeaderThrough="stdafx.h"
+				PrecompiledHeaderFile=".\Debug/common.pch"
 				AssemblerListingLocation=".\Debug/"
 				ObjectFile=".\Debug/"
 				ProgramDataBaseFileName=".\Debug/"
 				BrowseInformation="1"
+				Detect64BitPortabilityProblems="true"
 				DebugInformationFormat="4"
-				CompileAs="0"
 			/>
 			<Tool
 				Name="VCManagedResourceCompilerTool"
@@ -285,7 +289,7 @@
 		</Configuration>
 		<Configuration
 			Name="Debug|x64"
-			OutputDirectory="$(SolutionDir)vt5\$(PlatformName)\$(ConfigurationName)\"
+			OutputDirectory="$(SolutionDir)vt5\$(PlatformName)\$(ConfigurationName)"
 			ConfigurationType="2"
 			InheritedPropertySheets="..\props\CommonEnv.vsprops"
 			UseOfMFC="2"
@@ -313,7 +317,6 @@
 				RuntimeLibrary="3"
 				TreatWChar_tAsBuiltInType="false"
 				ForceConformanceInForLoopScope="false"
-				UsePrecompiledHeader="2"
 				Detect64BitPortabilityProblems="false"
 				DebugInformationFormat="3"
 			/>
@@ -331,7 +334,6 @@
 				AdditionalDependencies="HtmlHelp.lib"
 				OutputFile="$(SolutionDir)vt5\$(PlatformName)\$(ConfigurationName)\$(ProjectName).dll"
 				AdditionalLibraryDirectories=""
-				ModuleDefinitionFile=" "
 				GenerateDebugInformation="true"
 				RandomizedBaseAddress="1"
 				DataExecutionPrevention="0"
@@ -525,8 +527,6 @@
 					<Tool
 						Name="VCCLCompilerTool"
 						UsePrecompiledHeader="0"
-						PrecompiledHeaderThrough=" "
-						PrecompiledHeaderFile=" "
 					/>
 				</FileConfiguration>
 				<FileConfiguration
@@ -535,8 +535,6 @@
 					<Tool
 						Name="VCCLCompilerTool"
 						UsePrecompiledHeader="0"
-						PrecompiledHeaderThrough=" "
-						PrecompiledHeaderFile=" "
 					/>
 				</FileConfiguration>
 				<FileConfiguration
@@ -553,8 +551,6 @@
 					<Tool
 						Name="VCCLCompilerTool"
 						UsePrecompiledHeader="0"
-						PrecompiledHeaderThrough=" "
-						PrecompiledHeaderFile=" "
 					/>
 				</FileConfiguration>
 			</File>

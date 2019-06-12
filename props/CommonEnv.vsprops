@@ -28,6 +28,6 @@
 	<Tool
 		Name="VCMIDLTool"
 		TypeLibraryName="$(OutDir)/$(ProjectName).tlb"
-		OutputDirectory="$(SolutionDir)vt5\$(PlatformName)\$(ConfigurationName)"
+		OutputDirectory="$(IntDir)"
 	/>
 </VisualStudioPropertySheet>

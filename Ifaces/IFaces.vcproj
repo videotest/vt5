@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="windows-1251"?>
 <VisualStudioProject
 	ProjectType="Visual C++"
-	Version="9.00"
+	Version="9,00"
 	Name="IFaces"
 	ProjectGUID="{E7823BFF-F982-4527-A879-D4DA8A10345C}"
 	RootNamespace="IFaces"
@@ -21,29 +21,6 @@
 	<Configurations>
 		<Configuration
 			Name="Debug|Win32"
-			OutputDirectory="$(SolutionDir)vt5$(PlatformName)\$(ConfigurationName)\comps"
-			IntermediateDirectory="$(SolutionDir)build\$(PlatformName)\$(ConfigurationName)\$(ProjectName)"
-			ConfigurationType="10"
-			UseOfMFC="0"
-			>
-			<Tool
-				Name="VCPreBuildEventTool"
-			/>
-			<Tool
-				Name="VCCustomBuildTool"
-			/>
-			<Tool
-				Name="VCMIDLTool"
-				TargetEnvironment="1"
-				TypeLibraryName="$(InputName).tlb"
-				OutputDirectory="$(SolutionDir)vt5\$(PlatformName)\$(ConfigurationName)\comps"
-			/>
-			<Tool
-				Name="VCPostBuildEventTool"
-			/>
-		</Configuration>
-		<Configuration
-			Name="Release|Win32"
 			OutputDirectory="$(SolutionDir)vt5$(PlatformName)\$(ConfigurationName)\comps"
 			IntermediateDirectory="$(SolutionDir)build\$(PlatformName)\$(ConfigurationName)\$(ProjectName)"
 			ConfigurationType="10"
@@ -80,6 +57,28 @@
 			<Tool
 				Name="VCMIDLTool"
 				TargetEnvironment="3"
+				TypeLibraryName="$(InputName).tlb"
+				OutputDirectory="$(SolutionDir)vt5\$(PlatformName)\$(ConfigurationName)\comps"
+			/>
+			<Tool
+				Name="VCPostBuildEventTool"
+			/>
+		</Configuration>
+		<Configuration
+			Name="Release|Win32"
+			OutputDirectory="$(SolutionDir)vt5$(PlatformName)\$(ConfigurationName)\comps"
+			IntermediateDirectory="$(SolutionDir)build\$(PlatformName)\$(ConfigurationName)\$(ProjectName)"
+			ConfigurationType="10"
+			UseOfMFC="0"
+			>
+			<Tool
+				Name="VCPreBuildEventTool"
+			/>
+			<Tool
+				Name="VCCustomBuildTool"
+			/>
+			<Tool
+				Name="VCMIDLTool"
 				TypeLibraryName="$(InputName).tlb"
 				OutputDirectory="$(SolutionDir)vt5\$(PlatformName)\$(ConfigurationName)\comps"
 			/>
@@ -133,7 +132,7 @@
 				RelativePath=".\Charts.idl"
 				>
 				<FileConfiguration
-					Name="Release|Win32"
+					Name="Debug|Win32"
 					>
 					<Tool
 						Name="VCMIDLTool"
@@ -141,7 +140,7 @@
 					/>
 				</FileConfiguration>
 				<FileConfiguration
-					Name="Debug|x64"
+					Name="Release|Win32"
 					>
 					<Tool
 						Name="VCMIDLTool"
@@ -164,30 +163,6 @@
 			<File
 				RelativePath=".\dataview.idl"
 				>
-				<FileConfiguration
-					Name="Release|Win32"
-					>
-					<Tool
-						Name="VCMIDLTool"
-						TypeLibraryName="$(InputName).tlb"
-					/>
-				</FileConfiguration>
-				<FileConfiguration
-					Name="Debug|x64"
-					>
-					<Tool
-						Name="VCMIDLTool"
-						TypeLibraryName="$(InputName).tlb"
-					/>
-				</FileConfiguration>
-				<FileConfiguration
-					Name="Release|x64"
-					>
-					<Tool
-						Name="VCMIDLTool"
-						TypeLibraryName="$(InputName).tlb"
-					/>
-				</FileConfiguration>
 			</File>
 			<File
 				RelativePath="MacroRecorder.idl"

@@ -21,7 +21,7 @@
 	<Configurations>
 		<Configuration
 			Name="Debug|Win32"
-			OutputDirectory="$(SolutionDir)vt5\$(PlatformName)\$(ConfigurationName)\"
+			OutputDirectory="$(SolutionDir)vt5\$(PlatformName)\$(ConfigurationName)"
 			ConfigurationType="1"
 			InheritedPropertySheets="$(SolutionDir)props\CommonEnv.vsprops"
 			UseOfMFC="2"
@@ -43,6 +43,7 @@
 			<Tool
 				Name="VCMIDLTool"
 				PreprocessorDefinitions="_DEBUG"
+				SuppressStartupBanner="true"
 				TargetEnvironment="1"
 				TypeLibraryName="$(OutDir)/$(ProjectName).tlb"
 			/>
@@ -50,15 +51,23 @@
 				Name="VCCLCompilerTool"
 				AdditionalOptions=""
 				Optimization="0"
+				InlineFunctionExpansion="0"
 				AdditionalIncludeDirectories="&quot;$(SolutionDir)controls\BCGControlBar&quot;"
 				PreprocessorDefinitions="WIN32;_DEBUG;_WINDOWS;_AFX_SECURE_NO_DEPRECATE;_CRT_SECURE_NO_DEPRECATE"
+				MinimalRebuild="true"
 				BasicRuntimeChecks="3"
 				RuntimeLibrary="3"
 				TreatWChar_tAsBuiltInType="false"
 				ForceConformanceInForLoopScope="false"
+				RuntimeTypeInfo="true"
 				UsePrecompiledHeader="2"
+				PrecompiledHeaderThrough="stdafx.h"
 				BrowseInformation="1"
+				WarningLevel="3"
+				SuppressStartupBanner="true"
+				Detect64BitPortabilityProblems="false"
 				DebugInformationFormat="4"
+				CompileAs="0"
 			/>
 			<Tool
 				Name="VCManagedResourceCompilerTool"
@@ -74,14 +83,16 @@
 			<Tool
 				Name="VCLinkerTool"
 				AdditionalOptions="/MACHINE:I386"
-				AdditionalDependencies="htmlhelp.lib Version.lib comsuppd.lib gost.lib"
+				AdditionalDependencies="comsuppd.lib htmlhelp.lib Version.lib gost.lib"
 				OutputFile="$(SolutionDir)vt5\$(PlatformName)\$(ConfigurationName)\$(ProjectName).exe"
 				LinkIncremental="2"
-				AdditionalLibraryDirectories=""
+				SuppressStartupBanner="true"
+				AdditionalLibraryDirectories="\vt5\common\debug,\vt5\common\"
 				UACExecutionLevel="2"
-				ModuleDefinitionFile=""
+				ModuleDefinitionFile=" "
 				GenerateDebugInformation="true"
-				ProgramDatabaseFile="$(TargetDir)\pdb\$(TargetName).pdb"
+				ProgramDatabaseFile="\vt5\vt5\debug\pdb\shell.pdb"
+				GenerateMapFile="false"
 				SubSystem="2"
 				RandomizedBaseAddress="1"
 				DataExecutionPrevention="0"
@@ -91,7 +102,7 @@
 			/>
 			<Tool
 				Name="VCManifestTool"
-				AdditionalManifestFiles=" "
+				EmbedManifest="false"
 			/>
 			<Tool
 				Name="VCXDCMakeTool"
@@ -111,7 +122,7 @@
 		</Configuration>
 		<Configuration
 			Name="Debug|x64"
-			OutputDirectory="$(SolutionDir)vt5\$(PlatformName)\$(ConfigurationName)\"
+			OutputDirectory="$(SolutionDir)vt5\$(PlatformName)\$(ConfigurationName)"
 			ConfigurationType="1"
 			InheritedPropertySheets="$(SolutionDir)props\CommonEnv.vsprops"
 			UseOfMFC="2"
@@ -132,6 +143,7 @@
 			/>
 			<Tool
 				Name="VCMIDLTool"
+				SuppressStartupBanner="true"
 				TargetEnvironment="3"
 				TypeLibraryName="$(OutDir)/$(ProjectName).tlb"
 			/>
@@ -146,9 +158,11 @@
 				RuntimeLibrary="3"
 				TreatWChar_tAsBuiltInType="false"
 				ForceConformanceInForLoopScope="false"
+				RuntimeTypeInfo="true"
 				UsePrecompiledHeader="2"
 				PrecompiledHeaderThrough="stdafx.h"
 				BrowseInformation="1"
+				WarningLevel="3"
 				Detect64BitPortabilityProblems="false"
 				DebugInformationFormat="3"
 				CompileAs="0"
@@ -169,12 +183,11 @@
 				AdditionalDependencies="Version.lib comsuppd.lib gost.lib controls.lib"
 				OutputFile="$(SolutionDir)vt5\$(PlatformName)\$(ConfigurationName)\$(ProjectName).exe"
 				LinkIncremental="2"
-				AdditionalLibraryDirectories=""
-				ManifestFile="$(OutDir)\$(TargetFileName).intermediate.manifest"
+				AdditionalLibraryDirectories=" "
 				UACExecutionLevel="2"
-				ModuleDefinitionFile=""
+				ModuleDefinitionFile=" "
 				GenerateDebugInformation="true"
-				ProgramDatabaseFile="$(TargetDir)\pdb\$(TargetName).pdb"
+				GenerateMapFile="false"
 				SubSystem="2"
 				RandomizedBaseAddress="1"
 				DataExecutionPrevention="0"
@@ -185,7 +198,7 @@
 			/>
 			<Tool
 				Name="VCManifestTool"
-				AdditionalManifestFiles=" "
+				EmbedManifest="false"
 			/>
 			<Tool
 				Name="VCXDCMakeTool"
@@ -205,7 +218,7 @@
 		</Configuration>
 		<Configuration
 			Name="Release|Win32"
-			OutputDirectory="$(SolutionDir)vt5\$(PlatformName)\$(ConfigurationName)\"
+			OutputDirectory="$(SolutionDir)vt5\$(PlatformName)\$(ConfigurationName)"
 			ConfigurationType="1"
 			InheritedPropertySheets="$(SolutionDir)props\CommonEnv.vsprops"
 			UseOfMFC="2"
@@ -227,6 +240,7 @@
 			<Tool
 				Name="VCMIDLTool"
 				PreprocessorDefinitions="NDEBUG"
+				SuppressStartupBanner="true"
 				TargetEnvironment="1"
 				TypeLibraryName="$(OutDir)/$(ProjectName).tlb"
 			/>
@@ -242,8 +256,12 @@
 				EnableFunctionLevelLinking="true"
 				TreatWChar_tAsBuiltInType="false"
 				ForceConformanceInForLoopScope="false"
+				RuntimeTypeInfo="true"
 				UsePrecompiledHeader="2"
+				PrecompiledHeaderThrough="stdafx.h"
 				BrowseInformation="1"
+				WarningLevel="3"
+				SuppressStartupBanner="true"
 				DebugInformationFormat="3"
 				CompileAs="0"
 			/>
@@ -261,16 +279,14 @@
 			<Tool
 				Name="VCLinkerTool"
 				AdditionalOptions="/MACHINE:I386"
-				AdditionalDependencies="Version.lib comsupp.lib gost.lib"
+				AdditionalDependencies="Version.lib comsupp.lib xgost32s.lib"
 				OutputFile="$(SolutionDir)vt5\$(PlatformName)\$(ConfigurationName)\$(ProjectName).exe"
 				LinkIncremental="1"
 				SuppressStartupBanner="true"
-				AdditionalLibraryDirectories=""
-				ManifestFile="$(OutDir)\$(TargetFileName).intermediate.manifest"
-				UACExecutionLevel="2"
-				ModuleDefinitionFile=""
+				AdditionalLibraryDirectories="\vt5\common\release,\vt5\common"
+				ModuleDefinitionFile=" "
 				GenerateDebugInformation="true"
-				ProgramDatabaseFile="$(TargetDir)\pdb\$(TargetName).pdb"
+				ProgramDatabaseFile="\vt5\vt5\release\pdb\shell.pdb"
 				GenerateMapFile="true"
 				MapFileName="\vt5\shell\Release/shell.map"
 				SubSystem="2"
@@ -282,7 +298,7 @@
 			/>
 			<Tool
 				Name="VCManifestTool"
-				AdditionalManifestFiles=" "
+				AdditionalManifestFiles="elevate.manifest"
 			/>
 			<Tool
 				Name="VCXDCMakeTool"
@@ -302,7 +318,7 @@
 		</Configuration>
 		<Configuration
 			Name="Release|x64"
-			OutputDirectory="$(SolutionDir)vt5\$(PlatformName)\$(ConfigurationName)\"
+			OutputDirectory="$(SolutionDir)vt5\$(PlatformName)\$(ConfigurationName)"
 			ConfigurationType="1"
 			InheritedPropertySheets="$(SolutionDir)props\CommonEnv.vsprops"
 			UseOfMFC="2"
@@ -324,6 +340,7 @@
 			<Tool
 				Name="VCMIDLTool"
 				PreprocessorDefinitions="NDEBUG"
+				SuppressStartupBanner="true"
 				TargetEnvironment="3"
 				TypeLibraryName="$(OutDir)/$(ProjectName).tlb"
 			/>
@@ -339,9 +356,11 @@
 				EnableFunctionLevelLinking="true"
 				TreatWChar_tAsBuiltInType="false"
 				ForceConformanceInForLoopScope="false"
+				RuntimeTypeInfo="true"
 				UsePrecompiledHeader="2"
 				PrecompiledHeaderThrough="stdafx.h"
 				BrowseInformation="1"
+				WarningLevel="3"
 				DebugInformationFormat="3"
 				CompileAs="0"
 			/>
@@ -358,15 +377,13 @@
 			/>
 			<Tool
 				Name="VCLinkerTool"
-				AdditionalDependencies="Version.lib comsupp.lib gost.lib"
+				AdditionalDependencies="Version.lib comsuppd.lib gost.lib"
 				OutputFile="$(SolutionDir)vt5\$(PlatformName)\$(ConfigurationName)\$(ProjectName).exe"
 				LinkIncremental="1"
-				AdditionalLibraryDirectories=""
-				ManifestFile="$(OutDir)\$(TargetFileName).intermediate.manifest"
-				UACExecutionLevel="2"
-				ModuleDefinitionFile=""
+				AdditionalLibraryDirectories=" "
+				ModuleDefinitionFile=" "
 				GenerateDebugInformation="true"
-				ProgramDatabaseFile="$(TargetDir)\pdb\$(TargetName).pdb"
+				GenerateMapFile="true"
 				MapFileName="\vt5\shell\Release/shell.map"
 				SubSystem="2"
 				RandomizedBaseAddress="1"
@@ -378,7 +395,6 @@
 			/>
 			<Tool
 				Name="VCManifestTool"
-				AdditionalManifestFiles=" "
 			/>
 			<Tool
 				Name="VCXDCMakeTool"
@@ -527,22 +543,6 @@
 			<File
 				RelativePath=".\MfcOleFix.cpp"
 				>
-				<FileConfiguration
-					Name="Debug|Win32"
-					ExcludedFromBuild="true"
-					>
-					<Tool
-						Name="VCCLCompilerTool"
-					/>
-				</FileConfiguration>
-				<FileConfiguration
-					Name="Debug|x64"
-					ExcludedFromBuild="true"
-					>
-					<Tool
-						Name="VCCLCompilerTool"
-					/>
-				</FileConfiguration>
 			</File>
 			<File
 				RelativePath=".\misc.cpp"

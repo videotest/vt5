@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="windows-1251"?>
 <VisualStudioProject
 	ProjectType="Visual C++"
-	Version="9.00"
+	Version="9,00"
 	Name="Palette"
 	ProjectGUID="{779FD46D-C4B3-4E6F-9FB7-99CA6FA584AD}"
 	RootNamespace="Palette"
@@ -46,8 +46,6 @@
 				PreprocessorDefinitions="_DEBUG"
 				MkTypLibCompatible="true"
 				SuppressStartupBanner="true"
-				TargetEnvironment="1"
-				OutputDirectory="$(SolutionDir)vt5\$(PlatformName)\$(ConfigurationName)\comps\"
 			/>
 			<Tool
 				Name="VCCLCompilerTool"
@@ -70,7 +68,7 @@
 				Name="VCResourceCompilerTool"
 				PreprocessorDefinitions="_AFXDLL;_DEBUG"
 				Culture="1049"
-				AdditionalIncludeDirectories="$(OutDir)"
+				AdditionalIncludeDirectories=""
 			/>
 			<Tool
 				Name="VCPreLinkEventTool"
@@ -133,9 +131,7 @@
 				Name="VCMIDLTool"
 				PreprocessorDefinitions="_DEBUG"
 				MkTypLibCompatible="true"
-				SuppressStartupBanner="true"
 				TargetEnvironment="3"
-				OutputDirectory="$(SolutionDir)vt5\$(PlatformName)\$(ConfigurationName)\comps\"
 			/>
 			<Tool
 				Name="VCCLCompilerTool"
@@ -148,8 +144,8 @@
 				ForceConformanceInForLoopScope="false"
 				RuntimeTypeInfo="true"
 				UsePrecompiledHeader="2"
+				PrecompiledHeaderThrough=" "
 				BrowseInformation="1"
-				WarningLevel="3"
 				DebugInformationFormat="3"
 				CompileAs="0"
 			/>
@@ -160,7 +156,6 @@
 				Name="VCResourceCompilerTool"
 				PreprocessorDefinitions="_AFXDLL;_DEBUG"
 				Culture="1049"
-				AdditionalIncludeDirectories="$(OutDir)"
 			/>
 			<Tool
 				Name="VCPreLinkEventTool"
@@ -199,8 +194,6 @@
 		</Configuration>
 		<Configuration
 			Name="Release|Win32"
-			OutputDirectory=".\Release"
-			IntermediateDirectory=".\Release"
 			ConfigurationType="2"
 			InheritedPropertySheets="..\..\..\props\CommonEnv.vsprops"
 			UseOfMFC="2"
@@ -227,7 +220,6 @@
 				MkTypLibCompatible="true"
 				SuppressStartupBanner="true"
 				TargetEnvironment="1"
-				OutputDirectory="$(SolutionDir)vt5\$(PlatformName)\$(ConfigurationName)\comps\"
 			/>
 			<Tool
 				Name="VCCLCompilerTool"
@@ -240,7 +232,7 @@
 				ForceConformanceInForLoopScope="false"
 				RuntimeTypeInfo="true"
 				UsePrecompiledHeader="2"
-				WarningLevel="3"
+				PrecompiledHeaderThrough=" "
 				DebugInformationFormat="3"
 				CompileAs="0"
 			/>
@@ -251,7 +243,6 @@
 				Name="VCResourceCompilerTool"
 				PreprocessorDefinitions="_AFXDLL;NDEBUG"
 				Culture="1049"
-				AdditionalIncludeDirectories="$(OutDir)"
 			/>
 			<Tool
 				Name="VCPreLinkEventTool"
@@ -261,7 +252,6 @@
 				AdditionalOptions="/MACHINE:I386"
 				LinkIncremental="1"
 				AdditionalLibraryDirectories=""
-				ModuleDefinitionFile=" "
 				GenerateDebugInformation="true"
 				SubSystem="2"
 				RandomizedBaseAddress="1"
@@ -317,7 +307,6 @@
 				MkTypLibCompatible="true"
 				SuppressStartupBanner="true"
 				TargetEnvironment="3"
-				OutputDirectory="$(SolutionDir)vt5\$(PlatformName)\$(ConfigurationName)\comps\"
 			/>
 			<Tool
 				Name="VCCLCompilerTool"
@@ -331,7 +320,7 @@
 				ForceConformanceInForLoopScope="false"
 				RuntimeTypeInfo="true"
 				UsePrecompiledHeader="2"
-				WarningLevel="3"
+				PrecompiledHeaderThrough=" "
 				DebugInformationFormat="3"
 				CompileAs="0"
 			/>
@@ -342,7 +331,6 @@
 				Name="VCResourceCompilerTool"
 				PreprocessorDefinitions="_AFXDLL;NDEBUG"
 				Culture="1049"
-				AdditionalIncludeDirectories="$(OutDir)"
 			/>
 			<Tool
 				Name="VCPreLinkEventTool"
@@ -351,7 +339,6 @@
 				Name="VCLinkerTool"
 				LinkIncremental="1"
 				AdditionalLibraryDirectories=""
-				ModuleDefinitionFile=" "
 				GenerateDebugInformation="true"
 				SubSystem="2"
 				RandomizedBaseAddress="1"
@@ -420,8 +407,7 @@
 					>
 					<Tool
 						Name="VCMIDLTool"
-						TargetEnvironment="1"
-						HeaderFileName="Palette_h.h"
+						TargetEnvironment="3"
 					/>
 				</FileConfiguration>
 				<FileConfiguration
@@ -430,7 +416,6 @@
 					<Tool
 						Name="VCMIDLTool"
 						TargetEnvironment="1"
-						HeaderFileName="Palette_h.h"
 					/>
 				</FileConfiguration>
 				<FileConfiguration
@@ -438,8 +423,7 @@
 					>
 					<Tool
 						Name="VCMIDLTool"
-						TargetEnvironment="1"
-						HeaderFileName="Palette_h.h"
+						TargetEnvironment="3"
 					/>
 				</FileConfiguration>
 			</File>
@@ -451,7 +435,7 @@
 					>
 					<Tool
 						Name="VCResourceCompilerTool"
-						AdditionalIncludeDirectories=""
+						AdditionalIncludeDirectories="$(OUTDIR);$(NoInherit)"
 					/>
 				</FileConfiguration>
 				<FileConfiguration
@@ -459,7 +443,7 @@
 					>
 					<Tool
 						Name="VCResourceCompilerTool"
-						AdditionalIncludeDirectories=""
+						AdditionalIncludeDirectories="$(OUTDIR);$(NoInherit)"
 					/>
 				</FileConfiguration>
 				<FileConfiguration
