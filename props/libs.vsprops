@@ -15,10 +15,6 @@
 		CompileAs="0"
 	/>
 	<Tool
-		Name="VCLibrarianTool"
-		OutputFile="$(SolutionDir)lib\$(PlatformName)\$(ConfigurationName)\$(ProjectName).lib"
-	/>
-	<Tool
 		Name="VCLinkerTool"
 		OutputFile="$(OutDir)\$(ProjectName).lib"
 	/>
