@@ -8,7 +8,7 @@
 #include "PropBag.h"
 #include "fish.h"
 #include "color.h"
-#include "FishSettings.h"
+#include "Settings.h"
 
 IMPLEMENT_DYNCREATE(CFishByClustering,	CCmdTargetEx);
 

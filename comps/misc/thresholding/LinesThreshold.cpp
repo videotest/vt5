@@ -27,7 +27,7 @@ _ainfo_base::arg	CLinesThresholdInfo::s_pargs[] =
 static double inline sqr(double x)
 { return x*x; }
 
-static inline int iround(double x)
+static inline int round(double x)
 {
 	return int(floor(x+0.5));
 }
@@ -119,8 +119,8 @@ bool CLinesThreshold::InvokeFilter()
 					double dy = arr_dy[i];
 					for(int i=-m_nMask; i<=m_nMask; i++)
 					{
-						int xx = x + iround(i*dx);
-						int yy = y + iround(i*dy);
+						int xx = x + round(i*dx);
+						int yy = y + round(i*dy);
 						if(yy<0 || yy>=cy || xx<0 || xx>=cx)
 							continue;
 						if(srcRows[yy][xx]<c_min)
@@ -143,8 +143,8 @@ bool CLinesThreshold::InvokeFilter()
 						dstRows[y][x] += 1;
 						//for(int i=-2; i<=2; i++)
 						//{
-						//	int xx = x + iround(dy*i);
-						//	int yy = y + iround(-dx*i);
+						//	int xx = x + round(dy*i);
+						//	int yy = y + round(-dx*i);
 						//	if(yy<0 || yy>=cy || xx<0 || xx>=cx)
 						//		continue;
 						//	dstRows[yy][xx] ++;

@@ -196,7 +196,7 @@ long CStatView::on_paint()
 	GetClientRect(m_hwnd,&rcClient);
 
 	if(0>=m_grid.m_list_col.size()){
-	HBRUSH hbrush = ::CreateSolidBrush( ::GetSysColor( COLOR_WINDOW ) );
+		HBRUSH hbrush = ::CreateSolidBrush( ::GetSysColor( COLOR_WINDOW ) );
 		::FillRect( hdc, &rcClient, hbrush );
 		CString sNoData((LPCTSTR)IDS_NO_DATA);
 		::DrawText( hdc, sNoData, sNoData.GetLength(), &rcClient, DT_CENTER | DT_VCENTER | DT_SINGLELINE );
@@ -294,22 +294,19 @@ void CStatView::OnNotify( const char *pszEvent, IUnknown *punkHit, IUnknown *pun
 //////////////////////////////////////////////////////////////////////
 HRESULT CStatView::GetPrintWidth( int nMaxWidth, int *pnReturnWidth, BOOL *pbContinue, int nUserPosX, int *pnNewUserPosX )
 {
-	*pbContinue=m_grid.GetPrintWidth( nMaxWidth, *pnReturnWidth, nUserPosX, *pnNewUserPosX);
-	return S_OK;
+	return m_grid.GetPrintWidth( nMaxWidth, pnReturnWidth, pbContinue, nUserPosX, pnNewUserPosX );
 }
 
 //////////////////////////////////////////////////////////////////////
 HRESULT CStatView::GetPrintHeight( int nMaxHeight, int *pnReturnHeight, BOOL *pbContinue, int nUserPosY, int *pnNewUserPosY )
 {
-	*pbContinue=m_grid.GetPrintHeight( nMaxHeight, *pnReturnHeight, nUserPosY, *pnNewUserPosY );
-	return S_OK;
+	return m_grid.GetPrintHeight( nMaxHeight, pnReturnHeight, pbContinue, nUserPosY, pnNewUserPosY );
 }
 
 //////////////////////////////////////////////////////////////////////
 HRESULT CStatView::Print( HDC hdc, RECT rectTarget, int nUserPosX, int nUserPosY, int nUserPosDX, int nUserPosDY, BOOL bUseScrollZoom, DWORD dwFlags )
 {
-	double fzoom_view = 1.;
-	return m_grid.Print( hdc, rectTarget, nUserPosX, nUserPosY, nUserPosDX, nUserPosDY, fzoom_view, dwFlags );
+	return m_grid.Print( hdc, rectTarget, nUserPosX, nUserPosY, nUserPosDX, nUserPosDY, bUseScrollZoom, dwFlags );
 }
 
 //Persist Impl
@@ -325,26 +322,26 @@ HRESULT CStatView::GetClassID(CLSID *pClassID )
 
 
 //////////////////////////////////////////////////////////////////////
-HRESULT CStatView::GetFirstVisibleObjectPosition(TPOS *plpos)
+HRESULT CStatView::GetFirstVisibleObjectPosition( long *plpos )
 {
 	if( !plpos )	return E_POINTER;
 
 	*plpos = 0;
 	if( m_grid.m_ptr_table != 0 )
-		*plpos = (TPOS)1;
+		*plpos = 1;
 	
 	return S_OK;
 }
 
 //////////////////////////////////////////////////////////////////////
-HRESULT CStatView::GetNextVisibleObject(IUnknown ** ppunkObject, TPOS *plPos)
+HRESULT CStatView::GetNextVisibleObject( IUnknown ** ppunkObject, long *plPos )
 {
 	if( !plPos )	return E_POINTER;
 
-	TPOS lPos = *plPos;
+	long lPos		= *plPos;
 	*ppunkObject	= 0;
 	*plPos			= 0;
-	if (lPos == (TPOS)1)
+	if( lPos == 1 )
 	{
 		if( m_grid.m_ptr_table )
 		{

@@ -64,7 +64,7 @@ IUnknown *CMeasureChord::GetContextObject(_bstr_t cName, _bstr_t cType)
 		return punkImage;
 	}
 
-	LONG_PTR lPos = 0;
+	long lPos = 0;
 	ptrC->GetFirstObjectPos( bstrType, &lPos );
 	
 	while( lPos )
@@ -300,7 +300,7 @@ HRESULT CMeasureChord::DoInvoke()
 				fsin_angle = sin( fradian ); // dy
 		//
 		
-		//for( LPOS lpos_angle = lmap_angles.head( ); lpos_angle; lpos_angle = lmap_angles.next( lpos_angle ) )
+		//for( long lpos_angle = lmap_angles.head( ); lpos_angle; lpos_angle = lmap_angles.next( lpos_angle ) )
 		{	// идем по всем заданным углам
 			//_step step = lmap_angles.get( lpos_angle );
 			//long langle = lmap_angles.get_key( lpos_angle );

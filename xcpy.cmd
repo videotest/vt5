@@ -1,1 +1,0 @@
-"c:\Program Files\7-Zip\7z.exe" a qq -r -xr!*_i.c -xr!*_h.h -xr!_int.h *.h *.inl *.c *.cpp *.rc *.rc2 *.ico .cur *.vcproj *.sln *.bmp *.idl *.odl *.lib *.def *.txt

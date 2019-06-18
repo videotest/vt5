@@ -20,7 +20,6 @@
 #include "\vt5\awin\trace.h"
 
 CIntIniValue g_CheckGetImage("\\Sew Large Image", "CheckGetImage", 1);
-CIntIniValue g_FireMoveLV(_T("\\Sew Large Image\\Events"),_T("MoveLiveVideo"),TRUE);
 
 
 #include "vfw.h"
@@ -333,8 +332,6 @@ CSewLIView::CSewLIView()
 	m_DrawPreviewMode = OpacquePreview;
 	m_nPrevDiffState = -1;
 	m_dwDrvFlag = 0;
-	m_LastFragDrawMode = FragmentSmoothTransition;
-	m_nDrawFrameMode = DrawFrameActiveFrame|DrawFrameOverlay;
 }
 
 CSewLIView::~CSewLIView()
@@ -738,7 +735,7 @@ void CSewLIView::OnNotify( const char *pszEvent, IUnknown *punkHit, IUnknown *pu
 }
 
 //////////////////////////////////////////////////////////////////////
-HRESULT CSewLIView::OnActivateView( BOOL bActivate, IUnknown *punkOtherView )
+LRESULT CSewLIView::OnActivateView( BOOL bActivate, IUnknown *punkOtherView )
 {
 	_ShowPropPage( bActivate == TRUE );
 	return S_OK;	
@@ -753,18 +750,18 @@ HRESULT CSewLIView::GetClassID( CLSID *pClassID )
 	return S_OK;
 }
 
-HRESULT CSewLIView::GetFirstVisibleObjectPosition(TPOS *plpos)
+HRESULT CSewLIView::GetFirstVisibleObjectPosition( long *plpos )
 {
 	if(plpos)
 	{
-		*plpos = (TPOS)1;
+		*plpos = 1;
 		return S_OK;
 	}
 	else
 		return E_INVALIDARG;
 }
 
-HRESULT CSewLIView::GetNextVisibleObject(IUnknown ** ppunkObject, TPOS *plPos)
+HRESULT CSewLIView::GetNextVisibleObject( IUnknown ** ppunkObject, long *plPos )
 {
 	if(plPos && ppunkObject)
 	{
@@ -884,7 +881,7 @@ HRESULT CSewLIView::NotifyPutToDataEx( IUnknown* punkObj, IUnknown** punkUndoObj
 	HRESULT hr = sptrSLI->AddImage(punkObj, CPoint(0,0), addImageFindPos);
 	if (SUCCEEDED(hr))
 	{
-		TPOS lpos;
+		long lpos;
 		sptrSLI->GetLastFragmentPosition(&lpos);
 		if (lpos != 0)
 		{
@@ -908,11 +905,11 @@ HRESULT CSewLIView::Undo( IUnknown* punkUndoObj )
 	ISewFragmentPtr ptrFragToDel(punkUndoObj);
 	if (ptrFragToDel != 0)
 	{
-		TPOS lpos, lToDel = 0;
+		long lpos,lToDel=0;
 		sptrSLI->GetFirstFragmentPos(&lpos);
 		while (lpos)
 		{
-			TPOS lPrev = lpos;
+			long lPrev = lpos;
 			ISewFragmentPtr ptrFragCur;
 			sptrSLI->GetNextFragment(&lpos, &ptrFragCur);
 			if (ptrFragCur == ptrFragToDel)
@@ -1091,12 +1088,6 @@ HRESULT CSewLIView::MoveLiveVideo(/* [in] */ int x, /* [in] */ int y, /* [in] */
 	if (nFlags&moveFragCorrect)
 	{
 		DoMoveLV(x,y,0);
-		if ((nFlags&moveFragFire) && (int)g_FireMoveLV)
-		{
-			IScriptSitePtr	ptr_ss = ::GetAppUnknown();
-			if (ptr_ss != 0)
-				ptr_ss->Invoke(_bstr_t("SewLI_LiveVideoMoved"), 0, NULL, 0, fwAppScript);
-		}
 		return S_OK;
 	}
 	m_rcPreviewRect = CRect(CPoint(x,y), m_rcPreviewRect.Size());
@@ -1153,120 +1144,22 @@ HRESULT CSewLIView::put_ShowLiveVideoMode(/*[in]*/ int pVal )
 	return S_OK;
 }
 
-HRESULT CSewLIView::get_BaseFragment(IUnknown **ppunkVal)
-{
-	(*ppunkVal) = m_LFragBase.GetFrag();
-	if (*ppunkVal)
-		(*ppunkVal)->AddRef();
-	return S_OK;
-}
-
-HRESULT CSewLIView::get_LastFragmentMode(/*[out,retval]*/ int * pVal )
-{
-	*pVal = m_LastFragDrawMode;
-	return S_OK;
-}
-
-HRESULT CSewLIView::put_LastFragmentMode(/*[in]*/ int pVal )
-{
-	if (pVal >= FragmentOpaque && pVal <= FragmentNegative)
-		m_LastFragDrawMode = (DrawFragmentMode)pVal;
-	InvalidateRect(m_hwnd, NULL, TRUE);
-	return S_OK;
-}
-
-HRESULT CSewLIView::get_ShowFrame(/*[out,retval]*/ int * pVal )
-{
-	*pVal = m_nDrawFrameMode;
-	return S_OK;
-}
-
-HRESULT CSewLIView::put_ShowFrame(/*[in]*/ int pVal )
-{
-	m_nDrawFrameMode = pVal;
-	InvalidateRect(m_hwnd, NULL, TRUE);
-	return S_OK;
-}
-
-HRESULT CSewLIView::get_NextFragmentDirection(/*[out,retval]*/ double * pVal )
-{
-	if (m_sptrIP != 0)
-	{
-		*pVal = atan2((double)-m_ptLVOffs.y,(double)m_ptLVOffs.x);
-	}
-	else
-	{
-		ISewImageListPtr sptrSLI(m_sptrObjectList);
-		if (sptrSLI != 0)
-		{
-			CPoint pt;
-			sptrSLI->CalcOrigFragOffset(NULL, &pt);
-			*pVal = atan2((double)-pt.y,(double)pt.x);
-		}
-		else *pVal = 0.;
-	}
-	return S_OK;
-}
-
-
-static void PointByFragmentAndMode(ISewFragmentPtr &sptrFragFound, int nMode, int &x, int &y)
-{
-	CRect rc = GetFragmentRect(sptrFragFound);
-	int hm = (nMode-1)%3;
-	int vm = (nMode-1)/3;
-	if (hm == 0)
-		x = rc.left;
-	else if (hm == 1)
-		x = (rc.left+rc.right)/2;
-	else //if(hm == 2)
-		x = rc.right;
-	if (vm == 0)
-		y = rc.top;
-	else if (vm == 1)
-		y = (rc.top+rc.bottom)/2;
-	else //if (vm == 2)
-		y = rc.bottom;
-}
 
 bool CSewLIView::DoMoveLVTo(int x, int y, int nFlags)
 {
+	if (m_sptrIP == 0)
+		return false;
 	int nMode = nFlags&0xF;
 	ISewImageListPtr sptrSLI(m_sptrObjectList);
 	ISewFragmentPtr sptrFragFound;
-	TPOS lPos, lPosFound;
-	if (m_sptrIP == 0)
-	{
-		if (nMode > 0)
-		{
-			ISewFragmentPtr sptrFragLast;
-			sptrSLI->GetLastFragmentPosition(&lPos);
-			if (lPos != 0)
-			{
-				sptrSLI->GetPrevFragment(&lPos, &sptrFragLast);
-				sptrSLI->GetPrevFragment(&lPos, &sptrFragFound);
-//				sptrFragFound = GetLastFragByPoint(lPos,sptrSLI,CPoint(x,y));
-				if (sptrFragFound != 0)
-				{
-					PointByFragmentAndMode(sptrFragFound, nMode, x, y);
-					CPoint ptPos(x,y);
-					if (FindOptimalPositionByPoint(sptrSLI, sptrFragFound, sptrFragLast,
-						&ptPos))
-					{
-						sptrSLI->MoveFragment(sptrFragLast, ptPos, moveFragCalcOvr|moveFragFire);
-						return true;
-					}
-				}
-			}
-		}
-		return false;
-	}
+	long lPos,lPosFound;
 	if (nMode == 0)
 	{
 		sptrSLI->GetLastFragmentPosition(&lPos);
 		while (lPos)
 		{
 			ISewFragmentPtr sptrFrag;
-			TPOS lPosPrev = lPos;
+			long lPosPrev = lPos;
 			sptrSLI->GetPrevFragment(&lPos, &sptrFrag);
 			POINT ptFrag;
 			sptrFrag->GetOffset(&ptFrag);
@@ -1287,8 +1180,7 @@ bool CSewLIView::DoMoveLVTo(int x, int y, int nFlags)
 		if (lPos != 0)
 		{
 			sptrSLI->GetPrevFragment(&lPos, &sptrFragFound);
-			PointByFragmentAndMode(sptrFragFound, nMode, x, y);
-			/*CRect rc = GetFragmentRect(sptrFragFound);
+			CRect rc = GetFragmentRect(sptrFragFound);
 			int hm = (nMode-1)%3;
 			int vm = (nMode-1)/3;
 			if (hm == 0)
@@ -1302,7 +1194,7 @@ bool CSewLIView::DoMoveLVTo(int x, int y, int nFlags)
 			else if (vm == 1)
 				y = (rc.top+rc.bottom)/2;
 			else //if (vm == 2)
-				y = rc.bottom;*/
+				y = rc.bottom;
 		}
 	}
 	if (sptrFragFound != 0)
@@ -1330,12 +1222,12 @@ bool CSewLIView::DoMoveLV(int x, int y, int nMode)
 	ISewImageListPtr sptrSLI(m_sptrObjectList);
 	ISewFragmentPtr sptrFragFound;
 	int nOvrArea = 0;
-	TPOS lPos, lPosFound;
+	long lPos,lPosFound;
 	sptrSLI->GetLastFragmentPosition(&lPos);
 	while (lPos)
 	{
 		ISewFragmentPtr sptrFrag;
-		TPOS lPosPrev = lPos;
+		long lPosPrev = lPos;
 		sptrSLI->GetPrevFragment(&lPos, &sptrFrag);
 		POINT ptFrag;
 		sptrFrag->GetOffset(&ptFrag);
@@ -1453,7 +1345,7 @@ void CSewLIView::_UpdatePreviewSize()
 	ISewImageListPtr sptrSIL(m_sptrObjectList);
 	if (sptrSIL != 0)
 	{
-		TPOS lLast = 0;
+		long lLast = 0;
 		sptrSIL->GetLastFragmentPosition(&lLast);
 		if (lLast != 0)
 		{
@@ -1473,10 +1365,6 @@ void CSewLIView::_UpdatePreviewSize()
 
 bool CSewLIView::MakeLoadFragList(bool bLIChanged)
 {
-	static bool bInside = false;
-	if (bInside)
-		return false;
-	CSetBool sb(&bInside,true);
 	double fZoom = 1.;
 	_point pointScroll(0, 0);
 	IScrollZoomSitePtr sptrSZ(Unknown());
@@ -1508,12 +1396,11 @@ bool CSewLIView::MakeLoadFragList(bool bLIChanged)
 	sptrSIL->GetRangeCoef(&nRangeCoef);
 	int nViewRange = GetViewRangeByZoom(fZoom, nRangeCoef);
 	CRect rcBounds(m_ptCoordSpaceOrg,m_szCoordSpaceExt);
-	TPOS lPos = 0;
+	long lPos = 0;
 	sptrSIL->GetFirstFragmentPos(&lPos);
 	while (lPos)
 	{
 		ISewFragmentPtr sptrFrag;
-		TPOS lPosSave = lPos;
 		sptrSIL->GetNextFragment(&lPos, &sptrFrag);
 		POINT pt;
 		GetFragmentOffset(sptrFrag, &pt);
@@ -1539,16 +1426,15 @@ bool CSewLIView::MakeLoadFragList(bool bLIChanged)
 			rcBounds.top = max(rcBounds.top,pt.y+sz.cy);
 			continue;
 		}
-		NewList.insert(new CSewLoadedFragment(sptrFrag,nZoom,lPosSave));
+		NewList.insert(new CSewLoadedFragment(sptrFrag,nZoom));
 	}
 
 	m_LoadFragList.deinit();
-	TPOS lpos = NewList.head();
+	long lpos = NewList.head();
 	while (lpos)
 	{
 		CSewLoadedFragment *p = NewList.next(lpos);
-		m_LoadFragList.insert(new CSewLoadedFragment(p->m_pFrag,p->m_nZoom,p->m_lpos));
-
+		m_LoadFragList.insert(new CSewLoadedFragment(p->m_pFrag,p->m_nZoom));
 	}
 	m_rcBoundsPrev = rcBounds;
 	m_rcImagePrev = rcImage;
@@ -1557,8 +1443,6 @@ bool CSewLIView::MakeLoadFragList(bool bLIChanged)
 
 BOOL CSewLIView::DrawActiveFragment(HDC hdcMem, DrawFrameMode Mode)
 {
-	if ((m_nDrawFrameMode&DrawFrameActiveFrame)==0)
-		return false;
 	CRect	rectActive(0,0,0,0);
 	if (m_sptrIP != 0)
 		rectActive = ConvertToClient(m_rcPreviewRect);
@@ -1575,7 +1459,7 @@ BOOL CSewLIView::DrawActiveFragment(HDC hdcMem, DrawFrameMode Mode)
 		ISewImageListPtr sptrSIL(m_sptrObjectList);
 		if (sptrSIL == 0)
 			return false;
-		TPOS lPosActive;
+		long lPosActive;
 		sptrSIL->GetActiveFragmentPosition(&lPosActive);
 		if (lPosActive != 0)
 		{
@@ -1613,8 +1497,6 @@ BOOL CSewLIView::DrawActiveFragment(HDC hdcMem, DrawFrameMode Mode)
 
 BOOL CSewLIView::DrawIntersection(HDC hdcMem)
 {
-	if ((m_nDrawFrameMode&DrawFrameOverlay)==0)
-		return false;
 	CRect rcInter(0,0,0,0);
 	if (m_sptrIP != 0)
 	{
@@ -1628,12 +1510,12 @@ BOOL CSewLIView::DrawIntersection(HDC hdcMem)
 	else
 	{
 		ISewImageListPtr sptrSIL(m_sptrObjectList);
-		TPOS lPosLast, lPosActive;
+		long lPosLast,lPosActive;
 		sptrSIL->GetLastFragmentPosition(&lPosLast);
 		sptrSIL->GetActiveFragmentPosition(&lPosActive);
 		if (lPosLast != 0 && lPosLast == lPosActive)
 		{
-			TPOS lPos = lPosLast;
+			long lPos = lPosLast;
 			ISewFragmentPtr sptrFragLast,sptrFragPrev;
 			sptrSIL->GetPrevFragment(&lPos,&sptrFragLast);
 			if (lPos != 0)
@@ -1671,103 +1553,6 @@ BOOL CSewLIView::DrawIntersection(HDC hdcMem)
 
 	return true;
 }
-
-void CSewLIView::DrawFragment(BITMAPINFOHEADER &bmih, LPBYTE pdibBits,
-	CPoint pointScroll, CRect rectPaint, COLORREF cr, DrawFragmentMode dfm,
-	ISewFragment *pFrag, double fZoom, _ptr_t2<WORD> &GlobalDistMap, bool *pbCC2)
-	{
-		IUnknownPtr punkImage;
-		int nZoom = fZoom>=1.?1:(int)floor(1/fZoom);
-		pFrag->GetImage(&nZoom, &punkImage);
-		POINT ptOffset;
-		GetFragmentOffset(pFrag,&ptOffset);
-		SIZE szFrag;
-		pFrag->GetSize(&szFrag);
-		double dFragZoom = 1./double(nZoom);
-		CPoint ptZOffset(ptOffset.x/nZoom,ptOffset.y/nZoom);
-
-		sptrINamedDataObject2	sptrN(punkImage);
-		IImage3Ptr image(punkImage);
-
-		//cache color convertor information
-		IUnknown *punkColorCnv = 0;
-		if( image != 0 )
-			image->GetColorConvertor( &punkColorCnv );
-	else return;
-		IColorConvertorExPtr		ptrCC(punkColorCnv);
-		IColorConvertorEx2Ptr		ptrCC2(punkColorCnv);
-		IColorConvertorLookupPtr	ptrCCLookup(punkColorCnv);
-		if( punkColorCnv )punkColorCnv->Release();
-		// Make transparency map
-		IDistanceMapPtr sptrDistMap;
-		pFrag->GetDistanceMap(&nZoom, &sptrDistMap);
-		//set lookup table
-		byte* pbyteLookup = 0;
-		long nSize = 0;
-		pbyteLookup = ::GetValuePtr(image, szLookup, szLookupTable, &nSize);
-		if( ptrCCLookup != 0 )
-		{
-			int cx = 256;
-			int cy = nSize/cx; 
-			ptrCCLookup->SetLookupTable( pbyteLookup, cx, cy );
-			if( pbyteLookup )delete pbyteLookup;
-		}
-		IUnknown *punkColorCnvTemp = 0;
-		image->GetColorConvertor( &punkColorCnvTemp );
-		CPoint	point = CPoint( 0, 0 );
-		if( punkColorCnvTemp )
-		{
-			IColorConvertorExPtr	ptrCCTemp( punkColorCnvTemp );
-			IColorConvertor2Ptr ptrCC2Temp( punkColorCnvTemp );
-
-			punkColorCnvTemp->Release();
-	
-			image->GetOffset( &point );
-			CRect	rectDraft;
-			rectDraft.left = point.x;
-			rectDraft.top = point.y;
-			rectDraft.right = rectDraft.left+m_szCoordSpaceExt.cx;
-			rectDraft.bottom = rectDraft.top+m_szCoordSpaceExt.cy;
-	
-			rectDraft.left = int( rectDraft.left*fZoom-pointScroll.x-2 );
-			rectDraft.right = int( rectDraft.right*fZoom-pointScroll.x+2 );
-			rectDraft.top = int( rectDraft.top*fZoom-pointScroll.y-2 );
-			rectDraft.bottom = int( rectDraft.bottom*fZoom-pointScroll.y+2 );
-
-		if (pbCC2)
-			*pbCC2 = ptrCC2 != 0 && sptrDistMap != 0;
-
-			bool bScrollZoom=true;
-			if( pdibBits)
-			{
-				rectDraft.IntersectRect( rectPaint, rectDraft );
-				if( (rectDraft.right <= rectDraft.left||	rectDraft.bottom <= rectDraft.top) && bScrollZoom )
-				return;
-				if (ptrCC2 != 0 && (int)g_SmoothTransition && sptrDistMap != 0)
-			{
-				DWORD dwFlags = cidrTranspOpaque;
-				if (dfm == FragmentTransparent)
-					dwFlags = cidrTranspTransparent;
-				else if (dfm == FragmentSmoothTransition)
-					dwFlags = cidrTranspSmoothTransition;
-				else if (dfm == FragmentNegative)
-					dwFlags = cidrTranspNegative;
-					ptrCC2->ConvertImageToDIBRect2( &bmih, pdibBits,
-							(WORD *)GlobalDistMap, rectPaint.TopLeft(), 
-							(IImage2*)image, rectPaint,  ptZOffset, 
-							bScrollZoom ? fZoom/dFragZoom : 1, bScrollZoom ? pointScroll : CPoint(0, 0),
-						cr, dwFlags, sptrDistMap, Unknown());
-			}
-				else
-					ptrCC->ConvertImageToDIBRect( &bmih, pdibBits, rectPaint.TopLeft(), 
-							(IImage2*)image, rectPaint,  ptZOffset, 
-							bScrollZoom ? fZoom/dFragZoom : 1, bScrollZoom ? pointScroll : CPoint(0, 0),
-							cr, /*dwDrawFlags*/0, Unknown());
-			}
-		}
-		if( ptrCCLookup != 0 )
-			ptrCCLookup->KillLookup();
-	}
 
 //выводит на экран за один проход все фрагменты из списка pFragmentList
 BOOL CSewLIView::DrawImages(HDC hdcScreen, CRect rectPaint1)
@@ -1830,25 +1615,101 @@ BOOL CSewLIView::DrawImages(HDC hdcScreen, CRect rectPaint1)
 	COLORREF	cr = ::GetValueColor( GetAppUnknown(), "\\Colors", "Background", RGB( 128, 128, 255 ) );
 	hbrBkgnd = CreateSolidBrush(cr); 
 	::FillRect( hdcMem,rectPaint, hbrBkgnd );
-	ISewImageListPtr sptrSLI(m_sptrObjectList);
 	if (IsRealDoc(m_sptrObjectList))
 	{
-		// Allocate memory for distance map.
-		_ptr_t2<WORD> GlobalDistMap;
-		GlobalDistMap.alloc(bmih.biWidth*bmih.biHeight);
-		GlobalDistMap.zero();
-		TPOS lPosLast;
-		sptrSLI->GetLastFragmentPosition(&lPosLast);
-		// Process fragments drawing itself.
-		TPOS lPos = m_LoadFragList.head();
-		while (lPos)
+	// Allocate memory for distance map.
+	_ptr_t2<WORD> GlobalDistMap;
+	GlobalDistMap.alloc(bmih.biWidth*bmih.biHeight);
+	GlobalDistMap.zero();
+	// Process fragments drawing itself.
+	long lPos = m_LoadFragList.head();;
+	while (lPos)
+	{
+		CSewLoadedFragment *pSewLoadedFragment = m_LoadFragList.next(lPos);
+		ISewFragment *pFrag = pSewLoadedFragment->m_pFrag;
+		IUnknownPtr punkImage;
+		int nZoom = fZoom>=1.?1:(int)floor(1/fZoom);
+		pFrag->GetImage(&nZoom, &punkImage);
+		POINT ptOffset;
+		GetFragmentOffset(pFrag,&ptOffset);
+		SIZE szFrag;
+		pFrag->GetSize(&szFrag);
+		double dFragZoom = 1./double(nZoom);
+		CPoint ptZOffset(ptOffset.x/nZoom,ptOffset.y/nZoom);
+
+		sptrINamedDataObject2	sptrN(punkImage);
+		IImage3Ptr image(punkImage);
+
+		//cache color convertor information
+		IUnknown *punkColorCnv = 0;
+		if( image != 0 )
 		{
-			CSewLoadedFragment *pSewLoadedFragment = m_LoadFragList.next(lPos);
-			ISewFragment *pFrag = pSewLoadedFragment->m_pFrag;
-			DrawFragment(bmih, pdibBits, pointScroll, rectPaint, cr,
-				pSewLoadedFragment->m_lpos==lPosLast?m_LastFragDrawMode:FragmentSmoothTransition,
-				pFrag, fZoom, GlobalDistMap);
+			image->GetColorConvertor( &punkColorCnv );
 		}
+		else 
+			continue;
+		IColorConvertorExPtr		ptrCC(punkColorCnv);
+		IColorConvertorEx2Ptr		ptrCC2(punkColorCnv);
+		IColorConvertorLookupPtr	ptrCCLookup(punkColorCnv);
+		if( punkColorCnv )punkColorCnv->Release();
+		// Make transparency map
+		IDistanceMapPtr sptrDistMap;
+		pFrag->GetDistanceMap(&nZoom, &sptrDistMap);
+		//set lookup table
+		byte* pbyteLookup = 0;
+		long nSize = 0;
+		pbyteLookup = ::GetValuePtr(image, szLookup, szLookupTable, &nSize);
+		if( ptrCCLookup != 0 )
+		{
+			int cx = 256;
+			int cy = nSize/cx; 
+			ptrCCLookup->SetLookupTable( pbyteLookup, cx, cy );
+			if( pbyteLookup )delete pbyteLookup;
+		}
+		IUnknown *punkColorCnvTemp = 0;
+		image->GetColorConvertor( &punkColorCnvTemp );
+		CPoint	point = CPoint( 0, 0 );
+		if( punkColorCnvTemp )
+		{
+			IColorConvertorExPtr	ptrCCTemp( punkColorCnvTemp );
+			IColorConvertor2Ptr ptrCC2Temp( punkColorCnvTemp );
+
+			punkColorCnvTemp->Release();
+	
+			image->GetOffset( &point );
+			CRect	rectDraft;
+			rectDraft.left = point.x;
+			rectDraft.top = point.y;
+			rectDraft.right = rectDraft.left+m_szCoordSpaceExt.cx;
+			rectDraft.bottom = rectDraft.top+m_szCoordSpaceExt.cy;
+	
+			rectDraft.left = int( rectDraft.left*fZoom-pointScroll.x-2 );
+			rectDraft.right = int( rectDraft.right*fZoom-pointScroll.x+2 );
+			rectDraft.top = int( rectDraft.top*fZoom-pointScroll.y-2 );
+			rectDraft.bottom = int( rectDraft.bottom*fZoom-pointScroll.y+2 );
+
+			bool bScrollZoom=true;
+			if( pdibBits)
+			{
+				rectDraft.IntersectRect( rectPaint, rectDraft );
+				if( (rectDraft.right <= rectDraft.left||	rectDraft.bottom <= rectDraft.top) && bScrollZoom )
+					continue;
+				if (ptrCC2 != 0 && (int)g_SmoothTransition && sptrDistMap != 0)
+					ptrCC2->ConvertImageToDIBRect2( &bmih, pdibBits,
+							(WORD *)GlobalDistMap, rectPaint.TopLeft(), 
+							(IImage2*)image, rectPaint,  ptZOffset, 
+							bScrollZoom ? fZoom/dFragZoom : 1, bScrollZoom ? pointScroll : CPoint(0, 0),
+							cr, /*dwDrawFlags*/0, sptrDistMap, Unknown());
+				else
+					ptrCC->ConvertImageToDIBRect( &bmih, pdibBits, rectPaint.TopLeft(), 
+							(IImage2*)image, rectPaint,  ptZOffset, 
+							bScrollZoom ? fZoom/dFragZoom : 1, bScrollZoom ? pointScroll : CPoint(0, 0),
+							cr, /*dwDrawFlags*/0, Unknown());
+			}
+		}
+		if( ptrCCLookup != 0 )
+			ptrCCLookup->KillLookup();
+	}
 	// Draw preview with frame or active fragment's frame.
 	if (m_sptrIP != 0)
 	{
@@ -1863,7 +1724,8 @@ BOOL CSewLIView::DrawImages(HDC hdcScreen, CRect rectPaint1)
 	DrawIntersection(hdcMem);
 	}
 	else
-	{ // The preview in the file open dialog.
+	{
+		ISewImageListPtr sptrSLI(m_sptrObjectList);
 		IUnknownPtr punkTI;
 		sptrSLI->GetTotalImage(&punkTI);
 		if (punkTI != 0)
@@ -2022,7 +1884,7 @@ CPoint CSewLIView::GetInitPreviewPos()
 	ISewImageListPtr sptrSIL(m_sptrObjectList);
 	if (sptrSIL != 0)
 	{
-		TPOS lLastPos;
+		long lLastPos;
 		sptrSIL->GetLastFragmentPosition(&lLastPos);
 		if (lLastPos != 0)
 		{
@@ -2055,7 +1917,7 @@ CSize CSewLIView::GetDrvImgSize()
 			ISewImageListPtr sptrSIL(m_sptrObjectList);
 			if (sptrSIL != 0)
 			{
-				TPOS lLastPos;
+				long lLastPos;
 				sptrSIL->GetLastFragmentPosition(&lLastPos);
 				if (lLastPos != 0)
 				{
@@ -2127,7 +1989,6 @@ bool CSewLIView::AutoMovePreview(bool bForce)
 	ISewFragment *pFrag = m_LFragBase.GetFrag();
 	if (pFrag == NULL)
 		return false;
-	CHourglass wc;
 	// Zoom will be used for correction
 	double fZoom = 1.;
 	IScrollZoomSitePtr sptrSZ(Unknown());

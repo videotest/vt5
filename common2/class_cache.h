@@ -38,17 +38,17 @@ public:
 		return ::get_object_class(pcalc, str_short.c_str());
 	};
 
-	inline string get_class_name(LPOS lpos)
+	inline string get_class_name(long lpos)
 	{
 		return (lpos>=0 && lpos<class_count) ? class_names[lpos] : class_name_unknown;
 	};
 
-	inline COLORREF get_class_color(LPOS lpos)
+	inline COLORREF get_class_color(long lpos)
 	{
 		return (lpos>=0 && lpos<class_count) ? class_colors[lpos] : class_color_unknown;
 	};
 
-	//inline COLORREF get_smooth_class_color(LPOS lpos, long nClassCount);
+	//inline COLORREF get_smooth_class_color(long lpos, long nClassCount);
 	inline long	get_class_count()
 	{
 		return class_count;

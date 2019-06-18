@@ -43,9 +43,9 @@ public:
 	// For IMeasParamGroup
  	com_call CalcValues(IUnknown *punkCalcObject, IUnknown *punkSource );
 	com_call GetParamsCount(long *plCount);
-	com_call GetFirstPos(LONG_PTR *plPos);
-	com_call GetNextParam(LONG_PTR *plPos, struct ParameterDescriptor **ppDescriptior );
-	com_call GetPosByKey(long lKey, LONG_PTR *plPos);
+	com_call GetFirstPos(long *plPos);
+	com_call GetNextParam(long *plPos, struct ParameterDescriptor **ppDescriptior );
+	com_call GetPosByKey(long lKey, long *plPos);
 	com_call InitializeCalculation( IUnknown *punkContainer );
 	com_call FinalizeCalculation();
 	com_call GetUnit(long lType, BSTR *pbstr, double *pfCoeffToUnits);

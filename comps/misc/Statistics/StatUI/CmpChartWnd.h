@@ -199,7 +199,7 @@ namespace ViewSpace
 		void SetClassFile( LPCTSTR pStr ) { strcpy( m_strClassFile, pStr ); }
 		LPCTSTR GetClassFile( ) { return m_strClassFile; }
 
-		LRESULT on_destroy()
+		long on_destroy() 
 		{ 
 			m_sptrView = 0; 
 
@@ -217,11 +217,11 @@ namespace ViewSpace
 
 		CCmpChartWnd();
 		~CCmpChartWnd();
-		LRESULT on_paint();
+		long on_paint();
 //		long on_erasebkgnd( HDC hDC ) { return 1L; }
-		LRESULT on_mousemove(const _point &point);
-		LRESULT on_lbuttonup(const _point &point);
-		LRESULT on_lbuttondblclk(const _point &point);
+		long on_mousemove( const _point &point );
+		long on_lbuttonup( const _point &point );
+		long on_lbuttondblclk( const _point &point );
 
 		void load_from_ndata(  INamedDataPtr sptrND );
 		void store_to_ndata( INamedDataPtr sptrND );
@@ -230,14 +230,14 @@ namespace ViewSpace
 
 		const CRect& get_min_rect();
 		void _calc_gist_value();
-		LRESULT on_size(short cx, short cy, ulong fSizeType);
+		long on_size( short cx, short cy, ulong fSizeType );
 		virtual bool create( DWORD style, const RECT &rect, const _char *pszTitle = 0, HWND parent = 0, HMENU hmenu = 0, const _char *pszClass = 0 );
 		void DoDraw( HDC hDC, RECT rcPaint, RECT *rcCalc = 0,double fZoom = 1, bool bPrint = false );
 		void calc_min_rect( BOOL bPrintMode );
 
 
 
-		LRESULT handle_message(UINT m, WPARAM w, LPARAM l)
+		long handle_message( UINT m, WPARAM w, LPARAM l )
 		{
 			switch( m )
 			{

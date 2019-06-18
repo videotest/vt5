@@ -221,7 +221,7 @@ void CActionInteractiveScroll::_activate_object( CPoint pt )
 		return;
 
 
-	POSITION posStart = 0, lPrevPos = 0;
+	long posStart = 0, lPrevPos = 0;
 	
 	ptrListObject->GetFirstChildPosition( &posStart );
 

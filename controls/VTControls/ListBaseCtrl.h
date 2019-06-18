@@ -65,8 +65,8 @@ public:
 		m_list.clear();
 	}
 
-	TPOS GetFirstPos() { return m_list.head(); }
-	TPOS GetNext(TPOS lPos, CHeaderCtrl **pCtrl)
+	long GetFirstPos() { return m_list.head(); }
+	long GetNext( long lPos,  CHeaderCtrl **pCtrl ) 
 	{ 
 		*pCtrl = m_list.get( lPos );
 		return m_list.next( lPos ); 
@@ -79,7 +79,7 @@ public:
 
 	bool Find( CHeaderCtrl *pItem )
 	{
-		for (TPOS lPos = m_list.head(); lPos; lPos = m_list.next(lPos))
+		for( long lPos = m_list.head(); lPos; lPos = m_list.next( lPos ) )
 		{
 			CHeaderCtrl *pCtrl = m_list.get( lPos );
 

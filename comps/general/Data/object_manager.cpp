@@ -228,7 +228,7 @@ bool object_manager::append_type_list_from_doc( IUnknown* punkDoc )
 		long lObjCount = 0;
 		ptrDC->GetObjectCount( bstrType, &lObjCount );
 
-		LONG_PTR lPos = 0;
+		long lPos = 0;
 		ptrDC->GetFirstObjectPos( bstrType, &lPos );
 		
 		while( lPos )
@@ -902,14 +902,14 @@ IUnknown* object_manager::get_active_view()
 //
 //
 ////////////////////////////////////////////////////////////////////////////////////////////
-HRESULT object_manager::XObjectManager::GetFirstObjectTypePos( TPOS *plPos )
+HRESULT object_manager::XObjectManager::GetFirstObjectTypePos( long* plPos )
 {
 	_try_nested(object_manager, ObjectManager, GetFirstObjectTypePos )
 	{	
 		if( !plPos )
 			return E_INVALIDARG;
 
-		*plPos = pThis->m_listType.GetHeadPosition();
+		*plPos = (long)pThis->m_listType.GetHeadPosition();
 
 		return S_OK;
 	}
@@ -917,7 +917,7 @@ HRESULT object_manager::XObjectManager::GetFirstObjectTypePos( TPOS *plPos )
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////
-HRESULT object_manager::XObjectManager::GetNextObjectType( TPOS *plPos, BSTR* pbstrTypeName )
+HRESULT object_manager::XObjectManager::GetNextObjectType( long* plPos, BSTR* pbstrTypeName )
 {
 	_try_nested(object_manager, ObjectManager, GetNextObjectType )
 	{	
@@ -931,7 +931,7 @@ HRESULT object_manager::XObjectManager::GetNextObjectType( TPOS *plPos, BSTR* pb
 		if( pbstrTypeName )
 			*pbstrTypeName = pti->m_strTypeName.AllocSysString();
 
-		 *plPos = pos;
+		 *plPos = (long)pos;
 
 		return S_OK;
 	}
@@ -939,7 +939,7 @@ HRESULT object_manager::XObjectManager::GetNextObjectType( TPOS *plPos, BSTR* pb
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////
-HRESULT object_manager::XObjectManager::GetFirstObjectNamePos( BSTR bstrType, LONG_PTR * plPos )
+HRESULT object_manager::XObjectManager::GetFirstObjectNamePos( BSTR bstrType, long * plPos )
 {
 	_try_nested(object_manager, ObjectManager, GetFirstObjectNamePos )
 	{	
@@ -958,7 +958,7 @@ HRESULT object_manager::XObjectManager::GetFirstObjectNamePos( BSTR bstrType, LO
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////
-HRESULT object_manager::XObjectManager::GetNextObjectByName( BSTR bstrType, LONG_PTR * plPos, BSTR* pbstrName )
+HRESULT object_manager::XObjectManager::GetNextObjectByName( BSTR bstrType, long * plPos, BSTR* pbstrName )
 {
 	_try_nested(object_manager, ObjectManager, GetNextObjectByName )
 	{	
@@ -988,7 +988,7 @@ HRESULT object_manager::XObjectManager::GetNextObjectByName( BSTR bstrType, LONG
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////
-HRESULT object_manager::XObjectManager::GetFirstObjectPos( BSTR bstrType, LONG_PTR * plPos )
+HRESULT object_manager::XObjectManager::GetFirstObjectPos( BSTR bstrType, long * plPos )
 {
 	_try_nested(object_manager, ObjectManager, GetFirstObjectPos )
 	{	
@@ -998,7 +998,7 @@ HRESULT object_manager::XObjectManager::GetFirstObjectPos( BSTR bstrType, LONG_P
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////
-HRESULT object_manager::XObjectManager::GetNextObject( BSTR bstrType, LONG_PTR * plPos, IUnknown** ppunkObj )
+HRESULT object_manager::XObjectManager::GetNextObject( BSTR bstrType, long * plPos, IUnknown** ppunkObj )
 {
 	_try_nested(object_manager, ObjectManager, GetNextObject )
 	{	
@@ -1178,22 +1178,22 @@ HRESULT object_manager::XObjectManager::GetObjectDocument( BSTR bstrType, BSTR b
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////
-TPOS object_manager::GetFirstObjectTypePos() 
+long object_manager::GetFirstObjectTypePos() 
 {
-	TPOS lPos = 0;
+	long lPos = 0;
 	m_xObjectManager.GetFirstObjectTypePos( &lPos );
 	return lPos;
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////
-TPOS object_manager::GetNextObjectTypePos(TPOS lPos) 
+long object_manager::GetNextObjectTypePos(long lPos) 
 {
 	m_xObjectManager.GetNextObjectType( &lPos, 0 );
 	return lPos;
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////
-BSTR object_manager::GetObjectType(TPOS lPos) 
+BSTR object_manager::GetObjectType(long lPos) 
 {
 	BSTR bstr = 0;
 	m_xObjectManager.GetNextObjectType( &lPos, &bstr );
@@ -1201,23 +1201,23 @@ BSTR object_manager::GetObjectType(TPOS lPos)
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////
-LONG_PTR object_manager::GetFirstObjectPos(LPCTSTR pszType) 
+long object_manager::GetFirstObjectPos(LPCTSTR pszType) 
 {
-	LONG_PTR lPos = 0;
+	long lPos = 0;
 	m_xObjectManager.GetFirstObjectNamePos( _bstr_t( pszType ), &lPos );
 
 	return lPos;
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////
-LONG_PTR object_manager::GetNextObjectPos(LPCTSTR pszType, LONG_PTR lPos) 
+long object_manager::GetNextObjectPos(LPCTSTR pszType, long lPos) 
 {	
 	m_xObjectManager.GetNextObjectByName( _bstr_t( pszType ), &lPos, 0 );
 	return lPos;
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////
-BSTR object_manager::GetObjectName(LPCTSTR pszType, LONG_PTR lPos) 
+BSTR object_manager::GetObjectName(LPCTSTR pszType, long lPos) 
 {
 	BSTR bstr = 0;
 	m_xObjectManager.GetNextObjectByName( _bstr_t(pszType), &lPos, &bstr );

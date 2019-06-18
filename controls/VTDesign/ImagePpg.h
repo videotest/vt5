@@ -45,7 +45,7 @@ protected:
 protected:
 	//{{AFX_MSG(CVTImagePropPage)
 	virtual BOOL OnInitDialog();
-	afx_msg LRESULT OnColorChange(WPARAM lParam, LPARAM wParam);
+	afx_msg LONG OnColorChange(UINT lParam, LONG wParam);
 	afx_msg void OnLoadPermanent();
 	afx_msg void OnBrowseFile();
 	afx_msg void OnPermanent();

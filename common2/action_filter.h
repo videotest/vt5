@@ -71,10 +71,10 @@ protected:
 	com_call DoRedo();
 	com_call GetActionState( DWORD *pdwState );
 
-	com_call GetFirstArgumentPosition( TPOS *pnPos );
-	com_call GetNextArgument( IUnknown **ppunkDataObject, TPOS *pnPosNext );
-	com_call GetArgumentInfo( TPOS lPos, BSTR *pbstrArgType, BSTR *pbstrArgName, BOOL *pbOut );
-	com_call SetArgument( TPOS lPos, IUnknown *punkDataObject, BOOL bDataChanged );
+	com_call GetFirstArgumentPosition( long *pnPos );
+	com_call GetNextArgument( IUnknown **ppunkDataObject, long *pnPosNext );
+	com_call GetArgumentInfo( long lPos, BSTR *pbstrArgType, BSTR *pbstrArgName, BOOL *pbOut );
+	com_call SetArgument( long lPos, IUnknown *punkDataObject, BOOL bDataChanged );
 	com_call InitArguments();
 	com_call LockDataChanging( BOOL bLock );
 	com_call SetPreviewMode( BOOL bEnter );

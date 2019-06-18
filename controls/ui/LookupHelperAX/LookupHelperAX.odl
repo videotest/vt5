@@ -4,6 +4,8 @@
 // produce the type library (LookupHelperAX.tlb) that will become a resource in
 // LookupHelperAX.ocx.
 
+#include <olectl.h>
+#include <idispids.h>
 
 	[ uuid(F970DB7A-64A1-4da2-9A88-1FAEDD790012), version(1.1),
   helpfile("LookupHelperAX.hlp"),
@@ -11,8 +13,6 @@
   control ]
 library LOOKUPHELPERAXLib
 {
-#include <olectl.h>
-#include <idispids.h>
 	importlib(STDOLE_TLB);
 	importlib(STDTYPE_TLB);
 

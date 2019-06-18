@@ -103,14 +103,14 @@ static void DDX_Text_Shutter(CDataExchange* pDX, int nIDC, int &nMcs)
 }
 
 
-CSettingsSheet *CSettingsPage::GetSettingsParentSheet()
+CSettingsSheet *CSettingsPage::GetParentSheet()
 {
 	return m_pSheet;
 }
 
 void CSettingsPage::SetModified(BOOL bChanged)
 {
-	GetSettingsParentSheet()->m_bModified = bChanged;
+	GetParentSheet()->m_bModified = bChanged;
 	CPropertyPage::SetModified(bChanged);
 }
 
@@ -163,13 +163,13 @@ void CAmplPage::DoDataExchange(CDataExchange* pDX)
 	DDX_Control(pDX, IDC_E_GAIN, m_EGain);
 	DDX_Control(pDX, IDC_PROGRESS_AUTO, m_ProgressAuto);
 	//}}AFX_DATA_MAP
-	DDX_Text(pDX, IDC_E_GAIN, GetSettingsParentSheet()->m_nGain);
-	DDX_Text(pDX, IDC_E_OFFSET, GetSettingsParentSheet()->m_nOffset);
-	DDX_Text_Shutter(pDX, IDC_E_SHUTTER, GetSettingsParentSheet()->m_nShutter);
-	__Validate(pDX, m_hWnd, IDC_E_SHUTTER, GetSettingsParentSheet()->m_nShutter, g_CxLibWork.m_sht.timeMin,
+	DDX_Text(pDX, IDC_E_GAIN, GetParentSheet()->m_nGain);
+	DDX_Text(pDX, IDC_E_OFFSET, GetParentSheet()->m_nOffset);
+	DDX_Text_Shutter(pDX, IDC_E_SHUTTER, GetParentSheet()->m_nShutter);
+	__Validate(pDX, m_hWnd, IDC_E_SHUTTER, GetParentSheet()->m_nShutter, g_CxLibWork.m_sht.timeMin,
 		g_CxLibWork.m_sht.timeMax); 
-	DDX_Text(pDX, IDC_E_PROC_WHITE, GetSettingsParentSheet()->m_nProcWhite);
-	DDX_Check(pDX, IDC_SHUTTER_AUTO, GetSettingsParentSheet()->m_bAutoShutter);
+	DDX_Text(pDX, IDC_E_PROC_WHITE, GetParentSheet()->m_nProcWhite);
+	DDX_Check(pDX, IDC_SHUTTER_AUTO, GetParentSheet()->m_bAutoShutter);
 }
 
 
@@ -194,13 +194,13 @@ void CAmplPage::OnAutoSetup()
 	{
 		RECT r; r.left = r.top = r.right = r.bottom = 0;
 		int nBrightness = g_BaumerProfile.GetProfileInt(_T("Settings"), _T("FindShutterBrightness"), 220, true);
-		int nPercent = GetSettingsParentSheet()->m_nProcWhite;
+		int nPercent = GetParentSheet()->m_nProcWhite;
 		if (FindShutter(nBrightness, nPercent, r))
 		{
 			DWORD dwDelay = g_BaumerProfile.GetProfileInt(_T("Settings"), _T("FindShutterDelay"), 3000, true);
 			m_bHardwareSetup = TRUE;
 			SetTimer(1, dwDelay, NULL);
-			GetSettingsParentSheet()->UpdateControls(ESH_Start_Auto);
+			GetParentSheet()->UpdateControls(ESH_Start_Auto);
 		}
 	}
 	else
@@ -214,8 +214,8 @@ void CAmplPage::OnAutoSetup()
 			m_ProgressAuto.ShowWindow(SW_SHOW);
 			m_ProgressAuto.SetPos(0);
 			s_hwndProgress = m_ProgressAuto.m_hWnd;
-			GetSettingsParentSheet()->m_bFreezeGraffic = TRUE;
-			if (GetSettingsParentSheet()->m_bBinning)
+			GetParentSheet()->m_bFreezeGraffic = TRUE;
+			if (GetParentSheet()->m_bBinning)
 			{
 				SetBinningMode(FALSE);
 				Sleep(300);
@@ -224,17 +224,17 @@ void CAmplPage::OnAutoSetup()
 				g_CxLibWork.m_cx = g_CxLibWork.m_lpbi->biWidth = GetImFrameX();
 				g_CxLibWork.m_cy = g_CxLibWork.m_lpbi->biHeight = GetImFrameY();
 				g_CxLibWork.m_bpp = GetImBpp();
-				g_CxLibWork.SetWBalance(GetSettingsParentSheet()->m_bWBEnable, GetSettingsParentSheet()->m_dWBRed,
-					GetSettingsParentSheet()->m_dWBGreen, GetSettingsParentSheet()->m_dWBBlue);
-				/*if (GetSettingsParentSheet()->m_bWBEnableIm)
-					ImRgbLut(GetSettingsParentSheet()->m_dWBRedIm, GetSettingsParentSheet()->m_dWBGreenIm,
-					GetSettingsParentSheet()->m_dWBBlueIm, LUTALL);
+				g_CxLibWork.SetWBalance(GetParentSheet()->m_bWBEnable, GetParentSheet()->m_dWBRed,
+					GetParentSheet()->m_dWBGreen, GetParentSheet()->m_dWBBlue);
+				/*if (GetParentSheet()->m_bWBEnableIm)
+					ImRgbLut(GetParentSheet()->m_dWBRedIm, GetParentSheet()->m_dWBGreenIm,
+					GetParentSheet()->m_dWBBlueIm, LUTALL);
 				else
 					ImRgbLut(1., 1., 1., LUTALL);*/
-				SetRgbLut(GetSettingsParentSheet()->m_bCBEnable, 1, &GetSettingsParentSheet()->m_dCBRed, &GetSettingsParentSheet()->m_dCBGreen,
-					&GetSettingsParentSheet()->m_dCBBlue);
+				SetRgbLut(GetParentSheet()->m_bCBEnable, 1, &GetParentSheet()->m_dCBRed, &GetParentSheet()->m_dCBGreen,
+					&GetParentSheet()->m_dCBBlue);
 			}
-			GetSettingsParentSheet()->UpdateControls(ESH_Start_Auto);
+			GetParentSheet()->UpdateControls(ESH_Start_Auto);
 		}
 		SetModified();
 	}
@@ -246,9 +246,9 @@ void CAmplPage::OnChangeEGain()
 	{
 		UpdateData();
 		EnterCriticalSection(&g_CritSectionCamera);
-		SetGain(GetSettingsParentSheet()->m_nGain);
+		SetGain(GetParentSheet()->m_nGain);
 		LeaveCriticalSection(&g_CritSectionCamera);
-		if (!s_bInsideHScroll) m_SGain.SetPos(GetSettingsParentSheet()->m_nGain);
+		if (!s_bInsideHScroll) m_SGain.SetPos(GetParentSheet()->m_nGain);
 		SetModified();
 	}
 }
@@ -259,9 +259,9 @@ void CAmplPage::OnChangeEOffset()
 	{
 		UpdateData();
 		EnterCriticalSection(&g_CritSectionCamera);
-		SetBlackLevel(GetSettingsParentSheet()->m_nOffset);
+		SetBlackLevel(GetParentSheet()->m_nOffset);
 		LeaveCriticalSection(&g_CritSectionCamera);
-		if (!s_bInsideHScroll) m_SOffset.SetPos(GetSettingsParentSheet()->m_nOffset);
+		if (!s_bInsideHScroll) m_SOffset.SetPos(GetParentSheet()->m_nOffset);
 		SetModified();
 	}
 }
@@ -272,7 +272,7 @@ void CAmplPage::OnChangeEShutter()
 	{
 		UpdateData();
 		EnterCriticalSection(&g_CritSectionCamera);
-		CSettingsSheet *p = GetSettingsParentSheet();
+		CSettingsSheet *p = GetParentSheet();
 		SetShutterTime(p->m_nShutter, NULL);
 		LeaveCriticalSection(&g_CritSectionCamera);
 		if (!s_bInsideHScroll) m_SShutter.SetPos(p->m_nShutter);
@@ -285,7 +285,7 @@ void CAmplPage::OnChangeEProcWhite()
 	if (m_EProcWhite.m_hWnd)
 	{
 		UpdateData();
-		g_CxLibWork.m_nProcWhite = GetSettingsParentSheet()->m_nProcWhite;
+		g_CxLibWork.m_nProcWhite = GetParentSheet()->m_nProcWhite;
 		if (!s_bInsideHScroll) m_SProcWhite.SetPos(g_CxLibWork.m_nProcWhite);
 		SetModified();
 	}
@@ -294,7 +294,7 @@ void CAmplPage::OnChangeEProcWhite()
 void CAmplPage::OnShutterAuto() 
 {
 	UpdateData();
-	CSettingsSheet *p = GetSettingsParentSheet();
+	CSettingsSheet *p = GetParentSheet();
 	int nAutoBrightness = g_BaumerProfile.GetProfileInt(_T("Settings"), _T("AutoShutterBrightness"), 200);
 	EnterCriticalSection(&g_CritSectionCamera);
 	AutomaticShutter(p->m_bAutoShutter, nAutoBrightness);
@@ -307,7 +307,7 @@ void CAmplPage::OnShutterAuto()
 			Sleep(200);
 			EnterCriticalSection(&g_CritSectionCamera);
 			SetShutterTime(p->m_nShutter, &sht);
-			SetGain(GetSettingsParentSheet()->m_nGain);
+			SetGain(GetParentSheet()->m_nGain);
 			LeaveCriticalSection(&g_CritSectionCamera);
 		}
 		else
@@ -333,7 +333,7 @@ void CAmplPage::OnShutterAuto()
 void CAmplPage::OnHScroll(UINT nSBCode, UINT nPos, CScrollBar* pScrollBar) 
 {
 	UpdateData();
-	CSettingsSheet *p = GetSettingsParentSheet();
+	CSettingsSheet *p = GetParentSheet();
 	CLock lock(&s_bInsideHScroll);
 	if (pScrollBar == (CScrollBar*)&m_SGain)
 	{
@@ -367,7 +367,7 @@ void CAmplPage::OnHScroll(UINT nSBCode, UINT nPos, CScrollBar* pScrollBar)
 BOOL CAmplPage::OnInitDialog() 
 {
 	CPropertyPage::OnInitDialog();
-	CSettingsSheet *p = GetSettingsParentSheet();
+	CSettingsSheet *p = GetParentSheet();
 	m_Auto.GetWindowText(m_sAutoSetup);
 	m_ProgressAuto.SetRange(0, 10);
 	m_ProgressAuto.SetPos(0);
@@ -378,7 +378,7 @@ BOOL CAmplPage::OnInitDialog()
 	SetSlider(m_SOffset, m_SpOffset, TRUE, p->m_nOffset,  g_CxLibWork.m_CameraType.vOffsetMin, g_CxLibWork.m_CameraType.vOffsetMax);
 	SetExpSlider(m_SShutter, m_SpShutter, !p->m_bAutoShutter, p->m_nShutter,  g_CxLibWork.m_sht.timeMin, g_CxLibWork.m_sht.timeMax);
 	m_EShutter.EnableWindow(!p->m_bAutoShutter);
-	SetSlider(m_SProcWhite, m_SpProcWhite, TRUE, GetSettingsParentSheet()->m_nProcWhite, 0, 100);
+	SetSlider(m_SProcWhite, m_SpProcWhite, TRUE, GetParentSheet()->m_nProcWhite,  0, 100);
 	m_EProcWhite.EnableWindow(!p->m_bAutoShutter);
 	m_SProcWhite.EnableWindow(!p->m_bAutoShutter);
 	m_SpProcWhite.EnableWindow(!p->m_bAutoShutter);
@@ -394,7 +394,7 @@ void CAmplPage::OnDeltaposSpShutter(NMHDR* pNMHDR, LRESULT* pResult)
 	NM_UPDOWN* pNMUpDown = (NM_UPDOWN*)pNMHDR;
 	CLock lock(&s_bInsideSpin);
 	UpdateData();
-	CSettingsSheet *p = GetSettingsParentSheet();
+	CSettingsSheet *p = GetParentSheet();
 	p->m_nShutter = m_SShutter.NextValue(p->m_nShutter, pNMUpDown->iDelta);
 	UpdateData(FALSE);
 	m_SShutter.SetPos(p->m_nShutter);
@@ -412,13 +412,13 @@ void CAmplPage::OnTimer(UINT_PTR nIDEvent)
 	{
 		m_bHardwareSetup = FALSE;
 		KillTimer(1);
-		CSettingsSheet *p = GetSettingsParentSheet();
+		CSettingsSheet *p = GetParentSheet();
 		int nShutter = g_CxLibWork.GetShutterTime();
 		UpdateData();
 		p->m_nShutter = nShutter;
 		UpdateData(FALSE);
 		m_SShutter.SetPos(p->m_nShutter);
-		GetSettingsParentSheet()->UpdateControls(ESH_Stop_Auto);
+		GetParentSheet()->UpdateControls(ESH_Stop_Auto);
 		SetModified();
 	}
 	else if (s_bSetupComplete)
@@ -426,7 +426,7 @@ void CAmplPage::OnTimer(UINT_PTR nIDEvent)
 		s_bSetup = s_bSetupComplete = FALSE;
 		EnterCriticalSection(&g_CritSectionCamera);
 		GetCameraInfo(&g_CxLibWork.m_CameraType, sizeof(tCameraType), &g_CxLibWork.m_CameraStatus , sizeof(tCameraStatus));
-		if (GetSettingsParentSheet()->m_bBinning)
+		if (GetParentSheet()->m_bBinning)
 		{
 			SetBinningMode(TRUE);
 			SetWhiteBalance(FALSE, FALSE, NULL, NULL, NULL);
@@ -434,19 +434,19 @@ void CAmplPage::OnTimer(UINT_PTR nIDEvent)
 		}
 		LeaveCriticalSection(&g_CritSectionCamera);
 		UpdateData();
-		GetSettingsParentSheet()->m_nGain = g_CxLibWork.m_CameraStatus.vAmplif;
-		GetSettingsParentSheet()->m_nOffset = g_CxLibWork.m_CameraStatus.vOffset;
-		GetSettingsParentSheet()->m_nShutter = g_CxLibWork.m_nFoundShutter;
-		m_SGain.SetPos(GetSettingsParentSheet()->m_nGain);
-		m_SOffset.SetPos(GetSettingsParentSheet()->m_nOffset);
-		m_SShutter.SetPos(GetSettingsParentSheet()->m_nShutter);
+		GetParentSheet()->m_nGain = g_CxLibWork.m_CameraStatus.vAmplif;
+		GetParentSheet()->m_nOffset = g_CxLibWork.m_CameraStatus.vOffset;
+		GetParentSheet()->m_nShutter = g_CxLibWork.m_nFoundShutter;
+		m_SGain.SetPos(GetParentSheet()->m_nGain);
+		m_SOffset.SetPos(GetParentSheet()->m_nOffset);
+		m_SShutter.SetPos(GetParentSheet()->m_nShutter);
 		UpdateData(FALSE);
 		m_Auto.SetWindowText(m_sAutoSetup);
 		m_ProgressAuto.ShowWindow(SW_HIDE);
 		m_ProgressAuto.SetPos(0);
 		s_hwndProgress = NULL;
-		GetSettingsParentSheet()->m_bFreezeGraffic = FALSE;
-		GetSettingsParentSheet()->UpdateControls(ESH_Stop_Auto);
+		GetParentSheet()->m_bFreezeGraffic = FALSE;
+		GetParentSheet()->UpdateControls(ESH_Stop_Auto);
 	}
 
 	CPropertyPage::OnTimer(nIDEvent);
@@ -463,19 +463,19 @@ void CAmplPage::OnDestroy()
 
 void CAmplPage::OnOK() 
 {
-	GetSettingsParentSheet()->OnOK();
+	GetParentSheet()->OnOK();	
 	CPropertyPage::OnOK();
 }
 
 void CAmplPage::OnCancel() 
 {
-	GetSettingsParentSheet()->OnCancel();
+	GetParentSheet()->OnCancel();
 	CPropertyPage::OnCancel();
 }
 
 BOOL CAmplPage::OnApply() 
 {
-	GetSettingsParentSheet()->OnApply();
+	GetParentSheet()->OnApply();
 	return CPropertyPage::OnApply();
 }
 
@@ -486,7 +486,7 @@ void CAmplPage::UpdateControls(int nHint)
 	if (nHint == ESH_Start_Auto || nHint == ESH_Stop_Auto)
 	{
 		BOOL bEnable = nHint==ESH_Stop_Auto;
-		int nCamera = CameraIds::CameraDescrByInternalId(GetSettingsParentSheet()->m_nCamera)->nBaumerId;
+		int nCamera = CameraIds::CameraDescrByInternalId(GetParentSheet()->m_nCamera)->nBaumerId;
 		m_SGain.EnableWindow(bEnable&&GainEnabled(nCamera));
 		m_SpGain.EnableWindow(bEnable&&GainEnabled(nCamera));
 		m_EGain.EnableWindow(bEnable&&GainEnabled(nCamera));
@@ -503,15 +503,15 @@ void CAmplPage::UpdateControls(int nHint)
 	}
 	else if (nHint == ESH_Camera_Changed)
 	{
-		SetSlider(m_SGain, GainEnabled(GetSettingsParentSheet()->m_nCamera), GetSettingsParentSheet()->m_nGain, g_CxLibWork.m_CameraType.vAmplMin,
+		SetSlider(m_SGain, GainEnabled(GetParentSheet()->m_nCamera), GetParentSheet()->m_nGain, g_CxLibWork.m_CameraType.vAmplMin,
 			g_CxLibWork.m_CameraType.vAmplMax);
-		m_EGain.EnableWindow(GainEnabled(GetSettingsParentSheet()->m_nCamera));
-		SetSlider(m_SOffset, TRUE, GetSettingsParentSheet()->m_nOffset, g_CxLibWork.m_CameraType.vOffsetMin, g_CxLibWork.m_CameraType.vOffsetMax);
-		SetExpSlider(m_SShutter, m_SpShutter, !GetSettingsParentSheet()->m_bAutoShutter, GetSettingsParentSheet()->m_nShutter,
+		m_EGain.EnableWindow(GainEnabled(GetParentSheet()->m_nCamera));
+		SetSlider(m_SOffset, TRUE, GetParentSheet()->m_nOffset,  g_CxLibWork.m_CameraType.vOffsetMin, g_CxLibWork.m_CameraType.vOffsetMax);
+		SetExpSlider(m_SShutter, m_SpShutter, !GetParentSheet()->m_bAutoShutter, GetParentSheet()->m_nShutter,
 			g_CxLibWork.m_sht.timeMin, g_CxLibWork.m_sht.timeMax);
-		m_EProcWhite.EnableWindow(!GetSettingsParentSheet()->m_bAutoShutter);
-		m_SProcWhite.EnableWindow(!GetSettingsParentSheet()->m_bAutoShutter);
-		m_SpProcWhite.EnableWindow(!GetSettingsParentSheet()->m_bAutoShutter);
+		m_EProcWhite.EnableWindow(!GetParentSheet()->m_bAutoShutter);
+		m_SProcWhite.EnableWindow(!GetParentSheet()->m_bAutoShutter);
+		m_SpProcWhite.EnableWindow(!GetParentSheet()->m_bAutoShutter);
 	}
 }
 
@@ -537,19 +537,19 @@ void CCameraPage::DoDataExchange(CDataExchange* pDX)
 	DDX_Control(pDX, IDC_COMBO_BITS, m_Bits);
 	DDX_Check(pDX, IDC_GRAFFIC, m_bGraffic);
 	//}}AFX_DATA_MAP
-	DDX_CBIndex(pDX, IDC_CAMERA, GetSettingsParentSheet()->m_nCamera);
-	DDX_Check(pDX, IDC_AGP, GetSettingsParentSheet()->m_bAGP);
+	DDX_CBIndex(pDX, IDC_CAMERA, GetParentSheet()->m_nCamera);
+	DDX_Check(pDX, IDC_AGP, GetParentSheet()->m_bAGP);
 	if (g_CxLibWork.IsDC300())
-		DDX_Check(pDX, IDC_BINING, GetSettingsParentSheet()->m_bDC300QuickView);
+		DDX_Check(pDX, IDC_BINING, GetParentSheet()->m_bDC300QuickView);
 	else
-		DDX_Check(pDX, IDC_BINING, GetSettingsParentSheet()->m_bBinning);
-	DDX_Check(pDX, IDC_NATURAL_SIZE, GetSettingsParentSheet()->m_bNaturalSize);
-	DDX_Check(pDX, IDC_GRAY_SCALE, GetSettingsParentSheet()->m_bGrayScale);
-	DDX_CBIndex(pDX, IDC_COMBO_COLOR_PLANE, GetSettingsParentSheet()->m_nPlane);
+		DDX_Check(pDX, IDC_BINING, GetParentSheet()->m_bBinning);
+	DDX_Check(pDX, IDC_NATURAL_SIZE, GetParentSheet()->m_bNaturalSize);
+	DDX_Check(pDX, IDC_GRAY_SCALE, GetParentSheet()->m_bGrayScale);
+	DDX_CBIndex(pDX, IDC_COMBO_COLOR_PLANE, GetParentSheet()->m_nPlane);
 	if (pDX->m_bSaveAndValidate)
 	{
-		if (GetSettingsParentSheet()->m_nConvEnd < GetSettingsParentSheet()->m_nConvStart)
-			GetSettingsParentSheet()->m_nConvEnd = GetSettingsParentSheet()->m_nConvStart;
+		if (GetParentSheet()->m_nConvEnd < GetParentSheet()->m_nConvStart)
+			GetParentSheet()->m_nConvEnd = GetParentSheet()->m_nConvStart;
 	}
 }
 
@@ -570,7 +570,7 @@ END_MESSAGE_MAP()
 BOOL CCameraPage::OnInitDialog() 
 {
 	CPropertyPage::OnInitDialog();
-	CSettingsSheet *p = GetSettingsParentSheet();
+	CSettingsSheet *p = GetParentSheet();
 	m_bGraffic = p->m_bGraffic;
 	UpdateData(FALSE);
 	bool bIntOk = g_CxLibWork.IsInitedOk();
@@ -606,14 +606,14 @@ void CCameraPage::InitCameraCB()
 
 void CCameraPage::OnOK() 
 {
-	GetSettingsParentSheet()->OnOK();
+	GetParentSheet()->OnOK();	
 	CPropertyPage::OnOK();
 }
 
 
 void CCameraPage::OnCancel() 
 {
-	CSettingsSheet *p = GetSettingsParentSheet();
+	CSettingsSheet *p = GetParentSheet();
 	p->OnCancel();
 	if (p->m_pSettingsSite)
 		p->m_pSettingsSite->OnChangeNaturalSize(p->m_bNaturalSize?true:false);
@@ -622,7 +622,7 @@ void CCameraPage::OnCancel()
 
 BOOL CCameraPage::OnApply() 
 {
-	GetSettingsParentSheet()->OnApply();
+	GetParentSheet()->OnApply();
 	return CPropertyPage::OnApply();
 }
 
@@ -631,10 +631,10 @@ void CCameraPage::OnSelchangeCamera()
 	UpdateData();
 	if (g_BaumerProfile.GetProfileInt(NULL,_T("ReinitCamera"),FALSE, true, true))
 	{
-		GetSettingsParentSheet()->m_bCameraChanged = true;
-		GetSettingsParentSheet()->InitCamera();
+		GetParentSheet()->m_bCameraChanged = true;
+		GetParentSheet()->InitCamera();
 		UpdateData(FALSE);
-		GetSettingsParentSheet()->UpdateControls(ESH_Camera_Changed);
+		GetParentSheet()->UpdateControls(ESH_Camera_Changed);
 		g_CxLibWork.NotifyChangeSizes();
 	}
 	SetModified();
@@ -647,7 +647,7 @@ void CCameraPage::OnSelchangeComboBits()
 	int nBitsMode = m_Bits.GetCurSel();
 	if (nBitsMode >= 0)
 	{
-		GetSettingsParentSheet()->m_nBitsMode = nBitsMode;
+		GetParentSheet()->m_nBitsMode = nBitsMode;
 		BitsModeDescr *pBM = BitsModeDescrByNum(nBitsMode);
 		EnterCriticalSection(&g_CritSectionCamera);
 		g_CxLibWork.m_nBitsMode = pBM->nBitsMode;
@@ -661,7 +661,7 @@ void CCameraPage::OnSelchangeComboBits()
 			g_CxLibWork.m_nConvStart12,g_CxLibWork.m_nConvEnd12,g_CxLibWork.m_dGamma12);
 		GetCameraInfo(&g_CxLibWork.m_CameraType, sizeof(tCameraType), &g_CxLibWork.m_CameraStatus , sizeof(tCameraStatus));
 		LeaveCriticalSection(&g_CritSectionCamera);
-		GetSettingsParentSheet()->UpdateControls(ESH_BitMode);
+		GetParentSheet()->UpdateControls(ESH_BitMode);
 //		SetTopBottom();
 		SetModified();
 	}
@@ -672,7 +672,7 @@ void CCameraPage::OnAgp()
 	UpdateData();
 	EnterCriticalSection(&g_CritSectionCamera);
 	CAMERADLLSETS settings;
-	settings.VadSearchMode = GetSettingsParentSheet()->m_bAGP;
+	settings.VadSearchMode = GetParentSheet()->m_bAGP;
 	DLLSettings(&settings);
 	LeaveCriticalSection(&g_CritSectionCamera);
 	SetModified();
@@ -681,13 +681,13 @@ void CCameraPage::OnAgp()
 void CCameraPage::OnBining() 
 {
 	UpdateData();
-	CSettingsSheet *p = GetSettingsParentSheet();
+	CSettingsSheet *p = GetParentSheet();
 	if (g_CxLibWork.IsDC300())
 	{
 		EnterCriticalSection(&g_CritSectionCamera);
 		g_CxLibWork.m_nDC300QuickView = p->m_bDC300QuickView;
 		g_CxLibWork.InitDC300();
-		BitsModeDescr *pBM = BitsModeDescrByNum(GetSettingsParentSheet()->m_nBitsMode);
+		BitsModeDescr *pBM = BitsModeDescrByNum(GetParentSheet()->m_nBitsMode);
 		SetPixelWidth(pBM->nBitsMode);
 		int p = g_CxLibWork.IsDC300()?4:3;
 		SetScanMode(SM_SSMTC, &p);
@@ -742,20 +742,20 @@ void CCameraPage::OnBining()
 void CCameraPage::OnSelchangeComboColorPlane() 
 {
 	UpdateData();
-	if (GetSettingsParentSheet()->m_bGrayScale)
-		g_CxLibWork.InitGray(GetSettingsParentSheet()->m_nPlane);
+	if (GetParentSheet()->m_bGrayScale)
+		g_CxLibWork.InitGray(GetParentSheet()->m_nPlane);
 	SetModified();
 }
 
 void CCameraPage::OnGrayScale() 
 {
 	UpdateData();
-	BOOL bEnable = GetSettingsParentSheet()->m_bGrayScale;
+	BOOL bEnable = GetParentSheet()->m_bGrayScale;
 	::EnableWindow(::GetDlgItem(m_hWnd, IDC_STATIC_COLOR_PLANE), bEnable);
 	::EnableWindow(::GetDlgItem(m_hWnd, IDC_COMBO_COLOR_PLANE), bEnable);
 	EnterCriticalSection(&g_CritSectionCamera);
-	if (GetSettingsParentSheet()->m_bGrayScale)
-		g_CxLibWork.InitGray(GetSettingsParentSheet()->m_nPlane);
+	if (GetParentSheet()->m_bGrayScale)
+		g_CxLibWork.InitGray(GetParentSheet()->m_nPlane);
 	else
 		g_CxLibWork.InitGray(NoneGrayMode);
 	LeaveCriticalSection(&g_CritSectionCamera);
@@ -765,7 +765,7 @@ void CCameraPage::OnGrayScale()
 void CCameraPage::OnNaturalSize() 
 {
 	UpdateData();
-	CSettingsSheet *p = GetSettingsParentSheet();
+	CSettingsSheet *p = GetParentSheet();
 	if (p->m_pSettingsSite)
 		p->m_pSettingsSite->OnChangeNaturalSize(p->m_bNaturalSize?true:false);
 	SetModified();
@@ -777,7 +777,7 @@ void CCameraPage::UpdateControls(int nHint)
 	if (!m_hWnd) return;
 //	if (nHint == ESH_Start_Auto || nHint == ESH_Stop_Auto)
 	{
-		CSettingsSheet *p = GetSettingsParentSheet();
+		CSettingsSheet *p = GetParentSheet();
 		bool bIntOk = g_CxLibWork.IsInitedOk();
 		BOOL bEnable = nHint!=ESH_Start_Auto;
 		::EnableWindow(::GetDlgItem(m_hWnd, IDC_CAMERA), bEnable&&!p->m_bCameraDisabled);
@@ -791,7 +791,7 @@ void CCameraPage::UpdateControls(int nHint)
 void CCameraPage::OnGraffic() 
 {
 	UpdateData();
-	GetSettingsParentSheet()->SetGrafficMode(m_bGraffic);
+	GetParentSheet()->SetGrafficMode(m_bGraffic);
 }
 
 void CCameraPage::OnCameraSystemManager() 
@@ -831,13 +831,13 @@ void CWhitePage::DoDataExchange(CDataExchange* pDX)
 	DDX_Control(pDX, IDC_E_WB_RED, m_EWBRed);
 	DDX_Control(pDX, IDC_WB_ENABLE, m_WBEnable);
 	//}}AFX_DATA_MAP
-	DDX_Check(pDX, IDC_WB_ENABLE, GetSettingsParentSheet()->m_bWBEnable);
-	DDX_Text(pDX, IDC_E_WB_BLUE, GetSettingsParentSheet()->m_dWBBlue);
-	__Validate(pDX, m_hWnd, IDC_E_WB_BLUE, GetSettingsParentSheet()->m_dWBBlue, 0.01, 4.);
-	DDX_Text(pDX, IDC_E_WB_GREEN, GetSettingsParentSheet()->m_dWBGreen);
-	__Validate(pDX, m_hWnd, IDC_E_WB_GREEN, GetSettingsParentSheet()->m_dWBGreen, 0.01, 4.);
-	DDX_Text(pDX, IDC_E_WB_RED, GetSettingsParentSheet()->m_dWBRed);
-	__Validate(pDX, m_hWnd, IDC_E_WB_RED, GetSettingsParentSheet()->m_dWBRed, 0.01, 4.);
+	DDX_Check(pDX, IDC_WB_ENABLE, GetParentSheet()->m_bWBEnable);
+	DDX_Text(pDX, IDC_E_WB_BLUE, GetParentSheet()->m_dWBBlue);
+	__Validate(pDX, m_hWnd, IDC_E_WB_BLUE, GetParentSheet()->m_dWBBlue, 0.01, 4.);
+	DDX_Text(pDX, IDC_E_WB_GREEN, GetParentSheet()->m_dWBGreen);
+	__Validate(pDX, m_hWnd, IDC_E_WB_GREEN, GetParentSheet()->m_dWBGreen, 0.01, 4.);
+	DDX_Text(pDX, IDC_E_WB_RED, GetParentSheet()->m_dWBRed);
+	__Validate(pDX, m_hWnd, IDC_E_WB_RED, GetParentSheet()->m_dWBRed, 0.01, 4.);
 }
 
 
@@ -868,14 +868,14 @@ void CWhitePage::UpdateControls(int nHint)
 	if (!m_hWnd) return;
 	if (nHint == ESH_Start_Auto || nHint == ESH_Stop_Auto || nHint == ESH_Binning || nHint == ESH_BitMode || nHint == 0)
 	{
-		m_WBEnable.EnableWindow(!s_bSetup&&!GetSettingsParentSheet()->m_bBinning);
-		m_EWBRed.EnableWindow(!s_bSetup&&!GetSettingsParentSheet()->m_bBinning&&GetSettingsParentSheet()->m_bWBEnable);
-		m_EWBGreen.EnableWindow(!s_bSetup&&!GetSettingsParentSheet()->m_bBinning&&GetSettingsParentSheet()->m_bWBEnable);
-		m_EWBBlue.EnableWindow(!s_bSetup&&!GetSettingsParentSheet()->m_bBinning&&GetSettingsParentSheet()->m_bWBEnable);
-		SetSlider(m_SWBRed, m_SpWBRed, !s_bSetup&&!GetSettingsParentSheet()->m_bBinning&&GetSettingsParentSheet()->m_bWBEnable, int(GetSettingsParentSheet()->m_dWBRed*100), 1, 400);
-		SetSlider(m_SWBGreen, m_SpWBGreen, !s_bSetup&&!GetSettingsParentSheet()->m_bBinning&&GetSettingsParentSheet()->m_bWBEnable, int(GetSettingsParentSheet()->m_dWBGreen*100), 1, 400);
-		SetSlider(m_SWBBlue, m_SpWBBlue, !s_bSetup&&!GetSettingsParentSheet()->m_bBinning&&GetSettingsParentSheet()->m_bWBEnable, int(GetSettingsParentSheet()->m_dWBBlue*100), 1, 400);
-		m_WBDefault.EnableWindow(!s_bSetup&&!GetSettingsParentSheet()->m_bBinning&&GetSettingsParentSheet()->m_bWBEnable/*&& !IsImLibMode(GetSettingsParentSheet())*/);
+		m_WBEnable.EnableWindow(!s_bSetup&&!GetParentSheet()->m_bBinning);
+		m_EWBRed.EnableWindow(!s_bSetup&&!GetParentSheet()->m_bBinning&&GetParentSheet()->m_bWBEnable);
+		m_EWBGreen.EnableWindow(!s_bSetup&&!GetParentSheet()->m_bBinning&&GetParentSheet()->m_bWBEnable);
+		m_EWBBlue.EnableWindow(!s_bSetup&&!GetParentSheet()->m_bBinning&&GetParentSheet()->m_bWBEnable);
+		SetSlider(m_SWBRed, m_SpWBRed, !s_bSetup&&!GetParentSheet()->m_bBinning&&GetParentSheet()->m_bWBEnable, int(GetParentSheet()->m_dWBRed*100), 1, 400);
+		SetSlider(m_SWBGreen, m_SpWBGreen, !s_bSetup&&!GetParentSheet()->m_bBinning&&GetParentSheet()->m_bWBEnable, int(GetParentSheet()->m_dWBGreen*100), 1, 400);
+		SetSlider(m_SWBBlue, m_SpWBBlue, !s_bSetup&&!GetParentSheet()->m_bBinning&&GetParentSheet()->m_bWBEnable, int(GetParentSheet()->m_dWBBlue*100), 1, 400);
+		m_WBDefault.EnableWindow(!s_bSetup&&!GetParentSheet()->m_bBinning&&GetParentSheet()->m_bWBEnable/*&& !IsImLibMode(GetParentSheet())*/);
 	}
 }
 
@@ -883,7 +883,7 @@ void CWhitePage::OnHScroll(UINT nSBCode, UINT nPos, CScrollBar* pScrollBar)
 {
 	CLock lock(&s_bInsideHScroll);
 	UpdateData();
-	CSettingsSheet *p = GetSettingsParentSheet();
+	CSettingsSheet *p = GetParentSheet();
 	if (pScrollBar == (CScrollBar*)&m_SWBRed)
 	{
 		int n = m_SWBRed.GetPos();
@@ -921,7 +921,7 @@ void CWhitePage::OnWbEnable()
 	UpdateData();
 	UpdateControls();
 	EnterCriticalSection(&g_CritSectionCamera);
-	CSettingsSheet *p = GetSettingsParentSheet();
+	CSettingsSheet *p = GetParentSheet();
 	g_CxLibWork.SetWBalance(p->m_bWBEnable, p->m_dWBRed, p->m_dWBGreen, p->m_dWBBlue);
 	LeaveCriticalSection(&g_CritSectionCamera);
 	SetModified();
@@ -929,7 +929,7 @@ void CWhitePage::OnWbEnable()
 
 void CWhitePage::OnWbDefault() 
 {
-	CSettingsSheet *p = GetSettingsParentSheet();
+	CSettingsSheet *p = GetParentSheet();
 	if (p->m_bWBEnable)
 	{
 		UpdateData();
@@ -952,9 +952,9 @@ void CWhitePage::OnWbDefault()
 			g_CxLibWork.DoWBalance(p->m_dWBRed, p->m_dWBGreen, p->m_dWBBlue);
 			LeaveCriticalSection(&g_CritSectionCamera);
 		}
-		SetSlider(m_SWBRed, m_SpWBRed, !s_bSetup&&!GetSettingsParentSheet()->m_bBinning&&GetSettingsParentSheet()->m_bWBEnable, int(GetSettingsParentSheet()->m_dWBRed*100), 1, 400);
-		SetSlider(m_SWBGreen, m_SpWBGreen, !s_bSetup&&!GetSettingsParentSheet()->m_bBinning&&GetSettingsParentSheet()->m_bWBEnable, int(GetSettingsParentSheet()->m_dWBGreen*100), 1, 400);
-		SetSlider(m_SWBBlue, m_SpWBBlue, !s_bSetup&&!GetSettingsParentSheet()->m_bBinning&&GetSettingsParentSheet()->m_bWBEnable, int(GetSettingsParentSheet()->m_dWBBlue*100), 1, 400);
+		SetSlider(m_SWBRed, m_SpWBRed, !s_bSetup&&!GetParentSheet()->m_bBinning&&GetParentSheet()->m_bWBEnable, int(GetParentSheet()->m_dWBRed*100), 1, 400);
+		SetSlider(m_SWBGreen, m_SpWBGreen, !s_bSetup&&!GetParentSheet()->m_bBinning&&GetParentSheet()->m_bWBEnable, int(GetParentSheet()->m_dWBGreen*100), 1, 400);
+		SetSlider(m_SWBBlue, m_SpWBBlue, !s_bSetup&&!GetParentSheet()->m_bBinning&&GetParentSheet()->m_bWBEnable, int(GetParentSheet()->m_dWBBlue*100), 1, 400);
 		UpdateData(FALSE);
 	}
 	SetModified();
@@ -962,7 +962,7 @@ void CWhitePage::OnWbDefault()
 
 void CWhitePage::DoChangeValue()
 {
-	CSettingsSheet *p = GetSettingsParentSheet();
+	CSettingsSheet *p = GetParentSheet();
 	UpdateData();
 	EnterCriticalSection(&g_CritSectionCamera);
 	g_CxLibWork.SetWBalance(p->m_bWBEnable, p->m_dWBRed, p->m_dWBGreen, p->m_dWBBlue);
@@ -976,7 +976,7 @@ void CWhitePage::OnChangeEWbBlue()
 	if (m_EWBBlue.m_hWnd)
 	{
 		DoChangeValue();
-		int n = int(GetSettingsParentSheet()->m_dWBBlue*100);
+		int n = int(GetParentSheet()->m_dWBBlue*100);
 		if (!s_bInsideHScroll) m_SWBBlue.SetPos(n);
 		if (!s_bInsideSpin) m_SpWBBlue.SetPos(n);
 	}
@@ -988,7 +988,7 @@ void CWhitePage::OnChangeEWbGreen()
 	if (m_EWBGreen.m_hWnd)
 	{
 		DoChangeValue();
-		int n = int(/*IsImLibMode(GetSettingsParentSheet())?GetSettingsParentSheet()->m_dWBGreenIm*100:*/GetSettingsParentSheet()->m_dWBGreen*100);
+		int n = int(/*IsImLibMode(GetParentSheet())?GetParentSheet()->m_dWBGreenIm*100:*/GetParentSheet()->m_dWBGreen*100);
 		if (!s_bInsideHScroll) m_SWBGreen.SetPos(n);
 		if (!s_bInsideSpin) m_SpWBGreen.SetPos(n);
 	}
@@ -999,7 +999,7 @@ void CWhitePage::OnChangeEWbRed()
 	if (m_EWBRed.m_hWnd)
 	{
 		DoChangeValue();
-		int n = int(/*IsImLibMode(GetSettingsParentSheet())?GetSettingsParentSheet()->m_dWBRedIm*100:*/GetSettingsParentSheet()->m_dWBRed*100);
+		int n = int(/*IsImLibMode(GetParentSheet())?GetParentSheet()->m_dWBRedIm*100:*/GetParentSheet()->m_dWBRed*100);
 		if (!s_bInsideHScroll) m_SWBRed.SetPos(n);
 		if (!s_bInsideSpin) m_SpWBRed.SetPos(n);
 	}
@@ -1010,7 +1010,7 @@ void CWhitePage::OnDeltaposSpRed(NMHDR* pNMHDR, LRESULT* pResult)
 	NM_UPDOWN* pNMUpDown = (NM_UPDOWN*)pNMHDR;
 	CLock lock(&s_bInsideSpin);
 	UpdateData();
-	CSettingsSheet *p = GetSettingsParentSheet();
+	CSettingsSheet *p = GetParentSheet();
 	double dPos = (/*IsImLibMode(p)?p->m_dWBRedIm*100.:*/p->m_dWBRed*100.)+pNMUpDown->iDelta;
 	dPos = max(min(dPos,400.),1.);
 	/*if (IsImLibMode(p))
@@ -1027,7 +1027,7 @@ void CWhitePage::OnDeltaposSpGreen(NMHDR* pNMHDR, LRESULT* pResult)
 	NM_UPDOWN* pNMUpDown = (NM_UPDOWN*)pNMHDR;
 	CLock lock(&s_bInsideSpin);
 	UpdateData();
-	CSettingsSheet *p = GetSettingsParentSheet();
+	CSettingsSheet *p = GetParentSheet();
 	double dPos = (/*IsImLibMode(p)?p->m_dWBGreenIm*100.:*/p->m_dWBGreen*100.)+pNMUpDown->iDelta;
 	dPos = max(min(dPos,400.),1.);
 	/*if (IsImLibMode(p))
@@ -1044,7 +1044,7 @@ void CWhitePage::OnDeltaposSpBlue(NMHDR* pNMHDR, LRESULT* pResult)
 	NM_UPDOWN* pNMUpDown = (NM_UPDOWN*)pNMHDR;
 	CLock lock(&s_bInsideSpin);
 	UpdateData();
-	CSettingsSheet *p = GetSettingsParentSheet();
+	CSettingsSheet *p = GetParentSheet();
 	double dPos = (/*IsImLibMode(p)?p->m_dWBBlueIm*100.:*/p->m_dWBBlue*100.)+pNMUpDown->iDelta;
 	dPos = max(min(dPos,400.),1.);
 	/*if (IsImLibMode(p))
@@ -1059,19 +1059,19 @@ void CWhitePage::OnDeltaposSpBlue(NMHDR* pNMHDR, LRESULT* pResult)
 
 BOOL CWhitePage::OnApply() 
 {
-	GetSettingsParentSheet()->OnApply();
+	GetParentSheet()->OnApply();
 	return CPropertyPage::OnApply();
 }
 
 void CWhitePage::OnCancel() 
 {
-	GetSettingsParentSheet()->OnCancel();
+	GetParentSheet()->OnCancel();
 	CPropertyPage::OnCancel();
 }
 
 void CWhitePage::OnOK() 
 {
-	GetSettingsParentSheet()->OnOK();
+	GetParentSheet()->OnOK();
 	CPropertyPage::OnOK();
 }
 
@@ -1105,13 +1105,13 @@ void CColorPage::DoDataExchange(CDataExchange* pDX)
 	DDX_Control(pDX, IDC_E_CB_RED, m_ECBRed);
 	DDX_Control(pDX, IDC_CB_ENABLE, m_CBEnable);
 	//}}AFX_DATA_MAP
-	DDX_Check(pDX, IDC_CB_ENABLE, GetSettingsParentSheet()->m_bCBEnable);
-	DDX_Text(pDX, IDC_E_CB_BLUE, GetSettingsParentSheet()->m_dCBBlue);
-	__Validate(pDX, m_hWnd, IDC_E_CB_BLUE, GetSettingsParentSheet()->m_dCBBlue, 0.01, 4.);
-	DDX_Text(pDX, IDC_E_CB_GREEN, GetSettingsParentSheet()->m_dCBGreen);
-	__Validate(pDX, m_hWnd, IDC_E_CB_GREEN, GetSettingsParentSheet()->m_dCBGreen, 0.01, 4.);
-	DDX_Text(pDX, IDC_E_CB_RED, GetSettingsParentSheet()->m_dCBRed);
-	__Validate(pDX, m_hWnd, IDC_E_CB_RED, GetSettingsParentSheet()->m_dCBRed, 0.01, 4.);
+	DDX_Check(pDX, IDC_CB_ENABLE, GetParentSheet()->m_bCBEnable);
+	DDX_Text(pDX, IDC_E_CB_BLUE, GetParentSheet()->m_dCBBlue);
+	__Validate(pDX, m_hWnd, IDC_E_CB_BLUE, GetParentSheet()->m_dCBBlue, 0.01, 4.);
+	DDX_Text(pDX, IDC_E_CB_GREEN, GetParentSheet()->m_dCBGreen);
+	__Validate(pDX, m_hWnd, IDC_E_CB_GREEN, GetParentSheet()->m_dCBGreen, 0.01, 4.);
+	DDX_Text(pDX, IDC_E_CB_RED, GetParentSheet()->m_dCBRed);
+	__Validate(pDX, m_hWnd, IDC_E_CB_RED, GetParentSheet()->m_dCBRed, 0.01, 4.);
 }
 
 
@@ -1134,7 +1134,7 @@ void CColorPage::UpdateControls(int nHint)
 	if (!m_hWnd) return;
 	if (nHint == ESH_Start_Auto || nHint == ESH_Stop_Auto || nHint == ESH_Binning || nHint == 0)
 	{
-		CSettingsSheet *p = GetSettingsParentSheet();
+		CSettingsSheet *p = GetParentSheet();
 		m_CBEnable.EnableWindow(!s_bSetup&&!p->m_bBinning);
 		m_ECBRed.EnableWindow(!s_bSetup&&!p->m_bBinning&&p->m_bCBEnable);
 		m_ECBGreen.EnableWindow(!s_bSetup&&!p->m_bBinning&&p->m_bCBEnable);
@@ -1157,7 +1157,7 @@ void CColorPage::OnHScroll(UINT nSBCode, UINT nPos, CScrollBar* pScrollBar)
 {
 	CLock lock(&s_bInsideHScroll);
 	UpdateData();
-	CSettingsSheet *p = GetSettingsParentSheet();
+	CSettingsSheet *p = GetParentSheet();
 	if (pScrollBar == (CScrollBar*)&m_SCBRed)
 	{
 		int n = m_SCBRed.GetPos();
@@ -1194,7 +1194,7 @@ void CColorPage::OnCbEnable()
 {
 	UpdateData();
 	UpdateControls();
-	CSettingsSheet *p = GetSettingsParentSheet();
+	CSettingsSheet *p = GetParentSheet();
 	EnterCriticalSection(&g_CritSectionCamera);
 	SetRgbLut(p->m_bCBEnable, 1, &p->m_dCBRed, &p->m_dCBGreen, &p->m_dCBBlue);
 	LeaveCriticalSection(&g_CritSectionCamera);
@@ -1203,7 +1203,7 @@ void CColorPage::OnCbEnable()
 
 void CColorPage::DoChangeValue()
 {
-	CSettingsSheet *p = GetSettingsParentSheet();
+	CSettingsSheet *p = GetParentSheet();
 	UpdateData();
 	EnterCriticalSection(&g_CritSectionCamera);
 	SetRgbLut(p->m_bCBEnable, 1, &p->m_dCBRed, &p->m_dCBGreen, &p->m_dCBBlue);
@@ -1217,7 +1217,7 @@ void CColorPage::OnChangeECbBlue()
 	if (m_ECBBlue.m_hWnd)
 	{
 		UpdateData();
-		int n = int(GetSettingsParentSheet()->m_dCBBlue*100);
+		int n = int(GetParentSheet()->m_dCBBlue*100);
 		if (!s_bInsideHScroll) m_SCBBlue.SetPos(n);
 		if (!s_bInsideSpin) m_SpCBBlue.SetPos(n);
 	}
@@ -1228,7 +1228,7 @@ void CColorPage::OnChangeECbGreen()
 	if (m_ECBGreen.m_hWnd)
 	{
 		UpdateData();
-		int n = int(GetSettingsParentSheet()->m_dCBGreen*100);
+		int n = int(GetParentSheet()->m_dCBGreen*100);
 		if (!s_bInsideHScroll) m_SCBGreen.SetPos(n);
 		if (!s_bInsideSpin) m_SpCBGreen.SetPos(n);
 	}
@@ -1239,7 +1239,7 @@ void CColorPage::OnChangeECbRed()
 	if (m_ECBBlue.m_hWnd)
 	{
 		UpdateData();
-		int n = int(GetSettingsParentSheet()->m_dCBRed*100);
+		int n = int(GetParentSheet()->m_dCBRed*100);
 		if (!s_bInsideHScroll) m_SCBRed.SetPos(n);
 		if (!s_bInsideSpin) m_SpCBRed.SetPos(n);
 	}
@@ -1250,9 +1250,9 @@ void CColorPage::OnDeltaposSpCbBlue(NMHDR* pNMHDR, LRESULT* pResult)
 	NM_UPDOWN* pNMUpDown = (NM_UPDOWN*)pNMHDR;
 	CLock lock(&s_bInsideSpin);
 	UpdateData();
-	double dPos = GetSettingsParentSheet()->m_dCBBlue*100.+pNMUpDown->iDelta;
+	double dPos = GetParentSheet()->m_dCBBlue*100.+pNMUpDown->iDelta;
 	dPos = max(min(dPos,400.),1.);
-	GetSettingsParentSheet()->m_dCBBlue = dPos/100.;
+	GetParentSheet()->m_dCBBlue = dPos/100.;
 	UpdateData(FALSE);
 	m_SCBBlue.SetPos(int(dPos));
 	*pResult = 0;
@@ -1263,9 +1263,9 @@ void CColorPage::OnDeltaposSpCbGreen(NMHDR* pNMHDR, LRESULT* pResult)
 	NM_UPDOWN* pNMUpDown = (NM_UPDOWN*)pNMHDR;
 	CLock lock(&s_bInsideSpin);
 	UpdateData();
-	double dPos = GetSettingsParentSheet()->m_dCBGreen*100.+pNMUpDown->iDelta;
+	double dPos = GetParentSheet()->m_dCBGreen*100.+pNMUpDown->iDelta;
 	dPos = max(min(dPos,400.),1.);
-	GetSettingsParentSheet()->m_dCBGreen = dPos/100.;
+	GetParentSheet()->m_dCBGreen = dPos/100.;
 	UpdateData(FALSE);
 	m_SCBGreen.SetPos(int(dPos));
 	*pResult = 0;
@@ -1276,9 +1276,9 @@ void CColorPage::OnDeltaposSpCbRed(NMHDR* pNMHDR, LRESULT* pResult)
 	NM_UPDOWN* pNMUpDown = (NM_UPDOWN*)pNMHDR;
 	CLock lock(&s_bInsideSpin);
 	UpdateData();
-	double dPos = GetSettingsParentSheet()->m_dCBRed*100.+pNMUpDown->iDelta;
+	double dPos = GetParentSheet()->m_dCBRed*100.+pNMUpDown->iDelta;
 	dPos = max(min(dPos,400.),1.);
-	GetSettingsParentSheet()->m_dCBRed = dPos/100.;
+	GetParentSheet()->m_dCBRed = dPos/100.;
 	UpdateData(FALSE);
 	m_SCBRed.SetPos(int(dPos));
 	*pResult = 0;
@@ -1287,19 +1287,19 @@ void CColorPage::OnDeltaposSpCbRed(NMHDR* pNMHDR, LRESULT* pResult)
 
 BOOL CColorPage::OnApply() 
 {
-	GetSettingsParentSheet()->OnApply();
+	GetParentSheet()->OnApply();
 	return CPropertyPage::OnApply();
 }
 
 void CColorPage::OnCancel() 
 {
-	GetSettingsParentSheet()->OnCancel();
+	GetParentSheet()->OnCancel();
 	CPropertyPage::OnCancel();
 }
 
 void CColorPage::OnOK() 
 {
-	GetSettingsParentSheet()->OnOK();
+	GetParentSheet()->OnOK();
 	CPropertyPage::OnOK();
 }
 
@@ -1332,7 +1332,7 @@ void CFramePage::DoDataExchange(CDataExchange* pDX)
 	DDX_Control(pDX, IDC_S_BOTTOM_MARGIN, m_SBottomMargin);
 	DDX_Check(pDX, IDC_PREVIEW_ALL_FRAME, m_bPreviewAllFrame);
 	//}}AFX_DATA_MAP
-	CSettingsSheet *p = GetSettingsParentSheet();
+	CSettingsSheet *p = GetParentSheet();
 	DDX_Check(pDX, IDC_ENABLE_FRAME, p->m_bEnableMargins);
 	DDX_Text(pDX, IDC_E_LEFT_MARGIN, p->m_nLeftMargin);
 	DDX_Text(pDX, IDC_E_RIGHT_MARGIN, p->m_nRightMargin);
@@ -1352,7 +1352,7 @@ void CFramePage::UpdateControls(int nHint)
 	if (!m_hWnd) return;
 	if (nHint == ESH_Start_Auto || nHint == ESH_Stop_Auto || nHint == 0)
 	{
-		CSettingsSheet *p = GetSettingsParentSheet();
+		CSettingsSheet *p = GetParentSheet();
 		BOOL bEnable = nHint!=ESH_Start_Auto;
 		::EnableWindow(::GetDlgItem(m_hWnd, IDC_ENABLE_FRAME), bEnable);
 		::EnableWindow(::GetDlgItem(m_hWnd, IDC_PREVIEW_ALL_FRAME), bEnable&&p->m_bEnableMargins);
@@ -1370,7 +1370,7 @@ void CFramePage::UpdateControls(int nHint)
 BOOL CFramePage::OnInitDialog() 
 {
 	CPropertyPage::OnInitDialog();
-	CSettingsSheet *p = GetSettingsParentSheet();
+	CSettingsSheet *p = GetParentSheet();
 	m_SLeftMargin.SetRange(0, p->m_nMaxMarginX);
 	m_SLeftMargin.SetPos(p->m_nLeftMargin);
 	m_SRightMargin.SetRange(0, p->m_nMaxMarginX);
@@ -1403,7 +1403,7 @@ void CFramePage::OnChangeELeftMargin()
 	if (m_ELeftMargin.m_hWnd)
 	{
 		UpdateData();
-		CSettingsSheet *p = GetSettingsParentSheet();
+		CSettingsSheet *p = GetParentSheet();
 		g_CxLibWork.m_rcMargins = CRect(p->m_nLeftMargin, p->m_nTopMargin, p->m_nRightMargin, p->m_nBottomMargin);
 		SetModified();
 		g_CxLibWork.NotifyChangeSizes();
@@ -1415,7 +1415,7 @@ void CFramePage::OnChangeERightMargin()
 	if (m_ERightMargin.m_hWnd)
 	{
 		UpdateData();
-		CSettingsSheet *p = GetSettingsParentSheet();
+		CSettingsSheet *p = GetParentSheet();
 		g_CxLibWork.m_rcMargins = CRect(p->m_nLeftMargin, p->m_nTopMargin, p->m_nRightMargin, p->m_nBottomMargin);
 		SetModified();
 		g_CxLibWork.NotifyChangeSizes();
@@ -1427,7 +1427,7 @@ void CFramePage::OnChangeETopMargin()
 	if (m_ETopMargin.m_hWnd)
 	{
 		UpdateData();
-		CSettingsSheet *p = GetSettingsParentSheet();
+		CSettingsSheet *p = GetParentSheet();
 		g_CxLibWork.m_rcMargins = CRect(p->m_nLeftMargin, p->m_nTopMargin, p->m_nRightMargin, p->m_nBottomMargin);
 		SetModified();
 		g_CxLibWork.NotifyChangeSizes();
@@ -1439,7 +1439,7 @@ void CFramePage::OnChangeEBottomMargin()
 	if (m_EBottomMargin.m_hWnd)
 	{
 		UpdateData();
-		CSettingsSheet *p = GetSettingsParentSheet();
+		CSettingsSheet *p = GetParentSheet();
 		g_CxLibWork.m_rcMargins = CRect(p->m_nLeftMargin, p->m_nTopMargin, p->m_nRightMargin, p->m_nBottomMargin);
 		SetModified();
 		g_CxLibWork.NotifyChangeSizes();
@@ -1450,7 +1450,7 @@ void CFramePage::OnEnableFrame()
 {
 	UpdateData();
 	UpdateControls(0);
-	CSettingsSheet *p = GetSettingsParentSheet();
+	CSettingsSheet *p = GetParentSheet();
 	g_CxLibWork.m_bEnableMargins = p->m_bEnableMargins;
 	g_CxLibWork.NotifyChangeSizes();
 	SetModified();
@@ -1459,22 +1459,22 @@ void CFramePage::OnEnableFrame()
 BOOL CFramePage::OnApply() 
 {
 	m_bPreviewAllFrameOld = m_bPreviewAllFrame;
-	GetSettingsParentSheet()->OnApply();
+	GetParentSheet()->OnApply();
 	return CPropertyPage::OnApply();
 }
 
 void CFramePage::OnCancel() 
 {
 	g_BaumerProfile.WriteProfileInt(_T("Settings"), _T("PreviewAllFrame"), m_bPreviewAllFrameOld);
-	GetSettingsParentSheet()->OnCancel();
-	g_CxLibWork.m_bEnableMargins = GetSettingsParentSheet()->m_bEnableMargins;
+	GetParentSheet()->OnCancel();
+	g_CxLibWork.m_bEnableMargins = GetParentSheet()->m_bEnableMargins;
 	g_CxLibWork.NotifyChangeSizes();
 	CPropertyPage::OnCancel();
 }
 
 void CFramePage::OnOK() 
 {
-	GetSettingsParentSheet()->OnOK();
+	GetParentSheet()->OnOK();
 	CPropertyPage::OnOK();
 }
 

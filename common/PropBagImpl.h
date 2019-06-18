@@ -55,14 +55,14 @@ protected:
 			dwHash=hash_f(bstrName1);
 		}
 	};
-	virtual int GetPropertyPos( BSTR bstrName, LPOS* plos );
+	virtual int GetPropertyPos( BSTR bstrName, long *plos );
 	virtual void OnChange() {};
 private:
 	_ptr_t<CNamedProperty> m_bag;
 	bool Search(BSTR bstr, long *ppos); //найти элемент в массиве;
 	// Если найден - true, его номер в ppos
 	// Если не найден - false, в ppos - номер первого большего
-	int CompareItem(LPOS lpos, DWORD h2, BSTR bstr2);		
+	int CompareItem(long lpos, DWORD h2, BSTR bstr2);		
 };
 
 #include "PropBagImpl.inl"

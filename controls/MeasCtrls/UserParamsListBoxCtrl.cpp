@@ -266,7 +266,7 @@ BSTR CUserParamsListBoxCtrl::GetParamSection(LONG nIdx)
 
 	CString strResult;
 
-	TPOS lPos = m_ParamList[nIdx];
+	long lPos = m_ParamList[ nIdx ];
 	CDrawParam *pParam = lPos ? m_ParamList.get( lPos ) : 0;
 	if( pParam )
 		pParam->GetSection( &strResult );
@@ -310,7 +310,7 @@ VARIANT_BOOL CUserParamsListBoxCtrl::RemoveItem(LONG nIdx)
 {
 	AFX_MANAGE_STATE(AfxGetStaticModuleState());
 
-	TPOS lPos = m_ParamList[nIdx];
+	long lPos = m_ParamList[ nIdx ];
 	if( GetSafeHwnd( ) && lPos )
 	{
 		CListBox *pList = (CListBox*) this;
@@ -454,7 +454,7 @@ long	CUserParamsListBoxCtrl::GetMaxSecondColumnWidth( )
 
 	
 
-	for (TPOS lPos = m_ParamList.head(); lPos; lPos = m_ParamList.next(lPos))
+	for( long lPos = m_ParamList.head( ); lPos; lPos = m_ParamList.next( lPos ) )
 	{
 		long lWidth = m_ParamList.get( lPos )->GetWidth( pdc ? pdc->m_hDC : 0, TRUE );
 		if( lWidth > lMaxWidth )
@@ -749,7 +749,7 @@ void	CUserParamsListBoxCtrl::InitDefault()
 
 /*void	CUserParamsListBoxCtrl::SetWorksModes( )
 {
-	for( LPOS lPos = m_ParamList.head( ); lPos; lPos = m_ParamList.next( lPos ) )
+	for( long lPos = m_ParamList.head( ); lPos; lPos = m_ParamList.next( lPos ) )
 		m_ParamList.get( lPos )->SetWorksMode( m_lWorksMode );
 
 }  */
@@ -793,7 +793,7 @@ BOOL	CUserParamsListBoxCtrl::SearchItemListBySection( CString strSection, long *
 		FALSE;
 
     (*plIdx) = 0;
-		for (TPOS lPos = m_ParamList.head(); lPos; lPos = m_ParamList.next(lPos))
+	for( long lPos = m_ParamList.head( ); lPos; lPos = m_ParamList.next( lPos ) )
 	{
 		CDrawParam *pParam = 0;
 		pParam = m_ParamList.get( lPos );

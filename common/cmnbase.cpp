@@ -356,14 +356,14 @@ void CEventListenerImpl::Register( IUnknown *punkCtrl, const char *pszEvString )
 	INotifyControllerPtr	sp(punkCtrl);
 	sp->RegisterEventListener( 0, Unknown() );
 
-	m_arrRegistredCtrls.AddTail( punkCtrl );
+	//m_arrRegistredCtrls.AddTail( punkCtrl );
 	m_nRegCounter++;
 }
 
 void CEventListenerImpl::UnRegister( IUnknown *punkCtrl, const char *pszEvString )
 {
-	if( !m_arrRegistredCtrls.Find( punkCtrl ) )
-		return;
+	//if( !m_arrRegistredCtrls.Find( punkCtrl ) )
+	//	return;
 
 	if( !m_nRegCounter )
 		return;

@@ -1,7 +1,7 @@
 ; NotifyContr.def : Declares the module parameters for the DLL.
 
 LIBRARY      "NotifyContr"
-; DESCRIPTION  'NotifyContr Windows Dynamic Link Library'
+DESCRIPTION  'NotifyContr Windows Dynamic Link Library'
 
 EXPORTS
     ; Explicit exports can go here

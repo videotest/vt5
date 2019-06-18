@@ -36,7 +36,7 @@ bool CFindCircles2::CanDeleteArgument( CFilterArgument *pa )
 static double inline sqr(double x)
 { return x*x; }
 
-static int inline iround(double x)
+static int inline round(double x)
 { return int(floor(x+0.5)); }
 
 double CFindCircles2::CheckCircle(int x, int y, int j)
@@ -230,7 +230,7 @@ double CFindCircles2::FindSpot(int x, int y, int* jj)
 		if(h>h_best)
 		{
 			h_best = h;
-			j_best = j + iround( s1*(m_nr-1)/(m_nRadius-2.0) );
+			j_best = j + round( s1*(m_nr-1)/(m_nRadius-2.0) );
 			j_best = max(1, min(m_nr-1, j_best));
 		}
 	}
@@ -364,7 +364,7 @@ double CFindCircles2::FindSpot2(int x, int y, int* jj_max, int* jj_wanted, int* 
 		dd[i] = d_best;
 		j_avg[i] = js/max(ds,1e-5);
 		
-		//jj[i] = iround(j_avg[i]);
+		//jj[i] = round(j_avg[i]);
 	}
 	d_sum /= m_na;
 
@@ -381,8 +381,8 @@ double CFindCircles2::FindSpot2(int x, int y, int* jj_max, int* jj_wanted, int* 
 		s += d;
 	}
 	s = max(s,0.01);
-	x += iround(sx/s);
-	y += iround(sy/s);
+	x += round(sx/s);
+	y += round(sy/s);
 
 	x = max(1, min(m_cx-2, x));
 	y = max(1, min(m_cy-2, y));
@@ -421,7 +421,7 @@ double CFindCircles2::FindSpot2(int x, int y, int* jj_max, int* jj_wanted, int* 
 
 		for(int i=0; i<m_na; i++)
 		{
-			jj[i] -= iround( dj[i]*fabs(dj[i])/dj_max );
+			jj[i] -= round( dj[i]*fabs(dj[i])/dj_max );
 		}
 	}
 
@@ -542,7 +542,7 @@ double CFindCircles2::SmoothContour(int x, int y, int* jj, int nArcLength, int n
 			int i = (i1+k) % m_na;
 			double j_predicted = jj[i1] + k*dj_di + alpha*k*(nArcLength-k);
 			s2 += sqr(jj[i]-j_predicted);
-			int j3 = iround(j_predicted);
+			int j3 = round(j_predicted);
 			double d_max_exact=0;
 			double d_max_round=0;
 			for(int dj=1; dj<3; dj++)
@@ -609,7 +609,7 @@ double CFindCircles2::SmoothContour(int x, int y, int* jj, int nArcLength, int n
 	{
 		int i = (i1+k) % m_na;
 		double j_predicted = jj[i1] + k*dj_di + alpha*k*(nArcLength-k);
-		jj[i] = iround(j_predicted);
+		jj[i] = round(j_predicted);
 	}
 
 	return s_worst;
@@ -648,7 +648,7 @@ INamedDataObject2Ptr CFindCircles2::CreateObject(int x, int y, int* jj)
 		for(int i=0; i<m_na; i++)
 		{
 			int i2 = (i*2) % m_na;
-			points[i].x = iround( s1 + s_co*m_co[i] + s_si*m_si[i] );
+			points[i].x = round( s1 + s_co*m_co[i] + s_si*m_si[i] );
 			//+
 			//	s_co2*m_co[i2] + s_si2*m_si[i2] );
 		}
@@ -674,7 +674,7 @@ INamedDataObject2Ptr CFindCircles2::CreateObject(int x, int y, int* jj)
 		for(int i=0; i<m_na; i++)
 		{
 			int i2 = (i*2) % m_na;
-			points[i].y = iround( s1 + s_co*m_co[i] + s_si*m_si[i] +
+			points[i].y = round( s1 + s_co*m_co[i] + s_si*m_si[i] +
 				s_co2*m_co[i2] + s_si2*m_si[i2] );
 		}
 	}
@@ -1023,8 +1023,8 @@ bool CFindCircles2::InvokeFilter()
 				m_rr[j]=r;
 				for(int i=0; i<na; i++)
 				{
-					m_dx[i*nr+j] = iround( r*m_co[i] );
-					m_dy[i*nr+j] = iround( r*m_si[i] );
+					m_dx[i*nr+j] = round( r*m_co[i] );
+					m_dy[i*nr+j] = round( r*m_si[i] );
 				}
 			}
 
@@ -1126,8 +1126,8 @@ bool CFindCircles2::InvokeFilter()
 					}
 					if(s>1)
 					{
-						pSeed->y = iround(ys/s);
-						pSeed->x = iround(xs/s);
+						pSeed->y = round(ys/s);
+						pSeed->x = round(xs/s);
 						pSeed->r = rs/s;
 						pSeed->h = h_max;
 					}

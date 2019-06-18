@@ -110,7 +110,7 @@ void StoreSelection(IUnknown* punkDoc, IUnknown* punkView, const char *szSection
         // заполним мапу - перевод из номера объекта данного класса в IUnknownPtr
 		_list_map_t<IUnknownPtr, _pair_t, cmp_pair> mapNumberToUnknownPtr;
 		{
-			LONG_PTR lPos = 0;
+			long lPos = 0;
 			sptrDocDC->GetFirstObjectPos( bstrType, &lPos );
 			while( lPos )
 			{
@@ -144,7 +144,7 @@ void StoreSelection(IUnknown* punkDoc, IUnknown* punkView, const char *szSection
 			long nIndex=0;
 			long nParentIndex=0, nSubIndex=0;
 			long nPrevParentNum=-1;
-			for (TPOS lPos = mapNumberToUnknownPtr.tail(); lPos != 0; lPos = mapNumberToUnknownPtr.prev(lPos))
+			for(long lPos = mapNumberToUnknownPtr.tail(); lPos!=0; lPos = mapNumberToUnknownPtr.prev(lPos))
 			{
 				IUnknown *punk = mapNumberToUnknownPtr.get(lPos);
 				_pair_t pr = mapNumberToUnknownPtr.get_key(lPos);
@@ -166,7 +166,9 @@ void StoreSelection(IUnknown* punkDoc, IUnknown* punkView, const char *szSection
 			}
 		}
 
-		LONG_PTR lPos = 0;
+		// TODO: в simple режиме селектить ровно один объект - #1000.
+
+		long lPos = 0;
 		sptrDC->GetFirstSelectedPos( bstrType, &lPos );
 		long nCount=0; // счетчик заселекченных объектов
 		while( lPos )
@@ -174,7 +176,7 @@ void StoreSelection(IUnknown* punkDoc, IUnknown* punkView, const char *szSection
 			IUnknown* punk = 0;
 			if(bSimple)
 			{ // при упрощенном варианте записи вместо реального селекшна берем 1 элемент - последний созданный (с индексом 1000)
-				TPOS lPos1 = mapNumberToUnknownPtr.tail();
+				long lPos1 = mapNumberToUnknownPtr.tail();
 				if(lPos1)
 					punk = mapNumberToUnknownPtr.get(lPos1);
 				if(punk) punk->AddRef();
@@ -185,7 +187,7 @@ void StoreSelection(IUnknown* punkDoc, IUnknown* punkView, const char *szSection
 				sptrDC->GetNextSelected( bstrType, &lPos, &punk );
 			}
 
-			TPOS lMapPos = mapUnkToIndex.find(long(punk));
+			long lMapPos = mapUnkToIndex.find(long(punk));
 
 			GuidKey base_key;
 			INamedDataObject2Ptr sptrNDO(punk);
@@ -278,7 +280,7 @@ void LoadSelection(IUnknown* punkDoc, IUnknown* punkView, const char *szSection,
 		// заполним мапу - перевод из номера объекта данного класса в IUnknownPtr
 		_list_map_t<IUnknownPtr, _pair_t, cmp_pair> mapNumberToUnknownPtr;
 		{
-			LONG_PTR lPos = 0;
+			long lPos = 0;
 			sptrDocDC->GetFirstObjectPos( types[nType], &lPos );
 			while( lPos )
 			{
@@ -313,7 +315,7 @@ void LoadSelection(IUnknown* punkDoc, IUnknown* punkView, const char *szSection,
 			long nIndex=0;
 			long nParentIndex=0, nSubIndex=0;
 			long nPrevParentNum=-1;
-			for (TPOS lPos = mapNumberToUnknownPtr.tail(); lPos != 0; lPos = mapNumberToUnknownPtr.prev(lPos))
+			for(long lPos = mapNumberToUnknownPtr.tail(); lPos!=0; lPos = mapNumberToUnknownPtr.prev(lPos))
 			{
 				IUnknown *punk = mapNumberToUnknownPtr.get(lPos);
 				_pair_t pr = mapNumberToUnknownPtr.get_key(lPos);
@@ -342,7 +344,7 @@ void LoadSelection(IUnknown* punkDoc, IUnknown* punkView, const char *szSection,
 			CString strName = (char*)(types[nType]);
 			strName.AppendFormat("_%u",unsigned(nCount));
 			long index = ::GetValueInt(punkNamedData,szSection,strName, -1);
-			TPOS lpos = mapIndexToUnknownPtr.find(index);
+			long lpos = mapIndexToUnknownPtr.find(index);
 			if(lpos)
 			{
 				IUnknownPtr ptrSel=mapIndexToUnknownPtr.get(lpos);
@@ -366,7 +368,7 @@ void LoadSelection(IUnknown* punkDoc, IUnknown* punkView, const char *szSection,
 				::sscanf( strMethodBaseKey.GetBuffer(), "%I64X-%I64X",
 					&lo_guid(&method_base_key), &hi_guid(&method_base_key) );
 
-				TPOS lpos_guid = mapMethodBaseKeyToBaseKey.find(method_base_key);
+				long lpos_guid = mapMethodBaseKeyToBaseKey.find(method_base_key);
 				if(lpos_guid)
 				{
 					GuidKey base_key2 = 
@@ -689,7 +691,7 @@ bool RecursiveAddEntry( INamedData* ptrDst, INamedData* ptrSrc, LPCSTR pszEntry,
 			if( VT_BSTR == var.vt )
 			{
 				CString str(var);
-				TPOS lPosMap = pSubstMap->head();
+				long lPosMap = pSubstMap->head();
 				while(lPosMap)
 				{
 					CString strFrom = pSubstMap->get_key(lPosMap);
@@ -764,13 +766,19 @@ bool ImportShellData( IUnknown* punkSrc, char* pszDisabledKeys )
 			if(var.vt==VT_BSTR)
 			{ // нас интересуют только строки, причем строго определенного формата - полные пути
 				CString strFrom(var);
-				if(strFrom.GetLength()>=3 && strEntryName != "CurrentPath")
-				{ // CurrentPath не используем! Он может быть левым.
+				if(strFrom.GetLength()>=3)
+				{ // проверим на соответствие шаблону ?:*\ 
+					if(':'==strFrom[1] && '\\'==strFrom[strFrom.GetLength()-1])
+					{
+						if(strEntryName != "CurrentPath") // CurrentPath не используем! Он может быть левым.
+						{
 							CString strTo = ::GetValueString(sptrDst, "\\Paths", strEntryName, strFrom);
 							map.set(strTo, strFrom);
 						}
 					}
 				}
+			}        
+		}
 
 		RecursiveAddEntry(sptrDst, sptrSrc, "\\",
 			pszDisabledKeys, &map);
@@ -784,14 +792,30 @@ bool ImportShellData( IUnknown* punkSrc, char* pszDisabledKeys )
 	return bRes;
 }
 
-bool InitSubstMap( CSubstMap* pMap, INamedDataPtr sptrSrc, INamedDataPtr sptrDst )
-{ // построить мапу
-	pMap->clear();
+bool ImportShellData2( IUnknown* punkSrc )
+{	// импорт shell.data с учетом MergeKeys и с подменой
+	// всех путей из [Paths] на текущие
+	INamedDataPtr sptrDst(::GetAppUnknown());
+	if(sptrDst==0) return false;
 
+	INamedDataPtr sptrSrc(punkSrc);
+	if(sptrSrc==0) return false;
+
+	CSubstMap map; // подготовим список подстановок
+
+	_bstr_t bstrPathSrc;
+	_bstr_t bstrPathDst;
+	sptrSrc->GetCurrentSection(bstrPathSrc.GetAddress());
+	sptrDst->GetCurrentSection(bstrPathDst.GetAddress());
+
+	bool bRes = false;
+
+	do
+	{
 		if( S_OK != sptrDst->SetupSection( _bstr_t("\\Paths") ) )
-		return false;
+			break;
 		if( S_OK != sptrSrc->SetupSection( _bstr_t("\\Paths") ) )
-		return false;
+			break;
 
 		// get count of entries
 		long EntryCount = 0;
@@ -812,34 +836,19 @@ bool InitSubstMap( CSubstMap* pMap, INamedDataPtr sptrSrc, INamedDataPtr sptrDst
 			if(var.vt==VT_BSTR)
 			{ // нас интересуют только строки, причем строго определенного формата - полные пути
 				CString strFrom(var);
-			if(strFrom.GetLength()>=3 && strEntryName != "CurrentPath")
-			{ // CurrentPath не используем! Он может быть левым.
+				if(strFrom.GetLength()>=3)
+				{ // проверим на соответствие шаблону ?:*\ 
+					if(':'==strFrom[1] && '\\'==strFrom[strFrom.GetLength()-1])
+					{
+						if(strEntryName != "CurrentPath") // CurrentPath не используем! Он может быть левым.
+						{
 							CString strTo = ::GetValueString(sptrDst, "\\Paths", strEntryName, strFrom);
-				pMap->set(strTo, strFrom);
+							map.set(strTo, strFrom);
+						}
 					}
 				}
 			}        
-	return true;
 		}
-
-bool ImportShellData2( IUnknown* punkSrc )
-{	// импорт shell.data с учетом MergeKeys и с подменой
-	// всех путей из [Paths] на текущие
-	INamedDataPtr sptrDst(::GetAppUnknown());
-	if(sptrDst==0) return false;
-
-	INamedDataPtr sptrSrc(punkSrc);
-	if(sptrSrc==0) return false;
-
-	_bstr_t bstrPathSrc;
-	_bstr_t bstrPathDst;
-	sptrSrc->GetCurrentSection(bstrPathSrc.GetAddress());
-	sptrDst->GetCurrentSection(bstrPathDst.GetAddress());
-
-	bool bRes = false;
-
-	CSubstMap map; // подготовим список подстановок
-	InitSubstMap(&map, sptrSrc, sptrDst);
 
 		// теперь собственно сольем
 		CTreeFilter t;
@@ -893,87 +902,10 @@ bool ImportShellData2( IUnknown* punkSrc )
 		::CopyNamedData(::GetAppUnknown(), sptrND2);
 
 		bRes = true; // успешно выполнили
+	}
+	while(0); // выполняем 1 раз - цикл только ради break
 
 	sptrDst->SetupSection( bstrPathDst ); // вернем все, как было
 	sptrSrc->SetupSection( bstrPathSrc );
 	return bRes;
-}
-
-bool RecursiveFilterNamedData( INamedData* pData, _bstr_t bstrPath, CSubstMap* pSubstMap )
-{
-	// set section
-	if( S_OK != pData->SetupSection( bstrPath ) )
-		return false;
-
-	// get count of entries
-	long EntryCount = 0;
-	pData->GetEntriesCount( &EntryCount );
-
-	// for all entries
-	for( int i = 0; i<(int)EntryCount; i++ )
-	{
-		_bstr_t bstrEntryName;
-		pData->GetEntryName( i, bstrEntryName.GetAddress() );
-
-		if(bstrEntryName.length()==0) continue; // всякую хрень накидают, а я убирай? хуюшки!
-		
-		// format a full path for entry
-		_bstr_t bstrPathNew;
-		int nLen = bstrPath.length();
-
-		if( nLen > 0 && ((char*)bstrPath)[nLen-1] == '\\' )
-			bstrPathNew = bstrPath + bstrEntryName;
-		else
-			bstrPathNew = bstrPath + "\\" + bstrEntryName;
-
-		// get value
-		_variant_t var;
-		pData->GetValue( bstrPathNew, &var );
-
-		// проверим на соответствие шаблонам из списка
-		if( VT_BSTR == var.vt )
-		{
-			CString str(var);
-			TPOS lPosMap = pSubstMap->head();
-			while(lPosMap)
-			{
-				CString strFrom = pSubstMap->get_key(lPosMap);
-				CString strTo = pSubstMap->get(lPosMap);
-				lPosMap = pSubstMap->next(lPosMap);
-
-				long n = strFrom.GetLength();
-				if( 0 == strFrom.CompareNoCase(str.Left(n)) )
-				{
-					str.Delete(0, n);
-					str.Insert(0, strTo);
-					var = str;
-					pData->SetValue( bstrPathNew, var );
-					break;
-				}
-			}
-		}
-			
-		// if this entry has children => we want to walk to them
-		if( EntryCount > 0 )
-			RecursiveFilterNamedData( pData, bstrPathNew, pSubstMap );
-
-		// for next entry on this level restore Section
-		pData->SetupSection( bstrPath );
-	}
-		
-	return true;
-}
-
-bool FilterNamedData( IUnknown* punkData, CSubstMap* pSubstMap )
-{
-	INamedDataPtr sptrData(punkData);
-	if(sptrData==0) return false;
-
-	_bstr_t bstrPath;
-	sptrData->GetCurrentSection(bstrPath.GetAddress());
-
-	RecursiveFilterNamedData(sptrData, _bstr_t("\\"), pSubstMap);
-
-	sptrData->SetupSection(bstrPath);
-	return true;
 }

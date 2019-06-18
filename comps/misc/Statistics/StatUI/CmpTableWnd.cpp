@@ -89,7 +89,7 @@ namespace ViewSpace
 		m_sptrAttached = _rStatCmpView.m_pCmpStatObject;
 	}
 
-	LRESULT CCmpTableWnd::on_paint()
+	long CCmpTableWnd::on_paint()
 	{
 		RECT rcPaint = { 0, 0, 0, 0 };
 		::GetUpdateRect( handle(), &rcPaint, false );
@@ -578,7 +578,7 @@ namespace ViewSpace
 			else
 			{
 				_bstr_t name;
-				TPOS lPos = m_mapColumnName.find(i - lKeySz);
+				long lPos = m_mapColumnName.find( i - lKeySz );
 
 				m_pColumnInfo[i + 2].lUsedID = i - lKeySz;
 
@@ -587,7 +587,7 @@ namespace ViewSpace
 				else
 					strcpy( m_pColumnInfo[i + 2].szName, "" );
 
-				TPOS lPos2 = m_mapColumnOrder.find(i - lKeySz);
+				long lPos2 = m_mapColumnOrder.find( i - lKeySz );
 
 				if( lPos2 )
 					m_pColumnInfo[i + 2].lOrder = m_mapColumnOrder.get( lPos2 );
@@ -695,7 +695,7 @@ namespace ViewSpace
 		if( m_list_classes.count() )
 		{
 			CString str_data;
-			for (TPOS lpos = m_list_classes.head(); lpos; lpos = m_list_classes.next(lpos))
+			for( long lpos = m_list_classes.head(); lpos; lpos = m_list_classes.next( lpos ) )
 			{
 				long lclass = m_list_classes.get( lpos );
 
@@ -910,7 +910,7 @@ namespace ViewSpace
 		}
 	}
 
-	LRESULT CCmpTableWnd::on_size(short cx, short cy, ulong fSizeType)
+	long CCmpTableWnd::on_size( short cx, short cy, ulong fSizeType )
 	{
 		RECT rc;
 		::GetClientRect( m_hwnd, &rc );
@@ -967,9 +967,9 @@ namespace ViewSpace
 
 		lClassSz = lst_classes.count();
 		long *plclasses = new long[lClassSz];
-		{long i = 0; for (TPOS lpos = lst_classes.head(); lpos; lpos = lst_classes.next(lpos), i++)
-			plclasses[i] = lst_classes.get(lpos);
-		}
+		for( long lpos = lst_classes.head(), i = 0; lpos; lpos = lst_classes.next( lpos ), i++  )
+			plclasses[i] = lst_classes.get( lpos );
+
 
 		LOGFONT lfTable = m_lfTableFont;
 		if( m_bPrintMode )
@@ -1346,13 +1346,13 @@ namespace ViewSpace
 
 	CString CCmpTableWnd::_get_user_value( long lCol, long lRow )
 	{
-		TPOS lColPos = m_mapColumn.find(lCol);
+		long lColPos = m_mapColumn.find( lCol );
 		if( lColPos )
 		{
 			ROW_TO_VALUE *map = m_mapColumn.get( lColPos );
 			if( map )
 			{
-				TPOS lRowPos = map->find(lRow);
+				long lRowPos = map->find( lRow );
 				if( lRowPos )
 					return map->get( lRowPos );
 			}
@@ -1360,21 +1360,21 @@ namespace ViewSpace
 		return "";
 	}
 
-	LRESULT CCmpTableWnd::on_hscroll(unsigned scrollCode, unsigned pos, HWND hwndScroll)
+	long CCmpTableWnd::on_hscroll( unsigned scrollCode, unsigned pos, HWND hwndScroll )
 	{
 		LRESULT lr=m_Grid.OnHScroll((int)scrollCode, (short)pos, hwndScroll);
 		return 1;
 		//		return __super::on_vscroll( scrollCode, pos, hwndScroll );
 	}
 
-	LRESULT CCmpTableWnd::on_vscroll(unsigned code, unsigned pos, HWND hwndScroll)
+	long CCmpTableWnd::on_vscroll( unsigned code, unsigned pos, HWND hwndScroll )
 	{
 		//::SendMessage( m_gridClass.handle(), WM_VSCROLL, (WPARAM)MAKELONG( code, pos ), (LPARAM)hwndScroll );
 		//::SendMessage( m_grid.handle(), WM_VSCROLL, (WPARAM)MAKELONG( code, pos ), (LPARAM)hwndScroll );
 		return __super::on_vscroll( code, pos, hwndScroll );
 	}
 
-	LRESULT CCmpTableWnd::on_notify(uint idc, NMHDR *pnmhdr)
+	long CCmpTableWnd::on_notify( uint idc, NMHDR *pnmhdr )
 	{
 		switch(pnmhdr->code)
 		{
@@ -1512,7 +1512,7 @@ namespace ViewSpace
 		}
 	}
 
-	LRESULT CCmpTableWnd::handle_message(UINT m, WPARAM w, LPARAM l)
+	long CCmpTableWnd::handle_message( UINT m, WPARAM w, LPARAM l )
 	{
 		switch( m )
 		{
@@ -1545,94 +1545,206 @@ namespace ViewSpace
 		return rcHeader.Height() + rc.Height() * nRows;
 	}
 
-	POINT CCmpTableWnd::RowCol(const POINT& pt)
-	{
-		CRect rcHeader; Header_GetItemRect( m_Grid.GetHeader(), 0, &rcHeader );
-		CRect rc; m_Grid.GetItemRect(0, &rc, LVIR_BOUNDS );
-		int iRow = (pt.y-rc.Height())/rc.Height();
-		if(iRow >= m_strVals.GetRowsCount())
-			iRow=m_strVals.GetRowsCount()-1;
-
-		int lVirtualWidth = 0;
-		int iCol = m_strVals.GetColsCount()-1;
-		for (int i = 0; i <= iCol; i++)
-		{
-			lVirtualWidth += m_pColumnInfo[i].nWidth;
-			if(pt.x < lVirtualWidth){
-				iCol=i;
-				break;
-		}
-			}
-		POINT ptColRow;
-		ptColRow.x=iCol;
-		ptColRow.y=iRow+1;
-		return ptColRow;
-			}
-
-	RECT CCmpTableWnd::RectHitTest(const POINT& pt)
-			{
-		POINT ptColRow=RowCol(pt);
-		CRect cellRect;
-		if(ptColRow.y>0)
-			m_Grid.GetSubItemRect(ptColRow.y-1, ptColRow.x, LVIR_BOUNDS, &cellRect);
-			else
-			{
-			m_Grid.GetSubItemRect(0, ptColRow.x, LVIR_BOUNDS, &cellRect);
-			cellRect -= CPoint(0,cellRect.Height());
-			}
-		return cellRect;
-		}
-
 	bool CCmpTableWnd::GetPrintWidth(int nMaxWidth, int& nReturnWidth, int nUserPosX, int& nNewUserPosX)
-			{
+	{
 		bool bContinue = false;
 		long nWidth = GetTableWidth();
-		if(nWidth>0)
+		if(nWidth<=0)
 		{
-			CRect rcCell=RectHitTest(CPoint(nUserPosX, 0));
-			CRect rcLastCell=RectHitTest(CPoint(nUserPosX+nMaxWidth, 0));
+			nNewUserPosX += nReturnWidth;
+			return bContinue;
+		}
 
-//			nNewUserPosX = nUserPosX+nReturnWidth;
-			if (nWidth > rcLastCell.right)
+		m_bPrinting = true;
+
+		// grid is longer that given max_width
+		if (nWidth > nUserPosX + nMaxWidth)
+		{
+			// 2 cases: a) first call 
+			// in this case given user_pos == 0 && given new_usr_pos == 0
+			//			b) next call 
+			// in this case user_pos undefined (previous new_usr_pos) && given new_usr_pos undefined
+			// calc last from previous printed column
+			LVHITTESTINFO hitTestInfo={{nUserPosX, 0}}; m_Grid.HitTest(&hitTestInfo);
+			if (hitTestInfo.iSubItem < 0)
+				hitTestInfo.iSubItem = 0;
+
+			if (hitTestInfo.iItem < 0) // error
 			{
-				nNewUserPosX = rcLastCell.left;
-				bContinue = true;
+				hitTestInfo.iItem = 0;
+			}
+
+			nNewUserPosX = nUserPosX;
+			CRect cellRect;
+			m_Grid.GetSubItemRect(hitTestInfo.iItem, hitTestInfo.iSubItem, LVIR_BOUNDS, &cellRect);
+			nNewUserPosX = cellRect.left;
+
+			int nLastCol = hitTestInfo.iSubItem;
+			for (nLastCol = hitTestInfo.iSubItem; nLastCol < m_Grid.GetColumnCount(); nLastCol++)
+			{
+				int nW = m_Grid.GetColumnWidth(nLastCol);
+				// check column is full visible
+				if ((nNewUserPosX + nW) > (nUserPosX + nMaxWidth))
+					break;
+				// add column width to return_width 
+				nNewUserPosX += nW;
+			}
+			if (hitTestInfo.iSubItem >= nLastCol) // too long column
+			{
+				nReturnWidth = nMaxWidth;
+				nNewUserPosX = nNewUserPosX + nReturnWidth + 1;
 			}
 			else
 			{
-				nNewUserPosX = rcLastCell.right;
-			bContinue = false;
-				nReturnWidth=rcLastCell.right-rcCell.left;
+				nReturnWidth = nNewUserPosX - nUserPosX;
+				nNewUserPosX += 1;
 			}
+			bContinue = true;
 		}
+		else// grid is no shorter that given max_width
+		{
+			// calc newUserPosX & return width
+			// 2 cases: a) whole grid is shorter that given max_width
+			// in this case given user_pos == 0 && given new_usr_pos undefined
+			//			b) last part of grid is shorter than given max_width
+			// in this case user_pos undefined (0 || previous new_usr_pos) && given new_usr_pos undefined
+
+			if (nUserPosX == 0)// for case a:
+			{
+				nReturnWidth = nWidth - nUserPosX;
+				nNewUserPosX = nWidth + 1;
+				m_bPrinting = false;
+				return false;
+			}
+
+			// else for case b:
+			// get first cell
+			LVHITTESTINFO hitTestInfo={{nNewUserPosX, 0}}; m_Grid.HitTest(&hitTestInfo);
+			if (hitTestInfo.iSubItem < 0)
+				hitTestInfo.iSubItem = 0;
+
+			if (hitTestInfo.iItem < 0) // error
+			{
+				hitTestInfo.iItem = 0;
+			}
+
+			nNewUserPosX = nUserPosX;
+			CRect cellRect;
+			m_Grid.GetSubItemRect(hitTestInfo.iItem, hitTestInfo.iSubItem, LVIR_BOUNDS, &cellRect);
+			nNewUserPosX = cellRect.left;
+
+			int nLastCol = hitTestInfo.iSubItem;
+			for (nLastCol = hitTestInfo.iSubItem; nLastCol < m_Grid.GetColumnCount(); nLastCol++)
+				nNewUserPosX += m_Grid.GetColumnWidth(nLastCol);
+
+			nReturnWidth = nNewUserPosX - nUserPosX;
+			nNewUserPosX += 1;
+			bContinue = false;
+		}
+		m_bPrinting = false;
 		return bContinue;
 	}
 
 	bool CCmpTableWnd::GetPrintHeight(int nMaxHeight, int& nReturnHeight, int nUserPosY, int& nNewUserPosY)
 	{
 		bool bContinue = false;
-		int nRows=m_strVals.GetRowsCount();
-		if(nRows<=0)
+		int nHeight = GetTableHeight();
+		if(nHeight<=0)
+		{
+			nNewUserPosY += nReturnHeight;
 			return bContinue;
-		long nHeight = GetTableHeight();
-		if(nHeight){
-			CRect rcCell=RectHitTest(CPoint(0, nUserPosY));
-			CRect rcLastCell=RectHitTest(CPoint(0, nUserPosY+nMaxHeight));
-
-			nNewUserPosY = nUserPosY + nReturnHeight;
-
-			if (nHeight > rcLastCell.bottom)
-			{
-				nNewUserPosY = rcLastCell.top;
-			bContinue = true;
 		}
+
+		m_bPrinting = true;
+		// grid is longer that given max_height
+		if (nHeight > nUserPosY + nMaxHeight)
+		{
+			// calc last printed column
+			LVHITTESTINFO hitTestInfo={{0, nUserPosY}}; m_Grid.HitTest(&hitTestInfo);
+			if (hitTestInfo.iSubItem < 0)
+
+				if (hitTestInfo.iSubItem < 0)
+					hitTestInfo.iSubItem = 0;
+
+			if (hitTestInfo.iItem < 0) 
+			{
+				hitTestInfo.iItem = 0;
+			}
+
+			nNewUserPosY = nUserPosY;
+			CRect cellRect;
+			m_Grid.GetSubItemRect(hitTestInfo.iItem, hitTestInfo.iSubItem, LVIR_BOUNDS, &cellRect);
+			nNewUserPosY = cellRect.top;
+
+			int nLastRow = hitTestInfo.iItem;
+			for (nLastRow = hitTestInfo.iItem; nLastRow < m_Grid.GetItemCount(); nLastRow++)
+			{
+				CRect rcRow;
+				m_Grid.GetItemRect(hitTestInfo.iItem, &rcRow, LVIR_BOUNDS);
+				int nH = rcRow.Height();
+				if ((nNewUserPosY + nH) > (nUserPosY + nMaxHeight))
+					break;
+				nNewUserPosY += nH;
+			}
+			nReturnHeight = nNewUserPosY - nUserPosY;
+
+			if (hitTestInfo.iItem >= nLastRow) // too long row
+			{
+				nReturnHeight = nMaxHeight;
+				nNewUserPosY = nUserPosY + nReturnHeight + 1;
+			}
 			else
 			{
-				nNewUserPosY = rcLastCell.bottom;
-			bContinue = false;
-				nReturnHeight=rcLastCell.bottom-rcCell.top;
+				nReturnHeight = nNewUserPosY - nUserPosY;
+				nNewUserPosY += 1;
 			}
+
+			bContinue = true;
 		}
+		else// grid is not higher than given max_height
+		{
+			// calc newUserPosY & return рушпре
+			// 2 cases: a) whole grid is shorter that given max_height
+			// in this case given user_pos == 0 && given new_usr_pos undefined
+			//			b) last part of grid is shorter than given max_height
+			// in this case user_pos undefined (0 || previous new_usr_pos) && given new_usr_pos undefined
+
+			if (nUserPosY == 0)// for case a:
+			{
+				nReturnHeight = nHeight - nUserPosY;
+				nNewUserPosY = nHeight + 1;
+				m_bPrinting = false;
+				return false;
+
+			}
+			// else for case b:
+			// get first cell
+			LVHITTESTINFO hitTestInfo={{0, nNewUserPosY}}; m_Grid.HitTest(&hitTestInfo);
+			if (hitTestInfo.iSubItem < 0)
+				if (hitTestInfo.iSubItem < 0)
+					hitTestInfo.iSubItem = 0;
+
+			if (hitTestInfo.iItem < 0) // error
+			{
+				hitTestInfo.iItem = 0;
+			}
+
+			nNewUserPosY = nUserPosY;
+			CRect cellRect;
+			m_Grid.GetSubItemRect(hitTestInfo.iItem, hitTestInfo.iSubItem, LVIR_BOUNDS, &cellRect);
+			nNewUserPosY = cellRect.top;
+
+			int nLastRow = hitTestInfo.iItem;
+			//			for (nLastRow = hitTestInfo.iItem; nLastRow < GetRowCount(); nLastRow++)
+			//				nNewUserPosY += GetRowHeight(nLastRow);
+
+			nReturnHeight = nNewUserPosY - nUserPosY;
+			nNewUserPosY += 1;
+			bContinue = false;
+
+		}
+
+		m_bPrinting = false;
 		return bContinue;
 	}
 
@@ -1646,21 +1758,17 @@ namespace ViewSpace
 		int nSave = dc.SaveDC();
 
 		dc.SetMapMode(MM_ANISOTROPIC);
-		dc.SetWindowOrg(RectDraw.left,RectDraw.top);
-		dc.SetWindowExt(RectDraw.Width(), RectDraw.Height());
+		dc.SetWindowOrg(RectDraw.left,0);
+		dc.SetWindowExt(RectDraw.Width()+1, RectDraw.Height()+2);
 		dc.SetViewportExt(rectTarget.Size());
 		dc.SetViewportOrg(rectTarget.TopLeft());
 
-		{
 		CRgn ClipRegion;
 		if (ClipRegion.CreateRectRgnIndirect(rectTarget))
 			dc.SelectClipRgn(ClipRegion);
-		ClipRegion.DeleteObject();
-		}
 
+		ClipRegion.DeleteObject();
 		///////////////////////
-		long lWidth=GetTableWidth();
-		long lHeight=GetTableHeight();
 		{
 			if( m_bPrinting && 
 				(0==_rStatCmpView.m_pCmpStatObject || 0==_rStatCmpView.m_pCmpStatObject->_statObjects.size()) )
@@ -1680,12 +1788,21 @@ namespace ViewSpace
 
 			HBRUSH hBrush = ::CreateSolidBrush( clBackColor );
 
+			double _fZoom = 1;
+			IScrollZoomSitePtr sptrZ = m_sptrView;
+			if( m_bPrintMode ){
+				sptrZ->GetZoom( &_fZoom );
+			}
+
 			{
 				RECT rcClass = {0};
 
 				HBRUSH hBr = ::CreateSolidBrush( RGB(0,255,0) ) ;
 
 				HBRUSH hOldBr = (HBRUSH)::SelectObject( dc, hBr );
+
+				int w = m_rcMinRect.right - m_rcMinRect.left;
+				int w2 = get_column_rect( m_Grid.GetColumnCount() - 1 ).right - get_column_rect( 0 ).left;
 
 				LOGFONT lf = m_lfTableFont; 
 				int nButtom = 0;
@@ -1720,6 +1837,7 @@ namespace ViewSpace
 							hdi.cchTextMax=MAX_PATH*sizeof(TCHAR);
 							hdi.pszText=(TCHAR*)_alloca(hdi.cchTextMax);
 							BOOL b=Header_GetItem(hwnd_header,i,&hdi);
+
 							Header_GetItemRect( hwnd_header, i, &rcHdrItem );
 							rcHdrItem.right=rcHdrItem.left+hdi.cxy;
 
@@ -1756,29 +1874,30 @@ namespace ViewSpace
 								::DeleteObject( hFnt );
 							}
 							x += m_pColumnInfo[i].nWidth;
-							dc.MoveTo(x-1,0);
-							dc.LineTo(x-1,lHeight);
+							dc.MoveTo(x-1,RectDraw.top);
+							dc.LineTo(x-1,RectDraw.bottom);
 						}
-						dc.MoveTo(RectDraw.left,0);
-						dc.LineTo(RectDraw.left,lHeight);
+						dc.MoveTo(RectDraw.left,RectDraw.top);
+						dc.LineTo(RectDraw.left,RectDraw.bottom);
 
-						int y=0;
+						int y;
 						for (int j=0;j<2;++j){
-							y = j*(lHeaderHeight);
-							dc.MoveTo(0,y);
-							dc.LineTo(lWidth,y);
+							y = RectDraw.top + j*(lHeaderHeight);
+							dc.MoveTo(RectDraw.left,y);
+							dc.LineTo(RectDraw.right,y);
 						}
 						for( int j = 0; j < nRows; j++ )
 						{
 							y += iHeightStep;
-							dc.MoveTo(0,y);
-							dc.LineTo(lWidth,y);
+							dc.MoveTo(RectDraw.left,y);
+							dc.LineTo(RectDraw.right,y);
 						}
 					}
 					::SetBkMode( dc, nMode );
 				}
 
 				::SelectObject( dc, hOldBr );
+
 				::DeleteObject( hBr );
 			}				  
 

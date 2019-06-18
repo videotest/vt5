@@ -15,8 +15,8 @@ static char THIS_FILE[]=__FILE__;
 
 static bool IsMethodicFile(LPCTSTR lpstrFileName)
 {
-	int nName = (int)_tcslen(lpstrFileName);
-	int nDefault = (int)_tcslen(_T("-Default"));
+	int nName = _tcslen(lpstrFileName);
+	int nDefault = _tcslen(_T("-Default"));
 	if (nName <= nDefault) return true;
 	if (_tcscmp(lpstrFileName+nName-nDefault,_T("-Default"))==0)
 		return false;
@@ -93,10 +93,10 @@ void CMethodicsComboValue::OnInitControl()
 		if (CStdProfileManager::m_pMgr->m_sMethodicIni != sCommonIni &&
 			Find(m_saMethodics, CStdProfileManager::m_pMgr->m_sMethodicIni) == -1)
 			m_saMethodics.Add(CStdProfileManager::m_pMgr->m_sMethodicIni);
-		m_nValues = (int)m_saMethodics.GetSize();
+		m_nValues = m_saMethodics.GetSize();
 		m_pDescr = new INTCOMBOITEMDESCR[m_nValues];
 		memset(m_pDescr, 0, m_nValues*sizeof(INTCOMBOITEMDESCR));
-		m_vi.nMax = (int)m_saMethodics.GetSize();
+		m_vi.nMax = m_saMethodics.GetSize();
 		m_vi.nCurrent = 0;
 		for (int i = 0; i < m_saMethodics.GetSize(); i++)
 		{
@@ -120,7 +120,7 @@ CString CMethodicsComboValue::MethodicByMethodicIni(LPCTSTR lpstrMethIni)
 	_tsplitpath(lpstrMethIni, NULL, NULL, szName, NULL);
 	CString sCommonIni = CStdProfileManager::m_pMgr->m_sCommonIni;
 	_tsplitpath(sCommonIni, NULL, NULL, szCName, NULL);
-	int n = (int)_tcslen(szCName);
+	int n = _tcslen(szCName);
 	if (_tcsncmp(szName, szCName, n) == 0)
 	{
 		if (szName[n] == _T('-'))
@@ -164,7 +164,7 @@ void CMethodicsComboValue::SetValueInt(int n, bool bReset)
 
 CString CMethodicsComboValue::UniqueName(LPCTSTR lpstrMethName)
 {
-	int n = (int)_tcslen(lpstrMethName);
+	int n = _tcslen(lpstrMethName);
 	while (n > 0 && _istdigit(lpstrMethName[n-1]))
 		n--;
 	int nNum = _ttoi(&lpstrMethName[n])+1;
@@ -195,7 +195,7 @@ CString CMethodicsComboValue::UniqueName(LPCTSTR lpstrMethName)
 
 CString CMethodicsComboValue::UniqueValue(LPCTSTR lpstrSec, LPCTSTR lpstrEntry, LPCTSTR lpstrValue)
 {
-	int n = (int)_tcslen(lpstrValue);
+	int n = _tcslen(lpstrValue);
 	while (n > 0 && _istdigit(lpstrValue[n-1]))
 		n--;
 	int nNum = _ttoi(&lpstrValue[n])+1;
@@ -256,7 +256,7 @@ int CMethodicsComboValue::NewMethodic()
 		sDefTitle = dlg.m_sName;
 	else
 		return operator int();
-	if (CopyFile(sCurMethIni, sNewMethIni, FALSE))
+	if (CopyFile(sCurMethIni, sNewMethIni, FALSE))	
 	{
 		CStringArray saTitles;
 		GetAllEntries(sCurMethIni, _T("MethodicTitles"), saTitles);

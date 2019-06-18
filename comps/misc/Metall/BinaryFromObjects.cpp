@@ -56,7 +56,7 @@ bool CBinaryFromObjects::InvokeFilter()
 
 	//пробежимся по всем объектам
 	int nObject=0;
-	POSITION posObject = 0;
+	long posObject=0; 
 	ptrObjects->GetFirstChildPosition(&posObject);
 
 	StartNotification( nObjects, 1, 1 );

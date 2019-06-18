@@ -121,7 +121,7 @@ bool CFilterObjectList::InvokeFilter()
 		INamedDataObject2Ptr ptr_ndo( ptr_target_ol );
 		if( ptr_ndo )
 		{
-			TPOS lpos = 0;
+			long lpos = 0;
 			ptr_ndo->GetFirstChildPosition( &lpos );
 			while( lpos )
 			{
@@ -190,7 +190,7 @@ IUnknownPtr CFilterObjectList::extract_image_from_list( IUnknown* punk_ol )
 	if( ptr_list == 0 )		return 0;
 
 
-	TPOS lpos_active = 0;
+	long lpos_active = 0;
 	if( 1L == GetArgumentInt("ActiveObjectOnly" ) )
 	{
 		ptr_list->GetActiveChild( &lpos_active );
@@ -206,7 +206,7 @@ IUnknownPtr CFilterObjectList::extract_image_from_list( IUnknown* punk_ol )
 	int npane_count = 0;
 	_bstr_t bstr_cc;
 
-	TPOS lpos = 0;
+	long lpos = 0;
 	ptr_list->GetFirstChildPosition( &lpos );
 	while( lpos )
 	{		
@@ -280,7 +280,7 @@ IUnknownPtr CFilterObjectList::extract_image_from_list( IUnknown* punk_ol )
 	ptr_list->GetFirstChildPosition( &lpos );
 	while( lpos )
 	{
-		TPOS lpos_save = lpos;
+		long lpos_save = lpos;
 
 		IUnknownPtr ptr_child = 0;
 		ptr_list->GetNextChild( &lpos, &ptr_child );		
@@ -365,7 +365,7 @@ bool CFilterObjectList::filter_images( IUnknown* punk_src, IUnknown* punk_target
 	ptr_filter->InitArguments();
 
 	//init filter argument
-	TPOS larg_pos = 0;
+	long larg_pos = 0;
 	ptr_filter->GetFirstArgumentPosition( &larg_pos );
 	while( larg_pos )
 	{
@@ -475,7 +475,7 @@ bool CFilterObjectList::place_image_to_list( IUnknown* punk_image, IUnknown* pun
 	if( ptr_image == 0 || ptr_list == 0 )		return false;
 
 	//copy objectlist images
-	TPOS lpos = 0;
+	long lpos = 0;
 	ptr_list->GetFirstChildPosition( &lpos );
 	while( lpos )
 	{
@@ -602,7 +602,7 @@ bool CFilterObjectList::create_compatible_ol( IUnknown* punk_src, IUnknown* punk
 	INamedDataObject2Ptr ptr_list( ptr_co );
 	if( ptr_list )
 	{
-		TPOS lpos = 0;
+		long lpos = 0;
 		ptr_list->GetFirstChildPosition( &lpos );
 		while( lpos )
 		{

@@ -165,7 +165,7 @@ class CParser
 
 	enum XTypes{ DELIMITER = 1, FUNCTION, VARIABLE, NUMBER, NAMED_CONST, SUB_EXPR_DELIMITER, UNKNOWN };
 	enum XNamedConsts{ NCONST_UNKNOWN = 1, NCONST_PI, NCONST_EXP };
-		
+	
 	class	XExprEntry
 	{
 		
@@ -183,7 +183,7 @@ class CParser
 		CParser *pParser;
 		
 		void	next( );
-		       
+
 		CString m_strType;
 		CString			get_type_info(){return m_strType;};
 		virtual void*	get_this(){return this;};
@@ -252,7 +252,7 @@ class CParser
 	{
 	protected:
 		int m_ncurr_expr_idx;			// индекс текущего подвыражения
-
+	
 	public:
         _ptr_t<XSubExpr*> m_sub_exprs;	// массив указателей на подвыражения
 		_ptr_t<RECT> m_separator_rects;	// массив прямоугольников разделителей подвыражений
@@ -272,13 +272,13 @@ class CParser
 		CString m_strSeparator;
 	};
 
-	class XSingleArgFunc : public XFunc
+	class	XSingleArgFunc : public XFunc
 	{
 	public:
 		int		get_actual_args_count( ) { return 1; /*один аргумент*/ }
 	};
 
-	class XMultiArgFunc : public XFunc
+	class	XMultiArgFunc : public XFunc
 	{
 	public:
 		XMultiArgFunc( ) {};
@@ -347,7 +347,7 @@ class CParser
 		virtual	BOOL	draw( );
 		virtual void	calc_rect( RECT *prect );
 
-		TPOS	m_lPos;
+		long	m_lPos;
 	};
 
 	class	XUnkSymbol : public XExprEntry
@@ -362,7 +362,7 @@ class CParser
 		virtual	BOOL	draw( );
 		virtual void	calc_rect( RECT *prect );
 
-		TPOS	m_lPos;
+		long	m_lPos;
 	};
 
 	class	XEmptyOperation : public XExprEntry
@@ -392,7 +392,7 @@ class CParser
 		virtual	BOOL	draw( );
 		virtual void	calc_rect( RECT *prect );
 
-		TPOS	m_lPos;
+		long	m_lPos;
 	};
 
 	class	XBrackets : virtual public XExprEntry
@@ -576,7 +576,7 @@ class CParser
 		XCos( ){m_strType = "Cos";} 
 
         virtual	double	calc( );
-		virtual	BOOL	draw( );
+		virtual	BOOL	draw( ); 
 		virtual void	calc_rect( RECT *prect );
 
 	};
@@ -894,7 +894,7 @@ public:
 	void GetDividedStrings(CString& strBegin, CString& strEnd);
 	void DeleteEntry(CString& s);
 	POINT GetCursorPosition(void);
-	
+
 private:
 	void sort_entries(void);
 protected:

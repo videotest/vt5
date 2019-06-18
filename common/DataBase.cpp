@@ -494,7 +494,7 @@ bool CDataObjectBase::_RemoveChild(IUnknown* punkChild, POSITION pos)
 	INamedDataObject2Ptr sptr(punkChild);
 	
 	if (sptr != 0)
-		sptr->SetObjectPosInParent((TPOS)0);
+		sptr->SetObjectPosInParent((long)0);
 	//punkChild->Release();
 
 	return true;
@@ -504,13 +504,13 @@ void CDataObjectBase::_AddChild(IUnknown *punkChild)
 {
 	ASSERT( !_FindChild( punkChild ) );
 
-	POSITION pos = m_listChilds.AddTail(punkChild);
+	POSITION pos = m_listChilds.AddTail( punkChild );
 	OnAddChild( punkChild, pos );
 
 	INamedDataObject2Ptr sptr(punkChild);
 	
 	if (sptr != 0)
-		sptr->SetObjectPosInParent(pos);
+		sptr->SetObjectPosInParent((long)pos);
 
 //	DoSetActiveChild( pos );
 }
@@ -649,7 +649,7 @@ HRESULT CDataObjectBase::XDataObj::GetChildsCount( long *plCount )
 //	_catch_nested;
 }
 
-HRESULT CDataObjectBase::XDataObj::GetFirstChildPosition(POSITION *plPos)
+HRESULT CDataObjectBase::XDataObj::GetFirstChildPosition( long *plPos )
 {
 	METHOD_PROLOGUE_EX(CDataObjectBase, DataObj)									
 //	_try_nested(CDataObjectBase, DataObj, GetChild)
@@ -657,13 +657,13 @@ HRESULT CDataObjectBase::XDataObj::GetFirstChildPosition(POSITION *plPos)
 		if (!plPos)
 			return E_INVALIDARG;
 
-		*plPos = pThis->GetFirstChildPosition();
+		*plPos = (long)pThis->GetFirstChildPosition();
 		return S_OK;
 	}
 //	_catch_nested;
 }
 
-HRESULT CDataObjectBase::XDataObj::GetNextChild(POSITION *plPos, IUnknown **ppunkChild)
+HRESULT CDataObjectBase::XDataObj::GetNextChild( long *plPos, IUnknown **ppunkChild )
 {
 	METHOD_PROLOGUE_EX(CDataObjectBase, DataObj)									
 //	_try_nested(CDataObjectBase, DataObj, GetNextChild)
@@ -671,7 +671,7 @@ HRESULT CDataObjectBase::XDataObj::GetNextChild(POSITION *plPos, IUnknown **ppun
 		if (!ppunkChild || !plPos)
 			return E_INVALIDARG;
 
-		*ppunkChild = pThis->GetNextChild(*plPos);
+		*ppunkChild = pThis->GetNextChild( (POSITION&)*plPos );
 
 		if( *ppunkChild )
 			(*ppunkChild)->AddRef();
@@ -681,7 +681,7 @@ HRESULT CDataObjectBase::XDataObj::GetNextChild(POSITION *plPos, IUnknown **ppun
 //	_catch_nested;
 }
 
-HRESULT CDataObjectBase::XDataObj::GetLastChildPosition(POSITION *plPos)
+HRESULT CDataObjectBase::XDataObj::GetLastChildPosition(long *plPos)
 {
 	METHOD_PROLOGUE_EX(CDataObjectBase, DataObj)									
 //	_try_nested(CDataObjectBase, DataObj, GetNextChild)
@@ -689,13 +689,13 @@ HRESULT CDataObjectBase::XDataObj::GetLastChildPosition(POSITION *plPos)
 		if (!plPos)
 			return E_INVALIDARG;
 
-		*plPos = pThis->GetLastChildPosition();
+		*plPos = (long)pThis->GetLastChildPosition();
 		return S_OK;
 	}
 //	_catch_nested;
 }
 
-HRESULT CDataObjectBase::XDataObj::GetPrevChild(POSITION *plPos, IUnknown **ppunkChild)
+HRESULT CDataObjectBase::XDataObj::GetPrevChild(long *plPos, IUnknown **ppunkChild)
 {
 	METHOD_PROLOGUE_EX(CDataObjectBase, DataObj)									
 //	_try_nested(CDataObjectBase, DataObj, GetNextChild)
@@ -703,7 +703,7 @@ HRESULT CDataObjectBase::XDataObj::GetPrevChild(POSITION *plPos, IUnknown **ppun
 		if (!ppunkChild || !plPos)
 			return E_INVALIDARG;
 
-		*ppunkChild = pThis->GetPrevChild(*plPos);
+		*ppunkChild = pThis->GetPrevChild((POSITION&)*plPos);
 
 		if (*ppunkChild)
 			(*ppunkChild)->AddRef();
@@ -740,18 +740,18 @@ HRESULT CDataObjectBase::XDataObj::GetObjectFlags( DWORD *pdwObjectFlags )
 //	_catch_nested;
 }
 
-HRESULT CDataObjectBase::XDataObj::SetActiveChild(TPOS lPos)
+HRESULT CDataObjectBase::XDataObj::SetActiveChild( long lPos )
 {
 	METHOD_PROLOGUE_EX(CDataObjectBase, DataObj)									
 //	_try_nested(CDataObjectBase, DataObj, SetActiveChild)
 	{
-		pThis->DoSetActiveChild(lPos);
+		pThis->DoSetActiveChild( (POSITION)lPos );
 		return S_OK;
 	}
 //	_catch_nested;
 }
 
-HRESULT CDataObjectBase::XDataObj::GetActiveChild(TPOS *plPos)
+HRESULT CDataObjectBase::XDataObj::GetActiveChild( long *plPos )
 {
 	METHOD_PROLOGUE_EX(CDataObjectBase, DataObj)									
 //	_try_nested(CDataObjectBase, DataObj, GetActiveChild)
@@ -759,7 +759,7 @@ HRESULT CDataObjectBase::XDataObj::GetActiveChild(TPOS *plPos)
 		if (!plPos)
 			return E_INVALIDARG;
 
-		(*plPos) = pThis->DoGetActiveChild();
+		(*plPos) = (long)pThis->DoGetActiveChild();
 		return S_OK;
 	}
 //	_catch_nested;
@@ -813,7 +813,7 @@ HRESULT CDataObjectBase::XDataObj::GetData( IUnknown **ppunkNamedData )
 //	_catch_nested;
 }
 
-HRESULT CDataObjectBase::XDataObj::GetObjectPosInParent(TPOS *plPos)
+HRESULT CDataObjectBase::XDataObj::GetObjectPosInParent( long *plPos )
 {
 	METHOD_PROLOGUE_EX(CDataObjectBase, DataObj)									
 //	_try_nested(CDataObjectBase, DataObj, GetObjectPosInParent)
@@ -821,14 +821,14 @@ HRESULT CDataObjectBase::XDataObj::GetObjectPosInParent(TPOS *plPos)
 		if (!plPos)
 			return E_INVALIDARG;
 
-		*plPos = (TPOS)pThis->m_PosInParent;
+		*plPos = (long)pThis->m_PosInParent;
 		return S_OK;
 	}
 //	_catch_nested;
 }
 
 
-HRESULT CDataObjectBase::XDataObj::SetObjectPosInParent(TPOS lPos)
+HRESULT CDataObjectBase::XDataObj::SetObjectPosInParent( long lPos )
 {
 	METHOD_PROLOGUE_EX(CDataObjectBase, DataObj)									
 //	_try_nested(CDataObjectBase, DataObj, SetObjectPosInParent)
@@ -839,7 +839,7 @@ HRESULT CDataObjectBase::XDataObj::SetObjectPosInParent(TPOS lPos)
 //	_catch_nested;
 }
 
-HRESULT CDataObjectBase::XDataObj::GetChildPos(IUnknown *punkChild, TPOS *plPos)
+HRESULT CDataObjectBase::XDataObj::GetChildPos(IUnknown *punkChild, long *plPos)
 {
 	METHOD_PROLOGUE_EX(CDataObjectBase, DataObj)									
 //	_try_nested(CDataObjectBase, DataObj, SetObjectPosInParent)
@@ -851,7 +851,7 @@ HRESULT CDataObjectBase::XDataObj::GetChildPos(IUnknown *punkChild, TPOS *plPos)
 		if (!pos)
 			return E_INVALIDARG;
 		
-		*plPos = (TPOS)pos;
+		*plPos = (long)pos;
 		return S_OK;
 	}
 //	_catch_nested;
@@ -924,7 +924,7 @@ bool CDataObjectBase::SetBaseObjectKey(GuidKey & BaseKey)
 	__m_lBaseObjKey = BaseKey;
 
 	if (sptrData != 0)
-		sptrData->NotifyContexts(ncChangeBase, GetControllingUnknown(), 0, &PrevKey);
+		sptrData->NotifyContexts(ncChangeBase, GetControllingUnknown(), 0, (LPARAM)&PrevKey);
 	
 	return true;
 }
@@ -937,7 +937,7 @@ void CDataObjectBase::ReplaceObjectKey(GuidKey & rKey)
 	m_key = rKey;
 
 	if (sptrData != 0)
-		sptrData->NotifyContexts(ncChangeKey, GetControllingUnknown(), 0, &PrevKey);
+		sptrData->NotifyContexts(ncChangeKey, GetControllingUnknown(), 0, (LPARAM)&PrevKey);
 }
 
 
@@ -970,12 +970,12 @@ POSITION CDataObjectBase::GetLastChildPosition()
 	return m_listChilds.GetTailPosition();
 }
 
-IUnknown *CDataObjectBase::GetNextChild(POSITION& pos)
+IUnknown *CDataObjectBase::GetNextChild( POSITION &pos )
 {
 	return (IUnknown*)m_listChilds.GetNext( pos );
 }
 
-IUnknown *CDataObjectBase::GetPrevChild(POSITION& pos)
+IUnknown *CDataObjectBase::GetPrevChild(POSITION & pos)
 {
 	return (IUnknown*)m_listChilds.GetPrev(pos);
 }
@@ -1283,13 +1283,13 @@ bool CDataObjectBase::SerializeObject( CStreamEx& ar, SerializeParams *pparams )
 	return true;
 }
 
-POSITION CDataObjectBase::_FindChild( IUnknown *punkChild )
+POSITION	CDataObjectBase::_FindChild( IUnknown *punkChild )
 {
 	INamedDataObject2Ptr sptr = punkChild;
 
-	POSITION lPos = 0;
+	long lPos = 0;
 	if (sptr != 0 && SUCCEEDED(sptr->GetObjectPosInParent(&lPos)) && lPos != 0)
-		return lPos;
+		return (POSITION)lPos;
 
 	return m_listChilds.Find( punkChild );
 	/*
@@ -1416,7 +1416,7 @@ long CDataObjectListBase::GetCount()
 
 LPDISPATCH CDataObjectListBase::GetActiveObject()
 {
-	POSITION pos = (POSITION)DoGetActiveChild();
+	POSITION pos=DoGetActiveChild();
 	IUnknown* punkObj = 0;
 	if(pos) punkObj = (IUnknown*)m_listChilds.GetAt(pos);
 	IDispatch* pdisp = 0;
@@ -1444,7 +1444,7 @@ void CDataObjectListBase::SetActiveObject(LPDISPATCH newValue)
 		ErrorMsg(IDS_NOTOBJECT_INLIST);
 		return;
 	}
-	DoSetActiveChild((TPOS)pos);
+	DoSetActiveChild(pos);
 }
 
 LPDISPATCH CDataObjectListBase::GetObject(long nPos)
@@ -1490,14 +1490,14 @@ long CDataObjectListBase::AddObject(LPDISPATCH pdispObject)
 	}
 }
 
-void CDataObjectListBase::RemoveObject(INT_PTR nIndex)
+void CDataObjectListBase::RemoveObject(long nPos)
 {
-	if (!(nIndex < m_listChilds.GetCount() && nIndex >= 0))
+	if(!(nPos < m_listChilds.GetCount() && nPos >= 0))
 	{
 		ErrorMsg(IDS_INCORRECT_POS);
 		return;
 	}
-	POSITION pos = m_listChilds.FindIndex(nIndex);
+	POSITION pos = m_listChilds.FindIndex(nPos);
 
 	//_RemoveChild((IUnknown*)m_listChilds.GetAt(pos), pos);
 	INamedDataObject2Ptr	ptrNamed( (IUnknown*)m_listChilds.GetAt(pos) );
@@ -1505,7 +1505,7 @@ void CDataObjectListBase::RemoveObject(INT_PTR nIndex)
 
 }
 
-void CDataObjectListBase::RemoveObjectByPos(TPOS nPos)
+void CDataObjectListBase::RemoveObjectByPos(long nPos)
 {
 	POSITION pos = (POSITION)nPos;
 	//_RemoveChild((IUnknown*)m_listChilds.GetAt(pos), pos);
@@ -1571,7 +1571,7 @@ HRESULT CDataObjectListBase::XDataObjList::MoveObject(GUID keyFrom, BOOL bDirect
 
 
 
-void CDataObjectListBase::OnAddChild( IUnknown *punkNewChild, TPOS pos )
+void CDataObjectListBase::OnAddChild( IUnknown *punkNewChild, POSITION pos )
 {
 	punkNewChild->AddRef();
 
@@ -1580,18 +1580,18 @@ void CDataObjectListBase::OnAddChild( IUnknown *punkNewChild, TPOS pos )
 		::FireEventNotify( m_punkNamedData, szEventChangeObjectList, GetControllingUnknown(), punkNewChild, cncAdd );
 }
 
-void CDataObjectListBase::OnDeleteChild(IUnknown *punkChildToDelete, TPOS pos)
+void CDataObjectListBase::OnDeleteChild( IUnknown *punkChildToDelete, POSITION pos )
 {
 	if( m_posActiveObject == pos )
 	{
-		POSITION posTest = (POSITION)m_posActiveObject;
+		POSITION	posTest = m_posActiveObject;
 		m_listChilds.GetNext( posTest );
 		if( !posTest )
 		{
-			posTest = (POSITION)m_posActiveObject;
+			posTest = m_posActiveObject;
 			m_listChilds.GetPrev( posTest );
 		}
-		m_posActiveObject = (TPOS)posTest;
+		m_posActiveObject = posTest;
 
 		if (m_posActiveObject)
 			UpdateActiveObject();
@@ -1627,25 +1627,25 @@ void CDataObjectListBase::OnAfterSerialize( CStreamEx &ar )
 
 	if( ar.IsLoading() )
 	{
-		m_posActiveObject = (TPOS)m_listChilds.GetHeadPosition();
+		m_posActiveObject = m_listChilds.GetHeadPosition();
 		UpdateActiveObject();
 	}
 }
 
 //static bool bInSetActiveChild = false;
-bool CDataObjectListBase::DoSetActiveChild(TPOS pos)
+bool CDataObjectListBase::DoSetActiveChild( POSITION pos )
 {
 	//CTimeTest time( true, "CDataObjectListBase::DoSetActiveChild" );
 //	if( m_posActiveObject == pos )
 //		return true;
 
-	m_posActiveObject = (TPOS)pos;
+	m_posActiveObject = pos;
 
 	UpdateActiveObject();
 	return true;
 }
 
-TPOS CDataObjectListBase::DoGetActiveChild()
+POSITION CDataObjectListBase::DoGetActiveChild()
 {
 	return m_posActiveObject;
 }
@@ -1659,7 +1659,7 @@ void CDataObjectListBase::UpdateActiveObject()
 		IUnknown	*punkActive = 0;
 		if( m_posActiveObject )
 		{
-			punkActive = (IUnknown*)m_listChilds.GetAt((POSITION)m_posActiveObject);
+			punkActive = (IUnknown*)m_listChilds.GetAt( m_posActiveObject );
 			::FireEventNotify( m_punkNamedData, szEventChangeObjectList, GetControllingUnknown(), punkActive, cncActivate );
 		}
 		else
@@ -1679,7 +1679,7 @@ void CDataObjectListBase::UpdateDeactiveObject()
 		
 		IUnknown	*punkActive = 0;
 		if( m_posActiveObject )
-			punkActive = (IUnknown*)m_listChilds.GetAt((POSITION)m_posActiveObject);
+			punkActive = (IUnknown*)m_listChilds.GetAt( m_posActiveObject );
 			::FireEventNotify( m_punkNamedData, szEventChangeObjectList, GetControllingUnknown(), punkActive, cncDeactivate );
 
 		m_bLockUpdate = false;
@@ -1777,7 +1777,7 @@ void CDataObjectBase::disp_GetLastChildPos( VARIANT FAR* pvarPos )
 //////////////////////////////////////////////////////////////////////
 LPDISPATCH CDataObjectBase::disp_GetNextChild( VARIANT FAR* pvarPos )
 {
-	LPOS lPos = 0;
+	long lPos = 0;
 	IDispatch* pdisp = NULL;
 	
 	if( pvarPos )
@@ -1787,7 +1787,7 @@ LPDISPATCH CDataObjectBase::disp_GetNextChild( VARIANT FAR* pvarPos )
 		IUnknown* punk = 0;
 		punk = GetNextChild( (POSITION&)lPos );
 				
-		*pvarPos = _variant_t( lPos ); 
+		*pvarPos = _variant_t( (long)lPos ); 
 
 		if( punk )
 		{
@@ -1803,7 +1803,7 @@ LPDISPATCH CDataObjectBase::disp_GetNextChild( VARIANT FAR* pvarPos )
 //////////////////////////////////////////////////////////////////////
 LPDISPATCH CDataObjectBase::disp_GetPrevChild( VARIANT FAR* pvarPos )
 {
-	LPOS lPos = 0;
+	long lPos = 0;
 	IDispatch* pdisp = NULL;
 
 	if( pvarPos )
@@ -1813,7 +1813,7 @@ LPDISPATCH CDataObjectBase::disp_GetPrevChild( VARIANT FAR* pvarPos )
 		IUnknown* punk = 0;
 		punk = GetPrevChild((POSITION&)lPos);
 		
-		*pvarPos = _variant_t( lPos ); 
+		*pvarPos = _variant_t( (long)lPos ); 
 		
 		if( punk )
 		{

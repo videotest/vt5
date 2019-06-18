@@ -59,7 +59,7 @@ CMethod::CMethod(void)
 		ASSERT( false );
 	}
 
-	TPOS lPos = 0;
+	long lPos=0;
 	m_xMethodData.GetNextStep(&lPos,0);
 	m_xMethodData.SetActiveStepPos(lPos, true);
 }
@@ -93,7 +93,7 @@ void CMethod::StoreToNamedData(IUnknown* punkND)
 	}
 
 	::SetValue(punkND,"\\_method","StepCount", long(m_Steps.count()));
-	long n; TPOS lpos;
+	long n, lpos;
 	for(lpos=m_Steps.head(), n=0;
 		lpos;
 		lpos=m_Steps.next(lpos), n++)
@@ -131,7 +131,7 @@ void CMethod::LoadFromNamedData(IUnknown* punkND)
 		strPath.Format("\\_method\\Step%u",n);
 		CMethodStep step;
 		step.LoadFromNamedData(punkND, strPath);
-		TPOS lNewPos = m_Steps.add_tail(step);
+		long lNewPos = m_Steps.add_tail(step);
 		m_StepsPosMap.set(lNewPos,lNewPos);
 		if(n==nActiveStep) 	m_lActiveStepPos = lNewPos;
 	}
@@ -246,22 +246,14 @@ HRESULT CMethod::XMethod::LoadFile(BSTR bstrFile)
 		sptrIFileDataObject3 sptrF(pThis->m_punkNamedData);
 		if( sptrF == 0 ) return E_FAIL;
 
-		sptrINamedData sptrND(pThis->m_punkNamedData);
-		if( sptrND == 0 ) return E_FAIL;
-
-		int nStealthIndex = ::GetValueInt(sptrND, "\\General", "StealthIndex",-1);
+		int nStealthIndex = ::GetValueInt(sptrINamedData(), "\\General", "StealthIndex",-1);
 		if( sptrF->LoadProtectedFile( bstrFile ) != S_OK )
 			return E_FAIL;
 
-//TODO: убрать подстановку имен из остальных мест?
-		CSubstMap substMap;
-		InitSubstMap( &substMap, sptrND, INamedDataPtr(::GetAppUnknown()) );
-		FilterNamedData( sptrND, &substMap );
-
-		nStealthIndex = ::GetValueInt(sptrND, "\\General", "StealthIndex",-1);
+		nStealthIndex = ::GetValueInt(sptrINamedData(), "\\General", "StealthIndex",-1);
 		// здесь - прочитать все из собственной NamedData
 		pThis->LoadFromNamedData(sptrF);
-		nStealthIndex = ::GetValueInt(sptrND, "\\General", "StealthIndex",-1);
+		nStealthIndex = ::GetValueInt(sptrINamedData(), "\\General", "StealthIndex",-1);
 		nStealthIndex += 0;
 	}
 	_catch return E_FAIL;
@@ -294,7 +286,7 @@ HRESULT CMethod::XMethod::GetFullScript(BSTR *pbstrScript)
 	_try(CMethod::XMethod, GetFullScript)
 	{
 		_bstr_t bstr("");
-		for (TPOS lpos = pThis->m_Steps.head();
+		for(long lpos=pThis->m_Steps.head();
 			lpos;
 			lpos=pThis->m_Steps.next(lpos))
 		{
@@ -311,7 +303,7 @@ HRESULT CMethod::XMethod::GetFullScript(BSTR *pbstrScript)
 //----------------------------------------
 // IMethodData interface
 
-HRESULT CMethod::XMethodData::GetFirstStepPos(TPOS *plPos)
+HRESULT CMethod::XMethodData::GetFirstStepPos( long *plPos )
 {
 	METHOD_PROLOGUE_EX(CMethod, MethodData);
 	if(!plPos) return E_INVALIDARG;
@@ -319,7 +311,7 @@ HRESULT CMethod::XMethodData::GetFirstStepPos(TPOS *plPos)
 	return S_OK;
 }
 
-HRESULT CMethod::XMethodData::GetNextStep(TPOS *plPos, CMethodStep *pStep)
+HRESULT CMethod::XMethodData::GetNextStep( long *plPos, CMethodStep *pStep )
 {
 	METHOD_PROLOGUE_EX(CMethod, MethodData);
 	if(!plPos) return E_INVALIDARG;
@@ -357,7 +349,7 @@ HRESULT CMethod::XMethodData::GetNextStep(TPOS *plPos, CMethodStep *pStep)
 	return S_OK;
 }
 
-HRESULT CMethod::XMethodData::GetNextStepPtr(TPOS *plPos, CMethodStep **ppStep)
+HRESULT CMethod::XMethodData::GetNextStepPtr( long *plPos, CMethodStep **ppStep )
 {
 	METHOD_PROLOGUE_EX(CMethod, MethodData);
 	if(!plPos) return E_INVALIDARG;
@@ -383,7 +375,7 @@ HRESULT CMethod::XMethodData::GetNextStepPtr(TPOS *plPos, CMethodStep **ppStep)
 	return S_OK;
 }
 
-HRESULT CMethod::XMethodData::GetPrevStep(TPOS *plPos, CMethodStep *pStep)
+HRESULT CMethod::XMethodData::GetPrevStep( long *plPos, CMethodStep *pStep )
 {
 	METHOD_PROLOGUE_EX(CMethod, MethodData);
 	if(!plPos) return E_INVALIDARG;
@@ -419,7 +411,7 @@ HRESULT CMethod::XMethodData::GetPrevStep(TPOS *plPos, CMethodStep *pStep)
 	return S_OK;
 }
 
-HRESULT CMethod::XMethodData::SetStep(TPOS *plPos, CMethodStep *pStep, bool bDontClearCache)
+HRESULT CMethod::XMethodData::SetStep( long *plPos, CMethodStep *pStep, bool bDontClearCache )
 {
 	METHOD_PROLOGUE_EX(CMethod, MethodData);
 	if(!plPos) return E_INVALIDARG;
@@ -438,7 +430,7 @@ HRESULT CMethod::XMethodData::SetStep(TPOS *plPos, CMethodStep *pStep, bool bDon
 		IMethodManPtr sptrM(ptr_mtd_man);
 		if(sptrM)
 		{
-			for (TPOS lPos2 = *plPos; lPos2 != 0; GetNextStep(&lPos2, 0))
+			for( long lPos2=*plPos; lPos2!=0; GetNextStep(&lPos2,0) )
 				sptrM->DropCache(pThis->GetControllingUnknown(), lPos2);
 		}
 	}
@@ -468,7 +460,7 @@ HRESULT CMethod::XMethodData::GetStepCount( long *plCount )
 	return S_OK;
 }
 
-HRESULT CMethod::XMethodData::AddStep(CMethodStep *pStep, TPOS lInsertBefore, TPOS *plNewPos)
+HRESULT CMethod::XMethodData::AddStep( CMethodStep *pStep, long lInsertBefore, long *plNewPos )
 {
 	METHOD_PROLOGUE_EX(CMethod, MethodData);
 	if(!pStep) return E_INVALIDARG;
@@ -479,7 +471,7 @@ HRESULT CMethod::XMethodData::AddStep(CMethodStep *pStep, TPOS lInsertBefore, TP
 		return E_INVALIDARG;
 	}
 
-	TPOS lPos = pThis->m_Steps.insert_before(*pStep, lInsertBefore);
+	long lPos = pThis->m_Steps.insert_before(*pStep, lInsertBefore);
 	pThis->m_StepsPosMap.set(lPos,lPos);
 
 	if(plNewPos) *plNewPos = lPos;
@@ -489,7 +481,7 @@ HRESULT CMethod::XMethodData::AddStep(CMethodStep *pStep, TPOS lInsertBefore, TP
 		IMethodManPtr sptrM(ptr_mtd_man);
 		if(sptrM)
 		{
-			for (TPOS lPos2 = lPos; lPos2 != 0; GetNextStep(&lPos2, 0))
+			for( long lPos2=lPos; lPos2!=0; GetNextStep(&lPos2,0) )
 				sptrM->DropCache(pThis->GetControllingUnknown(), lPos2);
 		}
 	}
@@ -506,7 +498,7 @@ HRESULT CMethod::XMethodData::AddStep(CMethodStep *pStep, TPOS lInsertBefore, TP
 	return S_OK;
 }
 
-HRESULT CMethod::XMethodData::DeleteStep(TPOS lPos)
+HRESULT CMethod::XMethodData::DeleteStep( long lPos )
 {
 	METHOD_PROLOGUE_EX(CMethod, MethodData);
 	if(!lPos) return E_INVALIDARG;
@@ -518,7 +510,7 @@ HRESULT CMethod::XMethodData::DeleteStep(TPOS lPos)
 		IMethodManPtr sptrM(ptr_mtd_man);
 		if(sptrM)
 		{
-			for (TPOS lPos2 = lPos; lPos2 != 0; GetNextStep(&lPos2, 0))
+			for( long lPos2=lPos; lPos2!=0; GetNextStep(&lPos2,0) )
 				sptrM->DropCache(pThis->GetControllingUnknown(), lPos2);
 		}
 	}
@@ -543,7 +535,7 @@ HRESULT CMethod::XMethodData::DeleteStep(TPOS lPos)
 	return S_OK;
 }
 
-HRESULT CMethod::XMethodData::SetActiveStepPos(TPOS lPos, BOOL bLoadCache)
+HRESULT CMethod::XMethodData::SetActiveStepPos( long lPos, BOOL bLoadCache )
 {
 	METHOD_PROLOGUE_EX(CMethod, MethodData);
 	
@@ -555,7 +547,7 @@ HRESULT CMethod::XMethodData::SetActiveStepPos(TPOS lPos, BOOL bLoadCache)
 	IMethodManPtr sptrM(ptr_mtd_man);
 	if(sptrM==0) return E_FAIL;
 
-	TPOS lMethodPos = 0;
+	long lMethodPos=0;
 	sptrM->GetActiveMethodPos(&lMethodPos);
 	IUnknownPtr ptrActiveMethod;
 	if(lMethodPos) sptrM->GetNextMethod(&lMethodPos,&ptrActiveMethod);
@@ -591,7 +583,7 @@ HRESULT CMethod::XMethodData::SetActiveStepPos(TPOS lPos, BOOL bLoadCache)
 	return S_OK;
 }
 
-HRESULT CMethod::XMethodData::GetActiveStepPos(TPOS *plPos)
+HRESULT CMethod::XMethodData::GetActiveStepPos( long *plPos )
 {
 	METHOD_PROLOGUE_EX(CMethod, MethodData);
 	if(!plPos) return E_INVALIDARG;
@@ -614,7 +606,7 @@ HRESULT CMethod::XMethodData::SetModifiedFlag( BOOL bFlag )
 	return S_OK;
 }
 
-HRESULT CMethod::XMethodData::GetStepIndexByPos(TPOS lPos, long *plIndex)
+HRESULT CMethod::XMethodData::GetStepIndexByPos( long lPos, long *plIndex )
 {
     METHOD_PROLOGUE_EX(CMethod, MethodData);
 
@@ -622,7 +614,7 @@ HRESULT CMethod::XMethodData::GetStepIndexByPos(TPOS lPos, long *plIndex)
 	if( !lPos || !plIndex ) 
 		return E_INVALIDARG;
 
-	TPOS lStepPos = 0;
+	long lStepPos = 0;
 	lStepPos = pThis->m_Steps.head();
 	*plIndex = 0;
 	while(lStepPos)
@@ -639,7 +631,7 @@ HRESULT CMethod::XMethodData::GetStepIndexByPos(TPOS lPos, long *plIndex)
 	return S_FALSE;		
 }
 
-HRESULT CMethod::XMethodData::GetStepPosByIndex(long lIndex, TPOS *plPos)
+HRESULT CMethod::XMethodData::GetStepPosByIndex( long lIndex, long *plPos )
 {
 	METHOD_PROLOGUE_EX(CMethod, MethodData);
 
@@ -688,7 +680,7 @@ HRESULT CMethod::XMethodData::UpdateActiveStep()
 	IMethodManPtr sptrM(ptr_mtd_man);
 	if(sptrM==0) return E_FAIL; // вообще охренели... методман-то всяко должен быть
 
-	TPOS pos1 = pThis->m_lActiveStepPos;
+	long pos1 = pThis->m_lActiveStepPos;
 	sptrM->IsCached(pThis->GetControllingUnknown(), pos1, &bCached);
 	CMethodStep* pStep;
 	GetNextStepPtr(&pos1, &pStep);
@@ -699,7 +691,7 @@ HRESULT CMethod::XMethodData::UpdateActiveStep()
 		//{ // !!! debug // если разрешить - будет SBT 1385
 		//	long nIndex=-1;
 		//	GetStepIndexByPos(pThis->m_lActiveStepPos, &nIndex);
-		//	LPOS lPos1 = pThis->m_lActiveStepPos;
+		//	long lPos1 = pThis->m_lActiveStepPos;
 		//	CMethodStep* pStep=0;
 		//	GetNextStepPtr( &lPos1, &pStep );
 		//	CString s;
@@ -767,7 +759,7 @@ HRESULT CMethod::XMethodChanges::MoveStep(long nStepFrom, long nStepTo, long nMo
 	do
 	{ // если должны и можем продолжить имеющийся шаг - то...
 		if(nMoveCode==mmscMove) break; // просто движение - отдельная запись
-		TPOS lOldHead = m_undo.head();
+		long lOldHead = m_undo.head();
 		if(!lOldHead) break;
 		CMethodDoer *pDoer0 = m_undo.get(m_undo.head());
 		if(!pDoer0) break;
@@ -885,7 +877,7 @@ HRESULT CMethod::XMethodChanges::EndGroupUndo()
 { // Завершить группу Undo (при этом все шаги от последнего BeginGroupUndo попадают внутрь единого шага GroupUndo)
 
 	// пробежимся по списку, найдем созданный по BeginGroupUndo DoerGroup
-	TPOS lpos = m_undo.head();
+	long lpos = m_undo.head();
 	CMethodDoerGroup* pDoerGroup = 0;
 	while(lpos)
 	{
@@ -914,7 +906,7 @@ HRESULT CMethod::XMethodChanges::EndGroupUndo()
 		CMethodDoer **ppDoer = &( m_undo.get(lpos) );
 		pDoerGroup->m_undo.add_head(*ppDoer);
 		*ppDoer=0; // дабы m_undo его не попыталось освободить
-		TPOS lpos1 = lpos;
+		long lpos1=lpos;
 		lpos = m_undo.prev(lpos);
 		m_undo.remove(lpos1);
 	}

@@ -162,7 +162,7 @@ void	CVListCtrl::redirect_scrollbar( int iBar, int iCode, unsigned uPos, xDirect
 					}
                 }  
 
-				LRESULT iRetVal = 0;
+				int iRetVal = 0;
 				switch( iBar )
 				{
 				case SB_HORZ:
@@ -270,7 +270,7 @@ void	CVListCtrl::redirect_scrollbar( int iBar, int iCode, unsigned uPos, xDirect
 					iX = iPositionForeignSB - si_foreign.nPos;
 				else if( iBar == SB_VERT )
 				{
-                    if( 1 < GetRowCount( ) )
+          if( 1 < GetRowCount( ) )
 					{
 						RECT rt;
 						if( ListView_GetItemRect( handle( ), 0, &rt, LVIR_LABEL ) )
@@ -557,9 +557,9 @@ bool CVListCtrl::subclass( HWND hwnd, bool f_nccreate /*= false*/ )
     return bRes;
 }
 
-LRESULT	CVListCtrl::handle_message(UINT m, WPARAM w, LPARAM l)
+long	CVListCtrl::handle_message( UINT m, WPARAM w, LPARAM l )
 {
-	LRESULT lRes = 1;
+	long lRes = 1;		  
 
 	switch( m )
 	{
@@ -605,9 +605,9 @@ LRESULT	CVListCtrl::handle_message(UINT m, WPARAM w, LPARAM l)
 	return lRes;
 }
 
-LRESULT CVListCtrl::on_create( CREATESTRUCT *pcs )
+long CVListCtrl::on_create( CREATESTRUCT *pcs )
 {
-	LRESULT lRes = __super::on_create(pcs);
+	long lRes = __super::on_create( pcs );
 	EnableDragDrop( m_bEnableDragDrop );
 	
 	DWORD dwRemove = 0, dwAdd = 0;
@@ -620,23 +620,23 @@ LRESULT CVListCtrl::on_create( CREATESTRUCT *pcs )
 	return lRes;
 }
 
-LRESULT CVListCtrl::on_hscroll( unsigned code, unsigned pos, HWND hwndScroll )
+long CVListCtrl::on_hscroll( unsigned code, unsigned pos, HWND hwndScroll )
 {	
 	xDirection dir = ( hwndScroll && (hwndScroll != handle( )) ) ? XD_Backward : XD_Forward;
     redirect_scrollbar( SB_HORZ, code, pos, dir );
     return 0;					   
 }
 
-LRESULT CVListCtrl::on_vscroll(unsigned code, unsigned pos, HWND hwndScroll)
+long CVListCtrl::on_vscroll( unsigned code, unsigned pos, HWND hwndScroll )	
 {
 	xDirection dir = ( hwndScroll && (hwndScroll != handle( )) ) ? XD_Backward : XD_Forward;
 	redirect_scrollbar( SB_VERT, code, pos, dir );
 	return 0;
 }
 
-LRESULT	CVListCtrl::OnWindowPosChanged(LPWINDOWPOS lpwp)
+long	CVListCtrl::OnWindowPosChanged( LPWINDOWPOS lpwp )
 {
-	LRESULT lRes = __super::handle_message(WM_WINDOWPOSCHANGED, 0, (LPARAM)lpwp);
+	long lRes =  __super::handle_message( WM_WINDOWPOSCHANGED, 0, (LPARAM) lpwp);
     update_foreign_scrollbars( );
     return lRes;
 }
@@ -675,9 +675,9 @@ long	CVListCtrl::OnNcCalcSize( WPARAM w, LPARAM l )
 	return __super::handle_message( WM_NCCALCSIZE , w, l);
 }
 
-LRESULT	CVListCtrl::OnInsertColumn(int iCol, const LPLVCOLUMN pcol)
+long	CVListCtrl::OnInsertColumn( int iCol, const LPLVCOLUMN pcol )
 {
-	LRESULT lRes = __super::handle_message( LVM_INSERTCOLUMN, iCol, (LPARAM) pcol );
+	long lRes = __super::handle_message( LVM_INSERTCOLUMN, iCol, (LPARAM) pcol );
 	if( lRes == -1 )
 		return lRes;
 
@@ -694,8 +694,8 @@ LRESULT	CVListCtrl::OnInsertColumn(int iCol, const LPLVCOLUMN pcol)
 		pLCAInfo->uiMask = LSTINF_BKCOLOR | LSTINF_FORECOLOR | LSTINF_FONT | LSTINF_FORMAT | LSTINF_VISIBLE;
         HDITEM hdC = {0};
 		hdC.mask = HDI_LPARAM;
-		hdC.lParam = (LPARAM) pLCAInfo;
-		if( !Header_SetItem( ListView_GetHeader(m_hwnd), lRes, &hdC ) )
+		hdC.lParam = (long) pLCAInfo;
+		if( !Header_SetItem( ListView_GetHeader( m_hwnd ), lRes, &hdC ) )
 		{
 			delete pLCAInfo;	pLCAInfo = 0;
 			ListView_DeleteColumn( m_hwnd, lRes ); // удаление столбца
@@ -705,7 +705,7 @@ LRESULT	CVListCtrl::OnInsertColumn(int iCol, const LPLVCOLUMN pcol)
 	return lRes;
 }
 
-LRESULT	CVListCtrl::OnDeleteColumn(int iCol)
+long	CVListCtrl::OnDeleteColumn(	int iCol )
 {
 	HDITEM hdC = {0};
     // получение указателя на дополнительные
@@ -716,7 +716,7 @@ LRESULT	CVListCtrl::OnDeleteColumn(int iCol)
 	return __super::handle_message( LVM_DELETECOLUMN, iCol, 0 );
 }
 
-LRESULT	CVListCtrl::OnInsertRow(const LPLVITEM prow)
+long	CVListCtrl::OnInsertRow( const LPLVITEM prow )
 {
 	return __super::handle_message( LVM_INSERTITEM, 0, (LPARAM) prow );
 }
@@ -1357,7 +1357,7 @@ long	CVListCtrl::OnODCacheInt( int nRowFrom, int	nRowTo )
 	return 0;
 }
 
-LRESULT	CVListCtrl::on_keydown(long nVirtKey)
+long	CVListCtrl::on_keydown( long nVirtKey )
 {
     if( !handle() )
 		return 1;
@@ -1404,7 +1404,7 @@ LRESULT	CVListCtrl::on_keydown(long nVirtKey)
 	return /*bProcessed ? 1 : __super::on_keydown( nVirtKey )*/ 1;
 }
 
-LRESULT	CVListCtrl::on_lbuttondown(const _point &point)
+long	CVListCtrl::on_lbuttondown( const _point &point )
 {
 
 	if( !handle() )
@@ -1452,9 +1452,9 @@ LRESULT	CVListCtrl::on_lbuttondown(const _point &point)
 	return __super::on_lbuttondown( point );
 }
 
-LRESULT	CVListCtrl::on_notify(uint idc, NMHDR *pmnhdr)
+long	CVListCtrl::on_notify( uint idc, NMHDR *pmnhdr )
 {
-	LRESULT lRet = 0;
+	long lRet = 0;
 
 	switch( pmnhdr->code )
 	{
@@ -1518,7 +1518,7 @@ LRESULT	CVListCtrl::on_notify(uint idc, NMHDR *pmnhdr)
 	return lRet;
 }
 
-LRESULT	CVListCtrl::on_size(short cx, short cy, ulong fSizeType)
+long	CVListCtrl::on_size( short cx, short cy, ulong fSizeType )
 {
 	m_lWidthClientArea = cx;
 	m_lHeightClientArea = cy;
@@ -1532,7 +1532,7 @@ LRESULT	CVListCtrl::on_size(short cx, short cy, ulong fSizeType)
 	return lres;
 }
 
-LRESULT	CVListCtrl::on_destroy()
+long	CVListCtrl::on_destroy( )
 {
 	for( int iColumn = 0; iColumn < GetColumnCount( ); iColumn ++ )
 	{
@@ -1655,7 +1655,7 @@ BOOL	CVListCtrl::Header_SetTextColor( COLORREF *pcr )
 	return TRUE;
 }
 
-LRESULT	CVListCtrl::OnLButtonClickHeader(LPNMHEADER lpmnhdr)
+long	CVListCtrl::OnLButtonClickHeader( LPNMHEADER lpmnhdr )
 {
 	// выбор столбца
 	//SetSelection( -1, -1, lpmnhdr->iItem, lpmnhdr->iItem );
@@ -1665,24 +1665,24 @@ LRESULT	CVListCtrl::OnLButtonClickHeader(LPNMHEADER lpmnhdr)
 	return __super::call_default();
 }
 
-LRESULT	CVListCtrl::OnMButtonClickHeader(LPNMHEADER lpmnhdr)
+long	CVListCtrl::OnMButtonClickHeader( LPNMHEADER lpmnhdr )
 {
 	//return 1;
 	return __super::call_default();
 }
 
-LRESULT	CVListCtrl::OnRButtonClickHeader(LPNMHEADER lpmnhdr)
+long	CVListCtrl::OnRButtonClickHeader( LPNMHEADER lpmnhdr )
 {
 	//return 1;
 	return __super::call_default();
 }
 
-LRESULT	CVListCtrl::OnItemChangingHeader(LPNMHEADER lpmnhdr)
+long	CVListCtrl::OnItemChangingHeader( LPNMHEADER lpmnhdr )
 {
    return __super::call_default();
 }
 
-LRESULT	CVListCtrl::OnItemChangedHeader(LPNMHEADER lpmnhdr)
+long	CVListCtrl::OnItemChangedHeader( LPNMHEADER lpmnhdr )
 {
 	if( ( ( lpmnhdr->pitem->mask & HDI_WIDTH ) == HDI_WIDTH ) )
 	{	// если ширина изменилась
@@ -1697,7 +1697,7 @@ LRESULT	CVListCtrl::OnItemChangedHeader(LPNMHEADER lpmnhdr)
 	}
 	
 	// vanek - 24.09.2003
-	LRESULT lres = __super::call_default();
+	long lres = __super::call_default();
 	if( ( ( lpmnhdr->pitem->mask & HDI_WIDTH ) == HDI_WIDTH ) )	
 		set_foreign_scrollbar_info( SB_HORZ );
 	else if( ( ( lpmnhdr->pitem->mask & HDI_WIDTH ) == HDI_HEIGHT ) )
@@ -1705,28 +1705,28 @@ LRESULT	CVListCtrl::OnItemChangedHeader(LPNMHEADER lpmnhdr)
 	return lres;
 }
 
-LRESULT	CVListCtrl::OnBeginTrackHeader(LPNMHEADER lpmnhdr)
+long	CVListCtrl::OnBeginTrackHeader( LPNMHEADER lpmnhdr )
 {
 	// получение значений общих параметров
 	ListColumnAdditionInfo *pstLAInfo = 0;
 	pstLAInfo = (ListColumnAdditionInfo *) get_lparam( lpmnhdr->iItem );
-	LRESULT lRes = __super::call_default();
+	long lRes = __super::call_default();
 	return ( pstLAInfo ? !pstLAInfo->iVisible : lRes );
 }
 
-LRESULT	CVListCtrl::OnEndTrackHeader(LPNMHEADER lpmnhdr)
+long	CVListCtrl::OnEndTrackHeader( LPNMHEADER lpmnhdr )
 {
 	return __super::call_default();
 	//return FALSE;
 }
 
-LRESULT	CVListCtrl::OnBeginDragHeader(LPNMHEADER lpmnhdr)
+long	CVListCtrl::OnBeginDragHeader( LPNMHEADER lpmnhdr )
 {
 	return __super::call_default();
 	//return FALSE;
 }
 
-LRESULT	CVListCtrl::OnEndDragHeader(LPNMHEADER lpmnhdr)
+long	CVListCtrl::OnEndDragHeader( LPNMHEADER lpmnhdr )
 {
 	return __super::call_default();
 	//return FALSE;

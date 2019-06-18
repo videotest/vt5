@@ -25,19 +25,6 @@ enum DrawPreviewMode
 	SubtractPreview
 };
 
-enum DrawFragmentMode
-{
-	FragmentOpaque = 0,
-	FragmentTransparent = 1,
-	FragmentSmoothTransition = 2,
-	FragmentNegative = 3,
-};
-
-enum DrawFrameMode
-{
-	DrawFrameActiveFrame = 1,
-	DrawFrameOverlay = 2,
-};
 
 class CLVFrameBuffer : public IDIBProvider
 {
@@ -154,8 +141,8 @@ protected:
 	//Persist
 	com_call GetClassID( CLSID *pClassID ); 
 
-	com_call GetFirstVisibleObjectPosition(TPOS *plpos);
-	com_call GetNextVisibleObject(IUnknown ** ppunkObject, TPOS *plPos);
+	com_call GetFirstVisibleObjectPosition( long *plpos );
+	com_call GetNextVisibleObject( IUnknown ** ppunkObject, long *plPos );
 
 	com_call GetMatchType( BSTR bstrObjectType, DWORD *pdwMatch );
 
@@ -200,18 +187,6 @@ protected:
 		/*[out,retval]*/ int * pVal );
     virtual HRESULT __stdcall put_ShowLiveVideoMode (
 		/*[in]*/ int pVal );
-    virtual HRESULT __stdcall get_BaseFragment (
-        /*[out,retval]*/ IUnknown * * ppunkVal );
-    virtual HRESULT __stdcall get_LastFragmentMode (
-        /*[out,retval]*/ int * pVal );
-    virtual HRESULT __stdcall put_LastFragmentMode (
-        /*[in]*/ int pVal );
-    virtual HRESULT __stdcall get_ShowFrame (
-        /*[out,retval]*/ int * pVal );
-    virtual HRESULT __stdcall put_ShowFrame (
-        /*[in]*/ int pVal );
-    virtual HRESULT __stdcall get_NextFragmentDirection (
-        /*[out,retval]*/ double * pVal );
 
 	// INotifyPlace
 	com_call NotifyPutToData( IUnknown* punkObj );
@@ -292,13 +267,7 @@ protected:
 	void CheckDiff();
 	CRect ConvertToClient(CRect rcImage);
 	
-	DrawFragmentMode m_LastFragDrawMode;
 	BOOL DrawImages(HDC hdcScreen, CRect rectPaint);
-	void DrawFragment(BITMAPINFOHEADER &bmih, LPBYTE pdibBits,
-		CPoint pointScroll, CRect rectPaint, COLORREF cr, DrawFragmentMode dfm,
-		ISewFragment *pFrag, double fZoom, _ptr_t2<WORD> &GlobalDistMap,
-		bool *pbCC2 = NULL);
-	int m_nDrawFrameMode;
 	bool m_bAlternateFrame;
 	enum DrawFrameMode
 	{

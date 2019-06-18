@@ -28,20 +28,20 @@ public:
 	void DeInit();
 
 	BEGIN_INTERFACE_PART(CalcCntr, ICalcObjectContainer)
-		com_call GetCurentPosition(LONG_PTR *plpos, long *plKey);
-		com_call SetCurentPosition(LONG_PTR lpos);
+		com_call GetCurentPosition( long *plpos, long *plKey );
+		com_call SetCurentPosition( long lpos );
 		com_call Move( long lDirection );
 
-		com_call GetFirstParameterPos(LONG_PTR *plpos);
-		com_call GetLastParameterPos(LONG_PTR *plpos);
-		com_call GetNextParameter(LONG_PTR *plpos, struct ParameterContainer **ppContainer);
-		com_call GetPrevParameter(LONG_PTR *plpos, struct ParameterContainer **ppContainer);
-		com_call MoveParameterAfter(LONG_PTR lpos, struct ParameterContainer *p);	//InsertAfter, if pos=zero, 
+		com_call GetFirstParameterPos( long *plpos );
+		com_call GetLastParameterPos( long *plpos );
+		com_call GetNextParameter( long *plpos, struct ParameterContainer **ppContainer );
+		com_call GetPrevParameter( long *plpos, struct ParameterContainer **ppContainer );
+		com_call MoveParameterAfter( long lpos, struct ParameterContainer *p );	//InsertAfter, if pos=zero, 
 
-		com_call DefineParameter(long lKey, enum ParamType type, IMeasParamGroup *pGroup, LONG_PTR *plpos);
-		com_call DefineParameterFull(struct ParameterContainer *p, LONG_PTR *plpos);	//component should copy container
+		com_call DefineParameter( long lKey, enum ParamType type, IMeasParamGroup *pGroup, long *plpos );
+		com_call DefineParameterFull( struct ParameterContainer *p, long *plpos );	//component should copy container
 		com_call RemoveParameter( long lKey );
-		com_call RemoveParameterAt(LONG_PTR lpos);
+		com_call RemoveParameterAt( long lpos );
 		com_call Reset();
 		com_call ParamDefByKey( long lKey, struct ParameterContainer * * ppContainer );
 
@@ -51,7 +51,7 @@ protected:
 	ParameterContainer*	find( long lKey );
 	void			container_notify( long lCode, long lKey );
 public:
-	LONG_PTR m_lCurrentPosition;
+	long									m_lCurrentPosition;
 	CTypedPtrList<CPtrList, ParameterContainer*>	m_params;
 	POSITION AddParameter(ParameterContainer *pi);
 };
@@ -127,7 +127,7 @@ class CTreeLevel: public CTypedPtrList<CPtrList,CTreeNode*>,
 {
 	CPtrList m_listDeleted;
 	ULONG m_lRef;
-	TPOS m_lActive;
+	long m_lActive;
 	BOOL m_bDelay;
 	int level;
 	int m_nClass;
@@ -159,7 +159,7 @@ public:
 			s.Format("Deleted Tree Level %i by delete\n", level);
 			OutputDebugStr(s);*/
 	};
-	void SetActiveChild( TPOS lPos, CTreeNode* childToSet );
+	void SetActiveChild( long lPos, CTreeNode* childToSet );
 	void SetLevel(int l){level = l;};
 	int GetLevel(){return level;};
 	//Добавляет объект и его подобъекты во временный список (см. DelayRemove(BOOL delay)) 
@@ -188,20 +188,20 @@ public:
 	//Caution! Do not use for tree building, use CTreeNotion::AddElement instead
 	com_call AddChild( IUnknown *punkChild ) ;
 	com_call GetChildsCount( long *plCount ) ;
-	com_call GetFirstChildPosition(TPOS *plPos);
-	com_call GetNextChild(TPOS *plPos, IUnknown **ppunkChild);
-	com_call GetLastChildPosition(TPOS *plPos);
-	com_call GetPrevChild(TPOS *plPos, IUnknown **ppunkChild);
+	com_call GetFirstChildPosition( long *plPos ) ;
+	com_call GetNextChild( long *plPos, IUnknown **ppunkChild ) ;
+	com_call GetLastChildPosition(long *plPos) ;
+	com_call GetPrevChild(long *plPos, IUnknown **ppunkChild) ;
 	com_call AttachData( IUnknown *punkNamedData ) ;
 	com_call GetObjectFlags( DWORD *pdwObjectFlags ) ;
-	com_call SetActiveChild( TPOS lPos ) ;
-	com_call GetActiveChild( TPOS *plPos ) ;
+	com_call SetActiveChild( long lPos ) ;
+	com_call GetActiveChild( long *plPos ) ;
 	com_call SetUsedFlag( BOOL bSet ) ;	
 	com_call SetHostedFlag( BOOL bSet ) ;			
 	com_call GetData(IUnknown **ppunkNamedData ) ;
-	com_call GetObjectPosInParent(TPOS *plPos);
-	com_call SetObjectPosInParent(TPOS lPos);
-	com_call GetChildPos(IUnknown *punkChild, TPOS *plPos) ;
+	com_call GetObjectPosInParent( long *plPos ) ; 
+	com_call SetObjectPosInParent( long lPos ) ; 
+	com_call GetChildPos(IUnknown *punkChild, long *plPos) ;
 	com_call InitAttachedData() ;
 	com_call GetBaseKey(GUID * pBaseKey) ;
 	com_call SetBaseKey(GUID * pBaseKey) ;
@@ -518,8 +518,8 @@ public:
 	//class wizard support
 	//{{AFX_DISPATCH(CMeasureObjectList)
 	afx_msg long GetParametersCount();
-	afx_msg LONG_PTR GetFirstParameterPosition();
-	afx_msg LONG_PTR GetNextParameter(LONG_PTR lpos, VARIANT FAR* refName, VARIANT FAR* refUnits, VARIANT FAR* refKey, VARIANT FAR* refCalibr);
+	afx_msg long GetFirstParameterPosition();
+	afx_msg long GetNextParameter(long lpos, VARIANT FAR* refName, VARIANT FAR* refUnits, VARIANT FAR* refKey, VARIANT FAR* refCalibr);
 
 	afx_msg bool SetBagProperty( LPCTSTR, const VARIANT FAR& );
 	afx_msg VARIANT GetBagProperty( LPCTSTR );
@@ -656,7 +656,7 @@ public:
 
 protected:
 	POSITION	m_posActiveChild;
-
+	
 };
 
 

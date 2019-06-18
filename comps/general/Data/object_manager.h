@@ -99,12 +99,12 @@ protected:
 
 	// Generated OLE dispatch map functions
 	//{{AFX_DISPATCH(object_manager)
-	afx_msg TPOS GetFirstObjectTypePos();
-	afx_msg TPOS GetNextObjectTypePos(TPOS lPos);
-	afx_msg BSTR GetObjectType(TPOS lPos);
-	afx_msg LONG_PTR GetNextObjectPos(LPCTSTR pszType, LONG_PTR lPos);
-	afx_msg LONG_PTR GetFirstObjectPos(LPCTSTR pszType);
-	afx_msg BSTR GetObjectName(LPCTSTR pszType, LONG_PTR lPos);
+	afx_msg long GetFirstObjectTypePos();
+	afx_msg long GetNextObjectTypePos(long lPos);
+	afx_msg BSTR GetObjectType(long lPos);
+	afx_msg long GetNextObjectPos(LPCTSTR pszType, long lPos);
+	afx_msg long GetFirstObjectPos(LPCTSTR pszType);
+	afx_msg BSTR GetObjectName(LPCTSTR pszType, long lPos);
 	afx_msg BSTR GetActiveObjectName(LPCTSTR pszType);
 	afx_msg BOOL SetActiveObjectByName(LPCTSTR pszType, LPCTSTR pszName);
 	afx_msg LPDISPATCH GetActiveObject(LPCTSTR pszType);
@@ -118,16 +118,16 @@ protected:
 
 	BEGIN_INTERFACE_PART(ObjectManager, IObjectManager)
 		//enum types
-		com_call GetFirstObjectTypePos( TPOS *plPos );
-		com_call GetNextObjectType( TPOS *plPos, BSTR* pbstrTypeName );
+		com_call GetFirstObjectTypePos( long* plPos );
+		com_call GetNextObjectType( long* plPos, BSTR* pbstrTypeName );
 
 		//enum names
-		com_call GetFirstObjectNamePos( BSTR bstrType, LONG_PTR * plPos );
-		com_call GetNextObjectByName( BSTR bstrType, LONG_PTR * plPos, BSTR* pbstrName );
+		com_call GetFirstObjectNamePos( BSTR bstrType, long * plPos );
+		com_call GetNextObjectByName( BSTR bstrType, long * plPos, BSTR* pbstrName );
 
 		//enum unknown
-		com_call GetFirstObjectPos( BSTR bstrType, LONG_PTR * plPos );
-		com_call GetNextObject( BSTR bstrType, LONG_PTR * plPos, IUnknown** ppunkObj );
+		com_call GetFirstObjectPos( BSTR bstrType, long * plPos );
+		com_call GetNextObject( BSTR bstrType, long * plPos, IUnknown** ppunkObj );
 
 		//by name activation
 		com_call GetActiveObjectName( BSTR bstrType, BSTR* pbstrName );

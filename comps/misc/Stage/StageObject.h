@@ -31,7 +31,7 @@ class CStageObject : public ComObjectBase, public CNamedObjectImpl, public IDisp
 	public IStage, public _dyncreate_t<CStageObject>
 {
 	route_unknown();
-public:
+public:	
 	CStageObject(void);
 	~CStageObject(void);
 	virtual IUnknown *DoGetInterface(const IID &iid);

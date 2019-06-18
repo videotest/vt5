@@ -10,7 +10,7 @@ import "ocidl.idl";
 library SewLIViewLib
 {	
 
-	importlib("stdole2.tlb");
+	importlib("stdole.tlb");
 
 	[
 		object,
@@ -41,12 +41,6 @@ library SewLIViewLib
 		[propput, id(9), helpstring("property AutoMoveLiveVideoMode")] HRESULT AutoMoveLiveVideoMode([in] int newVal);
 		[propget, id(10), helpstring("property ShowLiveVideoMode")] HRESULT ShowLiveVideoMode([out, retval] int* pVal);
 		[propput, id(10), helpstring("property ShowLiveVideoMode")] HRESULT ShowLiveVideoMode([in] int newVal);
-		[propget, id(11), helpstring("property BaseFragment")] HRESULT BaseFragment([out, retval] IUnknown** ppunkVal);
-		[propget, id(12), helpstring("property LastFragmentMode")] HRESULT LastFragmentMode([out, retval] int* pVal);
-		[propput, id(12), helpstring("property LastFragmentMode")] HRESULT LastFragmentMode([in] int newVal);
-		[propget, id(13), helpstring("property ShowFrame")] HRESULT ShowFrame([out, retval] int* pVal);
-		[propput, id(13), helpstring("property ShowFrame")] HRESULT ShowFrame([in] int newVal);
-		[propget, id(14), helpstring("property NextFragmentDirection")] HRESULT NextFragmentDirection([out, retval] double* pVal);
 	};
 
 	[

@@ -21,7 +21,6 @@ static const IID IID_IAxCtrlDisp =
 
 BEGIN_INTERFACE_MAP(CAXCtrlBase, CDataObjectBase)
 	INTERFACE_PART(CAXCtrlBase, IID_IActiveXCtrl, Ctrl)
-	INTERFACE_PART(CAXCtrlBase, IID_IViewSubType, ViewSubType)
 	INTERFACE_PART(CAXCtrlBase, IID_IAxCtrlDisp, Dispatch)	
 END_INTERFACE_MAP()
 
@@ -37,7 +36,6 @@ END_DISPATCH_MAP()
 
 
 CAXCtrlBase::CAXCtrlBase()
-: m_ViewSubType(0)
 {
 	m_rect = CRect( 100, 100, 300, 250 );
 	m_nID = 0;
@@ -510,30 +508,6 @@ HRESULT CAXFormBase::XForm::GetScript( IUnknown **ppunkScript )
 		if( *ppunkScript )
 			(*ppunkScript)->AddRef();
 
-		return S_OK;
-	}
-	_catch_nested;
-}
-
-// Implement IViewSubType interface
-
-IMPLEMENT_UNKNOWN(CAXCtrlBase, ViewSubType)
-
-HRESULT CAXCtrlBase::XViewSubType::GetViewSubType( unsigned long* pViewSubType )
-{
-	_try_nested(CAXCtrlBase, ViewSubType, SetViewSubType )
-	{	
-		*pViewSubType=pThis->m_ViewSubType;
-		return S_OK;
-	}
-	_catch_nested;
-}
-
-HRESULT CAXCtrlBase::XViewSubType::SetViewSubType( unsigned long ViewSubType )
-{
-	_try_nested(CAXCtrlBase, ViewSubType, SetViewSubType )
-	{	
-		pThis->m_ViewSubType=ViewSubType;
 		return S_OK;
 	}
 	_catch_nested;

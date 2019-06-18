@@ -1,6 +1,6 @@
 ; MeasCtrls.def : Declares the module parameters.
 
-LIBRARY      "MeasCtrls.DLL"
+LIBRARY      "MeasCtrls.OCX"
 
 EXPORTS
 	DllCanUnloadNow     PRIVATE

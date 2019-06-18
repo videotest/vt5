@@ -432,7 +432,7 @@ void CIPreviewView::DeinitPreview()
 	}
 }
 
-void CIPreviewView::OnTimer(UINT_PTR nIDEvent) 
+void CIPreviewView::OnTimer(UINT nIDEvent) 
 {
 	if (m_pDraw && nIDEvent == 274)
 		m_pDraw->OnTimer(this, nIDEvent);

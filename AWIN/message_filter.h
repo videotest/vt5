@@ -22,14 +22,14 @@ public:
 	message_filter();
 	virtual ~message_filter(){}
 
-	virtual LRESULT	handle_message( UINT m, WPARAM w, LPARAM l );
+	virtual long	handle_message( UINT m, WPARAM w, LPARAM l );
 };
 
 inline message_filter::message_filter()
 {
 }
 
-inline LRESULT message_filter::handle_message(UINT m, WPARAM w, LPARAM l)
+inline long	message_filter::handle_message( UINT m, WPARAM w, LPARAM l )
 {
 	return 0;
 }

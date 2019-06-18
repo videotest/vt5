@@ -60,7 +60,11 @@ using namespace std;
 
 #ifndef _COMMON_LIB
 //include .lib
+#ifdef _DEBUG
+#define _LIBNAME_COMMON "common_d.lib"
+#else
 #define _LIBNAME_COMMON "common.lib"
+#endif //_DEBUG
 
 #pragma message( "Common library linking with " _LIBNAME_COMMON )
 #pragma comment(lib, _LIBNAME_COMMON)

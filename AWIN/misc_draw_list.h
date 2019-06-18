@@ -113,7 +113,7 @@ inline long draw_string_list::on_erase_rect( HDC hdc, const _rect &rect )
 
 inline draw_string_item	*draw_string_list::hit_test( const _point pt )
 {
-	for( LPOS lpos = head(); lpos; lpos = next( lpos ) )
+	for( long lpos = head(); lpos; lpos = next( lpos ) )
 	{
 		draw_string_item	*pe = get( lpos );
 
@@ -154,7 +154,7 @@ inline bool draw_string_list::calc_layout( int width )
 	int	cy = rect.height();
 	int	max_width = 0, max_height = 0;
 
-	for( LPOS lpos = head(); lpos; lpos = next( lpos ) )
+	for( long lpos = head(); lpos; lpos = next( lpos ) )
 	{
 		draw_string_item	*pe = get( lpos );
 
@@ -294,7 +294,7 @@ inline bool draw_string_list::draw( HDC hdc, const RECT &rect, unsigned flags )
 	::SetBkColor( hdc, ::GetSysColor( COLOR_WINDOW ) );
 	::SetROP2( hdc, R2_COPYPEN );
 
-	for( LPOS lpos = head(); lpos; lpos = next( lpos ) )
+	for( long lpos = head(); lpos; lpos = next( lpos ) )
 	{
 		draw_string_item	*p = get( lpos );
 		_rect	rect_item = p->rect;
@@ -352,7 +352,7 @@ inline keyword	*draw_string_list::lookup( const _char *psz_key )
 inline keyword	*draw_string_list::first_keyword()
 {
 	if( !m_pkeywords )return 0;
-	for( LPOS lpos = head(); lpos; lpos = next( lpos ) )
+	for( long lpos = head(); lpos; lpos = next( lpos ) )
 	{
 		draw_string_item	*p = get( lpos );
 		if( p->flags & STRING_ITEM_LINK )

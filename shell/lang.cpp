@@ -1,13 +1,5 @@
 #include "stdafx.h"
 #include "tlhelp32.h"
-#include "CmnHdr.h"
-#include <ImageHlp.h>
-#pragma comment(lib, "ImageHlp")
-
-#include "APIHook.h"
-#include "Toolhelp.h"
-#include <crtdbg.h>
-
 
 HMODULE (WINAPI *g_pLoadLibraryA)(LPCSTR) = 0;
 int (WINAPI *g_pMultiByteToWideChar)(UINT,DWORD,LPCSTR,int,LPWSTR,int) = 0;
@@ -43,9 +35,9 @@ typedef struct tag_HOOKFUNCDESCW
 
 // A useful macro.
 #define MakePtr( cast , ptr , AddValue ) \
-	(cast)((DWORD_PTR)(ptr)+(DWORD_PTR)(AddValue))
+                                 (cast)( (DWORD)(ptr)+(DWORD)(AddValue))
 #ifdef _DEBUG
-#define _assert(b)	_ASSERTE(b)
+#define _assert(b)	if( !(b) )MessageBox( 0, #b, "_assertion!", MB_OK )
 #define _trace(s)	OutputDebugString( #s )
 #else
 #define _assert(b)
@@ -394,10 +386,10 @@ void _message(const char *psz )
 LANGID		g_lid;
 int			g_codepage;
 
-HOOKMACRO("KERNEL32.DLL", HRSRC __stdcall, FindResourceA, (
-	HMODULE hModule,
+HRSRC WINAPI LanguageFindResource(
+    HMODULE hModule,
     LPCSTR lpName,
-    LPCSTR lpType ))
+    LPCSTR lpType )
 {
 	HRSRC hrsrc = ::FindResourceEx( hModule, lpType, lpName, g_lid );
 	if( hrsrc )return hrsrc;
@@ -407,12 +399,12 @@ HOOKMACRO("KERNEL32.DLL", HRSRC __stdcall, FindResourceA, (
 	if( hrsrc )return hrsrc;
 	return 0;
 }
-/*
-HOOKMACRO("USER32.DLL", HMENU __stdcall, LoadMenuA, (
+
+HMENU WINAPI LanguageLoadMenu(
     HINSTANCE hInstance,
-    LPCSTR lpMenuName))
+    LPCSTR lpMenuName)
 {
-	HRSRC	hrsrc = ::FindResource( hInstance, lpMenuName, RT_MENU );
+	HRSRC	hrsrc = ::LanguageFindResource( hInstance, lpMenuName, RT_MENU );
 	if( !hrsrc )return 0;
 	HGLOBAL	hrc = ::LoadResource( hInstance, hrsrc );
 	if( !hrc )return 0;
@@ -423,13 +415,11 @@ HOOKMACRO("USER32.DLL", HMENU __stdcall, LoadMenuA, (
 
 	return hmenu;
 }
-*/
-	//HOOKMACRO("KERNEL32.DLL", int __stdcall, MultiByteToWideChar, (
-int __stdcall LanguageMultiByteToWideChar(
-	UINT CodePage, DWORD dwFlags,
+
+int WINAPI LanguageMultiByteToWideChar(
+    UINT CodePage, DWORD dwFlags,
     LPCSTR lpMultiByteStr, int cchMultiByte,
     LPWSTR lpWideCharStr, int cchWideChar )
-		//)
 {
 	long lret = g_pMultiByteToWideChar( CodePage, dwFlags, lpMultiByteStr, 
 		cchMultiByte, lpWideCharStr, cchWideChar );
@@ -458,14 +448,17 @@ int __stdcall LanguageMultiByteToWideChar(
 
 }
 
-	HOOKMACRO("USER32.DLL", HWND __stdcall, CreateDialogParamA, (
+
+
+
+HWND WINAPI LanguageCreateDialogParam(
     HINSTANCE hInstance,
     LPCSTR lpTemplateName,
     HWND hWndParent ,
     DLGPROC lpDialogFunc,
-    LPARAM dwInitParam))
+    LPARAM dwInitParam)
 {
-	HRSRC	hrsrc = ::FindResource( hInstance, lpTemplateName, RT_DIALOG );
+	HRSRC	hrsrc = ::LanguageFindResource( hInstance, lpTemplateName, RT_DIALOG );
 	if( !hrsrc )return 0;
 	HGLOBAL	hrc = ::LoadResource( hInstance, hrsrc );
 	if( !hrc )return 0;
@@ -480,15 +473,15 @@ int __stdcall LanguageMultiByteToWideChar(
 }
 
 //Dialog box replacement
-	HOOKMACRO("USER32.DLL", INT_PTR __stdcall, DialogBoxParamA, (
+int WINAPI LanguageDialogBoxParam(
     HINSTANCE hInstance,
     LPCSTR lpTemplateName,
     HWND hWndParent ,
     DLGPROC lpDialogFunc,
-    LPARAM dwInitParam ))
+    LPARAM dwInitParam )
 {
-	INT_PTR nResult = -1;
-	HRSRC	hrsrc = ::FindResource( hInstance, lpTemplateName, RT_DIALOG );
+	int nResult = -1;
+	HRSRC	hrsrc = ::LanguageFindResource( hInstance, lpTemplateName, RT_DIALOG );
 	if( !hrsrc )return nResult;
 	HGLOBAL	hrc = ::LoadResource( hInstance, hrsrc );
 	if( !hrc )return nResult;
@@ -519,14 +512,13 @@ public:
 
 __init_title __init_title__;
 
-//HOOKMACRO("OLEAUT32.DLL", BSTR __stdcall, SysAllocString, (const OLECHAR * oleChar))
 
-HOOKMACRO("USER32.DLL", int __stdcall, LoadStringA, (
+int WINAPI LanguageLoadString(
   HINSTANCE hInstance,  // handle to resource module
   UINT uID,             // resource identifier
   LPTSTR lpBuffer,      // resource buffer
   int nBufferMax        // size of buffer
-))
+)
 {
 	if( uID == AFX_IDS_APP_TITLE )
 	{
@@ -534,7 +526,7 @@ HOOKMACRO("USER32.DLL", int __stdcall, LoadStringA, (
 		{
 			strncpy( lpBuffer, sz_app_title, nBufferMax );
 			lpBuffer[nBufferMax-1] = 0;
-			return (int)strlen( lpBuffer );
+			return strlen( lpBuffer );
 		}
 	}
 
@@ -543,7 +535,7 @@ HOOKMACRO("USER32.DLL", int __stdcall, LoadStringA, (
 	int	nResourceID = uID/16+1;
 	int	nIndex = uID % 16;
 
-	HRSRC	hrsrc = ::FindResource( hInstance, MAKEINTRESOURCE(nResourceID), RT_STRING );
+	HRSRC	hrsrc = ::LanguageFindResource( hInstance, MAKEINTRESOURCE(nResourceID), RT_STRING );
 	if( !hrsrc ){ASSERT(false);return 0;}
 	HGLOBAL	hrc = ::LoadResource( hInstance, hrsrc );
 	if( !hrc ){ASSERT(false);return 0;}
@@ -573,7 +565,7 @@ HOOKMACRO("USER32.DLL", int __stdcall, LoadStringA, (
 	nResult = ::WideCharToMultiByte( CP_ACP, 0, ptsz, nLen+1, p, length, 0, 0 );
 	nResult = min( nBufferMax, max( nResult, 0 ) );
 	memcpy( lpBuffer, p, nResult );
-	delete []p;
+	delete p;
 
 	if( nResult == 0 )
 	{
@@ -663,7 +655,7 @@ bool HookSystemFunc( HMODULE hModule, const char *pszExportFuncName, void *ptrNe
 	return HookSystemFuncPtr( pfn, ptrNewFuncAddress );
 }
 
-extern HOOKFUNCDESC	hookKernel[]/*, hookUser[]*/;
+extern HOOKFUNCDESC	hookKernel[], hookUser[];
 
 
 
@@ -684,37 +676,15 @@ bool InstallHooks( HMODULE h )
 		return true;
 	
 
-
-	//HOOKFUNCDESC	hookUser[] =
-	//{
-//		{ "DialogBoxParamA", (PROC)LanguageDialogBoxParam },
-//		{ "CreateDialogParamA", (PROC)LanguageCreateDialogParam },
-//		{ "LoadStringA", (PROC)LanguageLoadString },
-//		{ "LoadMenuA", (PROC)LanguageLoadMenu },
-//	};
-//	hookUser[2].pProc = (PROC)&LanguageLoadString;
-
-	//char szFilterName[255] = "";
-	//int lrc = 0x000007fedb8a0000!=*(__int64*)&h?-1:LanguageLoadString(h, 2, szFilterName, 255);
-
-	//HOOKFUNCDESC	hookKernel[] =
-	//{
-	//	{ "FindResourceA", (PROC)LanguageFindResource },
-	//	{ "LoadLibraryA", (PROC)HookLoadLibrary },
-	//		//{"MultiByteToWideChar", (PROC)LanguageMultiByteToWideChar}
-	//};
-
-	//lrc = 0x000007fedb8a0000 != *(__int64*)&h ? -1 : ::LoadString(h, 2, szFilterName, 255);
-
 	
-	//bResult &= HookImportedFunctionsByName( h, "User32.dll", 
-	//	3, hookUser, &dwHooked );
-	//bResult &= HookImportedFunctionsByName( h, "Kernel32.dll", 
-	//	2, hookKernel, &dwHooked );
+	
+	bResult &= HookImportedFunctionsByName( h, "User32.dll", 
+		4, hookUser, &dwHooked );
+	bResult &= HookImportedFunctionsByName( h, "Kernel32.dll", 
+		2, hookKernel, &dwHooked );
 
- 
-	if( !bResult )
-		_message( sz );
+	//if( !bResult )
+	//	_message( sz );
 
 	return true;
 }
@@ -734,7 +704,7 @@ HMODULE WINAPI HookLoadLibrary( LPCSTR lpLibFileName )
 	return h;
 }
 
-#if 0
+
 HOOKFUNCDESC	hookUser[]=
 {
 	{"DialogBoxParamA", (PROC)LanguageDialogBoxParam},
@@ -745,11 +715,11 @@ HOOKFUNCDESC	hookUser[]=
 
 HOOKFUNCDESC	hookKernel[]=
 {
-//	{"FindResourceA", (PROC)LanguageFindResource},
+	{"FindResourceA", (PROC)LanguageFindResource},
 	{"LoadLibraryA", (PROC)HookLoadLibrary},
 //	{"MultiByteToWideChar", (PROC)LanguageMultiByteToWideChar}
 };
-#endif
+
 
 bool InitLanguageSupport( LANGID langid )
 {

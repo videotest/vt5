@@ -1,4 +1,0 @@
-'resource:Delete Table#Statistics#Delete data table#Delete Data Table
-'state:function=ExistStatTable
-
-ObjectDelete GetNameStatTable()

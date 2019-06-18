@@ -76,7 +76,7 @@ bool CActionMapObjects2Image::Invoke()
 	if( ptr_image == 0 || ptr_object_list == 0 )
 		return false;
 
-	TPOS lpos = 0;
+	long lpos = 0;
 	ptr_object_list->GetFirstChildPosition( &lpos );
 	while( lpos )
 	{
@@ -171,7 +171,7 @@ bool CActionMakeObjectsNonVirtual::Invoke()
 	if( ptr_image == 0 || ptr_object_list == 0 )
 		return false;
 
-	TPOS lpos = 0;
+	long lpos = 0;
 	ptr_object_list->GetFirstChildPosition( &lpos );
 	while( lpos )
 	{

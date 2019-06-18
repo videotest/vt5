@@ -854,7 +854,7 @@ IUnknown* CActiveXSite::_GetAppComponent( int nPos )
 
 int	CActiveXSite::_GetControlComponentsCount()
 {
-	return (int)m_windows.GetCount();
+	return m_windows.GetCount();
 }
 
 IUnknown* CActiveXSite::_GetControlComponent( int nPos )
@@ -1161,13 +1161,13 @@ void CActiveXSite::UpdateSystemSettings()
 
 	::FireEvent( ptrA, szEventNewSettings );
 
-	LONG_PTR	lposTempl = 0;
+	long	lposTempl = 0;
 
 	ptrA->GetFirstDocTemplPosition( &lposTempl );
 
 	while( lposTempl )
 	{
-		LONG_PTR	lposDoc = 0;
+		long	lposDoc = 0;
 		ptrA->GetFirstDocPosition( lposTempl, &lposDoc );
 
 

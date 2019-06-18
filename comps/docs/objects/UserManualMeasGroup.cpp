@@ -83,7 +83,7 @@ bool	CUserManualMeasGroup::get_string_by_key( long lKey, CString *str, char *sEn
 bool	CUserManualMeasGroup::calc_value( ICalcObject2Ptr	&ptrCalc, ICalcObjectContainerPtr &ptrCalcCont, _list_t<CParamElement> &lCalculateKeys, double *pfResult )
 {	
 	*pfResult = 0;
-	TPOS lPos = 0;
+	long lPos = 0;
 	CParamElement CurElem = lCalculateKeys.get( lCalculateKeys.tail( ) );
 	long lCurrKey = CurElem.lKey; // последний ключ в lCalculateKeys - ключ параметра, для которого надо посчитать
 	// && на || - бага по поводу расчета, когда заданы ключи "чужих" параметров
@@ -119,7 +119,7 @@ bool	CUserManualMeasGroup::calc_value( ICalcObject2Ptr	&ptrCalc, ICalcObjectCont
 	
 	// свой, но еще не посчитан
 	CUserManualMeasParam *pParam = 0;
-	TPOS lParamPos = m_mapKeyToParam.find(lCurrKey);
+	long lParamPos = m_mapKeyToParam.find( lCurrKey );
 	if( lParamPos )
 		pParam = m_mapKeyToParam.get( lParamPos );
 	else
@@ -185,7 +185,7 @@ bool	CUserManualMeasGroup::calc_value( ICalcObject2Ptr	&ptrCalc, ICalcObjectCont
 	if( lParamsSize > 0 )
 	{
 		// copy to temp
-		for (TPOS lPos = lCalculateKeys.head(); lPos; lPos = lCalculateKeys.next(lPos))
+		for( long lPos = lCalculateKeys.head( ); lPos; lPos = lCalculateKeys.next( lPos ) )
 			TempCalculateKeys.add_tail( lCalculateKeys.get( lPos ) );
 
 		double *pParamsValues = 0;

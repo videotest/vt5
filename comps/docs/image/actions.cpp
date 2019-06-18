@@ -583,7 +583,7 @@ bool CBinErode::InvokeFilter()
 #ifdef _DEBUG
 	char buffer[14];
 	sprintf(buffer, "mask = %d\n", maskSize);
-	//OutputDebugStr(buffer);
+	OutputDebugStr(buffer);
 	__time_test__ t("CBinErode::InvokeFilter -");
 #endif
 

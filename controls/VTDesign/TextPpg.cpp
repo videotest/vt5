@@ -106,7 +106,7 @@ void CVTTextPropPage::DoDataExchange(CDataExchange* pDX)
 
 /////////////////////////////////////////////////////////////////////////////
 // CVTTextPropPage message handlers
-LRESULT CVTTextPropPage::OnColorChange(WPARAM lParam, LPARAM wParam)
+LONG CVTTextPropPage::OnColorChange(UINT lParam, LONG wParam)
 {
 	SetModifiedFlag( TRUE );		
 	return 1;

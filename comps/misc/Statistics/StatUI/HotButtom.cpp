@@ -52,7 +52,7 @@ void CHotButtom::SetIndex( long lIndex  )
 
 }
 
-LRESULT CHotButtom::on_lbuttondown(const _point &point)
+long CHotButtom::on_lbuttondown( const _point &point )
 {
 	char szScript[200];
 	strcpy( szScript, m_szScriptText );
@@ -61,7 +61,7 @@ LRESULT CHotButtom::on_lbuttondown(const _point &point)
 	return 1L;
 }
 
-LRESULT CHotButtom::on_setcursor(unsigned code, unsigned hit)
+long CHotButtom::on_setcursor( unsigned code, unsigned hit )
 {														   
 	::SetCursor( m_hCursor );
 	return 0L;

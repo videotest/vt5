@@ -27,13 +27,7 @@ CDirDilate::~CDirDilate()
 {
 }
 
-#if 1500 <= _MSC_VER && _MSC_VER <= 1600
-namespace {
-	int  round(double num) {
-		return int((num > 0.0) ? floor(num + 0.5) : ceil(num - 0.5));
-	}
-}
-#endif
+#define round(x) int(floor(x+0.5))
 
 //---------------------------------------------------------------------------
 bool CDirDilate::InvokeFilter()

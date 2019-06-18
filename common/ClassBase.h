@@ -68,10 +68,10 @@ public:
 	virtual bool SetClassKey(GUID lClassKey)
 	{	m_lClassKey = lClassKey; return true;	}
 
-	virtual bool GetNextValue(LPOS* plPos, long * plKey, double * pfValue);
-	virtual bool GetFirstValuePos(LPOS* plPos);
-	virtual bool GetValuePos(long lKey, LPOS * plPos);
-	virtual bool RemoveValueByPos(LPOS lPos);
+	virtual bool GetNextValue(long * plPos, long * plKey, double * pfValue);
+	virtual bool GetFirstValuePos(long * plPos);
+	virtual bool GetValuePos(long lKey, long * plPos);
+	virtual bool RemoveValueByPos(long lPos);
 
 	virtual bool SetValue(long lParamKey, double fValue);
 	virtual bool GetValue(long lParamKey, double * pfValue);
@@ -96,10 +96,10 @@ protected:
 		com_call SetValue(long lParamKey, double fValue);
 		com_call RemoveValue(long lParamKey);
 		com_call ClearValues();
-		com_call GetFirstValuePos(LPOS * plPos);
-		com_call GetNextValue(LPOS * plPos, long * plKey, double * pfValue);
-		com_call GetValuePos(long lKey, LPOS *plPos);
-		com_call RemoveValueByPos(LPOS lPos);
+		com_call GetFirstValuePos(long * plPos);
+		com_call GetNextValue(long * plPos, long * plKey, double * pfValue);
+		com_call GetValuePos(long lKey, long *plPos);
+		com_call RemoveValueByPos(long lPos);
 		com_call GetObjectClass(GUID* plClassKey);
 		com_call SetObjectClass(GUID lClassKey);
 		// ICalcObject2
@@ -148,16 +148,15 @@ BOOL CMapEx<KEY, ARG_KEY, VALUE, ARG_VALUE>::GetAt(ARG_KEY key, VALUE& rValue, P
 class std_dll CMeasParamGroupImpl :	public CImplBase
 {
 public:
-	//typedef LONG_PTR TPOS;
 	CMeasParamGroupImpl();
 	virtual ~CMeasParamGroupImpl();
 public:
 	BEGIN_INTERFACE_PART_EXPORT(Group, IMeasParamGroup)
  		com_call CalcValues(IUnknown *punkCalcObject, IUnknown *punkSource );
 		com_call GetParamsCount(long *plCount);
-		com_call GetFirstPos(LONG_PTR *plPos);
-		com_call GetNextParam(LONG_PTR *plPos, struct ParameterDescriptor **ppDescriptior );
-		com_call GetPosByKey(long lKey, LONG_PTR *plPos);
+		com_call GetFirstPos(long *plPos);
+		com_call GetNextParam(long *plPos, struct ParameterDescriptor **ppDescriptior );
+		com_call GetPosByKey(long lKey, long *plPos);
 		com_call InitializeCalculation( IUnknown *punkContainer );
 		com_call FinalizeCalculation();
 		com_call GetUnit( long lType, BSTR *pbstr, double *pfCoeffToUnits );
@@ -319,13 +318,13 @@ protected:
 
 	
 	BEGIN_INTERFACE_PART_EXPORT(GroupMan, IParamGroupManager)
-		com_call ExcludeGroup(TPOS *plPos);
+		com_call ExcludeGroup(long *plPos);
 		com_call ExcludeGroup(IUnknown* punkGroup);
-		com_call IncludeGroup(IUnknown* punkGroup, TPOS *plPos);
+		com_call IncludeGroup(IUnknown* punkGroup, long *plPos);
 
-		com_call GetFirstPos(LONG_PTR *plPos);
-		com_call GetNextGroup(long *LONG_PTR, IUnknown **ppunk);
-		com_call GetGroupPos(IUnknown* punkGroup, LONG_PTR *plPos); //???
+		com_call GetFirstPos(long *plPos);
+		com_call GetNextGroup(long *plPos, IUnknown **ppunk);
+		com_call GetGroupPos(IUnknown* punkGroup, long *plPos); //???
 		com_call GetGroupCount(int *pnCount);
 
 		com_call SaveState(IUnknown* punkNamedData);

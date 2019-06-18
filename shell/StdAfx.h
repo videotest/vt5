@@ -10,9 +10,6 @@
 #pragma once
 #endif // _MSC_VER > 1000
 
-#define WINVER 0x0600
-#define _WIN32_WINNT 0x600
-
 #define VC_EXTRALEAN		// Exclude rarely-used stuff from Windows headers
 
 #include <afxwin.h>         // MFC core and standard components
@@ -30,19 +27,6 @@
 #pragma warning(disable: 4786)
 
 #include "afxtempl.h"
-
-#include <../src/mfc/stdafx.h>
-//#include <afxext.h>
-//#include <afxtoolbar.h>
-//#include <afxcontrolbars.h>
-//#include <afxpriv.h>
-//#include <afxtoolbarbutton.h>
-//#include <afxMDIFrameWndEx.h>
-//#include <afxtoolbarmenubutton.h>
-//#include <afxpopupmenu.h>
-//#include <afxtoolbarcomboboxbutton.h>
-//#include <afxdockablepane.h>
-//#include <afxmenuhash.h>
 
 #include <map>
 using std::map;

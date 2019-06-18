@@ -13,7 +13,7 @@ class CEditTestDBDlg : public CDialog, public resizable_dlg_impl< CEditTestDBDlg
 {
 	DECLARE_DYNAMIC(CEditTestDBDlg)
 
-	void DoInitTestsWindow(HTREEITEM hti, ITestManager *pTestManager, LPOS lParentPos);
+	void DoInitTestsWindow(HTREEITEM hti, ITestManager *pTestManager, long lParentPos);
 	void InitTestsWindow();
 	RECT m_rect_wnd;
 public:
@@ -28,8 +28,8 @@ public:
 		XItemInfoEx();
 		~XItemInfoEx();
 
-		LPOS lparent_pos;
-		LPOS lpos;
+		long lparent_pos;
+		long lpos;
 	};
 
 protected:
@@ -368,18 +368,18 @@ public:
 			m_EditAddInfo,
 			m_EditExecConds;
 
-	HTREEITEM	AddTreeItem( HTREEITEM hti_parent, CString sName, LPOS lparent_pos, LPOS lpos);
+	HTREEITEM	AddTreeItem( HTREEITEM hti_parent, CString sName, long lparent_pos, long lpos);
 	BOOL		DeleteTreeItem( HTREEITEM hti );
 
 	void		UpdateTreeItemIcon( HTREEITEM hti );
 	void		SynchronizeTestItemWithCtrls( TVITEM *pst_tvitem );
 	void		SynchronizeCtrlsWithTestItem( TVITEM *pst_tvitem );
 	BOOL		GenerateUniqueTestName( HTREEITEM hti_parent, CString sbase_name, CString *psUniqueTestName );
-	HTREEITEM	FindTestItemInTree( HTREEITEM hti_parent, LPOS lpos_parent_test, LPOS lpos_test );
+	HTREEITEM	FindTestItemInTree( HTREEITEM hti_parent, long lpos_parent_test, long lpos_test );
 	HTREEITEM	FindItemByName( HTREEITEM hti_parent, CString str_item_name, BOOL bsearch_in_subitems );
 
-	void		SetSelectedTestItem( LPOS lpos_parent, LPOS lpos );
-	void		GetSelectedTestItem( LPOS *plpos_parent, LPOS *plpos );
+	void		SetSelectedTestItem( long lpos_parent, long lpos );
+	void		GetSelectedTestItem( long *plpos_parent, long *plpos );
 	void		UpdateSelectedTest();
 
 	void		_update_test_info_ctrls( ITestItem *pti );

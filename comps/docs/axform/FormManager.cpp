@@ -31,23 +31,6 @@ next
 #include "WizardDlg.h"
 #include "button_messages.h"
 
-template<class Type> class CTempValue
-{
-public:
-	CTempValue( Type* pVar, Type value )
-	{
-		m_pVar = pVar;
-		m_oldValue = *m_pVar;
-		*m_pVar = value;
-	}
-	~CTempValue()	
-	{
-		*m_pVar = m_oldValue;
-	}
-	Type* m_pVar;
-	Type m_oldValue;
-};
-
 
 bool CanDestroyForm(bool bOk = false)
 {
@@ -408,7 +391,8 @@ long CFormManager::ExecutePage(LPCTSTR szFormName)
 
 void CFormManager::ExecutePageModal(LPCTSTR szFormName) 
 {
-	CTempValue<bool> tmp(&m_bModalMode, true); // на время выполнения поставить m_bModalMode = true;
+	bool bmode_old = m_bModalMode;
+	m_bModalMode = true;
 
 	ExecutePage( szFormName );
 
@@ -427,6 +411,9 @@ void CFormManager::ExecutePageModal(LPCTSTR szFormName)
 /*		TranslateMessage( &msg );
 		DispatchMessage( &msg );
 */	}
+
+	m_bModalMode = bmode_old;
+
 }
 
 BOOL CFormManager::GetModalMode() 
@@ -465,7 +452,7 @@ public:
 	}
 };
 
-INT_PTR CFormManager::ExecuteModal(LPCTSTR szFormName) 
+long CFormManager::ExecuteModal(LPCTSTR szFormName) 
 {
 	IUnknown	*punk = CFormManager::_GetFormByName( szFormName );
 
@@ -481,9 +468,10 @@ INT_PTR CFormManager::ExecuteModal(LPCTSTR szFormName)
 	dialog.SetForm( punk );
 
 	CManageDlgPointer ManageDlgPointer(&m_pFormDialog, &dialog);
-
-	CTempValue<bool> tmp(&m_bModalMode, true); // на время выполнения поставить m_bModalMode = true;
-	INT_PTR nRet = dialog.DoModal();
+	bool bmode_old = m_bModalMode;
+	m_bModalMode = true;
+	int nRet = dialog.DoModal();
+	m_bModalMode = bmode_old;
 
 	punk->Release();
 
@@ -655,7 +643,7 @@ IUnknown *CFormManager::_GetFormByName( const char *szName )
 {
 	IApplicationPtr	sptrA( GetAppUnknown() );
 
-	LONG_PTR	lTemplPos;
+	long	lTemplPos;
 
 	IUnknown	*punkObj = ::GetObjectByName( ::GetAppUnknown(), szName, 0 );
 
@@ -666,7 +654,7 @@ IUnknown *CFormManager::_GetFormByName( const char *szName )
 
 	while( lTemplPos )
 	{
-		LONG_PTR	lPosDoc = 0;
+		long	lPosDoc = 0;
 		sptrA->GetFirstDocPosition( lTemplPos, &lPosDoc );
 
 		while( lPosDoc ) 
@@ -716,7 +704,7 @@ IUnknown *CFormManager::_GetFormByName( const char *szName )
 
 	return 0;
 }
-INT_PTR CFormManager::ExecuteOptions() 
+long CFormManager::ExecuteOptions() 
 {
 	// TODO: Add your dispatch handler code here
 	IApplicationPtr	ptrA( GetAppUnknown() );
@@ -853,7 +841,7 @@ void CFormManager::OnPageApply()
 
 void CFormManager::_ProcessStackPages()
 {
-	INT_PTR nStackSize = m_strStackPages.GetSize();
+	int nStackSize = m_strStackPages.GetSize();
 	if(nStackSize > 0)
 	{
 		ExecutePage(m_strStackPages[nStackSize-1]);
@@ -896,9 +884,12 @@ void CFormManager::CreateNewWizard(LPCTSTR szWizardName)
 
 void CFormManager::ExecuteWizard(LPCTSTR szWizardName) 
 {
-	CTempValue<bool> tmp(&m_bModalMode, true); // на время выполнения поставить m_bModalMode = true;
+	// TODO: Add your dispatch handler code here
+	bool bmode_old = m_bModalMode;
+	m_bModalMode = true;
 	if(m_pWizard)
 		m_pWizard->ExecuteWizard();
+	m_bModalMode = bmode_old;
 }	
 
 void CFormManager::ExecuteNestedWizard() 

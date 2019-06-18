@@ -1,7 +1,7 @@
 ; PropertySheet.def : Declares the module parameters for the DLL.
 
 LIBRARY      "PropertySheet"
-; DESCRIPTION  'PropertySheet Windows Dynamic Link Library'
+DESCRIPTION  'PropertySheet Windows Dynamic Link Library'
 
 EXPORTS
     ; Explicit exports can go here

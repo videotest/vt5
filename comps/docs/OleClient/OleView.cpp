@@ -555,25 +555,25 @@ HRESULT COleView::GetClassID(CLSID *pClassID )
 }
 
 //////////////////////////////////////////////////////////////////////
-HRESULT COleView::GetFirstVisibleObjectPosition(TPOS *plpos)
+HRESULT COleView::GetFirstVisibleObjectPosition( long *plpos )
 {
 	*plpos = 0;
 
 	if( m_ptrActiveObject != 0 )
-		*plpos = (TPOS)1;
+		*plpos = 1;
 	
 	return S_OK;
 }
 
 //////////////////////////////////////////////////////////////////////
-HRESULT COleView::GetNextVisibleObject(IUnknown ** ppunkObject, TPOS *plPos)
+HRESULT COleView::GetNextVisibleObject( IUnknown ** ppunkObject, long *plPos )
 {	
-	TPOS lPos = *plPos;
+	long lPos		= *plPos;
 	*ppunkObject	= 0;
 
 	*plPos			= 0;
 
-	if (lPos == (TPOS)1)
+	if( lPos == 1 )
 	{
 		if( m_ptrActiveObject )
 		{

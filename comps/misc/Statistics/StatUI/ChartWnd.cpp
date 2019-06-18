@@ -14,14 +14,6 @@
 #define MAX_SCALE_FACTOR_VALUES_Y	   200
 #define MAX_SCALE_FACTOR_GRID_Y		   400
 
-#if 1500 <= _MSC_VER && _MSC_VER <= 1600
-namespace {
-	int  round(double num) {
-		return int((num > 0.0) ? floor(num + 0.5) : ceil(num - 0.5));
-	}
-}
-#endif
-
 namespace ViewSpace 
 {
 
@@ -348,7 +340,7 @@ namespace ViewSpace
 			::DeleteObject(m_hFontSignature);
 	}
 
-	LRESULT CChartWnd::on_paint()
+	long CChartWnd::on_paint()
 	{
 		RECT rcPaint = { 0, 0, 0, 0 };
 		::GetUpdateRect( handle(), &rcPaint, false );
@@ -900,7 +892,7 @@ namespace ViewSpace
 		{
 			m_list_color_chart.add_tail( m_clChartColor );
 
-			for (TPOS lpos_lst = m_list_attached.next(m_list_attached.head()); lpos_lst; lpos_lst = m_list_attached.next(lpos_lst))
+			for( long lpos_lst = m_list_attached.next( m_list_attached.head() ); lpos_lst; lpos_lst = m_list_attached.next( lpos_lst ) )
 			{
 				INamedDataPtr sptr_nd = m_list_attached.get( lpos_lst );
 				COLORREF cl_chart = ::GetValueColor( sptr_nd, SECT_STATUI_CHART_ROOT, CHART_COLOR, m_clChartColor );
@@ -971,7 +963,7 @@ namespace ViewSpace
 		{
 			m_list_color_curve.add_tail( m_clCurveColor );
 
-			for (TPOS lpos_lst = m_list_attached.next(m_list_attached.head()); lpos_lst; lpos_lst = m_list_attached.next(lpos_lst))
+			for( long lpos_lst = m_list_attached.next( m_list_attached.head() ); lpos_lst; lpos_lst = m_list_attached.next( lpos_lst ) )
 			{
 				INamedDataPtr sptr_nd = m_list_attached.get( lpos_lst );
 				COLORREF cl_curve = ::GetValueColor( sptr_nd, SECT_STATUI_CHART_ROOT, CURVE_COLOR, m_clCurveColor );
@@ -1288,7 +1280,7 @@ namespace ViewSpace
 		if( m_list_classes.count() )
 		{
 			CString str_data;
-			for (TPOS lpos = m_list_classes.head(); lpos; lpos = m_list_classes.next(lpos))
+			for( long lpos = m_list_classes.head(); lpos; lpos = m_list_classes.next( lpos ) )
 			{
 				long lclass = m_list_classes.get( lpos );
 
@@ -1462,7 +1454,7 @@ namespace ViewSpace
 		}
 
 		m_iError = IDS_ALL_YVALUES_ZERO;
-		for (TPOS lpos_lst = m_list_attached.head(); lpos_lst; lpos_lst = m_list_attached.next(lpos_lst))
+		for( long lpos_lst = m_list_attached.head(); lpos_lst; lpos_lst = m_list_attached.next( lpos_lst ) )
 		{
 			IStatObjectDispPtr ptr_object = m_list_attached.get( lpos_lst );
 
@@ -1578,7 +1570,7 @@ namespace ViewSpace
 		}
 
 		double fXMinVal = 1e308, fXMaxVal = -1e307;
-		for (TPOS lpos_lst = m_list_attached.head(); lpos_lst; lpos_lst = m_list_attached.next(lpos_lst))
+		for( long lpos_lst = m_list_attached.head(); lpos_lst; lpos_lst = m_list_attached.next( lpos_lst ) )
 		{
 			IStatObjectDispPtr ptr_object = m_list_attached.get( lpos_lst );
 
@@ -1778,10 +1770,10 @@ namespace ViewSpace
 		double fYMinVal = 1e307;
 		_list_t<double> m_max_y;
 		long lStatID=0;
-		for (TPOS lpos_lst = m_list_attached.head(); lpos_lst; lpos_lst = m_list_attached.next(lpos_lst), lStatID++)
+		for( long lpos_lst = m_list_attached.head(); lpos_lst; lpos_lst = m_list_attached.next( lpos_lst ), lStatID++ )
 			m_max_y.add_tail( -1e307 );
 		lStatID = 0;
-		for (TPOS lpos_lst = m_list_attached.head(); lpos_lst; lpos_lst = m_list_attached.next(lpos_lst), lStatID++)
+		for( long lpos_lst = m_list_attached.head(); lpos_lst; lpos_lst = m_list_attached.next( lpos_lst ), lStatID++ )
 		{
 			double fCummu = 0; 
 			IStatObjectDispPtr ptr_object = m_list_attached.get( lpos_lst );
@@ -1813,14 +1805,14 @@ namespace ViewSpace
 					if( pYAxis[0] < fYMinVal )
 						fYMinVal = pYAxis[0];
 
-					{long id = 0; for (TPOS lp = m_max_y.head(); lp; lp = m_max_y.next(lp), id++)
+					for( long lp = m_max_y.head(), id = 0; lp; lp = m_max_y.next( lp ), id++ )
 					{
-						if (lStatID == id)
+						if( lStatID == id )
 						{
-							m_max_y.set(__max(pYAxis[0], m_max_y.get(lp)), lp);
+							m_max_y.set( __max( pYAxis[0], m_max_y.get( lp ) ), lp );
 							break;
 						}
-					}}
+					}
 
 					double pXAxis[2];
 
@@ -1995,15 +1987,15 @@ namespace ViewSpace
 						if( pYAxis[i] < /*_fMinY*/ fYMinVal )
 							/*_fMinY*/ fYMinVal = pYAxis[i];
 
-						{long id = 0; for (TPOS lp = m_max_y.head(); lp; lp = m_max_y.next(lp), id++)
-						{
-							if (lStatID == id)
+							for( long lp = m_max_y.head(), id = 0; lp; lp = m_max_y.next( lp ), id++ )
 							{
-								m_max_y.set(__max(pYAxis[i], m_max_y.get(lp)), lp);
-								m_max_y.set(__max(pYAxis[i + 1], m_max_y.get(lp)), lp);
-								break;
+								if( lStatID == id )
+								{
+									m_max_y.set( __max( pYAxis[i], m_max_y.get( lp ) ), lp );
+									m_max_y.set( __max( pYAxis[i+1], m_max_y.get( lp ) ), lp );
+									break;
+								}
 							}
-						}}
 
 							if( !m_nXAxisType )
 							{
@@ -2071,8 +2063,7 @@ namespace ViewSpace
 
 				if( m_list_color_chart.count() > 1 )
 				{
-					long _qq = 0;
-					for (TPOS lp = m_list_color_chart.head(); lp; lp = m_list_color_chart.next(lp), _qq++)
+					for( long lp = m_list_color_chart.head(), _qq = 0; lp; lp = m_list_color_chart.next( lp ), _qq++ )
 					{
 						if( _qq == lStatID )
 						{
@@ -2405,7 +2396,7 @@ namespace ViewSpace
 		}
 
 		lStatID = 0;
-		for (TPOS lpos_lst = m_list_attached.head(); lpos_lst; lpos_lst = m_list_attached.next(lpos_lst), lStatID++)
+		for( long lpos_lst = m_list_attached.head(); lpos_lst; lpos_lst = m_list_attached.next( lpos_lst ), lStatID++ )
 		{
 			IStatObjectDispPtr ptr_object = m_list_attached.get( lpos_lst );
 			if( m_bShowCurve && m_nXAxisType )
@@ -2481,14 +2472,14 @@ namespace ViewSpace
 				double f_min = 0.0; //pArrY.min();
 
 				double fmax_y = fYMaxVal;
-				{long id = 0; for (TPOS lp = m_max_y.head(); lp; lp = m_max_y.next(lp), id++)
+				for( long lp = m_max_y.head(), id = 0; lp; lp = m_max_y.next( lp ), id++ )
 				{
-					if (lStatID == id)
+					if( lStatID == id )
 					{
-						fmax_y = m_max_y.get(lp);
+						fmax_y = m_max_y.get( lp );
 						break;
 					}
-				}}
+				}
 
 				for( int i = 0; i < lCount; i++ )
 					pArrY[i] = ( pArrY[i] - f_min ) * fmax_y / (f_max - f_min);
@@ -2499,8 +2490,7 @@ namespace ViewSpace
 
 				if( m_list_color_curve.count() > 1 )
 				{
-					long _qq = 0;
-					for (TPOS lp = m_list_color_curve.head(); lp; lp = m_list_color_curve.next(lp), _qq++)
+					for( long lp = m_list_color_curve.head(), _qq = 0; lp; lp = m_list_color_curve.next( lp ), _qq++ )
 					{
 						if( _qq == lStatID )
 						{
@@ -2553,14 +2543,14 @@ namespace ViewSpace
 			double f_min = pArrY.min();
 
 			double fmax_y = fYMaxVal;
-			{ long id = 0; for (TPOS lp = m_max_y.head(); lp; lp = m_max_y.next(lp), id++)
+			for( long lp = m_max_y.head(), id = 0; lp; lp = m_max_y.next( lp ), id++ )
 			{
-				if (lStatID == id)
+				if( lStatID == id )
 				{
-					fmax_y = m_max_y.get(lp);
+					fmax_y = m_max_y.get( lp );
 					break;
 				}
-			}} 
+			}
 
 			for( int i = 0; i < lCount; i++ )
 				pArrY[i] = ( pArrY[i] - f_min ) * fmax_y / (f_max - f_min);
@@ -2835,7 +2825,7 @@ namespace ViewSpace
 		}
 	}
 
-	LRESULT CChartWnd::on_size(short cx, short cy, ulong fSizeType)
+	long CChartWnd::on_size( short cx, short cy, ulong fSizeType )
 	{
 		RECT rc = {0};
 		::GetClientRect( m_hwnd, &rc );
@@ -2933,7 +2923,7 @@ EndFill:
 		return 0;
 	}
 
-	LRESULT CChartWnd::on_lbuttonup(const _point &point)
+	long CChartWnd::on_lbuttonup( const _point &point )
 	{
 		if( !m_nChartViewType && m_arrClasses ) 
 		{
@@ -3001,7 +2991,7 @@ EndFill:
 		return 1L;
 	}
 
-	LRESULT CChartWnd::on_lbuttondblclk(const _point &point)
+	long CChartWnd::on_lbuttondblclk( const _point &point )
 	{
 		if( !m_nChartViewType && m_arrClasses ) 
 		{
@@ -3059,7 +3049,7 @@ EndFill:
 		return __super::on_lbuttondblclk( point );
 	}
 
-	LRESULT CChartWnd::on_mousemove(const _point &point)
+	long CChartWnd::on_mousemove( const _point &point )
 	{
 		if( m_bShowCurve && m_nXAxisType )
 		{
@@ -3148,7 +3138,7 @@ EndFill:
 
 		IStatObjectDispPtr sptrStat;
 		{
-			TPOS posStat = m_list_attached.head();
+			long posStat=m_list_attached.head();
 			if(posStat) sptrStat=m_list_attached.get(posStat);
 			if(0==sptrStat) return;
 		}

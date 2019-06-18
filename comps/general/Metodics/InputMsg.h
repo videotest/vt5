@@ -12,9 +12,9 @@ public:
 	CInputMsgDlg();
 	~CInputMsgDlg();
 
-	virtual LRESULT	on_initdialog();
+	virtual long	on_initdialog();
 	virtual void	on_ok();
 
 protected:
-	virtual LRESULT on_command(uint cmd);
+	virtual long on_command( uint cmd );
 };

@@ -9,7 +9,7 @@
 
 class CDBaseDocument;
 #include "types.h"
-
+#include "DBLocksInfo.h"
 
 
 /////////////////////////////////////////////////////////////////////////////
@@ -18,7 +18,7 @@ class CDBaseDocument;
 class CDBaseEngine : public CCmdTarget
 {
 	DECLARE_DYNCREATE(CDBaseEngine)
-
+	CDBLocksInfo* m_pdbLocks;
 	CDBaseDocument*		m_pDocument;
 public:
 	
@@ -26,7 +26,7 @@ public:
 	CDBaseEngine(CDBaseDocument* pDocument);
 	virtual ~CDBaseEngine();
 
-
+	CDBLocksInfo*		GetLocksInfo(){return m_pdbLocks;};
 	bool				OpenFromString( CString strConnectionString );
 	bool				OpenAccessFile( CString strMDBFile, CString& strConnectionString );
 	bool				OpenAdvancedConnection( CString& strConnectionString );

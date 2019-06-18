@@ -36,7 +36,7 @@ void CActionControlsRegistrator::RegisterActionControl( const char *pszProgID, c
 {
 	if( bRegister )
 	{
-		::RegSetValueEx( m_hKey, pszActionName, 0, REG_SZ, (byte*)pszProgID, (DWORD)strlen( pszProgID ) );
+		::RegSetValueEx( m_hKey, pszActionName, 0, REG_SZ, (byte*)pszProgID, strlen( pszProgID ) );
 	}
 	else
 	{
@@ -47,7 +47,7 @@ void CActionControlsRegistrator::RegisterActionControl( const char *pszProgID, c
 long CActionControlsRegistrator::GetRegistredCount()
 {
 	ASSERT( m_strControls.GetSize() == m_strActions.GetSize() );
-	return (long)m_strActions.GetSize();
+	return m_strActions.GetSize();
 }
 
 void CActionControlsRegistrator::GetActionControl( int nPos, CString &strProgID, CString &strActionName )

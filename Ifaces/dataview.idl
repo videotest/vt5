@@ -5,7 +5,6 @@
 ]
 library DataViewTypeLib
 {
-	typedef LONG_PTR TPOS;
 
 [uuid(D3A6B9E3-F6D3-49e6-B178-F57B5D536C39)]
 interface IClassView : IUnknown

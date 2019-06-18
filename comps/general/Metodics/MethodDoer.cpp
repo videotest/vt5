@@ -17,17 +17,17 @@ bool CMethodDoer::AttachMethod(IUnknown *punkMethod)
 	return true;
 }
 
-TPOS CMethodDoer::GetPosByIndex(long nIndex)
+long CMethodDoer::GetPosByIndex(long nIndex)
 { // получить по номеру шага его pos в методике
 	if(m_sptrMethodData==0) return 0;
-	TPOS lStepPos = 0;
+	long lStepPos = 0;
 	if( S_OK != m_sptrMethodData->GetStepPosByIndex( nIndex , &lStepPos) )
 		return 0;
 
 	return lStepPos;
 }
 
-long CMethodDoer::GetIndexByPos(TPOS nPos)
+long CMethodDoer::GetIndexByPos(long nPos)
 { // получить по pos'у шага его номер в методике
 	if(m_sptrMethodData==0) return -1;
 	if(nPos==0) return -1;
@@ -53,7 +53,7 @@ bool CMethodDoerGroup::Do()
 {
 	if(m_sptrMethodData==0) return false;
 
-	TPOS lpos = m_undo.tail();
+	long lpos=m_undo.tail();
 	while(lpos)
 	{
 		CMethodDoer *pDoer = m_undo.get(lpos);
@@ -68,7 +68,7 @@ bool CMethodDoerGroup::Undo()
 {
 	if(m_sptrMethodData==0) return false;
 
-	TPOS lpos=m_undo.head();
+	long lpos=m_undo.head();
 	while(lpos)
 	{
 		CMethodDoer *pDoer = m_undo.get(lpos);
@@ -92,7 +92,7 @@ CMethodDoerAddStep::~CMethodDoerAddStep(void)
 	IMethodManPtr sptrM(ptr_mtd_man);
 	if(sptrM)
 	{
-		TPOS lThisPos = (TPOS)this;
+		long lThisPos = (long)this;
 		sptrM->DropCache(m_sptrMethodData, lThisPos);
 	}	
 
@@ -102,7 +102,7 @@ bool CMethodDoerAddStep::Do()
 {
 	if(m_sptrMethodData==0) return false;
 	if(m_nIndex<0) return false; // на всякий случай - вдруг нас не проинитили
-	TPOS lPos = GetPosByIndex(m_nIndex);
+	long lPos = GetPosByIndex(m_nIndex);
 	if(lPos==0)
 	{ // 0 - либо надо добавлять в самый хвост, либо ошибка
 		long nCount=0;
@@ -110,7 +110,7 @@ bool CMethodDoerAddStep::Do()
 		if(m_nIndex!=nCount) return false; // ошибка
 	}
 
-	TPOS lNewPos = 0;
+	long lNewPos=0;
 	m_sptrMethodData->AddStep(&m_Step,lPos,&lNewPos);
 
 	// если у нас был сохранен кэш - восстановить его
@@ -118,7 +118,7 @@ bool CMethodDoerAddStep::Do()
 	IMethodManPtr sptrM(ptr_mtd_man);
 	if(sptrM)
 	{
-		TPOS lThisPos = (TPOS)this;
+		long lThisPos = (long)this;
 		sptrM->MoveCache(m_sptrMethodData, lThisPos, lNewPos);
 		// перекинули из нашего кэша в кэш метода
 	}	
@@ -133,7 +133,7 @@ bool CMethodDoerAddStep::Undo()
 	if(m_sptrMethodData==0) return false;
 	if(m_nIndex<0) return false; // на всякий случай - вдруг нас не проинитили
 
-	TPOS lPos = GetPosByIndex(m_nIndex);
+	long lPos = GetPosByIndex(m_nIndex);
 	if(lPos==0) return false; // на всякий случай
 
 	// перед удалением степа - заберем себе его кэш
@@ -141,12 +141,12 @@ bool CMethodDoerAddStep::Undo()
 	IMethodManPtr sptrM(ptr_mtd_man);
 	if(sptrM)
 	{
-		TPOS lThisPos = (TPOS)this;
+		long lThisPos = (long)this;
 		sptrM->MoveCache(m_sptrMethodData, lPos, lThisPos);
 		// перекинули из кэша метода в наш кэша
 	}
 
-	TPOS lPos1 = lPos;
+	long lPos1 = lPos;
 	m_sptrMethodData->GetPrevStep(&lPos1, &m_Step);
 	// забрали Step - для Redo; lPos1 - предыдущий шаг, на него переставим активность
 
@@ -155,7 +155,7 @@ bool CMethodDoerAddStep::Undo()
 	while(1)
 	{	// если должно заактивизиться начало или конец цикла - идем вверх
 		if(!lPos1) break; // уперлись в начало методики
-		TPOS lPos2 = lPos1;
+		long lPos2=lPos1;
 		CMethodStep step2;
 		m_sptrMethodData->GetPrevStep(&lPos2,&step2);
 		if(	step2.m_bstrActionName != _bstr_t(szBeginMethodLoop) &&
@@ -168,7 +168,7 @@ bool CMethodDoerAddStep::Undo()
 	while(1)
 	{	// если должно заактивизиться начало или конец цикла - идем вниз
 		if(!lPos1) break; // уперлись в конец методики
-		TPOS lPos2 = lPos1;
+		long lPos2=lPos1;
 		CMethodStep step2;
 		m_sptrMethodData->GetNextStep(&lPos2,&step2);
 		if(	step2.m_bstrActionName != _bstr_t(szBeginMethodLoop) &&
@@ -195,13 +195,13 @@ bool CMethodDoerChangeStep::Do()
 	if(m_sptrMethodData==0) return false;
 	if(m_nIndex<0) return false; // на всякий случай - вдруг нас не проинитили
 
-	TPOS lPos = GetPosByIndex(m_nIndex);
+	long lPos = GetPosByIndex(m_nIndex);
 	if(lPos==0) return false; // на всякий случай
 
 	CMethodStep step1;
 	step1.m_bSkipData = m_Step.m_bSkipData;
 
-	TPOS lPos1 = lPos;
+	long lPos1 = lPos;
 	m_sptrMethodData->GetNextStep(&lPos1, &step1); // забрали Step - для Redo
 	lPos1 = lPos;
 	m_sptrMethodData->SetStep(&lPos1, &m_Step, m_bDontClearCache ); // установили step
@@ -230,18 +230,18 @@ bool CMethodDoerMoveStep::Do()
 
 	if(m_nIndex1==m_nIndex0) return true; // просто защита от дурака...
 
-	TPOS lPos0 = GetPosByIndex(m_nIndex0);
+	long lPos0 = GetPosByIndex(m_nIndex0);
 	if(lPos0==0) return false; // на всякий случай
 
 	CMethodStep step;
-	TPOS lPos0tmp = lPos0;
+	long lPos0tmp = lPos0;
 	m_sptrMethodData->GetNextStep(&lPos0tmp, &step); // забрали Step
 	m_sptrMethodData->DeleteStep(lPos0); // ну и удалили нафиг
 
 	// [vanek]: а теперь берем позицию до которой надо воткнуть
-	TPOS lPos1 = GetPosByIndex(m_nIndex1);
+	long lPos1 = GetPosByIndex(m_nIndex1);
 	
-	TPOS lNewPos = 0;
+	long lNewPos=0;
 	m_sptrMethodData->AddStep(&step,lPos1, &lNewPos);
 	m_sptrMethodData->SetActiveStepPos(lNewPos, FALSE);
 

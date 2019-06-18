@@ -17,10 +17,10 @@ namespace ViewSpace
 
 	template <class T, bool t_bVertical = true>
 	class CSplitterLtdWindowT : 
-		public WTL::CSplitterWindowImpl<CSplitterLtdWindowT<T, t_bVertical> >,
+		public WTL::CSplitterWindowImpl<CSplitterLtdWindowT<T, t_bVertical>, t_bVertical>,
 		public CCalcMinRect<T>
 	{
-		typedef WTL::CSplitterWindowImpl<CSplitterLtdWindowT<T, t_bVertical> > CSplitWinImpl;
+		typedef WTL::CSplitterWindowImpl<CSplitterLtdWindowT<T, t_bVertical>, t_bVertical> CSplitWinImpl;
 		SIZE _sizeMin[2];
 	public:
 		DECLARE_WND_CLASS_EX(_T("SplitterLtdWindow"), CS_DBLCLKS, COLOR_WINDOW)
@@ -69,7 +69,7 @@ namespace ViewSpace
 				if(m_xySplitterPos != xyNewSplitPos)
 				{
 					if(m_bFullDrag)
-					{
+					{	
 						if(SetSplitterPos(xyNewSplitPos, true))
 							UpdateWindow();
 					}

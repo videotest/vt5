@@ -53,9 +53,9 @@ Basic definitions for the <b> MexAPI. </b>
 
 //! Values for parameter status of user defined function of type ::mexImageFinalProc 
 //!
-#define IMAGE_READY         0 //!< Image is complete an OK, used as value of status in a call to ::mexImageFinalProc.
-#define IMAGE_TRANSFER_ERR  1 //!< Imagetransfer failed, used as value of status in a call to ::mexImageFinalProc.
-#define IMAGE_STARTAQC_ERR  2 //!< Start of image transfer failed, used as value of status in a call to ::mexImageFinalProc.
+#define IMAGE_READY         0          //!< Image is complete an OK, used as value of status in a call to ::mexImageFinalProc.
+#define IMAGE_TRANSFER_ERR  1          //!< Imagetransfer failed, used as value of status in a call to ::mexImageFinalProc.
+#define IMAGE_STARTAQC_ERR  2          //!< Start of image transfer failed, used as value of status in a call to ::mexImageFinalProc.
 #define IMAGE_READY_BUTNOTEQUALIZED  3 //!< ImageReady but not equalized because out of range (for multi shot images only).
 #define NOTIFY_TRIGGER_RELEASED      4 //!< External trigger released
 #define NOTIFY_EXPOSURE_START        5 //!< Exposure start
@@ -286,11 +286,11 @@ typedef BOOL (__cdecl *mexImageProc)(long done,
 //! \copydoc page18
 typedef BOOL (__stdcall * mexImageFinalProc)(unsigned long status, // success code for incoming image
                                              void * colorchannels[3],      // color chanesl of incoming image order is blue,green,red
-                           unsigned long UserValue                // generic user value from caller
-                           );
+                                              unsigned long UserValue                // generic user value from caller
+                                            );
 
 
-//! Callback function to signalize <b> plug and play events </b> on the FireWire bus. 
+//! Callback function to signalize <b> plug and play events </b> on the FireWire bus.
 //! \note The callback reports events on the FireWire-Bus that affects changing connections to FireWire-Devices. 
 //! Hence the value for CamGUID can be any identifier of a FireWire-Device. If the value is 0, the implementation
 //! was unable to find out the identifier. Any incoming call of this callback should be handled so as if all 

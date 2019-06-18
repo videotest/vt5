@@ -1,7 +1,7 @@
 #if !defined(__TwainDrv_H__)
 #define __TwainDrv_H__
 
-#include "twain.h"
+#include <twain.h>
 #include "TwainCol.h"
 #include "Library.h"
 

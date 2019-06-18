@@ -24,7 +24,7 @@ protected:
 	com_call LoadTextFile( BSTR bstrFileName );
 	com_call SaveTextFile( BSTR bstrFileName );
 	com_call SetModifiedFlag( BOOL bSet );
-	
+
 	// bstrFileName - незащищенная часть файла (читается, если не удалось прочитать защищенный)
 	// bstrFileName.protected - защищенный файл
 	// bstrFileName.protected.chk - подпись защищенного файла

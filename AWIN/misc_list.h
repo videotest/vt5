@@ -16,7 +16,6 @@
 
 #pragma warning(disable:4786)
 
-typedef POSITION TPOS;
 
 template<class data_type, void *ptr_free = 0>
 class _list_t
@@ -41,16 +40,16 @@ public:
 	};
 
 
-	TPOS head()							{ return (TPOS)m_phead; };
-	TPOS tail()							{ return (TPOS)m_ptail; };
+	long head()							{return (long)m_phead;};
+	long tail()							{return (long)m_ptail;};
 	long count()						{return m_count;}
-	static data_type	&get(TPOS lpos){ return ((list_item*)lpos)->data; }
-	static TPOS next(TPOS lpos)				{ return (TPOS)((list_item*)lpos)->next; }
-	static TPOS prev(TPOS lpos)				{ return (TPOS)((list_item*)lpos)->prev; }
-	static void set(data_type	p, TPOS lpos)	{ ((list_item*)lpos)->data = p; }
-	TPOS add_head(data_type p)		{ return insert_after(p); }
-	TPOS add_tail(data_type p)		{ return insert_before(p); }
-	TPOS insert_before(data_type p, TPOS lpos = 0)
+	static data_type	&get( long lpos ){return ((list_item*)lpos)->data;}
+	static long next( long lpos )				{return (long)((list_item*)lpos)->next;}
+	static long prev( long lpos )				{return (long)((list_item*)lpos)->prev;}
+	static void set( data_type	p, long lpos )	{((list_item*)lpos)->data = p;}
+	long add_head( data_type p )		{return insert_after( p );}
+	long add_tail( data_type p )		{return insert_before( p );}
+	long insert_before( data_type p, long lpos = 0 )
 	{
 		list_item	*pnext = (list_item*)lpos;
 		list_item	*pnew = new list_item;
@@ -66,10 +65,10 @@ public:
 
 		m_count++;
 
-		return (TPOS)pnew;
+		return (long)pnew;
 	}
 
-	TPOS insert_after(data_type p, TPOS lpos = 0)
+	long insert_after( data_type p, long lpos = 0 )
 	{
 		list_item	*pprev = (list_item*)lpos;
 		list_item	*pnew = new list_item;
@@ -85,9 +84,9 @@ public:
 
 		m_count++;
 
-		return (TPOS)pnew;
+		return (long)pnew;
 	}
-	void remove(TPOS lpos)
+	void remove( long lpos )
 	{
 		list_item	*premove = (list_item*)lpos;
 		if( premove->next )premove->next->prev = premove->prev;else m_ptail = premove->prev;
@@ -111,13 +110,13 @@ public:
 		m_phead = m_ptail = 0;
 		m_count = 0;
 	}
-	TPOS	find(data_type &p)
+	long	find( data_type &p )
 	{
 		list_item	*pitem = m_phead;
 		while( pitem )
 		{
 			if( p == pitem->data )
-				return TPOS(pitem);
+				return long(pitem);
 			pitem = pitem->next;
 		}
 		return 0;

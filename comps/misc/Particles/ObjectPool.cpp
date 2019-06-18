@@ -22,7 +22,7 @@ void CObjectPool::StartProcessing(IUnknown *list, IUnknown *image, int cx, int c
 	if(m_List==0) return;
 	m_cx=cx;
 	m_cy=cy;
-	TPOS lPos=0;
+	long lPos=0;
 	m_List->GetFirstChildPosition(&lPos);
 	m_Objects.deinit();
 	while(lPos)

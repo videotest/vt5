@@ -308,13 +308,13 @@ public:
 	{ return m_sGroupName; }
 //toolbar support
 	int GetDefToolBarsCount()
-	{ return (int)m_sToolBars.GetSize(); }
+	{ return m_sToolBars.GetSize(); }
 	const char *GetDefToolBarName( int iTBIdx )
 	{ return m_sToolBars[iTBIdx]; }
 //menu information
 //return the menu count, where action defaultly present
 	int	GetDefMenusCount()
-	{ return (int)m_sMenus.GetSize(); }
+	{ return m_sMenus.GetSize(); }
 	CString GetDefMenuName( int iMenuIdx )
 	{ return m_sMenus[iMenuIdx]; }
 //special action processing (such as - compo-box in toolbar, sub-menu in toolbar) - comming soom

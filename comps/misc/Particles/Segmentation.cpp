@@ -60,7 +60,7 @@ IUnknown *CSegmSmallObjects::GetContextObject(_bstr_t cName, _bstr_t cType)
 		return punkImage;
 	}
 
-	LONG_PTR lPos = 0;
+	long lPos = 0;
 	ptrC->GetFirstObjectPos( bstrType, &lPos );
 	
 	while( lPos )

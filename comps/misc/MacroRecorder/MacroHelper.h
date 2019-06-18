@@ -144,5 +144,5 @@ public:
 	
 // override  
 public:
-	virtual LRESULT handle_message( UINT m, WPARAM w, LPARAM l );
+	virtual long handle_message( UINT m, WPARAM w, LPARAM l );
 };

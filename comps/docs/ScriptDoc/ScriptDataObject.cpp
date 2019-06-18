@@ -913,7 +913,7 @@ DWORD CScriptActionInfo::GetActionState()
 		IMainWindowPtr	ptrMainWindow = punkMainWnd;
 		punkMainWnd->Release();
 
-		POSITION lpos = 0;
+		long	lpos = 0;
 		ptrMainWindow->GetFirstToolbarPosition( &lpos );
 		DWORD	dwState = 0;
 
@@ -941,7 +941,7 @@ DWORD CScriptActionInfo::GetActionState()
 		IMainWindowPtr	ptrMainWindow = punkMainWnd;
 		punkMainWnd->Release();
 
-		POSITION	lpos = 0;
+		long	lpos = 0;
 		ptrMainWindow->GetFirstDockWndPosition( &lpos );
 		DWORD	dwState = 0;
 

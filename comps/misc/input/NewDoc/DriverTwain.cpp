@@ -197,7 +197,7 @@ void CDriverTwain::InitDSM()
 int CDriverTwain::OnGetDevicesCount()
 {
 	if (!m_bDSMInited) InitDSM();
-	return (int)g_DataSrcMgr.m_DataSources.GetSize();
+	return g_DataSrcMgr.m_DataSources.GetSize();
 }
 
 void CDriverTwain::OnGetDeviceNames(int nDev, CString &sShortName, CString &sLongName, CString &sCat)

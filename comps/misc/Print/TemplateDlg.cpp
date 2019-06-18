@@ -122,13 +122,13 @@ void CTemplateDlg::FillExistTemplates()
 	if( sptrA != NULL )
 	{			
 
-		LONG_PTR	lPosTemplate = 0;
+		long	lPosTemplate = 0;
 		
 		sptrA->GetFirstDocTemplPosition( &lPosTemplate );
 		
 		while( lPosTemplate )
 		{
-			LONG_PTR	lPosDoc = 0;
+			long	lPosDoc = 0;
 
 			sptrA->GetFirstDocPosition( lPosTemplate, &lPosDoc );
 
@@ -150,7 +150,7 @@ void CTemplateDlg::FillExistTemplates()
 
 					_bstr_t bstrType(szTypeReportForm);
 
-					LONG_PTR lPos = NULL;
+					long lPos = NULL;
 					
 					spDC->GetFirstObjectPos( bstrType, &lPos );
 					while( lPos )

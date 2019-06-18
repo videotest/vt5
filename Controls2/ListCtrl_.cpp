@@ -32,7 +32,7 @@ BOOL	CListCtrl_::delete_cells_info( int iRow, int iColumn )
 	{
 		for( int iCurrCol = iColumn; iCurrCol <= iEndColumn; iCurrCol ++ )
 		{
-			TPOS lColPos = 0, lRowPos = 0;
+			long lColPos = 0, lRowPos = 0;
 			lColPos = m_Columns[iCurrCol];
 			lRowPos = m_Rows[iRow];
 
@@ -40,7 +40,7 @@ BOOL	CListCtrl_::delete_cells_info( int iRow, int iColumn )
 				continue;
 
 			ListCellAdditionInfo *pLCAInfo = 0;
-			TPOS lPos = find_cell( iRow, iCurrCol );
+			long lPos = find_cell( iRow, iCurrCol );
 			if( lPos )
 			{
 				pLCAInfo = (ListCellAdditionInfo *) m_Cells.get( lPos ).lpInfo;
@@ -59,14 +59,14 @@ BOOL	CListCtrl_::delete_cells_info( int iRow, int iColumn )
 }
 
 // return cells position
-TPOS	CListCtrl_::find_cell(int iRow, int iColumn)
+long	CListCtrl_::find_cell( int iRow, int iColumn )
 {
-	TPOS 	lColPos = m_Columns[iColumn],
+	long 	lColPos = m_Columns[iColumn],
 			lRowPos = m_Rows[iRow];
 
 	if( lColPos && lRowPos )
 	{
-		for (TPOS lPos = m_Cells.head(); lPos; lPos = m_Cells.next(lPos))
+     	for( long lPos = m_Cells.head( ); lPos; lPos = m_Cells.next( lPos ) )
 		{
 			if( (m_Cells.get( lPos ).lColumnPos == lColPos) && (m_Cells.get( lPos ).lRowPos == lRowPos) )
 				return lPos;
@@ -173,7 +173,7 @@ BOOL	CListCtrl_::SetCellProp( int iRow, int iColumn, const ListCellInfo *pLCInfo
 	if( !handle( ) || !pLCInfo )
 		return FALSE;
 
-	TPOS	lColPos = m_Columns[ iColumn ], 
+	long	lColPos = m_Columns[ iColumn ], 
 			lRowPos = m_Rows[ iRow ];
 	
     if( !lColPos || !lRowPos )
@@ -181,16 +181,16 @@ BOOL	CListCtrl_::SetCellProp( int iRow, int iColumn, const ListCellInfo *pLCInfo
 
 	//BOOL	bFind = FALSE;
 	ListCellAdditionInfo *pLCAInfo = 0;
-	TPOS lPos = find_cell(iRow, iColumn);
+    long lPos = find_cell( iRow, iColumn );
 	if( lPos )
-		pLCAInfo = m_Cells.get( lPos ).lpInfo;
+		pLCAInfo = (ListCellAdditionInfo *) m_Cells.get( lPos ).lpInfo;
 	else
 	{
 		XCell stCell;
 		stCell.lColumnPos = lColPos;
 		stCell.lRowPos = lRowPos;
 		pLCAInfo = new ListCellAdditionInfo;
-		stCell.lpInfo = pLCAInfo;
+		stCell.lpInfo = (long) pLCAInfo;
 		m_Cells.add_tail( stCell );
 	}
 
@@ -212,7 +212,7 @@ BOOL	CListCtrl_::GetCellProp( int iRow, int iColumn, ListCellInfo * pLCInfo )
     if( ListView_GetItem( m_hwnd, &stItem ) )
 		return FALSE;*/
 
-	TPOS lPos = find_cell(iRow, iColumn);
+	long lPos = find_cell( iRow, iColumn );
 	
 	//
 	//long	lRow = m_Rows.get( m_Rows[iRow] ),
@@ -264,7 +264,7 @@ BOOL	CListCtrl_::GetCellProp( int iRow, int iColumn, ListCellInfo * pLCInfo )
 	//return TRUE;
 }
 
-LRESULT	CListCtrl_::on_destroy()
+long	CListCtrl_::on_destroy( )
 {
 	int iRowCount = 0,
 		iColCount = 0;
@@ -281,9 +281,9 @@ LRESULT	CListCtrl_::on_destroy()
 	return CVListCtrl::on_destroy( );
 }
 
-LRESULT	CListCtrl_::OnInsertColumn(int iCol, const LPLVCOLUMN pcol)
+long	CListCtrl_::OnInsertColumn( int iCol, const LPLVCOLUMN pcol )
 {
-	LRESULT lRes = __super::OnInsertColumn(iCol, pcol);
+	long lRes = __super::OnInsertColumn( iCol, pcol );
 	
 	/*if( !clearing_cells_lparam( -1, lRes ) )
 	{
@@ -293,7 +293,7 @@ LRESULT	CListCtrl_::OnInsertColumn(int iCol, const LPLVCOLUMN pcol)
 	
 	if( lRes != -1 )
 	{
-		TPOS lPos = 0;
+		long lPos = 0;
 		lPos = m_Columns[ lRes ];
 		if( lPos )
 			m_Columns.insert_before( lRes, lPos );
@@ -304,12 +304,12 @@ LRESULT	CListCtrl_::OnInsertColumn(int iCol, const LPLVCOLUMN pcol)
 	return lRes;
 }
 
-LRESULT	CListCtrl_::OnDeleteColumn(int iCol)
+long	CListCtrl_::OnDeleteColumn(	int iCol )
 {
 	if( iCol >= 0 )
 	{
 		delete_cells_info( -1, iCol );
-		TPOS lPos = 0;
+		long lPos = 0;
 		lPos = m_Columns[ iCol ];
 		if( lPos )
 			m_Columns.remove( lPos );
@@ -317,7 +317,7 @@ LRESULT	CListCtrl_::OnDeleteColumn(int iCol)
 	return __super::OnDeleteColumn( iCol );
 }
 
-LRESULT	CListCtrl_::OnInsertRow(const LPLVITEM prow)
+long	CListCtrl_::OnInsertRow( const LPLVITEM prow )
 {
 	long lRes = __super::OnInsertRow( prow );
 	if( lRes != -1 )
@@ -327,7 +327,7 @@ LRESULT	CListCtrl_::OnInsertRow(const LPLVITEM prow)
 			ListView_DeleteItem( m_hwnd, lRes);
 			lRes = -1;
 		}*/
-		TPOS lPos = 0;
+		long lPos = 0;
 		lPos = m_Rows[ lRes ];
         if( lPos )
 			m_Rows.insert_before( lRes, lPos );
@@ -343,7 +343,7 @@ long	CListCtrl_::OnDeleteRow( int iRow )
 	if( iRow >= 0 )
 	{
 		delete_cells_info( iRow, -1 );
-		TPOS lPos = 0;
+		long lPos = 0;
 		lPos = m_Rows[ iRow ];
 		if( lPos )
 			m_Rows.remove( lPos );

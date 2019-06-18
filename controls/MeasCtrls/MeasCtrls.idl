@@ -4,16 +4,16 @@
 // produce the type library (MeasCtrls.tlb) that will become a resource in
 // MeasCtrls.ocx.
 
+#include <olectl.h>
+#include <idispids.h>
+#include "olectl.h"
+
 [ uuid(40075923-4631-4A92-A6BE-6FA82744087A), version(1.0),
   helpfile("MeasCtrls.hlp"),
   helpstring("MeasCtrls ActiveX Control module"),
   control ]
 library MeasCtrlsLib
 {
-#include <olectl.h>
-#include <idispids.h>
-#include "olectl.h"
-
 	importlib(STDOLE_TLB);
 
 	//  Primary dispatch interface for CDisplUserParamCtrl

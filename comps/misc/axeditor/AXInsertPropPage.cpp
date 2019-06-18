@@ -359,7 +359,7 @@ void CAXInsertPropPage::OnButtonAdd()
 		//spShellData->GetEntriesCount( &nEntriesCount );				
 	}
 
-	int nSize = (int)dlg.m_arrCLSID.GetSize();
+	int nSize = dlg.m_arrCLSID.GetSize();
 	for(int i = 0; i < nSize; i++)
 	{
 		BSTR	bstr = 0;

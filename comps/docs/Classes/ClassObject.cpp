@@ -100,18 +100,18 @@ HRESULT CClassObject::XClassObj::EmptyAllParamsLimits()
 	return S_OK;
 }
 	
-HRESULT CClassObject::XClassObj::GetFirstParamLimitsPos(LONG_PTR* plPos)
+HRESULT CClassObject::XClassObj::GetFirstParamLimitsPos(long* plPos)
 {
 	METHOD_PROLOGUE(CClassObject, ClassObj)
 	if(plPos)
-		*plPos = (LONG_PTR)pThis->_GetFirstParamLimitsPos();
+		*plPos = pThis->_GetFirstParamLimitsPos();
 	return S_OK;
 }
 	
-HRESULT CClassObject::XClassObj::GetNextParamLimits(LONG_PTR* plPos, long* plParamKey, double* pfLo, double* pfHi)
+HRESULT CClassObject::XClassObj::GetNextParamLimits(long* plPos, long* plParamKey, double* pfLo, double* pfHi)
 {
 	METHOD_PROLOGUE(CClassObject, ClassObj)
-	pThis->_GetNextParamLimits((POSITION*)plPos, plParamKey, pfLo, pfHi);
+	pThis->_GetNextParamLimits(plPos, plParamKey, pfLo, pfHi);
 	return S_OK;
 }
 	
@@ -267,19 +267,19 @@ void CClassObject::_EmptyAllParamsLimits()
 	m_mapParamLimits.RemoveAll();
 }
 
-TPOS CClassObject::_GetFirstParamLimitsPos()
+long CClassObject::_GetFirstParamLimitsPos()
 {
-	return m_mapParamLimits.GetStartPosition();
+	return (long)m_mapParamLimits.GetStartPosition();
 }
 
-void CClassObject::_GetNextParamLimits(POSITION* plPos, long* plParamKey, double* pfLo, double* pfHi)
+void CClassObject::_GetNextParamLimits(long* plPos, long* plParamKey, double* pfLo, double* pfHi)
 {
 	if(plPos && *plPos && plParamKey)
 	{
 		ParamLimitsInfo* pInfo = 0;
 		POSITION pos = (POSITION)*plPos;
 		m_mapParamLimits.GetNextAssoc(pos, *plParamKey, pInfo);
-		*plPos = pos;
+		*plPos = (long)pos;
 		if(pInfo)
 		{
 			if(pfLo) *pfLo = pInfo->fLo;

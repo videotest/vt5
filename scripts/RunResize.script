@@ -1,3 +1,0 @@
-'resource:Resize...#Image#Resize the active image#Resize Image
-'state:action=Median
-FormManager.ExecuteModal "Resize"

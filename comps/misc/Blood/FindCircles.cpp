@@ -21,7 +21,7 @@ _ainfo_base::arg        CFindCirclesInfo::s_pargs[] =
 	{0, 0, 0, false, false },
 };
 
-static inline int iround(double x)
+static inline int round(double x)
 {
 	return int(floor(x+0.5));
 }
@@ -59,10 +59,10 @@ bool CFindCircles::InvokeFilter()
 	smart_alloc(dy2,int,nPoints);
 	for(int i=0; i<nPoints; i++)
 	{
-		dx1[i] = iround( cos(i*2*PI/nPoints)*(nRadius+h/2) );
-		dy1[i] = iround( sin(i*2*PI/nPoints)*(nRadius+h/2) );
-		dx2[i] = iround( cos(i*2*PI/nPoints)*(nRadius-h/2) );
-		dy2[i] = iround( sin(i*2*PI/nPoints)*(nRadius-h/2) );
+		dx1[i] = round( cos(i*2*PI/nPoints)*(nRadius+h/2) );
+		dy1[i] = round( sin(i*2*PI/nPoints)*(nRadius+h/2) );
+		dx2[i] = round( cos(i*2*PI/nPoints)*(nRadius-h/2) );
+		dy2[i] = round( sin(i*2*PI/nPoints)*(nRadius-h/2) );
 	}
 
 	StartNotification(cy,nPaneCount);

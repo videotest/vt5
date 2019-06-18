@@ -18,7 +18,11 @@
 
 #include "\vt5\common\misc_str.h"
 
-#import <statobject.tlb> no_namespace raw_interfaces_only named_guids 
+#ifdef _DEBUG
+	#import "\vt5\vt5\debug\comps\statobject.tlb" no_namespace raw_interfaces_only named_guids 
+#else
+	#import "\vt5\vt5\release\comps\statobject.tlb" no_namespace raw_interfaces_only named_guids 
+#endif
 
 
 using namespace ObjectSpace::ParamSpace;
@@ -231,8 +235,8 @@ private:
 	long m_lVirtClasses;
 public:
 	void GetVirtualClasses(bool& bVirtualClasses, long& lVirtClasses);
-	COLORREF get_class_color( LPOS lpos );
-	const char* get_class_name( LPOS lpos );
+	COLORREF get_class_color( long lpos );
+	const char* get_class_name( long lpos );
 };
 
 	//////////////////////////////////////////////////////////////////////

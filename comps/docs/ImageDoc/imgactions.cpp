@@ -11,6 +11,11 @@
 #include "misc_utils.h"
 #include "CalibrMarker.h"
 
+#ifdef _DEBUG
+#define new DEBUG_NEW
+#undef THIS_FILE
+static char THIS_FILE[] = __FILE__;
+#endif
 
 
 //dyncreate
@@ -1138,7 +1143,7 @@ static bool __HasObject(IUnknown *punkData, const char *szType)
 		if( szType && str != szType )
 			continue;
 		IUnknownPtr	punkObj;
-		LONG_PTR	lpos = 0;
+		long	lpos = 0;
 		sptrM->GetObjectFirstPosition(nType, &lpos );
 		return lpos != 0;
 	}

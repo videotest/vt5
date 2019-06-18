@@ -78,7 +78,7 @@ App::~App()
 //	OutputDebugString( "\n" );
 
 
-	delete[] m_pszModuleFileName;
+	delete m_pszModuleFileName;
 }
 
 const char *App::module_filename()
@@ -152,7 +152,7 @@ bool App::Init( HINSTANCE h )
 	if (!m_punkAppUnknown)
 	{
 	#ifdef _DEBUG
-		HINSTANCE hDll_Common = GetModuleHandle("common.dll");
+		HINSTANCE hDll_Common = GetModuleHandle("common_d.dll");
 	#else
 		HINSTANCE hDll_Common = GetModuleHandle("common.dll");
 	#endif
@@ -190,7 +190,6 @@ bool App::Deinit()
 	while( m_pclass )
 	{
 		CWndClass	*p = m_pclass->m_pnext;
-		UnregisterClass(m_pclass->GetClassName(),  handle());
 		delete m_pclass;
 		m_pclass = p;
 	}
@@ -723,8 +722,13 @@ bool ClassFactory::RegisterThis(IVTApplication * pApp, BOOL bModeRegister, App::
 		else // we need to generate new clsid
 		{
 			// and create new CLSID if needed 
-			guidExtern = (pInfo->m_clsid);
+			if (FAILED(::CoCreateGuid(&guidExtern)) || guidExtern == INVALID_KEY)
+			{
+				App::instance()->handle_error();
+				return false;
+			}
 		}
+
 		pInfo->m_clsidExt = guidExtern;
 	}
 
@@ -781,7 +785,7 @@ bool _RegisterObject(GuidKey & guidKey, _bstr_t bstrProgID, _bstr_t bstrSectProg
 	}
 
 // string CLSID\\{CLSID}
-	::CRegKey reg;
+	CRegKey reg;
 	if (reg.Create(HKEY_CLASSES_ROOT, bstrRegGuid))
 	{
 		CRegValue valProgID;
@@ -799,7 +803,7 @@ bool _RegisterObject(GuidKey & guidKey, _bstr_t bstrProgID, _bstr_t bstrSectProg
 	}
 
 // string CLSID\\{CLSID}\\InprocServer32
-	::CRegKey regInProcServer;
+	CRegKey regInProcServer;
 	if (regInProcServer.Create(HKEY_CLASSES_ROOT, bstrRegInprocServer))
 	{
 		// set module name
@@ -827,7 +831,7 @@ bool _RegisterObject(GuidKey & guidKey, _bstr_t bstrProgID, _bstr_t bstrSectProg
 	}
 
 // string CLSID\\{CLSID}\\ProgID
-	::CRegKey regProgID;
+	CRegKey regProgID;
 	if (regProgID.Create(HKEY_CLASSES_ROOT, bstrRegProgID))
 	{
 		// set value
@@ -864,7 +868,7 @@ bool _RegisterObject(GuidKey & guidKey, _bstr_t bstrProgID, _bstr_t bstrSectProg
 
 	if (bstrSect.length())
 	{
-		::CRegKey regSect;
+		CRegKey regSect;
 		if (regSect.Create(HKEY_LOCAL_MACHINE, bstrSect))
 		{
 			CRegValue val(bstrSectProgID);
@@ -940,7 +944,7 @@ bool _UnregisterObject(GuidKey & guidKey, _bstr_t bstrProgID, _bstr_t bstrSectio
 		_bstr_t bstrProgIDCLSID(bstrProgID);
 		bstrProgIDCLSID += "\\CLSID";
 
-		::CRegKey regProg;
+		CRegKey regProg;
 		if (regProg.Open(HKEY_CLASSES_ROOT, bstrProgIDCLSID))
 		{
 			_bstr_t bstrCLSID;
@@ -954,7 +958,7 @@ bool _UnregisterObject(GuidKey & guidKey, _bstr_t bstrProgID, _bstr_t bstrSectio
 				_bstr_t bstrKey("CLSID\\");
 				bstrKey += bstrCLSID;
 
-				::CRegKey regCLSID;
+				CRegKey regCLSID;
 				if (regCLSID.Open(HKEY_CLASSES_ROOT, bstrKey))
 					regCLSID.DeleteKey();
 			}
@@ -980,7 +984,7 @@ bool _UnregisterObject(GuidKey & guidKey, _bstr_t bstrProgID, _bstr_t bstrSectio
 
 			// get real progID
 			_bstr_t bstrRealCLSIDProgID;
-			::CRegKey regProg;
+			CRegKey regProg;
 			if (regProg.Open(HKEY_CLASSES_ROOT, bstrCLSIDProgIDKey))
 			{
 				// get default value (registered extern ProgID)
@@ -993,7 +997,7 @@ bool _UnregisterObject(GuidKey & guidKey, _bstr_t bstrProgID, _bstr_t bstrSectio
 			}
 
 			// delete CLSID entry
-			::CRegKey regCLSID;
+			CRegKey regCLSID;
 			if (regCLSID.Open(HKEY_CLASSES_ROOT, bstrCLSIDKey))
 				regCLSID.DeleteKey();
 
@@ -1007,7 +1011,7 @@ bool _UnregisterObject(GuidKey & guidKey, _bstr_t bstrProgID, _bstr_t bstrSectio
 	}
 	if (bstrSection.length())
 	{
-		::CRegKey reg;
+		CRegKey reg;
 		if (reg.Open(HKEY_LOCAL_MACHINE, bstrSection))
 		{
 			CRegValue val(bstrProgID);
@@ -1044,15 +1048,15 @@ HRESULT GetComponentInfo(void ** ppv)
 	{
 		return E_FAIL;
 	}
-	else if (pInfo->lpos == (TPOS)-1) // get first component
+	else if (pInfo->lpos == (DWORD)-1) // get first component
 	{
 		pComInfo = App::instance()->FirstComInfo();
-		pInfo->lpos = (TPOS)(pComInfo ? pComInfo->m_pnext : 0);
+		pInfo->lpos = (DWORD)(pComInfo ? pComInfo->m_pnext : 0);
 	}
 	else // get next component
 	{
 		pComInfo = (App::ComInfo*)pInfo->lpos;
-		pInfo->lpos = (TPOS)(pComInfo ? pComInfo->m_pnext : 0);
+		pInfo->lpos = (DWORD)(pComInfo ? pComInfo->m_pnext : 0);
 	}
 
 	if (!pComInfo)

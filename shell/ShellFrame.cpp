@@ -430,7 +430,7 @@ IMPLEMENT_UNKNOWN(CShellFrame, Frm);
 
 LPUNKNOWN CShellFrame::GetInterfaceHook(const void*piidv)
 {
-	static bool bInsideHook = false;
+	/*static bool bInsideHook = false;
 
 	if( bInsideHook )
 		return false;
@@ -453,7 +453,7 @@ LPUNKNOWN CShellFrame::GetInterfaceHook(const void*piidv)
 
 		return punkInterface;
 	}
-	bInsideHook  = false;
+	bInsideHook  = false;*/
 
 	return 0;
 }
@@ -519,9 +519,9 @@ HRESULT CShellFrame::XFrm::DestroyView( IUnknown *punkView )
 
 			if( ::GetWindowFromUnknown( punk ) == ::GetWindowFromUnknown( punkView ) )
 			{
-				ULONG ul=punk->Release(); 
+				punk->Release();
 				pview->DestroyWindow();
-				//pview->Release();
+
 				return S_OK;
 			}
 			else
@@ -2345,7 +2345,7 @@ void CShellFrame::_RecalcLayoyt( bool bOnlyIfToolbarExist )
 /////////////////////////////////////////////////////////////////////////////
 int CShellFrame::GetToolBarCount()
 {
-	return (int)m_ptrToolBarList.GetCount();
+	return m_ptrToolBarList.GetCount();
 }
 
 /////////////////////////////////////////////////////////////////////////////
@@ -2484,9 +2484,9 @@ LRESULT CShellFrame::OnSetMessageString(WPARAM wParam, LPARAM lParam)
 			CFrameWnd* pFrameWnd = pMessageBar->GetParentFrame();
 			// get message associated with the ID indicated by wParam
 			if( pFrameWnd )
-				pFrameWnd->GetMessageString((UINT)wParam, strMessage);
+				pFrameWnd->GetMessageString(wParam, strMessage);
 			else
-				GetMessageString((UINT)wParam, strMessage);
+				GetMessageString(wParam, strMessage);
 
 			lpsz = strMessage;
 		}

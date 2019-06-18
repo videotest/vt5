@@ -216,7 +216,7 @@ HRESULT CBinaryImage::Load( IStream *pStream, SerializeParams *pparams )
 		// A.M. fix 2292
 		byte *p = new byte[m_cx4*m_cy];
 		ZeroMemory(p, m_cx4*m_cy);
-		
+
 		for(long y = 0; y < m_cy; y++)
 		{
 			m_ppRows[y] = p+y*m_cx4;

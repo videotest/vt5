@@ -1,7 +1,7 @@
 #pragma once
 #include "method_int.h"
 
-BOOL	get_method_by_name(BSTR bstr_mtd_name, IMethodMan *pmtd_man, IUnknown **ppunk_mtd, TPOS *plpos_mtd = 0);
+BOOL	get_method_by_name( BSTR bstr_mtd_name, IMethodMan *pmtd_man, IUnknown **ppunk_mtd, long *plpos_mtd = 0 );
 HRESULT _invoke_func( IDispatch *pDisp, BSTR bstrFuncName, VARIANT* pargs, int nArgsCount, VARIANT* pvarResult );
 _variant_t _exec_script_function( LPCTSTR lpctstrFunction, long nArgsCount=0, _variant_t *pvarArgs=0 );
 void FireScriptEvent(LPCTSTR lpszEventName, int nParams=0, VARIANT *pvarParams=0);
@@ -18,7 +18,7 @@ public:
 	_dbg_tracer(const char *name, const char *param=0) // предполагается, что *name - литерал, копию заводить не будем
 	{
 		m_pszName = name;
-		TPOS pos = _tracers_map.find(m_pszName);
+		long pos = _tracers_map.find(m_pszName);
 		if(pos) _tracers_map.set( _tracers_map.get(pos) + 1, m_pszName );
 		else _tracers_map.set( 1, m_pszName );
 		//_trace( "/----{ ", param );
@@ -29,7 +29,7 @@ public:
 	{
 		m_nDepth--;
 		//_trace( "\\----} " );
-		TPOS pos = _tracers_map.find(m_pszName);
+		long pos = _tracers_map.find(m_pszName);
 		if(pos) _tracers_map.set( _tracers_map.get(pos) - 1, m_pszName );
 		else _tracers_map.set( 0, m_pszName );
 	}
@@ -55,7 +55,7 @@ public:
 		strncpy(p, m_pszName, 100);
 		p += strlen(p);
 
-		TPOS pos = _tracers_map.find(m_pszName);
+		long pos = _tracers_map.find(m_pszName);
 		if(pos)
 		{
 			sprintf( p, "[%i]", _tracers_map.get(pos) );

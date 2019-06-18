@@ -91,7 +91,7 @@ IUnknown *CStageObject::DoGetInterface(const IID &iid)
 	//VTMessageBox("DoGetInterfacePosl", "VT5", MB_OK);
 	//
 		return ComObjectBase::DoGetInterface(iid);
-}
+	}
 }
 
 int CStageObject::GetPropertyInt(int dispid)
@@ -341,7 +341,7 @@ HRESULT CStageObject::Invoke(DISPID dispid, REFIID riid, LCID lcid, WORD wFlags,
 	case DISPID_MOVE:
 		return DispatchProc2Int(dispid, wFlags, pdispparams);
 	case DISPID_MOVETOZ:
-	case DISPID_MOVEZ:
+	case DISPID_MOVEZ:    
 		return DispatchProc1Int(dispid, wFlags, pdispparams);
     //Sergey 21.11.2005
      case DISPID_EXEC:
@@ -421,8 +421,8 @@ void CStageObject::InitStage()
 	{
 		
 		m_StageState = Absent;
-		if (::GetValueInt(::GetAppUnknown(), "Stage", "Present", FALSE) == FALSE)
-			return;
+		if (::GetValueInt(::GetAppUnknown(), "Stage", "Present", FALSE) == FALSE)		
+		return;
 		//Sergey 27/07/06
 		VTMessageBox("LStep1", "VT5", MB_OK);
 		LStep1 = new CLStep4X();

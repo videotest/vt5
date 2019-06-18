@@ -43,6 +43,34 @@
 #define IDS_STRING22                    22
 #define IDS_MACHINE                     22
 #define IDS_EMPTY_VALUE                 23
+#define IDS_COMPACT_ERROR               24
+#define IDS_COMPUTER                    25
+#define IDS_EXCLUSIVE_REQUEST_RECEIVED  26
+#define IDS_ER_ERROR                    27
+#define IDS_ATTENTION                   28
+#define IDS_DBSIZE_WARNING              29
+#define IDS_DBASE_BACKUP_TO_OPTIC       30
+#define IDS_INSERTDISC                  31
+#define IDS_MEDIA_UNSUPPORTED2          32
+#define IDS_MEDIA_UNSUPPORTED           32
+#define IDS_READY_TOBURN2               33
+#define IDS_READY_TOBURN                33
+#define IDS_NA                          34
+#define IDS_MEDIADAMAGED                35
+#define IDS_MEDIAPROTECTED              36
+#define IDS_NOTBLANK_NOTAPPENDABLE      37
+#define IDS_NOTENOUGHSPACE              38
+#define IDS_DIRECTORY_WAS_MOVED_OR_REMOVED 39
+#define IDS_BURN_SUCCEED                40
+#define IDS_BURN_FAIL                   41
+#define IDS_NO_RECORDER                 42
+#define IDS_NO_MEDIA                    43
+#define IDS_MEDIA_BUSY                  44
+#define IDS_WRITEPROTECTED              45
+#define IDS_NORESPONSE                  46
+#define IDS_UPSIDE_DOWN                 47
+#define IDS_INITIALIZING                48
+#define IDS_UNKNOWNERROR                49
 #define IDC_AREA                        100
 #define IDC_TEST1                       101
 #define IDC_TEST2                       102
@@ -281,6 +309,7 @@
 #define IDC_TABLE                       21003
 #define IDC_CAPTION                     21003
 #define IDC_VT4_PATH                    21003
+#define IDC_VOLUMENAME                  21003
 #define IDC_BUTTON1                     21004
 #define IDC_DROP_TABLE                  21004
 #define IDD_QUERY_DLG                   21004
@@ -291,6 +320,7 @@
 #define IDC_EDIT2                       21004
 #define IDC_VT4_BROWSE                  21004
 #define IDC_USER_INFO                   21004
+#define IDC_ADDSOURCE                   21004
 #define IDC_CHECK1                      21005
 #define IDC_ADD_TABLE                   21005
 #define IDC_PICK2                       21005
@@ -305,6 +335,7 @@
 #define IDC_NEW_RECORD                  21005
 #define IDC_VT5_BROWSE                  21005
 #define IDC_OPEN                        21005
+#define IDC_CLOSE                       21005
 #define IDC_CHECK2                      21006
 #define IDC_BUTTON3                     21006
 #define IDC_RENAME_FILTER               21006
@@ -312,6 +343,7 @@
 #define IDC_CREATE_NEW_TABLE            21006
 #define IDC_OK                          21006
 #define IDC_VT5_PATH                    21006
+#define IDC_REMOVESOURCE                21006
 #define IDC_BUTTON6                     21007
 #define IDC_SELECT_AND_EXIT             21007
 #define IDC_ANALIZE                     21007
@@ -385,8 +417,10 @@
 #define IDD_NEW_QUERY_WIZARD_SQL        21051
 #define IDC_STATIC_CONDITION            21052
 #define IDD_NEW_FIELD                   21052
+#define IDC_STATIC_MEDIA                21052
 #define IDC_VALUE_STATIC                21053
 #define IDD_PROP_PAGE_EMU               21053
+#define IDC_STATIC_MEDIA2               21053
 #define IDD_FIELD_CHOOSER               21054
 #define IDD_DELETE_FIELD                21055
 #define IDC_USE_FILTER_ROW              21056
@@ -437,12 +471,19 @@
 #define IDC_QUERY_RECORD_COUNT          21077
 #define IDI_ICON1                       21077
 #define IDC_QUERY_CURRENT_RECORD        21078
+#define IDD_SIZEATLIMIT_DLG             21078
 #define IDC_RESULT                      21079
+#define IDD_EXCLUSIVE_DLG               21079
 #define IDC_BTN_CANCEL                  21080
+#define IDD_FILETOOBIG                  21080
 #define IDC_GROUP_PROPERTIES            21081
 #define IDC_GROUP_DEFAULT               21082
+#define IDB_BREAK                       21082
 #define IDC_GROUP_VT_OBJECT             21083
+#define IDD_BACKUP_DLG                  21083
 #define IDC_LABEL_VALUE                 21084
+#define IDI_BURN                        21084
+#define IDD_BACKUP_DLG1                 21084
 #define IDC_LABEL_TYPE                  21085
 #define IDC_FIELDS                      21086
 #define IDC_EVENT                       21087
@@ -451,6 +492,7 @@
 #define IDC_COMBO1                      21092
 #define IDC_FIELD                       21092
 #define IDC_FIELD_TYPE                  21092
+#define IDC_DRIVE_SELECTOR              21092
 #define IDC_LIST2                       21093
 #define IDC_COMBO2                      21093
 #define IDC_BUTTON4                     21094
@@ -467,6 +509,7 @@
 #define IDC_TABLE__LIST                 21098
 #define IDC_FIELD_LIST                  21098
 #define IDC_LIST                        21098
+#define IDC_USERSLIST                   21098
 #define IDC_BUTTON9                     21099
 #define IDC_BUTTON10                    21100
 #define IDC_START                       21100
@@ -513,9 +556,22 @@
 #define IDC_DELETE_ROW                  21140
 #define IDC_PROGRESS1                   21141
 #define IDC_PROGRESS                    21141
+#define IDC_BURNPROGRESS                21141
 #define IDC_NEW_PATH                    21142
 #define IDC_BROWSE                      21143
 #define IDC_COMBOBOXEX1                 21144
+#define IDC_ICONLABEL                   21145
+#define IDC_GROUP                       21146
+#define ID_HELPBTN                      21147
+#define IDC_STATIC_DRIVE                21148
+#define IDC_STATIC_MULTI                21150
+#define IDC_STATIC_CLOSE                21151
+#define IDC_STATIC_MULTI2               21153
+#define IDC_STATIC_CLOSE2               21155
+#define IDC_STATIC_DRIVE2               21156
+#define IDC_STATIC_ERROR                21158
+#define IDC_STATIC_ERROR_ICON           21159
+#define ID_BURN                         21160
 #define ID_BUTTON32793                  32793
 #define IDS_FIELD_PROPERTY              32803
 #define IDS_UNPACK_SUCCEDED             32804
@@ -528,14 +584,15 @@
 #define IDS_DB_FROM_TEMPLATE            35001
 #define IDS_DELETE_RECORDS              35002
 #define IDS_EMPTY_DBFIELD               35003
+#define IDS_COMPACTDB                   35004
 
 // Next default values for new objects
 // 
 #ifdef APSTUDIO_INVOKED
 #ifndef APSTUDIO_READONLY_SYMBOLS
-#define _APS_NEXT_RESOURCE_VALUE        21078
+#define _APS_NEXT_RESOURCE_VALUE        21085
 #define _APS_NEXT_COMMAND_VALUE         32808
-#define _APS_NEXT_CONTROL_VALUE         21145
+#define _APS_NEXT_CONTROL_VALUE         21161
 #define _APS_NEXT_SYMED_VALUE           21000
 #endif
 #endif

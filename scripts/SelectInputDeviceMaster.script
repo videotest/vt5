@@ -1,7 +1,0 @@
-'resource:Select Device and Input...#Acquire#Select device and input image into a new document#Select Device and Input
-
-Data.Setvalue "\Input\Device",Data.Getvalue ("\Input\MainDevice")
-If ActionManager.InputImage (2,4,1) Then
-	Data.Setvalue "\Input\MainDevice",Data.Getvalue ("\Input\Device")
-End If
-

@@ -1159,7 +1159,7 @@ bool CQueryField::KillNotSerializeChildGuid()
 	if( ptrND == NULL)
 		return_and_assert( false );
 
-	for( INT_PTR i=m_arGuid.GetSize()-1;i>=0;i-- )
+	for( int i=m_arGuid.GetSize()-1;i>=0;i-- )
 	{
 		IUnknown* punkObject = ::GetObjectByKey( ptrND, m_arGuid[i] );
 		if( !punkObject )
@@ -2365,7 +2365,7 @@ bool CQueryField::IsChild( IUnknown* punkChild )
 	//At first find group guid
 	GuidKey guidGroup = INVALID_KEY;
 	
-	TPOS lGroupPos = 0;
+	long lGroupPos = 0;
 	ptrPrivND->GetBaseGroupFirstPos( &lGroupPos );
 	while( lGroupPos )
 	{
@@ -2386,7 +2386,7 @@ bool CQueryField::IsChild( IUnknown* punkChild )
 		return false;
 
 	
-	TPOS lPos = 0;
+	long lPos = 0;
 	ptrPrivND->GetBaseGroupObjectFirstPos( &guidGroup, &lPos );
 	while( lPos )
 	{
@@ -2522,7 +2522,7 @@ void CQueryField::OnNewObjectSet2Data( IUnknown* punkCtrl, IUnknown* punkObject,
 	INamedDataPtr ptrND( punkCtrl );	
 	if( ptrND )
 	{
-		ptrND->NotifyContexts(ncChangeKey, punkObject, 0, &prevKey);
+		ptrND->NotifyContexts(ncChangeKey, punkObject, 0, (LPARAM)&prevKey);
 	}
 	else
 	{

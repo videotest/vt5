@@ -50,7 +50,7 @@ protected:
 class CWaitDlg : public CDialog
 {
 	DECLARE_DYNAMIC(CWaitDlg)
-	UINT_PTR m_timerID;
+	UINT m_timerID;
 	CRect m_rectAnime;
 	CRect m_drawRect, m_redrawRect;
 	HBITMAP m_hBitmap;
@@ -85,4 +85,4 @@ struct PD
 	BOOL bFile;
 };
 
-#endif // !defined(AFX_ENTERNAMEDLG_H__CDA64C58_CFB7_45FA_8FAD_92EE7614A5BC__INCLUDED_)
+#endif // !defined(AFX_ENTERNAMEDLG_H__CDA64C58_CFB7_45FA_8FAD_92EE7614A5BC__INCLUDED_) 

@@ -1,7 +1,7 @@
 ; NewDoc.def : Declares the module parameters for the DLL.
 
 LIBRARY      "NewDoc"
-; DESCRIPTION  'NewDoc Windows Dynamic Link Library'
+;DESCRIPTION  'NewDoc Windows Dynamic Link Library'
 
 EXPORTS
     ; Explicit exports can go here

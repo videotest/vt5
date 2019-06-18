@@ -100,8 +100,6 @@ public:
 // save/load operations
 	bool Save(LPCTSTR szFile);
 	bool Load(LPCTSTR szFile);
-	bool SaveText(LPCTSTR szFile);
-	bool LoadText(LPCTSTR szFile);
 
 	void SetKey(GuidKey & rKey, DWORD dwImito = 0);
 	void GetKey(GuidKey & rKey, DWORD & dwImito)	{	rKey = m_GuidKey; dwImito = m_dwImito;	}
@@ -134,9 +132,6 @@ private:
 	CEntryList	m_listEntries;	// list of Translation entries
 
 };
-
-CStringA g2s(GuidKey k);
-
 
 extern const char * szGUARDFILESIG;
 

@@ -229,7 +229,7 @@ STDMETHODIMP CDebugHost::XDebugHost::OnRunScript( BSTR bstrScript, BSTR bstrFile
 
 	HRESULT	hr = S_OK;
 
-	ATL::CComPtr<IDebugDocumentHelper>	pi_DebugDocHelper;
+	CComPtr<IDebugDocumentHelper>	pi_DebugDocHelper;	
 
 	hr = pThis->m_pdm->CreateDebugDocumentHelper( NULL, &pi_DebugDocHelper );	
 

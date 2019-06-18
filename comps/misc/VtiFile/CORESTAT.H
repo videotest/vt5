@@ -78,7 +78,7 @@ interface IClassManager : public IUnknown
 	virtual HRESULT __stdcall GetFirstClassPosition( long *lPosRef ) = 0;
 	virtual HRESULT __stdcall GetNextClass( long *lPosRef, IUnknown **ppClassInfo ) = 0; // IClassInfo
 	virtual HRESULT __stdcall CreateAddClass( IUnknown **ppClassInfo ) = 0;
-	virtual HRESULT __stdcall DeleteClass( LPOS lPos ) = 0;
+	virtual HRESULT __stdcall DeleteClass( long lPos ) = 0;
 	virtual HRESULT __stdcall TestObject( IUnknown *pObject, IUnknown **ppClassInfoRet ) = 0;
 	virtual HRESULT __stdcall GetClassByNum( int iNum, IUnknown **ppClassInfoRet ) = 0;
 };
@@ -102,7 +102,7 @@ interface ILimitList : public IUnknown // supports IClassInfo
 	virtual HRESULT __stdcall CreateAddLimit( IUnknown **ppLimit ) = 0;
 	virtual HRESULT __stdcall GetFirstLimitPosition( long *lPosRef ) = 0;
 	virtual HRESULT __stdcall GetNextLimit( long *lPosRef, IUnknown **ppLimit ) = 0; // Ilimit
-	virtual HRESULT __stdcall DeleteLimit( LPOS lPos ) = 0;
+	virtual HRESULT __stdcall DeleteLimit( long lPos ) = 0;
 };
 
 enum StatNotifyCause

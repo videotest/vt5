@@ -21,7 +21,7 @@ static void root_parent(IUnknown* prince, IUnknown* beggar)
 static bool check_group_for_useless(IMeasParamGroupPtr& group)
 {
 
-	LONG_PTR	lposP = 0;
+	long	lposP = 0;
  	group->GetFirstPos( &lposP );
 	while( lposP )
 	{
@@ -56,19 +56,19 @@ END_INTERFACE_MAP()
 
 IMPLEMENT_UNKNOWN(CActionObjectBase, DrAction)
 
-HRESULT CActionObjectBase::XDrAction::GetFirstObjectPosition(LONG_PTR *plpos)
+HRESULT CActionObjectBase::XDrAction::GetFirstObjectPosition( long *plpos )
 {
 	METHOD_PROLOGUE_EX(CActionObjectBase, DrAction);
-	(*plpos) = (LONG_PTR)pThis->m_listToDocument.GetHeadPosition();
+	(*plpos) = (long)pThis->m_listToDocument.GetHeadPosition();
 	return S_OK;
 }
-HRESULT CActionObjectBase::XDrAction::GetNextObject(IUnknown **ppunkObject, LONG_PTR *plpos)
+HRESULT CActionObjectBase::XDrAction::GetNextObject( IUnknown **ppunkObject, long *plpos )
 {
 	METHOD_PROLOGUE_EX(CActionObjectBase, DrAction);
 
 	POSITION	pos = (POSITION)*plpos;
 	*ppunkObject = (IUnknown*)pThis->m_listToDocument.GetNext( pos );
-	*plpos = (LONG_PTR)pos;
+	*plpos = (long)pos;
 	if( *ppunkObject )(*ppunkObject)->AddRef();
 
 	return S_OK;
@@ -773,7 +773,7 @@ void	CActionObjectBase::update_phases_info(IUnknown* pList)
 	INamedDataObject2Ptr ndo = pList;
 	if(ndo)
 	{
-		TPOS pos;
+		long pos;
 		CString strClassifier, strData ="";
 		CString str = ::GetValueString( ::GetAppUnknown(), "\\Classes", "ClassFile", "" );	
 		int nidx = str.ReverseFind( '\\' );
@@ -1015,7 +1015,7 @@ void CActionObjectBase::_activate_object( CPoint pt )
 	ptrDocList->Release();
 
 
-	TPOS posStart = 0, lPrevPos = 0;
+	long posStart = 0, lPrevPos = 0;
 	
 	ptrListObject->GetFirstChildPosition( &posStart );
 

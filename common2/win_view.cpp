@@ -93,13 +93,13 @@ HRESULT CWinViewBase::OnActivateView( BOOL bActivate, IUnknown *punkOtherView )
 	return S_OK;
 }
 
-HRESULT CWinViewBase::GetFirstVisibleObjectPosition(TPOS *plpos)
+HRESULT CWinViewBase::GetFirstVisibleObjectPosition( long *plpos )
 {
 	(*plpos) = m_listObjects.head();
 	return S_OK;
 }
 
-HRESULT CWinViewBase::GetNextVisibleObject( IUnknown ** ppunkObject, TPOS *plPos )
+HRESULT CWinViewBase::GetNextVisibleObject( IUnknown ** ppunkObject, long *plPos )
 {
 	IUnknown	*punkNext = m_listObjects.next( *plPos );
 	if( ppunkObject )

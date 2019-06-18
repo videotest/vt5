@@ -12,10 +12,6 @@
 #include <math.h>
 #include <\vt5\awin\trace.h>
 
-CIntIniValue g_FireMoveFragment(_T("\\Sew Large Image\\Events"),_T("MoveFragment"),TRUE);
-CIntIniValue g_FireOvrProc(_T("\\Sew Large Image\\Events"),_T("OverlapPercentTooSmall"),TRUE);
-
-
 static BOOL SerializeBSTR( BSTR* pbstr, IStream &ar, bool bIsStoring )
 {
 	if( !pbstr )
@@ -260,23 +256,6 @@ void CFragmentImage::LoadImage()
 				{
 					m_ptrImage = 0;
 					bLoaded = false;
-				}
-				if (!bLoaded)
-				{
-					if (m_nZoom > 1)
-					{ // If zoomed image absent - make it
-						CLoadFragment lf(m_pFragment,1);
-						IUnknownPtr punkImg11;
-						int nZoom11 = 1;
-						m_pFragment->GetImage(&nZoom11, &punkImg11);
-						if (punkImg11 != 0)
-						{
-							IUnknownPtr punkImg = RebuildImage(punkImg11);
-							m_ptrImage = punkImg;
-							SaveImage(punkImg);
-							bLoaded = true;
-						}
-					}
 				}
 			}
 			if (bLoaded)
@@ -932,7 +911,7 @@ void CSewLIBase::ClearOrphantImages()
 	if (bstrPath.length() == 0)
 		return;
 	long lMaxFragNum = -1;
-	TPOS lpos;
+	long lpos;
 	GetFirstFragmentPos(&lpos);
 	while (lpos)
 	{
@@ -999,7 +978,7 @@ void CSewLIBase::RebuildTotalImage(int nRects, RECT *pRects)
 {
 	for (int i = 0; i < nRects; i++)
 		m_TotalImage.ClearRect(m_TotalImage.CalcDstRect(m_rcTotal,pRects[i]));
-	TPOS lpos;
+	long lpos;
 	GetFirstFragmentPos(&lpos);
 	while (lpos)
 	{
@@ -1057,7 +1036,7 @@ void CSewLIBase::RecalcTotalRect()
 {
 	m_rcTotal = CRect(0,0,0,0);
 	bool bFirst = true;
-	TPOS lpos;
+	long lpos;
 	GetFirstFragmentPos(&lpos);
 	while (lpos)
 	{
@@ -1111,14 +1090,14 @@ void CSewLIBase::InitDir()
 	}
 };
 
-int CSewLIBase::CalcOverPercentByRect(CRect rcOvr, TPOS lPosSkip)
+int CSewLIBase::CalcOverPercentByRect(CRect rcOvr, long lPosSkip)
 {
 	int nRes = -2;
-	TPOS lpos;
+	long lpos;
 	GetFirstFragmentPos(&lpos);
 	while (lpos)
 	{
-		TPOS lposPrev = lpos;
+		long lposPrev = lpos;
 		ISewFragmentPtr sptrFrag;
 		GetNextFragment(&lpos, &sptrFrag);
 		if (lposPrev == lPosSkip)
@@ -1148,11 +1127,11 @@ int CSewLIBase::CalcOverPercentByRect(CRect rcOvr, TPOS lPosSkip)
 
 void CSewLIBase::RecalcOvrPercent(bool bFireEvent)
 {
-	TPOS lpos;
+	long lpos;
 	GetLastFragmentPosition(&lpos);
 	if (lpos != 0)
 	{
-		TPOS lPosSkip = lpos;
+		long lPosSkip = lpos;
 		ISewFragmentPtr sptrFrag;
 		GetNextFragment(&lpos, &sptrFrag);
 		POINT pt;
@@ -1179,27 +1158,6 @@ HRESULT CSewLIBase::AddImage(IUnknown *punkImage, POINT ptOffs, DWORD dwFlags)
 		{
 			if (bGlobalSearch)
 				FindOptimalPosition1(this, pPrev, img, &ptOffs);
-		}
-	}
-	else if (dwFlags&addImageCorrectPos)
-	{
-		IDocumentSitePtr sptrDS(m_punkNamedData);
-		if (sptrDS != 0)
-		{
-			IUnknownPtr punkView;
-			sptrDS->GetActiveView(&punkView);
-			ISewLIViewPtr sptrView(punkView);
-			if (sptrView != 0)
-			{
-				IUnknownPtr punkFrag;
-				sptrView->get_BaseFragment(&punkFrag);
-				ISewFragmentPtr sptrFrag(punkFrag);
-				if (sptrFrag != 0)
-				{
-					FindOptimalPositionCorrect(this,sptrFrag,img,1.,&ptOffs);
-//					CorrectPos(sptrFrag,img,ptOffs,&ptOffs);
-				}
-			}
 		}
 	}
 	int cx,cy;
@@ -1320,27 +1278,18 @@ HRESULT CSewLIBase::MoveFragment(ISewFragment *pFragment, POINT ptNewPos, DWORD 
 	if (dwFlags&moveFragCalcOvr)
 		RecalcOvrPercent(true);
 	if (dwFlags&moveFragFire)
-	{
-		if ((int)g_FireMoveFragment)
-		{
-			IScriptSitePtr	ptr_ss = ::GetAppUnknown();
-			if (ptr_ss != 0)
-				ptr_ss->Invoke(_bstr_t("SewLI_FragmentMoved"), 0, NULL, 0, fwAppScript);
-		}
-		if ((int)g_FireOvrProc)
 		CheckOverlapPercent();
-	}
 	SetModifiedFlag(TRUE);
 	return S_OK;
 }
 
-HRESULT CSewLIBase::DeleteFragment(TPOS lPosFrag)
+HRESULT CSewLIBase::DeleteFragment(long lPosFrag)
 {
 	ISewFragment *pFrag = m_listTerm.get(lPosFrag);
 	if (pFrag == NULL) return S_FALSE;
 	if (lPosFrag == m_lPosActive)
 	{
-		TPOS l = lPosFrag;
+		long l = lPosFrag;
 		m_listTerm.prev(l);
 		if (l == NULL && m_listTerm.tail() != lPosFrag)
 			l = m_listTerm.tail();
@@ -1370,13 +1319,13 @@ HRESULT CSewLIBase::DeleteFragment(TPOS lPosFrag)
 }
 
 
-HRESULT CSewLIBase::GetActiveFragmentPosition(TPOS *plPos)
+HRESULT CSewLIBase::GetActiveFragmentPosition(long *plPos)
 {
 	*plPos = m_lPosActive;
 	return S_OK;
 }
 
-HRESULT CSewLIBase::SetActiveFragmentPosition(TPOS lPos)
+HRESULT CSewLIBase::SetActiveFragmentPosition(long lPos)
 {
 	m_lPosActive = lPos;
 	if (m_punkNamedData != 0)
@@ -1434,7 +1383,7 @@ bool CSewLIBase::CheckFragmentDirValid(bool *pbChanged)
 
 HRESULT CSewLIBase::CalcOrigFragOffset(ISewFragment **ppPrev, POINT *pptOffs)
 {
-	TPOS lTailPos;
+	long lTailPos;
 	if (m_lPosActive != 0)
 		lTailPos = m_lPosActive;
 	else if (m_listTerm.tail())
@@ -1445,7 +1394,7 @@ HRESULT CSewLIBase::CalcOrigFragOffset(ISewFragment **ppPrev, POINT *pptOffs)
 	{
 		CPoint ptOffs;
 		ISewFragment *pPrev = m_listTerm.get(lTailPos);
-		TPOS lBef = lTailPos;
+		long lBef = lTailPos;
 		m_listTerm.prev(lBef);
 		ISewFragment *pPrev2 = lBef==0?NULL:m_listTerm.get(lBef);
 		POINT ptPrev;
@@ -1465,12 +1414,9 @@ HRESULT CSewLIBase::CalcOrigFragOffset(ISewFragment **ppPrev, POINT *pptOffs)
 			ptOffs.x = ptPrev.x+szPrev.cx*9/10;
 		}
 		*pptOffs = ptOffs;
-		if (ppPrev)
-		{
 		*ppPrev = pPrev;
 		if (*ppPrev)
 			(*ppPrev)->AddRef();
-		}
 		return S_OK;
 	}
 	return S_FALSE;
@@ -1588,7 +1534,7 @@ HRESULT CSewLIBase::Store( IStream *pStream, SerializeParams *pparams )
 	SerializeBSTR(&m_bstrFragmentDir.GetBSTR(), *pStream, true);
 	pStream->Write( (LPRECT)m_rcTotal, sizeof(RECT), &nWritten );
 	long lObj = 1;
-	TPOS lposTerm = m_listTerm.head();
+	long lposTerm = m_listTerm.head();
 	while (lposTerm)
 	{
 		ISewFragment *pFrag = m_listTerm.next(lposTerm);
@@ -1641,9 +1587,6 @@ HRESULT CSewLIBase::NotifyPutToDataEx( IUnknown* punkObj, IUnknown** punkUndoObj
 				sptrView->GetLiveVideoRect((int *)&rcLV.left, (int *)&rcLV.top,
 					(int *)&rcLV.right,	(int *)&rcLV.bottom);
 				ptPos = rcLV.TopLeft();
-				if (GetValueInt(GetAppUnknown(), "\\Sew Large Image\\Correction", "EnableAfterInput", TRUE))
-					dwFlags = addImageCorrectPos;
-				else
 				dwFlags = 0;
 			}
 		}
@@ -1663,11 +1606,11 @@ HRESULT CSewLIBase::Undo( IUnknown* punkUndoObj )
 	ISewFragmentPtr ptrFragToDel(punkUndoObj);
 	if (ptrFragToDel != 0)
 	{
-		TPOS lpos, lToDel = 0;
+		long lpos,lToDel=0;
 		GetFirstFragmentPos(&lpos);
 		while (lpos)
 		{
-			TPOS lPrev = lpos;
+			long lPrev = lpos;
 			ISewFragmentPtr ptrFragCur;
 			GetNextFragment(&lpos, &ptrFragCur);
 			if (ptrFragCur == ptrFragToDel)
@@ -1777,13 +1720,13 @@ HRESULT	CSewLIBase::GetType( BSTR *pbstrType )
 	return CObjectBase::GetType( pbstrType );
 }
 
-HRESULT CSewLIBase::GetFirstFragmentPos(TPOS *plPos)
+HRESULT CSewLIBase::GetFirstFragmentPos(long *plPos)
 {
 	*plPos = m_listTerm.head();
 	return S_OK;
 }
 
-HRESULT CSewLIBase::GetNextFragment(TPOS *plPos, ISewFragment **ppFragment)
+HRESULT CSewLIBase::GetNextFragment(long *plPos, ISewFragment **ppFragment)
 {
 	*ppFragment = m_listTerm.next(*plPos);
 	if (*ppFragment)
@@ -1791,7 +1734,7 @@ HRESULT CSewLIBase::GetNextFragment(TPOS *plPos, ISewFragment **ppFragment)
 	return S_OK;
 }
 
-HRESULT CSewLIBase::GetPrevFragment(TPOS *plPos, ISewFragment **ppFragment)
+HRESULT CSewLIBase::GetPrevFragment(long *plPos, ISewFragment **ppFragment)
 {
 	*ppFragment = m_listTerm.prev(*plPos);
 	if (*ppFragment)
@@ -1860,7 +1803,7 @@ HRESULT CSewLIBase::GetRangeCoef(int *pnRangeCoef)
 	return S_OK;
 }
 
-HRESULT CSewLIBase::GetLastFragmentPosition(TPOS *plPos)
+HRESULT CSewLIBase::GetLastFragmentPosition(long *plPos)
 {
 	*plPos = m_listTerm.tail();
 	return S_OK;

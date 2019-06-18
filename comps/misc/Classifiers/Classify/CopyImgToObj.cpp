@@ -114,12 +114,12 @@ bool CActionCopyImageToObjects::InvokeFilter()
 	long lObjects;
 	sptrObjIn->GetChildsCount(&lObjects);
 	StartNotification(lObjects);
-	POSITION pos = 0; int i = 0;
-	sptrObjIn->GetFirstChildPosition(&pos);
+	long pos = 0, i = 0;
+	sptrObjIn->GetFirstChildPosition((long*)&pos);
 	while (pos)
 	{
 		IUnknownPtr sptr;
-		sptrObjIn->GetNextChild(&pos, &sptr);
+		sptrObjIn->GetNextChild((long*)&pos, &sptr);
 		IClonableObjectPtr sptrClone(sptr);		
 		if(sptrClone != 0)
 		{

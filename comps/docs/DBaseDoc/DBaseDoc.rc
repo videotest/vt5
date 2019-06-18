@@ -789,6 +789,63 @@ BEGIN
     PUSHBUTTON      "°пЦъ",IDHELP,187,42,50,14,0,0,HIDHELP
 END
 
+IDD_FILETOOBIG DIALOGEX 0, 0, 349, 143
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | DS_CENTER | WS_POPUP | 
+    WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+CAPTION "Attention!"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,237,122,50,14
+    ICON            "",IDC_ICONLABEL,23,20,20,20,SS_CENTERIMAGE | 
+                    SS_REALSIZEIMAGE
+    DEFPUSHBUTTON   "Help",ID_HELPBTN,292,122,50,14
+    GROUPBOX        "",IDC_GROUP,61,39,281,78
+    CONTROL         "-close database connection",IDC_RADIO3,"Button",
+                    BS_AUTORADIOBUTTON,71,98,242,10
+    CONTROL         "- turn database into read and delete only mode",
+                    IDC_RADIO2,"Button",BS_AUTORADIOBUTTON,71,76,238,10
+    CONTROL         "- create empty copy of database",IDC_RADIO1,"Button",
+                    BS_AUTORADIOBUTTON,71,54,240,10
+    LTEXT           "The database size is nearly maximum.\nData loss is possible due database futher growing.\nIn such situation you can:",
+                    IDC_STATIC,61,7,281,33
+END
+
+IDD_BACKUP_DLG DIALOGEX 0, 0, 503, 294
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | DS_CENTER | WS_POPUP | 
+    WS_CAPTION | WS_SYSMENU
+CAPTION "CD/DVD burning"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    COMBOBOX        IDC_DRIVE_SELECTOR,16,42,304,38,CBS_DROPDOWN | CBS_SORT | 
+                    WS_VSCROLL | WS_TABSTOP
+    CONTROL         "Finalize",IDC_CLOSE,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,402,18,77,13
+    EDITTEXT        IDC_VOLUMENAME,406,38,65,14,ES_AUTOHSCROLL | 
+                    ES_WANTRETURN
+    DEFPUSHBUTTON   "",ID_BURN,389,273,50,14,BS_ICON
+    PUSHBUTTON      "Cancel",IDCANCEL,446,273,50,14
+    LTEXT           "Device:",IDC_STATIC,15,25,317,15
+    GROUPBOX        "",IDC_STATIC,7,7,489,70
+    LTEXT           "Volume label:",IDC_STATIC,352,39,47,11
+    CONTROL         "",IDC_BURNPROGRESS,"msctls_progress32",0x1,23,257,457,
+                    11,WS_EX_STATICEDGE
+    GROUPBOX        "",IDC_STATIC,17,81,468,172
+    LTEXT           "Media:",IDC_STATIC_MEDIA,27,117,91,14
+    LTEXT           "Multisession:",IDC_STATIC_MULTI,27,144,91,14
+    LTEXT           "Finalize disc after burn:",IDC_STATIC_CLOSE,27,171,91,
+                    14
+    LTEXT           "Drive:",IDC_STATIC_DRIVE,27,90,91,14
+    LTEXT           "",IDC_STATIC_MEDIA2,130,117,343,14
+    LTEXT           "",IDC_STATIC_MULTI2,130,144,343,14
+    LTEXT           "",IDC_STATIC_CLOSE2,130,171,343,14
+    LTEXT           "",IDC_STATIC_DRIVE2,130,90,343,14
+    LTEXT           "",IDC_STATIC_ERROR,56,226,422,22,0,WS_EX_TRANSPARENT
+    ICON            IDI_ERROR_DDL,IDC_STATIC_ERROR_ICON,26,226,20,20,
+                    SS_CENTERIMAGE
+    PUSHBUTTON      "Add file(s)",IDC_ADDSOURCE,56,195,93,15
+    PUSHBUTTON      "Remove file(s)",IDC_REMOVESOURCE,351,193,93,15
+END
+
 
 /////////////////////////////////////////////////////////////////////////////
 //
@@ -1116,6 +1173,22 @@ BEGIN
         TOPMARGIN, 7
         BOTTOMMARGIN, 59
     END
+
+    IDD_FILETOOBIG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 342
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 136
+    END
+
+    IDD_BACKUP_DLG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 496
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 287
+    END
 END
 #endif    // APSTUDIO_INVOKED
 
@@ -1216,6 +1289,7 @@ BEGIN
     IDS_DB_FROM_TEMPLATE    "NewDBFromTemplate\nёґЦЖ»о¶ЇКэѕЭїв...\nКэѕЭїв\nК№УГУл»о¶ЇКэѕЭївПаН¬µДЅб№№ґґЅЁРВКэѕЭїв\nёґЦЖ»о¶ЇКэѕЭїв"
     IDS_DELETE_RECORDS      "DeleteRecords\nЙѕіэјЗВј\nКэѕЭїв\nЙѕіэјЗВј\nЙѕіэјЗВј"
     IDS_EMPTY_DBFIELD       "EmptyDBField\nЗеїХКэѕЭївЧЦ¶О\nКэѕЭїв\nЗеїХКэѕЭївЧЦ¶О\nЗеїХКэѕЭївЧЦ¶О"
+    IDS_COMPACTDB           "CompactDB\nCompact Database\nDatabase\nCompact Database\nCompact Database"
 END
 
 STRINGTABLE 
@@ -1412,9 +1486,68 @@ BEGIN
     IDS_MANY_USERS          "ОЮ·ЁґтїЄКэѕЭївЎЈУГ»§М«¶аЎЈ"
     IDS_USER                "УГ»§"
     IDS_MACHINE             "Йи±ё"
+    IDS_COMPACT_ERROR       "Program failed compact %s database\nfor following possible reasons:\n\t- database was opened by another user\n\t- wrong database path was specified\nCheck for right path to database, database name, or try later. "
+    IDS_COMPUTER            "Computer"
+    IDS_EXCLUSIVE_REQUEST_RECEIVED 
+                            "Program has received request for exclusive connection from user %s.\nYou must close your database connection if you agree to satisfy request."
+    IDS_ER_ERROR            "User %s connected to database %s in exclusive mode.\nConnection impossible. Try to connect later. "
+    IDS_ATTENTION           "Attention!"
+    IDS_DBSIZE_WARNING      "The database size is nearly maximum. Before you continue program will try reduce it. It may take a several minutes.  "
+    IDS_DBASE_BACKUP_TO_OPTIC 
+                            "BackUpDatabaseToOptic\nBackup Database\nDatabase\nBackup database\nBackup Database"
+    IDS_INSERTDISC          "Insert disc"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_MEDIA_UNSUPPORTED2  "Unsupported or unknown media. Check disc in the drive.\n\rBurning impossible."
+    IDS_READY_TOBURN        "Ready"
+    IDS_NA                  "N/A"
+    IDS_MEDIADAMAGED        "The disc in the drive damaged.\nBurning impossible. "
+    IDS_MEDIAPROTECTED      "The disc is write protected or finalized.\nBurning impossible."
+    IDS_NOTBLANK_NOTAPPENDABLE 
+                            "For discs of such type data appending not realized."
+    IDS_NOTENOUGHSPACE      "Not enough free space on disc! Burn failed!"
+    IDS_DIRECTORY_WAS_MOVED_OR_REMOVED 
+                            "The folder %s was moved or removed. Please restart action."
+    IDS_BURN_SUCCEED        "Burn succeed!"
+    IDS_BURN_FAIL           "Burn failed!"
+    IDS_NO_RECORDER         "No recorder detected!"
+    IDS_NO_MEDIA            "No media in drive!"
+    IDS_MEDIA_BUSY          "Drive busy! Please, wait."
+    IDS_WRITEPROTECTED      "Disk write protected!"
+    IDS_NORESPONSE          "Recorder no response!"
+    IDS_UPSIDE_DOWN         "Disc is upside down!"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_INITIALIZING        "Initializing..."
+    IDS_UNKNOWNERROR        "Unknown error!"
 END
 
 #endif    // Chinese (P.R.C.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+/////////////////////////////////////////////////////////////////////////////
+// Neutral resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_NEU)
+#ifdef _WIN32
+LANGUAGE LANG_NEUTRAL, SUBLANG_NEUTRAL
+#pragma code_page(1251)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDI_BURN                ICON                    "res\\ico00005.ico"
+#endif    // Neutral resources
 /////////////////////////////////////////////////////////////////////////////
 
 
@@ -2208,6 +2341,85 @@ BEGIN
                     WS_BORDER | WS_TABSTOP,7,20,222,94
 END
 
+IDD_SIZEATLIMIT_DLG DIALOGEX 0, 0, 378, 183
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | 
+    WS_SYSMENU
+CAPTION "Внимание!"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    LTEXT           "Размер базы данных приближается к предельно допустимому!\n ",
+                    IDC_STATIC,7,7,364,39
+END
+
+IDD_EXCLUSIVE_DLG DIALOGEX 0, 0, 317, 138
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | 
+    WS_SYSMENU
+CAPTION "Ожидание..."
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    PUSHBUTTON      "Cancel",IDCANCEL,260,117,50,14
+    LTEXT           "Программа ожидает отсоединения от базы следующих пользователей:",
+                    IDC_STATIC,7,7,303,14
+    CONTROL         "",IDC_USERSLIST,"SysListView32",LVS_REPORT | 
+                    LVS_ALIGNLEFT | WS_BORDER | WS_TABSTOP,7,31,303,82
+END
+
+IDD_FILETOOBIG DIALOGEX 0, 0, 349, 143
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | DS_CENTER | WS_POPUP | 
+    WS_VISIBLE | WS_CAPTION
+CAPTION "Внимание!"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,237,122,50,14
+    ICON            "",IDC_ICONLABEL,23,20,20,20,SS_CENTERIMAGE | 
+                    SS_REALSIZEIMAGE
+    DEFPUSHBUTTON   "Help",ID_HELPBTN,292,122,50,14
+    GROUPBOX        "",IDC_GROUP,61,39,281,78
+    CONTROL         "- закрыть базу",IDC_RADIO3,"Button",BS_AUTORADIOBUTTON,
+                    71,98,242,10
+    CONTROL         "- перевести активную базу в режим чтения и удаления данных",
+                    IDC_RADIO2,"Button",BS_AUTORADIOBUTTON,71,76,238,10
+    CONTROL         "- создать пустую копию базы",IDC_RADIO1,"Button",
+                    BS_AUTORADIOBUTTON,71,54,240,10
+    LTEXT           "Размер базы данных близок к предельному размеру.\nЕсть риск потери данных при дальнейшем увеличении базы.\nВ данном случае вы можете:",
+                    IDC_STATIC,61,7,281,33
+END
+
+IDD_BACKUP_DLG DIALOGEX 0, 0, 503, 294
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | DS_CENTER | WS_POPUP | 
+    WS_CAPTION | WS_SYSMENU
+CAPTION "CD/DVD запись"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    COMBOBOX        IDC_DRIVE_SELECTOR,16,42,304,38,CBS_DROPDOWN | CBS_SORT | 
+                    WS_VSCROLL | WS_TABSTOP
+    CONTROL         "Завершить диск",IDC_CLOSE,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,402,18,77,13
+    EDITTEXT        IDC_VOLUMENAME,406,38,65,14,ES_AUTOHSCROLL | 
+                    ES_WANTRETURN
+    DEFPUSHBUTTON   "",ID_BURN,389,273,50,14,BS_ICON
+    PUSHBUTTON      "Выход",IDCANCEL,446,273,50,14
+    LTEXT           "Устройство:",IDC_STATIC,15,25,317,15
+    GROUPBOX        "",IDC_STATIC,7,7,489,70
+    LTEXT           "Метка тома:",IDC_STATIC,352,39,47,11
+    CONTROL         "",IDC_BURNPROGRESS,"msctls_progress32",0x1,23,257,457,
+                    11,WS_EX_STATICEDGE
+    GROUPBOX        "",IDC_STATIC,17,81,468,172
+    LTEXT           "Носитель:",IDC_STATIC_MEDIA,27,117,91,14
+    LTEXT           "Многосессионный:",IDC_STATIC_MULTI,27,144,91,14
+    LTEXT           "Завершить диск:",IDC_STATIC_CLOSE,27,171,91,14
+    LTEXT           "Дисковод:",IDC_STATIC_DRIVE,27,90,91,14
+    LTEXT           "",IDC_STATIC_MEDIA2,130,117,343,14
+    LTEXT           "",IDC_STATIC_MULTI2,130,144,343,14
+    LTEXT           "",IDC_STATIC_CLOSE2,130,171,343,14
+    LTEXT           "",IDC_STATIC_DRIVE2,130,90,343,14
+    LTEXT           "",IDC_STATIC_ERROR,56,226,422,22,0,WS_EX_TRANSPARENT
+    ICON            IDI_ERROR_DDL,IDC_STATIC_ERROR_ICON,26,226,20,20,
+                    SS_CENTERIMAGE
+    PUSHBUTTON      "Добавить файл(ы)",IDC_ADDSOURCE,56,195,93,15
+    PUSHBUTTON      "Удалить файл(ы)",IDC_REMOVESOURCE,351,193,93,15
+END
+
 
 /////////////////////////////////////////////////////////////////////////////
 //
@@ -2535,6 +2747,38 @@ BEGIN
         TOPMARGIN, 7
         BOTTOMMARGIN, 144
     END
+
+    IDD_SIZEATLIMIT_DLG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 371
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 176
+    END
+
+    IDD_EXCLUSIVE_DLG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 310
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 131
+    END
+
+    IDD_FILETOOBIG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 342
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 136
+    END
+
+    IDD_BACKUP_DLG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 496
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 287
+    END
 END
 #endif    // APSTUDIO_INVOKED
 
@@ -2620,6 +2864,7 @@ IDB_PATTERN_VIEW        BITMAP                  "res\\Pattern.bmp"
 IDB_ADD                 BITMAP                  "res\\bitmap2.bmp"
 IDB_DELETE              BITMAP                  "res\\bitmap3.bmp"
 IDB_EDIT                BITMAP                  "res\\bitmap4.bmp"
+IDB_BREAK               BITMAP                  "res\\break_.bmp"
 
 /////////////////////////////////////////////////////////////////////////////
 //
@@ -2719,6 +2964,7 @@ BEGIN
     IDS_DB_FROM_TEMPLATE    "NewDBFromTemplate\nНовая база из активной...\nБаза данных\nСоздать новую базу на основе активной\nНовая база из активной"
     IDS_DELETE_RECORDS      "DeleteRecords\nУдалить записи\nБаза данных\nУдалить\nУдалить записи"
     IDS_EMPTY_DBFIELD       "EmptyDBField\nОчистить поле\nБаза данных\nУдалить данные из поля\nОчистить поле"
+    IDS_COMPACTDB           "CompactDB\nСжать базу данных\nБаза данных\nСжать базу данных\nСжать базу данных"
 END
 
 STRINGTABLE 
@@ -2922,6 +3168,44 @@ BEGIN
     IDS_USER                "Пользователь"
     IDS_MACHINE             "Машина"
     IDS_EMPTY_VALUE         "Пожалуйста введите не пустое значение."
+    IDS_COMPACT_ERROR       "Программе не удалось сжать базу данных %s по следующим возможным причинам:\n\t- был указан неверный путь к файлу БД\n\t- база данных была открыта другим пользователем\nПроверьте правильность пути к файлу БД и/или попытайтесь позже. "
+    IDS_COMPUTER            "Компьютер"
+    IDS_EXCLUSIVE_REQUEST_RECEIVED 
+                            "Программа получила запрос на монопольный доступ к базе данных от пользователя %s.\nДля выполнения запроса, пожалуйста, закройте базу данных."
+    IDS_ER_ERROR            "Пользователь %s подключен к базе %s в монопольном режиме.\nПодключение невозможно. Попробуйте открыть БД позже. "
+    IDS_ATTENTION           "Внимание!"
+    IDS_DBSIZE_WARNING      "Размер базы данных близок к максимальному. Прежде, чем продолжить работу, программа попытается сжать БД.\nЭто может занять несколько минут. "
+    IDS_DBASE_BACKUP_TO_OPTIC 
+                            "BackUpDatabaseToOptic\nСоздать копию базы данных\nБаза данных\nСоздать копию базы данных\nСоздать копию базы данных"
+    IDS_INSERTDISC          "Вставьте диск"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_MEDIA_UNSUPPORTED   "Неизвестный или неподдерживаемый формат носителя.\n\rПроверьте наличие диска в дисководе. Прожиг невозможен."
+    IDS_READY_TOBURN        "Готово..."
+    IDS_NA                  "Недоступно"
+    IDS_MEDIADAMAGED        "Диск имеет повреждения.\nПрожиг невозможен. "
+    IDS_MEDIAPROTECTED      "Диск завершен или защищен от записи.\nПрожиг невозможен."
+    IDS_NOTBLANK_NOTAPPENDABLE 
+                            "Для дисков данного типа добавление данных не реализовано. "
+    IDS_NOTENOUGHSPACE      "Ошибка записи! Недостаточно свободного места на диске!"
+    IDS_DIRECTORY_WAS_MOVED_OR_REMOVED 
+                            "Папка %s была перемещена или удалена. Пожалуйста, перезапустите акцию. "
+    IDS_BURN_SUCCEED        "Прожиг завершен успешно!"
+    IDS_BURN_FAIL           "Прожиг не удался!"
+    IDS_NO_RECORDER         "Дисковод не найден!"
+    IDS_NO_MEDIA            "Нет диска!"
+    IDS_MEDIA_BUSY          "Дисковод занят! Пожалуйста, подождите."
+    IDS_WRITEPROTECTED      "Диск защищен от записи."
+    IDS_NORESPONSE          "Устройство не отвечает."
+    IDS_UPSIDE_DOWN         "Диск перевернут!"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_INITIALIZING        "Инициализация..."
+    IDS_UNKNOWNERROR        "Неопознанная ошибка."
 END
 
 #endif    // Russian resources
@@ -3715,6 +3999,76 @@ BEGIN
     ICON            IDI_ERROR_DDL,IDC_STATIC,7,7,20,20
 END
 
+IDD_EXCLUSIVE_DLG DIALOGEX 0, 0, 317, 138
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | 
+    WS_SYSMENU
+CAPTION "Waiting..."
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    PUSHBUTTON      "Cancel",IDCANCEL,260,117,50,14
+    LTEXT           "Program now waiting while these users will be disconnected from database ",
+                    IDC_STATIC,7,7,303,14
+    CONTROL         "",IDC_USERSLIST,"SysListView32",LVS_REPORT | 
+                    LVS_ALIGNLEFT | WS_BORDER | WS_TABSTOP,7,23,303,90
+END
+
+IDD_FILETOOBIG DIALOGEX 0, 0, 349, 143
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | 
+    WS_SYSMENU
+CAPTION "Attention!"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,237,122,50,14
+    ICON            "",IDC_ICONLABEL,23,20,20,20,SS_CENTERIMAGE | 
+                    SS_REALSIZEIMAGE
+    DEFPUSHBUTTON   "Help",ID_HELPBTN,292,122,50,14
+    GROUPBOX        "",IDC_GROUP,61,39,281,78
+    CONTROL         "-close database connection",IDC_RADIO3,"Button",
+                    BS_AUTORADIOBUTTON,71,98,242,10
+    CONTROL         "- turn database into read and delete only mode",
+                    IDC_RADIO2,"Button",BS_AUTORADIOBUTTON,71,76,238,10
+    CONTROL         "- create empty copy of database",IDC_RADIO1,"Button",
+                    BS_AUTORADIOBUTTON,71,54,240,10
+    LTEXT           "The database size is nearly maximum.\nData loss is possible due database futher growing.\nIn such situation you can:",
+                    IDC_STATIC,61,7,281,33
+END
+
+IDD_BACKUP_DLG DIALOGEX 0, 0, 503, 294
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | DS_CENTER | WS_POPUP | 
+    WS_CAPTION | WS_SYSMENU
+CAPTION "CD/DVD burning"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    COMBOBOX        IDC_DRIVE_SELECTOR,16,42,304,38,CBS_DROPDOWN | CBS_SORT | 
+                    WS_VSCROLL | WS_TABSTOP
+    CONTROL         "Finalize",IDC_CLOSE,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,402,18,77,13
+    EDITTEXT        IDC_VOLUMENAME,406,38,65,14,ES_AUTOHSCROLL | 
+                    ES_WANTRETURN
+    DEFPUSHBUTTON   "",ID_BURN,389,273,50,14,BS_ICON
+    PUSHBUTTON      "Cancel",IDCANCEL,446,273,50,14
+    LTEXT           "Device:",IDC_STATIC,15,25,317,15
+    GROUPBOX        "",IDC_STATIC,7,7,489,70
+    LTEXT           "Volume label:",IDC_STATIC,352,39,47,11
+    CONTROL         "",IDC_BURNPROGRESS,"msctls_progress32",0x1,23,257,457,
+                    11,WS_EX_STATICEDGE
+    GROUPBOX        "",IDC_STATIC,17,81,468,172
+    LTEXT           "Media:",IDC_STATIC_MEDIA,27,117,91,14
+    LTEXT           "Multisession:",IDC_STATIC_MULTI,27,144,91,14
+    LTEXT           "Finalize disc after burn:",IDC_STATIC_CLOSE,27,171,91,
+                    14
+    LTEXT           "Drive:",IDC_STATIC_DRIVE,27,90,91,14
+    LTEXT           "",IDC_STATIC_MEDIA2,130,117,343,14
+    LTEXT           "",IDC_STATIC_MULTI2,130,144,343,14
+    LTEXT           "",IDC_STATIC_CLOSE2,130,171,343,14
+    LTEXT           "",IDC_STATIC_DRIVE2,130,90,343,14
+    LTEXT           "",IDC_STATIC_ERROR,56,226,422,22,0,WS_EX_TRANSPARENT
+    ICON            IDI_ERROR_DDL,IDC_STATIC_ERROR_ICON,26,226,20,20,
+                    SS_CENTERIMAGE
+    PUSHBUTTON      "Add file(s)",IDC_ADDSOURCE,56,195,93,15
+    PUSHBUTTON      "Remove file(s)",IDC_REMOVESOURCE,351,193,93,15
+END
+
 
 /////////////////////////////////////////////////////////////////////////////
 //
@@ -4042,6 +4396,30 @@ BEGIN
         TOPMARGIN, 7
         BOTTOMMARGIN, 55
     END
+
+    IDD_EXCLUSIVE_DLG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 310
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 131
+    END
+
+    IDD_FILETOOBIG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 342
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 136
+    END
+
+    IDD_BACKUP_DLG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 496
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 287
+    END
 END
 #endif    // APSTUDIO_INVOKED
 
@@ -4229,6 +4607,7 @@ BEGIN
     IDS_DB_FROM_TEMPLATE    "NewDBFromTemplate\nCopy Active Database...\nDatabase\nCreate new database with the same structure as the active one\nCopy Active Database"
     IDS_DELETE_RECORDS      "DeleteRecords\nDelete Records\nDatabase\nDelete records\nDelete Records"
     IDS_EMPTY_DBFIELD       "EmptyDBField\nEmpty DB Field\nDatabase\nEmpty DB field\nEmpty DB Field"
+    IDS_COMPACTDB           "CompactDB\nCompact Database\nDatabase\nCompact Database\nCompact Database"
 END
 
 STRINGTABLE 
@@ -4429,6 +4808,44 @@ BEGIN
     IDS_USER                "User"
     IDS_MACHINE             "Machine"
     IDS_EMPTY_VALUE         "Please enter not empty value."
+    IDS_COMPACT_ERROR       "Program failed compact %s database\nfor following possible reasons:\n\t- database was opened by another user\n\t- wrong database path was specified\nCheck for right path to database, database name, or try later. "
+    IDS_COMPUTER            "Computer"
+    IDS_EXCLUSIVE_REQUEST_RECEIVED 
+                            "Program has received request for exclusive connection from user %s.\nYou must close your database connection if you agree to satisfy request."
+    IDS_ER_ERROR            "User %s connected to database %s in exclusive mode.\nConnection impossible. Try to connect later. "
+    IDS_ATTENTION           "Attention!"
+    IDS_DBSIZE_WARNING      "The database size is nearly maximum. Before you continue program will try reduce it. It may take a several minutes.  "
+    IDS_DBASE_BACKUP_TO_OPTIC 
+                            "BackUpDatabaseToOptic\nBackup Database\nDatabase\nBackup database\nBackup Database"
+    IDS_INSERTDISC          "Insert disc"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_MEDIA_UNSUPPORTED   "Unsupported or unknown media. Check if disc in the drive.\nBurning impossible."
+    IDS_READY_TOBURN2       "Ready "
+    IDS_NA                  "N/A"
+    IDS_MEDIADAMAGED        "The disc in the drive damaged.\nBurning impossible. "
+    IDS_MEDIAPROTECTED      "The disc is write protected or finalized.\nBurning impossible."
+    IDS_NOTBLANK_NOTAPPENDABLE 
+                            "For discs of such type data appending not realized."
+    IDS_NOTENOUGHSPACE      "Not enough free space on disc! Burn failed!"
+    IDS_DIRECTORY_WAS_MOVED_OR_REMOVED 
+                            "The folder %s was moved or removed. Please restart action."
+    IDS_BURN_SUCCEED        "Burn succeed!"
+    IDS_BURN_FAIL           "Burn failed!"
+    IDS_NO_RECORDER         "No recorder detected!"
+    IDS_NO_MEDIA            "No media in drive!"
+    IDS_MEDIA_BUSY          "Drive busy! Please, wait."
+    IDS_WRITEPROTECTED      "Disk write protected!"
+    IDS_NORESPONSE          "Recorder no response!"
+    IDS_UPSIDE_DOWN         "Disc is upside down!"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_INITIALIZING        "Initializing..."
+    IDS_UNKNOWNERROR        "Unknown error!"
 END
 
 #endif    // English (U.S.) resources

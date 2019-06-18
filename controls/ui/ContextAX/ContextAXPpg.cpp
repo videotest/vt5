@@ -38,15 +38,7 @@ GUARD_IMPLEMENT_OLECREATE_CTRL(CContextAXPropPage, "CONTEXTAX.ContextAXPropPage.
 
 BOOL CContextAXPropPage::CContextAXPropPageFactory::UpdateRegistry(BOOL bRegister)
 {
-#if defined(NOGUARD)
-	if (bRegister)
-		return AfxOleRegisterPropertyPageClass(AfxGetInstanceHandle(),
-			m_clsid, IDS_CONTEXTAX_PPG);
-	else
-		return AfxOleUnregisterClass(m_clsid, NULL);
-#else
 	return UpdateRegistryPage(bRegister, AfxGetInstanceHandle(), IDS_CONTEXTAX_PPG);
-#endif
 }
 
 

@@ -2,8 +2,6 @@
 #define __com_unknown_h__
 
 #include "com_defs.h"
-#include <atlcoll.h>
-
 //#include "misc_new.h"
 					  //public Object, 
 class ComObjectBase : public IUnknown

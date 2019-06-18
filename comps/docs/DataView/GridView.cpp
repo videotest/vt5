@@ -427,11 +427,11 @@ void CGridViewBase::OnActivateCell(NMHDR* pNMHDR, LRESULT* pResult)
 
 	//activate object in object list
 	long	row = pnmgv->iRow, col = pnmgv->iColumn;
-	POSITION	lCurrentChildPos = 0, lNewChildPos = 0;
-	POSITION	lCurrentParamPos = 0, lNewParamPos = 0;
+	long	lCurrentChildPos = 0, lNewChildPos = 0;
+	long	lCurrentParamPos = 0, lNewParamPos = 0;
 
 	m_objects->GetActiveChild( &lCurrentChildPos );
-	m_container->GetCurentPosition((LONG_PTR*)&lCurrentParamPos, 0);
+	m_container->GetCurentPosition( &lCurrentParamPos, 0 );
 
 	lNewChildPos = lCurrentChildPos;
 	lNewParamPos = lCurrentParamPos;
@@ -471,7 +471,7 @@ void CGridViewBase::OnActivateCell(NMHDR* pNMHDR, LRESULT* pResult)
 
 	if( col != -1 && col < m_cols.GetSize() && m_cols[col]->pparam )
 	{
-		lNewParamPos = (POSITION)m_cols[col]->pparam->lpos;
+		lNewParamPos = m_cols[col]->pparam->lpos;
 	}
 
 	col = pnmgv->iColumn;
@@ -500,7 +500,7 @@ void CGridViewBase::OnActivateCell(NMHDR* pNMHDR, LRESULT* pResult)
 	//if( lCurrentParamPos != lNewParamPos )
 	{
 		bool	bOld = LockNotification( true );
-		m_container->SetCurentPosition((LONG_PTR)lNewParamPos);
+		m_container->SetCurentPosition( lNewParamPos );
 		LockNotification( bOld );
 	}
 
@@ -700,7 +700,7 @@ void CGridViewBase::OnNotify( const char *pszEvent, IUnknown *punkHit, IUnknown 
 			if( !pcol )return;
 			long	col = pcol->col;
 			ParameterContainer	*pprev = 0;
-			LPOS lpos = p->lpos;
+			long	lpos = p->lpos;
 			m_container->GetPrevParameter( &lpos, 0 );
 			if( lpos )m_container->GetNextParameter( &lpos, &pprev );
 
@@ -1006,7 +1006,7 @@ bool CGridViewBase::AddAllParams()
 	m_Grid.SetColumnCount( nCount+col );
 
 
-	LONG_PTR	lpos;
+	long	lpos;
 	m_container->GetFirstParameterPos( &lpos );
 
 	while( lpos )
@@ -1093,7 +1093,7 @@ bool CGridViewBase::OnGetDispInfoRow( long row )
 
 	long	colsCount = m_Grid.GetColumnCount(), col;
 
-	LONG_PTR	lpos;
+	long	lpos;
 	m_container->GetFirstParameterPos( &lpos );
 
 
@@ -1217,7 +1217,7 @@ bool CGridViewBase::AddAllObjects()
 	long	row = rowFirstObject();
 	m_Grid.SetRowCount( lCount+row );
 
-	TPOS	lpos;
+	long	lpos;
 	m_objects->GetFirstChildPosition( &lpos );
 
 	
@@ -1342,7 +1342,7 @@ bool CGridViewBase::UpdateActiveCell()
 	long	row = m_Grid.GetAdditionRow(), col = 0;
 
 	//active row
-	POSITION	lpos;
+	long	lpos;
 	m_objects->GetActiveChild( &lpos );
 	if( lpos )
 	{
@@ -1363,7 +1363,7 @@ bool CGridViewBase::UpdateActiveCell()
 	//active column
 
 	long	lkey = -1;
-	m_container->GetCurentPosition((LONG_PTR*)&lpos, &lkey);
+	m_container->GetCurentPosition( &lpos, &lkey );
 
 	
 
@@ -1517,7 +1517,7 @@ void CGridViewBase::OnSetColumnCount(long nCols)
 {
 	if( nCols > m_cols.GetSize() )
 	{
-		for (long col = (long)m_cols.GetSize(); col < nCols; col++)
+		for( long col = m_cols.GetSize(); col < nCols; col++ )
 		{
 			ColInfo	*p = new ColInfo;
 			p->pparam = 0;
@@ -1536,7 +1536,7 @@ void CGridViewBase::OnSetRowCount(long nRows)
 {
 	if( nRows > m_rows.GetSize() )
 	{
-		for (long row = (long)m_rows.GetSize(); row < nRows; row++)
+		for( long row = m_rows.GetSize(); row < nRows; row++ )
 		{
 			RowInfo	*p = new RowInfo;
 			::ZeroMemory( p, sizeof(RowInfo) );
@@ -1598,7 +1598,7 @@ bool CGridViewBase::GetPrintHeight(int nMaxHeight, int& nReturnHeight, int nUser
 	int	nStartPos = nNewUserPosY - m_lStartPrintResultBarPosition;
 	long	lPrinted = 0;
 	int	nNewRetHeight = nReturnHeight;
-	int	nResultRowCount = (int)m_ResultBar.GetParamArray().GetSize();
+	int	nResultRowCount = m_ResultBar.GetParamArray().GetSize();
 
 	for( long row = 0; row < nResultRowCount; row++ )
 	{
@@ -1651,7 +1651,7 @@ void CGridViewBase::Print(HDC hdc, CRect rectTarget, int nUserPosX, int nUserPos
 	ClipRegion.DeleteObject();
 
 	int	row = nLastPosY - m_lStartPrintResultBarPosition+1;
-	int	nResultRowCount = (int)m_ResultBar.GetParamArray().GetSize();
+	int	nResultRowCount = m_ResultBar.GetParamArray().GetSize();
 
 	CRect	rectParam;
 
@@ -1675,7 +1675,7 @@ void CGridViewBase::Print(HDC hdc, CRect rectTarget, int nUserPosX, int nUserPos
 		//rectParam.left = nUserPosX;
 
 		CResultParam	&param = m_ResultBar.GetParamArray().GetAt( row );
-		int	colCount = (int)param.GetValues().GetSize();
+		int	colCount = param.GetValues().GetSize();
 
 		CRect	rectP = param.GetParamRect( 0 );
 		rectP.left = rectName.left-nUserPosX;
@@ -1807,7 +1807,7 @@ HRESULT CGridViewBase::XFrame::UnselectObject( IUnknown* punkObj )
 HRESULT CGridViewBase::XFrame::GetObjectsCount(DWORD* pnCount)
 {
 	METHOD_PROLOGUE_EX(CGridViewBase, Frame);
-	*pnCount = (DWORD)pThis->m_selection.GetSize();
+	*pnCount = pThis->m_selection.GetSize();
 	return S_OK;
 }
 
@@ -1934,7 +1934,7 @@ void	CGridViewBase::_selection_from_range()
 				{
 					INamedDataObject2Ptr	ptrNP( punk );
 					punkParent->Release();
-					LPOS lposA;
+					long	lposA;
 					ptrN->GetObjectPosInParent( &lposA );
 					ptrNP->SetActiveChild( lposA );
 				}*/
@@ -2013,7 +2013,7 @@ void CGridViewBase::_add_result_to_grid()
 
 	m_rowPrintResult = m_Grid.GetRowCount();
 	CResParamArray		&param = m_ResultBar.GetParamArray();
-	m_Grid.SetRowCount( (int)m_rowPrintResult+param.GetSize() );
+	m_Grid.SetRowCount( m_rowPrintResult+param.GetSize() );
 
 	long	row, col, idx, n;
 	for( row = m_rowPrintResult, idx = 0; idx < param.GetSize(); idx++, row++ )
@@ -2109,7 +2109,7 @@ void CGridViewBase::UpdateActiveCellNoHScroll(void)
 	long	row = m_Grid.GetAdditionRow(), col = 0;
 
 	//active row
-	POSITION	lpos;
+	long	lpos;
 	m_objects->GetActiveChild( &lpos );
 	if( lpos )
 	{
@@ -2129,7 +2129,7 @@ void CGridViewBase::UpdateActiveCellNoHScroll(void)
 	}
 
 	long	lkey = -1;
-	m_container->GetCurentPosition( (LONG_PTR*)&lpos, &lkey );
+	m_container->GetCurentPosition( &lpos, &lkey );
 
 	if( lkey != -1 )
 	{

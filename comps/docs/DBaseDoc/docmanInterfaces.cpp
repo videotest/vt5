@@ -57,7 +57,7 @@ HRESULT CDBaseDocument::XTypes::GetType( long index, BSTR *pbstrType )
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////
-HRESULT CDBaseDocument::XTypes::GetObjectFirstPosition( long nType, LONG_PTR *plpos )
+HRESULT CDBaseDocument::XTypes::GetObjectFirstPosition( long nType, long *plpos )
 {
 	_try_nested(CDBaseDocument, Types, GetObjectFirstPosition )
 	{	
@@ -70,7 +70,7 @@ HRESULT CDBaseDocument::XTypes::GetObjectFirstPosition( long nType, LONG_PTR *pl
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////
-HRESULT CDBaseDocument::XTypes::GetNextObject( long nType, LONG_PTR *plpos, IUnknown **ppunkObj )
+HRESULT CDBaseDocument::XTypes::GetNextObject( long nType, long *plpos, IUnknown **ppunkObj )
 {
 	_try_nested(CDBaseDocument, Types, GetNextObject )
 	{	
@@ -384,7 +384,7 @@ HRESULT CDBaseDocument::XData::GetObject(	BSTR bstrName, BSTR bstrType, IUnknown
 
 
 ////////////////////////////////////////////////////////////////////////////////////////////
-HRESULT CDBaseDocument::XData::NotifyContexts( DWORD dwNotifyCode, IUnknown *punkNew, IUnknown *punkOld, GUID* dwData)
+HRESULT CDBaseDocument::XData::NotifyContexts( DWORD dwNotifyCode, IUnknown *punkNew, IUnknown *punkOld, DWORD dwData)
 {
 	_try_nested(CDBaseDocument, Data, NotifyContexts)
 	{	
@@ -464,7 +464,7 @@ HRESULT CDBaseDocument::XData::GetBaseGroupCount(int * pnCount)
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////
-HRESULT CDBaseDocument::XData::GetBaseGroupFirstPos(TPOS *plPos)
+HRESULT CDBaseDocument::XData::GetBaseGroupFirstPos(long * plPos)
 {
 	_try_nested(CDBaseDocument, Data, GetBaseGroupFirstPos )
 	{		
@@ -476,7 +476,7 @@ HRESULT CDBaseDocument::XData::GetBaseGroupFirstPos(TPOS *plPos)
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////
-HRESULT CDBaseDocument::XData::GetNextBaseGroup(GUID * pKey, TPOS *plPos)
+HRESULT CDBaseDocument::XData::GetNextBaseGroup(GUID * pKey, long * plPos)
 {
 	_try_nested(CDBaseDocument, Data, GetNextBaseGroup )
 	{		
@@ -524,7 +524,7 @@ HRESULT CDBaseDocument::XData::GetBaseGroupObjectsCount(GUID * pKey, int * pnCou
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////
-HRESULT CDBaseDocument::XData::GetBaseGroupObjectFirstPos(GUID * pKey, TPOS *plPos)
+HRESULT CDBaseDocument::XData::GetBaseGroupObjectFirstPos(GUID * pKey, long * plPos)
 {
 	_try_nested(CDBaseDocument, Data, GetBaseGroupObjectFirstPos )
 	{		
@@ -536,7 +536,7 @@ HRESULT CDBaseDocument::XData::GetBaseGroupObjectFirstPos(GUID * pKey, TPOS *plP
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////
-HRESULT CDBaseDocument::XData::GetBaseGroupNextObject(GUID * pKey, TPOS *plPos, IUnknown ** ppunkObject)
+HRESULT CDBaseDocument::XData::GetBaseGroupNextObject(GUID * pKey, long * plPos, IUnknown ** ppunkObject)
 {
 	_try_nested(CDBaseDocument, Data, GetBaseGroupNextObject )
 	{		
@@ -606,6 +606,10 @@ HRESULT CDBaseDocument::XDBaseDocument::SetActiveQuery( IUnknown* punk )
 		pThis->m_activeQueryKey = ::GetObjectKey( punk );
 		IDataContextPtr sptrDC = pThis->GetControllingUnknown();
 
+        CDBLocksInfo* p_dbli = pThis->m_dbEngine.GetLocksInfo();
+		ISelectQuery2Ptr sq = punk;
+		sq->AttachLockInfo((void*) p_dbli);
+		
 		if( sptrDC )
 			sptrDC->SetActiveObject( _bstr_t( szTypeQueryObject ), punk, 0  );
 
@@ -1065,6 +1069,8 @@ HRESULT CDBaseDocument::XDBConnection::CloseConnection()
 	_try_nested(CDBaseDocument, DBConnection, CloseConnection)
 	{
 		pThis->m_dbEngine.Close();
+		delete pThis->m_dbEngine.m_pdbLocks;
+		pThis->m_dbEngine.m_pdbLocks =0;
 		return S_OK;
 	}
 	_catch_nested;
@@ -1079,7 +1085,7 @@ HRESULT CDBaseDocument::XDBConnection::OpenConnection()
 
 		if( !bResult )
 			return S_FALSE;
-
+	
 		return S_OK;
 	}
 	_catch_nested;
@@ -1206,7 +1212,27 @@ HRESULT CDBaseDocument::XDBaseDocument::IsReadOnly( BOOL* pbReadOnly )
 	_catch_nested;
 }
 
-
+////////////////////////////////////////////////////////////////////////////////////////////
+//is read-delete only?
+HRESULT CDBaseDocument::XDBaseDocument::IsReadDeleteOnly( BOOL* pbReadOnly )
+{
+	_try_nested(CDBaseDocument, DBaseDocument, IsReadDeleteOnly);
+	{	
+		*pbReadOnly = ( pThis->m_bReadDeleteOnly ? 1 : 0 );
+		return S_OK;
+	}
+	_catch_nested;
+}
+//set/remove read-delete flag
+HRESULT CDBaseDocument::XDBaseDocument::SetReadDeleteOnly( BOOL bReadOnly )
+{
+	_try_nested(CDBaseDocument, DBaseDocument, SetReadDeleteOnly);
+	{	
+		pThis->m_bReadDeleteOnly = bReadOnly;
+		return S_OK;
+	}
+	_catch_nested;
+}
 ////////////////////////////////////////////////////////////////////////////////////////////
 HRESULT CDBaseDocument::XDBaseDocument::GetNamedDataFieldsSection( BSTR* pbstrSection )
 {
@@ -1629,4 +1655,23 @@ HRESULT CDBaseDocument::XUserNameProvider::GetUserName( IUnknown* punkObject, BS
 	_catch_nested;
 }
 
+//	
+HRESULT CDBaseDocument::XLockInfo::GetLockInfoPtr(void** li)
+{
+	_try_nested(CDBaseDocument, LockInfo, GetLockInfoPtr);
+	{
+		*li = pThis->m_dbEngine.m_pdbLocks;
+		return S_OK;
+	}
+	_catch_nested;
 
+}
+HRESULT CDBaseDocument::XLockInfo::SetLockInfo(void* li)
+{
+	_try_nested(CDBaseDocument, LockInfo, SetLockInfo);
+	{
+		pThis->m_dbEngine.m_pdbLocks = (CDBLocksInfo*)li;
+		return S_OK;
+	}
+	_catch_nested;
+}

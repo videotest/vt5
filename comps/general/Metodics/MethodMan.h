@@ -4,7 +4,6 @@
 #include "\vt5\awin\misc_list.h"
 #include "\vt5\awin\misc_ptr.h"
 #include "MethodStep.h"
-#include "MethodDataUtil.h"
 
 enum MethodExecutionState
 {
@@ -37,19 +36,19 @@ public:
 		com_call Record();
 		com_call IsRunning(BOOL *pbVal);
 		com_call IsRecording(BOOL *pbVal);
-		com_call AddMethod(IUnknown* punkMethod, TPOS lInsertBefore, TPOS *plNewPos = 0);
-		com_call DeleteMethod(TPOS lPos);
-		com_call SetActiveMethodPos(TPOS lPos);
-		com_call GetActiveMethodPos(TPOS *plPos);
-		com_call GetFirstMethodPos(TPOS *plPos);
-		com_call GetNextMethod(TPOS *plPos, IUnknown **pMethod);
+		com_call AddMethod(IUnknown* punkMethod, long lInsertBefore, long *plNewPos = 0);
+		com_call DeleteMethod(long lPos);
+		com_call SetActiveMethodPos( long lPos );
+		com_call GetActiveMethodPos( long *plPos );
+		com_call GetFirstMethodPos( long *plPos );
+		com_call GetNextMethod( long *plPos, IUnknown **pMethod );
 		com_call Reload( );
 
-		com_call StoreCache(IUnknown *punkMethod, TPOS lStepPos);
-		com_call LoadCache(IUnknown *punkMethod, TPOS lStepPos, DWORD dwFlags = lcfLoadAll);
-		com_call DropCache(IUnknown *punkMethod, TPOS lStepPos);
-		com_call IsCached(IUnknown *punkMethod, TPOS lStepPos, BOOL *pbCached);
-		com_call MoveCache(IUnknown *punkMethod, TPOS lOldStepPos, TPOS lNewStepPos, BOOL bCopy);
+		com_call StoreCache( IUnknown *punkMethod, long lStepPos );
+		com_call LoadCache( IUnknown *punkMethod, long lStepPos, DWORD dwFlags=lcfLoadAll );
+		com_call DropCache( IUnknown *punkMethod, long lStepPos );
+		com_call IsCached( IUnknown *punkMethod, long lStepPos, BOOL *pbCached );
+		com_call MoveCache( IUnknown *punkMethod, long lOldStepPos, long lNewStepPos, BOOL bCopy);
 
 		com_call LockNotification(); // заблокировать нотификации
 		com_call UnlockNotification(); // разблокировать нотификации
@@ -58,7 +57,7 @@ public:
 	END_INTERFACE_PART(MethodMan);
 
 	static CString GetCacheDir();
-	static CString GetCachePath(TPOS lMethodPos, TPOS lStepPos);
+	static CString GetCachePath( long lMethodPos, long lStepPos );
 
 protected:
 	virtual void OnNotify( const char *pszEvent, IUnknown *punkHit, IUnknown *punkFrom, void *pdata, long cbSize );
@@ -107,8 +106,8 @@ protected:
 
 	// данные для IMethodMan
 	_list_t<IUnknownPtr> m_Methods;
-	_map_t<TPOS, TPOS, cmp<TPOS> > m_MethodPosMap; // карта Pos'ов методов - для защиты от неправильных (чтобы проверять корректность быстро, не пробегая по списку)
-	TPOS m_lActiveMethodPos;
+	_map_t<long, long, cmp_long> m_MethodPosMap; // карта Pos'ов методов - для защиты от неправильных (чтобы проверять корректность быстро, не пробегая по списку)
+	long m_lActiveMethodPos;
 
 	_ptr_t<char> m_pDisabledKeys; // буфер для файла с ключами/секциями, которые нельзя вносить в методику
 
@@ -124,7 +123,7 @@ protected:
 
 	bool m_bNoLoop;
 	long m_nIndexBreakpoint;
-
+	
 	_bstr_t m_bstrLastLoadedDoc;
 
 	long m_nLockNotificationCounter;
@@ -158,7 +157,7 @@ protected:
     bool CheckDocument(); // проверка активного документа - тот ли, что помнит методика?
 	// если нет - Stop
 
-		bool ApplyStepsToShellData(TPOS lStepPos0 = 0);
+	bool ApplyStepsToShellData(long lStepPos0=0);
 	// закинуть в shell.data nameddata всех шагов с первого 
 	// по lStepPos0 или по текущий, если lStepPos0==0
 

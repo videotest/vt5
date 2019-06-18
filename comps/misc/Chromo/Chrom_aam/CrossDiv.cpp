@@ -299,8 +299,8 @@ void CCrossDivFilter::SeparateTouch()
 	AddLineToContour(pTrack,&TrackSize,m_SqrPoints[2],m_SqrPoints[3]);
 	AddLineToContour(pTrack,&TrackSize,m_SqrPoints[3],m_SqrPoints[0]);
 	
-	long cnt = 0; POSITION pos = 0;
-	m_List->GetChildsCount(&cnt);
+	long pos = 0;
+	m_List->GetChildsCount(&pos);//
 	m_List->GetFirstChildPosition(&pos);
 	while( pos ) //по всем объектам
 	{

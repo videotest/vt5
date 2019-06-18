@@ -320,7 +320,7 @@ void CInputDlg::DoSaveAvi()
 	dlg.ReadSettings();
 	int r;
 	if (dlg.m_strFile.IsEmpty())
-		r = (int)dlg.DoModal();
+		r = dlg.DoModal();
 	else r = IDOK;
 	if (r == IDOK)
 	{

@@ -713,7 +713,7 @@ HRESULT CCarioView::XCarioView::SetMode( CarioViewMode viewMode )
 
 			if( ptrObjectList != 0 )
 			{
-				POSITION	lpos = 0;
+				long	lpos = 0;
 				if( po && po->m_ptrMeasureObject != 0 )
 				{
 					INamedDataObject2Ptr	ptrN( po->m_ptrMeasureObject );
@@ -1413,9 +1413,9 @@ POSITION CCarioView::GetFisrtVisibleObjectPosition()
 /////////////////////////////////////////////////////////////////////////////
 IUnknown * CCarioView::GetNextVisibleObject( POSITION &rPos )
 {
-	POSITION	lpos = rPos;
+	long	lpos = (long)rPos;
 	IUnknown	*punk = m_listVisibleObjects.get( lpos );
-	rPos = m_listVisibleObjects.next( lpos );
+	(long&)rPos = m_listVisibleObjects.next( lpos );
 	if( punk )punk->AddRef();
 	return punk;
 }
@@ -1430,7 +1430,7 @@ IUnknown* CCarioView::GetObjectByPoint( CPoint pt )
 	INamedDataObject2Ptr ptrNDO( m_drawobjects );
 	if( ptrNDO == 0 ) return 0;
 
-	POSITION lpos = 0;
+	long lpos = 0;
 	ptrNDO->GetFirstChildPosition( &lpos );
 	while( lpos )
 	{
@@ -1704,7 +1704,7 @@ bool CCarioView::_OnLButtonDown(UINT nFlags, CPoint point)
 
 			if( ptrObjectList != 0 )
 			{
-				POSITION	lpos = 0;
+				long	lpos = 0;
 				if( po && po->m_ptrMeasureObject != 0 )
 				{
 					INamedDataObject2Ptr	ptrN( po->m_ptrMeasureObject );

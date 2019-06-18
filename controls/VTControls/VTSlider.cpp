@@ -857,14 +857,14 @@ void CVTSlider::OnMouseMove(UINT nFlags, CPoint point)
 
 	if( !m_bSliderCross )
 	{
-		if( m_track == track1 )
-		{
-			SetPosLo( ival );
-		}
-		if( m_track == track2 )
-		{
-			SetPosHi( ival );
-		}
+	if( m_track == track1 )
+	{
+		SetPosLo( ival );
+	}
+	if( m_track == track2 )
+	{
+		SetPosHi( ival );
+	}
 	}
 
 	if( m_bSliderCross )

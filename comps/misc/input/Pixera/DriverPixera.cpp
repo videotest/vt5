@@ -411,7 +411,7 @@ void CALLBACK TimerProc(HWND hwnd, UINT uMsg, UINT_PTR idEvent, DWORD dwTime)
 			//sergey 11/05/06
 			CAM_WB_SetFactors(1.,1.,1.);
 			
-//			Sleep(200);
+//          Sleep(200);
 			//Sleep(100);
 			CAM_WB_SetFactors(dWBRed,dWBGreen,dWBBlue);
 			TRACE("TimerProc, factors are %f,%f,%f\n", dWBRed, dWBGreen, dWBBlue);
@@ -482,7 +482,7 @@ bool CDriverPixera::InitMIA()
 	//end
 	CAM_MIA_SetPreDrawFunc(ImageFunc);
 	//sergey 11.05.06	
-	RestoreSettingsLite();
+	RestoreSettingsLite();	
 	//::RestoreSettings();
 	//end
 

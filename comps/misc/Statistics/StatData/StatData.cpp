@@ -16,14 +16,14 @@
 #include "\vt5\awin\misc_module.h"
 #include "MenuRegistrator.h"
 
-//
-//#ifdef _DEBUG
-//#pragma comment (lib, "\\vt5\\common2\\debug\\common2.lib")
-//#pragma comment (lib, "\\vt5\\Controls2\\debug\\controls2.lib")
-//#else
-//#pragma comment (lib, "\\vt5\\common2\\release\\common2.lib")
-//#pragma comment (lib, "\\vt5\\Controls2\\release\\controls2.lib")
-//#endif//_DEBUG
+
+#ifdef _DEBUG
+#pragma comment (lib, "\\vt5\\common2\\debug\\common2.lib")
+#pragma comment (lib, "\\vt5\\Controls2\\debug\\controls2.lib")
+#else
+#pragma comment (lib, "\\vt5\\common2\\release\\common2.lib")
+#pragma comment (lib, "\\vt5\\Controls2\\release\\controls2.lib")
+#endif//_DEBUG
 
 BOOL APIENTRY DllMain( HANDLE hModule, 
                        DWORD  ul_reason_for_call, 

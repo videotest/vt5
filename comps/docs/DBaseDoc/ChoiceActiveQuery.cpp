@@ -71,7 +71,7 @@ BOOL CChoiceActiveQuery::OnInitDialog()
 		return FALSE;
 	}
 
-	LONG_PTR lPos = 0;
+	long lPos = 0;
 	ptrDC->GetFirstObjectPos( _bstr_t(szTypeQueryObject), &lPos );
 	while( lPos )
 	{

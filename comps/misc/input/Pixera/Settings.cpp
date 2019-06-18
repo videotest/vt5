@@ -159,9 +159,9 @@ void SaveSettings()
 	SaveLevelAdjustment(kLuminanceChannel);
 	if (bColorCamera)
 	{
-	SaveLevelAdjustment(kRedChannel);
-	SaveLevelAdjustment(kGreenChannel);
-	SaveLevelAdjustment(kBlueChannel);
+		SaveLevelAdjustment(kRedChannel);
+		SaveLevelAdjustment(kGreenChannel);
+		SaveLevelAdjustment(kBlueChannel);
 	}
 	AccumulateMethodEx AccMode;
 	CAM_SIA_GetAccumulateMode(&AccMode);
@@ -172,18 +172,18 @@ void SaveSettings()
 	if (bColorCamera)
 	{
 		//WhiteBalanceModeEx WBMode = CAM_WB_GetMode();
-	CStdProfileManager::m_pMgr->WriteProfileInt(_T("WhiteBalance"), _T("Mode"), g_nWBMode);
-	bool bWBShow;
-	PxRectEx WBrect;
-	UCHAR byWBR,byWBG,byWBB;
-	CAM_WB_GetRegion(&bWBShow,&WBrect,&byWBR,&byWBG,&byWBB);
-	SaveRect(_T("WhiteBalance\\Rect"), bWBShow, WBrect, byWBR, byWBG, byWBB);
-	double dWBRed,dWBGreen,dWBBlue;
-	CAM_WB_GetFactors(&dWBRed,&dWBGreen,&dWBBlue);
+		CStdProfileManager::m_pMgr->WriteProfileInt(_T("WhiteBalance"), _T("Mode"), g_nWBMode);
+		bool bWBShow;
+		PxRectEx WBrect;
+		UCHAR byWBR,byWBG,byWBB;
+		CAM_WB_GetRegion(&bWBShow,&WBrect,&byWBR,&byWBG,&byWBB);
+		SaveRect(_T("WhiteBalance\\Rect"), bWBShow, WBrect, byWBR, byWBG, byWBB);
+		double dWBRed,dWBGreen,dWBBlue;		
+		CAM_WB_GetFactors(&dWBRed,&dWBGreen,&dWBBlue);
 		
-	CStdProfileManager::m_pMgr->WriteProfileDouble(_T("WhiteBalance"), _T("red"), dWBRed);
-	CStdProfileManager::m_pMgr->WriteProfileDouble(_T("WhiteBalance"), _T("green"), dWBGreen);
-	CStdProfileManager::m_pMgr->WriteProfileDouble(_T("WhiteBalance"), _T("blue"), dWBBlue);
+		CStdProfileManager::m_pMgr->WriteProfileDouble(_T("WhiteBalance"), _T("red"), dWBRed);
+		CStdProfileManager::m_pMgr->WriteProfileDouble(_T("WhiteBalance"), _T("green"), dWBGreen);
+		CStdProfileManager::m_pMgr->WriteProfileDouble(_T("WhiteBalance"), _T("blue"), dWBBlue);
 	}
 	OrientationEx Orient = CAM_IP_GetOrientation();
 	CStdProfileManager::m_pMgr->WriteProfileInt(_T("Image"), _T("Orientation"), Orient);
@@ -199,8 +199,8 @@ void SaveSettings()
 	CStdProfileManager::m_pMgr->WriteProfileInt(_T("Image"), _T("Microscope"), MicroMode);
 	if (bColorCamera)
 	{
-	BOOL bColor = CAM_IP_IsColorCapture()==kColorCamColor;
-	CStdProfileManager::m_pMgr->WriteProfileInt(_T("Image"), _T("Color"), bColor);
+		BOOL bColor = CAM_IP_IsColorCapture()==kColorCamColor;
+		CStdProfileManager::m_pMgr->WriteProfileInt(_T("Image"), _T("Color"), bColor);
 	}
 	BOOL bFocus = CAM_FF_IsRunning();
 	CStdProfileManager::m_pMgr->WriteProfileInt(_T("Focus"), _T("Enable"), bFocus);
@@ -274,9 +274,9 @@ void RestoreSettings()
 	RestoreLevelAdjustment(kLuminanceChannel);
 	if (bColorCamera)
 	{
-	RestoreLevelAdjustment(kRedChannel);
-	RestoreLevelAdjustment(kGreenChannel);
-	RestoreLevelAdjustment(kBlueChannel);
+		RestoreLevelAdjustment(kRedChannel);
+		RestoreLevelAdjustment(kGreenChannel);
+		RestoreLevelAdjustment(kBlueChannel);
 	}
 	int nAccMode = CStdProfileManager::m_pMgr->GetProfileInt(_T("Accumulation"), _T("Mode"), kNotAccumulating);
 	check(nAccMode, kNotAccumulating, kAverage);
@@ -292,14 +292,14 @@ void RestoreSettings()
 	}
 	//??????????????????????????????????
 	if (bColorCamera)
-	{
-	int nWBMode = CStdProfileManager::m_pMgr->GetProfileInt(_T("WhiteBalance"), _T("Mode"), kAutoWB);
-	check(nWBMode, kWBOff, kManualWB);
-	g_nWBMode = nWBMode;
+	{		
+		int nWBMode = CStdProfileManager::m_pMgr->GetProfileInt(_T("WhiteBalance"), _T("Mode"), kAutoWB);
+		check(nWBMode, kWBOff, kManualWB);
+		g_nWBMode = nWBMode;
 		//CAM_WB_SetMode((WhiteBalanceModeEx)nWBMode);
-	bool bWBShow;
-	PxRectEx WBrect;
-	UCHAR byWBR,byWBG,byWBB;
+		bool bWBShow;
+		PxRectEx WBrect;
+		UCHAR byWBR,byWBG,byWBB;
 		//sergey 10/05/06
 		if (nWBMode != kAutoWB)
 		{
@@ -330,13 +330,13 @@ void RestoreSettings()
 		
 		
 
-	RestoreRect(_T("WhiteBalance\\Rect"), bWBShow, WBrect, byWBR, byWBG, byWBB);
+		RestoreRect(_T("WhiteBalance\\Rect"), bWBShow, WBrect, byWBR, byWBG, byWBB);
 		
 		
 		
 		
 		//if(bWBShow)
-	CAM_WB_SetRegion(bWBShow,&WBrect,byWBR,byWBG,byWBB);
+		CAM_WB_SetRegion(bWBShow,&WBrect,byWBR,byWBG,byWBB);
 
 		 //}
 		//end
@@ -345,16 +345,16 @@ void RestoreSettings()
 		{
 			CAM_WB_SetMode(kManualWB);
 		
-	double dWBRed = CStdProfileManager::m_pMgr->GetProfileDouble(_T("WhiteBalance"), _T("red"), 1.);
-	double dWBGreen = CStdProfileManager::m_pMgr->GetProfileDouble(_T("WhiteBalance"), _T("green"), 1.);
-	double dWBBlue = CStdProfileManager::m_pMgr->GetProfileDouble(_T("WhiteBalance"), _T("blue"), 1.);
+		double dWBRed = CStdProfileManager::m_pMgr->GetProfileDouble(_T("WhiteBalance"), _T("red"), 1.);
+		double dWBGreen = CStdProfileManager::m_pMgr->GetProfileDouble(_T("WhiteBalance"), _T("green"), 1.);
+		double dWBBlue = CStdProfileManager::m_pMgr->GetProfileDouble(_T("WhiteBalance"), _T("blue"), 1.);
 		//sergey 11/05/06
 		//CAM_WB_SetFactors(1.,1.,1.);
 		//end
 		//Sleep(15);
-	CAM_WB_SetFactors(dWBRed,dWBGreen,dWBBlue);
+		CAM_WB_SetFactors(dWBRed,dWBGreen,dWBBlue);
 		TRACE("Restore settings, mode = %d, factors are %f,%f,%f\n", nWBMode,dWBRed,dWBGreen,dWBBlue);
-	}
+		}
 		//end
 	}
 	int nOrient = CStdProfileManager::m_pMgr->GetProfileInt(_T("Image"), _T("Orientation"), kNoTransform);
@@ -375,8 +375,8 @@ void RestoreSettings()
 	CAM_AE_SetMicroMode((MicroModeEx)nMicroMode);
 	if (bColorCamera)
 	{
-	ColorModeEx Color = CStdProfileManager::m_pMgr->GetProfileInt(_T("Image"),_T("Color"),TRUE)?kColorCamColor:kColorCamMono;
-	CAM_IP_ColorCapture(Color);
+		ColorModeEx Color = CStdProfileManager::m_pMgr->GetProfileInt(_T("Image"),_T("Color"),TRUE)?kColorCamColor:kColorCamMono;
+		CAM_IP_ColorCapture(Color);
 	}
 	BOOL bFocus = CStdProfileManager::m_pMgr->GetProfileInt(_T("Focus"), _T("Enable"), FALSE);
 	if (bFocus)

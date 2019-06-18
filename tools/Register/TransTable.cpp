@@ -15,8 +15,6 @@
 
 extern bool bReportErrors;
 
-void WriteLogLine(const char *lpszFormat, ...);
-
 // таблица перестановок
 static BYTE STable[128] = 
 {
@@ -270,7 +268,7 @@ bool CTranslateTable::Save(LPCTSTR szFile)
 	pfnGUARDGETNSKINFO pfnGetNSKInfo = (pfnGUARDGETNSKINFO)GetProcAddress(hModule, "GuardGetNSKInfo");
 	pfnGUARDGETAPPNAME pfnGetAppName = (pfnGUARDGETAPPNAME)GetProcAddress(hModule, "GuardGetAppName");
 	pfnGUARDGETCOMPANYNAME pfnGetCompanyName = (pfnGUARDGETCOMPANYNAME)GetProcAddress(hModule, "GuardGetCompanyName");
-	pfnGUARDGETAPPNAME pfnGetSuffix = (pfnGUARDGETAPPNAME)GetProcAddress(hModule, "GuardGetSuffix");
+	//pfnGUARDGETAPPNAME pfnGetSuffix = (pfnGUARDGETAPPNAME)GetProcAddress(hModule, "GuardGetSuffix");
 
 	if (!pfnGetNSKInfo || !pfnGetAppName || !pfnGetCompanyName)
 		return false;
@@ -315,7 +313,7 @@ bool CTranslateTable::Save(LPCTSTR szFile)
 //			return false;
 		}
 
-		// now we have buffer that contains crypted contents of translation_table
+		// now we have buffer that contains crypted contents of tarnslation_table
 		// we need generate index
 		srand(m_dwImito); // set seed dependent from imito
 		int nIndex = rand() % dwSize;
@@ -357,7 +355,7 @@ bool CTranslateTable::Save(LPCTSTR szFile)
 
 		// read size of app_suffix string
 		LONG lSufSize = 0;
-		pfnGetSuffix(0, &lSufSize);
+		pfnGetCompanyName(0, &lSufSize);
 
 		// save count of app_suffix_string
 		file.Write((LPVOID)&lSufSize, sizeof(LONG));
@@ -398,7 +396,7 @@ bool CTranslateTable::Save(LPCTSTR szFile)
 		{
 		case CFileException::tooManyOpenFiles:
 
-		case CFileException::genericException:
+		case CFileException::generic:
 		case CFileException::hardIO:
 			GuardSetErrorCode(guardInvalidGuardFile);
 			break;
@@ -428,247 +426,6 @@ bool CTranslateTable::Save(LPCTSTR szFile)
 			delete [] pBuffer, pBuffer = 0;
 	}
 	return true;
-}
-
-bool CTranslateTable::SaveText(LPCTSTR szFile)
-{
-	if (lstrlen(szFile) && lstrcmp(m_strFileName, szFile))
-		m_strFileName = szFile;
-
-	if (m_strFileName.IsEmpty() || m_GuidKey == INVALID_KEY)
-		return false;
-
-	// get functions
-	HMODULE hModule = GetModuleHandle(0);
-	if (!hModule)
-		return false;
-
-	typedef void (*pfnGUARDGETNSKINFO)(DWORD*);
-	typedef void (*pfnGUARDGETAPPNAME)(char*, LONG*);
-	typedef void (*pfnGUARDGETCOMPANYNAME)(char*, LONG*);
-
-	pfnGUARDGETNSKINFO pfnGetNSKInfo = (pfnGUARDGETNSKINFO)GetProcAddress(hModule, "GuardGetNSKInfo");
-	pfnGUARDGETAPPNAME pfnGetAppName = (pfnGUARDGETAPPNAME)GetProcAddress(hModule, "GuardGetAppName");
-	pfnGUARDGETCOMPANYNAME pfnGetCompanyName = (pfnGUARDGETCOMPANYNAME)GetProcAddress(hModule, "GuardGetCompanyName");
-	pfnGUARDGETAPPNAME pfnGetSuffix = (pfnGUARDGETAPPNAME)GetProcAddress(hModule, "GuardGetSuffix");
-
-	if (!pfnGetNSKInfo || !pfnGetAppName || !pfnGetCompanyName)
-		return false;
-
-	// get size of array
-	DWORD dwSize = 0;
-	CEntryList::iterator le = m_listEntries.end();
-	CEntryList::iterator lp = m_listEntries.begin();
-
-	{
-		FILE* file = fopen( m_strFileName, "w" );
-
-		// Get app_name
-		LONG lNameSize = 0;
-		pfnGetAppName(0, &lNameSize);
-		{
-			CString strAppName(DEF_APP_NAME);
-			if (lNameSize)
-			{
-				pfnGetAppName(strAppName.GetBuffer(lNameSize + 1), &lNameSize);
-				strAppName.ReleaseBuffer();
-				if (strAppName.GetLength() > lNameSize)
-					strAppName.SetAt(lNameSize, '\0');
-
-			}
-			// save app_name_string
-			fprintf(file, "APP_NAME %s\n",(LPCSTR)strAppName);
-		}
-
-		// read size of app_suffix string
-		{		
-			LONG lSufSize = 0;
-			CString strSuf;
-			if (lSufSize)
-			{
-				pfnGetSuffix(strSuf.GetBuffer(lSufSize + 1), &lSufSize);
-				strSuf.ReleaseBuffer();
-				if (strSuf.GetLength() > lSufSize)
-					strSuf.SetAt(lSufSize, '\0');
-			}
-			// save app_suffix_string
-			fprintf(file, "Suffix %s\n", (LPCSTR)strSuf);
-		}
-
-		// read size of app_suffix string
-		{		
-			LONG lSufSize = 0;
-			pfnGetCompanyName(0, &lSufSize);
-			CString strSuf;
-			if (lSufSize)
-			{
-				pfnGetCompanyName(strSuf.GetBuffer(lSufSize + 1), &lSufSize);
-				strSuf.ReleaseBuffer();
-				if (strSuf.GetLength() > lSufSize)
-					strSuf.SetAt(lSufSize, '\0');
-			}
-			// save app_suffix_string
-			fprintf(file, "CompanyName %s\n", (LPCSTR)strSuf);
-		}
-	
-		fprintf(file, "NumberOfEntries %u\n", (DWORD)m_listEntries.size());
-	
-		for (lp = m_listEntries.begin(); lp != le; lp++)
-		{
-			TTranslateEntry* e = *lp;
-			fprintf(file, "%s %s %u %s\n", 
-				g2s(e->GuidExtern), g2s(e->GuidInner), e->dwData, e->szProgID);
-		}
-		fclose(file);
-	}
-	return true;
-}
-
-GuidKey s2g(LPCSTR s)
-{
-	_bstr_t cs=s;
-	GuidKey key;
-	HRESULT hr=CLSIDFromString(cs, &key);
-	return key;
-}
-
-int scanValue(FILE* file,const CString& sFmt, CString& sValue)
-{
-	LONG len = 81;
-	char szAppName[81];
-	fgets(szAppName,len,file);
-	int nf=sscanf(szAppName,sFmt+"%s\n", sValue.GetBuffer(len));
-	sValue.ReleaseBuffer();
-	return nf;
-}
-
-bool CTranslateTable::LoadText(LPCTSTR szFile)
-{
-	//if (lstrlen(szFile) && lstrcmp(m_strFileName, szFile))
-	//	m_strFileName = szFile;
-
-	//if (m_strFileName.IsEmpty() || m_GuidKey == INVALID_KEY)
-	//	return false;
-
-	// free old tables
-	Free();
-
-	if (m_GuidKey == INVALID_KEY)
-		return false;
-
-	// get functions
-	HMODULE hModule = GetModuleHandle(0);
-	if (!hModule)
-		return false;
-
-	typedef void (*pfnGUARDSETVALUE)(const char*);
-	pfnGUARDSETVALUE pfnSetAppName = (pfnGUARDSETVALUE)GetProcAddress(hModule, "GuardSetAppName");
-	pfnGUARDSETVALUE pfnSetSuffix  = (pfnGUARDSETVALUE)GetProcAddress(hModule, "GuardSetSuffix");
-	pfnGUARDSETVALUE pfnSetComName = (pfnGUARDSETVALUE)GetProcAddress(hModule, "GuardSetCompanyName");
-
-	bool bRet = false;
-	int nf;
-	try
-	{
-		FILE* file = fopen( szFile, "r" );
-		if(!file)
-			return bRet;
-		// read size of app_name string
-		{
-			CString strAppName;
-			scanValue(file, "APP_NAME",strAppName);
-			if(strAppName.IsEmpty())
-				strAppName=DEF_APP_NAME;
-			pfnSetAppName( strAppName );			
-		}
-
-		// read count of app_suffix_string
-		{
-			CString strSuf;
-			scanValue(file, "Suffix",strSuf);
-			pfnSetSuffix( strSuf );			
-		}
-
-		// read size of app_suffix string
-		{
-			CString strCompanyName;
-			scanValue(file, "CompanyName",strCompanyName);
-			pfnSetComName( strCompanyName );			
-		}
-
-		// read imito
-		m_dwImito =16;
-
-		DWORD dwNEntries=0;
-		nf=fscanf(file, "NumberOfEntries %u\n", &dwNEntries);
-
-		for (DWORD ie=0; ie < dwNEntries; ++ie)
-		{
-			char sgExt[42], sgInn[42], szProgId[81];
-			DWORD dwData=0;
-			size_t nSize=0;
-
-			bRet=false;
-			nf=fscanf_s(file, "%s %s %u %[^\n ]\n", 
-				sgExt, 41, sgInn, 41, &dwData, szProgId, 80);
-			if(nf==4)
-			{
-				nSize=strlen(szProgId);
-				if(nSize>0)
-				{
-					TTranslateEntry* e = new TTranslateEntry;
-					e->GuidExtern = s2g(sgExt);
-					e->GuidInner = s2g(sgInn);
-					e->szProgID = new TCHAR [nSize+1];
-					memcpy((void*)e->szProgID, szProgId , nSize+1);
-					e->dwData = dwData;
-					if(!Add(e))
-					{
-						delete e;
-						break;
-					}
-					bRet=true;
-				}
-			}
-		}
-		fclose(file);
-	}
-	catch(CFileException * e)
-	{
-		CString strError;
-		e->GetErrorMessage(strError.GetBuffer(1024), 1024);
-		TRACE ("%s\n", strError);
-		switch (e->m_cause)
-		{
-		case CFileException::tooManyOpenFiles:
-
-		case CFileException::genericException:
-		case CFileException::hardIO:
-			GuardSetErrorCode(guardInvalidGuardFile);
-			break;
-
-		case CFileException::fileNotFound:
-		case CFileException::badPath:
-		case CFileException::invalidFile:
-			GuardSetErrorCode(guardInvalidGuardFile);
-			break;
-
-		case CFileException::accessDenied:
-		case CFileException::sharingViolation:
-		case CFileException::lockViolation:
-		case CFileException::badSeek:
-		case CFileException::endOfFile:
-			GuardSetErrorCode(guardReadGuardFile);
-			break;
-		}
-
-		if( bReportErrors )e->ReportError();
-		e->Delete();
-
-		return false;
-	}
-
-	return bRet;
 }
 
 bool CTranslateTable::Load(LPCTSTR szFile)
@@ -773,7 +530,7 @@ bool CTranslateTable::Load(LPCTSTR szFile)
 		}
 
 
-		// add to diff sizeof(index) && sizeof(imito)
+		// add to diff sizeof(index) && szeof(imito)
 		dwDiff += sizeof(DWORD) + sizeof(int);
 
 		// get file size
@@ -800,7 +557,7 @@ bool CTranslateTable::Load(LPCTSTR szFile)
 		// read last part of buffer
 		dwAllRead += file.Read(&(pBuffer[nIndex]), dwSize - nIndex);
 
-		// buffer size is not equal w/ read size
+		// buffer size is not equal w/ readed size
 		if (dwAllRead != dwSize)
 		{
 			GuardSetErrorCode(guardReadGuardFile);
@@ -855,7 +612,7 @@ bool CTranslateTable::Load(LPCTSTR szFile)
 		{
 		case CFileException::tooManyOpenFiles:
 
-		case CFileException::genericException:
+		case CFileException::generic:
 		case CFileException::hardIO:
 			GuardSetErrorCode(guardInvalidGuardFile);
 			break;
@@ -891,13 +648,6 @@ bool CTranslateTable::Load(LPCTSTR szFile)
 	return bRet;
 }
 
-CStringA g2s(GuidKey k)
-{
-	CStringW s; s.GetBufferSetLength(41); StringFromGUID2(k, s.GetBuffer(), 41);
-	CStringA sa = s;
-	return sa;
-}
-
 bool CTranslateTable::Add(TTranslateEntry * pEntry)
 {
 	if (!pEntry)
@@ -912,12 +662,9 @@ bool CTranslateTable::Add(TTranslateEntry * pEntry)
 
 	m_listEntries.push_back(pEntry);
 	m_mapGuid[pEntry->GuidExtern] = pEntry;
-	GuidKey guidCreapted = pEntry->GuidExtern;
-	GuidKey guidDecreapted = DecryptEntry(pEntry);
 	m_mapIntGuid[DecryptEntry(pEntry)] = pEntry;
 	m_mapProgID[pEntry->szProgID] = pEntry;
-	//WriteLogLine("guidCreapted = %s, guidDecreapted = %s, pEntry->GuidInner = %s, pEntry->szProgID = %s"
-	//	, g2s(guidCreapted), g2s(guidDecreapted), g2s(pEntry->GuidInner), pEntry->szProgID);
+
 	return true;
 }
 
@@ -992,12 +739,22 @@ bool CTranslateTable::Remove(LPCTSTR szProgID)
 
 bool CTranslateTable::CryptEntry(TTranslateEntry * pEntry)
 {
-	return true;
+	if (!pEntry)
+		return false;
+
+	DWORD dwDummy = 0;
+	return m_CryptEngine.Crypt((BYTE*)&(pEntry->GuidInner), sizeof(GUID), dwDummy);
 }
 
 GuidKey CTranslateTable::DecryptEntry(TTranslateEntry * pEntry)
 {
-	return pEntry->GuidInner;
+	GuidKey key;
+	if (pEntry)
+		key = pEntry->GuidInner;
+
+	DWORD dwDummy = 0;
+	m_CryptEngine.Decrypt((BYTE*)&key, sizeof(GUID), dwDummy);
+	return key;
 }
 
 //////////////////////////////////////////////////////////////////////

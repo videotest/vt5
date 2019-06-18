@@ -1,7 +1,7 @@
 ; FiltersMain.def : Declares the module parameters for the DLL.
 
 LIBRARY      "FiltersMain"
-; DESCRIPTION  'FiltersMain Windows Dynamic Link Library'
+DESCRIPTION  'FiltersMain Windows Dynamic Link Library'
 
 EXPORTS
     ; Explicit exports can go here

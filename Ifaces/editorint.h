@@ -57,8 +57,8 @@ interface IEditorAction : public IUnknown
 
 interface IObjectAction : public IUnknown
 {
-	com_call GetFirstObjectPosition(LONG_PTR *plpos) = 0;
-	com_call GetNextObject(IUnknown **ppunkObject, LONG_PTR *plpos) = 0;
+	com_call GetFirstObjectPosition( long *plpos ) = 0;
+	com_call GetNextObject( IUnknown **ppunkObject, long *plpos ) = 0;
 	com_call AddObject( IUnknown *punkObject ) = 0;
 };
 

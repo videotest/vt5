@@ -1,6 +1,0 @@
-'state:function=StateMeasManualAngle2LineScript
-
-MethodMan_BeforeInteractiveMethodStep "MeasManualAngle2LineScript", "group"
-ActionState.RunInteractive "MeasManualAngle2Line"
-MethodMan.StoreStepAs Docs.LoadString ("Manual Measurements")
-MethodMan.CancelStepStoring

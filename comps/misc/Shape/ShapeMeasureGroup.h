@@ -152,7 +152,7 @@ public:
 		r = r<0. ? -r:r;
 		if(r>1.) return r = 1./r; 
 		s.Format("%f\n", r);
-		OutputDebugString(s);
+		OutputDebugStr(s);
 		return r;
 	}
 

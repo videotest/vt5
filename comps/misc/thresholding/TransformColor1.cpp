@@ -126,7 +126,7 @@ bool CTransformColor1::InvokeFilter()
 	int nPanes = ::GetImagePaneCount( ptrSrc );
 
 	if(!bDisableCreate)
-	{	
+	{
 		ICompatibleObjectPtr ptrCO( ptrDst );
 		if( ptrCO == NULL ) return false;
 		if( S_OK != ptrCO->CreateCompatibleObject( ptrSrc, NULL, 0 ) )
@@ -428,37 +428,37 @@ bool CTransformColor1::InvokeFilter()
 
 		if( !bDisableCreate ) // только если надо создавать выходное изображение
 		{
-		for( int y=0; y<cy; y++ )
-		{
-			byte *pm;
-			ptrSrc->GetRowMask( y, &pm );
-			for( int nPane=0; nPane<nPanes; nPane++ )
+			for( int y=0; y<cy; y++ )
 			{
-				ptrSrc->GetRow(y, nPane, &src[nPane]);
-				ptrDst->GetRow(y, nPane, &dst[nPane]);
-			}
-			for(int x=0; x<cx; x++)
-			{
-				if( *pm >= 128 )
+				byte *pm;
+				ptrSrc->GetRowMask( y, &pm );
+				for( int nPane=0; nPane<nPanes; nPane++ )
 				{
-					for( int i=0; i<nPanes; i++ )
-					{
-						double s=0;
-						for( int j=0; j<nPanes; j++ )
-						{
-							s += m4[i*nPanes+j] * (*src[j]-v[j]);
-						}
-						s = v2[i] + s;
-						s = max(0,min(65535,s));
-						*dst[i] = color(s);
-					}
+					ptrSrc->GetRow(y, nPane, &src[nPane]);
+					ptrDst->GetRow(y, nPane, &dst[nPane]);
 				}
-				pm++;
-				for( int i=0; i<nPanes; i++ ) src[i]++;
-				for( int i=0; i<nPanes; i++ ) dst[i]++;
+				for(int x=0; x<cx; x++)
+				{
+					if( *pm >= 128 )
+					{
+						for( int i=0; i<nPanes; i++ )
+						{
+							double s=0;
+							for( int j=0; j<nPanes; j++ )
+							{
+								s += m4[i*nPanes+j] * (*src[j]-v[j]);
+							}
+							s = v2[i] + s;
+							s = max(0,min(65535,s));
+							*dst[i] = color(s);
+						}
+					}
+					pm++;
+					for( int i=0; i<nPanes; i++ ) src[i]++;
+					for( int i=0; i<nPanes; i++ ) dst[i]++;
+				}
+				Notify(y);
 			}
-			Notify(y);
-		}
 		}
 
 		if(nFlags&4) // 4 - сохранять текущие цвета как "старые" (u,a)

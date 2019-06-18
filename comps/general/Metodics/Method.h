@@ -55,20 +55,20 @@ public:
 	END_INTERFACE_PART(Method);
 
 	BEGIN_INTERFACE_PART(MethodData, IMethodData)
-		com_call GetFirstStepPos(TPOS *plPos);
-		com_call GetNextStep(TPOS *plPos, CMethodStep *pStep);
-		com_call GetNextStepPtr(TPOS *plPos, CMethodStep **ppStep);
-		com_call GetPrevStep(TPOS *plPos, CMethodStep *pStep);
+		com_call GetFirstStepPos( long *plPos );
+		com_call GetNextStep( long *plPos, CMethodStep *pStep );
+		com_call GetNextStepPtr( long *plPos, CMethodStep **ppStep );
+		com_call GetPrevStep( long *plPos, CMethodStep *pStep );
 		com_call GetStepCount( long *plCount );
-		com_call AddStep(CMethodStep *pStep, TPOS lInsertBefore, TPOS *plNewPos = 0);
-		com_call SetStep(TPOS *plPos, CMethodStep *pStep, bool bDontClearCache = false);
-		com_call DeleteStep(TPOS lPos);
-		com_call SetActiveStepPos(TPOS lPos, BOOL bLoadCache);
-		com_call GetActiveStepPos(TPOS *plPos);
+	    com_call AddStep( CMethodStep *pStep, long lInsertBefore, long *plNewPos=0 );
+		com_call SetStep( long *plPos, CMethodStep *pStep, bool bDontClearCache=false );
+		com_call DeleteStep( long lPos );
+		com_call SetActiveStepPos( long lPos, BOOL bLoadCache );
+		com_call GetActiveStepPos( long *plPos );
 		com_call GetModifiedFlag( BOOL *pbFlag );
 		com_call SetModifiedFlag( BOOL bFlag );
-		com_call GetStepIndexByPos(TPOS lPos, long *plIndex);
-		com_call GetStepPosByIndex(long lIndex, TPOS *plPos);
+		com_call GetStepIndexByPos( long lPos, long *plIndex );
+		com_call GetStepPosByIndex( long lIndex, long *plPos );
 		com_call UpdateMethod(); // обновляет shell.data методики
 		com_call UpdateActiveStep(); // обновляет состояние вьюх (\\StateAfterAction) активного шага
 	END_INTERFACE_PART(MethodData);
@@ -101,8 +101,8 @@ private:
 
 	// данные для IMethodData
 	_list_t<CMethodStep> m_Steps; // список шагов методики
-	_map_t<TPOS, TPOS, cmp<TPOS> > m_StepsPosMap; // карта Pos'ов шагов - для защиты от неправильных (чтобы проверять корректность быстро, не пробегая по списку)
-	TPOS m_lActiveStepPos;
+	_map_t<long, long, cmp_long> m_StepsPosMap; // карта Pos'ов шагов - для защиты от неправильных (чтобы проверять корректность быстро, не пробегая по списку)
+	long m_lActiveStepPos;
 	BOOL m_bModifiedFlag;
 
 	BOOL m_bLockUpdateShellData; // если TRUE, то UpdateMethod() вместо реального обновления только выставит флаг m_bNeedUpdateShellData

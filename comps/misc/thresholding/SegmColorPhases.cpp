@@ -88,7 +88,7 @@ bool CSegmColorPhases::InvokeFilter()
 {
 	IImage3Ptr	ptrSrcImage( GetDataArgument() );
 	IBinaryImagePtr	ptrBin = GetDataResult();
-			
+
 	int nTestPointX = GetArgLong("TestPointX");
 	int nTestPointY = GetArgLong("TestPointY");
 			

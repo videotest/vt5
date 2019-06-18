@@ -165,7 +165,7 @@ static void CopyParams( ICalcObjectContainerPtr in, ICalcObjectContainerPtr out 
 	if( in == 0 || out == 0)
 		return;
 
-	LONG_PTR lParamPos = 0;
+	long lParamPos = 0;
 	in->GetFirstParameterPos( &lParamPos );
 	while( lParamPos )
 	{
@@ -267,7 +267,7 @@ static IUnknownPtr CropObjectsListBySel(IUnknown *pimgOLOld, IUnknown *pimgSel, 
 				// Offset all manual measure objects.
 				sptrCalcNew = punkObjNew ;
 				INamedDataObject2Ptr sptrNDO2Obj(punkObjNew );
-				TPOS	lpos = 0;
+				long	lpos = 0;
 				sptrNDO2Obj->GetFirstChildPosition(&lpos);
 				while (lpos)
 				{
@@ -343,7 +343,7 @@ static IUnknownPtr CropObjectsListBySel(IUnknown *pimgOLOld, IUnknown *pimgSel, 
 			sptrCalcNew = objectNew;
 			// Copy also manual measures
 			INamedDataObject2Ptr sptrNDO2Obj(sptrCalc);
-			TPOS	lpos = 0;
+			long	lpos = 0;
 			sptrNDO2Obj->GetFirstChildPosition(&lpos);
 			while (lpos)
 			{

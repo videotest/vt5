@@ -108,7 +108,7 @@ CActionHelpContext::~CActionHelpContext()
 bool CActionHelpContext::m_bInside = false;
 
 bool CActionHelpContext::Invoke()
-{							  
+{
 	if(m_bInside) return false; // вложенный вызов - отказать
 	m_bInside = true;
 

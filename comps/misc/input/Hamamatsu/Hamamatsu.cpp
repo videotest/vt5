@@ -5,10 +5,9 @@
 #include "Hamamatsu.h"
 #include "HamamatsuDriver.h"
 #include <comdef.h>
-#include <../common2/com_main.h>
+#include "com_main.h"
+#include "misc_utils.h"
 #include "VT5Profile.h"
-#include <data5.h>
-#include <../common2/misc_utils.h>
 
 #ifdef _DEBUG
 #define new DEBUG_NEW
@@ -70,7 +69,7 @@ int CHamamatsuApp::ExitInstance()
 	return CWinApp::ExitInstance();
 }
 
-void CHamamatsuApp::WinHelpInternal(DWORD_PTR dwData, UINT nCmd) 
+void CHamamatsuApp::WinHelpInternal(DWORD dwData, UINT nCmd) 
 {
 	if (CStdProfileManager::m_pMgr->GetProfileInt(_T("Settings"), _T("DisableHelp"), 1))
 		return;

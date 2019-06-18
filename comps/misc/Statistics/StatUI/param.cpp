@@ -2218,7 +2218,7 @@ bool PARAMS_LIST::add_tail(ParamSpace::CStatParamBase* pParam)
 CClass& CClass::TrieveClass(CStatisticObject& stat, ClassID ClassId)
 {
 	std::pair<CStatisticObject::ClassMap::iterator,bool> 
-		res_pair=stat.m_ClassMap.insert(CStatisticObject::ClassMap::value_type(ClassId,(ObjectSpace::CClass*)NULL));
+		res_pair=stat.m_ClassMap.insert(CStatisticObject::ClassMap::value_type(ClassId,NULL));
 	ClassMap::iterator itClass=res_pair.first;
 	if(res_pair.second){
 		itClass->second=new CClass(stat, ClassId);
@@ -2241,7 +2241,7 @@ CClass& CClass::TrieveSub(const NumImg image)
 ParamSpace::CStatParamBase&  CClass::Param(long paramKey)
 {
 	std::pair<PARAMS_LIST::iterator,bool> 
-		res_pair=insert(PARAMS_LIST::value_type(paramKey,(CStatParamBase*)NULL));
+		res_pair=insert(PARAMS_LIST::value_type(paramKey,NULL));
 	PARAMS_LIST::iterator it=res_pair.first;
 	if(res_pair.second){
 		it->second=stat.CreateStatParam(*this, ::GetAppUnknown(), paramKey);

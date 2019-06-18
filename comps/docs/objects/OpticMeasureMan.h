@@ -51,7 +51,7 @@ class CExampleOptDens : public CObject
 public:
 	// Adds one sample and sets nominal if its not set.
 	void AddSample(double dCalc, double dNominal = 0.);
-	long GetSize(){return (long)m_mapCalcOptDens.size();};
+	long GetSize(){return m_mapCalcOptDens.size();};
 
 	MAPA m_mapCalcOptDens;
 

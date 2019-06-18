@@ -366,8 +366,8 @@ void CResultBar::OnPaint()
 {
 	CPaintDC dc(this); // device context for painting
 	
-	//CMemDC DC(&dc);
-	Draw(&dc);
+	CMemDC DC(&dc);
+	Draw(&DC);
 }
 
 BOOL CResultBar::OnEraseBkgnd(CDC* pDC) 
@@ -606,7 +606,7 @@ bool CResultBar::Recalc()
 	if( ptrContainer == 0  )return false;
 
 
-	LONG_PTR	lpos, n = 0;
+	long	lpos, n = 0;
 	ptrContainer->GetFirstParameterPos( &lpos );
 	while( lpos )
 	{

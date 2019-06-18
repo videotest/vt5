@@ -64,7 +64,7 @@ void CCmpStatObjectView::default_init()
 
 void CCmpStatObjectView::set_modify()
 {
-	//for( LPOS lpos_lst = m_list_attached.head(); lpos_lst; lpos_lst = m_list_attached.next( lpos_lst ) )
+	//for( long lpos_lst = m_list_attached.head(); lpos_lst; lpos_lst = m_list_attached.next( lpos_lst ) )
 	//{
 	//	IUnknownPtr ptr_object = m_list_attached.get( lpos_lst );
 	//	if( ptr_object )
@@ -75,7 +75,7 @@ void CCmpStatObjectView::set_modify()
 //////////////////////////////////////////////////////////////////////
 CCmpStatObjectView::~CCmpStatObjectView()
 {
-	//for( LPOS lpos_lst = m_list_attached.head(); lpos_lst; lpos_lst = m_list_attached.next( lpos_lst ) )
+	//for( long lpos_lst = m_list_attached.head(); lpos_lst; lpos_lst = m_list_attached.next( lpos_lst ) )
 	//{
 	//	IUnknownPtr ptr_object = m_list_attached.get( lpos_lst );
 	//	if( ptr_object )
@@ -108,7 +108,7 @@ void CCmpStatObjectView::DoAttachObjects()
 		return;
 
 
-	//for( LPOS lpos_lst = m_list_attached.head(); lpos_lst; lpos_lst = m_list_attached.next( lpos_lst ) )
+	//for( long lpos_lst = m_list_attached.head(); lpos_lst; lpos_lst = m_list_attached.next( lpos_lst ) )
 	//{
 	//	IUnknown *punk_lst = m_list_attached.get( lpos_lst );
 
@@ -120,7 +120,7 @@ void CCmpStatObjectView::DoAttachObjects()
 
 
 	{
-		LONG_PTR lpos_selected = 0;
+		long lpos_selected = 0;
 		_bstr_t bstr_type( szTypeCmpStatObject );
 
 		ptr_context->GetFirstSelectedPos( bstr_type, &lpos_selected );
@@ -535,12 +535,12 @@ void CCmpStatObjectView::OnNotify( const char *pszEvent, IUnknown *punkHit, IUnk
 		if( !strcmp( pszEvent, szEventChangeObject ) )
 		{
 			if(m_pCmpStatObject)
-			if(m_pCmpStatObject->_statObjects.size())
-			{
-				IUnknownPtr ptr_object = m_pCmpStatObject->Unknown();
-				if( ::GetKey( ptr_object ) != ::GetKey( punkFrom ) )
-					return;
-			}
+				if(m_pCmpStatObject->_statObjects.size())
+				{
+					IUnknownPtr ptr_object = m_pCmpStatObject->Unknown();
+					if( ::GetKey( ptr_object ) != ::GetKey( punkFrom ) )
+						return;
+				}
 		}
 
 		if(m_pCmpStatObject && m_pCmpStatObject->_statObjects.size())
@@ -625,8 +625,8 @@ HRESULT CCmpStatObjectView::Print( HDC hdc, RECT rectTarget, int nUserPosX, int 
 	}
 	else
 	{
-		int	nLastPosX = nUserPosX + nUserPosDX;
-		int	nLastPosY = nUserPosY + nUserPosDY;
+		int	nLastPosX = nUserPosX + nUserPosDX - 1;
+		int	nLastPosY = nUserPosY + nUserPosDY - 1;
 		CRect	rectDraw(nUserPosX, nUserPosY, nLastPosX, nLastPosY);
 
 		if( m_dwViews & vtTableView )
@@ -658,7 +658,7 @@ HRESULT CCmpStatObjectView::GetClassID(CLSID *pClassID )
 
 
 //////////////////////////////////////////////////////////////////////
-HRESULT CCmpStatObjectView::GetFirstVisibleObjectPosition(TPOS *plpos)
+HRESULT CCmpStatObjectView::GetFirstVisibleObjectPosition( long *plpos )
 {
 	if( !plpos )
 		return S_FALSE;
@@ -666,13 +666,13 @@ HRESULT CCmpStatObjectView::GetFirstVisibleObjectPosition(TPOS *plpos)
 	if(0==m_pCmpStatObject || 0==m_pCmpStatObject->_statObjects.size())
 		return S_FALSE;
 
-	*plpos = (TPOS)1;
+	*plpos = 1;
 	
 	return S_OK;
 }
 
 //////////////////////////////////////////////////////////////////////
-HRESULT CCmpStatObjectView::GetNextVisibleObject(IUnknown ** ppunkObject, TPOS *plPos)
+HRESULT CCmpStatObjectView::GetNextVisibleObject( IUnknown ** ppunkObject, long *plPos )
 {
 	if( !plPos )
 		return S_FALSE;

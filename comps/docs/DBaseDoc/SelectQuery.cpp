@@ -11,8 +11,9 @@
 #include "Wizards.h"
 #include "undoint.h"
 #include "UserInfo.h"
-
-
+#include "dbfilesize.h"
+#include "dblocksinfo.h"
+#include "DBactions.h"
 /////////////////////////////////////////////////////////////////////////////////////////
 //CViewContext
 CViewContext::CViewContext()
@@ -25,7 +26,7 @@ CViewContext::CViewContext()
 CViewContext::~CViewContext()
 {
 	POSITION pos = m_arObjectInfo.GetHeadPosition();
-	
+
 	while( pos )
 	{
 		CObjectInfo* poi = (CObjectInfo*)m_arObjectInfo.GetNext( pos );
@@ -46,7 +47,7 @@ IMPLEMENT_DYNCREATE(CQueryObject, CAXFormBase);
 
 // {C5ED0CDE-E2EC-41ff-B63B-DBAB7A9F0DDD}
 GUARD_IMPLEMENT_OLECREATE(CQueryObject, "DBaseDoc.QueryObjectD", 
-0xc5ed0cde, 0xe2ec, 0x41ff, 0xb6, 0x3b, 0xdb, 0xab, 0x7a, 0x9f, 0xd, 0xdd);
+						  0xc5ed0cde, 0xe2ec, 0x41ff, 0xb6, 0x3b, 0xdb, 0xab, 0x7a, 0x9f, 0xd, 0xdd);
 // {AB987CFA-EFCC-46fc-AF3E-24EB51D45D03}
 static const GUID clsidSelectQueryDataObjectInfo = 
 { 0xab987cfa, 0xefcc, 0x46fc, { 0xaf, 0x3e, 0x24, 0xeb, 0x51, 0xd4, 0x5d, 0x3 } };
@@ -57,6 +58,7 @@ DATA_OBJECT_INFO(IDS_QUERY_TYPE, CQueryObject, szTypeQueryObject, clsidSelectQue
 
 BEGIN_INTERFACE_MAP(CQueryObject, CAXFormBase)
 	INTERFACE_PART(CQueryObject, IID_IQueryObject, Query)
+	INTERFACE_PART(CQueryObject, IID_ISelectQuery2, SelectQuery)
 	INTERFACE_PART(CQueryObject, IID_ISelectQuery, SelectQuery)
 	INTERFACE_PART(CQueryObject, IID_IDBaseListener, DBaseListener)
 	INTERFACE_PART(CQueryObject, IID_IDBChild, DBChild)
@@ -103,7 +105,7 @@ CQueryObject::CQueryObject()
 	m_sizeTumbnailBorder = CSize( 5, 5 );
 
 	m_state = qsClose;
-	
+
 	m_lBookMark = -1;
 
 	m_nActiveField = -1;
@@ -114,6 +116,10 @@ CQueryObject::CQueryObject()
 	m_lCanModifyDatabase = -1;
 
 	m_llast_primary_key = -1;
+
+	ISelectQuery2Ptr sq = GetControllingUnknown();
+	sq->AttachLockInfo(0);
+
 }	
 
 /////////////////////////////////////////////////////////////////////////////////////////
@@ -150,10 +156,10 @@ void CQueryObject::_UnRegisterOnDBController()
 
 	if( m_sptrParent == NULL )
 		return;
-	
+
 	//unregister on DBase controller
 	m_sptrParent->UnRegisterDBaseListener( GetControllingUnknown() );
-	
+
 	UnRegister( m_sptrParent );
 
 	m_bWasRegister = false;
@@ -177,7 +183,7 @@ bool CQueryObject::CanModifyDatabase()
 	}	
 	return ( m_lCanModifyDatabase == 1 );
 }
-			
+
 
 
 //reason of func OnCatchEventDocumentAfterClose()
@@ -195,7 +201,7 @@ void CQueryObject::DeInit()
 		ptrQ->Close();
 
 	_UnRegisterOnDBController();
-	
+
 	m_sptrParent = 0;	
 
 	DestroyCacheBuffers();	
@@ -214,14 +220,25 @@ void CQueryObject::OnNotify( const char *pszEvent, IUnknown *punkHit, IUnknown *
 			//m_xSelectQuery.UpdateInteractive( TRUE );
 			DeInit();
 		}
-		else if( !strcmp(pszEvent, szEventBeforeClose ) && ( ::GetObjectKey( m_sptrParent ) == ::GetObjectKey(punkFrom) ) )
+		/*else if( !strcmp(pszEvent, szEventBeforeClose ) && ( ::GetObjectKey( m_sptrParent ) == ::GetObjectKey(punkFrom) ) )
 		{
-			
-		}
+
+		}*/
 		if( !strcmp(pszEvent, szEventChangeObject) )
 		{
+
 			if( IsOpen() )
 			{
+				if(m_pdbli==NULL)
+				{
+					IDBLockInfoPtr li = m_sptrParent;
+					CDBLocksInfo* p_dbli;
+					li->GetLockInfoPtr((void**)&p_dbli);
+					if(p_dbli) m_pdbli = p_dbli;
+				}
+				if(m_pdbli && !m_pdbli->AddLock(m_llast_primary_key) ) 
+					return;
+
 				for( int iField=0;iField<m_query.m_arrFields.GetSize();iField++ )
 				{
 					CQueryField* pField = m_query.m_arrFields[iField];
@@ -229,7 +246,7 @@ void CQueryObject::OnNotify( const char *pszEvent, IUnknown *punkHit, IUnknown *
 						break;
 				}
 			}
-			
+
 		}
 	}
 }
@@ -241,7 +258,7 @@ bool CQueryObject::IsOpen()
 		return false;
 
 	long lState;
-    HRESULT _hr = m_spRecordset->get_State( &lState );
+	HRESULT _hr = m_spRecordset->get_State( &lState );
 	if( _hr != S_OK )
 		return false;
 
@@ -267,7 +284,7 @@ bool CQueryObject::SerializeObject( CStreamEx &ar, SerializeParams *pparams )
 			ar >> m_strTumbnailCaptionField;
 			ar >> m_sizeTumbnail;
 		}
-		
+
 		if( nVersion >= 3 )
 			ar >> m_sizeTumbnailView;
 
@@ -334,80 +351,80 @@ bool CQueryObject::ClearUndoRedoList()
 ////////////////////////////////////////////////////////////////////////////////////////////
 /*void CQueryObject::SaveContextState()
 {
-	DestroyContextState();
+DestroyContextState();
 
-	if( m_sptrParent == NULL )
-		return;
-
-
-	IDocumentSitePtr ptrDS( m_sptrParent );
-	if( ptrDS == NULL )
-		return;
-
-	
-	LPOS lPos = 0;
-	ptrDS->GetFirstViewPosition( &lPos );
-	while( lPos )
-	{
-		IUnknown* punkView = NULL;
-		ptrDS->GetNextView( &punkView, &lPos );
-		if( !punkView )
-			continue;
+if( m_sptrParent == NULL )
+return;
 
 
-		IDataContext2Ptr ptrC( punkView );
-		punkView->Release();
-
-		if( ptrC == NULL )
-			continue;
-
-		CViewContext* pi = new CViewContext;
-		m_arViewContext.AddHead( pi );
-
-		pi->m_guidKeyView = ::GetObjectKey( ptrC );
+IDocumentSitePtr ptrDS( m_sptrParent );
+if( ptrDS == NULL )
+return;
 
 
+long lPos = 0;
+ptrDS->GetFirstViewPosition( &lPos );
+while( lPos )
+{
+IUnknown* punkView = NULL;
+ptrDS->GetNextView( &punkView, &lPos );
+if( !punkView )
+continue;
 
-		long nObjTypeCount = 0;
-		ptrC->GetObjectTypeCount( &nObjTypeCount );
-		for( int i=0;i<nObjTypeCount;i++ )
-		{
-			BSTR bstrObjType = 0;
-			ptrC->GetObjectTypeName( i, &bstrObjType );
-			_bstr_t bstrType = bstrObjType;
-			::SysFreeString( bstrObjType );
 
-			long lObjPos = 0;
-			ptrC->GetFirstSelectedPos( bstrType, &lObjPos );
-			while( lObjPos )
-			{
-				IUnknown* punkObj = NULL;
-				ptrC->GetNextSelected( bstrType, &lObjPos, &punkObj );
-				if( !punkObj )
-					continue;
+IDataContext2Ptr ptrC( punkView );
+punkView->Release();
 
-				CObjectInfo* poi = new CObjectInfo;
-				pi->m_arObjectInfo.AddHead( poi );
-				
-				poi->m_strObjectName	= ::GetObjectName( punkObj );
-				poi->strObjectType		= ::GetObjectKind( punkObj );				
-				poi->m_bActive = false;
-				punkObj->Release();
-			}
+if( ptrC == NULL )
+continue;
 
-			IUnknown* punkObj = NULL;
-			ptrC->GetActiveObject( bstrType, &punkObj );
-			if( punkObj )
-			{
-				CObjectInfo* poi = new CObjectInfo;
-				pi->m_arObjectInfo.AddHead( poi );
-				poi->m_strObjectName	= ::GetObjectName( punkObj );
-				poi->strObjectType		= ::GetObjectKind( punkObj );				
-				poi->m_bActive = true;
-				punkObj->Release();
-			}
-		}		
-	}
+CViewContext* pi = new CViewContext;
+m_arViewContext.AddHead( pi );
+
+pi->m_guidKeyView = ::GetObjectKey( ptrC );
+
+
+
+long nObjTypeCount = 0;
+ptrC->GetObjectTypeCount( &nObjTypeCount );
+for( int i=0;i<nObjTypeCount;i++ )
+{
+BSTR bstrObjType = 0;
+ptrC->GetObjectTypeName( i, &bstrObjType );
+_bstr_t bstrType = bstrObjType;
+::SysFreeString( bstrObjType );
+
+long lObjPos = 0;
+ptrC->GetFirstSelectedPos( bstrType, &lObjPos );
+while( lObjPos )
+{
+IUnknown* punkObj = NULL;
+ptrC->GetNextSelected( bstrType, &lObjPos, &punkObj );
+if( !punkObj )
+continue;
+
+CObjectInfo* poi = new CObjectInfo;
+pi->m_arObjectInfo.AddHead( poi );
+
+poi->m_strObjectName	= ::GetObjectName( punkObj );
+poi->strObjectType		= ::GetObjectKind( punkObj );				
+poi->m_bActive = false;
+punkObj->Release();
+}
+
+IUnknown* punkObj = NULL;
+ptrC->GetActiveObject( bstrType, &punkObj );
+if( punkObj )
+{
+CObjectInfo* poi = new CObjectInfo;
+pi->m_arObjectInfo.AddHead( poi );
+poi->m_strObjectName	= ::GetObjectName( punkObj );
+poi->strObjectType		= ::GetObjectKind( punkObj );				
+poi->m_bActive = true;
+punkObj->Release();
+}
+}		
+}
 
 }*/
 
@@ -415,181 +432,181 @@ bool CQueryObject::ClearUndoRedoList()
 ////////////////////////////////////////////////////////////////////////////////////////////
 /*void CQueryObject::RestoreContextState()
 {
-	
-
-	if( m_sptrParent == NULL )
-		return;
-
-	INamedDataPtr ptrND( m_sptrParent );
-
-	IDocumentSitePtr ptrDS( m_sptrParent );
-	if( ptrDS == NULL )
-		return;
-
-	
-	//set m_bBaseObject flag
-	{
-		POSITION posVC = m_arViewContext.GetHeadPosition();
-		
-		while( posVC )
-		{			
-			CViewContext* pvc = (CViewContext*)m_arViewContext.GetNext( posVC );
-
-			POSITION posObj = pvc->m_arObjectInfo.GetHeadPosition();
-			while( posObj )
-			{
-				CObjectInfo* poi = (CObjectInfo*)pvc->m_arObjectInfo.GetNext( posObj );				
-
-				IUnknown* punkTestObj = NULL;
-				punkTestObj = ::GetObjectByName( ptrND, poi->m_strObjectName, poi->strObjectType );
-				IUnknownPtr ptrTestObj = punkTestObj;
-				if( punkTestObj )
-					punkTestObj->Release();
-
-				
-				LPOS lPosGrp = -1;
-				ptrND->GetBaseGroupFirstPos( &lPosGrp );
-				while( lPosGrp )
-				{
-					IUnknown* punkObject = NULL;
-					GuidKey guid = INVALID_KEY;
-					ptrND->GetNextBaseGroup( &guid, &lPosGrp );
-					ptrND->GetBaseGroupBaseObject( &guid, &punkObject );
-					if( punkObject )
-					{
-						if( ::GetObjectKey( ptrTestObj ) == ::GetObjectKey( punkObject ) )
-						{
-							poi->m_bBaseObject = true;
-							punkObject->Release();
-							break;
-						}
-						
-						punkObject->Release();
-
-					}
-				}
-
-			}
-		}
-
-	}
-	
-	long lViewPos = 0;
-	ptrDS->GetFirstViewPosition( &lViewPos );
-	while( lViewPos )
-	{
-		IUnknown* punkView = NULL;
-		ptrDS->GetNextView( &punkView, &lViewPos );
-		if( !punkView )
-			continue;
 
 
-		IDataContext2Ptr ptrC( punkView );
-		punkView->Release();
+if( m_sptrParent == NULL )
+return;
 
-		if( ptrC == NULL )
-			continue;
+INamedDataPtr ptrND( m_sptrParent );
 
-
-		CViewContext* pvcFind = NULL;
-		POSITION pos = m_arViewContext.GetHeadPosition();
-		
-		while( pos )
-		{			
-			CViewContext* pvc = (CViewContext*)m_arViewContext.GetNext( pos );
-			if( pvc->m_guidKeyView == ::GetObjectKey( ptrC ) )
-			{
-				pvcFind = pvc;
-				break;
-			}
-		}
-
-		if( pvcFind )
-		{			
+IDocumentSitePtr ptrDS( m_sptrParent );
+if( ptrDS == NULL )
+return;
 
 
-			//Deselect all
-			{
-				long lCount = 0;
-				VERIFY( S_OK == ptrC->GetObjectTypeCount( &lCount ) );
-				for( long l=0;l<lCount;l++ )
-				{
-					BSTR bstrTypeName = 0;
-					VERIFY( S_OK == ptrC->GetObjectTypeName( l, &bstrTypeName ) );
-					VERIFY( S_OK == ptrC->UnselectAll( bstrTypeName ) );
-					::SysFreeString( bstrTypeName );	bstrTypeName = 0;
-				}					
-			}
+//set m_bBaseObject flag
+{
+POSITION posVC = m_arViewContext.GetHeadPosition();
+
+while( posVC )
+{			
+CViewContext* pvc = (CViewContext*)m_arViewContext.GetNext( posVC );
+
+POSITION posObj = pvc->m_arObjectInfo.GetHeadPosition();
+while( posObj )
+{
+CObjectInfo* poi = (CObjectInfo*)pvc->m_arObjectInfo.GetNext( posObj );				
+
+IUnknown* punkTestObj = NULL;
+punkTestObj = ::GetObjectByName( ptrND, poi->m_strObjectName, poi->strObjectType );
+IUnknownPtr ptrTestObj = punkTestObj;
+if( punkTestObj )
+punkTestObj->Release();
 
 
-			//at first activate base object
-			POSITION posObj = pvcFind->m_arObjectInfo.GetHeadPosition();
-			while( posObj )
-			{
-				CObjectInfo* poi = (CObjectInfo*)pvcFind->m_arObjectInfo.GetNext( posObj );				
-				if( poi->m_bActive )continue;
-				if( poi->m_bBaseObject )
-				{
-					IUnknown* punkObj = NULL;
-					punkObj = ::GetObjectByName( ptrND, poi->m_strObjectName, poi->strObjectType );
-					if( punkObj )
-					{
-						//[AY]???
-						ptrC->SetObjectSelect( punkObj, TRUE );
-						//ptrC->SetActiveObject( 0, punkObj, TRUE );
-						punkObj->Release();
-						return;
-					}
+long lPosGrp = -1;
+ptrND->GetBaseGroupFirstPos( &lPosGrp );
+while( lPosGrp )
+{
+IUnknown* punkObject = NULL;
+GuidKey guid = INVALID_KEY;
+ptrND->GetNextBaseGroup( &guid, &lPosGrp );
+ptrND->GetBaseGroupBaseObject( &guid, &punkObject );
+if( punkObject )
+{
+if( ::GetObjectKey( ptrTestObj ) == ::GetObjectKey( punkObject ) )
+{
+poi->m_bBaseObject = true;
+punkObject->Release();
+break;
+}
 
-				}
-			}
-			//and now select not base object
-			posObj = pvcFind->m_arObjectInfo.GetHeadPosition();
-			while( posObj )
-			{
-				CObjectInfo* poi = (CObjectInfo*)pvcFind->m_arObjectInfo.GetNext( posObj );				
-				if( poi->m_bActive )continue;
-				if( !poi->m_bBaseObject )
-				{
-					IUnknown* punkObj = NULL;
-					punkObj = ::GetObjectByName( ptrND, poi->m_strObjectName, poi->strObjectType );
-					if( punkObj )
-					{
-						ptrC->SetObjectSelect( punkObj, TRUE );
-						punkObj->Release();
-					}
+punkObject->Release();
 
-				}
-			}
+}
+}
 
-			posObj = pvcFind->m_arObjectInfo.GetHeadPosition();
-			while( posObj )
-			{
-				CObjectInfo* poi = (CObjectInfo*)pvcFind->m_arObjectInfo.GetNext( posObj );				
-				if( poi->m_bActive )continue;
-				if( !poi->m_bBaseObject )
-				{
-					IUnknown* punkObj = NULL;
-					punkObj = ::GetObjectByName( ptrND, poi->m_strObjectName, poi->strObjectType );
-					if( punkObj )
-					{
-						ptrC->SetObjectSelect( punkObj, TRUE );
-						punkObj->Release();
-					}
+}
+}
 
-				}
-			}
-		}
-	}
+}
+
+long lViewPos = 0;
+ptrDS->GetFirstViewPosition( &lViewPos );
+while( lViewPos )
+{
+IUnknown* punkView = NULL;
+ptrDS->GetNextView( &punkView, &lViewPos );
+if( !punkView )
+continue;
+
+
+IDataContext2Ptr ptrC( punkView );
+punkView->Release();
+
+if( ptrC == NULL )
+continue;
+
+
+CViewContext* pvcFind = NULL;
+POSITION pos = m_arViewContext.GetHeadPosition();
+
+while( pos )
+{			
+CViewContext* pvc = (CViewContext*)m_arViewContext.GetNext( pos );
+if( pvc->m_guidKeyView == ::GetObjectKey( ptrC ) )
+{
+pvcFind = pvc;
+break;
+}
+}
+
+if( pvcFind )
+{			
+
+
+//Deselect all
+{
+long lCount = 0;
+VERIFY( S_OK == ptrC->GetObjectTypeCount( &lCount ) );
+for( long l=0;l<lCount;l++ )
+{
+BSTR bstrTypeName = 0;
+VERIFY( S_OK == ptrC->GetObjectTypeName( l, &bstrTypeName ) );
+VERIFY( S_OK == ptrC->UnselectAll( bstrTypeName ) );
+::SysFreeString( bstrTypeName );	bstrTypeName = 0;
+}					
+}
+
+
+//at first activate base object
+POSITION posObj = pvcFind->m_arObjectInfo.GetHeadPosition();
+while( posObj )
+{
+CObjectInfo* poi = (CObjectInfo*)pvcFind->m_arObjectInfo.GetNext( posObj );				
+if( poi->m_bActive )continue;
+if( poi->m_bBaseObject )
+{
+IUnknown* punkObj = NULL;
+punkObj = ::GetObjectByName( ptrND, poi->m_strObjectName, poi->strObjectType );
+if( punkObj )
+{
+//[AY]???
+ptrC->SetObjectSelect( punkObj, TRUE );
+//ptrC->SetActiveObject( 0, punkObj, TRUE );
+punkObj->Release();
+return;
+}
+
+}
+}
+//and now select not base object
+posObj = pvcFind->m_arObjectInfo.GetHeadPosition();
+while( posObj )
+{
+CObjectInfo* poi = (CObjectInfo*)pvcFind->m_arObjectInfo.GetNext( posObj );				
+if( poi->m_bActive )continue;
+if( !poi->m_bBaseObject )
+{
+IUnknown* punkObj = NULL;
+punkObj = ::GetObjectByName( ptrND, poi->m_strObjectName, poi->strObjectType );
+if( punkObj )
+{
+ptrC->SetObjectSelect( punkObj, TRUE );
+punkObj->Release();
+}
+
+}
+}
+
+posObj = pvcFind->m_arObjectInfo.GetHeadPosition();
+while( posObj )
+{
+CObjectInfo* poi = (CObjectInfo*)pvcFind->m_arObjectInfo.GetNext( posObj );				
+if( poi->m_bActive )continue;
+if( !poi->m_bBaseObject )
+{
+IUnknown* punkObj = NULL;
+punkObj = ::GetObjectByName( ptrND, poi->m_strObjectName, poi->strObjectType );
+if( punkObj )
+{
+ptrC->SetObjectSelect( punkObj, TRUE );
+punkObj->Release();
+}
+
+}
+}
+}
+}
 
 }*/
 
 ////////////////////////////////////////////////////////////////////////////////////////////
 void CQueryObject::DestroyContextState()
 {
-	
+
 	POSITION pos = m_arViewContext.GetHeadPosition();
-	
+
 	while( pos )
 	{
 		CViewContext* pkey = (CViewContext*)m_arViewContext.GetNext( pos );
@@ -597,7 +614,7 @@ void CQueryObject::DestroyContextState()
 	}
 
 	m_arViewContext.RemoveAll();
-	
+
 
 }
 
@@ -725,9 +742,9 @@ HRESULT CQueryObject::XQuery::SetActiveField( int nIndex )
 			{
 				CQueryField* pField = pThis->m_query.m_arrFields[pThis->m_nActiveField];
 				pThis->m_sptrParent->FireEvent( _bstr_t(szDBaseEventActiveFieldLost), 
-									pThis->m_sptrParent, pThis->m_sptrParent, 
-									_bstr_t( (LPCSTR)pField->m_strTable ), 
-									_bstr_t( (LPCSTR)pField->m_strField ), _variant_t( (long)pThis->m_nActiveField ) );
+					pThis->m_sptrParent, pThis->m_sptrParent, 
+					_bstr_t( (LPCSTR)pField->m_strTable ), 
+					_bstr_t( (LPCSTR)pField->m_strField ), _variant_t( (long)pThis->m_nActiveField ) );
 
 			}
 		}
@@ -745,13 +762,13 @@ HRESULT CQueryObject::XQuery::SetActiveField( int nIndex )
 
 		CQueryField* pField = pThis->m_query.m_arrFields[nIndex];
 		pThis->m_sptrParent->FireEvent( _bstr_t(szDBaseEventActiveFieldSet), 
-							pThis->m_sptrParent, pThis->m_sptrParent, 
-							_bstr_t( (LPCSTR)pField->m_strTable ), 
-							_bstr_t( (LPCSTR)pField->m_strField ), _variant_t( (long)nIndex ) );
+			pThis->m_sptrParent, pThis->m_sptrParent, 
+			_bstr_t( (LPCSTR)pField->m_strTable ), 
+			_bstr_t( (LPCSTR)pField->m_strField ), _variant_t( (long)nIndex ) );
 
 
 		pThis->m_nActiveField = nIndex;
-		
+
 		//Write active field property to private named data
 		{
 			INamedDataPtr ptrPrivND = pThis->GetPrivateNamedData();
@@ -762,7 +779,7 @@ HRESULT CQueryObject::XQuery::SetActiveField( int nIndex )
 		//support toolbar update in ShellFrame
 		::ForceAppIdleUpdate();
 
-		
+
 		return S_OK;
 	}
 	_catch_nested;
@@ -804,9 +821,9 @@ HRESULT CQueryObject::XQuery::GetFieldLen( int nIndex, long* pLen )
 				return S_OK;
 			}
 		}
-		
+
 		*pLen = 0;
-		 
+
 		return S_FALSE;
 	}
 	_catch_nested;
@@ -824,7 +841,7 @@ tagVARIANT g_varEmpty={VT_EMPTY};
 QueryState CQueryObject::GetState()
 {
 	QueryState qs = qsClose;
-		
+
 	if( IsOpen( ) )
 	{
 		if( IsRecordsetModified() )
@@ -850,7 +867,7 @@ void CQueryObject::InitFieldsBuffers()
 
 	INamedDataPtr ptrPrivND = GetPrivateNamedData();
 	int nfield = 0;
-	
+
 	try
 	{
 
@@ -905,7 +922,7 @@ void CQueryObject::InitFieldsBuffers()
 
 			pField->m_strTable.MakeLower();
 			pField->m_strField.MakeLower();
-			
+
 
 			FieldType fieldType = ::GetFieldType( m_sptrParent, pField->m_strTable, pField->m_strField );
 
@@ -962,7 +979,7 @@ void CQueryObject::InitFieldsBuffers()
 				}
 
 			}
-			
+
 		}	
 	}
 	catch(...)
@@ -1010,7 +1027,14 @@ bool CQueryObject::InitDefValues( bool bAfterInsert )
 bool CQueryObject::OnRecordChange()
 {
 	CWaitCursor cursor;
-
+	if(m_pdbli==NULL)
+	{
+		IDBLockInfoPtr li = m_sptrParent;
+		CDBLocksInfo* p_dbli;
+		li->GetLockInfoPtr((void**)&p_dbli);
+		if(p_dbli) m_pdbli = p_dbli;
+	}
+	if(m_pdbli) m_pdbli->SetNavigationFlag(true);
 	if( !IsOpen() )
 		return false;
 
@@ -1019,10 +1043,10 @@ bool CQueryObject::OnRecordChange()
 		CQueryField* pField = m_query.m_arrFields[iField];
 		pField->RecordChange();
 	}
-
+	if(m_pdbli) m_pdbli->SetNavigationFlag(false);
 	return true;
 
-	::ForceAppIdleUpdate();
+	/*::ForceAppIdleUpdate();*/
 }
 
 bool CQueryObject::OnCancel()
@@ -1067,8 +1091,12 @@ bool CQueryObject::OnUpdate()
 ////////////////////////////////////////////////////////////////////////////////////////////
 void CQueryObject::OnDBaseNotify( const char *pszEvent, IUnknown *punkObject, IUnknown *punkDBaseDocument, BSTR bstrTableName, BSTR bstrFieldName, const _variant_t var )
 {
-	/*
-	if( !strcmp( pszEvent, szDBaseEventConnectionOpen ) ||
+
+	if( !strcmp( pszEvent, szDBaseEventActiveFieldLost ) ||
+		!strcmp( pszEvent, szDBaseEventActiveFieldSet )) return;
+	__asm nop
+		/*
+		if( !strcmp( pszEvent, szDBaseEventConnectionOpen ) ||
 		!strcmp( pszEvent, szDBaseEventConnectionClose ) ||
 		!strcmp( pszEvent, szDBaseEventConnectionFailed ) ||
 		!strcmp( pszEvent, szDBaseEventAfterNavigation ) ||
@@ -1100,15 +1128,15 @@ int CQueryObject::GetFieldIndexFromSection( BSTR bstrTableField, sptrIDBaseDocum
 
 
 	if( S_OK != ptrDBS->GetFieldInfo(
-			_bstr_t(strTable), _bstr_t(strField),
-			NULL, &nFieldType,
-			NULL, NULL,
-			NULL, NULL,
-			NULL, NULL
-			 )  )
+		_bstr_t(strTable), _bstr_t(strField),
+		NULL, &nFieldType,
+		NULL, NULL,
+		NULL, NULL,
+		NULL, NULL
+		)  )
 		return -1;
 
-	
+
 	//now find field index in query
 	int nIndex = -1;
 	for( int i=0;i<m_query.m_arrFields.GetSize();i++)
@@ -1119,7 +1147,7 @@ int CQueryObject::GetFieldIndexFromSection( BSTR bstrTableField, sptrIDBaseDocum
 			)
 			nIndex = i;
 	}
-	
+
 
 	return nIndex;
 }
@@ -1136,7 +1164,7 @@ HRESULT CQueryObject::XSelectQuery::Open()
 		pThis->m_bCanProcessFind = false;
 
 		UpdateInteractive( TRUE );
-		
+
 
 		if( pThis->m_sptrParent == NULL )
 			return S_FALSE;
@@ -1150,7 +1178,7 @@ HRESULT CQueryObject::XSelectQuery::Open()
 		pThis->ClearFieldsBuffers();		
 
 		spDBDoc->FireEvent( _bstr_t(szDBaseEventBeforQueryOpen), ptrThis, spDBDoc, NULL, NULL, g_varEmpty );
-		
+
 
 		IDBConnectionPtr ptrDBC( spDBDoc );
 		if( ptrDBC == 0 )
@@ -1174,10 +1202,10 @@ HRESULT CQueryObject::XSelectQuery::Open()
 		if( pThis->m_spRecordset == NULL )
 		{
 			_START_CATCH
-			pThis->m_spRecordset.CreateInstance( __uuidof(ADO::Recordset) );
+				pThis->m_spRecordset.CreateInstance( __uuidof(ADO::Recordset) );
 			_END_CATCH(S_FALSE)
 		}
-		
+
 		pThis->ClearUndoRedoList();
 
 
@@ -1199,21 +1227,21 @@ HRESULT CQueryObject::XSelectQuery::Open()
 
 		if( spConnection->State != ADO::adStateOpen )
 			return S_FALSE;
-		
-		
+
+
 
 		_START_CATCH_REPORT
 
-		pThis->m_spRecordset->CursorLocation = ::GetCursorLocation( strQuery );
+			pThis->m_spRecordset->CursorLocation = ::GetCursorLocation( strQuery );
 
-		
+
 		//adUseClient
 		CTimeTest time(true, "Open recordset ...:");
 		time.m_bEnableFileOutput = false;				
 
 
 		pThis->m_spRecordset->Open( _bstr_t(strQuery), vConn, 
-					ADO::adOpenKeyset, ADO::adLockPessimistic, ADO::adCmdText);
+			ADO::adOpenKeyset, ADO::adLockPessimistic, ADO::adCmdText);
 
 		pThis->m_state = qsBrowse;		
 
@@ -1223,17 +1251,17 @@ HRESULT CQueryObject::XSelectQuery::Open()
 		pThis->InitFieldsBuffers();
 
 		if( pThis->ResolveSortProblem( strQuery, pThis->m_spRecordset->CursorLocation, 
-									bNeedRequery, curLocNew ) )
+			bNeedRequery, curLocNew ) )
 		{
 			if( bNeedRequery )
 			{
 				pThis->m_spRecordset = 0;
 				pThis->m_spRecordset.CreateInstance( __uuidof(ADO::Recordset) );
-				
+
 				pThis->m_spRecordset->CursorLocation = curLocNew;
-				
+
 				pThis->m_spRecordset->Open( _bstr_t(strQuery), vConn, 
-						ADO::adOpenKeyset, ADO::adLockPessimistic, ADO::adCmdText);
+					ADO::adOpenKeyset, ADO::adLockPessimistic, ADO::adCmdText);
 
 				pThis->InitFieldsBuffers();
 			}
@@ -1244,8 +1272,8 @@ HRESULT CQueryObject::XSelectQuery::Open()
 
 		_END_CATCH_REPORT(S_FALSE)		
 
-		pThis->InitDefValues( false );
-		
+			pThis->InitDefValues( false );
+
 		long lrecord = pThis->_find_record( pThis->_get_last_primary_key() );
 		if( lrecord > 0 )
 			GoToRecord( lrecord );
@@ -1265,7 +1293,7 @@ HRESULT CQueryObject::XSelectQuery::Open()
 		UpdateRecordPaneInfo( pThis->GetControllingUnknown() );
 
 		::ForceAppIdleUpdate();
-		
+
 		return S_OK;
 	}
 	_catch_nested;
@@ -1308,39 +1336,39 @@ HRESULT CQueryObject::XSelectQuery::Close()
 
 		//Closing if Open
 		_START_CATCH
-		if( pThis->IsOpen() )
-		{
-			pThis->SaveContextState();
-			if( pThis->m_spRecordset )
-				pThis->m_spRecordset->Close();						
+			if( pThis->IsOpen() )
+			{
+				pThis->SaveContextState();
+				if( pThis->m_spRecordset )
+					pThis->m_spRecordset->Close();						
 
-			pThis->m_spRecordset = 0;
-			pThis->ClearFieldsBuffers();
-		}
+				pThis->m_spRecordset = 0;
+				pThis->ClearFieldsBuffers();
+			}
 
-		pThis->m_state = qsClose;		
+			pThis->m_state = qsClose;		
 
-		_END_CATCH(S_FALSE)		
+			_END_CATCH(S_FALSE)		
 
 
-		{
-			_bstr_t bstrDBaseFieldsSection(SECTION_DBASERECORDNAMEDDATA);
+			{
+				_bstr_t bstrDBaseFieldsSection(SECTION_DBASERECORDNAMEDDATA);
 
-			//at first remove all SECTION_DBASEFIELDS entries in NamedData
-			sptrINamedData spND( spDBDoc );
-			if( spND == NULL )
-				return E_FAIL;
-			IS_OK( spND->DeleteEntry( bstrDBaseFieldsSection ) );
-		}		
+				//at first remove all SECTION_DBASEFIELDS entries in NamedData
+				sptrINamedData spND( spDBDoc );
+				if( spND == NULL )
+					return E_FAIL;
+				IS_OK( spND->DeleteEntry( bstrDBaseFieldsSection ) );
+			}		
 
-		
-		spDBDoc->FireEvent( _bstr_t(szDBaseEventAfterQueryClose), ptrThis, spDBDoc, NULL, NULL, g_varEmpty );
 
-		UpdateRecordPaneInfo( pThis->GetControllingUnknown() );
+			spDBDoc->FireEvent( _bstr_t(szDBaseEventAfterQueryClose), ptrThis, spDBDoc, NULL, NULL, g_varEmpty );
 
-		::ForceAppIdleUpdate();
+			UpdateRecordPaneInfo( pThis->GetControllingUnknown() );
 
-		return S_OK;
+			::ForceAppIdleUpdate();
+
+			return S_OK;
 	}
 	_catch_nested;
 }
@@ -1373,7 +1401,7 @@ HRESULT CQueryObject::XSelectQuery::Edit()
 
 		IUnknownPtr ptrThis = pThis->GetControllingUnknown();
 
-		
+
 		BOOL bSucceded = FALSE;
 		GetSupports( (short)ADO::adUpdate, &bSucceded );
 		if( !bSucceded)
@@ -1423,7 +1451,7 @@ HRESULT CQueryObject::XSelectQuery::UpdateInteractive( BOOL bAskOnlyObjectChange
 		}
 
 		return Update();
-		
+
 	}
 	_catch_nested;
 
@@ -1457,7 +1485,7 @@ HRESULT CQueryObject::XSelectQuery::Update()
 			return S_FALSE;
 
 		BOOL bSucceded = FALSE;
-		
+
 		bool bNeedUpdate = pThis->IsRecordsetModified();
 
 		if( !pThis->OnUpdate() )
@@ -1477,18 +1505,21 @@ HRESULT CQueryObject::XSelectQuery::Update()
 		CTimeTest time(true, "Update time...:");
 		time.m_bEnableFileOutput = false;				
 		_START_CATCH_REPORT
-		if( bNeedUpdate )
-		{			
-			pThis->m_spRecordset->Update();
-			//pThis->m_spRecordset->UpdateBatch( ADO::adAffectCurrent );
-		}
-		_END_CATCH_REPORT(S_FALSE)		
+			if( bNeedUpdate )
+			{			
+				pThis->m_spRecordset->Update();
+				//pThis->m_spRecordset->UpdateBatch( ADO::adAffectCurrent );
+			}
+			_END_CATCH_REPORT(S_FALSE)		
 
-		pThis->m_state = qsBrowse;
-		
-		spDBDoc->FireEvent( _bstr_t(szDBaseEventAfterUpdateRecord), ptrThis, spDBDoc, NULL, NULL, g_varEmpty );
+				pThis->m_state = qsBrowse;
 
-		return S_OK;
+			spDBDoc->FireEvent( _bstr_t(szDBaseEventAfterUpdateRecord), ptrThis, spDBDoc, NULL, NULL, g_varEmpty );
+
+
+
+
+			return S_OK;
 	}
 	_catch_nested;
 }
@@ -1525,17 +1556,17 @@ HRESULT CQueryObject::XSelectQuery::Cancel()
 			return S_FALSE;
 
 		spDBDoc->FireEvent( _bstr_t(szDBaseEventBeforCancelRecord), ptrThis, spDBDoc, NULL, NULL, g_varEmpty );
-		
+
 		_START_CATCH_REPORT
-		pThis->m_spRecordset->Cancel();
+			pThis->m_spRecordset->Cancel();
 		_END_CATCH_REPORT(S_FALSE)
-		
-		pThis->m_state = qsBrowse;
-		
+
+			pThis->m_state = qsBrowse;
+
 		pThis->OnCancel();		
 
-		
-		
+
+
 		spDBDoc->FireEvent( _bstr_t(szDBaseEventAfterCancelRecord), ptrThis, spDBDoc, NULL, NULL, g_varEmpty );
 
 		//pThis->RestoreContextState();
@@ -1552,72 +1583,129 @@ HRESULT CQueryObject::XSelectQuery::Insert()
 {
 	_try_nested(CQueryObject, SelectQuery, Insert)
 	{	
-		if( !pThis->CanModifyDatabase() )
-			return S_FALSE;
-
-		if( !pThis->IsOpen() )
-			return S_FALSE;
-
-		//pThis->SaveContextState();
-
-		//DB_SELECT_QUERY_DOCUMENT_IMPL; /*spNDO2 - this, spDBDoc - document*/
 		if( pThis->m_sptrParent == NULL )
 			return S_FALSE;
 
-		sptrIDBaseDocument spDBDoc( pThis->m_sptrParent );
+		sptrIDBaseDocument2 spDBDoc( pThis->m_sptrParent );
 		if( spDBDoc == NULL )
-			return S_FALSE;
+			return S_FALSE;	
 
-		IUnknownPtr ptrThis = pThis->GetControllingUnknown();
+		//DB size checking	
+		{
+			IDBConnectionPtr conn = spDBDoc;
+			if( conn == NULL )
+				return S_FALSE;			
+			BSTR bstrFileName;
+			conn->GetMDBFileName( &bstrFileName );
+			CString fn = bstrFileName;
+			SysFreeString(bstrFileName);
+			CDBFileSize fsz(fn);
 
-		UpdateInteractive( TRUE );
+			if(!fsz.Check_for_size())
+			{
 
-		BOOL bSucceded = FALSE;
-		GetSupports( (short)ADO::adAddNew, &bSucceded );
-		if( !bSucceded)
-			return S_FALSE;
+				if(fsz.CompactSize() >0)//Можно сжать...
+				{
+					CString s, s1;
+					s.LoadString(IDS_DBSIZE_WARNING);
+					s1.LoadString(IDS_ATTENTION);
 
-		long lRecCount = 0;
-		GetRecordCount( &lRecCount );
+					this->Close();
+					conn->CloseConnection();
 
-		spDBDoc->FireEvent( _bstr_t(szDBaseEventBeforInsertRecord), ptrThis, spDBDoc, NULL, NULL, g_varEmpty );
+					MessageBox(GetMainFrameWnd()->m_hWnd, s, s1, MB_TOPMOST | MB_ICONINFORMATION | MB_OK);
+					CompactDB( fn);//compacting...
+					conn->OpenConnection();
+				}
 
-		_START_CATCH_REPORT
-		pThis->m_spRecordset->AddNew();		
-		
-		pThis->m_state = qsInsert;
-		
-		pThis->InitDefValues( true );
+				if(fsz.Check_for_size())
+				{
+					IDBLockInfoPtr li = conn;
+					CDBLocksInfo* p_dbli;
+					li->GetLockInfoPtr((void**)&p_dbli);
+					this->AttachLockInfo(p_dbli);
+					this->Open();
+				}
+				else
+				{
+					BOOL bRDO = FALSE;
+					spDBDoc->IsReadDeleteOnly(&bRDO);
+					if(!bRDO)
+					{
+						spDBDoc->SetReadDeleteOnly(TRUE);
+						CDBFileSizeDlg* p_fd=new CDBFileSizeDlg;
+						p_fd->SetDocumentTitle(fn);
+						p_fd->Create(p_fd->IDD, GetMainFrameWnd());
+						p_fd->ShowWindow(SW_SHOW);
+					}
+					return E_FAIL;
+				}
+			}
+		}
+		//DB size checking end
 
-		if( lRecCount == 0 )
-			pThis->m_spRecordset->AbsolutePosition = (ADO::PositionEnum)1;			
 
-		Update();
+if( !pThis->CanModifyDatabase() )
+return S_FALSE;
 
-		//long lcur_record = pThis->m_spRecordset->AbsolutePosition;
-		//TRACE("Current record = %d\n", lcur_record );
+if( !pThis->IsOpen() )
+return S_FALSE;
 
-		//т.к. поменялась позиция последней записи
-		pThis->_save_primary_key( true );
+//pThis->SaveContextState();
 
-		//pThis->m_spRecordset->UpdateBatch( ADO::adAffectCurrent );
+//DB_SELECT_QUERY_DOCUMENT_IMPL; /*spNDO2 - this, spDBDoc - document*/
 
-		pThis->OnRecordChange();
 
-		_END_CATCH_REPORT(S_FALSE)
-		
-		//pThis->RestoreContextState();
+IUnknownPtr ptrThis = pThis->GetControllingUnknown();
 
-		spDBDoc->FireEvent( _bstr_t(szDBaseEventAfterInsertRecord), ptrThis, spDBDoc, NULL, NULL, g_varEmpty );
-		spDBDoc->FireEvent( _bstr_t(szDBaseEventAfterNavigation), ptrThis, spDBDoc, NULL, NULL, g_varEmpty );
+UpdateInteractive( TRUE );
 
-		
+BOOL bSucceded = FALSE;
+GetSupports( (short)ADO::adAddNew, &bSucceded );
+if( !bSucceded)
+return S_FALSE;
 
-		UpdateRecordPaneInfo( pThis->GetControllingUnknown() );
+long lRecCount = 0;
+GetRecordCount( &lRecCount );
 
-		::ForceAppIdleUpdate();
+spDBDoc->FireEvent( _bstr_t(szDBaseEventBeforInsertRecord), ptrThis, spDBDoc, NULL, NULL, g_varEmpty );
 
-		return S_OK;
+_START_CATCH_REPORT
+pThis->m_spRecordset->AddNew();		
+
+pThis->m_state = qsInsert;
+
+pThis->InitDefValues( true );
+
+if( lRecCount == 0 )
+pThis->m_spRecordset->AbsolutePosition = (ADO::PositionEnum)1;			
+
+Update();
+
+//long lcur_record = pThis->m_spRecordset->AbsolutePosition;
+//TRACE("Current record = %d\n", lcur_record );
+
+//т.к. поменялась позиция последней записи
+pThis->_save_primary_key( true );
+
+//pThis->m_spRecordset->UpdateBatch( ADO::adAffectCurrent );
+
+pThis->OnRecordChange();
+
+_END_CATCH_REPORT(S_FALSE)
+
+//pThis->RestoreContextState();
+
+spDBDoc->FireEvent( _bstr_t(szDBaseEventAfterInsertRecord), ptrThis, spDBDoc, NULL, NULL, g_varEmpty );
+spDBDoc->FireEvent( _bstr_t(szDBaseEventAfterNavigation), ptrThis, spDBDoc, NULL, NULL, g_varEmpty );
+
+
+
+UpdateRecordPaneInfo( pThis->GetControllingUnknown() );
+
+::ForceAppIdleUpdate();
+
+return S_OK;
 	}
 	_catch_nested;
 }
@@ -1653,7 +1741,7 @@ HRESULT CQueryObject::XSelectQuery::DeleteEx(BOOL bQuiet)
 		if( pThis->m_sptrParent == NULL )
 			return S_FALSE;
 
-		sptrIDBaseDocument spDBDoc( pThis->m_sptrParent );
+		sptrIDBaseDocument2 spDBDoc( pThis->m_sptrParent );
 		if( spDBDoc == NULL )
 			return S_FALSE;
 
@@ -1683,46 +1771,54 @@ HRESULT CQueryObject::XSelectQuery::DeleteEx(BOOL bQuiet)
 
 
 		_START_CATCH_REPORT
-		pThis->m_spRecordset->Delete( ADO::adAffectCurrent );
+			pThis->m_spRecordset->Delete( ADO::adAffectCurrent );
 		_END_CATCH_REPORT(S_FALSE)
-		
-		
-		_START_CATCH_REPORT
 
-		if( nRecordCount > 1 )
-		{	
-			if( !bEOF )
-				pThis->m_spRecordset->AbsolutePosition = (ADO::PositionEnum)nCurRecord;
-			else if( !bBOF )				
-			{
-				pThis->m_spRecordset->AbsolutePosition = (ADO::PositionEnum)(nCurRecord-1);
+
+			_START_CATCH_REPORT
+
+			if( nRecordCount > 1 )
+			{	
+				if( !bEOF )
+					pThis->m_spRecordset->AbsolutePosition = (ADO::PositionEnum)nCurRecord;
+				else if( !bBOF )				
+				{
+					pThis->m_spRecordset->AbsolutePosition = (ADO::PositionEnum)(nCurRecord-1);
+				}
 			}
-		}
-		_END_CATCH_REPORT(S_FALSE)
-		
-		//т.к. поменялась позиция последней записи
-		pThis->_save_primary_key( true );		
+			_END_CATCH_REPORT(S_FALSE)
 
-		pThis->m_state = qsBrowse;
+				//т.к. поменялась позиция последней записи
+				pThis->_save_primary_key( true );		
 
-		//pThis->InitFieldsBuffers();
-		pThis->OnRecordChange();
-		//pThis->TestBofEof();		
+			pThis->m_state = qsBrowse;
+
+			//pThis->InitFieldsBuffers();
+			pThis->OnRecordChange();
+			//pThis->TestBofEof();		
 
 
-		//pThis->RestoreContextState();
+			//pThis->RestoreContextState();
 
-		spDBDoc->FireEvent( _bstr_t(szDBaseEventAfterDeleteRecord), ptrThis, spDBDoc, NULL, NULL, g_varEmpty );
+			spDBDoc->FireEvent( _bstr_t(szDBaseEventAfterDeleteRecord), ptrThis, spDBDoc, NULL, NULL, g_varEmpty );
 
-		spDBDoc->FireEvent( _bstr_t(szDBaseEventAfterNavigation), ptrThis, spDBDoc, NULL, NULL, g_varEmpty );
+			spDBDoc->FireEvent( _bstr_t(szDBaseEventAfterNavigation), ptrThis, spDBDoc, NULL, NULL, g_varEmpty );
 
-		UpdateRecordPaneInfo( pThis->GetControllingUnknown() );
+			UpdateRecordPaneInfo( pThis->GetControllingUnknown() );
 
-		return S_OK;
+			return S_OK;
 	}
 	_catch_nested;
 }
-
+HRESULT CQueryObject::XSelectQuery::AttachLockInfo(void *p)
+{
+	_try_nested(CQueryObject, SelectQuery, AttachLockInfo)
+	{
+		pThis->m_pdbli = (CDBLocksInfo*)p;
+		return S_OK;
+	}	
+	_catch_nested;
+}
 ////////////////////////////////////////////////////////////////////////////////////////////
 HRESULT CQueryObject::XSelectQuery::MoveFirst()
 {
@@ -1756,12 +1852,12 @@ HRESULT CQueryObject::XSelectQuery::MoveFirst()
 		spDBDoc->FireEvent( _bstr_t(szDBaseEventBeforNavigation), ptrThis, spDBDoc, NULL, NULL, g_varEmpty );
 
 		_START_CATCH_REPORT
-		pThis->m_spRecordset->MoveFirst();
+			pThis->m_spRecordset->MoveFirst();
 		_END_CATCH_REPORT(S_FALSE)
 
-		//т.к. поменялась позиция последней записи
-		pThis->_save_primary_key( true );
-		
+			//т.к. поменялась позиция последней записи
+			pThis->_save_primary_key( true );
+
 
 		pThis->m_state = qsBrowse;
 
@@ -1775,7 +1871,7 @@ HRESULT CQueryObject::XSelectQuery::MoveFirst()
 		spDBDoc->FireEvent( _bstr_t(szDBaseEventMoveFirst), ptrThis, spDBDoc, NULL, NULL, g_varEmpty );
 		spDBDoc->FireEvent( _bstr_t(szDBaseEventAfterNavigation), ptrThis, spDBDoc, NULL, NULL, g_varEmpty );
 
-		
+
 
 		UpdateRecordPaneInfo( pThis->GetControllingUnknown() );
 
@@ -1816,11 +1912,11 @@ HRESULT CQueryObject::XSelectQuery::MoveNext()
 		spDBDoc->FireEvent( _bstr_t(szDBaseEventBeforNavigation), ptrThis, spDBDoc, NULL, NULL, g_varEmpty );
 
 		_START_CATCH_REPORT
-		pThis->m_spRecordset->MoveNext();
+			pThis->m_spRecordset->MoveNext();
 		_END_CATCH_REPORT(S_FALSE)
 
-		//т.к. поменялась позиция последней записи
-		pThis->_save_primary_key( true );
+			//т.к. поменялась позиция последней записи
+			pThis->_save_primary_key( true );
 
 		pThis->m_state = qsBrowse;
 		//pThis->TestBofEof();
@@ -1832,7 +1928,7 @@ HRESULT CQueryObject::XSelectQuery::MoveNext()
 		spDBDoc->FireEvent( _bstr_t(szDBaseEventMoveNext), ptrThis, spDBDoc, NULL, NULL, g_varEmpty );
 		spDBDoc->FireEvent( _bstr_t(szDBaseEventAfterNavigation), ptrThis, spDBDoc, NULL, NULL, g_varEmpty );
 
-		
+
 
 		UpdateRecordPaneInfo( pThis->GetControllingUnknown() );
 
@@ -1874,12 +1970,12 @@ HRESULT CQueryObject::XSelectQuery::MovePrev()
 		spDBDoc->FireEvent( _bstr_t(szDBaseEventBeforNavigation), ptrThis, spDBDoc, NULL, NULL, g_varEmpty );
 
 		_START_CATCH_REPORT
-		pThis->m_spRecordset->MovePrevious();
+			pThis->m_spRecordset->MovePrevious();
 		_END_CATCH_REPORT(S_FALSE)
 
-		//т.к. поменялась позиция последней записи
-		pThis->_save_primary_key( true );
-		
+			//т.к. поменялась позиция последней записи
+			pThis->_save_primary_key( true );
+
 
 		pThis->m_state = qsBrowse;
 		//pThis->TestBofEof();
@@ -1890,7 +1986,7 @@ HRESULT CQueryObject::XSelectQuery::MovePrev()
 		spDBDoc->FireEvent( _bstr_t(szDBaseEventMovePrev), ptrThis, spDBDoc, NULL, NULL, g_varEmpty );
 		spDBDoc->FireEvent( _bstr_t(szDBaseEventAfterNavigation), ptrThis, spDBDoc, NULL, NULL, g_varEmpty );
 
-		
+
 
 		UpdateRecordPaneInfo( pThis->GetControllingUnknown() );
 
@@ -1906,7 +2002,7 @@ HRESULT CQueryObject::XSelectQuery::MoveLast()
 	{	
 		if( !pThis->IsOpen() )
 			return S_FALSE;
-		
+
 		//pThis->SaveContextState();
 
 		UpdateInteractive( TRUE );
@@ -1931,12 +2027,12 @@ HRESULT CQueryObject::XSelectQuery::MoveLast()
 		spDBDoc->FireEvent( _bstr_t(szDBaseEventBeforNavigation), ptrThis, spDBDoc, NULL, NULL, g_varEmpty );
 
 		_START_CATCH_REPORT
-		pThis->m_spRecordset->MoveLast();
+			pThis->m_spRecordset->MoveLast();
 		_END_CATCH_REPORT(S_FALSE)
 
-		//т.к. поменялась позиция последней записи
-		pThis->_save_primary_key( true );
-		
+			//т.к. поменялась позиция последней записи
+			pThis->_save_primary_key( true );
+
 		pThis->m_state = qsBrowse;
 		//pThis->TestBofEof();
 		pThis->OnRecordChange();
@@ -1945,7 +2041,7 @@ HRESULT CQueryObject::XSelectQuery::MoveLast()
 		spDBDoc->FireEvent( _bstr_t(szDBaseEventMoveLast), ptrThis, spDBDoc, NULL, NULL, g_varEmpty );
 		spDBDoc->FireEvent( _bstr_t(szDBaseEventAfterNavigation), ptrThis, spDBDoc, NULL, NULL, g_varEmpty );
 
-		
+
 
 		UpdateRecordPaneInfo( pThis->GetControllingUnknown() );
 
@@ -1986,7 +2082,7 @@ HRESULT CQueryObject::XSelectQuery::GetValue( BSTR bstrName, tagVARIANT *pvar )
 		{
 			if( !bOpen )
 				return_and_assert( E_FAIL );
-			
+
 			CQueryField* pFieldCache = NULL;
 			short nFieldType;
 			int nIndex = pThis->GetFieldIndexFromSection( bstrName, spDBDoc, nFieldType );
@@ -1998,35 +2094,35 @@ HRESULT CQueryObject::XSelectQuery::GetValue( BSTR bstrName, tagVARIANT *pvar )
 			if( pFieldCache )
 			{
 				_variant_t var;
-				
+
 				long lCurRecord = -1;
 				GetCurrentRecord( &lCurRecord );			
-				
+
 				if( lCurRecord == pThis->m_lBookMark ) 			
 					pFieldCache = pThis->m_query.m_arrFields[nIndex];				
-				
+
 				VERIFY( pFieldCache->GetPrivateValue( var ) );				
-				
-				
+
+
 				*pvar = var.Detach();
-				
+
 				return S_OK;
 			}			
 		}		
-		
+
 		//13.02.2003. Optimization. Cos values read OnRecordChange
 		/*
 		bool bProcess = false;
 		for( int i=0;i<pThis->m_query.m_arrFields.GetSize();i++ )
 		{
-			if( bProcess )
-				continue;
+		if( bProcess )
+		continue;
 
-			CQueryField* pField = pThis->m_query.m_arrFields[i];
-			bProcess = pField->OnGetValue( bstrName, pvar );
+		CQueryField* pField = pThis->m_query.m_arrFields[i];
+		bProcess = pField->OnGetValue( bstrName, pvar );
 		}
 		*/
-		
+
 		return ptrPrivND->GetValue( bstrName, pvar );
 	}
 	_catch_nested;
@@ -2035,8 +2131,22 @@ HRESULT CQueryObject::XSelectQuery::GetValue( BSTR bstrName, tagVARIANT *pvar )
 ////////////////////////////////////////////////////////////////////////////////////////////
 HRESULT CQueryObject::XSelectQuery::SetValue( BSTR bstrName, const tagVARIANT var, BOOL* pbPlaceToRecordset )
 {
+
 	_try_nested(CQueryObject, SelectQuery, SetValue)
 	{	
+		CString lk = bstrName;
+		if( lk.Find("LastPrimaryKeyValue")==-1)
+		{
+			if(pThis->m_pdbli==NULL)
+			{
+				IDBLockInfoPtr li = pThis->m_sptrParent;
+				CDBLocksInfo* p_dbli;
+				li->GetLockInfoPtr((void**)&p_dbli);
+				if(p_dbli) pThis->m_pdbli = p_dbli;
+			}
+			if(pThis->m_pdbli && !pThis->m_pdbli->AddLock(pThis->m_llast_primary_key) ) 
+				return E_FAIL;
+		}
 		if( pThis->m_bPrivateMode )
 			return_and_assert( E_FAIL );
 
@@ -2071,7 +2181,7 @@ HRESULT CQueryObject::XSelectQuery::SetValue( BSTR bstrName, const tagVARIANT va
 					pFieldForce = pField;
 					break;
 				}
-				
+
 				if( !strObjectName.IsEmpty() && pField->GetAsTableField() == strObjectName )
 				{
 					pFieldForce = pField;
@@ -2091,7 +2201,7 @@ HRESULT CQueryObject::XSelectQuery::SetValue( BSTR bstrName, const tagVARIANT va
 			{
 				if( bProcess )
 					continue;			
-				
+
 				CQueryField* pField = pThis->m_query.m_arrFields[i];
 				bProcess = pField->OnSetValue( bstrName, var, !bWasSetValue, bWasSetValue );			
 			}
@@ -2194,8 +2304,8 @@ HRESULT CQueryObject::XSelectQuery::IsAvailableField( BSTR bstrTable, BSTR bstrF
 		short nFieldType = -1;		
 
 		if(  S_OK != spDBDoc->GetFieldInfo(	bstrTable, bstrField, 
-											0, &nFieldType,
-											0, 0, 0, 0, 0, 0 )
+			0, &nFieldType,
+			0, 0, 0, 0, 0, 0 )
 			) 
 			return S_FALSE;
 
@@ -2220,17 +2330,17 @@ HRESULT CQueryObject::XSelectQuery::GetRecordCount( long* pnRecordCount )
 
 		if( !pThis->IsOpen() )
 			return S_FALSE;
-		
+
 		*pnRecordCount = 0;
 
 		_START_CATCH		
 
-		*pnRecordCount = pThis->m_spRecordset->RecordCount;
+			*pnRecordCount = pThis->m_spRecordset->RecordCount;
 
 		_END_CATCH(S_FALSE)
 
 
-		return S_OK;
+			return S_OK;
 	}
 	_catch_nested;
 
@@ -2258,16 +2368,16 @@ void CQueryObject::InitCacheBuffers()
 			continue;
 
 		CQueryField* pFieldSrc = m_query.m_arrFields[i];
-		
+
 		CQueryField* pFieldCache = new CQueryField;
 		m_arCacheFields.Add( pFieldCache );
 		pFieldCache->InitFrom( pFieldSrc );		
 		pFieldCache->SetMasterField( pFieldSrc );
 
 		pFieldCache->Init( pFieldCache->GetFieldType(), 
-							m_sptrParent, m_spRecordset, i 
-							);
-		
+			m_sptrParent, m_spRecordset, i 
+			);
+
 		//pFieldCache->SetMasterField( pFieldSrc );
 	}
 
@@ -2333,20 +2443,20 @@ HRESULT CQueryObject::XSelectQuery::SetCurrentRecord( long nCurRecord, long* pnR
 
 
 		*pnRealRecord = ADO::adPosUnknown;
-		
+
 		_START_CATCH
-		pThis->m_spRecordset->AbsolutePosition = (ADO::PositionEnum)nCurRecord;
+			pThis->m_spRecordset->AbsolutePosition = (ADO::PositionEnum)nCurRecord;
 		//pThis->m_spRecordset->AbsolutePosition = (PositionEnum)nCurRecord;
 
 		if( pnRealRecord )
 			*pnRealRecord = (long)pThis->m_spRecordset->AbsolutePosition;
-		
+
 
 		_END_CATCH(S_FALSE)
-		
-		//pThis->InitCacheBuffers();
 
-		return S_OK;
+			//pThis->InitCacheBuffers();
+
+			return S_OK;
 
 	}
 	_catch_nested;
@@ -2376,7 +2486,7 @@ HRESULT CQueryObject::XSelectQuery::GetCurrentRecord( long* pnCurrentRecord )
 			return S_FALSE;
 
 		*pnCurrentRecord = ADO::adPosUnknown;
-		
+
 		ADO::PositionEnum _result = ADO::adPosUnknown;
 		if( S_OK == pThis->m_spRecordset->get_AbsolutePosition( &_result ) )
 			*pnCurrentRecord = (long)_result;		
@@ -2401,7 +2511,7 @@ HRESULT CQueryObject::XSelectQuery::GoToRecord( long nRecordNum )
 		//pThis->SaveContextState();
 
 		UpdateInteractive( TRUE );
-		
+
 		pThis->ClearUndoRedoList();
 
 		//DB_SELECT_QUERY_DOCUMENT_IMPL /*spNDO2 - this, spDBDoc - document*/
@@ -2420,8 +2530,8 @@ HRESULT CQueryObject::XSelectQuery::GoToRecord( long nRecordNum )
 			pThis->m_spRecordset->AbsolutePosition = (ADO::PositionEnum)nRecordNum;		
 		_END_CATCH(S_FALSE)
 
-		//т.к. поменялась позиция последней записи
-		pThis->_save_primary_key( true );
+			//т.к. поменялась позиция последней записи
+			pThis->_save_primary_key( true );
 
 
 		pThis->m_state = qsBrowse;
@@ -2431,7 +2541,7 @@ HRESULT CQueryObject::XSelectQuery::GoToRecord( long nRecordNum )
 		//pThis->RestoreContextState();
 		spDBDoc->FireEvent( _bstr_t(szDBaseEventAfterNavigation), ptrThis, spDBDoc, NULL, NULL, g_varEmpty );
 
-		
+
 
 		UpdateRecordPaneInfo( pThis->GetControllingUnknown() );
 
@@ -2456,7 +2566,7 @@ HRESULT CQueryObject::XSelectQuery::GetTumbnail( void** ppTumbnail )
 	_try_nested(CQueryObject, SelectQuery, GetTumbnail)
 	{	
 		*ppTumbnail = NULL;
-		
+
 		if( !pThis->m_bPrivateMode )
 		{
 			ASSERT(false);
@@ -2478,16 +2588,16 @@ HRESULT CQueryObject::XSelectQuery::GetTumbnail( void** ppTumbnail )
 		short nFieldType;
 		CString strTableFieldSection;
 		strTableFieldSection.Format( "%s\\%s.%s", (LPCTSTR)SECTION_DBASEFIELDS, 
-									(LPCTSTR)pThis->m_strTumbnailTable, 
-									(LPCTSTR)pThis->m_strTumbnailField );		
-		
+			(LPCTSTR)pThis->m_strTumbnailTable, 
+			(LPCTSTR)pThis->m_strTumbnailField );		
+
 		int nIndex = pThis->GetFieldIndexFromSection( 
-				_bstr_t( (LPCTSTR)strTableFieldSection ), spDBDoc, nFieldType );		
+			_bstr_t( (LPCTSTR)strTableFieldSection ), spDBDoc, nFieldType );		
 
 		if( nIndex == -1 || (FieldType)nFieldType != ftVTObject )
 			return S_FALSE;
 
-		
+
 		if( nIndex < 0 || nIndex >= pThis->m_arCacheFields.GetSize() )
 			return S_FALSE;
 
@@ -2496,10 +2606,10 @@ HRESULT CQueryObject::XSelectQuery::GetTumbnail( void** ppTumbnail )
 
 		long lCurRecord = -1;
 		GetCurrentRecord( &lCurRecord );
-			
+
 		if( lCurRecord == pThis->m_lBookMark ) 			
 			pQueryField = pThis->m_query.m_arrFields[nIndex];
-		
+
 
 		*ppTumbnail = pQueryField->GetTumbnail();
 
@@ -2533,10 +2643,10 @@ HRESULT CQueryObject::XSelectQuery::GetTumbnailCaption( BSTR* pbstrCaption )
 		{
 			CString strKey;
 			strKey.Format( "%s\\%s.%s", 
-						(LPCTSTR)SECTION_DBASEFIELDS, 
-						(LPCTSTR)pThis->m_strTumbnailCaptionTable, 
-						(LPCTSTR)pThis->m_strTumbnailCaptionField );				
-			
+				(LPCTSTR)SECTION_DBASEFIELDS, 
+				(LPCTSTR)pThis->m_strTumbnailCaptionTable, 
+				(LPCTSTR)pThis->m_strTumbnailCaptionField );				
+
 			spND->GetValue( _bstr_t( (LPCTSTR)strKey ), &var );
 			if( var.vt == VT_BSTR )
 			{
@@ -2709,7 +2819,7 @@ HRESULT CQueryObject::XSelectQuery::GetCanProcessFind( BOOL* pbCanProcessFind )
 
 ////////////////////////////////////////////////////////////////////////////////////////////
 HRESULT CQueryObject::XSelectQuery::SetFindSettings( BOOL bFindInField, BSTR bstrTable, BSTR bstrField,
-								BOOL bMatchCase, BOOL bRegularExpression, BSTR bstrTextToFind  )
+													BOOL bMatchCase, BOOL bRegularExpression, BSTR bstrTextToFind  )
 {
 	_try_nested(CQueryObject, SelectQuery, SetFindSettings)
 	{	
@@ -2728,7 +2838,7 @@ HRESULT CQueryObject::XSelectQuery::SetFindSettings( BOOL bFindInField, BSTR bst
 
 ////////////////////////////////////////////////////////////////////////////////////////////
 HRESULT CQueryObject::XSelectQuery::GetFindSettings( BOOL* pbFindInField, BSTR* pbstrTable, BSTR* pbstrField,
-								BOOL* pbMatchCase, BOOL* pbRegularExpression, BSTR* pbstrTextToFind )
+													BOOL* pbMatchCase, BOOL* pbRegularExpression, BSTR* pbstrTextToFind )
 {
 	_try_nested(CQueryObject, SelectQuery, GetFindSettings)
 	{	
@@ -2774,7 +2884,7 @@ HRESULT CQueryObject::XSelectQuery::SetTumbnailBorderSize( SIZE size )
 
 		IUnknownPtr ptrThis = pThis->GetControllingUnknown();
 
-		
+
 		variant_t var;
 		spDBDoc->FireEvent( _bstr_t(szDBaseEventGalleryOptionsChange), ptrThis, spDBDoc, NULL, NULL, var );
 
@@ -2820,7 +2930,7 @@ INamedDataPtr CQueryObject::GetPrivateNamedData()
 
 	IUnknown* punkPrivateND = NULL;
 	m_sptrParent->GetPrivateNamedData( &punkPrivateND );
-	
+
 	if( punkPrivateND == NULL )
 		return NULL;
 
@@ -2849,10 +2959,10 @@ HRESULT CQueryObject::XSelectQuery::GetSupports( short nCursorOptionEnum, BOOL* 
 		VARIANT_BOOL varbSupport = VARIANT_FALSE;
 
 		_START_CATCH
-		varbSupport = pThis->m_spRecordset->Supports( Supports );
+			varbSupport = pThis->m_spRecordset->Supports( Supports );
 		_END_CATCH(S_FALSE)
 
-		*pbSucceeded = ( varbSupport == VARIANT_TRUE );
+			*pbSucceeded = ( varbSupport == VARIANT_TRUE );
 
 		return S_OK;
 	}
@@ -2882,7 +2992,7 @@ HRESULT CQueryObject::XSelectQuery::IsBOF( BOOL* pBResult )
 	{	
 		*pBResult = TRUE;
 
-		
+
 		if( !pThis->IsOpen() )
 			return S_OK;
 
@@ -2894,9 +3004,9 @@ HRESULT CQueryObject::XSelectQuery::IsBOF( BOOL* pBResult )
 			*pBResult = TRUE;
 			return S_OK;
 		}
-		
+
 		long nCurRecord		= (long)pThis->m_spRecordset->AbsolutePosition;
-		
+
 
 		if( nCurRecord == (long) ADO::adPosUnknown )
 		{
@@ -2920,7 +3030,7 @@ HRESULT CQueryObject::XSelectQuery::IsEOF( BOOL* pBResult )
 	_try_nested(CQueryObject, SelectQuery, IsEOF)
 	{	
 		*pBResult = TRUE;
-		
+
 		if( !pThis->IsOpen() )
 			return S_OK;
 
@@ -2957,10 +3067,10 @@ HRESULT CQueryObject::XSelectQuery::IsDBaseObject( IUnknown* punkObj, BOOL* pbDB
 	{	
 		if( pbDBaseObject )
 			*pbDBaseObject = FALSE;
-		
+
 		if( pGuidDBaseParent )
 			*pGuidDBaseParent = INVALID_KEY;
-		
+
 		if( !pThis->IsOpen() )
 			return S_OK;
 
@@ -3050,7 +3160,7 @@ HRESULT CQueryObject::XSelectQuery::GetSortField( int nIndex, BSTR* pbstrTable, 
 	{	
 		if( nIndex < 0 || nIndex >= pThis->m_query.m_arrSortFields.GetSize() )
 			return E_INVALIDARG;
-		
+
 		CSortField* psf = pThis->m_query.m_arrSortFields[nIndex];
 
 		if( pbstrTable )
@@ -3074,7 +3184,7 @@ HRESULT CQueryObject::XSelectQuery::RemoveSortFields( )
 	_try_nested(CQueryObject, SelectQuery, RemoveSortFields)
 	{	
 		pThis->m_query.DeleteSortFields();
-		
+
 		//надо сохранить порядок сортировки
 		SetModifiedFlagToObj( pThis->GetControllingUnknown() );
 
@@ -3089,7 +3199,7 @@ HRESULT CQueryObject::XSelectQuery::SaveContextsState()
 	_try_nested(CQueryObject, SelectQuery, SaveContextsState)
 	{	
 		pThis->SaveContextState();
-		
+
 		return S_OK;
 	}
 	_catch_nested;
@@ -3101,7 +3211,7 @@ HRESULT CQueryObject::XSelectQuery::RestoreContextsState()
 	_try_nested(CQueryObject, SelectQuery, RestoreContextsState)
 	{	
 		pThis->RestoreContextState();
-		
+
 		return S_OK;
 	}
 	_catch_nested;
@@ -3130,17 +3240,17 @@ HRESULT CQueryObject::XBlankForm::GetControlsCount( BSTR bstr_table, BSTR bstr_f
 
 			str_field.MakeLower();
 			str_table.MakeLower();
-			
+
 			CString str_field1 = bstr_field;
 			CString str_table1 = bstr_table;
 
 			str_field1.MakeLower();
 			str_table1.MakeLower();
 
-				
+
 			if( str_field == str_field1 &&  str_table == str_table1 )
 				(*plcount)++;
-			
+
 		}
 
 		for(i=0;i<arrCtrls.GetSize();i++ )
@@ -3222,7 +3332,7 @@ HRESULT CQueryObject::XNotifyObject::NotifyDestroy()
 					IDataContext2Ptr ptrDC( ptrDB );
 					if( ptrDC )
 					{
-						LONG_PTR lPos = 0;
+						long lPos = 0;
 						ptrDC->GetFirstObjectPos( _bstr_t(szTypeQueryObject), &lPos );
 						while( lPos )
 						{
@@ -3332,10 +3442,10 @@ HRESULT CQueryObject::XNotifyObject::NotifySelect( bool bSelect )
 				}
 			}
 		}
-		
+
 
 		ISelectQueryPtr ptrQ( pThis->GetControllingUnknown() );
-		
+
 		if( ptrQ )
 		{
 			ptrDB->SetActiveQuery( ptrQ );
@@ -3452,12 +3562,12 @@ void CQueryObject::DeleteNotExistGridFields()
 			m_query.m_arrGridFields.RemoveAt( i );
 		}
 	}
-		
+
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 bool CQueryObject::ResolveSortProblem( CString strSQL, ADO::CursorLocationEnum curLocOld, 
-									bool& bNeedRequery, ADO::CursorLocationEnum& curLocNew )
+									  bool& bNeedRequery, ADO::CursorLocationEnum& curLocNew )
 {
 	try
 	{			
@@ -3519,7 +3629,7 @@ bool CQueryObject::ResolveSortProblem( CString strSQL, ADO::CursorLocationEnum c
 			m_spRecordset->AbsolutePosition = (ADO::PositionEnum)( lCurRecord + 1 );
 		else
 			m_spRecordset->AbsolutePosition = (ADO::PositionEnum)( lCurRecord - 1 );
-		
+
 		_variant_t _var2;
 		ptrField->raw_GetChunk( 1, &_var2 );
 
@@ -3551,7 +3661,7 @@ IMPLEMENT_DYNCREATE(CBlankCtrl, CAXCtrlBase);
 
 // {BF960F7D-A5C3-49a8-A830-3E948DE2D06F}
 GUARD_IMPLEMENT_OLECREATE(CBlankCtrl, "Blank.BlankCtrl", 
-0xbf960f7d, 0xa5c3, 0x49a8, 0xa8, 0x30, 0x3e, 0x94, 0x8d, 0xe2, 0xd0, 0x6f);
+						  0xbf960f7d, 0xa5c3, 0x49a8, 0xa8, 0x30, 0x3e, 0x94, 0x8d, 0xe2, 0xd0, 0x6f);
 // {BABCE2E0-31A8-481a-9A1B-B982A85AB364}
 static const GUID clsidBlankCtrlDataObjectInfo = 
 { 0xbabce2e0, 0x31a8, 0x481a, { 0x9a, 0x1b, 0xb9, 0x82, 0xa8, 0x5a, 0xb3, 0x64 } };
@@ -3561,13 +3671,16 @@ DATA_OBJECT_INFO_FULL(IDS_BLABK_TYPE, CBlankCtrl, szTypeBlankCtrl, szTypeBlankFo
 
 BEGIN_INTERFACE_MAP(CBlankCtrl, CAXCtrlBase)
 	INTERFACE_PART(CBlankCtrl, IID_INotifyObject, NotifyObject)
+	INTERFACE_PART(CBlankCtrl, IID_IViewSubType, ViewSubType)
 END_INTERFACE_MAP()
 
 
 IMPLEMENT_UNKNOWN(CBlankCtrl, NotifyObject)
+IMPLEMENT_UNKNOWN(CBlankCtrl, ViewSubType)
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 CBlankCtrl::CBlankCtrl()
+: m_ViewSubType(0)
 {
 }
 
@@ -3631,7 +3744,7 @@ HRESULT CBlankCtrl::XNotifyObject::NotifyCreate()
 		if( ptrQ == 0 || ptrDBS == 0 ) 
 			return E_FAIL;
 
-		
+
 		IUnknownPtr ptrAXCtrl = pThis->GetAXCtrl();
 		if( ptrAXCtrl == 0 )
 			return E_FAIL;
@@ -3643,7 +3756,7 @@ HRESULT CBlankCtrl::XNotifyObject::NotifyCreate()
 			if(IDBObjectControlPtr pDBObject=pCtrlDB)
 			{
 				if(pThis->m_ViewSubType>0){
-					pCtrlDB->SetValue(ATL::CComVariant(pThis->m_ViewSubType));
+					pCtrlDB->SetValue(CComVariant(pThis->m_ViewSubType));
 					bViewSubType=true;
 				}
 			}
@@ -3673,7 +3786,7 @@ HRESULT CBlankCtrl::XNotifyObject::NotifyCreate()
 		CAddField dlg(bViewSubType?ptrDBS:0, bstrTable);
 
 		dlg.m_strFieldName = ::GenerateUniqFieldName( ptrDBS, strTable, ft );
-		
+
 		dlg.SetFieldType( ft );
 		if( dlg.DoModal() != IDOK )
 			return E_FAIL;
@@ -3702,13 +3815,13 @@ HRESULT CBlankCtrl::XNotifyObject::NotifyCreate()
 		{
 			if(IDBObjectControlPtr pDBObject=ptrCtrlDB)
 			{
-				ptrCtrlDB->SetValue(ATL::CComVariant(pThis->m_ViewSubType));
+				ptrCtrlDB->SetValue(CComVariant(pThis->m_ViewSubType));
 			}
 		}
 
 		if( S_OK != ptrDBS->GetFieldInfo(bstrTable, bstrField, 
-				0, 0,
-				0, 0, 0, 0, 0, 0 ))
+			0, 0,
+			0, 0, 0, 0, 0, 0 ))
 		{
 			if( S_OK != ptrDBS->AddField( bstrTable, bstrField, (short)ft, 0, 0 ) )
 			{
@@ -3719,7 +3832,7 @@ HRESULT CBlankCtrl::XNotifyObject::NotifyCreate()
 			ptrDBS->SetFieldInfo( bstrTable, bstrField, bstrField,
 				dlg.m_bReqValue, dlg.m_bDefValue, _bstr_t(dlg.m_strDefValue), _bstr_t( (LPCSTR)strObjectType ) );
 		}
-		
+
 		IDBControlPtr ptrCtrlDB( ptrAXCtrl );
 		if( ptrCtrlDB )
 		{
@@ -3792,7 +3905,7 @@ HRESULT CBlankCtrl::XNotifyObject::NotifyDestroy()
 		if( ptrQ == 0 || ptrDBS == 0 ) 
 			return E_FAIL;
 
-		
+
 		IUnknownPtr ptrAXCtrl = pThis->GetAXCtrl();
 		if( ptrAXCtrl == 0 )
 			return E_FAIL;
@@ -3855,9 +3968,9 @@ HRESULT CBlankCtrl::XNotifyObject::NotifyDestroy()
 					return S_OK;
 
 			}
-			
+
 		}
-		
+
 		CDeleteField dlg;
 		dlg.m_strTable = (LPCSTR)bstrTable;
 		dlg.m_strField = (LPCSTR)bstrField;
@@ -3918,6 +4031,28 @@ HRESULT CBlankCtrl::XNotifyObject::NotifySelect( bool bSelect )
 	_catch_nested;
 }
 
+// Implemention IViewSubType interface
+
+HRESULT CBlankCtrl::XViewSubType::GetViewSubType( unsigned long* pViewSubType )
+{
+	_try_nested(CBlankCtrl, ViewSubType, SetViewSubType )
+	{	
+		*pViewSubType=pThis->m_ViewSubType;
+		return S_OK;
+	}
+	_catch_nested;
+}
+
+HRESULT CBlankCtrl::XViewSubType::SetViewSubType( unsigned long ViewSubType )
+{
+	_try_nested(CBlankCtrl, ViewSubType, SetViewSubType )
+	{	
+		pThis->m_ViewSubType=ViewSubType;
+		return S_OK;
+	}
+	_catch_nested;
+}
+
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 ISelectQueryPtr CBlankCtrl::GetQuery()
 {
@@ -3954,7 +4089,7 @@ IDBaseStructPtr CBlankCtrl::GetDBStruct()
 
 	IDBaseStructPtr ptrDBS( punkData );
 	punkData->Release();	punkData = 0;
-		
+
 	return ptrDBS;
 }
 
@@ -3977,7 +4112,7 @@ IUnknownPtr CBlankCtrl::GetAXCtrl( )
 	CLSID	clsid;		
 	if( S_OK != ::CLSIDFromProgID( bstrProgID, &clsid ) )
 		return 0;
-	
+
 	IUnknown* punkAX = 0;
 	if( S_OK != CoCreateInstance( clsid, NULL, CLSCTX_INPROC_SERVER, IID_IUnknown, (LPVOID*)&punkAX ) )
 		return 0;
@@ -4020,7 +4155,7 @@ bool CBlankCtrl::IsDBaseControl( FieldType* pftype )
 			ft = ftVTObject;
 		else if( strProgID == DBTextProgID )
 			ft = ftString;
-		
+
 		*pftype = ft;
 	}
 
@@ -4042,8 +4177,8 @@ void CQueryObject::SaveContextState()
 	if( ptrDS == NULL )
 		return;
 
-	
-	TPOS lPos = 0;
+
+	long lPos = 0;
 	ptrDS->GetFirstViewPosition( &lPos );
 	while( lPos )
 	{
@@ -4095,7 +4230,7 @@ void CQueryObject::SaveContextState()
 
 void CQueryObject::RestoreContextState()
 {
-	
+
 
 	if( m_sptrParent == NULL )
 		return;
@@ -4106,7 +4241,7 @@ void CQueryObject::RestoreContextState()
 	if( ptrDS == NULL )
 		return;
 
-	TPOS lViewPos = 0;
+	long lViewPos = 0;
 	ptrDS->GetFirstViewPosition( &lViewPos );
 	while( lViewPos )
 	{
@@ -4125,7 +4260,7 @@ void CQueryObject::RestoreContextState()
 
 		CViewContext* pvcFind = NULL;
 		POSITION pos = m_arViewContext.GetHeadPosition();
-		
+
 		while( pos )
 		{			
 			CViewContext* pvc = (CViewContext*)m_arViewContext.GetNext( pos );
@@ -4199,12 +4334,12 @@ long CQueryObject::_get_primary_key_value()
 
 	return lprimary_key;
 }
-		
+
 long CQueryObject::_find_record( long lprimary_key )
 {
 	if( lprimary_key == -1 )
 		return -1;
-	
+
 	try
 	{
 		if( !IsOpen() )	return -1;
@@ -4224,7 +4359,7 @@ long CQueryObject::_find_record( long lprimary_key )
 		{
 			lcur_record++;
 
-  			ADO::FieldsPtr ptr_fields = m_spRecordset->Fields;
+			ADO::FieldsPtr ptr_fields = m_spRecordset->Fields;
 			if( ptr_fields )
 			{
 				ADO::FieldPtr ptr_field = ptr_fields->GetItem( lidx );
@@ -4266,12 +4401,22 @@ void CQueryObject::_save_primary_key( bool bset_modify_flag )
 {
 	if( bset_modify_flag )
 		SetModifiedFlagToObj( GetControllingUnknown() );
-	
+
 	//save in query
 	m_llast_primary_key = _get_primary_key_value();
 
 	//and in document too
 	::_SetValue( m_sptrParent, SECTION_DBASE, "LastPrimaryKeyValue", (long)m_llast_primary_key );
+	if(m_pdbli==NULL)
+	{
+		IDBLockInfoPtr li = m_sptrParent;
+		CDBLocksInfo* p_dbli;
+		li->GetLockInfoPtr((void**)&p_dbli);
+		if(p_dbli) m_pdbli = p_dbli;
+	}
+	if(m_pdbli)
+		m_pdbli->GoToRecord(m_llast_primary_key);
+
 }
 
 long CQueryObject::_get_last_primary_key()

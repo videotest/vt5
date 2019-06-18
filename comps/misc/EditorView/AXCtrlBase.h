@@ -40,11 +40,6 @@ protected:
 		com_call GenerateUniqueName( BSTR bstrOfferName, BSTR* pbstrNewName );
 	END_INTERFACE_PART(Ctrl)
 
-	BEGIN_INTERFACE_PART(ViewSubType, IViewSubType)
-		com_call GetViewSubType( unsigned long* pViewSubType );
-		com_call SetViewSubType( unsigned long ViewSubType );
-	END_INTERFACE_PART(ViewSubType)
-
 	DECLARE_DISPATCH_MAP();
 	//{{AFX_DISPATCH(CAXCtrlBase)
 	afx_msg void StoreCtrlData( LPDISPATCH lpCtrlDisp );
@@ -58,7 +53,7 @@ protected:
 	DWORD	m_dwStyle;
 	DWORD	m_dwMemSize;
 	byte	*m_pObjectData;
-	long m_ViewSubType;
+
 };
 
 

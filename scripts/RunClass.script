@@ -1,6 +1,0 @@
-'resource:Classifier...#Statistics#Classifier#Classifier
-'state:function=ClassifyAvail
-
-If Data.GetValue("\DockBars\PageInProcessing") Then Data.SetValue "\DockBars\isPass", True
-Data.Setvalue "\StatCfg\RunForm", "class"
-RunStat

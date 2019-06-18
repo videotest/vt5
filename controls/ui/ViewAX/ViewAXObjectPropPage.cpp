@@ -18,7 +18,11 @@ static char THIS_FILE[] = __FILE__;
 #endif
 
 
-#define _LIBNAME_CONTROLS_ "Controls.lib"
+#ifdef _DEBUG
+#pragma comment( lib, "Controls_d.lib" )
+#else
+#pragma comment( lib, "Controls.lib" )
+#endif//
 
 
 /////////////////////////////////////////////////////////////////////////////
@@ -55,15 +59,7 @@ GUARD_IMPLEMENT_OLECREATE_CTRL(CViewAXObjectPropPage, "VIEWAX.ViewAXObjectPropPa
 
 BOOL CViewAXObjectPropPage::CViewAXObjectPropPageFactory::UpdateRegistry(BOOL bRegister)
 {
-#if defined(NOGUARD)
-	if (bRegister)
-		return AfxOleRegisterPropertyPageClass(AfxGetInstanceHandle(),
-			m_clsid, IDS_VIEWAX_PPG);
-	else
-		return AfxOleUnregisterClass(m_clsid, NULL);
-#else
 	return UpdateRegistryPage(bRegister, AfxGetInstanceHandle(), IDS_VIEWAX_PPG);
-#endif
 }
 
 
@@ -157,7 +153,7 @@ BOOL CViewAXObjectPropPage::OnInitDialog()
 			sptrIApplication	sptrA_( GetAppUnknown() );
 			CString strType;
 			CString	strProgID_;
-			LONG_PTR	lDocTemplPos_;
+			long	lDocTemplPos_;
 
 			strType = m_grid.GetItemText(i+1,1);
 			if(strType=="Статистика")
@@ -302,7 +298,7 @@ void CViewAXObjectPropPage::ReBuildGridContent( int nFocusedRow, int nFocusedCol
 	::GetAllObjectTypes( arTypes, arUserNames );
 
 
-	LONG_PTR lPos = 0;
+	long lPos = 0;
 	sptrV->GetFirstObjectPosition( &lPos );
 	while( lPos )
 	{
@@ -396,7 +392,7 @@ void CViewAXObjectPropPage::SetComboBox( int nRow, int nColumn )
 		for (long nType = 0; nType < nTypesCounter; nType++)
 		{
 
-			LONG_PTR	lpos = 0;
+			long	lpos = 0;
 			// for all objects in type
 			sptrM->GetObjectFirstPosition(nType, &lpos);
 
@@ -478,7 +474,7 @@ BOOL CViewAXObjectPropPage::OnNotify(WPARAM wParam, LPARAM lParam, LRESULT* pRes
 			if( pnmgv->hdr.code == GVN_ENDLABELEDIT )
 			{
 				int nRow = pnmgv->iRow;	
-				LONG_PTR lPos = GetPositionByIndex(nRow - 1);
+				long lPos = GetPositionByIndex( nRow - 1 );				
 				int nCol = pnmgv->iColumn;
 				if( lPos > 0 && (nCol == 0 || nCol == 1 ) )
 				{
@@ -492,7 +488,7 @@ BOOL CViewAXObjectPropPage::OnNotify(WPARAM wParam, LPARAM lParam, LRESULT* pRes
 
 						bstrObjectName = bstrObjectType = 0;
 
-						LONG_PTR nSavePos = lPos;
+						long nSavePos = lPos;
 						sptrV->GetNextObject( &bstrObjectName, &bActiveObject, &bstrObjectType, &lPos );
 
 						CString strObjectName, strObjectType;
@@ -555,7 +551,7 @@ BOOL CViewAXObjectPropPage::OnNotify(WPARAM wParam, LPARAM lParam, LRESULT* pRes
 									punkDoc->Release();	
 									if( sptrDC )
 									{										
-										LONG_PTR lPos = 0;
+										long lPos = 0;
 										sptrDC->GetFirstObjectPos( _bstr_t( (LPCSTR)strObjectType ), 
 																	&lPos );
 										
@@ -608,7 +604,7 @@ BOOL CViewAXObjectPropPage::OnNotify(WPARAM wParam, LPARAM lParam, LRESULT* pRes
 						sptrIApplication	sptrA_( GetAppUnknown() );
 						CString strType;
 						CString	strProgID_;
-						LONG_PTR	lDocTemplPos_;
+						long	lDocTemplPos_;
 
 						strType = m_grid.GetItemText(i+1,1);
 						if(strType=="Статистика")
@@ -813,7 +809,7 @@ void CViewAXObjectPropPage::OnAdd()
 	if( sptrV == NULL )
 		return;
 
-	LONG_PTR lPos = GetPositionByIndex(nRow - 1);
+	long lPos = GetPositionByIndex( nRow - 1 );
 
 	sptrV->InsertAfter( lPos, _bstr_t(""), TRUE, _bstr_t(szTypeImage) );
 
@@ -821,14 +817,14 @@ void CViewAXObjectPropPage::OnAdd()
 }
 
 
-LONG_PTR CViewAXObjectPropPage::GetPositionByIndex(int nIndex)
+long CViewAXObjectPropPage::GetPositionByIndex( int nIndex )
 {
 	sptrIViewCtrl sptrV( GetViewAXControl() );
 	if( sptrV == NULL )
 		return -1;
 		
 	int i = 0;
-	LONG_PTR nPos = 0;
+	long nPos = 0;
 	sptrV->GetFirstObjectPosition( &nPos );
 	while( nPos )
 	{
@@ -853,7 +849,7 @@ void CViewAXObjectPropPage::OnDelete()
 	if( nRow < 0 )
 		return;
 
-	LONG_PTR lPos = GetPositionByIndex(nRow - 1);
+	long lPos = GetPositionByIndex( nRow - 1 );
 
 	sptrV->RemoveAt( lPos );
 	

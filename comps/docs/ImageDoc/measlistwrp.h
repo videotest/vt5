@@ -107,7 +107,7 @@ protected:
 	INamedDataObject2Ptr	m_ptrObjectList;
 	CMap<IUnknown*, IUnknown *&, POSITION, POSITION&>
 							m_mapPtrToPos;
-	CList<POSITION> m_sorted_list;
+	CList<long> m_sorted_list;
 
 	void _sort_list();
 };

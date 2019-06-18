@@ -475,7 +475,7 @@ void CPaletteCtrl::_SetCellsInfoArray()
 			m_ptrCellsInfo.Add(pCellInfo);
 		}
 	}
-	int nUpBound = (int)m_ptrCellsInfo.GetUpperBound();
+	int nUpBound = m_ptrCellsInfo.GetUpperBound();
 	m_sizeControl = CSize(30, 30);
 	if (nUpBound >= 0)
 	{

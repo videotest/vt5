@@ -156,7 +156,7 @@ protected:
 	CDWordList				m_listDelayExecFlags;
 	long					m_nRunningCount;
 	long					m_nInitRunningCount;
-	IActionTargetManager*	m_ptrTargetManager;	
+	IActionTargetManagerPtr	m_ptrTargetManager;	
 	CMap<CString, LPCSTR, DWORD, DWORD&>
 							m_mapOverridedStates;
 	HICON					m_hCurrentIcon;

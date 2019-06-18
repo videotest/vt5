@@ -1,4 +1,0 @@
-'state:function=StateMeasManualAngle2LineScript
-
-MethodMan.RenameCurrentStep Docs.LoadString ("Manual Measurements")
-ActionState.RunInteractive "MeasManualAngle2Line"

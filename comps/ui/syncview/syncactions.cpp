@@ -97,7 +97,7 @@ END_ACTION_ARG_LIST()
 static bool __Whether2ImageView(IUnknown *punkDoc, bool binclude_allview = false)
 {
 	IDocumentSitePtr ptrDS(punkDoc);
-	TPOS pos;
+	long pos;
 	int nViews = 0;
 	if (FAILED(ptrDS->GetFirstViewPosition(&pos)))
 		return false;

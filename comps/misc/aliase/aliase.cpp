@@ -8,11 +8,11 @@
 #include "action5.h"
 #include "data5.h"
 
-//#ifdef _DEBUG
-//#pragma comment (lib, "\\vt5\\common2\\debug\\common2.lib")
-//#else
-//#pragma comment (lib, "\\vt5\\common2\\release\\common2.lib")
-//#endif //_DEBUG#if 
+#ifdef _DEBUG
+#pragma comment (lib, "\\vt5\\common2\\debug\\common2.lib")
+#else
+#pragma comment (lib, "\\vt5\\common2\\release\\common2.lib")
+#endif //_DEBUG#if 
 
 
 //using namespace std;
@@ -447,7 +447,7 @@ BOOL APIENTRY DllMain( HANDLE hModule,
 		_dyncreate_t<App>::CreateObject();
 		App::instance()->Init( (HINSTANCE)hModule );
 
-		App::instance()->ObjectInfo( _dyncreate_t<CAliaseMan>::CreateObject, clsidAliaseMan, pszAliaseManProgID, (char*)pszAppAggrSection );
+		App::instance()->ObjectInfo( _dyncreate_t<CAliaseMan>::CreateObject, clsidAliaseMan, pszAliaseManProgID, pszAppAggrSection );
 
 		ClassFactory * pfactory = (ClassFactory*)ClassFactory::CreateObject();
 		pfactory->LoadObjectInfo();

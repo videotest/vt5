@@ -9,7 +9,7 @@
 LRESULT __stdcall WorkWindowProc( HWND hWnd, UINT nMessage, WPARAM wParam, LPARAM lParam )
 {
 	CMessageFilterImpl	*pFilter = (CMessageFilterImpl*)hWnd;
-	LRESULT lres = pFilter->DoMessage(nMessage, wParam, lParam);
+	long lres = pFilter->DoMessage( nMessage, wParam, lParam );
 	return lres;
 }
 
@@ -95,8 +95,8 @@ LRESULT	CWinImpl::DoMessage( UINT nMsg, WPARAM wParam, LPARAM lParam )
 	{
 	case WM_CREATE:			return DoCreate( (CREATESTRUCT*)lParam );
 	case WM_PAINT:			DoPaint();return 1;
-	case WM_COMMAND:		DoCommand( (UINT)wParam );return 1;
-	case WM_NOTIFY:			DoNotify( (UINT)wParam, (NMHDR*)lParam );
+	case WM_COMMAND:		DoCommand( wParam );return 1;
+	case WM_NOTIFY:			DoNotify( wParam, (NMHDR*)lParam );
 	case WM_GETINTERFACE:	return (LRESULT)this;
 	}
 
@@ -158,7 +158,7 @@ HRESULT	CWinImpl::HelpHitTest( POINT pt, BSTR *pbstrHelpFileName, DWORD *pdwTopi
 
 HRESULT	CWinImpl::PreTranslateMsg( MSG *pmsg, BOOL *pbReturn )
 {
-	TPOS pos = m_ptrsMsgListeners.head();
+	long pos = m_ptrsMsgListeners.head();
 	while( pos )
 	{
 		IMsgListenerPtr ptrML( m_ptrsMsgListeners.get(pos) );
@@ -200,7 +200,7 @@ HRESULT	CWinImpl::AttachMsgListener( IUnknown *punk )
 HRESULT	CWinImpl::DetachMsgListener( IUnknown *punk )
 {
 	IUnknownPtr ptr(punk);
-	TPOS pos = m_ptrsMsgListeners.find(ptr);
+	long pos = m_ptrsMsgListeners.find( ptr );
 	dbg_assert( pos!=0 );
 	if(pos) m_ptrsMsgListeners.remove(pos);
     return S_OK;
@@ -247,7 +247,7 @@ bool CWndClass::Register()
 
 	hInstance = App::handle();
 
-	m_bRegistred = ::RegisterClassEx((WNDCLASSEXA*)this) != 0;
+	m_bRegistred = ::RegisterClassEx( this ) != 0;
 	if( !m_bRegistred )
 		App::instance()->handle_error();
 

@@ -27,7 +27,7 @@ _ainfo_base::arg	CContinueCurvesInfo::s_pargs[] =
 static double inline sqr(double x)
 { return x*x; }
 
-static inline int iround(double x)
+static inline int round(double x)
 {
 	return int(floor(x+0.5));
 }
@@ -96,14 +96,14 @@ bool CContinueCurves::InvokeFilter()
 		}
 
 		int r=int(ceil(r_detector));
-		int na = iround(r_detector*8);
+		int na = round(r_detector*8);
 		smart_alloc(dx, double, na*2);
 		smart_alloc(dy, double, na*2);
 		smart_alloc(rr, double, na*2);
 		for(int i=0; i<na*2; i++)
 		{
-			dx[i] = iround(r_detector*cos(i*2*PI/na));
-			dy[i] = iround(r_detector*sin(i*2*PI/na));
+			dx[i] = round(r_detector*cos(i*2*PI/na));
+			dy[i] = round(r_detector*sin(i*2*PI/na));
 			rr[i] = r_detector / max(0.0001, cos(PI*i/na)) / 2;
 		}
 
@@ -184,7 +184,7 @@ bool CContinueCurves::InvokeFilter()
 						double step = 1/rr[cnt_max], step2 = sqrt(1-step*step);
 						for(int k=0; k<len1*0.5+rr[cnt_max]*0.5; k++)
 						{
-							int x = iround(fx), y = iround(fy);
+							int x = round(fx), y = round(fy);
 							if(x>=0 && x<cx && y>=0 && y<cy)
 							{
 								grayRows[y][x] = min(65535, grayRows[y][x]+8192);
@@ -203,7 +203,7 @@ bool CContinueCurves::InvokeFilter()
 						double step = 1/rr[cnt_max], step2 = sqrt(1-step*step);
 						for(int k=0; k<len1*0.5+rr[cnt_max]*0.5; k++)
 						{
-							int x = iround(fx), y = iround(fy);
+							int x = round(fx), y = round(fy);
 							if(x>=0 && x<cx && y>=0 && y<cy)
 							{
 								grayRows[y][x] = min(65535, grayRows[y][x]+8192);
@@ -224,8 +224,8 @@ bool CContinueCurves::InvokeFilter()
 						//	len = max(1, len);
 						//	for(int i=0; i<=len; i++)
 						//	{
-						//		int x = xA2 + iround( double(xB2-xA2)*i/len );
-						//		int y = yA2 + iround( double(yB2-yA2)*i/len );
+						//		int x = xA2 + round( double(xB2-xA2)*i/len );
+						//		int y = yA2 + round( double(yB2-yA2)*i/len );
 						//		grayRows[y][x] = min(65535, grayRows[y][x]+8192);
 						//	}
 						//}
@@ -236,8 +236,8 @@ bool CContinueCurves::InvokeFilter()
 						//	len = max(1, len);
 						//	for(int i=0; i<=len; i++)
 						//	{
-						//		int x = xA + iround( double(xB-xA)*i/len );
-						//		int y = yA + iround( double(yB-yA)*i/len );
+						//		int x = xA + round( double(xB-xA)*i/len );
+						//		int y = yA + round( double(yB-yA)*i/len );
 						//		grayRows[y][x] = min(65535, grayRows[y][x]+8192);
 						//	}
 						//}
@@ -249,8 +249,8 @@ bool CContinueCurves::InvokeFilter()
 							len = max(1, len);
 							for(int i=0; i<=len; i++)
 							{
-								int x = xA + iround( double(xA2-xA)*i/len );
-								int y = yA + iround( double(yA2-yA)*i/len );
+								int x = xA + round( double(xA2-xA)*i/len );
+								int y = yA + round( double(yA2-yA)*i/len );
 								grayRows[y][x] = min(65535, grayRows[y][x]+8192);
 							}
 							//grayRows[yA2][xA2] = min(65535, (grayRows[yA2][xA2]+65535)/2);
@@ -262,8 +262,8 @@ bool CContinueCurves::InvokeFilter()
 							len = max(1, len);
 							for(int i=0; i<=len; i++)
 							{
-								int x = xB + iround( double(xB2-xB)*i/len );
-								int y = yB + iround( double(yB2-yB)*i/len );
+								int x = xB + round( double(xB2-xB)*i/len );
+								int y = yB + round( double(yB2-yB)*i/len );
 								grayRows[y][x] = min(65535, grayRows[y][x]+8192);
 							}
 							//grayRows[yB2][xB2] = min(65535, (grayRows[yB2][xB2]+65535)/2);

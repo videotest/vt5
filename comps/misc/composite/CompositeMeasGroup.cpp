@@ -66,7 +66,7 @@ void CCompositeMeasGroup::add_value(CTreeNode* tn, CList<double>* values)
 			i++;
 			continue;
 		}
-		LPOS posValue;
+		long posValue;
 		co->GetValuePos(par->BaseParamKey, &posValue);
 		if(posValue)
 		{
@@ -441,7 +441,7 @@ ParameterDescriptor* CCompositeMeasGroup::find_parameter_desc(long key)
 		IMeasParamGroupPtr	ptrGroup( ptrG );
 
 		if( ptrGroup == 0 )continue;
-		LONG_PTR pos;
+		long pos;
 
 		ptrGroup->GetPosByKey(key,&pos);
 		if(pos)
@@ -495,7 +495,7 @@ void CCompositeMeasGroup::define_params()
 	while(pos)
 	{
 		PARAMETER* par = (PARAMETER*)m_Params.GetNext(pos);
-		LONG_PTR p,pp;
+		long p,pp;
 		IMeasParamGroupPtr group(this); 
 		group->GetPosByKey ( par->lKey, &p );
 		pp=p;

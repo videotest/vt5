@@ -136,7 +136,7 @@ protected:
 		com_call IsInNotify(long *pbFlag);
 	END_INTERFACE_PART(EvList)
 protected:
-	CPtrList	m_arrRegistredCtrls;
+	CPtrArray	m_arrRegistredCtrls;
 	int			m_nRegCounter;
 	bool		m_bInNotify;
 	bool		m_bLockNotification;

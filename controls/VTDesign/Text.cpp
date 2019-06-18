@@ -843,7 +843,7 @@ void CVTText::DrawContextGDI( HDC hDC, SIZE size/* in himetrics*/ )
 void CVTText::DrawContext( HDC hDC, SIZE size/* in himetrics*/ )	
 {
 #if defined(_USEGDIPLUS)
-	if (m_nDegree > 0 && m_strText.Find(_T('\n')) != -1)
+ 	if (m_nDegree > 0 && m_strText.Find(_T('\n')) != -1)
 		DrawContextGDIPlus(hDC, size);
 	else
 #endif
@@ -1056,7 +1056,7 @@ LRESULT CVTText::DefWindowProc(UINT message, WPARAM wParam, LPARAM lParam)
 {
 	if( message == WM_GETTEXT )
 	{
-		lstrcpyn((LPTSTR)lParam, (LPCTSTR)m_strText, (int)wParam);
+		lstrcpyn((LPTSTR)lParam, (LPCTSTR)m_strText, wParam);
 		if ((int)wParam > m_strText.GetLength())
 		wParam = m_strText.GetLength();
 		return TRUE;    

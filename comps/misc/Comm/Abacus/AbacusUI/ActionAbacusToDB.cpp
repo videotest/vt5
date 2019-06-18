@@ -40,7 +40,7 @@ bool CActionAbacusConnect::s_bConnected = false;
 bool CActionAbacusConnect::s_bAutoExecute = true;
 static int s_nTimerId = 0;
 
-void CALLBACK EXPORT TimerProc(HWND hWnd, UINT nMsg, UINT_PTR nIDEvent, DWORD dwTime)
+void CALLBACK EXPORT TimerProc(HWND hWnd, UINT nMsg, UINT nIDEvent, DWORD dwTime)
 {
 	DO_LOCK();
 	AFX_MANAGE_STATE(AfxGetStaticModuleState());
@@ -354,11 +354,11 @@ bool CActionAbacusToDB::Invoke()
 	if (!bOpen)
 		return false;
 
-	POSITION lPos = 0;
+	long lPos = 0;
 	_AbacusGetFirstRecordPosition(&lPos);
 	while(lPos)
 	{
-		POSITION lPrevPos = lPos;
+		long lPrevPos = lPos;
 		ABACUSRECORD *p;
 		_AbacusGetNextRecord(&lPos, &p);
 		if (ptrQ->Insert() != S_OK)

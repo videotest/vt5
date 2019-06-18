@@ -193,7 +193,7 @@ void CCrystalTextBuffer::InsertLine(LPCTSTR pszLine, int nLength /*= -1*/, int n
 		m_aLines.InsertAt(nPosition, li);
 
 #ifdef _DEBUG
-	int nLines = (int)m_aLines.GetSize();
+	int nLines = m_aLines.GetSize();
 	if (nLines % 5000 == 0)
 		TRACE1("%d lines loaded!\n", nLines);
 #endif
@@ -231,7 +231,7 @@ void CCrystalTextBuffer::AppendLine(int nLineIndex, LPCTSTR pszChars, int nLengt
 void CCrystalTextBuffer::FreeAll()
 {
 	//	Free text
-	int nCount = (int)m_aLines.GetSize();
+	int nCount = m_aLines.GetSize();
 	for (int I = 0; I < nCount; I ++)
 	{
 		if (m_aLines[I].m_nMax > 0)
@@ -240,7 +240,7 @@ void CCrystalTextBuffer::FreeAll()
 	m_aLines.RemoveAll();
 
 	//	Free undo buffer
-	int nBufSize = (int)m_aUndoBuf.GetSize();
+	int nBufSize = m_aUndoBuf.GetSize();
 	for (I = 0; I < nBufSize; I ++)
 		m_aUndoBuf[I].FreeText();
 	m_aUndoBuf.RemoveAll();
@@ -422,7 +422,7 @@ BOOL CCrystalTextBuffer::LoadFromFile(LPCTSTR pszFileName, int nCrlfStyle /*= CR
 			sptrApp->GetActionManager( &ptrAM );
 			IActionManager2Ptr sptrApp2 = ptrAM;
 
-			int nLineCount = (int)m_aLines.GetSize();
+			int nLineCount = m_aLines.GetSize();
 			for (int nLine = 0; nLine < nLineCount; nLine ++)
 			{
 				SLineInfo* pli = &m_aLines[nLine];
@@ -537,9 +537,9 @@ BOOL CCrystalTextBuffer::SaveToFile(LPCTSTR pszFileName, int nCrlfStyle /*= CRLF
 
 		ASSERT(nCrlfStyle >= 0 && nCrlfStyle <= 2);
 		const char *pszCRLF = crlfs[nCrlfStyle];
-		int nCRLFLength = (int)strlen(pszCRLF);
+		int nCRLFLength = strlen(pszCRLF);
 
-		int nLineCount = (int)m_aLines.GetSize();
+		int nLineCount = m_aLines.GetSize();
 		USES_CONVERSION;
 		for (int nLine = 0; nLine < nLineCount; nLine ++)
 		{
@@ -621,7 +621,7 @@ int CCrystalTextBuffer::GetLineCount()
 {
 	ASSERT(m_bInit);	//	Text buffer not yet initialized.
 						//	You must call InitNew() or LoadFromFile() first!
-	return (int)m_aLines.GetSize();
+	return m_aLines.GetSize();
 }
 
 int CCrystalTextBuffer::GetLineLength(int nLine)
@@ -664,7 +664,7 @@ static int FlagToIndex(DWORD dwFlag)
 
 int CCrystalTextBuffer::FindLineWithFlag(DWORD dwFlag)
 {
-	int nSize = (int)m_aLines.GetSize();
+	int nSize = m_aLines.GetSize();
 	for (int L = 0; L < nSize; L ++)
 	{
 		if ((m_aLines[L].m_dwFlags & dwFlag) != 0)
@@ -1149,7 +1149,7 @@ void CCrystalTextBuffer::AddUndoRecord(BOOL bInsert, const CPoint &ptStartPos, c
 	ASSERT(m_aUndoBuf.GetSize() == 0 || (m_aUndoBuf[0].m_dwFlags & UNDO_BEGINGROUP) != 0);
 	
 	//	Strip unnecessary undo records (edit after undo)
-	int nBufSize = (int)m_aUndoBuf.GetSize();
+	int nBufSize = m_aUndoBuf.GetSize();
 	if (m_nUndoPosition < nBufSize)
 	{
 		for (int I = m_nUndoPosition; I < nBufSize; I++)
@@ -1159,7 +1159,7 @@ void CCrystalTextBuffer::AddUndoRecord(BOOL bInsert, const CPoint &ptStartPos, c
 	
 	//	If undo buffer size is close to critical, remove the oldest records
 	ASSERT(m_aUndoBuf.GetSize() <= m_nUndoBufSize);
-	nBufSize = (int)m_aUndoBuf.GetSize();
+	nBufSize = m_aUndoBuf.GetSize();
 	if (nBufSize >= m_nUndoBufSize)
 	{
 		int nIndex = 0;
@@ -1188,7 +1188,7 @@ void CCrystalTextBuffer::AddUndoRecord(BOOL bInsert, const CPoint &ptStartPos, c
 	ur.SetText(pszText);
 	
 	m_aUndoBuf.Add(ur);
-	m_nUndoPosition = (int)m_aUndoBuf.GetSize();
+	m_nUndoPosition = m_aUndoBuf.GetSize();
 	
 	ASSERT(m_aUndoBuf.GetSize() <= m_nUndoBufSize);
 }
@@ -1323,7 +1323,7 @@ int CCrystalTextBuffer::FindNextBookmarkLine(int nCurrentLine)
 	if ((dwFlags & LF_BOOKMARKS) != 0)
 		nCurrentLine++;
 
-	int nSize = (int)m_aLines.GetSize();
+	int nSize = m_aLines.GetSize();
 	for (;;)
 	{ 
 		while (nCurrentLine < nSize)
@@ -1351,7 +1351,7 @@ int CCrystalTextBuffer::FindPrevBookmarkLine(int nCurrentLine)
 	if ((dwFlags & LF_BOOKMARKS) != 0)
 		nCurrentLine--;
 
-	int nSize = (int)m_aLines.GetSize();
+	int nSize = m_aLines.GetSize();
 	for (;;)
 	{ 
 		while (nCurrentLine >= 0)

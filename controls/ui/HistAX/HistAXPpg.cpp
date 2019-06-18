@@ -38,15 +38,7 @@ GUARD_IMPLEMENT_OLECREATE_CTRL(CHistAXPropPage, "HISTAX.HistAXPropPage.1",
 
 BOOL CHistAXPropPage::CHistAXPropPageFactory::UpdateRegistry(BOOL bRegister)
 {
-#if defined(NOGUARD)
-	if (bRegister)
-		return AfxOleRegisterPropertyPageClass(AfxGetInstanceHandle(),
-			m_clsid, IDS_HISTAX_PPG);
-	else
-		return AfxOleUnregisterClass(m_clsid, NULL);
-#else
 	return UpdateRegistryPage(bRegister, AfxGetInstanceHandle(), IDS_HISTAX_PPG);
-#endif
 }
 
 

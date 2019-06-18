@@ -107,7 +107,7 @@ HRESULT CManualMeasObject::XNotify::NotifySelect( bool bSelect )
 		ptrContainer->ParamDefByKey( lKey, &p );
 		if( p )ptrContainer->SetCurentPosition( p->lpos );
 
-		POSITION	lpos = 0;
+		long	lpos = 0;
 		INamedDataObject2Ptr	ptrList( ptrContainer );
 		ptrParent->GetObjectPosInParent( &lpos ); 
 		ptrList->SetActiveChild( lpos );
@@ -399,7 +399,7 @@ DWORD CManualMeasObject::GetNamedObjectFlags()
 	if( m_pParent )
 	{
 		ICalcObjectPtr	ptrCalc( m_pParent );
-		LPOS lExist = 0;
+		long	lExist = 0;
 		ptrCalc->GetFirstValuePos( &lExist );
 		if( lExist != 0 )ptrCalc->GetNextValue( &lExist, 0, 0 );
 
@@ -2090,7 +2090,7 @@ double _GetDistance(double x1_1, double y1_1, double x2_1, double y2_1,
 bool _GetMMObjectInfo(IUnknown *punkObj, _ParallelLineInfo &Info)
 {
 	INamedDataObject2Ptr sptrObj(punkObj);
-	TPOS lPosChild;
+	long lPosChild;
 	sptrObj->GetFirstChildPosition(&lPosChild);
 	while (lPosChild)
 	{
@@ -2174,7 +2174,7 @@ void CManualMeasObject::CalcParallelLinesMatrix(IUnknown *punkParent, IUnknown *
 	ICalcObjectContainerPtr sptrCOCObjLst(sptrObjList);
 	int k;
 	// Check for existance of necessary keys in container
-	LPOS lpos = 0;
+	long lpos = 0;
 	int nKeys = min(arrLines.GetSize(), m_arrKeys.GetSize());
 	IUnknownPtr pgroup(GetMeasManualGroup(),false);
 	IMeasParamGroupPtr	ptrGroup = pgroup;

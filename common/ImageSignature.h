@@ -262,9 +262,9 @@ static inline bool CheckFileSignature(const char *sz_file, bool bSimple=false)
 		if(!f) return false; // Нет файла
 
 		byte buf[1024];
-		while(size_t nRead = fread(buf,1,sizeof(buf),f))
+		while(int nRead = fread(buf,1,sizeof(buf),f))
 		{
-			MD5Update(&context, buf, (unsigned)nRead);
+			MD5Update(&context,buf,nRead);
 		}
 		MD5Final (digest,&context);
 		fclose(f);
@@ -298,9 +298,9 @@ static inline bool CreateFileSignature(const char *sz_file, bool bSimple=false)
 	if(!f) return false; // Нет файла
 
 	byte buf[1024];
-	while(size_t nRead = fread(buf,1,sizeof(buf),f))
+	while(int nRead = fread(buf,1,sizeof(buf),f))
 	{
-		MD5Update(&context, buf, (unsigned)nRead);
+		MD5Update(&context,buf,nRead);
 	}
 	MD5Final (digest,&context);
 	fclose(f);

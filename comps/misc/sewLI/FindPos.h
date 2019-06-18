@@ -3,7 +3,6 @@
 #include "iSewLI.h"
 
 bool CorrectPos(ISewImageList *pFragList, ISewFragment *pFrag, POINT ptOrig, POINT *pptRes);
-bool CorrectPos(ISewFragment *pFragBase, IImage3 *pimage, POINT ptOrig, POINT *pptRes);
 bool FindOptimalPosition(ISewImageList *pFragList, ISewFragment *pFragPrev, IImage3 *pimgNew, POINT *pptPos);
 bool FindOptimalPosition1(ISewImageList *pFragList, ISewFragment *pFragPrev, IImage3 *pimgNew, POINT *pptPos);
 bool FindOptimalPositionLive(ISewImageList *pFragList, ISewFragment *pFragPrev,

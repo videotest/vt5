@@ -150,7 +150,7 @@ IUnknown* CAdjustParams::GetContextObject(_bstr_t bstrName, _bstr_t bstrType)
 		return punkImage;
 	}
 
-	LONG_PTR lPos = 0;
+	long lPos = 0;
 	ptrC->GetFirstObjectPos( bstrType, &lPos );
 	
 	while( lPos )
@@ -214,11 +214,11 @@ HRESULT CAdjustParams::DoInvoke()
 			name[0]=0;
 		}
 
-		if(0==_stricmp("[LearningInfo]", section))
+		if(0==stricmp("[LearningInfo]", section))
 		{
-			if(0==_stricmp("ObjectsCount", name)) npat=atoi(val);
-			if(0==_stricmp("Keys", name)) ninp=GetIntArray(val,keys,MAXKEYS);
-			if(0==_stricmp("ClassCount", name)) nClasses=atoi(val);
+			if(0==stricmp("ObjectsCount", name)) npat=atoi(val);
+			if(0==stricmp("Keys", name)) ninp=GetIntArray(val,keys,MAXKEYS);
+			if(0==stricmp("ClassCount", name)) nClasses=atoi(val);
 			int n = atoi(name)-1;
 			if(n>=0 && n<npat)
 			{
@@ -339,15 +339,15 @@ HRESULT CAdjustParams::DoInvoke()
 
 	_ptr_t2 <CVector> in_new(nObjects);
 
-	TPOS pos = 0; long nObj = 0;
-	sptrList->GetFirstChildPosition(&pos);
+	long pos = 0, nObj = 0;
+	sptrList->GetFirstChildPosition((long*)&pos);
 	while (pos && nObj<nObjects)
 	{	// переберем объекты, переложим данные в массив
 		in_new[nObj].Alloc(ninp);
 		RF(ninp==in_new[nObj].m_size);
 
 		IUnknownPtr sptr;
-		sptrList->GetNextChild(&pos, &sptr);
+		sptrList->GetNextChild((long*)&pos, &sptr);
 
 		ICalcObjectPtr sptrCalc(sptr);
 		RF(sptrCalc!=0);
@@ -470,12 +470,12 @@ HRESULT CAdjustParams::DoInvoke()
 
 	// собственно масштабирование:
 	{
-		TPOS pos = 0; long nObj = 0;
-		sptrList->GetFirstChildPosition(&pos);
+		long pos = 0, nObj = 0;
+		sptrList->GetFirstChildPosition((long*)&pos);
 		while (pos && nObj<nObjects)
 		{	// переберем объекты, переложим данные в массив
 			IUnknownPtr sptr;
-			sptrList->GetNextChild(&pos, &sptr);
+			sptrList->GetNextChild((long*)&pos, &sptr);
 
 			ICalcObjectPtr sptrCalc(sptr);
 			RF(sptrCalc!=0);

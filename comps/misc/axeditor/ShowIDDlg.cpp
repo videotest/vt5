@@ -78,7 +78,7 @@ BOOL CShowIDDlg::OnInitDialog()
 
 	MoveWindow( rectDlg );
 
-	POSITION	lpos = 0;
+	long	lpos = 0;
 
 	INamedDataObject2Ptr	ptrN( m_pa->m_form );
 

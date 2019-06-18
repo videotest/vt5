@@ -16,9 +16,9 @@
 //debug support
 #include "\vt5\com_base\com_defs.h"
 #include "\vt5\com_base\debug_misc.h"			
-//#ifdef _DEBUG
-//#define new DBG_NEW
-//#endif
+#ifdef _DEBUG
+#define new DBG_NEW
+#endif
 
 #include "misc_classes.h"
 

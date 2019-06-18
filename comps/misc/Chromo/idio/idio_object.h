@@ -177,9 +177,9 @@ public:
 
 	_list_t2<band*, free_band>	bands;
 protected:
-	TPOS _get_pos_by_id(int nID);
-	HRESULT _set_bend_params( TPOS lPos, const double *pos1 = 0, const double *pos2 = 0, const int *color = 0, const BSTR *sz_number = 0, const int *flags = 0 );
-	HRESULT _get_bend_params(TPOS lPos, double *pos1 = 0, double *pos2 = 0, int *color = 0, BSTR *sz_number = 0, int *flags = 0);
+	long _get_pos_by_id( int nID );
+	HRESULT _set_bend_params( long lPos, const double *pos1 = 0, const double *pos2 = 0, const int *color = 0, const BSTR *sz_number = 0, const int *flags = 0 );
+	HRESULT _get_bend_params( long lPos, double *pos1 = 0, double *pos2 = 0, int *color = 0, BSTR *sz_number = 0, int *flags = 0 );
 
 	HBRUSH _create_brush( int nType);
 	void _calc_level( char *sz_number, band *pbend  );

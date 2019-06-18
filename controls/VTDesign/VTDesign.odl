@@ -4,15 +4,15 @@
 // produce the type library (VTDesign.tlb) that will become a resource in
 // VTDesign.ocx.
 
+#include <olectl.h>
+#include <idispids.h>
+
 [ uuid(BC127B08-026C-11D4-8124-0000E8DF68C3), version(1.0),
   helpfile("VTDesign.hlp"),
   helpstring("VTDesign ActiveX Control module"),
   control ]
 library VTDESIGNLib
 {
-#include <olectl.h>
-#include <idispids.h>
-
 	importlib(STDOLE_TLB);
 	importlib(STDTYPE_TLB);
 

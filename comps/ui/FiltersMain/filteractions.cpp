@@ -459,7 +459,7 @@ bool CActionEqualHists::InvokeFilter()
 
 	long	cx0 = image0.GetWidth(), cy0 = image0.GetHeight();
 	long	cx1 = image1.GetWidth(), cy1 = image1.GetHeight();
-		
+
 	double	dCoef = double(cx0*cy0)/double(cx1*cy1);
 		
 	CImageWrp	imageNew( GetDataResult() );
@@ -523,10 +523,10 @@ bool CActionEqualHists::InvokeFilter()
 
 			Notify(y);
 		}
-	
+
 		for (int nClr = 0; nClr < MaxColor+1; nClr++)
 			plHistResult[nClr] = (long)(dCoef*plHistResult[nClr]);
-
+	
 #if 0
 		for (lCurrColor = 0; lCurrColor < MaxColor; lCurrColor++)
 		{
@@ -547,7 +547,7 @@ bool CActionEqualHists::InvokeFilter()
 			{
 				plColorCoding[lDestColor-1] = lCurrColor-1;
 			}
-			
+
 			while( (dwDestColorSum <= dwCurColorSum) && (lDestColor < MaxColor) )
 			{
 				dwDestColorSum+=plHistResult[lDestColor];

@@ -1,6 +1,7 @@
+; Fish.def : Declares the module parameters for the DLL.
+
 LIBRARY      "Fish"
+DESCRIPTION  'Fish Windows Dynamic Link Library'
+
 EXPORTS
-	DllCanUnloadNow PRIVATE
-	DllGetClassObject PRIVATE
-	DllRegisterServer PRIVATE
-	DllUnregisterServer PRIVATE
+    ; Explicit exports can go here

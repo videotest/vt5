@@ -66,7 +66,7 @@ HRESULT	CActionExportBrightness::GetActionState(DWORD *pdwState)
 
 	if( sptr_ndo != 0 )
 	{
-		POSITION lpos_chld = 0; 
+		long lpos_chld = 0; 
         sptr_ndo->GetActiveChild( &lpos_chld );
 		if( lpos_chld )
 				*pdwState |= afEnabled;
@@ -91,7 +91,7 @@ HRESULT	CActionExportBrightness::DoInvoke()
 	if( sptr_ndo == 0 )
 		return E_FAIL;
 	
-	POSITION lpos_chld = 0; 
+	long lpos_chld = 0; 
     sptr_ndo->GetActiveChild( &lpos_chld );
 	if( !lpos_chld )
 		return E_FAIL;

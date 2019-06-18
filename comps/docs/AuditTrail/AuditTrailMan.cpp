@@ -187,7 +187,7 @@ void CAuditTrailMan::OnNotify( const char *pszEvent, IUnknown *punkHit, IUnknown
 											IFilterActionPtr sptrFilterAction(punkAction);
 											if(sptrFilterAction != 0)
 											{
-												TPOS nPos = 0;
+												long nPos = 0;
 												sptrFilterAction->GetFirstArgumentPosition(&nPos);
 												IUnknown* punkDataObject = 0;
 												bool bFound = false;
@@ -283,7 +283,7 @@ void CAuditTrailMan::CreateAT(IUnknown* punkDoc, CString strAction, CString strP
 		if(sptrContext == 0)
 			return;	
 
-		LONG_PTR lPos = 0;
+		long lPos = 0;
 		sptrContext->GetFirstObjectPos(_bstr_t(szArgumentTypeImage), &lPos);
 		while(lPos)
 		{
@@ -428,7 +428,7 @@ void CAuditTrailMan::_MakeUniqueName(IUnknown* punkDoc, CString& strName)
 
 	CStringArray strArray;
 	bool bPresentSameName = false;
-	LONG_PTR lPos = 0;
+	long lPos = 0;
 	sptrContext->GetFirstObjectPos(_bstr_t(szTypeAuditTrailObject), &lPos);
 	while(lPos)
 	{
@@ -579,7 +579,7 @@ void CAuditTrailMan::ProcessAction(IUnknown* punkHit)
 	{
 
 		//change target image
-		TPOS nPos = 0;
+		long nPos = 0;
 		sptrFilterAction->GetFirstArgumentPosition(&nPos);
 		IUnknown* punkDataObject = 0;
 		bool bFoundInAT = false;
@@ -776,7 +776,7 @@ bool CAuditTrailMan::CheckAuditAlive(ATinfo* pATinfo)
 	IDataContext2Ptr sptrContext(pATinfo->sptrDoc);
 	if(sptrContext != 0)
 	{
-		LONG_PTR lPos = 0;
+		long lPos = 0;
 		sptrContext->GetFirstObjectPos(_bstr_t(szTypeAuditTrailObject), &lPos);
 		while(lPos)
 		{

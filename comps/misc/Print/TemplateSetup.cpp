@@ -237,13 +237,13 @@ void CTemplateSetup::FillComboBoxes()
 	if( sptrA != NULL )
 	{			
 
-		LONG_PTR	lPosTemplate = 0;
+		long	lPosTemplate = 0;
 		
 		sptrA->GetFirstDocTemplPosition( &lPosTemplate );
 		
 		while( lPosTemplate )
 		{
-			LONG_PTR	lPosDoc = 0;
+			long	lPosDoc = 0;
 
 			sptrA->GetFirstDocPosition( lPosTemplate, &lPosDoc );
 
@@ -283,7 +283,7 @@ void CTemplateSetup::FillComboBoxes()
 
 					if (nCount)
 					{
-						TPOS lPos = 0;
+						long lPos = 0;
 						sptrC->GetFirstChildPos(bstrType, 0, &lPos);
 						while (lPos)
 						{
@@ -560,7 +560,7 @@ BOOL  CTemplateSetup::GenerateNewTemplate( CString strBaseTempl,
 
 					if (nObjCountOfType)
 					{
-						TPOS lPos = 0;
+						long lPos = 0;
 						sptrC->GetFirstChildPos(bstrType, 0, &lPos);
 						while (lPos)
 						{

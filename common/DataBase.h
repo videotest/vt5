@@ -102,23 +102,23 @@ public:
 
 		
 		com_call GetChildsCount( long *plCount );
-		com_call GetFirstChildPosition(POSITION *plPos);
-		com_call GetNextChild(POSITION *plPos, IUnknown **ppunkChild);
-		com_call GetLastChildPosition(POSITION *plPos);
-		com_call GetPrevChild(POSITION *plPos, IUnknown **ppunkChild);
+		com_call GetFirstChildPosition( long *plPos );
+		com_call GetNextChild( long *plPos, IUnknown **ppunkChild );
+		com_call GetLastChildPosition(long *plPos);
+		com_call GetPrevChild(long *plPos, IUnknown **ppunkChild);
 
 		com_call AttachData( IUnknown *punkNamedData );
 		com_call GetObjectFlags( DWORD *pdwObjectFlags );
 
-		com_call SetActiveChild(POSITION lPos);
-		com_call GetActiveChild(POSITION *plPos);
+		com_call SetActiveChild( long lPos );
+		com_call GetActiveChild( long *plPos );
 		com_call SetUsedFlag( BOOL bSet );
 		com_call SetHostedFlag( BOOL bSet );
 		com_call GetData(IUnknown **ppunkNamedData );
 
-		com_call GetObjectPosInParent(POSITION *plPos);
-		com_call SetObjectPosInParent(POSITION lPos);
-		com_call GetChildPos(IUnknown *punkChild, POSITION *plPos);
+		com_call GetObjectPosInParent( long *plPos );
+		com_call SetObjectPosInParent( long lPos ); 
+		com_call GetChildPos(IUnknown *punkChild, long *plPos);
 		com_call InitAttachedData();
 
 		com_call GetBaseKey(GUID * pBaseKey);
@@ -168,14 +168,14 @@ protected:
 	
 	virtual bool ExchangeDataWithParent( DWORD flags ){return true;};	//data exchange between parent and child
 	virtual bool SerializeObject( CStreamEx& ar, SerializeParams *pparams );
-	virtual bool DoSetActiveChild( TPOS pos ){return false;};
-	virtual TPOS DoGetActiveChild(){ return 0; };
+	virtual bool DoSetActiveChild( POSITION pos ){return false;};
+	virtual POSITION DoGetActiveChild(){return 0;};
 
 	virtual DWORD GetNamedObjectFlags();	//return the object flags
 
 	//events
-	virtual void OnAddChild(IUnknown *punkNewChild, POSITION pos){};
-	virtual void OnDeleteChild(IUnknown *punkChildToDelete, POSITION pos){};
+	virtual void OnAddChild( IUnknown *punkNewChild, POSITION pos ){};
+	virtual void OnDeleteChild( IUnknown *punkChildToDelete, POSITION pos ){};
 	virtual void OnBeforeSerialize( CStreamEx& ar ){};
 	virtual void OnAfterSerialize( CStreamEx& ar ){};
 	virtual void OnSetParent( IUnknown *punkNewParent ){};
@@ -193,10 +193,10 @@ protected:
 protected:
 	POSITION	GetFirstChildPosition();
 	POSITION	GetLastChildPosition();
-	IUnknown	*GetNextChild(POSITION &pos);
+	IUnknown	*GetNextChild( POSITION &pos );
 	IUnknown	*GetPrevChild(POSITION & pos);
 
-	POSITION _FindChild(IUnknown *punkChild);
+	POSITION		_FindChild( IUnknown *punkChild );
 	virtual void	_DetachChildParent();
 
 	void ErrorMsg(UINT nErrorID);
@@ -293,13 +293,13 @@ class std_dll CDataObjectListBase : public CDataObjectBase
 public:
 	CDataObjectListBase();
 protected:
-	virtual void OnAddChild(IUnknown *punkNewChild, TPOS pos);
-	virtual void OnDeleteChild(IUnknown *punkChildToDelete, TPOS pos);
+	virtual void OnAddChild( IUnknown *punkNewChild, POSITION pos );
+	virtual void OnDeleteChild( IUnknown *punkChildToDelete, POSITION pos );
 	virtual void OnBeforeSerialize( CStreamEx& ar );
 	virtual void OnAfterSerialize( CStreamEx& ar );
 
-	virtual bool DoSetActiveChild(TPOS pos);
-	virtual TPOS DoGetActiveChild();
+	virtual bool DoSetActiveChild( POSITION pos );
+	virtual POSITION DoGetActiveChild();
 
 	void UpdateActiveObject();
 	void UpdateObject(IUnknown* punkObj);
@@ -323,8 +323,8 @@ protected:
 		afx_msg long GetCount();		
 		afx_msg LPDISPATCH GetObject(long nPos);		
 		afx_msg long AddObject(LPDISPATCH pdispObject);		
-		afx_msg void RemoveObject(INT_PTR nIndex);
-		afx_msg void RemoveObjectByPos(TPOS nPos);
+		afx_msg void RemoveObject(long nPos);		
+		afx_msg void RemoveObjectByPos(long nPos);
 		afx_msg void MakeEmpty();		
 		afx_msg void disp_UpdateObject(VARIANT FAR* pvarObj);
 	//}}AFX_DISPATCH
@@ -332,7 +332,7 @@ protected:
 protected:
 
 	bool		m_bLockUpdate;
-	TPOS	m_posActiveObject;
+	POSITION	m_posActiveObject;
 
 };
 

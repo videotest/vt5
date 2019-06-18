@@ -102,7 +102,7 @@ public:
 	static void free_render( render *p )
 	{delete p;}
 	void set_layout( layout_side left, layout_side top, layout_side right, layout_side bottom );
-	TPOS insert_child(render *p, TPOS lpos_before = 0);
+	long insert_child( render *p, long lpos_before=0 );
 
 	virtual void deinit()	{m_childs.clear();}
 
@@ -165,7 +165,7 @@ inline bool render::mouse_leave( const _point &point )
 
 inline bool render::mouse_move( const _point &point )
 {
-	TPOS	lpos;
+	long	lpos;
 	render	*pmoused = 0;
 
 	for( lpos = m_childs.head(); lpos; lpos = m_childs.next( lpos ) )
@@ -232,7 +232,7 @@ inline long render::calc_side( const RECT &rectOld, render *p, layout_side_index
 	}
 	case store_prev_top:
 	{
-		for( TPOS lpos = m_childs.head(); lpos; lpos = m_childs.next( lpos ) )
+		for( long lpos = m_childs.head(); lpos; lpos = m_childs.next( lpos ) )
 			if( m_childs.get( lpos ) == p )break;
 
 		if( lpos )
@@ -262,7 +262,7 @@ inline void render::layout( const RECT &rect )
 	_rect	rectOld = m_rect;
 	m_rect = rect;
 
-	for (TPOS lpos = m_childs.head(); lpos; lpos = m_childs.next(lpos))
+	for( long lpos = m_childs.head(); lpos; lpos = m_childs.next( lpos ) )
 	{
 		render	*p = m_childs.get( lpos );
 
@@ -285,7 +285,7 @@ inline void render::layout( const RECT &rect )
 }
 inline void render::paint( HDC hdc )
 {
-	for (TPOS lpos = m_childs.head(); lpos; lpos = m_childs.next(lpos))
+	for( long lpos = m_childs.head(); lpos; lpos = m_childs.next( lpos ) )
 	{
 		render	*p = m_childs.get( lpos );
 
@@ -311,7 +311,7 @@ inline void render::set_layout( layout_side left, layout_side top, layout_side r
 	m_layouts[lsi_bottom] = bottom;
 
 }
-inline TPOS render::insert_child(render *p, TPOS lpos_before)
+inline long render::insert_child( render *p, long lpos_before )
 {
 	p->set_parent( this );
 	return m_childs.insert_before( p, lpos_before );
@@ -821,7 +821,7 @@ inline void render_menu::add_item( const _char *psz, UINT id )
 
 inline void render_menu::make_item_red( unsigned cmd, bool is_red )
 {
-	for (TPOS lpos = m_items.head(); lpos; lpos = m_items.next(lpos))
+	for( long lpos = m_items.head(); lpos; lpos = m_items.next( lpos ) )
 	{
 		item	*pi = m_items.get( lpos );
 		if( pi->id == cmd )
@@ -875,7 +875,7 @@ inline void render_menu::layout( const RECT &rect )
 
 	long	start_y = m_rect.top+m_yofs;
 
-	for (TPOS lpos = m_items.head(); lpos; lpos = m_items.next(lpos))
+	for( long lpos = m_items.head(); lpos; lpos = m_items.next( lpos ) )
 	{
 		item	*pitem = m_items.get( lpos );
 		_rect	&rect = pitem->rect;
@@ -899,7 +899,7 @@ inline void render_menu::paint( HDC hdc )
 	HFONT	hfont = create_font(), 
 		hfontold = (HFONT)::SelectObject( hdc, hfont );
 
-	for (TPOS lpos = m_items.head(); lpos; lpos = m_items.next(lpos))
+	for( long lpos = m_items.head(); lpos; lpos = m_items.next( lpos ) )
 	{
 		item	*pitem = m_items.get( lpos );		
 		
@@ -939,7 +939,7 @@ inline void render_menu::paint( HDC hdc )
 
 inline bool render_menu::mouse_leave( const _point &point )
 {
-	for (TPOS lpos = m_items.head(); lpos; lpos = m_items.next(lpos))
+	for( long lpos = m_items.head(); lpos; lpos = m_items.next( lpos ) )
 	{
 		item	*pitem = m_items.get( lpos );
 		if( pitem->hilighted )
@@ -955,7 +955,7 @@ inline bool render_menu::mouse_leave( const _point &point )
 inline bool render_menu::mouse_move( const _point &point )
 {
 	bool	need_send_message = false;
-	for (TPOS lpos = m_items.head(); lpos; lpos = m_items.next(lpos))
+	for( long lpos = m_items.head(); lpos; lpos = m_items.next( lpos ) )
 	{
 		item	*pitem = m_items.get( lpos );
 		bool	hilight = 	pitem->rect.pt_in_rect( point );
@@ -982,7 +982,7 @@ inline bool render_menu::mouse_move( const _point &point )
 
 inline bool render_menu::mouse_click( const _point &point )
 {
-	for (TPOS lpos = m_items.head(); lpos; lpos = m_items.next(lpos))
+	for( long lpos = m_items.head(); lpos; lpos = m_items.next( lpos ) )
 	{
 		item	*pitem = m_items.get( lpos );
 
@@ -1029,7 +1029,7 @@ inline _logfont *logfont_from_render( render *p )
 		return 0;
 }
 
-inline render *render_from_pos(TPOS lpos)
+inline render *render_from_pos( long lpos )
 {
 	return _list_t<render*>::get( lpos );
 };

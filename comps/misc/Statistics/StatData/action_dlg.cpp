@@ -25,7 +25,7 @@ CDeleteObjectDlg::~CDeleteObjectDlg()
 }
 
 //////////////////////////////////////////////////////////////////////
-LRESULT CDeleteObjectDlg::on_initdialog()
+long CDeleteObjectDlg::on_initdialog()
 {
 	long lres = dlg_impl::on_initdialog();
 
@@ -42,7 +42,7 @@ LRESULT CDeleteObjectDlg::on_initdialog()
 }
 
 //////////////////////////////////////////////////////////////////////
-LRESULT CDeleteObjectDlg::on_command(uint cmd)
+long CDeleteObjectDlg::on_command( uint cmd )
 {
 	if( cmd == IDC_RADIO_OBJECT_LIST || cmd == IDC_RADIO_IMAGE )
 	{
@@ -89,7 +89,7 @@ void CDeleteObjectDlg::fill_combos()
 	_list_map_t<long, bstr_t, cmp_bstr_t> list_ol;
 	
 
-	TPOS lpos = 0;
+	long lpos = 0;
 	m_ptr_table->GetFirstGroupPos( &lpos );
 	while( lpos )
 	{
@@ -112,7 +112,7 @@ void CDeleteObjectDlg::fill_combos()
 	HWND hwnd = ::GetDlgItem( handle(), IDC_OBJECT_LIST );
 	if( hwnd )
 	{
-		for (TPOS lpos = list_ol.head(); lpos; lpos = list_ol.next(lpos))
+		for( long lpos=list_ol.head(); lpos; lpos=list_ol.next(lpos) )
 		{
 			_bstr_t bstr = list_ol.get_key( lpos );
 			::SendMessage( hwnd, CB_ADDSTRING, 0, (LPARAM)(LPCTSTR)bstr );
@@ -123,7 +123,7 @@ void CDeleteObjectDlg::fill_combos()
 	hwnd = ::GetDlgItem( handle(), IDC_IMAGE );
 	if( hwnd )
 	{
-		for (TPOS lpos = list_image.head(); lpos; lpos = list_image.next(lpos))
+		for( long lpos=list_image.head(); lpos; lpos=list_image.next(lpos) )
 		{
 			_bstr_t bstr = list_image.get_key( lpos );
 			::SendMessage( hwnd, CB_ADDSTRING, 0, (LPARAM)(LPCTSTR)bstr );
@@ -190,7 +190,7 @@ void CCustomizeDlg::set_col_info( col_info* parr, size_t size )
 }
 
 //////////////////////////////////////////////////////////////////////
-LRESULT CCustomizeDlg::on_initdialog()
+long CCustomizeDlg::on_initdialog()
 {
 	long lres = dlg_impl::on_initdialog();
 
@@ -262,7 +262,7 @@ LRESULT CCustomizeDlg::on_initdialog()
 }
 
 //////////////////////////////////////////////////////////////////////
-LRESULT CCustomizeDlg::on_command(uint cmd)
+long CCustomizeDlg::on_command( uint cmd )
 {
 	if( cmd == IDC_MOVE_UP )
 	{
@@ -325,7 +325,7 @@ void CCustomizeDlg::on_ok()
 }
 
 //////////////////////////////////////////////////////////////////////
-LRESULT CCustomizeDlg::on_notify(uint idc, NMHDR *pnmhdr)
+long CCustomizeDlg::on_notify( uint idc, NMHDR *pnmhdr )
 {
 	if( idc == IDC_LIST && pnmhdr->code == LVN_ITEMCHANGED )
 	{

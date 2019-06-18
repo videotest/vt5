@@ -24,8 +24,6 @@ IMPLEMENT_DYNCREATE(CJPGFileFilter, CCmdTargetEx)
 GUARD_IMPLEMENT_OLECREATE(CJPGFileFilter, "FileFilters.JPGFileFilter", 0xa1618774, 0x6aa5, 0x11d3, 0xa4, 0xed, 0x0, 0x0, 0xb4, 0x93, 0xa1, 0x87)
 
 CJPGFileFilter* jpgFilter;
-bool jpgFirstTime;
-
 
 CJPGFileFilter::CJPGFileFilter()
 {
@@ -63,6 +61,7 @@ void jpgMonitorHandler(const char *msg,const unsigned int curPos,const unsigned 
 	jpgFilter->Notify(curPos);
 }
 
+
 void CJPGFileFilter::OnSetHandlers()
 {
 	//if(jpgFilter == NULL)
@@ -71,7 +70,7 @@ void CJPGFileFilter::OnSetHandlers()
 	m_oldMonitorHandle = SetMonitorHandler(jpgMonitorHandler);
 }
 
-
+/*
 void JPGErrorHandler(const unsigned int error,const char *message, const char *qualifier)
 {
   DestroyDelegateInfo();
@@ -91,7 +90,7 @@ void JPGMonitorHandler(const char *msg,const unsigned int curPos,const unsigned 
 
 /////////////////////////////////////////////////////////////////////////////
 // CJPGFileFilter message handlers
-
+/*
 bool CJPGFileFilter::ReadFile( const char *pszFileName )
 {
 	//CTimeTest timeTest(true, pszFileName, false);
@@ -129,6 +128,12 @@ bool CJPGFileFilter::ReadFile( const char *pszFileName )
 		strColorSpace = "GRAY";
 	else if (image->colorspace == YUVColorspace) 
 		strColorSpace = "YUV";
+	
+
+	color* pColor1 = NULL;
+	color* pColor2 = NULL;
+	color* pColor3 = NULL;
+	color* pColor4 = NULL;
 
 	IUnknown	*punk = CreateNamedObject( GetDataObjectType(0) );
 
@@ -142,7 +147,7 @@ bool CJPGFileFilter::ReadFile( const char *pszFileName )
 	if (!NameExists && punk)
 	{
 		// set this name to object
-		INamedObject2Ptr sptrObj(punk);
+		sptrINamedObject2 sptrObj(punk);
 		sptrObj->SetName(bstrName);
 	}
 	
@@ -167,21 +172,31 @@ bool CJPGFileFilter::ReadFile( const char *pszFileName )
 		FinishNotification();
 		return false;
 	}
-	color **pColor = new color*[numPanes];
- 
+
 	NextNotificationStage();
 
-	for (unsigned i = 0; i < image->rows; i++)
+	for (int i = 0; i < image->rows; i++)
 	{
-		for(int j = 0; j < numPanes; j++)
+		if (numPanes == 1)
+			pColor1 = sptrI.GetRow(i, 0);
+		else if (numPanes == 3)
 		{
-			pColor[j] = sptrI.GetRow(i, j);
+			pColor1 = sptrI.GetRow(i, 0);
+			pColor2 = sptrI.GetRow(i, 1);
+			pColor3 = sptrI.GetRow(i, 2);
+		}	
+		else if (numPanes == 4)
+		{
+			pColor1 = sptrI.GetRow(i, 0);
+			pColor2 = sptrI.GetRow(i, 1);
+			pColor3 = sptrI.GetRow(i, 2);
+			pColor4 = sptrI.GetRow(i, 3);
 		}
-		FillVTImageRow(image, i, pColor, numPanes);
+	
+		FillVTImageRow(image, i, pColor1, pColor2, pColor3, pColor4);
 		Notify(i);
 	}
-	delete []pColor;
-
+	
 	SetErrorHandler(oldErrorHandle);
 
 	FinishNotification();
@@ -247,6 +262,13 @@ bool CJPGFileFilter::WriteFile( const char *pszFileName )
 	else if (img.GetColorConvertor() == "YUV") 
 		image->colorspace = YUVColorspace;
 
+
+	color* pColor1 = NULL;
+	color* pColor2 = NULL;
+	color* pColor3 = NULL;
+	color* pColor4 = NULL;
+
+
 	int numPanes = 0;
 	numPanes = img.GetColorsCount();
 
@@ -256,20 +278,31 @@ bool CJPGFileFilter::WriteFile( const char *pszFileName )
 		FinishNotification();
 		return false;
 	}
-	color **pColor =new color*[numPanes];
 
 	NextNotificationStage();
 	
-	for (unsigned i = 0; i < image->rows; i++)
+	for (int i = 0; i < image->rows; i++)
 	{
-		for(int j = 0; j < numPanes; j++)
+		if (numPanes == 1)
+			pColor1 = img.GetRow(i, 0);
+		else if (numPanes == 3)
 		{
-			pColor[j] = img.GetRow(i, j);
+			pColor1 = img.GetRow(i, 0);
+			pColor2 = img.GetRow(i, 1);
+			pColor3 = img.GetRow(i, 2);
+		}	
+		else if (numPanes == 4)
+		{
+			pColor1 = img.GetRow(i, 0);
+			pColor2 = img.GetRow(i, 1);
+			pColor3 = img.GetRow(i, 2);
+			pColor4 = img.GetRow(i, 3);
 		}
-		FillMagickImageRow(image, i, pColor, numPanes);
+	
+		FillMagickImageRow(image, i, pColor1, pColor2, pColor3, pColor4);
 		Notify(i);
 	}
-	delete []pColor;
+	
 
 	strcpy(image_info.filename,pszFileName);
 	strcpy(image->filename,pszFileName);
@@ -281,3 +314,4 @@ bool CJPGFileFilter::WriteFile( const char *pszFileName )
 
 	return true;
 }
+*/

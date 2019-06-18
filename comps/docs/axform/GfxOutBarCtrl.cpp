@@ -373,7 +373,7 @@ void CGfxOutBarCtrl::OnPaint()
 	if (!GetFolderChild()) pDC->FillSolidRect(rc, crBackGroundColor);
 
 
-	int max = (int)arFolder.GetSize();
+	int max = arFolder.GetSize();
 	CRect frc;
 	if(m_bUseAdvMode)
 	{
@@ -439,7 +439,7 @@ BOOL CGfxOutBarCtrl::OnEraseBkgnd(CDC* pDC)
 
 bool CGfxOutBarCtrl::GetFolderRect(const int iIndex, CRect & rect) const
 {
-	int max = (int)arFolder.GetSize();
+	int max = arFolder.GetSize();
 	ASSERT(iIndex >= 0 && iIndex < max);
 
 	if (iIndex >= 0 && iIndex < max)
@@ -560,7 +560,7 @@ int CGfxOutBarCtrl::AddFolder(const char * cFolderName, const DWORD exData)
 	ASSERT(pbf);
 	arFolder.Add((void *)pbf);
 
-	return (int)arFolder.GetSize() - 1;
+	return arFolder.GetSize() - 1;
 }
 
 CGfxOutBarCtrl::CBarFolder::CBarFolder(const char * name, DWORD exData)
@@ -593,7 +593,7 @@ void CGfxOutBarCtrl::GetInsideRect(CRect & rect) const
 	GetClientRect(rect);
 	if (arFolder.GetSize() > 0 && m_bUseAdvMode)
 	{
-		int max = (int)arFolder.GetSize();
+		int max = arFolder.GetSize();
 		rect.top += iFolderHeight * (iSelFolder + 1) - 1;//+ 2;
 		rect.bottom -= (max - iSelFolder - 1)*iFolderHeight;
 		return;
@@ -628,7 +628,7 @@ int CGfxOutBarCtrl::HitTestEx(const CPoint & point, int &index)
 	if (bUpArrow && rcUpArrow.PtInRect(point)) return htUpScroll;
 	if (bDownArrow && rcDownArrow.PtInRect(point)) return htDownScroll;
 
-	int max = (int)arFolder.GetSize(), t;
+	int max = arFolder.GetSize(), t;
 
 	CRect rc;
 	for (t = 0; t < max; t++)
@@ -1333,7 +1333,7 @@ void CGfxOutBarCtrl::SetSelFolder(const int index)
 							
 int CGfxOutBarCtrl::GetFolderCount() const
 {
-	return (int)arFolder.GetSize();
+	return arFolder.GetSize();
 }
 
 int CGfxOutBarCtrl::GetSelFolder() const
@@ -1437,7 +1437,7 @@ CGfxOutBarCtrl::CBarItem::~CBarItem()
 
 int CGfxOutBarCtrl::CBarFolder::GetItemCount()
 {
-	return (int)arItems.GetSize();
+	return arItems.GetSize();
 }
 
 void CGfxOutBarCtrl::PaintItems(CDC * pDC, const int iFolder, CRect rc)
@@ -2319,7 +2319,7 @@ int CGfxOutBarCtrl::AddFolderBar(const char * pFolder, CWnd * pSon, const DWORD 
 
 	arFolder.Add((void *)pbf);
 
-	return (int)arFolder.GetSize() - 1;
+	return arFolder.GetSize() - 1;
 }
 
 CWnd * CGfxOutBarCtrl::GetFolderChild(int iFolder)

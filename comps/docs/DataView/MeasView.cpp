@@ -674,7 +674,7 @@ IUnknown *CMeasView::_object_from_cell( long row, long &col, bool bChParam/* = f
 		long	lKey = pcol->pparam->pDescr->lKey;
 		INamedDataObject2Ptr	ptrNamed( prow->pcalc );
 
-		TPOS	lpos;
+		long	lpos;
 		ptrNamed->GetFirstChildPosition( &lpos );
 
 		while( lpos )
@@ -710,7 +710,7 @@ IUnknown *CMeasView::_object_from_cell( long row, long &col, bool bChParam/* = f
 				long	lKey = pcol->pparam->pDescr->lKey;
 				INamedDataObject2Ptr	ptrNamed( prow->pcalc );
 
-				TPOS	lpos;
+				long	lpos;
 				ptrNamed->GetFirstChildPosition( &lpos );
 
 				while( lpos )
@@ -926,7 +926,7 @@ HRESULT CMeasView::XMeasView::CopyToClipboard( DWORD dwFlags )
 				if( ncol != range.Right() )
 				{					
 					strcpy( sz_buf, "\t" );
-					dw_size = (DWORD)strlen( sz_buf );
+					dw_size = strlen( sz_buf );
 					hr = pi_stream->Write( sz_buf, dw_size, &dw_size );
 				}
 			}
@@ -935,7 +935,7 @@ HRESULT CMeasView::XMeasView::CopyToClipboard( DWORD dwFlags )
 			if( nrow != range.Bottom() )
 			{				
 				strcpy( sz_buf, "\r\n" );
-				dw_size = (DWORD)strlen( sz_buf );
+				dw_size = strlen( sz_buf );
 				hr = pi_stream->Write( sz_buf, dw_size, &dw_size );
 			}
 		}
@@ -946,7 +946,7 @@ HRESULT CMeasView::XMeasView::CopyToClipboard( DWORD dwFlags )
 	{
 		//write new line
 		strcpy( sz_buf, "\r\n" );
-		dw_size = (DWORD)strlen( sz_buf );
+		dw_size = strlen( sz_buf );
 		hr = pi_stream->Write( sz_buf, dw_size, &dw_size );
 		int ntabs = 0;
 		if( pThis->m_bShowClass )	ntabs++;

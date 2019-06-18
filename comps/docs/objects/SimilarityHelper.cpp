@@ -42,7 +42,7 @@ void CSimilarityHelper::Init(IUnknown* punkList)
 	classes.resize(nObjects);
 	classes_weight.resize(nClasses);
 
-	LONG_PTR lpos = 0;
+	long lpos = 0;
 	sptrC->GetFirstParameterPos( &lpos );
 	char szBuf[100];
 	for(int i=0; i<nParams; i++)
@@ -72,7 +72,7 @@ void CSimilarityHelper::Init(IUnknown* punkList)
 
 	}
 
-	TPOS pos=0;
+	long pos=0;
 	sptrL->GetFirstChildPosition(&pos);
 	for(int j=0; j<nObjects; j++)
 	{
@@ -422,7 +422,7 @@ void CSimilarityHelper::TestObjectList(IUnknown* punkList)
 	INamedDataObject2Ptr sptrL(punkList);
 	if(sptrL==0) return; // неудача - фигню передали
 
-	TPOS pos=0;
+	long pos=0;
 	sptrL->GetFirstChildPosition(&pos);
 	while(pos)
 	{
@@ -443,7 +443,7 @@ double CSimilarityHelper::CalcError(IUnknown* punkList)
 
 	int nError=0, nTotal=0;
 
-	TPOS pos=0;
+	long pos=0;
 	sptrL->GetFirstChildPosition(&pos);
 	while(pos)
 	{

@@ -21,7 +21,7 @@ public:
 	LPCTSTR get_action() { return m_szscript_text; }
 	long get_index() { return m_lindex; }
 
-	LRESULT on_lbuttondown(const _point &point);
-	LRESULT on_setcursor(unsigned code, unsigned hit);
+	long on_lbuttondown( const _point &point );
+	long on_setcursor( unsigned code, unsigned hit );
 	bool create_ex( DWORD style, const RECT &rect, const _char *pszTitle = 0, HWND parent = 0, HMENU hmenu = 0, const _char *pszClass = 0, DWORD ex_style = 0 );
 };

@@ -10,8 +10,11 @@
 #include "data_main.h"
 
 #include "idispatchimpl.h"
-
-#import "testman.tlb" no_namespace raw_interfaces_only named_guids 
+#ifdef _DEBUG
+	#import "\vt5\vt5\debug\comps\testman.tlb" no_namespace raw_interfaces_only named_guids 
+#else
+	#import "\vt5\vt5\release\comps\testman.tlb" no_namespace raw_interfaces_only named_guids 
+#endif
 
 #include <atlstr.h>
 #include "/vt5/awin/misc_list.h"
@@ -72,7 +75,7 @@ private:
 	static void _free_test_item_info( XTestArrayItemInfo *pdata ) { delete pdata; }
 	_list_t<XTestArrayItemInfo *, _free_test_item_info> m_items;
 
-	TPOS FindItem(UINT nID);
+	long FindItem(UINT nID);
 };
 
 //////////////////////////////////////////////////////////////////////

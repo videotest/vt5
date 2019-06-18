@@ -82,7 +82,7 @@ void CopyParams( ICalcObjectContainerPtr in, ICalcObjectContainerPtr out )
 	if( in == 0 || out == 0)
 		return;
 
-	LONG_PTR lParamPos = 0;
+	long lParamPos = 0;
 	in->GetFirstParameterPos( &lParamPos );
 	while( lParamPos )
 	{
@@ -781,11 +781,11 @@ bool CActionObjectClassifyByLimits::InvokeFilter()
 		CLSIDFromString(_bstr_t(str), &guid);
 
 		IApplicationPtr sptrA(GetAppUnknown());
-		LONG_PTR	lPosTemplate = 0;
+		long	lPosTemplate = 0;
 		sptrA->GetFirstDocTemplPosition(&lPosTemplate);
 		while(lPosTemplate)
 		{
-			LONG_PTR	lPosDoc = 0;
+			long	lPosDoc = 0;
 			sptrA->GetFirstDocPosition(lPosTemplate, &lPosDoc);
 			while(lPosDoc)
 			{
@@ -864,8 +864,8 @@ bool CActionObjectClassifyByLimits::InvokeFilter()
 			if(sptrCO != 0)
 			{
 				guidNewClassKey = get_object_class( ICalcObjectPtr( sptrCO ) );
-				LONG_PTR lPos = 0;
-				LONG_PTR bFirstTime = true;
+				long lPos = 0;
+				bool bFirstTime = true;
 				sptrCO->GetFirstParamLimitsPos(&lPos);
 				while(lPos)
 				{
@@ -2379,7 +2379,7 @@ bool CActionObjectMultiLine::DoChangeObjects()
 	CPen	pen( PS_SOLID, m_nLineWidth, RGB( 255, 255, 255 ) );
 	CPen	*ppenOld = 
 	pdc->SelectObject( &pen );
-	pdc->Polyline( &m_points[0], (int)m_points.GetSize() );
+	pdc->Polyline( &m_points[0], m_points.GetSize() );
 	pdc->SelectObject( ppenOld );
 
 	wfi.AttachMasksToImage( image );
@@ -2472,7 +2472,7 @@ void CActionObjectMultiLine::SetLastPoint( CPoint point )
 	CPen	*ppenOld = 
 	pdc->SelectObject( &pen );
 	if( m_points.GetSize() )
-		pdc->Polyline( &m_points[0], (int)m_points.GetSize() );
+		pdc->Polyline( &m_points[0], m_points.GetSize() );
 	pdc->SelectObject( ppenOld );
 
 
@@ -2581,7 +2581,7 @@ void	CActionObjectEditor::_InitClippingRgn()
 			}
 			INamedDataObject2Ptr ndo(unkBase);
 
-			TPOS pos;
+			long pos;
 			ndo->GetFirstChildPosition(&pos);
 			while(pos)
 			{
@@ -5148,7 +5148,7 @@ bool CActionCalcMeasResult::Invoke()
 	ptrList->GetObjectUpdateLock( &bLock );
 	ptrList->LockObjectUpdate( true );
 
-	int	nCount = (int)objects.GetSize();
+	int	nCount = objects.GetSize();
 
 	for( int i = 0; i < nCount; i++ )
 	{
@@ -5158,7 +5158,7 @@ bool CActionCalcMeasResult::Invoke()
 
 	
 	//remove from container
-	LONG_PTR	lposParam = 0;
+	long	lposParam = 0;
 	ICalcObjectContainerPtr	ptrContainer( m_listObjects );
 	ptrContainer->GetFirstParameterPos( &lposParam );
 	ptrContainer->SetCurentPosition( 0 );
@@ -5166,7 +5166,7 @@ bool CActionCalcMeasResult::Invoke()
 	while( lposParam )
 	{
 		ParameterContainer *pContainer = 0;
-		LONG_PTR	lPosRemove = lposParam;
+		long	lPosRemove = lposParam;
 		ptrContainer->GetNextParameter( &lposParam, &pContainer );
 
 		if( pContainer->pDescr->pos == 0 )
@@ -5268,7 +5268,7 @@ bool CActionRecalcOnChangeCalibr::Invoke()
 		GUID guidKey;
 		ptrNamed->GetBaseKey( &guidKey );
 		INamedDataPtr	ptrData( m_punkTarget );
-		TPOS lpos = 0;
+		long	lpos = 0;
 		ptrData->GetBaseGroupObjectFirstPos( &guidKey, &lpos );
 		while( lpos )
 		{
@@ -5291,7 +5291,7 @@ bool CActionRecalcOnChangeCalibr::Invoke()
 
 	//walk all data objects
 	IApplication	*papp = GetAppUnknown();
-	LONG_PTR	lposDoc, lposTempl;
+	long	lposDoc, lposTempl;
 	papp->GetFirstDocTemplPosition( &lposTempl );
 	while( lposTempl )
 	{
@@ -5312,7 +5312,7 @@ bool CActionRecalcOnChangeCalibr::Invoke()
 
 			for( int lType = 0; lType < lTypesCount; lType++ )
 			{
-				LONG_PTR	lposObject;
+				long	lposObject;
 				ptrMan->GetObjectFirstPosition( lType, &lposObject );
 
 				while( lposObject )
@@ -5334,7 +5334,7 @@ bool CActionRecalcOnChangeCalibr::Invoke()
 void CActionRecalcOnChangeCalibr::StoreCalibration( IUnknown *punk, GUID &guid, double fCalibr, bool bReplace )
 {
 	INamedDataObject2Ptr	ptrNamed( punk );
-	TPOS	lpos = 0;
+	long	lpos = 0;
 	ptrNamed->GetFirstChildPosition( &lpos );
 
 	while( lpos )
@@ -5487,7 +5487,7 @@ BOOL	CActionJoinAllObjects::join_objects_by_class( IUnknown *punkObjListIn, IUnk
 
 	
 	SPUNK_LIST *plist = 0;
-	TPOS list_pos = m_map_class_to_objects.find(lClass);
+	long list_pos = m_map_class_to_objects.find( lClass );
 	if( !list_pos )
 		return FALSE;
 
@@ -5496,7 +5496,7 @@ BOOL	CActionJoinAllObjects::join_objects_by_class( IUnknown *punkObjListIn, IUnk
 		return FALSE;
 
 	// set masks and colors of images to new image
-	for (TPOS lpos = plist->head(); lpos; lpos = plist->next(lpos))
+	for( long lpos = plist->head( ); lpos; lpos = plist->next( lpos ) )
 	{
 		IUnknownPtr sptr_child = plist->get( lpos );
 		if( sptr_child == 0 )
@@ -5628,7 +5628,7 @@ BOOL	CActionJoinAllObjects::init( IUnknown *punkObjList, CString strClassifierNa
 	*pnObjNum = 0;
 		
 	SPUNK_LIST *plist = 0;
-	TPOS list_pos = m_map_class_to_objects.find(lClass);
+	long list_pos = m_map_class_to_objects.find( lClass );
 	if( !list_pos )
 		return FALSE;
 
@@ -5636,7 +5636,7 @@ BOOL	CActionJoinAllObjects::init( IUnknown *punkObjList, CString strClassifierNa
 	if( !plist  )
 		return FALSE;
 
-	for (TPOS lpos = plist->head(); lpos; lpos = plist->next(lpos))
+	for( long lpos = plist->head( ); lpos; lpos = plist->next( lpos ) )
 	{
 		IUnknownPtr sptr_child = plist->get( lpos );
 		if( sptr_child == 0 )
@@ -5760,7 +5760,7 @@ BOOL	CActionJoinAllObjects::init_class_list( IUnknown *punkObjList, CString strC
 			lchild_class = -2;
         
 		SPUNK_LIST *plist = 0;
-		TPOS list_pos = m_map_class_to_objects.find(lchild_class);
+		long list_pos = m_map_class_to_objects.find( lchild_class );
 		if( list_pos )
 			plist = m_map_class_to_objects.get( list_pos );
 		else
@@ -5802,7 +5802,7 @@ bool CActionSetListZOrder::Invoke()
 			false);
 	INamedDataObject2Ptr sptrND(punkList);
 	CString sName = ::GetObjectName(punkList);
-	TPOS lPos = 0;
+	long lPos = 0;
 	sptrND->GetFirstChildPosition(&lPos);
 	while( lPos )
 	{

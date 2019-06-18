@@ -238,7 +238,7 @@ void CCommentsObjectList::DoDraw( CDC &dc )
 	sptrIDrawObject sptrDrawObj = 0;
 	IUnknown* punk = 0;
 	if(sptrList == 0)return;
-	POSITION POS = 0;
+	long POS = 0;
 	sptrList->GetFirstChildPosition( &POS );
 	while(POS)
 	{

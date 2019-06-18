@@ -56,7 +56,7 @@ bool CStatGrid::buid( IUnknown* punk_tbl )
 }
 
 //////////////////////////////////////////////////////////////////////
-LRESULT CStatGrid::on_paint()
+long CStatGrid::on_paint()
 {
 	//clear cache
 	if( m_ptr_table )
@@ -96,7 +96,7 @@ bool CStatGrid::fill_grid( bool bload_from_shell_data )
 //	((CStatTableObject*)(IStatTable*)m_ptr_table)->UpdateColorsNames(short_classifiername(0));
 
 	//cache columns
-	TPOS lpos_param = 0;
+	long lpos_param = 0;
 	m_ptr_table->GetFirstParamPos( &lpos_param );	
 	while( lpos_param )
 	{			
@@ -115,10 +115,10 @@ bool CStatGrid::fill_grid( bool bload_from_shell_data )
 	{
 		std::sort(m_list_col.begin(), m_list_col.end(), less_col_info );
 
-		//for( LPOS lpos1=m_list_col.head(); lpos1; lpos1=m_list_col.next(lpos1) )
+		//for( long lpos1=m_list_col.head(); lpos1; lpos1=m_list_col.next(lpos1) )
 		//{
 		//	stat_col_info* pinfo1 = m_list_col.get( lpos1 );
-		//	for( LPOS lpos2=lpos1; lpos2; lpos2=m_list_col.next(lpos2) )
+		//	for( long lpos2=lpos1; lpos2; lpos2=m_list_col.next(lpos2) )
 		//	{
 		//		stat_col_info* pinfo2 = m_list_col.get( lpos2 );
 		//		if( pinfo1->m_order > pinfo2->m_order && 
@@ -195,7 +195,7 @@ bool CStatGrid::fill_grid( bool bload_from_shell_data )
 
 	//cache row num
 	long lrow_num = 0;
-	TPOS lpos_row = 0;
+	long lpos_row = 0;
 	m_ptr_table->GetFirstRowPos( &lpos_row );
 	while( lpos_row )
 	{
@@ -220,7 +220,7 @@ bool CStatGrid::fill_grid( bool bload_from_shell_data )
 }
 
 //////////////////////////////////////////////////////////////////////
-LRESULT CStatGrid::on_contextmenu(const _point &point)
+long CStatGrid::on_contextmenu( const _point &point )
 {
 	POINT pt = point;
 
@@ -239,20 +239,20 @@ LRESULT CStatGrid::on_contextmenu(const _point &point)
 }
 
 //////////////////////////////////////////////////////////////////////
-LRESULT CStatGrid::on_destroy()
+long CStatGrid::on_destroy()
 {
 	save_state( );
 	return CVListCtrl::on_destroy();
 }
 
 //////////////////////////////////////////////////////////////////////
-LRESULT CStatGrid::on_rbuttondown(const _point &point)
+long CStatGrid::on_rbuttondown( const _point &point )
 {
 	return __super::on_lbuttondown( point );
 }
 
 //////////////////////////////////////////////////////////////////////
-LRESULT CStatGrid::OnEndTrackHeader(LPNMHEADER lpmnhdr)
+long CStatGrid::OnEndTrackHeader( LPNMHEADER lpmnhdr )
 {
 	long lres = __super::OnEndTrackHeader( lpmnhdr );
 	save_state( );
@@ -260,7 +260,7 @@ LRESULT CStatGrid::OnEndTrackHeader(LPNMHEADER lpmnhdr)
 }
 
 //////////////////////////////////////////////////////////////////////
-LRESULT CStatGrid::OnEndDragHeader(LPNMHEADER lpmnhdr)
+long CStatGrid::OnEndDragHeader( LPNMHEADER lpmnhdr )
 {
 	long lres = __super::OnEndDragHeader( lpmnhdr );
 	save_state( );
@@ -281,7 +281,7 @@ void CStatGrid::handle_init()
 }
 
 //////////////////////////////////////////////////////////////////////
-LRESULT CStatGrid::handle_message(UINT m, WPARAM w, LPARAM l)
+long CStatGrid::handle_message( UINT m, WPARAM w, LPARAM l )
 {
 	/*
 	if( m == WM_KEYDOWN && w == VK_F2 )	
@@ -333,7 +333,7 @@ BOOL CStatGrid::GetCellProp( int iRow, int iColumn, ListCellInfo * pLCInfo )
 	if( !iColumn )	return true;
 	
 	CMapColInfo::const_iterator itCol = m_map_pcol->find( iColumn );
-	TPOS lpos_map_row = m_map_row.find(iRow);
+	long lpos_map_row = m_map_row.find( iRow );
 
 	if( m_map_pcol->end()==itCol || !lpos_map_row )
 	{
@@ -343,7 +343,7 @@ BOOL CStatGrid::GetCellProp( int iRow, int iColumn, ListCellInfo * pLCInfo )
 
 	
 	stat_col_info* psci	= itCol->second;
-	TPOS lpos_row = m_map_row.get(lpos_map_row);
+	long lpos_row		= m_map_row.get( lpos_map_row );
 
 
 	static char sz_buf[255]; sz_buf[0] = 0;
@@ -502,7 +502,7 @@ bool CStatGrid::save_state( long lflags )
 		ListColumnInfo lci;
 		lci.uiMask	= LSTINF_ORDER|LSTINF_WIDTH;
 		GetColumnProp( ncol, &lci );
-//		LPOS lpos_map = m_map_col.find( ncol );
+//		long lpos_map = m_map_col.find( ncol );
 		CMapColInfo::const_iterator itCol = m_map_pcol->find( ncol );
 		if( m_map_pcol->end()==itCol )
 		{
@@ -559,45 +559,45 @@ stat_col_info* CStatGrid::find_col_info_by_num( long ncol )
 }
 
 //////////////////////////////////////////////////////////////////////
-long CStatGrid::get_rows_count( ) const
+long CStatGrid::get_rows_count( )
 {
-	return (const_cast<CStatGrid*>(this))->GetRowCount() + 1;
+	return GetRowCount() + 1;
 }
 
 //////////////////////////////////////////////////////////////////////
 long CStatGrid::get_columns_count( )
 {
-	return GetColumnCount()-1;
+	return GetColumnCount();
 }
 
 //////////////////////////////////////////////////////////////////////
-CRect CStatGrid::get_cell_rect( int nrow, int ncol )
+_rect CStatGrid::get_cell_rect( int nrow, int ncol )
 {
-	CRect rc;
-	++ncol;
+	_rect rc;
+
 	if( !nrow )
 	{
 		HWND hwnd_header = ListView_GetHeader( handle() );
 		Header_GetItemRect( hwnd_header, ncol, &rc );
-		CRect rc_item;
+		_rect rc_item;
 		ListView_GetSubItemRect( handle(), 0, ncol, LVIR_BOUNDS, &rc_item );
-		//if( rc.bottom < rc_item.top )
-		//	rc.bottom = rc_item.top;
+		if( rc.bottom < rc_item.top )
+			rc.bottom = rc_item.top;
 	}
 	else
 	{
 		ListView_GetSubItemRect( handle(), nrow - 1, ncol, LVIR_BOUNDS, &rc );
 
-		//if( !ncol )
-		//	rc.left = rc.right = 0;		
+		if( !ncol )
+			rc.left = rc.right = 0;		
 	}
 	return rc;
 }
 
 //////////////////////////////////////////////////////////////////////
-CString CStatGrid::get_item_text( int nrow, int ncol )
+_string CStatGrid::get_item_text( int nrow, int ncol )
 {
-	CString str_text = "";
+	_string str_text = "";
 
 	if( !nrow )
 	{
@@ -619,133 +619,95 @@ CString CStatGrid::get_item_text( int nrow, int ncol )
 	return str_text;
 }
 
-int CStatGrid::GetTableWidth() const
+//////////////////////////////////////////////////////////////////////
+HRESULT CStatGrid::GetPrintWidth( int nMaxWidth, int *pnReturnWidth, BOOL *pbContinue, int nUserPosX, int *pnNewUserPosX )
 {
-	RECT rc={0};
-	HWND hwnd =(const_cast<CStatGrid*>(this))->handle();
-	ListView_GetItemRect(hwnd, 0, &rc, LVIR_BOUNDS);
-	return rc.right;
-}
+	if( !pnReturnWidth || !pbContinue || !pnNewUserPosX )	return E_POINTER;
 
-int CStatGrid::GetTableHeight() const
-{
-	HWND hwnd =(const_cast<CStatGrid*>(this))->handle();
-	CRect rcHeader; Header_GetItemRect(ListView_GetHeader(hwnd), 0, &rcHeader );
-	CRect rc; ListView_GetItemRect(hwnd, 0, &rc, LVIR_BOUNDS);
-	int nRows=get_rows_count()-1;
-	int bottom = rcHeader.Height() + rc.Height() * nRows;
-	RECT rect={0};
-	int iLast=ListView_GetItemCount(hwnd)-1;
-	ListView_GetItemRect(hwnd, iLast, &rect, LVIR_BOUNDS);
-	return rect.bottom;
-}
-
-POINT CStatGrid::RowCol(const POINT& pt)
-{
-	HWND hwnd =(const_cast<CStatGrid*>(this))->handle();
-	CRect rc; ListView_GetItemRect(hwnd, 0, &rc, LVIR_BOUNDS);
-	int iRow = (pt.y-rc.top)/rc.Height();
-	if(iRow >= get_rows_count()-1)
-		iRow=get_rows_count()-2;
-
-	int lVirtualWidth = 0;
-	int iCol = Header_GetItemCount(ListView_GetHeader(hwnd))-1;
-	for (int i = 0; i <= iCol; i++)
+	*pbContinue = false;
+	
+	int ncol_count = get_columns_count();
+	int nwidth = 0;
+	for( int i=nUserPosX; i<ncol_count;i++ )
 	{
-		lVirtualWidth += ListView_GetColumnWidth(hwnd,i);
-		if(pt.x < lVirtualWidth){
-			iCol=i;
+		_rect rc = get_cell_rect( 0, i );		
+		if( nwidth + rc.width() <= nMaxWidth )
+		{
+			nwidth += rc.width();
+			*pnReturnWidth = nwidth;
+			*pnNewUserPosX = i+1;
+			*pbContinue = ( i < ncol_count - 1 );
+		}
+		else
 			break;
-		}
 	}
-	POINT ptColRow;
-	ptColRow.x=iCol-1;
-	ptColRow.y=iRow+1;
-	return ptColRow;
+//	*pnReturnWidth = std::numeric_limits<int>::max()/200;
+
+	return S_OK;
 }
 
-RECT CStatGrid::RectHitTest(const POINT& pt)
+//////////////////////////////////////////////////////////////////////
+HRESULT CStatGrid::GetPrintHeight( int nMaxHeight, int *pnReturnHeight, BOOL *pbContinue, int nUserPosY, int *pnNewUserPosY )
 {
-	POINT ptColRow=RowCol(pt);
-	CRect cellRect;
-	return get_cell_rect(ptColRow.y,ptColRow.x);
-}
+	if( !pnReturnHeight || !pbContinue || !pnNewUserPosY )	return E_POINTER;
+
+	*pbContinue = false;
 	
-bool CStatGrid::GetPrintWidth(int nMaxWidth, int& nReturnWidth, int nUserPosX, int& nNewUserPosX)
-{
-	bool bContinue = false;
-	long nWidth = GetTableWidth();
-	if(nWidth>0)
+	int nrow_count = get_rows_count();
+	int nheight = 0;
+	for( int i=nUserPosY; i<nrow_count;i++ )
 	{
-		CRect rcCell=RectHitTest(CPoint(nUserPosX, 0));
-		CRect rcLastCell=RectHitTest(CPoint(nUserPosX+nMaxWidth, 0));
-
-		if (nWidth > rcLastCell.right)
+		_rect rc = get_cell_rect( i, 0 );
+		if( nheight + rc.height() <= nMaxHeight )
 		{
-			nNewUserPosX = rcLastCell.left;
-			bContinue = true;
+			nheight += rc.height();
+			*pnReturnHeight = nheight;
+			*pnNewUserPosY = i+1;
+			*pbContinue = ( i < nrow_count - 1 );			
 		}
 		else
-		{
-			rcLastCell.right += 2;
-			nNewUserPosX = rcLastCell.right;
-			bContinue = false;
-			nReturnWidth=rcLastCell.right-rcCell.left;
+			break;
 	}
-	}
-	return bContinue;
+//	*pnReturnHeight = std::numeric_limits<int>::max()/200;
+
+	return S_OK;
 }
 
-bool CStatGrid::GetPrintHeight(int nMaxHeight, int& nReturnHeight, int nUserPosY, int& nNewUserPosY)
-{
-	bool bContinue = false;
-	int nRows=get_rows_count();
-	if(nRows<=0)
-		return bContinue;
-	long nHeight = GetTableHeight();
-	if(nHeight){
-		CRect rcCell=RectHitTest(CPoint(0, nUserPosY));
-		CRect rcLastCell=RectHitTest(CPoint(0, nNewUserPosY+nMaxHeight));
-
-		nNewUserPosY = nUserPosY + nReturnHeight;
-	
-		if (nHeight > rcLastCell.bottom)
-		{
-			nNewUserPosY = rcLastCell.top;
-			bContinue = true;
-		}
-		else
-		{
-			rcLastCell.bottom += 2;
-			nNewUserPosY = rcLastCell.bottom;
-			bContinue = false;
-			nReturnHeight=rcLastCell.bottom-rcCell.top;
-	}
-	}
-	return bContinue;
-}
-
-HRESULT CStatGrid::Print( HDC hdc, RECT rectTarget, int nUserPosX, int nUserPosY, int nUserPosDX, int nUserPosDY, const double& fzoom_view, DWORD dwFlags )
+//////////////////////////////////////////////////////////////////////
+HRESULT CStatGrid::Print( HDC hdc, RECT rectTarget, int nUserPosX, int nUserPosY, int nUserPosDX, int nUserPosDY, BOOL bUseScrollZoom, DWORD dwFlags )
 {
 	if( !hdc )	return S_FALSE;
 
+	//clear cache first
 	if( m_ptr_table )
 		m_ptr_table->ClearCache();
 
-	CRect rc_target( rectTarget.left, rectTarget.top, rectTarget.right, rectTarget.bottom );
+	//m_str_class_name = short_classifiername( 0 );
 
-	CRect rc_first_item = get_cell_rect( nUserPosY, nUserPosX );
+	_rect rc_target( rectTarget.left, rectTarget.top, rectTarget.right, rectTarget.bottom );
 
-	CRect rc_tmp;
-	CRect& rrectTarget=(CRect&)rectTarget;
+	_rect rc_first_item = get_cell_rect( nUserPosY, nUserPosX );
+
+	_rect rc_tmp;
+	_rect rrectTarget=(const _rect&)rectTarget;
+
+	//rrectTarget.left*=100;
+	//rrectTarget.top*=100;
+	//rrectTarget.right*=100;
+	//rrectTarget.bottom*=100;
+
+	//rrectTarget.left/=70;
+	//rrectTarget.top/=70;
+	//rrectTarget.right/=70;
+	//rrectTarget.bottom/=70;
 
 	//determine width	
 	int nwidth = 0;
 	int colLast=nUserPosX;
-	for( ;colLast<nUserPosX+nUserPosDX && colLast<get_columns_count(); ++colLast )
+	for( ; nwidth<rrectTarget.width() && colLast<nUserPosX+nUserPosDX && colLast<get_columns_count(); ++colLast )
 	{
-		rc_tmp = get_cell_rect( 0, colLast);
-		nwidth += rc_tmp.Width();
+		rc_tmp = get_cell_rect( 0, colLast+1);
+		nwidth += rc_tmp.width();
 	}
 	
 	//determine height
@@ -753,39 +715,34 @@ HRESULT CStatGrid::Print( HDC hdc, RECT rectTarget, int nUserPosX, int nUserPosY
 	int rowLast=nUserPosY;
 	for(;rowLast<get_rows_count() && rowLast<nUserPosY+nUserPosDY; ++rowLast )
 	{
-		rc_tmp = get_cell_rect(rowLast, 0);
-		nheight += rc_tmp.Height();
+		rc_tmp = get_cell_rect( rowLast, 1 );
+		nheight += rc_tmp.height();
 	}	
 	
-	int	nLastPosX = nUserPosX + nUserPosDX;
-	int	nLastPosY = nUserPosY + nUserPosDY;
-	CRect	rectDraw(nUserPosX, nUserPosY, nLastPosX, nLastPosY);
 	
+	//set mode
 	int nold_map_mode = ::SetMapMode( hdc, MM_ANISOTROPIC );
+	_size size_old_wnd_ext;
+	//set extension
+	::SetWindowExtEx( hdc, 100, 100, &size_old_wnd_ext );
+	_size size_old_viewport_ext;
+	::SetViewportExtEx( hdc, 100, 100, &size_old_viewport_ext );
+	
+	//set viewport
+	_point pt_old_viewport_org;
+	_point pt_viewport_org;
 
-	CSize size_old_wnd_ext;
-	BOOL bRes=::SetWindowExtEx( hdc, rectDraw.Width(), rectDraw.Height(), &size_old_wnd_ext );
+	pt_viewport_org.x = rc_target.left;
+	pt_viewport_org.y = rc_target.top;
+	::SetViewportOrgEx( hdc, pt_viewport_org.x, pt_viewport_org.y, &pt_old_viewport_org );
 
-	CSize size_old_viewport_ext;
-	bRes=::SetViewportExtEx( hdc, rrectTarget.Width(), rrectTarget.Height(), &size_old_viewport_ext );
-
-	CPoint pt_old_viewport_org;
-	::SetViewportOrgEx( hdc, rrectTarget.left, rrectTarget.top, &pt_old_viewport_org );
-
-	CPoint pt_old_window_org;
-	::SetWindowOrgEx( hdc, rectDraw.left, rectDraw.top, &pt_old_window_org );
-
-	{
-		CRgn ClipRegion;
-		if (ClipRegion.CreateRectRgnIndirect(&rectTarget))
-			CDCHandle(hdc).SelectClipRgn(ClipRegion);
-		ClipRegion.DeleteObject();
-	}
-
+	//create brush
 	HBRUSH brush_border = ::CreateSolidBrush( RGB(0,0,0) );
 
+	//set bk mode
 	int nmode = ::SetBkMode( hdc, TRANSPARENT );
 
+	//set font
 	HFONT hfont = (HFONT)::SendMessage( handle(), WM_GETFONT, 0, 0 );
 	HFONT hfont_old = (HFONT)::SelectObject( hdc, hfont );
 
@@ -794,17 +751,23 @@ HRESULT CStatGrid::Print( HDC hdc, RECT rectTarget, int nUserPosX, int nUserPosY
 
 	COLORREF clr_old_text = ::SetTextColor( hdc, RGB(0,0,0) );	
 	
-	rowLast=get_rows_count();
-	colLast=get_columns_count();
-	for( int ncol = 0; ncol < colLast; ++ncol )
+	for( int ncol = nUserPosX; ncol < colLast; ncol++ )
 	{
-		for( int nrow = 0; nrow < rowLast; ++nrow )
+		for( int nrow = nUserPosY; nrow < rowLast; nrow++ )
 		{
-			CRect rc_cell = get_cell_rect(nrow, ncol);
+			_rect rc_cell = get_cell_rect( nrow, ncol );
+
+			//set 0 offset on page
+			rc_cell.left	-= rc_first_item.left;
+			rc_cell.right	-= rc_first_item.left;
+			rc_cell.top		-= rc_first_item.top;
+			rc_cell.bottom	-= rc_first_item.top;			
+
+			if( rc_cell.width() && rc_cell.height() )
 			{					
 				HPEN hpen_old = (HPEN)::SelectObject( hdc, hpen_solid );//!nrow ? hpen_solid : hpen_dash );
 
-				CRect rc_border = rc_cell;
+				_rect rc_border = rc_cell;
 				::MoveToEx( hdc, rc_border.left, rc_border.top, 0 );
 				::LineTo( hdc, rc_border.right, rc_border.top );
 				::LineTo( hdc, rc_border.right, rc_border.bottom );
@@ -813,8 +776,8 @@ HRESULT CStatGrid::Print( HDC hdc, RECT rectTarget, int nUserPosX, int nUserPosY
 
 				::SelectObject( hdc, hpen_old );
 				
-				CRect rc_text = rc_cell;
-				CString str_text = get_item_text(nrow, ncol+1);
+				_rect rc_text = rc_cell;
+				_string str_text = get_item_text( nrow, ncol );
 
 				// [vanek] BT2000:4090 - 09.12.2004
 				::InflateRect( &rc_text, -2, 0 );
@@ -824,7 +787,7 @@ HRESULT CStatGrid::Print( HDC hdc, RECT rectTarget, int nUserPosX, int nUserPosY
 				else
 					ui_flags |= DT_RIGHT;
 						
-        ::DrawText( hdc, (LPCTSTR)str_text, str_text.GetLength(), &rc_text, ui_flags );				
+        ::DrawText( hdc, (char*)str_text, str_text.length(), &rc_text, ui_flags );				
 			}
 		}
 	}
@@ -839,7 +802,6 @@ HRESULT CStatGrid::Print( HDC hdc, RECT rectTarget, int nUserPosX, int nUserPosY
 	::SetWindowExtEx( hdc, size_old_wnd_ext.cx, size_old_wnd_ext.cy, 0 );
 	::SetViewportExtEx( hdc, size_old_viewport_ext.cx, size_old_viewport_ext.cy, 0 );
 	::SetViewportOrgEx( hdc, pt_old_viewport_org.x, pt_old_viewport_org.y, 0 );
-	::SetWindowOrgEx( hdc, pt_old_window_org.x, pt_old_window_org.y, &pt_old_window_org );
 	
 
 	::DeleteObject( brush_border );	brush_border = 0;	 

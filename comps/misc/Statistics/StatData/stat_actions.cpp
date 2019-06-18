@@ -451,15 +451,15 @@ bool CCreateStatTable::test_exist( IStatTable* pi_table, INamedDataObject2* pi_o
 	if( nverify == VER_TYPE_IMAGE || nverify == VER_TYPE_OBJECT_LIST )
 	{
 		//gather info
-		_list_t<TPOS> list_group_delete;
+		_list_t<long> list_group_delete;
 
-		TPOS lpos_group = 0;
+		long lpos_group = 0;
 		pi_table->GetFirstGroupPos( &lpos_group );
 		while( lpos_group )
 		{
 			stat_group* pgroup = 0;
-			TPOS lpos_save = lpos_group;
-			pi_table->GetNextGroup(&lpos_group, &pgroup );
+			long lpos_save = lpos_group;
+			pi_table->GetNextGroup( &lpos_group, &pgroup );
 			if( nverify == VER_TYPE_IMAGE )
 			{
 				if( pgroup->guid_image == pgroup_new->guid_image )
@@ -488,24 +488,24 @@ bool CCreateStatTable::test_exist( IStatTable* pi_table, INamedDataObject2* pi_o
 			}
 
 			//delete group and row, associated with this group
-			for( TPOS lpos_group=list_group_delete.head(); lpos_group; lpos_group=list_group_delete.next(lpos_group) ) 
+			for( long lpos_group=list_group_delete.head(); lpos_group; lpos_group=list_group_delete.next(lpos_group) ) 
 				pi_table->DeleteGroup( list_group_delete.get( lpos_group ), true );
 		}
 	}
 	else if( nverify == VER_TYPE_OBJECT )
 	{
-		_list_t<LONG_PTR> list_row_delete;
+		_list_t<long> list_row_delete;
 
-		TPOS lpos_row = 0;
+		long lpos_row = 0;
 		pi_table->GetFirstRowPos( &lpos_row );
 		while( lpos_row )
 		{
 			stat_row* prow = 0;
-			TPOS lpos_row_save = lpos_row;
+			long lpos_row_save = lpos_row;
 			pi_table->GetNextRow( &lpos_row, &prow );
 
-			POSITION lpos_child = 0;
-			pi_ol->GetFirstChildPosition( (POSITION*)&lpos_child );
+			long lpos_child = 0;
+			pi_ol->GetFirstChildPosition( &lpos_child );
 			while( lpos_child )
 			{
 				IUnknown* punk_child = 0;
@@ -515,7 +515,7 @@ bool CCreateStatTable::test_exist( IStatTable* pi_table, INamedDataObject2* pi_o
 
 				if( guid_object == prow->guid_object )
 				{
-					list_row_delete.add_tail( (LONG_PTR)lpos_row_save );
+					list_row_delete.add_tail( lpos_row_save );
 					break;
 				}
 			}
@@ -532,8 +532,8 @@ bool CCreateStatTable::test_exist( IStatTable* pi_table, INamedDataObject2* pi_o
 			}
 
 			//delete group and row, associated with this group
-			for (TPOS lpos_row = list_row_delete.head(); lpos_row; lpos_row = list_row_delete.next(lpos_row))
-				pi_table->DeleteRow( (TPOS&)list_row_delete.get( lpos_row ) );
+			for( long lpos_row=list_row_delete.head(); lpos_row; lpos_row=list_row_delete.next(lpos_row) ) 
+				pi_table->DeleteRow( list_row_delete.get( lpos_row ) );
 		}
 
 	}
@@ -581,7 +581,7 @@ bool CCreateStatTable::process_table( IStatTable* pi_table, INamedDataObject2* p
 	pi_table->AddGroup( 0, &sg, 0 );
 
 	//add class param
-	TPOS lpos_class_param = 0;
+	long lpos_class_param = 0;
 	{		
 		pi_table->GetParamPosByKey( KEY_CLASS, &lpos_class_param );
 		if( !lpos_class_param )
@@ -596,7 +596,7 @@ bool CCreateStatTable::process_table( IStatTable* pi_table, INamedDataObject2* p
 		}
 	}
 
-	map<long,TPOS> mapKey_ParamPos;
+	map<long,long> mapKey_ParamPos;
 	{
 		INamedDataPtr pND=pi_table;
 		INamedDataPtr ndApp=::GetAppUnknown();
@@ -618,7 +618,7 @@ bool CCreateStatTable::process_table( IStatTable* pi_table, INamedDataObject2* p
 			}
 		}	
 
-		LONG_PTR lpos_param = 0;
+		long lpos_param = 0;
 		ptr_cont->GetFirstParameterPos( &lpos_param );
 		while( lpos_param )
 		{
@@ -655,7 +655,7 @@ bool CCreateStatTable::process_table( IStatTable* pi_table, INamedDataObject2* p
 					keyShell=lkey_ol;
 				}
 
-				TPOS lpos_tbl_param;
+				long lpos_tbl_param;
 				HRESULT hr=pi_table->GetParamPosByKey( keyShell, &lpos_tbl_param );
 				if(hr){
 					// Add column to table
@@ -696,7 +696,7 @@ bool CCreateStatTable::process_table( IStatTable* pi_table, INamedDataObject2* p
 	ICompositeObjectPtr co(pi_ol);
 	if(co!=0)	co->IsComposite(&bC);
 	
-	POSITION lpos_child = 0;
+	long lpos_child = 0;
 	pi_ol->GetFirstChildPosition( &lpos_child );
 	while( lpos_child )
 	{
@@ -727,7 +727,7 @@ bool CCreateStatTable::process_table( IStatTable* pi_table, INamedDataObject2* p
 		if( ptr_calc == 0 )	continue;
 
 		//add row to table
-		TPOS lpos_tbl_row = 0;
+		long lpos_tbl_row = 0;
 		stat_row sr;
 		init_stat_row( &sr );
 
@@ -766,8 +766,8 @@ bool CCreateStatTable::process_table( IStatTable* pi_table, INamedDataObject2* p
 			//PROFILE_TEST( "CCreateStatTable::process_table->save classes" );
 
 			IUnknown* punk_row = 0;
-			POSITION lpos_temp = lpos_tbl_row;
-			ptr_table_nd->GetNextChild(&lpos_temp, &punk_row );
+			long lpos_temp = lpos_tbl_row;
+			ptr_table_nd->GetNextChild( &lpos_temp, &punk_row );
 			if( punk_row )
 			{
 				{
@@ -796,7 +796,7 @@ bool CCreateStatTable::process_table( IStatTable* pi_table, INamedDataObject2* p
 		}
 
 		//add values
-		LONG_PTR lpos_param = 0;
+		long lpos_param = 0;
 		ptr_cont->GetFirstParameterPos( &lpos_param );
 		while( lpos_param )
 		{
@@ -807,7 +807,7 @@ bool CCreateStatTable::process_table( IStatTable* pi_table, INamedDataObject2* p
 				ParameterDescriptor* pDescr=ppc->pDescr;
 				long lkey = pDescr->lKey;
 
-				TPOS lpos_tbl_param;
+				long lpos_tbl_param;
 				try{
 					lpos_tbl_param=mapKey_ParamPos[lkey];
 				}catch(exception&){
@@ -1079,7 +1079,7 @@ bool CExportStatTable::export_table_to_stream( IStatTable* pi_table, IStream* pi
 	
 	//get params from table
 	lparam_count = 0;
-	TPOS lParamPos = 0;
+	long lParamPos = 0;
 	pi_table->GetFirstParamPos( &lParamPos );
 	while( lParamPos )
 	{
@@ -1195,12 +1195,12 @@ bool CExportStatTable::export_table_to_stream( IStatTable* pi_table, IStream* pi
 			DecimalSeparator=((wchar_t*)strDecimalSeparator)[0];
 	}
 
-	TPOS lrow_pos = 0;
+	long lrow_pos = 0;
 	pi_table->GetFirstRowPos( &lrow_pos );
 	while( lrow_pos )
 	{
 		stat_row* prow = 0;
-		TPOS lsave_row_pos = lrow_pos;
+		long lsave_row_pos = lrow_pos;
 		pi_table->GetNextRow( &lrow_pos, &prow );
 
 		//write values
@@ -1351,13 +1351,13 @@ HRESULT CDeleteObjectFromStatTable::DoInvoke()
 	if( ptr_new_table == 0 )	return S_FALSE;
 
 	//gather group positions
-	_list_t<TPOS> list_group;
+	_list_t<long> list_group;
 	
-	TPOS lpos = 0;
+	long lpos = 0;
 	ptr_new_table->GetFirstGroupPos( &lpos );
 	while( lpos )
 	{
-		TPOS lpos_save = lpos;
+		long lpos_save = lpos;
 		stat_group* pgroup = 0;
 		ptr_new_table->GetNextGroup( &lpos, &pgroup );
 		if( bstr_ol.length() )
@@ -1384,9 +1384,9 @@ HRESULT CDeleteObjectFromStatTable::DoInvoke()
 	
 
 	//remove groups
-	for (TPOS lpos = list_group.head(); lpos; lpos = list_group.next(lpos))
+	for( long lpos=list_group.head(); lpos; lpos=list_group.next(lpos) )
 	{
-		TPOS lgroup_pos = list_group.get( lpos );
+		long lgroup_pos = list_group.get( lpos );
         //remove group
 		ptr_new_table->DeleteGroup( lgroup_pos, true );
 	}
@@ -1598,20 +1598,19 @@ bool CFilterStatTable::filter_table( IStatTable* pi_table, IStatTable* pi_table_
 		list_classes.add_tail( lclass );
 	}
 
+	long lpos = 0;	
 	{
-		TPOS lpos = 0;
 		//copy params
-		pi_table->GetFirstParamPos(&lpos);
-		while (lpos)
+		pi_table->GetFirstParamPos( &lpos );
+		while( lpos )
 		{
 			stat_param* pparam = 0;
-			pi_table->GetNextParam(&lpos, &pparam);
-			pi_table_new->AddParam(0, pparam, 0);
+			pi_table->GetNextParam( &lpos, &pparam );
+			pi_table_new->AddParam( 0, pparam, 0 );
 		}
-	}
-	//copy groups
-	TPOS lpos = 0;
-	{
+        
+		//copy groups
+		lpos = 0;
 		pi_table->GetFirstGroupPos( &lpos );
 		while( lpos )
 		{
@@ -1621,12 +1620,13 @@ bool CFilterStatTable::filter_table( IStatTable* pi_table, IStatTable* pi_table_
 		}
 	}
 
-	pi_table->GetFirstRowPos(&lpos);
+	
+	pi_table->GetFirstRowPos( &lpos );
 	while( lpos )
 	{
 		bool bneed_remove = false;
 
-		TPOS lpos_save = lpos;
+		long lpos_save = lpos;
 		
 		stat_row* prow = 0;
 		pi_table->GetNextRow( &lpos, &prow );
@@ -1634,7 +1634,7 @@ bool CFilterStatTable::filter_table( IStatTable* pi_table, IStatTable* pi_table_
 		//lookup in params
 		if( list_params.count() )
 		{
-			for (TPOS lpos_param = list_params.head(); lpos_param; lpos_param = list_params.next(lpos_param))
+			for( long lpos_param=list_params.head(); lpos_param; lpos_param=list_params.next(lpos_param) )
 			{
 				filter_param* pparam = list_params.get( lpos_param );
 				stat_value* pvalue = 0;
@@ -1656,9 +1656,9 @@ bool CFilterStatTable::filter_table( IStatTable* pi_table, IStatTable* pi_table_
 		//lookup in classes
 		if( list_classes.count() && !bneed_remove )
 		{			
-			TPOS lpos_calc = lpos_save;
+			long lpos_calc = lpos_save;
 			IUnknown* punk_child = 0;
-			ptr_ndo->GetNextChild( (POSITION*)&lpos_calc, &punk_child );
+			ptr_ndo->GetNextChild( &lpos_calc, &punk_child );
 			if( punk_child )
 			{
 				ICalcObjectPtr ptr_calc = punk_child;
@@ -1668,7 +1668,7 @@ bool CFilterStatTable::filter_table( IStatTable* pi_table, IStatTable* pi_table_
 				{
 					bool bfound_class = false;
 					long lclass = get_object_class( ptr_calc, bstr_classes_file.length() ? (char*)bstr_classes_file : 0 );
-					for (TPOS lpos_class = list_classes.head(); lpos_class; lpos_class = list_classes.next(lpos_class))
+					for( long lpos_class=list_classes.head(); lpos_class; lpos_class=list_classes.next(lpos_class) )
 					{
 						if( lclass == list_classes.get( lpos_class ) )
 						{
@@ -1683,12 +1683,12 @@ bool CFilterStatTable::filter_table( IStatTable* pi_table, IStatTable* pi_table_
 
 		if( !bneed_remove )
 		{
-			TPOS lpos_new_row = 0;
+			long lpos_new_row = 0;
 			pi_table_new->AddRow( 0, prow, &lpos_new_row );
 
 			//copy classes
 			{
-				TPOS lpos_temp = lpos_save;
+				long lpos_temp = lpos_save;
 				IUnknown* punk_src = 0;
 				ptr_ndo->GetNextChild( &lpos_temp, &punk_src );
 				
@@ -1703,7 +1703,7 @@ bool CFilterStatTable::filter_table( IStatTable* pi_table, IStatTable* pi_table_
 			}
 
 			//copy values
-			TPOS lpos_param = 0;
+			long lpos_param = 0;
 			pi_table->GetFirstParamPos( &lpos_param );
 			while( lpos_param )
 			{
@@ -1813,13 +1813,13 @@ bool CFilterStatTable::filter_table( IStatTable* pi_table )
 		list_classes.add_tail( lclass );
 	}
 
-	LPOS lpos = 0;
+	long lpos = 0;
 	pi_table->GetFirstRowPos( &lpos );
 	while( lpos )
 	{
 		bool bneed_remove = false;
 
-		LPOS lpos_save = lpos;
+		long lpos_save = lpos;
 		
 		stat_row* prow = 0;
 		pi_table->GetNextRow( &lpos, &prow );
@@ -1827,7 +1827,7 @@ bool CFilterStatTable::filter_table( IStatTable* pi_table )
 		//lookup in params
 		if( list_params.count() )
 		{
-			for( LPOS lpos_param=list_params.head(); lpos_param; lpos_param=list_params.next(lpos_param) )
+			for( long lpos_param=list_params.head(); lpos_param; lpos_param=list_params.next(lpos_param) )
 			{
 				filter_param* pparam = list_params.get( lpos_param );
 				stat_value* pvalue = 0;
@@ -1849,7 +1849,7 @@ bool CFilterStatTable::filter_table( IStatTable* pi_table )
 		//lookup in classes
 		if( list_classes.count() && !bneed_remove )
 		{			
-			LPOS lpos_calc = lpos_save;
+			long lpos_calc = lpos_save;
 			IUnknown* punk_child = 0;
 			ptr_ndo->GetNextChild( &lpos_calc, &punk_child );
 			if( punk_child )
@@ -1861,7 +1861,7 @@ bool CFilterStatTable::filter_table( IStatTable* pi_table )
 				{
 					bool bfound_class = false;
 					long lclass = get_object_class( ptr_calc, bstr_classes_file.length() ? (char*)bstr_classes_file : 0 );
-					for( LPOS lpos_class=list_classes.head(); lpos_class; lpos_class=list_classes.next(lpos_class) )
+					for( long lpos_class=list_classes.head(); lpos_class; lpos_class=list_classes.next(lpos_class) )
 					{
 						if( lclass == list_classes.get( lpos_class ) )
 						{
@@ -2022,7 +2022,7 @@ bool CSewStatTable::process( IStatTable* pi_table, IStatTable* pi_table_add )
 	_list_t<long> list_key;
 	_list_t<long> list_key_add;
 
-	TPOS lpos = 0;
+	long lpos = 0;
 	pi_table->GetFirstParamPos( &lpos );
 	while( lpos )
 	{
@@ -2042,11 +2042,11 @@ bool CSewStatTable::process( IStatTable* pi_table, IStatTable* pi_table_add )
 
 	//calc new key for append
 	_list_t<long> list_new_key;
-	for (TPOS lpos1 = list_key_add.head(); lpos1; lpos1 = list_key_add.next(lpos1))
+	for( long lpos1=list_key_add.head(); lpos1; lpos1=list_key_add.next(lpos1) )
 	{
 		long lkey_add=list_key_add.get( lpos1 );
 		bool bfound = false;
-		for (TPOS lpos2 = list_key.head(); lpos2; lpos2 = list_key.next(lpos2))
+		for( long lpos2=list_key.head(); lpos2; lpos2=list_key.next(lpos2) )
 		{
 			long lkey=list_key.get( lpos2 );
 			if( lkey_add == lkey )
@@ -2079,7 +2079,7 @@ bool CSewStatTable::process( IStatTable* pi_table, IStatTable* pi_table_add )
 		//append keys
 		if( bneed_append_keys )
 		{
-			for (TPOS lpos = list_new_key.head(); lpos; lpos = list_new_key.next(lpos))
+			for( long lpos=list_new_key.head(); lpos; lpos=list_new_key.next(lpos) )
 			{
 				long lkey = list_new_key.get( lpos );
 
@@ -2095,7 +2095,7 @@ bool CSewStatTable::process( IStatTable* pi_table, IStatTable* pi_table_add )
 	long lgroup_count = 0;
 	pi_table_add->GetGroupCount( &lgroup_count );
 	long lidx = 0;
-	TPOS lpos_group_add = 0;
+	long lpos_group_add = 0;
 	pi_table_add->GetFirstGroupPos( &lpos_group_add );
 
 	while( lpos_group_add )
@@ -2118,13 +2118,13 @@ bool CSewStatTable::process( IStatTable* pi_table, IStatTable* pi_table_add )
 	pi_table_add->GetRowCount( &lrow_count );
 	lidx = 0;
 
-	TPOS lpos_row_add = 0;
+	long lpos_row_add = 0;
 	pi_table_add->GetFirstRowPos( &lpos_row_add );
 
 	while( lpos_row_add )
 	{
 		stat_row* prow_add = 0;
-		TPOS lpos_row_add_save = lpos_row_add;
+		long lpos_row_add_save = lpos_row_add;
 		pi_table_add->GetNextRow( &lpos_row_add, &prow_add );
 
 		stat_row row_new = {0};
@@ -2141,7 +2141,7 @@ bool CSewStatTable::process( IStatTable* pi_table, IStatTable* pi_table_add )
 		}
 
 		//add row
-		TPOS lpos_row_new = 0;
+		long lpos_row_new = 0;
 		pi_table->AddRow( 0, &row_new, &lpos_row_new );
 		release_stat_row( &row_new );
 
@@ -2150,11 +2150,11 @@ bool CSewStatTable::process( IStatTable* pi_table, IStatTable* pi_table_add )
 
 		//add classes
 		{
-			TPOS lpos_add_temp = (TPOS)lpos_row_add_save;
+			long lpos_add_temp = lpos_row_add_save;
 			IUnknown* punk_src = 0;
 			ptr_table_add_ndo->GetNextChild( &lpos_add_temp, &punk_src );
 			
-			TPOS lpos_new_temp = (TPOS)lpos_row_new;
+			long lpos_new_temp = lpos_row_new;
 			IUnknown* punk_target = 0;
 			ptr_table_ndo->GetNextChild( &lpos_new_temp, &punk_target );
 
@@ -2166,7 +2166,7 @@ bool CSewStatTable::process( IStatTable* pi_table, IStatTable* pi_table_add )
 		}
 
 		//set values
-		for (TPOS lpos = list_key_add.head(); lpos; lpos = list_key_add.next(lpos))
+		for( long lpos=list_key_add.head(); lpos; lpos=list_key_add.next(lpos) )
 		{
 			long lkey = list_key_add.get( lpos );
 			
@@ -2237,7 +2237,7 @@ void CSewStatTable::get_stat_tables( IUnknown** ppunk1, IUnknown** ppunk2 )
 
 			if( ptr_dc )
 			{
-				LONG_PTR lpos = 0;
+				long lpos = 0;
 				ptr_dc->GetFirstSelectedPos( _bstr_t(szTypeStatTable), &lpos );
 				if( lpos )
 				{

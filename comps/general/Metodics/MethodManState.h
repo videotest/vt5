@@ -16,11 +16,11 @@ public:
 	void StepForward(); // перейти на следующий шаг (не обновляя позицию в методике)
 	void StepBack(); // перейти на предыдущий шаг
 	void SeekTo(int nIndex); // перейти к заданному (0..число шагов) шагу
-	TPOS m_lMethodPos;
+	long m_lMethodPos;
 	IMethodDataPtr m_sptrMethod;
 	long m_lStepIndex;
-	TPOS m_lStepPos;
-	TPOS m_lNextStepPos;
+	long m_lStepPos;
+	long m_lNextStepPos;
 	CMethodStep* m_pStep;
 	bool m_bError;
 };

@@ -243,8 +243,6 @@ class CActionSewMoveFragment : public CInteractiveAction, public CUndoneableActi
 	bool m_bMoveLV;
 	CRect m_rcMoveFrag;
 	bool GetMoveableFragmentRect(RECT &rcMoveFrag);
-	bool m_bKeyPress;
-	void ProcessKeyboardMove(WPARAM wParam, bool bFinally);
 public:
 	route_unknown();
 	CActionSewMoveFragment(void);

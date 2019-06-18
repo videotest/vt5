@@ -278,7 +278,7 @@ HRESULT IErectCC::Invalidate()
 	return S_OK;
 }
 
-static inline int iround(double x)
+static inline int round(double x)
 {
 	return int(floor(x+0.5));
 }
@@ -484,7 +484,7 @@ HRESULT IErectCC::Recalc(IChromosome *pChromo)
 			double yd1=yd*daxisvect[i].y+xd*daxisvect[i].x;
 			//xd1=0; yd1=0;
 
-			m_ptDraw[j]=_point(width2+iround(xd1),i/*+int(yd1)*/);
+			m_ptDraw[j]=_point(width2+round(xd1),i/*+int(yd1)*/);
 		}
 	}
 

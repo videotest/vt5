@@ -266,7 +266,7 @@ bool CActionMeasureComposite::build_hierarchy(CTreeElement<IImage4>** images)
 #ifdef _DEBUG
 	CString dStr;
 	dStr.Format("--- Operation count %i\n", dbgCount);
-//	OutputDebugStr(dStr);
+	OutputDebugStr(dStr);
 #endif
 	if(!build_tree(images)) return false;
 	Notify(40);
@@ -331,7 +331,7 @@ void CActionMeasureComposite::construct_composite(CTreeElement<IImage4>** images
 
 		if(ndoML)
 		{
-			POSITION pos;
+			long pos;
 			ndoML->GetFirstChildPosition(&pos);
 			while(pos)
 			{
@@ -558,7 +558,7 @@ bool CActionMeasureComposite::check_if_kin(CImageWrp& image1, CImageWrp& image2,
 	CRect r2 = image2.GetRect();
 	CRect R;
 	long count=0;
-	long limit = long(CoverFactor*image1_pixCount);
+	long limit = CoverFactor*image1_pixCount;
 	if(!R.IntersectRect(r1,r2)) return false;
 	CPoint offset1(R.TopLeft()-r1.TopLeft());
 	CPoint offset2(R.TopLeft()-r2.TopLeft());
@@ -591,7 +591,7 @@ int CActionMeasureComposite::test_rects_enclosure(const CRect& r1, const CRect& 
 bool CActionMeasureComposite::check_group_for_useless(IMeasParamGroupPtr& group)
 {
 
-	LONG_PTR	lposP = 0;
+	long	lposP = 0;
 	group->GetFirstPos( &lposP );
 	while( lposP )
 	{

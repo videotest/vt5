@@ -215,7 +215,7 @@ protected:
 			for( int idx = ListView_GetNextItem( handle(), -1, LVNI_SELECTED );
 				idx != -1; idx = ListView_GetNextItem( handle(), idx, LVNI_SELECTED ) )
 			{
-				for( LPOS lpos = m_columns.head(); lpos; lpos = m_columns.next( lpos ) )
+				for( long lpos = m_columns.head(); lpos; lpos = m_columns.next( lpos ) )
 				{
 					check_column *pcol = m_columns.get( lpos );
 
@@ -259,7 +259,7 @@ protected:
 protected:
 	check_column	*_get_check_column( int col ) 
 	{
-		for( LPOS lpos = m_columns.head(); lpos; lpos = m_columns.next( lpos ) )
+		for( long lpos = m_columns.head(); lpos; lpos = m_columns.next( lpos ) )
 		{
 			check_column	*p = m_columns.get( lpos );
 			if( p->col == col )return p;

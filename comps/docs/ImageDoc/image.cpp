@@ -11,6 +11,13 @@
 #include "ImageSignature.h"
 #include "\vt5\AWIN\profiler.h"
 
+#ifdef _DEBUG
+#define new DEBUG_NEW
+#undef THIS_FILE
+static char THIS_FILE[] = __FILE__;
+#endif
+
+
 /////////////////////////////////////////////////////////////////////////////////////////
 //misc utils
 class CImageRowHelper
@@ -25,7 +32,7 @@ public:
 	}
 	~CImageRowHelper()
 	{
-		delete []m_pdummyRow;
+		delete m_pdummyRow;
 	}
 
 	static CImageRowHelper	CImageRowHelper::s_helper;

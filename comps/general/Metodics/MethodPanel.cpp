@@ -281,7 +281,7 @@ void CMethodPanel::OnNotify( const char *pszEvent, IUnknown *punkHit, IUnknown *
 					IMethodDataPtr sptr_mtd_data = sptr_active_mtd;
 					if( sptr_mtd_data != 0 )
 					{
-						TPOS lpos_next_step = msn.lPos;
+						long lpos_next_step = msn.lPos;
 						sptr_mtd_data->GetNextStep( &lpos_next_step, 0 );
 						if( lpos_next_step )
 							m_list_func_ctrl.insert_before_step( lpos_next_step, msn.lPos );
@@ -349,9 +349,9 @@ LRESULT CMethodPanel::WindowProc(UINT message, WPARAM wParam, LPARAM lParam)
 		msg.lParam	= lParam;
 		::GetCursorPos( &msg.pt );				
 
-		HWND hwnd = ::GetDlgItem( GetSafeHwnd(), (int)wParam );
+		HWND hwnd = ::GetDlgItem( GetSafeHwnd(), wParam );
 		long	lProcessed = false;
-		LRESULT	lret_reflect = ::SendMessage( hwnd, WM_NOTYFYREFLECT, (WPARAM)&lProcessed, (LPARAM)&msg );
+		long	lret_reflect = ::SendMessage( hwnd, WM_NOTYFYREFLECT, (WPARAM)&lProcessed, (LPARAM)&msg );
 		if( lProcessed ) 
 			return lret_reflect;                        		
 	}
@@ -417,13 +417,13 @@ BOOL CMethodPanel::OnListenMessage( MSG * pmsg, LRESULT *plResult )
 		return FALSE;
 
 	*plResult = CWnd::WalkPreTranslateTree( m_hWnd, pmsg );
-	return BOOL(*plResult);
+	return (*plResult);
 }
 
 /////////////////////////////////////////////////////////////////////////////
 void CMethodPanel::PostNcDestroy()
 {
-	//delete this;
+	delete this;
 }
 
 /////////////////////////////////////////////////////////////////////////////
@@ -555,7 +555,7 @@ BOOL	CMethodPanel::on_create_new_mtd(void)
 	if( sptr_mtd_man != 0 )
 	{	
 
-		LPOS lpos_mtd = 0;
+		long lpos_mtd = 0;
 		sptr_mtd_man->GetFirstMethodPos( &lpos_mtd );
 		if( lpos_mtd )
 		{
@@ -645,7 +645,7 @@ BOOL	CMethodPanel::on_del_active_func(void)
 	if( sptr_mtd == 0 )
 		return FALSE;
 
-	TPOS lpos_step = 0;
+    long lpos_step = 0;
 	sptr_mtd->GetActiveStepPos( &lpos_step );
 	if( !lpos_step )
 		return FALSE;
@@ -743,8 +743,8 @@ void	CMethodPanel::update_btns_states( bool bupdate_actions_btns /*= false*/ )
 				bcan_edit_mtd = FALSE;
 
 		IUnknownPtr	sptr_unk_active_mtd;
-		long		lstep_count = 0;
-		TPOS lpos_active_step = 0;
+		long		lstep_count = 0,
+			lpos_active_step = 0;
 
 		// [vanek] SBT:1160 - 05.10.2004
 		DWORD		dwactive_step_state = 0;
@@ -973,7 +973,7 @@ BOOL CMethodBar::OnCommand(WPARAM wParam, LPARAM lParam)
 	CWnd *pwnd_parent = 0;
 	pwnd_parent = GetParent();
 	if( pwnd_parent )
-		return (BOOL)pwnd_parent->SendMessage( WM_COMMAND, wParam, lParam );
+		return pwnd_parent->SendMessage( WM_COMMAND, wParam, lParam );
 
 	return TRUE;
 }

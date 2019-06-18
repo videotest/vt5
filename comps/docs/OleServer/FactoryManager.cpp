@@ -81,7 +81,7 @@ void CFactoryManager::Init()
 
 	::RegCloseKey( hKey );	hKey = 0;
 
-	TPOS lPos = bstrProgIDList.head();
+	long lPos = bstrProgIDList.head();
 	while( lPos )
 	{
 
@@ -132,7 +132,7 @@ void CFactoryManager::DeInit()
 
 	CloseFactories();
 
-	TPOS lPos = m_comps.head();
+	long lPos = m_comps.head();
 	while( lPos )
 	{
 		IUnknown* punk = m_comps.next( lPos );
@@ -162,7 +162,7 @@ HRESULT CFactoryManager::CanCloseServer( BOOL* pbCanClose )
 
 	long lObjectsCount = 0;
 	long lServerLocks = 0;
-	TPOS lPos = m_comps.head();
+	long lPos = m_comps.head();
 	while( lPos )
 	{
 		IUnknown* punk = m_comps.next( lPos );
@@ -191,7 +191,7 @@ HRESULT CFactoryManager::GetServerObjectsInfo( BSTR* pbstr )
 {
 	_bstr_t bstr_t;
 	char szBuf[30];
-	TPOS lPos = m_comps.head();
+	long lPos = m_comps.head();
 	while( lPos )
 	{
 		IUnknown* punk = m_comps.next( lPos );
@@ -269,7 +269,7 @@ HRESULT CFactoryManager::OpenFactories()
 		return S_FALSE;
 	}
 
-	TPOS lPos = m_comps.head();
+	long lPos = m_comps.head();
 	while( lPos )
 	{
 		IUnknown* punk = m_comps.next( lPos );
@@ -295,7 +295,7 @@ HRESULT CFactoryManager::CloseFactories()
 		return S_FALSE;
 	}
 
-	TPOS lPos = m_comps.head();
+	long lPos = m_comps.head();
 	while( lPos )
 	{
 		IUnknown* punk = m_comps.next( lPos );
@@ -315,7 +315,7 @@ HRESULT CFactoryManager::CloseFactories()
 //////////////////////////////////////////////////////////////////////
 HRESULT CFactoryManager::RegisterFactories()
 {
-	TPOS lPos = m_comps.head();
+	long lPos = m_comps.head();
 	while( lPos )
 	{
 		IUnknown* punk = m_comps.next( lPos );
@@ -351,7 +351,7 @@ HRESULT CFactoryManager::RegisterFactories()
 //////////////////////////////////////////////////////////////////////
 HRESULT CFactoryManager::UnRegisterFactories()
 {
-	TPOS lPos = m_comps.head();
+	long lPos = m_comps.head();
 	while( lPos )
 	{
 		IUnknown* punk = m_comps.next( lPos );

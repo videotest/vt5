@@ -1,7 +1,11 @@
 #ifndef __avi_int_h__
 #define __avi_int_h__
 
-#import <avi.tlb> exclude ("IUnknown", "GUID", "_GUID", "tagPOINT") no_namespace raw_interfaces_only named_guids 
+#ifdef _DEBUG
+#import "\vt5\vt5\debug\comps\avi.tlb" exclude ("IUnknown", "GUID", "_GUID", "tagPOINT") no_namespace raw_interfaces_only named_guids 
+#else
+#import "\vt5\vt5\release\comps\avi.tlb" exclude ("IUnknown", "GUID", "_GUID", "tagPOINT") no_namespace raw_interfaces_only named_guids 
+#endif
 
 #define szAviSection			"\\Avi"
 

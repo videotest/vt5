@@ -604,8 +604,6 @@ std_dll void SetValue( IUnknown *punkDoc, const char *pszSection, const char *ps
 extern "C" _declspec(dllexport) double GetValueDouble(IUnknown *punkDoc, const char *pszSection, const char *pszEntry, double fDefault = 0.);
 //get integer value from NamedData
 extern "C" _declspec(dllexport) long GetValueInt( IUnknown *punkDoc, const char *pszSection, const char *pszEntry, long lDefault = 0 );
-//get integer value from NamedData
-extern "C" _declspec(dllexport) __int64 GetValueInt64( IUnknown *punkDoc, const char *pszSection, const char *pszEntry, __int64 lDefault = 0 );
 //get string value from NamedData
 std_dll CString GetValueString( IUnknown *punkDoc, const char *pszSection, const char *pszEntry, const char *pszDefault = 0 );
 //get any value from NamedData
@@ -614,8 +612,6 @@ std_dll _variant_t GetValue( IUnknown *punkDoc, const char *pszSection, const ch
 std_dll void SetValue(IUnknown *punkDoc, const char *pszSection, const char *pszEntry, double fValue);
 //set integer value to NamedData
 std_dll void SetValue( IUnknown *punkDoc, const char *pszSection, const char *pszEntry, long lValue );
-//set __int64 value to NamedData
-std_dll void SetValue( IUnknown *punkDoc, const char *pszSection, const char *pszEntry, __int64 lValue );
 //set string value to NamedData
 std_dll void SetValue( IUnknown *punkDoc, const char *pszSection, const char *pszEntry, const char *pszValue );
 //set any value to NamedData

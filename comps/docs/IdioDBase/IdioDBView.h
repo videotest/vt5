@@ -82,7 +82,7 @@ public:
 		pDc->DrawText( m_strText, &rc, DT_TOP | DT_CENTER | DT_NOCLIP );
 
 
-		for( TPOS lPos = m_pDataArray.head(); lPos; lPos = m_pDataArray.next( lPos ) )
+		for( long lPos = m_pDataArray.head(); lPos; lPos = m_pDataArray.next( lPos ) )
 		{
 			CGalleryIdioItem *pItem = m_pDataArray.get( lPos );
 			pItem->DoDraw( pDc, pWnd );
@@ -132,7 +132,7 @@ public:
 	}
 	void DoDraw( CDC *pDc, CWnd *pWnd )
 	{
-		for (TPOS lPos = m_pDataArray.head(); lPos; lPos = m_pDataArray.next(lPos))
+		for( long lPos = m_pDataArray.head(); lPos; lPos = m_pDataArray.next( lPos ) )
 		{
 			CGalleryIdioCell *pItem = m_pDataArray.get( lPos );
 			pItem->DoDraw( pDc, pWnd );
@@ -148,7 +148,7 @@ public:
 	}
 	void DoDraw( CDC *pDc, CWnd *pWnd )
 	{
-		for (TPOS lPos = m_pDataArray.head(); lPos; lPos = m_pDataArray.next(lPos))
+		for( long lPos = m_pDataArray.head(); lPos; lPos = m_pDataArray.next( lPos ) )
 		{
 			CGalleryIdioLine *pItem = m_pDataArray.get( lPos );
 			pItem->DoDraw( pDc, pWnd );

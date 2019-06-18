@@ -37,20 +37,20 @@ protected:
 		com_call AddObject( IUnknown* punkObject );
 		com_call CreateTargets( );
 		//Output
-		com_call GetFirstItemPos( TPOS* plPos );
+		com_call GetFirstItemPos( long* plPos );
 		com_call GetNextItem(	
 							UINT* puiFlags, 
 							UINT* puiItemID, 
 							BSTR* pbstrText,			
 							UINT* puiParentID,
-							TPOS* plPos
+							long* plPos
 							);
 		//Event
 		com_call OnCommand( UINT uiCommand );
 
 		//com_call GetSourceDocGuid( GUID* pDocGuid );
-		//com_call GetFirstObjectPos( TPOS *plPos );
-		//com_call GetNextObjectPos( GUID* pObjGuid, TPOS *plPos );
+		//com_call GetFirstObjectPos( long* plPos );
+		//com_call GetNextObjectPos( GUID* pObjGuid, long* plPos );
 
 		//Info
 		//com_call GetItemInfo( UINT uiItemID, CItemInfo** ppii );

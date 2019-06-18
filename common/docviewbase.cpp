@@ -243,7 +243,7 @@ void CDocBase::OnActivateObject( IUnknown *punkDataObject, IUnknown *punkView )
 
 void CDocBase::UpdateAllViews( const char *psz, IUnknown *punkDataObject )
 {
-	TPOS	lpos;
+	long	lpos;
 	IUnknown	*punkView;
 
 	sptrIDocumentSite	sptrS( GetControllingUnknown() );
@@ -365,22 +365,22 @@ HRESULT CViewImpl::XView::OnActivateView( BOOL bActivate, IUnknown *punkOtherVie
 	_catch_nested;
 }
 
-HRESULT CViewImpl::XView::GetFirstVisibleObjectPosition(TPOS *plpos)
+HRESULT CViewImpl::XView::GetFirstVisibleObjectPosition( long *plpos )
 {
 	_try_nested_base(CViewImpl, View, GetFirstVisibleObjectPosition)
 
-	*plpos = pThis->GetFisrtVisibleObjectPosition();
+	*plpos = (long)pThis->GetFisrtVisibleObjectPosition();
 	return S_OK;
 
 	_catch_nested;
 }
-HRESULT CViewImpl::XView::GetNextVisibleObject(IUnknown ** ppunkObject, TPOS *plPos)
+HRESULT CViewImpl::XView::GetNextVisibleObject( IUnknown ** ppunkObject, long *plPos )
 {
 	_try_nested_base(CViewImpl, View, GetNextVisibleObject)
 
 	POSITION	pos = (POSITION)*plPos;
 	*ppunkObject = pThis->GetNextVisibleObject( pos );
-	*plPos = pos;
+	*plPos = (long)pos;
 	return S_OK;
 
 	_catch_nested;
@@ -515,7 +515,7 @@ bool CActionShowViewBase::Invoke()
 	{
 
 		_bstr_t bstrType = (LPCSTR)arViewTypes[i];
-		LONG_PTR lPos = 0;
+		long lPos = 0;
 		ptrContext->GetFirstSelectedPos( bstrType, &lPos );
 		
 		while( lPos )
@@ -549,7 +549,7 @@ bool CActionShowViewBase::Invoke()
 	{
 		_bstr_t bstrType = (LPCSTR)arViewTypes[i];
 		IUnknown* punk = 0;
-		LONG_PTR lPos = 0;
+		long lPos = 0;
 		ptrContext->GetFirstObjectPos( bstrType, &lPos );
 
 		while( lPos )
@@ -580,7 +580,7 @@ bool CActionShowViewBase::Invoke()
 		BSTR	bstrType = 0;
 		ptrContext->GetObjectTypeName( lType, &bstrType );
 
-		LPOS lpos = 0;
+		long	lpos = 0;
 		ptrContext->GetFirstSelectedPos( bstrType, &lpos );
 
 		while( lpos )
@@ -592,7 +592,7 @@ bool CActionShowViewBase::Invoke()
 
 		}
 	}
-	LPOS lpos;*/
+	long	lpos;*/
 
 
 	

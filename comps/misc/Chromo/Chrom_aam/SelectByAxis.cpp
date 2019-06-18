@@ -26,7 +26,7 @@
 IUnknownPtr find_child_by_interface(IUnknownPtr sptrParent, const GUID guid)
 {
 	INamedDataObject2Ptr sptrNDOParent(sptrParent);
-	POSITION lPos = 0;
+	long lPos = 0;
 	sptrNDOParent->GetFirstChildPosition(&lPos);
 	while (lPos)
 	{
@@ -391,7 +391,7 @@ static void curve2( // Отобразить кривую
             double y1, double v1  // координата Y и производная на втором конце
 			)
 {
-	double x,y,u,v;
+	auto double x,y,u,v;
 	if(_hypot(x1-x0,y1-y0)>1) {
 		midpoint(x0,u0,x1,u1, &x,&u);
 		midpoint(y0,v0,y1,v1, &y,&v);
@@ -413,7 +413,7 @@ static void MakeCurve2( // Создать кривую
             double y1, double v1  // координата Y и производная на втором конце
 			)
 {
-	double x,y,u,v;
+	auto double x,y,u,v;
 	midpoint(x0,u0,x1,u1, &x,&u);
 	midpoint(y0,v0,y1,v1, &y,&v);
 	if(_hypot(x1-x0,y1-y0)>1) {
@@ -1132,16 +1132,16 @@ bool CSelectByAxisFilter::SetCentromereClick(INamedDataObject2Ptr ptrList, int x
 	if(ptrList==0) return(false);
 	
 	double bestDistance=1e20; //наиболее подходящий объект
-	POSITION bestObjPos = 0;
+	long bestObjPos = 0;
 	int best_x, best_y;
 	int best_i;
 
-	POSITION objPos = 0;
+	long objPos = 0;
 	ptrList->GetFirstChildPosition(&objPos);
 	while( objPos ) //по всем объектам
 	{
 		IUnknownPtr ptr;
-		POSITION objPos1 = objPos;
+		long objPos1=objPos;
 		ptrList->GetNextChild(&objPos, &ptr);
 		IMeasureObjectPtr ptrO(ptr);
 		if(ptrO==0) continue;
@@ -1193,7 +1193,7 @@ bool CSelectByAxisFilter::SetCentromereClick(INamedDataObject2Ptr ptrList, int x
 	if(bestDistance<20)
 	{
 		IUnknownPtr ptr;
-		POSITION objPos = bestObjPos;
+		long objPos=bestObjPos;
 		ptrList->GetNextChild(&objPos, &ptr);
 		IMeasureObjectPtr ptrO(ptr);
 
@@ -1329,7 +1329,7 @@ bool CSelectByAxisFilter::SetCentromereClick(INamedDataObject2Ptr ptrList, int x
 			}
 		}
 
-		POSITION _lpos = 0;
+		long _lpos = 0;
 		ptrList->GetChildPos( ptrO, &_lpos );
 		ptrList->SetActiveChild( _lpos );
 
@@ -1495,7 +1495,7 @@ HRESULT CSelectByAxisFilter::DoInvoke()
 	{
 		//проверить - может, не надо создавать новый объект
 		bool bNewObject=true;
-		POSITION bestPos = 0;
+		long bestPos=0;
 
 		int bCreateAxis=GetValueInt(GetAppUnknown(),
 			"\\Chromos\\SelectByAxis", "CreateAxis", 1);
@@ -1513,12 +1513,12 @@ HRESULT CSelectByAxisFilter::DoInvoke()
 			{
 				double bestInRatio=0; //наиболее подходящий объект
 				double sumInRatio=0; //сумма процентов кусков оси по хромосомам (если >0.8 - правим лучшую)
-				POSITION objPos = 0;
+				long objPos = 0;
 				ptrList->GetFirstChildPosition(&objPos);
 				while( objPos ) //по всем объектам
 				{
 					IUnknownPtr sptr;
-					POSITION objPos1 = objPos;
+					long objPos1=objPos;
 					ptrList->GetNextChild(&objPos, &sptr);
 					IMeasureObjectPtr ptrO(sptr);
 					if(ptrO==0) continue;
@@ -1598,12 +1598,12 @@ HRESULT CSelectByAxisFilter::DoInvoke()
 			int nIntersectSum=0;
 			if(ptrList!=0)
 			{
-				POSITION objPos = 0;
+				long objPos = 0;
 				ptrList->GetFirstChildPosition(&objPos);
 				while( objPos ) //по всем объектам
 				{
 					IUnknownPtr sptr;
-					POSITION objPos1 = objPos;
+					long objPos1=objPos;
 					ptrList->GetNextChild(&objPos, &sptr);
 					IMeasureObjectPtr ptrO(sptr);
 					if(ptrO==0) continue;
@@ -1741,7 +1741,7 @@ HRESULT CSelectByAxisFilter::DoInvoke()
 
 			::ConditionalCalcObject( ptrO, 0, true, 0 );
 
-			POSITION _lpos = 0;
+			long _lpos = 0;
 			ptrList->GetChildPos( ptrO, &_lpos );
 			ptrList->SetActiveChild( _lpos );
 

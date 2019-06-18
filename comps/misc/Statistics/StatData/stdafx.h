@@ -1,21 +1,13 @@
 // stdafx.h : include file for standard system include files,
 // or project specific include files that are used frequently, but
 // are changed infrequently
+//
 
 #pragma once
 
 #define _STLP_NO_IOSTREAMS 1 
 #define WIN32_LEAN_AND_MEAN		// Exclude rarely-used stuff from Windows headers
-#define _WTL_NO_CSTRING
-#define _WIN32_WINNT 0x501
-
 // Windows Header Files:
-
-#include <atlstr.h>
-#include <atlapp.h>
-#include <atlmisc.h>
-#include <atlcoll.h>
-
 #include <windows.h>
 #include <stdio.h>
 
@@ -56,6 +48,7 @@ using std::auto_ptr;
 using std::exception;
 #include <algorithm>
 
+#include <atlstr.h>
 #include <stdlib.h>
 #include "class_utils.h"
 

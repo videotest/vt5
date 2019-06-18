@@ -172,15 +172,9 @@ END_MESSAGE_MAP()
 /////////////////////////////////////////////////////////////////////////////
 // CCrystalTextView construction/destruction
 
-CCrystalTextView::CCrystalTextView() : m_pIcons(0),
-	m_pdwParseCookies(0), m_pnActualLineLength(0),
-	m_hAccel(0),
-	m_pCacheBitmap(0),
-	m_pTextBuffer(0),
-	m_pszLastFindWhat(0)
+CCrystalTextView::CCrystalTextView()
 {
-	//AFX_ZERO_INIT_OBJECT(CView);
-	m_apFonts[0] = 0; m_apFonts[1] = 0; m_apFonts[2] = 0; m_apFonts[3] = 0;
+	AFX_ZERO_INIT_OBJECT(CView);
 	m_bSelMargin = TRUE;
 	ResetView();
 }
@@ -266,11 +260,11 @@ int CCrystalTextView::GetLineActualLength(int nLineIndex)
 #endif
 			if (psz == NULL)
 			{
-				nActualLength += int(pszChars + nLength - pszCurrent);
+				nActualLength += (pszChars + nLength - pszCurrent);
 				break;
 			}
 
-			nActualLength += int(psz - pszCurrent);
+			nActualLength += (psz - pszCurrent);
 			nActualLength += (nTabSize - nActualLength % nTabSize);
 			pszCurrent = psz + 1;
 		}
@@ -2344,20 +2338,20 @@ static int FindStringHelper(LPCTSTR pszFindWhere, LPCTSTR pszFindWhat, BOOL bWho
 		if (pszPos == NULL)
 			return -1;
 		if (! bWholeWord)
-			return nCur + int(pszPos - pszFindWhere);
+			return nCur + (pszPos - pszFindWhere);
 		if (pszPos > pszFindWhere && (isalnum_ru(pszPos[-1]) || pszPos[-1] == _T('_')))
 		{
-			nCur += int(pszPos - pszFindWhere);
+			nCur += (pszPos - pszFindWhere);
 			pszFindWhere = pszPos + 1;
 			continue;
 		}
 		if (isalnum_ru(pszPos[nLength]) || pszPos[nLength] == _T('_'))
 		{
-			nCur += int(pszPos - pszFindWhere + 1);
+			nCur += (pszPos - pszFindWhere + 1);
 			pszFindWhere = pszPos + 1;
 			continue;
 		}
-		return nCur + int(pszPos - pszFindWhere);
+		return nCur + (pszPos - pszFindWhere);
 	}
 	ASSERT(FALSE);		// Unreachable
 	return -1;

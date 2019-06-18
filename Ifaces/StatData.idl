@@ -18,22 +18,22 @@ library StatDataLib
 	{
 		//params
 		HRESULT getFirstParamPos( [out, retval]VARIANT* pv_pos );
-		HRESULT getNextParamPos([in]LONG_PTR lpos, [out, retval]VARIANT* pv_pos);
-		HRESULT getParamKey([in]LONG_PTR lpos, [out, retval]VARIANT* pv_key);
+		HRESULT getNextParamPos( [in]long lpos, [out, retval]VARIANT* pv_pos );
+		HRESULT getParamKey( [in]long lpos, [out, retval]VARIANT* pv_key );		
 
 		//rows
 		HRESULT getFirstRowPos( [out, retval]VARIANT* pv_pos );
-		HRESULT getNextRowPos([in]LONG_PTR lpos, [out, retval]VARIANT* pv_pos);
+		HRESULT getNextRowPos( [in]long lpos, [out, retval]VARIANT* pv_pos );		
 		HRESULT getRowCount( [out, retval]VARIANT* pv_count );
 		
-		HRESULT getRowGroup([in]LONG_PTR lpos, [out, retval]VARIANT* pv_group);
-		HRESULT getRowClass([in]LONG_PTR lpos, [in]BSTR class_file, [out, retval]VARIANT* pv_class);
-		HRESULT deleteRow([in]LONG_PTR lpos);
-		HRESULT getValueByKey([in]LONG_PTR lpos, [in]long lkey, [out, retval]VARIANT* pv_value);
-		HRESULT getValueByParamPos([in]LONG_PTR lpos, [in]LONG_PTR lparam_pos, [out, retval]VARIANT* pv_value);
+		HRESULT getRowGroup( [in]long lpos, [out, retval]VARIANT* pv_group );
+		HRESULT getRowClass( [in]long lpos, [in]BSTR class_file, [out, retval]VARIANT* pv_class );
+		HRESULT deleteRow( [in]long lpos );
+		HRESULT getValueByKey( [in]long lpos, [in]long lkey, [out, retval]VARIANT* pv_value );
+		HRESULT getValueByParamPos( [in]long lpos, [in]long lparam_pos, [out, retval]VARIANT* pv_value );
 
 		HRESULT getGroupCount( [out, retval]VARIANT* pv_count );
-		HRESULT getGroup([in]long pos, [out, retval]VARIANT* pv_group_ret);
+		HRESULT getGroup( [in]long lpos, [out, retval]VARIANT* pv_group_ret );
 
 		HRESULT updateObject( long lflags );
 		HRESULT relloadSettings( long lflags );
@@ -44,7 +44,7 @@ library StatDataLib
 
 		HRESULT IsEmpty( [out, retval] VARIANT_BOOL *pvbIsEmpty );
 		HRESULT GetType( [out, retval] BSTR *pbstrType );
-		HRESULT getValueByKeyInUnit([in]LONG_PTR lpos, [in]long lkey, [out, retval]VARIANT* pv_value);
+		HRESULT getValueByKeyInUnit( [in]long lpos, [in]long lkey, [out, retval]VARIANT* pv_value );
 		[id(1), helpstring("method UpdateClassNames")] HRESULT UpdateClassNames(void);
 	};
 }

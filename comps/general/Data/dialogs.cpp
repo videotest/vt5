@@ -139,7 +139,7 @@ void CCreateObjectDlg::FillTypesCombo()
 		::SysFreeString( bstr );
 
 		int nIdx = m_comboKinds.AddString( strType );
-		m_comboKinds.SetItemData(nIdx, (DWORD_PTR)pTypeInfo);
+		m_comboKinds.SetItemData( nIdx, (DWORD)pTypeInfo );
 
 		if( ::GetObjectName( pTypeInfo ) == m_strObjectType )
 			strSel = strType;

@@ -4,6 +4,8 @@
 // produce the type library (ColorManAX.tlb) that will become a resource in
 // ColorManAX.ocx.
 
+#include <olectl.h>
+#include <idispids.h>
 
 [ uuid(5DB73BB3-F590-11D3-A0BC-0000B493A187), version(1.0),
   helpfile("ColorManAX.hlp"),
@@ -11,8 +13,6 @@
   control ]
 library COLORMANAXLib
 {
-#include <olectl.h>
-#include <idispids.h>
 	importlib(STDOLE_TLB);
 	importlib(STDTYPE_TLB);
 

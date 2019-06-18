@@ -1,9 +1,0 @@
-'resource:Method Bar#Tools#Show/hide Method bar#Method Bar
-'state:dock=MethodPanel
-
-BarNo = ToolBars.FindDockNo ( "MethodPanel" )
-If ToolBars.IsDockBarVisible( BarNo ) Then
-	ToolBars.ShowDockBar BarNo , 0
-Else
-	ToolBars.ShowDockBar BarNo , 1
-End If	

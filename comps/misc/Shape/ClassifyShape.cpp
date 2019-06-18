@@ -196,7 +196,7 @@ bool CClassifyShape::InvokeFilter()
 	/*if(unk) unk->Release();*/
 	if(ndo==0) return false;
 
-	POSITION pos;
+	long pos;
 	ndo->GetFirstChildPosition(&pos);
 
 
@@ -221,7 +221,7 @@ bool CClassifyShape::InvokeFilter()
 		count++;
 		CString sss;
 		sss.Format("------ %i\n",count);
-		OutputDebugString(sss);*/ 
+		OutputDebugStr(sss);*/ 
 		CChCodedContour ccc(punkChild);
 		if(!ccc.GetContourSize()) 
 		{
@@ -592,7 +592,7 @@ void CPolygonalApprox::Print()
 		temp.Format("%f\t%f\n", pn.curvature, m_pointsDist[pn.number]);
 		out+=temp;
 	}
-	OutputDebugString(out);
+	OutputDebugStr(out);
 
 }
 

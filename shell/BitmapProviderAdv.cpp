@@ -122,7 +122,7 @@ bool CAdvancedBitmapProvider::Load( )
 
 		// store index
 		XCmdInfo *pinfo = 0;
-		TPOS lpos = 0;
+		long lpos = 0;
 		lpos = m_mapname2info.find( str_name );
 		if( lpos )
 			pinfo = m_mapname2info.get( lpos );
@@ -178,7 +178,7 @@ long CAdvancedBitmapProvider::GetBmpIndexFromName( LPCTSTR lpstr_name, long *plB
 	long lidx = -1;
 	*plBitmap = -1;
 
-	TPOS lpos = 0;
+	long lpos = 0;
 	lpos = m_mapname2info.find( CString( lpstr_name ) );
 	if( lpos )
 	{
@@ -207,7 +207,7 @@ bool CAdvancedBitmapProvider::CatchActionInfo( IUnknown *punkActionInfo )
 	_bstr_t bstr_name;
 	sptr_ai->GetCommandInfo( bstr_name.GetAddress(), 0, 0, 0 );
 
-	TPOS lpos = 0;
+    long lpos = 0;
 	lpos = m_mapname2info.find( CString( (LPCTSTR)(bstr_name) ) );
 	if( !lpos )
 		return false;
@@ -228,7 +228,7 @@ bool CAdvancedBitmapProvider::CatchActionInfo( IUnknown *punkActionInfo )
     if( S_OK != sptr_ai3->SetBitmapHelper( GetControllingUnknown() ) )
 		return false;
     
-	// store module and resource identifiers
+	// store module and resource indetifiers
 	sptr_ai->GetRuntimeInformaton( &pinfo->m_dwDllCode, &pinfo->m_dwResCmd );
 	return true;
 }
@@ -279,7 +279,7 @@ HRESULT CAdvancedBitmapProvider::XAdvBmps::GetBmpIndexFromCommand( UINT nCmd, DW
 
 		// find name by nCmd and dwDllCode
 		CString str_name( _T("") );
-		for (TPOS lpos = pThis->m_mapname2info.head(); lpos; lpos = pThis->m_mapname2info.next(lpos))
+		for( long lpos  = pThis->m_mapname2info.head(); lpos; lpos = pThis->m_mapname2info.next( lpos ) )
 		{
 			CAdvancedBitmapProvider::XCmdInfo *pinfo = 0;
 			pinfo = pThis->m_mapname2info.get( lpos );

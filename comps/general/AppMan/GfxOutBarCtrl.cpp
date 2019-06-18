@@ -617,9 +617,6 @@ int CGfxOutBarCtrl::HitTestEx(const CPoint & point, int &index)
 	if (bUpArrow && rcUpArrow.PtInRect(point)) return htUpScroll;
 	if (bDownArrow && rcDownArrow.PtInRect(point)) return htDownScroll;
 
-
-
-
 	int max = arFolder.GetSize(), t;
 
 	CRect rc;

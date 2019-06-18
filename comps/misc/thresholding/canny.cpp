@@ -25,7 +25,7 @@ _ainfo_base::arg	CCannyThresholdInfo::s_pargs[] =
 static double inline sqr(double x)
 { return x*x; }
 
-static inline int iround(double x)
+static inline int round(double x)
 {
 	return int(floor(x+0.5));
 }
@@ -123,8 +123,8 @@ bool CCannyThreshold::InvokeFilter()
 							int th1 = c + m_nThreshold/2;
 							for(int k=1; k<=h; k++)
 							{
-								int dx = iround(step_x*k);
-								int dy = iround(step_y*k);
+								int dx = round(step_x*k);
+								int dy = round(step_y*k);
 								int c1 = srcRows[y-dx][x+dy];
 								if(c1>th1) cnt++;
 								else if(c1<th0) cnt--;
@@ -143,8 +143,8 @@ bool CCannyThreshold::InvokeFilter()
 						//	double step_x = grad_x/grad;
 						//	double step_y = grad_y/grad;
 						//	int r=12;
-						//	int x0 = x - iround(r*step_x);
-						//	int y0 = y - iround(r*step_y);
+						//	int x0 = x - round(r*step_x);
+						//	int y0 = y - round(r*step_y);
 						//	for(int yy=-r; yy<=r; yy++)
 						//	{
 						//		int y1 = y0+yy;
@@ -158,8 +158,8 @@ bool CCannyThreshold::InvokeFilter()
 						//			grayRows[y1][x1] = max(0, grayRows[y1][x1] - grad/64);
 						//		}
 						//	}
-						//	x0 = x + iround(r*step_x);
-						//	y0 = y + iround(r*step_y);
+						//	x0 = x + round(r*step_x);
+						//	y0 = y + round(r*step_y);
 						//	for(int yy=-r; yy<=r; yy++)
 						//	{
 						//		int y1 = y0+yy;

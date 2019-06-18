@@ -312,7 +312,7 @@ bool CContextItemBase::SortChildren()
 		return true;
 
 	CItemList list;
-	int nCount = (int)m_listChildren.GetCount();
+	int nCount = m_listChildren.GetCount();
 	for (int i = 0; i < nCount; i++)
 	{
 		POSITION pos = FindSmallest();
@@ -343,7 +343,7 @@ bool CContextItemBase::SortChildrenCB(LPCVSORTCB pSort)
 		return false;
 
 	CItemList list;
-	int nCount = (int)m_listChildren.GetCount();
+	int nCount = m_listChildren.GetCount();
 	for (int i = 0; i < nCount; i++)
 	{
 		POSITION pos = FindSmallestCB(pSort);

@@ -1,10 +1,6 @@
 #ifndef __action5_h__
 #define __action5_h__
 
-//struct __POSITION {};
-//typedef __POSITION* POSITION;
-typedef POSITION TPOS;
-
 #include "defs.h"
 
 //script plug-in must support the following interfaces:
@@ -236,10 +232,10 @@ interface IActionTargetManager : public IUnknown
 
 interface IFilterAction : public IUnknown
 {
-	com_call GetFirstArgumentPosition(TPOS *pnPos) = 0;
-	com_call GetNextArgument(IUnknown **ppunkDataObject, TPOS *pnPosNext) = 0;
-	com_call GetArgumentInfo(TPOS lPos, BSTR *pbstrArgType, BSTR *pbstrArgName, BOOL *pbOut) = 0;
-	com_call SetArgument(TPOS lPos, IUnknown *punkDataObject, BOOL bDataChanged) = 0;
+	com_call GetFirstArgumentPosition( long *pnPos ) = 0;
+	com_call GetNextArgument( IUnknown **ppunkDataObject, long *pnPosNext ) = 0;
+	com_call GetArgumentInfo( long lPos, BSTR *pbstrArgType, BSTR *pbstrArgName, BOOL *pbOut ) = 0;
+	com_call SetArgument( long lPos, IUnknown *punkDataObject, BOOL bDataChanged ) = 0;
 	com_call InitArguments() = 0;
 	com_call LockDataChanging( BOOL bLock ) = 0;
 	com_call SetPreviewMode( BOOL bEnter ) = 0;

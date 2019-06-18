@@ -12,7 +12,7 @@ m_lStepIndex(-1), m_lStepPos(0), m_lNextStepPos(0), m_pStep(0)
 		return;
 
 	IUnknownPtr ptrMethod;
-	TPOS lMethodPos2 = m_lMethodPos;
+	long lMethodPos2 = m_lMethodPos;
 	pm->GetNextMethod(&lMethodPos2,&ptrMethod);
 	m_sptrMethod = ptrMethod;
 

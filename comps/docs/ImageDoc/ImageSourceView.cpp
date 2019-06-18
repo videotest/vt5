@@ -33,6 +33,13 @@
 
 #include "\vt5\AWIN\profiler.h"
 
+#ifdef _DEBUG
+#define new DEBUG_NEW
+#undef THIS_FILE
+static char THIS_FILE[] = __FILE__;
+#endif
+
+
 DWORD     g_pdwBinaryColors[256];
 DWORD     g_clSyncColor;
 
@@ -1808,7 +1815,7 @@ bool CImageSourceView::_DrawObjectClass(CDC &dc, IUnknown * punkObject, CRect & 
 
 	double Del = m_bFromPrint ? m_fZoom : 1;
 
-	TPOS	lpos = m_object_coords.find(punkObject);
+	long	lpos = m_object_coords.find( (long)punkObject );
 
 	if( !lpos )
 	{
@@ -1832,7 +1839,7 @@ bool CImageSourceView::_DrawObjectClass(CDC &dc, IUnknown * punkObject, CRect & 
 			if( ptrNDO == 0 )		return 0;
 
 
-			TPOS lPos = 0;
+			long lPos = 0;
 			ptrNDO->GetFirstChildPosition( &lPos );
 			while( lPos )
 			{
@@ -2039,7 +2046,7 @@ bool CImageSourceView::_DrawObjectClass(CDC &dc, IUnknown * punkObject, CRect & 
 		outRect.right = outRect.left + textRc.Width();
 		outRect.bottom = outRect.top + textRc.Height();
 
-		m_object_coords.set( outRect, punkObject );
+		m_object_coords.set( outRect, (long)punkObject );
 
 
 	}
@@ -2142,7 +2149,7 @@ bool CImageSourceView::_DrawObjectNumber(CDC &dc, IUnknown * punkObject, CRect &
 
 	dc.DrawText(strNumber, &textRc, DT_CALCRECT|DT_CENTER|DT_TOP|DT_SINGLELINE);
 
-	TPOS	lpos = m_object_coords_num.find(punkObject);
+	long	lpos = m_object_coords_num.find( (long)punkObject );
 
 	if( !lpos )
 	{
@@ -2166,7 +2173,7 @@ bool CImageSourceView::_DrawObjectNumber(CDC &dc, IUnknown * punkObject, CRect &
 			if( ptrNDO == 0 )		return 0;
 
 
-			TPOS lPos = 0;
+			long lPos = 0;
 			ptrNDO->GetFirstChildPosition( &lPos );
 			while( lPos )
 			{
@@ -2373,7 +2380,7 @@ bool CImageSourceView::_DrawObjectNumber(CDC &dc, IUnknown * punkObject, CRect &
 		outRect.right = outRect.left + textRc.Width();
 		outRect.bottom = outRect.top + textRc.Height();
 	
-		m_object_coords_num.set( outRect, punkObject );
+		m_object_coords_num.set( outRect, (long)punkObject );
 	}
 	else
 		outRect = m_object_coords_num.get( lpos );
@@ -2468,7 +2475,7 @@ CRect CImageSourceView::_GetObjectClassAndNumberRect(IUnknown * punkObject, CRec
 			dc.SelectObject( pOldFont );
 
 
-			TPOS	lpos = m_object_coords.find( punkObject );
+			long	lpos = m_object_coords.find( (long)punkObject );
 			
 			if( !lpos )
 			{
@@ -2492,7 +2499,7 @@ CRect CImageSourceView::_GetObjectClassAndNumberRect(IUnknown * punkObject, CRec
 					if( ptrNDO == 0 )		return 0;
 
 
-					TPOS lPos = 0;
+					long lPos = 0;
 					ptrNDO->GetFirstChildPosition( &lPos );
 					while( lPos )
 					{
@@ -2707,7 +2714,7 @@ CRect CImageSourceView::_GetObjectClassAndNumberRect(IUnknown * punkObject, CRec
 				outRect.right = outRect.left + textRc.Width();
 				outRect.bottom = outRect.top + textRc.Height();
 
-				m_object_coords.set( outRect, punkObject );
+				m_object_coords.set( outRect, (long)punkObject );
 			}
 			else 
 				outRect = m_object_coords.get( lpos );
@@ -2765,7 +2772,7 @@ CRect CImageSourceView::_GetObjectClassAndNumberRect(IUnknown * punkObject, CRec
 
 			dc.DrawText(strNumber, &textRc, DT_CALCRECT|DT_CENTER|DT_TOP|DT_SINGLELINE);
 
-			TPOS	lpos = m_object_coords_num.find(punkObject);
+			long	lpos = m_object_coords_num.find( (long)punkObject );
 
 			if( !lpos )
 			{
@@ -2789,7 +2796,7 @@ CRect CImageSourceView::_GetObjectClassAndNumberRect(IUnknown * punkObject, CRec
 					if( ptrNDO == 0 )		return 0;
 
 
-					TPOS lPos = 0;
+					long lPos = 0;
 					ptrNDO->GetFirstChildPosition( &lPos );
 					while( lPos )
 					{
@@ -3003,7 +3010,7 @@ CRect CImageSourceView::_GetObjectClassAndNumberRect(IUnknown * punkObject, CRec
 				outRect.right = outRect.left + textRc.Width();
 				outRect.bottom = outRect.top + textRc.Height();
 			
-				m_object_coords_num.set( outRect, punkObject );
+				m_object_coords_num.set( outRect, (long)punkObject );
 			}
 			else 
 				outRect = m_object_coords_num.get( lpos );
@@ -3063,7 +3070,7 @@ bool CImageSourceView::_DrawMeasObjects(CDC &dc, CRect rectClip, COLORREF color,
 
 
 	// for all manual meas objects
-	TPOS	lpos;
+	long	lpos;
 	ptrNamed->GetFirstChildPosition( &lpos );
 
 	CPen	pen(PS_SOLID, 0, color);
@@ -3182,7 +3189,7 @@ COLORREF CImageSourceView::_get_class_color( long lClass )
 
 		if( var.vt == VT_I4 && var.lVal == 1L && var2.vt == VT_I4 )
 		{
-			TPOS	lpos = m_class_colors2.find(lClass);
+			long	lpos = m_class_colors2.find( lClass );
 			if( !lpos )
 			{
 				COLORREF cr = ::get_smooth_class_color( lClass, var2.lVal, VIRTUAL_STAT_CLASSIFIER );
@@ -3193,7 +3200,7 @@ COLORREF CImageSourceView::_get_class_color( long lClass )
 		}
 	}
 
-	TPOS	lpos = m_class_colors.find(lClass);
+	long	lpos = m_class_colors.find( lClass );
 	if( !lpos )
 	{
 		COLORREF cr = ::get_class_color( lClass, m_bstr_class_name );
@@ -3223,7 +3230,7 @@ const char	*CImageSourceView::_get_class_name( long nclass )
 		{
 			if( nclass != -1 )
 			{
-				TPOS	lpos = m_class_names2.find(nclass);
+				long	lpos = m_class_names2.find( nclass );
 				if( !lpos )
 				{
 					char *str = _class_buffer();
@@ -3236,7 +3243,7 @@ const char	*CImageSourceView::_get_class_name( long nclass )
 		}
 	}
 
-	TPOS	lpos = m_class_names.find(nclass);
+	long	lpos = m_class_names.find( nclass );
 	if( !lpos )
 	{
 		const char *psz = ::get_class_name( nclass, m_bstr_class_name );
@@ -3409,7 +3416,7 @@ void CImageSourceView::DoDrawFrameObjects( IUnknown *punkObject, CDC &dc, CRect 
 
 		if( m_bShowName )
 		{
-			TPOS	lpos = m_object_coords.find(punkObject);
+			long	lpos = m_object_coords.find( (long)punkObject );
 			if( lpos )
 			{
 				rc = m_object_coords.get( lpos );
@@ -3439,7 +3446,7 @@ void CImageSourceView::DoDrawFrameObjects( IUnknown *punkObject, CDC &dc, CRect 
 		}
 		if( m_bShowNumber )
 		{
-			TPOS	lpos = m_object_coords_num.find(punkObject);
+			long	lpos = m_object_coords_num.find( (long)punkObject );
 			if( lpos )
 			{
 				rc = m_object_coords_num.get( lpos );
@@ -3883,7 +3890,7 @@ void CImageSourceView::SetObjectOffset( IUnknown *punkObj, CPoint ptOffset )
 			m_rcPrevClass.SetRectEmpty();
 		}
 
-	LPOS lPos = m_object_coords.find( (long)punkObj );
+	long lPos = m_object_coords.find( (long)punkObj );
 	if( lPos )
 		m_rcPrevClass = m_object_coords.get( lPos );
 
@@ -3892,8 +3899,8 @@ void CImageSourceView::SetObjectOffset( IUnknown *punkObj, CPoint ptOffset )
 		m_rcPrevNum = m_object_coords_num.get( lPos );
 ******************/
 
-	m_object_coords.remove_key( punkObj );
-	m_object_coords_num.remove_key( punkObj );
+	m_object_coords.remove_key( (long)punkObj );
+	m_object_coords_num.remove_key( (long)punkObj );
 }
 
 void CImageSourceView::DoResizeRotateObject( IUnknown *punkObject, CFrame *pframe )
@@ -4853,7 +4860,7 @@ void	CImageSourceView::OnSelect( INamedDataObject2 *pNamedObject )
 	pNamedObject->GetParent( &punkParent );
 	INamedDataObject2Ptr	ptrNamed( punkParent );
 	if( punkParent )punkParent->Release();
-	POSITION	lpos = 0;
+	long	lpos = 0;
 	pNamedObject->GetObjectPosInParent( &lpos );
 	if( ptrNamed != 0 )ptrNamed->SetActiveChild( lpos );
 	OnSelect( ptrNamed );
@@ -4873,7 +4880,7 @@ void	CImageSourceView::AddSelectableObject( INamedDataObject2 *pNamedObject, boo
 	m_object2position[pNamedObject]=m_selectableObjects.AddTail( pNamedObject );
 	pNamedObject->AddRef();
 
-	TPOS	lpos = 0;
+	long	lpos = 0;
 	pNamedObject->GetFirstChildPosition( &lpos );
 	while( lpos )
 	{
@@ -4904,7 +4911,7 @@ void	CImageSourceView::RemoveSelectableObject( INamedDataObject2 *pNamedObject, 
 	if( m_posLastSelectable == pos )m_posLastSelectable = 0;
 	
 
-	TPOS	lpos = 0;
+	long	lpos = 0;
 	pNamedObject->GetFirstChildPosition( &lpos );
 
 	while( lpos )
@@ -4928,7 +4935,7 @@ void CImageSourceView::_select_active_object(IUnknown *punkObjectList)
 	// SBT1742(12.04.2006). Do not remove object selection during notification with cncReset code.
 	INamedDataObject2Ptr	ptrOL( punkObjectList );
 	if (ptrOL == 0) return;
-	TPOS lpos = 0;
+	long lpos = 0;
 	ptrOL->GetActiveChild(&lpos);
 	IUnknownPtr punkActiveObj;
 	if (lpos != 0)
@@ -5026,7 +5033,7 @@ void CImageSourceView::_attach_msg_listeners_from_list( IUnknown* punkObjectList
 	if( ptrList == 0 )
 		return;
 
-	TPOS lpos = 0;
+	long lpos = 0;
 	ptrList->GetFirstChildPosition( &lpos );
 	while( lpos )
 	{
@@ -5403,7 +5410,7 @@ bool CImageSourceView::_check_cross( CRect rc, IUnknown *punkObject )
 		return true;
 	if( bOK )
 	{
-		TPOS Pos = 0;
+		long Pos = 0;
 		ptrListObject->GetFirstChildPosition( &Pos );
 
 		while( Pos )
@@ -5468,7 +5475,7 @@ bool CImageSourceView::_check_cross( CRect rc, IUnknown *punkObject )
 				{
 					if( GetObjectKey( punkObject ) != GetObjectKey( pChild ) )
 					{
-						TPOS lPos = m_object_coords.find(pChild);
+						long lPos = m_object_coords.find( (long)pChild );
 
 						if( lPos )
 						{
@@ -5490,7 +5497,7 @@ bool CImageSourceView::_check_cross( CRect rc, IUnknown *punkObject )
 
 	if( bOK )
 	{
-		TPOS Pos = 0;
+		long Pos = 0;
 		ptrListObject->GetFirstChildPosition( &Pos );
 
 		while( Pos )
@@ -5502,7 +5509,7 @@ bool CImageSourceView::_check_cross( CRect rc, IUnknown *punkObject )
 			{
 				if( GetObjectKey( punkObject ) != GetObjectKey( pChild ) )
 				{
-					TPOS lPos = m_object_coords_num.find(pChild);
+					long lPos = m_object_coords_num.find( (long)pChild );
 
 					if( lPos )
 					{
@@ -5533,7 +5540,7 @@ void CImageSourceView::_recalc_rect(BOOL bUpdate/* = false*/, IUnknown *punkExcl
 
 	if( ptr_objects != 0 )
 	{
-		TPOS lpos = 0;
+		long lpos = 0;
 		ptr_objects->GetFirstChildPosition( &lpos );
 
 		while( lpos ) 
@@ -5706,7 +5713,7 @@ HRESULT CImageSourceView::XMenuInitializer::OnInitPopup(
 
 		m_ptrSubMenu->SetSingleObjectName( _bstr_t( m_strText ) );
 
-		LPOS lPos = 0;	
+		long lPos = 0;	
 		m_ptrSubMenu->GetFirstItemPos( &lPos );
 		
 		
@@ -5722,7 +5729,7 @@ HRESULT CImageSourceView::XMenuInitializer::OnInitPopup(
 			BSTR bstrText	= 0;
 			UINT uiItemID	= 0;
 			UINT uiParentID	= -1;
-			//LONG_PTR lCurPos	= lPos;
+			//long lCurPos	= lPos;
 
 			m_ptrSubMenu->GetNextItem( &uiFlags, &uiItemID, &bstrText, &uiParentID, &lPos );
 			CString strText = bstrText;

@@ -35,12 +35,12 @@ void *woolz_object_by_vt5_object(IUnknown *punkVT5Obj)
 {
 	IWoolzObject *pwo = NULL;
 	sptrINamedDataObject2 sptrNObj(punkVT5Obj);
-	POSITION posObj = 0;
-	sptrNObj->GetFirstChildPosition(&posObj);
+	long posObj = 0;
+	sptrNObj->GetFirstChildPosition((long*)&posObj);
 	while (posObj)
 	{
 		IUnknown *punkCh = 0;
-		sptrNObj->GetNextChild(&posObj, &punkCh);
+		sptrNObj->GetNextChild((long*)&posObj, &punkCh);
 		if (punkCh)
 		{
 			IWoolzObject *pwo1 = NULL;
@@ -66,12 +66,12 @@ void *woolz_object_by_vt5_object(IUnknown *punkVT5Obj)
 IWoolzObjectPtr woolz_obj_by_VT5_obj(IUnknownPtr punkVT5Obj)
 {
 	sptrINamedDataObject2 sptrNObj(punkVT5Obj);
-	POSITION posObj = 0;
-	sptrNObj->GetFirstChildPosition(&posObj);
+	long posObj = 0;
+	sptrNObj->GetFirstChildPosition((long*)&posObj);
 	while (posObj)
 	{
 		IUnknownPtr punkCh;
-		sptrNObj->GetNextChild(&posObj, &punkCh);
+		sptrNObj->GetNextChild((long*)&posObj, &punkCh);
 		bool bCh = punkCh;
 		if (bCh)
 		{
@@ -300,12 +300,12 @@ HRESULT CWoolzObject::NormalizeParameters(IUnknown *punkObjectsList)
 	_ptr_t2<Chromosome*> arrObjects(lObjects);
 	_ptr_t2<IUnknown *> arrVT5Objs(lObjects);
 	// Iterate all objects and find Woolz object data
-	POSITION pos = 0;
-	sptrN->GetFirstChildPosition(&pos);
+	long pos = 0;
+	sptrN->GetFirstChildPosition((long*)&pos);
 	while (pos)
 	{
 		IUnknown	*punk = 0;
-		sptrN->GetNextChild(&pos, &punk );
+		sptrN->GetNextChild( (long*)&pos, &punk );
 		if (punk)
 		{
 			ICalcObjectPtr sptrObj(punk);

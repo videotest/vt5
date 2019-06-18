@@ -15,10 +15,10 @@
 #define ToColor( c )	color( max( 0, min( 65535, c ) ) )
 namespace misc_utils
 {
-inline int Bright ( int b, int g, int r )	//функция для получения яркости
-{
-	return (r*60+g*118+b*22)/200;
-}
+	inline int Bright ( int b, int g, int r )	//функция для получения яркости
+	{
+		return (r*60+g*118+b*22)/200;
+	}
 }
 using namespace misc_utils;
 

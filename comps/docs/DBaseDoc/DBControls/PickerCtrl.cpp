@@ -6,9 +6,11 @@
 #include "PickerCtrl.h"
 #include "dbcontrol.h"
 
-//#include "msado15.tlh"
-//#include "msado15.tli"
-#import "msado15.dll" rename_namespace("ADO") rename("EOF", "ADOEOF")
+
+#import "msado15.dll" \
+    rename_namespace("ADO") rename("EOF", "ADOEOF")
+#import "msadox.dll" \
+    rename_namespace("ADOX") rename("EOF", "ADOEOF")
 
 #include "EditCtrl.h"
 

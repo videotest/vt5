@@ -30,7 +30,7 @@ struct ClassCell
 	}
 	~ClassCell()
 	{
-		TPOS lPos = listObjects.head();
+		long lPos = listObjects.head();
 		while(lPos)
 		{
 			IUnknown* punk = listObjects.next(lPos);
@@ -58,7 +58,7 @@ class CRenameEditBox : public win_impl
 public:
 	CRenameEditBox();
 protected:
-	virtual LRESULT on_char(long nVirtKey);
+	virtual long on_char( long nVirtKey );
 public:
 	char m_szText[256];
 	bool m_bReady;
@@ -149,8 +149,8 @@ protected:
 	//Persist
 	com_call GetClassID( CLSID *pClassID ); 
 
-	com_call GetFirstVisibleObjectPosition(TPOS *plpos);
-	com_call GetNextVisibleObject(IUnknown ** ppunkObject, TPOS *plPos);
+	com_call GetFirstVisibleObjectPosition( long *plpos );
+	com_call GetNextVisibleObject( IUnknown ** ppunkObject, long *plPos );
 
 	com_call GetMatchType( BSTR bstrObjectType, DWORD *pdwMatch );
 

@@ -105,7 +105,7 @@ BOOL CPrintFieldAXPropPage::OnInitDialog()
 
 	// [vanek] BT2000: 3693
     long lCount = ::GetEntriesCount( ::GetAppUnknown(), "\\PrintFieldAX\\Groups" );
-	for( LPOS lPos = 0; lPos < lCount; lPos++ )  
+	for( long lPos = 0; lPos < lCount; lPos++ )  
         m_comboGroups.AddString( ::GetEntryName( ::GetAppUnknown(), "\\PrintFieldAX\\Groups", lPos ) );        
 	
 	IPrintFieldPtr	ptrPrintField( GetAXInstance() );

@@ -189,7 +189,7 @@ void CCrossDiv1Filter::SeparateTouch(const _point pt_x)
 	int TrackSize=1;
 	pTrack[0]=pt_x;
 
-	POSITION pos = 0;
+	long pos = 0;
 	m_List->GetFirstChildPosition(&pos);
 	while( pos ) //по всем объектам
 	{

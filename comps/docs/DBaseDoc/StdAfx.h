@@ -10,9 +10,6 @@
 #pragma once
 #endif // _MSC_VER > 1000
 
-#define WINVER 0x0501
-#define _WIN32_WINNT 0x501
-
 #define VC_EXTRALEAN		// Exclude rarely-used stuff from Windows headers
 
 #include <afxwin.h>         // MFC core and standard components
@@ -46,7 +43,7 @@
 
 #include <afxole.h>
 #include <atlbase.h>
-extern ATL::CComModule _Module;
+extern CComModule _Module;
 #include <atlcom.h>
 #include <atldbcli.h>
 #include <atldbsch.h>
@@ -54,8 +51,13 @@ extern ATL::CComModule _Module;
 
 #include <comdef.h>
 
-#import "msado15.dll" rename_namespace("ADO") rename("EOF", "ADOEOF")
-#import "msadox.dll" rename_namespace("ADOX") rename("EOF", "ADOEOF")
+#import "msado15.dll" \
+    rename_namespace("ADO") rename("EOF", "ADOEOF")
+	
+
+#import "msadox.dll" \
+    rename_namespace("ADOX") rename("EOF", "ADOEOF")
+
 
 //{{AFX_INSERT_LOCATION}}
 // Microsoft Visual C++ will insert additional declarations immediately before the previous line.

@@ -143,7 +143,7 @@ protected:
 	char	m_szText[20];
 	HICON	m_hIcon;
 
-	UINT_PTR m_nTimerID;
+	UINT m_nTimerID;
 
 	void InitDefaults();	
 

@@ -1,6 +1,0 @@
-'state:function=StateObjectScissorsScript
-
-MethodMan_BeforeInteractiveMethodStep "ObjectScissorsScript", "group"
-ActionState.RunInteractive "ObjectScissors"
-MethodMan.StoreStepAs Docs.LoadString ("Object Editor")
-MethodMan.CancelStepStoring

@@ -4,6 +4,8 @@
 // produce the type library (HistAX.tlb) that will become a resource in
 // HistAX.ocx.
 
+#include <olectl.h>
+#include <idispids.h>
 
 [ uuid(06FDDE55-F981-11D3-A0C1-0000B493A187), version(1.0),
   helpfile("HistAX.hlp"),
@@ -11,8 +13,6 @@
   control ]
 library HISTAXLib
 {
-#include <olectl.h>
-#include <idispids.h>
 	importlib(STDOLE_TLB);
 	importlib(STDTYPE_TLB);
 

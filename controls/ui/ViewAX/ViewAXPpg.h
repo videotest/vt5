@@ -38,7 +38,7 @@ protected:
 	virtual void DoDataExchange(CDataExchange* pDX);    // DDX/DDV support
 
 	void _RebuildViewsDesc();
-	IUnknown* _GetDataByObjectName(LONG_PTR nTemplPos, const char *szName);
+	IUnknown* _GetDataByObjectName(long nTemplPos, const char *szName);
 	void _UpdateProgID(int nSel = -1);
 
 // Message maps

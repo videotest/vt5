@@ -240,7 +240,7 @@ void CActionMeasParallelLines::SetParamsKeys()
 	{
 		IUnknownPtr punkObj(m_ObjListWrp.GetNextObject(pos),false);
 		INamedDataObject2Ptr sptrObj(punkObj);
-		POSITION lPosChild;
+		long lPosChild;
 		sptrObj->GetFirstChildPosition(&lPosChild);
 		while (lPosChild)
 		{
@@ -637,7 +637,7 @@ bool CActionMeasParallelLines::AddMMObject(long nPos)
 	IMeasParamGroupPtr sptrGroup(punkGroup);
 	if(punkGroup) punkGroup->Release();
 	
-	LONG_PTR lpos = 0;
+	long lpos = 0;
 	long lNewKey = -1;
 	ICalcObjectContainerPtr sptrCOC = m_ObjListWrp;
 	if(sptrCOC != 0) 

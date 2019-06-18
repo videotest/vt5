@@ -1,4 +1,0 @@
-'state:function=StateMeasManualCycle3Script
-
-MethodMan.RenameCurrentStep Docs.LoadString ("Manual Measurements")
-ActionState.RunInteractive "MeasManualCycle3"

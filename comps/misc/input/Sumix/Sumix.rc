@@ -356,28 +356,28 @@ BEGIN
     END
 
     IDD_PREVIEW_VIDEO, DIALOG
-BEGIN
+    BEGIN
         LEFTMARGIN, 7
         RIGHTMARGIN, 339
         TOPMARGIN, 7
         BOTTOMMARGIN, 209
-END
+    END
 
     IDD_SETTINGS, DIALOG
-BEGIN
+    BEGIN
         LEFTMARGIN, 7
         RIGHTMARGIN, 151
         TOPMARGIN, 7
         BOTTOMMARGIN, 98
-END
+    END
 
     IDD_SHUTTER, DIALOG
-BEGIN
+    BEGIN
         LEFTMARGIN, 7
         RIGHTMARGIN, 152
         TOPMARGIN, 7
         BOTTOMMARGIN, 61
-END
+    END
 
     IDD_VIDEO, DIALOG
     BEGIN
@@ -413,7 +413,7 @@ END
 //
 
 STRINGTABLE 
-    BEGIN
+BEGIN
     IDS_SUMIX               "Sumix"
     IDS_2080x1542_LOW_QUALITY "2080x1542 низкое качество"
     IDS_2080x1542_HIGH_QUALITY "2080x1542 высокое качество"
@@ -425,9 +425,9 @@ STRINGTABLE
 END
 
 STRINGTABLE 
-        BEGIN
+BEGIN
     IDS_INPUT               "Захват изображения"
-        END
+END
 
 STRINGTABLE 
 BEGIN
@@ -436,13 +436,13 @@ BEGIN
     IDS_FRAME_PERIOD        "%d мс  "
     IDS_ENHANCEMENT         "Преобразования"
     IDS_FILTER              "AVI files(*.avi)|*.avi|All files(*.*)|*.*||"
-    END
+END
 
 STRINGTABLE 
-    BEGIN
+BEGIN
     IDS_FILE_NOT_OPENED     "Файл %s не  открыть"
     IDS_VIDEO_CAPTURED      "Video saved in %s. %d frames captured, %d frames skipped."
-    END
+END
 
 STRINGTABLE 
 BEGIN

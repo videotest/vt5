@@ -1,7 +1,7 @@
 ; forensic.def : Declares the module parameters for the DLL.
 
 LIBRARY      "forensic"
-;DESCRIPTION  'forensic Windows Dynamic Link Library'
+DESCRIPTION  'forensic Windows Dynamic Link Library'
 
 EXPORTS
 	DllCanUnloadNow PRIVATE

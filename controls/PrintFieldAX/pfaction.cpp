@@ -463,7 +463,7 @@ void request_impl::layout_by_report_pos( CWnd *pwnd )
 			if( map_ctrls.head() )
 				rc_first_row = map_ctrls.get( map_ctrls.head() )->rect_position;
 
-			for (TPOS lpos = map_ctrls.head(); lpos; lpos = map_ctrls.next(lpos))
+			for( long lpos=map_ctrls.head(); lpos; lpos=map_ctrls.next(lpos) )
 			{
 				control_data* pc = map_ctrls.get( lpos );
 				
@@ -493,7 +493,7 @@ void request_impl::layout_by_report_pos( CWnd *pwnd )
 
 		//determine max group text extension
 		CSize max_extent = CSize( 0, 0 );
-		for (TPOS lpos = map_ctrls.head(); lpos; lpos = map_ctrls.next(lpos))
+		for( long lpos=map_ctrls.head(); lpos; lpos=map_ctrls.next(lpos) )
 		{
 			control_data* pc = map_ctrls.get( lpos );
 			CSize	size = dc.GetTextExtent( pc->caption, pc->caption.length() );
@@ -530,7 +530,7 @@ void request_impl::layout_by_report_pos( CWnd *pwnd )
 		int nydelta = ystart - lmin_top;
 
 		// offseting controls positions
-		for (TPOS lpos_move = map_ctrls.head(); lpos_move; lpos_move = map_ctrls.next(lpos_move))
+		for( long lpos_move = map_ctrls.head() ; lpos_move; lpos_move=map_ctrls.next(lpos_move) )
 		{
 			control_data* pc_move = map_ctrls.get( lpos_move );
 			pc_move->rect_position.OffsetRect( nxdelta, nydelta );
@@ -698,7 +698,7 @@ bool CActionRequestValuesForDB::Invoke()
 //get active document
 	IDBaseDocumentPtr	ptrDBDoc;
 	IApplication	*papp = GetAppUnknown();
-	LONG_PTR	lpos_t, lpos_d;
+	long	lpos_t, lpos_d;
 
 	papp->GetFirstDocTemplPosition( &lpos_t );
 
@@ -856,7 +856,7 @@ bool CActionRequestValuesForReport::Invoke()
 
 //enum its object and scan for PrintField
 	bool		bOneFound = false;
-	POSITION	lpos;
+	long		lpos;
 	CPtrArray	controls;
 	
 	ptrNamed->GetFirstChildPosition( &lpos );
@@ -943,7 +943,7 @@ bool CActionRequestValuesForReport::Invoke()
 		IDocumentSitePtr sptrDocSite(ptr_doc);
 		if (sptrDocSite != 0)
 		{
-			TPOS lPos = 0;
+			long lPos = 0;
 			sptrDocSite->GetFirstViewPosition(&lPos);
 			while (lPos)
 			{
@@ -1015,7 +1015,7 @@ bool CActionStoreValuesForReport::Invoke()
 
 //enum its object and scan for PrintField
 	bool		bOneFound = false;
-	POSITION	lpos;
+	long		lpos;
 	CPtrArray	controls;
 	
 	ptrNamed->GetFirstChildPosition( &lpos );

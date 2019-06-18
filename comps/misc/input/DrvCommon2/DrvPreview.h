@@ -5,7 +5,7 @@
 #include "ImageUtil.h"
 #include "ExposureMask.h"
 #include "CamValues.h"
-#include <../common2/com_unknown.h>
+#include "com_unknown.h"
 #include "CritSecEx.h"
 
 extern CCamBoolValue g_VertMirror;
@@ -93,7 +93,7 @@ protected:
 	// These shifts used in PlanesReady16
 	int m_nShift16To16; // Used to obtain native 16-bit image from driver 16-bit (usually low 12 bit valid)
 	int m_nShift16To8;  // Used to obtain 8-bit DIB from driver 16-bit planes
-
+   
 	class XStopPreview
 	{
 		

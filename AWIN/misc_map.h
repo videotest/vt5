@@ -17,12 +17,6 @@
 #include "misc_dbg.h"
 
 #pragma warning(disable:4786)
-typedef POSITION TPOS;
-
-template <typename T> long cmp(T a, T b)
-{
-	return b>a?1:(a>b?-1:0);
-}
 
 inline long cmp_long( long l1, long l2 )
 {	if( l1 == l2 )return 0;else return (l2>l1)?1:-1;};
@@ -72,11 +66,11 @@ public:
 /*
 	void		remove( key_type key );
 	long head();
-	long next( LPOS lpos );
+	long next( long lpos );
 	long tail();
-	long prev( LPOS lpos );
-	data_type	get( LPOS lpos );
-	key_type	get_key( LPOS lpos );
+	long prev( long lpos );
+	data_type	get( long lpos );
+	key_type	get_key( long lpos );
 	long		set( key_type key, data_type data );
 	long		find( key_type key );
 
@@ -102,12 +96,12 @@ protected:
 	}
 public:
 //установить значение дл€ ключа
-	TPOS set(data_type data, key_type key)
+	long set( data_type data, key_type key )
 	{
 		signed char	pdirs[MAX_DEEP], cmp=0;
 		long	ndeep = 0;
 //ищем ветку куда будем складывать результат
-//заодно ищем ветку которую потенциально может быть лучше баллансировать
+//заожно ищем ветку которую потенциально может быть лучше баллансировать
 //это - последн€€ ветка с фактором != 0 
 //(фактор не может быть больше 1, так как это уже отбаллансировалось
 //бы при предъидущих вызвовах, а 0 - не баллансируетс€ а тольео мен€етс€ фактор)
@@ -252,10 +246,10 @@ public:
 			}
 		}
 	
-		return (TPOS)pitem_ret;
+		return (long)pitem_ret;
 	}
 
-	LONG_PTR dbg_check(item *p)
+	long dbg_check( item *p )
 	{
 		if( !p )return 0;
 
@@ -269,10 +263,10 @@ public:
 		else
 			_assert( p == m_ptr );
 
-		LONG_PTR	right_h = _check(p->right);
-		TPOS	left_h = _check(p->left);
+		long	right_h = _check( p->right );
+		long	left_h = _check( p->left );
 
-		TPOS	factor = right_h - left_h;
+		long	factor = right_h-left_h;
 		_assert( factor == p->factor );
 
 		if( right_h > left_h )return right_h+1;
@@ -466,13 +460,13 @@ public:
 	}
 
 //найти позицию по ключу. если 0 то не нашли
-	TPOS	find( key_type key )
+	long	find( key_type key )
 	{
-		char	c;
+		long	c;
 		for( item	*p = m_ptr; p!=0;  )
 		{
 			c = _cmp( p->key, key );
-			if (!c)return (TPOS)p;
+			if( !c )return (long)p;
 
 			if( c > 0 )p = p->right;
 			else p = p->left;
@@ -532,23 +526,23 @@ public:
 	}
 
 	//вернуть - таки значение по позиции
-	data_type	get(TPOS lpos)
+	data_type	get( long lpos )
 	{
 		item	*p = (item*)lpos;
 		return p->data;
 	}
 
 	//вернуть - ключ по позиции
-	key_type	get_key(TPOS lpos)
+	key_type	get_key( long lpos )
 	{
 		item	*p = (item*)lpos;
 		return p->key;
 	}
 
 	//отладочные функции
-	TPOS root()					{ return (TPOS)m_ptr; }
-	TPOS left(LONG_PTR lpos)		{ item *p = (item*)lpos; return (TPOS)p->left; }
-	TPOS right(LONG_PTR lpos)		{ item *p = (item*)lpos; return (TPOS)p->right; }
+	long root()					{return (long)m_ptr;}
+	long left( long lpos )		{item *p = (item*)lpos;return (long)p->left;}
+	long right( long lpos )		{item *p = (item*)lpos;return (long)p->right;}
 
 
 protected:
@@ -586,11 +580,11 @@ public:
 /*
 	void		remove( key_type key );
 	long head();
-	long next( LPOS lpos );
+	long next( long lpos );
 	long tail();
-	long prev( LPOS lpos );
-	data_type	get( LPOS lpos );
-	key_type	get_key( LPOS lpos );
+	long prev( long lpos );
+	data_type	get( long lpos );
+	key_type	get_key( long lpos );
 	long		set( key_type key, data_type data );
 	long		find( key_type key );
 
@@ -616,7 +610,7 @@ protected:
 	}
 public:
 //установить значение дл€ ключа
-	TPOS set(data_type data, key_type key)
+	long set( data_type data, key_type key )
 	{
 		signed char	pdirs[MAX_DEEP], cmp=0;
 		long	ndeep = 0;
@@ -768,10 +762,10 @@ public:
 			}
 		}
 	
-		return (TPOS)pitem_ret;
+		return (long)pitem_ret;
 	}
 
-	LONG_PTR dbg_check(item *p)
+	long dbg_check( item *p )
 	{
 		if( !p )return 0;
 
@@ -785,16 +779,16 @@ public:
 		else
 			_assert( p == m_ptr );
 
-		LONG_PTR	right_h = _check(p->right);
-		LONG_PTR	left_h = _check(p->left);
+		long	right_h = _check( p->right );
+		long	left_h = _check( p->left );
 
-		LONG_PTR	factor = right_h - left_h;
+		long	factor = right_h-left_h;
 		_assert( factor == p->factor );
 
 		if( right_h > left_h )return right_h+1;
 		else return left_h+1;
 	}
-	bool remove(TPOS lpos)
+	bool remove( long lpos )
 	{
 		key_type key = get_key( lpos );
 		return remove_key( key );
@@ -992,13 +986,13 @@ public:
 	}
 
 //найти позицию по ключу. если 0 то не нашли
-	TPOS	find(key_type key)
+	long	find( key_type key )
 	{
 		long	c;
 		for( item	*p = m_ptr; p!=0;  )
 		{
 			c = _cmp( p->key, key );
-			if (!c)return (TPOS)p;
+			if( !c )return (long)p;
 
 			if( c > 0 )p = p->right;
 			else p = p->left;
@@ -1044,14 +1038,14 @@ public:
 		m_count = 0;
 	}
 	//навигаци€ - интерфейс списка
-	TPOS head()
+	long head()
 	{
 		if( !m_ptr )return 0;
 		item	*p = m_ptr;
 		while( p->left )p = p->left;
-		return (TPOS)p;
+		return (long)p;
 	}
-	TPOS next(TPOS lpos)
+	long next( long lpos )
 	{
 		item	*p = (item*)lpos;
 		if( p->right )
@@ -1068,17 +1062,17 @@ public:
 			while( p->parent && p->parent->right == p )p = p->parent;
 			p = p->parent;
 		}
-		return (TPOS)p;
+		return (long)p;
 	}
 
-	TPOS tail()
+	long tail()
 	{
 		if( !m_ptr )return 0;
 		item	*p = m_ptr;
 		while( p->right )p = p->right;
-		return (TPOS)p;
+		return (long)p;
 	}
-	TPOS prev(TPOS lpos)
+	long prev( long lpos )
 	{
 		item	*p = (item*)lpos;
 		if( p->left )
@@ -1095,27 +1089,27 @@ public:
 			while( p->parent && p->parent->left == p )p = p->parent;
 			p = p->parent;
 		}
-		return (TPOS)p;
+		return (long)p;
 	}
 
 	//вернуть - таки значение по позиции
-	data_type	get(TPOS lpos)
+	data_type	get( long lpos )
 	{
 		item	*p = (item*)lpos;
 		return p->data;
 	}
 
 	//вернуть - ключ по позиции
-	key_type	get_key(TPOS lpos)
+	key_type	get_key( long lpos )
 	{
 		item	*p = (item*)lpos;
 		return p->key;
 	}
 
 	//отладочные функции
-	TPOS root()					{ return (TPOS)m_ptr; }
-	TPOS left(TPOS lpos)		{ item *p = (item*)lpos; return (TPOS)p->left; }
-	TPOS right(TPOS lpos)		{ item *p = (item*)lpos; return (TPOS)p->right; }
+	long root()					{return (long)m_ptr;}
+	long left( long lpos )		{item *p = (item*)lpos;return (long)p->left;}
+	long right( long lpos )		{item *p = (item*)lpos;return (long)p->right;}
 
 
 protected:

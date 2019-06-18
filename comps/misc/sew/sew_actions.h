@@ -163,7 +163,7 @@ public:
 	_list_ptr_t<CDIBImage*, FreeEmpty>	
 					m_images;
 	IImage2Ptr		m_result;
-	TPOS			m_lCurrentPos;
+	long			m_lCurrentPos;
 	_rect			m_rectActiveImage;
 	_point			m_pointOffset;
 	_size			m_sizeScroll, m_sizeScrollOld;

@@ -12,10 +12,10 @@ public:
 	~CFilterArgImpl();
 
 	BEGIN_INTERFACE_PART(Filter, IFilterAction)
-		com_call GetFirstArgumentPosition(POSITION *pnPos);
-		com_call GetNextArgument(IUnknown **ppunkDataObject, POSITION *pnPosNext);
-		com_call GetArgumentInfo(POSITION lPos, BSTR *pbstrArgType, BSTR *pbstrArgName, BOOL *pbOut);
-		com_call SetArgument(POSITION lPos, IUnknown *punkDataObject, BOOL bDataChanged);
+		com_call GetFirstArgumentPosition( long *pnPos );
+		com_call GetNextArgument( IUnknown **ppunkDataObject, long *pnPosNext );
+		com_call GetArgumentInfo( long lPos, BSTR *pbstrArgType, BSTR *pbstrArgName, BOOL *pbOut );
+		com_call SetArgument( long lPos, IUnknown *punkDataObject, BOOL bDataChanged );
 		com_call InitArguments();
 		com_call LockDataChanging( BOOL bLock );
 		com_call SetPreviewMode( BOOL bEnter );

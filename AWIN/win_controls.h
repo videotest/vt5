@@ -85,7 +85,7 @@ public:
 	void set_item_text( int item, int subitem, _char *psz )		{ListView_SetItemText( handle(), item, subitem, psz );	}
 	void delete_item( int item )								{ListView_DeleteItem( handle(), item );}
 	void delete_all_items()										{ListView_DeleteAllItems( handle() );}
-	LPARAM get_item_data( int item )							{LV_ITEM	i;i.iItem = item;i.lParam = 0;i.mask = LVIF_PARAM;ListView_GetItem( handle(), &i );return i.lParam;}
+	unsigned get_item_data( int item )							{LV_ITEM	i;i.iItem = item;i.lParam = 0;i.mask = LVIF_PARAM;ListView_GetItem( handle(), &i );return i.lParam;}
 	void get_item_rect( int item, int code , RECT *prect)		{ListView_GetItemRect( handle(), item, prect, code );}
 	void get_subitem_rect( int item, int subitem, int code, RECT *prect)	{ListView_GetSubItemRect( handle(), item, subitem, code, prect );}
 	long get_selected_item()									{return ListView_GetSelectionMark( handle() );}

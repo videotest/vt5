@@ -10,8 +10,8 @@
 #ifndef __AFXWIN_H__
 
 #if _MSC_VER >= 1300
-/*	#include <xdebug>	
-	inline void* __cdecl operator new( unsigned int size, int type, const char *file, int line, int	dummy )
+	#include <xdebug>	
+/*	inline void* __cdecl operator new( unsigned int size, int type, const char *file, int line, int	dummy )
 	{ 
 		void *pres = _malloc_dbg(size, type, file, line);
 

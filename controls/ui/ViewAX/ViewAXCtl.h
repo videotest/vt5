@@ -156,16 +156,16 @@ protected:
 		com_call SetViewProgID( BSTR bstrProgID );
 
 		//object list
-		com_call GetFirstObjectPosition(LONG_PTR* plPos);
+		com_call GetFirstObjectPosition( long* plPos );
 		com_call GetNextObject( BSTR* pbstrObjectName, BOOL* pbActiveObject, 
-			BSTR* bstrObjectType, LONG_PTR *plPos);
-		com_call InsertAfter(LONG_PTR lPos,
+								BSTR* bstrObjectType, long *plPos );
+		com_call InsertAfter( long lPos,  
 								BSTR bstrObjectName, BOOL bActiveObject, 
 								BSTR bstrObjectType );
-		com_call EditAt(LONG_PTR lPos,
+		com_call EditAt( long lPos,  
 								BSTR bstrObjectName, BOOL bActiveObject, 
 								BSTR bstrObjectType );
-		com_call RemoveAt(LONG_PTR lPos);
+		com_call RemoveAt( long lPos );
 		
 		com_call DestroyView();
 
@@ -202,14 +202,14 @@ protected:
 	afx_msg void SetUseObjectDPI(BOOL bNewValue);
 	afx_msg double GetObjectDPI();
 	afx_msg void SetObjectDPI(double newValue);
-	afx_msg LONG_PTR GetFirstObjectPos();
-	afx_msg LONG_PTR GetNextObject(VARIANT FAR* varObjectName, VARIANT FAR* varActiveObject, VARIANT FAR* varObjectType, VARIANT FAR* varPos);
+	afx_msg long GetFirstObjectPos();
+	afx_msg long GetNextObject(VARIANT FAR* varObjectName, VARIANT FAR* varActiveObject, VARIANT FAR* varObjectType, VARIANT FAR* varPos);
 	afx_msg BOOL AddObject(LPCTSTR strObjectName, BOOL bActiveObject, LPCTSTR strObjectType);
-	afx_msg BOOL DeleteObject(LPOS lPos);
+	afx_msg BOOL DeleteObject(long lPos);
 	afx_msg long GetFirstPropertyPos();
 	afx_msg long GetNextProperty(VARIANT FAR* varName, VARIANT FAR* varValue, VARIANT FAR* varPos);
 	afx_msg BOOL SetProperty(LPCTSTR strName, const VARIANT FAR& varValue);
-	afx_msg BOOL DeletePropery(long idx);
+	afx_msg BOOL DeletePropery(long lPos);
 	afx_msg BOOL Rebuild();
 	afx_msg BSTR GetViewProgID();
 	afx_msg void SetViewProgID(LPCTSTR lpszNewValue);
@@ -291,16 +291,16 @@ protected:
 	bool Build();
 
 
-	bool _GetFirstObjectPosition(LONG_PTR* plPos);
+	bool _GetFirstObjectPosition( long* plPos );
 	bool _GetNextObject( CString& strObjectName, bool& bActiveObject, 
-		CString& strObjectType, LONG_PTR *plPos);
-	bool _InsertAfter(LONG_PTR lPos,
+							CString& strObjectType, long *plPos );
+	bool _InsertAfter( long lPos,  
 							CString strObjectName, bool bActiveObject, 
 							CString strObjectType );
-	bool _EditAt(LONG_PTR lPos,
+	bool _EditAt( long lPos,  
 							CString strObjectName, bool bActiveObject, 
 							CString strObjectType );
-	bool _RemoveAt(LONG_PTR lPos);
+	bool _RemoveAt( long lPos );
 
 	void DestroyObjectList( CPtrList* pOL );
 

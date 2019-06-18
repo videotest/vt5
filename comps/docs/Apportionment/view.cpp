@@ -354,10 +354,10 @@ bool CAView::DoFinishTracking( _point point )
 	if(m_sptrDragObj!=0)
 	{
 		long nClassCounter = 0;
-		TPOS lPos = m_listClassCells.head();
+		long lPos = m_listClassCells.head();
 		while(lPos)
 		{
-			TPOS lPos1 = lPos;
+			long lPos1=lPos;
 			ClassCell* pClassCell = m_listClassCells.next(lPos);
 			if(pClassCell!=0)
 			{
@@ -579,7 +579,7 @@ LRESULT CAView::OnPaint()
 	long nCurHeightPos = (long)(m_nInterCellDist*fZoom + .5);
 
 	ClassCell* pClassCell = 0;
-	TPOS lPos = m_listClassCells.head();
+	long lPos = m_listClassCells.head();
 	long nClassCounter = 0;
 	bool bDrawTable = true;
 	while(lPos)
@@ -701,12 +701,12 @@ LRESULT CAView::OnContextMenu( HWND hWnd, int x, int y )
 				if(punk!=0)
 				{
 					ICalcObjectPtr sptrCO1(punk);
-					TPOS lPos=0;
+					long lPos=0;
 					m_sptrObjectList->GetFirstChildPosition(&lPos);
 					while(lPos)
 					{
 						IUnknown* punkObject = 0;
-						TPOS lPos1=lPos;
+						long lPos1=lPos;
 						m_sptrObjectList->GetNextChild(&lPos, &punkObject);
 						ICalcObjectPtr sptrCO2(punkObject);
 						if(punkObject) punkObject->Release();
@@ -803,7 +803,7 @@ LRESULT CAView::OnMouseWheel(UINT nFlags, short zDelta, _point pt)
 		}
 
 		int nClass=0;
-		TPOS lPos = m_listClassCells.head();
+		long lPos = m_listClassCells.head();
 		while(lPos)
 		{
 			ClassCell* pClassCell = m_listClassCells.next(lPos);
@@ -1071,7 +1071,7 @@ void CAView::OnNotify( const char *pszEvent, IUnknown *punkHit, IUnknown *punkFr
 			}
 			else
 			{
-				TPOS lPos;
+				long lPos;
 				m_sptrObjectList->GetActiveChild( &lPos );
 				if( lPos )
 				{
@@ -1099,18 +1099,18 @@ HRESULT CAView::GetClassID( CLSID *pClassID )
 	return S_OK;
 }
 
-HRESULT CAView::GetFirstVisibleObjectPosition(TPOS *plpos)
+HRESULT CAView::GetFirstVisibleObjectPosition( long *plpos )
 {
 	if(plpos)
 	{
-		*plpos = (TPOS)1;
+		*plpos = 1;
 		return S_OK;
 	}
 	else
 		return E_INVALIDARG;
 }
 
-HRESULT CAView::GetNextVisibleObject(IUnknown ** ppunkObject, TPOS *plPos)
+HRESULT CAView::GetNextVisibleObject( IUnknown ** ppunkObject, long *plPos )
 {
 	if(plPos && ppunkObject)
 	{
@@ -1173,7 +1173,7 @@ HRESULT CAView::GetObjectByIdx(DWORD nIdx, IUnknown** ppunkObj)
 	{
 		*ppunkObj=0;
 		ClassCell* pClassCell = 0;
-		TPOS lPos = m_listClassCells.head();
+		long lPos = m_listClassCells.head();
 		long nClassCounter = 0;
 		while(lPos)
 		{
@@ -1181,7 +1181,7 @@ HRESULT CAView::GetObjectByIdx(DWORD nIdx, IUnknown** ppunkObj)
 			if(m_nActiveClass == nClassCounter)
 			{
 				long nObjectCounter = 0;
-				TPOS lPosObj =  pClassCell->listObjects.head();
+				long lPosObj =  pClassCell->listObjects.head();
 				while(lPosObj)
 				{
 					IUnknown* punk = pClassCell->listObjects.next(lPosObj);
@@ -1338,7 +1338,7 @@ void CAView::CalcCellSizeByList()
 	if(m_sptrObjectList == 0)
 		return;
 
-	TPOS lPos = 0;
+	long lPos = 0;
 	m_sptrObjectList->GetFirstChildPosition(&lPos);
 	while(lPos)
 	{
@@ -1382,7 +1382,7 @@ ClassCell* CAView::CalcClassCellLayout( long keyClass, long nWidthOfClassCell, d
 	
 	long nObjectsInClassCount = 0;
 	bool bAddUnitHeight = false;
-	TPOS lPos = 0;
+	long lPos = 0;
 	m_sptrObjectList->GetFirstChildPosition(&lPos);
 	while(lPos)
 	{
@@ -1461,7 +1461,7 @@ ClassCell* CAView::CalcClassCellLayout( long keyClass, long nWidthOfClassCell, d
 
 void CAView::_KillClassCellsList()
 {
-	TPOS lPos = m_listClassCells.head();
+	long lPos = m_listClassCells.head();
 	while(lPos)
 		delete  m_listClassCells.next(lPos);
 	
@@ -1531,8 +1531,8 @@ void CAView::DrawClassCell(HDC hdc, HBITMAP hDIBSection, _rect rectPaint, _point
 		::SetBkMode(hdc, OPAQUE);
 	}
 
-	TPOS nPosTLC = pClassCell->listTopLeftCell.head();
-	TPOS nPosObj = pClassCell->listObjects.head();
+	long nPosTLC = pClassCell->listTopLeftCell.head();
+	long nPosObj = pClassCell->listObjects.head();
 
 	long nThumbsCounter = 0;
 
@@ -1783,14 +1783,14 @@ void CAView::_SetActiveClassCell(IUnknown *punkObject)
 	bool bFound=false;
 
 	long nClassCounter=0;
-	TPOS lPosClass = m_listClassCells.head();
+	long lPosClass = m_listClassCells.head();
 
 	while(lPosClass)
 	{
 		ClassCell* pClassCell = pClassCell = m_listClassCells.next(lPosClass);
 		{
 			long nThumbCounter = 0;
-			TPOS lPosObj =  pClassCell->listObjects.head();
+			long lPosObj =  pClassCell->listObjects.head();
 			while(lPosObj)
 			{
 				IUnknown* punk = pClassCell->listObjects.next(lPosObj);
@@ -1801,7 +1801,7 @@ void CAView::_SetActiveClassCell(IUnknown *punkObject)
 					bFound=true;
 
 					// Ensure visible
-					TPOS lPosTLC = pClassCell->listTopLeftCell.head();
+					long lPosTLC = pClassCell->listTopLeftCell.head();
 					_rect rcCell = NORECT;
 					long nThumbCounter2 = 0;
 					while(lPosTLC)
@@ -1878,7 +1878,7 @@ _rect CAView::_CalcActiveClassCell(int x, int y)
 	//drawing class cells
 	long nCurHeightPos = (long)(m_nInterCellDist*fZoom + .5);
 	ClassCell* pClassCell = 0;
-	TPOS lPos = m_listClassCells.head();
+	long lPos = m_listClassCells.head();
 	m_nActiveClass = 0;
 	m_nActiveThumb = -1;
 	while(lPos)
@@ -1890,7 +1890,7 @@ _rect CAView::_CalcActiveClassCell(int x, int y)
 
 		if(y > nCurHeightPos && y < nCurHeightPos + pClassCell->sizeClassCell.cy)
 		{
-			TPOS lPosTLC = pClassCell->listTopLeftCell.head();
+			long lPosTLC = pClassCell->listTopLeftCell.head();
 			long nThumbCounter = 0;
 			while(lPosTLC)
 			{
@@ -1937,7 +1937,7 @@ _rect CAView::_CalcActiveClassCell(int x, int y)
 			while(lPos)
 			{
 				IUnknown* punkObject = 0;
-				TPOS lPos1=lPos;
+				long lPos1=lPos;
 				m_sptrObjectList->GetNextChild(&lPos, &punkObject);
 				ICalcObjectPtr sptrCO2(punkObject);
 				if(punkObject) punkObject->Release();
@@ -1976,7 +1976,7 @@ void CAView::_DrawTablText(HDC hdc, _rect rcText, _bstr_t bstrText, bool bFirstR
 HRESULT CAView::GetPrintWidth( int nMaxWidth, int *pnReturnWidth, BOOL *pbContinue, int nUserPosX, int *pnNewUserPosX )
 {
 
-	TPOS lPos = m_listClassCells.head();
+	long lPos = m_listClassCells.head();
 	long nMaxCount = 0;
 	while(lPos)
 	{
@@ -2013,7 +2013,7 @@ HRESULT CAView::GetPrintHeight( int nMaxHeight, int *pnReturnHeight, BOOL *pbCon
 		return S_FALSE;
 
 	ClassCell* pClassCell = 0;
-	TPOS lPos = m_listClassCells.head();
+	long lPos = m_listClassCells.head();
 	long nCurIntegralHeight = 0;
 	long nProcessedRows = 0;
 	bool bPureTablePaper = true;
@@ -2021,7 +2021,7 @@ HRESULT CAView::GetPrintHeight( int nMaxHeight, int *pnReturnHeight, BOOL *pbCon
 	{
 		pClassCell = m_listClassCells.next(lPos);
 		
-		TPOS lPosRH = pClassCell->listRowHeights.head();
+		long lPosRH = pClassCell->listRowHeights.head();
 		while(lPosRH)
 		{
 			long nRowHeight = *(pClassCell->listRowHeights.next(lPosRH));
@@ -2111,7 +2111,7 @@ HRESULT CAView::Print( HDC hdc, RECT rectTarget, int nUserPosX, int nUserPosY, i
 	long nHeight = 0;
 
 	ClassCell* pClassCell = 0;
-	TPOS lPos = m_listClassCells.head();
+	long lPos = m_listClassCells.head();
 	long nCurIntegralHeight = 0;
 	long nProcessedRows = 0;
 	long nRowCounter = 0;
@@ -2122,7 +2122,7 @@ HRESULT CAView::Print( HDC hdc, RECT rectTarget, int nUserPosX, int nUserPosY, i
 
 		nTotalCellRows += pClassCell->listRowHeights.Count();
 
-		TPOS nRowPos = pClassCell->listRowHeights.head();
+		long nRowPos = pClassCell->listRowHeights.head();
 		while(nRowPos)
 		{
 			long nCurHeight = *(pClassCell->listRowHeights.next(nRowPos));
@@ -2209,7 +2209,7 @@ HRESULT CAView::Print( HDC hdc, RECT rectTarget, int nUserPosX, int nUserPosY, i
 	while(lPos)
 	{
 		pClassCell = m_listClassCells.next(lPos);
-		TPOS lPosRH = pClassCell->listRowHeights.head();
+		long lPosRH = pClassCell->listRowHeights.head();
 
 		if(!pClassCell->listObjects.Count())
 		{
@@ -2237,7 +2237,7 @@ HRESULT CAView::Print( HDC hdc, RECT rectTarget, int nUserPosX, int nUserPosY, i
 		else
 		{
 			long nY0=nY;
-			TPOS nPosObj = pClassCell->listObjects.head();
+			long nPosObj = pClassCell->listObjects.head();
 			long nObjCounter = 0;
 			long nX = 0;
 			long nPrevRow = -1;
@@ -2342,12 +2342,12 @@ void CAView::BuildPrint(long nMaxWidth)
 
 	m_bPrintInited = true;
 	ClassCell* pClassCell = 0;
-	TPOS lPos = m_listClassCells.head();
+	long lPos = m_listClassCells.head();
 	while(lPos)
 	{
 		pClassCell = m_listClassCells.next(lPos);
 
-		TPOS lPosRH = pClassCell->listRowHeights.head();
+		long lPosRH = pClassCell->listRowHeights.head();
 		while(lPosRH)
 			delete pClassCell->listRowHeights.next(lPosRH);
 		pClassCell->listRowHeights.deinit();
@@ -2588,7 +2588,7 @@ void CAView::_DrawResultBar(HDC hdcMem, long& nCurHeightPos, double fZoom, bool 
 
 	if(nCount < 0)
 		nCount = m_listClassCells.Count();
-	TPOS lPos = m_listClassCells.head();
+	long lPos = m_listClassCells.head();
 	long nClassCounter = 0;
 	ClassCell* pClassCell = 0;
 	while(lPos)
@@ -2809,7 +2809,7 @@ HRESULT CAView::Invoke(
 HRESULT CAView::ScrollToClass( long nClass)
 {
 	ClassCell* pClassCell = 0;
-	TPOS lPos = m_listClassCells.head();
+	long lPos = m_listClassCells.head();
 	long nClassCounter = 0;
 	m_nActiveClass=nClass;
 	m_nActiveThumb=-1;
@@ -2918,7 +2918,7 @@ CRenameEditBox::CRenameEditBox()
 	m_bReady = false;
 }
 
-LRESULT CRenameEditBox::on_char( long nVirtKey )
+long CRenameEditBox::on_char( long nVirtKey )
 {
 	if( VK_RETURN == nVirtKey )
 	{

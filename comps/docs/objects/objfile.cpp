@@ -101,7 +101,7 @@ bool CObjectFileFilter::WriteFile( const char *pszFileName )
 
 
 		//make all images no virtual
-		TPOS	lpos = 0;
+		long	lpos = 0;
 		INamedDataObject2Ptr	ptrO( punk );
 
 		ptrO->GetFirstChildPosition( &lpos );

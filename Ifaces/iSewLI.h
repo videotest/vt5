@@ -33,7 +33,6 @@ interface ISewFragment : public IUnknown
 enum EAddImageFlags
 {
 	addImageFindPos = 1,
-	addImageCorrectPos = 2,
 };
 
 enum EMoveFragmentFlags
@@ -46,21 +45,21 @@ enum EMoveFragmentFlags
 interface ISewImageList : public IUnknown
 {
 	com_call OnActivateObject() = 0;
-	com_call GetFirstFragmentPos(TPOS *plPos) = 0;
-	com_call GetNextFragment(TPOS *plPos, ISewFragment **ppFragment) = 0;
-	com_call GetPrevFragment(TPOS *plPos, ISewFragment **ppFragment) = 0;
+	com_call GetFirstFragmentPos(long *plPos) = 0;
+	com_call GetNextFragment(long *plPos, ISewFragment **ppFragment) = 0;
+	com_call GetPrevFragment(long *plPos, ISewFragment **ppFragment) = 0;
 	com_call GetFragmentsCount(long *plCount) = 0;
 	com_call GetOrigin(POINT *pOrg) = 0;
 	com_call GetSize(SIZE *pSize) = 0;
 	com_call GetPath(BSTR *pbstrPath, BOOL bSaving) = 0;
 	com_call GetRangeCoef(int *pnRangeCoef) = 0;
 	com_call AddImage(IUnknown *punkImage, POINT ptOffs, DWORD dwFlags) = 0;
-	com_call GetActiveFragmentPosition(TPOS *plPos) = 0;
-	com_call SetActiveFragmentPosition(TPOS lPos) = 0;
-	com_call GetLastFragmentPosition(TPOS *plPos) = 0;
+	com_call GetActiveFragmentPosition(long *plPos) = 0;
+	com_call SetActiveFragmentPosition(long lPos) = 0;
+	com_call GetLastFragmentPosition(long *plPos) = 0;
 	com_call AddFragment(ISewFragment *pFragment) = 0;
 	com_call MoveFragment(ISewFragment *pFragment, POINT ptNewPos, DWORD dwFlags) = 0;
-	com_call DeleteFragment(TPOS lPosFrag) = 0;
+	com_call DeleteFragment(long lPosFrag) = 0;
 	com_call GetOverlapPercent(int *pnOvrPerc) = 0;
 	com_call CheckOverlapPercent() = 0;
 	com_call CalcOrigFragOffset(ISewFragment **ppPrev, POINT *pptOffs) = 0;

@@ -10,6 +10,13 @@
 #include "\vt5\AWIN\profiler.h"
 #include "\vt5\common2\class_utils.h"
 
+#ifdef _DEBUG
+#define new DEBUG_NEW
+#undef THIS_FILE
+static char THIS_FILE[] = __FILE__;
+#endif
+
+
 IMPLEMENT_DYNCREATE(CObjectsView, CCmdTarget)
 IMPLEMENT_DYNCREATE(CMasksView, CCmdTarget)
 IMPLEMENT_DYNCREATE(CImageView, CCmdTarget)
@@ -51,7 +58,7 @@ void CObjectViewBase::OnTimer(UINT_PTR nIDEvent)
 		if( !rect.PtInRect( point ) )
 		{
 			//for( int i = 0; i < m_hilighted_objects.GetSize(); i++ )
-			for (TPOS lPos = m_hilighted_objects.head(); lPos; lPos = m_hilighted_objects.next(lPos))
+			for(long lPos=m_hilighted_objects.head(); lPos; lPos=m_hilighted_objects.next(lPos))
 			{
 				//IUnknown	*punk_o = (IUnknown*)m_hilighted_objects[i];
 				IUnknown	*punk_o = m_hilighted_objects.get(lPos);
@@ -174,7 +181,7 @@ void CObjectViewBase::DoPocessNotify( const char *pszEvent, IUnknown *punkHit, I
 						INamedDataObject2Ptr ptrNamedObject = punkToActivate;
 						if(ptrNamedObject!=0)
 						{
-							TPOS lpos=0;
+							long lpos=0;
 							ptrNamedObject->GetFirstChildPosition( &lpos );
 							while( lpos )
 							{
@@ -198,9 +205,9 @@ void CObjectViewBase::DoPocessNotify( const char *pszEvent, IUnknown *punkHit, I
 				if( lHint == cncRemove )
 				{
 					//for( int i = m_hilighted_objects.GetSize()-1; i>=0; i-- )
-					for (TPOS lPos = m_hilighted_objects.tail(); lPos;)
+					for(long lPos=m_hilighted_objects.tail(); lPos; )
 					{
-						TPOS lPos1 = m_hilighted_objects.prev(lPos);
+						long lPos1=m_hilighted_objects.prev(lPos);
 						//IUnknown	*punk = (IUnknown*)m_hilighted_objects[i];
 						IUnknown	*punk = m_hilighted_objects.get(lPos);
 
@@ -327,7 +334,7 @@ void CObjectViewBase::_recalc_rect( BOOL bUpdate /* = false*/, IUnknown *punkExc
 				m_size_client.cy = max(szBase.cy, m_size_client.cy );
 			}
 
-			TPOS	lpos = 0;
+			long	lpos = 0;
 			INamedDataObject2Ptr	ptr_objects( (IUnknown*)pCur->m_objects );
 
 			ptr_objects->GetFirstChildPosition( &lpos );
@@ -387,7 +394,7 @@ void CObjectViewBase::_AttachObjects(IUnknown* punkContextFrom)
 
 	IDataContext2Ptr sptrContext(punkContextFrom);
 
-	LONG_PTR nPos = 0;
+	long nPos = 0;
 	sptrContext->GetFirstSelectedPos(_bstr_t(szTypeObjectList), &nPos);
 
 	bool bFirstPass = true;
@@ -435,7 +442,7 @@ void CObjectViewBase::_AttachObjects(IUnknown* punkContextFrom)
 			INamedDataObject2Ptr ptr_objects( (IUnknown*)m_pObjectListHead->m_objects );
 			if( ptr_objects )
 			{
-				TPOS lpos = 0;
+				long lpos = 0;
 				ptr_objects->GetActiveChild( &lpos );
 				if( lpos )
 				{
@@ -530,8 +537,8 @@ bool CObjectViewBase::_DrawObjectList(ObjectList* pList, CDC &dc, CRect rectClip
 			pobject->m_ptrMeas->GetDrawingNumber( &lNum );
 			if( lNum != nCount )
 			{
-				m_object_coords.remove_key((IUnknown*)*pobject );
-				m_object_coords_num.remove_key((IUnknown*)*pobject );
+				m_object_coords.remove_key( (long)(IUnknown*)*pobject );
+				m_object_coords_num.remove_key( (long)(IUnknown*)*pobject );
 			}
 
 			pobject->m_ptrMeas->SetDrawingNumber( nCount++ );
@@ -652,12 +659,12 @@ bool CObjectViewBase::CheckChildByPoint(CMeasObjListWrp* pObjects, IUnknown * pu
 		return false;
 
 	// get active param
-	POSITION lpos; long lkey;
-	ptrCont->GetCurentPosition((LONG_PTR*)&lpos, &lkey);
+	long lpos, lkey;
+	ptrCont->GetCurentPosition( &lpos, &lkey );
 
 
 	//get active child position
-	POSITION lposA = 0;
+	long	lposA = 0;
 	{
 		ptrNamedObject->GetFirstChildPosition( &lpos );
 		while( lpos )
@@ -682,7 +689,7 @@ bool CObjectViewBase::CheckChildByPoint(CMeasObjListWrp* pObjects, IUnknown * pu
 
 
 	// get pos of active child
-	TPOS lstart = 0;
+	long lstart = 0;
 	if( lposA != 0 )
 	{
 		lstart = lposA;
@@ -697,12 +704,12 @@ bool CObjectViewBase::CheckChildByPoint(CMeasObjListWrp* pObjects, IUnknown * pu
 		return false;
 
 	// save start pos
-	POSITION lend = 0;
+	long	lend = 0;
 	lpos = lstart;
 	
 	while( lpos != lend )
 	{
-		//LPOS lposCur = lpos;
+		//long	lposCur = lpos;
 		IUnknown *punk = 0;
 		ptrNamedObject->GetNextChild( &lpos, &punk );
 		if( !punk )continue;
@@ -722,6 +729,7 @@ bool CObjectViewBase::CheckChildByPoint(CMeasObjListWrp* pObjects, IUnknown * pu
 
 
 
+		long	lposCur = 0;//lpos; - it's own list not from named object
 		long	lParamKey		= -1;
 		DWORD	dwParamType	= -1;
 
@@ -882,14 +890,14 @@ void CObjectViewBase::_select_measurement( IUnknown *punkObjectToActivate )
 	if( !p )return;
 	ICalcObjectContainerPtr	ptrContainer( (IUnknown*)p->m_objects );
 	long	lActiveKey = -1;
-	POSITION	lpos = 0;
-	ptrContainer->GetCurentPosition((LONG_PTR*)&lpos, &lActiveKey);
+	long	lpos = 0;
+	ptrContainer->GetCurentPosition( &lpos, &lActiveKey );
 
 	//key valid only if manual measurement selected
 	if( lpos )
 	{
 		ParameterContainer *ppContainer =0;
-		ptrContainer->GetNextParameter((LONG_PTR*)&lpos, &ppContainer);
+		ptrContainer->GetNextParameter( &lpos, &ppContainer );
 		if( ppContainer->type == etUndefined )
 			lActiveKey = -1;
 	}
@@ -1000,7 +1008,7 @@ void CObjectViewBase::OnMouseMove(UINT nFlags, CPoint point)
 		
 			INamedDataObject2Ptr	ptrList( (IUnknown*)pCur->m_objects );
 
-			TPOS	lpos_o = 0;
+			long	lpos_o = 0;
 			ptrList->GetFirstChildPosition( &lpos_o );
 
 			pCur = pCur->pNext;
@@ -1034,7 +1042,7 @@ void CObjectViewBase::OnMouseMove(UINT nFlags, CPoint point)
 		{
 			bool	bFound = false;
 			IUnknown	*punk_o = (IUnknown*)hilighted_objects[i];
-			for (TPOS lPos = m_hilighted_objects.head(); lPos; lPos = m_hilighted_objects.next(lPos))
+			for(long lPos=m_hilighted_objects.head(); lPos; lPos=m_hilighted_objects.next(lPos))
 			//for( int j = 0; j < m_hilighted_objects.GetSize(); j++ )
 			{
 				//IUnknown	*punk_t = (IUnknown*)m_hilighted_objects[j];
@@ -1057,7 +1065,7 @@ void CObjectViewBase::OnMouseMove(UINT nFlags, CPoint point)
 		}
 
 		//for( i = 0; i < m_hilighted_objects.GetSize(); i++ )
-		for (TPOS lPos = m_hilighted_objects.head(); lPos; lPos = m_hilighted_objects.next(lPos))
+		for(long lPos=m_hilighted_objects.head(); lPos; lPos=m_hilighted_objects.next(lPos))
 		{
 			bool	bFound = false;
 			//IUnknown	*punk_o = (IUnknown*)m_hilighted_objects[i];
@@ -1133,7 +1141,7 @@ void CObjectViewBase::DrawHilightedObjects(CDC &dc, BITMAPINFOHEADER *pbmih, byt
 		CPoint	ptScroll = ::GetScrollPos( GetControllingUnknown() );
 
 		//for( long lobj = 0; lobj < m_hilighted_objects.GetSize(); lobj++ )
-		for (TPOS lPos = m_hilighted_objects.head(); lPos; lPos = m_hilighted_objects.next(lPos))
+		for(long lPos=m_hilighted_objects.head(); lPos; lPos=m_hilighted_objects.next(lPos))
 		{
 			//IUnknown	*punk = (IUnknown*)m_hilighted_objects[lobj];
 			IUnknown	*punk = m_hilighted_objects.get(lPos);

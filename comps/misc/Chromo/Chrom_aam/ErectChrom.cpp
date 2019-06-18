@@ -68,7 +68,7 @@ static void CopyParams( ICalcObjectContainerPtr in, ICalcObjectContainerPtr out 
 	if( in == 0 || out == 0)
 		return;
 	
-	LONG_PTR lParamPos = 0;
+	long lParamPos = 0;
 	in->GetFirstParameterPos( &lParamPos );
 	while( lParamPos )
 	{
@@ -81,7 +81,7 @@ static void CopyParams( ICalcObjectContainerPtr in, ICalcObjectContainerPtr out 
 static IUnknownPtr find_child_by_interface(IUnknownPtr sptrParent, const GUID guid)
 {
 	INamedDataObject2Ptr sptrNDOParent(sptrParent);
-	POSITION lPos = 0;
+	long lPos = 0;
 	sptrNDOParent->GetFirstChildPosition(&lPos);
 	while (lPos)
 	{
@@ -205,7 +205,7 @@ HRESULT CErectChromOn::DoInvoke()
 
 	int nN=0;
 	
-	POSITION pos; ptrList->GetFirstChildPosition(&pos);
+	long pos; ptrList->GetFirstChildPosition(&pos);
 	while( pos ) //по всем объектам
 	{
 		nN++;
@@ -258,11 +258,11 @@ HRESULT CErectChromOn::DoInvoke()
 
 HRESULT CErectChromOn::DoUndo()
 {
-	POSITION	posChrom = m_undoChrom.head();
-	POSITION	posChromConv = m_undoChromConv.head();
+	long	posChrom = m_undoChrom.head();
+	long	posChromConv = m_undoChromConv.head();
 	while( posChrom && posChromConv ) 
 	{
-		POSITION prevPosChromConv = posChromConv;
+		long prevPosChromConv=posChromConv;
 		IUnknown *punkChrom=m_undoChrom.next(posChrom);
 		IUnknown *punkChromConv=m_undoChromConv.next(posChromConv);
 		IChromosomePtr ptrChrom(punkChrom);
@@ -307,11 +307,11 @@ HRESULT CErectChromOn::DoUndo()
 
 HRESULT CErectChromOn::DoRedo()
 {
-	POSITION	posChrom = m_undoChrom.head();
-	POSITION	posChromConv = m_undoChromConv.head();
+	long	posChrom = m_undoChrom.head();
+	long	posChromConv = m_undoChromConv.head();
 	while( posChrom && posChromConv ) 
 	{
-		POSITION prevPosChromConv = posChromConv;
+		long prevPosChromConv=posChromConv;
 		IUnknown *punkChrom=m_undoChrom.next(posChrom);
 		IUnknown *punkChromConv=m_undoChromConv.next(posChromConv);
 		IChromosomePtr ptrChrom(punkChrom);
@@ -540,7 +540,7 @@ HRESULT CErectOneChromOnOff::DoInvoke()
 	INamedDataObject2Ptr	ptrObjectNDO(object);
 	if(ptrObjectNDO!=0)
 	{
-		POSITION	lpos = 0;
+		long	lpos = 0;
 		ptrObjectNDO->GetObjectPosInParent( &lpos ); 
 		ptrList->SetActiveChild( lpos );
 	}
@@ -559,7 +559,7 @@ HRESULT CErectOneChromOnOff::DoInvoke()
 		
 		if( ptrNDO != 0 )
 		{
-			POSITION lPosCromo = 0;
+			long lPosCromo = 0;
 			
 			IIdiogramPtr sptrEditable;
 
@@ -990,7 +990,7 @@ HRESULT CErectChromFilter::DoInvoke()
 	
 	//CopyParams(objectsIn, objectsOut);
 	
-	POSITION pos; ptrList->GetFirstChildPosition(&pos);
+	long pos; ptrList->GetFirstChildPosition(&pos);
 	while( pos ) //по всем объектам
 	{
 		nN++;
@@ -1031,9 +1031,9 @@ IUnknown* CErectChromFilter::DoGetInterface( const IID &iid )
 HRESULT CErectChromFilter::DoUndo()
 {
 	return E_FAIL;
-	POSITION	posO = m_undoO.head();
-	POSITION	posI = m_undoI.head();
-	POSITION	posC = m_undoC.head();
+	long	posO = m_undoO.head();
+	long	posI = m_undoI.head();
+	long	posC = m_undoC.head();
 	while( posO && posI && posC ) 
 	{
 		IUnknown *punkO=m_undoO.next(posO);
@@ -1064,9 +1064,9 @@ HRESULT CErectChromFilter::DoUndo()
 HRESULT CErectChromFilter::DoRedo()
 {
 	return E_FAIL;
-	POSITION	posO = m_undoO.head();
-	POSITION	posI = m_undoI.head();
-	POSITION	posC = m_undoC.head();
+	long	posO = m_undoO.head();
+	long	posI = m_undoI.head();
+	long	posC = m_undoC.head();
 	while( posO && posI && posC ) 
 	{
 		IUnknown *punkO=m_undoO.next(posO);

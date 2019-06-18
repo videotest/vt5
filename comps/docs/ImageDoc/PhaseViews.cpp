@@ -3,6 +3,12 @@
 #include "phaseviews.h"
 #include <math.h>
 
+#ifdef _DEBUG
+#define new DEBUG_NEW
+#undef THIS_FILE
+static char THIS_FILE[] = __FILE__;
+#endif
+
 int _GetNamedDataInt(IUnknown *punk, _bstr_t bstrSect, _bstr_t bstrKey, int nDefault)
 {
 	INamedDataObject2Ptr ptrNDO(punk);
@@ -248,7 +254,7 @@ void CPhaseViewBase::_AttachObjects( IUnknown *punkContextFrom )
 	IDataContext2Ptr sptrContext(punkContextFrom);
 	if(sptrContext != 0)
 	{
-		LONG_PTR nPos = 0;
+		long nPos = 0;
 		sptrContext->GetFirstSelectedPos(_bstr_t(szTypeBinaryImage), &nPos);
 		while(nPos)
 		{

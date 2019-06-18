@@ -31,7 +31,6 @@ BEGIN_INTERFACE_MAP(CDBObject, COleControl)
 	INTERFACE_PART(CDBObject, IID_IVTPrintCtrl, PrintCtrl)
 	INTERFACE_PART(CDBObject, IID_IAXCtrlDataSite, AXCtrlDataSite)
 	INTERFACE_PART(CDBObject, IID_IEventListener, EvList)
-	INTERFACE_PART(CDBObject, IID_IViewSubType, ViewSubType)
 END_INTERFACE_MAP();
 
 IMPLEMENT_UNKNOWN(CDBObject, ViewCtrl);
@@ -384,11 +383,11 @@ void CDBObject::InitDrawControlMode()
 		int nZoomingMode;
 		_bstr_t sSection(_T("\\Database\\Blank\\"));
 		{
-		_bstr_t bstrName;
-		sptrNO2->GetName(bstrName.GetAddress());
-		if (bstrName.length() > 0)
-		{
-			sSection += (LPCTSTR)bstrName;
+			_bstr_t bstrName;
+			sptrNO2->GetName(bstrName.GetAddress());
+			if (bstrName.length() > 0)
+			{
+				sSection += (LPCTSTR)bstrName;
 				{
 					int nZoomingModeDefault=0;
 					if(m_ViewSubType>0){
@@ -889,7 +888,7 @@ void CDBObject::SetFieldName(LPCTSTR lpszNewValue)
 /////////////////////////////////////////////////////////////////////////////
 void CDBObject::IDBControl_GetValue( tagVARIANT *pvar )
 {
-	ATL::CComVariant var(m_ViewSubType);
+	CComVariant var(m_ViewSubType);
 	*pvar = var;
 }
 
@@ -904,7 +903,7 @@ void CDBObject::IDBControl_SetValue( const tagVARIANT var )
 			{
 				if(INamedPropBagPtr pNamedPropBag=m_ctrlAXView.GetControlUnknown())
 				{
-					HRESULT hr = pNamedPropBag->SetProperty(ATL::CComBSTR(L"Views"), ATL::CComVariant(m_ViewSubType));
+					HRESULT hr=pNamedPropBag->SetProperty(CComBSTR(L"Views"),CComVariant(m_ViewSubType));
 				}
 			}
 		}
@@ -1064,7 +1063,7 @@ void CDBObject::SetViewName()
 		strObject.Format( "%s.%s", 
 			(LPCTSTR)IDBControl_GetTableName(), (LPCTSTR)IDBControl_GetFieldName() );		
 
-		LONG_PTR nPos = 1;
+		long nPos = 1;
 		while( nPos )
 		{
 			ptrViewCtrl->GetFirstObjectPosition( &nPos );
@@ -1099,7 +1098,7 @@ void CDBObject::SetViewName()
 					if( bstr )
 						::SysFreeString( bstr );	bstr = 0;
 
-					LONG_PTR lpos = 0;
+					long lpos = 0;
 					ptrDC->GetFirstObjectPos( bstrType, &lpos );
 					while( lpos )
 					{
@@ -1137,7 +1136,7 @@ void CDBObject::SetViewName()
 			if(m_ViewSubType>0){
 				if(INamedPropBagPtr pPropBag=ptrViewCtrl)
 				{
-					pPropBag->SetProperty(ATL::CComBSTR(L"Views"), ATL::CComVariant(m_ViewSubType));
+					pPropBag->SetProperty(CComBSTR(L"Views"), CComVariant(m_ViewSubType));
 				}
 			}
 
@@ -1324,12 +1323,6 @@ HRESULT CDBObject::XViewCtrl::Build( BOOL* pbSucceded )
 	START_VIEWAX_IMPL
 	pThis->SetViewName();
 	pThis->Resize();
-	if(pThis->m_ViewSubType>0){
-		if(INamedPropBagPtr pPropBag=spViewCtrl)
-		{
-			pPropBag->SetProperty(ATL::CComBSTR(L"Views"), ATL::CComVariant(pThis->m_ViewSubType));
-		}
-	}
 	HRESULT hr = spViewCtrl->Build( pbSucceded );
 	END_VIEWAX_IMPL	
 	return hr;
@@ -1446,7 +1439,7 @@ HRESULT CDBObject::XViewCtrl::SetViewProgID( BSTR bstrProgID )
 	return hr;
 }
 /////////////////////////////////////////////////////////////////////////////
-HRESULT CDBObject::XViewCtrl::GetFirstObjectPosition(LONG_PTR* plPos)
+HRESULT CDBObject::XViewCtrl::GetFirstObjectPosition( long* plPos )
 {
 	METHOD_PROLOGUE_EX(CDBObject, ViewCtrl)	
 	START_VIEWAX_IMPL	
@@ -1456,7 +1449,7 @@ HRESULT CDBObject::XViewCtrl::GetFirstObjectPosition(LONG_PTR* plPos)
 }
 /////////////////////////////////////////////////////////////////////////////
 HRESULT CDBObject::XViewCtrl::GetNextObject( BSTR* pbstrObjectName, BOOL* pbActiveObject, 
-	BSTR* bstrObjectType, LONG_PTR *plPos)
+								BSTR* bstrObjectType, long *plPos )
 {
 	METHOD_PROLOGUE_EX(CDBObject, ViewCtrl)	
 	START_VIEWAX_IMPL	
@@ -1466,7 +1459,7 @@ HRESULT CDBObject::XViewCtrl::GetNextObject( BSTR* pbstrObjectName, BOOL* pbActi
 	return hr;
 }
 /////////////////////////////////////////////////////////////////////////////
-HRESULT CDBObject::XViewCtrl::InsertAfter(LONG_PTR lPos,
+HRESULT CDBObject::XViewCtrl::InsertAfter( long lPos,  
 								BSTR bstrObjectName, BOOL bActiveObject, 
 								BSTR bstrObjectType )
 {
@@ -1479,7 +1472,7 @@ HRESULT CDBObject::XViewCtrl::InsertAfter(LONG_PTR lPos,
 	return hr;
 }
 /////////////////////////////////////////////////////////////////////////////
-HRESULT CDBObject::XViewCtrl::EditAt(LONG_PTR lPos,
+HRESULT CDBObject::XViewCtrl::EditAt( long lPos,  
 								BSTR bstrObjectName, BOOL bActiveObject, 
 								BSTR bstrObjectType )
 {
@@ -1492,7 +1485,7 @@ HRESULT CDBObject::XViewCtrl::EditAt(LONG_PTR lPos,
 	return hr;
 }
 /////////////////////////////////////////////////////////////////////////////
-HRESULT CDBObject::XViewCtrl::RemoveAt(LONG_PTR lPos)
+HRESULT CDBObject::XViewCtrl::RemoveAt( long lPos )
 {
 	METHOD_PROLOGUE_EX(CDBObject, ViewCtrl)	
 	START_VIEWAX_IMPL	
@@ -1867,30 +1860,6 @@ HRESULT CDBObject::XDBObjectControl::Build()
 	return S_OK;
 }
 
-// Implement IViewSubType interface
-
-IMPLEMENT_UNKNOWN(CDBObject, ViewSubType)
-
-HRESULT CDBObject::XViewSubType::GetViewSubType( unsigned long* pViewSubType )
-{
-	_try_nested(CDBObject, ViewSubType, SetViewSubType )
-	{	
-		*pViewSubType=pThis->m_ViewSubType;
-		return S_OK;
-	}
-	_catch_nested;
-}
-
-HRESULT CDBObject::XViewSubType::SetViewSubType( unsigned long ViewSubType )
-{
-	_try_nested(CDBObject, ViewSubType, SetViewSubType )
-	{	
-		pThis->m_ViewSubType=ViewSubType;
-		return S_OK;
-	}
-	_catch_nested;
-}
-
 /////////////////////////////////////////////////////////////////////////////
 void CDBObject::OnLButtonDblClk(UINT nFlags, CPoint point) 
 {		
@@ -1909,18 +1878,6 @@ void CDBObject::OnLButtonDblClk(UINT nFlags, CPoint point)
 		_bstr_t bstrEvent("DBBlank_OnLButtonDblClk");
 		_variant_t var(bstrViewName);
 		sptrSS->Invoke(bstrEvent, &var, 1, 0, fwAppScript);
-	}
-
-	{
-		IApplicationPtr sptrA(GetAppUnknown());
-		IUnknownPtr punkActiveDoc;
-		sptrA->GetActiveDocument(&punkActiveDoc);
-		if(INamedDataPtr	pND=punkActiveDoc){
-			if(m_ViewSubType>0)
-			{
-				HRESULT hr = pND->SetValue(ATL::CComBSTR(L"Views"), ATL::CComVariant(m_ViewSubType));
-			}
-		}
 	}
 
 	ChangeViewType();	

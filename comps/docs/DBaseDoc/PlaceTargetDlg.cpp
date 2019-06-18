@@ -140,7 +140,7 @@ BOOL CPlaceTargetDlg::OnInitDialog()
 	{
 		::CheckDlgButton( GetSafeHwnd(), IDC_RADIO1, 1 );
 		::EnableWindow( ::GetDlgItem( GetSafeHwnd(), IDC_RADIO2), false);
-	if( !plist->GetCount() )
+		if( !plist->GetCount() )
 		{
 			plist->EnableWindow( false );
 			::EnableWindow( ::GetDlgItem( GetSafeHwnd(), IDC_NEW_RECORD ), false );

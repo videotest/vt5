@@ -66,7 +66,7 @@ void CManualPage::DoDataExchange(CDataExchange* pDX)
 	DDX_Control(pDX, IDC_SP_TOP, m_SpinTop);
 	DDX_Control(pDX, IDC_SP_BOTTOM, m_SpinBottom);
 	//}}AFX_DATA_MAP
-	CSettingsSheet *p = GetSettingsParentSheet();
+	CSettingsSheet *p = GetParentSheet();
 	if (g_CxLibWork.m_nBitsMode <= W10BIT)
 	{
 		DDX_Text(pDX, IDC_E_TOP, p->m_nConvStart);
@@ -89,7 +89,7 @@ void CManualPage::DoDataExchange(CDataExchange* pDX)
 
 void CManualPage::SetTopBottom()
 {
-	CSettingsSheet *p = GetSettingsParentSheet();
+	CSettingsSheet *p = GetParentSheet();
 	if (g_CxLibWork.m_nBitsMode <= W10BIT)
 	{
 		m_SpinTop.SetRange(0, 1024);
@@ -126,7 +126,7 @@ BOOL CManualPage::OnInitDialog()
 	SetTopBottom();
 	m_Gamma.Init(this, NULL,this);
 	m_Gamma.SetRange(10);
-	InitComboByModes(&m_Bits, GetSettingsParentSheet()->m_nBitsMode);
+	InitComboByModes(&m_Bits, GetParentSheet()->m_nBitsMode);
 	UpdateControls(ESH_BitMode);
 	return TRUE;  // return TRUE unless you set the focus to a control
 	              // EXCEPTION: OCX Property Pages should return FALSE
@@ -134,14 +134,14 @@ BOOL CManualPage::OnInitDialog()
 
 void CManualPage::OnOK() 
 {
-	GetSettingsParentSheet()->OnOK();	
+	GetParentSheet()->OnOK();	
 	CPropertyPage::OnOK();
 }
 
 
 void CManualPage::OnCancel() 
 {
-	CSettingsSheet *p = GetSettingsParentSheet();
+	CSettingsSheet *p = GetParentSheet();
 	p->OnCancel();
 	if (p->m_pSettingsSite)
 		p->m_pSettingsSite->OnChangeNaturalSize(p->m_bNaturalSize?true:false);
@@ -150,7 +150,7 @@ void CManualPage::OnCancel()
 
 BOOL CManualPage::OnApply() 
 {
-	GetSettingsParentSheet()->OnApply();
+	GetParentSheet()->OnApply();
 	return CPropertyPage::OnApply();
 }
 
@@ -158,7 +158,7 @@ void CManualPage::UpdateControls(int nHint)
 {
 	if (m_hWnd)
 	{
-		CSettingsSheet *p = GetSettingsParentSheet();
+		CSettingsSheet *p = GetParentSheet();
 		BOOL bEnable = nHint!=ESH_Start_Auto;
 		BOOL bEnableTB = BitsModeDescrByNum(p->m_nBitsMode)->nConversion == ManualConversion;
 		::EnableWindow(::GetDlgItem(m_hWnd, IDC_COMBO_BITS), bEnable);
@@ -184,7 +184,7 @@ void CManualPage::OnChangeEBottom()
 	if (m_SpinTop.m_hWnd && m_SpinBottom.m_hWnd)
 	{
 		UpdateData();
-		CSettingsSheet *p = GetSettingsParentSheet();
+		CSettingsSheet *p = GetParentSheet();
 		EnterCriticalSection(&g_CritSectionCamera);
 		if (g_CxLibWork.m_nBitsMode <= W10BIT)
 			g_CxLibWork.m_nConvEnd = p->m_nConvEnd;
@@ -202,7 +202,7 @@ void CManualPage::OnChangeETop()
 	if (m_SpinTop.m_hWnd && m_SpinBottom.m_hWnd)
 	{
 		UpdateData();
-		CSettingsSheet *p = GetSettingsParentSheet();
+		CSettingsSheet *p = GetParentSheet();
 		EnterCriticalSection(&g_CritSectionCamera);
 		if (g_CxLibWork.m_nBitsMode <= W10BIT)
 			g_CxLibWork.m_nConvStart = p->m_nConvStart;
@@ -226,7 +226,7 @@ void CManualPage::OnChangeEditGamma()
 
 void CManualPage::OnHScroll(UINT nSBCode, UINT nPos, CScrollBar* pScrollBar) 
 {
-	CSettingsSheet *p = GetSettingsParentSheet();
+	CSettingsSheet *p = GetParentSheet();
 	if (pScrollBar == (CScrollBar*)&m_SliderGamma)
 	{
 		m_Gamma.OnHScroll();
@@ -246,7 +246,7 @@ void CManualPage::OnDeltaposSpinGamma(NMHDR* pNMHDR, LRESULT* pResult)
 
 void CManualPage::OnChangeValue(CSmartIntEdit *pEdit, int nValue)
 {
-	CSettingsSheet *p = GetSettingsParentSheet();
+	CSettingsSheet *p = GetParentSheet();
 	EnterCriticalSection(&g_CritSectionCamera);
 	g_CxLibWork.Gamma() = p->Gamma();
 	g_CxLibWork.InitBitnessAndConversion(g_CxLibWork.m_nBitsMode, g_CxLibWork.m_nConversion, FALSE,
@@ -265,7 +265,7 @@ void CManualPage::OnSelchangeComboBits()
 	BitsModeDescr *pBM = BitsModeDescrByName(s);
 	if (pBM)
 	{
-		GetSettingsParentSheet()->m_nBitsMode = pBM->nNum;
+		GetParentSheet()->m_nBitsMode = pBM->nNum;
 		int nBitsMode = pBM->nBitsMode;
 		if (Is12BitCamera(g_CxLibWork.m_nCamera) && nBitsMode == W10BIT)
 			nBitsMode = W12BIT;
@@ -290,7 +290,7 @@ void CManualPage::OnSelchangeComboBits()
 			LeaveCriticalSection(&g_CritSectionCamera);
 		}*/
 		SetTopBottom();
-		GetSettingsParentSheet()->UpdateControls(ESH_BitMode);
+		GetParentSheet()->UpdateControls(ESH_BitMode);
 		SetModified();
 	}
 }
@@ -317,7 +317,7 @@ void CTriggerDlg::DoDataExchange(CDataExchange* pDX)
 	//{{AFX_DATA_MAP(CTriggerDlg)
 		// NOTE: the ClassWizard will add DDX and DDV calls here
 	//}}AFX_DATA_MAP
-	CSettingsSheet *p = GetSettingsParentSheet();
+	CSettingsSheet *p = GetParentSheet();
 	DDX_Check(pDX, IDC_TRIGGER_MODE, p->m_bTriggerMode);
 	DDX_Check(pDX, IDC_DISCHARGE, p->m_bDischarge);
 }
@@ -337,7 +337,7 @@ END_MESSAGE_MAP()
 void CTriggerDlg::OnDischarge() 
 {
 	UpdateData();
-	CSettingsSheet *p = GetSettingsParentSheet();
+	CSettingsSheet *p = GetParentSheet();
 	EnterCriticalSection(&g_CritSectionCamera);
 	::SetTriggerMode(p->m_bTriggerMode, p->m_bDischarge);
 	GetCameraInfo(&g_CxLibWork.m_CameraType, sizeof(tCameraType), &g_CxLibWork.m_CameraStatus , sizeof(tCameraStatus));
@@ -349,7 +349,7 @@ void CTriggerDlg::OnDischarge()
 void CTriggerDlg::OnTriggerMode() 
 {
 	UpdateData();
-	CSettingsSheet *p = GetSettingsParentSheet();
+	CSettingsSheet *p = GetParentSheet();
 	EnterCriticalSection(&g_CritSectionCamera);
 	::SetTriggerMode(p->m_bTriggerMode, p->m_bDischarge);
 	GetCameraInfo(&g_CxLibWork.m_CameraType, sizeof(tCameraType), &g_CxLibWork.m_CameraStatus , sizeof(tCameraStatus));
@@ -362,7 +362,7 @@ void CTriggerDlg::UpdateControls(int nHint)
 {
 	if (m_hWnd)
 	{
-		CSettingsSheet *p = GetSettingsParentSheet();
+		CSettingsSheet *p = GetParentSheet();
 		BOOL bEnable = nHint!=ESH_Start_Auto && !p->m_bBinning && !g_CxLibWork.IsDC300();
 		::EnableWindow(::GetDlgItem(m_hWnd, IDC_TRIGGER_MODE), bEnable);
 		::EnableWindow(::GetDlgItem(m_hWnd, IDC_DISCHARGE), bEnable&&p->m_bTriggerMode);

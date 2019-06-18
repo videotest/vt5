@@ -22,7 +22,6 @@
 //}
 
 #include <windows.h>
-#include <atlcoll.h>
 #include "objbase.h"
 #define __IActiveScriptParse_INTERFACE_DEFINED__
 #include <ActivScp.h>

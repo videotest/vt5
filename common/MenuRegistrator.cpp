@@ -12,7 +12,7 @@
 #include "..\\common2\\com_main.h"
 #define __assert__( value )	dbg_assert( value )
 
-#define CVTRegKey ::CRegKey
+#define CVTRegKey CRegKey
 #define CVTRegValue CRegValue
 #define CStringArray StringArray
 #endif //_COMMON_LIB
@@ -52,7 +52,11 @@ typedef void (*GAN)(char *, long *);
 GAN GetFuncByName( const char* pszFuncName )
 {
 	HMODULE hModuleExe = GetModuleHandle(0);
-	HINSTANCE hDll_Common = GetModuleHandle("common.dll");
+	#ifdef _DEBUG
+		HINSTANCE hDll_Common = GetModuleHandle("common_d.dll");
+	#else
+		HINSTANCE hDll_Common = GetModuleHandle("common.dll");
+	#endif
 
 	GAN pfn = (GAN)GetProcAddress( hModuleExe, pszFuncName );
 	if( !pfn )
@@ -85,7 +89,7 @@ _bstr_t GetRegistryPath()
 	if (!punkAppUnknown)
 	{
 	#ifdef _DEBUG
-		HINSTANCE hDll_Common = GetModuleHandle("common.dll");
+		HINSTANCE hDll_Common = GetModuleHandle("common_d.dll");
 	#else
 		HINSTANCE hDll_Common = GetModuleHandle("common.dll");
 	#endif
@@ -222,7 +226,7 @@ bool CMenuRegistrator::UnRegisterMenu( const char* szViewName, const char* szObj
 
 	if( ::RegDeleteValue( m_hKey, (LPCTSTR)bstrKeyName ) != ERROR_SUCCESS )
 	{
-		__assert__(!"No KeyName");
+		__assert__( FALSE );
 		return false;
 	}
 

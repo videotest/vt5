@@ -5,7 +5,7 @@
 #include "PropBag.h"
 #include "ScriptNotifyInt.h"
 #include "color.h"
-#include "FishSettings.h"
+#include "Settings.h"
 
 const int nScrollW = 15;
 
@@ -123,7 +123,7 @@ IUnknown* GetActualImageFromView(IUnknown *punkView)
 			IDataContext2Ptr sptrC(ptrDoc);
 			if(sptrC!=0)
 			{
-				LONG_PTR lPos=0;
+				long lPos=0;
 				sptrC->GetFirstObjectPos(_bstr_t(szTypeImage), &lPos);
 				while(lPos)
 				{

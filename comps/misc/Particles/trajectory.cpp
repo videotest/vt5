@@ -133,7 +133,7 @@ static void MakeSmoothAxis(_dpoint *axis, int len,
 COLORREF trajectory::_get_class_color( long lClass )
 {
 	/*
-	LPOS lpos = ms_class_colors.find( lClass );
+	long	lpos = ms_class_colors.find( lClass );
 	if( !lpos )
 	{
 		COLORREF cr = ::get_class_color( lClass );
@@ -187,7 +187,7 @@ HRESULT trajectory::Paint( HDC hDC, RECT rectDraw, IUnknown *punkTarget, BITMAPI
 
 	/*
 	bool bActive = 0;
-	LPOS lPos=0;
+	long lPos=0;
 	ptrList->GetActiveChild(&lPos);
 	if(lPos!=0)
 	{
@@ -598,7 +598,7 @@ HRESULT trajectory::NotifySelect( bool bSelect )
 		punk->Release();
 		if( ptrContainer==0 )return S_FALSE;
 
-		TPOS lpos = 0;
+		long	lpos = 0;
 		INamedDataObject2Ptr	ptrList( ptrContainer );
 		ptrParent->GetObjectPosInParent( &lpos ); 
 		ptrList->SetActiveChild( lpos );
@@ -611,7 +611,7 @@ HRESULT trajectory::NotifySelect( bool bSelect )
 IUnknownPtr find_child_by_interface(IUnknownPtr sptrParent, const GUID guid)
 {
 	INamedDataObject2Ptr sptrNDOParent(sptrParent);
-	TPOS lPos = 0;
+	long lPos = 0;
 	sptrNDOParent->GetFirstChildPosition(&lPos);
 	while (lPos)
 	{

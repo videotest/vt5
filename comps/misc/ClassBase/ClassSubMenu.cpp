@@ -1,9 +1,8 @@
-#include "stdafx.h"
+#include "classsubmenu.h"
 #include "misc_utils.h"
 #include "core5.h"
 #include "data5.h"
 #include "docview5.h"
-#include "classsubmenu.h"
 #include "class_utils.h"
 
 CClassSubMenu::CClassSubMenu(void)
@@ -35,13 +34,13 @@ HRESULT CClassSubMenu::SetSingleObjectName( BSTR bstrObjectName )
 
 
 //////////////////////////////////////////////////////////////////////
-HRESULT CClassSubMenu::GetFirstItemPos( TPOS* plPos )
+HRESULT CClassSubMenu::GetFirstItemPos( long* plPos )
 {
 	if(plPos==0) return E_INVALIDARG;
 
 
 	m_bShowUnknown = ::GetPrivateProfileInt("Classes", "AppointUnknownClass", 0, full_classifiername(NULL));
-	TPOS lClass = 0;
+	long lClass=0;
 	*plPos = lClass+1;
 	
 	return S_OK;
@@ -54,28 +53,26 @@ HRESULT CClassSubMenu::GetNextItem(
 										UINT* puiItemID, 
 										BSTR* pbstrText, 							
 										UINT* puiParentID,
-										TPOS* plPos
+										long* plPos 
 										)
 {
 	if(plPos==0) return E_INVALIDARG;
 
 	long nClassCount = class_count();
-	long posClass = (long)*plPos;
-	long lClass = (long)posClass - 1;
-	(posClass)++;
+	long lClass = *plPos-1;
+	(*plPos)++;
 	if(m_bShowUnknown){
 		if(lClass>=nClassCount)
 		{
-			posClass = 0;
+			*plPos=0;
 			lClass=-1;
 		}
 	}else{
 		if(lClass>=nClassCount-1)
 		{
-			posClass = 0;
+			*plPos=0;
 		}
 	}
-	*plPos = (TPOS)posClass;
 	_bstr_t bstrClassName = get_class_name(lClass);
 	*puiFlags		= MF_STRING | MF_ENABLED;
 	*puiItemID		= m_uiStartItemID + lClass + 1;

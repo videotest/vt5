@@ -38,11 +38,11 @@ public:
 // Attributes
 public:
 	void RecalcLayout();
-	INT_PTR GetPanesCount()				{return m_panes.GetSize();}
+	long GetPanesCount()				{return m_panes.GetSize();}
 	PaneInfo *GetPaneInfo( int idx )	{return (PaneInfo*)m_panes[idx];}
 
 
-	TPOS SetXPBar(HWND hwndXPBar);
+	long SetXPBar( HWND hwndXPBar );
 // Overrides
 	// ClassWizard generated virtual function overrides
 	//{{AFX_VIRTUAL(CShellStatusBar)
@@ -77,7 +77,7 @@ protected:
 
 
 	HWND		m_hwndXPBar;
-	TPOS		lposStatus_;
+	long		m_lposStatus;
 };
 
 /////////////////////////////////////////////////////////////////////////////

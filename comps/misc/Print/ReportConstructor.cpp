@@ -228,7 +228,7 @@ bool CViewDescription::Init( IUnknown* punkView, IUnknown* punkDocumentSite )
 		IDataContext2Ptr sptrdc2 = sptrDC;
 		if( sptrdc2 != 0 && (dwobjflags & ofAllSelected) )
 		{
-			LONG_PTR lpos = 0;
+			long lpos = 0;
             sptrdc2->GetFirstSelectedPos( _bstr_t((LPCSTR)m_arObjectTypes[i]), &lpos );
 			while( lpos )
 			{
@@ -593,7 +593,7 @@ bool CReportConstructor::CreateSplitterViewDescription( )
 	}
 	
 
-	TPOS lPos = 0;
+	long lPos = 0;
 	m_sptrDocSite->GetFirstViewPosition( &lPos );
 	while( lPos )
 	{
@@ -621,7 +621,7 @@ void CReportConstructor::DeInitSplitterViewDescription()
 }
 
 //////////////////////////////////////////////////////////////////////
-INT_PTR CReportConstructor::GetSplitterViewDescriptionCount()
+int CReportConstructor::GetSplitterViewDescriptionCount()
 {
 	return m_arSplitterViewDescription.GetSize();
 }
@@ -677,7 +677,7 @@ bool CReportConstructor::CreateActiveObjectList()
 		if( bstrType == _bstr_t( szTypeReportForm ) )
 			continue;
 
-		LONG_PTR nPos = 0;
+		long nPos = 0;
 		sptrDC2->GetFirstSelectedPos( bstrType,  &nPos );
 		int nObjectNum = 0;
 		while( nPos )
@@ -715,7 +715,7 @@ void CReportConstructor::DeInitActiveObjectList()
 }
 
 //////////////////////////////////////////////////////////////////////
-INT_PTR CReportConstructor::GetActiveObjectListCount()
+int CReportConstructor::GetActiveObjectListCount()
 {
 	return m_arActiveObject.GetSize();
 }
@@ -740,7 +740,7 @@ public:
 //////////////////////////////////////////////////////////////////////
 bool CReportConstructor::CreateGroupViewObjectList( CArray<CViewObjectList*, CViewObjectList*>& arOL )
 {
-	INT_PTR nObjectCount = g_ReportConstructor.GetActiveObjectListCount();
+	int nObjectCount = g_ReportConstructor.GetActiveObjectListCount();
 	if( nObjectCount < 1 )
 		return false;
 
@@ -794,7 +794,7 @@ bool CReportConstructor::CreateGroupViewObjectList( CArray<CViewObjectList*, CVi
 			arTemp.Add( vp );
 		}
 		
-		INT_PTR nFirstObjectEntryCount = arProgID.GetSize();
+		int nFirstObjectEntryCount = arProgID.GetSize();
 		
 		arProgID.RemoveAll();		
 
@@ -846,7 +846,7 @@ bool CReportConstructor::CreateGroupViewObjectList( CArray<CViewObjectList*, CVi
 		{
 			int nCurSupportedCount = 0;
 			CString strProgID = arTemp[j].strViewProgID;
-			for( INT_PTR k=nFirstObjectEntryCount;k<arTemp.GetSize();k++ )
+			for( int k=nFirstObjectEntryCount;k<arTemp.GetSize();k++ )
 			{
 				if( strProgID == arTemp[k].strViewProgID )
 					nCurSupportedCount++;
@@ -894,9 +894,9 @@ bool CReportConstructor::CreateGroupViewObjectListUseBaseGroup( CArray<CViewObje
 	if( ptrData == 0 )
 		return false;
 
-	INT_PTR nObjectCount = g_ReportConstructor.GetActiveObjectListCount();
+	int nObjectCount = g_ReportConstructor.GetActiveObjectListCount();
 
-	for( INT_PTR i=0;i<nObjectCount;i++ )
+	for( int i=0;i<nObjectCount;i++ )
 	{
 		CViewObjectList* pvo = g_ReportConstructor.GetActiveObjectListItem( i );
 		if( pvo->m_bUse )
@@ -913,7 +913,7 @@ bool CReportConstructor::CreateGroupViewObjectListUseBaseGroup( CArray<CViewObje
 
 		GuidKey guidGroup = INVALID_KEY;
 
-		TPOS lGroupPos = 0;
+		long lGroupPos = 0;
 		ptrData->GetBaseGroupFirstPos( &lGroupPos );
 		while( lGroupPos )
 		{
@@ -943,7 +943,7 @@ bool CReportConstructor::CreateGroupViewObjectListUseBaseGroup( CArray<CViewObje
 		pvol_base_group->m_bUse			= true;
 
 
-		TPOS lPos = 0;
+		long lPos = 0;
 		ptrData->GetBaseGroupObjectFirstPos( &guidGroup, &lPos );
 		while( lPos )
 		{
@@ -1228,13 +1228,13 @@ bool CReportConstructor::FillOut_UseExist( IUnknown** ppunkReport, IUnknown** pp
 			if( sptrA != NULL )
 			{			
 
-				LONG_PTR	lPosTemplate = 0;
+				long	lPosTemplate = 0;
 				
 				sptrA->GetFirstDocTemplPosition( &lPosTemplate );
 				
 				while( lPosTemplate )
 				{
-					LONG_PTR	lPosDoc = 0;
+					long	lPosDoc = 0;
 
 					sptrA->GetFirstDocPosition( lPosTemplate, &lPosDoc );
 
@@ -1349,7 +1349,7 @@ bool CReportConstructor::ProcessExistReport( IUnknown* punkReport )
 
 	//Process arOL
 	{
-		TPOS lPos;
+		long lPos;
 		ptrNDO2->GetFirstChildPosition( &lPos );
 		while( lPos )
 		{
@@ -1380,7 +1380,7 @@ bool CReportConstructor::ProcessExistReport( IUnknown* punkReport )
 						continue;
 
 
-					LONG_PTR lVPos = 0;
+					long lVPos = 0;
 					ptrAX->GetFirstObjectPosition( &lVPos );
 					while( lVPos )
 					{
@@ -1414,7 +1414,7 @@ bool CReportConstructor::ProcessExistReport( IUnknown* punkReport )
 	}
 
 
-	TPOS lPos;
+	long lPos;
 	ptrNDO2->GetFirstChildPosition( &lPos );
 	while( lPos )
 	{
@@ -1445,7 +1445,7 @@ bool CReportConstructor::ProcessExistReport( IUnknown* punkReport )
 					continue;
 
 
-				LONG_PTR lVPos = 0;
+				long lVPos = 0;
 				ptrAX->GetFirstObjectPosition( &lVPos );
 				while( lVPos )
 				{
@@ -1453,7 +1453,7 @@ bool CReportConstructor::ProcessExistReport( IUnknown* punkReport )
 					BOOL bActiveObject = FALSE;
 					bstrObjectName = bstrObjectType = NULL;
 					
-					LONG_PTR nPosSave = lVPos;
+					long nPosSave = lVPos;
 					ptrAX->GetNextObject( &bstrObjectName, &bActiveObject, 
 											&bstrObjectType, &lVPos );
 
@@ -2040,7 +2040,7 @@ bool CReportConstructor::FillOut_Gallery( sptrIReportForm form )
 	if( nHorzItemCount < 1 )
 		nHorzItemCount = 2;
 
-	LONG_PTR nVertItemCount	= arVD.GetSize() / nHorzItemCount +
+	int nVertItemCount	= arVD.GetSize() / nHorzItemCount +
 		( ( (arVD.GetSize() ) % nHorzItemCount ) ? 1 : 0 );
 
 	if( nVertItemCount < 1 )
@@ -2135,7 +2135,7 @@ bool CReportConstructor::FillOut_FromSplitter( sptrIReportForm form )
 	}
 
 
-	LONG_PTR nViewCount = g_ReportConstructor.GetSplitterViewDescriptionCount();
+	int nViewCount = g_ReportConstructor.GetSplitterViewDescriptionCount();
 	
 	int nSplitterRowCount = g_ReportConstructor.GetSplitterRowCount();
 	int nSplitterColCount = g_ReportConstructor.GetSplitterColCount();	
@@ -2266,7 +2266,7 @@ IUnknown* CReportConstructor::CreateViewAXCtrl()
 bool CReportConstructor::GetMatchViewProgID( CArray<CString, CString>& arrViewProgID, CString strObjectType )
 {
 	sptrIApplication sptrApp( ::GetAppUnknown() );
-	LONG_PTR pos = 0;
+	long pos = 0;
 	sptrApp->GetFirstDocTemplPosition(&pos);
 	while(pos)
 	{
@@ -2506,7 +2506,7 @@ bool CReportConstructor::GetAvailableViewProgID( CArray<CString, CString>& arVie
 	if( sptrApp == NULL )
 		return false;
 
-	LONG_PTR pos = 0;
+	long pos = 0;
 	sptrApp->GetFirstDocTemplPosition(&pos);
 	while(pos)
 	{

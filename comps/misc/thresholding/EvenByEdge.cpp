@@ -25,7 +25,7 @@ _ainfo_base::arg	CEvenByEdgeInfo::s_pargs[] =
 static double inline sqr(double x)
 { return x*x; }
 
-static inline int iround(double x)
+static inline int round(double x)
 {
 	return int(floor(x+0.5));
 }

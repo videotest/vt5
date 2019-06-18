@@ -33,7 +33,7 @@ inline long _virtual_classify( INamedDataObject2Ptr sptrDNO, long lSuperClass )
 	long lBaseKey = GetValueInt( ::GetAppUnknown(), SECT_STATUI_CHART_AXIS_ROOT, X_PARAM_KEY, 0 );
 
 	double fMin = 1e307, fMax = -1e307;
-	TPOS lPos = 0;
+	long lPos = 0;
 	sptrDNO->GetFirstChildPosition( &lPos );
 	while( lPos )
 	{
@@ -146,7 +146,7 @@ inline void _virtual_classify( INamedDataObject2Ptr sptrDNO, IStatObjectDispPtr 
 {
 	long lBaseKey = GetValueInt( ::GetAppUnknown(), SECT_STATUI_CHART_AXIS_ROOT, X_PARAM_KEY, 0 );
 
-	POSITION lPos = 0;
+	long lPos = 0;
 	sptrDNO->GetFirstChildPosition( &lPos );
 	while( lPos )
 	{
@@ -839,7 +839,7 @@ HRESULT	CStatisticObject::_calculate_object( IUnknown *punkTable, long lClassDiv
 	if( m_setClassesForAll.size() == 1 && *m_setClassesForAll.begin() == -2 )
 		return E_FAIL;
 
-	LPOS lPos = 0;
+	long lPos = 0;
 
 	_bstr_t bstrClassFile = m_strClassFile;
 	long lClassC = 0;
@@ -879,10 +879,10 @@ HRESULT	CStatisticObject::_calculate_object( IUnknown *punkTable, long lClassDiv
 
 		IStatTablePtr sptrTable = sptrDNO;
 
-		TPOS lPos_BaseParam = 0;
-		POSITION lPos_AreaParam = 0;
-		POSITION lPos_LengthParam = 0;
-		POSITION lPos_PerimParam = 0;
+		long lPos_BaseParam = 0;
+		long lPos_AreaParam = 0;
+		long lPos_LengthParam = 0;
+		long lPos_PerimParam = 0;
 
 		sptrTable->GetParamPosByKey( 0, &lPos_AreaParam );	
 		sptrTable->GetParamPosByKey( 12, &lPos_LengthParam );	
@@ -903,7 +903,7 @@ HRESULT	CStatisticObject::_calculate_object( IUnknown *punkTable, long lClassDiv
 		MapGUID map_indexes;
 		map<GUID,NumImg,LessGUID> mapGuidGroup2Img;
 		{
-			TPOS lPosGroup = 0;
+			long lPosGroup = 0;
 			sptrTable->GetFirstGroupPos( &lPosGroup );
 			
 			while( lPosGroup )
@@ -915,18 +915,18 @@ HRESULT	CStatisticObject::_calculate_object( IUnknown *punkTable, long lClassDiv
 			}
 		}
 
-		TPOS lPosRow = 0;
-		sptrTable->GetFirstRowPos(&lPosRow); 
+		long lPosRow = 0; 
+		sptrTable->GetFirstRowPos( &lPosRow ); 
 		while( lPosRow ) 
 		{ 
 			stat_row *pRow = 0; 
-			TPOS lChild = lPosRow; 
-			sptrTable->GetNextRow(&lPosRow, &pRow);
+			long lChild = lPosRow; 
+			sptrTable->GetNextRow( &lPosRow, &pRow );	
 
 			IUnknown *punkO = 0;
 			{
-				TPOS lP = lChild;
-				sptrDNO->GetNextChild(&lP, &punkO );
+				long lP = lChild;
+				sptrDNO->GetNextChild( &lP, &punkO );
 			}
 
 			ICalcObjectPtr sptrCalc = punkO;
@@ -1050,10 +1050,10 @@ HRESULT	CStatisticObject::_calculate_object( IUnknown *punkTable, long lClassDiv
 	{
 		IStatTablePtr sptrTable = sptrDNO;
 
-		TPOS lPos = 0;
+		long lPos = 0;
 		sptrTable->GetFirstGroupPos( &lPos );
 
-		NumImg lgroup_idx = AllImages;        		
+    NumImg lgroup_idx = AllImages;        		
 
 		while( lPos )
 		{
@@ -1063,7 +1063,7 @@ HRESULT	CStatisticObject::_calculate_object( IUnknown *punkTable, long lClassDiv
 			lgroup_idx ++;
 
 			bool bNew = true;
-			for (TPOS lp = listImages.head(); lp; lp = listImages.next(lp))
+			for( long lp = listImages.head(); lp; lp = listImages.next( lp ) )
 			{
 				CImageInfo info = listImages.get( lp );
 				
@@ -1135,7 +1135,7 @@ HRESULT	CStatisticObject::_calculate_object( IUnknown *punkTable, long lClassDiv
 		double fArea = 0;
 		double fUsedArea = 0;
 
-		long lCount = 0; for (TPOS lp = listImages.head(); lp; lp = listImages.next(lp), lCount++)
+		for( long lp = listImages.head(), lCount = 0; lp; lp = listImages.next( lp ), lCount++ )
 		{
 			CImageInfo info = listImages.get( lp );
 			double fA2 = info.cx * info.cy * info.fCalibr * info.fCalibr;
@@ -1165,7 +1165,7 @@ HRESULT	CStatisticObject::_calculate_object( IUnknown *punkTable, long lClassDiv
 
 	//{
 	//	long lMeasKey = GetValueInt( ::GetAppUnknown(), SECT_STATUI_CHART_AXIS_ROOT, X_PARAM_KEY, 0 ); 
-	//	LPOS lpos_map = m_map_meas_params.find( lMeasKey );
+	//	long lpos_map = m_map_meas_params.find( lMeasKey );
 	//	if( lpos_map )
 	//	{
 	//		ParameterDescriptor_ex* pmp = m_map_meas_params.get( lpos_map );
@@ -2373,7 +2373,7 @@ void CStatisticObject::GetVirtualClasses(bool& bVirtualClasses, long& lVirtClass
 	lVirtClasses = -2;
 }
 
-COLORREF CStatisticObject::get_class_color( LPOS lpos )
+COLORREF CStatisticObject::get_class_color( long lpos )
 {
 	bool bVirtualClasses;
 	long lVirtClasses;
@@ -2384,7 +2384,7 @@ COLORREF CStatisticObject::get_class_color( LPOS lpos )
 	return CColorsNames::get_class_color(lpos);
 }
 
-const char *CStatisticObject::get_class_name( LPOS lpos )
+const char *CStatisticObject::get_class_name( long lpos )
 {
 	bool bVirtualClasses;
 	long lVirtClasses;

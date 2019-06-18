@@ -86,7 +86,7 @@ static inline bool GetLongProp(Type* pval, char *szName, INamedPropBag *pBag1, I
 	GetProp1(var, szName, pBag3);
 	if(var.vt!=VT_EMPTY)
 	{
-		*pval = (Type)var.lVal;
+		*pval = var.lVal;
 		return true;
 	}
 	return false;

@@ -13,13 +13,14 @@ IMPLEMENT_DYNCREATE(CDBaseEngine, CCmdTarget)
 
 CDBaseEngine::CDBaseEngine()
 {
-
+	m_pdbLocks = 0;
 }
 /////////////////////////////////////////////////////////////////////////////
 CDBaseEngine::CDBaseEngine( CDBaseDocument* pDocument )
 {
 	m_pDocument			= pDocument;	
 	m_bDirtyTableInfo	= true;
+	m_pdbLocks = 0;
 }
 
 /////////////////////////////////////////////////////////////////////////////
@@ -125,8 +126,9 @@ bool CDBaseEngine::Close()
 	m_catalogPtr	= 0;
 	m_connPtr		= 0;
 
-	m_pDocument->FireSimpleEvent( szDBaseEventConnectionClose );	
-
+	m_pDocument->FireSimpleEvent( szDBaseEventConnectionClose );
+	delete m_pdbLocks;
+	m_pdbLocks = 0;
 	return true;
 }
 
@@ -179,6 +181,7 @@ CString SetConnectionProperty( const char* psz_coonnection, const char* psz_prop
 //		Opening connection
 //
 /////////////////////////////////////////////////////////////////////////////
+
 bool CDBaseEngine::OpenFromString( CString strConnectionString )
 {
 	Close();
@@ -190,10 +193,10 @@ bool CDBaseEngine::OpenFromString( CString strConnectionString )
 	AFX_MANAGE_STATE(AfxGetStaticModuleState());
 
 	m_str_conn = strConnectionString;
-
+	CString strMdbFileName;
 	{				
 		
-		CString strMdbFileName = CDBaseDocument::GetMDBFileNameFromConnectionCtring( strConnectionString, m_pDocument->m_str_dbd_open_file_name );		
+		strMdbFileName = CDBaseDocument::GetMDBFileNameFromConnectionCtring( strConnectionString, m_pDocument->m_str_dbd_open_file_name );		
 
 		if( !strMdbFileName.IsEmpty() )
 		{
@@ -244,7 +247,8 @@ bool CDBaseEngine::OpenFromString( CString strConnectionString )
 	}
 
 	try
-	{		
+	{	
+
 		//test read only
 		if( m_pDocument )
 		{			
@@ -304,7 +308,13 @@ bool CDBaseEngine::OpenFromString( CString strConnectionString )
 		{
 			dump_com_error(e);
 		}
-
+		{//KIR 
+			delete m_pdbLocks;
+			m_pdbLocks = new CDBLocksInfo;
+			if(!m_pdbLocks->AttachToDB(strMdbFileName))
+				return false;
+			m_pdbLocks->StartNotification(&m_pDocument->m_eventController);
+		}
 	}
 	catch (_com_error &e)
 	{
@@ -319,6 +329,7 @@ bool CDBaseEngine::OpenFromString( CString strConnectionString )
 }
 
 /////////////////////////////////////////////////////////////////////////////
+
 bool CDBaseEngine::OpenAccessFile( CString strMDBFile, CString& strConnectionString )
 {
 	Close();
@@ -338,8 +349,8 @@ bool CDBaseEngine::OpenAccessFile( CString strMDBFile, CString& strConnectionStr
 			szDirDbd, NULL, NULL);
 		if (!_tcscmp(szDrive,szDriveDbd) && !_tcscmp(szDir,szDirDbd))
 		{
-		_tmakepath(szPath, NULL, NULL, szFName, szExt);
-		strConnectionString += szPath;
+			_tmakepath(szPath, NULL, NULL, szFName, szExt);
+			strConnectionString += szPath;
 		}
 		else
 			strConnectionString += strMDBFile;	

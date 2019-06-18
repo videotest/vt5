@@ -1,9 +1,0 @@
-'resource:Show Class Labels#Tools#Show/hide labels of classes#Show Class Labels
-'state:function=StateShowClassLabels
-
-If Data.GetValue("\ImageView\ShowClassName") Then
-	Data.SetValue "\ImageView\ShowClassName", 0
-Else
-	Data.SetValue "\ImageView\ShowClassName", 1
-End If
-MainWnd.UpdateSystemSettings

@@ -712,21 +712,21 @@ ABACUSCTRL_API bool AbacusGetInit(ABACUSINIT **ppAbacusInit)
 	return true;
 }
 
-ABACUSCTRL_API bool AbacusGetFirstRecordPosition(POSITION *plPos)
+ABACUSCTRL_API bool AbacusGetFirstRecordPosition(long *plPos)
 {
-	*plPos = (POSITION)s_pFirstAbacusRecord;
+	*plPos = (long)s_pFirstAbacusRecord;
 	return true;
 }
 
-ABACUSCTRL_API bool AbacusGetNextRecord(POSITION *plPos, ABACUSRECORD **ppRecord)
+ABACUSCTRL_API bool AbacusGetNextRecord(long *plPos, ABACUSRECORD **ppRecord)
 {
 	AbacusRecordHolder *p = (AbacusRecordHolder *)*plPos;
 	*ppRecord = &p->ar;
-	*plPos = (POSITION)p->pNext;
+	*plPos = (long)p->pNext;
 	return true;
 }
 
-ABACUSCTRL_API void AbacusRemoveRecord(POSITION lPos)
+ABACUSCTRL_API void AbacusRemoveRecord(long lPos)
 {
 	EnterCriticalSection(&s_cs);
 	AbacusRecordHolder *p = (AbacusRecordHolder *)lPos;

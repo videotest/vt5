@@ -15,7 +15,7 @@ struct	undo_info
 inline void free_undo_info( undo_info *p )
 {
 	if( !p )return;
-	for (TPOS lpos = p->actions.head(); lpos; lpos = p->actions.next(lpos))
+	for( long lpos = p->actions.head(); lpos; lpos = p->actions.next( lpos ) )
 		p->actions.get( lpos )->Release();
 
 	delete p;

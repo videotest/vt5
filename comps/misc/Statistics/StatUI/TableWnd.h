@@ -123,7 +123,7 @@ namespace ViewSpace
 		LPCTSTR GetClassFile( ) { return m_strClassFile; }
 
 		void calc_min_rect( bool bPrintMode );
-		LRESULT on_destroy() { m_sptrView = 0; return __super::on_destroy(); }
+		long on_destroy() { m_sptrView = 0; return __super::on_destroy(); }
 		void set_view_unkn( IUnknownPtr view ) { m_sptrView = view; }
 		RECT get_column_rect( int iIndex );
 		RECT get_row_rect( int iIndex );
@@ -151,7 +151,7 @@ namespace ViewSpace
 		{ 
 			if( m_list_attached.count() ) 
 			{
-				for (TPOS lpos_lst = m_list_attached.head(); lpos_lst; lpos_lst = m_list_attached.next(lpos_lst))
+				for( long lpos_lst = m_list_attached.head(); lpos_lst; lpos_lst = m_list_attached.next( lpos_lst ) )
 				{
 					IUnknownPtr ptr_object = m_list_attached.get( lpos_lst );
 					if( ptr_object )
@@ -159,12 +159,12 @@ namespace ViewSpace
 				}
 			}
 		}
-		LRESULT on_paint();
+		long on_paint();
 
 		void load_from_ndata(  INamedDataPtr sptrND );
 		void store_to_ndata( INamedDataPtr sptrND );
 
-		virtual LRESULT on_size(short cx, short cy, ulong fSizeType);
+		virtual long on_size( short cx, short cy, ulong fSizeType );
 		virtual bool create( DWORD style, const RECT &rect, const _char *pszTitle = 0, HWND parent = 0, HMENU hmenu = 0, const _char *pszClass = 0 );
 		const CRect& get_min_rect();
 
@@ -178,19 +178,18 @@ namespace ViewSpace
 		};
 
 		void DoDraw( HDC hDC, RECT rcPaint, double fZoom = 1, bool bPrint = false );
-		LRESULT on_erasebkgnd(HDC hDC)
+		long on_erasebkgnd( HDC hDC )
 		{
 			return 1;//__super::on_erasebkgnd(hDC);
 		}
-		LRESULT on_hscroll(unsigned code, unsigned pos, HWND hwndScroll);
-		LRESULT on_vscroll(unsigned code, unsigned pos, HWND hwndScroll);
-		LRESULT on_notify(uint idc, NMHDR *pnmhdr);
+		long on_hscroll( unsigned code, unsigned pos, HWND hwndScroll );
+		long on_vscroll( unsigned code, unsigned pos, HWND hwndScroll );
+		long on_notify(uint idc, NMHDR *pnmhdr);
 
 		void clear_attached() { m_list_attached.clear(); }
 		void set_active_simple( int nindex ) 
-		{
-			long lid = 0;
-			for (TPOS lp = m_list_attached.head(); lp; lp = m_list_attached.next(lp), lid++)
+		{ 
+			for( long lp = m_list_attached.head(), lid = 0; lp; lp = m_list_attached.next( lp ), lid++ )
 			{
 				if( lid == nindex )
 				{
@@ -199,7 +198,7 @@ namespace ViewSpace
 				}
 			}
 		}
-		LRESULT handle_message(UINT m, WPARAM w, LPARAM l);
+		long handle_message(UINT m, WPARAM w, LPARAM l);
 		void _resize_child( RECT rect );
 	protected:
 		CString _get_user_value( long lCol, long lRow );
@@ -214,7 +213,5 @@ private:
 	bool m_bPrinting;
 	int GetTableWidth() const;
 	int GetTableHeight() const;
-	RECT RectHitTest(const POINT& pt);
-	POINT RowCol(const POINT& pt);
 };
 }

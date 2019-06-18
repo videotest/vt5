@@ -258,7 +258,7 @@ HRESULT CBayesianClassifier::SetFlags( /*[in]*/ DWORD dwFlag )
 HRESULT CBayesianClassifier::Teach(IUnknown* punkOL)
 {
 	INamedDataObject2Ptr ol = punkOL;
-	POSITION pos;
+	long pos;
 	ol->GetFirstChildPosition( &pos);
 	IUnknown* punk; 
 	int n = m_cs.GetParamsCount();

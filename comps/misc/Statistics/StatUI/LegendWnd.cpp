@@ -80,7 +80,7 @@ namespace ViewSpace
 	}
 
 
-	LRESULT CLegendWnd::on_paint()
+	long CLegendWnd::on_paint()
 	{
 		RECT rcPaint = { 0, 0, 0, 0 };
 		::GetUpdateRect( handle(), &rcPaint, false );
@@ -185,45 +185,45 @@ namespace ViewSpace
 
 				RECT rc2 = {0};
 
-				{long lid = 0; for (TPOS lpos_lst = m_list_attached.head(); lpos_lst; lpos_lst = m_list_attached.next(lpos_lst), lid++)
+				for( long lpos_lst = m_list_attached.head(), lid = 0; lpos_lst; lpos_lst = m_list_attached.next( lpos_lst ), lid++ )
 				{
 					rc2 = m_lpParams[i].m_pparam_values[lid].m_rectParamValue;
 
-					::OffsetRect(&rc2, m_lpParams[i].m_pparam_values[lid].lCommaPart - m_lst_max_comma_width[lid], 0);
+					::OffsetRect( &rc2, m_lpParams[i].m_pparam_values[lid].lCommaPart - m_lst_max_comma_width[lid], 0 );
 
-					rc2 = ScaleRect(rc2, fZoom);
+					rc2 = ScaleRect( rc2, fZoom );
 
-					rc2.top = long(rc2.top * _fZoom);
-					rc2.bottom = long(rc2.bottom * _fZoom);
+					rc2.top = long( rc2.top * _fZoom );
+ 					rc2.bottom = long( rc2.bottom * _fZoom );
 
-					rc2.right = long(rc2.left * _fZoom + (rc2.right - rc2.left) * _fZoom);
+ 					rc2.right = long( rc2.left * _fZoom + ( rc2.right - rc2.left ) * _fZoom );
 
-					if (m_lpParams[i].m_pparam_values[lid].m_bIncorrect)
-						m_lfFont.DrawString(g, CStringW(m_lpParams[i].m_pparam_values[lid].m_szParamValue), &rc2, DT_RIGHT | DT_VCENTER | DT_SINGLELINE | (bPrint ? DT_NOCLIP : 0), m_clIncorrectColor);
+  				if( m_lpParams[i].m_pparam_values[lid].m_bIncorrect )
+						m_lfFont.DrawString( g, CStringW(m_lpParams[i].m_pparam_values[lid].m_szParamValue), &rc2, DT_RIGHT | DT_VCENTER | DT_SINGLELINE |( bPrint ? DT_NOCLIP : 0 ), m_clIncorrectColor ); 
 					else
-						m_lfFont.DrawString(g, CStringW(m_lpParams[i].m_pparam_values[lid].m_szParamValue), &rc2, DT_RIGHT | DT_VCENTER | DT_SINGLELINE | (bPrint ? DT_NOCLIP : 0));
+						m_lfFont.DrawString( g, CStringW(m_lpParams[i].m_pparam_values[lid].m_szParamValue), &rc2, DT_RIGHT | DT_VCENTER | DT_SINGLELINE |( bPrint ? DT_NOCLIP : 0 ) ); 
 
-					if (i == 0)
+					if( i == 0 )
 					{
 						{
 							{
 								COLORREF cl_data = m_lst_color_hot_data[lid];
 								RECT rc_data = ScaleRect(m_lst_rect_hot_data[lid], fZoom);
-								CString str_data = m_lst_text_hot_data[lid];
+ 								CString str_data = m_lst_text_hot_data[lid];
 
 								long dx = rc_data.right - rc_data.left;
-
-								rc_data.right = rc2.right;
+								
+								rc_data.right = rc2.right; 
 								rc_data.left = (long)(rc_data.right - dx*0.8);
 
-								rc_data.top = long(rc_data.top * _fZoom);
-								rc_data.bottom = long(rc_data.bottom * _fZoom);
+ 								rc_data.top			= long( rc_data.top * _fZoom );
+								rc_data.bottom	= long( rc_data.bottom * _fZoom );
 
-								m_lfFont.DrawString(g, CStringW(str_data), &rc_data, DT_CENTER | DT_VCENTER | DT_END_ELLIPSIS);
+								m_lfFont.DrawString( g, CStringW(str_data),  &rc_data, DT_CENTER | DT_VCENTER | DT_END_ELLIPSIS );
 							}
 						}
 					}
-				}}
+				}
 
 				RECT _rc = rcPaint;
 				_rc.left += 5;
@@ -396,13 +396,13 @@ namespace ViewSpace
 		}
 
 
-		{LONG_PTR lid = 0; for (TPOS lpos_lst = m_list_attached.head();
-		lid<m_list_attached.count();
-		++lid, lpos_lst = m_list_attached.next(lpos_lst))
+		for( long lid=0, lpos_lst = m_list_attached.head(); 
+			lid<m_list_attached.count(); 
+			++lid, lpos_lst=m_list_attached.next(lpos_lst))
 		{
-			m_lst_color_hot_data[lid] = (::GetValueColor(m_list_attached.get(lpos_lst), SECT_STATUI_STAT_LEGEND, SAMPLING_COLOR, RGB(255, 255, 0)));
-			m_lst_text_hot_data[lid] = ((char*)::GetValueString(m_list_attached.get(lpos_lst), SECT_STATUI_STAT_LEGEND, SAMPLING_NAME, ""));
-		}}
+			m_lst_color_hot_data[lid]=( ::GetValueColor( m_list_attached.get( lpos_lst ), SECT_STATUI_STAT_LEGEND, SAMPLING_COLOR, RGB( 255, 255, 0 ) ));
+			m_lst_text_hot_data[lid]=( (char*)::GetValueString( m_list_attached.get( lpos_lst ), SECT_STATUI_STAT_LEGEND, SAMPLING_NAME, "" ));
+		}
 
 		if( m_lCustomDataCount > 0 )
 		{
@@ -418,13 +418,13 @@ namespace ViewSpace
 				strValue.Format( "%s%d", ENTRY_VALUE, m_lpParams[i].lUserID );
 				strOrder.Format( "%s%d", ENTRY_ORDER, m_lpParams[i].lUserID );
 
-				strcpy(m_lpParams[i].m_szParamName, (char*)::GetValueString(sptrND, SECT_STATUI_STAT_LEGEND_USERDATA, strName, 0));
+				strcpy( m_lpParams[i].m_szParamName, (char*)::GetValueString( sptrND, SECT_STATUI_STAT_LEGEND_USERDATA, strName, 0 ) );
 
-				{long lid = 0; for (TPOS lpos_lst = m_list_attached.head(); lpos_lst; lpos_lst = m_list_attached.next(lpos_lst), lid++)
+				for( long lpos_lst = m_list_attached.head(), lid = 0; lpos_lst; lpos_lst = m_list_attached.next( lpos_lst ), lid++ )
 				{
-					strcpy(m_lpParams[i].m_pparam_values[lid].m_szParamValue, (char*)::GetValueString(m_list_attached.get(lpos_lst), SECT_STATUI_STAT_LEGEND_USERDATA, strValue, 0));
+					strcpy( m_lpParams[i].m_pparam_values[lid].m_szParamValue, (char*)::GetValueString( m_list_attached.get( lpos_lst ), SECT_STATUI_STAT_LEGEND_USERDATA, strValue, 0 ) );
 					m_lpParams[i].m_pparam_values[lid].m_bIncorrect = false;
-				}}
+				}
 
 				m_lpParams[i].lOrder = ::GetValueInt( sptrND, SECT_STATUI_STAT_LEGEND_USERDATA, strOrder, m_lpParams[i].lOrder );
 				m_lpParams[i].bUserValue = true;
@@ -457,7 +457,6 @@ namespace ViewSpace
 		m_lfFont.lfStrikeOut = ::GetValueInt( sptrND, SECT_STATUI_STAT_LEGEND_FONT, FONT_STRIKEOUT, m_lfFont.lfStrikeOut) != 0;
 
 		m_lfFont.m_clrText = ::GetValueColor( sptrND, SECT_STATUI_STAT_LEGEND_FONT, TEXT_COLOR , m_lfFont.m_clrText );
-		m_lfFont.Delete();
 		m_clIncorrectColor = ::GetValueColor( sptrND, SECT_STATUI_STAT_LEGEND , INCORRECT_COLOR , m_clIncorrectColor );
 
 		m_bEnableLegendArea = ::GetValueInt( sptrND, SECT_STATUI_ROOT, ENABLE_STAT_PARAM_AREA, m_bEnableLegendArea ) != 0;
@@ -486,7 +485,6 @@ namespace ViewSpace
 		m_lfFontTitle.lfUnderline = ::GetValueInt( sptrND, SECT_STATUI_LEGEND_TITLE_FONT_ROOT, FONT_UNDERLINE, m_lfFontTitle.lfUnderline ) != 0;
 		m_lfFontTitle.lfStrikeOut = ::GetValueInt( sptrND, SECT_STATUI_LEGEND_TITLE_FONT_ROOT, FONT_STRIKEOUT, m_lfFontTitle.lfStrikeOut) != 0;
 		m_lfFontTitle.m_clrText = ::GetValueColor( sptrND, SECT_STATUI_LEGEND_TITLE_FONT_ROOT, TEXT_COLOR , m_lfFontTitle.m_clrText );
-		m_lfFontTitle.Delete();
 
 	}
 	
@@ -545,50 +543,49 @@ namespace ViewSpace
 
 		m_bMinSizeCalc = false;
 
-		{long lid = 0; for (TPOS lpos_lst = m_list_attached.head(); lpos_lst; lpos_lst = m_list_attached.next(lpos_lst), lid++)
+		for( long lpos_lst = m_list_attached.head(), lid = 0; lpos_lst; lpos_lst = m_list_attached.next( lpos_lst ), lid++ )
 		{
-			IStatObjectDispPtr sptrStatObject = m_list_attached.get(lpos_lst);
+			IStatObjectDispPtr sptrStatObject = m_list_attached.get( lpos_lst );
 			IStatObjectPtr sptrSt = sptrStatObject;
 
-			for (int i = 0; i < m_lParamCount + m_lCustomDataCount; i++)
+			for( int i = 0; i < m_lParamCount + m_lCustomDataCount; i++ )
 			{
-				if (m_lpParams[i].bUserValue)
+				if( m_lpParams[i].bUserValue )
 					continue;
 
 				long lKey = m_lpParams[i].lKey;
 
 				double fValue = 0;
 
-				HRESULT hr = sptrStatObject->GetValueGlobalInUnit2(lKey, &fValue);
-				if (hr == S_OK)
+				HRESULT hr = sptrStatObject->GetValueGlobalInUnit2( lKey, &fValue );
+ 				if( hr == S_OK )
 				{
-					_bstr_t bstrUnit;
-					sptrSt->GetParamInfo(lKey, 0, bstrUnit.GetAddress());
-
-					if (bstrUnit.length() > 0 && !lid)
+					_bstr_t bstrUnit; 
+					sptrSt->GetParamInfo( lKey, 0, bstrUnit.GetAddress() );
+					
+					if( bstrUnit.length() > 0 && !lid )
 					{
-						strcat(m_lpParams[i].m_szParamName, ", ");
-						strcat(m_lpParams[i].m_szParamName, (char*)bstrUnit);
+						strcat( m_lpParams[i].m_szParamName, ", " );
+						strcat( m_lpParams[i].m_szParamName, (char*)bstrUnit );
 					}
-					if (fabs(fValue) > 1e20 || (fabs(fValue) < 1e-20 && fValue != 0.)) {
-						sprintf(m_lpParams[i].m_pparam_values[lid].m_szParamValue, "%.6e", fValue);
-					}
-					else{
-						sprintf(m_lpParams[i].m_pparam_values[lid].m_szParamValue, m_lpParams[i].m_szParamFormat, fValue);
+					if(fabs(fValue)>1e20 || (fabs(fValue)<1e-20 && fValue!=0.)) {
+						sprintf( m_lpParams[i].m_pparam_values[lid].m_szParamValue,  "%.6e", fValue );
+					}else{
+						sprintf( m_lpParams[i].m_pparam_values[lid].m_szParamValue,  m_lpParams[i].m_szParamFormat, fValue );
 					}
 					m_lpParams[i].m_pparam_values[lid].m_bIncorrect = false;
 				}
 				else
 				{
-					if (hr == S_FALSE)
-						::LoadString(App::handle(), IDS_NOVAL, m_lpParams[i].m_pparam_values[lid].m_szParamValue, sizeof(m_lpParams[i].m_pparam_values[lid].m_szParamValue));
+					if( hr == S_FALSE )
+						::LoadString( App::handle(), IDS_NOVAL,	m_lpParams[i].m_pparam_values[lid].m_szParamValue, sizeof( m_lpParams[i].m_pparam_values[lid].m_szParamValue ) );
 					else
-						::LoadString(App::handle(), IDS_NOEXPR, m_lpParams[i].m_pparam_values[lid].m_szParamValue, sizeof(m_lpParams[i].m_pparam_values[lid].m_szParamValue));
+						::LoadString( App::handle(), IDS_NOEXPR,	m_lpParams[i].m_pparam_values[lid].m_szParamValue, sizeof( m_lpParams[i].m_pparam_values[lid].m_szParamValue ) );
 
 					m_lpParams[i].m_pparam_values[lid].m_bIncorrect = true;
 				}
 			}
-		}}
+		}
 	}
 
 	void CLegendWnd::calc_min_rect( bool bPrintMode )
@@ -616,10 +613,10 @@ namespace ViewSpace
 
 				w = __max( rc.right, w );
 
-				{long lid = 0; for (TPOS lpos_lst = m_list_attached.head(); lpos_lst; lpos_lst = m_list_attached.next(lpos_lst), lid++)
+				for( long lpos_lst = m_list_attached.head(), lid = 0; lpos_lst; lpos_lst = m_list_attached.next( lpos_lst ), lid++ )
 				{
-					RECT rc3 = { 0 };
-					m_lfFont.MeasureString(g, CStringW(m_lpParams[i].m_pparam_values[lid].m_szParamValue), &rc3, DT_LEFT | DT_TOP | DT_SINGLELINE);
+					RECT rc3 = {0};
+					m_lfFont.MeasureString( g, CStringW(m_lpParams[i].m_pparam_values[lid].m_szParamValue), &rc3, DT_LEFT | DT_TOP | DT_SINGLELINE );
 
 					rc2.top = rc3.top;
 					rc2.bottom = rc3.bottom;
@@ -627,15 +624,15 @@ namespace ViewSpace
 					rc2.left = rc3.left;
 					rc2.right += rc3.right + NCOLUMN_OFFSET;
 
-					m_lst_value_width[lid] = __max(m_lst_value_width[lid], rc3.right + NCOLUMN_OFFSET);
-				}}
+					m_lst_value_width[lid]=__max( m_lst_value_width[lid], rc3.right + NCOLUMN_OFFSET );
+				}
 
 				w2 = __max( rc2.right, w2 );
 
 				m_nLineHeight = __max( rc.bottom - rc.top, m_nLineHeight );
 				m_nLineHeight = __max( rc2.bottom - rc2.top, m_nLineHeight );
 
-				long lid = 0; for (TPOS lpos_lst = m_list_attached.head(); lpos_lst; lpos_lst = m_list_attached.next(lpos_lst), lid++)
+ 				for( long lpos_lst = m_list_attached.head(), lid = 0; lpos_lst; lpos_lst = m_list_attached.next( lpos_lst ), lid++ )
 				{
 					CString str = m_lpParams[i].m_pparam_values[lid].m_szParamValue;
 					
@@ -678,7 +675,7 @@ namespace ViewSpace
 				}
 			}
 
-  			labs_max_comma_width = 0;
+			labs_max_comma_width = 0;
 			labs_max_comma_width = m_lst_max_comma_width.sum();				
 			labs_max_comma_width *= m_lst_max_comma_width.size() + 1; 
 
@@ -826,7 +823,7 @@ namespace ViewSpace
 			m_lpParams[i].m_rectParamName.bottom = m_lhot_data_height + rcText.top + (i + 1) * m_nLineHeight;
 
 			long llast_x = m_lpParams[i].m_rectParamName.right;
-			{long lid = 0; for (TPOS lpos_lst = m_list_attached.head(); lpos_lst; lpos_lst = m_list_attached.next(lpos_lst), lid++)
+			for( long lpos_lst = m_list_attached.head(), lid = 0; lpos_lst; lpos_lst = m_list_attached.next( lpos_lst ), lid++ )
 			{
 				m_lpParams[i].m_pparam_values[lid].m_rectParamValue.left = llast_x + nCenterOffset * 2 + m_lst_max_comma_width[lid];
 				long nValueWidth = m_lst_value_width[lid];
@@ -837,13 +834,13 @@ namespace ViewSpace
 				llast_x = m_lpParams[i].m_pparam_values[lid].m_rectParamValue.right + NCOLUMN_OFFSET;
 
 				RECT rc_hot_data = { m_lpParams[i].m_pparam_values[lid].m_rectParamValue.left, rcText.top, m_lpParams[i].m_pparam_values[lid].m_rectParamValue.right, rcText.top + m_lhot_data_height };
-				m_lst_rect_hot_data[lid] = rc_hot_data;
-			}}
+				m_lst_rect_hot_data[lid]=rc_hot_data;
+			}
 
 		}
 	}
 
-	LRESULT CLegendWnd::on_size(short cx, short cy, ulong fSizeType)
+	long CLegendWnd::on_size( short cx, short cy, ulong fSizeType )
 	{
 		RECT rc;
 		::GetClientRect( m_hwnd, &rc );
@@ -854,7 +851,7 @@ namespace ViewSpace
 		return __super::on_size( cx, cy, fSizeType );
 	}
 
-	LRESULT CLegendWnd::on_mousemove(const _point &point)
+	long CLegendWnd::on_mousemove( const _point &point )
 	{
 		for( unsigned lp_rect =0;  lp_rect<m_lst_rect_hot_data.size(); ++lp_rect )
 		{
@@ -872,7 +869,7 @@ namespace ViewSpace
 		return __super::on_mousemove( point );
 	}
 
-	LRESULT CLegendWnd::on_lbuttondown(const _point &point)
+	long CLegendWnd::on_lbuttondown( const _point &point )
 	{
 		for( unsigned lid =0;  lid<m_lst_rect_hot_data.size(); ++lid )
 		{
@@ -888,7 +885,7 @@ namespace ViewSpace
 		return __super::on_lbuttondown( point );
 	}
 
-	LRESULT CLegendWnd::handle_message(UINT m, WPARAM w, LPARAM l)
+	long CLegendWnd::handle_message( UINT m, WPARAM w, LPARAM l )
 	{
 		switch( m )
 		{

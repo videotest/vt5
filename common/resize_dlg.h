@@ -120,7 +120,7 @@ public:
 					continue;
 				}
 
-				TPOS lpos = m_mapCoord.find( pMap[i].nCtlID );
+				long lpos = m_mapCoord.find( pMap[i].nCtlID );
 
 				if( !lpos )
 				{

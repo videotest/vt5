@@ -175,7 +175,7 @@ protected:
 	afx_msg double GetZoom();
 	afx_msg void SetZoom(double newValue);
 	afx_msg LPDISPATCH GetViewDispatch( );	
-	afx_msg LPDISPATCH GetDataContextDispatch( );	
+	afx_msg LPDISPATCH GetDataContextDispatch( );
 	afx_msg BSTR GetViewName();
 	//}}AFX_DISPATCH
 	DECLARE_DISPATCH_MAP()

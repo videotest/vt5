@@ -117,7 +117,7 @@ IAviImagePtr GetActiveAviFromDoc( IUnknown* punkDoc )
 		return 0;
 
 	_bstr_t bstrImage = szTypeImage;
-	LONG_PTR lPos = 0;
+	long lPos = 0;
 	ptrDC->GetFirstSelectedPos( bstrImage, &lPos );
 
 	while( lPos )
@@ -145,7 +145,7 @@ IAviImagePtr GetActiveAviFromContext( IUnknown* punkContext )
 		return 0;
 
 	_bstr_t bstrImage = szTypeImage;
-	LONG_PTR lPos = 0;
+	long lPos = 0;
 	ptrDC->GetFirstSelectedPos( bstrImage, &lPos );
 
 	while( lPos )

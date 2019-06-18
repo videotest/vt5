@@ -3,6 +3,8 @@
 // This file will be processed by the MIDL compiler to produce the
 // type library (DBaseDoc.tlb).
 
+#include <olectl.h>
+#include <idispids.h>
 
 //uuid(1AD5ED15-BEBC-4203-B4A7-4FAA7788A144), version(1.0)
 
@@ -12,8 +14,6 @@
 ]
 library DBaseDoc
 {
-#include <olectl.h>
-#include <idispids.h>
 	importlib("stdole32.tlb");
 	importlib("stdole2.tlb");
 

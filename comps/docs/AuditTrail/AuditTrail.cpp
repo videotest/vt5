@@ -116,9 +116,9 @@ STDAPI DllRegisterServer(void)
 	{
 		//Menu name
 		CString strATViewMenu = szAuditTrailViewUN;
-		strATViewMenu.LoadString( IDS_ATVIEW_CONTEXT_MENU );
+		//strATViewMenu.LoadString( IDS_ATVIEW_CONTEXT_MENU );
 		CString strATTextViewMenu = szAuditTrailTextViewUN;
-		strATTextViewMenu.LoadString( IDS_ATTEXTVIEW_CONTEXT_MENU );
+		//strATTextViewMenu.LoadString( IDS_ATTEXTVIEW_CONTEXT_MENU );
 		
 		CMenuRegistrator rcm;
 		rcm.RegisterMenu( szAuditTrailView, 0, (LPCSTR)strATViewMenu );

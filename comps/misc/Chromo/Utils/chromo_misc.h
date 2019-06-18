@@ -27,7 +27,7 @@ inline bool IsObjectListHasChromoObject( IUnknown* punkObjectList )
 	INamedDataObject2Ptr ptr_list( punkObjectList );
 	if( ptr_list == 0 )	return false;
 
-	POSITION lpos_measure = 0;
+	long lpos_measure = 0;
 	ptr_list->GetFirstChildPosition( &lpos_measure );
 	while( lpos_measure )
 	{
@@ -43,7 +43,7 @@ inline bool IsObjectListHasChromoObject( IUnknown* punkObjectList )
 		if( ptr_child == 0 )
 			continue;
 
-		POSITION lPosCromo = 0;
+		long lPosCromo = 0;
 		ptr_child->GetFirstChildPosition( &lPosCromo );
 		while( lPosCromo )
 		{

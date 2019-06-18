@@ -80,7 +80,7 @@ inline BOOL search_section_by_key( /*CString *psMainSection*/ long lWorksMode, l
 		//stMainSection = _T( sMainMeasParamsSection );
 			long lCount = ::GetEntriesCount( ::GetAppUnknown(), _T( sMainMeasParamsSection ) );
 
-			for( LPOS lPos = 0; lPos < lCount; lPos++ )
+			for( long lPos = 0; lPos < lCount; lPos++ )
 			{
 				*psSection = sMainMeasParamsSection;
 				CString sEntryName = ::GetEntryName( ::GetAppUnknown(), _T( sMainMeasParamsSection ), lPos );
@@ -99,7 +99,7 @@ inline BOOL search_section_by_key( /*CString *psMainSection*/ long lWorksMode, l
 		//stMainSection = _T( sMainStatParamsSection );
 			long lCount = ::GetEntriesCount( ::GetAppUnknown(), sMainStatParamsSection );
 
-			for( LPOS lPos = 0; lPos < lCount; lPos++ )
+			for( long lPos = 0; lPos < lCount; lPos++ )
 			{
 				*psSection = sMainStatParamsSection;
 				CString sEntryName = ::GetEntryName( ::GetAppUnknown(), sMainStatParamsSection, lPos );
@@ -139,12 +139,12 @@ inline long	get_sections_by_worksmode( long lWorksMode, BSTR **ppbstrSections, l
 			pbstrt = new _bstr_t[ lCount ];
 			plong = new long[ lCount ];
 
-			for( LPOS lPos = 0; lPos < lCount; lPos++ )
+			for( long lPos = 0; lPos < lCount; lPos++ )
 			{
 				_bstr_t	bstrEntryName = ::GetEntryName( ::GetAppUnknown(), _T( sMainMeasParamsSection ), lPos );
 				_bstr_t bstrParamsSection( _T( sMainMeasParamsSection ) );
 				bstrParamsSection += _T("\\") + bstrEntryName;
-				
+
 				_bstr_t bstrExpr = GetValueStringWithoutSet( ::GetAppUnknown(), bstrParamsSection, sExprString, "");
 				if( ((char*)(bstrExpr))[0] == '#' )
 					continue; // если ExprString начинается с # - игнорируем, секретный параметр
@@ -168,12 +168,12 @@ inline long	get_sections_by_worksmode( long lWorksMode, BSTR **ppbstrSections, l
 			pbstrt = new _bstr_t[ lCount ];
 			plong = new long[ lCount ];
 						
-			for( LPOS lPos = 0; lPos < lCount; lPos++ )
+			for( long lPos = 0; lPos < lCount; lPos++ )
 			{
 				_bstr_t	bstrEntryName = ::GetEntryName( ::GetAppUnknown(), _T( sMainStatParamsSection ), lPos );
 				_bstr_t bstrParamsSection( _T( sMainStatParamsSection ) );
 				bstrParamsSection += _T("\\") + bstrEntryName;
-				
+
 				_bstr_t bstrExpr = GetValueStringWithoutSet( ::GetAppUnknown(), bstrParamsSection, sExprString, "");
 				if( ((char*)(bstrExpr))[0] == '#' )
 					continue; // если ExprString начинается с # - игнорируем, секретный параметр

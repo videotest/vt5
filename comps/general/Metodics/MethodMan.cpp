@@ -242,7 +242,7 @@ BSTR CMethodMan::GetActionNameByIndex(long nIndex)
 	CMethodManState st(&m_xMethodMan);
 	if( st.m_bError ) return bstrName.copy();
 
-	TPOS lStepPos = 0;
+	long lStepPos = 0;
 	st.m_sptrMethod->GetStepPosByIndex(nIndex, &lStepPos);
 	if(!lStepPos) return bstrName.copy();
 
@@ -281,7 +281,7 @@ void CMethodMan::CancelStepStoring()
 
 void CMethodMan::DeleteCurrentMethod()
 {
-	TPOS lpos = 0;
+	long lpos=0;
 	m_xMethodMan.GetActiveMethodPos(&lpos);
 	if(lpos)
 	{
@@ -291,7 +291,7 @@ void CMethodMan::DeleteCurrentMethod()
 
 void CMethodMan::RenameCurrentMethod(LPCTSTR strName)
 {
-	TPOS lpos = 0;
+	long lpos=0;
 	m_xMethodMan.GetActiveMethodPos(&lpos);
 	if(lpos)
 	{
@@ -333,7 +333,7 @@ void CMethodMan::RenameCurrentStep(LPCTSTR strName)
 BSTR CMethodMan::GetCurrentMethodName()
 {
 	_bstr_t bstrName;
-	TPOS lMethodPos = 0;
+	long lMethodPos=0;
 	m_xMethodMan.GetActiveMethodPos(&lMethodPos);
 	if(lMethodPos)
 	{
@@ -974,7 +974,7 @@ HRESULT CMethodMan::XMethodMan::Stop(BOOL bStopRun, BOOL bStopRecord)
 			pThis->QueueFireScriptEvent("OnStopRecordMtd");
 
 		{ // BT 4355
-			TPOS lpos = pThis->m_lActiveMethodPos;
+			long lpos = pThis->m_lActiveMethodPos;
 			IUnknownPtr ptrMethod;
 			GetNextMethod(&lpos,&ptrMethod);
 			IMethodDataPtr sptrMethodData(ptrMethod);
@@ -1121,18 +1121,18 @@ HRESULT CMethodMan::XMethodMan::IsRecording(BOOL *pbVal)
 	return S_OK;
 }
 
-HRESULT CMethodMan::XMethodMan::AddMethod(IUnknown* punkMethod, TPOS lInsertBefore, TPOS *plNewPos /*= 0*/)
+HRESULT CMethodMan::XMethodMan::AddMethod(IUnknown* punkMethod, long lInsertBefore, long *plNewPos /*= 0*/ )
 {
 	METHOD_PROLOGUE_EX(CMethodMan, MethodMan);
 	if(!punkMethod) return E_INVALIDARG;
-	TPOS lPos = pThis->m_Methods.insert_before(punkMethod, lInsertBefore);
+	long lPos = pThis->m_Methods.insert_before(punkMethod, lInsertBefore);
 	pThis->m_MethodPosMap.set(lPos,lPos);
 	if( plNewPos )
 		*plNewPos = lPos;
 
 	if(!pThis->m_nLockNotificationCounter)
 	{
-		TPOS lPos1 = lPos;
+		long lPos1=lPos;
 		IUnknownPtr punk;
 		GetNextMethod(&lPos1, &punk);
 		::FireEventNotify( pThis->GetControllingUnknown(), szEventChangeMethod, pThis->GetControllingUnknown(), punk, cncAdd );
@@ -1141,7 +1141,7 @@ HRESULT CMethodMan::XMethodMan::AddMethod(IUnknown* punkMethod, TPOS lInsertBefo
 	return S_OK;
 }
 
-HRESULT CMethodMan::XMethodMan::DeleteMethod(TPOS lPos)
+HRESULT CMethodMan::XMethodMan::DeleteMethod(long lPos)
 {
 	METHOD_PROLOGUE_EX(CMethodMan, MethodMan);
 	if(!lPos) return E_INVALIDARG;
@@ -1151,7 +1151,7 @@ HRESULT CMethodMan::XMethodMan::DeleteMethod(TPOS lPos)
 	// если удал€ем активную строку - сместим ее указатель
 	if(pThis->m_lActiveMethodPos == lPos)
 	{
-		TPOS lPos1 = pThis->m_Methods.next(lPos);
+		long lPos1 = pThis->m_Methods.next(lPos);
 		if(!lPos1) // если следующей методики нет - заактивизим предыдущую
 			lPos1 = pThis->m_Methods.prev(lPos);
 		SetActiveMethodPos(lPos1);
@@ -1159,14 +1159,14 @@ HRESULT CMethodMan::XMethodMan::DeleteMethod(TPOS lPos)
 
 	if(!pThis->m_nLockNotificationCounter)
 	{
-		TPOS lPos1 = lPos;
+		long lPos1=lPos;
 		IUnknownPtr punk;
 		GetNextMethod(&lPos1, &punk);
 		::FireEventNotify( pThis->GetControllingUnknown(), szEventChangeMethod, pThis->GetControllingUnknown(), punk, cncRemove );
 	}
 
 	{
-		TPOS lpos2 = lPos;
+		long lpos2=lPos;
 		IUnknownPtr ptrMethod;
 		GetNextMethod(&lpos2, &ptrMethod);
 		IMethodPtr sptrMethod(ptrMethod);
@@ -1190,7 +1190,7 @@ HRESULT CMethodMan::XMethodMan::DeleteMethod(TPOS lPos)
 	return S_OK;
 }
 
-HRESULT CMethodMan::XMethodMan::SetActiveMethodPos(TPOS lPos)
+HRESULT CMethodMan::XMethodMan::SetActiveMethodPos( long lPos )
 {
 	METHOD_PROLOGUE_EX(CMethodMan, MethodMan);
 
@@ -1208,7 +1208,7 @@ HRESULT CMethodMan::XMethodMan::SetActiveMethodPos(TPOS lPos)
 	{
 		if( pThis->m_lActiveMethodPos )
 		{ // деактивизитс€ реальна€ методика - спросим и, если надо, обновим ее shell.data
-			TPOS lPos1 = pThis->m_lActiveMethodPos;
+			long lPos1 = pThis->m_lActiveMethodPos;
 			IUnknownPtr ptrMethod;
 			GetNextMethod(&lPos1,&ptrMethod);
 			IMethodDataPtr sptrMethod(ptrMethod);
@@ -1286,7 +1286,7 @@ HRESULT CMethodMan::XMethodMan::SetActiveMethodPos(TPOS lPos)
 
 	{ // сбросить кэш и записи undo/redo дл€ активной методики; "отцепитьс€" от документа
 		pThis->DropAllCache();
-		TPOS lMethodPos = 0;
+		long lMethodPos=0;
 		GetActiveMethodPos(&lMethodPos);
 		if(lMethodPos)
 		{
@@ -1301,7 +1301,7 @@ HRESULT CMethodMan::XMethodMan::SetActiveMethodPos(TPOS lPos)
 
 	if(!pThis->m_nLockNotificationCounter)
 	{
-		TPOS lPos1 = pThis->m_lActiveMethodPos;
+		long lPos1=pThis->m_lActiveMethodPos;
 		IUnknownPtr punk;
 		GetNextMethod(&lPos1, &punk);
 		::FireEventNotify( pThis->GetControllingUnknown(), szEventChangeMethod, pThis->GetControllingUnknown(), punk, cncDeactivate );
@@ -1311,7 +1311,7 @@ HRESULT CMethodMan::XMethodMan::SetActiveMethodPos(TPOS lPos)
 	{ // смена методики - загрузить shell.data от нее
 		if( lPos )
 		{ // активизируетс€ реальна€ методика
-			TPOS lPos1 = lPos;
+			long lPos1 = lPos;
 			IUnknownPtr ptrMethod;
 			GetNextMethod(&lPos1,&ptrMethod);
 			INamedDataPtr sptrNamedData(ptrMethod);
@@ -1331,7 +1331,7 @@ HRESULT CMethodMan::XMethodMan::SetActiveMethodPos(TPOS lPos)
 
 	if(!pThis->m_nLockNotificationCounter)
 	{
-		TPOS lPos1 = lPos;
+		long lPos1=lPos;
 		IUnknownPtr punk;
 		GetNextMethod(&lPos1, &punk);
 		::FireEventNotify( pThis->GetControllingUnknown(), szEventChangeMethod, pThis->GetControllingUnknown(), punk, cncActivate );
@@ -1350,7 +1350,7 @@ HRESULT CMethodMan::XMethodMan::SetActiveMethodPos(TPOS lPos)
 	return S_OK;
 }
 
-HRESULT CMethodMan::XMethodMan::GetActiveMethodPos(TPOS *plPos)
+HRESULT CMethodMan::XMethodMan::GetActiveMethodPos( long *plPos )
 {
 	METHOD_PROLOGUE_EX(CMethodMan, MethodMan);
 	if(!plPos) return E_INVALIDARG;
@@ -1358,7 +1358,7 @@ HRESULT CMethodMan::XMethodMan::GetActiveMethodPos(TPOS *plPos)
 	return S_OK;
 }
 
-HRESULT CMethodMan::XMethodMan::GetFirstMethodPos(TPOS *plPos)
+HRESULT CMethodMan::XMethodMan::GetFirstMethodPos( long *plPos )
 {
 	METHOD_PROLOGUE_EX(CMethodMan, MethodMan);
 	if(!plPos) return E_INVALIDARG;
@@ -1366,7 +1366,7 @@ HRESULT CMethodMan::XMethodMan::GetFirstMethodPos(TPOS *plPos)
 	return S_OK;
 }
 
-HRESULT CMethodMan::XMethodMan::GetNextMethod(TPOS *plPos, IUnknown **pMethod)
+HRESULT CMethodMan::XMethodMan::GetNextMethod( long *plPos, IUnknown **pMethod )
 {
 	METHOD_PROLOGUE_EX(CMethodMan, MethodMan);
 	if(!plPos) return E_INVALIDARG;
@@ -1434,7 +1434,7 @@ HRESULT CMethodMan::XMethodMan::Reload( )
 			sptrMethod->SetName( _bstr_t(ff.GetFileTitle()) );
 			IMethodDataPtr sptrMethodData(ptr);
 			if(sptrMethodData) sptrMethodData->SetModifiedFlag(FALSE);
-			TPOS lNewMethodPos = 0;
+			long lNewMethodPos = 0;
 			AddMethod( sptrMethod, 0, &lNewMethodPos);
 			if( _bstr_t(ff.GetFileTitle()) == bstrActiveMethod )
 			{
@@ -1447,7 +1447,7 @@ HRESULT CMethodMan::XMethodMan::Reload( )
 	bool bVirtualFreeMode = 0 != ::GetValueInt( GetAppUnknown(), "\\Methodics", "VirtualFreeMode", 1 );
 	if( (!bFoundActive) && (!bVirtualFreeMode) )
 	{
-		TPOS lPos = 0;
+		long lPos=0;
 		GetFirstMethodPos(&lPos);
 		SetActiveMethodPos( lPos );
 	}
@@ -1693,14 +1693,14 @@ CString CMethodMan::GetCacheDir()
 	return strPath;
 }
 
-CString CMethodMan::GetCachePath(TPOS lMethodPos, TPOS lStepPos)
+CString CMethodMan::GetCachePath( long lMethodPos, long lStepPos )
 {
 	CString strName;
 	strName.Format("%08X_CACHE",lStepPos);
 	return GetCacheDir() + strName;
 }
 
-HRESULT CMethodMan::XMethodMan::StoreCache(IUnknown *punkMethod, TPOS lStepPos)
+HRESULT CMethodMan::XMethodMan::StoreCache( IUnknown *punkMethod, long lStepPos )
 {
 	time_test ttt("MethodMan::StoreCache");
 	METHOD_PROLOGUE_EX(CMethodMan, MethodMan);
@@ -1708,7 +1708,7 @@ HRESULT CMethodMan::XMethodMan::StoreCache(IUnknown *punkMethod, TPOS lStepPos)
 	{
 		pThis->CheckDocument(); // ѕроверим, что активен нужный нам документ
 
-		TPOS lMethodPseudoPos = (TPOS)punkMethod;
+		long lMethodPseudoPos = (long)punkMethod;
 
 		CString strPath = GetCachePath(lMethodPseudoPos, lStepPos);
 
@@ -1801,21 +1801,21 @@ HRESULT CMethodMan::XMethodMan::StoreCache(IUnknown *punkMethod, TPOS lStepPos)
 	return S_OK;
 }
 
-HRESULT CMethodMan::XMethodMan::LoadCache(IUnknown *punkMethod, TPOS lStepPos, DWORD dwFlags)
+HRESULT CMethodMan::XMethodMan::LoadCache( IUnknown *punkMethod, long lStepPos, DWORD dwFlags )
 {
 	METHOD_PROLOGUE_EX(CMethodMan, MethodMan);
 	_try(CMethodMan::XMethodMan, LoadCache)
 	{
 		pThis->CheckDocument(); // ѕроверим, что активен нужный нам документ
 
-		TPOS lMethodPos = (TPOS)punkMethod;
+		long lMethodPos = (long)punkMethod;
 
 		// дот€немс€ до нужного шага; если он StateLess - то изменим lStepPos, чтоб указывала на предыдущий
 		CMethodStep* pStep = 0;
 		while(1)
 		{
 			IMethodDataPtr sptrMethod(punkMethod);
-			TPOS lStepPos1 = lStepPos;
+			long lStepPos1=lStepPos;
 			if((sptrMethod!=0) && lStepPos1) sptrMethod->GetNextStepPtr(&lStepPos1, &pStep);
 			if(pStep==0) return E_FAIL; // если шага нет - опаньки
 			if( ( pStep->m_dwFlags & msfStateless ) == 0 ) break; // если есть и он не Stateless - Ok, завершаем цикл
@@ -1893,12 +1893,12 @@ HRESULT CMethodMan::XMethodMan::LoadCache(IUnknown *punkMethod, TPOS lStepPos, D
 	return S_OK;
 }
 
-HRESULT CMethodMan::XMethodMan::DropCache(IUnknown *punkMethod, TPOS lStepPos)
+HRESULT CMethodMan::XMethodMan::DropCache( IUnknown *punkMethod, long lStepPos )
 {
 	METHOD_PROLOGUE_EX(CMethodMan, MethodMan);
 	_try(CMethodMan::XMethodMan, DropCache)
 	{
-		CString strPath = GetCachePath((TPOS)punkMethod, lStepPos);
+		CString strPath = GetCachePath( (long)punkMethod, lStepPos);
 
 		bool bCached = _isfileexist(strPath + ".data");
 		if(bCached)
@@ -1918,20 +1918,20 @@ HRESULT CMethodMan::XMethodMan::DropCache(IUnknown *punkMethod, TPOS lStepPos)
 	return S_OK;
 }
 
-HRESULT CMethodMan::XMethodMan::IsCached(IUnknown *punkMethod, TPOS lStepPos, BOOL *pbCached)
+HRESULT CMethodMan::XMethodMan::IsCached( IUnknown *punkMethod, long lStepPos, BOOL *pbCached )
 {
 	METHOD_PROLOGUE_EX(CMethodMan, MethodMan);
 	if(pbCached==0) return E_INVALIDARG;
 	_try(CMethodMan::XMethodMan, IsCached)
 	{
-		TPOS lMethodPos = (TPOS)punkMethod;
+		long lMethodPos = (long)punkMethod;
 
 		// дот€немс€ до нужного шага; если он StateLess - то изменим lStepPos, чтоб указывала на предыдущий
 		CMethodStep* pStep = 0;
 		while(1)
 		{
 			IMethodDataPtr sptrMethod(punkMethod);
-			TPOS lStepPos1 = lStepPos;
+			long lStepPos1=lStepPos;
 			if((sptrMethod!=0) && lStepPos1) sptrMethod->GetNextStepPtr(&lStepPos1, &pStep);
 			if(pStep==0) break; // если шага нет - опаньки
 			if( ( pStep->m_dwFlags & msfStateless ) == 0 ) break; // если есть и он не Stateless - Ok, завершаем цикл
@@ -1950,11 +1950,11 @@ HRESULT CMethodMan::XMethodMan::IsCached(IUnknown *punkMethod, TPOS lStepPos, BO
 }
 
 // переместить или скопировать кэш с одной позиции на другую (поддержка дл€ MethodDoer::Undo())
-HRESULT CMethodMan::XMethodMan::MoveCache(IUnknown *punkMethod, TPOS lOldStepPos, TPOS lNewStepPos, BOOL bCopy)
+HRESULT CMethodMan::XMethodMan::MoveCache( IUnknown *punkMethod, long lOldStepPos, long lNewStepPos, BOOL bCopy )
 {
 	_try(CMethodMan::XMethodMan, MoveCache)
 	{
-		TPOS lMethodPos = (TPOS)punkMethod;
+		long lMethodPos = (long)punkMethod;
 
 		CString strOldPath = GetCachePath(lMethodPos, lOldStepPos);
 		CString strNewPath = GetCachePath(lMethodPos, lNewStepPos);
@@ -2051,7 +2051,7 @@ CMethodStep* CMethodMan::GetCurrentStep()
 	return st.m_pStep;
 }
 
-bool CMethodMan::ApplyStepsToShellData(TPOS lStepPos0)
+bool CMethodMan::ApplyStepsToShellData(long lStepPos0)
 {	// закинуть в shell.data nameddata всех шагов с первого 
 	// по lStepPos0 или по текущий, если lStepPos0==0
 	CMethodManState st(&m_xMethodMan);
@@ -2062,7 +2062,7 @@ bool CMethodMan::ApplyStepsToShellData(TPOS lStepPos0)
 
 	if(lStepPos0==0) return false; // надо подумать - если нет активного шага, примен€ть все или ни одного?
 
-	TPOS lStepPos = 0;
+	long lStepPos=0;
 	st.m_sptrMethod->GetFirstStepPos(&lStepPos);
 	CMethodStep* pStep=0;
 

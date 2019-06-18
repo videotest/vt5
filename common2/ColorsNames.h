@@ -2,22 +2,22 @@
 
 class CColorsNames : public IUnknown
 {
-	ATL::CStringW _sSection;
+	CStringW _sSection;
 public:
 	struct ColorName{
 		ColorName(){}
-		ColorName(COLORREF clr, ATL::CString Name) :_clr(clr), _Name(Name){}
+		ColorName(COLORREF clr, CString Name):_clr(clr), _Name(Name){}
 		COLORREF _clr;
-		ATL::CString _Name;
+		CString _Name;
 	};
 private:
 	std::map<int,ColorName> _mapDscrClass;
 public:
 	virtual ~CColorsNames(){}
 	void UpdateColorsNames(const char *szClassifierShortName);
-	const char *get_class_name(const LPOS lpos);
-	const COLORREF get_class_color(const LPOS lpos);
-	bool testClass(const LPOS lpos);
+	const char *get_class_name(const long lpos);
+	const COLORREF get_class_color(const long lpos);
+	bool testClass(const long lpos);
 	bool ParseClassifier(const char *szClassifierName=0);
 	bool LoadColorsNames(INamedData* pNamedData=0);
 	bool Save();
@@ -26,6 +26,6 @@ public:
 };
 
 namespace{
-	const ATL::CComBSTR CLASSIFIER(L"\\Classifier");
-	const ATL::CComBSTR CLASSIFIER_CLASSES(L"\\Classifier\\Classes");
+	const CComBSTR CLASSIFIER(L"\\Classifier");
+	const CComBSTR CLASSIFIER_CLASSES(L"\\Classifier\\Classes");
 }

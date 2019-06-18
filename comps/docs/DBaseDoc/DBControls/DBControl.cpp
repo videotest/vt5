@@ -395,6 +395,17 @@ HRESULT CDBControlImpl::XDBaseListener::OnNotify( BSTR bstrEvent, IUnknown *punk
 	METHOD_PROLOGUE_BASE(CDBControlImpl, DBaseListener)	
 	_variant_t data(var);
 	CString strEvent( bstrEvent );
+	if(!strcmp( strEvent, szDBaseEventLockedRecord))
+	{
+		pThis->IDBControl2_SetReadOnly(TRUE );
+		return S_OK;
+	}
+	else if(!strcmp( strEvent, szDBaseEventUnlockedRecord))
+	{
+		pThis->IDBControl2_SetReadOnly(FALSE);
+		return S_OK;
+	}
+
 	pThis->OnDBaseNotify( strEvent, punkObject, punkDBaseDocument, bstrTableName, bstrFieldName, data );
 
 	if( !strcmp( strEvent, szDBaseEventActiveFieldLost) || !strcmp( strEvent, szDBaseEventActiveFieldSet ) ) 
@@ -405,6 +416,7 @@ HRESULT CDBControlImpl::XDBaseListener::OnNotify( BSTR bstrEvent, IUnknown *punk
 			pThis->_RepaintCtrl();
 		}	
 	}
+
 
 
 	return S_OK;
@@ -572,7 +584,7 @@ sptrIBlankView CDBControlImpl::GetBlankView( CWnd* pCtrlWnd )
 	sptrIDocumentSite spDocSite( pUnkActiveDoc );
 	pUnkActiveDoc->Release();
 
-	LPOS lPos = 0;
+	long	lPos = 0;
 	spDocSite->GetFirstViewPosition( &lPos );
 
 	while( lPos )

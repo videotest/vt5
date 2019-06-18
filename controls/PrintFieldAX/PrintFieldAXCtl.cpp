@@ -410,7 +410,7 @@ void CPrintFieldAXCtrl::OnDraw(
 	::SelectObject( *pdc, hFontNormal );
 
 
-	CSize	size_caption = pdc->GetTextExtent(sz, (int)strlen(sz));
+	CSize	size_caption = pdc->GetTextExtent( sz, strlen( sz ) );
 	{
 /*		CRect	rect1;
 		rect1.SetRectEmpty();
@@ -458,7 +458,7 @@ void CPrintFieldAXCtrl::OnDraw(
 		::SelectObject( *pdc, hFontNormal );
 
 	::ExtTextOut( *pdc, rectCaption.left+5, rectCaption.top+rectCaption.Height()/2-
-		pdc->GetTextExtent(sz, (int)strlen(sz)).cy / 2,
+		pdc->GetTextExtent( sz, strlen(sz) ).cy/2,
 		ETO_CLIPPED, rectCaption, sz, strlen( sz ), 0 );
 
 	if( lDrawStyle == DRAW_ADVANCED )
@@ -484,7 +484,7 @@ void CPrintFieldAXCtrl::OnDraw(
 		{
 			pdc->SetTextAlign( TA_LEFT | TA_TOP ); 
 			int w = m_caption_width > 0 ? m_caption_width : -m_caption_width;
-			x = int(rcBounds.Width() * w / 100. - rectText.left);
+			x = rcBounds.Width() * w / 100. - rectText.left;
 			if( x < 0 )
 				x = 0;
 		}

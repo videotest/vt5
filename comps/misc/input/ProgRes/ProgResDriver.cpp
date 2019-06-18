@@ -57,14 +57,8 @@ CCamIntComboValue  g_PreviewMode(_T("Preview"), _T("Mode"), s_aModes, sizeof(s_a
 CCamIntComboValue  g_CaptureMode(_T("Capture"), _T("Mode"), s_aModes, 3,
 	mexShot2F_highqualitycol, 0, IDC_COMBO_CAPTURE);*/
 
-//sergey 14/09/06
-CCamIntComboValue2  g_PreviewMode(_T("Preview"), _T("Mode"), 0, 0, IDC_COMBO_PREVIEW,
+CCamIntComboValue2  g_PreviewMode(_T("Preview"), _T("Mode"), 0, 0, -1,
 	CCamValue::WriteToReg|CCamValue::SkipReinitCamera);
-
-//CCamIntComboValue2  g_PreviewMode(_T("Preview"), _T("Mode"), 0, 0, -1,
-	//CCamValue::WriteToReg|CCamValue::SkipReinitCamera);
-//end
-
 CCamIntComboValue2  g_CaptureMode(_T("Capture"), _T("Mode"), 0, 0, IDC_COMBO_CAPTURE,
 	CCamValue::WriteToReg|CCamValue::SkipReinitCamera);
 
@@ -118,44 +112,17 @@ CCamIntValue g_Gamma1(_T("Parameters"), _T("Gamma"), 10, 0, 50, IRepr_SmartIntEd
  //CCamBoolValue g_Histo(_T("Histogram"), _T("Show"), false);
 //end
 
-
-//sergey 02/10/06
-static int _CoefByMode(int mode,CamType type)
+static int _CoefByMode(int mode)
 {
-	
-	
-
-	if (type == cam14Mplus ||type == cam14Cplus)
-{
-		return 1;
-	}
-	else {
-	   
 #if defined(__MEX)
 	if (mode == mexShot2F_highqualitycol || mode == mexShot2F_lowqualitycol)
 #else
 	if (mode == meSingleShothighqualitycol || mode == meSingleShotlowqualitycol)
 #endif
-		//sergey 14/08/06
-		//return 1;
 		return 2;
 	else return 1;
-	//end
-	//end
-	}
 }
 
-/*static int _CoefByMode(int mode)
-{
-#if defined(__MEX)
-	if (mode == mexShot2F_highqualitycol || mode == mexShot2F_lowqualitycol)
-#else
-	if (mode == meSingleShothighqualitycol || mode == meSingleShotlowqualitycol)
-#endif
-		return 2;
-	else return 1;
-}*/
-//end
 static unsigned long ExposureUnitsToMilliseconds(unsigned long u)
 {
 	unsigned long m=(fix+u*lcl);	
@@ -193,7 +160,6 @@ void __stdcall InitCB(unsigned long status, unsigned long UserValue, unsigned __
 		}
 	}
 }
-
 
 BOOL __stdcall ImageFinalProcPrv(unsigned long status,void* src[3],unsigned long UserValue)
 {
@@ -296,9 +262,7 @@ CString GetDescrByMode(CProgResDriver *pDrv, mexAcqMode AcqMode, int nSuffix)
 unsigned long CProgResDriver::MillisecondsToExposureUnits(unsigned long m)
 {
 	//sergey 26/04/06
-	//sergey 02/05/07
-	//if ( m_pParams->m_CamType == cam14Mplus)
-		//end
+	
 	if (m_pParams->m_CamType == cam14Cplus || m_pParams->m_CamType == cam14Mplus)
 		//return 400+m*10;//::MillisecondsToExposureUnits(m);
 		return m/10;
@@ -306,9 +270,8 @@ unsigned long CProgResDriver::MillisecondsToExposureUnits(unsigned long m)
 		//sergey 30/05/06
 		return mexMSecToTicks(m_CamGuid, m/10, m_pParams->m_ParamsPrv.mode, 1);
 	    //return mexMSecToTicks(m_CamGuid, m, m_pParams->m_ParamsPrv.mode, 1);
-	  
 	        //end
-	
+	//
 	/*if (m_pParams->m_CamType == cam14Cplus || m_pParams->m_CamType == cam14Mplus)
 		return 400+m*10;//::MillisecondsToExposureUnits(m);
 	else
@@ -384,17 +347,14 @@ bool CProgResDriver::InitCamera()
 			{
 				m_CamGuid = GUID_List[0];
 				m_pParams->m_CamType = mexGetCameraType(m_CamGuid);
-
-				//sergey 14/08/06
-			BOOL bGetImageFromPreview = CStdProfileManager::m_pMgr->GetProfileInt(_T("Image"), _T("CaptureFromPreview"), 0, true, true);
-	        if (bGetImageFromPreview )
-			 {				
 				if (m_pParams->m_CamType == cam14Mplus)
 				{
 					//sergey 28/04/06
 					BOOL bColorCamera = CStdProfileManager::m_pMgr->GetProfileInt(_T("Settings"), _T("ColorCamera"), FALSE, true, true);
 					//end
-					//g_PreviewMode.Add(mexm14_Shot_bin2bw , GetDescrByMode(this, mexm14_Shot_bin2bw, -1), -1);
+					g_PreviewMode.Add(mexm14_Shot_bwhighres, GetDescrByMode(this, mexm14_Shot_bwhighres, -1), -1);
+					g_PreviewMode.Add(mexm14_Shot_bwlowres, GetDescrByMode(this, mexm14_Shot_bwlowres, -1), -1);
+					g_PreviewMode.Add(mexm14_Shot_highspeed1, GetDescrByMode(this, mexm14_Shot_highspeed1, -1), -1);
 					g_PreviewMode.Add(mexm14_Shot_highspeed2, GetDescrByMode(this, mexm14_Shot_highspeed2, -1), -1);
 				}
 				else if (m_pParams->m_CamType == cam14Cplus)
@@ -402,96 +362,18 @@ bool CProgResDriver::InitCamera()
 					//sergey 28/04/06
 					BOOL bColorCamera = CStdProfileManager::m_pMgr->GetProfileInt(_T("Settings"), _T("ColorCamera"), TRUE, true, true);
 					//end
-					//g_PreviewMode.Add(mexc14_Shot_bin3col     , GetDescrByMode(this, mexc14_Shot_bin3col     , -1), -1);
-					//g_PreviewMode.Add(mexc14_Shot_highspeed1   , GetDescrByMode(this, mexc14_Shot_highspeed1    , -1), -1);
-					g_PreviewMode.Add(mexc14_Shot_highspeed2, GetDescrByMode(this, mexc14_Shot_highspeed2, -1), -1);
-					
-				}
-				else
-				{
-					//sergey 28/04/06
-					BOOL bColorCamera = CStdProfileManager::m_pMgr->GetProfileInt(_T("Settings"), _T("ColorCamera"), TRUE, true, true);
-					//end
-					//g_PreviewMode.Add(mexShot2F_bin3col  , GetDescrByMode(this, mexShot2F_bin3col , -1), -1);
-					g_PreviewMode.Add(mexShot1F_highspeed2 , GetDescrByMode(this, mexShot1F_highspeed2 , -1), -1);
-					//g_PreviewMode.Add(mexShot1F_highspeed1  , GetDescrByMode(this, mexShot1F_highspeed1 , -1), -1);					
-				 }
-				g_PreviewMode.Init();
-				//g_CaptureMode.Add(mexm14_Shot_bin2bw , GetDescrByMode(this, mexm14_Shot_bin2bw , -1), -1);
-				//g_CaptureMode.Init();
-				if (m_pParams->m_CamType == cam14Mplus)
-				{
-					g_CaptureMode.Add(mexm14_Shot_bwhighres, GetDescrByMode(this, mexm14_Shot_bwhighres, -1), -1);
-					g_CaptureMode.Add(mexm14_Shot_bwlowres, GetDescrByMode(this, mexm14_Shot_bwlowres, -1), -1);
-					//g_CaptureMode.Add(mexm14_Shot_highspeed2, GetDescrByMode(this, mexm14_Shot_highspeed2, -1), -1);
-				}
-				else if (m_pParams->m_CamType == cam14Cplus)
-				{
-					g_CaptureMode.Add(mexc14_Shot_colhighres, GetDescrByMode(this, mexc14_Shot_colhighres, -1), -1);
-					g_CaptureMode.Add(mexc14_Shot_collowres, GetDescrByMode(this, mexc14_Shot_collowres, -1), -1);
-				}
-				else
-				{
-					
-					g_CaptureMode.Add(mexShot2F_highqualitycol, GetDescrByMode(this, mexShot2F_highqualitycol, -1), -1);
-					g_CaptureMode.Add(mexShot2F_bin2col, GetDescrByMode(this, mexShot2F_bin2col, -1), -1);
-				}
-				
-//				g_CaptureMode.Add(mexShot2F_bin4col, GetDescrByMode(this, mexShot2F_bin4col, -1), -1);
-				g_CaptureMode.Init();
-			 }
-			 else{
-		   //end
-
-				if (m_pParams->m_CamType == cam14Mplus)
-				{
-					//sergey 28/04/06
-					BOOL bColorCamera = CStdProfileManager::m_pMgr->GetProfileInt(_T("Settings"), _T("ColorCamera"), FALSE, true, true);
-					//end
-					//g_PreviewMode.Add(mexm14_Shot_bin2bw , GetDescrByMode(this, mexm14_Shot_bin2bw, -1), -1);
-					//g_PreviewMode.Add(mexm14_Shot_bwhighres, GetDescrByMode(this, mexm14_Shot_bwhighres, -1), -1);
-					g_PreviewMode.Add(mexm14_Shot_bwlowres, GetDescrByMode(this, mexm14_Shot_bwlowres, -1), -1);
-					//g_PreviewMode.Add(mexm14_Shot_highspeed1, GetDescrByMode(this, mexm14_Shot_highspeed1, -1), -1);
-					//g_PreviewMode.Add(mexm14_Shot_highspeed2, GetDescrByMode(this, mexm14_Shot_highspeed2, -1), -1);
-				}
-				else if (m_pParams->m_CamType == cam14Cplus)
-				{
-					//sergey 28/04/06
-					BOOL bColorCamera = CStdProfileManager::m_pMgr->GetProfileInt(_T("Settings"), _T("ColorCamera"), TRUE, true, true);
-					//end
-					//g_PreviewMode.Add(mexc14_Shot_colhighres, GetDescrByMode(this, mexc14_Shot_colhighres, -1), -1);
+					g_PreviewMode.Add(mexc14_Shot_colhighres, GetDescrByMode(this, mexc14_Shot_colhighres, -1), -1);
 					g_PreviewMode.Add(mexc14_Shot_collowres, GetDescrByMode(this, mexc14_Shot_collowres, -1), -1);
-					//g_PreviewMode.Add(mexc14_Shot_highspeed1, GetDescrByMode(this, mexc14_Shot_highspeed1, -1), -1);
-					//g_PreviewMode.Add(mexc14_Shot_highspeed2, GetDescrByMode(this, mexc14_Shot_highspeed2, -1), -1);
+					g_PreviewMode.Add(mexc14_Shot_highspeed1, GetDescrByMode(this, mexc14_Shot_highspeed1, -1), -1);
+					g_PreviewMode.Add(mexc14_Shot_highspeed2, GetDescrByMode(this, mexc14_Shot_highspeed2, -1), -1);
 				}
 				else
 				{
 					//sergey 28/04/06
 					BOOL bColorCamera = CStdProfileManager::m_pMgr->GetProfileInt(_T("Settings"), _T("ColorCamera"), TRUE, true, true);
-
 					//end
-
 					g_PreviewMode.Add(mexShot1F_highspeed2, GetDescrByMode(this, mexShot1F_highspeed2, -1), -1);
-					//g_PreviewMode.Add(mexShot1F_highspeed1, GetDescrByMode(this, mexShot1F_highspeed1, -1), -1);
-
-					//sergey 15/09/06
-					//g_PreviewMode.Add(mexShot2F_highqualitycol , GetDescrByMode(this,mexShot2F_highqualitycol, -1), -1); 
-
-					//g_PreviewMode.Add(mexShot_Raw, GetDescrByMode(this, mexShot_Raw, -1), -1); 
-					//g_PreviewMode.Add(mexShot2F_bin2col, GetDescrByMode(this, mexShot2F_bin2col, -1), -1);					
-					//g_PreviewMode.Add(mexShot2F_bin4col, GetDescrByMode(this, mexShot2F_bin4col, -1), -1);
-					//g_PreviewMode.Add(mexShot1F_highspeed2, GetDescrByMode(this, mexShot1F_highspeed2, -1), -1);
-					//g_PreviewMode.Add(mexShot1F_highspeed1, GetDescrByMode(this, mexShot1F_highspeed1, -1), -1);
-
-					//g_PreviewMode.Add( mexShot2F_highqualitycol  , GetDescrByMode(this, mexShot2F_highqualitycol , -1), -1); 
-                   
-					//g_PreviewMode.Add(mexShot2F_bin3col, GetDescrByMode(this, mexShot2F_bin3col, -1), -1);
-					//g_PreviewMode.Add(mexShot2F_bin5col , GetDescrByMode(this, mexShot2F_bin5col, -1), -1);
-					
-					
-					
-					//end
-					
+					g_PreviewMode.Add(mexShot1F_highspeed1, GetDescrByMode(this, mexShot1F_highspeed1, -1), -1);
 				}
 				g_PreviewMode.Init();
 				if (m_pParams->m_CamType == cam14Mplus)
@@ -511,10 +393,8 @@ bool CProgResDriver::InitCamera()
 					g_CaptureMode.Add(mexShot2F_highqualitycol, GetDescrByMode(this, mexShot2F_highqualitycol, -1), -1);
 					g_CaptureMode.Add(mexShot2F_bin2col, GetDescrByMode(this, mexShot2F_bin2col, -1), -1);
 				}
-				
 //				g_CaptureMode.Add(mexShot2F_bin4col, GetDescrByMode(this, mexShot2F_bin4col, -1), -1);
 				g_CaptureMode.Init();
-				}
 				mexSetPeltier(GUID_List[0], 0, 0);
 				mexDispose(GUID_List[0], (void*)15, 1);
 				mexEqualizer Equ;
@@ -530,20 +410,14 @@ bool CProgResDriver::InitCamera()
 	              {
 	               case cam10plus:
 	               case cam12plus:
-               //sergey 02/05/07
-				   case cam14Cplus:
-					   //end
 	               g_Contrast.SetId(IDC_EDIT_ENH_CONTRAST);
 	               g_Gamma.SetId(IDC_EDIT_ENH_GAMMA);
 			   break;
 				   case cam14Mplus:
 				   g_Contrast.SetId(IDC_EDIT_ENH_CONTRAST);
-				   //g_Gamma.SetId(IDC_EDIT_ENH_GAMMA);
 
 				   //sergey 21/06/06
 				   double nValue = CStdProfileManager::m_pMgr->GetProfileInt(_T("Parameters"), _T("Gamma"), 0, true);
-
-				   //sergey 02/10/06
 				   #if defined(__MEX)
 					mexGamma  pGamma;
 					double gamma=nValue/10;
@@ -557,12 +431,10 @@ bool CProgResDriver::InitCamera()
 					#else				
 				#endif		
 				   //end
-				   //end
 
 			   break;
 				  }
 	           //end
-			 
 				return true;
 			}
 		}
@@ -670,13 +542,7 @@ HRESULT CProgResDriver::OnUpdateCmdUI(HWND hwnd, int nID)
 			::EnableWindow(::GetDlgItem(*s, IDC_RED), FALSE);			
 	if(nID == IDC_SLIDER1_EXPOSURE ||nID ==IDC_EDIT_EXPOSURE)::EnableWindow(hwnd, 0);	
 			//::ShowWindow(::GetDlgItem(*s, IDC_COLOR_BALANCE),SW_RESTORE);*/
-	   //sergey 15/08/06
-         BOOL bGetImageFromPreview = CStdProfileManager::m_pMgr->GetProfileInt(_T("Image"), _T("CaptureFromPreview"), 0, true, true);
-		 if(bGetImageFromPreview){
-			 if (nID == IDC_COMBO_CAPTURE) ::EnableWindow(hwnd, false );
 	
-		 }
-		 //end
 
 		BOOL bColorCamera = CStdProfileManager::m_pMgr->GetProfileInt(_T("Settings"), _T("ColorCamera"), TRUE, true, true);
 		
@@ -688,41 +554,16 @@ HRESULT CProgResDriver::OnUpdateCmdUI(HWND hwnd, int nID)
 	else if (nID == IDC_WB_BUILD)
 		::EnableWindow(hwnd, (int)g_ColorBalanceAuto==0);
 	//sergey 17.04.06
+	
+	else if (nID == IDC_COLOR_BALANCE || nID == IDC_CHECK_GRAYSCALE)
+	     ::EnableWindow(hwnd, bColorCamera);
 		//::EnableWindow(hwnd, m_pParams->m_bColor);
 	if(nID == IDC_RED || nID == IDC_GREEN || nID == IDC_BLUE)			
 	    ::EnableWindow(hwnd, bColorCamera);
-	else if (nID == IDC_COLOR_BALANCE || nID == IDC_CHECK_GRAYSCALE){
-		::EnableWindow(hwnd, bColorCamera );
-		
-		//::EnableWindow(hwnd, !g_Gray.GetValueInt());
-		}
-	//sergey 15/08/06
-	if(bColorCamera){
-		if(g_Gray.GetValueInt()){
-			
-	if(nID == IDC_RED || nID == IDC_GREEN || nID == IDC_BLUE)			
-	    ::EnableWindow(hwnd, false);
-			if (nID == IDC_WB_AUTO || nID == IDC_WB_MANUAL ||nID == IDC_WB_BUILD ||nID == IDC_EDIT_WB_RED || nID == IDC_SPIN_WB_RED || nID == IDC_SLIDER_WB_RED ||
-		nID == IDC_EDIT_WB_GREEN || nID == IDC_SPIN_WB_GREEN || nID == IDC_SLIDER_WB_GREEN ||
-		nID == IDC_EDIT_WB_BLUE || nID == IDC_SPIN_WB_BLUE || nID == IDC_SLIDER_WB_BLUE)
-	     ::EnableWindow(hwnd, false);
-
-		if (nID == IDC_COLOR_BALANCE){	
-	       ::EnableWindow(hwnd, false ); }
-      }
-	}
-	//end
-	
-	
-	
-		
 	
 	if(!bColorCamera)
 	{
-		//sergey 02/07/07
-		g_Gray.SetValueInt(1);
-		::EnableWindow(::GetDlgItem(hwnd, IDC_CHECK_GRAYSCALE), FALSE);
-		//end
+		
 		::EnableWindow(::GetDlgItem(hwnd, IDC_RED), FALSE);
 		::EnableWindow(::GetDlgItem(hwnd, IDC_GREEN ), FALSE);
 		::EnableWindow(::GetDlgItem(hwnd, IDC_BLUE), FALSE);
@@ -732,27 +573,6 @@ HRESULT CProgResDriver::OnUpdateCmdUI(HWND hwnd, int nID)
 	     ::EnableWindow(hwnd, bColorCamera);
 	}
 	//end
-
-	//sergey 02/10/06
-	BOOL bMetal = CStdProfileManager::m_pMgr->GetProfileInt(_T("Settings"), _T("Metal"), FALSE, true, true);
-	if(bMetal)
-	{
-		if (nID == IDC_SLIDER_ENH_CONTRAST ||nID == IDC_EDIT_ENH_CONTRAST|| nID == IDC_SPIN_ENH_CONTRAST)
-           ::EnableWindow(hwnd, false);
-	}
-	//end
-
-
-
-		//sergey 08/12/06
-		BOOL bFish = CStdProfileManager::m_pMgr->GetProfileInt(_T("Settings"), _T("Fish"), FALSE, true, true);
-		if(bFish){			
-                 if (nID == IDC_SETTINGS_PAGE){	
-	            ::EnableWindow(hwnd, false ); }
-		         }
-		//end
-
-
 	return __super::OnUpdateCmdUI(hwnd, nID);
 }
 
@@ -897,23 +717,7 @@ bool CProgResDriver::GetFormat(bool bCapture, LPBITMAPINFOHEADER lpbi)
 		m_pParams->m_ParamsPrv.mode = (meScanMode)(int)g_PreviewMode;
 		meGetImageInfo(&m_pParams->m_ParamsPrv, &ImgInfo);
 #endif
-		//sergey 19/06/07
-		BOOL bInterpolation = CStdProfileManager::m_pMgr->GetProfileInt(_T("Settings"), _T("Interpolation"), FALSE, true, true);
-
-		
-				if(bInterpolation)
-	            {    
-					//sergey 02/07/07
-		             // g_Gray.SetValueInt(1);
-		             //end
-		         // InitDIB(lpbi, ImgInfo.DimX*2, ImgInfo.DimY, GetCameraBPP(), false);
-				  InitDIB(lpbi, ImgInfo.DimX*2, ImgInfo.DimY*2, GetCameraBPP(), false);
-				}
-				else {
-		//InitDIB(lpbi, ImgInfo.DimX*2, ImgInfo.DimY, GetCameraBPP(), false);
 		InitDIB(lpbi, ImgInfo.DimX, ImgInfo.DimY, GetCameraBPP(), false);
-				       }
-		//end
 		/*if(m_pParams->m_ParamsPrv.mode==mexm14_Shot_highspeed2)
 		InitDIB(lpbi, 680, 512, GetCameraBPP(), false);
 		else if(m_pParams->m_ParamsPrv.mode==mexm14_Shot_bwhighres) 
@@ -976,7 +780,6 @@ void CProgResDriver::OnImageReadyPrv(unsigned short* src[3])
 				switch (m_pParams->m_CamType)
 	              {	               
 				   case cam14Mplus:				  
-					   //sergey 02/10/06
 				   double nValue = CStdProfileManager::m_pMgr->GetProfileInt(_T("Parameters"), _T("Gamma"), 0, true);
 				   #if defined(__MEX)
 					mexGamma  pGamma;
@@ -990,7 +793,6 @@ void CProgResDriver::OnImageReadyPrv(unsigned short* src[3])
 					mexActivateGammaProcessing(m_CamGuid, &pGamma);
 					#else				
 				#endif	
-			//end
 			   break;
 				  }
 	           //end			
@@ -1035,11 +837,7 @@ void CProgResDriver::OnImageErrorCap()
 
 void CProgResDriver::CorrectBrightness(int cx, int cy, int mode, unsigned short* src[3])
 {
-	//sergey 02/10/06
-	CamType type = mexGetCameraType(m_CamGuid);
-	int nCoef = _CoefByMode(mode,type);
-	//int nCoef = _CoefByMode(mode);
-	//end
+	int nCoef = _CoefByMode(mode);
 	if (nCoef == 1)
 		return;
 	unsigned nCount = cx*cy;
@@ -1098,35 +896,6 @@ HRESULT CProgResDriver::SetValueInt(int nCurDev, BSTR bstrSec, BSTR bstrEntry, i
 		
 		//return S_OK;
 	}
-	//sergey 14/09/06
-	/*if (g_PreviewMode.CheckByName(bstrSec, bstrEntry))	
-	{
-		
-		s_bSizesChanged = true;		
-			
-		g_PreviewMode.SetValueInt(nValue);	
-		//g_CaptureMode.SetValueInt(nValue);
-		//this->OnStopGrab();
-		//this->EndPreview(0,this);
-		if(m_nGrabCount>1)--m_nGrabCount;
-		this->StartImageAquisition(1,FALSE);
-		
-		m_pParams->m_ParamsPrv.mode=(mexAcqMode)(int)g_PreviewMode;
-		mexIsAcquisitionModeSupported(m_CamGuid,m_pParams->m_ParamsPrv.mode);
-		
-
-		this->StartImageAquisition(1,TRUE);
-		if(m_nGrabCount<2)m_nGrabCount++;
-		//this->OnStartGrab();		
-		//mexModifyLiveParameters(m_CamGuid, m_pParams->m_ParamsPrv.mode, &m_pParams->m_ParamsPrv.rcimageBounds);		
-		//mexModifyLive(m_CamGuid,&m_pParams->m_ParamsPrv);
-		
-		
-		return S_OK;
-		//return __super::SetValueInt(nCurDev, bstrSec, bstrEntry, nValue, nFlags);
-	}*/
-	//end
-
 	//sergey 14/04/06
 	/*if (g_PreviewMode.CheckByName(bstrSec, bstrEntry))	
 	{
@@ -1146,21 +915,16 @@ HRESULT CProgResDriver::SetValueInt(int nCurDev, BSTR bstrSec, BSTR bstrEntry, i
 	
 	switch (type)
 	{
-		//sergey 02/05/07
-	//case cam14Cplus:
-		//end
+	case cam14Cplus:
 	case cam14Mplus:		
 		g_Gain.SetValueInt(nValue);
 		//int nGainMain,nGainR,nGainG,nGainB;
 		//if (m_pParams && m_pParams->m_hDev != NULL) m_pParams->m_Cam.CxGetGain(m_pParams->m_hDev, &nGainMain, &nGainR, &nGainG, &nGainB);
-
-		//sergey 02/10/06
 		#if defined(__MEX)
 		mexSetGain(m_CamGuid, nValue/10);	
        #else
 	
       #endif
-		//end
 		
 		break;	
 		return S_OK;
@@ -1173,12 +937,9 @@ HRESULT CProgResDriver::SetValueInt(int nCurDev, BSTR bstrSec, BSTR bstrEntry, i
 	
 	  switch (type)
 	   {
-		   //sergey 02/05/07
-	   //case cam14Cplus:
-		   //end
+	   case cam14Cplus:
 	   case cam14Mplus:
 		g_Gamma1.SetValueInt(nValue);
-		//sergey 02/10/06
 		#if defined(__MEX)
 		mexGamma  pGamma;
 		double gamma=(double)nValue/10;
@@ -1192,7 +953,6 @@ HRESULT CProgResDriver::SetValueInt(int nCurDev, BSTR bstrSec, BSTR bstrEntry, i
 		#else
 	
       #endif		
-		//end
 		break;		
 		return S_OK;
 	   }

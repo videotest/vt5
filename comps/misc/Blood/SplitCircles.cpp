@@ -27,7 +27,7 @@ static void CopyParams( ICalcObjectContainerPtr in, ICalcObjectContainerPtr out 
 	if( in == 0 || out == 0)
 		return;
 	
-	LONG_PTR lParamPos = 0;
+	long lParamPos = 0;
 	in->GetFirstParameterPos( &lParamPos );
 	while( lParamPos )
 	{
@@ -434,7 +434,7 @@ bool CSplitCircles::InvokeFilter()
 
 	int nSplitCountTotal=0;
 	
-	POSITION pos; objectsIn->GetFirstChildPosition(&pos);
+	long pos; objectsIn->GetFirstChildPosition(&pos);
 	while( pos ) //по всем объектам
 	{
 		IUnknownPtr sptr;
@@ -475,7 +475,7 @@ bool CSplitCircles::InvokeFilter()
 			if(punk1!=0) punk1->Release();
 			if(punk2!=0) punk2->Release();
 
-			POSITION pos = split_query.head();
+			long pos=split_query.head();
 			if(pos)
 			{
 				image=split_query.get(pos);

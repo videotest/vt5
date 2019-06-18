@@ -4,6 +4,9 @@
 // produce the type library (vtcontrols2.tlb) that will become a resource in
 // vtcontrols2.ocx.
 
+#include <olectl.h>
+#include <idispids.h>
+
 [ uuid(D4975FBA-118A-4368-B941-8A441A0CCFA4),
   version(1.4),
   helpfile("vtcontrols2.hlp"),
@@ -11,9 +14,6 @@
   control ]
 library VTCONTROLS2Lib
 {
-#include <olectl.h>
-#include <idispids.h>
-
 	importlib(STDOLE_TLB);
 	importlib(STDTYPE_TLB);
 

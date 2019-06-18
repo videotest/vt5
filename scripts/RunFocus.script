@@ -1,5 +1,0 @@
-
-Set ImgDoc = Docs.GetDocument(0, "Image")
-If Docs.IsPointerNull(ImgDoc) Then FileNew "Image"
-Set ImgDoc = Nothing
-FormManager.ExecutePageModal "Focus"

@@ -30,7 +30,7 @@ static void bbb(int line)
 //#define BBB bbb(__LINE__);
 #define BBB
 
-static inline int iround(double x)
+static inline int round(double x)
 {
 	return int(floor(x+0.5));
 }
@@ -1442,7 +1442,7 @@ IUnknown *CFindCells::GetContextObject(_bstr_t bstrName, _bstr_t bstrType)
 
 	ptrC = m_ptrTarget; // теперь пойдем по документу
 
-	LONG_PTR lPos = 0;
+	long lPos = 0;
 	ptrC->GetFirstObjectPos( bstrType, &lPos );
 	
 	while( lPos )
@@ -1896,12 +1896,12 @@ HRESULT CFindCells::DoInvoke()
 			}
 
 			// сопоставление со старым Object List
-			POSITION pos;
-			ptrObjectList->GetFirstChildPosition(&pos);
+			long pos;
+			ptrObjectList->GetFirstChildPosition((long*)&pos);
 			for(int i=0; i<nOld && pos!=0; i++)
 			{ // сравним координаты нового объекта с координатами старых
 				IUnknown* punk1 = 0;
-				ptrObjectList->GetNextChild(&pos, &punk1);
+				ptrObjectList->GetNextChild((long*)&pos, &punk1);
 				IMeasureObjectPtr ptrObj = ICalcObjectPtr(punk1);
 				if(punk1!=0) punk1->Release();
 				if(ptrObj!=0) //ну мало ли объекты какие-нибудь не такие...
@@ -1940,11 +1940,11 @@ HRESULT CFindCells::DoInvoke()
 			}
 
 			//убиение совсем уж близколежащих клеток (<m_MinNucleiSplitter)
-			TPOS lPos2 = cells.head();
+			long lPos2 = cells.head();
 			while(lPos2) // пройдемся по всем клеткам, уже включенным в список
 			{
 				CELL cell = cells.get(lPos2);
-				TPOS lPos2Old = lPos2;
+				int lPos2Old=lPos2;
 				lPos2 = cells.next(lPos2);
 				_point ptC2 = cell.ptC;
 				_point ptNC2 = cell.ptNC;
@@ -2113,7 +2113,7 @@ HRESULT CFindCells::DoInvoke()
 						double x0 = ofs1.x+w/2;
 						double y0 = ofs1.y+h/2;
 
-						int n = iround(r*6/40); // количество звездочек
+						int n = round(r*6/40); // количество звездочек
 						n = max(n,3);
 
 						for(i=0; i<n; i++)
@@ -2128,8 +2128,8 @@ HRESULT CFindCells::DoInvoke()
 							for(int j=0; j<10; j++)
 							{
 								double rr = (j&1) ? 3 : 8;
-								cNewCont->ppoints[j].x = iround(x1 + sin(j*2*PI/10)*rr);
-								cNewCont->ppoints[j].y = iround(y1 - cos(j*2*PI/10)*rr);
+								cNewCont->ppoints[j].x = round(x1 + sin(j*2*PI/10)*rr);
+								cNewCont->ppoints[j].y = round(y1 - cos(j*2*PI/10)*rr);
 							}
 							ptrI->AddContour( cNewCont );
 						}
@@ -2164,21 +2164,21 @@ HRESULT CFindCells::DoInvoke()
 
 	// "деление" клеток - если клетки лежат слишком близко (пересекаются), то
 	// отбросим у каждой клетки куски, которые ближе ко второй.
-	TPOS lPos1 = cells.head();
+	long lPos1=cells.head();
 	while(lPos1)
 	{
 		CELL cell = cells.get(lPos1);
-		TPOS lPos1Old = lPos1;
+		int lPos1Old=lPos1;
 		lPos1 = cells.next(lPos1);
 		IImage3Ptr img1 = cell.img;
 		_point ptC1 = cell.ptC;
 		_point ptNC1 = cell.ptNC;
 
-		TPOS lPos2 = cells.head();
+		long lPos2 = cells.head();
 		while(lPos2)
 		{
 			CELL cell = cells.get(lPos2);
-			TPOS lPos2Old = lPos2;
+			int lPos2Old=lPos2;
 			lPos2 = cells.next(lPos2);
 			IImage3Ptr img2 = cell.img;
 			_point ptC2 = cell.ptC;

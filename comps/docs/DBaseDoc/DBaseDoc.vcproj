@@ -21,8 +21,10 @@
 	<Configurations>
 		<Configuration
 			Name="Release|Win32"
+			OutputDirectory="\VT5\comps\docs\Dbasedoc\Release"
+			IntermediateDirectory="\VT5\comps\docs\Dbasedoc\Release"
 			ConfigurationType="2"
-			InheritedPropertySheets="$(SolutionDir)props\CommonEnv.vsprops"
+			InheritedPropertySheets="$(VCInstallDir)VCProjectDefaults\UpgradeFromVC71.vsprops"
 			UseOfMFC="2"
 			ATLMinimizesCRunTimeLibraryUsage="false"
 			CharacterSet="2"
@@ -50,8 +52,8 @@
 				Name="VCCLCompilerTool"
 				Optimization="2"
 				InlineFunctionExpansion="1"
-				AdditionalIncludeDirectories="&quot;$(SolutionDir)comps\misc\EditorView&quot;;&quot;$(SolutionDir)controls\Controls&quot;;&quot;$(CommonProgramFiles)\System\ado&quot;;&quot;$(SolutionDir)thirdparty\zlib-1.2.8&quot;"
-				PreprocessorDefinitions="WIN32;NDEBUG;_WINDOWS;_USRDLL;_CRT_SECURE_NO_WARNINGS"
+				AdditionalIncludeDirectories="\vt5\common,\vt5\ifaces,\vt5\comps\misc\EditorView,\vt5\Controls\Controls"
+				PreprocessorDefinitions="WIN32;NDEBUG;_WINDOWS;_USRDLL;ZLIB_DLL;_CRT_SECURE_NO_WARNINGS"
 				StringPooling="true"
 				RuntimeLibrary="2"
 				EnableFunctionLevelLinking="true"
@@ -80,16 +82,17 @@
 			<Tool
 				Name="VCLinkerTool"
 				AdditionalOptions="/MACHINE:I386"
-				AdditionalDependencies="zlib.lib"
 				OutputFile="\vt5\vt5\Release\comps\DBaseDoc.dll"
 				LinkIncremental="1"
 				SuppressStartupBanner="true"
-				AdditionalLibraryDirectories=""
+				AdditionalLibraryDirectories="\vt5\common\release,\vt5\common"
 				ModuleDefinitionFile=".\DBaseDoc.def"
 				GenerateDebugInformation="true"
+				ProgramDatabaseFile="\vt5\vt5\release\pdb\DBaseDoc.pdb"
 				SubSystem="2"
 				RandomizedBaseAddress="1"
 				DataExecutionPrevention="0"
+				ImportLibrary="\VT5\comps\docs\Dbasedoc\Release/DBaseDoc.lib"
 			/>
 			<Tool
 				Name="VCALinkTool"
@@ -115,8 +118,10 @@
 		</Configuration>
 		<Configuration
 			Name="Release|x64"
+			OutputDirectory="$(PlatformName)\$(ConfigurationName)"
+			IntermediateDirectory="$(PlatformName)\$(ConfigurationName)"
 			ConfigurationType="2"
-			InheritedPropertySheets="$(SolutionDir)props\CommonEnv.vsprops"
+			InheritedPropertySheets="$(VCInstallDir)VCProjectDefaults\UpgradeFromVC71.vsprops"
 			UseOfMFC="2"
 			ATLMinimizesCRunTimeLibraryUsage="false"
 			CharacterSet="2"
@@ -144,8 +149,8 @@
 				Name="VCCLCompilerTool"
 				Optimization="2"
 				InlineFunctionExpansion="1"
-				AdditionalIncludeDirectories="&quot;$(SolutionDir)comps\misc\EditorView&quot;;&quot;$(SolutionDir)controls\Controls&quot;;&quot;$(CommonProgramFiles)\System\ado&quot;;&quot;$(SolutionDir)thirdparty\zlib-1.2.8&quot;"
-				PreprocessorDefinitions="_WIN64;_M_X64;_AFX_SECURE_NO_DEPRECATE;_CRT_SECURE_NO_DEPRECATE;NDEBUG;_WINDOWS;_USRDLL"
+				AdditionalIncludeDirectories="\vt5\common,\vt5\ifaces,\vt5\comps\misc\EditorView,\vt5\Controls\Controls"
+				PreprocessorDefinitions="_WIN64;_M_X64;_AFX_SECURE_NO_DEPRECATE;_CRT_SECURE_NO_DEPRECATE;NDEBUG;_WINDOWS;_USRDLL;ZLIB_DLL"
 				StringPooling="true"
 				RuntimeLibrary="2"
 				EnableFunctionLevelLinking="true"
@@ -173,16 +178,17 @@
 			/>
 			<Tool
 				Name="VCLinkerTool"
-				AdditionalDependencies="zlib.lib"
 				OutputFile="\vt5\vt5\$(OutDir)\comps\$(ProjectName).dll"
 				LinkIncremental="1"
 				SuppressStartupBanner="true"
-				AdditionalLibraryDirectories=""
+				AdditionalLibraryDirectories="\vt5\common\$(OutDir),\vt5\common"
 				ModuleDefinitionFile=".\DBaseDoc.def"
 				GenerateDebugInformation="true"
+				ProgramDatabaseFile="\vt5\vt5\$(OutDir)\pdb\DBaseDoc.pdb"
 				SubSystem="2"
 				RandomizedBaseAddress="1"
 				DataExecutionPrevention="0"
+				ImportLibrary="$(OutDir)\$(ProjectName).lib"
 				TargetMachine="17"
 			/>
 			<Tool
@@ -209,8 +215,10 @@
 		</Configuration>
 		<Configuration
 			Name="Debug|Win32"
+			OutputDirectory=".\Debug"
+			IntermediateDirectory=".\Debug"
 			ConfigurationType="2"
-			InheritedPropertySheets="$(SolutionDir)props\CommonEnv.vsprops"
+			InheritedPropertySheets="$(VCInstallDir)VCProjectDefaults\UpgradeFromVC71.vsprops"
 			UseOfMFC="2"
 			ATLMinimizesCRunTimeLibraryUsage="false"
 			CharacterSet="2"
@@ -237,8 +245,8 @@
 			<Tool
 				Name="VCCLCompilerTool"
 				Optimization="0"
-				AdditionalIncludeDirectories="&quot;$(SolutionDir)comps\misc\EditorView&quot;;&quot;$(SolutionDir)controls\Controls&quot;;&quot;$(CommonProgramFiles)\System\ado&quot;;&quot;$(SolutionDir)thirdparty\zlib-1.2.8&quot;"
-				PreprocessorDefinitions="WIN32;_DEBUG;_WINDOWS;_USRDLL;_AFX_SECURE_NO_DEPRECATE;_CRT_SECURE_NO_DEPRECATE"
+				AdditionalIncludeDirectories="&quot;$(CommonProgramFiles)/system/ado&quot;;\vt5\common;\vt5\ifaces;\vt5\comps\misc\EditorView;\vt5\Controls\Controls"
+				PreprocessorDefinitions="WIN32;_DEBUG;_WINDOWS;_USRDLL;ZLIB_DLL;_AFX_SECURE_NO_DEPRECATE;_CRT_SECURE_NO_DEPRECATE"
 				BasicRuntimeChecks="0"
 				RuntimeLibrary="3"
 				TreatWChar_tAsBuiltInType="false"
@@ -247,6 +255,9 @@
 				UsePrecompiledHeader="2"
 				PrecompiledHeaderThrough="stdafx.h"
 				BrowseInformation="1"
+				WarningLevel="3"
+				SuppressStartupBanner="true"
+				DebugInformationFormat="4"
 				CompileAs="0"
 			/>
 			<Tool
@@ -263,12 +274,17 @@
 			<Tool
 				Name="VCLinkerTool"
 				AdditionalOptions="/MACHINE:I386"
-				AdditionalDependencies="zlib.lib"
-				AdditionalLibraryDirectories=""
+				OutputFile="\vt5\vt5\Debug\comps\DBaseDoc.dll"
+				LinkIncremental="2"
+				SuppressStartupBanner="true"
+				AdditionalLibraryDirectories="\vt5\common\debug,\vt5\docs\misc\thumbman\debug,\vt5\common"
+				ModuleDefinitionFile=".\DBaseDoc.def"
 				GenerateDebugInformation="true"
+				ProgramDatabaseFile="\vt5\vt5\debug\pdb\DBaseDoc.pdb"
 				SubSystem="2"
 				RandomizedBaseAddress="1"
 				DataExecutionPrevention="0"
+				ImportLibrary=".\Debug/DBaseDoc.lib"
 			/>
 			<Tool
 				Name="VCALinkTool"
@@ -294,8 +310,10 @@
 		</Configuration>
 		<Configuration
 			Name="Debug|x64"
+			OutputDirectory="$(PlatformName)\$(ConfigurationName)"
+			IntermediateDirectory="$(PlatformName)\$(ConfigurationName)"
 			ConfigurationType="2"
-			InheritedPropertySheets="$(SolutionDir)props\CommonEnv.vsprops"
+			InheritedPropertySheets="$(VCInstallDir)VCProjectDefaults\UpgradeFromVC71.vsprops"
 			UseOfMFC="2"
 			ATLMinimizesCRunTimeLibraryUsage="false"
 			CharacterSet="2"
@@ -322,8 +340,8 @@
 			<Tool
 				Name="VCCLCompilerTool"
 				Optimization="0"
-				AdditionalIncludeDirectories="&quot;$(SolutionDir)comps\misc\EditorView&quot;;&quot;$(SolutionDir)controls\Controls&quot;;&quot;$(CommonProgramFiles)\System\ado&quot;;&quot;$(SolutionDir)thirdparty\zlib-1.2.8&quot;"
-				PreprocessorDefinitions="_DEBUG;_WINDOWS;_USRDLL;_WIN64;_M_X64;_AFX_SECURE_NO_DEPRECATE;_CRT_SECURE_NO_DEPRECATE"
+				AdditionalIncludeDirectories="&quot;$(CommonProgramFiles)/system/ado&quot;;\vt5\common;\vt5\ifaces;\vt5\comps\misc\EditorView;\vt5\Controls\Controls"
+				PreprocessorDefinitions="_DEBUG;_WINDOWS;_USRDLL;ZLIB_DLL;_WIN64;_M_X64;_AFX_SECURE_NO_DEPRECATE;_CRT_SECURE_NO_DEPRECATE"
 				BasicRuntimeChecks="0"
 				RuntimeLibrary="3"
 				TreatWChar_tAsBuiltInType="false"
@@ -333,6 +351,7 @@
 				PrecompiledHeaderThrough="stdafx.h"
 				BrowseInformation="1"
 				WarningLevel="3"
+				SuppressStartupBanner="true"
 				DebugInformationFormat="3"
 				CompileAs="0"
 			/>
@@ -349,12 +368,17 @@
 			/>
 			<Tool
 				Name="VCLinkerTool"
-				AdditionalDependencies="zlib.lib"
-				AdditionalLibraryDirectories=""
+				OutputFile="\vt5\vt5\$(OutDir)\comps\$(ProjectName).dll"
+				LinkIncremental="2"
+				SuppressStartupBanner="true"
+				AdditionalLibraryDirectories="\vt5\common\$(OutDir),\vt5\common"
+				ModuleDefinitionFile=".\DBaseDoc.def"
 				GenerateDebugInformation="true"
+				ProgramDatabaseFile="\vt5\vt5\$(OutDir)\pdb\DBaseDoc.pdb"
 				SubSystem="2"
 				RandomizedBaseAddress="1"
 				DataExecutionPrevention="0"
+				ImportLibrary="$(OutDir)\$(ProjectName).lib"
 				TargetMachine="17"
 			/>
 			<Tool
@@ -368,7 +392,6 @@
 			/>
 			<Tool
 				Name="VCBscMakeTool"
-				OutputFile="$(IntDir)/$(ProjectName).bsc"
 			/>
 			<Tool
 				Name="VCFxCopTool"
@@ -457,7 +480,15 @@
 				>
 			</File>
 			<File
+				RelativePath=".\DBFileSize.h"
+				>
+			</File>
+			<File
 				RelativePath=".\DBFindDlg.h"
+				>
+			</File>
+			<File
+				RelativePath=".\DBLocksInfo.h"
 				>
 			</File>
 			<File
@@ -541,6 +572,10 @@
 				>
 			</File>
 			<File
+				RelativePath=".\OpticalDriveWriter.h"
+				>
+			</File>
+			<File
 				RelativePath=".\PlaceTargetDlg.h"
 				>
 			</File>
@@ -613,6 +648,14 @@
 				>
 			</File>
 			<File
+				RelativePath=".\WaitExclusiveDlg.h"
+				>
+			</File>
+			<File
+				RelativePath=".\WarningWnd.h"
+				>
+			</File>
+			<File
 				RelativePath=".\Wizards.h"
 				>
 			</File>
@@ -651,6 +694,10 @@
 			</File>
 			<File
 				RelativePath=".\bmp00001.bmp"
+				>
+			</File>
+			<File
+				RelativePath=".\res\break_.bmp"
 				>
 			</File>
 			<File
@@ -907,7 +954,15 @@
 				>
 			</File>
 			<File
+				RelativePath=".\DBFileSize.cpp"
+				>
+			</File>
+			<File
 				RelativePath=".\DBFindDlg.cpp"
+				>
+			</File>
+			<File
+				RelativePath=".\DBLocksInfo.cpp"
 				>
 			</File>
 			<File
@@ -988,6 +1043,10 @@
 			</File>
 			<File
 				RelativePath="NewDBTempl.cpp"
+				>
+			</File>
+			<File
+				RelativePath=".\OpticalDriveWriter.cpp"
 				>
 			</File>
 			<File
@@ -1095,15 +1154,43 @@
 				>
 			</File>
 			<File
+				RelativePath=".\WaitExclusiveDlg.cpp"
+				>
+			</File>
+			<File
+				RelativePath=".\WarningWnd.cpp"
+				>
+			</File>
+			<File
 				RelativePath=".\Wizards.cpp"
 				>
 			</File>
 		</Filter>
+		<File
+			RelativePath=".\albom.progid"
+			>
+		</File>
+		<File
+			RelativePath=".\msado15.tlh"
+			>
+		</File>
+		<File
+			RelativePath=".\msado15.tli"
+			>
+		</File>
+		<File
+			RelativePath=".\msadox.tlh"
+			>
+		</File>
+		<File
+			RelativePath=".\msadox.tli"
+			>
+		</File>
+		<File
+			RelativePath=".\ReadMe.txt"
+			>
+		</File>
 	</Files>
 	<Globals>
-		<Global
-			Name="DevPartner_IsInstrumented"
-			Value="1"
-		/>
 	</Globals>
 </VisualStudioProject>

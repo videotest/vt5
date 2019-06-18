@@ -37,13 +37,13 @@ protected:
 	BEGIN_INTERFACE_PART(SubMenu,ISubMenu)
 		com_call SetStartItemID( UINT uiItemID );
 		com_call SetSingleObjectName( BSTR bstrObjectName );
-		com_call GetFirstItemPos(TPOS* plPos);
+		com_call GetFirstItemPos( long* plPos );
 		com_call GetNextItem(	
 				UINT* puiFlags, 
 				UINT* puiItemID, 
 				BSTR* pbstrText,				
 				UINT* puiParentID,
-				TPOS* plPos);
+				long* plPos );
 		com_call OnCommand( UINT uiCmd );	
 	END_INTERFACE_PART(SubMenu)
 public:
@@ -94,7 +94,7 @@ HRESULT CSubMenu::XSubMenu::SetSingleObjectName( BSTR bstrObjectName )
 
 
 //////////////////////////////////////////////////////////////////////
-HRESULT CSubMenu::XSubMenu::GetFirstItemPos(TPOS* plPos)
+HRESULT CSubMenu::XSubMenu::GetFirstItemPos( long* plPos )
 {
 	METHOD_PROLOGUE_EX(CSubMenu, SubMenu)
 
@@ -116,7 +116,7 @@ HRESULT CSubMenu::XSubMenu::GetNextItem(
 										UINT* puiItemID, 
 										BSTR* pbstrText, 							
 										UINT* puiParentID,
-										TPOS* plPos
+										long* plPos 
 										)
 {
 	METHOD_PROLOGUE_EX(CSubMenu, SubMenu)
@@ -202,7 +202,7 @@ void CSubMenu::InitSendManager()
 		_bstr_t bstrType = bstr;
 		::SysFreeString( bstr );
 
-		LONG_PTR lPos = 0;
+		long lPos = 0;
 //		ptrContext->GetFirstSelectedPos( bstrType, &lPos );
 		ptrContext->GetFirstObjectPos( bstrType, &lPos );
 		while( lPos )
@@ -311,7 +311,7 @@ bool CBaseObject::IsChild( INamedDataPtr ptrND, GuidKey guidChild )
 	if( m_guidGroup == INVALID_KEY )
 		return false;
 
-	TPOS lPos = 0;
+	long lPos = 0;
 	ptrND->GetBaseGroupObjectFirstPos( &m_guidGroup, &lPos );
 	while( lPos )
 	{
@@ -400,7 +400,7 @@ bool CActionSendTo::IsAvaible()
 	if (ptrS2 != 0)
 	{
 		bool bFoundEnabled = false;
-		TPOS lpos = 0;
+		long lpos = 0;
 		ptrS2->GetFirstItemPos(&lpos);
 		while (lpos != 0)
 		{
@@ -531,7 +531,7 @@ bool CActionSendTo::CreateObjectList()
 					continue;
 			}
 
-			LONG_PTR lPos = 0;
+			long lPos = 0;
 			ptrContext->GetFirstSelectedPos( bstrType, &lPos );
 			while( lPos )
 			{
@@ -645,7 +645,7 @@ bool CActionSendTo::CreateObjectList()
 	//Addition verify
 	{
 
-		INT_PTR nCount = 0;
+		int nCount = 0;
 		pos = m_arBaseObject.GetHeadPosition();	
 		while( pos )
 		{
@@ -730,7 +730,7 @@ GuidKey CActionSendTo::IsBaseObject( INamedDataPtr ptrND, GuidKey guidObj )
 	//CString strTest = ::GetObjectName( ptrTestObject );
 
 
-	TPOS lGroupPos = 0;
+	long lGroupPos = 0;
 	ptrND->GetBaseGroupFirstPos( &lGroupPos );
 	while( lGroupPos )
 	{
@@ -865,7 +865,7 @@ bool CActionSendTo::Invoke()
 	//Set base object and its childs
 	if( IsPutToDocument() )
 	{
-		StartNotification( int(m_arBaseObject.GetCount() + m_arGuidNotInGroup.GetCount()), 1, 1 );
+		StartNotification( m_arBaseObject.GetCount() + m_arGuidNotInGroup.GetCount(), 1, 1 );
 		int nIndex = 0;
 
 		POSITION pos = m_arBaseObject.GetHeadPosition();

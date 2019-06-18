@@ -237,7 +237,7 @@ public:
 IUnknownPtr find_child_by_interface(IUnknownPtr sptrParent, const GUID guid)
 {
 	INamedDataObject2Ptr sptrNDOParent(sptrParent);
-	TPOS lPos = 0;
+	long lPos = 0;
 	sptrNDOParent->GetFirstChildPosition(&lPos);
 	while (lPos)
 	{
@@ -365,7 +365,7 @@ static void CopyParams( ICalcObjectContainerPtr in, ICalcObjectContainerPtr out 
 	if( in == 0 || out == 0)
 		return;
 
-	LONG_PTR lParamPos = 0;
+	long lParamPos = 0;
 	in->GetFirstParameterPos( &lParamPos );
 	while( lParamPos )
 	{
@@ -394,12 +394,12 @@ CActionChromoEqualize::CActionChromoEqualize()
 bool CActionChromoEqualize::Process(IUnknown *punkObjList, bool bEqualize)
 {
 	sptrINamedDataObject2 sptrObjIn(punkObjList);
-	TPOS pos = 0; long i = 0;
-	sptrObjIn->GetFirstChildPosition(&pos);
+	long pos = 0, i = 0;
+	sptrObjIn->GetFirstChildPosition((long*)&pos);
 	while (pos)
 	{
 		IUnknownPtr sptr;
-		sptrObjIn->GetNextChild(&pos, &sptr);
+		sptrObjIn->GetNextChild((long*)&pos, &sptr);
 		if (bEqualize)
 		{
 			if (!_IsObjectEqualized(sptr))
@@ -763,14 +763,14 @@ HRESULT CActionChromoUnEqualizeObj::GetActionState(DWORD *pdwState)
 		IUnknownPtr punk(::GetActiveObjectFromContext(m_ptrTarget, szTypeObjectList), false);
 		sptrINamedDataObject2 sptrObjIn(punk);
 		bool bFound = false;
-		TPOS pos = 0;
+		long pos = 0;
 		if( sptrObjIn )//paul
 		{
-			sptrObjIn->GetFirstChildPosition(&pos);
+			sptrObjIn->GetFirstChildPosition((long*)&pos);
 			while (pos)
 			{
 				IUnknownPtr sptr;
-				sptrObjIn->GetNextChild(&pos, &sptr);
+				sptrObjIn->GetNextChild((long*)&pos, &sptr);
 				if (_IsObjectEqualized(sptr))
 				{
 					bFound = true;

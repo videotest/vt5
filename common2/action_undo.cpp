@@ -271,7 +271,7 @@ CDocHelper::~CDocHelper()
 
 void CDocHelper::DeInit()
 {
-	TPOS	lpos = head();
+	long	lpos = head();
 	while( lpos )delete next( lpos );
 
 	deinit();
@@ -287,7 +287,7 @@ ObjectData *CDocHelper::AddObject( IUnknown *punk, bool bObjectAdded, bool bMapD
 
 void CDocHelper::DoUndo( IUnknown *punkDocData )
 {
-	TPOS lpos = head();
+	long lpos = head();
 
 	while( lpos )
 		next( lpos )->DoUndo( punkDocData );
@@ -295,7 +295,7 @@ void CDocHelper::DoUndo( IUnknown *punkDocData )
 
 void CDocHelper::DoRedo( IUnknown *punkDocData )
 {
-	TPOS lpos = head();
+	long lpos = head();
 
 	while( lpos )
 		next( lpos )->DoRedo( punkDocData, m_bCleanVirtualsBack );

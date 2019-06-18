@@ -73,7 +73,7 @@ void COutlookBar::DeleteFolderBar( CBCGToolBar *pbar )
 
 void COutlookBar::DeleteAllFolderBars()
 {
-	for (int t = (int)arFolder.GetSize()-1; t >=0 ; t-- )
+	for (int t = arFolder.GetSize()-1; t >=0 ; t-- )
 	{
 		CBarFolder	*pfb = (CBarFolder*)arFolder.GetAt( t );
 		if( pfb->pChild )

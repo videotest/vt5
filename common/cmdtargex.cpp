@@ -20,7 +20,7 @@ LPUNKNOWN CMapInterfaceImpl::get_fast_interface( const GUID* piid )
 	if( !m_benable_map )	return 0;
 	if( m_binside_hook )	return 0;
 
-	TPOS lpos = m_map_interface.find(piid);
+	long lpos = m_map_interface.find( piid );
 	if( lpos )
 	{
 		interface_info* pii = m_map_interface.get( lpos );

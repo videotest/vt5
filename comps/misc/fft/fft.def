@@ -1,6 +1,7 @@
 ; fft.def : Declares the module parameters for the DLL.
 
 LIBRARY      "fft"
+DESCRIPTION  'fft Windows Dynamic Link Library'
 
 EXPORTS
     ; Explicit exports can go here

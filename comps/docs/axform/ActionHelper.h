@@ -25,7 +25,7 @@ public:
 
 	_bstr_t		m_bstr_original_name;
 	_bstr_t		m_bstr_given_name; // имя, указанное в командной строке
-	POSITION	m_lArgumentPosition;
+	long		m_lArgumentPosition;
 
 	// debug features - сохраняемая дополнительная инфа
 	IUnknown* m_punkActionInfo; // без AddRef

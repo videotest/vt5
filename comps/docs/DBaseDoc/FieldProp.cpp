@@ -165,6 +165,7 @@ void CObjFieldPropPage::SetBaseType( CString strBaseType )
 /////////////////////////////////////////////////////////////////////////////
 BOOL CObjFieldPropPage::OnInitDialog() 
 {
+
 	CPropertyPage::OnInitDialog();	
 
 	if( m_strBaseType.IsEmpty() )
@@ -253,7 +254,7 @@ BOOL CObjFieldPropPage::OnInitDialog()
 							bbb=0;
 						}
 						else
-				pComo->AddString( CString( bstrName ) );
+							pComo->AddString( CString( bstrName ) );
 					}
 					//else
 					//	numcur--;

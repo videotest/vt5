@@ -238,9 +238,7 @@ std_dll bool StealthCheckProtectionCLSID(REFCLSID rclsid);
 // word thread function
 std_dll DWORD __stdcall ThreadFuncStealthUpdate(LPVOID lpParam = 0);
 
-#if 0 //#ifndef _WIN64 
-
-
+#if 0 // #ifndef _WIN64
 //include .lib
 #ifdef _DEBUG
 #define _LIBNAME "dNovex.LIB"

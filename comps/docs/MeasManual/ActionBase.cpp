@@ -349,28 +349,28 @@ bool CMMActionObjectBase::ProcessMeasManualObject()
 		return false;
 
 
-	POSITION lParPosCur = 0;
-	ptrCont->GetCurentPosition( (LONG_PTR*)&lParPosCur, 0 );
+	long lParPosCur = 0;	
+	ptrCont->GetCurentPosition( &lParPosCur, 0 );
 
 	if( lParPosCur > 0 )
 	{
-		POSITION l = lParPosCur;
+		long l = lParPosCur;
 		ParameterContainer* pp = 0;
-		ptrCont->GetNextParameter((LONG_PTR*)&l, &pp);
+		ptrCont->GetNextParameter( &l, &pp );
 		if( pp && pp->pDescr )
 			m_undoInfo.m_lPrevActiveParam = pp->pDescr->lKey;
 	}
 
 	long lParamKey = -1;
-	LONG_PTR lParPos = 0;
+	long lParPos = 0;
 	
 	ptrCont->GetFirstParameterPos( &lParPos );	
 
 	//need create new object
-	if ((LONG_PTR)lParPosCur < 1)
+	if( lParPosCur < 1 )
 		lParPos = 0;
 	else		
-		lParPos = (LONG_PTR)lParPosCur;
+		lParPos = lParPosCur;
 
 	while( lParPos )
 	{
@@ -390,7 +390,7 @@ bool CMMActionObjectBase::ProcessMeasManualObject()
 	if( lParamKey != -1 )
 	{
 		INamedDataObject2Ptr ptrNDO2( m_ptrMeasObject );
-		TPOS lChildPos = 0;
+		long lChildPos = 0;
 
 		IManualMeasureObjectPtr ptrMM2Delete;
 
@@ -434,12 +434,12 @@ bool CMMActionObjectBase::ProcessMeasManualObject()
 		punkGroup->Release();
 
 
-	LONG_PTR lParamPos = (LONG_PTR)lParPosCur;
+	long lParamPos = lParPosCur;
 
 	if( lParamKey == -1 )
-	{		
+	{
 		long lUniqKey = MANUAL_PARAMS_FIRST_KEY;
-		LONG_PTR lPos=0;
+		long lPos=0;
 		
 		for(ptrCont->GetFirstParameterPos(&lPos); lPos; )
 		{
@@ -460,7 +460,7 @@ bool CMMActionObjectBase::ProcessMeasManualObject()
 		if( lParamPos )
 		{
 			ParameterContainer* pp = 0;
-			LONG_PTR lPos = lParamPos;
+			long lPos = lParamPos;
 			ptrCont->GetNextParameter( &lPos, &pp );
 			if( pp && pp->pDescr )
 				lParamKey = pp->pDescr->lKey;
@@ -615,18 +615,18 @@ bool CMMActionObjectBase::ShiftParamater()
 	if( ShiftDir == 0 )
 	{
 		//shift horizontal
-		POSITION lParPosCur = 0;
+		long lParPosCur = 0;	
 
-		ptrCont->GetCurentPosition((LONG_PTR*)&lParPosCur, 0);
+		ptrCont->GetCurentPosition( &lParPosCur, 0 );
 
 		long lKeyToRemove = -1;
-		LONG_PTR lParPos = 0;
+		long lParPos = 0;
 		
 		ptrCont->GetFirstParameterPos( &lParPos );	
 
 		//need create new object
 		if( lParPosCur > 0 )
-			lParPos = (LONG_PTR)lParPosCur;
+			lParPos = lParPosCur;
 
 
 		bool bFirstMatch = false;
@@ -672,7 +672,7 @@ bool CMMActionObjectBase::ShiftParamater()
 		}
 	}
 	else  if( ShiftDir == 1 )//vertiacal
-	{			
+	{	
 		//Composite support
 		ICompositeObjectPtr co(m_ObjListWrp);
 		if(co)
@@ -688,7 +688,7 @@ bool CMMActionObjectBase::ShiftParamater()
 					INamedDataObject2Ptr ndo(unk);
 					if(ndo)
 					{
-						TPOS pos;
+						long pos;
 						ndo->GetActiveChild( &pos );
 						ndo->GetNextChild(&pos, &unk);
 						if(unk) unk->Release();
@@ -725,8 +725,8 @@ bool CMMActionObjectBase::ShiftParamater()
 	else //diagonal
 	{
 		//shift horizontal
-		LONG_PTR lParPos = 0;
-		LONG_PTR lSavePos = 0;
+		long lParPos = 0;
+		long lSavePos = 0;
 		bool	bNewObject = 0;
 		
 		ptrCont->GetCurentPosition( &lParPos, 0 );
@@ -738,7 +738,7 @@ bool CMMActionObjectBase::ShiftParamater()
 			bNewObject = true;
 		}
 		
-		LONG_PTR	ltemp = lParPos;
+		long	ltemp = lParPos;
 
 		ParameterContainer* pp = 0;
 		ptrCont->GetNextParameter( &ltemp, &pp );
@@ -1016,13 +1016,13 @@ bool CMMActionObjectBase::Invoke()
 	ICalcObjectContainerPtr ptrCont( m_ObjListWrp );
 	if( ptrCont )
 	{
-		POSITION lParPos = 0;
-		ptrCont->GetCurentPosition((LONG_PTR*)&lParPos, 0);
+		long lParPos = 0;
+		ptrCont->GetCurentPosition( &lParPos, 0 );
 
 		if( lParPos )
 		{
 			ParameterContainer* pp = 0;
-			ptrCont->GetNextParameter((LONG_PTR*)&lParPos, &pp);
+			ptrCont->GetNextParameter( &lParPos, &pp );
 			if( pp && pp->pDescr )
 			{
 				m_undoInfo.m_lNewActiveParam = pp->pDescr->lKey;
@@ -1405,13 +1405,13 @@ bool CMMActionObjectBase::Initialize()
 
 	if( ptrCont != 0 )
 	{
-		LONG_PTR	lpos = 0;
+		long	lpos = 0;
 		ptrCont->GetCurentPosition( &lpos, 0 );
-		LONG_PTR	lposC = lpos;
+		long	lposC = lpos;
 
 		while( lpos != 0 )
 		{
-			LONG_PTR	lposSave = lpos;
+			long	lposSave = lpos;
 			ParameterContainer* pp = 0;
 			ptrCont->GetNextParameter( &lpos, &pp );
 
@@ -1428,7 +1428,7 @@ bool CMMActionObjectBase::Initialize()
 			ptrCont->GetFirstParameterPos( &lpos );
 			while( lpos != 0 )
 			{
-				LPOS lposSave = lpos;
+				long	lposSave = lpos;
 				ParameterContainer* pp = 0;
 				ptrCont->GetNextParameter( &lpos, &pp );
 
@@ -1533,7 +1533,7 @@ bool CMMActionObjectBase::IsAvaible()
 	if (FAILED(sptrList->GetChildsCount(&lCount)) || !lCount)
 		return true;
 
-	LPOS lPos = 0;
+	long lPos = 0;
 	if (FAILED(sptrParam->GetActiveParamPos(&lPos)) || !lPos)
 		return true;
 

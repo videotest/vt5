@@ -421,7 +421,7 @@ bool CTailEdit::DoRButtonUp( _point point )
 static IUnknownPtr find_child_by_interface(IUnknownPtr sptrParent, const GUID guid)
 {
 	INamedDataObject2Ptr sptrNDOParent(sptrParent);
-	TPOS lPos = 0;
+	long lPos = 0;
 	sptrNDOParent->GetFirstChildPosition(&lPos);
 	while (lPos)
 	{
@@ -453,17 +453,17 @@ bool CTailEdit::DoLButtonDown( _point point )
 	if(point.x<0 || point.x>=w || point.y<0 || point.y>=h) return true; //за пределами image - ничего не делаем
 
 	double bestDistance=1e20; //наиболее подходящий объект
-	TPOS bestObjPos = 0;
+	long bestObjPos = 0;
 	long bestObjNum = -1;
 	int best_x, best_y;
 	int best_nFrame=0;
 
-	TPOS objPos = 0;
+	long objPos = 0;
 	m_ptrList->GetFirstChildPosition(&objPos);
 	while( objPos ) //по всем объектам
 	{
 		IUnknownPtr ptr;
-		TPOS objPos1=objPos;
+		long objPos1=objPos;
 		m_ptrList->GetNextChild(&objPos, &ptr);
 		IMeasureObjectPtr ptrO(ptr);
 		if(ptrO==0) continue;
@@ -514,7 +514,7 @@ bool CTailEdit::DoLButtonDown( _point point )
 	if(bestDistance<10)   // нашли объект, не дальше 10 пикселей от точки
 	{
 		IUnknownPtr ptr;
-		TPOS objPos=bestObjPos;
+		long objPos=bestObjPos;
 		m_ptrList->GetNextChild(&objPos, &ptr);
 		m_ptrObject = ptr;
 		m_nObjNum = bestObjNum;

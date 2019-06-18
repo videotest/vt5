@@ -7,13 +7,6 @@
 #include "aam_utils.h"
 #include <limits.h>
 #include "\vt5\awin\misc_ptr.h"
-#if 1500 <= _MSC_VER && _MSC_VER <= 1600
-namespace {
-	int  round(double num) {
-			return int((num > 0.0) ? floor(num + 0.5) : ceil(num - 0.5));
-	}
-}
-#endif
 
 _ainfo_base::arg CFindStripesInfo::s_pargs[] =
 {
@@ -33,10 +26,10 @@ CFindStripes::~CFindStripes()
 {
 }
 
-//static inline int iround(double x)
-//{
-//	return int(floor(x+0.5));
-//}
+static inline int round(double x)
+{
+	return int(floor(x+0.5));
+}
 
 static int nCompareMethod=2;
 static int nAverageMethod=1;

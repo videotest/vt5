@@ -46,7 +46,7 @@ IUnknown* stat_row_ex::DoGetInterface( const IID &iid )
 //////////////////////////////////////////////////////////////////////
 HRESULT stat_row_ex::GetValue( long lParamKey, double *pfValue )
 {
-	TPOS lpos_value = m_map_value.find(lParamKey);
+	long lpos_value = m_map_value.find( lParamKey );
 	if( !lpos_value )
 		return S_FALSE;
 
@@ -62,7 +62,7 @@ HRESULT stat_row_ex::GetValue( long lParamKey, double *pfValue )
 //////////////////////////////////////////////////////////////////////
 HRESULT stat_row_ex::SetValue( long lParamKey, double fValue )
 {
-	TPOS lpos_value = m_map_value.find(lParamKey);
+	long lpos_value = m_map_value.find( lParamKey );
 	if( !lpos_value )
 		return E_INVALIDARG;
 

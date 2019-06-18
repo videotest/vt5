@@ -51,7 +51,7 @@ class CIdioEditUndoRedoImpl
 public:
 	virtual ~CIdioEditUndoRedoImpl()
 	{
-		for( TPOS lPos = m_listUndoInfo.head(); lPos; lPos = m_listUndoInfo.next( lPos ) )
+		for( long lPos = m_listUndoInfo.head(); lPos; lPos = m_listUndoInfo.next( lPos ) )
 		{
 			XInfo *p = m_listUndoInfo.get( lPos );
 			if( p )
@@ -59,7 +59,7 @@ public:
 		}
 		m_listUndoInfo.clear();
 
-		for (TPOS lPos = m_listRedoInfo.head(); lPos; lPos = m_listRedoInfo.next(lPos))
+		for( long lPos = m_listRedoInfo.head(); lPos; lPos = m_listRedoInfo.next( lPos ) )
 		{
 			XInfo *p = m_listRedoInfo.get( lPos );
 			if( p )
@@ -127,7 +127,7 @@ private:
 		INamedDataObject2Ptr ptrNDO( ptrMeasure );
 		if( ptrNDO == 0 )		return 0;
 
-		POSITION lPosCromo = 0;
+		long lPosCromo = 0;
 		ptrNDO->GetFirstChildPosition( &lPosCromo );
 		while( lPosCromo )
 		{
@@ -168,7 +168,7 @@ private:
 protected:
 	void do_undo() 
 	{ 
-		for (TPOS lPos = m_listUndoInfo.head(); lPos; lPos = m_listUndoInfo.next(lPos))
+		for( long lPos = m_listUndoInfo.head(); lPos; lPos = m_listUndoInfo.next( lPos ) )
 		{
 			XInfo *p = m_listUndoInfo.get( lPos );
 			_make_undo_redo( p ); 
@@ -176,7 +176,7 @@ protected:
 	}
 	void do_redo() 
 	{ 
-		for (TPOS lPos = m_listRedoInfo.head(); lPos; lPos = m_listRedoInfo.next(lPos))
+		for( long lPos = m_listRedoInfo.head(); lPos; lPos = m_listRedoInfo.next( lPos ) )
 		{
 			XInfo *p = m_listRedoInfo.get( lPos );
 			_make_undo_redo( p ); 

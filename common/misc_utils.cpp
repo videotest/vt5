@@ -155,7 +155,7 @@ std_dll RECT GetObjectRectangle(IUnknown *punkObject, int nMode)
 	INamedDataObject2Ptr sptrNDO2Obj(punkObject);
 	if (sptrNDO2Obj == 0)
 		return rc;
-	POSITION lpos = 0;
+	long	lpos = 0;
 	sptrNDO2Obj->GetFirstChildPosition(&lpos);
 	while (lpos)
 	{

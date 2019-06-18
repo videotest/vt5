@@ -21,7 +21,7 @@ protected:
 	IMethodManPtr	m_sptr_mtd_man;
 
 	IMethodDataPtr	m_sptr_active_mtd;
-	TPOS			m_lpos_active_mtd;
+	long			m_lpos_active_mtd;
 
 	long			m_litem_hot;
 	HRGN			m_hrgn_old;
@@ -47,19 +47,19 @@ public:
 
 public:
 	virtual bool	subclass( HWND hwnd, bool f_nccreate = false );
-	virtual LRESULT	handle_message( UINT m, WPARAM w, LPARAM l );
+	virtual long	handle_message( UINT m, WPARAM w, LPARAM l );
 
 public:
-	int		insert_after_step(TPOS lpos_target, TPOS lpos_step);
-	int		insert_before_step(TPOS lpos_target, TPOS lpos_step);
-	int		insert_step(TPOS lpos_step, int nitem);
+	int		insert_after_step( long lpos_target, long lpos_step );
+	int		insert_before_step( long lpos_target, long lpos_step );
+	int		insert_step( long lpos_step, int nitem );
 	
-	BOOL	delete_step(TPOS lpos_step);
+	BOOL	delete_step( long lpos_step );
 
-	int		find_step(TPOS lpos_step, int nstart_from = -1);
+	int		find_step( long lpos_step, int nstart_from = -1 );
 
-	BOOL	get_step_data(CMethodStep *pstep_data, TPOS lpos_step);
-	BOOL	get_step_data(CMethodStep *pstep_data, int nitem_step, TPOS *plpos_step = 0);
+	BOOL	get_step_data( CMethodStep *pstep_data, long lpos_step );
+	BOOL	get_step_data( CMethodStep *pstep_data, int nitem_step, long *plpos_step = 0 );
 
 	BOOL	set_step_data( CMethodStep *pstep_data, int nitem_step, bool bdont_clear_cache = false );
 
@@ -69,16 +69,16 @@ public:
 	void	fill(void);
 
 	void	update_check_states(void);
-	void	update_check_state(TPOS lpos_step);
+	void	update_check_state( long lpos_step );
 	void	update_check_state( int nitem );
 
-	TPOS	update_active_step(void);
-	void	set_active_step(TPOS lpos_step);
-	void	set_active_step_item(TPOS lpos_step);
+	long	update_active_step(void);
+	void	set_active_step( long lpos_step );
+	void	set_active_step_item( long lpos_step );
 		
 	BOOL	is_cached( int nitem_step );
 
-	DWORD	get_step_state(TPOS lpos_step);
+	DWORD	get_step_state( long lpos_step );
 
 	BOOL	get_mtd_man( IUnknown **ppunk_mtd_man );
 	BOOL	get_mtd( IUnknown **ppunk_mtd );
@@ -87,18 +87,18 @@ public:
 	void	set_redraw( BOOL bturn_on ) { send_message( WM_SETREDRAW, (WPARAM)bturn_on, 0); }
 
 	// redraw step
-	void	redraw_step(TPOS lpos_step);
+	void	redraw_step( long lpos_step );
 		
 protected:
-	virtual LRESULT on_rbuttondown(const _point &point);
-	virtual LRESULT on_lbuttondown(const _point &point);
-	virtual LRESULT on_lbuttonup(const _point &point);
-	virtual LRESULT on_lbuttondblclk(const _point &point);
-	virtual LRESULT on_rbuttondblclk(const _point &point);
-	virtual LRESULT on_mousemove(const _point &point);
-	virtual LRESULT on_destroy();
-	virtual LRESULT on_keydown(long nVirtKey);
-	virtual LRESULT on_killfocus(HWND hwndOld);
+	virtual long on_rbuttondown( const _point &point );
+	virtual long on_lbuttondown( const _point &point );
+	virtual long on_lbuttonup( const _point &point );
+	virtual long on_lbuttondblclk( const _point &point );
+	virtual long on_rbuttondblclk( const _point &point );
+	virtual long on_mousemove( const _point &point );
+	virtual long on_destroy();
+	virtual long on_keydown( long nVirtKey );
+	virtual long on_killfocus( HWND hwndOld );
     	
 
 	virtual long on_notify_reflect( NMHDR *pnmhdr, long *plProcessed );
@@ -121,7 +121,7 @@ protected:
 	void	set_def_styles(void);
 	BOOL	init(void);
 	
-	int		get_icon_step(TPOS lpos_step);
+	int		get_icon_step( long lpos_step );
 
 	BOOL	calc_loop_rect( RECT *ploop_rect );
 	void	update_loop( );

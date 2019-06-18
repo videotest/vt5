@@ -21,8 +21,8 @@ public:
 	virtual bool AttachMethod(IUnknown *punkMethod);
 	static void _self_destroyer( CMethodDoer *pItem ) { if(pItem!=0) delete pItem; }
 protected:
-	TPOS GetPosByIndex(long nIndex); // получить по номеру шага его pos в методике; 0 - нет такого
-	long GetIndexByPos(TPOS nPos); // получить по pos'у шага его номер в методике; -1 - нет такого
+	long GetPosByIndex(long nIndex); // получить по номеру шага его pos в методике; 0 - нет такого
+	long GetIndexByPos(long nPos); // получить по pos'у шага его номер в методике; -1 - нет такого
 	IMethodDataPtr m_sptrMethodData;
 };
 

@@ -241,7 +241,7 @@ void CSyncEditManager::OnNotify( const char *pszEvent, IUnknown *punkHit, IUnkno
 
 			IUndoListPtr	ptrUndoList( ptrDoc );
 
-			TPOS	lpos = 0;
+			long	lpos = 0;
 			ptrDoc->GetFirstViewPosition( &lpos );
 
 			while( lpos )
@@ -338,7 +338,7 @@ void CSyncEditManager::OnNotify( const char *pszEvent, IUnknown *punkHit, IUnkno
 			//get target image and store it to processed list
 			CPtrList	ptrList;
 
-			LONG_PTR lpos = 0;
+			long	lpos = 0;
 			ptrOA->GetFirstObjectPosition( &lpos );
 			if( !lpos )return;
 
@@ -380,13 +380,13 @@ void CSyncEditManager::OnNotify( const char *pszEvent, IUnknown *punkHit, IUnkno
 
 			IUndoListPtr	ptrUndoList( ptrDoc );
 
-			TPOS pos = 0;
-			ptrDoc->GetFirstViewPosition( &pos );
+			lpos = 0;
+			ptrDoc->GetFirstViewPosition( &lpos );
 
 			while( lpos )
 			{
 				IUnknown	*punkView = 0;
-				ptrDoc->GetNextView( &punkView, &pos );
+				ptrDoc->GetNextView( &punkView, &lpos );
 				if( !punkView )continue;
 
 				IImageViewPtr	ptrIV( punkView );
@@ -415,7 +415,7 @@ void CSyncEditManager::OnNotify( const char *pszEvent, IUnknown *punkHit, IUnkno
 				ptrNewA->AttachTarget( ptrIV );
 
 
-				LONG_PTR	lposO = 0;
+				long	lposO = 0;
 				ptrOA->GetFirstObjectPosition( &lposO );
 
 				while( lposO )
@@ -502,7 +502,7 @@ bool CActionSyncEdit::IsAvaible()
 	IDocumentSitePtr sptrActiveDoc = punkActiveDoc;
 	if (sptrActiveDoc == 0)
 		return false;
-	TPOS lPosView;
+	long lPosView;
 	int nViews = 0;
 	sptrActiveDoc->GetFirstViewPosition(&lPosView);
 	while (lPosView)

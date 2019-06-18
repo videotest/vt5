@@ -13,8 +13,18 @@
 
 #include "statusutils.h"
 
+
+
+
+#ifdef _DEBUG
+#pragma comment( lib, "EditorView_d.lib" )
+#pragma comment( lib, "Controls_d.lib" )
+#else
 #pragma comment( lib, "EditorView.lib" )
 #pragma comment( lib, "Controls.lib" )
+#endif//
+
+
 #pragma comment( lib, "zlib.lib" )
 
 
@@ -415,7 +425,17 @@ bool GetUsersInfo( CArray<user_info,user_info&> *parr_users )
 					ui.m_str_machine	= var0.bstrVal;
 				if( var1.vt == VT_BSTR )
 					ui.m_str_user		= var1.bstrVal;
-				parr_users->Add( ui );
+				bool bFound =false;
+				for(int i=0;i<parr_users->GetSize();i++)
+				{
+					if(parr_users->GetAt(i) == ui)
+					{
+						bFound =true;
+						break;
+					}
+				}
+				if(!bFound)
+					parr_users->Add( ui );
 			}
 			lcount++;
 			ptr_rs->MoveNext();
@@ -430,4 +450,8 @@ bool GetUsersInfo( CArray<user_info,user_info&> *parr_users )
 
 
 	return true;
+}
+bool operator ==(const user_info& u1, const user_info& u2)
+{
+	return(u1.m_str_machine == u2.m_str_machine && u1.m_str_user == u2.m_str_user);
 }

@@ -742,7 +742,8 @@ bool CShapeMeasureGroup::CalcValues( IUnknown *punkCalcObject, IUnknown *punkSou
 }
 bool CShapeMeasureGroup::GetUnit( long lKey, long lType, _bstr_t &bstrType, double &fCoeffToUnits )
 {
-	bstrType = GetValueString(GetAppUnknown(), "Units\\Relative", "Name", "-");
+	CString s = GetValueString(GetAppUnknown(), "Units\\Relative", "Name", "-");
+	bstrType = s.AllocSysString();
 	fCoeffToUnits =1.;
 	return true;
 }

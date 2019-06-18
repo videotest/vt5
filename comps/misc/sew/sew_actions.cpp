@@ -947,7 +947,7 @@ IUnknown	*CSewManual::DoGetInterface( const IID &iid )
 void CSewManual::DeInit()
 {
 	m_lCurrentPos = 0;
-	TPOS	lpos = m_images.head();
+	long	lpos = m_images.head();
 	while( lpos )delete m_images.next( lpos );
 	
 	m_images.deinit();
@@ -977,7 +977,7 @@ bool CSewManual::Initialize()
 
 
 	_bstr_t	bstrImage = szTypeImage;
-	LONG_PTR	lpos = 0;
+	long	lpos = 0;
 	IUnknown	*punkImage = 0;
 	bool	bFirst = true;
 
@@ -1112,7 +1112,7 @@ HRESULT CSewManual::Paint( HDC hDC, RECT rectDraw,
 	ptrScrollZoom->GetZoom( &fZoom );
 	ptrScrollZoom->GetScrollPos( &pointScroll );
 
-	TPOS	lpos = m_images.head();
+	long	lpos = m_images.head();
 
 	while( lpos )
 	{
@@ -1372,10 +1372,10 @@ HRESULT CSewManual::GetActionState( DWORD *pdwState )
 		*pdwState = 0;
 	else
 	{
-	_bstr_t	bstrImage = szTypeImage;
-	long	count;
-	ptrContext->GetSelectedCount( bstrImage, &count );
-	*pdwState = count > 1;
+		_bstr_t	bstrImage = szTypeImage;
+		long	count;
+		ptrContext->GetSelectedCount( bstrImage, &count );
+		*pdwState = count > 1;
 	}
 	return S_OK;
 }
@@ -1394,7 +1394,7 @@ HRESULT CSewManual::DoInvoke()
 		ptrSite->SetScrollPos( _point( 0, 0 ) );
 	}
 
-	TPOS	lpos = m_images.head();
+	long	lpos = m_images.head();
 	while( lpos )
 	{
 		CDIBImage	*pimg = m_images.next( lpos );
@@ -1582,7 +1582,7 @@ HRESULT CSewManual::NextImage()
 	bool	bFirst = true;
 	_rect	rectAll;
 	//CDIBImage	*pdib = 
-	TPOS	lpos = m_images.head();
+	long	lpos = m_images.head();
 	while( lpos )
 	{
 		CDIBImage	*pimage = m_images.next( lpos );
@@ -1645,4 +1645,5 @@ HRESULT CSewManual::NextImage()
 
 CAutoSewHorzInfo::CAutoSewHorzInfo()
 {
+	OutputDebugString( "qq\n" );
 }

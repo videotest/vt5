@@ -1,6 +1,0 @@
-'resource:Axes...#Statistics#Axes#Axes
-'state:function=ExistStatTableOrObject
-
-If Data.GetValue("\DockBars\PageInProcessing") Then Data.SetValue "\DockBars\isPass", True
-Data.Setvalue "\StatCfg\RunForm", "axis"
-RunStat

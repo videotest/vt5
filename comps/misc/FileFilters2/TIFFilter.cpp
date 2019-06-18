@@ -30,7 +30,7 @@ CTIFFilter::CTIFFilter()
 {
 	m_bstrDocumentTemplate = _bstr_t("Image");
 
-	char szFilterName[255]="";
+	char szFilterName[255];	szFilterName[0] = 0;
 	::LoadString(App::handle(), IDS_TIF_FILTERNAME, szFilterName, 255);
 	m_bstrFilterName = szFilterName;//_bstr_t("TIFF files");
 	m_bstrFilterExt = _bstr_t(".tif\n.tiff");

@@ -45,7 +45,7 @@ IUnknown *CAxActionBase::GetNext( POSITION &pos )
 
 int CAxActionBase::GetControlsCount()
 {
-	return (int)m_ptrList.GetCount();
+	return m_ptrList.GetCount();
 }
 
 bool CAxActionBase::InitList()
@@ -706,7 +706,7 @@ bool CActionAddEventHandlers::Invoke()
 					punkScript->Release();
 				long nLineCount = 0;
 				//sptrScript->GetLinesCount(&nLineCount);
-				int nEventsCount = (int)dlg.m_arrEvents.GetSize();
+				int nEventsCount = dlg.m_arrEvents.GetSize();
 				for(int i = 0; i < nEventsCount; i++)
 				{
 					if(dlg.m_arrEvents[i] != "")
@@ -770,7 +770,7 @@ bool CActionAddEventHandlers::Invoke()
 					
 					IViewPtr	ptrScriptView;
 
-					TPOS	lpos = 0;
+					long	lpos = 0;
 					ptrDoc->GetFirstViewPosition( &lpos );
 					while( lpos )
 					{
@@ -2059,7 +2059,7 @@ bool CActionAxInsertControl::Invoke()
 	INotifyObjectPtr ptrNO( sptrC );
 	if( ptrNO )
 	{
-		ATL::CComVariant varViews = GetArgument( "Views" );
+		CComVariant varViews = GetArgument( "Views" );
 		if(VT_EMPTY!=varViews.vt)
 		{
 			HRESULT hr=varViews.ChangeType(VT_I4);

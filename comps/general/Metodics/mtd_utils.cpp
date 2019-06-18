@@ -2,7 +2,7 @@
 #include "mtd_utils.h"
 #include "ScriptNotifyInt.h"
 
-BOOL	get_method_by_name(BSTR bstr_mtd_name, IMethodMan *pmtd_man, IUnknown **ppunk_mtd, TPOS *plpos_mtd /*= 0*/)
+BOOL	get_method_by_name( BSTR bstr_mtd_name, IMethodMan *pmtd_man, IUnknown **ppunk_mtd, long *plpos_mtd /*= 0*/ )
 {
 	if( !bstr_mtd_name || (!ppunk_mtd && !plpos_mtd) )
 		return FALSE;
@@ -22,7 +22,7 @@ BOOL	get_method_by_name(BSTR bstr_mtd_name, IMethodMan *pmtd_man, IUnknown **ppu
 		return FALSE;
 
 	// search method by name
-    TPOS lpos_mtd = 0;
+    long lpos_mtd = 0;
 	
 	// if method's name is empty return current active method
 	if( !::SysStringLen( bstr_mtd_name ) )
@@ -33,7 +33,7 @@ BOOL	get_method_by_name(BSTR bstr_mtd_name, IMethodMan *pmtd_man, IUnknown **ppu
 		while( lpos_mtd )
 		{
 			IUnknown  *punk_mtd = 0;
-			TPOS lpos_curr_mtd = lpos_mtd;
+			long lpos_curr_mtd = lpos_mtd;
 			if( S_OK != sptr_mtd_man->GetNextMethod( &lpos_mtd, &punk_mtd ) )
 				break;
 

@@ -48,8 +48,8 @@ class outpost_columns
 {
 public:
 	virtual long first_column() = 0;
-	virtual long next_column( LPOS lpos ) = 0;
-	virtual column_info	*get_column( LPOS lpos ) = 0;
+	virtual long next_column( long lpos ) = 0;
+	virtual column_info	*get_column( long lpos ) = 0;
 	virtual void clear_columns() = 0;					//do not free column_info pointers
 	virtual long insert_column( column_info *p ) = 0;
 };
@@ -62,8 +62,8 @@ public:
 	virtual ~columns_description()					{clear();}
 public:
 	virtual long first_column()						{return head();}
-	virtual long next_column( LPOS lpos )			{return next( lpos );}
-	virtual column_info	*get_column( LPOS lpos )	{return get( lpos );}
+	virtual long next_column( long lpos )			{return next( lpos );}
+	virtual column_info	*get_column( long lpos )	{return get( lpos );}
 	virtual void clear_columns()					{clear();}
 	virtual long insert_column( column_info *p )
 	{		return insert_before( p );	}
@@ -123,7 +123,7 @@ protected:
 		{delete p;}
 	public:
 		bool	is_item;
-		LPOS lpos_list;
+		long	lpos_list;
 	};
 
 	//хранится только для основной строки (со столбцами)
@@ -516,7 +516,7 @@ inline long list_details_ctrl::set_columns_info( outpost_columns *pcols )
 	_reload_items();
 
 	m_childs_column_count = 0;
-	for( LPOS lpos = m_pcols->first_column(); lpos; lpos = m_pcols->next_column( lpos ) )
+	for( long lpos = m_pcols->first_column(); lpos; lpos = m_pcols->next_column( lpos ) )
 		if( m_pcols->get_column( lpos )->state == COLUMN_STATE_CHILD )
 			m_childs_column_count++;
 
@@ -683,7 +683,7 @@ inline int list_details_ctrl::_insert_childs( int idx )
 
 	subitem_data	*p = 0;
 
-	for( LPOS lpos = m_pcols->first_column(); lpos; lpos = m_pcols->next_column( lpos ) )
+	for( long lpos = m_pcols->first_column(); lpos; lpos = m_pcols->next_column( lpos ) )
 	{
 		column_info	*pcolumn = m_pcols->get_column( lpos );
 		if( pcolumn->state == COLUMN_STATE_CHILD )
@@ -709,7 +709,7 @@ inline int list_details_ctrl::_insert_childs( int idx )
 //поиск item_data по параметру
 inline list_details_ctrl::item_data*	list_details_ctrl::_data_from_param( unsigned param )
 {
-	LPOS lpos = m_items.find( param );
+	long	lpos = m_items.find( param );
 	if( !lpos )return 0;
 	return m_items.get( lpos );
 }
@@ -735,7 +735,7 @@ inline void list_details_ctrl::_load_item( item_data	*pdata )
 
 	if( m_pcols )
 	{
-		for( LPOS lpos = m_pcols->first_column(); lpos; lpos = m_pcols->next_column( lpos ) )
+		for( long lpos = m_pcols->first_column(); lpos; lpos = m_pcols->next_column( lpos ) )
 		{
 			column_info	*pcolumn = m_pcols->get_column( lpos );
 			if( pcolumn->state == COLUMN_STATE_VISIBLE )
@@ -756,7 +756,7 @@ inline void list_details_ctrl::_free_subitems()
 //reload all items
 inline void list_details_ctrl::_reload_items()
 {
-	for( LPOS lpos = m_items.head(); lpos; lpos = m_items.next( lpos ) )
+	for( long lpos = m_items.head(); lpos; lpos = m_items.next( lpos ) )
 	{
 		item_data	*pdata = m_items.get( lpos );
 		_load_item( pdata );
@@ -780,7 +780,7 @@ inline void list_details_ctrl::_reload_columns()
 	HWND	hwnd_header = list_ctrl::get_header();
 	
 	idx++;
-	for( LPOS lpos = m_pcols->first_column(); lpos; lpos = m_pcols->next_column( lpos ) )
+	for( long lpos = m_pcols->first_column(); lpos; lpos = m_pcols->next_column( lpos ) )
 	{
 		column_info	*pcolumn = m_pcols->get_column( lpos );
 		if( pcolumn->state == COLUMN_STATE_VISIBLE )

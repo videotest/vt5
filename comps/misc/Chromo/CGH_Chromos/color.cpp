@@ -114,7 +114,7 @@ boolean CalcRatioPane(IImage3Ptr img, INamedDataObject2Ptr obj,
 	smart_alloc(bin,byte,cx*cy); smart_bin.zero();
 
 	//построение маски для определения фона
-	POSITION pos; obj->GetFirstChildPosition(&pos);
+	long pos; obj->GetFirstChildPosition(&pos);
 	while( pos ) //по всем объектам
 	{
 		IUnknownPtr sptr;
@@ -513,7 +513,7 @@ IUnknown *CActionCalcRatioPane::GetContextObject(CString cName, CString cType)
 		return punkImage;
 	}
 
-	LONG_PTR lPos = 0;
+	long lPos = 0;
 	ptrC->GetFirstObjectPos( bstrType, &lPos );
 	
 	while( lPos )
@@ -551,8 +551,8 @@ bool CActionCalcRatioPane::DoUndo()
 		m_undo_bListPane3=tmp;
 	}
 
-	TPOS	posImage = m_undoImages.tail();
-	TPOS	posData = m_undoData.tail();
+	long	posImage = m_undoImages.tail();
+	long	posData = m_undoData.tail();
 	while( posImage && posData ) 
 	{
 		IImage3Ptr image=m_undoImages.get(posImage);
@@ -618,8 +618,8 @@ bool CActionCalcRatioPane::DoRedo()
 		m_undo_bListPane3=tmp;
 	}
 
-	TPOS	posImage = m_undoImages.head();
-	TPOS	posData = m_undoData.head();
+	long	posImage = m_undoImages.head();
+	long	posData = m_undoData.head();
 	while( posImage && posData ) 
 	{
 		IImage3Ptr image=m_undoImages.get(posImage);
@@ -726,7 +726,7 @@ bool CActionCalcRatioPane::Invoke()
 	//для undo - старые данные с list
 	if(m_undo_List!=0)
 	{
-		POSITION pos; ptrList->GetFirstChildPosition(&pos);
+		long pos; ptrList->GetFirstChildPosition(&pos);
 		while( pos ) //по всем объектам
 		{
 			IUnknownPtr sptr;
@@ -899,7 +899,7 @@ IUnknown *CActionSwitchCGHPane::GetContextObject(CString cName, CString cType)
 		return punkImage;
 	}
 
-	LONG_PTR lPos = 0;
+	long lPos = 0;
 	ptrC->GetFirstObjectPos( bstrType, &lPos );
 	
 	while( lPos )
@@ -1801,7 +1801,7 @@ DWORD CColorConvertorCGH::GetPaneFlags(int numPane)
 
 void CColorConvertorCGH::ConvertRGBToImage( byte *_pRGB, color **_ppColor, int _cx )
 {
-	color	*p0, *p1, *p2;
+	/*color	*p0, *p1, *p2;
 	p0 = _ppColor[0];
 	p1 = _ppColor[1];
 	p2 = _ppColor[2];
@@ -1811,8 +1811,7 @@ void CColorConvertorCGH::ConvertRGBToImage( byte *_pRGB, color **_ppColor, int _
 		p2[n] = ByteAsColor( _pRGB[c++] );
 		p1[n] = ByteAsColor( _pRGB[c++] );
 		p0[n] = ByteAsColor( _pRGB[c++] );
-	}
-#if 0
+	}*/
 	__asm
 	{
 			mov	ebx, _pRGB
@@ -1851,12 +1850,11 @@ $loop:
 			pop		ebp
 			
 	}
-#endif
 }
 
 void CColorConvertorCGH::ConvertImageToRGB( color **_ppColor, byte *_pRGB, int _cx )
 {
-	color	*p0, *p1, *p2;
+	/*color	*p0, *p1, *p2;
 	p0 = _ppColor[0];
 	p1 = _ppColor[1];
 	p2 = _ppColor[2];
@@ -1865,8 +1863,7 @@ void CColorConvertorCGH::ConvertImageToRGB( color **_ppColor, byte *_pRGB, int _
 		_pRGB[c++] = ColorAsByte( p2[n] );
 		_pRGB[c++] = ColorAsByte( p1[n] );
 		_pRGB[c++] = ColorAsByte( p0[n] );
-	}
-#if 0
+	}*/
 	__asm
 	{
 			mov	ebx, _pRGB
@@ -1909,7 +1906,6 @@ $loop:
 			pop		ebp
 			
 	}
-#endif
 }
 
 

@@ -18,8 +18,6 @@ inline int Range(int n, int nMin, int nMax) {return n<nMin?nMin:n>nMax?nMax:n;}
 
 void CopyImage(IImage *pDest, IImage *pSrc, POINT ptDest, POINT ptSrc, SIZE sz,
 	int nZoom, IDistanceMap *pTotalDM, IDistanceMap *pCurDM);
-void CopyImage(IImage *pDest, IImage *pSrc, POINT ptDest, POINT ptSrc, SIZE sz,
-	double dZoom, IDistanceMap *pTotalDM, IDistanceMap *pCurDM);
 void FillImage(IImage *pDest, int cx, int cy, bool bGray, COLORREF clrBack);
 IUnknownPtr BuildZoomedImage(IUnknown *punkImg11, int nZoom);
 
@@ -28,25 +26,22 @@ bool IsDirectoryExist(const char *pszDir);
 bool CheckDirectory(const char *pszDir, GUID guid);
 bool CheckSliVt5(const char *pszDir, GUID guid);
 bool RecursiveCopyDir(const char *pszSrcDir, const char *pszDstDir);
-
 CRect GetFragmentRect(ISewFragment *pFrag);
-ISewFragmentPtr GetLastFragByPoint(TPOS lPos, ISewImageList *pSLI, POINT point);
 
 void FreeAndUnloadFragment(void *p);
 void FreeFragment(void *p);
 class CFragList : public _list_t2<ISewFragment *,FreeFragment>
 {
 public:
-	TPOS	insert_before(ISewFragment *p, TPOS lpos = 0);
-	TPOS	insert(ISewFragment *p, TPOS lpos = 0);
+	long	insert_before( ISewFragment *p, long lpos = 0 );
+	long	insert( ISewFragment *p, long lpos = 0 );
 };
 
 struct CSewLoadedFragment
 {
 	ISewFragment *m_pFrag;
 	int m_nZoom;
-	TPOS m_lpos;
-	CSewLoadedFragment(ISewFragment *pFrag, int nZoom, TPOS lpos);
+	CSewLoadedFragment(ISewFragment *pFrag, int nZoom);
 	~CSewLoadedFragment();
 };
 

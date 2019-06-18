@@ -76,7 +76,7 @@ void CAviParams::DefineParameter(long lKey, BSTR bstrName, BSTR bstrDefFmt)
 	pdescr->bstrDefFormat = bstrDefFmt==0?0:SysAllocString(bstrDefFmt);
 	pdescr->lKey = lKey;
 	pdescr->lEnabled = 0;
-	pdescr->pos = (LONG_PTR)m_Params.add_tail(pdescr);
+	pdescr->pos = m_Params.add_tail(pdescr);
 	if (bstrName != 0)
 	{
 		_bstr_t sMainSection("\\measurement\\parameters\\");
@@ -92,21 +92,23 @@ void CAviParams::ReadParameterSettings(ParameterDescriptor *pdescr)
 	{
 		if (pdescr->lKey == KEY_TIME)
 		{
-			_SetBSTR( pdescr->bstrUnit, GetValueString(GetAppUnknown(), szTimeUnits, szUnitName, szDefTimeUnits) );
+			pdescr->bstrUnit = GetValueString(GetAppUnknown(), szTimeUnits, szUnitName, szDefTimeUnits).copy();
 			pdescr->fCoeffToUnits = GetValueDouble( GetAppUnknown(), szTimeUnits, szUnitCoeff, 1 );
 		}
 		pdescr->lEnabled = ::GetValueInt(GetAppUnknown(), strSection, "Enable", pdescr->lEnabled);
 	}
 	_bstr_t	strUserName = pdescr->bstrUserName;
 	_bstr_t	strDefFormat = pdescr->bstrDefFormat;
-	_SetBSTR( pdescr->bstrUserName, ::GetValueString(GetAppUnknown(), strSection, "UserName", strUserName) );
-	_SetBSTR( pdescr->bstrDefFormat, ::GetValueString(GetAppUnknown(), strSection, "Format", strDefFormat) );
+	::SysFreeString(pdescr->bstrUserName);
+	::SysFreeString(pdescr->bstrDefFormat);
+	pdescr->bstrUserName = ::GetValueString(GetAppUnknown(), strSection, "UserName", strUserName).copy();
+	pdescr->bstrDefFormat = ::GetValueString(GetAppUnknown(), strSection, "Format", strDefFormat).copy();
 	pdescr->lTableOrder = ::GetValueInt( GetAppUnknown(), strSection, "TableOrder", pdescr->lTableOrder );
 }
 
 void CAviParams::ReloadState()
 {
-	for (TPOS lpos = m_Params.head(); lpos != 0; lpos = m_Params.next(lpos))
+	for (long lpos = m_Params.head(); lpos != 0; lpos = m_Params.next(lpos))
 	{
 		ParameterDescriptor *pdescr = m_Params.get(lpos);
 		ReadParameterSettings(pdescr);
@@ -155,28 +157,28 @@ HRESULT CAviParams::GetParamsCount(long *plCount)
 	return S_OK;
 }
 
-HRESULT CAviParams::GetFirstPos(LONG_PTR *plPos)
+HRESULT CAviParams::GetFirstPos(long *plPos)
 {
-	*plPos = (LONG_PTR)m_Params.head();
+	*plPos = m_Params.head();
 	return S_OK;
 }
 
-HRESULT CAviParams::GetNextParam(LONG_PTR *plPos, struct ParameterDescriptor **ppDescriptior )
+HRESULT CAviParams::GetNextParam(long *plPos, struct ParameterDescriptor **ppDescriptior )
 {
-	if (ppDescriptior) *ppDescriptior = m_Params.get((TPOS)*plPos);
-	*plPos = (LONG_PTR)m_Params.next((TPOS)*plPos);
+	if (ppDescriptior) *ppDescriptior = m_Params.get(*plPos);
+	*plPos = m_Params.next(*plPos);
 	return S_OK;
 }
 
-HRESULT CAviParams::GetPosByKey(long lKey, LONG_PTR *plPos)
+HRESULT CAviParams::GetPosByKey(long lKey, long *plPos)
 {
 	*plPos = 0;
-	for (TPOS lpos = m_Params.head(); lpos != 0; lpos = m_Params.next(lpos))
+	for (long lpos = m_Params.head(); lpos != 0; lpos = m_Params.next(lpos))
 	{
 		ParameterDescriptor *pdescr = m_Params.get(lpos);
 		if (pdescr->lKey == lKey)
 		{
-			*plPos = (LONG_PTR)lpos;
+			*plPos = lpos;
 			break;
 		}
 	}
@@ -186,7 +188,7 @@ HRESULT CAviParams::GetPosByKey(long lKey, LONG_PTR *plPos)
 HRESULT CAviParams::InitializeCalculation(IUnknown *punkContainer)
 {
 	m_ptrContainer = punkContainer;
-	for (TPOS lpos = m_Params.head(); lpos != 0; lpos = m_Params.next(lpos))
+	for (long lpos = m_Params.head(); lpos != 0; lpos = m_Params.next(lpos))
 	{
 		ParameterDescriptor *pdescr = m_Params.get(lpos);
 		if (pdescr->lEnabled)

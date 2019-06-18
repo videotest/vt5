@@ -487,14 +487,14 @@ double CAppDisp::GetMeasureParamCoef( long lCode, const VARIANT FAR& diNamedData
 		map_meas_params mapMeasParam;
 		CreateNDParamDescrCache(mapMeasParam,pND);
 		if(ParameterDescriptor_ex*pmp=mapMeasParam(lCode))
-{
+	{
 		return pmp->fCoeffToUnits;
 	}				
 	}else{
 		if(ParameterDescriptor_ex* pmp = m_mapMeasParam(lCode))
-	{
-		return pmp->fCoeffToUnits;
-	}				
+		{
+			return pmp->fCoeffToUnits;
+		}
 	}				
 	return 0;
 }
@@ -503,7 +503,7 @@ BSTR  CAppDisp::GetMeasureParamUnit( long lCode, const VARIANT FAR& diNamedData 
 {
 	if(lCode >= MANUAL_PARAMS_FIRST_KEY && lCode <= MANUAL_PARAMS_LAST_KEY
 		|| MEAS_USER_PARAMS_FIRST_KEY<=lCode && lCode<MEAS_USER_PARAMS_LAST_KEY)
-{
+	{
 	INamedDataPtr pND=GetAppUnknown();
 		if(VT_DISPATCH==diNamedData.vt){
 			INamedDataPtr pTableND=diNamedData.pdispVal;
@@ -519,14 +519,14 @@ BSTR  CAppDisp::GetMeasureParamUnit( long lCode, const VARIANT FAR& diNamedData 
 	}				
 	}else{
 		if(ParameterDescriptor_ex* pmp = m_mapMeasParam(lCode))
-	{
-		CString str = pmp->bstrUnit;
-		return str.AllocSysString();
-	}				
+		{
+			CString str = pmp->bstrUnit;
+			return str.AllocSysString();
+		}
 	}				
 	return 0;
 }
-	
+
 void CAppDisp::UpdateUnits(void)
 {
 	CreateParamDescrCache(m_mapMeasParam);

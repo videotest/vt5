@@ -48,16 +48,16 @@ public:
 	notifier()
 	{		lock = false;	}
 
-	TPOS attach_listener( event_listener *p )
+	long attach_listener( event_listener *p )
 	{			return listeners.insert_before( p, 0 );		}
-	void detach_listener(event_listener *p, TPOS lpos = 0)
+	void detach_listener( event_listener *p, long lpos = 0 )
 	{			if( !lpos )lpos = listeners.find( p );listeners.remove( lpos );	}
 	virtual void on_unlock_notify()	{};
 	void notify( int code, void *pdata, event_listener *psource = 0 )
 	{
 		if( lock )return;
 
-		TPOS	lpos = listeners.head();
+		long	lpos = listeners.head();
 
 		while( lpos )
 		{

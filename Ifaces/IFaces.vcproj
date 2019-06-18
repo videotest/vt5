@@ -21,9 +21,10 @@
 	<Configurations>
 		<Configuration
 			Name="Debug|Win32"
-			OutputDirectory="$(SolutionDir)vt5$(PlatformName)\$(ConfigurationName)\comps"
-			IntermediateDirectory="$(SolutionDir)build\$(PlatformName)\$(ConfigurationName)\$(ProjectName)"
+			OutputDirectory=".\Debug"
+			IntermediateDirectory=".\Debug"
 			ConfigurationType="10"
+			InheritedPropertySheets="$(VCInstallDir)VCProjectDefaults\UpgradeFromVC71.vsprops"
 			UseOfMFC="0"
 			>
 			<Tool
@@ -34,8 +35,8 @@
 			/>
 			<Tool
 				Name="VCMIDLTool"
-				TypeLibraryName="$(InputName).tlb"
-				OutputDirectory="$(SolutionDir)vt5\$(PlatformName)\$(ConfigurationName)\comps"
+				TargetEnvironment="1"
+				TypeLibraryName="$(SolutionDir)vt5\$(IntDir)\comps\$(InputName).tlb"
 			/>
 			<Tool
 				Name="VCPostBuildEventTool"
@@ -43,9 +44,10 @@
 		</Configuration>
 		<Configuration
 			Name="Debug|x64"
-			OutputDirectory="$(SolutionDir)vt5$(PlatformName)\$(ConfigurationName)\comps"
-			IntermediateDirectory="$(SolutionDir)build\$(PlatformName)\$(ConfigurationName)\$(ProjectName)"
+			OutputDirectory="$(PlatformName)\$(ConfigurationName)"
+			IntermediateDirectory="$(PlatformName)\$(ConfigurationName)"
 			ConfigurationType="10"
+			InheritedPropertySheets="$(VCInstallDir)VCProjectDefaults\UpgradeFromVC71.vsprops"
 			UseOfMFC="0"
 			>
 			<Tool
@@ -57,8 +59,7 @@
 			<Tool
 				Name="VCMIDLTool"
 				TargetEnvironment="3"
-				TypeLibraryName="$(InputName).tlb"
-				OutputDirectory="$(SolutionDir)vt5\$(PlatformName)\$(ConfigurationName)\comps"
+				TypeLibraryName="$(SolutionDir)vt5\$(IntDir)\comps\$(InputName).tlb"
 			/>
 			<Tool
 				Name="VCPostBuildEventTool"
@@ -66,9 +67,10 @@
 		</Configuration>
 		<Configuration
 			Name="Release|Win32"
-			OutputDirectory="$(SolutionDir)vt5$(PlatformName)\$(ConfigurationName)\comps"
-			IntermediateDirectory="$(SolutionDir)build\$(PlatformName)\$(ConfigurationName)\$(ProjectName)"
+			OutputDirectory=".\Release"
+			IntermediateDirectory=".\Release"
 			ConfigurationType="10"
+			InheritedPropertySheets="$(VCInstallDir)VCProjectDefaults\UpgradeFromVC71.vsprops"
 			UseOfMFC="0"
 			>
 			<Tool
@@ -79,8 +81,7 @@
 			/>
 			<Tool
 				Name="VCMIDLTool"
-				TypeLibraryName="$(InputName).tlb"
-				OutputDirectory="$(SolutionDir)vt5\$(PlatformName)\$(ConfigurationName)\comps"
+				TypeLibraryName="$(SolutionDir)vt5\$(IntDir)\comps\$(InputName).tlb"
 			/>
 			<Tool
 				Name="VCPostBuildEventTool"
@@ -88,9 +89,10 @@
 		</Configuration>
 		<Configuration
 			Name="Release|x64"
-			OutputDirectory="$(SolutionDir)vt5$(PlatformName)\$(ConfigurationName)\comps"
-			IntermediateDirectory="$(SolutionDir)build\$(PlatformName)\$(ConfigurationName)\$(ProjectName)"
+			OutputDirectory="$(PlatformName)\$(ConfigurationName)"
+			IntermediateDirectory="$(PlatformName)\$(ConfigurationName)"
 			ConfigurationType="10"
+			InheritedPropertySheets="$(VCInstallDir)VCProjectDefaults\UpgradeFromVC71.vsprops"
 			UseOfMFC="0"
 			>
 			<Tool
@@ -102,8 +104,7 @@
 			<Tool
 				Name="VCMIDLTool"
 				TargetEnvironment="3"
-				TypeLibraryName="$(InputName).tlb"
-				OutputDirectory="$(SolutionDir)vt5\$(PlatformName)\$(ConfigurationName)\comps"
+				TypeLibraryName="$(SolutionDir)vt5\$(IntDir)\comps\$(InputName).tlb"
 			/>
 			<Tool
 				Name="VCPostBuildEventTool"
@@ -119,6 +120,38 @@
 			<File
 				RelativePath=".\avi.idl"
 				>
+				<FileConfiguration
+					Name="Debug|Win32"
+					>
+					<Tool
+						Name="VCMIDLTool"
+						TypeLibraryName="$(SolutionDir)vt5\$(IntDir)\comps/$(InputName).tlb"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Debug|x64"
+					>
+					<Tool
+						Name="VCMIDLTool"
+						TypeLibraryName="$(SolutionDir)vt5\$(IntDir)\comps/$(InputName).tlb"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Release|Win32"
+					>
+					<Tool
+						Name="VCMIDLTool"
+						TypeLibraryName="$(SolutionDir)vt5\$(IntDir)\comps/$(InputName).tlb"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Release|x64"
+					>
+					<Tool
+						Name="VCMIDLTool"
+						TypeLibraryName="$(SolutionDir)vt5\$(IntDir)\comps/$(InputName).tlb"
+					/>
+				</FileConfiguration>
 			</File>
 			<File
 				RelativePath="aview.idl"
@@ -136,7 +169,15 @@
 					>
 					<Tool
 						Name="VCMIDLTool"
-						TypeLibraryName="$(InputName).tlb"
+						TypeLibraryName="$(OUTDIR)\$(InputName).tlb"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Debug|x64"
+					>
+					<Tool
+						Name="VCMIDLTool"
+						TypeLibraryName="$(OUTDIR)\$(InputName).tlb"
 					/>
 				</FileConfiguration>
 				<FileConfiguration
@@ -144,7 +185,7 @@
 					>
 					<Tool
 						Name="VCMIDLTool"
-						TypeLibraryName="$(InputName).tlb"
+						TypeLibraryName="$(OUTDIR)\$(InputName).tlb"
 					/>
 				</FileConfiguration>
 				<FileConfiguration
@@ -152,17 +193,81 @@
 					>
 					<Tool
 						Name="VCMIDLTool"
-						TypeLibraryName="$(InputName).tlb"
+						TypeLibraryName="$(OUTDIR)\$(InputName).tlb"
 					/>
 				</FileConfiguration>
 			</File>
 			<File
 				RelativePath=".\DataBook.idl"
 				>
+				<FileConfiguration
+					Name="Debug|Win32"
+					>
+					<Tool
+						Name="VCMIDLTool"
+						TypeLibraryName="$(OUTDIR)/DataBook.tlb"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Debug|x64"
+					>
+					<Tool
+						Name="VCMIDLTool"
+						TypeLibraryName="$(OUTDIR)/DataBook.tlb"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Release|Win32"
+					>
+					<Tool
+						Name="VCMIDLTool"
+						TypeLibraryName="$(OUTDIR)/DataBook.tlb"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Release|x64"
+					>
+					<Tool
+						Name="VCMIDLTool"
+						TypeLibraryName="$(OUTDIR)/DataBook.tlb"
+					/>
+				</FileConfiguration>
 			</File>
 			<File
 				RelativePath=".\dataview.idl"
 				>
+				<FileConfiguration
+					Name="Debug|Win32"
+					>
+					<Tool
+						Name="VCMIDLTool"
+						TypeLibraryName="$(OUTDIR)/dataview.tlb"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Debug|x64"
+					>
+					<Tool
+						Name="VCMIDLTool"
+						TypeLibraryName="$(OUTDIR)/dataview.tlb"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Release|Win32"
+					>
+					<Tool
+						Name="VCMIDLTool"
+						TypeLibraryName="$(OUTDIR)/dataview.tlb"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Release|x64"
+					>
+					<Tool
+						Name="VCMIDLTool"
+						TypeLibraryName="$(OUTDIR)/dataview.tlb"
+					/>
+				</FileConfiguration>
 			</File>
 			<File
 				RelativePath="MacroRecorder.idl"
@@ -171,14 +276,110 @@
 			<File
 				RelativePath=".\measure.idl"
 				>
+				<FileConfiguration
+					Name="Debug|Win32"
+					>
+					<Tool
+						Name="VCMIDLTool"
+						TypeLibraryName="$(OUTDIR)/measure.tlb"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Debug|x64"
+					>
+					<Tool
+						Name="VCMIDLTool"
+						TypeLibraryName="$(OUTDIR)/measure.tlb"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Release|Win32"
+					>
+					<Tool
+						Name="VCMIDLTool"
+						TypeLibraryName="$(OUTDIR)/measure.tlb"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Release|x64"
+					>
+					<Tool
+						Name="VCMIDLTool"
+						TypeLibraryName="$(OUTDIR)/measure.tlb"
+					/>
+				</FileConfiguration>
 			</File>
 			<File
 				RelativePath=".\misc.idl"
 				>
+				<FileConfiguration
+					Name="Debug|Win32"
+					>
+					<Tool
+						Name="VCMIDLTool"
+						TypeLibraryName="$(OUTDIR)/misc.tlb"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Debug|x64"
+					>
+					<Tool
+						Name="VCMIDLTool"
+						TypeLibraryName="$(OUTDIR)/misc.tlb"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Release|Win32"
+					>
+					<Tool
+						Name="VCMIDLTool"
+						TypeLibraryName="$(OUTDIR)/misc.tlb"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Release|x64"
+					>
+					<Tool
+						Name="VCMIDLTool"
+						TypeLibraryName="$(OUTDIR)/misc.tlb"
+					/>
+				</FileConfiguration>
 			</File>
 			<File
 				RelativePath=".\miscdefs.idl"
 				>
+				<FileConfiguration
+					Name="Debug|Win32"
+					>
+					<Tool
+						Name="VCMIDLTool"
+						TypeLibraryName="$(OUTDIR)/miscdefs.tlb"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Debug|x64"
+					>
+					<Tool
+						Name="VCMIDLTool"
+						TypeLibraryName="$(OUTDIR)/miscdefs.tlb"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Release|Win32"
+					>
+					<Tool
+						Name="VCMIDLTool"
+						TypeLibraryName="$(OUTDIR)/miscdefs.tlb"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Release|x64"
+					>
+					<Tool
+						Name="VCMIDLTool"
+						TypeLibraryName="$(OUTDIR)/miscdefs.tlb"
+					/>
+				</FileConfiguration>
 			</File>
 			<File
 				RelativePath="OleClient.idl"
@@ -195,6 +396,38 @@
 			<File
 				RelativePath="statobject.idl"
 				>
+				<FileConfiguration
+					Name="Debug|Win32"
+					>
+					<Tool
+						Name="VCMIDLTool"
+						TypeLibraryName="$(SolutionDir)vt5\$(IntDir)\comps\$(InputName).tlb"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Debug|x64"
+					>
+					<Tool
+						Name="VCMIDLTool"
+						TypeLibraryName="$(SolutionDir)vt5\$(IntDir)\comps\$(InputName).tlb"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Release|Win32"
+					>
+					<Tool
+						Name="VCMIDLTool"
+						TypeLibraryName="$(SolutionDir)vt5\$(IntDir)\comps\$(InputName).tlb"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Release|x64"
+					>
+					<Tool
+						Name="VCMIDLTool"
+						TypeLibraryName="$(SolutionDir)vt5\$(IntDir)\comps\$(InputName).tlb"
+					/>
+				</FileConfiguration>
 			</File>
 			<File
 				RelativePath="StorageObj.idl"
@@ -457,9 +690,5 @@
 		</File>
 	</Files>
 	<Globals>
-		<Global
-			Name="DevPartner_IsInstrumented"
-			Value="0"
-		/>
 	</Globals>
 </VisualStudioProject>

@@ -85,7 +85,7 @@ void AddObject(IUnknown *punkDoc, LPCTSTR lpszString)
 		IUnknownPtr punkObj;
 		// Find object (if any).
 		INamedDataObject2Ptr sptrNDO2(punkList);
-		POSITION pos;
+		long pos;
 		sptrNDO2->GetFirstChildPosition(&pos);
 		while (pos)
 		{

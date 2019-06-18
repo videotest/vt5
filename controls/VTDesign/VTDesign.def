@@ -1,6 +1,6 @@
 ; VTDesign.def : Declares the module parameters.
 
-LIBRARY      "VTDESIGN.DLL"
+LIBRARY      "VTDESIGN.OCX"
 
 EXPORTS
 	DllCanUnloadNow     PRIVATE

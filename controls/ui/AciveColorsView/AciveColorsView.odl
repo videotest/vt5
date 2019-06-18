@@ -4,15 +4,15 @@
 // produce the type library (AciveColorsView.tlb) that will become a resource in
 // AciveColorsView.ocx.
 
+#include <olectl.h>
+#include <idispids.h>
+
 [ uuid(0C1F6A88-9DB3-11D3-A536-0000B493A187), version(1.0),
   helpfile("AciveColorsView.hlp"),
   helpstring("AciveColorsView ActiveX Control module"),
   control ]
 library ACIVECOLORSVIEWLib
 {
-#include <olectl.h>
-#include <idispids.h>
-
 	importlib(STDOLE_TLB);
 	importlib(STDTYPE_TLB);
 

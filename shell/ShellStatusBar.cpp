@@ -9,9 +9,10 @@
 /////////////////////////////////////////////////////////////////////////////
 // CShellStatusBar
 
-CShellStatusBar::CShellStatusBar() :lposStatus_(0)
+CShellStatusBar::CShellStatusBar()
 {
 	m_hwndXPBar = 0;
+	m_lposStatus = 0;
 }
 
 CShellStatusBar::~CShellStatusBar()
@@ -75,7 +76,7 @@ HRESULT CShellStatusBar::XStatus::AddPane( const GUID &guidPane, int cxWidth, HW
 		status.hwnd = hwnd;
 		status.guid = guidPane;
 
-		::SendMessage(pThis->m_hwndXPBar, XPB_ADDSTATUSPANE, (WPARAM)pThis->lposStatus_, (LPARAM)&status);
+		::SendMessage( pThis->m_hwndXPBar, XPB_ADDSTATUSPANE, pThis->m_lposStatus, (LPARAM)&status );
 	}
 
 	return S_OK;
@@ -95,7 +96,7 @@ HRESULT CShellStatusBar::XStatus::RemovePane( const GUID &guidPane )
 	pThis->RecalcLayout();
 
 	if( pThis->m_hwndXPBar )
-		::SendMessage(pThis->m_hwndXPBar, XBP_REMOVESTATUSPANE, (WPARAM)pThis->lposStatus_, (LPARAM)&guidPane);
+		::SendMessage( pThis->m_hwndXPBar, XBP_REMOVESTATUSPANE, pThis->m_lposStatus, (LPARAM)&guidPane );
 
 
 	return S_OK;
@@ -131,7 +132,7 @@ HRESULT CShellStatusBar::XStatus::SetPaneIcon( const GUID &guidPane, HICON hIcon
 			status.guid = guidPane;
 			status.hIcon = hIcon;
 
-			::SendMessage(pThis->m_hwndXPBar, XPB_SETSTATUSPANE, (WPARAM)pThis->lposStatus_, (LPARAM)&status);
+			::SendMessage( pThis->m_hwndXPBar, XPB_SETSTATUSPANE, pThis->m_lposStatus, (LPARAM)&status );
 		}
 	}
 	
@@ -165,7 +166,7 @@ void CShellStatusBar::RecalcLayout()
 
 	int	*pnWidths = new int[m_panes.GetSize()];
 
-	for( int n = (int)m_panes.GetSize()-1; n >= 0; n-- )
+	for( int n = m_panes.GetSize()-1; n >= 0; n-- )
 	{
 		PaneInfo	*pPaneInfo = (PaneInfo*)m_panes[n];
 		if( pPaneInfo->cx != -1 )
@@ -177,7 +178,7 @@ void CShellStatusBar::RecalcLayout()
 			pnWidths[n] = nWidth;
 	}
 
-	ctrl.SetParts( (int)m_panes.GetSize(), pnWidths );
+	ctrl.SetParts( m_panes.GetSize(), pnWidths );
 
 	for( n = 0; n < m_panes.GetSize(); n++ )
 	{
@@ -219,7 +220,7 @@ LRESULT CShellStatusBar::OnSetPaneText(WPARAM wParam, LPARAM lParam)
 			status.pszText = pszNewText;
 			status.guid = pPaneInfo->guidPane;
 
-			::SendMessage(m_hwndXPBar, XPB_SETSTATUSPANE, (WPARAM)lposStatus_, (LPARAM)&status);
+			::SendMessage( m_hwndXPBar, XPB_SETSTATUSPANE, m_lposStatus, (LPARAM)&status );
 		}
 		else
 			if( pPaneInfo->hwnd )
@@ -282,7 +283,7 @@ LRESULT CShellStatusBar::OnSetText(WPARAM wParam, LPARAM lParam)
 			status.pszText = (char*)(const char*)strText;
 			status.guid = pPaneInfo->guidPane;
 
-			::SendMessage(m_hwndXPBar, XPB_SETSTATUSPANE, (WPARAM)lposStatus_, (LPARAM)&status);
+			::SendMessage( m_hwndXPBar, XPB_SETSTATUSPANE, m_lposStatus, (LPARAM)&status );
 		}
 		else
 			if( pPaneInfo->hwnd )
@@ -293,7 +294,7 @@ LRESULT CShellStatusBar::OnSetText(WPARAM wParam, LPARAM lParam)
 	return Default();
 }	
 
-TPOS CShellStatusBar::SetXPBar( HWND hwnd )
+long CShellStatusBar::SetXPBar( HWND hwnd )
 {
 	m_hwndXPBar = hwnd;
 
@@ -311,10 +312,10 @@ TPOS CShellStatusBar::SetXPBar( HWND hwnd )
 		insert.item.style = XPPS_STATUS;
 		insert.item.mask |= XPF_TEXT|XPF_STYLE;
 
-		lposStatus_ = (TPOS)::SendMessage(m_hwndXPBar, XPB_INSERTITEM, 0, (LPARAM)&insert);
+		m_lposStatus = ::SendMessage( m_hwndXPBar, XPB_INSERTITEM, 0, (LPARAM)&insert );
 
 		//load all panes
-		long	nCount = (long)GetPanesCount();
+		long	nCount = GetPanesCount();
 		
 		for( long n = 0; n < nCount; n++ )
 		{
@@ -336,14 +337,14 @@ TPOS CShellStatusBar::SetXPBar( HWND hwnd )
 			status.pszText = sz;
 			status.dwStyle = 0;
 
-			::SendMessage(m_hwndXPBar, XPB_ADDSTATUSPANE, (WPARAM)lposStatus_, (LPARAM)&status);
+			::SendMessage( m_hwndXPBar, XPB_ADDSTATUSPANE, m_lposStatus, (LPARAM)&status);
 		}
 
 	}
 	else
 	{
 		//load all panes
-		long	nCount = (long)GetPanesCount();
+		long	nCount = GetPanesCount();
 		
 		for( long n = 0; n < nCount; n++ )
 		{
@@ -353,8 +354,8 @@ TPOS CShellStatusBar::SetXPBar( HWND hwnd )
 			::SetParent( ppane->hwnd, GetSafeHwnd() );
 			RecalcLayout();
 		}
-		lposStatus_ = 0;
+		m_lposStatus = 0;
 	}
-	return lposStatus_;
+	return m_lposStatus;
 }
 

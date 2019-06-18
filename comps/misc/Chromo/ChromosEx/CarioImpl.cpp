@@ -46,7 +46,7 @@ RECT GetDrawingRect( IUnknownPtr drawobjects, IUnknown *punkExcludedObject = 0 /
 	if( ptrNDO == 0 )
 		return rc;
 
-	POSITION lpos = 0;
+	long lpos = 0;
 	ptrNDO->GetFirstChildPosition( &lpos );
 	while( lpos )
 	{
@@ -782,7 +782,7 @@ void chromo_object::layout_object( bool bShowChromoCenterLine, bool m_bShowChrom
 
 		CDC	*cdc = pWnd->GetDC();
 
-		TPOS	lpos = pImpl->m_idiograms.find( nClassNum );
+		long	lpos = pImpl->m_idiograms.find( nClassNum );
 		if( lpos )
 		{
 			IIdiogramPtr	ptrIdio = pImpl->m_idiograms.get( lpos );
@@ -834,7 +834,7 @@ void chromo_object::layout_object( bool bShowChromoCenterLine, bool m_bShowChrom
 			ICalcObjectPtr	ptr_calc( m_ptrMeasureObject );
 			int nClassNum = get_object_class( ptr_calc );
 
-			TPOS	lpos = pImpl->m_idiograms.find(nClassNum);
+			long	lpos = pImpl->m_idiograms.find( nClassNum );
 
 			if( !lpos )
 			{
@@ -1281,7 +1281,7 @@ void chromo_object::layout_object( bool bShowChromoCenterLine, bool m_bShowChrom
 				while( listSkippedBr.count() )
 				{
 					long lCount = listSkippedBr.count();
-					for (TPOS lPos = listSkippedBr.head(); lPos; lPos = listSkippedBr.next(lPos))
+					for( long lPos = listSkippedBr.head(); lPos; lPos = listSkippedBr.next( lPos ) )
 					{
 						int nID = listSkippedBr.get( lPos );
 						if( nID + 1 < nSz - 1 )
@@ -1312,7 +1312,7 @@ void chromo_object::layout_object( bool bShowChromoCenterLine, bool m_bShowChrom
 				while( listSkippedRat.count() )
 				{
 					long lCount = listSkippedRat.count();
-					for (TPOS lPos = listSkippedRat.head(); lPos; lPos = listSkippedRat.next(lPos))
+					for( long lPos = listSkippedRat.head(); lPos; lPos = listSkippedRat.next( lPos ) )
 					{
 						int nID = listSkippedRat.get( lPos );
 						if( nID + 1 < nSz - 1 )
@@ -1915,7 +1915,7 @@ void chromo_object::layout_object( bool bShowChromoCenterLine, bool m_bShowChrom
 						}
 
 /*********************************************************/
-						TPOS lPos = m_listCGHAmpl_L.head();
+						long lPos = m_listCGHAmpl_L.head();
 						while( lPos )
 						{
 							CInterval in = m_listCGHAmpl_L.get( lPos );
@@ -3010,12 +3010,12 @@ bool CCarioImpl::synchronize_with_object_list( IUnknown* punkObjectList )
 
 	INamedDataObject2Ptr ptrNDO2( punkObjectList );
 	if( ptrNDO2 == 0 )return true;
-	POSITION pos;
-	ptrNDO2->GetFirstChildPosition(&pos);
-	while (pos)
+	long	lpos;
+	ptrNDO2->GetFirstChildPosition( &lpos );
+	while( lpos )
 	{
 		IUnknown	*punk = 0;
-		ptrNDO2->GetNextChild(&pos, &punk);
+		ptrNDO2->GetNextChild( &lpos, &punk );
 
 		if( punk )
 		{
@@ -3029,8 +3029,7 @@ bool CCarioImpl::synchronize_with_object_list( IUnknown* punkObjectList )
 	}
 
 //2. теперь ищем объекты, соотв chromo_object
-	long	i, j, k; TPOS lpos;
-
+	long	i, j, k;
 	for( i = 0; i < m_arCarioLine.GetSize(); i++ )
 	{
 		chromo_line	*pline = m_arCarioLine[i];
@@ -3114,12 +3113,12 @@ bool CCarioImpl::synchronize_with_object_list( IUnknown* punkObjectList )
 	object_list.clear();
 
 
-	ptrNDO2->GetActiveChild( &pos );
+	ptrNDO2->GetActiveChild( &lpos );
 
-	if( pos )
+	if( lpos )
 	{
 		IUnknown	*punk = 0;
-		ptrNDO2->GetNextChild( &pos, &punk );
+		ptrNDO2->GetNextChild( &lpos, &punk );
 
 		if( punk )
 		{
@@ -3157,7 +3156,7 @@ void CCarioImpl::fill_cromo_array_from_object_list( IUnknown* punkObjectList, CA
 	if( ptrNDO2 == 0 )
 		return;
 
-	POSITION lPosChild = 0;
+	long lPosChild = 0;
 	ptrNDO2->GetFirstChildPosition( &lPosChild );
 	while( lPosChild ) 
 	{
@@ -3171,7 +3170,7 @@ void CCarioImpl::fill_cromo_array_from_object_list( IUnknown* punkObjectList, CA
 		if( ptrNDOCromoParent == 0 )
 			continue;
 
-		POSITION lPosCromo = 0;
+		long lPosCromo = 0;
 		ptrNDOCromoParent->GetFirstChildPosition( &lPosCromo );
 		while( lPosCromo )
 		{
@@ -3912,7 +3911,7 @@ IIdiogramPtr CCarioImpl::get_idio_object_from_measure( IUnknown* punkMeasure, bo
 	if( ptrNDO == 0 )		return 0;
 
 
-	POSITION lPosCromo = 0;
+	long lPosCromo = 0;
 	ptrNDO->GetFirstChildPosition( &lPosCromo );
 	while( lPosCromo )
 	{
@@ -3954,7 +3953,7 @@ IChromosomePtr CCarioImpl::get_chromo_object_from_measure( IUnknown* punkMeasure
 	if( ptrNDO == 0 )		return 0;
 
 
-	POSITION lPosCromo = 0;
+	long lPosCromo = 0;
 	ptrNDO->GetFirstChildPosition( &lPosCromo );
 	while( lPosCromo )
 	{
@@ -4571,7 +4570,7 @@ IUnknownPtr _GetObjectByName( IUnknown *punkFrom, const BSTR bstrObject, const B
 			continue;
 
 		IUnknown	*punkObj = 0;
-		LONG_PTR	dwPos = 0;
+		long	dwPos = 0;
 
 		ptrDataType->GetObjectFirstPosition( nType, &dwPos );
 
@@ -4590,7 +4589,7 @@ IUnknownPtr _GetObjectByName( IUnknown *punkFrom, const BSTR bstrObject, const B
 			INamedDataObject2Ptr	ptrN( punkObj );
 			punkObj->Release();
 
-			POSITION	lpos = 0;
+			long	lpos = 0;
 			ptrN->GetFirstChildPosition( &lpos );
 
 			while( lpos )
@@ -4652,7 +4651,7 @@ void CCarioImpl::load_idiograms()
 
 					if( ptrObject )
 					{
-						POSITION lPos = 0;
+						long lPos = 0;
 						ptrObject->GetFirstChildPosition( &lPos );
 						while( lPos ) 
 						{
@@ -4668,7 +4667,7 @@ void CCarioImpl::load_idiograms()
 									long lClass = -1;
 									sptrIdio->get_class( &lClass );
 
-									TPOS	lpos = m_idiograms.find(lClass);
+									long	lpos = m_idiograms.find( lClass );
 									if( !lpos )
 										m_idiograms.set( sptrIdio, lClass );
 								}
@@ -4906,7 +4905,7 @@ void CCarioImpl::draw_chromo_object( CDC* pdc, int nLineIdx, int nCellIdx, int n
 			lClassNum = get_object_class( ptr_calc );
 		}
 
-		TPOS	lpos = m_idiograms.find(lClassNum);
+		long	lpos = m_idiograms.find( lClassNum );
 		if( lpos )
 		{
 			IIdiogramPtr	ptrIdio = m_idiograms.get( lpos );
@@ -4926,7 +4925,7 @@ void CCarioImpl::draw_chromo_object( CDC* pdc, int nLineIdx, int nCellIdx, int n
 
 			if( pchromo->m_bHasCGHAmplL )
 			{
-				TPOS lPos = pchromo->m_listCGHAmpl_L.head();
+				long lPos = pchromo->m_listCGHAmpl_L.head();
 				while( lPos )
 				{
 					CInterval in = pchromo->m_listCGHAmpl_L.get( lPos );
@@ -4952,7 +4951,7 @@ void CCarioImpl::draw_chromo_object( CDC* pdc, int nLineIdx, int nCellIdx, int n
 
 			if( pchromo->m_bHasCGHAmplR )
 			{
-				TPOS lPos = pchromo->m_listCGHAmpl_R.head();
+				long lPos = pchromo->m_listCGHAmpl_R.head();
 
 				while( lPos )
 				{
@@ -6088,8 +6087,8 @@ bool CCarioImpl::arrage_by_classes()
 			chromo_cell* pcell = pline->m_arCell[cell];
 			long	class_no = pcell->m_nClassNum;
 
-			TPOS	lpos_next;
-			for (TPOS lpos = objects.head(); lpos; lpos = lpos_next)
+			long	lpos_next;
+			for( long lpos = objects.head(); lpos; lpos = lpos_next )
 			{
 				lpos_next = objects.next( lpos );
 
@@ -6104,7 +6103,7 @@ bool CCarioImpl::arrage_by_classes()
 		}
 	}
 
-	for (TPOS lpos = objects.head(); lpos; lpos = objects.next(lpos))
+	for( long lpos = objects.head(); lpos; lpos = objects.next( lpos ) )
 		pcellar->m_arChromos.Add( objects.get( lpos ) );
 	
 	synchronize_dimmension( SDF_NORECALC );
@@ -6159,7 +6158,7 @@ CString CCarioImpl::get_idio_hint( int nLine, int nCell, int nChromo, CPoint pt 
 								lClass = get_object_class( ptr_calc );
 							}
 
-							TPOS	lpos = m_idiograms.find(lClass);
+							long	lpos = m_idiograms.find( lClass );
 							if( lpos )
 								sptrBends = m_idiograms.get( lpos );
 						}
@@ -6229,7 +6228,7 @@ IIdiogramPtr CCarioImpl::_get_editable_idio( IUnknown* punkMeasure )
 	if( ptrNDO == 0 )		return 0;
 
 
-	POSITION lPosCromo = 0;
+	long lPosCromo = 0;
 	ptrNDO->GetFirstChildPosition( &lPosCromo );
 	while( lPosCromo )
 	{

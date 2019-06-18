@@ -1,9 +1,0 @@
-'resource:Rename Method#Method#Rename the selected method#Rename Method
-'state:action=MtdCopyMethod
-
-Input = InputBox(Docs.LoadString ("Enter new name for the selected method"), Docs.LoadString ("Rename Method")) 
-
-If Input <> "" Then
-	MethodMan.RenameCurrentMethod Input
-	MainWnd.UpdateSystemSettings
-End If

@@ -30,7 +30,7 @@ IUnknown* GetActiveOleObjectFromDoc( IUnknown* punkDoc, _bstr_t* pbstrName )
 		return 0;
 
 
-	LONG_PTR lPos = 0;
+	long lPos = 0;
 	ptrDC->GetFirstSelectedPos( _bstr_t( szTypeOleItem ), &lPos );
 	if( !lPos )
 		return 0;
@@ -534,7 +534,7 @@ HRESULT CActivateOleObject::DoInvoke()
 	ptrC->GetActiveObject( _bstr_t(szTypeOleItem), &punkOleObject );	
 	if( !punkOleObject )		
 	{
-		LONG_PTR lPos = 0;
+		long lPos = 0;
 		ptrC->GetFirstObjectPos( _bstr_t(szTypeOleItem), &lPos );
 		ptrC->GetNextObject( _bstr_t(szTypeOleItem), &lPos, &punkOleObject );
 		if( punkOleObject )

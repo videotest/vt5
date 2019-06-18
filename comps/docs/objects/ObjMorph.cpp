@@ -61,15 +61,15 @@ static IBinaryImagePtr _CreateBinaryImageByObjectList(IUnknown *punkImage, IUnkn
 	IBinaryImagePtr sptrBin(punkBin);
 	sptrBin->CreateNew(szBin.cx, szBin.cy);
 	sptrINamedDataObject2 sptrNDO2Obj(punkObjList);
-	TPOS posActive; // Active object
+	long posActive; // Active object
 	sptrNDO2Obj->GetActiveChild(&posActive);
-	TPOS pos = 0;
-	sptrNDO2Obj->GetFirstChildPosition(&pos);
+	long pos = 0;
+	sptrNDO2Obj->GetFirstChildPosition((long*)&pos);
 	while (pos)
 	{
 		IUnknownPtr sptr;
 		bool bActive = pos==posActive;
-		sptrNDO2Obj->GetNextChild(&pos, &sptr);
+		sptrNDO2Obj->GetNextChild((long*)&pos, &sptr);
 		if (!bActive)
 			_MapObjectToBinary(sptrBin, sptr, szBin, nExpand, 0xFF);
 	}
@@ -85,7 +85,7 @@ static IBinaryImagePtr _CreateBinaryImageByActiveObject(IUnknown *punkImage, IUn
 	IBinaryImagePtr sptrBin(punkBin);
 	sptrBin->CreateNew(szBin.cx, szBin.cy);
 	sptrINamedDataObject2 sptrNDO2Obj(punkObjList);
-	TPOS posActive; // Active object
+	long posActive; // Active object
 	IUnknownPtr sptr;
 	sptrNDO2Obj->GetActiveChild(&posActive);
 	if (posActive == 0)
@@ -668,7 +668,7 @@ public:
 static IUnknownPtr _FindImageOnActiveObject(IUnknown *punkObjList, IUnknownPtr &punkActiveObject)
 {
 	sptrINamedDataObject2 sptrNDO2Obj(punkObjList);
-	TPOS posActive; // Active object
+	long posActive; // Active object
 	IUnknownPtr punkObject;
 	sptrNDO2Obj->GetActiveChild(&posActive);
 	if (posActive == 0)
@@ -760,7 +760,7 @@ END_ACTION_ARG_LIST()
 struct XItem
 {
 	IUnknownPtr sptrChild;
-	POSITION lPos;
+	long lPos;
 	
 	XItem()
 	{
@@ -792,7 +792,7 @@ bool CObjectSetZOrder::Invoke()
 
 	_list_t< XItem > list;
 
-	POSITION lPos = 0;
+	long lPos = 0;
 	sptrND->GetFirstChildPosition( &lPos );
 	while( lPos )
 	{
@@ -813,7 +813,7 @@ bool CObjectSetZOrder::Invoke()
 		punkList->Release();
 
 	int lZOrder = 0;
-	for (TPOS lPos = list.head(); lPos; lPos = list.next(lPos))
+	for( long lPos = list.head(); lPos; lPos = list.next( lPos ) )
 	{
 		XItem &item = list.get( lPos );
 
@@ -828,9 +828,9 @@ bool CObjectSetZOrder::Invoke()
 
 
 
-			TPOS _min_lp = lPos;
+			long _min_lp = lPos;
 
-			for (TPOS lPos2 = list.next(lPos); lPos2; lPos2 = list.next(lPos2))
+			for( long lPos2 = list.next( lPos ); lPos2; lPos2 = list.next( lPos2 ) )
 			{
 				XItem &item2 = list.get( lPos2 );
 

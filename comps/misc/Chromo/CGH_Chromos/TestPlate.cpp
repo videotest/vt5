@@ -46,7 +46,7 @@ IUnknown* CTestPlate::GetContextObject(CString cName, CString cType)
 		return punkImage;
 	}
 
-	LONG_PTR lPos = 0;
+	long lPos = 0;
 	ptrC->GetFirstObjectPos( bstrType, &lPos );
 	
 	while( lPos )
@@ -109,7 +109,7 @@ bool CTestPlate::Invoke()
 	long nOversectCount=0;
 
 	// пробежимся по объектам
-	POSITION pos = 0; sptrObjects->GetFirstChildPosition(&pos);
+	long pos=0; sptrObjects->GetFirstChildPosition(&pos);
 	while( pos ) //по всем объектам
 	{
 		IUnknownPtr ptrObj;
@@ -240,7 +240,7 @@ bool CTestPlate::Invoke()
         // снова пробежимся по объектам - для вычисления средних значений цвета каждого объекта
 		double fObjectsSum=0, fObjectsSum2=0; // суммы средних яркостей объектов и их квадратов
 		long nObjectsCount=0;
-		POSITION pos = 0; sptrObjects->GetFirstChildPosition(&pos);
+		long pos=0; sptrObjects->GetFirstChildPosition(&pos);
 		while( pos ) //по всем объектам
 		{
 			IUnknownPtr ptrObj;
@@ -383,7 +383,7 @@ bool CTestPlate::Invoke()
 			sptrSelection->EmptyFrame();
 			sptrObjects->SetActiveChild( 0 );
 			// пробежимся по объектам
-			POSITION pos = 0; sptrObjects->GetFirstChildPosition(&pos);
+			long pos=0; sptrObjects->GetFirstChildPosition(&pos);
 			while( pos ) //по всем объектам
 			{
 				IUnknownPtr ptrObj;

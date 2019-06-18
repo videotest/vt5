@@ -388,7 +388,6 @@ BEGIN_MESSAGE_MAP(CMainFrame, CBCGMDIFrameWnd)
 	ON_WM_DESTROY()
 	ON_WM_TIMER()
 	ON_WM_INITMENUPOPUP()
-	ON_WM_NCDESTROY()
 END_MESSAGE_MAP()
 
 static UINT indicators[] =
@@ -499,10 +498,7 @@ CMainFrame::CMainFrame()
 {
 	m_pAM = 0;
 
-	m_lposStatus = 0;
-	m_lposProperties = 0;
-	m_lposForm = 0;
-
+	m_lposStatus = m_lposProperties = m_lposForm = 0;
 	m_hImageListButtons = m_hImageListAction = 0;
 	m_nXPWidth = 0;
 	m_hwndXPBar = 0;
@@ -1583,7 +1579,7 @@ void CMainFrame::OnClose()
 		punk_mtd_man = 0;
         if( sptr_mtd_man )
 		{ // получить и записать в shell.data имя активной методики, а потом сбросить ее lPos
-			TPOS lActiveMethodPos = 0;
+			long lActiveMethodPos=0;
 			sptr_mtd_man->GetActiveMethodPos(&lActiveMethodPos);
 			IUnknownPtr ptrActiveMethod;
 			sptr_mtd_man->GetNextMethod(&lActiveMethodPos, &ptrActiveMethod);
@@ -1648,17 +1644,6 @@ void CMainFrame::OnClose()
 	if( m_pAM )
 		m_pAM->Release();	m_pAM = 0;
 
-	//delete plug-in windows
-	//for(POSITION pos = GetFirstDockBarPos(); pos; )
-	//{
-	//	CControlBar	*pbar = GetNextDockBar( pos );
-	//	if(pbar && pbar->IsKindOf( RUNTIME_CLASS( CShellDockBar ) ) )
-	//	{
-	//		delete pbar;
-	//		pbar = 0;
-	//	}
-	//}
-
 	theApp.FreeComponents();
 
 	if( !b )
@@ -1682,39 +1667,9 @@ void CMainFrame::OnClose()
 //	AfxOleSetUserCtrl( FALSE );
 	m_DistrWnd.m_bRecreateOnDistr = false;
 
+	DestroyWindow();
+
 	//CBCGMDIFrameWnd::OnClose();
-	{
-		AFX_MODULE_STATE* pModuleState = AfxGetModuleState();
-		int incOleLock = 0;
-
-		// m_nObjectCount is telling how many mdi windows 
-		// that are open (I guess)
-
-		// This is called to make the objectCount go as low as possible.
-		AfxGetApp()->CloseAllDocuments(FALSE);
-		while (pModuleState->m_nObjectCount > 0)
-		{
-			// If we end up here then and object "hangs"
-
-			// This is called BEFORE OnClose to make the OnClose destroy the window
-			AfxOleUnlockApp();
-
-			// This tells us to remember to increment the object count
-			// AFTER the window is destroyed
-			incOleLock++;
-		}
-		__super::OnClose();
-		while (incOleLock)
-		{
-			// incerement ObjectCount to let the hanging object close
-			// down itself.
-			AfxOleLockApp();
-
-			incOleLock--;
-		}
-	}
-//	DestroyWindow();
-
 }	
 
 	
@@ -2063,14 +2018,14 @@ HRESULT CMainFrame::XMain::ShowControlBar( HWND hwnd, long bShow )
 	return S_OK;
 }
 
-HRESULT CMainFrame::XMain::GetFirstDockWndPosition( POSITION *plPosition )
+HRESULT CMainFrame::XMain::GetFirstDockWndPosition( long *plPosition )
 {
 	METHOD_PROLOGUE_EX(CMainFrame, Main)
 
-	*plPosition = pThis->GetFirstDockBarPos();
+	*plPosition = (long)pThis->GetFirstDockBarPos();
 	return S_OK;
 }
-HRESULT CMainFrame::XMain::GetNextDockWnd(IUnknown **ppunkDock, POSITION *plPosition)
+HRESULT CMainFrame::XMain::GetNextDockWnd( IUnknown **ppunkDock, long *plPosition )
 {
 	METHOD_PROLOGUE_EX(CMainFrame, Main)
 
@@ -2083,7 +2038,7 @@ HRESULT CMainFrame::XMain::GetNextDockWnd(IUnknown **ppunkDock, POSITION *plPosi
 		CShellDockBar	*pbar = (CShellDockBar*)pcbar;
 		*ppunkDock = pbar->GetClientUnknown();
 	}
-	*plPosition = pos;
+	*plPosition = (long)pos;
 
 	if( *ppunkDock )
 		(*ppunkDock)->AddRef();
@@ -2091,19 +2046,19 @@ HRESULT CMainFrame::XMain::GetNextDockWnd(IUnknown **ppunkDock, POSITION *plPosi
 	return S_OK;
 }
 
-HRESULT CMainFrame::XMain::GetFirstToolbarPosition(POSITION *plPosition)
+HRESULT CMainFrame::XMain::GetFirstToolbarPosition( long *plPosition )
 {
 	METHOD_PROLOGUE_EX(CMainFrame, Main)
-	*plPosition = gAllToolbars.GetHeadPosition();
+	*plPosition = (long)gAllToolbars.GetHeadPosition();
 	return S_OK;
 }
-HRESULT CMainFrame::XMain::GetNextToolbar(HWND *phwnd, POSITION *plPosition)
+HRESULT CMainFrame::XMain::GetNextToolbar( HWND *phwnd, long *plPosition )
 {
 	METHOD_PROLOGUE_EX(CMainFrame, Main)
-	POSITION	pos = *plPosition;
+	POSITION	pos = (POSITION)*plPosition;
 	CBCGToolBar* pToolBar = (CBCGToolBar*)gAllToolbars.GetNext( pos );
 	*phwnd = pToolBar->GetSafeHwnd();
-	*plPosition = pos;
+	*plPosition = (long)pos;
 	return S_OK;
 }
 
@@ -2312,7 +2267,7 @@ void CMainFrame::EnterMode(long nHeight)
 			XPPANEITEM	item;
 			item.mask = XPF_HEIGHT;
 			item.nHeight = nHeight;
-			::SendMessage( m_hwndXPBar, XPB_SETITEM, (WPARAM)m_lposForm, (LPARAM)&item );
+			::SendMessage( m_hwndXPBar, XPB_SETITEM, m_lposForm, (LPARAM)&item );
 
 			return;
 		}
@@ -2333,7 +2288,7 @@ void CMainFrame::EnterMode(long nHeight)
 		}
 		::SetParent( m_wndSettings, m_hwndXPBar );
 
-		TPOS lpos_insert = 0;
+		long lpos_insert = 0;
 		if( m_lposStatus )
 			lpos_insert = m_lposStatus;//*(long*)m_lposStatus;
 
@@ -2346,8 +2301,8 @@ void CMainFrame::EnterMode(long nHeight)
 		insert.item.hImageListCaption = m_hImageListButtons;
 
 
-		m_lposForm = (TPOS)::SendMessage( m_hwndXPBar, XPB_INSERTITEM, 0, (LPARAM)&insert );
-		::SendMessage(m_hwndXPBar, XPB_SETWINDOW, (WPARAM)m_lposForm, (LPARAM)m_wndSettings.GetSafeHwnd());
+		m_lposForm = ::SendMessage( m_hwndXPBar, XPB_INSERTITEM, 0, (LPARAM)&insert );
+		::SendMessage( m_hwndXPBar, XPB_SETWINDOW, m_lposForm, (LPARAM)m_wndSettings.GetSafeHwnd() );
 
 		/*
 		XP_CAPTION_BUTTON	button;
@@ -2405,7 +2360,7 @@ void CMainFrame::LeaveMode()
 	{
 		m_wndSettings.ShowWindow( SW_HIDE );
 		::SetParent( m_wndSettings, GetSafeHwnd() );
-		::SendMessage(m_hwndXPBar, XPB_REMOVEITEM, (WPARAM)m_lposForm, 0);
+		::SendMessage( m_hwndXPBar, XPB_REMOVEITEM, m_lposForm, 0 );
 		m_lposForm = 0;
 	}
 
@@ -2779,7 +2734,7 @@ void CMainFrame::SetWindowPos(short X, short Y, short CX, short CY)
 
 long CMainFrame::GetFramesCount() 
 {
-	return (long)m_ptrChildWindows.GetCount();
+	return m_ptrChildWindows.GetCount();
 
 	return 0;
 }
@@ -2877,7 +2832,7 @@ void CMainFrame::OnDropFiles(HDROP hDropInfo)
 		if (sptrM != 0)
 		{
 			//find the context_view window between dockbars
-			POSITION lPos = 0;
+			long lPos = 0;
 			sptrM->GetFirstDockWndPosition(&lPos);
 			IUnknownPtr	sptrDockBar;
 
@@ -3483,26 +3438,26 @@ CComboBoxInfo* CMainFrame::GetNextComboButton( POSITION &pos )
 	return (CComboBoxInfo*)m_arComboButtons.GetNext( pos );
 }
 
-HRESULT CMainFrame::XUserInterface::GetFirstComboButton(POSITION *plPosition)
+HRESULT CMainFrame::XUserInterface::GetFirstComboButton( long *plPosition )
 {
 	_try_nested(CMainFrame, UserInterface, GetFirstComboButton)
 	{		
-		*plPosition = pThis->GetFirstComboButton();
+		*plPosition = (long)pThis->GetFirstComboButton();
 		return S_OK;
 	}
 	_catch_nested;
 }
 
-HRESULT CMainFrame::XUserInterface::GetNextComboButton(HWND* phWnd, IUnknown** ppunkInfo, POSITION *plPosition)
+HRESULT CMainFrame::XUserInterface::GetNextComboButton( HWND* phWnd, IUnknown** ppunkInfo, long *plPosition )
 {
 	_try_nested(CMainFrame, UserInterface, GetNextComboButton)
 	{		
-		POSITION	pos = *plPosition;
+		POSITION	pos = (POSITION)*plPosition;
 		CComboBoxInfo* pInfo = pThis->GetNextComboButton( pos );
 		*phWnd = pInfo->hWnd;
 		pInfo->ptrActionInfo->AddRef();
 		*ppunkInfo = pInfo->ptrActionInfo;
-		*plPosition = pos;
+		*plPosition = (long)pos;
 		return S_OK;
 	}
 	_catch_nested;
@@ -3735,19 +3690,19 @@ bool CMainFrame::ProcessHelpMessage( MSG *pmsg, IUnknown **ppunkHelpInfo )
 						if( !lResult )return false;
 					}*/
 
-					LRESULT	dw;
+					DWORD	dw;
 
 					//else try to send MFC message			
 					dw = ::SendMessage( hWndHit, WM_HELPHITTEST, pmsg->wParam, MAKELONG(pointClient.x, pointClient.y ) );
-					if( dw == -2 )
+					if( dw == (DWORD)-2 )
 					{
 						*ppunkHelpInfo = 0;
 						return false;
 					}
 
-					if( dw != -1 && dw >= ID_CMDMAN_BASE && dw < ID_CMDMAN_MAX )
+					if( dw != (DWORD)-1 && dw >= ID_CMDMAN_BASE && dw < ID_CMDMAN_MAX )
 					{
-						CActionInfoWrp	*pwrp = g_CmdManager.GetActionInfo( int(dw-ID_CMDMAN_BASE) );
+						CActionInfoWrp	*pwrp = g_CmdManager.GetActionInfo( dw-ID_CMDMAN_BASE );
 						if( !pwrp )
 							return false;
 						*ppunkHelpInfo = pwrp->m_pActionInfo;
@@ -4507,7 +4462,7 @@ void CMainFrame::ShowXPBar(BOOL bShow)
 			WS_CHILD|WS_VISIBLE|WS_CLIPSIBLINGS|WS_CLIPCHILDREN, 0, 0, 100, 100, GetSafeHwnd(),
 			(HMENU)1002, theApp.m_hInstance, 0 );
 
-		m_nXPWidth = (long)::SendMessage( m_hwndXPBar, XPB_GETDEFPARAMS, 0, 0 );
+		m_nXPWidth = ::SendMessage( m_hwndXPBar, XPB_GETDEFPARAMS, 0, 0 );
 
 
 		XP_TIMER_PARAMS	params;
@@ -4546,9 +4501,8 @@ void CMainFrame::ShowXPBar(BOOL bShow)
 
 		if( !m_hwndXPBar )return;
 
-		m_lposStatus = m_lposProperties = 0;
-		m_lposForm = 0;
-		::DestroyWindow(m_hwndXPBar);
+		m_lposStatus = m_lposProperties = m_lposForm = 0;
+		::DestroyWindow( m_hwndXPBar );
 		m_hwndXPBar = 0;
 //		m_rectBorder.left -= m_nXPWidth;
 
@@ -4572,7 +4526,7 @@ long CMainFrame::AddToolbarPane(LPCTSTR szCaption, long lInsertPos, long lImageL
 	if( !m_hwndXPBar )return 0;
 
 	// [vanek] : переводим lInsertPos во внутреннюю позицию	паны - 18.08.2004
-	TPOS posInt = xppane_pos_ext2int( lInsertPos );
+	lInsertPos = xppane_pos_ext2int( lInsertPos );
 	
 	XPINSERTITEM	insert;
 	ZeroMemory( &insert, sizeof( insert ) );
@@ -4591,16 +4545,16 @@ long CMainFrame::AddToolbarPane(LPCTSTR szCaption, long lInsertPos, long lImageL
 
 	if( !lInsertPos )
 	{
-		TPOS	lposBefore = m_lposStatus;
+		long	lposBefore = m_lposStatus;
 		if( m_lposProperties )lposBefore = m_lposProperties;
 		if( m_lposForm )lposBefore = m_lposForm;
 
 		///!!!using _list_t feature
 		if( lposBefore )
-			posInt = lposBefore;//*(LONG_PTR*)lposBefore;
+			lInsertPos = lposBefore;//*(long*)lposBefore;
 	}
 
-	insert.insert_pos = posInt;
+	insert.insert_pos = lInsertPos;
 	insert.item.pszText = (char*)szCaption;
 	insert.item.style = XPPS_TOOLBAR;
 	insert.item.hImageList = hImageList;
@@ -4608,25 +4562,25 @@ long CMainFrame::AddToolbarPane(LPCTSTR szCaption, long lInsertPos, long lImageL
 	insert.item.mask |= XPF_TEXT|XPF_IMAGE|XPF_STYLE|XPF_IMAGELIST|XPF_IMAGE;
 
     // [vanek] : обновляем мапы и переводим внутреннюю позицию во внешнюю - 18.08.2004	 
-	TPOS  lpos_added = 0;
-	lpos_added = (TPOS)::SendMessage(m_hwndXPBar, XPB_INSERTITEM, 0, (LPARAM)&insert);
-	if (!lpos_added)
-		return 0;
-
-	_bstr_t bstr_name( szCaption );
+	long  lpos_added = 0;
+	lpos_added = ::SendMessage( m_hwndXPBar, XPB_INSERTITEM, 0, (LPARAM)&insert );
+	if( lpos_added )
+	{
+		_bstr_t bstr_name( szCaption );
 
 		// обновляем мапы
-	TPOS lpos_in_extmap = 0;
-	lpos_in_extmap = m_map_xppanename2extpos.find(bstr_name);
-	if( !lpos_in_extmap )
-		lpos_in_extmap = m_map_xppanename2extpos.set(1 + m_map_xppanename2extpos.count(), bstr_name);
+		long lpos_in_extmap = 0;
+		lpos_in_extmap = m_map_xppanename2extpos.find( bstr_name );
+		if( !lpos_in_extmap )
+			lpos_in_extmap = m_map_xppanename2extpos.set( 1 + m_map_xppanename2extpos.count(), bstr_name );
 
-	m_map_xppanename2intpos.set( lpos_added, bstr_name );
+		m_map_xppanename2intpos.set( lpos_added, bstr_name );
 
-	// переводим внутреннюю позицию во внешнюю
-  long index = m_map_xppanename2extpos.get( lpos_in_extmap );
+		// переводим внутреннюю позицию во внешнюю
+        lpos_added = m_map_xppanename2extpos.get( lpos_in_extmap );
+     }
     
-	return index;
+	return lpos_added;
 }
 
 void CMainFrame::XPExpandPane(long lpos, long state) 
@@ -4634,9 +4588,9 @@ void CMainFrame::XPExpandPane(long lpos, long state)
 	if( !m_hwndXPBar )return;
 
 	// [vanek] : переводим lpos во внутреннюю позицию паны - 18.08.2004
-	TPOS tpos = xppane_pos_ext2int( lpos );
+	lpos = xppane_pos_ext2int( lpos );
 
-	::SendMessage( m_hwndXPBar, XPB_EXPANDITEM, (WPARAM)tpos, state );
+	::SendMessage( m_hwndXPBar, XPB_EXPANDITEM, lpos, state );
 }
 
 
@@ -4652,7 +4606,7 @@ void CMainFrame::XPAddButton(long lpos, LPCTSTR pszAction, long nImage, long nSt
 	if( !m_hwndXPBar )return;
 
 	// [vanek] : переводим lpos во внутреннюю позицию паны - 18.08.2004
-	TPOS tpos = xppane_pos_ext2int( lpos );
+	lpos = xppane_pos_ext2int( lpos );
 
 	XPBUTTON	button;
 	ZeroMemory( &button, sizeof( button ) );
@@ -4667,7 +4621,7 @@ void CMainFrame::XPAddButton(long lpos, LPCTSTR pszAction, long nImage, long nSt
 
 	XPPANEITEM	item;
 	item.mask = XPF_IMAGELIST;
-	::SendMessage(m_hwndXPBar, XPB_GETITEM, (WPARAM)tpos, (LPARAM)&item);
+	::SendMessage( m_hwndXPBar, XPB_GETITEM, lpos, (LPARAM)&item );
 
 	if( item.hImageList == m_hImageListAction )
 	{
@@ -4675,7 +4629,7 @@ void CMainFrame::XPAddButton(long lpos, LPCTSTR pszAction, long nImage, long nSt
 		static _list_map_t<int, CString, cmp_cstring>	m_action_images_map;
 		nImage = -1;
 
-		TPOS	lpos_found = m_action_images_map.find(pszAction);
+		long	lpos_found = m_action_images_map.find( pszAction );
 		if( lpos_found )
 		{
 			nImage = m_action_images_map.get( lpos_found );
@@ -4715,15 +4669,15 @@ void CMainFrame::XPAddButton(long lpos, LPCTSTR pszAction, long nImage, long nSt
 	button.string = (char*)(const char*)pAI->GetActionUserName();
 	button.command = (unsigned)pAI->GetLocalID();
 
-	::SendMessage(m_hwndXPBar, XPB_ADDBUTTON, (WPARAM)tpos, (LPARAM)&button);
+	::SendMessage( m_hwndXPBar, XPB_ADDBUTTON, lpos, (LPARAM)&button );
 }
 
-void CMainFrame::XPSetButton(long lpos, LPCTSTR pszAction, long nImage, long nState)
+void CMainFrame::XPSetButton(long lpos, LPCTSTR pszAction, long nImage, long nState) 
 {
 	if( !m_hwndXPBar )return;
 
 	// [vanek] : переводим lpos во внутреннюю позицию паны - 18.08.2004
-	TPOS tpos = xppane_pos_ext2int( lpos );
+	lpos = xppane_pos_ext2int( lpos );
 
 	XPBUTTON	button;
 	ZeroMemory( &button, sizeof( button ) );
@@ -4738,7 +4692,7 @@ void CMainFrame::XPSetButton(long lpos, LPCTSTR pszAction, long nImage, long nSt
 
 	XPPANEITEM	item;
 	item.mask = XPF_IMAGELIST;
-	::SendMessage(m_hwndXPBar, XPB_GETITEM, (WPARAM)tpos, (LPARAM)&item);
+	::SendMessage( m_hwndXPBar, XPB_GETITEM, lpos, (LPARAM)&item );
 
 	if( item.hImageList == m_hImageListAction )
 		button.mask = XPBF_TEXT|XPBF_STYLE;
@@ -4749,7 +4703,7 @@ void CMainFrame::XPSetButton(long lpos, LPCTSTR pszAction, long nImage, long nSt
 	button.string = (char*)(const char*)pAI->GetActionUserName();
 	button.command = (unsigned)pAI->GetLocalID();
 
-	::SendMessage( m_hwndXPBar, XPB_SETBUTTON, (WPARAM)tpos, (LPARAM)&button );
+	::SendMessage( m_hwndXPBar, XPB_SETBUTTON, lpos, (LPARAM)&button );
 }
 
 void CMainFrame::XPRemovePane(long lpos) 
@@ -4757,12 +4711,12 @@ void CMainFrame::XPRemovePane(long lpos)
 	if( !m_hwndXPBar )return;
 
     // [vanek] : переводим lpos во внутреннюю позицию паны - 18.08.2004
-	TPOS tpos = xppane_pos_ext2int( lpos );
+	lpos = xppane_pos_ext2int( lpos );
 
 	if( ::SendMessage( m_hwndXPBar, XPB_REMOVEITEM, lpos, 0 ) )
 	{	// удаляем lpos из внутренней мапы 
-		TPOS lpos_del = 0;
-		lpos_del = xppane_find_by_pos( tpos, 0 );
+        long lpos_del = 0;
+		lpos_del = xppane_find_by_pos( lpos, false, 0 );
 		if( lpos_del )
 			m_map_xppanename2intpos.remove( lpos_del );
     }
@@ -4773,9 +4727,9 @@ void CMainFrame::XPEnsureVisible(long lpos)
 	if( !m_hwndXPBar )return;
 
 	// [vanek] : переводим lpos во внутреннюю позицию паны - 18.08.2004
-	TPOS tpos = xppane_pos_ext2int( lpos );
+	lpos = xppane_pos_ext2int( lpos );
 
-	::SendMessage( m_hwndXPBar, XBP_ENSUREVISIBLE, (WPARAM)tpos, 0 );
+	::SendMessage( m_hwndXPBar, XBP_ENSUREVISIBLE, lpos, 0 );
 }
 
 long CMainFrame::CreateImageList(LPCTSTR szFileName, long cx, long cy, long nTransparent) 
@@ -4817,25 +4771,25 @@ void CMainFrame::XPSetPaneParam(long lpos, long param)
 	if( !m_hwndXPBar )return;
 
 	// [vanek] : переводим lpos во внутреннюю позицию паны - 18.08.2004
-	TPOS tpos = xppane_pos_ext2int( lpos );
+	lpos = xppane_pos_ext2int( lpos );
 
 	XPPANEITEM	item;
 	item.mask = XPF_PARAM;
 	item.lParam = param;
-	::SendMessage( m_hwndXPBar, XPB_SETITEM, (WPARAM)tpos, (LPARAM)&item );
+	::SendMessage( m_hwndXPBar, XPB_SETITEM, lpos, (LPARAM)&item );
 }
 
-long CMainFrame::XPGetPaneParam(long lpos)
+long CMainFrame::XPGetPaneParam(long lpos) 
 {
 	if( !m_hwndXPBar )return 0;
 
 	// [vanek] : переводим lpos во внутреннюю позицию паны - 18.08.2004
-	TPOS tpos = xppane_pos_ext2int( lpos );
+	lpos = xppane_pos_ext2int( lpos );
 
 	XPPANEITEM	item;
 	item.mask = XPF_PARAM;
-	::SendMessage( m_hwndXPBar, XPB_GETITEM, (WPARAM)tpos, (LPARAM)&item );
-	 
+	::SendMessage( m_hwndXPBar, XPB_GETITEM, lpos, (LPARAM)&item );
+
 	return item.lParam;
 }
 
@@ -4843,12 +4797,13 @@ long CMainFrame::XPGetFirstPane()
 {
 	if( !m_hwndXPBar )return 0;
 
-	TPOS lint_pos = 0;
-	lint_pos=(TPOS)::SendMessage(m_hwndXPBar, XPB_GETFIRSTITEM, 0, 0);
+	long	lint_pos = 0,
+			lext_pos = 0;
+
+	lint_pos = ::SendMessage( m_hwndXPBar, XPB_GETFIRSTITEM, 0, 0 );
 
 	// [vanek] : переводим возвращаемое значение внутренней позиции паны во внешнюю - 18.08.2004
-	long lext_pos = 0;
-	lext_pos=xppane_pos_int2ext(lint_pos);
+	lext_pos = xppane_pos_int2ext( lint_pos );
 
 	// если текущая пана не имеет внешней позиции - ищем дальше
 	if( lint_pos && !lext_pos )
@@ -4857,19 +4812,20 @@ long CMainFrame::XPGetFirstPane()
 	return lext_pos;
 }
 
-long CMainFrame::XPGetNextPane(long lpos)
+long CMainFrame::XPGetNextPane(long lpos) 
 {
 	if( !m_hwndXPBar )return 0;
 
 	// [vanek] : переводим lpos во внутреннюю позицию паны - 18.08.2004
-	TPOS tpos = xppane_pos_ext2int( lpos );
+	lpos = xppane_pos_ext2int( lpos );
 
-	long lext_pos = 0;
-	TPOS lint_pos = 0;
+	long	lint_pos = lpos,
+			lext_pos = 0;
+
 	// ищем следующую пану, которая имеет внешнюю позиицю
-  do
+   	do
 	{
-		lint_pos = (TPOS)::SendMessage( m_hwndXPBar, XPB_GETNEXTITEM, (WPARAM)lint_pos, 0 );
+		lint_pos = ::SendMessage( m_hwndXPBar, XPB_GETNEXTITEM, lint_pos, 0 );
 
 		// переводим возвращаемое значение внутренней позиции паны во внешнюю
 		lext_pos = xppane_pos_int2ext( lint_pos  );
@@ -4892,7 +4848,7 @@ void CMainFrame::XPSetImageList(long lImageList)
 	::SendMessage( m_hwndXPBar, XPB_SETIMAGELIST, 0, (LPARAM)hImageList );
 }
 
-void CMainFrame::LogFontSetBold(TPOS lpos, long fBold) 
+void CMainFrame::LogFontSetBold(long lpos, long fBold) 
 {
 	render	*p = get_render( lpos, -1, 0 );
 	_logfont	*plf = logfont_from_render( p );
@@ -4900,7 +4856,7 @@ void CMainFrame::LogFontSetBold(TPOS lpos, long fBold)
 	if( plf )plf->set_bold( fBold != 0 );
 }
 
-void CMainFrame::LogFontSetFace(TPOS lpos, LPCTSTR pszFaceName)
+void CMainFrame::LogFontSetFace(long lpos, LPCTSTR pszFaceName) 
 {
 	render	*p = get_render( lpos, -1, 0 );
 	_logfont	*plf = logfont_from_render( p );
@@ -4908,7 +4864,7 @@ void CMainFrame::LogFontSetFace(TPOS lpos, LPCTSTR pszFaceName)
 	if( plf )plf->set_face( pszFaceName );
 }
 
-void CMainFrame::LogFontSetColor(TPOS lpos, long color)
+void CMainFrame::LogFontSetColor(long lpos, long color) 
 {
 	render	*p = get_render( lpos, -1, 0 );
 	_logfont	*plf = logfont_from_render( p );
@@ -4916,7 +4872,7 @@ void CMainFrame::LogFontSetColor(TPOS lpos, long color)
 	if( plf )plf->set_text_color( color );
 }
 
-void CMainFrame::LogFontSetHeight(TPOS lpos, long nHeight)
+void CMainFrame::LogFontSetHeight(long lpos, long nHeight) 
 {
 	render	*p = get_render( lpos, -1, 0 );
 	_logfont	*plf = logfont_from_render( p );
@@ -4924,7 +4880,7 @@ void CMainFrame::LogFontSetHeight(TPOS lpos, long nHeight)
 	if( plf )plf->set_height( nHeight );
 }
 
-void CMainFrame::RenderSetLayout(TPOS lpos, long left, long top, long right, long bottom)
+void CMainFrame::RenderSetLayout(long lpos, long left, long top, long right, long bottom) 
 {
 	render	*p = get_render( lpos, -1, 0 );
 	p->set_layout( (layout_side)left, 
@@ -4933,19 +4889,19 @@ void CMainFrame::RenderSetLayout(TPOS lpos, long left, long top, long right, lon
 					(layout_side)bottom );
 }
 
-void CMainFrame::RenderSetRect(TPOS lpos, long left, long top, long right, long bottom)
+void CMainFrame::RenderSetRect(long lpos, long left, long top, long right, long bottom) 
 {
 	render	*p = get_render( lpos, -1, 0 );
 	p->set_rect( _rect(left, top, right, bottom) );
 }
 
-TPOS CMainFrame::RectCreate(TPOS lpos_parent)
+long CMainFrame::RectCreate(long lpos_parent) 
 {
 	render_rect	*p = new render_rect;
 	return set_render( p, lpos_parent );
 }
 
-void CMainFrame::RectSetColor(TPOS lpos, long color)
+void CMainFrame::RectSetColor(long lpos, long color) 
 {
 	render_rect *prect = (render_rect*)
 		get_render( lpos, type_render_rect, "RectSetColor" );
@@ -4954,20 +4910,20 @@ void CMainFrame::RectSetColor(TPOS lpos, long color)
 	prect->set_color( color );
 }
 
-TPOS CMainFrame::PageCreate(TPOS lpos_parent)
+long CMainFrame::PageCreate(long lpos_parent) 
 {
 	render_page	*p = new render_page;
 	p->set_window( m_wndMDIClient );
 	return set_render( p, lpos_parent );
 }
 
-TPOS CMainFrame::TipCreate(TPOS lpos_parent)
+long CMainFrame::TipCreate(long lpos_parent) 
 {
 	render_tip	*p = new render_tip;
 	return set_render( p, lpos_parent );
 }
 
-void CMainFrame::TipAddText(TPOS lpos, LPCTSTR psz) 
+void CMainFrame::TipAddText(long lpos, LPCTSTR psz) 
 {
 	render_tip *ptype = (render_tip*)
 		get_render( lpos, type_render_tip, "TipAddText" );
@@ -4976,7 +4932,7 @@ void CMainFrame::TipAddText(TPOS lpos, LPCTSTR psz)
 	ptype->add_text( psz );
 }
 
-void CMainFrame::TipSetIcon(TPOS lpos, LPCTSTR pszFileName)
+void CMainFrame::TipSetIcon(long lpos, LPCTSTR pszFileName) 
 {
 	render_tip *ptype = (render_tip*)
 		get_render( lpos, type_render_tip, "TipSetIcon" );
@@ -4992,13 +4948,13 @@ void CMainFrame::TipSetIcon(TPOS lpos, LPCTSTR pszFileName)
 	ptype->set_icon( h );
 }
 
-TPOS CMainFrame::ImageCreate(TPOS lpos_parent)
+long CMainFrame::ImageCreate(long lpos_parent) 
 {
 	render_image	*p = new render_image;
 	return set_render( p, lpos_parent );
 }
 
-void CMainFrame::ImageSetBitmap(TPOS lpos, LPCTSTR pszFileName)
+void CMainFrame::ImageSetBitmap(long lpos, LPCTSTR pszFileName) 
 {
 	render_image *pimage = (render_image*)
 		get_render( lpos, type_render_image, "ImageSetBitmap" );
@@ -5015,7 +4971,7 @@ void CMainFrame::ImageSetBitmap(TPOS lpos, LPCTSTR pszFileName)
 	pimage->set_bitmap( hbmp );
 }
 
-void CMainFrame::ImageSetTransparent(TPOS lpos, long color)
+void CMainFrame::ImageSetTransparent(long lpos, long color) 
 {
 	render_image *pimage = (render_image*)
 		get_render( lpos, type_render_image, "ImageSetTransparent" );
@@ -5024,13 +4980,13 @@ void CMainFrame::ImageSetTransparent(TPOS lpos, long color)
 	pimage->set_transparent( color );
 }
 
-TPOS CMainFrame::TextCreate(TPOS lpos_parent)
+long CMainFrame::TextCreate(long lpos_parent) 
 {
 	render_text	*p = new render_text;
 	return set_render( p, lpos_parent );
 }
 
-void CMainFrame::TextAddText(TPOS lpos, LPCTSTR psz)
+void CMainFrame::TextAddText(long lpos, LPCTSTR psz) 
 {
 	render_text *ptext = (render_text*)
 		get_render( lpos, type_render_text, "TextAddText" );
@@ -5039,7 +4995,7 @@ void CMainFrame::TextAddText(TPOS lpos, LPCTSTR psz)
 	ptext->add_text( psz );
 }
 
-TPOS CMainFrame::MenuCreate(TPOS lpos_parent)
+long CMainFrame::MenuCreate(long lpos_parent) 
 {
 	render_menu	*p = new render_menu;
 	p->set_target( *this );
@@ -5051,7 +5007,7 @@ TPOS CMainFrame::MenuCreate(TPOS lpos_parent)
 	return set_render( p, lpos_parent );
 }
 
-void CMainFrame::MenuAddItem(TPOS lpos, LPCTSTR pszAction)
+void CMainFrame::MenuAddItem(long lpos, LPCTSTR pszAction) 
 {
 	render_menu *pmenu = (render_menu*)
 		get_render( lpos, type_render_menu, "MenuAddItem" );
@@ -5079,11 +5035,11 @@ void CMainFrame::DeleteAllDrawing()
 	m_wndMDIClient.Invalidate();
 }
 
-render *CMainFrame::get_render(TPOS lpos, long type, const char *pfunc )
+render *CMainFrame::get_render( long lpos, long type, const char *pfunc )
 {
 	render	*p = 0;
 	if( lpos == 0 ) return 0;
-	else if( lpos == (TPOS)(-1) ) p = m_wndMDIClient.m_prender;
+	else if( lpos == -1 ) p = m_wndMDIClient.m_prender;
 	else p = render_from_pos( lpos );
 
 	if( type != -1 && p->type() != type )
@@ -5097,7 +5053,7 @@ render *CMainFrame::get_render(TPOS lpos, long type, const char *pfunc )
 	return p;
 }
 
-TPOS CMainFrame::set_render(render *p, TPOS lpos_p)
+long CMainFrame::set_render( render *p, long lpos_p )
 {
 	render *pp = get_render( lpos_p, -1, 0 );
 	if( !pp )
@@ -5106,7 +5062,7 @@ TPOS CMainFrame::set_render(render *p, TPOS lpos_p)
 		m_wndMDIClient.m_prender = p;
 		m_wndMDIClient.Invalidate();
 
-		return (TPOS)(-1);
+		return -1;
 	}
 	else
 		return pp->insert_child( p );
@@ -5141,7 +5097,7 @@ void CMainFrame::UpdateClientStyle()
 
 void find_menus( render	*pbase, _list_t<render_menu*> &menus )
 {
-	for( TPOS lpos = pbase->m_childs.head(); lpos; lpos = pbase->m_childs.next( lpos ) )
+	for( long lpos = pbase->m_childs.head(); lpos; lpos = pbase->m_childs.next( lpos ) )
 	{
 		render	*p = pbase->m_childs.get( lpos );
 		if( p->type() == type_render_menu)
@@ -5154,7 +5110,7 @@ LRESULT CMainFrame::OnIdleUpdateCmdUI( WPARAM w, LPARAM l )
 {
 	if( m_hwndXPBar )
 	{
-		for( LPOS lpos = ::SendMessage( m_hwndXPBar, XPB_GETFIRSTITEM, 0, 0 );
+		for( long lpos = ::SendMessage( m_hwndXPBar, XPB_GETFIRSTITEM, 0, 0 );
 			lpos; lpos = ::SendMessage( m_hwndXPBar, XPB_GETNEXTITEM, lpos, 0 ) )
 		{
 				XPPANEITEM	item;
@@ -5163,7 +5119,7 @@ LRESULT CMainFrame::OnIdleUpdateCmdUI( WPARAM w, LPARAM l )
 
 				if( item.style == XPPS_TOOLBAR )
 				{
-					for( LPOS lpos_b = ::SendMessage( m_hwndXPBar, XPB_GETFIRSTBUTTON, lpos, 0 );
+					for( long lpos_b = ::SendMessage( m_hwndXPBar, XPB_GETFIRSTBUTTON, lpos, 0 );
 						lpos_b; lpos_b = ::SendMessage( m_hwndXPBar, XPB_GETNEXTBUTTON, lpos, lpos_b ) )
 					{
 						XPBUTTON	button;
@@ -5198,10 +5154,10 @@ LRESULT CMainFrame::OnIdleUpdateCmdUI( WPARAM w, LPARAM l )
 		GetCursorPos( &point );
 		m_wndMDIClient.ScreenToClient( &point );
 
-		for (TPOS lpos_m = menus.head(); lpos_m; lpos_m = menus.next(lpos_m))
+		for( long lpos_m = menus.head(); lpos_m; lpos_m = menus.next( lpos_m ) )
 		{
 			render_menu	*p = menus.get( lpos_m );
-			for (TPOS lpos = p->m_items.head(); lpos; lpos = p->m_items.next(lpos))
+			for( long	lpos = p->m_items.head(); lpos; lpos = p->m_items.next( lpos ) )
 			{
 				render_menu::item*	pitem = p->m_items.get( lpos );
 
@@ -5262,15 +5218,15 @@ LRESULT CMainFrame::OnSetSheetButton( WPARAM id, LPARAM code )
 			return 0;
 
 	XP_CAPTION_BUTTON	button;
-	button.nCmd = (UINT)id;
+	button.nCmd = id;
 	if( code == SHEET_BUTTON_CREATED )
 	{ 
 		button.mask = XPCBM_IMAGE;
-		button.iImage = __image_from_button( (unsigned)id );
+		button.iImage = __image_from_button( id );
 
 		if( button.iImage != -1 )
 		{
-			::SendMessage(m_hwndXPBar, XBP_ADDCAPTIONBUTTON, (WPARAM)m_lposForm, (LPARAM)&button);
+			::SendMessage( m_hwndXPBar, XBP_ADDCAPTIONBUTTON, m_lposForm, (LPARAM)&button );
 			return 1;
 		}
 	}
@@ -5279,7 +5235,7 @@ LRESULT CMainFrame::OnSetSheetButton( WPARAM id, LPARAM code )
 	{
 		button.mask = XPCBM_STATE;
 		button.dwState = (code == SHEET_BUTTON_ENABLED)?XPBS_ENABLED:0;
-		::SendMessage(m_hwndXPBar, XBP_SETCAPTIONBUTTON, (WPARAM)m_lposForm, (LPARAM)&button);
+		::SendMessage( m_hwndXPBar, XBP_SETCAPTIONBUTTON, m_lposForm, (LPARAM)&button );
 	}
 	return 0;
 }
@@ -5316,13 +5272,13 @@ void CMainFrame::UpdateSystemSettings()
 		pAppDisp->UpdateUnits();
 	}
 
-	LONG_PTR	lposTempl = 0;
+	long	lposTempl = 0;
 
 	ptrA->GetFirstDocTemplPosition( &lposTempl );
 
 	while( lposTempl )
 	{
-		LONG_PTR	lposDoc = 0;
+		long	lposDoc = 0;
 		ptrA->GetFirstDocPosition( lposTempl, &lposDoc );
 
 
@@ -5502,7 +5458,7 @@ LRESULT CMainFrame::OnFormCaptionChanged( WPARAM, LPARAM l )
 		XPPANEITEM	item;
 		item.mask = XPF_TEXT;
 		item.pszText = (char*)psz;
-		::SendMessage(m_hwndXPBar, XPB_SETITEM, (WPARAM)m_lposForm, (LPARAM)&item);
+		::SendMessage( m_hwndXPBar, XPB_SETITEM, m_lposForm, (LPARAM)&item );
 	}
 	return 0;
 }
@@ -5515,7 +5471,7 @@ BSTR CMainFrame::XPCreateStatusItem(LPCTSTR pszItem)
 	item.mask = XPSM_GUID|XPSM_TEXT;
 	item.pszText = (char*)pszItem;
 	::CoCreateGuid( &item.guid );
-	::SendMessage( m_hwndXPBar, XPB_ADDSTATUSPANE, (WPARAM)m_lposStatus, (LPARAM)&item );
+	::SendMessage( m_hwndXPBar, XPB_ADDSTATUSPANE, m_lposStatus, (LPARAM)&item );
 //	::SendMessage( m_hwndXPBar, XPB_SETSTATUSPANE, m_lposStatus, (LPARAM)&item );
 
 	BSTR	bstr_sys;
@@ -5538,7 +5494,7 @@ void CMainFrame::XPSetStatusItem(LPCTSTR pszGUID, LPCTSTR pszText)
 	item.mask = XPSM_GUID|XPSM_TEXT;
 	item.pszText = (char*)pszText;
 	item.guid = guid;
-	::SendMessage(m_hwndXPBar, XPB_SETSTATUSPANE, (WPARAM)m_lposStatus, (LPARAM)&item);
+	::SendMessage( m_hwndXPBar, XPB_SETSTATUSPANE, m_lposStatus, (LPARAM)&item );
 }
 
 void CMainFrame::XPRemoveStatusItem( LPCTSTR pszGUID ) 
@@ -5549,7 +5505,7 @@ void CMainFrame::XPRemoveStatusItem( LPCTSTR pszGUID )
 	if( ::CLSIDFromString( _bstr_t(pszGUID), &guid )!= S_OK )
 		return;
 
-	::SendMessage(m_hwndXPBar, XBP_REMOVESTATUSPANE, (WPARAM)m_lposStatus, (LPARAM)&guid);
+	::SendMessage( m_hwndXPBar, XBP_REMOVESTATUSPANE, m_lposStatus, (LPARAM)&guid );
 }
 
 void CMainFrame::XPSetDefaultStatusText(LPCTSTR sz) 
@@ -5619,7 +5575,7 @@ void		CMainFrame::_init_script_notify( )
 	m_lLag =  ::GetValueInt( ::GetAppUnknown( ), "LongOperation", "ScriptFireLag", -1 );
 }
 
-HRESULT		CMainFrame::_fire_script_event( LPCTSTR lpctstrEvent, LPCTSTR lpctstrActionName, BOOL bSetPos /*= FALSE*/, LPOS lPos /*= 0*/ )
+HRESULT		CMainFrame::_fire_script_event( LPCTSTR lpctstrEvent, LPCTSTR lpctstrActionName, BOOL bSetPos /*= FALSE*/, long lPos /*= 0*/ )
 {
 	if( !lpctstrActionName || !lpctstrEvent )
 		return S_FALSE;
@@ -5715,46 +5671,46 @@ BOOL CMainFrame::OnWndMsg(UINT message, WPARAM wParam, LPARAM lParam, LRESULT* p
 	return __super::OnWndMsg(message, wParam, lParam, pResult);
 }
 
-TPOS	CMainFrame::xppane_pos_ext2int( long lpos_ext ) 
+long	CMainFrame::xppane_pos_ext2int( long lpos_ext ) 
 {   
 	_bstr_t bstr_found_name;
-	if( !xppane_find_by_pos( lpos_ext, &bstr_found_name ) )
+	if( !xppane_find_by_pos( lpos_ext, true, &bstr_found_name ) )
 		return 0;
 
-	TPOS lpos_found = 0;
+	long lpos_found = 0;
 	lpos_found = m_map_xppanename2intpos.find( bstr_found_name );
 	return lpos_found ? m_map_xppanename2intpos.get( lpos_found ): 0;
 }
 
-long	CMainFrame::xppane_pos_int2ext( TPOS lpos_int )
+long	CMainFrame::xppane_pos_int2ext( long lpos_int )
 {
 	_bstr_t bstr_found_name;
-	if( !xppane_find_by_pos( lpos_int, &bstr_found_name ) )
+	if( !xppane_find_by_pos( lpos_int, false, &bstr_found_name ) )
 		return 0;
 
-	TPOS lpos_found = 0;
+	long lpos_found = 0;
 	lpos_found = m_map_xppanename2extpos.find( bstr_found_name );
 	return lpos_found ? m_map_xppanename2extpos.get( lpos_found ): 0;
 }
 
-TPOS	CMainFrame::xppane_find_by_pos(long idx_find, _bstr_t *pbstr_found_name)
+long	CMainFrame::xppane_find_by_pos( long lpos_find, bool bext_pos, _bstr_t *pbstr_found_name )
 {
-	for (TPOS lpos = m_map_xppanename2extpos.head(); lpos; lpos = m_map_xppanename2extpos.next(lpos))
+	if( bext_pos )
 	{
-		if (idx_find == m_map_xppanename2extpos.get(lpos))
+		for( long lpos = m_map_xppanename2extpos.head(); lpos; lpos = m_map_xppanename2extpos.next( lpos ) )
 		{
-			if (pbstr_found_name)
-				*pbstr_found_name = m_map_xppanename2intpos.get_key(lpos);
+			if( lpos_find == m_map_xppanename2extpos.get( lpos ) )
+			{
+				if( pbstr_found_name )
+					*pbstr_found_name = m_map_xppanename2intpos.get_key( lpos );
 
-			return lpos;
-		}
+				return lpos;
+			}
+		}                        
 	}
-	return 0;
-}
-
-TPOS	CMainFrame::xppane_find_by_pos(TPOS lpos_find, _bstr_t *pbstr_found_name)
-{
-		for( TPOS lpos = m_map_xppanename2intpos.head(); lpos; lpos = m_map_xppanename2intpos.next( lpos ) )
+	else
+	{
+		for( long lpos = m_map_xppanename2intpos.head(); lpos; lpos = m_map_xppanename2intpos.next( lpos ) )
 		{
 			if( lpos_find == m_map_xppanename2intpos.get( lpos ) )
 			{
@@ -5764,6 +5720,8 @@ TPOS	CMainFrame::xppane_find_by_pos(TPOS lpos_find, _bstr_t *pbstr_found_name)
 				return lpos;
 			}
 		}
+	}
+
 	return 0;
 }
 
@@ -5807,12 +5765,4 @@ void CMainFrame::ShowProgress(LPCTSTR text, LONG percent)
 	m_wndStatusBar.SetWindowText(text);
 	m_wndShellProgress.SetPercent(percent);
 	m_wndShellProgress.LockUpdateText( true );
-}
-
-
-void CMainFrame::OnNcDestroy()
-{
-	__super::OnNcDestroy();
-
-	// TODO: Add your message handler code here
 }

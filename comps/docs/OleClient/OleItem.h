@@ -10,8 +10,11 @@
 #include "axdoccontainer.h"
 
 #include "idispatchimpl.h"
-
-#import <OleClient.tlb> no_namespace raw_interfaces_only named_guids 
+#ifdef _DEBUG
+	#import "\vt5\vt5\debug\comps\OleClient.tlb" no_namespace raw_interfaces_only named_guids 
+#else
+	#import "\vt5\vt5\release\comps\OleClient.tlb" no_namespace raw_interfaces_only named_guids 
+#endif
 
 
 //////////////////////////////////////////////////////////////////////

@@ -4,14 +4,6 @@
 //#include "utils.h"
 #include "defs.h"
 
-#if defined(_WIN64)
-#define LONG_PTR_VAL llVal
-#define VT_LONG_PTR VT_I8
-#else
-#define LONG_PTR_VAL lVal
-#define VT_LONG_PTR VT_I4
-#endif
-
 #define szContaintersStatesSection "\\ContainersStates"
 
 	enum NotifyCodes
@@ -153,20 +145,20 @@ interface INamedData : public IUnknown
 	com_call NameExists( BSTR bstrName, long* Exists ) = 0;
 	com_call GetObject( BSTR bstrName, BSTR bstrType, IUnknown **punk ) = 0;
 
-	com_call NotifyContexts( DWORD dwNotifyCode, IUnknown *punkNew, IUnknown *punkOld, GUID* dwData) = 0;
+	com_call NotifyContexts( DWORD dwNotifyCode, IUnknown *punkNew, IUnknown *punkOld, DWORD dwData) = 0;
 	com_call EnableBinaryStore( BOOL bBinary ) = 0;
 	
 	com_call GetCurrentSection( BSTR* pbstrSection ) = 0;
 
 	com_call GetBaseGroupCount(int * pnCount) = 0;
-	com_call GetBaseGroupFirstPos(TPOS *plPos) = 0;
-	com_call GetNextBaseGroup(GUID * pKey, TPOS *plPos) = 0;
+	com_call GetBaseGroupFirstPos(long * plPos) = 0;
+	com_call GetNextBaseGroup(GUID * pKey, long * plPos) = 0;
 	com_call GetIsBaseGroup(GUID * pKey, BOOL * pbBase) = 0;
 	com_call GetBaseGroupBaseObject(GUID * pKey, IUnknown ** ppunkObject) = 0;
 
 	com_call GetBaseGroupObjectsCount(GUID * pKey, int * pnCount) = 0;
-	com_call GetBaseGroupObjectFirstPos(GUID * pKey, TPOS *plPos) = 0;
-	com_call GetBaseGroupNextObject(GUID * pKey, TPOS *plPos, IUnknown ** ppunkObject) = 0;
+	com_call GetBaseGroupObjectFirstPos(GUID * pKey, long * plPos) = 0;
+	com_call GetBaseGroupNextObject(GUID * pKey, long * plPos, IUnknown ** ppunkObject) = 0;
 	com_call SetEmptySection( BSTR* bstrSectionName ) = 0;
 };
 
@@ -190,8 +182,8 @@ interface IDataTypeManager  : public IUnknown
 	com_call GetTypesCount( long *pnCount ) = 0;
 	com_call GetType( long index, BSTR *pbstrType ) = 0;
 
-	com_call GetObjectFirstPosition( long nType, LONG_PTR *plpos ) = 0;
-	com_call GetNextObject( long nType, LONG_PTR *plpos, IUnknown **ppunkObj ) = 0;
+	com_call GetObjectFirstPosition( long nType, long *plpos ) = 0;
+	com_call GetNextObject( long nType, long *plpos, IUnknown **ppunkObj ) = 0;
 };
 
 
@@ -276,25 +268,25 @@ interface INamedDataObject2 : public INamedDataObject
 	com_call AddChild( IUnknown *punkChild ) = 0;
 
 	com_call GetChildsCount( long *plCount ) = 0;
-	com_call GetFirstChildPosition(POSITION *plPos) = 0;
-	com_call GetNextChild(POSITION *plPos, IUnknown **ppunkChild) = 0;
-	com_call GetLastChildPosition(POSITION *plPos) = 0;
-	com_call GetPrevChild(POSITION *plPos, IUnknown **ppunkChild) = 0;
+	com_call GetFirstChildPosition( long *plPos ) = 0;
+	com_call GetNextChild( long *plPos, IUnknown **ppunkChild ) = 0;
+	com_call GetLastChildPosition(long *plPos) = 0;
+	com_call GetPrevChild(long *plPos, IUnknown **ppunkChild) = 0;
 
 	com_call AttachData( IUnknown *punkNamedData ) = 0;	//called from NamedData
 	com_call GetObjectFlags( DWORD *pdwObjectFlags ) = 0;
 
-	com_call SetActiveChild(POSITION lPos) = 0;
-	com_call GetActiveChild(POSITION *plPos) = 0;
+	com_call SetActiveChild( long lPos ) = 0;
+	com_call GetActiveChild( long *plPos ) = 0;
 	com_call SetUsedFlag( BOOL bSet ) = 0;				//set flag object used as part of another object, doesn't 
 														//require to store object in NamedData
 	com_call SetHostedFlag( BOOL bSet ) = 0;			//set flag if object controlled by host
 	com_call GetData(IUnknown **ppunkNamedData ) = 0;
 
-	com_call GetObjectPosInParent(POSITION *plPos) = 0; // return object position in parent's object child list
-	com_call SetObjectPosInParent(POSITION lPos) = 0;
+	com_call GetObjectPosInParent( long *plPos ) = 0; // return object position in parent's object child list
+	com_call SetObjectPosInParent( long lPos ) = 0; 
 
-	com_call GetChildPos(IUnknown *punkChild, POSITION *plPos) = 0;
+	com_call GetChildPos(IUnknown *punkChild, long *plPos) = 0;
 	com_call InitAttachedData() = 0;
 // base and source key functionality
 	com_call GetBaseKey(GUID * pBaseKey) = 0;
@@ -321,7 +313,7 @@ interface IDataContext : public IUnknown
 	com_call GetData( IUnknown **ppunk ) = 0;
 	com_call AttachData( IUnknown *punkNamedData ) = 0;
 
-	com_call Notify( long cod, IUnknown *punkNew, IUnknown *punkOld, GUID* dwData ) = 0;
+	com_call Notify( long cod, IUnknown *punkNew, IUnknown *punkOld, DWORD dwData ) = 0;
 
 	com_call LockUpdate(BOOL bLock, BOOL bNeedUpdate) = 0;
 	com_call GetLockUpdate(BOOL * pbLock) = 0;
@@ -332,7 +324,7 @@ interface IDataContext2 : public IDataContext
 {
 // object types
 	com_call GetObjectTypeCount(long * plCount) = 0;
-	com_call GetObjectTypeName(LONG_PTR lPos, BSTR * pbstrType) = 0;
+	com_call GetObjectTypeName(long lPos, BSTR * pbstrType) = 0;
 
 // type enables
 	com_call GetTypeEnable(BSTR bstrType, BOOL * pbEnable) = 0;
@@ -341,31 +333,31 @@ interface IDataContext2 : public IDataContext
 
 // objects 
 	com_call GetObjectCount(BSTR bstrType, long * plCount) = 0;
-	com_call GetFirstObjectPos(BSTR bstrType, LONG_PTR * plPos) = 0;
-	com_call GetNextObject(BSTR bstrType, LONG_PTR * plPos, IUnknown ** ppunkObject) = 0;
-	com_call GetLastObjectPos(BSTR bstrType, LONG_PTR * plPos) = 0;
-	com_call GetPrevObject(BSTR bstrType, LONG_PTR * plPos, IUnknown ** ppunkObject) = 0;
+	com_call GetFirstObjectPos(BSTR bstrType, long * plPos) = 0;
+	com_call GetNextObject(BSTR bstrType, long * plPos, IUnknown ** ppunkObject) = 0;
+	com_call GetLastObjectPos(BSTR bstrType, long * plPos) = 0;
+	com_call GetPrevObject(BSTR bstrType, long * plPos, IUnknown ** ppunkObject) = 0;
 
-	com_call GetObjectPos(BSTR bstrType, IUnknown * punkObject, LONG_PTR * plPos) = 0;
+	com_call GetObjectPos(BSTR bstrType, IUnknown * punkObject, long * plPos) = 0;
 	com_call GetObjectEnable(IUnknown * punkObject, BOOL * pbFlag) = 0;
 
 // child objects
 	com_call GetChildrenCount(BSTR bstrType, IUnknown * punkParent, long * plCount) = 0;
-	com_call GetFirstChildPos(BSTR bstrType, IUnknown * punkParent, TPOS *plPos) = 0;
-	com_call GetNextChild(BSTR bstrType, IUnknown * punkParent, TPOS *plPos, IUnknown ** ppunkChild) = 0;
-	com_call GetLastChildPos(BSTR bstrType, IUnknown * punkParent, TPOS *plPos) = 0;
-	com_call GetPrevChild(BSTR bstrType, IUnknown * punkParent, TPOS *plPos, IUnknown ** ppunkChild) = 0;
-	com_call GetChildPos(BSTR bstrType, IUnknown * punkParent, IUnknown * punkChild, TPOS *plPos) = 0;
+	com_call GetFirstChildPos(BSTR bstrType, IUnknown * punkParent, long * plPos) = 0;
+	com_call GetNextChild(BSTR bstrType, IUnknown * punkParent, long * plPos, IUnknown ** ppunkChild) = 0;
+	com_call GetLastChildPos(BSTR bstrType, IUnknown * punkParent, long * plPos) = 0;
+	com_call GetPrevChild(BSTR bstrType, IUnknown * punkParent, long * plPos, IUnknown ** ppunkChild) = 0;
+	com_call GetChildPos(BSTR bstrType, IUnknown * punkParent, IUnknown * punkChild, long * plPos) = 0;
 
 // selected objects
 	com_call GetObjectSelect(IUnknown * punkObject, BOOL * pbFlag) = 0;
 	com_call SetObjectSelect(IUnknown * punkObject, BOOL bFlag) = 0;
 
 	com_call GetSelectedCount(BSTR bstrType, long * pnCount) = 0;
-	com_call GetFirstSelectedPos(BSTR bstrType, LONG_PTR * pnPos) = 0;
-	com_call GetNextSelected(BSTR bstrType, LONG_PTR * pnPos, IUnknown ** ppunkObject) = 0;
-	com_call GetLastSelectedPos(BSTR bstrType, LONG_PTR * plPos) = 0;
-	com_call GetPrevSelected(BSTR bstrType, LONG_PTR * plPos, IUnknown ** ppunkObject) = 0;
+	com_call GetFirstSelectedPos(BSTR bstrType, long * pnPos) = 0;
+	com_call GetNextSelected(BSTR bstrType, long * pnPos, IUnknown ** ppunkObject) = 0;
+	com_call GetLastSelectedPos(BSTR bstrType, long * plPos) = 0;
+	com_call GetPrevSelected(BSTR bstrType, long * plPos, IUnknown ** ppunkObject) = 0;
 	com_call GetSelectedObjectNumber(BSTR bstrType, IUnknown * punkObject, long * pnNumber) = 0;
 
 	com_call UnselectAll(BSTR bstrType) = 0;

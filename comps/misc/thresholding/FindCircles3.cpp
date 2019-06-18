@@ -38,7 +38,7 @@ bool CFindCircles3::CanDeleteArgument( CFilterArgument *pa )
 static double inline sqr(double x)
 { return x*x; }
 
-static int inline iround(double x)
+static int inline round(double x)
 { return int(floor(x+0.5)); }
 
 
@@ -215,8 +215,8 @@ bool CFindCircles3::InvokeFilter()
 				m_rr[j]=r;
 				for(int i=0; i<na; i++)
 				{
-					m_dx[i*nr+j] = iround( r*m_co[i] );
-					m_dy[i*nr+j] = iround( r*m_si[i] );
+					m_dx[i*nr+j] = round( r*m_co[i] );
+					m_dy[i*nr+j] = round( r*m_si[i] );
 				}
 			}
 
@@ -328,8 +328,8 @@ bool CFindCircles3::InvokeFilter()
 					double s=0;
 					for(int j=0; j<=L; j++)
 					{ // проверка линии между точками
-						int x = iround(x1+dx*j); //можно в целых быстрее
-						int y = iround(y1+dy*j); //можно в целых быстрее
+						int x = round(x1+dx*j); //можно в целых быстрее
+						int y = round(y1+dy*j); //можно в целых быстрее
 						int c = srcRows[y][x];
 						s += c;
 					}
@@ -429,9 +429,9 @@ bool CFindCircles3::InvokeFilter()
 						//double dc = double(c2-c1)/L;
 						for(int j=0; j<=L; j++)
 						{ // провести линию между точками
-							int x = iround(x1+dx*j); //можно в целых быстрее
-							int y = iround(y1+dy*j); //можно в целых быстрее
-							//int c = iround(c1+dc*j); //можно в целых быстрее
+							int x = round(x1+dx*j); //можно в целых быстрее
+							int y = round(y1+dy*j); //можно в целых быстрее
+							//int c = round(c1+dc*j); //можно в целых быстрее
 							dbgRows[y][x] = max(c,dbgRows[y][x]);
 						}
 					}
@@ -511,8 +511,8 @@ bool CFindCircles3::InvokeFilter()
 				CCircle* pr = rings+j;
 				for(int k=0; k<256; k++)
 				{
-					int x = iround(pr->x0 + pr->r0*cos(k*PI/128));
-					int y = iround(pr->y0 + pr->r0*sin(k*PI/128));
+					int x = round(pr->x0 + pr->r0*cos(k*PI/128));
+					int y = round(pr->y0 + pr->r0*sin(k*PI/128));
 					if(x>=0 && x<cx && y>=0 && y<cy)
 						dbg2Rows[y][x]=65535;
 				}

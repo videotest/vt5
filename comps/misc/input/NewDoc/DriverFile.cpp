@@ -37,7 +37,7 @@ IUnknownPtr _GetObjectByName( IUnknown *punkFrom, const BSTR bstrObject, const B
 			continue;
 
 		IUnknown	*punkObj = 0;
-		LONG_PTR	dwPos = 0;
+		long	dwPos = 0;
 
 		ptrDataType->GetObjectFirstPosition( nType, &dwPos );
 
@@ -56,7 +56,7 @@ IUnknownPtr _GetObjectByName( IUnknown *punkFrom, const BSTR bstrObject, const B
 			INamedDataObject2Ptr	ptrN( punkObj );
 			punkObj->Release();
 
-			POSITION lpos = 0;
+			long	lpos = 0;
 			ptrN->GetFirstChildPosition( &lpos );
 
 			while( lpos )

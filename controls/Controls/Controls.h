@@ -18,7 +18,11 @@
 
 #ifndef _CONTROL_LIB_
 //include .lib
+#ifdef _DEBUG
+#define _LIBNAME_CONTROLS_ "Controls_d.lib"
+#else
 #define _LIBNAME_CONTROLS_ "Controls.lib"
+#endif //_DEBUG
 
 #pragma message("Controls library linking with " _LIBNAME_CONTROLS_)
 #pragma comment(lib, _LIBNAME_CONTROLS_)

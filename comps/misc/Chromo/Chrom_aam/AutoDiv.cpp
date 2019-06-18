@@ -49,7 +49,7 @@ static void CopyParams( ICalcObjectContainerPtr in, ICalcObjectContainerPtr out 
 	if( in == 0 || out == 0)
 		return;
 	
-	LONG_PTR lParamPos = 0;
+	long lParamPos = 0;
 	in->GetFirstParameterPos( &lParamPos );
 	while( lParamPos )
 	{
@@ -65,10 +65,10 @@ HRESULT CAutoDivFilter::DoUndo()
 
 	if(result==S_OK)
 	{
-		POSITION	pos = m_undo_images.head();
+		long	pos = m_undo_images.head();
 		while( pos ) 
 		{
-			POSITION prevPos = pos;
+			long prevPos=pos;
 			IUnknown *punk_image=m_undo_images.next(pos);
 			IImage3Ptr image(punk_image);
 
@@ -85,10 +85,10 @@ HRESULT CAutoDivFilter::DoUndo()
 
 HRESULT CAutoDivFilter::DoRedo()
 {
-	POSITION pos = m_undo_images.head();
+	long	pos = m_undo_images.head();
 	while( pos ) 
 	{
-		POSITION prevPos = pos;
+		long prevPos=pos;
 		IUnknown *punk_image=m_undo_images.next(pos);
 		IImage3Ptr image(punk_image);
 
@@ -128,7 +128,7 @@ bool CAutoDivFilter::InvokeFilter()
 	//FinishNotification();
     //return true; //debug
 
-	POSITION pos; objectsIn->GetFirstChildPosition(&pos);
+	long pos; objectsIn->GetFirstChildPosition(&pos);
 	while( pos ) //по всем объектам
 	{
 		invoke_nN=nN; //for debug purposes

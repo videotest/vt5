@@ -101,7 +101,7 @@ static char THIS_FILE[] = __FILE__;
 
 //ViewAX button referense
 
-#import <ContextAX.dll> rename_namespace("OcxSpace") 
+#import <ContextAX.ocx> rename_namespace("OcxSpace") 
 
 using namespace OcxSpace; 
 
@@ -569,7 +569,7 @@ bool CPrintPreview::Init()
 static IUnknownPtr FindViewByGuid(IDocumentSite *pds, GuidKey guidOrig)
 {
 	IUnknownPtr punkView1;
-	TPOS pos;
+	long pos;
 	pds->GetFirstViewPosition(&pos);
 	while(pos)
 	{
@@ -1544,13 +1544,13 @@ void CPrintPreview::FillTemplateCombo()
 	sptrIApplication sptrA( GetAppUnknown( ) );
 	if( sptrA != NULL )
 	{
-		LONG_PTR	lPosTemplate = 0;
+		long	lPosTemplate = 0;
 		
 		sptrA->GetFirstDocTemplPosition( &lPosTemplate );
 		
 		while( lPosTemplate )
 		{
-			LONG_PTR	lPosDoc = 0;
+			long	lPosDoc = 0;
 
 			sptrA->GetFirstDocPosition( lPosTemplate, &lPosDoc );
 
@@ -1588,7 +1588,7 @@ void CPrintPreview::FillTemplateCombo()
 
 					if (nCount)
 					{
-						TPOS lPos = 0;
+						long lPos = 0;
 						sptrC->GetFirstChildPos(bstrType, 0, &lPos);
 						while (lPos)
 						{

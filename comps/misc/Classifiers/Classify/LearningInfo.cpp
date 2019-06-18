@@ -295,7 +295,7 @@ bool CFeaturesArray::InitFromClassFile(const char *pszClassFile)
 			ptrManager->GetComponentUnknownByIdx(iGroup, &punk);
 			IMeasParamGroupPtr	ptrG(punk);
 			if (ptrG == 0) continue;
-			LONG_PTR lPos = 0;
+			long lPos = 0;
 			if (FAILED(ptrG->GetFirstPos(&lPos))) continue;
 			while (lPos)
 			{
@@ -321,7 +321,7 @@ bool CFeaturesArray::InitFromClassFile(const char *pszClassFile)
 		ptrManager->GetComponentUnknownByIdx(iGroup, &punk);
 		IMeasParamGroupPtr	ptrG(punk);
 		if (ptrG == 0) continue;
-		LONG_PTR lPos = 0;
+		long lPos = 0;
 		if (FAILED(ptrG->GetFirstPos(&lPos))) continue;
 		while (lPos)
 		{
@@ -670,7 +670,7 @@ static bool EnumMissedParams(_ptr_t2<long> &MissedParams, int nEnable = -1)
 			ptrManager->GetComponentUnknownByIdx(iGroup, &punk);
 			IMeasParamGroupPtr	ptrG(punk);
 			if (ptrG == 0) continue;
-			LONG_PTR lPos = 0;
+			long lPos = 0;
 			if (SUCCEEDED(ptrG->GetPosByKey(MissedParams[iMiss], &lPos)) && lPos)
 			{
 				ParameterDescriptor *pDescr = NULL;
@@ -709,7 +709,7 @@ void CalcObjectList(IUnknown* punkObjList, bool bSetParams, ICompManager *pGroup
 		if( bSetParams )
 			ptrG->InitializeCalculation( ptrObjectList );
 
-		TPOS pos = 0;
+		long pos = 0;
 		sptrNDO2Obj->GetFirstChildPosition(&pos);
 		while (pos)
 		{

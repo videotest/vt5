@@ -730,45 +730,6 @@ const unsigned uPanesUsed=0x07;
 	}																										\
 	delete pxofs;delete pyofs;
 
-
-#define CONVERTTODIB_PART2_TRANSP_T																					\
-					if (*pDistSum>0)\
-					{\
-						*p = (byte)((((DWORD)*p)+((DWORD)Bbyte))/2); p++;\
-						*p = (byte)((((DWORD)*p)+((DWORD)Gbyte))/2); p++;\
-						*p = (byte)((((DWORD)*p)+((DWORD)Rbyte))/2); p++;\
-					}\
-					else\
-					{\
-						*p = Bbyte; p++;\
-						*p = Gbyte; p++;\
-						*p = Rbyte; p++;\
-					}\
-					pDistSum++;\
-				}\
-			}\
-		}\
-	}\
-	delete pxofs;delete pyofs;
-
-#define CONVERTTODIB_PART2_TRANSP_N							\
-					if (*pDistSum>0)\
-					{\
-						*p = *p>Bbyte?*p-Bbyte:Bbyte-*p; p++;\
-						*p = *p>Gbyte?*p-Gbyte:Gbyte-*p; p++;\
-						*p = *p>Rbyte?*p-Rbyte:Rbyte-*p; p++;\
-					}\
-					else\
-					{\
-						*p = Bbyte; p++;\
-						*p = Gbyte; p++;\
-						*p = Rbyte; p++;\
-					}\
-					pDistSum++;\
-				}\
-			}\
-		}\
-	}\
-	delete pxofs;delete pyofs;
+																						\
 
 #endif // __ccmacro_h__

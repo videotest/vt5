@@ -584,7 +584,7 @@ bool CActionGridMoveParam::Invoke()
 	}
 
 	//get the prev parameter key
-	LONG_PTR	lpos = p->lpos;
+	long	lpos = p->lpos;
 	ParameterContainer	*pprev = 0;
 	m_ptrC->GetPrevParameter( &lpos, &pprev );
 	// Now only lpos prev, pprev is same (pprev == p)
@@ -594,7 +594,7 @@ bool CActionGridMoveParam::Invoke()
 		pprev = NULL;
 	m_lOldPrevParam = pprev?pprev->pDescr->lKey:-1;
 
-	LPOS lposAfter = 0;
+	long	lposAfter = 0;
 	ParameterContainer	*pnew = 0;
 	m_ptrC->ParamDefByKey( m_lNewPrevParam, &pnew );
 	if( pnew )lposAfter = pnew->lpos;
@@ -610,7 +610,7 @@ bool CActionGridMoveParam::DoUndo()
 	m_ptrC->ParamDefByKey( m_lParam, &p );
 	if( p == 0 )return false;
 
-	LPOS lposAfter = 0;
+	long	lposAfter = 0;
 	ParameterContainer	*pnew = 0;
 	m_ptrC->ParamDefByKey( m_lOldPrevParam, &pnew );
 	if( pnew )lposAfter = pnew->lpos;
@@ -626,7 +626,7 @@ bool CActionGridMoveParam::DoRedo()
 	m_ptrC->ParamDefByKey( m_lParam, &p );
 	if( p == 0 )return false;
 
-	LPOS lposAfter = 0;
+	long	lposAfter = 0;
 	ParameterContainer	*pnew = 0;
 	m_ptrC->ParamDefByKey( m_lNewPrevParam, &pnew );
 	if( pnew )lposAfter = pnew->lpos;
@@ -844,7 +844,7 @@ bool CActionRemoveAllMMObjects::Invoke()
 		}
 
 		// get first child pos 
-		TPOS lPos = 0;
+		long lPos = 0;
 		if (FAILED(sptrN->GetLastChildPosition(&lPos)))
 		{
 			bRet = false;
@@ -1168,7 +1168,7 @@ bool CActionSetParamValue::ExecuteSettings(CWnd *pwndParent)
 	if (m_lParamKey == -1)
 	{
 		IMeasParamGroup2Ptr sptrG = m_list;
-		LPOS lPos = 0;
+		long lPos = 0;
 		if (sptrG != 0 && SUCCEEDED(sptrG->GetActiveParamPos(&lPos)) && lPos)
 			sptrG->GetParamInfo(lPos, &m_lParamKey, 0, 0, 0);
 	}
@@ -1351,7 +1351,7 @@ bool CActionRemoveParam::Invoke()
 	m_ValuesInit.alloc(lCount);
 	memset(m_ValuesInit.ptr(),0,lCount*sizeof(BOOL));
 
-	TPOS	lpos = 0;
+	long	lpos = 0;
 	ptrNamedObject->GetFirstChildPosition( &lpos );
 
 	while( lpos )
@@ -1373,7 +1373,7 @@ bool CActionRemoveParam::Invoke()
 			m_ValuesInit.ptr()[nObject] = FALSE;
 		nObject++;
 
-		TPOS	lpos_m = 0;
+		long	lpos_m = 0;
 		ptrMeas->GetFirstChildPosition( &lpos_m );
 
 		while( lpos_m ) 
@@ -1420,7 +1420,7 @@ bool CActionRemoveParam::DoUndo()
 		if( ptrG == 0 )
 			return false;
 
-		LONG_PTR	lpos = 0;
+		long	lpos = 0;
 		m_ptrC->DefineParameter( -1, m_type, ptrG, &lpos );
 		ParameterContainer	*pc = 0;
 		m_ptrC->GetNextParameter( &lpos, &pc );
@@ -1434,7 +1434,7 @@ bool CActionRemoveParam::DoUndo()
 
 		int nObject = 0;
 		INamedDataObject2Ptr	ptrNamedObject( m_ptrC );
-		TPOS	lpos1 = 0;
+		long	lpos1 = 0;
 		ptrNamedObject->GetFirstChildPosition( &lpos1 );
 		while( lpos1 )
 		{
@@ -1518,7 +1518,7 @@ static CString GenerateParameterName(ICalcObjectContainer *pco, LPCTSTR pszParam
 		else
 			sName.Format(_T("%s%d"), pszParamName, i);
 		bool bFound = false;
-		LONG_PTR lpos;
+		long lpos;
 		pco->GetFirstParameterPos(&lpos);
 		while (lpos)
 		{
@@ -1639,7 +1639,7 @@ bool CActionCreateParam::Invoke()
 //		else str.Format( "%s%d", (const char*)m_strParamName, i );
 		str = GenerateParameterName(m_ptrC, m_strParamName);
 
-		LONG_PTR	lpos = 0;
+		long	lpos = 0;
 		m_ptrC->DefineParameter( -1, m_type, m_ptrG, &lpos );
 		ParameterContainer	*pc = 0;
 		m_ptrC->GetNextParameter( &lpos, &pc );
@@ -1670,7 +1670,7 @@ bool CActionCreateParam::DoRedo()
 		if( i == 0 )str = m_strParamName;
 		else str.Format( "%s%d", (const char*)m_strParamName, i );
 
-		LONG_PTR	lpos = 0;
+		long	lpos = 0;
 		m_ptrC->DefineParameter( -1, m_type, m_ptrG, &lpos );
 		ParameterContainer	*pc = 0;
 		m_ptrC->GetNextParameter( &lpos, &pc );
@@ -1694,7 +1694,7 @@ bool CHeightUndoImpl::Remember(IUnknown *punkList )
 	if( ptrList == 0 )
 		return false;
     	
-	TPOS lPos = 0;
+	long lPos = 0;
 	ptrList->GetFirstChildPosition( &lPos );
 	
 	m_Heights.clear();
@@ -1727,7 +1727,7 @@ bool CHeightUndoImpl::_undo_redo( IUnknown *punkDoc )
 	if( !punkDoc )
 		return false;
 
-	for (TPOS lPos = m_Objects.head(), lPos2 = m_Heights.head(); lPos; lPos = m_Objects.next(lPos), lPos2 = m_Heights.next(lPos2))
+	for( long lPos = m_Objects.head(), lPos2 = m_Heights.head(); lPos; lPos = m_Objects.next( lPos ), lPos2 = m_Heights.next( lPos2 ) )
 	{
 		INamedPropBag *ptrBag = m_Objects.get( lPos );
 		long *plVal = &m_Heights.get( lPos2 );

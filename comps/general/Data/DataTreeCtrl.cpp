@@ -574,7 +574,7 @@ bool CContextTreeCtrl::AddObject(IUnknown* punkObject, bool bActive)
 			return false;
 
 		// and add it to item
-		if (!m_Tree.SetItemData(hitem, (DWORD_PTR)pdata))
+		if (!m_Tree.SetItemData(hitem, (DWORD)pdata))
 			return false;
 
 		if (bActive)
@@ -586,7 +586,7 @@ bool CContextTreeCtrl::AddObject(IUnknown* punkObject, bool bActive)
 		// and add all children
 		_bstr_t		bstrType(strType);
 		IUnknown *	punk = 0;
-		TPOS lPos = 0;
+		long		lPos = 0;
 		// get object's children count (for children that are exists in data context
 		m_sptrContext->GetFirstChildPos(bstrType, sptr, &lPos);
 
@@ -1248,7 +1248,7 @@ bool CContextTreeCtrl::FillType(LPCTSTR sztype)
 		// get hitem  == parent for all objects of this type
 		hParent = GetItemByName(sztype); 
 
-		TPOS lPos = 0;
+		long lPos = 0;
 		m_sptrContext->GetFirstChildPos(bstrType, NULL, &lPos);
 
 		while (lPos) 

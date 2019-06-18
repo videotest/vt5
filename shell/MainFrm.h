@@ -136,7 +136,7 @@ public:
 	}
 
 
-	virtual LRESULT on_paint()
+	virtual long on_paint()
 	{
 		PAINTSTRUCT ps = {0};
 		
@@ -164,7 +164,7 @@ public:
 		return 0L;
 	}
 	
-	virtual LRESULT on_destroy()
+	virtual long on_destroy()							
 	{
 		if( m_bRecreateOnDistr )
 		{
@@ -175,7 +175,7 @@ public:
 		return 1L;
 	}
 
-	virtual LRESULT on_create(CREATESTRUCT *pcs)
+	virtual long on_create( CREATESTRUCT *pcs )
 	{
 		on_timer( 54321 );
 
@@ -183,7 +183,7 @@ public:
 		return __super::on_create( pcs );
 	}
 	
-	virtual LRESULT on_mousemove(const _point &point)
+	virtual long on_mousemove( const _point &point )
 	{
 		KillTimer( handle(), 54321);
 		on_timer( 54321 );
@@ -192,7 +192,7 @@ public:
 		return __super::on_mousemove( point );
 	}
 	
-	virtual LRESULT on_timer(ulong lEvent)
+	virtual long on_timer( ulong lEvent )
 	{
 		if( lEvent == 54321 )
 		{
@@ -480,25 +480,25 @@ protected:
 	afx_msg long XPGetFirstPane();
 	afx_msg long XPGetNextPane(long lpos);
 	afx_msg void XPSetImageList(long lImageList);
-	afx_msg void LogFontSetBold(TPOS lpos, long fBold);
-	afx_msg void LogFontSetFace(TPOS lpos, LPCTSTR pszFaceName);
-	afx_msg void LogFontSetColor(TPOS lpos, long color);
-	afx_msg void LogFontSetHeight(TPOS lpos, long nHeight);
-	afx_msg void RenderSetLayout(TPOS lpos, long left, long top, long right, long bottom);
-	afx_msg void RenderSetRect(TPOS lpos, long left, long top, long right, long bottom);
-	afx_msg TPOS RectCreate(TPOS lpos_parent);
-	afx_msg void RectSetColor(TPOS lpos, long color);
-	afx_msg TPOS PageCreate(TPOS lpos_parent);
-	afx_msg TPOS TipCreate(TPOS lpos_parent);
-	afx_msg void TipAddText(TPOS lpos, LPCTSTR psz);
-	afx_msg void TipSetIcon(TPOS lpos, LPCTSTR pszFileName);
-	afx_msg TPOS ImageCreate(TPOS lpos_parent);
-	afx_msg void ImageSetBitmap(TPOS lpos, LPCTSTR psz_filename);
-	afx_msg void ImageSetTransparent(TPOS lpos, long color);
-	afx_msg TPOS TextCreate(TPOS lpos_parent);
-	afx_msg void TextAddText(TPOS lpos, LPCTSTR psz);
-	afx_msg TPOS MenuCreate(TPOS lpos_parent);
-	afx_msg void MenuAddItem(TPOS lpos, LPCTSTR pszAction);
+	afx_msg void LogFontSetBold(long lpos, long fBold);
+	afx_msg void LogFontSetFace(long lpos, LPCTSTR pszFaceName);
+	afx_msg void LogFontSetColor(long lpos, long color);
+	afx_msg void LogFontSetHeight(long lpos, long nHeight);
+	afx_msg void RenderSetLayout(long lpos, long left, long top, long right, long bottom);
+	afx_msg void RenderSetRect(long lpos, long left, long top, long right, long bottom);
+	afx_msg long RectCreate(long lpos_parent);
+	afx_msg void RectSetColor(long lpos, long color);
+	afx_msg long PageCreate(long lpos_parent);
+	afx_msg long TipCreate(long lpos_parent);
+	afx_msg void TipAddText(long lpos, LPCTSTR psz);
+	afx_msg void TipSetIcon(long lpos, LPCTSTR pszFileName);
+	afx_msg long ImageCreate(long lpos_parent);
+	afx_msg void ImageSetBitmap(long lpos, LPCTSTR psz_filename);
+	afx_msg void ImageSetTransparent(long lpos, long color);
+	afx_msg long TextCreate(long lpos_parent);
+	afx_msg void TextAddText(long lpos, LPCTSTR psz);
+	afx_msg long MenuCreate(long lpos_parent);
+	afx_msg void MenuAddItem(long lpos, LPCTSTR pszAction);
 	afx_msg void DeleteAllDrawing();
 	afx_msg void MDIClientUpdate();
 	afx_msg void IdleUpdate();
@@ -535,14 +535,14 @@ protected:
 		//com_call ResetPagesList();
 		//com_call AddSettingsPage( IUnknown *punk );
 		com_call EnterSettingsMode(HWND* hwndSettings, LONG nHeight);
-		com_call GetFirstDockWndPosition( POSITION *plPosition );
-		com_call GetNextDockWnd(IUnknown **ppunkDock, POSITION *plPosition);
+		com_call GetFirstDockWndPosition( long *plPosition );
+		com_call GetNextDockWnd( IUnknown **ppunkDock, long *plPosition );
 		com_call CreateDockBar(IUnknown* punk, UINT nID, HWND* pHWND);
 		com_call KillDockBar(BSTR bstrName);
 		com_call LeaveSettingsMode();
 		com_call GetMDIClientWnd(HWND* pHwnd);
-		com_call GetFirstToolbarPosition(POSITION *plPosition);
-		com_call GetNextToolbar(HWND *phwnd, POSITION *plPosition);
+		com_call GetFirstToolbarPosition( long *plPosition );
+		com_call GetNextToolbar( HWND *phwnd, long *plPosition );
 		com_call ShowControlBar( HWND hwnd, long bShow );
 		com_call CreateDockBarEx(IUnknown* punk, UINT nID, HWND* pHWND, DWORD dwFlags/*1 - not float now*/);
 		com_call IsHelpMode( BOOL *pbool );
@@ -553,8 +553,8 @@ protected:
 	END_INTERFACE_PART(Toolbar);
 
 	BEGIN_INTERFACE_PART(UserInterface, IUserInterface)
-		com_call GetFirstComboButton(POSITION *plPosition);
-		com_call GetNextComboButton(HWND* phWnd, IUnknown** ppunkInfo, POSITION *plPosition);
+		com_call GetFirstComboButton( long *plPosition );
+		com_call GetNextComboButton( HWND* phWnd, IUnknown** ppunkInfo, long *plPosition );	
 	END_INTERFACE_PART(UserInterface);
 
 	BEGIN_INTERFACE_PART(TranslatorWnd, ITranslatorWnd)
@@ -666,10 +666,10 @@ protected:
 	long		m_nXPWidth;
 	CList<HIMAGELIST, HIMAGELIST&>	m_listImageList;
 	HIMAGELIST	m_hImageListAction, m_hImageListButtons;
-	TPOS m_lposStatus, m_lposProperties, m_lposForm;
-	//render support
-	render *get_render(TPOS lpos, long type, const char *pfunc);
-	TPOS set_render(render *p, TPOS lpos_p);
+	long		m_lposStatus, m_lposProperties, m_lposForm;
+//render support
+	render *get_render( long lpos, long type, const char *pfunc );
+	long set_render( render *p, long lpos_p );
 
 	virtual BOOL CanShowMenuBar();
 
@@ -686,7 +686,7 @@ protected:
 	DWORD		m_dwScriptSetPosTime;
 	
 	void		_init_script_notify( );
-	HRESULT		_fire_script_event( LPCTSTR lpctstrEvent, LPCTSTR lpctstrActionName, BOOL bSetPos = FALSE, LPOS lPos = 0 );
+	HRESULT		_fire_script_event( LPCTSTR lpctstrEvent, LPCTSTR lpctstrActionName, BOOL bSetPos = FALSE, long lPos = 0 );
 	BOOL		_get_action_name( IUnknown *punk, CString *pstrActionName );
     
 public:
@@ -697,7 +697,7 @@ public:
 
 	void		SetAccelTable( HACCEL haccel );
 
-	UINT_PTR		m_nTimerID;
+	UINT		m_nTimerID;
 	afx_msg void OnDestroy();
 	afx_msg void OnTimer(UINT_PTR nIDEvent);
 protected:
@@ -710,21 +710,20 @@ protected:
 	// каждой пане присваивается индекс по ее имени, т.о. имена пан в этом случае д.б. уникальными - 18.08.2004
 
 	// мапа: <имя_паны> - <позиция_в_xpbar>, содержит список пан, содержащихся в xpbar
-	_list_map_t<TPOS, _bstr_t, cmp_bstr_t> m_map_xppanename2intpos;
+	_list_map_t<long, _bstr_t, cmp_bstr_t> m_map_xppanename2intpos;	
 
 	// мапа: <имя_паны> - <уникальный_индекс_паны>,  если при добавлении паны ее нет в текущей мапе, она заноситься
 	// в данную мапу и ей присваивается уникальный номер; ничего из мапы в процессе работы не удаляется, т.о. пана
 	// с именем "Метафаза" будет всегда иметь один и тот же уникальный номер, даже если реально ее удалили, а потом
 	// опять создали
-	_list_map_t<long, _bstr_t, cmp_bstr_t> m_map_xppanename2extpos;
+	_list_map_t<long, _bstr_t, cmp_bstr_t> m_map_xppanename2extpos;	
 	
 	// вспомогательные функции для перевода внешней позиции паны (уникального номера) во внутреннюю (позиция в 
 	// xpbar) и наоборот
-	TPOS	xppane_pos_ext2int(long lpos_ext);
-	long	xppane_pos_int2ext(TPOS lpos_int);
+	long	xppane_pos_ext2int( long lpos_ext );
+	long	xppane_pos_int2ext( long lpos_int );
 	// функция поиска позиции в соответсвующей мапе по внутренней/внешней позиции паны
-	TPOS xppane_find_by_pos(long lpos_find, _bstr_t *pbstr_found_name);
-	TPOS xppane_find_by_pos(TPOS lpos_find, _bstr_t *pbstr_found_name);
+	long	xppane_find_by_pos( long lpos_find, bool bext_pos, _bstr_t *pbstr_found_name );
 
 	////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -747,8 +746,6 @@ protected:
 	{
 		dispidShowProgress = 65L
 	};
-public:
-	afx_msg void OnNcDestroy();
 };
 
 #include "menuhash.h"

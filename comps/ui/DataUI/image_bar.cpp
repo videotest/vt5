@@ -491,7 +491,7 @@ bool image_bar::sync_info( )
 	if( ptr_dc != 0  )
 	{
 		//fill list
-		LONG_PTR lpos = 0;		
+		long lpos = 0;		
 		ptr_dc->GetFirstObjectPos( bstr_image, &lpos );
 		while( lpos )
 		{
@@ -600,24 +600,20 @@ bool image_bar::sync_info( )
     {
 		long lCount = m_list_image.count();
 		image_info **ppinfo = 0;
-		ppinfo = new image_info*[lCount];
+		ppinfo = new image_info*[ lCount ];
+		 
+		for( long lpos = m_list_image.head(), lIndex = 0; lpos && (lIndex < lCount);
+			lpos = m_list_image.next( lpos ), lIndex++  )
 		{
-			long lIndex = 0;
-			for (TPOS lpos = m_list_image.head(); lpos && (lIndex < lCount);
-				lpos = m_list_image.next(lpos), lIndex++)
-			{
-				image_info *pinfo = m_list_image.get(lpos);
-				ppinfo[lIndex] = pinfo;
-				parse_name(_GetObjectName(pinfo), pinfo->m_str_short_name, (long&)pinfo->m_nnumber);
-			}
+			image_info *pinfo = m_list_image.get( lpos );
+			ppinfo[ lIndex ] = pinfo;
+			parse_name( _GetObjectName( pinfo ), pinfo->m_str_short_name, (long&)pinfo->m_nnumber );
 		}
 
-		qsort((void *)ppinfo, (size_t)lCount, sizeof(image_info*), compare_image_info);
-		{
-			long  lIndex = 0;
-			for (TPOS lpos = m_list_image.head(); lpos && (lIndex < lCount); lpos = m_list_image.next(lpos), lIndex++)
-				m_list_image.set(ppinfo[lIndex], lpos);
-		}
+		qsort( (void *) ppinfo, (size_t) lCount, sizeof( image_info* ), compare_image_info );
+
+		for( long lpos = m_list_image.head(), lIndex = 0; lpos && (lIndex < lCount); lpos = m_list_image.next( lpos ), lIndex++ )
+			m_list_image.set( ppinfo[ lIndex ], lpos );
 
 		if( ppinfo )
 		{
@@ -625,14 +621,14 @@ bool image_bar::sync_info( )
 			ppinfo = 0;
 		}
 	}
-	/*for( LPOS lpos1=m_list_image.head(); lpos1; lpos1=m_list_image.next(lpos1) )
+	/*for( long lpos1=m_list_image.head(); lpos1; lpos1=m_list_image.next(lpos1) )
 	{
 		if( lpos1 == m_list_image.tail() )
 			continue;
 
 		image_info* pinfo1 = m_list_image.get( lpos1 );
 
-		for( LPOS lpos2=m_list_image.next(lpos1); lpos2; lpos2=m_list_image.next(lpos2) )
+		for( long lpos2=m_list_image.next(lpos1); lpos2; lpos2=m_list_image.next(lpos2) )
 		{
 			image_info* pinfo2 = m_list_image.get( lpos2 );
 
@@ -674,7 +670,7 @@ bool image_bar::sync_activity( )
 	}
 
 	long lidx = 0;
-	for( TPOS lpos=m_list_image.head(); lpos; lpos=m_list_image.next(lpos) )
+	for( long lpos=m_list_image.head(); lpos; lpos=m_list_image.next(lpos) )
 	{
 		image_info* pi = m_list_image.get( lpos );
 		if( pi->ptr_image != 0 && ::GetObjectKey( pi->ptr_image ) == guid_sel )
@@ -754,7 +750,7 @@ CRect image_bar::get_item_rect( long nitem, bool bfull )
 image_info* image_bar::get_image_info_by_idx( long lidx )
 {
 	long litem_idx = 0;
-	for( TPOS lpos=m_list_image.head(); lpos; lpos=m_list_image.next(lpos) )	
+	for( long lpos=m_list_image.head(); lpos; lpos=m_list_image.next(lpos) )	
 	{
 		if( lidx == litem_idx)
 			return m_list_image.get(lpos);
@@ -1004,7 +1000,7 @@ bool image_bar::do_draw( CDC* pdc, CRect rc_update, BITMAPINFOHEADER* pbmih, byt
 
 	item_draw_info idi;
 	long lidx = 0;
-	for( TPOS lpos=m_list_image.head(); lpos; lpos=m_list_image.next(lpos) )
+	for( long lpos=m_list_image.head(); lpos; lpos=m_list_image.next(lpos) )
 	{
 		CRect rc_item = convert_from_client_to_wnd( get_item_rect( lidx, true ) );
 		
@@ -1499,12 +1495,13 @@ BSTR image_bar::GetObjectInfoByIndex( long lIdx, VARIANT FAR* varStorageName, VA
 	if( ( lIdx < 0 ) || ( lIdx >= m_list_image.count() ) )
 		return sImageName.AllocSysString( );
 
-	TPOS lPos = 0;
+	long lListIdx = 0, lPos = 0;
 	for( lPos = m_list_image.head(); lPos; lPos = m_list_image.next( lPos )  )
 	{
-		long lListIdx = m_list_image.get(lPos)->m_licon_index;
 		if( lListIdx == lIdx )
 			break;
+		else
+		   lListIdx ++;
 	}
 
 	if( !lPos )

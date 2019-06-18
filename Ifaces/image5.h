@@ -211,11 +211,6 @@ enum ConvertImageToDIBRectFlags
 	cidrHilight = 8,
 	cidrIgnoreMask = 16,
 	cidrExportImage = 32,
-	cidrTranspMask = 128+64,
-	cidrTranspOpaque = 0,
-	cidrTranspTransparent = 64,
-	cidrTranspSmoothTransition = 128,
-	cidrTranspNegative = 128+64,
 };
 
 interface IColorConvertorEx : public IUnknown

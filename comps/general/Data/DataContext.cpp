@@ -175,7 +175,7 @@ BOOL CDataContext::SetActiveObject(LPDISPATCH lpdispObj)
 }
 
 // return first position of object of given type
-LONG_PTR CDataContext::GetFirstObjectPos(LPCTSTR szType)
+long CDataContext::GetFirstObjectPos(LPCTSTR szType)
 {
 	// create BSTR from LPCTSTR
 	_bstr_t bstrType(szType);
@@ -186,11 +186,11 @@ LONG_PTR CDataContext::GetFirstObjectPos(LPCTSTR szType)
 	if (!pMgr || !ManagerIsAvailable(pMgr))
 		return 0;
 	
-	return (LONG_PTR)pMgr->GetFirstObjectPos();
+	return (long)pMgr->GetFirstObjectPos();
 }
 
 // return next object of given type by position and advance position to next object
-LPDISPATCH CDataContext::GetNextObject(LPCTSTR szType, LONG_PTR * plPos)
+LPDISPATCH CDataContext::GetNextObject(LPCTSTR szType, long * plPos)
 {
 	// create BSTR from LPCTSTR
 	_bstr_t bstrType(szType);
@@ -203,7 +203,7 @@ LPDISPATCH CDataContext::GetNextObject(LPCTSTR szType, LONG_PTR * plPos)
 	
 	POSITION pos = (POSITION)*plPos;
 	CContextObject * pObj = pMgr->GetNextObject(pos);
-	*plPos = (LONG_PTR)pos;
+	*plPos = (long)pos;
 	if (!pObj)
 		return 0;
 
@@ -225,11 +225,11 @@ long CDataContext::GetLastObjectPos(LPCTSTR szType)
 	if (!pMgr || !ManagerIsAvailable(pMgr))
 		return 0;
 	
-	return (LONG_PTR)pMgr->GetLastObjectPos();
+	return (long)pMgr->GetLastObjectPos();
 }
 
 // return prev object of given type by position and advance position to prev object
-LPDISPATCH CDataContext::GetPrevObject(LPCTSTR szType, LONG_PTR * plPos)
+LPDISPATCH CDataContext::GetPrevObject(LPCTSTR szType, long * plPos)
 {
 	// create BSTR from LPCTSTR
 	_bstr_t bstrType(szType);
@@ -242,7 +242,7 @@ LPDISPATCH CDataContext::GetPrevObject(LPCTSTR szType, LONG_PTR * plPos)
 	
 	POSITION pos = (POSITION)*plPos;
 	CContextObject * pObj = pMgr->GetPrevObject(pos);
-	*plPos = (LONG_PTR)pos;
+	*plPos = (long)pos;
 	if (!pObj)
 		return 0;
 
@@ -337,7 +337,7 @@ HRESULT CDataContext::XContext::AttachData(IUnknown * punkNamedData)
 
 
 // Notify context by NamedData based on cod
-HRESULT CDataContext::XContext::Notify(long cod, IUnknown * punkNew, IUnknown * punkOld, GUID* dwData)
+HRESULT CDataContext::XContext::Notify(long cod, IUnknown * punkNew, IUnknown * punkOld, DWORD dwData)
 {
 	METHOD_PROLOGUE_EX(CDataContext, Context)
 	{
@@ -470,14 +470,14 @@ HRESULT CDataContext::XContext::GetObjectTypeCount(long * plCount)
 		if (!plCount)
 			return E_INVALIDARG;
 
-		*plCount = (int)pThis->m_arrObjManagers.GetSize();
+		*plCount = pThis->m_arrObjManagers.GetSize();
 		return S_OK;
 	}
 }
 
 // return name of type by pos
 // pos MUST be in range (0,  GetObjectTypeCount())
-HRESULT CDataContext::XContext::GetObjectTypeName(LONG_PTR lPos, BSTR * pbstrType)
+HRESULT CDataContext::XContext::GetObjectTypeName(long lPos, BSTR * pbstrType)
 {
 	METHOD_PROLOGUE_EX(CDataContext, Context)
 	{
@@ -560,7 +560,7 @@ HRESULT CDataContext::XContext::GetObjectCount(BSTR bstrType, long * plCount)
 }
 
 // return position of first object of given type  
-HRESULT CDataContext::XContext::GetFirstObjectPos(BSTR bstrType, LONG_PTR * plPos)
+HRESULT CDataContext::XContext::GetFirstObjectPos(BSTR bstrType, long * plPos)
 {
 	METHOD_PROLOGUE_EX(CDataContext, Context)
 	{
@@ -573,14 +573,14 @@ HRESULT CDataContext::XContext::GetFirstObjectPos(BSTR bstrType, LONG_PTR * plPo
 		if (!pMgr)
 			return E_INVALIDARG;
 
-		*plPos = (LONG_PTR)pMgr->GetFirstObjectPos();
+		*plPos = (long)pMgr->GetFirstObjectPos();
 
 		return S_OK;
 	}
 }
 
 // return object of of given type  by given position and advance position to next object
-HRESULT CDataContext::XContext::GetNextObject(BSTR bstrType, LONG_PTR * plPos, IUnknown ** ppunkObject)
+HRESULT CDataContext::XContext::GetNextObject(BSTR bstrType, long * plPos, IUnknown ** ppunkObject)
 {
 	METHOD_PROLOGUE_EX(CDataContext, Context)
 	{
@@ -598,7 +598,7 @@ HRESULT CDataContext::XContext::GetNextObject(BSTR bstrType, LONG_PTR * plPos, I
 			return E_INVALIDARG;
 
 		CContextObject * pObj = pMgr->GetNextObject(pos);
-		*plPos = (LONG_PTR)pos;
+		*plPos = (long)pos;
 
 		if (pObj)
 			*ppunkObject = pObj->GetPtr(true);
@@ -608,7 +608,7 @@ HRESULT CDataContext::XContext::GetNextObject(BSTR bstrType, LONG_PTR * plPos, I
 }
 
 // return position of last object of given type  
-HRESULT CDataContext::XContext::GetLastObjectPos(BSTR bstrType, LONG_PTR * plPos)
+HRESULT CDataContext::XContext::GetLastObjectPos(BSTR bstrType, long * plPos)
 {
 	METHOD_PROLOGUE_EX(CDataContext, Context)
 	{
@@ -621,14 +621,14 @@ HRESULT CDataContext::XContext::GetLastObjectPos(BSTR bstrType, LONG_PTR * plPos
 		if (!pMgr)
 			return E_INVALIDARG;
 
-		*plPos = (LONG_PTR)pMgr->GetLastObjectPos();
+		*plPos = (long)pMgr->GetLastObjectPos();
 
 		return S_OK;
 	}
 }
 
 // return object of given type by given position and advance position to prev object
-HRESULT CDataContext::XContext::GetPrevObject(BSTR bstrType, LONG_PTR * plPos, IUnknown ** ppunkObject)
+HRESULT CDataContext::XContext::GetPrevObject(BSTR bstrType, long * plPos, IUnknown ** ppunkObject)
 {
 	METHOD_PROLOGUE_EX(CDataContext, Context)
 	{
@@ -646,7 +646,7 @@ HRESULT CDataContext::XContext::GetPrevObject(BSTR bstrType, LONG_PTR * plPos, I
 			return E_INVALIDARG;
 
 		CContextObject * pObj = pMgr->GetPrevObject(pos);
-		*plPos = (LONG_PTR)pos;
+		*plPos = (long)pos;
 
 		if (pObj)
 			*ppunkObject = pObj->GetPtr(true);
@@ -656,7 +656,7 @@ HRESULT CDataContext::XContext::GetPrevObject(BSTR bstrType, LONG_PTR * plPos, I
 }
 
 // return position of object of given type
-HRESULT CDataContext::XContext::GetObjectPos(BSTR bstrType, IUnknown * punkObject, LONG_PTR * plPos)
+HRESULT CDataContext::XContext::GetObjectPos(BSTR bstrType, IUnknown * punkObject, long * plPos)
 {
 	METHOD_PROLOGUE_EX(CDataContext, Context)
 	{
@@ -673,7 +673,7 @@ HRESULT CDataContext::XContext::GetObjectPos(BSTR bstrType, IUnknown * punkObjec
 		if (!pMgr)
 			return E_INVALIDARG;
 
-		*plPos = (LONG_PTR)pMgr->FindObjectPos(sptrObj);
+		*plPos = (long)pMgr->FindObjectPos(sptrObj);
 
 		return S_OK;
 	}
@@ -735,7 +735,7 @@ HRESULT CDataContext::XContext::GetChildrenCount(BSTR bstrType, IUnknown * punkP
 	}
 }
 
-HRESULT CDataContext::XContext::GetFirstChildPos(BSTR bstrType, IUnknown * punkParent, TPOS *plPos)
+HRESULT CDataContext::XContext::GetFirstChildPos(BSTR bstrType, IUnknown * punkParent, long * plPos)
 {
 	METHOD_PROLOGUE_EX(CDataContext, Context)
 	{
@@ -761,12 +761,12 @@ HRESULT CDataContext::XContext::GetFirstChildPos(BSTR bstrType, IUnknown * punkP
 		if (!pParent)
 			return E_INVALIDARG;
 
-		*plPos = pParent->GetChildFirstPos();
+		*plPos = (long)pParent->GetChildFirstPos();
 		return S_OK;
 	}
 }
 
-HRESULT CDataContext::XContext::GetNextChild(BSTR bstrType, IUnknown * punkParent, TPOS *plPos, IUnknown ** ppunkChild)
+HRESULT CDataContext::XContext::GetNextChild(BSTR bstrType, IUnknown * punkParent, long * plPos, IUnknown ** ppunkChild)
 {
 	METHOD_PROLOGUE_EX(CDataContext, Context)
 	{
@@ -794,7 +794,7 @@ HRESULT CDataContext::XContext::GetNextChild(BSTR bstrType, IUnknown * punkParen
 
 		POSITION pos = (POSITION)*plPos;
 		CContextObject * pChild = pParent->GetNextChild(pos);
-		*plPos = pos;
+		*plPos = (long)pos;
 
 		if (pChild)
 			*ppunkChild = (IUnknown*)pChild->GetPtr(true);
@@ -803,7 +803,7 @@ HRESULT CDataContext::XContext::GetNextChild(BSTR bstrType, IUnknown * punkParen
 	}
 }
 
-HRESULT CDataContext::XContext::GetLastChildPos(BSTR bstrType, IUnknown * punkParent, TPOS *plPos)
+HRESULT CDataContext::XContext::GetLastChildPos(BSTR bstrType, IUnknown * punkParent, long * plPos)
 {
 	METHOD_PROLOGUE_EX(CDataContext, Context)
 	{
@@ -828,12 +828,12 @@ HRESULT CDataContext::XContext::GetLastChildPos(BSTR bstrType, IUnknown * punkPa
 		if (!pParent)
 			return E_INVALIDARG;
 
-		*plPos = pParent->GetChildLastPos();
+		*plPos = (long)pParent->GetChildLastPos();
 		return S_OK;
 	}
 }
 
-HRESULT CDataContext::XContext::GetPrevChild(BSTR bstrType, IUnknown * punkParent, TPOS *plPos, IUnknown ** ppunkChild)
+HRESULT CDataContext::XContext::GetPrevChild(BSTR bstrType, IUnknown * punkParent, long * plPos, IUnknown ** ppunkChild)
 {
 	METHOD_PROLOGUE_EX(CDataContext, Context)
 	{
@@ -861,7 +861,7 @@ HRESULT CDataContext::XContext::GetPrevChild(BSTR bstrType, IUnknown * punkParen
 
 		POSITION pos = (POSITION)*plPos;
 		CContextObject * pChild = pParent->GetPrevChild(pos);
-		*plPos = pos;
+		*plPos = (long)pos;
 		if (pChild)
 			*ppunkChild = (IUnknown*)pChild->GetPtr(true);
 
@@ -869,7 +869,7 @@ HRESULT CDataContext::XContext::GetPrevChild(BSTR bstrType, IUnknown * punkParen
 	}
 }
 
-HRESULT CDataContext::XContext::GetChildPos(BSTR bstrType, IUnknown * punkParent, IUnknown * punkChild, TPOS *plPos)
+HRESULT CDataContext::XContext::GetChildPos(BSTR bstrType, IUnknown * punkParent, IUnknown * punkChild, long * plPos)
 {
 	METHOD_PROLOGUE_EX(CDataContext, Context)
 	{
@@ -898,7 +898,7 @@ HRESULT CDataContext::XContext::GetChildPos(BSTR bstrType, IUnknown * punkParent
 		sptrINamedDataObject2 sptrChild(punkChild);
 		CContextObject * pChild = pMgr->FindObject(sptrChild);
 		if (pChild)
-			*plPos = pParent->FindChild(pChild);
+			*plPos = (long)pParent->FindChild(pChild);
 
 		return S_OK;
 	}
@@ -1006,7 +1006,7 @@ HRESULT CDataContext::XContext::GetSelectedCount(BSTR bstrType, long * plCount)
 
 // get position of first selected object or 0 
 // if context has no selected objects of such type
-HRESULT CDataContext::XContext::GetFirstSelectedPos(BSTR bstrType, LONG_PTR * plPos)
+HRESULT CDataContext::XContext::GetFirstSelectedPos(BSTR bstrType, long * plPos)
 {
 	METHOD_PROLOGUE_EX(CDataContext, Context)
 	{
@@ -1019,14 +1019,14 @@ HRESULT CDataContext::XContext::GetFirstSelectedPos(BSTR bstrType, LONG_PTR * pl
 		if (!pMgr)
 			return E_INVALIDARG;
 
-		*plPos = (LONG_PTR)pMgr->GetFirstSelectedPos();
+		*plPos = (long)pMgr->GetFirstSelectedPos();
 		return S_OK;
 	}
 }
 
 // get selected object by its pos and advance position to next selected object or 0 
 // if context has no more selected objects of such type
-HRESULT CDataContext::XContext::GetNextSelected(BSTR bstrType, LONG_PTR * plPos, IUnknown ** ppunkObject)
+HRESULT CDataContext::XContext::GetNextSelected(BSTR bstrType, long * plPos, IUnknown ** ppunkObject)
 {
 	METHOD_PROLOGUE_EX(CDataContext, Context)
 	{
@@ -1041,7 +1041,7 @@ HRESULT CDataContext::XContext::GetNextSelected(BSTR bstrType, LONG_PTR * plPos,
 
 		POSITION pos = (POSITION)*plPos;
 		CContextObject * pObj = pMgr->GetNextSelected(pos);
-		*plPos = (LONG_PTR)pos;
+		*plPos = (long)pos;
 
 		if (!pObj)
 			return E_INVALIDARG;
@@ -1053,7 +1053,7 @@ HRESULT CDataContext::XContext::GetNextSelected(BSTR bstrType, LONG_PTR * plPos,
 
 // get position of last selected object or 0 
 // if context has no selected objects of such type
-HRESULT CDataContext::XContext::GetLastSelectedPos(BSTR bstrType, LONG_PTR * plPos)
+HRESULT CDataContext::XContext::GetLastSelectedPos(BSTR bstrType, long * plPos)
 {
 	METHOD_PROLOGUE_EX(CDataContext, Context)
 	{
@@ -1065,14 +1065,14 @@ HRESULT CDataContext::XContext::GetLastSelectedPos(BSTR bstrType, LONG_PTR * plP
 		if (!pMgr)
 			return E_INVALIDARG;
 
-		*plPos = (LONG_PTR)pMgr->GetLastSelectedPos();
+		*plPos = (long)pMgr->GetLastSelectedPos();
 		return S_OK;
 	}
 }
 
 // get selected object by its pos and advance position to prev selected object or 0 
 // if context has no more selected objects of such type
-HRESULT CDataContext::XContext::GetPrevSelected(BSTR bstrType, LONG_PTR * plPos, IUnknown ** ppunkObject)
+HRESULT CDataContext::XContext::GetPrevSelected(BSTR bstrType, long * plPos, IUnknown ** ppunkObject)
 {
 	METHOD_PROLOGUE_EX(CDataContext, Context)
 	{
@@ -1087,7 +1087,7 @@ HRESULT CDataContext::XContext::GetPrevSelected(BSTR bstrType, LONG_PTR * plPos,
 
 		POSITION pos = (POSITION)*plPos;
 		CContextObject * pObj = pMgr->GetPrevSelected(pos);
-		*plPos = (LONG_PTR)pos;
+		*plPos = (long)pos;
 
 		if (!pObj)
 			return E_INVALIDARG;
@@ -1266,7 +1266,7 @@ HRESULT CDataContext::XSync::GetObjManagerCount(int * pnCount)
 		if (!pnCount)
 			return E_INVALIDARG;
 
-		*pnCount = (int)pThis->m_arrObjManagers.GetSize();
+		*pnCount = pThis->m_arrObjManagers.GetSize();
 		return S_OK;
 	}
 }
@@ -1526,12 +1526,12 @@ bool CDataContext::PassFilter(IUnknown * punkFilter)
 	_try(CDataContext, PassFilter)
 	{
 		bool bAnyDeletedArgs = false;
-		TPOS lPos = 0;
+		long lPos = 0;
 		sptrF->GetFirstArgumentPosition(&lPos);
 
 		while (lPos)
 		{
-			TPOS lObjPos = lPos;
+			long lObjPos = lPos;
 			IUnknownPtr sptrUnkObj;
 			sptrF->GetNextArgument(&sptrUnkObj, &lPos);
 
@@ -1599,12 +1599,12 @@ bool CDataContext::UndoFilter(IUnknown * punkFilter)
 	{
 		bool bAnyDeletedArgs = false;
 		// A.M. A.M. BT 4652. See comment on declaration of _MakeFilterArgumentsArray.
-		CArray<TPOS, TPOS&> arrArgs;
+		CArray<long,long&> arrArgs;
 		_MakeFilterArgumentsArray(sptrF,arrArgs);
 		for (int i = 0; i < arrArgs.GetSize(); i++)
 		{
-			TPOS lPos = arrArgs.GetAt(i);
-			TPOS lObjPos =lPos;
+			long lPos = arrArgs.GetAt(i);
+			long lObjPos = lPos;
 			IUnknownPtr sptrUnkObj;
 			sptrF->GetNextArgument(&sptrUnkObj, &lPos);
 
@@ -1643,19 +1643,19 @@ bool CDataContext::UndoFilter(IUnknown * punkFilter)
 	return true;
 }
 
-void CDataContext::_MakeFilterArgumentsArray(IFilterAction2Ptr sptrF, CArray<TPOS, TPOS&> &arrArgs)
+void CDataContext::_MakeFilterArgumentsArray(IFilterAction2Ptr sptrF, CArray<long,long&> &arrArgs)
 {
-	TPOS lPos = 0;
+	long lPos = 0;
 	sptrF->GetFirstArgumentPosition(&lPos);
 	while (lPos)
 	{
-		TPOS lObjPos = lPos;
+		long lObjPos = lPos;
 		IUnknownPtr sptrUnkObj;
 		sptrF->GetNextArgument(&sptrUnkObj, &lPos);
 		bool bParentOfSomeObject = false;
 		for (int i = 0; i < arrArgs.GetSize(); i++)
 		{
-			TPOS lPosTest = arrArgs.GetAt(i);
+			long lPosTest = arrArgs.GetAt(i);
 			IUnknownPtr sptrUnkTest;
 			sptrF->GetNextArgument(&sptrUnkTest, &lPosTest);
 			if (::GetParentKey(sptrUnkTest) == ::GetObjectKey(sptrUnkObj))
@@ -1794,7 +1794,7 @@ int CompMgr(const void *arg1, const void *arg2)
 
 int FindGreatest(CNDOManagers & arr)
 {
-	int nSize = (int)arr.GetSize();
+	int nSize = arr.GetSize();
 	if (!nSize)
 		return -1;
 
@@ -1827,7 +1827,7 @@ int FindGreatest(CNDOManagers & arr)
 // new version that used 'qsort'
 bool CDataContext::Sort()
 {
-	int nCount = (int)m_arrObjManagers.GetSize();
+	int nCount = m_arrObjManagers.GetSize();
 	if (nCount < 2)
 		return true;
 
@@ -2034,7 +2034,7 @@ bool CDataContext::SynchronizeWithContext(IUnknown * punkContext)
 				pMan->SetLastTimeUsed(lTime);
 
 				// for all objects of this type
-				LONG_PTR lObjPos = 0;
+				long lObjPos = 0;
 				if (FAILED(sptrC->GetLastObjectPos(bstrType, &lObjPos)) || !lObjPos)
 					continue;
 
@@ -2063,7 +2063,7 @@ bool CDataContext::SynchronizeWithContext(IUnknown * punkContext)
 				// selected objects
 				pMan->DeselectAll();
 
-				LONG_PTR nSelPos = 0;
+				long nSelPos = 0;
 				sptrC->GetFirstSelectedPos(bstrType, &nSelPos);
 				while (nSelPos)
 				{
@@ -2153,7 +2153,7 @@ bool CDataContext::InitializeContext()
 			}
 
 			IUnknownPtr sptrObj;
-			LONG_PTR lpos = 0;
+			long	lpos = 0;
 			// get first object pos 
 			sptrTypeMgr->GetObjectFirstPosition(nCnt, &lpos);
 
@@ -2220,7 +2220,7 @@ bool CDataContext::_InitContext()
 			}
 
 			IUnknownPtr sptrObj;
-			LONG_PTR	lpos = 0;
+			long	lpos = 0;
 			// get first object pos 
 			sptrTypeMgr->GetObjectFirstPosition(nCnt, &lpos);
 
@@ -2643,7 +2643,7 @@ bool CDataContext::NeedActivateObject(CContextObject * pObject, bool bActive, in
 
 			bool bBaseObjVisible = false;
 			// try to find object w/ given base key within view's visible objects
-			TPOS lPos = 0;
+			long lPos = 0;
 			sptrV->GetFirstVisibleObjectPosition(&lPos);
 			while (lPos)
 			{
@@ -2691,7 +2691,7 @@ bool CDataContext::NeedActivateObject(CContextObject * pObject, bool bActive, in
 			{
 				bool bBaseObjVisible = false;
 				// try to find object w/ given base key within view's visible objects
-				TPOS lPos = 0;
+				long lPos = 0;
 				sptrV->GetFirstVisibleObjectPosition(&lPos);
 				while (lPos)
 				{
@@ -2729,7 +2729,7 @@ bool CDataContext::NeedActivateObject(CContextObject * pObject, bool bActive, in
 				bool bBaseActive = false;
 				
 				// [vanek] BT2000: 3364
-				TPOS lPos = 0;
+				long lPos = 0;
 				m_sptrINamedData->GetBaseGroupObjectFirstPos(&BaseKey, &lPos);
 				while (lPos)
 				{
@@ -2797,7 +2797,7 @@ bool CDataContext::_RemoveNamedObject(INamedDataObject2 * pNamedObject, BSTR bst
 		IViewPtr	ptrView( GetControllingUnknown() );
 		if( ptrView != 0 )
 		{
-			TPOS	lpos = 0;
+			long	lpos = 0;
 			ptrView->GetFirstVisibleObjectPosition(&lpos );
 			while( lpos )
 			{
@@ -2906,7 +2906,7 @@ bool ObjectIsVisible(IView * pView, INamedDataObject2 * pObj)
 	GuidKey ObjKey = ::GetObjectKey(pObj);
 
 	// try to find given object in view's visible objects
-	TPOS lPos = 0;
+	long lPos = 0;
 	pView->GetFirstVisibleObjectPosition(&lPos);
 	while (lPos)
 	{
@@ -3077,7 +3077,7 @@ bool CDataContext::ActivateDependents(CContextObject * pObj, GuidKey & BaseKey, 
 
 	// for all objects in group
 	// get first pos of base group
-	TPOS lPos = 0;
+	long lPos = 0;
 	m_sptrINamedData->GetBaseGroupObjectFirstPos(&BaseKey, &lPos);
 	while (lPos)
 	{
@@ -3192,7 +3192,7 @@ bool CDataContext::SerializeObject( CStreamEx &ar, SerializeParams *pparams )
 		ar << nVersion; //version
 
 		// save number of obj managers
-		int nCount = (int)m_arrObjManagers.GetSize();
+		int nCount = m_arrObjManagers.GetSize();
 		ar << nCount;
 
 		// for all managers from last to first
@@ -3491,7 +3491,7 @@ bool CDataContext::StoreToText(CStringArray & sa)
 
 	Sort();
 	// for all mamangers in reverse order
-	for (int i = (int)m_arrObjManagers.GetSize() - 1; i >= 0; i--)
+	for (int i = m_arrObjManagers.GetSize() - 1; i >= 0; i--)
 	{
 		CObjectManager * pMgr = m_arrObjManagers[i];
 		if (!pMgr)
@@ -3781,7 +3781,7 @@ void TextToMemFile(CMemFile & file, CStringArray & sa)
 	for (i = 0; i < sa.GetSize(); i++ )
 	{
 		const char * sz = sa[i];
-		int	nLineLen = (int)::strlen(sz);
+		int	nLineLen = ::strlen(sz);
 
 		for (int j = 0; j < nLineLen; j += 3)
 		{

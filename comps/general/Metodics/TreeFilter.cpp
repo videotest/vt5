@@ -231,7 +231,7 @@ inline void subst_from_map(_variant_t &var, CSubstMap* pSubstMap)
 	if( VT_BSTR == var.vt )
 	{
 		CString str(var);
-		TPOS lPosMap = pSubstMap->head();
+		long lPosMap = pSubstMap->head();
 		while(lPosMap)
 		{
 			CString strFrom = pSubstMap->get_key(lPosMap);

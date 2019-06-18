@@ -66,7 +66,7 @@ static void CopyParams( ICalcObjectContainerPtr in, ICalcObjectContainerPtr out 
 	if( in == 0 || out == 0)
 		return;
 	
-	LONG_PTR lParamPos = 0;
+	long lParamPos = 0;
 	in->GetFirstParameterPos( &lParamPos );
 	while( lParamPos )
 	{
@@ -79,7 +79,7 @@ static void CopyParams( ICalcObjectContainerPtr in, ICalcObjectContainerPtr out 
 static IUnknownPtr find_child_by_interface(IUnknownPtr sptrParent, const GUID guid)
 {
 	INamedDataObject2Ptr sptrNDOParent(sptrParent);
-	POSITION lPos = 0;
+	long lPos = 0;
 	sptrNDOParent->GetFirstChildPosition(&lPos);
 	while (lPos)
 	{
@@ -351,7 +351,7 @@ bool CAverageObjectsFilter::InvokeFilter()
 
 		nListCount++; //пересчитаем переданные листы
 
-		POSITION pos; objectsIn->GetFirstChildPosition(&pos);
+		long pos; objectsIn->GetFirstChildPosition(&pos);
 		while( pos ) //по всем объектам
 		{
 			Notify(nN++);
@@ -399,7 +399,7 @@ bool CAverageObjectsFilter::InvokeFilter()
 	int x0=10, y0=10;
 	for (int objClass=0; objClass<nCountOut; objClass++)
 	{
-		POSITION lpos = in_images[objClass].head();
+		long lpos=in_images[objClass].head();
 		if(lpos==0) continue;
 		IImage3Ptr image0 = in_images[objClass].get(lpos); // первое изображение
 		//узнаем ColorConverter и число пан в объектах
@@ -673,7 +673,7 @@ bool CAverageObjectsFilter::IsAvaible()
 		INamedDataObject2Ptr objectsIn(GetDataArgument(sz));
 		if( objectsIn!=0 )
 		{	//есть хоть один аргумент - можно работать
-			POSITION pos; objectsIn->GetFirstChildPosition(&pos);
+			long pos; objectsIn->GetFirstChildPosition(&pos);
 			while( pos ) //по всем объектам
 			{
 				IUnknownPtr sptr;

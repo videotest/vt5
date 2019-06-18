@@ -69,47 +69,47 @@ public:
 	com_call			IsBaseObject(BOOL * pbFlag);
 
 	//INamedDataObject2
-	com_call			GetFirstChildPosition(TPOS *plPos);
-	com_call			GetNextChild(TPOS *plPos, IUnknown **ppunkChild);
+	com_call			GetFirstChildPosition( long *plPos );
+	com_call			GetNextChild( long *plPos, IUnknown **ppunkChild );
 
 
 	//IStatTable
 	//parameter info
-	com_call			GetFirstParamPos( TPOS* plpos );
-	com_call			GetNextParam( TPOS* plpos, stat_param** ppparam );
+	com_call			GetFirstParamPos( long* plpos );
+	com_call			GetNextParam( long* plpos, stat_param** ppparam );
 	com_call			GetParamsCount( long* pl_count );
-	com_call			AddParam( TPOS lpos_insert_after, stat_param* pparam, TPOS* pl_pos_new );
-	com_call			DeleteParam( TPOS lpos );
-	com_call			GetParamPosByKey( long lkey, TPOS* pl_pos );
+	com_call			AddParam( long lpos_insert_after, stat_param* pparam, long* pl_pos_new );
+	com_call			DeleteParam( long lpos );
+	com_call			GetParamPosByKey( long lkey, long* pl_pos );
 
 	//group
-	com_call			GetFirstGroupPos(TPOS* plpos);
-	com_call			GetNextGroup(TPOS* plpos, stat_group** ppgroup);
-	com_call			AddGroup(TPOS lpos_insert_after, stat_group* pgroup, TPOS* pl_pos_new);
-	com_call			DeleteGroup(TPOS lpos, BOOL bsync_rows);
+	com_call			GetFirstGroupPos( long* plpos );
+	com_call			GetNextGroup( long* plpos, stat_group** ppgroup );
+	com_call			AddGroup( long lpos_insert_after, stat_group* pgroup, long* pl_pos_new );
+	com_call			DeleteGroup( long lpos, BOOL bsync_rows );
 	com_call			GetGroupCount( long* pl_count );
 
 	//row info
-	com_call			GetFirstRowPos(TPOS* pl_pos);
-	com_call			GetNextRow(TPOS* pl_pos, stat_row** pprow);
+	com_call			GetFirstRowPos( long* pl_pos );
+	com_call			GetNextRow( long* pl_pos, stat_row** pprow );
 	com_call			GetRowCount( long* pl_count );
-	com_call			AddRow(TPOS lpos_insert_after, stat_row* prow, TPOS* pl_pos_new);
-	com_call			DeleteRow(TPOS lpos_row);
+	com_call			AddRow( long lpos_insert_after, stat_row* prow, long* pl_pos_new );
+	com_call			DeleteRow( long lpos_row );
 
 	//value by param
-	com_call			GetValue(TPOS lpos_row, TPOS lpos_param, stat_value** ppvalue);
-	com_call			SetValue(TPOS lpos_row, TPOS lpos_param, stat_value* pvalue);
+	com_call			GetValue( long lpos_row, long lpos_param, stat_value** ppvalue );
+	com_call			SetValue( long lpos_row, long lpos_param, stat_value* pvalue );
 	
 	//value by key
-	com_call			GetValueByKey(TPOS lpos_row, long lkey, stat_value** ppvalue);
-	com_call			SetValueByKey(TPOS lpos_row, long lkey, stat_value* pvalue);
+	com_call			GetValueByKey( long lpos_row, long lkey, stat_value** ppvalue );
+	com_call			SetValueByKey( long lpos_row, long lkey, stat_value* pvalue );
 
 	com_call			ClearCache( );
 
 	STDMETHOD(UpdateClassNames)(void);
 
 	//helper func
-	stat_param_ex*		get_param_by_key(long lkey, TPOS* pl_pos);
+	stat_param_ex*		get_param_by_key( long lkey, long* pl_pos );
 
 	//ICompatibleObject
 	com_call			CreateCompatibleObject( IUnknown *punkObjSource, void *pData, unsigned uDataSize );
@@ -152,34 +152,34 @@ public:
       com_call getFirstParamPos (
         /*[out,retval]*/ VARIANT * pv_pos );
       com_call getNextParamPos (
-				/*[in]*/ LONG_PTR lpos,
+        /*[in]*/ long lpos,
         /*[out,retval]*/ VARIANT * pv_pos );
-	  com_call getParamKey(
-		  /*[in]*/ LONG_PTR lpos,
-		  /*[out,retval]*/ VARIANT * pv_key);
+      com_call getParamKey (
+        /*[in]*/ long lpos,
+        /*[out,retval]*/ VARIANT * pv_key );
       com_call getFirstRowPos (
         /*[out,retval]*/ VARIANT * pv_pos );
       com_call getNextRowPos (
-				/*[in]*/ LONG_PTR lpos,
+        /*[in]*/ long lpos,
 		/*[out,retval]*/ VARIANT * pv_pos );
       com_call getRowCount (
         /*[out,retval]*/ VARIANT * pv_count );
       com_call getRowGroup (
-				/*[in]*/ LONG_PTR lpos,
+        /*[in]*/ long lpos,
         /*[out,retval]*/ VARIANT * pv_group );
       com_call getRowClass (
-				/*[in]*/ LONG_PTR lpos,
+        /*[in]*/ long lpos,
         /*[in]*/ BSTR class_file,
         /*[out,retval]*/ VARIANT * pv_class );
       com_call deleteRow (
-				/*[in]*/ LONG_PTR lpos);
+        /*[in]*/ long lpos );
       com_call getValueByKey (
-				/*[in]*/ LONG_PTR lpos,
+        /*[in]*/ long lpos,
         /*[in]*/ long lkey,
         /*[out,retval]*/ VARIANT * pv_value );
       com_call getValueByParamPos (
-				/*[in]*/ LONG_PTR lpos,
-				/*[in]*/ LONG_PTR lparam_pos,
+        /*[in]*/ long lpos,
+        /*[in]*/ long lparam_pos,
         /*[out,retval]*/ VARIANT * pv_value );
       com_call getGroupCount (
         /*[out,retval]*/ VARIANT * pv_count );
@@ -193,7 +193,7 @@ public:
 	  com_call IsEmpty( /*[out, retval]*/ VARIANT_BOOL *pvbIsEmpty );
 	  // [vanek] BT2000:4077 - 08.12.2004
 	  com_call GetType( /*[out, retval]*/ BSTR *pbstrType );
-		com_call getValueByKeyInUnit( /*[in]*/LONG_PTR lpos, /*[in]*/long lkey, /*[out, retval]*/VARIANT* pv_value);
+	  com_call getValueByKeyInUnit( /*[in]*/long lpos, /*[in]*/long lkey, /*[out, retval]*/VARIANT* pv_value );
 
 	ITypeLib*	m_pi_type_lib;
 	ITypeInfo*	m_pi_type_info;

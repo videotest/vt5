@@ -51,16 +51,16 @@ _variant_t _exec_script_function( LPCTSTR lpctstrFunction, long nArgsCount, _var
 	return varRes;
 }
 
-static int GetGroupNoByObjectPos(IUnknown *punkTD, LONG_PTR lpos)
+static int GetGroupNoByObjectPos(IUnknown *punkTD, long lpos)
 {
 	IStatTablePtr sptrTD(punkTD);
 	if (sptrTD == 0) return -1;
 	stat_row *prow;
-	sptrTD->GetNextRow((TPOS*)&lpos, &prow);
+	sptrTD->GetNextRow(&lpos, &prow);
 	dbg_assert(prow != NULL);
 	GuidKey guildGroup = prow->guid_group;
 	int nGroup = 0;
-	TPOS lposGroup;
+	long lposGroup;
 	sptrTD->GetFirstGroupPos(&lposGroup);
 	while (lposGroup)
 	{
@@ -121,9 +121,9 @@ public:
 			return false;
 		return m_abMask[n];
 	}
-	bool CheckObjectByPos(IUnknown *punkTD, POSITION lPosPrev)
+	bool CheckObjectByPos(IUnknown *punkTD, long lPosPrev)
 	{
-		int nGroup = GetGroupNoByObjectPos(punkTD, (LONG_PTR)lPosPrev);
+		int nGroup = GetGroupNoByObjectPos(punkTD, lPosPrev);
 		if (nGroup > -1 && !Check(nGroup))
 			return false;
 		else
@@ -250,7 +250,7 @@ HRESULT CActionClassifyObjectAll::DoInvoke()
 					if(n_params >= params.size()) params.alloc(params.size()*2);
 					params.ptr()[n_params] = n; n_params++;
 					struct ParameterContainer *pContainer=0;
-					TPOS param_pos=0;
+					long param_pos=0;
 					if(ptrContainer!=0) ptrContainer->ParamDefByKey(n,&pContainer);
 					if(ptrTable!=0) ptrTable->GetParamPosByKey(n,&param_pos);
 					if(0==pContainer && 0==param_pos)
@@ -292,7 +292,7 @@ HRESULT CActionClassifyObjectAll::DoInvoke()
 
 	sptrProxy->Start();
 
-	POSITION lPos = 0;
+	long lPos = 0;
 	CSupportComposite sc(ptrList);
 	INamedDataObject2Ptr ptrSaveList(ptrList);
 	if(sc.IsComposite())
@@ -456,7 +456,7 @@ HRESULT CActionClassifyObjectAll::DoInvoke()
 	SetModified( true );
 
 	long l = cncReset;
-
+	
 	FireEvent( m_ptrTarget, szEventChangeObjectList, ptrSaveList, 0, &l, sizeof( l ) );
 	return S_OK;
 }

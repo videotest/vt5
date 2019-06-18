@@ -31,7 +31,7 @@ CAxDocContainer::CAxDocContainer( COleItemData* pOleItemData )
 
 	m_bstrStreamName  = szObjStreamName;
 	char buf[255];
-	_ui64toa(dw, buf, 10);
+	_itoa( abs( dw ), buf, 10 );
 	m_bstrStreamName += buf;	
 
 	//m_bstrStreamName += "e82375712534123";

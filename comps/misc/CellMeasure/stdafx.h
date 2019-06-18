@@ -5,9 +5,6 @@
 
 #pragma once
 
-#define WINVER 0x0501
-#define _WIN32_WINNT 0x501
-
 #define VC_LEANANDMEAN
 
 #include <afxwin.h>         // MFC core and standard components

@@ -1,6 +1,0 @@
-'state:function=StateObjectRectScript
-
-MethodMan_BeforeInteractiveMethodStep "ObjectRectScript", "group"
-ActionState.RunInteractive "ObjectRect"
-MethodMan.StoreStepAs Docs.LoadString ("Object Editor")
-MethodMan.CancelStepStoring

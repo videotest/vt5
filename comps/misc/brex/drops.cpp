@@ -52,7 +52,7 @@ HRESULT	CActionFindDropAngle::GetActionState(DWORD *pdwState)
 
 	if( sptr_ndo != 0 )
 	{
-		LPOS lpos_chld = 0; 
+		long lpos_chld = 0; 
         sptr_ndo->GetActiveChild( &lpos_chld );
 		if( lpos_chld )
 				*pdwState |= afEnabled;

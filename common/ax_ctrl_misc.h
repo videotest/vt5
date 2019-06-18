@@ -60,7 +60,11 @@ inline void FireCtrlPropChange( IUnknown* punk_ctrl_disp )
 	PGET_APP_UNKNOWN pGetAppUnknown	= 0;
 	IUnknown* punk_app				= 0;
 
-	HINSTANCE hDll_Common = GetModuleHandle("common.dll");
+	#ifdef _DEBUG
+		HINSTANCE hDll_Common = GetModuleHandle("common_d.dll");
+	#else
+		HINSTANCE hDll_Common = GetModuleHandle("common.dll");
+	#endif
 
 	if (hDll_Common)
 	{

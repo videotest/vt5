@@ -39,7 +39,7 @@ IMPLEMENT_GROUP_OLECREATE(CSpermMeasGroup, "SpermParams.SpermMeasGroup",
 IUnknownPtr find_child_by_interface(IUnknownPtr sptrParent, const GUID guid)
 {
 	INamedDataObject2Ptr sptrNDOParent(sptrParent);
-	POSITION lPos = 0;
+	long lPos = 0;
 	sptrNDOParent->GetFirstChildPosition(&lPos);
 	while (lPos)
 	{

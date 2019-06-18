@@ -36,7 +36,7 @@ bool CTakeObjectsRects::InvokeFilter()
 	StartNotification(nCount,1,1);
 
 	m_ObjectPool.StartProcessing(objectsOut, ptrImage, nMinCX, nMinCY);
-	TPOS pos; objectsIn->GetFirstChildPosition(&pos);
+	long pos; objectsIn->GetFirstChildPosition(&pos);
 	int nObj=0;
 	while( pos ) //по всем объектам
 	{

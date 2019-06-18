@@ -121,7 +121,7 @@ public:
 	bool is_runned() { return m_brunned; }
 	void set_main_width( int nw )
 	{
-		for (TPOS lw = m_listItems.head(); lw; lw = m_listItems.next(lw))
+		for( long lw = m_listItems.head(); lw; lw = m_listItems.next( lw ) )
 		{
 			CPaneItem *pp = m_listItems.get( lw );
 			pp->set_main_width( nw );
@@ -138,20 +138,20 @@ public:
 	CPaneItemPlace *get_sub_place_from_handle( HWND hwnd );
 
 	RECT get_virtual_rect();
-	LRESULT on_erasebkgnd(HDC);
-	LRESULT on_paint();
+	long on_erasebkgnd( HDC );
+	long on_paint();
 	void check_scroll( bool *pbUpScroll, bool *pbDownScroll );
 	int get_row_height();
 	void offset_items( POINT ptOffset );
-	virtual LRESULT on_mousemove(const _point &point);
-	virtual LRESULT on_lbuttondown(const _point &point);
-	virtual LRESULT on_lbuttonup(const _point &point);
-	virtual LRESULT	handle_message(UINT m, WPARAM w, LPARAM l);
-	virtual LRESULT on_size(short cx, short cy, ulong fSizeType);
+	virtual long on_mousemove( const _point &point );
+	virtual long on_lbuttondown( const _point &point );
+	virtual long on_lbuttonup( const _point &point );
+	virtual long	handle_message( UINT m, WPARAM w, LPARAM l );
+	virtual long on_size( short cx, short cy, ulong fSizeType );
 
 	void store_content( INamedData *punkND, CString strRoot );
 	void load_content( INamedData *punkND, CString strRoot );
-	virtual LRESULT on_timer(ulong lEvent);
+	virtual long on_timer( ulong lEvent );
 
 	CPaneItem *get_item( long lIndex );
 	long get_item_count( ) { return m_listItems.count(); }
@@ -180,13 +180,13 @@ public:
 	}
 	long on_notify_reflect( NMHDR *pnmhdr, long *plProcessed );
 	long handle_reflect_message( MSG *pmsg, long *plProcessed );
-	LRESULT on_erasebkgnd(HDC);
+	long on_erasebkgnd( HDC );
 
-	LRESULT on_mousemove(const _point &point);
-	LRESULT	handle_message(UINT m, WPARAM w, LPARAM l);
+	long on_mousemove( const _point &point );
+	long	handle_message( UINT m, WPARAM w, LPARAM l );
 	long on_mouseleave();
-	LRESULT on_lbuttondown(const _point &point);
-	LRESULT on_lbuttonup(const _point &point);
+	long on_lbuttondown( const _point &point );
+	long on_lbuttonup( const _point &point );
 };
 
 class CPaneTitle : public win_impl
@@ -199,10 +199,10 @@ public:
 	~CPaneTitle();
 	long on_notify_reflect( NMHDR *pnmhdr, long *plProcessed );
 	long handle_reflect_message( MSG *pmsg, long *plProcessed );
-	LRESULT on_mousemove(const _point &point);
-	LRESULT	handle_message(UINT m, WPARAM w, LPARAM l);
+	long on_mousemove( const _point &point );
+	long	handle_message( UINT m, WPARAM w, LPARAM l );
 	long on_mouseleave();
-	LRESULT on_lbuttonup(const _point &point);
+	long on_lbuttonup( const _point &point );
 	void set_icon( HICON hIcon ) { m_hIcon = hIcon; }
 };
 
@@ -230,9 +230,9 @@ public:
 	CPane();
 	~CPane();
 	virtual bool create( DWORD style, const RECT &rect, const _char *pszTitle = 0, HWND parent = 0, HMENU hmenu = 0, const _char *pszClass = 0 );
-	virtual LRESULT on_size(short cx, short cy, ulong fSizeType);
-	virtual LRESULT handle_message(UINT m, WPARAM w, LPARAM l);
-	LRESULT on_erasebkgnd(HDC);
+	virtual long on_size( short cx, short cy, ulong fSizeType );
+	virtual long handle_message( UINT m, WPARAM w, LPARAM l );
+	long on_erasebkgnd( HDC );
 	void open_pane( bool bOpen );
 
 	CPaneItemPlace *get_item_place() { return &m_ItemPlace; }
@@ -270,9 +270,9 @@ public:
 	CPaneBar();
 	virtual ~CPaneBar();
 
-	LRESULT on_size(short cx, short cy, ulong fSizeType);
-	LRESULT on_erasebkgnd(HDC);
-	LRESULT handle_message(UINT m, WPARAM w, LPARAM l);
+	long on_size( short cx, short cy, ulong fSizeType );
+	long on_erasebkgnd( HDC );
+	long handle_message( UINT m, WPARAM w, LPARAM l );
 
 	LRESULT help_hit_test( WPARAM wParam, LPARAM lParam );
 

@@ -24,14 +24,14 @@ using namespace ObjectSpace::ObjectActions;
 using namespace ViewSpace;
 using namespace ViewSpace::ViewActions;
 
-//
-//#ifdef _DEBUG
-//#pragma comment (lib, "\\vt5\\common2\\debug\\common2.lib")
-//#pragma comment (lib, "\\vt5\\Controls2\\debug\\controls2.lib")
-//#else
-//#pragma comment (lib, "\\vt5\\common2\\release\\common2.lib")
-//#pragma comment (lib, "\\vt5\\Controls2\\release\\controls2.lib")
-//#endif//_DEBUG
+
+#ifdef _DEBUG
+#pragma comment (lib, "\\vt5\\common2\\debug\\common2.lib")
+#pragma comment (lib, "\\vt5\\Controls2\\debug\\controls2.lib")
+#else
+#pragma comment (lib, "\\vt5\\common2\\release\\common2.lib")
+#pragma comment (lib, "\\vt5\\Controls2\\release\\controls2.lib")
+#endif//_DEBUG
 
 namespace{
 	struct CStatUIModule:CAtlDllModuleT<CStatUIModule>{}_AtlModule;

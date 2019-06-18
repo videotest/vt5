@@ -90,14 +90,14 @@ protected:
 	}
 
 protected:
-	virtual LRESULT on_create(CREATESTRUCT *pcs)
+	virtual long on_create( CREATESTRUCT *pcs )
 	{
-		LRESULT l = __super::on_create(pcs);
+		long l = __super::on_create(pcs);
 		m_nTimer = SetTimer(handle(), 1, 100, NULL);
 		SetCapture(handle());
 		return l;
 	}
-	virtual LRESULT on_mousemove(const _point &point)
+	virtual long on_mousemove(const _point &point)
 	{
 		if (m_bDrag)
 		{
@@ -112,25 +112,25 @@ protected:
 		}
 		return 0;
 	}
-	virtual LRESULT on_lbuttondown(const _point &point)
+	virtual long on_lbuttondown( const _point &point )
 	{
 		m_ptStartDrag = point;
 		m_rcStartDrag = m_rc;
 		m_bDrag = true;
 		return 0;
 	}
-	virtual LRESULT on_lbuttonup(const _point &point)
+	virtual long on_lbuttonup( const _point &point )
 	{
 		m_bDrag = false;
 		return 0;
 	}
-	virtual LRESULT on_rbuttonup(const _point &point)
+	virtual long on_rbuttonup( const _point &point )
 	{
 		m_bEditComplete = true;
 		m_nCompleteCode = 0;
 		return 0;
 	}
-	virtual LRESULT on_keydown(long nVirtKey)
+	virtual long on_keydown( long nVirtKey )
 	{
 		switch (nVirtKey)
 		{
@@ -161,17 +161,17 @@ protected:
 		}
 		return __super::on_keydown(nVirtKey);
 	}
-	virtual LRESULT on_erasebkgnd(HDC)
+	virtual long on_erasebkgnd(HDC)
 	{
 		return 1;
 	}
-	virtual LRESULT on_timer(ulong lEvent)
+	virtual long on_timer(ulong lEvent)
 	{
 		RedrawRect();
 		KillTimer(handle(), m_nTimer);
 		return 0;
 	}
-	virtual LRESULT on_activate(unsigned code, HWND hwnd)
+	virtual long on_activate(unsigned code, HWND hwnd)
 	{
 		if (code == WA_INACTIVE)
 		{

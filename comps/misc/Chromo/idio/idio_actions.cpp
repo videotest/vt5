@@ -57,7 +57,7 @@ IUnknownPtr _GetObjectByName( IUnknown *punkFrom, const BSTR bstrObject, const B
 			continue;
 
 		IUnknown	*punkObj = 0;
-		LONG_PTR	dwPos = 0;
+		long	dwPos = 0;
 
 		ptrDataType->GetObjectFirstPosition( nType, &dwPos );
 
@@ -76,7 +76,7 @@ IUnknownPtr _GetObjectByName( IUnknown *punkFrom, const BSTR bstrObject, const B
 			INamedDataObject2Ptr	ptrN( punkObj );
 			punkObj->Release();
 
-			POSITION	lpos = 0;
+			long	lpos = 0;
 			ptrN->GetFirstChildPosition( &lpos );
 
 			while( lpos )
@@ -233,7 +233,7 @@ public:
 		if( sptrWin->CreateWnd( handle(), rcView, WS_CHILD | WS_VISIBLE | WS_TABSTOP, 23322323 ) != S_OK )
 			return 0;
 
-		LONG_PTR lPos = 0;
+		long lPos = 0;
 		sptrContext->GetFirstObjectPos( bstrIDB, &lPos );
 
 		if( lPos )
@@ -248,7 +248,7 @@ public:
 		return 1L;
 	}
 
-	LRESULT on_initdialog()
+	long on_initdialog()
 	{
 		char	sz_path[MAX_PATH];
 
@@ -276,10 +276,10 @@ public:
 			init_db( m_main_path + tch + ".dbi" );
 		}
 		
-		return 1;
+		return 1L;
 	}
 
-	LRESULT on_destroy()
+	long on_destroy()							
 	{
 		IWindowPtr sptrWin = m_sptrView;	
 		if( sptrWin )
@@ -601,7 +601,7 @@ public:
 
 		__super::on_ok();
 	}
-	LRESULT handle_message( UINT m, WPARAM w, LPARAM l )
+	long handle_message( UINT m, WPARAM w, LPARAM l )
 	{
 		if( m == WM_COMMAND && IDC_COMBO_TYPE == LOWORD( w ) && CBN_SELCHANGE == HIWORD( w ) )
 		{
@@ -643,7 +643,7 @@ public:
 		return __super::handle_message( m, w, l );
 	}
 
-	LRESULT on_hscroll(unsigned code, unsigned pos, HWND hwndScroll)
+	long on_hscroll( unsigned code, unsigned pos, HWND hwndScroll )
 	{
 		RECT	rcClient = {0};
 		::GetClientRect( get_dlg_item( IDC_IDIO_LIST ), &rcClient );
@@ -663,7 +663,7 @@ public:
 		return 0L;
 	}
 
-	LRESULT on_vscroll(unsigned code, unsigned pos, HWND hwndScroll)
+	long on_vscroll( unsigned code, unsigned pos, HWND hwndScroll )
 	{
 		RECT	rcClient = {0};
 		::GetClientRect( get_dlg_item( IDC_IDIO_LIST ), &rcClient );
@@ -687,7 +687,7 @@ public:
 
 action_insert::~action_insert()
 {
-	TPOS	lpos = m_insert.head();
+	long	lpos = m_insert.head();
 	while( lpos )m_insert.next( lpos )->Release();
 }
 
@@ -718,7 +718,7 @@ HRESULT action_insert::DoInvoke()
 	{
 		INamedDataObject2Ptr	ptrNamed( ptrActiveObject );
 
-		POSITION	lpos_c = 0;
+		long	lpos_c = 0;
 		ptrNamed->GetFirstChildPosition( &lpos_c );
 		while( lpos_c )
 		{
@@ -746,7 +746,7 @@ HRESULT action_insert::DoInvoke()
 
 	//insert the selected idiogrtam
 	bool	fFirst = true;
-	for( TPOS lpos = m_insert.head(); lpos; m_insert.next( lpos ) )
+	for( long lpos = m_insert.head(); lpos; m_insert.next( lpos ) )
 	{
 		IIdiogram	*p = m_insert.get( lpos );
 

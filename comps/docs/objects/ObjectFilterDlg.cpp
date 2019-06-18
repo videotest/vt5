@@ -12,7 +12,11 @@
 static char THIS_FILE[] = __FILE__;
 #endif
 
-#define _LIBNAME_CONTROLS_ "Controls.lib"
+#ifdef _DEBUG
+#pragma comment( lib, "Controls_d.lib" )
+#else
+#pragma comment( lib, "Controls.lib" )
+#endif//
 
 const long g_nColsCount = 3;
 
@@ -37,13 +41,13 @@ static void _GetMinMaxValue(long nParamKey, double &dMin, double &dMax)
 	pList->Release();
 	ParameterContainer *pParamCont;
 	sptrCntr->ParamDefByKey(nParamKey, &pParamCont);
-	TPOS pos = 0;
+	long pos = 0;
 	bool bFirst = true;
-	sptrObjects->GetFirstChildPosition(&pos);
+	sptrObjects->GetFirstChildPosition((long*)&pos);
 	while (pos)
 	{
 		IUnknownPtr sptr;
-		sptrObjects->GetNextChild(&pos, &sptr);
+		sptrObjects->GetNextChild((long*)&pos, &sptr);
 		ICalcObjectPtr sptrObj(sptr);
 		long lClass = get_object_class(sptrObj );
 		if (lClass >= 0)
@@ -171,7 +175,7 @@ void CObjectFilterDlg::_LoadParamsToGrid()
 			IMeasParamGroupPtr sptrGroup(punkGroup);
 			if(sptrGroup != 0)
 			{
-				LONG_PTR lParamPos = 0;
+				long lParamPos = 0;
 				if (FAILED(sptrGroup->GetFirstPos(&lParamPos)))
 					continue;
 

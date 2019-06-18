@@ -27,13 +27,13 @@ class xp_scroll : public win_impl
 public:
 	xp_scroll();
 	~xp_scroll();
-	virtual LRESULT handle_message( UINT m, WPARAM w, LPARAM l );
+	virtual long handle_message( UINT m, WPARAM w, LPARAM l );
 protected:
 
 	virtual void handle_init();
-	virtual LRESULT on_size(short cx, short cy, ulong fSizeType);
-	virtual LRESULT on_paint();
-	virtual LRESULT on_erasebkgnd(HDC);
+	virtual long on_size( short cx, short cy, ulong fSizeType );
+	virtual long on_paint();
+	virtual long on_erasebkgnd( HDC );
 	virtual long on_setscrollinfo( SCROLLINFO *pinfo, bool fRedraw );
 	virtual long on_getscrollinfo( SCROLLINFO *pinfo );
 	virtual long on_setrange( long min, long max );
@@ -41,11 +41,11 @@ protected:
 	virtual long on_enable( bool fEnable );
 	virtual long on_enable_scrollbar( long fDisable );
 
-	virtual LRESULT on_lbuttondown(const _point &point);
-	virtual LRESULT on_lbuttonup(const _point &point);
-	virtual LRESULT on_mousemove(const _point &point);
-	virtual LRESULT on_timer(ulong event);
-	virtual LRESULT on_ncdestroy();
+	virtual long on_lbuttondown( const _point &point );
+	virtual long on_lbuttonup( const _point &point );
+	virtual long on_mousemove( const _point &point );
+	virtual long on_timer( ulong event );
+	virtual long on_ncdestroy();
 protected:
 	void _draw_scroll_pane( HDC hdc, const _rect	&rect, unsigned flags, int item );
 	void _layout();
@@ -75,7 +75,7 @@ protected:
 
 int xp_scroll::scroll_msg[2] = {WM_HSCROLL, WM_VSCROLL};
 
-LRESULT xp_scroll::on_ncdestroy()
+long xp_scroll::on_ncdestroy()
 {
 	return win_impl::on_ncdestroy();
 }
@@ -214,7 +214,7 @@ void xp_scroll::_layout()
 	}
 }
 
-LRESULT xp_scroll::on_size(short cx, short cy, ulong fSizeType)
+long xp_scroll::on_size( short cx, short cy, ulong fSizeType )	
 {
 	win_impl::on_size( cx, cy, fSizeType );
 	_layout();
@@ -223,7 +223,7 @@ LRESULT xp_scroll::on_size(short cx, short cy, ulong fSizeType)
 	return true;
 }
 
-LRESULT xp_scroll::on_timer(ulong event)
+long xp_scroll::on_timer( ulong event )
 {
 	if( event == 123 )
 	{
@@ -449,7 +449,7 @@ void xp_scroll::_draw_scroll_pane( HDC hdc, const _rect	&rect, unsigned flags, i
 	ImageList_Draw( m_images, image, hdc, point.x, point.y, ILD_TRANSPARENT ); 
 }
 
-LRESULT xp_scroll::on_paint()
+long xp_scroll::on_paint()
 {
 	PAINTSTRUCT	ps;
 	HDC hdcPaint = BeginPaint( handle(), &ps );
@@ -546,7 +546,7 @@ LRESULT xp_scroll::on_paint()
 
 	return 0;
 }
-LRESULT xp_scroll::on_erasebkgnd(HDC)
+long xp_scroll::on_erasebkgnd( HDC )
 {
 	return 0;
 }
@@ -568,7 +568,7 @@ long xp_scroll::on_enable( bool fEnable )
 	return true;
 }
 
-LRESULT xp_scroll::handle_message( UINT m, WPARAM w, LPARAM l )
+long xp_scroll::handle_message( UINT m, WPARAM w, LPARAM l )
 {
 	switch( m )
 	{
@@ -665,7 +665,7 @@ long xp_scroll::on_getscrollinfo( SCROLLINFO *pinfo )
 	return true;
 }
 
-LRESULT xp_scroll::on_lbuttondown(const _point &point)
+long xp_scroll::on_lbuttondown( const _point &point )
 {
 	if( m_rect_up.pt_in_rect( point ) )
 	{
@@ -722,7 +722,7 @@ LRESULT xp_scroll::on_lbuttondown(const _point &point)
 	return true;
 }
 
-LRESULT xp_scroll::on_lbuttonup(const _point &point)
+long xp_scroll::on_lbuttonup( const _point &point )
 {
 	if( m_mode != MODE_NOTHING )
 	{
@@ -734,7 +734,7 @@ LRESULT xp_scroll::on_lbuttonup(const _point &point)
 	return true;
 }
 
-LRESULT xp_scroll::on_mousemove(const _point &point)
+long xp_scroll::on_mousemove( const _point &point )
 {
 	if( m_mode == MODE_TRACK )
 	{
@@ -801,7 +801,7 @@ void xp_pane::client_area( RECT *prect )
 void xp_pane::set_caption( XP_CAPTION_BUTTON *pbtn, bool bCreateNew )
 {
 	caption_button	*pfound = 0;
-	for (TPOS lpos = buttons.head(); lpos; lpos = buttons.next(lpos))
+	for( long lpos = buttons.head(); lpos; lpos = buttons.next( lpos ) )
 	{
 		caption_button *p = buttons.get( lpos );
 		if( p->command == pbtn->nCmd )
@@ -830,7 +830,7 @@ void xp_pane::set_caption( XP_CAPTION_BUTTON *pbtn, bool bCreateNew )
 
 void xp_pane::click( const _point &point )
 {
-	for (TPOS lpos = buttons.head(); lpos; lpos = buttons.next(lpos))
+	for( long lpos = buttons.head(); lpos; lpos = buttons.next( lpos ) )
 	{
 		caption_button *p = buttons.get( lpos );
 		if( (p->state & XPBS_ENABLED )&&p->rect.pt_in_rect( point ) )
@@ -854,7 +854,7 @@ void xp_pane::click( const _point &point )
 
 void xp_pane::remove_caption( unsigned id )
 {
-	for (TPOS lpos = buttons.head(); lpos; lpos = buttons.next(lpos))
+	for( long lpos = buttons.head(); lpos; lpos = buttons.next( lpos ) )
 	{
 		caption_button *p = buttons.get( lpos );
 		if( p->command == id )
@@ -874,7 +874,7 @@ void xp_pane::draw( Graphics &graphics, _rect &client )
 	rect_button.top = rect.top+caption_offset+2;
 	rect_button.bottom = rect_button.top+16;
 
-	for (TPOS lpos = buttons.tail(); lpos; lpos = buttons.prev(lpos))
+	for( long lpos = buttons.tail(); lpos; lpos = buttons.prev( lpos ) )
 	{
 		caption_button	*pbutton = buttons.get( lpos );
 		rect_button.right = rect_button.left-2;
@@ -961,7 +961,7 @@ xp_toolbar_pane::xp_toolbar_pane( xpbar_ctrl *p ) : xp_pane( p )
 
 xp_toolbar_pane::~xp_toolbar_pane()
 {
-	for (TPOS lpos = head(); lpos; lpos = next(lpos))
+	for( long lpos = head(); lpos; lpos=  next( lpos ) )
 	{
 		xp_button	*pbutton = get( lpos );
 		if( pbutton->hilighted )
@@ -988,7 +988,7 @@ void xp_toolbar_pane::from_item( XPPANEITEM *p )
 void xp_toolbar_pane::draw( Graphics &graphics, _rect &client )
 {
 
-	for (TPOS lpos = head(); lpos; lpos = next(lpos))
+	for( long lpos = head(); lpos; lpos = next( lpos ) )
 	{
 		xp_button	*pbutton = get( lpos );
 		_rect	rect_paint = pbutton->rect;
@@ -1073,7 +1073,7 @@ void xp_toolbar_pane::set_button( XPBUTTON *p, bool bnew )
 	}
 	else
 	{
-		for (TPOS lpos = head(); lpos; lpos = next(lpos))
+		for( long lpos = head(); lpos; lpos = next( lpos ) )
 		{
 			xp_button *pbt = get( lpos );
 			if( pbt->cmd == p->command )
@@ -1110,7 +1110,7 @@ void xp_toolbar_pane::calc_layout( bool update_size )
 
 	rect_paint.bottom = rect_paint.top+size_button.cy;
 	
-	for (TPOS lpos = head(); lpos; lpos = next(lpos))
+	for( long lpos = head(); lpos; lpos = next( lpos ) )
 	{
 		xp_button	*pbutton = get( lpos );
 		
@@ -1136,7 +1136,7 @@ void xp_toolbar_pane::move()
 
 long xp_toolbar_pane::hit_test( const _point &point, XPHITTEST *phit )
 {
-	for (TPOS lpos = head(); lpos; lpos = next(lpos))
+	for( long lpos = head(); lpos; lpos = next( lpos ) )
 	{
 		xp_button	*pbutton = get( lpos );
 		if( pbutton->rect.pt_in_rect( point ) )
@@ -1144,7 +1144,7 @@ long xp_toolbar_pane::hit_test( const _point &point, XPHITTEST *phit )
 			if( phit )
 			{
 				phit->flags = XPHT_BUTTON;
-				phit->lparam = (LPARAM)lpos;
+				phit->lparam = lpos;
 				phit->pbhilight = &pbutton->hilighted;
 
 				if( pbutton->style & XPBS_ENABLED )
@@ -1165,7 +1165,7 @@ long xp_toolbar_pane::hit_test( const _point &point, XPHITTEST *phit )
 
 bool xp_toolbar_pane::is_button_exist(xp_button*p)
 {
-	for (TPOS lpos = head(); lpos; lpos = next(lpos))
+	for( long lpos = head(); lpos; lpos = next( lpos ) )
 	{
 		xp_button	*pbutton = get( lpos );
 		if (pbutton == p)
@@ -1177,7 +1177,7 @@ bool xp_toolbar_pane::is_button_exist(xp_button*p)
 
 void xp_toolbar_pane::click( const _point &point )
 {
-	for (TPOS lpos = head(); lpos; lpos = next(lpos))
+	for( long lpos = head(); lpos; lpos = next( lpos ) )
 	{
 		xp_button	*pbutton = get( lpos );
 		if( pbutton->rect.pt_in_rect( point ) )
@@ -1343,7 +1343,7 @@ xp_status_pane::xp_status_pane( xpbar_ctrl *pctrl ) : xp_pane( pctrl )
 	height = 100;
 }
 
-void xp_status_pane::set_part_text(TPOS lpos, const char *psz)
+void xp_status_pane::set_part_text( long lpos, const char *psz )
 {
 	status_part	*ppart = get( lpos );
 	ppart->text = psz;
@@ -1356,7 +1356,7 @@ void xp_status_pane::show( bool show )
 {
 	if( show )calc_layout( false );
 
-	for (TPOS lpos = head(); lpos; lpos = next(lpos))
+	for( long lpos = head(); lpos; lpos = next( lpos ) )
 		if( get( lpos )->hwnd )
 			::ShowWindow( get( lpos )->hwnd, show?SW_SHOW:SW_HIDE );
 
@@ -1367,7 +1367,7 @@ void xp_status_pane::move()
 {
 	calc_layout( false );
 
-	for (TPOS lpos = head(); lpos; lpos = next(lpos))
+	for( long lpos = head(); lpos; lpos = next( lpos ) )
 		if( get( lpos )->hwnd )
 		{
 			_rect	rect = get( lpos )->rect;
@@ -1379,9 +1379,9 @@ void xp_status_pane::move()
 }
 
 
-TPOS xp_status_pane::set_part(XP_STATUS *pst, bool fChangeRef)
+long xp_status_pane::set_part( XP_STATUS *pst, bool fChangeRef )
 {
-	TPOS	lpos = lpos_by_guid(pst->guid);
+	long	lpos = lpos_by_guid( pst->guid );
 	status_part	*p = 0;
 	if( lpos )
 	{
@@ -1457,7 +1457,7 @@ void xp_status_pane::set_text( status_part *p, const char *psz )
 	}
 }
 
-void xp_status_pane::remove_part(TPOS lpos)
+void xp_status_pane::remove_part( long lpos )
 {
 	status_part	*p = get( lpos );
 	p->ref_counter--;
@@ -1468,15 +1468,15 @@ void xp_status_pane::remove_part(TPOS lpos)
 	}
 }
 
-TPOS	xp_status_pane::lpos_by_pos(long n)
+long	xp_status_pane::lpos_by_pos( long n )
 {
-	for (TPOS lpos = head(); lpos; lpos = next(lpos), n--)
+	for( long lpos = head(); lpos; lpos = next( lpos ), n-- )
 		if( !n )break;
 	return lpos;
 }
-TPOS	xp_status_pane::lpos_by_guid(const GUID &guid)
+long	xp_status_pane::lpos_by_guid( const GUID &guid )
 {
-	for (TPOS lpos = head(); lpos; lpos = next(lpos))
+	for( long lpos = head(); lpos; lpos = next( lpos ) )
 		if( get( lpos )->guid==guid )
 			break;
 	return lpos;
@@ -1484,7 +1484,7 @@ TPOS	xp_status_pane::lpos_by_guid(const GUID &guid)
 
 void xp_status_pane::draw( Graphics &graphics, _rect &client )
 {
-	for (TPOS lpos = head(); lpos; lpos = next(lpos))
+	for( long lpos = head(); lpos; lpos = next( lpos ) )
 	{
 		status_part	*ppart = get( lpos );
 		_rect	rect_paint = ppart->rect;
@@ -1528,7 +1528,7 @@ void xp_status_pane::calc_layout( bool update_size )
 	rect_paint.bottom = rect_paint.top;
 	long	calc_height = 11+caption_height;
 
-	for (TPOS lpos = head(); lpos; lpos = next(lpos))
+	for( long lpos = head(); lpos; lpos = next( lpos ) )
 	{
 		status_part	*pbutton = get( lpos );
 		
@@ -1724,7 +1724,7 @@ void xpbar_ctrl::redraw( _rect *prect, bool fUpdate )
 }
 
 
-LRESULT xpbar_ctrl::on_create(CREATESTRUCT *pcs)
+long xpbar_ctrl::on_create( CREATESTRUCT *pcs )
 {
 	win_impl::on_create( pcs );
 
@@ -1771,7 +1771,7 @@ LRESULT xpbar_ctrl::on_create(CREATESTRUCT *pcs)
 	return 0;
 }
 
-LRESULT xpbar_ctrl::on_destroy()
+long xpbar_ctrl::on_destroy()
 {
 	::DeleteObject( m_hfont );
 	::DeleteObject( m_hbrushScrollBar );
@@ -1787,12 +1787,12 @@ LRESULT xpbar_ctrl::on_destroy()
 	return win_impl::on_destroy();
 }
 
-LRESULT xpbar_ctrl::on_size(short cx, short cy, ulong fSizeType)
+long xpbar_ctrl::on_size( short cx, short cy, ulong fSizeType )
 {
 	if( current_bar_width != cx )
 	{
 		current_bar_width = cx;
-		for (TPOS lpos = head(); lpos; lpos = next(lpos))
+		for( long lpos = head(); lpos; lpos = next( lpos ) )
 		{
 			xp_pane *p = get( lpos );
 			p->rect.right = current_bar_width-pane_offset_x;
@@ -1813,7 +1813,7 @@ LRESULT xpbar_ctrl::on_size(short cx, short cy, ulong fSizeType)
 
 xp_status_pane *xpbar_ctrl::_find_statusbar()
 {
-	for (TPOS lpos = head(); lpos; lpos = next(lpos))
+	for( long lpos = head(); lpos; lpos = next( lpos ) )
 	{
 		xp_pane *p = get( lpos );
 		if( p->get_style() == XPPS_STATUS )return (xp_status_pane *)p;
@@ -1916,7 +1916,7 @@ void xpbar_ctrl::_update_sizes()
 		on_vscroll( SB_THUMBPOSITION, new_pos, 0 );
 }
 
-LRESULT xpbar_ctrl::on_paint()
+long xpbar_ctrl::on_paint()
 {
 	PAINTSTRUCT	paint;
 
@@ -1962,7 +1962,7 @@ LRESULT xpbar_ctrl::on_paint()
 //draw panes
 	
 	int	delta = 3;
-	for (TPOS lpos = head(); lpos; lpos = next(lpos))
+	for( long lpos = head(); lpos; lpos = next( lpos ) )
 	{
 		xp_pane	*p = get( lpos );
 
@@ -2059,7 +2059,7 @@ LRESULT xpbar_ctrl::on_paint()
 	return 0;
 }
 
-TPOS xpbar_ctrl::on_insert(XPINSERTITEM *p)
+long xpbar_ctrl::on_insert( XPINSERTITEM *p )
 {
 	unsigned style = XPPS_UNKNOWN;
 
@@ -2088,11 +2088,11 @@ TPOS xpbar_ctrl::on_insert(XPINSERTITEM *p)
 		::ImageList_GetIconSize( image_list, (int*)&ppane->caption_offset, (int*)&ppane->caption_height );
 	}
 	
-	TPOS lpos = insert_before(ppane, (TPOS)p->insert_pos);
+	long lpos = insert_before( ppane, p->insert_pos );
 
 
 	int	ypos = pane_offset_y;
-	TPOS	lprev_pos = prev(lpos);
+	long	lprev_pos = prev( lpos );
 
 	if( lprev_pos )
 		ypos = get( lprev_pos )->rect.bottom+pane_offset_y;
@@ -2104,7 +2104,7 @@ TPOS xpbar_ctrl::on_insert(XPINSERTITEM *p)
 	ppane->rect.right = current_bar_width-pane_offset_x;
 
 	long	delta = ppane->rect.height()+pane_offset_y;
-	for (TPOS lpos1 = next(lpos); lpos1; lpos1 = next(lpos1))
+	for( long lpos1 = next( lpos ); lpos1; lpos1 = next( lpos1 ) )
 	{
 		xp_pane *pn = get( lpos1 );
 		pn->rect.top += delta;
@@ -2137,14 +2137,14 @@ void xpbar_ctrl::_kill_timer()
 	timer_running = false;
 }
 
-LRESULT xpbar_ctrl::on_timer(ulong lEvent)
+long xpbar_ctrl::on_timer( ulong lEvent )
 {
 	if( lEvent == 777 )
 	{
 		//preform timer operation
 		bool	bChanged = false;
 
-		for (TPOS lpos = head(); lpos; lpos = next(lpos))
+		for( long lpos = head(); lpos; lpos = next( lpos ) )
 		{
 			xp_pane	*p = get( lpos );
 
@@ -2194,7 +2194,7 @@ LRESULT xpbar_ctrl::on_timer(ulong lEvent)
 						fOperationFinished  = true;
 					}
 				
-					TPOS lpos1 = next(lpos);
+				long lpos1 = next( lpos );
 				max_bottom = max( p->rect.bottom, max_bottom );
 
 				if( p->state == xpps_Deleting )
@@ -2249,13 +2249,13 @@ LRESULT xpbar_ctrl::on_timer(ulong lEvent)
 	return win_impl::on_timer( lEvent );
 }
 
-LRESULT xpbar_ctrl::on_lbuttonup(const _point &point)
+long xpbar_ctrl::on_lbuttonup( const _point &point )
 {
 	if( !m_fLB_pressed )return 0;
 	m_fLB_pressed  = false;
 
 	XPHITTEST	ht;
-	TPOS	lpos = on_hittest(point, &ht);
+	long	lpos = on_hittest( point, &ht );
 
 	if( !lpos )return 0;
 
@@ -2271,7 +2271,7 @@ LRESULT xpbar_ctrl::on_lbuttonup(const _point &point)
 	return true;
 }
 
-long xpbar_ctrl::on_expand(TPOS lpos, unsigned expand)
+long xpbar_ctrl::on_expand( long lpos, unsigned expand )
 {
 	xp_pane	*p = get( lpos );
 
@@ -2308,7 +2308,7 @@ long xpbar_ctrl::on_setimagelist( HIMAGELIST hil )
 	return 1;
 }
 
-long xpbar_ctrl::on_addbutton(TPOS lpos, XPBUTTON *pb)
+long xpbar_ctrl::on_addbutton( long lpos, XPBUTTON *pb )
 {
 	xp_pane	*p = get( lpos );
 	if( p->get_style() != XPPS_TOOLBAR )return 0;
@@ -2318,7 +2318,7 @@ long xpbar_ctrl::on_addbutton(TPOS lpos, XPBUTTON *pb)
 	return 1;
 }
 
-long xpbar_ctrl::on_setbutton(TPOS lpos, XPBUTTON *pb)
+long xpbar_ctrl::on_setbutton( long lpos, XPBUTTON *pb )
 {
 	xp_pane	*p = get( lpos );
 	if( p->get_style() != XPPS_TOOLBAR )return 0;
@@ -2328,18 +2328,18 @@ long xpbar_ctrl::on_setbutton(TPOS lpos, XPBUTTON *pb)
 	return 1;
 }
  
-TPOS xpbar_ctrl::on_hittest(const _point &point_window, XPHITTEST *phit)
+long xpbar_ctrl::on_hittest( const _point &point_window, XPHITTEST *phit )
 {
 	_point	point = point_window;
 	to_client( &point );
 
 
-	for (TPOS lpos = head(); lpos; lpos = next(lpos))
+	for( long lpos = head(); lpos; lpos = next( lpos ) )
 	{
 		xp_pane	*p = get( lpos );
 		if( p->rect.pt_in_rect( point ) )
 		{
-			for (TPOS lpos_btn = p->buttons.head(); lpos_btn;
+			for( long lpos_btn = p->buttons.head(); lpos_btn; 
 				lpos_btn = p->buttons.next( lpos_btn ) )
 				{
 					caption_button	*pbutton = p->buttons.get( lpos_btn );
@@ -2366,7 +2366,7 @@ TPOS xpbar_ctrl::on_hittest(const _point &point_window, XPHITTEST *phit)
 			}
 			else
 			{
-				long lret = p->hit_test(point, phit);
+				long lret = p->hit_test( point, phit );
 				if( lret )return lpos;
 				if( phit )
 				{
@@ -2382,10 +2382,10 @@ TPOS xpbar_ctrl::on_hittest(const _point &point_window, XPHITTEST *phit)
 
 #define WM_SETMESSAGESTRING 0x0362  // wParam = nIDS (or 0),
 
-LRESULT xpbar_ctrl::on_mousemove(const _point &point)
+long xpbar_ctrl::on_mousemove( const _point &point )
 {
 	XPHITTEST	ht;
-	TPOS	lpos = on_hittest(point, &ht);
+	long	lpos = on_hittest( point, &ht );
 
 	if( !lpos )
 	{
@@ -2398,7 +2398,7 @@ LRESULT xpbar_ctrl::on_mousemove(const _point &point)
 
 	if( ht.flags == XPHT_BUTTON )
 	{
-		TPOS	lpos_button = (TPOS)ht.lparam;
+		long	lpos_button  = ht.lparam;
 		xp_button	*pbtn = _list_t<xp_button*, free_button>::get( lpos_button );
 		::SendMessage( ::GetParent( handle() ), WM_SETMESSAGESTRING, pbtn->cmd, 0 );
 	}
@@ -2432,7 +2432,7 @@ void xpbar_ctrl::_clear_hilight()
 
 }
 
-long xpbar_ctrl::on_removeitem(TPOS lpos)
+long xpbar_ctrl::on_removeitem( long lpos )
 {
 	if( !lpos )return false;
 	xp_pane	*p = get( lpos );
@@ -2443,7 +2443,7 @@ long xpbar_ctrl::on_removeitem(TPOS lpos)
 	return true;
 }
 
-long xpbar_ctrl::on_setwindow(TPOS lpos, HWND hwnd)
+long xpbar_ctrl::on_setwindow( long lpos, HWND hwnd )
 {
 	if( !lpos )return 0;
 	xp_pane	*p = get( lpos );
@@ -2461,13 +2461,13 @@ long xpbar_ctrl::on_setpanetext( long n, const char *psz )
 	xp_status_pane *pst = _find_statusbar();
 	if( !pst )return 0;
 
-	TPOS	lpos = pst->lpos_by_pos(n);
+	long	lpos = pst->lpos_by_pos( n );
 	if( lpos )pst->set_part_text( lpos, psz );
 
 	return 1;
 }
 
-TPOS xpbar_ctrl::on_addstatuspane(TPOS lpos, XP_STATUS *p, bool fChangeRef)
+long xpbar_ctrl::on_addstatuspane( long lpos, XP_STATUS *p, bool fChangeRef )
 {
 	if( !lpos )return 0;
 	xp_pane	*pp = get( lpos );
@@ -2476,7 +2476,7 @@ TPOS xpbar_ctrl::on_addstatuspane(TPOS lpos, XP_STATUS *p, bool fChangeRef)
 	return ((xp_status_pane*)pp)->set_part( p, fChangeRef );
 }
 
-long xpbar_ctrl::on_removestatuspane(TPOS lpos, GUID*	pg)
+long xpbar_ctrl::on_removestatuspane( long lpos, GUID*	pg )
 {
 	if( !lpos )return 0;
 	xp_pane	*pp = get( lpos );
@@ -2484,13 +2484,13 @@ long xpbar_ctrl::on_removestatuspane(TPOS lpos, GUID*	pg)
 		return 0;
 
 	xp_status_pane	*pst = (xp_status_pane*)pp;
-	TPOS	lpos_p = pst->lpos_by_guid(*pg);
+	long	lpos_p = pst->lpos_by_guid( *pg );
 	if( lpos_p )pst->remove_part( lpos_p );
 
 	return 1;
 }
 
-long xpbar_ctrl::on_addcaptionbutton(TPOS lpos, XP_CAPTION_BUTTON*	p)
+long xpbar_ctrl::on_addcaptionbutton( long lpos, XP_CAPTION_BUTTON*	p )
 {
 	if( !lpos )return 0;
 	xp_pane	*pp = get( lpos );
@@ -2498,7 +2498,7 @@ long xpbar_ctrl::on_addcaptionbutton(TPOS lpos, XP_CAPTION_BUTTON*	p)
 	return 1;
 }
 
-long xpbar_ctrl::on_removecaptionbutton(TPOS lpos, unsigned id)
+long xpbar_ctrl::on_removecaptionbutton( long lpos, unsigned id )
 {
 	if( !lpos )return 0;
 	xp_pane	*pp = get( lpos );
@@ -2506,7 +2506,7 @@ long xpbar_ctrl::on_removecaptionbutton(TPOS lpos, unsigned id)
 	return 1;
 }
 
-long xpbar_ctrl::on_setcaptionbutton(TPOS lpos, XP_CAPTION_BUTTON*	p)
+long xpbar_ctrl::on_setcaptionbutton( long lpos, XP_CAPTION_BUTTON*	p )
 {
 	if( !lpos )return 0;
 	xp_pane	*pp = get( lpos );
@@ -2514,7 +2514,7 @@ long xpbar_ctrl::on_setcaptionbutton(TPOS lpos, XP_CAPTION_BUTTON*	p)
 	return 1;
 }
 
-LRESULT xpbar_ctrl::on_vscroll(unsigned code, unsigned pos, HWND hwndScroll)
+long xpbar_ctrl::on_vscroll( unsigned code, unsigned pos, HWND hwndScroll )
 {
 	SCROLLINFO	si;
 	ZeroMemory( &si, sizeof(si) );
@@ -2558,7 +2558,7 @@ LRESULT xpbar_ctrl::on_vscroll(unsigned code, unsigned pos, HWND hwndScroll)
 			rect.bottom = rect.top+delta-1;
 		else
 			rect.top = rect.bottom+delta+1;
-		for (TPOS lpos = head(); lpos; lpos = next(lpos))
+		for( long lpos = head(); lpos; lpos = next( lpos ) )
 			get( lpos )->move();
 
 		::InvalidateRect( handle(), &rect, false );
@@ -2568,7 +2568,7 @@ LRESULT xpbar_ctrl::on_vscroll(unsigned code, unsigned pos, HWND hwndScroll)
 	return true;
 }
 
-long xpbar_ctrl::on_ensurevisible(TPOS lpos)
+long xpbar_ctrl::on_ensurevisible( long lpos )
 {
 	if( !lpos )return 0;
 
@@ -2593,7 +2593,7 @@ long xpbar_ctrl::on_ensurevisible(TPOS lpos)
 	return 1;
 }
 
-LRESULT xpbar_ctrl::on_ncdestroy()
+long xpbar_ctrl::on_ncdestroy()
 {
 	win_impl::on_ncdestroy(); 
 	return 0;
@@ -2604,7 +2604,7 @@ long xpbar_ctrl::on_getdefparams( unsigned param )
 	return bar_width;
 }
 
-long xpbar_ctrl::on_getitem(TPOS lpos, XPPANEITEM *p)
+long xpbar_ctrl::on_getitem( long lpos, XPPANEITEM *p )
 {
 	xp_pane	*ppane = get( lpos );
 	
@@ -2631,7 +2631,7 @@ long xpbar_ctrl::on_getitem(TPOS lpos, XPPANEITEM *p)
 	return 1;
 }
 
-long xpbar_ctrl::on_setitem(TPOS lpos, XPPANEITEM *p)
+long xpbar_ctrl::on_setitem( long lpos, XPPANEITEM *p )
 {
 	xp_pane	*ppane = get( lpos );
 	ppane->from_item( p );
@@ -2642,7 +2642,7 @@ long xpbar_ctrl::on_setitem(TPOS lpos, XPPANEITEM *p)
 	return 0;
 }
 
-TPOS xpbar_ctrl::on_getnextitem(TPOS lpos)
+long xpbar_ctrl::on_getnextitem( long lpos )
 {
 	if( !lpos )return head();
 	else return next( lpos );
@@ -2660,24 +2660,24 @@ long xpbar_ctrl::on_ctlcolor( int nCtlType, HDC hdc, HWND hwnd )
 	return (long)m_hbrushStaticBackground;
 }
 
-TPOS xpbar_ctrl::on_getnextbutton(TPOS lpos, TPOS lpos_b)
+long xpbar_ctrl::on_getnextbutton( long lpos, long lpos_b )
 {
 	xp_pane	*ppane = get( lpos );
 	if( ppane->get_style() != XPPS_TOOLBAR )return 0;
 
 	xp_toolbar_pane	*pt = (xp_toolbar_pane*)ppane;
 
-	return !!lpos_b?pt->next( lpos_b ):pt->head();
+	return lpos_b?pt->next( lpos_b ):pt->head();
 }
 
-long xpbar_ctrl::on_getbuttonbypos(TPOS lpos_b, XPBUTTON*	p)
+long xpbar_ctrl::on_getbuttonbypos( long lpos_b, XPBUTTON*	p )
 {
 	xp_button	*pbutton = xp_toolbar_pane::get( lpos_b );
 	pbutton->to_button( p );
 	return 0;
 }
 
-long xpbar_ctrl::on_setbuttonbypos(TPOS lpos_b, XPBUTTON*	p)
+long xpbar_ctrl::on_setbuttonbypos( long lpos_b, XPBUTTON*	p )
 {
 	xp_button	*pbutton = xp_toolbar_pane::get( lpos_b );
 	if( pbutton->from_button( p ) )
@@ -2688,12 +2688,12 @@ long xpbar_ctrl::on_setbuttonbypos(TPOS lpos_b, XPBUTTON*	p)
 long xpbar_ctrl::on_helphittest( const _point &point )
 {
 	XPHITTEST	ht;
-	TPOS	lpos = on_hittest(point, &ht);
+	long	lpos = on_hittest( point, &ht );
 	if( !lpos )return -1;
 
 	if( ht.flags == XPHT_BUTTON )
 	{
-		TPOS	lpos_button = (TPOS)ht.lparam;
+		long	lpos_button  = ht.lparam;
 		xp_button	*pbtn = _list_t<xp_button*, free_button>::get( lpos_button );
 		return pbtn->cmd;
 	}
@@ -2710,7 +2710,7 @@ long xpbar_ctrl::on_settimerparams( XP_TIMER_PARAMS *pparams )
 
 bool xpbar_ctrl::is_pane_exist( xp_pane *ppane )
 {
-	for (TPOS lpos = head(); lpos; lpos = next(lpos))
+	for( long lpos = head(); lpos; lpos = next( lpos ) )
 		if( get( lpos ) == ppane )
 			return true;
 	return false;

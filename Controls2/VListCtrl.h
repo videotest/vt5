@@ -77,7 +77,7 @@ public :
 		}
 		if( !sText && !m_bIAllocText )
 		{
-			iszText = (int)strlen( str ) + 1;
+			iszText = strlen( str ) + 1;
 			sText = new char[ iszText ];
 			m_bIAllocText = true;
 			strcpy( sText, str );
@@ -517,15 +517,15 @@ public:
 	BOOL	Header_SetFont( LOGFONT *plf );
 	BOOL	Header_SetTextColor( COLORREF *pcr );
 
-	virtual LRESULT	OnLButtonClickHeader(LPNMHEADER lpmnhdr);
-	virtual	LRESULT	OnRButtonClickHeader(LPNMHEADER lpmnhdr);
-	virtual	LRESULT	OnMButtonClickHeader(LPNMHEADER lpmnhdr);
-	virtual LRESULT	OnItemChangingHeader(LPNMHEADER lpmnhdr);
-	virtual LRESULT	OnItemChangedHeader(LPNMHEADER lpmnhdr);
-	virtual	LRESULT	OnBeginTrackHeader(LPNMHEADER lpmnhdr);
-	virtual LRESULT	OnEndTrackHeader(LPNMHEADER lpmnhdr);
-	virtual LRESULT	OnBeginDragHeader(LPNMHEADER lpmnhdr);
-	virtual LRESULT	OnEndDragHeader(LPNMHEADER lpmnhdr);
+	virtual long	OnLButtonClickHeader( LPNMHEADER lpmnhdr );
+	virtual	long	OnRButtonClickHeader( LPNMHEADER lpmnhdr );
+	virtual	long	OnMButtonClickHeader( LPNMHEADER lpmnhdr );
+	virtual long	OnItemChangingHeader( LPNMHEADER lpmnhdr );
+	virtual long	OnItemChangedHeader( LPNMHEADER lpmnhdr );
+	virtual	long	OnBeginTrackHeader( LPNMHEADER lpmnhdr );
+	virtual long	OnEndTrackHeader( LPNMHEADER lpmnhdr );
+	virtual long	OnBeginDragHeader( LPNMHEADER lpmnhdr );
+	virtual long	OnEndDragHeader( LPNMHEADER lpmnhdr );
 
 	// Header Custom Draw
 	virtual long	OnCustomDrawHeader( NMCUSTOMDRAW *pnmCustomDraw);			
@@ -536,22 +536,22 @@ public:
 	
 
 	//////////////////////////////// обработка сообщений  //////////////////////////////////////////////
-	virtual	LRESULT	handle_message(UINT m, WPARAM w, LPARAM l);
-	virtual LRESULT	on_create(CREATESTRUCT *pcs);
-	virtual	LRESULT	on_keydown(long nVirtKey);
-	virtual LRESULT	on_lbuttondown(const _point &point);
-	virtual	LRESULT	on_notify(uint idc, NMHDR *pnmhdr);
-	virtual LRESULT	on_size(short cx, short cy, ulong fSizeType);
-	virtual LRESULT	on_destroy();
-	virtual LRESULT	on_hscroll(unsigned code, unsigned pos, HWND hwndScroll);
-	virtual LRESULT	on_vscroll(unsigned code, unsigned pos, HWND hwndScroll);
+	virtual	long	handle_message( UINT m, WPARAM w, LPARAM l );
+	virtual long	on_create( CREATESTRUCT *pcs );
+	virtual	long	on_keydown( long nVirtKey );
+	virtual long	on_lbuttondown( const _point &point );
+	virtual	long	on_notify( uint idc, NMHDR *pnmhdr );
+	virtual long	on_size( short cx, short cy, ulong fSizeType );
+	virtual long	on_destroy( );
+	virtual long	on_hscroll( unsigned code, unsigned pos, HWND hwndScroll );
+	virtual long	on_vscroll( unsigned code, unsigned pos, HWND hwndScroll );
 
-	virtual LRESULT	OnWindowPosChanged(LPWINDOWPOS lpwp);
+	virtual long	OnWindowPosChanged( LPWINDOWPOS lpwp );
 	virtual	long	OnMouseWheel(UINT nFlags, short zDelta, POINT pt);
 	virtual	long	OnNcCalcSize( WPARAM w, LPARAM l );
-	virtual	LRESULT	OnInsertColumn(int iCol, const LPLVCOLUMN pcol);
-	virtual	LRESULT	OnDeleteColumn(int iCol);
-	virtual	LRESULT	OnInsertRow(const LPLVITEM prow);
+	virtual	long	OnInsertColumn( int iCol, const LPLVCOLUMN pcol );
+	virtual	long	OnDeleteColumn(	int iCol );
+	virtual	long	OnInsertRow( const LPLVITEM prow );
 	virtual	long	OnDeleteRow( int iRow );
 	virtual	long	OnDeleteAllRows( );
 

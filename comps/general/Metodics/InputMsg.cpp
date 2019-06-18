@@ -20,9 +20,9 @@ CInputMsgDlg::~CInputMsgDlg()
 }
 
 /////////////////////////////////////////////////////////////
-LRESULT	CInputMsgDlg::on_initdialog()
+long	CInputMsgDlg::on_initdialog()
 {
-    LRESULT lres = dlg_impl::on_initdialog();
+    long lres = dlg_impl::on_initdialog();
 
 	if( !m_str_caption.IsEmpty() )
 		::SetWindowText( handle(), m_str_caption );
@@ -60,7 +60,7 @@ void CInputMsgDlg::on_ok()
 }
 
 /////////////////////////////////////////////////////////////
-LRESULT CInputMsgDlg::on_command(uint cmd)
+long CInputMsgDlg::on_command( uint cmd )
 {
     if( LOWORD(cmd) == IDC_EDIT_MSG && HIWORD(cmd) == EN_CHANGE  )
 	{        

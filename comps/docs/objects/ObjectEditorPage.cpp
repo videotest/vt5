@@ -189,7 +189,7 @@ BOOL CObjectEditorPage::OnInitDialog()
 
 	((CSpinButtonCtrl*)GetDlgItem( IDC_MIN_SPIN ))->SetRange( 0, 255 );
 	
-	DoLoadSettings();	
+	DoLoadSettings();
 
 	bool bUseRButton = ::GetValueInt(::GetAppUnknown(), "ObjectEditor", "UseRButton", 1) != 0;
 	HWND hWndContr = ::GetDlgItem(m_hWnd, IDC_VTSTATICTEXT1);

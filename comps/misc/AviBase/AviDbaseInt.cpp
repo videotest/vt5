@@ -9,12 +9,12 @@
 #include "resource.h"
 
 //////////////////////////////////////////////////////////////////////
-TPOS CAviObj::FindChildPos( IUnknown* punkChild )
+long CAviObj::FindChildPos( IUnknown* punkChild )
 {	
-	TPOS lPos = m_listChilds.head();
+	long lPos = m_listChilds.head();
 	while( lPos )
 	{
-		TPOS lSave = lPos;
+		long lSave = lPos;
 		if( punkChild == m_listChilds.next( lPos ) )
 			return lSave;			
 	}
@@ -116,7 +116,7 @@ HRESULT CAviObj::SetParent( IUnknown *punkParent, DWORD dwFlags /*AttachParentFl
 //for internal usage - it is called only from framework
 HRESULT CAviObj::RemoveChild( IUnknown *punkChild )
 {
-	TPOS pos = FindChildPos( punkChild );
+	long pos = FindChildPos( punkChild );
 	if( !pos )
 		return E_FAIL;
 
@@ -140,14 +140,14 @@ HRESULT CAviObj::AddChild( IUnknown *punkChild )
 	if( !punkChild )
 		return E_INVALIDARG;
 
-	TPOS pos = m_listChilds.insert( punkChild );
+	long pos = m_listChilds.insert( punkChild );
 	punkChild->AddRef();
 	
 
 	INamedDataObject2Ptr sptr( punkChild );
 	
 	if (sptr != 0)
-		sptr->SetObjectPosInParent( pos );
+		sptr->SetObjectPosInParent( (long)pos );
 
 	return S_OK;
 }
@@ -157,7 +157,7 @@ HRESULT CAviObj::GetChildsCount( long *plCount )
 {
 	long lCount = 0;
 
-	TPOS lPos = m_listChilds.head();
+	long lPos = m_listChilds.head();
 	while( lPos )
 	{		
 		m_listChilds.next( lPos );
@@ -170,7 +170,7 @@ HRESULT CAviObj::GetChildsCount( long *plCount )
 }
 
 //////////////////////////////////////////////////////////////////////
-HRESULT CAviObj::GetFirstChildPosition(TPOS *plPos)
+HRESULT CAviObj::GetFirstChildPosition( long *plPos )
 {
 	*plPos = m_listChilds.head();
 
@@ -178,12 +178,12 @@ HRESULT CAviObj::GetFirstChildPosition(TPOS *plPos)
 }
 
 //////////////////////////////////////////////////////////////////////
-HRESULT CAviObj::GetNextChild(TPOS *plPos, IUnknown **ppunkChild)
+HRESULT CAviObj::GetNextChild( long *plPos, IUnknown **ppunkChild )
 {
 	if( !plPos || !ppunkChild )
 		return E_INVALIDARG;
 
-	TPOS pos = *plPos;
+	long pos = *plPos;
 	*ppunkChild = m_listChilds.next( pos );
 
 	if(	*ppunkChild )
@@ -195,7 +195,7 @@ HRESULT CAviObj::GetNextChild(TPOS *plPos, IUnknown **ppunkChild)
 }
 
 //////////////////////////////////////////////////////////////////////
-HRESULT CAviObj::GetLastChildPosition(TPOS *plPos)
+HRESULT CAviObj::GetLastChildPosition(long *plPos)
 {
 	*plPos = m_listChilds.tail();
 
@@ -203,12 +203,12 @@ HRESULT CAviObj::GetLastChildPosition(TPOS *plPos)
 }
 
 //////////////////////////////////////////////////////////////////////
-HRESULT CAviObj::GetPrevChild(TPOS *plPos, IUnknown **ppunkChild)
+HRESULT CAviObj::GetPrevChild(long *plPos, IUnknown **ppunkChild)
 {
 	if( !plPos || !ppunkChild )
 		return E_INVALIDARG;
 
-	TPOS pos = *plPos;
+	long pos = *plPos;
 	*ppunkChild = m_listChilds.prev( pos );
 
 	if( *ppunkChild)
@@ -221,7 +221,7 @@ HRESULT CAviObj::GetPrevChild(TPOS *plPos, IUnknown **ppunkChild)
 
 
 //////////////////////////////////////////////////////////////////////
-HRESULT CAviObj::SetActiveChild(TPOS lPos)
+HRESULT CAviObj::SetActiveChild( long lPos )
 {
 	m_posActiveChild = lPos;
 
@@ -229,7 +229,7 @@ HRESULT CAviObj::SetActiveChild(TPOS lPos)
 }
 
 //////////////////////////////////////////////////////////////////////
-HRESULT CAviObj::GetActiveChild(TPOS *plPos)
+HRESULT CAviObj::GetActiveChild( long *plPos )
 {
 	*plPos = m_posActiveChild;
 
@@ -237,30 +237,30 @@ HRESULT CAviObj::GetActiveChild(TPOS *plPos)
 }
 
 //////////////////////////////////////////////////////////////////////
-HRESULT CAviObj::GetObjectPosInParent(TPOS *plPos) // return object position in parent's object child list
+HRESULT CAviObj::GetObjectPosInParent( long *plPos ) // return object position in parent's object child list
 {
 	*plPos = m_posInParent;
 	return S_OK;
 }
 
 //////////////////////////////////////////////////////////////////////
-HRESULT CAviObj::SetObjectPosInParent(TPOS lPos)
+HRESULT CAviObj::SetObjectPosInParent( long lPos )
 {
 	m_posInParent = lPos;
 	return S_OK;
 }
 
 //////////////////////////////////////////////////////////////////////
-HRESULT CAviObj::GetChildPos(IUnknown *punkChild, TPOS *plPos)
+HRESULT CAviObj::GetChildPos(IUnknown *punkChild, long *plPos)
 {
-	*plPos = FindChildPos(punkChild);
+	*plPos = FindChildPos( punkChild );
 
 	return S_OK;
 }
 
 void CAviObj::_DetachChildParent()
 {
-	TPOS lPos = m_listChilds.head();
+	long lPos = m_listChilds.head();
 	while( lPos )
 	{		
 		IUnknown *punkChild = m_listChilds.next( lPos ); //без AddRef

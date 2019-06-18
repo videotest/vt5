@@ -175,7 +175,7 @@ public:
 	CString	m_str_user;
 	CString	m_str_machine;
 };
-
+bool operator ==(const user_info&, const user_info&);
 bool GetUsersInfo( CArray<user_info,user_info&> *parr_users );
 
 /////////////////////////////////////////////////////////////////////////////

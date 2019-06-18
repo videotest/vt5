@@ -47,13 +47,13 @@ interface ISendToManager : public IUnknown
 	com_call AddObject( IUnknown* punkObject ) = 0;		
 	com_call CreateTargets( ) = 0;		
 	//Output
-	com_call GetFirstItemPos(TPOS* plPos) = 0;
+	com_call GetFirstItemPos( long* plPos ) = 0;
 	com_call GetNextItem(	
 			UINT* puiFlags, 
 			UINT* puiItemID, 
 			BSTR* pbstrText,			
 			UINT* puiParentID,
-			TPOS* plPos) = 0;
+			long* plPos ) = 0;	
 	//Event
 	com_call OnCommand( UINT uiCommand ) = 0;
 

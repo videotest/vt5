@@ -52,7 +52,7 @@ class script_debug_doc
 {
 	DWORD					m_dw_data;
 public:
-	ATL::CComPtr<IDebugDocumentHelper>	m_pDebugDocHelper;
+	CComPtr<IDebugDocumentHelper>	m_pDebugDocHelper;
 	script_debug_doc():m_pDebugDocHelper(0), m_dw_data(0) {}
 	~script_debug_doc(){
 		if( m_pDebugDocHelper )

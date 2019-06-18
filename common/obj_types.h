@@ -103,7 +103,7 @@ inline bool GetAvailableViewProgID( CStringArray& arViewList )
 	if( sptrApp == NULL )
 		return false;
 
-	LONG_PTR pos = 0;
+	long pos = 0;
 	sptrApp->GetFirstDocTemplPosition(&pos);
 	while(pos)
 	{
@@ -218,7 +218,7 @@ inline CString GetObjTypeByID( CString s )
 	if( sptrApp == NULL )
 		return strRes;
 
-	LONG_PTR pos = 0;
+	long pos = 0;
 	sptrApp->GetFirstDocTemplPosition(&pos);
 	while(pos)
 	{

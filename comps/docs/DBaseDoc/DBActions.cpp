@@ -28,6 +28,19 @@
 
 #include "zlib.h"
 
+
+#include <objbase.h>
+#define DBINITCONSTANTS
+#define INITGUID
+#include <initguid.h>
+#include <oledb.h>
+#include "msjetoledb.h"
+#include "jetoledb.h"	// for IJetCompact interface
+#include <atldbcli.h>
+#include <io.h>
+
+#include "dblocksinfo.h"
+#include "opticaldrivewriter.h"
 //[ag]1. dyncreate
 
 IMPLEMENT_DYNCREATE(CActionCloseQuery, CCmdTargetEx);
@@ -49,6 +62,7 @@ IMPLEMENT_DYNCREATE(CActionDBaseFindNext, CCmdTargetEx);
 IMPLEMENT_DYNCREATE(CActionDBaseFind, CCmdTargetEx);
 IMPLEMENT_DYNCREATE(CActionDBaseRestore, CCmdTargetEx);
 IMPLEMENT_DYNCREATE(CActionDBaseBackUp, CCmdTargetEx);
+IMPLEMENT_DYNCREATE(CActionDBBackupToOpticalDrive, CCmdTargetEx);
 IMPLEMENT_DYNCREATE(CActionShowGallery, CCmdTargetEx);
 IMPLEMENT_DYNCREATE(CActionShowBlankPreview, CCmdTargetEx);
 IMPLEMENT_DYNCREATE(CActionShowBlankDesign, CCmdTargetEx);
@@ -77,6 +91,8 @@ IMPLEMENT_DYNCREATE(CActionDeleteRecords, CCmdTargetEx);
 IMPLEMENT_DYNCREATE(CActionUpdateRecordsetInfo, CCmdTargetEx);
 
 IMPLEMENT_DYNCREATE(CActionEmptyDBField, CCmdTargetEx);
+
+IMPLEMENT_DYNCREATE(CActionCompactDB, CCmdTargetEx);
 
 //[ag]4. olecreate release
 // {E88DC2A0-2570-4795-B125-74D1F43255B2}
@@ -134,12 +150,17 @@ GUARD_IMPLEMENT_OLECREATE(CActionDBaseFind, "DBaseDoc.DBaseFind",
 GUARD_IMPLEMENT_OLECREATE(CActionDBaseRestore, "DBaseDoc.Restore",
 0x13b0ccfe, 0xeee6, 0x4927, 0x88, 0xab, 0x76, 0xa1, 0x21, 0xe2, 0x57, 0xed);
 // {43432ADB-38C2-42fb-8BA2-A4FD7D085285}
+
 GUARD_IMPLEMENT_OLECREATE(CActionDBaseBackUp, "DBaseDoc.BackUp",
 0x43432adb, 0x38c2, 0x42fb, 0x8b, 0xa2, 0xa4, 0xfd, 0x7d, 0x8, 0x52, 0x85);
+
 /*// {671F04E9-736E-43df-9DA4-4B77D46816A2}
 GUARD_IMPLEMENT_OLECREATE(CActionFilterMode, "DBaseDoc.FilterMode",
 0x671f04e9, 0x736e, 0x43df, 0x9d, 0xa4, 0x4b, 0x77, 0xd4, 0x68, 0x16, 0xa2);
 */
+// {A35FE992-3074-47d9-BEE1-C4AAA9661A3A}
+GUARD_IMPLEMENT_OLECREATE(CActionDBBackupToOpticalDrive, "DBaseDoc.BackUpToOptic",
+0xa35fe992, 0x3074, 0x47d9, 0xbe, 0xe1, 0xc4, 0xaa, 0xa9, 0x66, 0x1a, 0x3a);
 // {06BF969B-3873-4f29-9758-CC4E0C74DB6E}
 GUARD_IMPLEMENT_OLECREATE(CActionShowGallery, "DBaseDoc.ShowGallery",
 0x6bf969b, 0x3873, 0x4f29, 0x97, 0x58, 0xcc, 0x4e, 0xc, 0x74, 0xdb, 0x6e);
@@ -234,6 +255,10 @@ GUARD_IMPLEMENT_OLECREATE(CActionUpdateRecordsetInfo, "DBaseDoc.UpdateRecordsetI
 GUARD_IMPLEMENT_OLECREATE(CActionEmptyDBField, "DBaseDoc.EmptyDBField", 
 0x5470051e, 0x6754, 0x47fa, 0xbc, 0xc9, 0x64, 0x89, 0xde, 0xa0, 0xd4, 0xc9);
 
+// {F2B48A69-0072-4a80-B756-88734427F1C7}
+GUARD_IMPLEMENT_OLECREATE(CActionCompactDB, "DBaseDoc.CompactDB", 
+0xf2b48a69, 0x72, 0x4a80, 0xb7, 0x56, 0x88, 0x73, 0x44, 0x27, 0xf1, 0xc7);
+
 
 //[ag]5. guidinfo release
 
@@ -297,6 +322,10 @@ static const GUID guidRestore =
 // {9803E9F1-00A5-4fd9-914B-FE6DFD4CD0A4}
 static const GUID guidBackUp =
 { 0x9803e9f1, 0xa5, 0x4fd9, { 0x91, 0x4b, 0xfe, 0x6d, 0xfd, 0x4c, 0xd0, 0xa4 } };
+// {B8C68DA6-6455-4f00-920C-4EABD58488B8}
+static const GUID guidBackUpOptic = 
+{ 0xb8c68da6, 0x6455, 0x4f00, { 0x92, 0xc, 0x4e, 0xab, 0xd5, 0x84, 0x88, 0xb8 } };
+
 // {8F908CA3-5777-43a0-A912-6B1A98BAAA8C}
 static const GUID guidFilterMode =
 { 0x8f908ca3, 0x5777, 0x43a0, { 0xa9, 0x12, 0x6b, 0x1a, 0x98, 0xba, 0xaa, 0x8c } };
@@ -388,6 +417,11 @@ static const GUID guidEmptyDBField =
 { 0xbc938def, 0x4a61, 0x4f30, { 0x91, 0x6b, 0x90, 0xc7, 0xd, 0x8, 0x23, 0xa9 } };
 
 
+// {8E90536D-A207-4e72-8E39-D5FDB1EB2887}
+static const GUID guidCompactDB = 
+{ 0x8e90536d, 0xa207, 0x4e72, { 0x8e, 0x39, 0xd5, 0xfd, 0xb1, 0xeb, 0x28, 0x87 } };
+
+
 //[ag]6. action info
 ACTION_INFO_FULL(CActionQueryWizard, IDS_QUERY_WIZARD, -1, -1, guidQuery);
 ACTION_INFO_FULL(CActionGalleryOptions, IDS_GALLERY_OPTIONS, -1, -1, guidGalleryOptions);
@@ -409,6 +443,7 @@ ACTION_INFO_FULL(CActionDBaseFindNext, IDS_DBASE_FINDTEXT_NEXT, -1, -1, guidDBas
 ACTION_INFO_FULL(CActionDBaseFind, IDS_DBASE_FINDTEXT, -1, -1, guidDBaseFind);
 ACTION_INFO_FULL(CActionDBaseRestore, IDS_DBASE_RESTORE, -1, -1, guidRestore);
 ACTION_INFO_FULL(CActionDBaseBackUp, IDS_DBASE_BACKUP, -1, -1, guidBackUp);
+ACTION_INFO_FULL(CActionDBBackupToOpticalDrive, IDS_DBASE_BACKUP_TO_OPTIC, -1, -1, guidBackUpOptic);
 ACTION_INFO_FULL(CActionShowGallery, IDS_SHOW_GALLERY, -1, -1, guidShowGallery);
 ACTION_INFO_FULL(CActionShowBlankPreview, IDS_SHOW_BLANK_PREVIEW, -1, -1, guidShowBlankViewPreview);
 ACTION_INFO_FULL(CActionShowBlankDesign, IDS_SHOW_BLANK_DESIGN, -1, -1, guidShowBlankView);
@@ -434,7 +469,7 @@ ACTION_INFO_FULL(CActionFieldProperties, IDS_FIELD_PROPERTY, -1, -1, guidFieldPr
 ACTION_INFO_FULL(CActionDeleteRecords, IDS_DELETE_RECORDS, -1, -1, guidDeleteRecords);
 ACTION_INFO_FULL(CActionUpdateRecordsetInfo, IDS_UPDATE_RECORDSET_INFO, -1, -1, guidUpdateRecordsetInfo);
 ACTION_INFO_FULL(CActionEmptyDBField, IDS_EMPTY_DBFIELD, -1, -1, guidEmptyDBField);
-
+ACTION_INFO_FULL(CActionCompactDB, IDS_COMPACTDB, -1, -1, guidCompactDB);
 //[ag]7. targets
 
 ACTION_TARGET(CActionCloseQuery, "anydoc");
@@ -455,6 +490,7 @@ ACTION_TARGET(CActionDBaseFindNext, "anydoc");
 ACTION_TARGET(CActionDBaseFind, "anydoc");
 ACTION_TARGET(CActionDBaseRestore, "anydoc");
 ACTION_TARGET(CActionDBaseBackUp, "anydoc");
+ACTION_TARGET(CActionDBBackupToOpticalDrive, szTargetApplication);
 ACTION_TARGET(CActionShowGallery, szTargetFrame);
 ACTION_TARGET(CActionShowBlankPreview, szTargetFrame);
 ACTION_TARGET(CActionShowBlankDesign, szTargetFrame);
@@ -483,11 +519,16 @@ ACTION_TARGET(CActionDeleteRecords, "anydoc" );
 ACTION_TARGET(CActionUpdateRecordsetInfo, "anydoc" );
 
 ACTION_TARGET(CActionEmptyDBField, "anydoc" );
-
+ACTION_TARGET(CActionCompactDB, szTargetApplication );
 
 ACTION_ARG_LIST(CActionDeleteRecords)
 	ARG_INT("Question", 1 )
 END_ACTION_ARG_LIST()
+
+ACTION_ARG_LIST(CActionCompactDB)
+	ARG_STRING("DBPath", "")
+END_ACTION_ARG_LIST()
+
 
 
 
@@ -1428,20 +1469,6 @@ bool CActionDBGenerateReportByAXForm::ProcessReportByQuery( IReportForm* pIRepor
 
 				}
 
-				if(IViewSubTypePtr pViewSub=sptrAXCtrl)
-				{
-					unsigned	 long ViewSubType=0;
-					if(SUCCEEDED(pViewSub->GetViewSubType(&ViewSubType)))
-					{
-						if(ViewSubType>0){
-							if(IViewSubTypePtr pViewSubRpCtrl=spReportCtrl)
-							{
-								pViewSubRpCtrl->SetViewSubType(ViewSubType);
-							}
-						}
-					}
-				}
-
 				if( bstrName )
 					::SysFreeString( bstrName );	bstrName = 0;
 
@@ -1692,12 +1719,20 @@ ACTION_ARG_LIST(CActionDBaseBackUp)
 	ARG_STRING("TargetFileName", "")	
 END_ACTION_ARG_LIST()
 
+ACTION_ARG_LIST(CActionDBBackupToOpticalDrive)
+	ARG_STRING("TargetFileName", "")	
+END_ACTION_ARG_LIST()
+
 ACTION_ARG_LIST(CActionDBaseRestore)
 	ARG_STRING("SourceFileName", "")	
 END_ACTION_ARG_LIST()
 
 BEGIN_INTERFACE_MAP(CActionDBaseBackUp, CActionBase)
 	INTERFACE_PART(CActionDBaseBackUp, IID_ILongOperation, Long)
+END_INTERFACE_MAP()
+
+BEGIN_INTERFACE_MAP(CActionDBBackupToOpticalDrive, CActionBase)
+	INTERFACE_PART(CActionDBBackupToOpticalDrive, IID_ILongOperation, Long)
 END_INTERFACE_MAP()
 
 BEGIN_INTERFACE_MAP(CActionDBaseRestore, CActionBase)
@@ -1853,7 +1888,7 @@ long CFindImpl::ProcessFind( IUnknown* punkQ, IUnknown* punkDoc, bool bFoundFrom
 
 		ptrRecordset->CursorLocation = ::GetCursorLocation( (LPCSTR)bstrSQL );
 
-		ptrRecordset->Open( bstrSQL, vConn, ADO::adOpenKeyset, ADO::adLockOptimistic, ADO::adCmdText );
+		ptrRecordset->Open( bstrSQL, vConn, ADO::adOpenKeyset, ADO::adLockPessimistic, ADO::adCmdText );
 
 		
 		long lCurRecord = 0;
@@ -2948,14 +2983,14 @@ bool CActionCloseQuery::Invoke()
 
 #ifdef _DEBUG
 	{
-		TPOS lpos;
+		long	lpos;
 		INamedDataPtr	ptrNamedData( m_punkTarget );
 		ptrNamedData->GetBaseGroupFirstPos( &lpos );
 		while( lpos )
 		{
 			GUID guid;
 			ptrNamedData->GetNextBaseGroup( &guid, &lpos );
-			TPOS lpos1;
+			long	lpos1;
 			ptrNamedData->GetBaseGroupObjectFirstPos( &guid, &lpos1 );
 			while( lpos1 )
 			{
@@ -2981,14 +3016,14 @@ bool CActionCloseQuery::Invoke()
 	
 #ifdef _DEBUG
 	{
-		TPOS lpos;
+		long	lpos;
 		INamedDataPtr	ptrNamedData( m_punkTarget );
 		ptrNamedData->GetBaseGroupFirstPos( &lpos );
 		while( lpos )
 		{
 			GUID guid;
 			ptrNamedData->GetNextBaseGroup( &guid, &lpos );
-			TPOS lpos1;
+			long	lpos1;
 			ptrNamedData->GetBaseGroupObjectFirstPos( &guid, &lpos1 );
 			while( lpos1 )
 			{
@@ -3218,7 +3253,12 @@ CActionInsertRecord::~CActionInsertRecord()
 bool CActionInsertRecord::Invoke()
 {
 	GET_ACTIVE_QUERY_FROM_DOC()// spQueryData - active Query data,spSelectQuery - select query	
-	spSelectQuery->Insert();
+	
+	BOOL bReadDeleteOnly = FALSE;
+	spDBDoc->IsReadDeleteOnly( &bReadDeleteOnly );
+	if( bReadDeleteOnly )	return false;
+	
+	if(S_OK != spSelectQuery->Insert()) return false;
 	return true;
 }
 
@@ -3230,7 +3270,11 @@ bool CActionInsertRecord::IsAvaible()
 	BOOL bReadOnly = FALSE;
 	spDBDoc->IsReadOnly( &bReadOnly );
 	if( bReadOnly )	return false;
-		
+
+	BOOL bReadDeleteOnly = FALSE;
+	spDBDoc->IsReadDeleteOnly( &bReadDeleteOnly );
+	if( bReadDeleteOnly )	return false;
+
 	short nState = 0;
 	spSelectQuery->GetState( &nState );
 	if( (QueryState)nState != qsClose )
@@ -4349,3 +4393,445 @@ bool CActionEmptyDBField::DoRedo()
 	m_changes.DoRedo( m_punkTarget );
 	return true;
 }
+
+bool CActionCompactDB::Invoke()
+{
+	
+	CWaitCursor wc;
+	CString src = GetArgumentString("DBPath");
+	IDBaseDocumentPtr dbDoc =0;
+	IDBConnectionPtr dbConn =0;
+	ISelectQuery2Ptr sq =0;
+	sptrIApplication	sptrApp( ::GetAppUnknown() );
+	bool bClosed = false;
+	{
+		long	lPosTempl, lPosDoc;
+		sptrApp->GetFirstDocTemplPosition( &lPosTempl );
+		while( lPosTempl && !bClosed)
+		{
+			sptrApp->GetFirstDocPosition( lPosTempl, &lPosDoc );
+			while( lPosDoc && !bClosed)
+			{
+				IUnknownPtr	ptrData;
+				sptrApp->GetNextDoc( lPosTempl, &lPosDoc, &ptrData );
+				dbDoc = ptrData;
+				if(dbDoc)
+				{
+					dbConn = dbDoc;
+					if(dbConn)
+					{
+						BSTR bstrMDB;
+						dbConn->GetMDBFileName( &bstrMDB );
+						CString name = bstrMDB;
+						SysFreeString(bstrMDB);
+						name.MakeLower();
+						src.MakeLower();
+
+						if(name!=src) 
+						{
+							dbConn =0;
+							dbDoc =0;
+							continue;
+						}
+						IUnknown* q=0;
+						dbDoc->GetActiveQuery( &q );
+						if(q)
+						{
+							sq=q;
+							q->Release();
+						}
+						if(sq)
+						{
+							sq->Close();
+						}
+						dbConn->CloseConnection();
+						bClosed = true;
+					}
+				}
+			}
+			sptrApp->GetNextDocTempl( &lPosTempl, 0, 0 );
+		}
+	}
+
+	bool result = CompactDB(src);
+
+	if(bClosed)
+	{
+		dbConn->OpenConnection();
+		IDBLockInfoPtr li = dbConn;
+		CDBLocksInfo* p_dbli;
+		li->GetLockInfoPtr((void**)&p_dbli);
+		sq->AttachLockInfo(p_dbli);
+		sq->Open();
+	}
+
+	return result;
+
+}
+bool CompactDB(LPCTSTR mdb)
+{
+	CWaitCursor wc;
+	CString src = mdb;
+	if(src.IsEmpty()) return false;
+	TCHAR filename[256] = {0};
+	TCHAR dir[1024] ={0};
+	TCHAR drive[16] ={0};
+	TCHAR ext[16] ={0};
+	splitpath(src, drive, dir, filename, ext);
+	CString temp = filename; 
+	temp+="XXX";
+	mktemp( temp.GetBuffer() );
+	TCHAR output[1024] ={0};
+	makepath(output, drive, dir, temp.GetBuffer(), ext);
+	temp.ReleaseBuffer();
+	GetMainFrameWnd()->RedrawWindow(0,0, RDW_ALLCHILDREN | RDW_INVALIDATE | RDW_UPDATENOW | RDW_ERASE );
+	
+	HRESULT hr = CompactDatabase(src.GetBuffer(), output);
+	if(hr == S_FALSE ) return true;
+	
+	if(FAILED(hr)) 
+	{
+		CString s;
+		s.Format(IDS_COMPACT_ERROR, src);
+		MessageBox(GetMainFrameWnd()->m_hWnd,s,"Error!",MB_OK | MB_APPLMODAL | MB_ICONERROR); 
+		return false;
+	}
+
+
+	remove(src.GetBuffer());
+	rename(output,src.GetBuffer());
+	
+	return true; 
+}
+
+long GetJetEngineType( LPCTSTR src )
+{
+	HRESULT hr;
+	ATL::CDataSource ds;
+	CComBSTR bstrSource;
+	VARIANT vPropValue;	
+	// Initialize our variant to VT_I4 and 0.
+	vPropValue.vt   = VT_I4;
+	vPropValue.lVal = 0L;	
+	// Exit now if source database is null.
+	if( NULL == src ) return 0;	
+
+	// Build connection string for source.
+	bstrSource = L"Provider=Microsoft.Jet.OLEDB.4.0;Data Source=";
+	bstrSource += src;
+	bstrSource += L";";	hr = ds.OpenFromInitializationString( bstrSource );
+	hr = ds.GetProperty( DBPROPSET_JETOLEDB_DBINIT, DBPROP_JETOLEDB_ENGINE, &vPropValue );
+
+	// Version returned will be one of these values:
+	// 
+	// #define JETDBENGINETYPE_UNKNOWN	0x00
+	// #define JETDBENGINETYPE_JET10	0x01
+	// #define JETDBENGINETYPE_JET11	0x02
+	// #define JETDBENGINETYPE_JET2X	0x03
+	// #define JETDBENGINETYPE_JET3X	0x04
+	// #define JETDBENGINETYPE_JET4X	0x05
+	return vPropValue.lVal;
+}
+
+
+
+HRESULT CompactDatabase(LPCTSTR src, LPCTSTR dest)
+{
+
+	ATL::CDataSource ds;
+	CComPtr<IJetCompact> spJetCompact =NULL;
+	CComPtr<IDBCreateSession> spSession =NULL;
+	CComPtr<IErrorRecords> spRecords = NULL; 
+	HRESULT	hr=0;	
+	CComPtr<IErrorInfo> spError = NULL; 
+	//Specify the source DSO
+	ds.Open(CLSID_JETOLEDB_4_00, src);
+	CDBPropSet propset1(DBPROPSET_DBINIT);
+    propset1.AddProperty(DBPROP_INIT_DATASOURCE, dest);	
+	/*long x = GetJetEngineType( src );
+	CDBPropSet propset2(DBPROPSET_JETOLEDB_DBINIT);
+	propset2.AddProperty(DBPROP_JETOLEDB_ENGINE, x);*/
+
+	/*CDBPropSet propset3(DBPROPSET_JETOLEDB_SESSION);
+	bool b =propset3.AddProperty(DBPROP_JETOLEDB_CONNECTIONCONTROL, variant_t((int)1));*/	
+	CDBPropSet dbsets[1] = { propset1/*, propset2, propset3 */};	
+	// Have we connected to the database?
+	ATLASSERT(ds.m_spInit != NULL);
+	variant_t v;
+	v.Clear();
+	ds.GetProperty(DBPROPSET_JETOLEDB_DBINIT, DBPROP_JETOLEDB_COMPACTFREESPACESIZE,&v);
+	if((int)v <0) return S_FALSE;
+
+
+	
+	hr = ds.m_spInit->QueryInterface(IID_IDBCreateSession, (void**)&spSession);
+	if (FAILED(hr))
+		return hr;
+	
+	//IJetCompact only supported in Jet 4.0 and above
+	hr = spSession->QueryInterface( __uuidof(IJetCompact), (void**)&spJetCompact);
+
+	if (FAILED(hr))
+		return hr;	//Delete the destination file if it exists
+	remove(dest);	
+
+	{
+		CDBLocksInfo dbli;
+		dbli.AttachToDB(src);
+		dbli.RemoveZombies();
+		if( dbli.IssueExclusiveRequest(true))
+		{
+			int n = dbli.RemoveZombies();
+			dbli.IssueExclusiveRequest(false);
+		}
+	}
+
+	hr = spJetCompact->Compact(1, dbsets);
+
+	return hr;
+}
+//////////////////////////////////////////////////////////////////////
+//CActionDBBackupToOpticalDrive implementation
+CActionDBBackupToOpticalDrive::CActionDBBackupToOpticalDrive()
+{
+	m_pBufRaw	= 0;
+	m_pBufPack	= 0;
+}
+
+CActionDBBackupToOpticalDrive::~CActionDBBackupToOpticalDrive()
+{
+	if( m_pBufRaw )
+		delete m_pBufRaw;	m_pBufRaw = 0;
+
+	if( m_pBufPack )
+		delete m_pBufPack;	m_pBufPack = 0;
+}
+void CleanDirectory(const CString& path)
+{
+	
+}
+
+bool CActionDBBackupToOpticalDrive::Invoke()
+{
+	CIMAPISettingsDlg dlg;
+	CString dir = GetArgumentString( "TargetFileName" );
+	BOOL bMakeCompress = GetValueInt(GetAppUnknown(), "Database\\BackUp","DVDCompression",0);
+
+		//CFSPrototype fsp;
+		//fsp.AddFile("E:\\vt5\\_en", 0);
+		///*fsp.AddFile("E:\\vt5\\morphology.mbd", 0);*/
+		//dlg.SetPath(fsp.GetRoot());
+
+	if(bMakeCompress)
+	{;}
+	else
+	{
+		;
+	}
+
+	
+	dlg.DoModal();
+	return true;
+
+	sptrIDBaseDocument spDBDoc( m_punkTarget );
+	if( spDBDoc == NULL )
+		return false;
+
+	IDBConnectionPtr ptrDBC( spDBDoc );
+	if( ptrDBC == 0 )
+		return false;
+
+	//Update active query
+	sptrISelectQuery spSelectQuery;
+	BOOL bWasOpen = false;
+	{
+		IUnknown* pUnkActiveQuery = NULL;
+		spDBDoc->GetActiveQuery( &pUnkActiveQuery );
+		if( pUnkActiveQuery )
+		{
+			spSelectQuery = pUnkActiveQuery;
+			pUnkActiveQuery->Release();
+
+			if( spSelectQuery )
+			{
+				spSelectQuery->IsOpen( &bWasOpen );
+				spSelectQuery->Update();				
+			}
+
+		}
+	}
+
+
+	BSTR bstrFileName = 0;
+	ptrDBC->GetMDBFileName( &bstrFileName );
+	CString strMDBFileName = bstrFileName;
+	
+	if( bstrFileName )
+		::SysFreeString( bstrFileName );
+
+	CFileFind ff;
+	if( !ff.FindFile( strMDBFileName ) )
+	{
+		CString strWarning;
+		strWarning.LoadString( IDS_WARNING_NO_MDB_FILES );
+		CString strError;
+		strError.Format( (LPCTSTR)strWarning, (LPCTSTR)strMDBFileName );
+		AfxMessageBox( strError, MB_ICONSTOP );
+		return false;
+	}
+
+	CString strTargetFileName = GetArgumentString( "TargetFileName" );
+
+	
+	if( !ff.FindFile( strTargetFileName ) )
+	{
+		CFileDialog dlg(FALSE, 0, 0, OFN_HIDEREADONLY | OFN_OVERWRITEPROMPT, 0, 0, _FILE_OPEN_SIZE_ );
+			
+		CString strLastBackUpLocation = ::_GetValueString( spDBDoc, 
+									SECTION_SETTINGS, SECTION_LASTBACKUPLOCATION, "" );		
+
+		strcpy(dlg.m_ofn.lpstrFile, strLastBackUpLocation);
+		dlg.m_ofn.lpstrFilter = "VT archive files(*.vta)\0*.vta\0\0";		
+
+		if(dlg.DoModal() != IDOK)
+			return false;
+
+		strTargetFileName = dlg.GetPathName();						
+
+		CString strLower = strTargetFileName;
+		strLower.MakeLower();
+
+		if( -1 == strLower.Find( ".vta" ) )
+			strTargetFileName += ".vta";			
+
+		::_SetValue( spDBDoc, SECTION_SETTINGS, SECTION_LASTBACKUPLOCATION, strTargetFileName );		
+	}
+
+	if( spSelectQuery )
+		spSelectQuery->Close();
+
+	if( ptrDBC )
+		ptrDBC->CloseConnection();
+
+	try{
+		CFile fileRead( strMDBFileName, 
+					CFile::modeRead | CFile::shareExclusive | 
+					CFile::typeBinary 					
+					);
+
+		CFile fileWrite( strTargetFileName, 
+					CFile::modeCreate | CFile::modeWrite |
+					CFile::typeBinary 
+					);
+
+		//CArchiveExt arStore( &fileWrite, CArchive::store, 1024*1024, NULL, "", TRUE );
+
+		DWORD dwFileLength = fileRead.GetLength();
+		DWORD dwCurPosition = 0;
+
+
+		fileWrite.Write( "VTA", sizeof(char) * 3 );
+		fileWrite.Write( &dwFileLength, sizeof(DWORD) );		
+		
+
+		DWORD dwBufRawSize = dwFileLength / 1000;
+		if( dwBufRawSize < 1024 )
+			dwBufRawSize = 1024;
+
+		fileWrite.Write( &dwBufRawSize, sizeof(DWORD) );		
+
+		
+
+		m_pBufRaw = new BYTE[ dwBufRawSize ];		
+		DWORD dwBufPackSize = dwBufRawSize * 1.2;
+
+
+		m_pBufPack = new BYTE[ dwBufRawSize * 1.2 ];
+										 
+		StartNotification( 1001, 1, 1 );
+
+		bool b_enough = false;
+		while( !b_enough )
+		{						 
+			UINT nRealLength = fileRead.Read( m_pBufRaw, dwBufRawSize );			
+
+			DWORD dwPack = dwBufPackSize;
+
+			if( Z_OK != compress( m_pBufPack, &dwPack, m_pBufRaw, nRealLength ) )
+				return false;
+
+			fileWrite.Write( &nRealLength, sizeof(DWORD) );
+			fileWrite.Write( &dwPack, sizeof(DWORD) );
+			fileWrite.Write( m_pBufPack, dwPack );			
+
+			//arStore.Write( g_szBuf, nRealLength );
+			if( nRealLength != dwBufRawSize )
+				b_enough = true;
+
+			dwCurPosition += nRealLength;
+
+			int nPercent = int( double(dwCurPosition) / double(dwFileLength) * 1000.);
+
+			Notify( nPercent );
+		}
+
+		fileRead.Close();
+		//arStore.Close();
+		fileWrite.Close();
+
+		FinishNotification();
+
+		AfxMessageBox( IDS_PACK_SUCCEDED, MB_ICONINFORMATION );
+
+
+	}
+	catch(CFileException* pe)
+	{		
+
+		pe->ReportError();
+		pe->Delete();
+		
+		FinishNotification();
+
+	}
+	catch(CTerminateException* pe)
+	{
+		if( ptrDBC )
+			ptrDBC->OpenConnection();
+
+		if( spSelectQuery != 0 && bWasOpen )
+			spSelectQuery->Open();
+
+		pe->Delete();
+
+		FinishNotification();
+	}
+
+
+	if( ptrDBC )
+		ptrDBC->OpenConnection();
+
+	if( spSelectQuery != 0 && bWasOpen )
+		spSelectQuery->Open();
+
+
+	FinishNotification();
+
+	return true;
+}
+
+//extended UI
+bool CActionDBBackupToOpticalDrive::IsAvaible()
+{
+	/*sptrIDBaseDocument spDBDoc( m_punkTarget );
+	if( spDBDoc == NULL )
+		return false;*/
+
+	return true;
+}
+
+bool CActionDBBackupToOpticalDrive::IsChecked()
+{
+	return false;
+}
+

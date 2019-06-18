@@ -431,14 +431,14 @@ BOOL CShellToolbarButton::OnContextHelp( CWnd *pwnd )
 	if( strs.GetSize() == 0 )
 		return true;
 
-	INT_PTR	idx1 = strs.Find( "<!-- list start -->" );
-	INT_PTR	idx2 = strs.Find( "<!-- list end -->" );
+	int	idx1 = strs.Find( "<!-- list start -->" );
+	int	idx2 = strs.Find( "<!-- list end -->" );
 
 	if( idx1 == -1 || idx2 == -1 || idx2 < idx1+1 )
 		return true;
 
 	strs.RemoveAt( idx1+1, idx2-idx1-2 );
-	int	idx = (int)idx1+1;
+	int	idx = idx1+1;
 
 	strs.InsertAt( idx++, "<ul>" );
 
@@ -596,7 +596,7 @@ void CShellToolbarButton::CreatePopup( bool bConstructNow )
 
 //	m_ptrSubMenu->SetSingleObjectName( _bstr_t( m_strText ) );
 
-	TPOS lPos = 0;
+	long lPos = 0;	
 	m_ptrSubMenu->GetFirstItemPos( &lPos );
 	
 	
@@ -893,7 +893,7 @@ BOOL CShellPopupMenu::UpdateCmdUI(CCmdUI *pCmdUI)
 
 	if (ptrSubMenu != 0)
 	{
-		TPOS lpos = 0;
+		long lpos = 0;
 		ptrSubMenu->GetFirstItemPos(&lpos);
 		while (lpos)
 		{

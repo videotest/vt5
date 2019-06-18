@@ -1,6 +1,6 @@
 #pragma once
 
-#include "FishDlgs.h"
+#include "dlgs.h"
 
 #include <vector>
 

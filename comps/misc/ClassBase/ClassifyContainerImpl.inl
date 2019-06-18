@@ -71,7 +71,7 @@ inline HRESULT CClassifyContainerImpl::RemoveClasses()
 
 inline HRESULT CClassifyContainerImpl::GetClassParams( /*[in]*/ long lClass, /*[out]*/CLASSINFO *ppParams )
 {
-	TPOS lPos = m_mapClassParams.find(lClass);
+	long lPos = m_mapClassParams.find( lClass );
 	if( lPos > 0 )
 	{
 		*ppParams = m_mapClassParams.get( lPos );
@@ -144,7 +144,7 @@ inline HRESULT CClassifyContainerImpl::GetKeyParams( /*[in] */long lClass,/*[in]
 	if( !ppfParams && !plSz )
 		return S_FALSE;
 
-	TPOS lPos = m_mapKeyParams[lClass].find(lKey);
+	long lPos = m_mapKeyParams[lClass].find( lKey );
 	if( lPos > 0 )
 	{
 		XKeyItem* item = m_mapKeyParams[lClass].get( lPos );
@@ -547,7 +547,7 @@ inline HRESULT CClassifyContainerImpl::GetObjectClass( /*[in]*/ IUnknown *punkOb
 
 	GuidKey guidKey = ::GetKey( punkObject );
 
-	TPOS lpos = m_arObjectList.find(&guidKey);
+	long lpos = m_arObjectList.find( &guidKey );
 	if( !lpos )
 		return S_FALSE;
 
@@ -556,7 +556,7 @@ inline HRESULT CClassifyContainerImpl::GetObjectClass( /*[in]*/ IUnknown *punkOb
 	return S_OK;
 
 	/*
-	for( LPOS lPos = m_arObjectList.head(); lPos; lPos = m_arObjectList.next( lPos ) )
+	for( long lPos = m_arObjectList.head(); lPos; lPos = m_arObjectList.next( lPos ) )
 	{
 		XObjectItem* pitem = m_arObjectList.get( lPos );
 		if( pitem->guidKey == guidKey )
@@ -623,7 +623,7 @@ inline CClassifyContainerImpl::XKeyItem* CClassifyContainerImpl::find_key_item( 
 {
 	if( !m_mapKeyParams || lclass < 0 || lclass > m_lSz2 )	return 0;
 
-	TPOS lpos = m_mapKeyParams[lclass].find(lkey);
+	long lpos = m_mapKeyParams[lclass].find( lkey );
 	if( !lpos )		return 0;
 
 	XKeyItem* pitem = m_mapKeyParams[lclass].get( lpos );

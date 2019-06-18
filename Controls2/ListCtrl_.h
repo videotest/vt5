@@ -8,9 +8,9 @@ class CListCtrl_ :
 
 	struct XCell
 	{
-		TPOS	lColumnPos;	// позиция столбца в списке столбцов
-		TPOS	lRowPos;	// позиция строки в списке строк
-		ListCellAdditionInfo*	lpInfo;		// указатель на инфор-ю
+		long	lColumnPos;	// позиция столбца в списке столбцов
+		long	lRowPos;	// позиция строки в списке строк
+		long	lpInfo;		// указатель на инфор-ю
 
 		XCell()
 		{
@@ -25,8 +25,8 @@ class CListCtrl_ :
 	_list_idx_t<XCell>	m_Cells;
 
 
-	BOOL delete_cells_info( int iRow, int iColumn );		// удаление информации о ячейке(ах): если (-1) - удаление всех ячеек
-	TPOS find_cell( int iRow, int iColumn ); 
+	BOOL	delete_cells_info( int iRow, int iColumn );		// удаление информации о ячейке(ах): если (-1) - удаление всех ячеек
+	long	find_cell( int iRow, int iColumn ); 
 	
 public:
 	CListCtrl_(void);
@@ -48,11 +48,11 @@ public:
 	virtual	BOOL	GetCellProp( int iRow, int iColumn, ListCellInfo * pLCInfo );		// получение свойств ячейки
 
 	// обработка сообщений листа
-	virtual LRESULT	on_destroy();
+	virtual long	on_destroy( );
 
-	virtual	LRESULT	OnInsertColumn(int iCol, const LPLVCOLUMN pcol);
-	virtual	LRESULT	OnDeleteColumn(int iCol);
-	virtual	LRESULT	OnInsertRow(const LPLVITEM prow);
+	virtual	long	OnInsertColumn( int iCol, const LPLVCOLUMN pcol );
+	virtual	long	OnDeleteColumn(	int iCol );
+	virtual	long	OnInsertRow( const LPLVITEM prow );
 	virtual	long	OnDeleteRow( int iRow );
 	virtual	long	OnDeleteAllRows( );
 

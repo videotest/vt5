@@ -25,7 +25,7 @@ void OutputDescr(double* d, int n)
 		t.Empty();
 	}
 	s+="\n";
-	OutputDebugString(s);
+	OutputDebugStr(s);
 }
 
 #define MAXENERGY 8.
@@ -425,7 +425,7 @@ void ShapeClass::Serialize(CArchive& ar)
 			CString s;
 			s.Format(" %i\n",nDescriptors);
 			ctr+=s;
-			OutputDebugString(ctr);
+			OutputDebugStr(ctr);
 			for(int i=0;i<nDescriptors;i++)
 			{
 				m_descrs.GetAt(i).Serialize(ar);
@@ -858,8 +858,8 @@ void ShapeClass::CalcDistTableWithWeights()
 
 void ShapeClass::Clusterize()
 {
-	OutputDebugString(m_strName);
-	OutputDebugString("\n");
+	OutputDebugStr(m_strName);
+	OutputDebugStr("\n");
 	delete m_pw;
 	m_pw = new ParzenWindows();
 	m_pw->AttachDescriptors(m_descrs);

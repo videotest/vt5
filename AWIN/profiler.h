@@ -48,14 +48,14 @@ inline void __WriteLog__( const char *psz_format, ... )
 		DWORD dw_offset = ::SetFilePointer( hFile, 0, 0, FILE_END );
 		//write time
 		const char* psz_time = __GetCurrentTime__();
-		DWORD dwSize = (DWORD)strlen(psz_time);
+		DWORD dwSize = strlen( psz_time );
 		::WriteFile( hFile, psz_time, dwSize, &dwSize, 0 );
 
 		//write tabs
 		::WriteFile( hFile, "\t", 1, &dwSize, 0 );
 
 		//write out string
-		dwSize = (DWORD)strlen(sz);
+		dwSize = strlen( sz );
 		::WriteFile( hFile, sz, dwSize, &dwSize, 0 );
 
 		::CloseHandle( hFile );	hFile = 0;		

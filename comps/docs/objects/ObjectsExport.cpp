@@ -213,7 +213,7 @@ bool CActionObjectsExport::ExportToFile(CObjectListWrp &ObjList, CFile *pFile,
 	_bstr_t bstrComma(_T(","));
 	ICalcObjectContainerPtr sptrCOC(ObjList);
 	INamedDataObject2Ptr objects(ObjList);
-	LONG_PTR lpos;
+	long lpos;
 	if (bAddParamNames)
 	{
 		CStringW sClass;
@@ -234,7 +234,7 @@ bool CActionObjectsExport::ExportToFile(CObjectListWrp &ObjList, CFile *pFile,
 		}
 		ar.Write((wchar_t*)bstrNewLine,bstrNewLine.length()*sizeof(wchar_t));
 	}
-	TPOS lposObj;
+	long lposObj;
 	objects->GetFirstChildPosition(&lposObj);
 	while (lposObj) 
 	{

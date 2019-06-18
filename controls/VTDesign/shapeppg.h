@@ -58,9 +58,9 @@ protected:
 protected:
 	//{{AFX_MSG(CVTShapePropPage)
 	virtual BOOL OnInitDialog();
-	afx_msg LRESULT OnColorChange(WPARAM lParam, LPARAM wParam);
-	afx_msg LRESULT OnLineChange(WPARAM lParam, LPARAM wParam);
-	afx_msg LRESULT OnArrowChange(WPARAM lParam, LPARAM wParam);	
+	afx_msg LONG OnColorChange(UINT lParam, LONG wParam);
+	afx_msg LONG OnLineChange(UINT lParam, LONG wParam);
+	afx_msg LONG OnArrowChange(UINT lParam, LONG wParam);	
 	//}}AFX_MSG
 	DECLARE_MESSAGE_MAP()
 

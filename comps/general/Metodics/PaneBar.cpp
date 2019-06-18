@@ -222,7 +222,7 @@ void CPaneItem::do_draw( HDC hDC, DWORD dwFlags, bool bCalcOnly )
 	BOOL m_bEnablePane=false;
 	if(m_psub_items)
 	{
-		for (TPOS lPos = m_psub_items->m_listItems.head(); lPos; lPos = m_psub_items->m_listItems.next(lPos))
+		for( long lPos = m_psub_items->m_listItems.head(); lPos; lPos = m_psub_items->m_listItems.next( lPos ) )
 		{
 			CPaneItem *pItem = m_psub_items->m_listItems.get( lPos );
 			if( pItem->is_empty() )
@@ -736,7 +736,7 @@ void CPaneItem::on_mouse_over( POINT pt, HWND hwnd )
 	BOOL m_bEnablePane=false;
 	if(m_psub_items)
 	{
-		for (TPOS lPos = m_psub_items->m_listItems.head(); lPos; lPos = m_psub_items->m_listItems.next(lPos))
+		for( long lPos = m_psub_items->m_listItems.head(); lPos; lPos = m_psub_items->m_listItems.next( lPos ) )
 		{
 			CPaneItem *pItem = m_psub_items->m_listItems.get( lPos );
 			if( pItem->is_empty() )
@@ -770,7 +770,7 @@ void CPaneItem::on_mouse_over( POINT pt, HWND hwnd )
 		HDC hDipl = ::GetDC( 0 );
 
 		int nmax = 0;
-		for (TPOS lPos = m_psub_items->m_listItems.head(); lPos; lPos = m_psub_items->m_listItems.next(lPos))
+		for( long lPos = m_psub_items->m_listItems.head(); lPos; lPos = m_psub_items->m_listItems.next( lPos ) )
 		{
 			CPaneItem *pItem = m_psub_items->m_listItems.get( lPos );
 
@@ -870,7 +870,7 @@ RECT CPaneItemPlace::get_virtual_rect()
 {
 	RECT rc = { 0, 0, 0, m_listItems.head() ? 0 : EMPTY_PANE_HEIGHT  };
 
-	for (TPOS lPos = m_listItems.head(); lPos; lPos = m_listItems.next(lPos))
+	for( long lPos = m_listItems.head(); lPos; lPos = m_listItems.next( lPos ) )
 	{
 		CPaneItem *pItem = m_listItems.get( lPos );
 
@@ -888,7 +888,7 @@ RECT CPaneItemPlace::get_virtual_rect()
 
 CPaneItemPlace *CPaneItemPlace::get_sub_place_from_handle( HWND hwnd )
 {
-	for (TPOS lPos = m_listItems.head(); lPos; lPos = m_listItems.next(lPos))
+	for( long lPos = m_listItems.head(); lPos; lPos = m_listItems.next( lPos ) )
 	{
 		CPaneItem *pItem = m_listItems.get( lPos );
 		if( pItem->m_psub_items && pItem->m_psub_items->handle() == hwnd )
@@ -898,7 +898,7 @@ CPaneItemPlace *CPaneItemPlace::get_sub_place_from_handle( HWND hwnd )
 }
 
 
-LRESULT CPaneItemPlace::on_timer(ulong lEvent)
+long CPaneItemPlace::on_timer( ulong lEvent )
 {
 	if( lEvent == SHOW_TIMER )
 	{
@@ -949,7 +949,7 @@ LRESULT CPaneItemPlace::on_timer(ulong lEvent)
 	return win_impl::on_timer( lEvent );
 }
 
-LRESULT CPaneItemPlace::on_erasebkgnd(HDC hDC)
+long CPaneItemPlace::on_erasebkgnd( HDC hDC )
 {
 	//if(fKeyDown)
 	//{
@@ -984,7 +984,7 @@ LRESULT CPaneItemPlace::on_erasebkgnd(HDC hDC)
 	VERIFY(::DeleteObject( (HGDIOBJ )hBrush ));
 	return 0L; 
 }
-LRESULT CPaneItemPlace::on_paint()
+long CPaneItemPlace::on_paint()
 {
 	BYTE keydown[256];
 	BOOL bPaint=false;
@@ -1029,7 +1029,7 @@ LRESULT CPaneItemPlace::on_paint()
 	PAINTSTRUCT ps = {0};
 	HDC hDC = ::BeginPaint( handle(), &ps );
 
-	for (TPOS lPos = m_listItems.head(); lPos; lPos = m_listItems.next(lPos))
+	for( long lPos = m_listItems.head(); lPos; lPos = m_listItems.next( lPos ) )
 	{
 		CPaneItem *pItem = m_listItems.get( lPos );
 		if( pItem->is_empty() )
@@ -1090,7 +1090,7 @@ void CPaneItemPlace::check_scroll( bool *pbUpScroll, bool *pbDownScroll )
 	RECT rcClient = {0};
 	::GetClientRect( handle(), &rcClient );
 
-	for (TPOS lPos = m_listItems.head(); lPos; lPos = m_listItems.next(lPos))
+	for( long lPos = m_listItems.head(); lPos; lPos = m_listItems.next( lPos ) )
 	{
 		CPaneItem *pItem = m_listItems.get( lPos );
 		if( pItem->is_empty() )
@@ -1109,7 +1109,7 @@ void CPaneItemPlace::check_scroll( bool *pbUpScroll, bool *pbDownScroll )
 
 int CPaneItemPlace::get_row_height()
 {
-	TPOS lPos = m_listItems.head();
+	long lPos = m_listItems.head();
 
 	if( !lPos )
 		return EMPTY_PANE_HEIGHT;
@@ -1126,7 +1126,7 @@ int CPaneItemPlace::get_row_height()
 
 void CPaneItemPlace::offset_items( POINT ptOffset )
 {
-	for (TPOS lPos = m_listItems.head(); lPos; lPos = m_listItems.next(lPos))
+ 	for( long lPos = m_listItems.head(); lPos; lPos = m_listItems.next( lPos ) )
 	{
 		CPaneItem *pItem = m_listItems.get( lPos );
 		if( pItem->is_empty() )
@@ -1143,8 +1143,8 @@ void CPaneItemPlace::offset_items( POINT ptOffset )
 
 CPaneItem *CPaneItemPlace::get_item( long lIndex )
 {
-	long lSkip = 0, i=0;
-	for (TPOS lPos = m_listItems.head(); lPos; lPos = m_listItems.next(lPos), i++)
+	long lSkip = 0;
+	for( long lPos = m_listItems.head(), i = 0; lPos; lPos = m_listItems.next( lPos ), i++ )
 	{
 		if( (i - lSkip) == lIndex )
 		{
@@ -1160,7 +1160,7 @@ CPaneItem *CPaneItemPlace::get_item( long lIndex )
 	return 0;
 }
 
-LRESULT CPaneItemPlace::on_lbuttondown(const _point &point)
+long CPaneItemPlace::on_lbuttondown( const _point &point )
 {
 	m_bMove = false;
 	
@@ -1187,7 +1187,7 @@ LRESULT CPaneItemPlace::on_lbuttondown(const _point &point)
 	return 0L;
 }
 
-LRESULT CPaneItemPlace::on_lbuttonup(const _point &point)
+long CPaneItemPlace::on_lbuttonup( const _point &point )
 {
  	::SetCursor( m_hActive );
 
@@ -1246,7 +1246,7 @@ LRESULT CPaneItemPlace::on_lbuttonup(const _point &point)
 	return 0L;
 }
 
-LRESULT CPaneItemPlace::on_mousemove(const _point &point)
+long CPaneItemPlace::on_mousemove( const _point &point )
 {
 	m_bMouseOver = true;
 	m_ptOver = point;
@@ -1313,7 +1313,7 @@ LRESULT CPaneItemPlace::on_mousemove(const _point &point)
 	return 0L;
 }
 
-LRESULT CPaneItemPlace::handle_message(UINT m, WPARAM w, LPARAM l)
+long CPaneItemPlace::handle_message( UINT m, WPARAM w, LPARAM l )
 {
 	if( m == WM_HELPHITTEST )
 	{
@@ -1462,7 +1462,7 @@ LRESULT CPaneItemPlace::handle_message(UINT m, WPARAM w, LPARAM l)
 
 		if( m == WM_CREATE )
 		{
-			LRESULT lRes = __super::handle_message(m, w, l);
+			long lRes = __super::handle_message( m, w, l );
 
 			m_pCtrl = new CToolTipCtrl;
 			m_pCtrl->Create( /*CWnd::FromHandle( handle() )*/0, TTS_ALWAYSTIP );
@@ -1517,7 +1517,7 @@ LRESULT CPaneItemPlace::handle_message(UINT m, WPARAM w, LPARAM l)
 
 CPaneItem* CPaneItemPlace::get_item_by_pos( POINT ptScreen )
 {
-	for (TPOS lPos = m_listItems.head(); lPos; lPos = m_listItems.next(lPos))
+	for( long lPos = m_listItems.head(); lPos; lPos = m_listItems.next( lPos ) )
 	{
 		CPaneItem *pItem = m_listItems.get( lPos );
 		RECT rcItem = pItem->get_virtual_rect();
@@ -1535,7 +1535,7 @@ void CPaneItemPlace::store_content( INamedData *punkND, CString strRoot )
 {
 	::SetValue( punkND, strRoot, ENTRY_ITEM_COUNT, m_listItems.count() );
 
-	for (TPOS lPos = m_listItems.head(), i = 0; lPos; lPos = m_listItems.next(lPos), i++)
+	for( long lPos = m_listItems.head(), i = 0; lPos; lPos = m_listItems.next( lPos ), i++ )
 	{
 		CPaneItem *pItem = m_listItems.get( lPos );
 
@@ -1591,7 +1591,7 @@ void CPaneItemPlace::add_item( IActionInfo *punkActionInfo, POINT pt )
 	
 	bool bOk = false;
 
-	for (TPOS lPos = m_listItems.head(); lPos; lPos = m_listItems.next(lPos))
+	for( long lPos = m_listItems.head(); lPos; lPos = m_listItems.next( lPos ) )
 	{
 		CPaneItem *pItem = m_listItems.get( lPos );
 
@@ -1602,7 +1602,7 @@ void CPaneItemPlace::add_item( IActionInfo *punkActionInfo, POINT pt )
 
  		if( PtInRect( &rcItem, pt ) )
 		{
-			for (TPOS lPos2 = m_listItems.next(lPos), i = 0; lPos2; lPos2 = m_listItems.next(lPos2))
+			for( long lPos2 =  m_listItems.next( lPos ), i = 0; lPos2; lPos2 = m_listItems.next( lPos2 ) )
 			{
 				CPaneItem *pItem2 = m_listItems.get( lPos2 );
 				RECT rcItem2 = pItem2->get_virtual_rect();
@@ -1623,7 +1623,7 @@ void CPaneItemPlace::add_item( IActionInfo *punkActionInfo, POINT pt )
 
 	if( !bOk )
 	{
-		TPOS lPos = m_listItems.tail();
+		long lPos = m_listItems.tail();
 
 		if( lPos )
 		{
@@ -1651,9 +1651,9 @@ void CPaneItemPlace::clear_items()
 	m_listItems.clear();
 }
 
-LRESULT CPaneItemPlace::on_size(short cx, short cy, ulong fSizeType)
+long CPaneItemPlace::on_size( short cx, short cy, ulong fSizeType )
 {
-	for( TPOS lPos = m_listItems.head(); lPos; lPos = m_listItems.next( lPos ) )
+	for( long lPos = m_listItems.head(); lPos; lPos = m_listItems.next( lPos ) )
 	{
 		CPaneItem *pItem = m_listItems.get( lPos );
 		if( pItem->is_empty() )
@@ -1666,12 +1666,12 @@ LRESULT CPaneItemPlace::on_size(short cx, short cy, ulong fSizeType)
 
 void CPaneItemPlace::remove_item( long lIndex )
 {
-	long lSkip = 0, i=0;
-	for (TPOS lPos = m_listItems.head(); lPos; lPos = m_listItems.next(lPos), i++)
+	long lSkip = 0;
+	for( long lPos = m_listItems.head(), i = 0; lPos; lPos = m_listItems.next( lPos ), i++ )
 	{
 		if( ( i - lSkip ) == lIndex )
 		{
-			for (TPOS lPos2 = m_listItems.next(lPos); lPos2; lPos2 = m_listItems.next(lPos2))
+			for( long lPos2 = m_listItems.next( lPos ); lPos2; lPos2 = m_listItems.next( lPos2 ) )
 			{
 				CPaneItem *pItem = m_listItems.get( lPos2 );
 				if( pItem->is_empty() )
@@ -1702,7 +1702,7 @@ void CPaneItemPlace::add_help_items( CStringArrayEx *pstrs, int &nidx, int nleve
 	IActionManagerPtr sptrActionMan = punkActionMan;
 	punkActionMan->Release(); punkActionMan = 0;
 
-	for (TPOS lPos = m_listItems.head(); lPos; lPos = m_listItems.next(lPos))
+	for( long lPos = m_listItems.head(), i = 0; lPos; lPos = m_listItems.next( lPos ), i++ )
 	{
 		CPaneItem *pItem = m_listItems.get( lPos );
 
@@ -1874,7 +1874,7 @@ bool CPane::create( DWORD style, const RECT &rect, const _char *pszTitle, HWND p
 	return bRet;
 }
 
-LRESULT CPane::on_size(short cx, short cy, ulong fSizeType)
+long CPane::on_size( short cx, short cy, ulong fSizeType )
 {
 	int dy = cy;
 	if( m_TitleBar.handle() )
@@ -1925,7 +1925,7 @@ LRESULT CPane::on_size(short cx, short cy, ulong fSizeType)
 	return 0L;
 }
 
-LRESULT CPane::handle_message(UINT m, WPARAM w, LPARAM l)
+long CPane::handle_message( UINT m, WPARAM w, LPARAM l )
 {
 	if( m == WM_IS_PANE_OPEN )
 		return (long)is_open();
@@ -2168,7 +2168,7 @@ void CPane::load_content( INamedData *punkND, CString strRoot )
 	m_ItemPlace.load_content( punkND, strRoot );
 }
 
-LRESULT CPane::on_erasebkgnd(HDC hDC)
+long CPane::on_erasebkgnd( HDC hDC )
 {
  	RECT rect = {0};
 	::GetClientRect( handle(), &rect );
@@ -2367,7 +2367,7 @@ long CPaneScrollBtn::on_notify_reflect( NMHDR *pnmhdr, long *plProcessed )
 	return __super::on_notify_reflect( pnmhdr, plProcessed );
 }
 
-LRESULT CPaneScrollBtn::on_erasebkgnd(HDC hDC)
+long CPaneScrollBtn::on_erasebkgnd( HDC hDC )
 {
 	return 0L;
 	RECT rect = {0};
@@ -2380,7 +2380,7 @@ LRESULT CPaneScrollBtn::on_erasebkgnd(HDC hDC)
 	return 0L; 
 }
 
-LRESULT  CPaneScrollBtn::on_mousemove(const _point &point)
+long  CPaneScrollBtn::on_mousemove( const _point &point )
 {
 	if( !m_bMiceOver )
 		InvalidateRect( handle(), 0, TRUE );
@@ -2397,7 +2397,7 @@ LRESULT  CPaneScrollBtn::on_mousemove(const _point &point)
 	return __super::on_mousemove( point );
 }
 
-LRESULT  CPaneScrollBtn::handle_message(UINT m, WPARAM w, LPARAM l)
+long  CPaneScrollBtn::handle_message( UINT m, WPARAM w, LPARAM l )
 {
 	if( m == WM_MOUSELEAVE )
 		return on_mouseleave();
@@ -2411,14 +2411,14 @@ long  CPaneScrollBtn::on_mouseleave()
 	return 1L;
 }
 
-LRESULT CPaneScrollBtn::on_lbuttondown(const _point &point)
+long CPaneScrollBtn::on_lbuttondown( const _point &point )
 {
 	m_bDown = true;
 	::InvalidateRect( handle(), 0, TRUE );
 	return __super::on_lbuttondown( point );
 }
 
-LRESULT CPaneScrollBtn::on_lbuttonup(const _point &point)
+long CPaneScrollBtn::on_lbuttonup( const _point &point )
 {
 	m_bDown = false;
 	::InvalidateRect( handle(), 0, TRUE );
@@ -2533,14 +2533,14 @@ long CPaneTitle::on_notify_reflect( NMHDR *pnmhdr, long *plProcessed )
 	return __super::on_notify_reflect( pnmhdr, plProcessed );
 }
 
-LRESULT	CPaneTitle::handle_message(UINT m, WPARAM w, LPARAM l)
+long	CPaneTitle::handle_message( UINT m, WPARAM w, LPARAM l )
 {
 	if( m == WM_MOUSELEAVE )
 		return on_mouseleave();
 	return __super::handle_message( m, w, l );
 }
 
-LRESULT CPaneTitle::on_mousemove(const _point &point)
+long CPaneTitle::on_mousemove( const _point &point )
 {
 	if( !m_bMiceOver )
 		InvalidateRect( handle(), 0, TRUE );
@@ -2563,7 +2563,7 @@ long CPaneTitle::on_mouseleave()
 	return 1L;
 }
 
-LRESULT CPaneTitle::on_lbuttonup(const _point &point)
+long CPaneTitle::on_lbuttonup( const _point &point )
 {
 	return __super::on_lbuttonup( point );
 }
@@ -2637,8 +2637,7 @@ CPane*	CPaneBar::AddNewPane( CString strName, long lInsertAfterIndex )
 		m_PaneList.add_tail( ppane );
 	else
 	{
-		long i = 0;
-		for (TPOS lPos = m_PaneList.head(); lPos; lPos = m_PaneList.next(lPos), i++)
+		for( long lPos = m_PaneList.head(), i = 0; lPos; lPos = m_PaneList.next( lPos ), i++ )
 		{
 			if( i == lInsertAfterIndex )
 			{
@@ -2650,14 +2649,14 @@ CPane*	CPaneBar::AddNewPane( CString strName, long lInsertAfterIndex )
 	return   ppane;
 }
 
-LRESULT CPaneBar::on_size(short cx, short cy, ulong fSizeType)
+long CPaneBar::on_size( short cx, short cy, ulong fSizeType )
 {
 	SCROLLINFO info = {0};
  	info.cbSize				= sizeof( SCROLLINFO );
 	info.fMask				= SIF_ALL;
 	::GetScrollInfo( ::GetParent( handle() ), SB_VERT,&info );
 	
-	for (TPOS lPos = m_PaneList.head(); lPos; lPos = m_PaneList.next(lPos))
+	for( long lPos = m_PaneList.head(); lPos; lPos = m_PaneList.next( lPos ) )
 	{
 		CPane *ppane = m_PaneList.get( lPos );
 
@@ -2672,7 +2671,7 @@ LRESULT CPaneBar::on_size(short cx, short cy, ulong fSizeType)
 	return 0L;
 }
 
-LRESULT CPaneBar::on_erasebkgnd(HDC hDC)
+long CPaneBar::on_erasebkgnd( HDC hDC )
 {
   	RECT rect = {0};
 	::GetClientRect( handle(), &rect );
@@ -2692,7 +2691,7 @@ LRESULT CPaneBar::on_erasebkgnd(HDC hDC)
 	return 0L; 
 }
 
-LRESULT CPaneBar::handle_message(UINT m, WPARAM w, LPARAM l)
+long CPaneBar::handle_message( UINT m, WPARAM w, LPARAM l )
 {
    	if( m == WM_NEED_RECALC )
 	{
@@ -2704,7 +2703,7 @@ LRESULT CPaneBar::handle_message(UINT m, WPARAM w, LPARAM l)
 
 		bool block = m_block_send;
 
-		for (TPOS lPos = m_PaneList.head(), lIndex = 0; lPos; lPos = m_PaneList.next(lPos), lIndex++)
+		for( long lPos = m_PaneList.head(), lIndex = 0; lPos; lPos = m_PaneList.next( lPos ), lIndex++ )
 		{
 			CPane *ppane = m_PaneList.get( lPos );
 
@@ -2787,7 +2786,7 @@ LRESULT CPaneBar::handle_message(UINT m, WPARAM w, LPARAM l)
 
 		RECT rcPrev = {0};
 
-		for (TPOS lPos = m_PaneList.head(), lIndex = 0; lPos; lPos = m_PaneList.next(lPos), lIndex++)
+		for( long lPos = m_PaneList.head(), lIndex = 0; lPos; lPos = m_PaneList.next( lPos ), lIndex++ )
 		{
 			CPane *ppane = m_PaneList.get( lPos );
 
@@ -2851,7 +2850,7 @@ LRESULT CPaneBar::handle_message(UINT m, WPARAM w, LPARAM l)
 		if( dy > 0 && npos_prev > info.nMin || dy < 0 && npos_prev <  (info.nMax - info.nPage)  )
 		{
 
-			for (TPOS lPos = m_PaneList.head(), lIndex = 0; lPos; lPos = m_PaneList.next(lPos), lIndex++)
+			for( long lPos = m_PaneList.head(), lIndex = 0; lPos; lPos = m_PaneList.next( lPos ), lIndex++ )
 			{
 				CPane *ppane = m_PaneList.get( lPos );
 				
@@ -2907,8 +2906,7 @@ void CPaneBar::_update_scroll_info( RECT rc )
 
 CPane* CPaneBar::get_item( long lIndex )
 {
-	long i = 0;
-	for (TPOS lPos = m_PaneList.head(); lPos; lPos = m_PaneList.next(lPos), i++)
+	for( long lPos = m_PaneList.head(), i = 0; lPos; lPos = m_PaneList.next( lPos ), i++ )
 	{
 		if( i == lIndex )
 			return m_PaneList.get( lPos );
@@ -2918,7 +2916,7 @@ CPane* CPaneBar::get_item( long lIndex )
 
 CPane* CPaneBar::get_item_by_pos( POINT ptScreen )
 {
-	for (TPOS lPos = m_PaneList.head(); lPos; lPos = m_PaneList.next(lPos))
+	for( long lPos = m_PaneList.head(); lPos; lPos = m_PaneList.next( lPos ) )
 	{
 		CPane *pPane = m_PaneList.get( lPos );
 
@@ -2933,8 +2931,7 @@ CPane* CPaneBar::get_item_by_pos( POINT ptScreen )
 
 void CPaneBar::remove_item( long lIndex )
 {
-	long i = 0;
-	for (TPOS lPos = m_PaneList.head(); lPos; lPos = m_PaneList.next(lPos), i++)
+	for( long lPos = m_PaneList.head(), i = 0; lPos; lPos = m_PaneList.next( lPos ), i++ )
 	{
 		if( i == lIndex )
 		{
@@ -2949,7 +2946,7 @@ void CPaneBar::store_content( INamedData *punkND, CString str_root  )
 	INamedDataPtr sptrND = punkND;
 	
 	::SetValue( punkND, str_root, ENTRY_PANE_COUNT, m_PaneList.count() );
-	for (TPOS lPos = m_PaneList.head(), i = 0; lPos; lPos = m_PaneList.next(lPos), i++)
+	for( long lPos = m_PaneList.head(), i = 0; lPos; lPos = m_PaneList.next( lPos ), i++ )
 	{
 		CPane *pPane = m_PaneList.get( lPos );
 
@@ -2987,7 +2984,7 @@ void CPaneBar::load_content( INamedData *punkND, CString str_root )
 
 void CPaneBar::clear_items()
 {
-	for (TPOS lPos = m_PaneList.head(); lPos; lPos = m_PaneList.next(lPos))
+	for( long lPos = m_PaneList.head(); lPos; lPos = m_PaneList.next( lPos ) )
 	{
 		CPane *pPane = m_PaneList.get( lPos );
 		pPane->clear_items();
@@ -3000,7 +2997,7 @@ RECT CPaneBar::get_virtual_rect()
 {
 	RECT rc_ret = {0};
 
-	for (TPOS lPos = m_PaneList.head(); lPos; lPos = m_PaneList.next(lPos))
+	for( long lPos = m_PaneList.head(); lPos; lPos = m_PaneList.next( lPos ) )
 	{
 		CPane *pPane = m_PaneList.get( lPos );
 
@@ -3027,7 +3024,7 @@ RECT CPaneBar::get_virtual_rect()
 
 CPaneBar* CPaneBar::get_bar_by_pos( POINT ptScreen )
 {
-	for (TPOS lPos = m_PaneList.head(); lPos; lPos = m_PaneList.next(lPos))
+	for( long lPos = m_PaneList.head(); lPos; lPos = m_PaneList.next( lPos ) )
 	{
 		CPane *pPane = m_PaneList.get( lPos );
 
@@ -3072,7 +3069,7 @@ LRESULT CPaneBar::help_hit_test( WPARAM wParam, LPARAM lParam )
 	}
 	else
 	{
-		for (TPOS lPos = m_PaneList.head(); lPos; lPos = m_PaneList.next(lPos))
+		for( long lPos = m_PaneList.head(); lPos; lPos = m_PaneList.next( lPos ) )
 		{
 			CPane *ppane = m_PaneList.get( lPos );
 
@@ -3091,7 +3088,7 @@ LRESULT CPaneBar::help_hit_test( WPARAM wParam, LPARAM lParam )
 
 bool CPaneBar::open_mtd_pane( CString str_name, bool bopen )
 {
-	for (TPOS lPos = m_PaneList.head(); lPos; lPos = m_PaneList.next(lPos))
+	for( long lPos = m_PaneList.head(); lPos; lPos = m_PaneList.next( lPos ) )
 	{
 		CPane *ppane = m_PaneList.get( lPos );
 
@@ -3104,7 +3101,7 @@ bool CPaneBar::open_mtd_pane( CString str_name, bool bopen )
 
 CPaneItemPlace *CPaneBar::get_pane_place_from_handle( HWND hwnd )
 {
-	for (TPOS lPos = m_PaneList.head(); lPos; lPos = m_PaneList.next(lPos))
+	for( long lPos = m_PaneList.head(); lPos; lPos = m_PaneList.next( lPos ) )
 	{
 		CPane *ppane = m_PaneList.get( lPos );
 

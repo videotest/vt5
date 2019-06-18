@@ -5,7 +5,7 @@
 
 #include "Fish.h"
 #include "CustomStatic.h"
-#include "FishSettings.h"
+#include "Settings.h"
 #define TIMER_ID 102030
 // CChildWnd dialog
 class CChildWnd

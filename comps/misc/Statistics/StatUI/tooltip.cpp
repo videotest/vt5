@@ -58,7 +58,7 @@ BOOL CToolTip32::AddTool(HWND hwnd, LPCTSTR lpszText, LPCRECT lpRectTool, UINT_P
 
 void CToolTip32::DeleteAll( HWND hwnd )
 {
-	for (TPOS lPos = m_listTips.head(); lPos; lPos = m_listTips.next(lPos))
+	for( long lPos = m_listTips.head(); lPos; lPos = m_listTips.next( lPos ) )
 	{
 		DelTool( hwnd, m_listTips.get( lPos ) );
 	}

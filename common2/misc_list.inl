@@ -30,7 +30,7 @@ void _list_t2<DATA, pfn>::deinit()
 }
 
 template <class DATA, void (*pfn)( void * )>
-TPOS _list_t2<DATA, pfn>::insert_before( DATA data, TPOS lpos )
+long _list_t2<DATA, pfn>::insert_before( DATA data, long lpos )
 {
 	Item	*pitem = (Item*)lpos;
 	if( !pitem )pitem = (Item*)head();
@@ -49,11 +49,11 @@ TPOS _list_t2<DATA, pfn>::insert_before( DATA data, TPOS lpos )
 
 	m_nCounter++;
 
-	return (TPOS)pnew;
+	return (long)pnew;
 }
 
 template <class DATA, void (*pfn)( void * )>
-TPOS _list_t2<DATA, pfn>::insert( DATA data, TPOS lpos )
+long _list_t2<DATA, pfn>::insert( DATA data, long lpos )
 {
 	Item	*pitem = (Item*)lpos;
 	if( !pitem )pitem = (Item*)tail();
@@ -72,11 +72,11 @@ TPOS _list_t2<DATA, pfn>::insert( DATA data, TPOS lpos )
 
 	m_nCounter++;
 
-	return (TPOS)pnew;
+	return (long)pnew;
 }
 
 template <class DATA, void (*pfn)( void * )>
-void _list_t2<DATA, pfn>::remove( TPOS lpos )
+void _list_t2<DATA, pfn>::remove( long lpos )
 {
 	Item	*pitem = (Item*)lpos;
 	Item	*pn = pitem->m_next;
@@ -93,23 +93,23 @@ void _list_t2<DATA, pfn>::remove( TPOS lpos )
 }
 
 template <class DATA, void (*pfn)( void * )>
-DATA _list_t2<DATA, pfn>::next( TPOS &lpos )
+DATA _list_t2<DATA, pfn>::next( long &lpos )
 {
 	Item	*pitem = (Item*)lpos;
-	lpos = (TPOS)pitem->m_next;
+	lpos = (long)pitem->m_next;
 	return pitem->m_data;
 }
 
 template <class DATA, void (*pfn)( void * )>
-DATA _list_t2<DATA, pfn>::prev( TPOS &lpos )
+DATA _list_t2<DATA, pfn>::prev( long &lpos )
 {
 	Item	*pitem = (Item*)lpos;
-	lpos = (TPOS)pitem->m_prev;
+	lpos = (long)pitem->m_prev;
 	return pitem->m_data;
 }
 
 template <class DATA, void (*pfn)( void * )>
-DATA _list_t2<DATA, pfn>::get( TPOS lpos )
+DATA _list_t2<DATA, pfn>::get( long lpos )
 {
 	Item	*pitem = (Item*)lpos;
 	return pitem->m_data;

@@ -607,7 +607,7 @@ void CSplitterCompare::AfterSplitCol()
 	sptrContext0->GetSelectedCount(_bstr_t(szArgumentTypeImage), &nCount);
 	if(nCount > 1)
 	{
-		LONG_PTR nPos = 0;
+		long nPos = 0;
 		sptrContext0->GetFirstSelectedPos(_bstr_t(szArgumentTypeImage), &nPos);
 
 		IUnknown *punkObject0 = 0, *punkObject1 = 0;

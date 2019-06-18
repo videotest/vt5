@@ -237,7 +237,7 @@ public:
 	SHORT	  GetItemHeight(HCONTEXTITEM hItem);
 	COLORREF  GetItemTextColor(HCONTEXTITEM hItem);
 	COLORREF  GetItemBkColor(HCONTEXTITEM hItem);
-	DWORD_PTR     GetItemData(HCONTEXTITEM hItem);
+	DWORD     GetItemData(HCONTEXTITEM hItem);
 	BOOL	  GetItemRect(HCONTEXTITEM hItem, LPRECT lpRect);
 
 	BOOL      SetItem(CVITEM* pItem);
@@ -251,7 +251,7 @@ public:
 	SHORT	  SetItemHeight(HCONTEXTITEM hItem, SHORT cyHeight);
 	COLORREF  SetItemTextColor(HCONTEXTITEM hItem, COLORREF clr);
 	COLORREF  SetItemBkColor(HCONTEXTITEM hItem, COLORREF clr);
-	BOOL      SetItemData(HCONTEXTITEM hItem, DWORD_PTR dwData);
+	BOOL      SetItemData(HCONTEXTITEM hItem, DWORD dwData);
 	
 	BOOL      ItemHasChildren(HCONTEXTITEM hItem);
 	BOOL      ItemIsHeader(HCONTEXTITEM hItem);
@@ -523,7 +523,7 @@ public:
 	BOOL      SetItemText(HTREEITEM hItem, LPCTSTR lpszItem);
 	BOOL      SetItemImage(HTREEITEM hItem, int nImage, int nSelectedImage);
 	BOOL      SetItemState(HTREEITEM hItem, UINT nState, UINT nStateMask);
-	BOOL      SetItemData(HTREEITEM hItem, DWORD_PTR dwData);
+	BOOL      SetItemData(HTREEITEM hItem, DWORD dwData);
 	BOOL      ItemHasChildren(HTREEITEM hItem) const;
 	CEdit*	  GetEditControl() const;
 	UINT	  GetVisibleCount() const;

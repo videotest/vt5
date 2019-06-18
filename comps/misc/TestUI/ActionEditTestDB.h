@@ -11,11 +11,11 @@ public:
 
 };
 
-BOOL	CheckTestBranch( ITestManager *ptest_man, LPOS lpos_test, LPOS lpos_start_parent = 0);
-BOOL	HasSavedChild( ITestManager *ptest_man, LPOS lpos_parent );
+BOOL	CheckTestBranch( ITestManager *ptest_man, long lpos_test, long lpos_start_parent = 0);
+BOOL	HasSavedChild( ITestManager *ptest_man, long lpos_parent );
 
 // lexecution_parts -> настройка "\\TestMan\\ExecutionParts" в shell.data
-BOOL	ExecuteBranchTests( ITestManager *ptest_man, LPOS lpos_test, long lexecution_parts );
+BOOL	ExecuteBranchTests( ITestManager *ptest_man, long lpos_test, long lexecution_parts );
 
 enum TestOperations
 {
@@ -32,7 +32,7 @@ enum TestOperations
 	toParseCond = 1 << 10,
 };
 
-BOOL	DoOperationWithChildTests( ITestManager *ptest_man, DWORD dwoperations,LPOS lpos_parent );
+BOOL	DoOperationWithChildTests( ITestManager *ptest_man, DWORD dwoperations,long lpos_parent );
 
 
 class CActionEditTestDB : public CActionBase
@@ -46,7 +46,7 @@ public:
 	virtual bool Invoke();
 
 protected:
-	LPOS m_lworking_test;
+	long m_lworking_test;
 
 	enum XConditionType
 	{
@@ -55,9 +55,9 @@ protected:
 	};
 
     BOOL _record_test_sequence( ITestManager *ptest_man, BOOL bfinal_sequence, IMacroManager *pmacro_man,
-		HWND hwnd_main, LPOS lpos_parent, LPOS lpos_test );
+		HWND hwnd_main, long lpos_parent, long lpos_test );
     BOOL _edit_test_sequence( ITestManager *ptest_man, BOOL bfinal_sequence, IMacroManager *pmacro_man,
-		IMacroHelper *pMacroHelper, HWND hwnd_main, LPOS lpos_parent, LPOS lpos_test );
-		BOOL _input_condition( ITestManager *ptest_man, HWND hwnd_main, LPOS lpos_parent,
-		LPOS lpos_test, XConditionType cond_type );
+		IMacroHelper *pMacroHelper, HWND hwnd_main, long lpos_parent, long lpos_test );
+	BOOL _input_condition( ITestManager *ptest_man, HWND hwnd_main, long lpos_parent,
+		long lpos_test, XConditionType cond_type );
 };

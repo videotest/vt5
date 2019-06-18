@@ -6,7 +6,12 @@
 #include "PropBagImpl.h"
 #include <ColorsNames.h>
 
-#import <statobject.tlb> no_namespace raw_interfaces_only named_guids 
+
+#ifdef _DEBUG
+#import "\vt5\vt5\debug\comps\statobject.tlb" no_namespace raw_interfaces_only named_guids 
+#else
+#import "\vt5\vt5\release\comps\statobject.tlb" no_namespace raw_interfaces_only named_guids 
+#endif
 
 enum TableStatus{
 	comparable=0,
@@ -17,8 +22,6 @@ enum TableStatus{
 };
 inline TableStatus& operator &= (TableStatus& s, const short bits)
 	{ return (TableStatus&)((short&)s &= bits);}
-inline TableStatus& operator |= (TableStatus& s, const short bits)
-{ return (TableStatus&)((short&)s |= bits);}
 inline TableStatus operator | (const TableStatus s1, const TableStatus s2)
 	{return (TableStatus)(short(short(s1)|short(s2)));}
 
@@ -65,7 +68,7 @@ namespace ObjectSpace
 		STDMETHOD(put_Statuses)(VARIANT newVal);
 		//STDMETHOD(get_Standard)(VARIANT* pVal);
 		//STDMETHOD(put_Standard)(VARIANT newVal);
-		STDMETHOD(Compare)(LONG* rc);
+		STDMETHOD(Compare)(void);
 		STDMETHOD(GetPrivateNamedData) ( /*[out,retval]*/ IDispatch **ppDisp );
 //	private:
 		struct StatTable{

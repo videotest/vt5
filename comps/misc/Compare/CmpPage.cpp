@@ -271,7 +271,7 @@ public:
 		m_clockwise = true;
 	}
 
-	virtual LRESULT on_initdialog()
+	virtual long on_initdialog()
 	{
 		m_clockwise = ::GetValueInt( GetAppUnknown(), "\\Compare", "Clockwise", m_clockwise )!=0;
 		if( !m_clockwise && m_angle != 0 )
@@ -303,7 +303,7 @@ public:
 
 		dlg_impl::on_ok();
 	}
-	virtual LRESULT on_command(uint cmd)
+	virtual long on_command( uint cmd )
 	{
 		if( cmd == IDC_CLOCKWISE )m_clockwise = true;
 		if( cmd == IDC_ANTICLOCKWISE )m_clockwise = false;

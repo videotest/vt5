@@ -55,7 +55,7 @@ struct XPBUTTON
 struct XPINSERTITEM
 {
 	XPPANEITEM	item;
-	TPOS insert_pos;	//insert_after
+	long		insert_pos;	//insert_after
 };
 
 #define XPHT_CAPTION		1
@@ -71,7 +71,7 @@ struct XPHITTEST
 	RECT		rect_invalidate;
 	bool		*pbhilight;
 
-	LPARAM		lparam;
+	long		lparam;
 };
 
 #define XPSM_HWND	(1<<1)

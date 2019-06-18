@@ -9,11 +9,10 @@
 // Windows Header Files:
 
 #ifndef _WIN32_WINNT		// Allow use of features specific to Windows NT 4 or later.
-#define _WIN32_WINNT 0x0501	// Change this to the appropriate value to target Windows 2000 or later.
+#define _WIN32_WINNT 0x0500	// Change this to the appropriate value to target Windows 2000 or later.
 #endif						
 
 #include <windows.h>
-//#include <atlcoll.h>
 
 #define SIMPLE_TYPES_DEFINED
 #include "\vt5\awin\type_defs.h"
@@ -29,7 +28,6 @@
 //common2
 #include "com_main.h"
 #include "com_unknown.h"
-#include <atlcoll.h>
 
 //debug support
 #include "\vt5\com_base\debug_misc.h"			

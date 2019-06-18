@@ -244,20 +244,20 @@ bool CActionCutArea::cut_area(sptrIDocument sptrD)
 		bHasCross = false;
 		std::vector<IUnknown *>ListPUNKObjects;
 
-		TPOS lpos = 0;
-		ptrListObject->GetFirstChildPosition((POSITION*)&lpos);
+		long Pos = 0;
+		ptrListObject->GetFirstChildPosition( &Pos );
 
-		while (lpos)
+		while( Pos )
 		{
 			IUnknown *punkChild = 0;
-			ptrListObject->GetNextChild((POSITION*)&lpos, &punkChild);
+			ptrListObject->GetNextChild( &Pos, &punkChild );
 			
 			if( punkChild )
 				ListPUNKObjects.push_back( punkChild );
 		}
 		
 		long nSize = ListPUNKObjects.size();
-		for(long Pos = 0; Pos < nSize; Pos++ )
+		for( Pos = 0; Pos < nSize; Pos++ )
 		{
 			IUnknown *punkImage = 0;
 
@@ -2476,15 +2476,15 @@ void CActionCutArea::_activate_object( CPoint pt )
 	punkDocList->Release();
 
 
-	TPOS posStart = 0, lPrevPos = 0;
+	long posStart = 0, lPrevPos = 0;
 	
-	ptrListObject->GetFirstChildPosition((POSITION*)&posStart);
+	ptrListObject->GetFirstChildPosition( &posStart );
 
 	while( posStart )
 	{
 		IUnknown *punkObject = 0;
 		lPrevPos = posStart;
-		ptrListObject->GetNextChild((POSITION*)&posStart, &punkObject);
+		ptrListObject->GetNextChild( &posStart, &punkObject );
 
 		if( punkObject )
 		{

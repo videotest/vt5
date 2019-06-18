@@ -181,7 +181,7 @@ POSITION CObjectListWrp::Find( IUnknown *punkObject )
 	if (!CheckState())
 		return 0;
 
-	TPOS lPos = 0;
+	long lPos = 0;
 	if (SUCCEEDED(m_sptrN->GetChildPos(punkObject, &lPos)) && lPos)
 		return (POSITION)lPos;
 
@@ -229,7 +229,7 @@ POSITION CObjectListWrp::GetFirstObjectPosition()
 	if( !CheckState() )return 0;
 
 	POSITION	pos = 0;
-	m_sptrN->GetFirstChildPosition( &pos );
+	m_sptrN->GetFirstChildPosition( (long*)&pos );
 
 	return pos;
 }
@@ -240,7 +240,7 @@ IUnknown *CObjectListWrp::GetNextObject( POSITION &pos )
 	if( !CheckState() )return 0;
 
 	IUnknown	*punk = 0;
-	m_sptrN->GetNextChild(&pos, &punk );
+	m_sptrN->GetNextChild( (long*)&pos, &punk );
 
 	return punk;
 }
@@ -252,7 +252,7 @@ POSITION CObjectListWrp::GetLastObjectPosition()
 		return 0;
 
 	POSITION pos = 0;
-	m_sptrN->GetLastChildPosition(&pos);
+	m_sptrN->GetLastChildPosition((long*)&pos);
 
 	return pos;
 }
@@ -264,7 +264,7 @@ IUnknown * CObjectListWrp::GetPrevObject(POSITION & pos)
 		return 0;
 
 	IUnknown * punk = 0;
-	m_sptrN->GetPrevChild(&pos, &punk);
+	m_sptrN->GetPrevChild((long*)&pos, &punk);
 
 	return punk;
 }
@@ -290,9 +290,9 @@ POSITION	CObjectListWrp::GetCurPosition()
 {
 	if( !CheckState() )return 0;
 
-	TPOS	pos;
-	m_sptrN->GetActiveChild(&pos);
-	return (POSITION)pos;
+	POSITION	pos;
+	m_sptrN->GetActiveChild( (long*)&pos );
+	return pos;
 
 }
 //set it!
@@ -301,6 +301,6 @@ void CObjectListWrp::SetCurPosition( POSITION pos )
 	if( !CheckState() )
 		return;
 
-	m_sptrN->SetActiveChild((TPOS)pos);
+	m_sptrN->SetActiveChild( (long) pos );
 }
 

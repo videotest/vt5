@@ -100,7 +100,7 @@ void CVTSystemPropPage::DoDataExchange(CDataExchange* pDX)
 
 /////////////////////////////////////////////////////////////////////////////
 // CVTSystemPropPage message handlers
-LRESULT CVTSystemPropPage::OnColorChange(WPARAM lParam, LPARAM wParam)
+LONG CVTSystemPropPage::OnColorChange(UINT lParam, LONG wParam)
 {
 	SetModifiedFlag( TRUE );		
 	return 1;

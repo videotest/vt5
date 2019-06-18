@@ -24,7 +24,7 @@ CArrangeDlg::CArrangeDlg(IUnknown* punkClassList)
 
 CArrangeDlg::~CArrangeDlg()
 {
-	TPOS nPos = m_listClassesKeys.head();
+	long nPos = m_listClassesKeys.head();
 	while(nPos)
 		delete m_listClassesKeys.next(nPos);
 
@@ -51,7 +51,7 @@ bool CArrangeDlg::DoInitDialog()
 	long nIdx = 0;
 	if(m_sptrClassList != 0)
 	{
-		TPOS lPos = 0;
+		long lPos = 0;
 		m_sptrClassList->GetFirstChildPosition(&lPos);
 		while(lPos)
 		{
@@ -94,8 +94,8 @@ void CArrangeDlg::DoCommand( UINT nCmd )
 		if(nSelect >= 0 && sptrList != 0)
 		{
 			long nCounter = 0;
-			TPOS posPrev = 0, posObj = 0, posNext = 0;
-			TPOS pos = m_listClassesKeys.head();
+			long posPrev = 0, posObj = 0, posNext = 0;
+			long pos = m_listClassesKeys.head();
 			GuidKey* pkey;
 			while(pos)
 			{

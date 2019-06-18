@@ -30,7 +30,7 @@ public:
 	CHistoDlg(CHistoIds IDs, CWnd* pParent = NULL);   // standard constructor
 
 // Dialog Data
-	//{{AFX_DATA(CHistoDlg)
+	//{{AFX_DATA(CHistoDlg)	 
 	CStatic	m_Static0;
 	CStatic	m_MaxColor;
 	CStatic	m_MaxPoints;

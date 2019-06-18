@@ -295,7 +295,6 @@ BOOL CPeriodicDlg::OnInitDialog()
 		::EnableWindow(::GetDlgItem(m_hWnd, IDC_STOP1), FALSE);
 	}
 	Register(GetAppUnknown(), NULL);
-	AddRef();
 	m_clrText = ::GetValueColor(GetAppUnknown(), "Editor", "CommentText_Fore", RGB(0,255,0));
 	
 	return TRUE;  // return TRUE unless you set the focus to a control
@@ -481,7 +480,7 @@ void CPeriodicDlg::OpenImages()
 			IDocumentSitePtr sptrDS = punkDoc;
 			if (sptrDS == 0)
 				continue;
-			TPOS lPos = 0;
+			long lPos = 0;
 			sptrDS->GetFirstViewPosition(&lPos);
 			while (lPos)
 			{

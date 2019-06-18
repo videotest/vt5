@@ -46,15 +46,8 @@ GUARD_IMPLEMENT_OLECREATE_CTRL(CViewAXSizePropPage, "VIEWAX.ViewAXSizePropPage.1
 
 BOOL CViewAXSizePropPage::CViewAXSizePropPageFactory::UpdateRegistry(BOOL bRegister)
 {
-#if defined(NOGUARD)
-	if (bRegister)
-		return AfxOleRegisterPropertyPageClass(AfxGetInstanceHandle(),
-			m_clsid, IDS_VIEWAX_PPG);
-	else
-		return AfxOleUnregisterClass(m_clsid, NULL);
-#else
+	// TODO: Define string resource for page type; replace '0' below with ID.
 	return UpdateRegistryPage(bRegister, AfxGetInstanceHandle(), IDS_VIEWAX_PPG);
-#endif
 }
 
 

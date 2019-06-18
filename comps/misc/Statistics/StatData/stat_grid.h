@@ -38,13 +38,13 @@ public:
 	bool				fill_grid( bool bload_from_shell_data);
 	
 	//message handlers
-	virtual LRESULT		on_paint();
-	virtual LRESULT		on_contextmenu(const _point &point);
-	virtual LRESULT		on_destroy();
-	virtual LRESULT		on_rbuttondown(const _point &point);
+	virtual long		on_paint();
+	virtual long		on_contextmenu( const _point &point );
+	virtual long		on_destroy();
+	virtual long		on_rbuttondown( const _point &point );
 
-	virtual LRESULT		OnEndTrackHeader(LPNMHEADER lpmnhdr);
-	virtual LRESULT		OnEndDragHeader(LPNMHEADER lpmnhdr);
+	virtual long		OnEndTrackHeader( LPNMHEADER lpmnhdr );
+	virtual long		OnEndDragHeader( LPNMHEADER lpmnhdr );
 
 	//active object
 	IStatTablePtr		m_ptr_table;
@@ -60,7 +60,7 @@ public:
 protected:
 	//message handlers
 	virtual void		handle_init();	
-	virtual LRESULT		handle_message(UINT m, WPARAM w, LPARAM l);
+	virtual long		handle_message( UINT m, WPARAM w, LPARAM l );
 
 public:
 	//scrollbars
@@ -84,7 +84,7 @@ public:
 	CMapColInfo* m_map_pcol;
 protected:
 	//row cache	
-	_list_map_t<TPOS/*row pos*/, long/*row num*/, cmp_long>			m_map_row;
+	_list_map_t<long/*row pos*/, long/*row num*/, cmp_long>			m_map_row;
 
 
 	//measure params cache	
@@ -94,21 +94,17 @@ public:
 	stat_col_info*		find_col_info_by_num( long ncol );
 
 
-	long				get_rows_count( ) const;
+	long				get_rows_count( );
 	long				get_columns_count( );
 //	long				get_row_height( int nrow );
 //	long				get_col_width( int ncol );
-	CRect				get_cell_rect( int nrow, int ncol );
-	CString			get_item_text( int nrow, int ncol );
+	_rect				get_cell_rect( int nrow, int ncol );
+	_string				get_item_text( int nrow, int ncol );
 	
 	//Print support
-	int GetTableWidth() const;
-	int GetTableHeight() const;
-	RECT RectHitTest(const POINT& pt);
-	POINT RowCol(const POINT& pt);
-	virtual bool GetPrintWidth(int nMaxWidth, int& nReturnWidth, int nUserPosX, int& nNewUserPosX); 
-	virtual bool GetPrintHeight(int nMaxHeight, int& nReturnHeight, int nUserPosY, int& nNewUserPosY);
-	com_call Print( HDC hdc, RECT rectTarget, int nUserPosX, int nUserPosY, int nUserPosDX, int nUserPosDY, const double& fzoom_view, DWORD dwFlags);
+	com_call			GetPrintWidth( int nMaxWidth, int *pnReturnWidth, BOOL *pbContinue, int nUserPosX, int *pnNewUserPosX );
+	com_call			GetPrintHeight( int nMaxHeight, int *pnReturnHeight, BOOL *pbContinue, int nUserPosY, int *pnNewUserPosY );
+	com_call			Print( HDC hdc, RECT rectTarget, int nUserPosX, int nUserPosY, int nUserPosDX, int nUserPosDY, BOOL bUseScrollZoom, DWORD dwFlags );
 
 	virtual	long		OnODCacheInt( int nRowFrom, int	nRowTo );
 };

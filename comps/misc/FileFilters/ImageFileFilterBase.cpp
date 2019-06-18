@@ -193,7 +193,7 @@ bool CImageFileFilterBase::ReadFile( const char *pszFileName )
 
 	NextNotificationStage();
 
-	for (unsigned i = 0; i < image->rows; i++)
+	for (int i = 0; i < image->rows; i++)
 	{
 		for(int k = 0; k < numPanes; k++)
 		{
@@ -368,7 +368,7 @@ bool CImageFileFilterBase::WriteFile( const char *pszFileName )
 	//NextNotificationStage();
 	StartNotification(image->rows, 1, 1);
 	
-	for (unsigned i = 0; i < image->rows; i++)
+	for (int i = 0; i < image->rows; i++)
 	{
 		for(int k = 0; k < numPanes; k++)
 		{

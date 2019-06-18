@@ -15,13 +15,6 @@
 #define MAX_SCALE_FACTOR_VALUES_Y	   200
 #define MAX_SCALE_FACTOR_GRID_Y		   400
 
-#if 1500 <= _MSC_VER && _MSC_VER <= 1600
-namespace {
-	int  round(double num) {
-		return int((num > 0.0) ? floor(num + 0.5) : ceil(num - 0.5));
-	}
-}
-#endif
 
 namespace{
 
@@ -372,7 +365,7 @@ namespace ViewSpace
 			::DeleteObject(m_hFontSignature);
 	}
 
-	LRESULT CCmpChartWnd::on_paint()
+	long CCmpChartWnd::on_paint()
 	{
 		RECT rcPaint = { 0, 0, 0, 0 };
 		RECT rcPaint2 = { 0, 0, 0, 0 };
@@ -1291,9 +1284,9 @@ namespace ViewSpace
 		if( m_list_classes.count() )
 		{
 			CString str_data;
-			for (TPOS lpos = m_list_classes.head(); lpos; lpos = m_list_classes.next(lpos))
+			for( long lpos = m_list_classes.head(); lpos; lpos = m_list_classes.next( lpos ) )
 			{
-				LONG_PTR lclass = m_list_classes.get(lpos);
+				long lclass = m_list_classes.get( lpos );
 
 				CString str;
 				str.Format( "%d", lclass );
@@ -1622,66 +1615,66 @@ namespace ViewSpace
 						break;
 				}
 
-		// Compute left and right x edges of Chart
-		if(bUseLogaScaleX)
-		{
-			if(fXMinVal<=0.)
-			{
-				fXMinVal=fXMaxVal/1000.;
-				if(fXMinVal<=0.)
+				// Compute left and right x edges of Chart
+				if(bUseLogaScaleX)
 				{
-					m_iError=IDS_LOGSCALE_MAX_INVALID;
-					return;
+					if(fXMinVal<=0.)
+					{
+						fXMinVal=fXMaxVal/1000.;
+						if(fXMinVal<=0.)
+						{
+							m_iError=IDS_LOGSCALE_MAX_INVALID;
+							return;
+						}
+					}
+					if(m_bShowAxisValueX)
+					{
+						dblArray ValsX;
+						_get_loga_scale( ValsX, fXMinVal, fXMaxVal, 10.);
+						fXMinVal=ValsX[0];
+						fXMaxVal=ValsX[ValsX.size()-1];
+					}
 				}
 			}
-			if(m_bShowAxisValueX)
-			{
-				dblArray ValsX;
-				_get_loga_scale( ValsX, fXMinVal, fXMaxVal, 10.);
-				fXMinVal=ValsX[0];
-				fXMaxVal=ValsX[ValsX.size()-1];
-			}
 		}
-									}
-								}
 
 ////////////////////////////////////////
 		if(m_nXAxisType && m_lCustomParamCount>=m_lClassCount)
-								{
+		{
 			m_strChartBeginEndVal.Format( "( " + strRangeFormat + " - " + strRangeFormat + " )", fXMinVal, fXMaxVal );
 			if(m_nChartViewType)
-					{
+			{
 				// Сортировка по в порядке возрастания иксов
-						if( !(1==m_nChartType) )
-						{
-							for( long i = 0; i < m_lClassCount; i++ )
-							{
-								double fMin = 0, fVar = 0; int nID = -1;
+				if( !(1==m_nChartType) )
+				{
+					for( long i = 0; i < m_lClassCount; i++ )
+					{
+						double fMin = 0, fVar = 0; int nID = -1;
 						fMin=m_parrParamChartMin[plClassArray[i]];
 						fVar=m_parrParamChartMax[plClassArray[i]]-fMin;
-								for( long j = i + 1; j < m_lClassCount; j++ )
-								{
-									double fValue = 0, fValue2 = 0;
+						for( long j = i + 1; j < m_lClassCount; j++ )
+						{
+							double fValue = 0, fValue2 = 0;
 							fValue=m_parrParamChartMin[plClassArray[j]];
 							fValue2=m_parrParamChartMax[plClassArray[j]]-fValue;
 							if( fValue + fValue2/2 < fMin + fVar/2 )
-		{	   
-										fMin = fValue;
-										fVar = fValue2;
-										nID = j; 
-									}
-								}
+							{
+								fMin = fValue;
+								fVar = fValue2;
+								nID = j; 
+							}
+						}
 
-								if( nID != - 1 )
-			{
-									long lClass = plClassArray[nID];
-									plClassArray[nID] = plClassArray[i];
-									plClassArray[i] = lClass;
-								}
-			}
-		}
+						if( nID != - 1 )
+						{
+							long lClass = plClassArray[nID];
+							plClassArray[nID] = plClassArray[i];
+							plClassArray[i] = lClass;
+						}
+					}
 				}
 			}
+		}
 
 
 
@@ -2282,10 +2275,10 @@ namespace ViewSpace
 							pfValsX = new double[lCountX];
 							for( long z = 0; z < lCountX; z++ )
 							{
-								pfValsX[z] = (aa + z * fXScaleFactorValues); 
+									pfValsX[z] = (aa + z * fXScaleFactorValues); 
 
-								strAllRow.Format( str, pfValsX[z] );
-								if( strAllRow.GetLength() > x )
+									strAllRow.Format( str, pfValsX[z] );
+									if( strAllRow.GetLength() > x )
 								{
 									x = strAllRow.GetLength();
 									sMax = strAllRow;
@@ -2354,9 +2347,9 @@ namespace ViewSpace
 			double fMaxProbDensity=1.;
 			if(m_bShowCurve)
 			{
-		for(lStatID=0; lStatID<statObjects.size(); ++lStatID)
-		{
-			IStatObjectDispPtr ptr_object = statObjects[lStatID].second._pStat;
+				for(lStatID=0; lStatID<statObjects.size(); ++lStatID)
+				{
+					IStatObjectDispPtr ptr_object = statObjects[lStatID].second._pStat;
 					using namespace ObjectSpace;
 					double fStdDev = 1.;
 					CStatisticObject* pStat=(CStatisticObject*)((IStatObjectDisp*)ptr_object);
@@ -2399,46 +2392,46 @@ namespace ViewSpace
 			if(m_bShowCurve)
 			{
 				for(lStatID=0; lStatID<statObjects.size(); ++lStatID)
-			{
+				{
 					IStatObjectDispPtr ptr_object = statObjects[lStatID].second._pStat;
 
-				using namespace ObjectSpace;
+					using namespace ObjectSpace;
 					double fStdDev = 1.;
 					double fMX = 0.;
 
-				if( m_lUniformDistribution == 0 )
-				{
-					CStatisticObject* pStat=(CStatisticObject*)((IStatObjectDisp*)ptr_object);
-					HRESULT hr=pStat->GetParamVal2(ClassID(AllClasses,AllImages), PARAM_MX, 0, fMX);
-					if(hr) continue;
-					hr=pStat->GetParamVal2(ClassID(AllClasses,AllImages), PARAM_STDDEV, 0, fStdDev);
-					if(hr) continue;
-					fMX *= fCoefX;
-					fStdDev *= fCoefX;
-				}
-				else
-				{
+					if( m_lUniformDistribution == 0 )
+					{
+						CStatisticObject* pStat=(CStatisticObject*)((IStatObjectDisp*)ptr_object);
+						HRESULT hr=pStat->GetParamVal2(ClassID(AllClasses,AllImages), PARAM_MX, 0, fMX);
+						if(hr) continue;
+						hr=pStat->GetParamVal2(ClassID(AllClasses,AllImages), PARAM_STDDEV, 0, fStdDev);
+						if(hr) continue;
+						fMX *= fCoefX;
+						fStdDev *= fCoefX;
+					}
+					else
+					{
 						ptr_object->GetValueGlobal2( PARAM_MATHXLOG, &fMX );
-					fMX = log(fMX);
-					ptr_object->GetValueGlobal2( PARAM_DXLOG, &fStdDev );
-					fStdDev = M_LN10*sqrt(fStdDev);
-				}
+						fMX = log(fMX);
+						ptr_object->GetValueGlobal2( PARAM_DXLOG, &fStdDev );
+						fStdDev = M_LN10*sqrt(fStdDev);
+					}
 
-				long lCount = long(m_lClassCount) * 50;
-				dblArray pArrX(lCount), pArrY(lCount);
+					long lCount = long(m_lClassCount) * 50;
+					dblArray pArrX(lCount), pArrY(lCount);
 
-				// A.M. fix. SBT 1414.
-				double fXStartChart = fXMinVal, fXEndChart = fXMaxVal;
+					// A.M. fix. SBT 1414.
+					double fXStartChart = fXMinVal, fXEndChart = fXMaxVal;
 
-				pArrX[0]=fXStartChart;
-				if( m_lUniformDistribution == 1 ){
-					double fLogStep =log(fXEndChart/fXStartChart)/(lCount - 1);	
-					double fMult=exp(fLogStep);
-					for( int i = 1; i < lCount; ++i)
-						pArrX[i] = pArrX[i-1] * fMult;
-					double y=log(fXStartChart);
-					for( int i = 0; i < lCount; ++i, y+=fLogStep){
-						switch (m_nChartType){
+					pArrX[0]=fXStartChart;
+					if( m_lUniformDistribution == 1 ){
+						double fLogStep =log(fXEndChart/fXStartChart)/(lCount - 1);	
+						double fMult=exp(fLogStep);
+						for( int i = 1; i < lCount; ++i)
+							pArrX[i] = pArrX[i-1] * fMult;
+						double y=log(fXStartChart);
+						for( int i = 0; i < lCount; ++i, y+=fLogStep){
+							switch (m_nChartType){
 							default:
 							case 0:
 								pArrY[i] = FLogNormal( pArrX[i]/fCoefX, fMX, fStdDev )/fMaxProbDensity;
@@ -2450,31 +2443,31 @@ namespace ViewSpace
 								pArrY[i] = Fnormal( pArrX[i], fMX, fStdDev )/fMaxProbDensity;
 								//double z = (y - fMX)/fStdDev;
 								//pArrY[i] = M_1_SQRT_2_PI / fStdDev * exp(-z*z/2.); 
-											}
-											break;
+								}
+								break;
+							}
+						}
+					}else{
+						double fStep = ( fXEndChart - fXStartChart ) / (lCount - 1) ;
+						for( int i = 1; i < lCount; i++ )
+							pArrX[i] = pArrX[i-1] + fStep;
+						for( int i = 0; i < lCount; i++ ){
+							if( m_nChartType == 1)
+								pArrY[i] = FuncNormDistrib( (pArrX[i] - fMX ) / fStdDev);
+							else
+								pArrY[i] = Fnormal( pArrX[i], fMX, fStdDev )/fMaxProbDensity;
 						}
 					}
-				}else{
-					double fStep = ( fXEndChart - fXStartChart ) / (lCount - 1) ;
-					for( int i = 1; i < lCount; i++ )
-						pArrX[i] = pArrX[i-1] + fStep;
-					for( int i = 0; i < lCount; i++ ){
-						if( m_nChartType == 1)
-							pArrY[i] = FuncNormDistrib( (pArrX[i] - fMX ) / fStdDev);
-						else
-								pArrY[i] = Fnormal( pArrX[i], fMX, fStdDev )/fMaxProbDensity;
-					}
-				}
 
-				double f_max = pArrY.max();
-				double f_min = 0.0; //pArrY.min();
+					double f_max = pArrY.max();
+					double f_min = 0.0; //pArrY.min();
 
-				for( int i = 0; i < lCount; i++ )
-					pArrY[i] = ( pArrY[i] - f_min ) * fYMaxVal;
+					for( int i = 0; i < lCount; i++ )
+						pArrY[i] = ( pArrY[i] - f_min ) * fYMaxVal;
 
 
-				m_sptrChart->SetData( 1500 + lStatID, &pArrX[0], lCount, cdfDataX );
-				m_sptrChart->SetData( 1500 + lStatID, &pArrY[0], lCount, cdfDataY );
+					m_sptrChart->SetData( 1500 + lStatID, &pArrX[0], lCount, cdfDataX );
+					m_sptrChart->SetData( 1500 + lStatID, &pArrY[0], lCount, cdfDataY );
 
 					COLORREF clrCorrected;
 					{
@@ -2485,55 +2478,55 @@ namespace ViewSpace
 					}
 					ptrChartAtrr->SetChartColor( 1500 + lStatID, clrCorrected, ccfChartColor );
 
-				ptrChartAtrr->SetChartColor( 1500 + lStatID, m_lfFontAxisChart.m_clrText, ccfAxisText );
+					ptrChartAtrr->SetChartColor( 1500 + lStatID, m_lfFontAxisChart.m_clrText, ccfAxisText );
+
+					LOGFONT lf = m_lfFontAxisChart;
+					HDC hDC = ::CreateDC( "DISPLAY", 0, 0, 0 );
+					lf.lfHeight = -MulDiv( lf.lfHeight, m_DCLOGPIXELSY, 72);
+					::DeleteDC( hDC );
+
+					ptrChartAtrr->SetAxisTextFont( 1500 + lStatID, (BYTE *)&lf, ChartAxis( cafAxisX | cafAxisY ), ChartFont( cfnDigit | cfnAxisName ) );
+				}
+			}
+
+			if(m_lUniformDistribution == 0 && m_bShowUserCurve)
+			{
+				long lCount = long(m_lClassCount) * 50;
+
+				dblArray pArrX(lCount), pArrY(lCount);
+
+				double fXStartChart = fXMinVal, fXEndChart = fXMaxVal;
+
+				double fStep = ( fXEndChart - fXStartChart ) / (lCount - 1) ;
+
+				for( int i = 0; i < lCount; i++ )
+					pArrX[i] = fXStartChart + i * fStep;
+
+				for( int i = 0; i < lCount; i++ )
+				{
+					pArrY[i] = Fnormal( pArrX[i], m_fUserCurveMX*fCoefX, fCoefX*sqrt(m_fUserCurveDX));
+					if( m_nChartType == 1 && i > 0 )
+						pArrY[i] = pArrY[i] + pArrY[i - 1];
+				}
+				double f_max = pArrY.max();
+				double f_min = 0.;
+
+				for( int i = 0; i < lCount; i++ )
+					pArrY[i] = ( pArrY[i] - f_min ) * fYMaxVal/fMaxProbDensity;
+
+
+				m_sptrChart->SetData( 1600 + lStatID, &pArrX[0], lCount, cdfDataX );
+				m_sptrChart->SetData( 1600 + lStatID, &pArrY[0], lCount, cdfDataY );
+
+				ptrChartAtrr->SetChartColor( 1600 + lStatID, m_clUserCurveColor, ccfChartColor );
+				ptrChartAtrr->SetChartColor( 1600 + lStatID, m_lfFontAxisChart.m_clrText, ccfAxisText );
 
 				LOGFONT lf = m_lfFontAxisChart;
 				HDC hDC = ::CreateDC( "DISPLAY", 0, 0, 0 );
 				lf.lfHeight = -MulDiv( lf.lfHeight, m_DCLOGPIXELSY, 72);
 				::DeleteDC( hDC );
 
-				ptrChartAtrr->SetAxisTextFont( 1500 + lStatID, (BYTE *)&lf, ChartAxis( cafAxisX | cafAxisY ), ChartFont( cfnDigit | cfnAxisName ) );
-			}
-		}
-
-			if(m_lUniformDistribution == 0 && m_bShowUserCurve)
-		{
-			long lCount = long(m_lClassCount) * 50;
-
-			dblArray pArrX(lCount), pArrY(lCount);
-
-			double fXStartChart = fXMinVal, fXEndChart = fXMaxVal;
-
-			double fStep = ( fXEndChart - fXStartChart ) / (lCount - 1) ;
-
-			for( int i = 0; i < lCount; i++ )
-				pArrX[i] = fXStartChart + i * fStep;
-
-			for( int i = 0; i < lCount; i++ )
-			{
-					pArrY[i] = Fnormal( pArrX[i], m_fUserCurveMX*fCoefX, fCoefX*sqrt(m_fUserCurveDX));
-				if( m_nChartType == 1 && i > 0 )
-					pArrY[i] = pArrY[i] + pArrY[i - 1];
-			}
-			double f_max = pArrY.max();
-				double f_min = 0.;
-
-			for( int i = 0; i < lCount; i++ )
-					pArrY[i] = ( pArrY[i] - f_min ) * fYMaxVal/fMaxProbDensity;
-
-
-			m_sptrChart->SetData( 1600 + lStatID, &pArrX[0], lCount, cdfDataX );
-			m_sptrChart->SetData( 1600 + lStatID, &pArrY[0], lCount, cdfDataY );
-
-			ptrChartAtrr->SetChartColor( 1600 + lStatID, m_clUserCurveColor, ccfChartColor );
-			ptrChartAtrr->SetChartColor( 1600 + lStatID, m_lfFontAxisChart.m_clrText, ccfAxisText );
-
-			LOGFONT lf = m_lfFontAxisChart;
-			HDC hDC = ::CreateDC( "DISPLAY", 0, 0, 0 );
-			lf.lfHeight = -MulDiv( lf.lfHeight, m_DCLOGPIXELSY, 72);
-			::DeleteDC( hDC );
-
-			ptrChartAtrr->SetAxisTextFont( 1600 + lStatID, (BYTE *)&lf, ChartAxis( cafAxisX | cafAxisY ), ChartFont( cfnDigit | cfnAxisName ) );
+				ptrChartAtrr->SetAxisTextFont( 1600 + lStatID, (BYTE *)&lf, ChartAxis( cafAxisX | cafAxisY ), ChartFont( cfnDigit | cfnAxisName ) );
 			}
 		}
 
@@ -2787,7 +2780,7 @@ namespace ViewSpace
 		}
 	}
 
-	LRESULT CCmpChartWnd::on_size(short cx, short cy, ulong fSizeType)
+	long CCmpChartWnd::on_size( short cx, short cy, ulong fSizeType )
 	{
 		RECT rc = {0};
 		::GetClientRect( m_hwnd, &rc );
@@ -2884,7 +2877,7 @@ EndFill:
 		return 0;
 	}
 
-	LRESULT CCmpChartWnd::on_lbuttonup(const _point &point)
+	long CCmpChartWnd::on_lbuttonup( const _point &point )
 	{
 		if( !m_nChartViewType && m_arrClasses ) 
 		{
@@ -2899,7 +2892,7 @@ EndFill:
 			CCmpStatObjectView* pView=
 				(CCmpStatObjectView*)((char*)this-offsetof(CCmpStatObjectView,m_wndChart));
 			unsigned uHighlightedStat=-1;
-
+	
 			size_t nStats=statObjects.size();
 			size_t lStatID;
 			for(lStatID=0; lStatID<nStats; ++lStatID)
@@ -2938,13 +2931,13 @@ EndFill:
 
 				if( ::PtInRect( &rcTip, point )&& (vtTableView & pView->m_dwViews))
 				{
-							int iItem=m_arrClasses[i]*nStats+lStatID;
-							int iItemHot=pView->m_wndTable.m_Grid.SetItemState(iItem
-								,LVIS_FOCUSED|LVIS_SELECTED,LVIS_FOCUSED|LVIS_SELECTED);
-							BOOL b=pView->m_wndTable.m_Grid.EnsureVisible(iItem,FALSE);
-							pView->m_wndTable.m_Grid.SetFocus();
+					int iItem=m_arrClasses[i]*nStats+lStatID;
+					int iItemHot=pView->m_wndTable.m_Grid.SetItemState(iItem
+						,LVIS_FOCUSED|LVIS_SELECTED,LVIS_FOCUSED|LVIS_SELECTED);
+					BOOL b=pView->m_wndTable.m_Grid.EnsureVisible(iItem,FALSE);
+					pView->m_wndTable.m_Grid.SetFocus();
 
-							::SetCursor( m_cur_hand );
+					::SetCursor( m_cur_hand );
 
 					uHighlightedStat=lStatID;
 
@@ -2959,7 +2952,7 @@ HighLight:;
 		return 1L;
 	}
 
-	LRESULT CCmpChartWnd::on_lbuttondblclk(const _point &point)
+	long CCmpChartWnd::on_lbuttondblclk( const _point &point )
 	{
 		if( !m_nChartViewType && m_arrClasses ) 
 		{
@@ -3016,7 +3009,7 @@ HighLight:;
 		return __super::on_lbuttondblclk( point );
 	}
 
-	LRESULT CCmpChartWnd::on_mousemove(const _point &point)
+	long CCmpChartWnd::on_mousemove( const _point &point )
 	{
 		if( m_bShowCurve && m_nXAxisType )
 		{
@@ -3051,8 +3044,8 @@ HighLight:;
 			size_t nStats=statObjects.size();
 			size_t lStatID;
 			for(lStatID=0; lStatID<nStats; ++lStatID)
-			for( long i = m_lClassCount - 1; i >= 0; i-- )
-			{
+				for( long i = m_lClassCount - 1; i >= 0; i-- )
+				{
 					long lClass = m_arrClasses[i]+lStatID*0x100;
 
 				double *pYAxis = 0;

@@ -4,7 +4,7 @@
 
 class CChildrenArray : public sptrINamedDataObject2
 {
-	POSITION *m_pPositions;
+	long *m_pPositions;
 	long lObjects;
 public:
 	CChildrenArray(IUnknown *punk, bool bCache = false) : sptrINamedDataObject2(punk)
@@ -23,20 +23,20 @@ public:
 	{
 		if (m_pPositions)
 		{
-			POSITION pos = m_pPositions[iNum];
+			long pos = m_pPositions[iNum];
 			IUnknownPtr sptr;
-			GetInterfacePtr()->GetNextChild(&pos, &sptr);
+			GetInterfacePtr()->GetNextChild((long*)&pos, &sptr);
 			return sptr;
 		}
 		else
 		{
-			POSITION posCur = 0;
+			long posCur = 0;
 			int iCur = 0;
-			GetInterfacePtr()->GetFirstChildPosition(&posCur);
+			GetInterfacePtr()->GetFirstChildPosition((long*)&posCur);
 			while (posCur)
 			{
 				IUnknownPtr sptr;
-				GetInterfacePtr()->GetNextChild(&posCur, &sptr);
+				GetInterfacePtr()->GetNextChild((long*)&posCur, &sptr);
 				if (iNum == iCur++)
 					return sptr;
 			}
@@ -59,15 +59,15 @@ public:
 		if (m_pPositions)
 			return;
 		GetInterfacePtr()->GetChildsCount(&lObjects);
-		m_pPositions = new POSITION[lObjects];
-		POSITION posCur = 0;
+		m_pPositions = new long[lObjects];
+		long posCur = 0;
 		int iCur = 0;
-		GetInterfacePtr()->GetFirstChildPosition(&posCur);
+		GetInterfacePtr()->GetFirstChildPosition((long*)&posCur);
 		while (posCur)
 		{
 			m_pPositions[iCur++] = posCur;
 			IUnknownPtr sptr;
-			GetInterfacePtr()->GetNextChild(&posCur, &sptr);
+			GetInterfacePtr()->GetNextChild((long*)&posCur, &sptr);
 		}
 	}
 	void Uncache()

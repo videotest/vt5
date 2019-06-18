@@ -353,7 +353,7 @@ LONG CChoiceGreekSymbolCtrl::GetChar(LONG nIdx)
 	AFX_MANAGE_STATE(AfxGetStaticModuleState());
 
 	// TODO: Add your dispatch handler code here
-	TPOS lpos = 0;
+	long lpos = 0;
 	for( int nindex = nIdx; nindex >= 0; nindex -- )
 		lpos = lpos ? m_symbols.next( lpos ) : m_symbols.head( );		
 	

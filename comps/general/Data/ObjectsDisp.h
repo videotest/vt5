@@ -60,26 +60,26 @@ protected:
 	afx_msg void SetObjectActive(LPDISPATCH pdispObject);
 	afx_msg LPDISPATCH CreateNewObject(LPCTSTR szType);
 	afx_msg LPDISPATCH GetObjectByName(LPCTSTR szName);
-	afx_msg LONG_PTR GetFirstObjectPos(LPCTSTR szType);
-	afx_msg LONG_PTR GetNextObjectPos(LPCTSTR szType, LPOS lPos);
-	afx_msg LONG_PTR GetLastObjectPos(LPCTSTR szType);
-	afx_msg LONG_PTR GetPrevObjectPos(LPCTSTR szType, LPOS lPos);
-	afx_msg LPDISPATCH GetObject(LPCTSTR szType, LPOS lPos);
+	afx_msg long GetFirstObjectPos(LPCTSTR szType);
+	afx_msg long GetNextObjectPos(LPCTSTR szType, long lPos);
+	afx_msg long GetLastObjectPos(LPCTSTR szType);
+	afx_msg long GetPrevObjectPos(LPCTSTR szType, long lPos);
+	afx_msg LPDISPATCH GetObject(LPCTSTR szType, long lPos);
 	afx_msg void GetFirstSelectedObjectPos(LPCTSTR szType, VARIANT FAR* pvarPos);
 	afx_msg void GetLastSelectedObjectPos(LPCTSTR szType, VARIANT FAR* pvarPos);
 	afx_msg LPDISPATCH GetNextSelectedObject(LPCTSTR szType, VARIANT FAR* pvarPos);
 	afx_msg LPDISPATCH GetPrevSelectedObject(LPCTSTR szType, VARIANT FAR* pvarPos);
 	afx_msg long GetSelectedObjectsCount(LPCTSTR szType);
 	afx_msg void SelectObject(LPDISPATCH pObject, BOOL bSelect);
-	afx_msg LPDISPATCH GetSelectedObject(LPCTSTR szType, LONG_PTR lPos);
+	afx_msg LPDISPATCH GetSelectedObject(LPCTSTR szType, long lPos);
 	afx_msg LPDISPATCH GetSelectedByIndex(LPCTSTR szType, long nIndex);
 	afx_msg long SetToActiveDocument(LPDISPATCH pobj);
 	afx_msg LPDISPATCH CloneObject(LPDISPATCH obj);
 	afx_msg BSTR GenerateNewKey();
-	afx_msg BOOL SetBaseObjectKey( LPCTSTR szType, LPOS lPos, LPCTSTR lpctVal );
-	afx_msg BSTR GetBaseObjectKey( LPCTSTR szType, LPOS lPos );
-	afx_msg BOOL IsBaseObject(LPCTSTR szType, LPOS lPos );
-	afx_msg BSTR GetObjectKey( LPCTSTR szType, LPOS lPos );
+	afx_msg BOOL SetBaseObjectKey( LPCTSTR szType, long lPos, LPCTSTR lpctVal );
+	afx_msg BSTR GetBaseObjectKey( LPCTSTR szType, long lPos );
+	afx_msg BOOL IsBaseObject(LPCTSTR szType, long lPos );
+	afx_msg BSTR GetObjectKey( LPCTSTR szType, long lPos );
 	afx_msg LPDISPATCH GetLastActiveObject(LPCTSTR szType);
 	//}}AFX_DISPATCH
 	DECLARE_DISPATCH_MAP()

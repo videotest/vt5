@@ -6,8 +6,11 @@
 #include "data5.h"
 
 #include "idispatchimpl.h"
-	
-#import "testman.tlb" no_namespace raw_interfaces_only named_guids 
+#ifdef _DEBUG
+	#import "\vt5\vt5\debug\comps\testman.tlb" no_namespace raw_interfaces_only named_guids 
+#else
+	#import "\vt5\vt5\release\comps\testman.tlb" no_namespace raw_interfaces_only named_guids 
+#endif
 
 #define MAX_VARS_PER_TEST 1000
 
@@ -171,11 +174,11 @@ public:
 	// interface ITestItem
 	com_call SetPath( /*[in]*/ BSTR bstrPath );
 	com_call GetPath( /*[out,retval]*/ BSTR *pbstrPath );
-	com_call GetFirstCondPos( /*[out,retval]*/ LPOS *lpPos );
+	com_call GetFirstCondPos( /*[out,retval]*/ long *lpPos );
 	com_call GetNextCond( /*[out]*/ VARIANT *plPos, /*[out, retval]*/ BSTR *pbstr );
-	com_call GetNextCond( /*[out]*/ LPOS *plPos, /*[out, retval]*/ BSTR *pbstr );
+	com_call GetNextCond( /*[out]*/ long *plPos, /*[out, retval]*/ BSTR *pbstr );
 	com_call AddCond( /*[in]*/ BSTR bstrCond );
-	com_call DeleteCond( /*[in]*/ LPOS lPos );
+	com_call DeleteCond( /*[in]*/ long lPos );
 	com_call DeleteAllCond();
 	com_call SetScript( /*[in]*/ BSTR bstrScript );
 	com_call GetScript( /*[out,retval]*/ BSTR *pbstrScript );
@@ -189,16 +192,16 @@ public:
 	// [vanek]
 	com_call ParseExecCond();
 	com_call VerifyExecCond( /*[out]*/ BOOL *pbCanExec );
-	com_call GetFirstExecCondPos( /*[out]*/ LPOS *lpPos);
-	com_call GetNextExecCond( /*[out]*/ LPOS *plPos, /*[in]*/ BSTR *pbstr);
+	com_call GetFirstExecCondPos( /*[out]*/ long *lpPos );
+	com_call GetNextExecCond( /*[out]*/ long *plPos, /*[in]*/ BSTR *pbstr );
 	com_call AddExecCond( /*[in]*/ BSTR bstrCond );
-	com_call DeleteExecCond( /*[in]*/ LPOS lPos);
+	com_call DeleteExecCond( /*[in]*/ long lPos );
 	com_call DeleteAllExecCond();
 
-	com_call GetFirstSingleCond( /*[out,retval]*/ LPOS *lpPos );
+	com_call GetFirstSingleCond( /*[out,retval]*/ long *lpPos );
 	com_call NextSingleCond( /*[out]*/ VARIANT *lpPos, /*[out]*/ VARIANT *pVarName, /*[out]*/ VARIANT *pVarPath, /*[out]*/ VARIANT *pVarParams );
 
-	com_call GetFirstMultyCond( /*[out,retval]*/ LPOS *lpPos );
+	com_call GetFirstMultyCond( /*[out,retval]*/ long *lpPos );
 	com_call NextMultyCond( /*[out]*/ VARIANT *lpPos, /*[out]*/ VARIANT *pVarName, /*[out]*/ VARIANT *pVarPath, /*[out]*/ VARIANT **pVarParams,/*[out]*/ VARIANT *pVarFlag, /*[out]*/ long *plCount, VARIANT *pVarNameMain, /*[out]*/ VARIANT **pVarParamsMain, /*[out]*/ long *plCountMain  );
 
 	com_call Rename( /*[in]*/ BSTR bstrNewName );

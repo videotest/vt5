@@ -240,7 +240,7 @@ bool CActionStrip::Initialize()
 
 	if(m_ptrList!=0)
 	{
-		POSITION pos = 0;
+		long pos=0;
 		m_ptrList->GetFirstChildPosition(&pos);
 		if( pos )
 		{

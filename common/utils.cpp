@@ -21,7 +21,7 @@
 #include "\vt5\AWIN\misc_map.h"
 #include "\vt5\awin\misc_dbg.h"
 
-#import "msado15.dll" rename_namespace("ADO") rename("EOF", "ADOEOF")
+#include "msado15.tlh"
 
 class time_test2
 {
@@ -190,17 +190,8 @@ void CLogFile::Init()
 
 	if( m_lLoggingLevel )
 	{
-		CFileException pError;
-		m_file.Open(m_sFileName, CFile::modeCreate | CFile::modeWrite | CFile::typeText, &pError);
-		if (pError.m_cause == CFileException::none)
-		{
-			Write("start", m_sFileName);
-		}
-		else
-		{
-			pError.ReportError();
-			exit(1);
-		}
+		m_file.Open( m_sFileName, CFile::modeCreate | CFile::modeWrite | CFile::typeText  );
+		Write( "start", m_sFileName );
 	}
 }
 
@@ -864,26 +855,6 @@ std_dll long GetValueInt( IUnknown *punkDoc, const char *pszSection, const char 
 	//	return lDefault;
 	//}
 }
-//get __int64 value from NamedData
-std_dll __int64 GetValueInt64( IUnknown *punkDoc, const char *pszSection, const char *pszEntry, __int64 lDefault )
-{
-	//	try
-	{
-		_variant_t	var( lDefault );
-		var = ::GetValue( punkDoc, pszSection, pszEntry, var );
-
-		_VarChangeType( var, VT_I8 );
-
-		if (var.vt == VT_I8)
-			return var.lVal;
-		else
-			return lDefault;
-	}
-	//catch( ... )
-	//{
-	//	return lDefault;
-	//}
-}
 
 //get string value from NamedData
 std_dll CString GetValueString( IUnknown *punkDoc, const char *pszSection, const char *pszEntry, const char *pszDefault )
@@ -992,13 +963,6 @@ std_dll void SetValue( IUnknown *punkDoc, const char *pszSection, const char *ps
 
 //set integer value to NamedData
 std_dll void SetValue( IUnknown *punkDoc, const char *pszSection, const char *pszEntry, long lValue )
-{
-	_variant_t	var( lValue );
-	::SetValue( punkDoc, pszSection, pszEntry, var );
-}
-
-//set __int64 value to NamedData
-std_dll void SetValue( IUnknown *punkDoc, const char *pszSection, const char *pszEntry, __int64 lValue )
 {
 	_variant_t	var( lValue );
 	::SetValue( punkDoc, pszSection, pszEntry, var );
@@ -1271,7 +1235,7 @@ std_dll IUnknown *FindObjectByName(IUnknown *punkData, const char *szName)
 	// for all types in documentA
 	for (long nType = 0; nType < nTypesCounter; nType++)
 	{
-		LONG_PTR	lpos = 0;
+		long	lpos = 0;
 		// for all objects in type
 		sptrM->GetObjectFirstPosition(nType, &lpos);
 
@@ -1312,7 +1276,7 @@ std_dll IUnknown *FindChildByName(IUnknown *punkParent, const char *szName)
 	if (sptrParent == 0)
 		return 0;
 
-	POSITION lPos = 0;
+	long lPos = 0;
 	sptrParent->GetFirstChildPosition(&lPos);
 
 	while (lPos)
@@ -1458,14 +1422,14 @@ std_dll IUnknown *GetDocByKey( GuidKey lDocKey )
 {
 	sptrIApplication sptrA( GetAppUnknown() );
 
-	LONG_PTR	lPosTemplate = 0;
+	long	lPosTemplate = 0;
 	
 	if (FAILED(sptrA->GetFirstDocTemplPosition( &lPosTemplate )))
 		return 0;
 
 	while( lPosTemplate )
 	{
-		LONG_PTR	lPosDoc = 0;
+		long	lPosDoc = 0;
 
 		if (SUCCEEDED(sptrA->GetFirstDocPosition( lPosTemplate, &lPosDoc )))
 		{
@@ -1528,7 +1492,7 @@ std_dll IUnknown *GetObjectByName( IUnknown *punkData, const char *szName, const
 			continue;
 
 		IUnknown	*punkObj = 0;
-		LONG_PTR	lpos = 0;
+		long	lpos = 0;
 
 		sptrM->GetObjectFirstPosition( nType, &lpos );
 
@@ -1580,7 +1544,7 @@ std_dll IUnknown *GetObjectByKey( IUnknown *punkData, GuidKey lKey )
 	for( long nType = 0; nType < nTypesCounter; nType ++ )
 	{
 		IUnknown	*punkObj = 0;
-		LONG_PTR	lpos = 0;
+		long	lpos = 0;
 
 		sptrM->GetObjectFirstPosition( nType, &lpos );
 
@@ -1935,7 +1899,7 @@ std_dll bool GetDataDump(LPCTSTR szFileName, IUnknown *punkData)
 
 			ar << strType + strEnd;
 			
-			LONG_PTR	lpos = 0;
+			long	lpos = 0;
 			sptrT->GetObjectFirstPosition(i, &lpos);
 
 			while (lpos)
@@ -2410,8 +2374,8 @@ std_dll IUnknown *FindObjectByKeyEx(GuidKey lKey)
 	//try to locate data object with specified key in all documents
 	sptrIApplication sptrApp(::GetAppUnknown(false));
 
-	LONG_PTR lPosTempl = 0; 
-	LONG_PTR lPosDoc = 0;
+	long lPosTempl = 0; 
+	long lPosDoc = 0;
 	sptrApp->GetFirstDocTemplPosition(&lPosTempl);
 
 	while (lPosTempl)
@@ -2440,7 +2404,7 @@ IUnknown *FindObjectByKey( GuidKey lKey )
 
 	sptrIApplication	sptrApp( ::GetAppUnknown() );
 
-	LONG_PTR	lPosTempl, lPosDoc;
+	long	lPosTempl, lPosDoc;
 
 	sptrApp->GetFirstDocTemplPosition( &lPosTempl );
 
@@ -2581,7 +2545,7 @@ std_dll IUnknown* GetFilterByType(LPCTSTR szType)
 			punk->Release();
 
 		// for all document templates
-		LONG_PTR nPos = 0;
+		long nPos = 0;
 		sptrApp->GetFirstDocTemplPosition(&nPos);
 
 		while (nPos)
@@ -2670,7 +2634,7 @@ std_dll IUnknown* GetFilterByFile(LPCTSTR szFileName)
 			return NULL;
 
 		// for all document templates
-		LONG_PTR nPos = 0;
+		long nPos = 0;
 		sptrApp->GetFirstDocTemplPosition(&nPos);
 
 		while (nPos)
@@ -2762,7 +2726,7 @@ std_dll CString FindMostMatchView( const char *szType, DWORD &dwMatch )
 {
 	sptrIApplication	sptrA( GetAppUnknown() );
 
-	LONG_PTR	lDocTemplPos;
+	long	lDocTemplPos;
 	_bstr_t	bstrType = szType;
 
 	sptrA->GetFirstDocTemplPosition( &lDocTemplPos );
@@ -3362,7 +3326,7 @@ std_dll BOOL ExecuteFileDialog(BOOL bOpenFileDialog, OPENFILENAME& ofn, const ch
 		sptr->SetDefaultSection( 0 );
 	
 
-	CFileDialog dlgFile(bOpenFileDialog, 0, 0, OFN_HIDEREADONLY | OFN_OVERWRITEPROMPT, 0, 0, 0/*_FILE_OPEN_SIZE_*/ );
+	CFileDialog dlgFile(bOpenFileDialog, 0, 0, OFN_HIDEREADONLY | OFN_OVERWRITEPROMPT, 0, 0, 0 /*_FILE_OPEN_SIZE_*/ );
 
 	ofn.Flags |= OFN_EXPLORER | OFN_ENABLEHOOK;
 	ofn.lpfnHook = dlgFile.m_ofn.lpfnHook;
@@ -3373,7 +3337,7 @@ std_dll BOOL ExecuteFileDialog(BOOL bOpenFileDialog, OPENFILENAME& ofn, const ch
 	//if(bOpenFileDialog)
 	//	sptr->SetCurExtension(_bstr_t(strExt));
 	
-	
+	/*
 	sptrIApplication sptrApp(GetAppUnknown());
 	sptrIActionManager sptrActMan;
 	if (sptrApp != 0)
@@ -3384,20 +3348,20 @@ std_dll BOOL ExecuteFileDialog(BOOL bOpenFileDialog, OPENFILENAME& ofn, const ch
 	}
 	if (sptrActMan != 0)
 		sptrActMan->EnableManager(FALSE);
-	AfxGetApp()->OnIdle(0);
+	AfxGetApp()->OnIdle(0);*/
 
 	HRESULT hr = sptr->Execute(bOpenFileDialog ? offOpen : offSave);
 
-	if (sptrActMan != 0)
-		sptrActMan->EnableManager(TRUE);
+	//if (sptrActMan != 0)
+	//	sptrActMan->EnableManager(TRUE);
 
-	//if(bOpenFileDialog)
-	//{
-	//	BSTR bstr = 0;
-	//	sptr->GetCurExtension(&bstr);
-	//	strExt = bstr;
-	//	::SysFreeString(bstr);
-	//}
+	/*if(bOpenFileDialog)
+	{
+		BSTR bstr = 0;
+		sptr->GetCurExtension(&bstr);
+		strExt = bstr;
+		::SysFreeString(bstr);
+	}*/
 
 	sptr = 0;
 
@@ -3503,7 +3467,7 @@ std_dll bool ChangeBaseKeyForDocument(IUnknown * punkDoc, GuidKey OldKey, GuidKe
 		_bstr_t bstrType(bstrtype, false);
 
 		// get object's count for given type
-		LPOS lPos = 0;
+		long lPos = 0;
 		if (FAILED(sptrC->GetFirstObjectPos(bstrType, &lPos)) || !lPos)
 		{
 			bRet = false;
@@ -3689,7 +3653,7 @@ std_dll IUnknown *GetPropertySheet()
 
 
 	//find the properties window between dockbars
-	POSITION lPos =0;
+	long	lPos =0;
 	sptrM->GetFirstDockWndPosition( &lPos );
 	IUnknown	*punkDockBar;
 
@@ -3771,7 +3735,7 @@ std_dll IUnknown *GetColorChooser()
 
 
 	//find the properties window between dockbars
-	POSITION	lPos =0;
+	long	lPos =0;
 	sptrM->GetFirstDockWndPosition( &lPos );
 	IUnknown	*punkDockBar;
 
@@ -4024,7 +3988,7 @@ std_dll IUnknown* GetObjectByKeyEx(IUnknown* punkData, GuidKey lKey)
 	// for all types
 	for (long nType = 0; nType < nTypesCounter; nType++)
 	{
-		LONG_PTR lpos = 0;
+		long	lpos = 0;
 
 		sptrM->GetObjectFirstPosition(nType, &lpos);
 
@@ -4090,7 +4054,7 @@ std_dll IUnknown* GetChildObjectByKey(IUnknown* punkParent, GuidKey lKey)
 		return 0;
 
 	// for all children
-	POSITION lPos = 0;
+	long lPos = 0;
 	if (FAILED(sptr->GetFirstChildPosition(&lPos)))
 		return 0; 
 
@@ -4275,7 +4239,7 @@ std_dll void NotifyObjectSelect(IUnknown *punk, bool bSelect)
 	if (!CheckInterface(sptrParent, IID_IDataObjectList))
 		return;
 
-	TPOS lPos = 0;
+	long lPos = 0;
 	if (bSelect)
 	{
 		if (FAILED(sptrN->GetObjectPosInParent(&lPos)) || !lPos)
@@ -4305,7 +4269,7 @@ std_dll void NotifyObjectSelect(IUnknown *punk, IUnknown * punkEvListener, bool 
 
 	// forbid notification
 	if (sptrList != 0)sptrList->LockObjectUpdate(true);
-	TPOS lPos = 0;
+	long lPos = 0;
 	if (bSelect)
 		sptrN->GetObjectPosInParent(&lPos);
 
@@ -4531,7 +4495,7 @@ std_dll long FindNextManualParam(IUnknown * punkList)
 
 		long lActivePos = 0;
 		sptr->GetActiveParamPos(&lActivePos);
-		LPOS lPos = lActivePos;
+		long lPos = lActivePos;
 	// try to find next manual param
 		while (lPos)
 		{
@@ -4632,7 +4596,7 @@ std_dll CString GetCalibrUnitName(LPCTSTR szGroupMgr, long lParamKey, long lMeas
 		if (!nCount)
 			return strOut;
 
-		LPOS lPos = 0;
+		long lPos = 0;
 		sptrM->GetFirstPos(&lPos);
 
 		int nNextPos = 0;
@@ -4848,7 +4812,7 @@ std_dll CString	GenerateNameForArgument( CString strArgName, IUnknown *punkDocDa
 
 	for( lType = 0; lType < lTypesCount; lType++ )
 	{
-		LONG_PTR	lpos = 0;
+		long	lpos = 0;
 		ptrManager->GetObjectFirstPosition( lType, &lpos );
 
 		while( lpos )
@@ -4893,7 +4857,7 @@ std_dll void _VarChangeType( VARIANT &var, long lType, VARIANT *psrc )
 	{
 		char	sz[100];
 		sprintf( sz, "%g", (double)psrc->fltVal );
-		ATL::CComVariant comVar=sz;
+		CComVariant comVar=sz;
 		comVar.Detach(&var);
 		return;
 	}
@@ -4901,7 +4865,7 @@ std_dll void _VarChangeType( VARIANT &var, long lType, VARIANT *psrc )
 	{
 		char	sz[100];
 		sprintf( sz, "%g", psrc->dblVal );
-		ATL::CComVariant comVar = sz;
+		CComVariant comVar=sz;
 		comVar.Detach(&var);
 		return;
 	}
@@ -4914,7 +4878,7 @@ std_dll void _VarChangeType( VARIANT &var, long lType, VARIANT *psrc )
 		if( p )*p = '.';
 		float fltVal;
 		sscanf( str, "%f", &fltVal );
-		ATL::CComVariant comVar = fltVal;
+		CComVariant comVar=fltVal;
 		comVar.Detach(&var);
 		return;
 	}
@@ -4926,7 +4890,7 @@ std_dll void _VarChangeType( VARIANT &var, long lType, VARIANT *psrc )
 		if( p )*p = '.';
 		double dblVal;
 		sscanf( str, "%lf", &dblVal );
-		ATL::CComVariant comVar = dblVal;
+		CComVariant comVar=dblVal;
 		comVar.Detach(&var);
 		return;
 	}
@@ -5984,12 +5948,16 @@ std_dll bool SetAppropriateView(IUnknown* punkTarget, DWORD dwType)
 }
 
 
-CPtrList	g_listLock;
+struct OlePtrList : CPtrList{
+	~OlePtrList(){CCmdTargetEx::Dump();}
+} g_listLock;
+int g_cnt=0;
 struct	PtrLockInfo
 {
 	std::string	strFile;
 	int			nLine;
 	CCmdTarget	*pcmdTarget;
+	int cnt;
 };
 
 POSITION	_OleFindLockInfoDbg( CCmdTarget *ptarget )
@@ -6015,7 +5983,7 @@ std_dll void _OleLockAppDbg( CCmdTarget *ptarget, int nLine, const char *pszFile
 	p->nLine = nLine;
 	p->strFile = pszFile;
 	p->pcmdTarget = ptarget;
-
+	p->cnt = ++g_cnt;
 	g_listLock.AddTail( p );
 }
 
@@ -6038,7 +6006,8 @@ std_dll void _OleTraceLeaks()
 	{
 		PtrLockInfo	*pinfo = (PtrLockInfo	*)g_listLock.GetNext( pos );
 		char	sz[255];
-		sprintf( sz, "Ole object found file %s{%d}\n", pinfo->strFile.c_str(), pinfo->nLine );
+		sprintf( sz, "%s(%d) cnt%d addr %x Leak Ole object found file \n"
+			, pinfo->strFile.c_str(), pinfo->nLine, pinfo->cnt, pinfo->pcmdTarget );
 		OutputDebugString( sz );
 	}
 }
@@ -6053,15 +6022,15 @@ std_dll IUnknown *GetActiveMeasureObject( INamedDataObject2Ptr	ptrNamedObject )
 	punk->Release();
 
 	if( ptrCont == 0 )return 0;
-	LONG_PTR lpos; long lkey;
+	long	lpos, lkey;
 	ptrCont->GetCurentPosition( &lpos, &lkey );
 
-	ptrNamedObject->GetFirstChildPosition((POSITION*)&lpos);
+	ptrNamedObject->GetFirstChildPosition( &lpos );
 
 	while( lpos )
 	{
 		IUnknown *punk = 0;
-		ptrNamedObject->GetNextChild((POSITION*)&lpos, &punk);
+		ptrNamedObject->GetNextChild( &lpos, &punk );
 		if( !punk )continue;
 		IManualMeasureObjectPtr	ptrM = punk;
 		punk->Release();
@@ -6199,7 +6168,7 @@ std_dll bool SyncSplitterView( IUnknown* punkViewFocused, SyncViewData* pData )
 
 	_bstr_t bstrObjType = ::GetObjectKind( pData->punkObject2Activate );
 
-	TPOS lPos = 0;
+	long lPos = 0;
 	ptrDS->GetFirstViewPosition( &lPos );
 
 	bool	bProcess = false;

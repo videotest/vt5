@@ -111,7 +111,7 @@ CPropertySheetBase::CPropertySheetBase( const char *szSection )
 
 CPropertySheetBase::~CPropertySheetBase()
 {
-	int nCount = (int)m_PageList.GetSize();
+	int nCount = m_PageList.GetSize();
 
 	for(int i = 0; i < nCount; i++)
 		delete m_PageList.GetAt(i);
@@ -240,12 +240,12 @@ CWnd* CPropertySheetBase::GetWindow()
 
 void CPropertySheetBase::DelayShowPage( int nPage, bool bShow )
 {
-	for (int n = (int)m_PagesToDelayShow.GetSize() - 1; n >= 0; n--)
+	for( int n = m_PagesToDelayShow.GetSize( ) - 1; n >= 0; n-- )
 	{
 		if( m_PagesToDelayShow[n] == nPage )
 			m_PagesToDelayShow[n] = -1;
 	}
-	for (n = (int)m_PagesToDelayHide.GetSize() - 1; n >= 0; n--)
+	for( n = m_PagesToDelayHide.GetSize( ) - 1; n >= 0; n-- )
 	{
 		if( m_PagesToDelayHide[n] == nPage )
 			m_PagesToDelayHide[n] = -1;

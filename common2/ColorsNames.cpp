@@ -22,7 +22,7 @@ void CColorsNames::UpdateColorsNames(const char *szClassifierShortName)
 	}
 }
 
-const char* CColorsNames::get_class_name(const LPOS lpos)
+const char* CColorsNames::get_class_name(const long lpos)
 {
 	const std::map<int,ColorName>::const_iterator it=_mapDscrClass.find(int(lpos));
 	if(it!=_mapDscrClass.end())
@@ -34,7 +34,7 @@ const char* CColorsNames::get_class_name(const LPOS lpos)
 	}
 }
 
-const COLORREF CColorsNames::get_class_color(const LPOS lpos)
+const COLORREF CColorsNames::get_class_color(const long lpos)
 {
 	const std::map<int,ColorName>::const_iterator it=_mapDscrClass.find(int(lpos));
 	if(it!=_mapDscrClass.end())
@@ -43,7 +43,7 @@ const COLORREF CColorsNames::get_class_color(const LPOS lpos)
 		return GetValueColor( GetAppUnknown(), "\\Classes", "UnkClassColor", RGB( 255, 255, 0 ) );;
 }
 
-bool CColorsNames::testClass(const LPOS lpos)
+bool CColorsNames::testClass(const long lpos)
 {
 	const std::map<int,ColorName>::const_iterator it=_mapDscrClass.find(int(lpos));
 	if(it!=_mapDscrClass.end())
@@ -73,7 +73,7 @@ bool CColorsNames::ParseClassifier(const char *szClassifierName)
 				if(nFields<=3){
 					sprintf(sz_ClsName,"Class%d",iClassNo);
 				}
-				ColorName colorName(RGB(r,g,b), ATL::CString(sz_ClsName));
+				ColorName colorName(RGB(r,g,b), CString(sz_ClsName));
 				_mapDscrClass[iClassNo]=colorName;
 			}
 		}
@@ -92,10 +92,10 @@ bool CColorsNames::LoadColorsNames(INamedData* pNamedData)
 	long cnt=0; pNd->GetEntriesCount(&cnt);
 	for (long iEntry=0; iEntry<cnt; ++iEntry)
 	{
-		ATL::CComBSTR entry;
+		CComBSTR entry;
 
 		pNd->GetEntryName(iEntry, &entry);
-		ATL::CComVariant var=entry;
+		CComVariant var=entry;
 		if(SUCCEEDED(var.ChangeType(VT_I4)))
 		{
 			int iClassNo=var.intVal;
@@ -109,7 +109,7 @@ bool CColorsNames::LoadColorsNames(INamedData* pNamedData)
 					if(nFields<=3){
 						swprintf(wsz_ClsName,L"Class%d",iClassNo);
 					}
-					ColorName colorName(RGB(r,g,b), ATL::CString(wsz_ClsName));
+					ColorName colorName(RGB(r,g,b), CString(wsz_ClsName));
 					_mapDscrClass[iClassNo]=colorName;
 				}
 			}
@@ -133,10 +133,10 @@ bool CColorsNames::Save()
 			g = GetGValue(colorName._clr), 
 			b = GetBValue(colorName._clr);
 		int nFields=::swprintf(wsz_ClsName, L"(%d,%d,%d),%s", r, g, b
-			, (LPCWSTR)ATL::CStringW(colorName._Name));
-		ATL::CComVariant vr=long(iClassNo);
+			, (LPCWSTR)CStringW(colorName._Name));
+		CComVariant vr=long(iClassNo);
 		vr.ChangeType(VT_BSTR);
-		pNd->SetValue(vr.bstrVal,ATL::CComVariant(wsz_ClsName));
+		pNd->SetValue(vr.bstrVal,CComVariant(wsz_ClsName));
 	}
 	return _mapDscrClass.size()>0;
 }
@@ -152,10 +152,10 @@ bool CColorsNames::SetClasses(const std::vector<long>& aVecClasses, INamedData* 
 		it!=aVecClasses.end(); ++it)
 	{
 		int iClassNo=*it;
-		ATL::CComVariant vClassNo=iClassNo;
+		CComVariant vClassNo=iClassNo;
 		if(SUCCEEDED(vClassNo.ChangeType(VT_BSTR)))
 		{
-			ATL::CComVariant var;
+			CComVariant var;
 			pNd->GetValue(vClassNo.bstrVal, &var);
 			if(VT_BSTR==var.vt)
 			{
@@ -166,7 +166,7 @@ bool CColorsNames::SetClasses(const std::vector<long>& aVecClasses, INamedData* 
 					if(nFields<=3){
 						swprintf(wsz_ClsName,L"Class%d",iClassNo);
 					}
-					ColorName colorName( RGB(r,g,b), ATL::CString(wsz_ClsName));
+					ColorName colorName( RGB(r,g,b), CString(wsz_ClsName));
 					_mapDscrClass[iClassNo]=colorName;
 				}
 			}

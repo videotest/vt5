@@ -168,7 +168,7 @@ BOOL CCommonPropertyPage::OnSetActive()
 				if (sShort == sCur)
 				{
 					bCurDriver = true;
-					nCurSel = (int)m_saLongNames.GetSize()-1;
+					nCurSel = m_saLongNames.GetSize()-1;
 				}
 			}
 			else
@@ -185,7 +185,7 @@ BOOL CCommonPropertyPage::OnSetActive()
 				if (!bFound)
 					m_saCategories.Add(sCat);
 				if (sShort == sCur)
-					nCurSel = (int)m_saCategories.GetSize() - 1;
+					nCurSel = m_saCategories.GetSize()-1;
 			}
 		}
 	}	
@@ -198,7 +198,7 @@ BOOL CCommonPropertyPage::OnSetActive()
 		m_CreatorsList.SetCurSel(m_saCategories.GetSize()+nCurSel);
 	else
 		m_CreatorsList.SetCurSel(nCurSel);
-	int n = (int)bCurDriver ? m_saCategories.GetSize() + nCurSel : nCurSel;
+	int n = bCurDriver?m_saCategories.GetSize()+nCurSel:nCurSel;
 	if (n < m_saCategories.GetSize())
 		((CPropertySheet *)GetParent())->SetWizardButtons(PSWIZB_NEXT);
 	else
@@ -277,7 +277,7 @@ BOOL CInputPropertyPage::OnSetActive()
 				m_saLongNames.Add(sLong);
 				m_saShortNames.Add(sShort);
 				if (sShort == sCur)
-					nCurSel = (int)m_saShortNames.GetSize() - 1;
+					nCurSel = m_saShortNames.GetSize()-1;
 			}
 		}
 	}	

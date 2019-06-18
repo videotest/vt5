@@ -1,5 +1,4 @@
-EXPORTS
-	DllCanUnloadNow     PRIVATE
-	DllGetClassObject   PRIVATE
-;	DllRegisterServer   PRIVATE
-;	DllUnregisterServer PRIVATE
+; EditorView.def : Declares the module parameters for the DLL.
+
+; DESCRIPTION  'EditorView Windows Dynamic Link Library'
+

@@ -38,15 +38,7 @@ GUARD_IMPLEMENT_OLECREATE_CTRL(CLookupHelperAXPropPage, "LOOKUPHELPERAX.LookupHe
 
 BOOL CLookupHelperAXPropPage::CLookupHelperAXPropPageFactory::UpdateRegistry(BOOL bRegister)
 {
-#if defined(NOGUARD)
-	if (bRegister)
-		return AfxOleRegisterPropertyPageClass(AfxGetInstanceHandle(),
-			m_clsid, IDS_LOOKUPHELPERAX_PPG);
-	else
-		return AfxOleUnregisterClass(m_clsid, NULL);
-#else
 	return UpdateRegistryPage(bRegister, AfxGetInstanceHandle(), IDS_LOOKUPHELPERAX_PPG);
-#endif
 }
 
 

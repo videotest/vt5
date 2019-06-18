@@ -1,5 +1,5 @@
 #pragma once
-#include "../AbacusCtrl/AbacusI.h"
+#include "AbacusI.h"
 
 // Статическая обвязка вокруг функций из AbacusCtrl.dll. AbacusCtrl.dll загружается динамически.
 
@@ -14,11 +14,11 @@ int  _AbacusGetState();
 // Вызывает AbacusGetInit (см. AbacusI.h)
 bool _AbacusGetInit(ABACUSINIT **ppAbacusInit);
 // Вызывает AbacusGetFirstRecordPosition (см. AbacusI.h)
-bool _AbacusGetFirstRecordPosition(POSITION *plPos);
+bool _AbacusGetFirstRecordPosition(long *plPos);
 // Вызывает AbacusGetNextRecord (см. AbacusI.h)
-bool _AbacusGetNextRecord(POSITION *plPos, ABACUSRECORD **ppRecords);
+bool _AbacusGetNextRecord(long *plPos, ABACUSRECORD **ppRecords);
 // Вызывает AbacusRemoveRecord (см. AbacusI.h)
-void _AbacusRemoveRecord(POSITION lPos);
+void _AbacusRemoveRecord(long lPos);
 // Вызывает AbacusGetSetup (см. AbacusI.h)
 bool _AbacusGetSetup(ABACUSCONTROLSETUP *pSetup);
 // Вызывает AbacusSetSetup (см. AbacusI.h)

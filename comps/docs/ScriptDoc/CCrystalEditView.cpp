@@ -78,7 +78,7 @@ IMPLEMENT_DYNAMIC(CCrystalEditView, CCrystalTextView)
 
 CCrystalEditView::CCrystalEditView()
 {
-	//AFX_ZERO_INIT_OBJECT(CCrystalTextView);
+	AFX_ZERO_INIT_OBJECT(CCrystalTextView);
 	m_bAutoIndent = TRUE;
 }
 

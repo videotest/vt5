@@ -9,7 +9,6 @@
 #include <fcntl.h>
 #include <sys/types.h>
 #include <sys/stat.h>
-#include <math.h>
 
 #define VT5SLISIGNATURE "VT5 Sew Large Image directory"
 
@@ -167,58 +166,6 @@ void CopyImage(IImage *pDest, IImage *pSrc, POINT ptDest1, POINT ptSrc,
 						pRowSrcB[ptSrc.x+x*nZoom],pRowDMTot[ptDest.x+x],
 						pRowDMCur[ptDest.x+x]);
 				}
-			}
-		}
-	}
-}
-
-void CopyImage(IImage *pDest, IImage *pSrc, POINT ptDest, POINT ptSrc, SIZE sz,
-	double dZoom, IDistanceMap *pTotalDM, IDistanceMap *pCurDM)
-{
-	CSize szDest((int)ceil(sz.cx*dZoom),(int)ceil(sz.cy*dZoom));
-	int nPanesDst = ::GetImagePaneCount(pDest);
-	int nPanesSrc = ::GetImagePaneCount(pSrc);
-	_ptr_t2<int> arXF(szDest.cx),arXC(szDest.cx),arKX(szDest.cx);
-	for (int x = 0; x < szDest.cx; x++)
-	{
-		double dx = x/dZoom;
-		double dxf = floor(dx);
-		double dxc = ceil(dx);
-		if (dxc >= sz.cx)
-			dxc = dxf;
-		arXF[x] = (int)dxf;
-		arXC[x] = (int)dxc;
-		arKX[x] = (int)(256.*(dx-dxf));
-	}
-	for (int y = 0; y < szDest.cy; y++)
-	{
-		WORD *pRowDMTot;
-		pTotalDM->GetRow(ptDest.y+y, &pRowDMTot);
-		WORD *pRowDMCur;
-		pCurDM->GetRow(ptDest.y+y, &pRowDMCur);
-		for (int i = 0; i < nPanesDst; i++)
-		{
-			color *pRowDest;
-			pDest->GetRow(ptDest.y+y, i, &pRowDest);
-			color *pRowSrc1,*pRowSrc2;
-			double dy = y/dZoom;
-			double dyf = floor(dy);
-			double dyc = ceil(dy);
-			if (dyc >= sz.cy)
-				dyc = dyf;
-			int ky = (int)(256.*(dy-dyf));
-			pSrc->GetRow(ptSrc.y+(int)dyf, i, &pRowSrc1);
-			pSrc->GetRow(ptSrc.y+(int)dyc, i, &pRowSrc2);
-			for (int x = 0; x < szDest.cx; x++)
-			{
-				int xf = arXF[x];
-				int xc = arXC[x];
-				int kx = arKX[x];
-				DWORD dwYF = (((DWORD)pRowSrc1[xf])*(256-kx)+((DWORD)pRowSrc1[xc])*kx)/256;
-				DWORD dwYC = (((DWORD)pRowSrc2[xf])*(256-kx)+((DWORD)pRowSrc2[xc])*kx)/256;
-				DWORD dwColor = (dwYF*(256-ky)+dwYC*ky)/256;
-				pRowDest[ptDest.x+x] = MakePixel(pRowDest[ptDest.x+x],
-					(color)dwColor, pRowDMTot[ptDest.x+x], pRowDMCur[ptDest.x+x]);
 			}
 		}
 	}
@@ -569,28 +516,6 @@ CRect GetFragmentRect(ISewFragment *pFrag)
 	return CRect(ptFrag, szFrag);
 }
 
-ISewFragmentPtr GetLastFragByPoint(TPOS lPos, ISewImageList *pSLI, POINT point)
-{
-	ISewFragmentPtr sptrFragFound;
-	while (lPos)
-	{
-		ISewFragmentPtr sptrFrag;
-		pSLI->GetPrevFragment(&lPos, &sptrFrag);
-		POINT ptFrag;
-		sptrFrag->GetOffset(&ptFrag);
-		SIZE szFrag;
-		sptrFrag->GetSize(&szFrag);
-		if (point.x >= ptFrag.x && point.x < ptFrag.x+szFrag.cx &&
-			point.y >= ptFrag.y && point.y < ptFrag.y+szFrag.cy)
-		{
-			sptrFragFound = sptrFrag;
-			break;
-		}
-	}
-	return sptrFragFound;
-}
-
-
 class _CLibrary
 {
 public:
@@ -627,23 +552,22 @@ void FreeFragment(void *p)
 	((ISewFragment *)p)->Release();
 }
 
-TPOS	CFragList::insert_before(ISewFragment *p, TPOS lpos)
+long	CFragList::insert_before( ISewFragment *p, long lpos )
 {
 	p->AddRef();
 	return __super::insert_before(p, lpos);
 }
 
-TPOS	CFragList::insert(ISewFragment *p, TPOS lpos)
+long	CFragList::insert( ISewFragment *p, long lpos )
 {
 	p->AddRef();
 	return __super::insert(p, lpos);
 }
 
-CSewLoadedFragment::CSewLoadedFragment(ISewFragment *pFrag, int nZoom, TPOS lpos)
+CSewLoadedFragment::CSewLoadedFragment(ISewFragment *pFrag, int nZoom)
 {
 	m_pFrag = pFrag;
 	m_nZoom = nZoom;
-	m_lpos = lpos;
 	m_pFrag->AddRef();
 	m_pFrag->LoadImage(m_nZoom);
 }

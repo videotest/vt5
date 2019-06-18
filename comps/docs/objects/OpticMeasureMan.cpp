@@ -18,7 +18,7 @@ static char THIS_FILE[] = __FILE__;
 void COptDensSet::_CalcMedium()
 {
 	m_fMedium = 0;
-	long nCount = (long)m_mapData.GetCount();
+	long nCount = m_mapData.GetCount();
 	if(nCount)
 	{
 		POSITION pos = m_mapData.GetStartPosition();

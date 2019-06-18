@@ -791,7 +791,7 @@ COLORREF CContextCtrl::GetItemBkColor(HCONTEXTITEM hItem)
 	return hItem ? hItem->GetBackClr() : CLR_DEFAULT;
 }
 
-DWORD_PTR CContextCtrl::GetItemData(HCONTEXTITEM hItem)
+DWORD CContextCtrl::GetItemData(HCONTEXTITEM hItem)
 {
 	ASSERT(hItem);
 	return hItem ? hItem->GetData() : 0;
@@ -928,7 +928,7 @@ COLORREF CContextCtrl::SetItemBkColor(HCONTEXTITEM hItem, COLORREF clr)
 	return clPrev;
 }
 
-BOOL CContextCtrl::SetItemData(HCONTEXTITEM hItem, DWORD_PTR dwData)
+BOOL CContextCtrl::SetItemData(HCONTEXTITEM hItem, DWORD dwData)
 {
 	ASSERT(hItem);
 	if (!hItem)
@@ -4059,8 +4059,8 @@ LRESULT CContextCtrl::OnSetFont(WPARAM hFont, LPARAM lParam)
     LRESULT result = Default();
 
     // Get the logical font
-		LOGFONT lf; int cb;
-    if (!(cb=GetObject((HFONT) hFont, sizeof(LOGFONT), &lf)))
+    LOGFONT lf;
+    if (!GetObject((HFONT) hFont, sizeof(LOGFONT), &lf))
         return result;
 
     // Store font as the global default
@@ -4094,9 +4094,9 @@ LRESULT CContextCtrl::OnSetFont(WPARAM hFont, LPARAM lParam)
 
         pDC->SelectObject(pOldFont);
 
-//		pDC->SelectObject(&m_BoldFont);
+		pDC->SelectObject(&m_BoldFont);
 		NewCharSize = pDC->GetTextExtent(_T("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSATUVWXYZ"),52);
-//		pDC->SelectObject(pOldFont);
+		pDC->SelectObject(pOldFont);
 
         ReleaseDC(pDC);
 

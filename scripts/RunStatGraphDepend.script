@@ -1,5 +1,0 @@
-'resource:Dependence...#Statistics#Dependence#Dependence
-'state:function=ExistStatTable
-
-If Data.GetValue("\DockBars\PageInProcessing") Then Data.SetValue "\DockBars\isPass", True
-FormManager.ExecutePageModal "StatGraphDepend"

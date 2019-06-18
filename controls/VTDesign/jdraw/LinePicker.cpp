@@ -57,7 +57,7 @@ END_MESSAGE_MAP()
 /////////////////////////////////////////////////////////////////////////////
 // CLinePicker message handlers
 
-LRESULT CLinePicker::OnSelEndOK(WPARAM lParam, LPARAM /*wParam*/)
+LONG CLinePicker::OnSelEndOK(UINT lParam, LONG /*wParam*/)
 {
     int LineType = (int) lParam;
     m_bActive = FALSE;
@@ -75,7 +75,7 @@ LRESULT CLinePicker::OnSelEndOK(WPARAM lParam, LPARAM /*wParam*/)
     return TRUE;
 }
 
-LRESULT CLinePicker::OnSelEndCancel(WPARAM lParam, LPARAM /*wParam*/)
+LONG CLinePicker::OnSelEndCancel(UINT lParam, LONG /*wParam*/)
 {
     m_bActive = FALSE;
     SetLine((int) lParam);
@@ -89,7 +89,7 @@ LRESULT CLinePicker::OnSelEndCancel(WPARAM lParam, LPARAM /*wParam*/)
     return TRUE;
 }
 
-LRESULT CLinePicker::OnSelChange(WPARAM lParam, LPARAM /*wParam*/)
+LONG CLinePicker::OnSelChange(UINT lParam, LONG /*wParam*/)
 {
     if (m_bTrackSelection) SetLine((int) lParam);
 

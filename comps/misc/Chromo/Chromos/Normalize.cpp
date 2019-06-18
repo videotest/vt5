@@ -15,13 +15,13 @@ static char THIS_FILE[]=__FILE__;
 IUnknownPtr find_child_by_interface(IUnknownPtr sptrParent, const GUID guid);
 IUnknownPtr find_woolz_in_list(IUnknownPtr sptrObjectsList)
 {
-	POSITION pos = 0;
+	long pos = 0;
 	sptrINamedDataObject2 sptrN(sptrObjectsList);
-	sptrN->GetFirstChildPosition(&pos);
+	sptrN->GetFirstChildPosition((long*)&pos);
 	while (pos)
 	{
 		IUnknownPtr sptr;
-		sptrN->GetNextChild(&pos, &sptr);
+		sptrN->GetNextChild((long*)&pos, &sptr);
 		if (bool(sptr))
 		{
 			ICalcObjectPtr sptrObj((IUnknown *)sptr);
@@ -478,7 +478,7 @@ bool CActionActionCalcNrmPar::Invoke()
 		INotifyControllerPtr sptrNC(ptrNC);
 		long l = cncReset;
 		if (sptrNC != 0)
-		sptrNC->FireEvent(_bstr_t(szEventChangeObjectList), NULL, NDO, &l, 0);
+			sptrNC->FireEvent(_bstr_t(szEventChangeObjectList), NULL, NDO, &l, 0);
 	}
 	return true;
 }

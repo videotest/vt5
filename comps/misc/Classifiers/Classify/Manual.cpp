@@ -746,12 +746,12 @@ static void _CalcClassifiedAndAll(IUnknown *punkObjList, int &nClassified, int &
 	sptrINamedDataObject2 sptrNDO2Obj(punkObjList);
 	if (sptrNDO2Obj == 0)
 		return;
-	TPOS pos = 0;
-	sptrNDO2Obj->GetFirstChildPosition(&pos);
+	long pos = 0;
+	sptrNDO2Obj->GetFirstChildPosition((long*)&pos);
 	while (pos)
 	{
 		IUnknownPtr punk;
-		sptrNDO2Obj->GetNextChild(&pos, &punk);
+		sptrNDO2Obj->GetNextChild((long*)&pos, &punk);
 		ICalcObjectPtr sptrCO(punk);
 		long lClass = get_object_class(sptrCO);
 		if (lClass >= 0)

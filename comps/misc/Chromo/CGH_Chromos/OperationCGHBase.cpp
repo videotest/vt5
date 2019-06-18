@@ -31,7 +31,7 @@ IUnknown * COperationBase::GetContextImage(CString cName)
 		return punkImage;
 	}
 
-	LONG_PTR lPos = 0;
+	long lPos = 0;
 	ptrC->GetFirstObjectPos( bstrType, &lPos );
 	
 	while( lPos )

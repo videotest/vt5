@@ -32,8 +32,8 @@ public:	//IView
 	com_call GetDroppedDataObject(IUnknown** punkDO);
 	com_call OnActivateView( BOOL bActivate, IUnknown *punkOtherView );
 
-	com_call GetFirstVisibleObjectPosition(TPOS *plpos);
-	com_call GetNextVisibleObject( IUnknown ** ppunkObject, TPOS *plPos );
+	com_call GetFirstVisibleObjectPosition( long *plpos );
+	com_call GetNextVisibleObject( IUnknown ** ppunkObject, long *plPos );
 public:
 	virtual IUnknown *DoGetInterface( const IID &iid );
 	virtual void DoAttachObjects();

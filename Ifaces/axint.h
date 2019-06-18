@@ -226,16 +226,16 @@ interface IViewCtrl : public IUnknown
 	com_call SetViewProgID( BSTR bstrProgID ) = 0;
 
 	//object list
-	com_call GetFirstObjectPosition(LONG_PTR* plPos) = 0;
+	com_call GetFirstObjectPosition( long* plPos ) = 0;
 	com_call GetNextObject( BSTR* pbstrObjectName, BOOL* pbActiveObject, 
-		BSTR* bstrObjectType, LONG_PTR *plPos) = 0;
-	com_call InsertAfter(LONG_PTR lPos,
+							BSTR* bstrObjectType, long *plPos ) = 0;
+	com_call InsertAfter( long lPos,  
 							BSTR bstrObjectName, BOOL bActiveObject, 
 							BSTR bstrObjectType ) = 0;
-	com_call EditAt(LONG_PTR lPos,
+	com_call EditAt( long lPos,  
 							BSTR bstrObjectName, BOOL bActiveObject, 
 							BSTR bstrObjectType ) = 0;
-	com_call RemoveAt(LONG_PTR lPos) = 0;
+	com_call RemoveAt( long lPos ) = 0;
 	
 	com_call DestroyView() = 0;
 };

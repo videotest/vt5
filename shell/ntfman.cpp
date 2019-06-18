@@ -74,7 +74,7 @@ void CLongOperationListener::_AddListenersToSite( IUnknown *punkSite )
 		bool bFirstCallForThisView = true;
 		IPreviewSitePtr	ptrPreview( punkSite );
 
-		TPOS lPreviewObjectPos = 0;
+		long	lPreviewObjectPos = 0;
 		ptrFilter->GetFirstArgumentPosition( &lPreviewObjectPos );
 
 		while( lPreviewObjectPos )

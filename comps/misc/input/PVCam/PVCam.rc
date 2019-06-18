@@ -317,7 +317,6 @@ END
 STRINGTABLE 
 BEGIN
     IDS_PVCAM               "PVCam"
-    IDS_SAME_AS_PREVIEW     "预览"
     IDS_PREDEFINED_METHODIC "预先定义"
     IDS_NEW_METHODIC        "新的纹理"
     IDS_IMAGE               "图像"
@@ -395,7 +394,6 @@ END
 STRINGTABLE 
 BEGIN
     IDS_PVCAM               "PVCam"
-    IDS_SAME_AS_PREVIEW     "Preview"
     IDS_PREDEFINED_METHODIC "Predefined"
     IDS_NEW_METHODIC        "New methodic"
     IDS_IMAGE               "Image"
@@ -794,7 +792,6 @@ END
 STRINGTABLE 
 BEGIN
     IDS_PVCAM               "PVCam"
-    IDS_SAME_AS_PREVIEW     "Preview"
     IDS_PREDEFINED_METHODIC "Predefined"
     IDS_NEW_METHODIC        "New methodic"
     IDS_IMAGE               "Image"

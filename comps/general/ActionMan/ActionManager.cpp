@@ -515,7 +515,7 @@ void CActionManager::OnChangeParent()
 	sptrIApplication	spApp( ::GetAppUnknown() );
 	IUnknown	*punkTargetMan = 0;
 	spApp->GetTargetManager( &punkTargetMan );
-	m_ptrTargetManager = (IActionTargetManager*)punkTargetMan;
+	m_ptrTargetManager = punkTargetMan;
 	punkTargetMan->Release();
 
 	//cache all avaible actions

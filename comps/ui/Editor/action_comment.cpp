@@ -47,13 +47,13 @@ END_INTERFACE_MAP()
 IMPLEMENT_UNKNOWN(CActionEditComment, DrAction)
 IMPLEMENT_UNKNOWN_BASE(CActionEditComment, ScriptNotify )
 
-HRESULT CActionEditComment::XDrAction::GetFirstObjectPosition(LONG_PTR *plpos)
+HRESULT CActionEditComment::XDrAction::GetFirstObjectPosition( long *plpos )
 {
 	METHOD_PROLOGUE_EX(CActionEditComment, DrAction);
 	(*plpos) = 1;
 	return S_OK;
 }
-HRESULT CActionEditComment::XDrAction::GetNextObject(IUnknown **ppunkObject, LONG_PTR *plpos)
+HRESULT CActionEditComment::XDrAction::GetNextObject( IUnknown **ppunkObject, long *plpos )
 {
 	METHOD_PROLOGUE_EX(CActionEditComment, DrAction);
 	*ppunkObject = pThis->m_ptrComment;
@@ -734,7 +734,7 @@ void CActionEditComment::_ResetPunkEditedObj()
 	
 
 	ASSERT(sptrList != 0);
-	POSITION POS = 0;
+	long POS = 0;
 	sptrList->GetFirstChildPosition( &POS );
 	int idx = 0;
 	while(POS)
@@ -1149,7 +1149,7 @@ void CActionEditComment::_ModifyCurrentObj(CPoint pt)
 	sptrICommentObj sptrObj = 0;
 	IUnknown* punk = 0;
 	if(sptrList == 0)return;
-	POSITION POS = 0;
+	long POS = 0;
 	sptrList->GetFirstChildPosition( &POS );
 	CRect	rcText;
 	CPoint	ptArrow;
@@ -1500,7 +1500,7 @@ void CActionEditComment::_SetHotPointsArray(IUnknown* punkExceptThis)
 	sptrICommentObj sptrObj = 0;
 	IUnknown* punk = 0;
 	if(sptrList == 0)return;
-	POSITION POS = 0;
+	long POS = 0;
 	sptrList->GetFirstChildPosition( &POS );
 	CRect	rcText;
 	CPoint	ptArrow;
@@ -1555,7 +1555,7 @@ void CActionEditComment::_KillHotPointsArray()
 	sptrICommentObj sptrObj = 0;
 	IUnknown* punk = 0;
 	if(sptrList == 0)return;
-	POSITION POS = 0;
+	long POS = 0;
 	sptrList->GetFirstChildPosition( &POS );
 	while(POS)
 	{

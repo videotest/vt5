@@ -303,7 +303,7 @@ static bool create_compatible_ol( IUnknown* punk_src, IUnknown* punk_target, boo
 	INamedDataObject2Ptr ptr_list( ptr_co );
 	if( ptr_list )
 	{
-		TPOS lpos = 0;
+		long lpos = 0;
 		ptr_list->GetFirstChildPosition( &lpos );
 		while( lpos )
 		{
@@ -538,7 +538,7 @@ bool CSegmObjects::InvokeFilter()
 	int nObject=0;
 	StartNotification(nCount,1,1);
 
-	TPOS pos; objectsOut->GetFirstChildPosition(&pos);
+	long pos; objectsOut->GetFirstChildPosition(&pos);
 	while( pos ) //по всем объектам
 	{
 		IUnknownPtr ptr1;
@@ -776,7 +776,7 @@ bool CSegmLines::InvokeFilter()
 
 	// заполнение binary
 	{
-		TPOS pos; pResParticles->GetFirstChildPosition(&pos);
+		long pos; pResParticles->GetFirstChildPosition(&pos);
 		while( pos ) //по всем объектам
 		{
 			IUnknownPtr ptr1;
@@ -816,7 +816,7 @@ bool CSegmLines::InvokeFilter()
 	int nObject=0;
 	StartNotification(nCount,1,1);
 
-	TPOS pos; pResParticles->GetFirstChildPosition(&pos);
+	long pos; pResParticles->GetFirstChildPosition(&pos);
 	while( pos ) //по всем объектам
 	{
 		IUnknownPtr ptr1;

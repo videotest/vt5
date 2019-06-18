@@ -131,43 +131,43 @@ Only in a working session the events on the FireWire bus will be reported (in co
 If as callback NULL was given, no reports about events on the FireWire bus comes in. 
 
 - A working session with CxxPlus.dll is typically timely structured as follows :
-\code
-// C/C++ code fragment
-  unsigned long Number=10;
-  unsigned __int64 GUID_List[10];
+  \code
+  // C/C++ code fragment
+    unsigned long Number=10;
+    unsigned __int64 GUID_List[10];
   
-  void __stdcall InitCB(  unsigned long status,
-                         unsigned long UserValue,
-                         unsigned __int64 CamGUID)
-  {
-    //... doing something with respect to unpluggin/ plugging of cameras
-  }
+    void __stdcall InitCB(  unsigned long status,
+                           unsigned long UserValue,
+                           unsigned __int64 CamGUID)
+    {
+      //... doing something with respect to unpluggin/ plugging of cameras
+    }
 
     // Starts the working session with the CxxPlus.dll.
-  long resinit=mexInit(InitCB,0); // no specific user value
+    long resinit=mexInit(InitCB,0); // no specific user value
   
-  long res=-1;
-  if(resinit==NOERR)
-  {
-      // Searching for avalable cameras
-    res=mexFindCameras(&Number,GUID_List);
-    if(res==NOERR && Number>0)
+    long res=-1;
+    if(resinit==NOERR)
     {
-        // Start a camera session.
-      res=mexOpenCamera(GUID_List[0]); // open camera session (if wanted camera is identified by GUID_List[0]);
-      if(res==NOERR)
+      // Searching for avalable cameras
+      res=mexFindCameras(&Number,GUID_List);
+      if(res==NOERR && Number>0)
       {
-       // .... use other MexAPI functions
-       // ....
-       // ....GUID_List[0]
+        // Start a camera session.
+        res=mexOpenCamera(GUID_List[0]); // open camera session (if wanted camera is identified by GUID_List[0]);
+        if(res==NOERR)
+        {
+         // .... use other MexAPI functions
+         // ....
+         // ....GUID_List[0]
          // Finish a camera session.
-       mexCloseCamera(GUID_List[0]);  // close the camera session with the specified camera
+         mexCloseCamera(GUID_List[0]);  // close the camera session with the specified camera
+        }
       }
-    }
       // Finish the working session with CxxPlus.dll.
       mexExit();
-  }
-\endcode
+    }
+  \endcode
 - The time interval from ::mexOpenCamera (camguid) to ::mexCloseCamera (camguid) ist called <b> camera session </b>.
 A camera session is specific to an unique camera identified by the global unique identifier camguid.
 Almost all functions of <b> MexAPI </b> are successfully callable <b> only in a camera session </b>. But some 
@@ -448,7 +448,7 @@ typedef struct mexImageParams
   mexImageProc pImageproc;	      //!< Progress callback routine, may be NULL.
   DWORD dwData;						        //!< User Data for pImageproc. 
 } mexImageParams;
-		
+
 //! Structure for positions of the piezo scanner.
 //! Structure to control the piezo scanner of ProgResC14Plus and ProgResM14Plus.
 //! \note 
@@ -1016,7 +1016,7 @@ CXXPLUS_SPEC long __stdcall mexCloseImageTransfer(unsigned __int64 CamGUID);
 //! \retval ::NOERR if successful.
 //! \retval ::PARAMERR if something in the parameter list is wrong.
 CXXPLUS_SPEC long __stdcall mexFreeInternalMemory(unsigned __int64 CamGUID,int parts);
-
+                                                                                                 
 //! \brief Modify aquisition parameters while live mode is running.
 //!
 //! \param[in] CamGUID Global unique identifier of camera.
@@ -1420,7 +1420,7 @@ CXXPLUS_SPEC long  __stdcall mexSetScannerPositions(unsigned __int64 CamGUID, //
 //! \note This function is only supported by ProgResC14Plus.
 CXXPLUS_SPEC long  __stdcall mexGetScannerPositions(unsigned __int64 CamGUID,
                                                     mexScannerPositions * pSP
-                                          );
+                                                   );
 //! Reset the scanner position to that from EPROM of camera. 
 //! \param[in] CamGUID Global unique identifier of camera.
 //! \retval ::NOERR If OK.

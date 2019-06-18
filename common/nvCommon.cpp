@@ -25,7 +25,7 @@ std_dll bool EnumStealthKeys(KeyInfo * pKeyInfo, int nNumKeys, WORD wSerialNum)
 	if (!pKeyInfo || !nNumKeys)
 		return false;
 
-	nvInitialize(0, 0, wSerialNum);
+//	nvInitialize(0, 0, wSerialNum);
 
 	DWORD dwID = 0;
 	int nRet = nskFindFirst(nvGetPid(), &dwID);

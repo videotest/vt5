@@ -29,6 +29,7 @@ inline long cmp_len_CString( const CString psz1, const CString psz2 )
 
 typedef _list_map_t<CString, CString, cmp_len_CString> CSubstMap;
 
+
 // Фильтрация: перекладываем все, кроме pszDisabledKeys, из одной NamedData
 // в другую; при этом подменяем все пути в соответствии с pSubstMap (все
 // строки, начинающиеся с ключей pSubstMap заменяем на значения pSubstMap).
@@ -39,12 +40,6 @@ bool RecursiveAddEntry( INamedData* ptrDst, INamedData* ptrSrc, LPCSTR pszEntry,
 // всех путей из [Paths] на текущие
 bool ImportShellData( IUnknown* punkSrc, char* pszDisabledKeys );
 
-// инициализация мапы для подстановок \\Paths из одной shell.data в другую
-bool InitSubstMap( CSubstMap* pMap, INamedDataPtr sptrSrc, INamedDataPtr sptrDst );
-
 // импорт shell.data с учетом MergeKeys и с подменой
 // всех путей из [Paths] на текущие
 bool ImportShellData2( IUnknown* punkSrc );
-
-// поправить в punkData все пути в соответствии с pSubstMap
-bool FilterNamedData( IUnknown* punkData, CSubstMap* pSubstMap );

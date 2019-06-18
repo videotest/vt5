@@ -76,8 +76,8 @@ public:
 
 	DECLARE_INTERFACE_MAP();
 	BEGIN_INTERFACE_PART(DrAction, IObjectAction)
-		com_call GetFirstObjectPosition(LONG_PTR *plpos);
-		com_call GetNextObject(IUnknown **ppunkObject, LONG_PTR *plpos);
+		com_call GetFirstObjectPosition( long *plpos );
+		com_call GetNextObject( IUnknown **ppunkObject, long *plpos );
 		com_call AddObject( IUnknown *punkObject );
 	END_INTERFACE_PART(DrAction)
 

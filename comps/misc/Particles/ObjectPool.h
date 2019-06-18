@@ -22,7 +22,7 @@ public:
 private:
 	INamedDataObject2Ptr m_List;
 	IImage3Ptr m_Image;
-	TPOS m_lPos;
+	long m_lPos;
 	int m_cx, m_cy; //predefined size for objects
 	_list_t2 <IUnknown*, FreeReleaseUnknown> m_Objects;
 };

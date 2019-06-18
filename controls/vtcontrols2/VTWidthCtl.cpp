@@ -579,7 +579,7 @@ void CVTWidthCtrl::OnButtonUpClicked()
 	if(m_Orientation)
 		SetWidth(m_Width-1);
 	else
-		SetWidth(m_Width+1);
+	SetWidth(m_Width+1);
 }
 
 void CVTWidthCtrl::OnButtonDownClicked()
@@ -587,7 +587,7 @@ void CVTWidthCtrl::OnButtonDownClicked()
 	if(m_Orientation)
 		SetWidth(m_Width+1);
 	else
-		SetWidth(m_Width-1);
+	SetWidth(m_Width-1);
 }
 
 void CVTWidthCtrl::OnButtonSliderClicked()

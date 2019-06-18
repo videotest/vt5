@@ -217,7 +217,7 @@ HRESULT CActionSewImport::DoInvoke()
 			IDataContext2Ptr sptrDC(m_ptrTarget);
 			if (sptrDC != 0)
 			{
-				LONG_PTR lpos;
+				long lpos;
 				sptrDC->GetFirstObjectPos(_bstr_t(szArgumentTypeImage), &lpos);
 				if (lpos != 0)
 					sptrDC->GetNextObject(_bstr_t(szArgumentTypeImage), &lpos, &punkImg);
@@ -235,13 +235,13 @@ HRESULT CActionSewImport::DoInvoke()
 
 HRESULT CActionSewImport::DoUndo()
 {
-	TPOS lPosActive, lPosLast;
+	long lPosActive,lPosLast;
 	m_sptrSLI->GetActiveFragmentPosition(&lPosActive);
 	m_sptrSLI->GetLastFragmentPosition(&lPosLast);
 	if (lPosActive != 0 && lPosActive == lPosLast)
 	{
 		ISewFragmentPtr sptrFrag;
-		TPOS l = lPosActive;
+		long l = lPosActive;
 		m_sptrSLI->GetNextFragment(&l, &sptrFrag);
 		sptrFrag->GetOffset(&m_ptPos);
 		sptrFrag->GetImage(NULL, &m_punkImage);
@@ -319,7 +319,7 @@ HRESULT CActionSewExport::DoInvoke()
 		RemoveFromDocData(m_ptrTarget, punkImg);
 	if (nFragNum < 0)
 	{
-		TPOS lPos;
+		long lPos;
 		sptrSLI->GetActiveFragmentPosition(&lPos);
 		if (lPos != 0)
 		{
@@ -331,7 +331,7 @@ HRESULT CActionSewExport::DoInvoke()
 	else
 	{
 		int iNum = 0;
-		TPOS lPos = 0;
+		long lPos = 0;
 		sptrSLI->GetFirstFragmentPos(&lPos);
 		while (lPos)
 		{
@@ -364,7 +364,6 @@ CActionSewMoveFragment::CActionSewMoveFragment(void)
 	m_bEnableMove = false;
 	m_bMoved = false;
 	m_bMoveLV = false;
-	m_bKeyPress = false;
 }
 
 CActionSewMoveFragment::~CActionSewMoveFragment(void)
@@ -420,7 +419,7 @@ bool CActionSewMoveFragment::Finalize()
 
 bool CActionSewMoveFragment::GetMoveableFragmentRect(RECT &rcMoveFrag)
 {
-	TPOS lposLast = 0, lposActive = 0;
+	long lposLast = 0, lposActive = 0;
 	m_sptrSLI->GetLastFragmentPosition(&lposLast);
 	m_sptrSLI->GetActiveFragmentPosition(&lposActive);
 	if (lposActive == lposLast && lposLast != NULL)
@@ -464,7 +463,7 @@ bool CActionSewMoveFragment::DoLButtonDown( _point point )
 	}
 	else
 	{
-		TPOS lpos = 0;
+		long lpos = 0;
 		m_sptrSLI->GetLastFragmentPosition(&lpos);
 		if (lpos != 0)
 			m_sptrSLI->GetNextFragment(&lpos, &m_sptrFrag);
@@ -525,14 +524,14 @@ bool CActionSewMoveFragment::DoLButtonUp( _point point )
 	{
 		CPoint ptOrig;
 		m_sptrSLI->GetOrigin(&ptOrig);
-		TPOS lPosActive = 0;
+		long lPosActive = 0;
 		m_sptrSLI->GetActiveFragmentPosition(&lPosActive);
-		TPOS lPosFound = 0;
-		TPOS lPos = 0;
+		long lPosFound = 0;
+		long lPos = 0;
 		m_sptrSLI->GetFirstFragmentPos(&lPos);
 		while (lPos)
 		{
-			TPOS lPosPrev = lPos;
+			long lPosPrev = lPos;
 			ISewFragmentPtr sptrFrag;
 			m_sptrSLI->GetNextFragment(&lPos, &sptrFrag);
 			if (lPosPrev == lPosActive )
@@ -574,7 +573,7 @@ bool CActionSewMoveFragment::DoRButtonUp( _point point )
 	else
 	{
 		// 1. Calculate point in document coordinates.
-		TPOS lposLast = 0;
+		long lposLast = 0;
 		m_sptrSLI->GetLastFragmentPosition(&lposLast);
 		ISewFragmentPtr sptrLastFrag;
 		if (lposLast != 0)
@@ -589,10 +588,11 @@ bool CActionSewMoveFragment::DoRButtonUp( _point point )
 		m_sptrSLI->GetOrigin(&ptOrig);
 		point.x += ptOrig.x;
 		point.y += ptOrig.y;
+//		point.x -= szLastFrag.cx/2;
+//		point.y -= szLastFrag.cy/2;
 		// 2. Find base fragment.
-		ISewFragmentPtr sptrFragFound = GetLastFragByPoint(lposLast,m_sptrSLI,point);
-		/*ISewFragmentPtr sptrFragFound;
-		LPOS lPos = lposLast;
+		ISewFragmentPtr sptrFragFound;
+		long lPos = lposLast;
 		while (lPos)
 		{
 			ISewFragmentPtr sptrFrag;
@@ -608,7 +608,7 @@ bool CActionSewMoveFragment::DoRButtonUp( _point point )
 				break;
 			}
 
-		}*/
+		}
 		// 3. Correct position using found fragment.
 		if (sptrFragFound != 0)
 		{
@@ -626,77 +626,14 @@ bool CActionSewMoveFragment::DoRButtonUp( _point point )
 	return b;
 }
 
-static CPoint _OffsetByKey(int nKey, int nDelta)
-{
-	if (nKey == VK_LEFT)
-		return CPoint(-nDelta,0);
-	else if (nKey == VK_RIGHT)
-		return CPoint(nDelta,0);
-	else if (nKey == VK_UP)
-		return CPoint(0,-nDelta);
-	else if (nKey == VK_DOWN)
-		return CPoint(0,nDelta);
-	return CPoint(0,0);
-}
-
-void CActionSewMoveFragment::ProcessKeyboardMove(WPARAM wParam, bool bFinally)
-{
-	int nDelta = 1;
-	if (::GetAsyncKeyState(VK_CONTROL) & 0x8000)
-	{
-		nDelta = 10;
-	}
-	BOOL bShowLV = FALSE;
-	m_sptrView->get_ShowLiveVideo(&bShowLV);
-	if (bShowLV)
-	{
-		CRect rcLV;
-		m_sptrView->GetLiveVideoRect((int *)&rcLV.left, (int *)&rcLV.top, (int *)&rcLV.right, (int *)&rcLV.bottom);
-		rcLV.OffsetRect(_OffsetByKey(wParam,nDelta));
-	}
-	else
-	{
-		TPOS lpos = 0, lposActive = 0;
-		m_sptrSLI->GetLastFragmentPosition(&lpos);
-		m_sptrSLI->GetActiveFragmentPosition(&lposActive);
-		if (lpos == lposActive)
-		{
-			ISewFragmentPtr sptrFrag;
-			m_sptrSLI->GetNextFragment(&lpos,&sptrFrag);
-			if (sptrFrag != 0)
-			{
-				CPoint ptOffs;
-				sptrFrag->GetOffset(&ptOffs);
-				ptOffs.Offset(_OffsetByKey(wParam,nDelta));
-				m_sptrSLI->MoveFragment(sptrFrag, ptOffs, bFinally?moveFragCalcOvr|moveFragFire:0);
-			}
-		}
-	}
-}
 
 LRESULT	CActionSewMoveFragment::DoMessage( UINT nMsg, WPARAM wParam, LPARAM lParam )
 {
-	if (nMsg == WM_KEYDOWN)
+	if (nMsg == 0x202)
 	{
-		if (wParam == VK_LEFT || wParam == VK_RIGHT || wParam == VK_UP || wParam == VK_DOWN)
-		{
-			if (m_bKeyPress)
-				ProcessKeyboardMove(wParam, false);
-			else
-				m_bKeyPress = true;
-		}
+		OutputDebugString("WM_LBUTTONUP\n");
 	}
-	else if (nMsg == WM_KEYUP)
-	{
-		if (wParam == VK_LEFT || wParam == VK_RIGHT || wParam == VK_UP || wParam == VK_DOWN)
-		{
-			ProcessKeyboardMove(wParam, true);
-			m_bKeyPress = false;
-		}
-	}
-	else if (nMsg == WM_SETCURSOR)
-	{
-		if (m_sptrView != 0 && m_sptrSLI != 0)
+	if (nMsg == WM_SETCURSOR && m_sptrView != 0 && m_sptrSLI != 0)
 	{
 		CPoint ptCursor;
 		GetCursorPos(&ptCursor);
@@ -727,7 +664,6 @@ LRESULT	CActionSewMoveFragment::DoMessage( UINT nMsg, WPARAM wParam, LPARAM lPar
 				::SetCursor(::LoadCursor(NULL, IDC_ARROW));
 		}
 		return 1L;
-	}
 	}
 	return CInteractiveAction::DoMessage(nMsg,wParam,lParam);
 }
@@ -803,13 +739,13 @@ HRESULT CActionSewDeleteFragment::DoInvoke()
 		punkSLI = IUnknownPtr(::GetActiveObjectFromDocument(m_ptrTarget,szArgumentTypeSewLI), false);
 	ISewImageListPtr sptrSLI(punkSLI);
 	if (sptrSLI == 0) return S_FALSE;
-	TPOS lPosActive, lPosLast;
+	long lPosActive,lPosLast;
 	sptrSLI->GetActiveFragmentPosition(&lPosActive);
 	sptrSLI->GetLastFragmentPosition(&lPosLast);
 	if (lPosActive != 0 && lPosActive == lPosLast)
 	{
 		ISewFragmentPtr sptrFrag;
-		TPOS l = lPosActive;
+		long l = lPosActive;
 		sptrSLI->GetNextFragment(&l, &sptrFrag);
 		sptrFrag->GetOffset(&m_ptPos);
 		sptrFrag->GetImage(NULL, &m_punkImage);
@@ -827,13 +763,13 @@ HRESULT CActionSewDeleteFragment::DoUndo()
 
 HRESULT CActionSewDeleteFragment::DoRedo()
 {
-	TPOS lPosActive, lPosLast;
+	long lPosActive,lPosLast;
 	m_sptrSLI->GetActiveFragmentPosition(&lPosActive);
 	m_sptrSLI->GetLastFragmentPosition(&lPosLast);
 	if (lPosActive != 0 && lPosActive == lPosLast)
 	{
 		ISewFragmentPtr sptrFrag;
-		TPOS l = lPosActive;
+		long l = lPosActive;
 		m_sptrSLI->GetNextFragment(&l, &sptrFrag);
 		sptrFrag->GetOffset(&m_ptPos);
 		sptrFrag->GetImage(NULL, &m_punkImage);
@@ -938,8 +874,7 @@ bool CActionSewSaveImage::InvokeFilter()
 {
 	ISewImageListPtr sptrSLI(GetDataArgument());
 	IImagePtr img(GetDataResult());
-	int cx = GetArgLong("CX"), cy;
-	double dZoom = 1.;
+	int cx = GetArgLong("CX"), cy, nZoom;
 	CSize sizeSLI;
 	sptrSLI->GetSize(&sizeSLI);
 	CPoint ptSLIOffs;
@@ -950,49 +885,50 @@ bool CActionSewSaveImage::InvokeFilter()
 		int nLimitY = GetValueInt(GetAppUnknown(), "\\Sew Large Image\\Limits", "LimitY", 3072);
 		if (sizeSLI.cx > nLimitX || sizeSLI.cy > nLimitY)
 		{
-			int nx,ny;
-			if (double(sizeSLI.cx)/sizeSLI.cy>double(nLimitX)/nLimitY)
-			{
-				dZoom = double(nLimitX)/double(sizeSLI.cx);
-				nx = nLimitX;
-				ny = (int)ceil(sizeSLI.cy*dZoom);
-			}
-			else
-			{
-				dZoom = double(nLimitY)/double(sizeSLI.cy);
-				nx = (int)ceil(sizeSLI.cx*dZoom);
-				ny = nLimitY;
-			}
+			double dZoomX = double(nLimitX)/double(sizeSLI.cx);
+			double dZoomY = double(nLimitY)/double(sizeSLI.cy);
+			double dZoom = min(dZoomX,dZoomY);
+			nZoom = (int)ceil(1./dZoom);
 			SIZE aSizes[2];
-			aSizes[0].cx = nx;
-			aSizes[0].cy = ny;
-			aSizes[1].cx = nx/2;
-			aSizes[1].cy = ny/2;
+			aSizes[0].cx = (int)(sizeSLI.cx/nZoom);
+			aSizes[0].cy = (int)(sizeSLI.cy/nZoom);
+			aSizes[1].cx = (int)(sizeSLI.cx/nZoom/2);
+			aSizes[1].cy = (int)(sizeSLI.cy/nZoom/2);
 			CSaveSewImgDlg dlg(aSizes, 2, 3);
 			if (dlg.DoModal() == IDCANCEL)
 				return S_FALSE;
 			cx = aSizes[dlg.m_nFmt].cx;
 			cy = aSizes[dlg.m_nFmt].cy;
 			if (dlg.m_nFmt == 1)
-				dZoom /= 2.;
+				nZoom *= 2;
 		}
 		else
 		{
-			dZoom = 1.;
+			nZoom = 1;
 			cx = sizeSLI.cx;
 			cy = sizeSLI.cy;
 		}
 	}
 	else
 	{
-		dZoom = sizeSLI.cx/double(cx);
-		cy = (int)ceil(sizeSLI.cy*dZoom);
+		int nZoom = sizeSLI.cx/cx;
+		cy = sizeSLI.cy/nZoom;
 	}
 	img->CreateImage(cx, cy, _bstr_t("RGB"), -1);
 	FillImage(img, cx, cy, false, RGB(255,255,255));
 	CDistMap DMTotal;
 	DMTotal.CreateNew(cx,cy);
-	TPOS lpos = 0;
+	long lpos = 0;
+/*	sptrSLI->GetFirstFragmentPos(&lpos);
+	while (lpos)
+	{
+		ISewFragmentPtr sptrFrag;
+		sptrSLI->GetNextFragment(&lpos, &sptrFrag);
+		CRect rc = GetFragmentRect(sptrFrag);
+		rc.OffsetRect(-ptSLIOffs.x, -ptSLIOffs.y);
+		CRect rcZ = CRect(rc.left/nZoom, rc.top/nZoom, rc.right/nZoom, rc.bottom/nZoom);
+		DMTotal.AddRect(rcZ);
+	}*/
 	long lFragCount;
 	sptrSLI->GetFragmentsCount(&lFragCount);
 	int iFragment = 0;
@@ -1005,8 +941,7 @@ bool CActionSewSaveImage::InvokeFilter()
 		sptrSLI->GetNextFragment(&lpos, &sptrFrag);
 		CRect rc = GetFragmentRect(sptrFrag);
 		rc.OffsetRect(-ptSLIOffs.x, -ptSLIOffs.y);
-		CRect rcZ = CRect((int)floor(rc.left*dZoom), (int)floor(rc.top*dZoom),
-			(int)ceil(rc.right*dZoom), (int)ceil(rc.bottom*dZoom));
+		CRect rcZ = CRect(rc.left/nZoom, rc.top/nZoom, rc.right/nZoom, rc.bottom/nZoom);
 		CLoadFragment lf(sptrFrag, 1);
 		int nZoom11 = 1;
 		IUnknownPtr punkImgFrag;
@@ -1016,7 +951,7 @@ bool CActionSewSaveImage::InvokeFilter()
 		DMCur.CreateNew(cx,cy);
 		DMCur.AddRect(rcZ);
 		DMTotal.AddRect(rcZ);
-		CopyImage(img, imgFrag, rcZ.TopLeft(), CPoint(0,0), rc.Size(), dZoom,
+		CopyImage(img, imgFrag, rcZ.TopLeft(), CPoint(0,0), rc.Size(), nZoom,
 			&DMTotal, &DMCur);
 		Notify(iFragment++);
 	}

@@ -97,7 +97,7 @@ void CMorphoGraph::WriteToTextFile(CString& strDes, CString& path)
 		TCHAR s[1024];
 		e->GetErrorMessage((LPTSTR)&s,1024);
 		s[1023] ='\n';
-		OutputDebugString(s);
+		OutputDebugStr(s);
 	}	
 }
 
@@ -274,7 +274,7 @@ void CCurvatureBin::GetDescriptor(CurveDescr& cd)
 		delete[] old;
 		
 
-//__asm nop
+__asm nop
 }
 
 

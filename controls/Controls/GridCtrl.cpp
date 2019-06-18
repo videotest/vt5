@@ -2851,7 +2851,7 @@ BOOL CGridCtrl::PasteTextToGrid(CCellID cell, COleDataObject* pDataObject)
 
     // Get the text from the COleDataObject
     HGLOBAL hmem = pDataObject->GetGlobalData(CF_TEXT);
-		CMemFile sf((BYTE*) ::GlobalLock(hmem), (UINT)::GlobalSize(hmem));
+    CMemFile sf((BYTE*) ::GlobalLock(hmem), ::GlobalSize(hmem));
 
     // CF_TEXT is ANSI text, so we need to allocate a char* buffer
     // to hold this.
@@ -2859,7 +2859,7 @@ BOOL CGridCtrl::PasteTextToGrid(CCellID cell, COleDataObject* pDataObject)
     if (!szBuffer)
         return FALSE;
 
-    sf.Read(szBuffer, (UINT)::GlobalSize(hmem));
+    sf.Read(szBuffer, ::GlobalSize(hmem));
     ::GlobalUnlock(hmem);
 
     // Now store in generic TCHAR form so we no longer have to deal with
@@ -3604,10 +3604,8 @@ void CGridCtrl::EnableScrollBarCtrl( int nBar, BOOL bEnable )
 BOOL CGridCtrl::SetScrollInfo( int nBar, SCROLLINFO *psi, BOOL fRedraw )
 {
 	HWND	hwnd = GetScrollBarCtrl( nBar )->GetSafeHwnd();
-	if( hwnd )
-		return (BOOL)::SendMessage(hwnd, SBM_SETSCROLLINFO, fRedraw, (LPARAM)psi);
-	else 
-		return (BOOL)CWnd::SetScrollInfo(nBar, psi, fRedraw);
+	if( hwnd )return ::SendMessage( hwnd, SBM_SETSCROLLINFO, fRedraw, (LPARAM)psi );
+	else return CWnd::SetScrollInfo(nBar, psi, fRedraw);
 }
 
 BOOL CGridCtrl::GetScrollInfo(int nBar, LPSCROLLINFO psi, UINT nMask )
@@ -3618,8 +3616,7 @@ BOOL CGridCtrl::GetScrollInfo(int nBar, LPSCROLLINFO psi, UINT nMask )
 		psi->fMask = nMask;
 		return ::SendMessage( hwnd, SBM_GETSCROLLINFO, 0, (LPARAM)psi );
 	}
-	else 
-		return CWnd::GetScrollInfo(nBar, psi, nMask);
+	else return CWnd::GetScrollInfo(nBar, psi, nMask);
 }
 
 void CGridCtrl::GetScrollRange(int nBar, LPINT lpMinPos, LPINT lpMaxPos) const
@@ -8497,11 +8494,11 @@ void CGridCtrl::SetSaveWidth(int nIndex, CELLHEIGHT nSize)
 		m_arrSaveWidths[nIndex] = nSize;
 	else
 	{
-		INT_PTR nPrev = m_arrSaveWidths.GetSize();
+		int nPrev = m_arrSaveWidths.GetSize();
 		m_arrSaveWidths.SetSize(nIndex + 1);
 		if (nPrev >= 0)
 		{
-			for (INT_PTR i = nPrev; i < m_arrSaveWidths.GetSize(); i++)
+			for (int i = nPrev; i < m_arrSaveWidths.GetSize(); i++)
 				m_arrSaveWidths[i] = GetColumnCount() > i ? GetColumnWidth(i) : m_nDefCellWidth;
 		}
 

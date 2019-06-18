@@ -29,7 +29,7 @@ _ainfo_base::arg	CFindCurvesInfo::s_pargs[] =
 static double inline sqr(double x)
 { return x*x; }
 
-static inline int iround(double x)
+static inline int round(double x)
 {
 	return int(floor(x+0.5));
 }
@@ -45,8 +45,8 @@ void CFindCurves::FindCurve()
 	int count_good = 0;
 	for(int i=0; i<100; i++)
 	{
-		int x0 = iround(fx);
-		int y0 = iround(fy);
+		int x0 = round(fx);
+		int y0 = round(fy);
 		double sx=0, sy=0, s=0;
 		for(int yy=-1; yy<=1; yy++)
 		{
@@ -123,7 +123,7 @@ CRadiusDetector::CRadiusDetector(byte** ppData, int cx, int cy, double r_detecto
     m_r_detector = r_detector;
 
 	int r=int(ceil(r_detector));
-	m_na = iround(r_detector*8);
+	m_na = round(r_detector*8);
 
 	m_dx.alloc(m_na*2);
 	m_dy.alloc(m_na*2);
@@ -131,8 +131,8 @@ CRadiusDetector::CRadiusDetector(byte** ppData, int cx, int cy, double r_detecto
 
 	for(int i=0; i<m_na*2; i++)
 	{
-		m_dx[i] = iround(r_detector*cos(i*2*PI/m_na));
-		m_dy[i] = iround(r_detector*sin(i*2*PI/m_na));
+		m_dx[i] = round(r_detector*cos(i*2*PI/m_na));
+		m_dy[i] = round(r_detector*sin(i*2*PI/m_na));
 		m_rr[i] = r_detector / max(0.0001, cos(PI*i/m_na)) / 2;
 	}
 
@@ -145,8 +145,8 @@ double CRadiusDetector::GetVal(int x, int y)
 
 	for(int i=0; i<m_na*2; i++)
 	{
-		int y2 = y + iround(m_dy[i]);
-		int x2 = x + iround(m_dx[i]);
+		int y2 = y + round(m_dy[i]);
+		int x2 = x + round(m_dx[i]);
 		if(x2<0 || x2>=m_cx || y2<0 || y2>=m_cy)
 			continue; // при выходе за пределы не вполне корректно, но обработаем
 		if(m_ppData[y2][x2])

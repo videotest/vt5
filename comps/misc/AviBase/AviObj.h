@@ -12,12 +12,7 @@
 #include "misc_list.h"
 
 #include <dshow.h>
-#define __IDxtCompositor_INTERFACE_DEFINED__
-#define __IDxtAlphaSetter_INTERFACE_DEFINED__
-#define __IDxtJpeg_INTERFACE_DEFINED__
-#define __IDxtKey_INTERFACE_DEFINED__
-#include "qeditMy.h"
-
+#include <qedit.h>
 #include "\vt5\crypto\crypto.h"
 
 class CAviObj : public CObjectBase,
@@ -293,10 +288,10 @@ protected:
 	INamedDataObject2Ptr	m_ptrParent;
 	IUnknownPtr				m_ptrNamedData;
 	_list_t2<IUnknown*>		m_listChilds;	
-	TPOS					m_posActiveChild;
-	TPOS					m_posInParent;
+	long					m_posActiveChild;
+	long					m_posInParent;
 
-	TPOS					FindChildPos( IUnknown* punkChild );
+	long					FindChildPos( IUnknown* punkChild );
 	bool					m_bDummyStub;
 
 
@@ -313,20 +308,20 @@ protected:
 	com_call AddChild( IUnknown *punkChild );
 
 	com_call GetChildsCount( long *plCount );
-	com_call GetFirstChildPosition(TPOS *plPos);
-	com_call GetNextChild(TPOS *plPos, IUnknown **ppunkChild);
-	com_call GetLastChildPosition(TPOS *plPos);
-	com_call GetPrevChild(TPOS *plPos, IUnknown **ppunkChild);
+	com_call GetFirstChildPosition( long *plPos );
+	com_call GetNextChild( long *plPos, IUnknown **ppunkChild );
+	com_call GetLastChildPosition(long *plPos);
+	com_call GetPrevChild(long *plPos, IUnknown **ppunkChild);
 	
 	virtual void	_DetachChildParent(); //отвязать всех чайлдов	
 
-	com_call SetActiveChild(TPOS lPos);
-	com_call GetActiveChild(TPOS *plPos);
+	com_call SetActiveChild( long lPos );
+	com_call GetActiveChild( long *plPos );
 
-	com_call GetObjectPosInParent(TPOS *plPos); // return object position in parent's object child list
-	com_call SetObjectPosInParent(TPOS lPos);
+	com_call GetObjectPosInParent( long *plPos ); // return object position in parent's object child list
+	com_call SetObjectPosInParent( long lPos ); 
 
-	com_call GetChildPos(IUnknown *punkChild, TPOS *plPos);
+	com_call GetChildPos(IUnknown *punkChild, long *plPos);
 
 protected:
 	vlong *m_pSignatures; // подписи всех кадров

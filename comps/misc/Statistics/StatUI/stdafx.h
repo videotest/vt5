@@ -10,9 +10,7 @@
 #define _USE_MATH_DEFINES
 #define _WIN32_WINNT 0x501
 #define _WTL_NO_CSTRING
-#define _HAS_AUTO_PTR_ETC 1
 
-#include <memory>
 #include <math.h>
 
 // Windows Header Files:
@@ -28,7 +26,7 @@ extern CAppModule _Module;
 //#include <atlgdix.h>
 #include <atlsplit.h>
 #include <atlscrl.h>
-//#include <atlcoll.h>
+#include <atlcoll.h>
 
 #include <comdef.h>
 #include <atlstr.h>
@@ -69,7 +67,7 @@ using std::valarray;
 typedef valarray<double> dblArray;
 #include <map>
 using std::map;
-#include <unordered_map>
+#include <hash_map>
 //using std::hash_map;
 #include <vector>
 using std::vector;
@@ -111,4 +109,10 @@ inline BOOL _InvalidateRect(
 	else
 		::InvalidateRect( hWnd, lpRect, bErase );
 	return true;
+}
+namespace{
+	inline int round(double x)
+	{
+		return int(floor(x+0.5));
+	}
 }

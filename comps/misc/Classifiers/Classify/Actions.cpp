@@ -90,7 +90,7 @@ IUnknownPtr _GetObjectByName( IUnknown *punkFrom, const BSTR bstrObject, const B
 			continue;
 
 		IUnknown	*punkObj = 0;
-		LONG_PTR	dwPos = 0;
+		long	dwPos = 0;
 
 		ptrDataType->GetObjectFirstPosition( nType, &dwPos );
 
@@ -109,7 +109,7 @@ IUnknownPtr _GetObjectByName( IUnknown *punkFrom, const BSTR bstrObject, const B
 			INamedDataObject2Ptr	ptrN( punkObj );
 			punkObj->Release();
 
-			POSITION lpos = 0;
+			long	lpos = 0;
 			ptrN->GetFirstChildPosition( &lpos );
 
 			while( lpos )
@@ -204,24 +204,24 @@ IUnknownPtr CObjIntActionBase::GetFoundObject()
 	sptrINamedDataObject2 sptrNDO2Obj(punk);
 	if (!punk) return 0;
 	punk->Release();
-	POSITION pos = 0;
+	long pos = 0;
 	int nObjNo = 0;
-	sptrNDO2Obj->GetFirstChildPosition(&pos);
+	sptrNDO2Obj->GetFirstChildPosition((long*)&pos);
 	while (pos)
 	{
 		IUnknownPtr sptr;
-		sptrNDO2Obj->GetNextChild(&pos, &sptr);
+		sptrNDO2Obj->GetNextChild((long*)&pos, &sptr);
 		if (nObjNo++ == m_nFoundObjNo)
 			return sptr;
 	}
 	return 0;
 }
 
-static int FindObjNo(INamedDataObject2 *pNDO2, TPOS posFind)
+static int FindObjNo(INamedDataObject2 *pNDO2, long posFind)
 {
-	POSITION pos = 0;
+	long pos = 0;
 	int nObjNo = 0;
-	pNDO2->GetFirstChildPosition(&pos);
+	pNDO2->GetFirstChildPosition((long*)&pos);
 	while (pos)
 	{
 		if (pos == posFind)
@@ -232,12 +232,12 @@ static int FindObjNo(INamedDataObject2 *pNDO2, TPOS posFind)
 	return -1;
 }
 
-bool CObjIntActionBase::_DoLButtonDownOnObject( _point point, TPOS &posObj,
+bool CObjIntActionBase::_DoLButtonDownOnObject( _point point, long &posObj,
 	INamedDataObject2 *pNDO2, bool bSetActive, int iObjNo)
 {
-	TPOS pos1 = posObj;
+	long pos1 = posObj;
 	IUnknownPtr sptr;
-	pNDO2->GetNextChild((POSITION*)&posObj, &sptr);
+	pNDO2->GetNextChild(&posObj, &sptr);
 	IRectObjectPtr sptrROObj(sptr);
 	bool b = sptrROObj;
 	if (b)
@@ -301,7 +301,7 @@ bool CObjIntActionBase::DoLButtonDown( _point point )
 	if (!punk) return 0;
 	sptrINamedDataObject2 sptrNDO2Obj(punk);
 	if (punk) punk->Release();
-	TPOS posActive;
+	long posActive;
 	sptrNDO2Obj->GetActiveChild(&posActive);
 	if (posActive != 0)
 	{
@@ -309,9 +309,9 @@ bool CObjIntActionBase::DoLButtonDown( _point point )
 			return true;
 	}
 	// Now iterate list
-	TPOS pos = 0;
+	long pos = 0;
 	int nObjNo = 0;
-	sptrNDO2Obj->GetFirstChildPosition(&pos);
+	sptrNDO2Obj->GetFirstChildPosition((long*)&pos);
 	while (pos)
 	{
 		if (_DoLButtonDownOnObject(point, pos, sptrNDO2Obj, false, nObjNo))
@@ -664,13 +664,13 @@ HRESULT CActionAddAllObjects::DoInvoke()
 		sptrINamedDataObject2 sptrNDO2Obj(punk);
 		if (punk) punk->Release();
 		CLearningInfo LearnInfo(bstrClassFile,sptrNDO2Obj,&m_LearningInfoState);
-		TPOS pos = 0;
+		long pos = 0;
 		bool bOk = true;
-		sptrNDO2Obj->GetFirstChildPosition(&pos);
+		sptrNDO2Obj->GetFirstChildPosition((long*)&pos);
 		while (pos)
 		{
 			IUnknownPtr sptr;
-			sptrNDO2Obj->GetNextChild(&pos, &sptr);
+			sptrNDO2Obj->GetNextChild((long*)&pos, &sptr);
 			bOk &= LearnInfo.AddObjectToLearnInfo(sptr);
 		}
 		if (!bOk && _GetClassifierInt("Classification", "Messages", 0, bstrClassFile))

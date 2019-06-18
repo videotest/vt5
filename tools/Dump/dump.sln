@@ -1,25 +1,30 @@
-Microsoft Visual Studio Solution File, Format Version 10.00
-# Visual Studio 2008
+Microsoft Visual Studio Solution File, Format Version 8.00
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "dump", "dump.vcproj", "{951E3A03-430E-46B9-85D7-407A4D316413}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
 EndProject
 Global
-	GlobalSection(SolutionConfigurationPlatforms) = preSolution
-		Debug|Win32 = Debug|Win32
-		Debug|x64 = Debug|x64
-		Release|Win32 = Release|Win32
-		Release|x64 = Release|x64
+	GlobalSection(SourceCodeControl) = preSolution
+		SccNumberOfProjects = 2
+		SccProjectUniqueName0 = dump.vcproj
+		SccLocalPath0 = .
+		CanCheckoutShared = true
+		SccLocalPath1 = .
+		CanCheckoutShared = true
+		SolutionUniqueID = {BF9C9A12-34F9-46D4-8C95-FA71E9D6A4EC}
 	EndGlobalSection
-	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{951E3A03-430E-46B9-85D7-407A4D316413}.Debug|Win32.ActiveCfg = Debug|Win32
-		{951E3A03-430E-46B9-85D7-407A4D316413}.Debug|Win32.Build.0 = Debug|Win32
-		{951E3A03-430E-46B9-85D7-407A4D316413}.Debug|x64.ActiveCfg = Debug|x64
-		{951E3A03-430E-46B9-85D7-407A4D316413}.Debug|x64.Build.0 = Debug|x64
-		{951E3A03-430E-46B9-85D7-407A4D316413}.Release|Win32.ActiveCfg = Release|Win32
-		{951E3A03-430E-46B9-85D7-407A4D316413}.Release|Win32.Build.0 = Release|Win32
-		{951E3A03-430E-46B9-85D7-407A4D316413}.Release|x64.ActiveCfg = Release|x64
-		{951E3A03-430E-46B9-85D7-407A4D316413}.Release|x64.Build.0 = Release|x64
+	GlobalSection(SolutionConfiguration) = preSolution
+		Debug = Debug
+		Release = Release
 	EndGlobalSection
-	GlobalSection(SolutionProperties) = preSolution
-		HideSolutionNode = FALSE
+	GlobalSection(ProjectConfiguration) = postSolution
+		{951E3A03-430E-46B9-85D7-407A4D316413}.Debug.ActiveCfg = Debug|Win32
+		{951E3A03-430E-46B9-85D7-407A4D316413}.Debug.Build.0 = Debug|Win32
+		{951E3A03-430E-46B9-85D7-407A4D316413}.Release.ActiveCfg = Release|Win32
+		{951E3A03-430E-46B9-85D7-407A4D316413}.Release.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+	EndGlobalSection
+	GlobalSection(ExtensibilityAddIns) = postSolution
 	EndGlobalSection
 EndGlobal

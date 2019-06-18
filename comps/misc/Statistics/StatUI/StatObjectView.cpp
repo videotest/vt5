@@ -70,7 +70,7 @@ void CStatObjectView::default_init()
 
 void CStatObjectView::set_modify()
 {
-	for (TPOS lpos_lst = m_list_attached.head(); lpos_lst; lpos_lst = m_list_attached.next(lpos_lst))
+	for( long lpos_lst = m_list_attached.head(); lpos_lst; lpos_lst = m_list_attached.next( lpos_lst ) )
 	{
 		IUnknownPtr ptr_object = m_list_attached.get( lpos_lst );
 		if( ptr_object )
@@ -81,7 +81,7 @@ void CStatObjectView::set_modify()
 //////////////////////////////////////////////////////////////////////
 CStatObjectView::~CStatObjectView()
 {
-	for (TPOS lpos_lst = m_list_attached.head(); lpos_lst; lpos_lst = m_list_attached.next(lpos_lst))
+	for( long lpos_lst = m_list_attached.head(); lpos_lst; lpos_lst = m_list_attached.next( lpos_lst ) )
 	{
 		IUnknownPtr ptr_object = m_list_attached.get( lpos_lst );
 		if( ptr_object )
@@ -114,7 +114,7 @@ void CStatObjectView::DoAttachObjects()
 		return;
 
 
-	for (TPOS lpos_lst = m_list_attached.head(); lpos_lst; lpos_lst = m_list_attached.next(lpos_lst))
+	for( long lpos_lst = m_list_attached.head(); lpos_lst; lpos_lst = m_list_attached.next( lpos_lst ) )
 	{
 		IUnknown *punk_lst = m_list_attached.get( lpos_lst );
 
@@ -125,7 +125,7 @@ void CStatObjectView::DoAttachObjects()
 	_clear_attached();
 
 
-	LONG_PTR lpos_selected = 0;
+	long lpos_selected = 0;
 	_bstr_t bstr_type( szTypeStatObject );
 
 	ptr_context->GetFirstSelectedPos( bstr_type, &lpos_selected );
@@ -153,25 +153,9 @@ void CStatObjectView::DoAttachObjects()
 	}
 
 
-	if( IVtActiveXCtrl2Ptr sptr =  Unknown() )
-	{
-		if(INamedPropBagPtr pNamedPropBag=sptr){
-			CComVariant ViewSubType;
-			if(SUCCEEDED(pNamedPropBag->GetProperty(CComBSTR(L"Views"),&ViewSubType))){
-				if(SUCCEEDED(ViewSubType.ChangeType(VT_I4))){
-					if(ViewSubType.lVal>0){
-						if(INamedPropBagPtr pNamedPropBag=Unknown()){
-							m_dwViewsAX=ViewSubType.lVal;
-						}
-					}
-				}
-			}
-		}
-	}
-
 	if( m_list_attached.count() )
 	{
-		for (TPOS lpos_lst = m_list_attached.head(); lpos_lst; lpos_lst = m_list_attached.next(lpos_lst))
+		for( long lpos_lst = m_list_attached.head(); lpos_lst; lpos_lst = m_list_attached.next( lpos_lst ) )
 		{
 			IUnknownPtr ptr_object = m_list_attached.get( lpos_lst );
 
@@ -193,10 +177,24 @@ void CStatObjectView::DoAttachObjects()
 				load_from_ndata( ptr_object );
 				if( IVtActiveXCtrl2Ptr sptr =  Unknown() )
 				{
-					m_dwViews=m_dwViewsAX;
+					if(INamedPropBagPtr pControlPropBag=sptr)
+					{
+						CComVariant ViewSubType;
+						if(SUCCEEDED(pControlPropBag->GetProperty(CComBSTR("Views"), &ViewSubType))){
+							HRESULT hr=ViewSubType.ChangeType(VT_I4);
+							if(SUCCEEDED(hr)){
+								if(ViewSubType.lVal>0){
+									if(INamedPropBagPtr pNamedPropBag=Unknown()){
+										m_dwViews=ViewSubType.lVal;
+									}
+								}
+							}
+						}
+					}
 				}
 				break;
 			}
+
 		}
 	}
 
@@ -206,7 +204,7 @@ void CStatObjectView::DoAttachObjects()
 
 void CStatObjectView::attach_data()
 {
-	for (TPOS lpos_lst = m_list_attached.head(); lpos_lst; lpos_lst = m_list_attached.next(lpos_lst))
+	for( long lpos_lst = m_list_attached.head(); lpos_lst; lpos_lst = m_list_attached.next( lpos_lst ) )
 	{
 		IUnknownPtr ptr_object = m_list_attached.get( lpos_lst );
 
@@ -435,7 +433,7 @@ long CStatObjectView::on_destroy()
 {
 	if(IsWindow())
 		UnsubclassWindow();
-	for (TPOS lpos_lst = m_list_attached.head(); lpos_lst; lpos_lst = m_list_attached.next(lpos_lst))
+	for( long lpos_lst = m_list_attached.head(); lpos_lst; lpos_lst = m_list_attached.next( lpos_lst ) )
 	{
 		IUnknownPtr ptr_object = m_list_attached.get( lpos_lst );
 		if( ptr_object )
@@ -512,10 +510,6 @@ long CStatObjectView::on_paint()
 		::SetBkColor( hdcMemory, ::GetSysColor( COLOR_BTNFACE ) );
 		::SetBkMode(hdcMemory,TRANSPARENT);
 		::DrawText( hdcMemory, m_strErrorDescr, m_strErrorDescr.GetLength(), &rcPaint2, DT_CENTER | DT_VCENTER | DT_SINGLELINE );
-	}else if(!m_bError && m_list_attached.count()>0){
-		::SetBkColor( hdcMemory, ::GetSysColor( COLOR_BTNFACE ) );
-		::SetBkMode(hdcMemory,TRANSPARENT);
-		::DrawText( hdcMemory, CString((LPCTSTR)NO_SELECTED_VIEWS),-1, &rcPaint2, DT_CENTER | DT_VCENTER | DT_SINGLELINE );
 	}
 	::DeleteObject( hbrush );	hbrush = 0;
 
@@ -547,6 +541,7 @@ long CStatObjectView::on_size( int cx, int cy )
 
 	if( m_rcPrev.right == cx && m_rcPrev.bottom == cy )
 		return 0L;
+
 	if( m_bShowen )
 	{
 		RECT rc = {0};
@@ -555,11 +550,8 @@ long CStatObjectView::on_size( int cx, int cy )
 
 		if( rc.right == rc.left && rc.bottom == rc.top )
 			return 0;
-
-		if(!m_bError && m_list_attached.count()>0 && 0==m_dwViews){
-			::InvalidateRect(m_hwnd,NULL,FALSE);
-		}
 	}  
+
 	return 1L;
 }
 
@@ -616,7 +608,7 @@ void CStatObjectView::OnNotify( const char *pszEvent, IUnknown *punkHit, IUnknow
 		if( !strcmp( pszEvent, szEventChangeObject ) )
 		{
 			bool b_ok = false;
-			for (TPOS lpos_lst = m_list_attached.head(); lpos_lst; lpos_lst = m_list_attached.next(lpos_lst))
+			for( long lpos_lst = m_list_attached.head(); lpos_lst; lpos_lst = m_list_attached.next( lpos_lst ) )
 			{
 				IUnknownPtr ptr_object = m_list_attached.get( lpos_lst );
 				if( ::GetKey( ptr_object ) == ::GetKey( punkFrom ) )
@@ -723,21 +715,21 @@ HRESULT CStatObjectView::Print( HDC hdc, RECT rectTarget, int nUserPosX, int nUs
 	{
 		if(m_list_attached.count())
 		{
-		int	nLastPosX = nUserPosX + nUserPosDX - 1;
-		int	nLastPosY = nUserPosY + nUserPosDY - 1;
-		CRect	rectDraw(nUserPosX, nUserPosY, nLastPosX, nLastPosY);
+			int	nLastPosX = nUserPosX + nUserPosDX - 1;
+			int	nLastPosY = nUserPosY + nUserPosDY - 1;
+			CRect	rectDraw(nUserPosX, nUserPosY, nLastPosX, nLastPosY);
 
-		if( m_dwViews & vtTableView )
-		{
-			m_wndTable.Print(CDCHandle(hdc), rectTarget, rectDraw);
-		}
-		else if( m_dwViews & vtChartView )
+			if( m_dwViews & vtTableView )
 			{
-			m_wndChart.Print(CDCHandle(hdc), rectTarget, rectDraw);
+				m_wndTable.Print(CDCHandle(hdc), rectTarget, rectDraw);
 			}
-		else if( m_dwViews & vtLegendView)
+			else if( m_dwViews & vtChartView )
 			{
-			m_wndLegend.Print(CDCHandle(hdc), rectTarget, rectDraw);
+				m_wndChart.Print(CDCHandle(hdc), rectTarget, rectDraw);
+			}
+			else if( m_dwViews & vtLegendView)
+			{
+				m_wndLegend.Print(CDCHandle(hdc), rectTarget, rectDraw);
 			}
 		}
 	}
@@ -757,7 +749,7 @@ HRESULT CStatObjectView::GetClassID(CLSID *pClassID )
 
 
 //////////////////////////////////////////////////////////////////////
-HRESULT CStatObjectView::GetFirstVisibleObjectPosition(TPOS *plpos)
+HRESULT CStatObjectView::GetFirstVisibleObjectPosition( long *plpos )
 {
 	if( !plpos )
 		return S_FALSE;
@@ -771,7 +763,7 @@ HRESULT CStatObjectView::GetFirstVisibleObjectPosition(TPOS *plpos)
 }
 
 //////////////////////////////////////////////////////////////////////
-HRESULT CStatObjectView::GetNextVisibleObject(IUnknown ** ppunkObject, TPOS *plPos)
+HRESULT CStatObjectView::GetNextVisibleObject( IUnknown ** ppunkObject, long *plPos )
 {
 	if( !plPos )
 		return S_FALSE;
@@ -806,7 +798,7 @@ HRESULT CStatObjectView::ShowView( DWORD dwView )
 
 	if( m_list_attached.count() != 0 && !m_bPrintMode )
 	{
-		for (TPOS lpos_lst = m_list_attached.head(); lpos_lst; lpos_lst = m_list_attached.next(lpos_lst))
+		for( long lpos_lst = m_list_attached.head(); lpos_lst; lpos_lst = m_list_attached.next( lpos_lst ) )
 		{
 			IUnknownPtr ptr_object = m_list_attached.get( lpos_lst );
 			if( ptr_object )
@@ -833,7 +825,7 @@ const SIZE CStatObjectView::_recalc_layout(SIZE sizeRect)
 	{
 		BOOL bLock = 0;
 
-		for (TPOS lpos_lst = m_list_attached.head(); lpos_lst; lpos_lst = m_list_attached.next(lpos_lst))
+		for( long lpos_lst = m_list_attached.head(); lpos_lst; lpos_lst = m_list_attached.next( lpos_lst ) )
 		{
 			IUnknownPtr ptr_object = m_list_attached.get( lpos_lst );
 			IStatObjectPtr sptrS = ptr_object;

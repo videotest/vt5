@@ -46,7 +46,7 @@ protected:
 // Message maps
 protected:
 	//{{AFX_MSG(CVT3DBarPropPage)
-	afx_msg LRESULT OnColorChange(WPARAM lParam, LPARAM wParam);
+	afx_msg LONG OnColorChange(UINT lParam, LONG wParam);
 	virtual BOOL OnInitDialog();
 	//}}AFX_MSG
 	DECLARE_MESSAGE_MAP()

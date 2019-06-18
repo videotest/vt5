@@ -129,7 +129,7 @@ BOOL CPreviewDialog::OnInitDialog()
 		
 		::GetWindowRect(::GetDlgItem(m_hWnd, IDC_IMAGE), &rc);
 		ScreenToClient(rc);
-		m_rcImage = CRect(Marg, Marg, m_Image.m_szPrv.cx, m_Image.m_szPrv.cy);
+		m_rcImage = CRect(Marg, Marg, m_Image.m_szPrv.cx, m_Image.m_szPrv.cy);		
 		SetWindowPos(0, 0, 0, rc.right+Marg, rc.bottom+Marg, SWP_NOZORDER|SWP_NOMOVE);
 		
 	}
@@ -321,7 +321,7 @@ void CPreviewDialog::OnDestroy()
 	//sergey 05/02/06
 	//if (m_bInitOk && m_bPreview)::SaveSettings();	
 	//end
-	m_sptrPrv->EndPreview(m_nDev, this);
+	m_sptrPrv->EndPreview(m_nDev, this);	
 	CBaseDialog::OnDestroy();
 }
 
@@ -391,7 +391,7 @@ LRESULT CPreviewDialog::OnDelayedRepaint(WPARAM wParam, LPARAM lParam)
 	dwTime=0;
 		m_HistoDlg.ResetPeriod(dwFps);
 		//end
-
+		
 	}
     
 	return 0;
@@ -421,7 +421,7 @@ void CPreviewDialog::OnLayoutChanged()
 }
 
 void CPreviewDialog::OnLButtonDown(UINT nFlags, CPoint point) 
-{
+{	
 
 	if (m_rcImage.PtInRect(point))
 	{

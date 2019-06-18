@@ -120,13 +120,13 @@ static bool DoClassify(IUnknownPtr punkObjList, char *sz_ini)
 	//double GarbageThreshold=GetValueDouble
 	//	(GetAppUnknown(), "\\CellClassify", "GarbageThreshold", 5.0 );
 
-	TPOS pos;
-	sptrN->GetFirstChildPosition((TPOS*)&pos);
+	long pos;
+	sptrN->GetFirstChildPosition((long*)&pos);
 	while (pos)
 	{
-		TPOS pos1 = pos;
+		long pos1 = pos;
 		IUnknownPtr sptr;
-		sptrN->GetNextChild((TPOS*)&pos, &sptr);
+		sptrN->GetNextChild((long*)&pos, &sptr);
 		ICalcObjectPtr sptrObj = ICalcObjectPtr(sptr);
 		if(sptrObj!=0) //ну мало ли объекты какие-нибудь не такие...
 		{
@@ -180,7 +180,7 @@ bool CClassifyNeuro::InvokeFilter()
 		char sz_tmp[128];
 		//Проверить, что инишка - нашего типа
 		ini.GetVal("General","ClassifyProgID",sz_tmp, sizeof(sz_tmp));
-		RF(_stricmp(sz_tmp,"Neuro.NeuroClassifier")==0);
+		RF(stricmp(sz_tmp,"Neuro.NeuroClassifier")==0);
 	}
 
 	// Process classification itself.
@@ -242,7 +242,7 @@ HRESULT CTeachNeuro::DoInvoke()
 	char sz_tmp[128];
 	//Проверить, что инишка - нашего типа
 	ini.GetVal("General","ClassifyProgID",sz_tmp, sizeof(sz_tmp));
-	RF(_stricmp(sz_tmp,"Neuro.NeuroClassifier")==0);
+	RF(stricmp(sz_tmp,"Neuro.NeuroClassifier")==0);
 
 	_bstr_t iniLearning=GetArgString("LearningInfo");
 	if(iniLearning==_bstr_t(""))
@@ -304,11 +304,11 @@ HRESULT CTeachNeuro::DoInvoke()
 			name[0]=0;
 		}
 
-		if(0==_stricmp("[LearningInfo]", section))
+		if(0==stricmp("[LearningInfo]", section))
 		{
-			if(0==_stricmp("ObjectsCount", name)) npat=atoi(val);
-			if(0==_stricmp("Keys", name)) ninp=GetIntArray(val,keys,MAXKEYS);
-			if(0==_stricmp("ClassCount", name))
+			if(0==stricmp("ObjectsCount", name)) npat=atoi(val);
+			if(0==stricmp("Keys", name)) ninp=GetIntArray(val,keys,MAXKEYS);
+			if(0==stricmp("ClassCount", name))
 			{
 				nout=atoi(val);
 				out_count.Alloc(nout);
@@ -663,7 +663,7 @@ HRESULT CNeuroClassifier::Teach()
 	char sz_tmp[128];
 	//Проверить, что инишка - нашего типа
 	ini.GetVal("General","ClassifyProgID",sz_tmp, sizeof(sz_tmp));
-	RSF(_stricmp(sz_tmp,"Neuro.NeuroClassifier")==0);
+	RSF(stricmp(sz_tmp,"Neuro.NeuroClassifier")==0);
 
 	long lHiddenNeurons = 9;
 	ini.GetVal("NeuroSettings","HiddenNeurons",sz_tmp, sizeof(sz_tmp));
@@ -702,11 +702,11 @@ HRESULT CNeuroClassifier::Teach()
 			name[0]=0;
 		}
 
-		if(0==_stricmp("[LearningInfo]", section))
+		if(0==stricmp("[LearningInfo]", section))
 		{
-			if(0==_stricmp("ObjectsCount", name)) npat=atoi(val);
-			if(0==_stricmp("Keys", name)) ninp=GetIntArray(val,keys,MAXKEYS);
-			if(0==_stricmp("ClassCount", name))
+			if(0==stricmp("ObjectsCount", name)) npat=atoi(val);
+			if(0==stricmp("Keys", name)) ninp=GetIntArray(val,keys,MAXKEYS);
+			if(0==stricmp("ClassCount", name))
 			{
 				nout=atoi(val);
 				out_count.Alloc(nout);

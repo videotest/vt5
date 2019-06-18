@@ -161,11 +161,11 @@ void CSendToManager::Init()
 		return;
 	
 
-	LONG_PTR	lPosTemplate = 0;	
+	long	lPosTemplate = 0;	
 	sptrA->GetFirstDocTemplPosition( &lPosTemplate );	
 	while( lPosTemplate )
 	{
-		LONG_PTR	lPosDoc = 0;
+		long	lPosDoc = 0;
 		sptrA->GetFirstDocPosition( lPosTemplate, &lPosDoc );
 		while( lPosDoc )
 		{
@@ -433,13 +433,13 @@ IUnknownPtr CSendToManager::GetDocumentByKey( GuidKey guidKey )
 	sptrIApplication sptrA( GetAppUnknown( ) );
 	if( sptrA != NULL )
 	{			
-		LONG_PTR	lPosTemplate = 0;
+		long	lPosTemplate = 0;
 		
 		sptrA->GetFirstDocTemplPosition( &lPosTemplate );
 		
 		while( lPosTemplate )
 		{
-			LONG_PTR	lPosDoc = 0;
+			long	lPosDoc = 0;
 
 			sptrA->GetFirstDocPosition( lPosTemplate, &lPosDoc );
 
@@ -550,7 +550,7 @@ static bool _IsAnyObject( IUnknown *punkData, const char *szType )
 
 		if( str == szType )
 		{
-			LONG_PTR	lpos = 0;
+			long	lpos = 0;
 			sptrM->GetObjectFirstPosition( nType, &lpos );
 			return lpos!=0?true:false;
 		}
@@ -613,7 +613,7 @@ static bool IsBaseObject(INamedDataPtr ptrND, GuidKey guidObj)
 		if( punkParent != 0)
 			return false;
 	}
-	TPOS lGroupPos = 0;
+	long lGroupPos = 0;
 	ptrND->GetBaseGroupFirstPos( &lGroupPos );
 	while( lGroupPos )
 	{
@@ -723,7 +723,7 @@ void CSendToManager::MakeBaseObjectsArray(IUnknown *punkSrcDoc, CStringArray &ar
 		}
 		bool bBaseObjectFound = false;
 		bool bAnyObjectFound = false;
-		LONG_PTR lPos = 0;
+		long lPos = 0;
 		ptrContext->GetFirstSelectedPos( bstrType, &lPos );
 		while( lPos )
 		{
@@ -926,11 +926,11 @@ HRESULT CSendToManager::XSendToManager::CreateTargets( )
 
 
 /////////////////////////////////////////////////////////////////////////////
-HRESULT CSendToManager::XSendToManager::GetFirstItemPos( TPOS* plPos )
+HRESULT CSendToManager::XSendToManager::GetFirstItemPos( long* plPos )
 {
 	_try_nested(CSendToManager, SendToManager, GetFirstItemPos)
 	{				
-		*plPos = pThis->m_arItems.GetHeadPosition();
+		*plPos = (long)pThis->m_arItems.GetHeadPosition();
 		return S_OK;
 	}
 
@@ -943,14 +943,14 @@ HRESULT CSendToManager::XSendToManager::GetNextItem(
 													UINT* puiItemID, 
 													BSTR* pbstrText,			
 													UINT* puiParentID,
-													TPOS* plPos 
+													long* plPos 
 													)
 {
 	_try_nested(CSendToManager, SendToManager, GetNextItem)
 	{				
 		POSITION pos = (POSITION)(*plPos);
 		CItemInfo* pi = (CItemInfo*)pThis->m_arItems.GetNext( pos );
-		*plPos = pos;
+		*plPos = (long)pos;
 		if( pi )
 		{
 			if (puiFlags != NULL)
@@ -1029,7 +1029,7 @@ HRESULT CSendToManager::XSendToManager::GetSourceDocGuid( GUID* pDocGuid )
 }
 
 /////////////////////////////////////////////////////////////////////////////
-HRESULT CSendToManager::XSendToManager::GetFirstObjectPos( TPOS *plPos )
+HRESULT CSendToManager::XSendToManager::GetFirstObjectPos( long* plPos )
 {
 	_try_nested(CSendToManager, SendToManager, GetFirstObjectPos)
 	{				
@@ -1041,7 +1041,7 @@ HRESULT CSendToManager::XSendToManager::GetFirstObjectPos( TPOS *plPos )
 }
 
 /////////////////////////////////////////////////////////////////////////////
-HRESULT CSendToManager::XSendToManager::GetNextObjectPos( GUID* pObjGuid, TPOS *plPos )
+HRESULT CSendToManager::XSendToManager::GetNextObjectPos( GUID* pObjGuid, long* plPos )
 {
 	_try_nested(CSendToManager, SendToManager, GetNextObjectPos)
 	{				

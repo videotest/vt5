@@ -132,14 +132,13 @@ HRESULT CNotifyController::XContr::RegisterEventListener( BSTR szEventDesc, IUnk
 			return E_INVALIDARG;
 		}
 
-		ASSERT(pListener != (IUnknown*)0xCDCDCDCDCDCDCDCD);
+		ASSERT( (long)pListener != 0xCDCDCDCD );
 		ASSERT( !pThis->m_list.Find( pListener ));
 
 		if (pThis->m_list.Find( pListener ))
 			return S_OK;
 		
 		pThis->m_list.AddTail( pListener );
-		pListener->AddRef();
 
 		return S_OK;
 	}
@@ -153,10 +152,9 @@ HRESULT CNotifyController::XContr::UnRegisterEventListener( BSTR szEventDesc, IU
 		POSITION pos = pThis->m_list.Find( pListener );
 		ASSERT( pos );
 
-		pThis->m_list.RemoveAt( pos );
-		pListener->Release();
+		//pThis->m_list.RemoveAt( pos );
 
-		//pThis->m_list.SetAt( pos, 0 );
+		pThis->m_list.SetAt( pos, 0 );
 
 		ASSERT(!pThis->m_list.Find( pListener ));
 

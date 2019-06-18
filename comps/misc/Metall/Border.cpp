@@ -43,7 +43,7 @@ static _rect CalcObjectSize(INamedDataObject2 *pNDOObjLst)
 {
 	_rect rc(0,0,0,0);
 	bool bInit = false;
-	POSITION lPos;
+	long lPos;
 	pNDOObjLst->GetFirstChildPosition(&lPos);
 	while (lPos)
 	{
@@ -140,7 +140,7 @@ static void MapObjectsToImage(CImageData &ImageData, INamedDataObject2 *pNDOObjL
 {
 	IImage4 *pimgMap = ImageData.m_img;
 	color clrObject = 0;
-	POSITION lPos;
+	long lPos;
 	if (bSequence)
 	{
 		ImageData.m_ObjectsIn.alloc(nObjects);
@@ -438,7 +438,7 @@ static void MakeBorderObject(CImageData &ImageData, _rect rc, INamedDataObject2 
 	if (pBP && ImageData.m_ObjectsIn.size())
 	{
 		ICalcObjectPtr sptrCO(punkObject);
-		TPOS lPos;
+		long lPos;
 		pBP->GetFirstPosEx(&lPos);
 		ParameterDescriptorEx *pdescr;
 		while (lPos)

@@ -43,7 +43,7 @@ bool CTestAveraged::InvokeFilter()
 	double fAvgDevThreshold = ::GetValueDouble(::GetAppUnknown(), CGH_ROOT "\\TestAveraged", "AvgDevThreshold", 0.2 );
 
 	// пробежимся по объектам
-	POSITION pos=0; sptrObjects->GetFirstChildPosition(&pos);
+	long pos=0; sptrObjects->GetFirstChildPosition(&pos);
 	while( pos ) //по всем объектам
 	{
 		IUnknownPtr ptrObj;

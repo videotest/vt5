@@ -255,7 +255,7 @@ IAuditTrailObject* CActionSetActiveAThumbnail::GetAT()
 		IViewPtr	sptrV(m_punkTarget);
 		if(sptrV != 0)
 		{
-			TPOS pos = 0;
+			long pos = 0; 
 			sptrV->GetFirstVisibleObjectPosition(&pos);
 			while(pos)
 			{

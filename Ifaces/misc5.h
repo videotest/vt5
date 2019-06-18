@@ -1,7 +1,11 @@
 #ifndef __misc5_h__
 #define __misc5_h__
 
-#import <misc.tlb> exclude ("IUnknown", "GUID", "_GUID") no_namespace raw_interfaces_only named_guids 
+#ifdef _DEBUG
+#import <debug\misc.tlb> exclude ("IUnknown", "GUID", "_GUID") no_namespace raw_interfaces_only named_guids 
+#else
+#import <release\misc.tlb> exclude ("IUnknown", "GUID", "_GUID") no_namespace raw_interfaces_only named_guids 
+#endif
 
 /*#include "defs.h"
 #include "window5.h"

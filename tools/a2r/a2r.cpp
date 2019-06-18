@@ -149,7 +149,7 @@ bool replace_aliases( lists	&resoucers )
 
 	for( lists::iterator rs = resoucers.begin(); rs != resoucers.end(); rs++ )
 	{
-		char	*psz = (char*)(*rs).c_str();
+		const char	*psz = (*rs).c_str();
 		if( !bStringTable && !bWaitForStringTable )
 		{
 			if( !strcmp( psz, "STRINGTABLE DISCARDABLE " ) )

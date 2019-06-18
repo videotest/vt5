@@ -65,11 +65,11 @@ BOOL CClassifierDlg::OnInitDialog()
 	
 	//enum all classes lists, fill combo
 	IApplicationPtr sptrA(GetAppUnknown());
-	LONG_PTR	lPosTemplate = 0;
+	long	lPosTemplate = 0;
 	sptrA->GetFirstDocTemplPosition(&lPosTemplate);
 	while(lPosTemplate)
 	{
-		LONG_PTR	lPosDoc = 0;
+		long	lPosDoc = 0;
 		sptrA->GetFirstDocPosition(lPosTemplate, &lPosDoc);
 		while(lPosDoc)
 		{
@@ -79,7 +79,7 @@ BOOL CClassifierDlg::OnInitDialog()
 			if(punkDoc) punkDoc->Release();
 			if(sptrContext != 0)
 			{
-				LONG_PTR nClassPos = 0;
+				long nClassPos = 0;
 				sptrContext->GetFirstObjectPos(_bstr_t(szTypeClassList), &nClassPos);
 				while(nClassPos)
 				{
@@ -153,7 +153,7 @@ void CClassifierDlg::_GetAllParams()
 			IMeasParamGroupPtr sptrGroup(punkGroup);
 			if(sptrGroup != 0)
 			{
-				LONG_PTR lParamPos = 0;
+				long lParamPos = 0;
 				if (FAILED(sptrGroup->GetFirstPos(&lParamPos)))
 					continue;
 
@@ -216,7 +216,7 @@ void CClassifierDlg::OnSelendokComboClasses()
 
 			m_mapClassesByRow.SetAt(nClassRow, sptrClass);
 
-			LONG_PTR nParamPos = 0;
+			long nParamPos = 0;
 			sptrClass->GetFirstParamLimitsPos(&nParamPos);
 			while(nParamPos)
 			{
@@ -584,7 +584,7 @@ void CClassifierDlg::OnOK()
 
 	int nCols = m_grid.GetColumnCount();
 
-	long nParamsCount = (long)m_mapPresentParams.GetCount();
+	long nParamsCount = m_mapPresentParams.GetCount();
 
 	POSITION pos = m_mapClassesByRow.GetStartPosition();
 	while(pos)

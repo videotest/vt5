@@ -39,7 +39,7 @@ protected:
 	double m_co[m_na], m_si[m_na];
 	double m_rr[m_nr];
 	int m_dx[m_na*m_nr], m_dy[m_na*m_nr];
-	
+
 	bool m_bSmoothContour; // сглаживать ли контура (отсекая выступающие части)
 	bool m_bCorrectByBin; // корректировать ли контура по binary
 	

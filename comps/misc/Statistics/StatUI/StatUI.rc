@@ -266,7 +266,6 @@ STRINGTABLE
 BEGIN
     IDS_FILES               "Файлы"
     IDS_CMP_VIEW_NAME       "Сравнение статистик"
-    NO_SELECTED_VIEWS       "Нет выбранных представлений"
 END
 
 #endif    // Russian resources
@@ -440,7 +439,6 @@ STRINGTABLE
 BEGIN
     IDS_FILES               "Files"
     IDS_CMP_VIEW_NAME       "Comparison"
-    NO_SELECTED_VIEWS       "No selected views"
 END
 
 #endif    // English (U.S.) resources

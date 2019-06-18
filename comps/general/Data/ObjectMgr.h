@@ -94,7 +94,7 @@ public:
 	// get child by pos
 	CContextObject *	GetChild(POSITION pos)			{	return GetNextChild(pos);						}
 	// get children count
-	int					GetChildrenCount()				{	return (int)m_listChildren.GetCount();				}
+	int					GetChildrenCount()				{	return m_listChildren.GetCount();				}
 	bool				HasChildren()					{	return m_listChildren.GetCount() ? true : false;	}
 
 	// check obj is child
@@ -190,7 +190,7 @@ public:
 	void Free();
 
 	// get component count 
-	int GetCount()		{	return (int)m_listObjects.GetCount();	}
+	int GetCount()		{	return m_listObjects.GetCount();	}
 	// return object by index
 	INamedDataObject2 *	Get(POSITION pos, bool bAddRef = true)
 	{	
@@ -263,8 +263,8 @@ public:
 	void SetLastTimeUsed(long lTime)	{	m_lLastTimeUsed = lTime;	}
 
 	void SetSelectedCount(int nCount)	{	m_nSelCount = nCount;	}
-	int	 GetAvailableSelectedCount()	{	return (int)m_nSelCount;	}
-	int	 GetSelectedCount()				{	return (int)m_listSelected.GetCount();	}
+	int	 GetAvailableSelectedCount()	{	return m_nSelCount;	}
+	int	 GetSelectedCount()				{	return m_listSelected.GetCount();	}
 
 
 protected:
@@ -291,7 +291,7 @@ public:
 	CContextManager();
 
 	// notify all objects 
-	bool Notify(long cod, IUnknown * punkNew, IUnknown * punkOld, GUID* dwData = 0);
+	bool Notify(long cod, IUnknown * punkNew, IUnknown * punkOld, DWORD dwData = 0);
 	
 	IUnknown* GetActive()
 	{	return m_ptrs.GetSize() ? (IUnknown*)m_ptrs[0] : NULL;	}

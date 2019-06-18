@@ -13,9 +13,6 @@
 
 #include "BCGUserToolsManager.h"
 
-#if _MSC_VER >= 1920
-#include <afxcontrolbarutil.h>
-#else
 inline BOOL IsStandardCommand (UINT uiCmd)
 {
 	return	((uiCmd >= ID_FILE_MRU_FILE1 && 
@@ -25,6 +22,5 @@ inline BOOL IsStandardCommand (UINT uiCmd)
 			(uiCmd >= ID_OLE_VERB_FIRST && uiCmd <= ID_OLE_VERB_LAST) ||		// OLE commands
 			g_pUserToolsManager != NULL && uiCmd == g_pUserToolsManager->GetToolsEntryCmd ());
 }
-#endif
 
 #endif // __BCGCONTROLBAR_H

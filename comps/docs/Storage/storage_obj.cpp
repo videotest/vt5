@@ -120,7 +120,7 @@ HRESULT storage_obj::Store( IStream *pStream, SerializeParams *pparams )
 	// save export records
 	long lrec_count = m_lExportRecords.count();
 	pStream->Write( &lrec_count, sizeof( long ), &nWritten );
-	for (TPOS lpos = m_lExportRecords.head(); lpos; lpos = m_lExportRecords.next(lpos))
+	for( long lpos = m_lExportRecords.head(); lpos; lpos = m_lExportRecords.next( lpos ) )
 		pStream->Write( &m_lExportRecords.get( lpos ), sizeof( long ), &nWritten );	
 
 	// save state
@@ -269,10 +269,10 @@ HRESULT storage_obj::DeleteRecord( /*[in]*/ long lrecord )
 		m_lCurrRecord = (rec_count == 0) ? CURRENT_RECORD_NO_SET : rec_count;
 	
 	// updates export records
-	TPOS lrec_pos = m_lExportRecords.find(lrecord);
+	long lrec_pos = m_lExportRecords.find( lrecord );
 	if( lrec_pos )
 		m_lExportRecords.remove( lrec_pos );
-	for (TPOS lpos = m_lExportRecords.head(); lpos; lpos = m_lExportRecords.next(lpos))
+	for( long lpos = m_lExportRecords.head(); lpos; lpos = m_lExportRecords.next( lpos ) )
 	{
 		long lexport_rec = m_lExportRecords.get( lpos );
 		if( lrecord < lexport_rec )
@@ -594,7 +594,7 @@ HRESULT storage_obj::ExportRecord( /*[in] long lrecord,*/ /*[in]*/ IDispatch* pd
 
 	if( hres == S_OK )
 	{
-		TPOS lpos = m_lExportRecords.find(m_lCurrRecord);
+		long lpos = m_lExportRecords.find( m_lCurrRecord );
 		if( !lpos )
 		{
             m_lExportRecords.clear(); // for export only one record
@@ -707,7 +707,7 @@ HRESULT storage_obj::ImportRecord( /*[in] long lrecord,*/ /*[in]*/ IDispatch* pd
 
 	if( hres == S_OK )
 	{
-		TPOS lpos = m_lExportRecords.find(m_lCurrRecord);
+		long lpos = m_lExportRecords.find( m_lCurrRecord );
 		if( lpos )
 			m_lExportRecords.remove( lpos );
 	}
@@ -818,7 +818,7 @@ HRESULT storage_obj::ClearDocument( /*[in]x long lrecord,*/ /*[in]*/ IDispatch* 
 
 	if( hres == S_OK )
 	{
-		TPOS lpos = m_lExportRecords.find(m_lCurrRecord);
+		long lpos = m_lExportRecords.find( m_lCurrRecord );
 		if( lpos )
 			m_lExportRecords.remove( lpos );
 	}

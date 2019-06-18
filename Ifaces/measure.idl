@@ -9,9 +9,6 @@
 ]
 library CalibrationTypeLib
 {
-	//struct __POSITION { char c; };
-	//typedef __POSITION* TPOS;
-	typedef LONG_PTR TPOS;
 
 [uuid(384B4AA8-CDCA-4739-8B15-38823C87874C)]
 interface ICalibr : IUnknown
@@ -116,7 +113,7 @@ struct ParameterDescriptor
 	BSTR		bstrDefFormat;
 	long		lKey;
 	long		lEnabled;
-	TPOS pos;
+	long		pos;
 	//must be filled on ReLoadState()
 	BSTR		bstrUnit;
 	double		fCoeffToUnits;
@@ -131,9 +128,9 @@ interface IMeasParamGroup : IUnknown
  	com_call CalcValues(IUnknown *punkCalcObject, IUnknown *punkSource );
 
 	com_call GetParamsCount(long *plCount);
-	com_call GetFirstPos(TPOS *plPos);
-	com_call GetNextParam(TPOS *plPos, struct ParameterDescriptor **ppDescriptior );
-	com_call GetPosByKey(long lKey, TPOS *plPos);
+	com_call GetFirstPos(long *plPos);
+	com_call GetNextParam(long *plPos, struct ParameterDescriptor **ppDescriptior );
+	com_call GetPosByKey(long lKey, long *plPos);
 
 	com_call GetUnit( long lType, BSTR *pbstr, double *pfCoeffToUnits );
 
@@ -160,8 +157,8 @@ etAngle };
 
 struct ParameterContainer
 {
-	long	cbSize;
-	TPOS	lpos;	//initialized by container
+	long		cbSize;
+	long		lpos;	//initialized by container
 
 	IMeasParamGroup				*pGroup;
 	struct ParameterDescriptor	*pDescr;
@@ -176,20 +173,20 @@ struct ParameterContainer
 [uuid(ACB5D40E-8A91-44d4-AF7F-F63022428A68)]
 interface ICalcObjectContainer : IUnknown
 {
-	com_call GetCurentPosition( LONG_PTR *plpos, long *plKey );
-	com_call SetCurentPosition( LONG_PTR lpos );
+	com_call GetCurentPosition( long *plpos, long *plKey );
+	com_call SetCurentPosition( long lpos );
 	com_call Move( long lDirection );
 
-	com_call GetFirstParameterPos( LONG_PTR *plpos );
-	com_call GetLastParameterPos( LONG_PTR *plpos );
-	com_call GetNextParameter( LONG_PTR *plpos, struct ParameterContainer **ppContainer );
-	com_call GetPrevParameter( LONG_PTR *plpos, struct ParameterContainer **ppContainer );
-	com_call MoveParameterAfter( LONG_PTR lpos, struct ParameterContainer *p );	//InsertAfter, if pos=zero, 
+	com_call GetFirstParameterPos( long *plpos );
+	com_call GetLastParameterPos( long *plpos );
+	com_call GetNextParameter( long *plpos, struct ParameterContainer **ppContainer );
+	com_call GetPrevParameter( long *plpos, struct ParameterContainer **ppContainer );
+	com_call MoveParameterAfter( long lpos, struct ParameterContainer *p );	//InsertAfter, if pos=zero, 
 
-	com_call DefineParameter( long lKey, enum ParamType type, IMeasParamGroup *pGroup, LONG_PTR *plpos );
-	com_call DefineParameterFull( struct ParameterContainer *p, LONG_PTR *plpos );
+	com_call DefineParameter( long lKey, enum ParamType type, IMeasParamGroup *pGroup, long *plpos );
+	com_call DefineParameterFull( struct ParameterContainer *p, long *plpos );
 	com_call RemoveParameter( long lKey );
-	com_call RemoveParameterAt( LONG_PTR lpos );
+	com_call RemoveParameterAt( long lpos );
 	com_call Reset();
 
 	com_call ParamDefByKey( long lKey, struct ParameterContainer **ppContainer );
@@ -220,11 +217,11 @@ interface IUnitManager
 	com_call GetCurrentUnit( const GUID guidSys, GUID *pguidUnit );
 	com_call SetCurrentUnit( const GUID guidSys, const GUID guidUnit );
 
-	com_call GetFirstSysUnitPos( LONG_PTR *plpos );
-	com_call GetNextSysUnit( GUID *pguidSys, LONG_PTR *plpos );
+	com_call GetFirstSysUnitPos( long *plpos );
+	com_call GetNextSysUnit( GUID *pguidSys, long *plpos );
 
-	com_call GetFirstUnitPos( LONG_PTR lposSys, LONG_PTR *plPos );
-	com_call GetNextUnitPos( LONG_PTR lposSys, GUID *pguidUnit, LONG_PTR *plPos );
+	com_call GetFirstUnitPos( long lposSys, long *plPos );
+	com_call GetNextUnitPos( long lposSys, GUID *pguidUnit, long *plPos );
 	
 	com_call RemoveUnit( const GUID guidUnit );
 	com_call SetUnitInfo( const GUID guidUnit, const GUID guidSys, BSTR bstrName, double fUnitToSysUnit, BSTR bstrFormat );
@@ -247,10 +244,10 @@ interface ICalcObject : IUnknown
 	com_call RemoveValue(long lParamKey);
 	com_call ClearValues();
 
-	com_call GetFirstValuePos(LONG_PTR * plPos);
-	com_call GetNextValue(LONG_PTR * plPos, long * plKey, double * pfValue);
-	com_call GetValuePos(long lKey, LONG_PTR * plPos);
-	com_call RemoveValueByPos(LONG_PTR lPos);
+	com_call GetFirstValuePos(long * plPos);
+	com_call GetNextValue(long * plPos, long * plKey, double * pfValue);
+	com_call GetValuePos(long lKey, long * plPos);
+	com_call RemoveValueByPos(long lPos);
 
 /*	com_call GetObjectClass(GUID	*plClassKey);
 	com_call SetObjectClass(GUID	lClassKey);*/
@@ -268,8 +265,8 @@ interface IClassObject : IUnknown
 	com_call GetParamLimits(long lParamKey, double* pfLo, double* pfHi);
 	com_call RemoveParamLimits(long lParamKey); 
 	com_call EmptyAllParamsLimits(); 
-	com_call GetFirstParamLimitsPos(LONG_PTR* plPos);
-	com_call GetNextParamLimits(LONG_PTR* plPos, long* plParamKey, double* pfLo, double* pfHi);
+	com_call GetFirstParamLimitsPos(long* plPos);
+	com_call GetNextParamLimits(long* plPos, long* plParamKey, double* pfLo, double* pfHi);
 };
 
 [uuid(9036F30D-6128-43ac-9997-0B5D0225FFC1)]

@@ -70,7 +70,7 @@ namespace STAT_DEPENDENCE
 		CString strRet;
 
 		long lPrev = 0;
-		LPOS lPos = str.Find( strA, lPrev );
+		long lPos = str.Find( strA, lPrev );
 
 		while( lPos != -1 )
 		{
@@ -307,7 +307,7 @@ void stat_dependence_view::DoAttachObjects()
 	if( ptr_context == 0 )
 		return;
 
-	for (TPOS lpos_lst = m_list_attached.head(); lpos_lst; lpos_lst = m_list_attached.next(lpos_lst))
+	for( long lpos_lst = m_list_attached.head(); lpos_lst; lpos_lst = m_list_attached.next( lpos_lst ) )
 	{
 		IUnknown *punk_lst = m_list_attached.get( lpos_lst );
 
@@ -318,7 +318,7 @@ void stat_dependence_view::DoAttachObjects()
 	_clear_attached();
 
 
-	LONG_PTR lpos_selected = 0;
+	long lpos_selected = 0;
 	_bstr_t bstr_type( szTypeStatTable );
 
 	ptr_context->GetFirstSelectedPos( bstr_type, &lpos_selected );
@@ -347,7 +347,7 @@ void stat_dependence_view::DoAttachObjects()
 
 	if( m_list_attached.count() )
 	{
-		for (TPOS lpos_lst = m_list_attached.head(); lpos_lst; lpos_lst = m_list_attached.next(lpos_lst))
+		for( long lpos_lst = m_list_attached.head(); lpos_lst; lpos_lst = m_list_attached.next( lpos_lst ) )
 		{
 			IUnknownPtr ptr_object = m_list_attached.get( lpos_lst );
 
@@ -425,7 +425,7 @@ long stat_dependence_view::on_create( CREATESTRUCT *pcs )
 //////////////////////////////////////////////////////////////////////
 long stat_dependence_view::on_destroy()
 {
-	for (TPOS lpos_lst = m_list_attached.head(); lpos_lst; lpos_lst = m_list_attached.next(lpos_lst))
+	for( long lpos_lst = m_list_attached.head(); lpos_lst; lpos_lst = m_list_attached.next( lpos_lst ) )
 	{
 		IUnknownPtr ptr_object = m_list_attached.get( lpos_lst );
 		if( ptr_object )
@@ -583,7 +583,7 @@ void stat_dependence_view::OnNotify( const char *pszEvent, IUnknown *punkHit, IU
 	//	m_wnd_data.berror = false;
 	//	_load_from_ndata( ::GetAppUnknown() );
 	//  
-	//	for( LPOS lpos_lst = m_list_attached.head(); lpos_lst; lpos_lst = m_list_attached.next( lpos_lst ) )
+	//	for( long lpos_lst = m_list_attached.head(); lpos_lst; lpos_lst = m_list_attached.next( lpos_lst ) )
 	//	{
 	//		IUnknownPtr ptr_object = m_list_attached.get( lpos_lst );
 	//		if( ptr_object )
@@ -602,7 +602,7 @@ void stat_dependence_view::OnNotify( const char *pszEvent, IUnknown *punkHit, IU
 		if( !strcmp( pszEvent, szEventChangeObject ) )
 		{
 			bool b_ok = false;
-			for (TPOS lpos_lst = m_list_attached.head(); lpos_lst; lpos_lst = m_list_attached.next(lpos_lst))
+			for( long lpos_lst = m_list_attached.head(); lpos_lst; lpos_lst = m_list_attached.next( lpos_lst ) )
 			{
 				IUnknownPtr ptr_object = m_list_attached.get( lpos_lst );
 				if( ::GetKey( ptr_object ) == ::GetKey( punkFrom ) )
@@ -747,7 +747,7 @@ HRESULT stat_dependence_view::GetClassID(CLSID *pClassID )
 
 
 //////////////////////////////////////////////////////////////////////
-HRESULT stat_dependence_view::GetFirstVisibleObjectPosition(TPOS *plpos)
+HRESULT stat_dependence_view::GetFirstVisibleObjectPosition( long *plpos )
 {
 	if( !plpos )
 		return S_FALSE;
@@ -761,7 +761,7 @@ HRESULT stat_dependence_view::GetFirstVisibleObjectPosition(TPOS *plpos)
 }
 
 //////////////////////////////////////////////////////////////////////
-HRESULT stat_dependence_view::GetNextVisibleObject(IUnknown ** ppunkObject, TPOS *plPos)
+HRESULT stat_dependence_view::GetNextVisibleObject( IUnknown ** ppunkObject, long *plPos )
 {
 	if( !plPos )
 		return S_FALSE;
@@ -804,7 +804,7 @@ bool stat_dependence_view::_is_ndata_empty( IUnknownPtr sptr )
 //////////////////////////////////////////////////////////////////////
 void stat_dependence_view::_set_modify()
 {
-	for (TPOS lpos_lst = m_list_attached.head(); lpos_lst; lpos_lst = m_list_attached.next(lpos_lst))
+	for( long lpos_lst = m_list_attached.head(); lpos_lst; lpos_lst = m_list_attached.next( lpos_lst ) )
 	{
 		IUnknownPtr ptr_object = m_list_attached.get( lpos_lst );
 		if( ptr_object )
@@ -906,14 +906,14 @@ void stat_dependence_view::_attach_data()
 	long lcurr_count = 0; // number of valid pair of points
 
 	// [vanek] BT2000:4118 - 13.12.2004
-	long lcount_sum = 0, lid = 0;
-	for (TPOS lpos = m_list_attached.head(); lpos; lpos = m_list_attached.next(lpos), lid++)
+	long lcount_sum = 0;
+	for( long lpos = m_list_attached.head(), lid = 0; lpos; lpos = m_list_attached.next( lpos ), lid++  )
 	{
 		pbbdepend_error[lid] = false;
 
 		IStatTablePtr sptr_table = m_list_attached.get( lpos );
 
-		TPOS lpos_param_x = 0, lpos_param_y = 0;
+		long lpos_param_x = 0, lpos_param_y = 0;
 
 		sptr_table->GetParamPosByKey( m_chart_params.nx_param_key, &lpos_param_x );	
 		sptr_table->GetParamPosByKey( m_chart_params.ny_param_key, &lpos_param_y );	
@@ -945,7 +945,7 @@ void stat_dependence_view::_attach_data()
 		double fmin_value_y = 1e308;
 		double fmax_value_y = -1e307;
 
-		TPOS lpos_row = 0; 
+		long lpos_row = 0; 
 		sptr_table->GetFirstRowPos( &lpos_row ); 
 
 		while( lpos_row ) 
@@ -955,7 +955,7 @@ void stat_dependence_view::_attach_data()
 			sptr_table->GetValue( lpos_row, lpos_param_x, &pvalue_x );
 
 			stat_value *pvalue_y = 0;
-			sptr_table->GetValue(lpos_row, lpos_param_y, &pvalue_y);
+			sptr_table->GetValue( lpos_row, lpos_param_y, &pvalue_y );
 
 			// [vanek] BT2000:4118 - 13.12.2004
 			if( pvalue_x && pvalue_x->bwas_defined && pvalue_y && pvalue_y->bwas_defined)
@@ -1098,8 +1098,8 @@ void stat_dependence_view::_attach_data()
 				dw_digs2 |= cfAxisScaleY;
 
 			ptr_chart_atrr->SetChartStyle( lid, ChartViewParam( cfAxisX | cfAxisY | dw_digs | dw_digs2 ) );
-			long id = 0;
-			for (TPOS lp_lst = m_chart_params.m_lst_chart_color.head(); lp_lst; lp_lst = m_chart_params.m_lst_chart_color.next(lp_lst), id++)
+
+			for( long lp_lst = m_chart_params.m_lst_chart_color.head(), id = 0; lp_lst; lp_lst = m_chart_params.m_lst_chart_color.next( lp_lst ), id++ )
 			{
 				if( id == lid )
 				{
@@ -1208,70 +1208,69 @@ void stat_dependence_view::_attach_data()
 	if( !lcount_sum )
 		m_wnd_data.berror = true;      
 	// Draw experimental points
-	{long lid = 0; for (TPOS lpos = m_list_attached.head(); lpos; lpos = m_list_attached.next(lpos), lid++)
+	for( long lpos = m_list_attached.head(), lid = 0; lpos; lpos = m_list_attached.next( lpos ), lid++  )
 	{
-		IStatTablePtr sptr_table = m_list_attached.get(lpos);
+		IStatTablePtr sptr_table = m_list_attached.get( lpos );
 
-		TPOS lpos_param_x = 0, lpos_param_y = 0;
+		long lpos_param_x = 0, lpos_param_y = 0;
 
-		sptr_table->GetParamPosByKey(m_chart_params.nx_param_key, &lpos_param_x);
-		sptr_table->GetParamPosByKey(m_chart_params.ny_param_key, &lpos_param_y);
+		sptr_table->GetParamPosByKey( m_chart_params.nx_param_key, &lpos_param_x );	
+		sptr_table->GetParamPosByKey( m_chart_params.ny_param_key, &lpos_param_y );	
 
-		if (!lpos_param_x || !lpos_param_y)
+		if( !lpos_param_x || !lpos_param_y )
 		{
 			m_wnd_data.berror = true;
 			break;
 		}
 
-		TPOS lpos_row = 0;
-		lpos_row = 0;
-		sptr_table->GetFirstRowPos(&lpos_row);
+		long lpos_row = 0; 
+		sptr_table->GetFirstRowPos( &lpos_row ); 
 
 
-		while (lpos_row)
-		{
+		while( lpos_row ) 
+		{ 
 			stat_value *pvalue_x = 0;
 
-			sptr_table->GetValue(lpos_row, lpos_param_x, &pvalue_x);
+			sptr_table->GetValue( lpos_row, lpos_param_x, &pvalue_x );
 
 			stat_value *pvalue_y = 0;
-			sptr_table->GetValue(lpos_row, lpos_param_y, &pvalue_y);
+			sptr_table->GetValue( lpos_row, lpos_param_y, &pvalue_y );
 
 			// [vanek] BT2000:4118 - 13.12.2004
-			if (pvalue_x && pvalue_x->bwas_defined && pvalue_y && pvalue_y->bwas_defined)
+			if( pvalue_x && pvalue_x->bwas_defined && pvalue_y && pvalue_y->bwas_defined)
 			{
-				{ long id = 0;	for (TPOS lp_lst = m_chart_params.m_lst_marker.head(); lp_lst; lp_lst = m_chart_params.m_lst_marker.next(lp_lst), id++)
+				for( long lp_lst = m_chart_params.m_lst_marker.head(), id = 0; lp_lst; lp_lst = m_chart_params.m_lst_marker.next( lp_lst ), id++ )
 				{
-					if (id == lid)
+					if( id == lid )
 					{
-						x_chart_params::x_marker_type marker = m_chart_params.m_lst_marker.get(lp_lst);
+						x_chart_params::x_marker_type marker = m_chart_params.m_lst_marker.get( lp_lst );
 
 						double x = pvalue_x->fvalue;
 						double y = pvalue_y->fvalue;
 
-						points[iPnt].x = x;
-						points[iPnt++].y = y;
+						points[iPnt].x=x;
+						points[iPnt++].y=y;
 
-						if (m_chart_params.buse_loga_scale_x)
+						if( m_chart_params.buse_loga_scale_x )
 						{
-							x = (log10(pvalue_x->fvalue / f_abs_min_value_x)) / (log10(f_abs_max_value_x / f_abs_min_value_x));
+							x = ( log10( pvalue_x->fvalue / f_abs_min_value_x ) ) / ( log10( f_abs_max_value_x / f_abs_min_value_x ) );
 						}
 
-						if (m_chart_params.buse_loga_scale_y)
+						if( m_chart_params.buse_loga_scale_y )
 						{
-							y = (log10(pvalue_y->fvalue / f_abs_min_value_y)) / (log10(f_abs_max_value_y / f_abs_min_value_y));
+							y = ( log10( pvalue_y->fvalue / f_abs_min_value_y ) ) / ( log10( f_abs_max_value_y / f_abs_min_value_y ) );
 						}
 
-						m_sptr_chart->AddMarker(x, y, marker.nmarker_size, marker.clmarker_color, ChartMarker(marker.nmarker_type));
+						m_sptr_chart->AddMarker( x, y, marker.nmarker_size, marker.clmarker_color, ChartMarker( marker.nmarker_type ) );
 						break;
 					}
-				}}
+				}
 			}
 
 			stat_row *prow = 0;
-			sptr_table->GetNextRow(&lpos_row, &prow);
+			sptr_table->GetNextRow( &lpos_row, &prow );
 		}
-	}}
+	}
 
 	_ASSERTE(iPnt==lcurr_count);
 
@@ -1303,19 +1302,18 @@ void stat_dependence_view::_attach_data()
 	}
 
 	bool berror = false;
-	{long lid = 0; for (TPOS lpos = m_list_attached.head(); lpos; lpos = m_list_attached.next(lpos), lid++)
-	if (pbbdepend_error[lid])
-	{
-		berror = true;
-		break;
-	}
-	}
+	for( long lpos = m_list_attached.head(), lid = 0; lpos; lpos = m_list_attached.next( lpos ), lid++  )
+		if( pbbdepend_error[lid] )
+		{
+			berror = true;
+			break;
+		}
 
 		if( !m_wnd_data.berror )
 		{
 			if( m_chart_params.ndependence_type && !berror )
 			{
-				long lid = 0; for (TPOS lpos = m_list_attached.head(); lpos; lpos = m_list_attached.next(lpos), lid++)
+				for( long lpos = m_list_attached.head(), lid = 0; lpos; lpos = m_list_attached.next( lpos ), lid++  )
 				{
 					if( !m_chart_params.buse_loga_scale_x )
 					{
@@ -1558,44 +1556,45 @@ void stat_dependence_view::_recalc_layout()
 	long nlast_count_x = m_rc_count_text.right;
 	long nlast_model_x = m_rc_model_text.right;
 	long nlast_corel_x = m_rc_corel_text.right;
-	{long lid = 0; for (TPOS lpos = m_lst_legend.head(); lpos; lpos = m_lst_legend.next(lpos), lid++)
-	{
-		x_legend_data &legend_data = m_lst_legend.get(lpos);
-		long id = 0;
-		for (TPOS lp = m_wnd_layout.m_lst_legend_layout.head(); lp; lp = m_wnd_layout.m_lst_legend_layout.next(lp), id++)
-		{
-			if (lid == id)
-			{
-				x_wnd_layout::x_legend_layout &legend_layout = m_wnd_layout.m_lst_legend_layout.get(lp);
 
-				legend_data.rc_name.left = nlast_name_x + SZ_PARAM_TEXT_VALUE_OFFSET;
-				legend_data.rc_name.top = m_rc_name_text.top;
-				legend_data.rc_name.right = legend_data.rc_name.left + legend_layout.legend_value_w;
-				legend_data.rc_name.bottom = m_rc_name_text.bottom;
+	for( long lpos = m_lst_legend.head(), lid = 0; lpos; lpos = m_lst_legend.next( lpos ), lid++ )
+	{
+		x_legend_data &legend_data = m_lst_legend.get( lpos );
+
+		for( long lp = m_wnd_layout.m_lst_legend_layout.head(), id = 0; lp; lp = m_wnd_layout.m_lst_legend_layout.next( lp ), id++ )
+		{
+			if( lid == id )
+			{
+				x_wnd_layout::x_legend_layout &legend_layout = m_wnd_layout.m_lst_legend_layout.get( lp );
+
+				legend_data.rc_name.left	= nlast_name_x + SZ_PARAM_TEXT_VALUE_OFFSET;
+				legend_data.rc_name.top		= m_rc_name_text.top;
+				legend_data.rc_name.right	= legend_data.rc_name.left + legend_layout.legend_value_w;
+				legend_data.rc_name.bottom	= m_rc_name_text.bottom;
 				nlast_name_x = legend_data.rc_name.right;
 
-				legend_data.rc_count_value.left = nlast_count_x + SZ_PARAM_TEXT_VALUE_OFFSET;
-				legend_data.rc_count_value.top = m_rc_count_text.top;
-				legend_data.rc_count_value.right = legend_data.rc_count_value.left + legend_layout.legend_value_w;
-				legend_data.rc_count_value.bottom = m_rc_count_text.bottom;
+				legend_data.rc_count_value.left		= nlast_count_x + SZ_PARAM_TEXT_VALUE_OFFSET;
+				legend_data.rc_count_value.top		= m_rc_count_text.top;
+				legend_data.rc_count_value.right	= legend_data.rc_count_value.left + legend_layout.legend_value_w;
+				legend_data.rc_count_value.bottom	= m_rc_count_text.bottom;
 				nlast_count_x = legend_data.rc_count_value.right;
 
-				legend_data.rc_model_value.left = nlast_model_x + SZ_PARAM_TEXT_VALUE_OFFSET;
-				legend_data.rc_model_value.top = m_rc_model_text.top;
-				legend_data.rc_model_value.right = legend_data.rc_model_value.left + legend_layout.legend_value_w;
-				legend_data.rc_model_value.bottom = m_rc_model_text.bottom;
+				legend_data.rc_model_value.left		= nlast_model_x + SZ_PARAM_TEXT_VALUE_OFFSET;
+				legend_data.rc_model_value.top		= m_rc_model_text.top;
+				legend_data.rc_model_value.right	= legend_data.rc_model_value.left + legend_layout.legend_value_w;
+				legend_data.rc_model_value.bottom	= m_rc_model_text.bottom;
 				nlast_model_x = legend_data.rc_model_value.right;
 
-				legend_data.rc_corel_value.left = nlast_corel_x + SZ_PARAM_TEXT_VALUE_OFFSET;
-				legend_data.rc_corel_value.top = m_rc_corel_text.top;
-				legend_data.rc_corel_value.right = legend_data.rc_corel_value.left + legend_layout.legend_value_w;
-				legend_data.rc_corel_value.bottom = m_rc_corel_text.bottom;
+				legend_data.rc_corel_value.left		= nlast_corel_x + SZ_PARAM_TEXT_VALUE_OFFSET;
+				legend_data.rc_corel_value.top		= m_rc_corel_text.top;
+				legend_data.rc_corel_value.right	= legend_data.rc_corel_value.left + legend_layout.legend_value_w;
+				legend_data.rc_corel_value.bottom	= m_rc_corel_text.bottom;
 				nlast_corel_x = legend_data.rc_corel_value.right;
 
 				break;
 			}
 		}
-	}}
+	}
 
 	RECT rc_hot_chart = {0};
 	RECT rc_hot_yparam = {0};
@@ -1687,17 +1686,18 @@ void stat_dependence_view::_calc_min_rect( bool bprint_mode )
 
 	long nfull_legend_x = 0;
 	long nfull_legend_y = 0;
-	{long id = 0; for (TPOS lp = m_wnd_layout.m_lst_legend_layout.head(); lp; lp = m_wnd_layout.m_lst_legend_layout.next(lp), id++)
+
+	for( long lp = m_wnd_layout.m_lst_legend_layout.head(), id = 0; lp; lp = m_wnd_layout.m_lst_legend_layout.next( lp ), id++ )
 	{
-		x_wnd_layout::x_legend_layout &legend_layout = m_wnd_layout.m_lst_legend_layout.get(lp);
+		x_wnd_layout::x_legend_layout &legend_layout = m_wnd_layout.m_lst_legend_layout.get( lp );
 
 		nfull_legend_x += legend_layout.legend_value_w;
 
-		if (lp != m_wnd_layout.m_lst_legend_layout.tail())
+		if( lp != m_wnd_layout.m_lst_legend_layout.tail() )
 			nfull_legend_x += SZ_PARAM_TEXT_VALUE_OFFSET;
 
-		nfull_legend_y = __max(nfull_legend_y, legend_layout.legend_value_h);
-	}}
+		nfull_legend_y = __max( nfull_legend_y, legend_layout.legend_value_h );
+	}
 
 	m_rc_min_rect.right =	SZ_BORDER + 
 		__max(  SZ_HOT_BTN_FULL, m_wnd_layout.yparam_w ) +
@@ -1869,95 +1869,95 @@ void stat_dependence_view::_do_draw( HDC hdc, RECT rc_paint, bool bcalc, double 
 		m_wnd_layout.legend_text_h	+= rc_calc.bottom;
 	}
 
-	{long lid = 0; for (TPOS lpos = m_lst_legend.head(); lpos; lpos = m_lst_legend.next(lpos), lid++)
+	for( long lpos = m_lst_legend.head(), lid = 0; lpos; lpos = m_lst_legend.next( lpos ), lid++ )
 	{
-		x_legend_data legend_data = m_lst_legend.get(lpos);
+		x_legend_data legend_data = m_lst_legend.get( lpos );
 
 		/* значения легенды */
-		if (!bcalc)
-			::DrawText(hdc, legend_data.sz_name, strlen(legend_data.sz_name), &scale_rect(legend_data.rc_name, fzoom), DT_LEFT | DT_VCENTER | DT_SINGLELINE);
+		if( !bcalc )
+			::DrawText( hdc, legend_data.sz_name, strlen( legend_data.sz_name ), &scale_rect( legend_data.rc_name, fzoom ), DT_LEFT | DT_VCENTER | DT_SINGLELINE );
 		else
 		{
-			RECT rc_calc = { 0 };
-			::DrawText(hdc, legend_data.sz_name, strlen(legend_data.sz_name), &rc_calc, DT_LEFT | DT_TOP | DT_SINGLELINE | DT_CALCRECT);
+			RECT rc_calc = {0};
+			::DrawText( hdc, legend_data.sz_name, strlen( legend_data.sz_name ), &rc_calc, DT_LEFT | DT_TOP | DT_SINGLELINE | DT_CALCRECT );
 
-			{long id = 0; for (TPOS lp = m_wnd_layout.m_lst_legend_layout.head(); lp; lp = m_wnd_layout.m_lst_legend_layout.next(lp), id++)
+			for( long lp = m_wnd_layout.m_lst_legend_layout.head(), id = 0; lp; lp = m_wnd_layout.m_lst_legend_layout.next( lp ), id++ )
 			{
-				if (lid == id)
+				if( lid == id )
 				{
-					x_wnd_layout::x_legend_layout &legend_layout = m_wnd_layout.m_lst_legend_layout.get(lp);
+					x_wnd_layout::x_legend_layout &legend_layout = m_wnd_layout.m_lst_legend_layout.get( lp );
 
-					legend_layout.legend_value_w = rc_calc.right;
-					legend_layout.legend_value_h = rc_calc.bottom;
-
-					break;
-				}
-			}}
-		}
-
-		if (!bcalc)
-			::DrawText(hdc, legend_data.sz_count_value, strlen(legend_data.sz_count_value), &scale_rect(legend_data.rc_count_value, fzoom), DT_LEFT | DT_VCENTER | DT_SINGLELINE);
-		else
-		{
-			RECT rc_calc = { 0 };
-			::DrawText(hdc, legend_data.sz_count_value, strlen(legend_data.sz_count_value), &rc_calc, DT_LEFT | DT_TOP | DT_SINGLELINE | DT_CALCRECT);
-
-			long id = 0; for (TPOS lp = m_wnd_layout.m_lst_legend_layout.head(); lp; lp = m_wnd_layout.m_lst_legend_layout.next(lp), id++)
-			{
-				if (lid == id)
-				{
-					x_wnd_layout::x_legend_layout &legend_layout = m_wnd_layout.m_lst_legend_layout.get(lp);
-
-					legend_layout.legend_value_w = __max(legend_layout.legend_value_w, rc_calc.right);
-					legend_layout.legend_value_h += rc_calc.bottom;
+					legend_layout.legend_value_w	= rc_calc.right;
+					legend_layout.legend_value_h	= rc_calc.bottom;
 
 					break;
 				}
 			}
 		}
 
-		if (!bcalc)
-			::DrawText(hdc, legend_data.sz_model_value, strlen(legend_data.sz_model_value), &scale_rect(legend_data.rc_model_value, fzoom), DT_LEFT | DT_VCENTER | DT_SINGLELINE);
+		if( !bcalc )
+			::DrawText( hdc, legend_data.sz_count_value, strlen( legend_data.sz_count_value ), &scale_rect( legend_data.rc_count_value, fzoom ), DT_LEFT | DT_VCENTER | DT_SINGLELINE );
 		else
 		{
-			RECT rc_calc = { 0 };
-			::DrawText(hdc, legend_data.sz_model_value, strlen(legend_data.sz_model_value), &rc_calc, DT_LEFT | DT_TOP | DT_SINGLELINE | DT_CALCRECT);
+			RECT rc_calc = {0};
+			::DrawText( hdc, legend_data.sz_count_value, strlen( legend_data.sz_count_value ), &rc_calc, DT_LEFT | DT_TOP | DT_SINGLELINE | DT_CALCRECT );
 
-			long id = 0; for (TPOS lp = m_wnd_layout.m_lst_legend_layout.head(); lp; lp = m_wnd_layout.m_lst_legend_layout.next(lp), id++)
+			for( long lp = m_wnd_layout.m_lst_legend_layout.head(), id = 0; lp; lp = m_wnd_layout.m_lst_legend_layout.next( lp ), id++ )
 			{
-				if (lid == id)
+				if( lid == id )
 				{
-					x_wnd_layout::x_legend_layout &legend_layout = m_wnd_layout.m_lst_legend_layout.get(lp);
+					x_wnd_layout::x_legend_layout &legend_layout = m_wnd_layout.m_lst_legend_layout.get( lp );
 
-					legend_layout.legend_value_w = __max(legend_layout.legend_value_w, rc_calc.right);
-					legend_layout.legend_value_h += rc_calc.bottom;
+					legend_layout.legend_value_w	= __max( legend_layout.legend_value_w, rc_calc.right );
+					legend_layout.legend_value_h	+= rc_calc.bottom;
 
 					break;
 				}
 			}
 		}
 
-		if (!bcalc)
-			::DrawText(hdc, legend_data.sz_corel_value, strlen(legend_data.sz_corel_value), &scale_rect(legend_data.rc_corel_value, fzoom), DT_LEFT | DT_VCENTER | DT_SINGLELINE);
+		if( !bcalc )
+			::DrawText( hdc, legend_data.sz_model_value, strlen( legend_data.sz_model_value ), &scale_rect( legend_data.rc_model_value, fzoom ), DT_LEFT | DT_VCENTER | DT_SINGLELINE );
 		else
 		{
-			RECT rc_calc = { 0 };
-			::DrawText(hdc, legend_data.sz_corel_value, strlen(legend_data.sz_corel_value), &rc_calc, DT_LEFT | DT_TOP | DT_SINGLELINE | DT_CALCRECT);
+			RECT rc_calc = {0};
+			::DrawText( hdc, legend_data.sz_model_value, strlen( legend_data.sz_model_value ), &rc_calc, DT_LEFT | DT_TOP | DT_SINGLELINE | DT_CALCRECT );
 
-			long id = 0; for (TPOS lp = m_wnd_layout.m_lst_legend_layout.head(); lp; lp = m_wnd_layout.m_lst_legend_layout.next(lp), id++)
+			for( long lp = m_wnd_layout.m_lst_legend_layout.head(), id = 0; lp; lp = m_wnd_layout.m_lst_legend_layout.next( lp ), id++ )
 			{
-				if (lid == id)
+				if( lid == id )
 				{
-					x_wnd_layout::x_legend_layout &legend_layout = m_wnd_layout.m_lst_legend_layout.get(lp);
+					x_wnd_layout::x_legend_layout &legend_layout = m_wnd_layout.m_lst_legend_layout.get( lp );
 
-					legend_layout.legend_value_w = __max(legend_layout.legend_value_w, rc_calc.right);
-					legend_layout.legend_value_h += rc_calc.bottom;
+					legend_layout.legend_value_w	= __max( legend_layout.legend_value_w, rc_calc.right );
+					legend_layout.legend_value_h	+= rc_calc.bottom;
 
 					break;
 				}
 			}
 		}
-	}}
+
+		if( !bcalc )
+			::DrawText( hdc, legend_data.sz_corel_value, strlen( legend_data.sz_corel_value ), &scale_rect( legend_data.rc_corel_value, fzoom ), DT_LEFT | DT_VCENTER | DT_SINGLELINE );
+		else
+		{
+			RECT rc_calc = {0};
+			::DrawText( hdc, legend_data.sz_corel_value, strlen( legend_data.sz_corel_value ), &rc_calc, DT_LEFT | DT_TOP | DT_SINGLELINE | DT_CALCRECT );
+
+			for( long lp = m_wnd_layout.m_lst_legend_layout.head(), id = 0; lp; lp = m_wnd_layout.m_lst_legend_layout.next( lp ), id++ )
+			{
+				if( lid == id )
+				{
+					x_wnd_layout::x_legend_layout &legend_layout = m_wnd_layout.m_lst_legend_layout.get( lp );
+
+					legend_layout.legend_value_w	= __max( legend_layout.legend_value_w, rc_calc.right );
+					legend_layout.legend_value_h	+= rc_calc.bottom;
+
+					break;
+				}
+			}
+		}
+	}
 
 	if( !bcalc )
 	{
@@ -2048,7 +2048,7 @@ void stat_dependence_view::_load_from_ndata(  INamedDataPtr sptr_nd )
 	if( m_list_attached.count() > 1 )
 	{
 
-		for (TPOS lpos_lst = m_list_attached.next(m_list_attached.head()); lpos_lst; lpos_lst = m_list_attached.next(lpos_lst))
+		for( long lpos_lst = m_list_attached.next( m_list_attached.head() ); lpos_lst; lpos_lst = m_list_attached.next( lpos_lst ) )
 		{
 			INamedDataPtr sptr_nd2 = m_list_attached.get( lpos_lst );
 			COLORREF cl_chart = ::GetValueColor( sptr_nd2, SECT_DEPENDENCE_CHART_ROOT, CHART_COLOR, RGB( 255, 0, 0 ) );
@@ -2147,7 +2147,7 @@ void stat_dependence_view::_load_from_ndata(  INamedDataPtr sptr_nd )
 
 	if( m_list_attached.count() > 1 )
 	{
-		for (TPOS lpos_lst = m_list_attached.next(m_list_attached.head()); lpos_lst; lpos_lst = m_list_attached.next(lpos_lst))
+		for( long lpos_lst = m_list_attached.next( m_list_attached.head() ); lpos_lst; lpos_lst = m_list_attached.next( lpos_lst ) )
 		{
 			INamedDataPtr sptr_nd2 = m_list_attached.get( lpos_lst );
 
@@ -2363,13 +2363,13 @@ double stat_dependence_view::_get_correl( IStatTable *punk_table, long lmodel, d
 	double fsum_yy = 0;
 	double fsum_xy = 0;
 
-	TPOS lpos_row = 0; 
-	punk_table->GetFirstRowPos(&lpos_row ); 
+	long lpos_row = 0; 
+	punk_table->GetFirstRowPos( &lpos_row ); 
 
 	long lcount = 0;
 	punk_table->GetRowCount( &lcount );
 
-	TPOS lpos_param_x = 0, lpos_param_y = 0;
+	long lpos_param_x = 0, lpos_param_y = 0;
 
 	punk_table->GetParamPosByKey( m_chart_params.nx_param_key, &lpos_param_x );	
 	punk_table->GetParamPosByKey( m_chart_params.ny_param_key, &lpos_param_y );	
@@ -2392,10 +2392,10 @@ double stat_dependence_view::_get_correl( IStatTable *punk_table, long lmodel, d
 		{ 
 			stat_value *pvalue_x = 0;
 
-			punk_table->GetValue(lpos_row, lpos_param_x, &pvalue_x);
+			punk_table->GetValue( lpos_row, lpos_param_x, &pvalue_x );
 
 			stat_value *pvalue_y = 0;
-			punk_table->GetValue(lpos_row, lpos_param_y, &pvalue_y);
+			punk_table->GetValue( lpos_row, lpos_param_y, &pvalue_y );
 
 			// [vanek] BT2000:4118 - 13.12.2004
 			if( pvalue_x && pvalue_x->bwas_defined && pvalue_y && pvalue_y->bwas_defined)

@@ -20,7 +20,7 @@ public:
 	virtual void Subclass( HWND hWnd );
 	virtual void DoCommand( UINT nCmd );
 
-	INT_PTR DoModal();
+	int DoModal();
 	
 	virtual UINT idd() = 0;
 protected:

@@ -695,7 +695,7 @@ bool CActionShowPrintDesignMode::Invoke()
 			punkV->Release();
 			if( ptrC )
 			{
-				LONG_PTR lPos = 0;
+				long lPos = 0;
 				ptrC->GetFirstObjectPos( _bstr_t(szTypeReportForm), &lPos );
 				ptrC->GetNextObject( _bstr_t(szTypeReportForm), &lPos, &punkData );
 			}			

@@ -112,64 +112,64 @@ public:
 	HWND	handle()	{return m_hwnd;}
 public:
 	virtual void	handle_init(){};
-	virtual LRESULT	handle_message( UINT m, WPARAM w, LPARAM l );
+	virtual long	handle_message( UINT m, WPARAM w, LPARAM l );
 protected:
-	virtual LRESULT on_create(CREATESTRUCT *pcs)			{ handle_init(); return call_default(); };
-	virtual LRESULT on_close()								{ return call_default(); };
-	virtual LRESULT on_destroy()							{ return call_default(); };
-	virtual LRESULT on_paint();
-	virtual LRESULT on_ncdestroy();
-	virtual LRESULT on_size(short cx, short cy, UINT_PTR fSizeType)	{ return call_default(); }
-	virtual LRESULT on_show(bool bShow, LPARAM status)		{ return call_default(); }
-	virtual LRESULT on_initdialog()						{return 0;};
-	virtual LRESULT on_timer(UINT_PTR lEvent)				{ return call_default(); };
-	virtual LRESULT on_command(UINT_PTR cmd)					{ return call_default(); };
-	virtual LRESULT on_syscommand(uint cmd)				{ return call_default(); };
-	virtual LRESULT on_mousemove(const _point &point)	{ return call_default(); };
-	virtual LRESULT on_lbuttondown(const _point &point)	{ return call_default(); };
-	virtual LRESULT on_lbuttonup(const _point &point)	{ return call_default(); };
-	virtual LRESULT on_rbuttondown(const _point &point)	{ return call_default(); };
-	virtual LRESULT on_rbuttonup(const _point &point)	{ return call_default(); };
-	virtual LRESULT on_getminmaxinfo(MINMAXINFO *pmminfo){ return call_default(); };
-	virtual LRESULT on_keydown(long nVirtKey)			{ return call_default(); }
-	virtual LRESULT on_keyup(long nVirtKey)				{ return call_default(); }
-	virtual LRESULT on_char(long nVirtKey)				{ return call_default(); }
-	virtual LRESULT on_getdlgcode(MSG* p)				{ return call_default(); }
-	virtual LRESULT on_notify(uint idc, NMHDR *pnmhdr)						{ return notify_reflect(); }
-	virtual LRESULT on_measureitem(int idc, MEASUREITEMSTRUCT *pmsr)			{ return notify_reflect(); }
-	virtual LRESULT on_drawitem(int idc, DRAWITEMSTRUCT *pdrw)				{ return notify_reflect(); }
-	virtual LRESULT on_compareitem( int idc, COMPAREITEMSTRUCT *pdrw )			{return notify_reflect();}
-	virtual LRESULT on_dropfiles(HANDLE hdrop)			{ return call_default(); };
-	virtual LRESULT on_setfocus(HWND hwndOld)			{ return call_default(); };
-	virtual LRESULT on_killfocus(HWND hwndOld)			{ return call_default(); };
-	virtual LRESULT on_erasebkgnd(HDC)					{ return call_default(); }
-	virtual LRESULT on_hscroll(unsigned code, unsigned pos, HWND hwndScroll)	{ return call_default(); }
-	virtual LRESULT on_vscroll(unsigned code, unsigned pos, HWND hwndScroll)	{ return call_default(); }
-	virtual LRESULT on_setcursor(unsigned code, unsigned hit)				{ return call_default(); }
-	virtual LRESULT on_activate(unsigned code, HWND hwnd)					{ return call_default(); }
-	virtual LRESULT on_mouseactivate(unsigned hit, unsigned message)			{ return call_default(); }
+	virtual long on_create( CREATESTRUCT *pcs )			{handle_init();return call_default();};
+	virtual long on_close()								{return call_default();};
+	virtual long on_destroy()							{return call_default();};
+	virtual long on_paint();
+	virtual long on_ncdestroy();
+	virtual long on_size( short cx, short cy, ulong fSizeType )	{return call_default();}
+	virtual long on_show( bool bShow, long status )		{return call_default();}
+	virtual long on_initdialog()						{return 0;};
+	virtual long on_timer( ulong lEvent )				{return call_default();};
+	virtual long on_command( uint cmd )					{return call_default();};
+	virtual long on_syscommand( uint cmd )				{return call_default();};
+	virtual long on_mousemove( const _point &point )	{return call_default();};
+	virtual long on_lbuttondown( const _point &point )	{return call_default();};
+	virtual long on_lbuttonup( const _point &point )	{return call_default();};
+	virtual long on_rbuttondown( const _point &point )	{return call_default();};
+	virtual long on_rbuttonup( const _point &point )	{return call_default();};
+	virtual long on_getminmaxinfo( MINMAXINFO *pmminfo ){return call_default();};
+	virtual long on_keydown( long nVirtKey )			{return call_default();}
+	virtual long on_keyup( long nVirtKey )				{return call_default();}
+	virtual long on_char( long nVirtKey )				{return call_default();}
+	virtual long on_getdlgcode( MSG* p )				{return call_default();}
+	virtual long on_notify( uint idc, NMHDR *pnmhdr )						{return notify_reflect();}
+	virtual long on_measureitem( int idc, MEASUREITEMSTRUCT *pmsr )			{return notify_reflect();}
+	virtual long on_drawitem( int idc, DRAWITEMSTRUCT *pdrw )				{return notify_reflect();}
+	virtual long on_compareitem( int idc, COMPAREITEMSTRUCT *pdrw )			{return notify_reflect();}
+	virtual long on_dropfiles( HANDLE hdrop )			{return call_default();};
+	virtual long on_setfocus( HWND hwndOld )			{return call_default();};
+	virtual long on_killfocus( HWND hwndOld )			{return call_default();};
+	virtual long on_erasebkgnd( HDC )					{return call_default();}
+	virtual long on_hscroll( unsigned code, unsigned pos, HWND hwndScroll )	{return call_default();}
+	virtual long on_vscroll( unsigned code, unsigned pos, HWND hwndScroll )	{return call_default();}
+	virtual long on_setcursor( unsigned code, unsigned hit )				{return call_default();}
+	virtual long on_activate( unsigned code, HWND hwnd )					{return call_default();}
+	virtual long on_mouseactivate( unsigned hit, unsigned message )			{return call_default();}
 
-	virtual LRESULT call_default();
-	virtual LRESULT notify_reflect();
+	virtual long call_default();
+	virtual long notify_reflect();
 	virtual long handle_reflect_message( MSG *pmsg, long *plProcessed );
 	virtual long on_notify_reflect( NMHDR *pnmhdr, long *plProcessed )		{return 0;}
 	virtual long on_getinterface()							{return 0;}
-	virtual LRESULT on_helpinfo(HELPINFO *phi)				{ return call_default(); }
+	virtual long on_helpinfo( HELPINFO *phi )				{return call_default();}
 	virtual long on_windowfocused( HWND hwnd )				{return 0;}
-	virtual LRESULT on_lbuttondblclk(const _point &point)	{ return call_default(); };
-	virtual LRESULT on_rbuttondblclk(const _point &point)	{ return call_default(); };
-	virtual LRESULT on_contextmenu(const _point &point)		{ return call_default(); }
-	virtual LRESULT on_cancelmode()							{ return call_default(); }
+	virtual long on_lbuttondblclk( const _point &point )	{return call_default();};
+	virtual long on_rbuttondblclk( const _point &point )	{return call_default();};
+	virtual long on_contextmenu( const _point &point )		{return call_default();}
+	virtual long on_cancelmode()							{return call_default();}
 public:	//wrappers
 	HWND get_dlg_item( UINT idc )								{return ::GetDlgItem( handle(), idc );}
-	BOOL get_window_rect( RECT *pr )							{return ::GetWindowRect( handle(), pr ); }
-	BOOL get_client_rect( RECT *pr )							{return ::GetClientRect( handle(), pr ); }
-	BOOL move_window( const RECT &rect, long lRepaint = true )	{return ::MoveWindow( handle(), rect.left, rect.top, rect.right-rect.left, rect.bottom-rect.top, lRepaint );}
+	long get_window_rect( RECT *pr )							{return ::GetWindowRect( handle(), pr ); }
+	long get_client_rect( RECT *pr )							{return ::GetClientRect( handle(), pr ); }
+	long move_window( const RECT &rect, long lRepaint = true )	{return ::MoveWindow( handle(), rect.left, rect.top, rect.right-rect.left, rect.bottom-rect.top, lRepaint );}
 	LRESULT send_message( UINT m, WPARAM w = 0, LPARAM l = 0)		{return ::SendMessage( handle(), m, w, l );}
-	UINT get_dlg_item_text( UINT idc, _char *psz, int cb )		{return ::GetDlgItemText( handle(), idc, psz, cb );}
-	UINT is_dlg_button_checked( UINT idc )						{return ::IsDlgButtonChecked( handle(), idc );}
-	BOOL check_dlg_button( UINT idc, int check )				{return ::CheckDlgButton( handle(), idc, check );}
-	BOOL set_dlg_item_text( UINT idc, const _char *psz )			{return ::SetDlgItemText( handle(), idc, psz );}
+	long get_dlg_item_text( UINT idc, _char *psz, int cb )		{return ::GetDlgItemText( handle(), idc, psz, cb );}
+	long is_dlg_button_checked( UINT idc )						{return ::IsDlgButtonChecked( handle(), idc );}
+	long check_dlg_button( UINT idc, int check )				{return ::CheckDlgButton( handle(), idc, check );}
+	long set_dlg_item_text( UINT idc, const _char *psz )			{return ::SetDlgItemText( handle(), idc, psz );}
 
 protected:
 	HWND			m_hwnd;
@@ -184,17 +184,17 @@ protected:
 };
 
 
-inline LRESULT win_impl::notify_reflect()
+inline long win_impl::notify_reflect()
 {
 	HWND	hwnd = 0;
 
 	if( m_current_message.message == WM_NOTIFY )
 		hwnd = ((NMHDR*)m_current_message.lParam)->hwndFrom;
 	else
-		hwnd = ::GetDlgItem( handle(), (int)m_current_message.wParam );
+		hwnd = ::GetDlgItem( handle(), m_current_message.wParam );
 	
 	long	lProcessed = false;
-	LRESULT	lret_reflect = 0;
+	long	lret_reflect = 0;
 	
 	if( hwnd )
 		lret_reflect = SendMessage( hwnd, WM_NOTYFYREFLECT, (WPARAM)&lProcessed, (LPARAM)&m_current_message );
@@ -203,7 +203,7 @@ inline LRESULT win_impl::notify_reflect()
 };
 
 
-inline LRESULT	win_impl::on_paint()
+inline long	win_impl::on_paint()
 {
 	if( m_proc_old )return call_default();;
 
@@ -213,9 +213,9 @@ inline LRESULT	win_impl::on_paint()
 	return 1;
 }
 
-inline LRESULT	win_impl::on_ncdestroy()
+inline long	win_impl::on_ncdestroy()
 {
-	LRESULT	lret = call_default();
+	long	lret = call_default();
 	detach();
 	
 	return lret;
@@ -321,9 +321,9 @@ bool win_impl::create_ex( DWORD style, const RECT &rect, const _char *pszTitle, 
 }
 
 inline 
-LRESULT	win_impl::handle_message(UINT m, WPARAM w, LPARAM l)
+long	win_impl::handle_message( UINT m, WPARAM w, LPARAM l )
 {
-	LRESULT	lres = 0;
+	long	lres = 0;
 //store old message
 	m_lock_delete++;
 
@@ -354,36 +354,36 @@ LRESULT	win_impl::handle_message(UINT m, WPARAM w, LPARAM l)
 	case WM_COMMAND:		lres = on_command( w );break;
 	case WM_SYSCOMMAND:		lres = on_syscommand( LOWORD(w) );break;
 	case WM_TIMER:			lres = on_timer( w );break;
-	case WM_LBUTTONDOWN:	lres = on_lbuttondown( _point( (long)l ) );break;
-	case WM_LBUTTONUP:		lres = on_lbuttonup(_point((long)l)); break;
-	case WM_RBUTTONDOWN:	lres = on_rbuttondown(_point((long)l)); break;
-	case WM_RBUTTONUP:		lres = on_rbuttonup(_point((long)l)); break;
-	case WM_MOUSEMOVE:		lres = on_mousemove(_point((long)l)); break;
+	case WM_LBUTTONDOWN:	lres = on_lbuttondown( _point( l ) );break;
+	case WM_LBUTTONUP:		lres = on_lbuttonup( _point( l ) );break;
+	case WM_RBUTTONDOWN:	lres = on_rbuttondown( _point( l ) );break;
+	case WM_RBUTTONUP:		lres = on_rbuttonup( _point( l ) );break;
+	case WM_MOUSEMOVE:		lres = on_mousemove( _point( l ) );break;
 	case WM_GETMINMAXINFO:	lres = on_getminmaxinfo( (MINMAXINFO *)l );break;
 	case WM_GETINTERFACE:	lres = on_getinterface();break;
-	case WM_NOTIFY:			lres = on_notify( (uint)w, (NMHDR*)l );break;
+	case WM_NOTIFY:			lres = on_notify( w, (NMHDR*)l );break;
 	case WM_DROPFILES:		lres = on_dropfiles( (HANDLE)w );break;
 	case WM_NOTYFYREFLECT:	lres = handle_reflect_message( (MSG*)l, (long*)w );break;
 	case WM_SETFOCUS:		lres = on_setfocus( (HWND)w );break;
 	case WM_KILLFOCUS:		lres = on_killfocus( (HWND)w );break;
-	case WM_CHAR:			lres = on_char( (long)w );break;
-	case WM_KEYDOWN:		lres = on_keydown( (long)w );break;
-	case WM_KEYUP:			lres = on_keyup( (long)w );break;
+	case WM_CHAR:			lres = on_char( w );break;
+	case WM_KEYDOWN:		lres = on_keydown( w );break;
+	case WM_KEYUP:			lres = on_keyup( w );break;
 	case WM_GETDLGCODE:		lres = on_getdlgcode( (MSG *)l );break;
 	case WM_ERASEBKGND:		lres = on_erasebkgnd( (HDC)w );break; 
 	case WM_HSCROLL:		lres = on_hscroll( LOWORD( w ), HIWORD( w ), (HWND)l );break;
 	case WM_VSCROLL:		lres = on_vscroll( LOWORD( w ), HIWORD( w ), (HWND)l );break;
-	case WM_DRAWITEM:		lres = on_drawitem( (int)w, (DRAWITEMSTRUCT*)l );break;
-	case WM_MEASUREITEM:	lres = on_measureitem( (int)w, (MEASUREITEMSTRUCT*)l );break;
-	case WM_COMPAREITEM:	lres = on_compareitem( (int)w, (COMPAREITEMSTRUCT*)l );break;
+	case WM_DRAWITEM:		lres = on_drawitem( w, (DRAWITEMSTRUCT*)l );break;
+	case WM_MEASUREITEM:	lres = on_measureitem( w, (MEASUREITEMSTRUCT*)l );break;
+	case WM_COMPAREITEM:	lres = on_compareitem( w, (COMPAREITEMSTRUCT*)l );break;
 	case WM_SETCURSOR:		lres = on_setcursor( HIWORD(l), LOWORD(l) );break;
 	case WM_HELP:			lres = on_helpinfo( (HELPINFO*)l );break;
 	case WM_WINDOWFOCUSED:	lres = on_windowfocused( (HWND)l );break;
 	case WM_ACTIVATE:		lres = on_activate( LOWORD(w), (HWND)l );break;
 	case WM_MOUSEACTIVATE:	lres = on_mouseactivate( LOWORD(l), HIWORD(l) );break;
-	case WM_LBUTTONDBLCLK:	lres = on_lbuttondblclk( _point((long)l) );break;
-	case WM_RBUTTONDBLCLK:	lres = on_rbuttondblclk( _point((long)l) );break;
-	case WM_CONTEXTMENU:	lres = on_contextmenu( _point((long)l) );break;
+	case WM_LBUTTONDBLCLK:	lres = on_lbuttondblclk( _point( l ) );break;
+	case WM_RBUTTONDBLCLK:	lres = on_rbuttondblclk( _point( l ) );break;
+	case WM_CONTEXTMENU:	lres = on_contextmenu( _point( l ) );break;
 	case WM_CANCELMODE:		lres = on_cancelmode();break;
 
 	default:lres = call_default();
@@ -405,7 +405,7 @@ inline long win_impl::handle_reflect_message( MSG *pmsg, long *plProcessed )
 	return 0;
 }
 
-inline LRESULT win_impl::call_default()
+inline long win_impl::call_default()
 {
 	if( m_proc_old && m_call_old )
 		return CallWindowProc( m_proc_old, handle(), m_current_message.message, m_current_message.wParam, m_current_message.lParam );
@@ -431,7 +431,7 @@ LONG_PTR __stdcall subclass_proc(HWND hwnd, UINT m, WPARAM w, LPARAM l )
 inline 
 LONG_PTR __stdcall subclassed_proc(HWND hwnd, UINT m, WPARAM w, LPARAM l )
 {
-	message_filter	*pm = (message_filter*)(LONG_PTR)hwnd;
+	message_filter	*pm = (message_filter*)(long)hwnd;
 	return pm->handle_message( m, w, l );
 }
 

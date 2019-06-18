@@ -34,7 +34,7 @@ static void CopyParams( ICalcObjectContainerPtr in, ICalcObjectContainerPtr out 
 	if( in == 0 || out == 0)
 		return;
 	
-	LONG_PTR lParamPos = 0;
+	long lParamPos = 0;
 	in->GetFirstParameterPos( &lParamPos );
 	while( lParamPos )
 	{
@@ -77,7 +77,7 @@ bool CProcessPairs::InvokeFilter()
 
 	{
 		// заполним массивы
-		POSITION pos=0;
+		long pos=0;
 		objectsIn->GetFirstChildPosition(&pos);
 		while(pos)
 		{
@@ -224,7 +224,7 @@ bool CProcessPairs::InvokeFilter()
 					{
 						int d = dist[i]+dist[i-1];
 						int key = (max(mark[i],mark[i-1])<<16) + min(mark[i],mark[i-1]);
-						TPOS pos = pair_map.find(key);
+						long pos = pair_map.find(key);
 						if(pos)
 						{
 							int d1 = pair_map.get(pos);
@@ -234,12 +234,12 @@ bool CProcessPairs::InvokeFilter()
 					}
 					if(mark[i]!=mark[i-cx])
 					{
-						long d = dist[i]+dist[i-cx];
+						int d = dist[i]+dist[i-cx];
 						int key = (max(mark[i],mark[i-cx])<<16) + min(mark[i],mark[i-cx]);
-						TPOS pos = pair_map.find(key);
+						long pos = pair_map.find(key);
 						if(pos)
 						{
-							long d1 = pair_map.get(pos);
+							int d1 = pair_map.get(pos);
 							if(d<d1) pair_map.set(d, key);
 						}
 						else pair_map.set(d, key);
@@ -250,11 +250,11 @@ bool CProcessPairs::InvokeFilter()
 			const int nMaxProfileLength=100;
 			color profile[nMaxProfileLength];
 			{ // проверка профил€ €ркости дл€ пар объектов
-				for(TPOS pos=pair_map.head(); pos; pos=pair_map.next(pos))
+				for(long pos=pair_map.head(); pos; pos=pair_map.next(pos))
 				{
 					int n = pair_map.get_key(pos);
 					short i1 = n>>16, i2 = n & 0xFFFF;
-					long d = pair_map.get(pos);
+					int d = pair_map.get(pos);
 					if( d<=nMaxDistance )
 					{
 						double dx = centers[i2].x-centers[i1].x;
@@ -297,9 +297,9 @@ bool CProcessPairs::InvokeFilter()
 
 			if(nFlags & 1)
 			{ // поиск тех, кого надо убить
-				for(TPOS pos=pair_map.head(); pos; pos=pair_map.next(pos))
+				for(long pos=pair_map.head(); pos; pos=pair_map.next(pos))
 				{
-					long n = pair_map.get_key(pos);
+					int n = pair_map.get_key(pos);
 					short i1 = n>>16, i2 = n & 0xFFFF;
 					int d = pair_map.get(pos);
 					if( i1>=0 && i2>=0 && d<=nMaxDistance )
@@ -317,12 +317,12 @@ bool CProcessPairs::InvokeFilter()
 			if(nFlags & 2)
 			{ // "распространение" классов на соседние объекты
 				//FILE* f=fopen("\\processpairs.log", "wt");
-				for(TPOS pos=pair_map.head(); pos; pos=pair_map.next(pos))
+				for(long pos=pair_map.head(); pos; pos=pair_map.next(pos))
 				{
-					long n = pair_map.get_key(pos);
+					int n = pair_map.get_key(pos);
 					short i1 = n>>16, i2 = n & 0xFFFF;
 					if( kills[i1] || kills[i2] ) continue; // убитые не участвуют в обработке
-					long d = pair_map.get(pos);
+					int d = pair_map.get(pos);
 					//if( i1>=0 && i2>=0 )
 					//	fprintf(f,"%i-%i: %i\n", i1, i2, pair_map.get(pos));
 					if( i1>=0 && i2>=0 && d<=nMaxDistance )

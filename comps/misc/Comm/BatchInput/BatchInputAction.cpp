@@ -50,7 +50,7 @@ static IUnknownPtr __FindBatchInputBar()
 		return 0;
 	punkMainWnd->Release();
 	//find the BatchInputDlg window between dockbars
-	POSITION lPos =0;
+	long	lPos =0;
 	sptrM->GetFirstDockWndPosition( &lPos );
 	while( lPos )
 	{

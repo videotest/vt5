@@ -112,7 +112,7 @@ void CSelectBinaryPP::DoLoadSettings()
 		punkActive->Release();
 	}
 
-	LONG_PTR pos =0;
+	long pos =0;
 	ptrDC->GetFirstObjectPos(bstrbi, &pos);
 	IUnknown *punkObject=0;
 	CString strName;

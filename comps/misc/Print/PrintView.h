@@ -413,12 +413,12 @@ protected:
 	// Generated OLE dispatch map functions
 	//{{AFX_DISPATCH(CPrintView)
 	afx_msg long GetFirstCtrlPos( );
-	afx_msg long GetNextCtrlPos( LPOS lPos );
-	afx_msg LPDISPATCH GetCtrlDispatch( LPOS lPos );
-	afx_msg BSTR GetCtrlProgID( LPOS lPos );
+	afx_msg long GetNextCtrlPos( long lPos );
+	afx_msg LPDISPATCH GetCtrlDispatch( long lPos );
+	afx_msg BSTR GetCtrlProgID( long lPos );
 	afx_msg long GetSelectedPos( );
-	afx_msg void StoreCtrlData( LPOS lPos );
-	afx_msg void SetSelectedPos( LPOS lPos );
+	afx_msg void StoreCtrlData( long lPos );
+	afx_msg void SetSelectedPos( long lPos );
 	//}}AFX_DISPATCH
 	DECLARE_DISPATCH_MAP()
 

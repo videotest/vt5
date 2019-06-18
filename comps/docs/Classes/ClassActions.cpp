@@ -32,13 +32,13 @@ protected:
 	BEGIN_INTERFACE_PART(SubMenu,ISubMenu)
 		com_call SetStartItemID( UINT uiItemID );
 		com_call SetSingleObjectName( BSTR bstrObjectName );
-		com_call GetFirstItemPos(TPOS* plPos);
+		com_call GetFirstItemPos( long* plPos );
 		com_call GetNextItem(	
 				UINT* puiFlags, 
 				UINT* puiItemID, 
 				BSTR* pbstrText,				
 				UINT* puiParentID,
-				TPOS* plPos);
+				long* plPos );
 		com_call OnCommand( UINT uiCmd );	
 	END_INTERFACE_PART(SubMenu)
 public:
@@ -88,10 +88,10 @@ HRESULT CSubMenu::XSubMenu::SetSingleObjectName( BSTR bstrObjectName )
 
 
 //////////////////////////////////////////////////////////////////////
-HRESULT CSubMenu::XSubMenu::GetFirstItemPos(TPOS* plPos)
+HRESULT CSubMenu::XSubMenu::GetFirstItemPos( long* plPos )
 {
 	METHOD_PROLOGUE_EX(CSubMenu, SubMenu)
-	*plPos = pThis->m_listClasses.GetFirstObjectPosition();
+	*plPos = (long)pThis->m_listClasses.GetFirstObjectPosition();
 	return S_OK;
 }
 
@@ -102,14 +102,14 @@ HRESULT CSubMenu::XSubMenu::GetNextItem(
 										UINT* puiItemID, 
 										BSTR* pbstrText, 							
 										UINT* puiParentID,
-										TPOS* plPos
+										long* plPos 
 										)
 {
 	METHOD_PROLOGUE_EX(CSubMenu, SubMenu)
 	
 	POSITION pos = (POSITION)(*plPos);
 	IUnknown* punkClass = pThis->m_listClasses.GetNextObject(pos);
-	*plPos = pos;
+	*plPos = (long)pos;
 	if(punkClass)
 	{
 		*puiFlags = MF_STRING|MF_ENABLED;
@@ -868,7 +868,7 @@ bool CActionObjectSetClass::ExecuteSettings(CWnd *pwndParent)
 		{
 			DWORD nObjects = 0;	
 			sptrMF->GetObjectsCount(&nObjects);
-			for (DWORD i = 0; i < nObjects; i++)
+			for(int i = 0; i < nObjects; i++)
 			{
 				IUnknown* punk = 0;
 				sptrMF->GetObjectByIdx(i, &punk);
@@ -1155,7 +1155,7 @@ bool CActionCalcStat::Invoke()
 		IMeasParamGroupPtr	ptrGroup = managerMeasurement.GetComponent( nGroup, false );
 		ptrGroup->InitializeCalculation( punkClasses );
 
-		POSITION lpos = 0;
+		long	lpos = 0;
 		ptrClasses->GetFirstChildPosition( &lpos );
 
 		while( lpos )

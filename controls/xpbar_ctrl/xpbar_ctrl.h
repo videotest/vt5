@@ -2,10 +2,10 @@
 #define __xpbar_ctrl__
 
 #include "comdef.h"
+#include "xp_bar.h"
 
 #include "\vt5\awin\win_base.h"
 #include "\vt5\awin\misc_list.h"
-#include "xp_bar.h"
 
 //from MFC
 #define WM_HELPHITTEST      0x0366  // lResult = dwContext,
@@ -97,7 +97,7 @@ public:
 public:
 	virtual void from_item( XPPANEITEM *p );
 	virtual void draw( Graphics &grapics, _rect &client );
-	virtual long hit_test(const _point &point, XPHITTEST *phit)	{ return 0; }
+	virtual long hit_test( const _point &point, XPHITTEST *phit )	{return 0;}
 	virtual unsigned get_style()	{return XPPS_UNKNOWN;}
 	virtual void click( const _point &point );
 	virtual void client_area( RECT *prect );
@@ -123,7 +123,7 @@ public:
 
 	virtual void from_item( XPPANEITEM *p );
 	virtual void draw( Graphics &grapics, _rect &client );
-	virtual long hit_test(const _point &point, XPHITTEST *phit);
+	virtual long hit_test( const _point &point, XPHITTEST *phit );
 	virtual void click( const _point &point );
 
 	void set_button( XPBUTTON *p, bool bnew );
@@ -163,11 +163,11 @@ class xp_status_pane : public xp_pane, public _list_t<status_part*, free_status_
 public:
 	xp_status_pane( xpbar_ctrl *pctrl );
 
-	void set_part_text(TPOS lpos, const char *psz);
-	TPOS set_part(XP_STATUS *pst, bool bChangeRef);
-	void remove_part(TPOS lpos);
-	TPOS lpos_by_pos(long n);
-	TPOS lpos_by_guid(const GUID &guid);
+	void set_part_text( long lpos, const char *psz );
+	long set_part( XP_STATUS *pst, bool bChangeRef );
+	void remove_part( long lpos );
+	long lpos_by_pos( long n );
+	long lpos_by_guid( const GUID &guid );
 	void set_text( status_part *p, const char *psz );
 
 	virtual void draw( Graphics &grapics, _rect &client );
@@ -203,100 +203,100 @@ public:
 	static void deinit();
 
 protected:
-	virtual LRESULT on_paint();
-	virtual LRESULT on_create(CREATESTRUCT *pcs);
-	virtual LRESULT on_destroy();
-	virtual LRESULT on_ncdestroy();
-	virtual LRESULT on_timer(ulong lEvent);
-	virtual LRESULT on_lbuttonup(const _point &point);
-	virtual LRESULT on_lbuttondown(const _point &point)		{ m_fLB_pressed = true; return win_impl::on_lbuttondown(point); }
-	virtual LRESULT on_mousemove(const _point &point);
+	virtual long on_paint();
+	virtual long on_create( CREATESTRUCT *pcs );
+	virtual long on_destroy();
+	virtual long on_ncdestroy();
+	virtual long on_timer( ulong lEvent );
+	virtual long on_lbuttonup( const _point &point );
+	virtual long on_lbuttondown( const _point &point )		{m_fLB_pressed = true;return win_impl::on_lbuttondown( point );}
+	virtual long on_mousemove( const _point &point );
 
-	virtual TPOS on_insert(XPINSERTITEM *p);
-	virtual long on_expand(TPOS lpos, unsigned type);
+	virtual long on_insert( XPINSERTITEM *p );
+	virtual long on_expand( long lpos, unsigned type );
 	virtual long on_setimagelist( HIMAGELIST hil );
-	virtual long on_addbutton(TPOS lpos, XPBUTTON *pb);
-	virtual long on_setbutton(TPOS lpos, XPBUTTON *pb);
-	virtual TPOS on_hittest(const _point &point, XPHITTEST *phit);
-	virtual long on_removeitem(TPOS lpos);
-	virtual long on_setwindow(TPOS lpos, HWND hwnd);
-	virtual LRESULT on_erasebkgnd(HDC)	{ return 0; }
+	virtual long on_addbutton( long lpos, XPBUTTON *pb );
+	virtual long on_setbutton( long lpos, XPBUTTON *pb );
+	virtual long on_hittest( const _point &point, XPHITTEST *phit );
+	virtual long on_removeitem( long lpos );
+	virtual long on_setwindow( long lpos, HWND hwnd );
+	virtual long on_erasebkgnd( HDC )	{return 0;}
 	virtual long on_setpanetext( long n, const char *psz );	
-	virtual TPOS on_addstatuspane(TPOS lpos, XP_STATUS *p, bool fChangeRef);
-	virtual long on_removestatuspane(TPOS lpos, GUID*	pg);
-	virtual long on_addcaptionbutton(TPOS lpos, XP_CAPTION_BUTTON*	p);
-	virtual long on_removecaptionbutton(TPOS lpos, unsigned id);
-	virtual long on_setcaptionbutton(TPOS lpos, XP_CAPTION_BUTTON*	p);
-	virtual LRESULT on_vscroll(unsigned code, unsigned pos, HWND hwndScroll);
-	virtual long on_ensurevisible(TPOS lpos);
-	virtual LRESULT on_size(short cx, short cy, ulong fSizeType);
+	virtual long on_addstatuspane( long lpos, XP_STATUS *p, bool fChangeRef );
+	virtual long on_removestatuspane( long lpos, GUID*	pg );
+	virtual long on_addcaptionbutton( long lpos, XP_CAPTION_BUTTON*	p );
+	virtual long on_removecaptionbutton( long lpos, unsigned id );
+	virtual long on_setcaptionbutton( long lpos, XP_CAPTION_BUTTON*	p );
+	virtual long on_vscroll( unsigned code, unsigned pos, HWND hwndScroll );
+	virtual long on_ensurevisible( long lpos );
+	virtual long on_size( short cx, short cy, ulong fSizeType );
 	virtual long on_getdefparams( unsigned param );
-	virtual long on_getitem(TPOS lpos, XPPANEITEM *p);
-	virtual long on_setitem(TPOS lpos, XPPANEITEM *p);
-	virtual TPOS on_getnextitem(TPOS lpos);
+	virtual long on_getitem( long lpos, XPPANEITEM *p );
+	virtual long on_setitem( long lpos, XPPANEITEM *p );
+	virtual long on_getnextitem( long lpos );
 	virtual long on_ctlcolor( int nCtlType, HDC hdc, HWND hwnd );
-	virtual TPOS on_getnextbutton(TPOS lpos, TPOS lpos_b);
-	virtual long on_getbuttonbypos(TPOS lpos_b, XPBUTTON*	p);
-	virtual long on_setbuttonbypos(TPOS lpos_b, XPBUTTON*	p);
+	virtual long on_getnextbutton( long lpos, long lpos_b );
+	virtual long on_getbuttonbypos( long lpos_b, XPBUTTON*	p );
+	virtual long on_setbuttonbypos( long lpos_b, XPBUTTON*	p );
 	virtual long on_helphittest( const _point &point );
 	virtual long on_settimerparams( XP_TIMER_PARAMS *pparams );
 
-	virtual LRESULT handle_message( UINT m, WPARAM w, LPARAM l )
+	virtual long handle_message( UINT m, WPARAM w, LPARAM l )
 	{
 		if( m == XPB_INSERTITEM )
-			return (LRESULT)on_insert( (XPINSERTITEM*)l );
+			return on_insert( (XPINSERTITEM*)l );
 		else if( m == XPB_EXPANDITEM )
-			return on_expand( (TPOS)w, l );
+			return on_expand( w, l );
 		else if( m == XPB_SETIMAGELIST )
 			return on_setimagelist( (HIMAGELIST)l );
 		else if( m == XPB_ADDBUTTON )
-			return on_addbutton( (TPOS)w, (XPBUTTON*)l );
+			return on_addbutton( w, (XPBUTTON*)l );
 		else if( m == XPB_SETBUTTON )
-			return on_setbutton( (TPOS)w, (XPBUTTON*)l );
+			return on_setbutton( w, (XPBUTTON*)l );
 		else if( m == XPB_HITTEST )
-			return (LRESULT)on_hittest( _point( l ), (XPHITTEST *)w );
+			return on_hittest( _point( l ), (XPHITTEST *)w );
 		else if( m == XPB_REMOVEITEM )
-			return on_removeitem((TPOS)w);
+			return on_removeitem( w );
 		else if( m == XPB_SETWINDOW )
-			return on_setwindow((TPOS)w, (HWND)l);
+			return on_setwindow( w, (HWND)l );
 		else if( m == SB_SETTEXT )
 			return on_setpanetext( w, (const char *)l );
 		else if( m == WM_SETTEXT )
 			return on_setpanetext( 0, (const char *)l );
 		else if( m == XPB_ADDSTATUSPANE )
-			return (LRESULT)on_addstatuspane( (TPOS)w, (XP_STATUS *)l, true );
+			return on_addstatuspane( w, (XP_STATUS *)l, true );
 		else if( m == XPB_SETSTATUSPANE )
-			return (LRESULT)on_addstatuspane((TPOS)w, (XP_STATUS *)l, false);
+			return on_addstatuspane( w, (XP_STATUS *)l, false );
 		else if( m == XBP_REMOVESTATUSPANE )
-			return on_removestatuspane((TPOS)w, (GUID*)l);
+			return on_removestatuspane( w, (GUID*)l ); 
 		else if( m == XBP_ADDCAPTIONBUTTON )
-			return on_addcaptionbutton((TPOS)w, (XP_CAPTION_BUTTON*)l);
+			return on_addcaptionbutton( w, (XP_CAPTION_BUTTON*)l );
 		else if( m == XBP_REMOVECAPTIONBUTTON )
-			return on_removecaptionbutton((TPOS)w, l);
+			return on_removecaptionbutton( w, l );
 		else if( m == XBP_SETCAPTIONBUTTON )
-			return on_setcaptionbutton((TPOS)w, (XP_CAPTION_BUTTON*)l);
+			return on_setcaptionbutton( w, (XP_CAPTION_BUTTON*)l );
 		else if( m == XBP_ENSUREVISIBLE )
-			return on_ensurevisible((TPOS)w);
+			return on_ensurevisible( w );
 		else if( m == XPB_GETDEFPARAMS )
 			return on_getdefparams( w );
 		else if( m == XPB_GETITEM )
-			return on_getitem((TPOS)w, (XPPANEITEM*)l);
+			return on_getitem( w, (XPPANEITEM*)l );
 		else if( m == XPB_SETITEM )
-			return on_setitem((TPOS)w, (XPPANEITEM*)l);
+			return on_setitem( w, (XPPANEITEM*)l );
 		else if( m == XPB_GETFIRSTITEM )
-			return (LRESULT)on_getnextitem( 0 );
+			return on_getnextitem( 0 );
 		else if( m == XPB_GETNEXTITEM )
-			return (LRESULT)on_getnextitem((TPOS)w);
+			return on_getnextitem( w );
 		else if( m == WM_GETFONT )
 			return (LRESULT)m_hfont;
 		else if( m == XPB_GETFIRSTBUTTON )
-			return (LRESULT)on_getnextbutton((TPOS)w, (TPOS)0);
+			return on_getnextbutton( w, 0 );
 		else if( m == XPB_GETNEXTBUTTON )
-			return (LRESULT)on_getnextbutton((TPOS)w, (TPOS)l);
+			return on_getnextbutton( w, l );
 		else if( m == XPB_GETBUTTONBYPOS )
-			return on_getbuttonbypos((TPOS)w, (XPBUTTON*)l);
+			return on_getbuttonbypos( w, (XPBUTTON*)l );
 		else if( m == XPB_SETBUTTONBYPOS )
-			return on_setbuttonbypos((TPOS)w, (XPBUTTON*)l);
+			return on_setbuttonbypos( w, (XPBUTTON*)l );
 		else if( m == WM_HELPHITTEST )
 			return on_helphittest( _point( l ) );
 		else if( m == XPB_SETTIMERPARAMS )

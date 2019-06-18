@@ -4,7 +4,7 @@
 #include "stdafx.h"
 #include "Fish.h"
 #include "CustomStatic.h"
-#include "FishSettings.h"
+#include "Settings.h"
 
 
 // CCustomStatic

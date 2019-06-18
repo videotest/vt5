@@ -40,14 +40,11 @@ END
 
 3 TEXTINCLUDE DISCARDABLE 
 BEGIN
-1 TYPELIB "ContextAX.tlb"
-    /*
-	"#ifdef _DEBUG\r\n"
+    "#ifdef _DEBUG\r\n"
     "1 TYPELIB ""\\\\vt5\\\\vt5\\\\debug\\\\comps\\\\ContextAX.tlb""\r\n"
     "#else\r\n"
     "1 TYPELIB ""\\\\vt5\\\\vt5\\\\release\\\\comps\\\\ContextAX.tlb""\r\n"
     "#endif\r\n"
-	*/
     "#include ""res\\ContextAX.rc2""\0"
 END
 
@@ -255,8 +252,11 @@ END
 //
 // Generated from the TEXTINCLUDE 3 resource.
 //
-1 TYPELIB "ContextAX.tlb"
-
+#ifdef _DEBUG
+1 TYPELIB "\\vt5\\vt5\\debug\\comps\\ContextAX.tlb"
+#else
+1 TYPELIB "\\vt5\\vt5\\release\\comps\\ContextAX.tlb"
+#endif
 #include "res\ContextAX.rc2"
 /////////////////////////////////////////////////////////////////////////////
 #endif    // not APSTUDIO_INVOKED

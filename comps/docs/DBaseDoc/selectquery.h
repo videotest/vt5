@@ -6,7 +6,7 @@
 #include "querybase.h"
 
 #include "AXCtrlBase.h"
-
+class CDBLocksInfo;
 class CObjectInfo
 {
 public:
@@ -81,7 +81,7 @@ protected:
 
 
 
-	BEGIN_INTERFACE_PART(SelectQuery, ISelectQuery)		
+	BEGIN_INTERFACE_PART(SelectQuery, ISelectQuery2)		
 
 		com_call Open();
 		com_call Close();
@@ -179,8 +179,12 @@ protected:
 		com_call RestoreContextsState();
 
 		com_call DeleteEx( BOOL bQuiet );
-	END_INTERFACE_PART(SelectQuery)
 
+		com_call AttachLockInfo(void*);
+
+
+	END_INTERFACE_PART(SelectQuery)
+		CDBLocksInfo* m_pdbli;
 
 	BEGIN_INTERFACE_PART(DBChild, IDBChild)
 		com_call SetParent( IUnknown* punkParent );
@@ -374,11 +378,18 @@ public:
 		com_call NotifySelect( bool bSelect );
 	END_INTERFACE_PART(NotifyObject)
 
+	BEGIN_INTERFACE_PART(ViewSubType, IViewSubType)
+		com_call GetViewSubType( unsigned long* pViewSubType );
+		com_call SetViewSubType( unsigned long ViewSubType );
+	END_INTERFACE_PART(ViewSubType)
+
 	ISelectQueryPtr GetQuery();
 	IDBaseStructPtr GetDBStruct();
 	bool			IsDBaseControl( FieldType* pftype = 0/*out*/);
 
 	IUnknownPtr		GetAXCtrl();
+private:
+	unsigned long m_ViewSubType;
 };
 
 

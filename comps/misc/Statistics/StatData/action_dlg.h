@@ -19,8 +19,8 @@ public:
 
 protected:
 //message handlers
-	virtual LRESULT	on_initdialog();
-	virtual LRESULT	on_command( uint cmd );
+	virtual long	on_initdialog();
+	virtual long	on_command( uint cmd );
 	virtual void	on_ok();	
 
 	void			fill_combos();
@@ -55,10 +55,10 @@ public:
 
 protected:
 //message handlers
-	virtual LRESULT	on_initdialog();
-	virtual LRESULT	on_command(uint cmd);
+	virtual long	on_initdialog();
+	virtual long	on_command( uint cmd );
 	virtual void	on_ok();	
-	virtual LRESULT	on_notify(uint idc, NMHDR *pnmhdr);
+	virtual long	on_notify( uint idc, NMHDR *pnmhdr );
 
 public:	
 	void			set_col_info( col_info* parr, size_t size );

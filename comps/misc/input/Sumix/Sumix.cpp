@@ -101,7 +101,7 @@ int CSumixApp::ExitInstance()
 	return CWinApp::ExitInstance();
 }
 
-void CSumixApp::WinHelpInternal(DWORD_PTR dwData, UINT nCmd) 
+void CSumixApp::WinHelpInternal(DWORD dwData, UINT nCmd) 
 {
 	if (CStdProfileManager::m_pMgr->GetProfileInt(_T("Settings"), _T("DisableHelp"), 1))
 		return;

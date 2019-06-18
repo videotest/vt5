@@ -159,19 +159,6 @@ static const DWORD BASED_CODE _dwColorManAXOleMisc =
 
 BOOL CColorManAXCtrl::CColorManAXCtrlFactory::UpdateRegistry(BOOL bRegister)
 {
-#if defined(NOGUARD)
-	if (bRegister)
-	{
-		return AfxOleRegisterControlClass(AfxGetInstanceHandle()
-			, m_clsid, m_lpszProgID, IDS_COLORMANAX, IDB_COLORMANAX
-			, afxRegInsertable | afxRegApartmentThreading, _dwColorManAXOleMisc
-			, _tlid, _wVerMajor, _wVerMinor);
-	}
-	else
-	{
-		return AfxOleUnregisterClass(m_clsid, m_lpszProgID);
-	}
-#else
 	// TODO: Verify that your control follows apartment-model threading rules.
 	// Refer to MFC TechNote 64 for more information.
 	// If your control does not conform to the apartment-model rules, then
@@ -180,7 +167,7 @@ BOOL CColorManAXCtrl::CColorManAXCtrlFactory::UpdateRegistry(BOOL bRegister)
 	return UpdateRegistryCtrl(bRegister, AfxGetInstanceHandle(), IDS_COLORMANAX, IDB_COLORMANAX,
 							  afxRegApartmentThreading, _dwColorManAXOleMisc,
 							  _tlid, _wVerMajor, _wVerMinor);
-#endif
+
 }
 
 

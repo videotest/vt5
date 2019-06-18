@@ -54,11 +54,11 @@ public:
 	void			init();	
 
 //message handlers
-	virtual LRESULT	on_initdialog();
-	virtual LRESULT	on_killfocus(HWND hwndOld);
-	virtual LRESULT	handle_message(UINT m, WPARAM w, LPARAM l);
-	virtual LRESULT	on_notify(uint idc, NMHDR *pnmhdr);
-	virtual LRESULT	on_hscroll(unsigned code, unsigned pos, HWND hwndScroll);
+	virtual long	on_initdialog();
+	virtual long	on_killfocus( HWND hwndOld );	
+	virtual long	handle_message( UINT m, WPARAM w, LPARAM l );
+	virtual long	on_notify( uint idc, NMHDR *pnmhdr );
+	virtual long	on_hscroll( unsigned code, unsigned pos, HWND hwndScroll );	
 
 	void			kill_slider();
 
@@ -72,16 +72,16 @@ class win_impl_with_tooltip : public win_impl
 	HWND	m_hwndOld;
 public:
 	win_impl_with_tooltip() { m_hwndOld = 0; }
-	virtual LRESULT	handle_message(UINT m, WPARAM w, LPARAM l);
+	virtual long	handle_message( UINT m, WPARAM w, LPARAM l );
 	
 	// vanek - 18.09.2003
-	virtual LRESULT	on_setfocus(HWND hwndOld)
+	virtual long	on_setfocus( HWND hwndOld )
 	{
 		m_hwndOld = hwndOld;
 		return __super::on_setfocus( hwndOld );
 	}
 	
-	virtual LRESULT on_keydown(long nVirtKey)
+	virtual long on_keydown( long nVirtKey )
 	{		
 		if( nVirtKey == VK_ESCAPE && ::IsWindow( m_hwndOld ) )
 		{
@@ -122,16 +122,16 @@ public:
 
 //message handlers
 	virtual void	handle_init();	
-	virtual LRESULT	on_destroy();
+	virtual long	on_destroy();
 
-	virtual LRESULT	on_paint();
-	virtual LRESULT	on_erasebkgnd(HDC);
+	virtual long	on_paint();	
+	virtual long	on_erasebkgnd( HDC );
 
-	virtual LRESULT	handle_message( UINT m, WPARAM w, LPARAM l );
-	virtual LRESULT	on_mousemove(const _point &point);
-	virtual LRESULT	on_lbuttondown(const _point &point);
-	virtual LRESULT	on_lbuttonup(const _point &point);
-	virtual LRESULT	on_size(short cx, short cy, ulong fSizeType);
+	virtual long	handle_message( UINT m, WPARAM w, LPARAM l );
+	virtual long	on_mousemove( const _point &point );	
+	virtual long	on_lbuttondown( const _point &point );
+	virtual long	on_lbuttonup( const _point &point );
+	virtual long	on_size( short cx, short cy, ulong fSizeType );
 	
 	bool			show_slider();
 

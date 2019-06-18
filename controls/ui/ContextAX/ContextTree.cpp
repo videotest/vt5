@@ -1736,7 +1736,7 @@ UINT CContextCtrl::GetSelectedItems(HCONTEXTITEM * phItems, int nCount)
 	if (!nCount || !AfxIsValidAddress((const void *)phItems, sizeof(HCONTEXTITEM) * nCount, true))
 		return -1;
 
-	int nCnt = (int)m_listSelected.GetCount();
+	int nCnt = m_listSelected.GetCount();
 	if (!nCnt)
 		return 0;
 	

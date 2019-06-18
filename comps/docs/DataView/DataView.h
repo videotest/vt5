@@ -38,7 +38,12 @@ public:
 	DECLARE_MESSAGE_MAP()
 };
 
-#import <dataview.tlb> exclude ("IUnknown", "GUID", "_GUID", "tagPOINT") no_namespace raw_interfaces_only named_guids 
+#ifdef _DEBUG
+#import "\vt5\ifaces\debug\dataview.tlb" exclude ("IUnknown", "GUID", "_GUID", "tagPOINT") no_namespace raw_interfaces_only named_guids 
+#else
+#import "\vt5\ifaces\release\dataview.tlb" exclude ("IUnknown", "GUID", "_GUID", "tagPOINT") no_namespace raw_interfaces_only named_guids 
+#endif
+
 
 
 /////////////////////////////////////////////////////////////////////////////

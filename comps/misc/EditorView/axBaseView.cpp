@@ -1167,28 +1167,45 @@ void CAxBaseView::_AddControl( IUnknown *punkControl )
 	}
 	else
 	{
+		if(IViewSubTypePtr pViewSub=punkControl)
+		{
+			if(SUCCEEDED(pViewSub->GetViewSubType(&ViewSubType)))
+			{
+				if(ViewSubType>0)
+				{
+					if(IDBControlPtr pDBControl=pdata->ptrCtrl)
+					{
+						if(IDBObjectControlPtr pDBObjectControl=pDBControl){
+							pDBControl->SetValue(CComVariant(ViewSubType));
+						}
+					}
+				}
+			}
+		}
 	}
 
 	IVtActiveXCtrl2Ptr	sptrVTC(pdata->ptrCtrl);
 	if(sptrVTC != 0)
 		sptrVTC->SetApp(GetAppUnknown());
 
-
+	::RestoreContainerFromDataObject( punkControl, pdata->ptrCtrl );
 	if(IViewSubTypePtr pViewSub=punkControl)
 	{
-		if(SUCCEEDED(pViewSub->GetViewSubType(&ViewSubType)))
-		{
 		if(ViewSubType>0)
 		{
-				if(IViewSubTypePtr pControlPropBag=pwnd->GetControlUnknown())
+			pViewSub->SetViewSubType(ViewSubType);
+			if(IDBControlPtr pDBControl=pdata->ptrCtrl)
 			{
-					pControlPropBag->SetViewSubType(ViewSubType);
+				if(IDBObjectControlPtr pDBObjectControl=pDBControl){
+					pDBControl->SetValue(CComVariant(ViewSubType));
+					if(INamedPropBagPtr pNamedPropBag=pDBObjectControl)
+					{
+						pNamedPropBag->SetProperty(CComBSTR("Views"), CComVariant(ViewSubType));
+					}
 				}
 			}
 		}
 	}
-
-	::RestoreContainerFromDataObject( punkControl, pdata->ptrCtrl );
 
 	m_controlInfos.AddTail( pdata );
 
@@ -2071,7 +2088,7 @@ BOOL CAxBaseView::PreTranslateMessage(MSG* pMsg)
 
 	if( pMsg->message == WM_KEYDOWN )
 	{
-		return _OnKeyDown( (UINT)pMsg->wParam, LOWORD( pMsg->lParam ), HIWORD( pMsg->lParam ) );
+		return _OnKeyDown( pMsg->wParam, LOWORD( pMsg->lParam ), HIWORD( pMsg->lParam ) );
 	}
 
 					 

@@ -1,7 +1,7 @@
 ; MV5Drv.def : Declares the module parameters for the DLL.
 
 LIBRARY      "MV5Drv"
-; DESCRIPTION  'MV5Drv Windows Dynamic Link Library'
+DESCRIPTION  'MV5Drv Windows Dynamic Link Library'
 
 EXPORTS
     ; Explicit exports can go here

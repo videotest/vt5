@@ -205,8 +205,10 @@ void CFilterCombo::OnEditFilter()
 
 	DWORD dwData = GetItemData( nIndex );
 
-	//if( spQuery->EditFilterVisible( (int)dwData ) != S_OK )
-	//	return;
+	/*
+	if( spQuery->EditFilterVisible( (int)dwData ) != S_OK )
+		return;
+		*/
 
 	BuildAppearance( );
 	SetCurSel( nIndex );
@@ -226,8 +228,10 @@ void CFilterCombo::OnDeleteFilter()
 
 	DWORD dwData = GetItemData( nIndex );
 
-	//if( spQuery->DeleteFilter( (int)dwData ) != S_OK )
-	//	return;
+	/*
+	if( spQuery->DeleteFilter( (int)dwData ) != S_OK )
+		return;
+		*/
 
 	BuildAppearance( );
 	SetCurSel( nIndex -1 );

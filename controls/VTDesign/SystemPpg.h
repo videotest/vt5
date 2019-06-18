@@ -43,7 +43,7 @@ protected:
 // Message maps
 protected:
 	//{{AFX_MSG(CVTSystemPropPage)
-	afx_msg LRESULT OnColorChange(WPARAM lParam, LPARAM wParam);
+	afx_msg LONG OnColorChange(UINT lParam, LONG wParam);
 	//}}AFX_MSG
 	DECLARE_MESSAGE_MAP()
 

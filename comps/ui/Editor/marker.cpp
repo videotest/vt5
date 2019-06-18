@@ -1154,13 +1154,13 @@ END_INTERFACE_MAP()
 
 IMPLEMENT_UNKNOWN(CActionEditArrow, DrAction)
 
-HRESULT CActionEditArrow::XDrAction::GetFirstObjectPosition(LONG_PTR *plpos)
+HRESULT CActionEditArrow::XDrAction::GetFirstObjectPosition( long *plpos )
 {
 	METHOD_PROLOGUE_EX(CActionEditArrow, DrAction);
 	(*plpos) = 1;
 	return S_OK;
 }
-HRESULT CActionEditArrow::XDrAction::GetNextObject(IUnknown **ppunkObject, LONG_PTR *plpos)
+HRESULT CActionEditArrow::XDrAction::GetNextObject( IUnknown **ppunkObject, long *plpos )
 {
 	METHOD_PROLOGUE_EX(CActionEditArrow, DrAction);
 	*ppunkObject = pThis->m_ptrArrow;
@@ -1331,7 +1331,7 @@ bool CActionEditArrow::DoLButtonUp( CPoint pt )
 	INamedDataObject2Ptr	ptrO( punk );
 	punk->Release();
 
-	POSITION	lpos = 0, lposActive = 0;
+	long	lpos = 0, lposActive = 0;
 	ptrO->GetActiveChild( &lpos );
 	lposActive = lpos;
 	if( lpos )ptrO->GetNextChild( &lpos, 0 );
@@ -1339,7 +1339,7 @@ bool CActionEditArrow::DoLButtonUp( CPoint pt )
 
 	while( lpos )
 	{
-		POSITION	lposSave = lpos;
+		long	lposSave = lpos;
 		IUnknown	*punk = 0;
 		ptrO->GetNextChild( &lpos, &punk );
 		if( !punk )continue;
@@ -1361,7 +1361,7 @@ bool CActionEditArrow::DoLButtonUp( CPoint pt )
 	ptrO->GetFirstChildPosition( &lpos );
 	while( lpos && lpos != lposActive )
 	{
-		POSITION	lposSave = lpos;
+		long	lposSave = lpos;
 		IUnknown	*punk = 0;
 		ptrO->GetNextChild( &lpos, &punk );
 		if( !punk )continue;
@@ -1509,13 +1509,13 @@ BEGIN_INTERFACE_MAP(CActionEditMarker, CInteractiveActionBase)
 END_INTERFACE_MAP()
 IMPLEMENT_UNKNOWN(CActionEditMarker, DrAction)
 
-HRESULT CActionEditMarker::XDrAction::GetFirstObjectPosition(LONG_PTR *plpos)
+HRESULT CActionEditMarker::XDrAction::GetFirstObjectPosition( long *plpos )
 {
 	METHOD_PROLOGUE_EX(CActionEditMarker, DrAction);
 	(*plpos) = 1;
 	return S_OK;
 }
-HRESULT CActionEditMarker::XDrAction::GetNextObject(IUnknown **ppunkObject, LONG_PTR *plpos)
+HRESULT CActionEditMarker::XDrAction::GetNextObject( IUnknown **ppunkObject, long *plpos )
 {
 	METHOD_PROLOGUE_EX(CActionEditMarker, DrAction);
 	*ppunkObject = pThis->m_ptrMarker;

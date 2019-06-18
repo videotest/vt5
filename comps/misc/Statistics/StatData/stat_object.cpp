@@ -2,7 +2,7 @@
 #include "resource.h"
 #include "stat_object.h"
 #include "stat_utils.h"
-#import "msado15.dll" rename_namespace("ADO") rename("EOF", "ADOEOF")
+#include "msado15.tlh"
 #include "statui_int.h"
 
 #include "\vt5\awin\profiler.h"
@@ -139,13 +139,13 @@ HRESULT CStatTableObject::IsBaseObject( BOOL * pbFlag )
 }
 
 //////////////////////////////////////////////////////////////////////
-HRESULT CStatTableObject::GetFirstChildPosition(TPOS *plPos)
+HRESULT CStatTableObject::GetFirstChildPosition( long *plPos )
 {
 	return GetFirstRowPos( plPos );
 }
 
 //////////////////////////////////////////////////////////////////////
-HRESULT CStatTableObject::GetNextChild(TPOS *plPos, IUnknown **ppunkChild)
+HRESULT CStatTableObject::GetNextChild( long *plPos, IUnknown **ppunkChild )
 {
 	stat_row* prow = 0;
 	HRESULT hr = GetNextRow( plPos, &prow );
@@ -166,21 +166,21 @@ HRESULT CStatTableObject::GetNextChild(TPOS *plPos, IUnknown **ppunkChild)
 //interface IStatTable
 //////////////////////////////////////////////////////////////////////
 //parameter info
-HRESULT CStatTableObject::GetFirstParamPos( TPOS* plpos )
+HRESULT CStatTableObject::GetFirstParamPos( long* plpos )
 {
 	if( !plpos )	return E_POINTER;
 
-	*plpos = (TPOS)m_list_params.head();
+	*plpos = m_list_params.head();
 	return S_OK;
 }
 
 //////////////////////////////////////////////////////////////////////
-HRESULT CStatTableObject::GetNextParam( TPOS* plpos, stat_param** ppparam )
+HRESULT CStatTableObject::GetNextParam( long* plpos, stat_param** ppparam )
 {	
 	if( !plpos || !ppparam )	return E_POINTER;
 
-	*ppparam = (stat_param*)m_list_params.get(*plpos);
-	*plpos = m_list_params.next(*plpos);
+	*ppparam	= m_list_params.get( *plpos );
+	*plpos		= m_list_params.next( *plpos );
 	return S_OK;
 }
 
@@ -194,7 +194,7 @@ HRESULT CStatTableObject::GetParamsCount( long* pl_count )
 }
 
 //////////////////////////////////////////////////////////////////////
-HRESULT CStatTableObject::AddParam( TPOS lpos_insert_after, stat_param* pparam, TPOS* pl_pos_new )
+HRESULT CStatTableObject::AddParam( long lpos_insert_after, stat_param* pparam, long* pl_pos_new )
 {	
 	if( !pparam )	return E_POINTER;
 
@@ -203,7 +203,7 @@ HRESULT CStatTableObject::AddParam( TPOS lpos_insert_after, stat_param* pparam, 
 	copy_stat_param( pparam, pnew_param );
 
 	//add param to list
-	TPOS lnew_pos = 0;
+	long lnew_pos = 0;
 	if( lpos_insert_after )
 		lnew_pos = m_list_params.insert_after( pnew_param, lpos_insert_after );
 	else
@@ -219,19 +219,19 @@ HRESULT CStatTableObject::AddParam( TPOS lpos_insert_after, stat_param* pparam, 
 }
 
 //////////////////////////////////////////////////////////////////////
-HRESULT CStatTableObject::DeleteParam( TPOS lpos )
+HRESULT CStatTableObject::DeleteParam( long lpos )
 {
 	if( !lpos )		return E_INVALIDARG;
 	
 	//get param info
-	stat_param_ex* psp = m_list_params.get(lpos );
+	stat_param_ex* psp = m_list_params.get( lpos );
 
 	//remove this param from all row
 	{
-		for (TPOS lpos_row = m_list_row.head(); lpos_row; lpos = m_list_row.next(lpos_row))
+		for( long lpos_row=m_list_row.head(); lpos_row; lpos=m_list_row.next(lpos_row) )
 		{
 			stat_row_ex* prow = m_list_row.get( lpos_row );
-			TPOS lpos_map = prow->m_map_value.find(psp->lkey);
+			long lpos_map = prow->m_map_value.find( psp->lkey );
 			if( lpos_map )
 				prow->m_map_value.remove( lpos_map );
 		}
@@ -239,22 +239,22 @@ HRESULT CStatTableObject::DeleteParam( TPOS lpos )
 
 
 	//remove from map
-	TPOS lmap_pos = m_map_params.find(psp->lkey);
+	long lmap_pos = m_map_params.find( psp->lkey );
 	_ASSERTE( lmap_pos );
 	m_map_params.remove( lmap_pos );
 
 	//remove from param
-	m_list_params.remove(lpos);
+	m_list_params.remove( lpos );	
 
 	return S_OK;
 }
 
 //////////////////////////////////////////////////////////////////////
-HRESULT CStatTableObject::GetParamPosByKey( long lkey, TPOS* pl_pos )
+HRESULT CStatTableObject::GetParamPosByKey( long lkey, long* pl_pos )
 {
 	if( !pl_pos )	return E_POINTER;
     
-	TPOS lmap_pos = m_map_params.find(lkey);
+	long lmap_pos = m_map_params.find( lkey );
 	if( !lmap_pos )	return S_FALSE;
 
 	*pl_pos = m_map_params.get( lmap_pos );
@@ -263,36 +263,36 @@ HRESULT CStatTableObject::GetParamPosByKey( long lkey, TPOS* pl_pos )
 
 //group
 //////////////////////////////////////////////////////////////////////
-HRESULT CStatTableObject::GetFirstGroupPos(TPOS* plpos)
+HRESULT CStatTableObject::GetFirstGroupPos( long* plpos )
 {
 	if( !plpos )	return E_POINTER;
 
-	*plpos = (TPOS)m_list_group.head();
+	*plpos = m_list_group.head();
 	return S_OK;
 }
 
 //////////////////////////////////////////////////////////////////////
-HRESULT CStatTableObject::GetNextGroup(TPOS* plpos, stat_group** ppgroup)
+HRESULT CStatTableObject::GetNextGroup( long* plpos, stat_group** ppgroup )
 {
 	if( !plpos || !ppgroup )	return E_POINTER;
 
 	*ppgroup = m_list_group.get( *plpos );
-	*plpos = (TPOS)m_list_group.next(*plpos);
+	*plpos = m_list_group.next( *plpos );
 	return S_OK;
 }
 
 
 //////////////////////////////////////////////////////////////////////
-HRESULT CStatTableObject::AddGroup(TPOS lpos_insert_after, stat_group* pgroup, TPOS* pl_pos_new)
+HRESULT CStatTableObject::AddGroup( long lpos_insert_after, stat_group* pgroup, long* pl_pos_new )
 {
 	//add to list
 	stat_group_ex* pnew_group = new stat_group_ex;
 	copy_stat_group( pgroup, pnew_group );
 
 	//add param to list
-	TPOS lnew_pos = 0;
+	long lnew_pos = 0;
 	if( lpos_insert_after )
-		lnew_pos = m_list_group.insert_after(pnew_group, lpos_insert_after);
+		lnew_pos = m_list_group.insert_after( pnew_group, lpos_insert_after );
 	else
 		lnew_pos = m_list_group.add_tail( pnew_group );
 
@@ -317,7 +317,7 @@ HRESULT CStatTableObject::getGroup( /*[in]*/long posIndex, /* [out, retval]*/VAR
 	{
 		return E_INVALIDARG;
 	}
-	TPOS lpos = m_list_group.head();
+	long lpos = m_list_group.head();
 	for(int index=0; index<posIndex; ++index)
 	{
 		lpos = m_list_group.next( lpos );
@@ -348,7 +348,7 @@ HRESULT CStatTableObject::getGroup( /*[in]*/long posIndex, /* [out, retval]*/VAR
 }
 
 //////////////////////////////////////////////////////////////////////
-HRESULT CStatTableObject::DeleteGroup(TPOS lpos, BOOL bsync_rows)
+HRESULT CStatTableObject::DeleteGroup( long lpos, BOOL bsync_rows )
 {
 	if( !lpos )	return E_INVALIDARG;
 
@@ -357,12 +357,12 @@ HRESULT CStatTableObject::DeleteGroup(TPOS lpos, BOOL bsync_rows)
 	//delete row, associate with this group
 	if( bsync_rows )
 	{
-		TPOS lpos_row = 0;
+		long lpos_row = 0;
 		GetFirstRowPos( &lpos_row );
 		while( lpos_row )
 		{
 			stat_row* prow = 0;
-			TPOS lpos_save = lpos_row;
+			long lpos_save = lpos_row;
 			GetNextRow( &lpos_row, &prow );
 
 			if( pgroup->guid_group == prow->guid_group )
@@ -378,22 +378,22 @@ HRESULT CStatTableObject::DeleteGroup(TPOS lpos, BOOL bsync_rows)
 
 //row info
 //////////////////////////////////////////////////////////////////////
-HRESULT CStatTableObject::GetFirstRowPos(TPOS* pl_pos)
+HRESULT CStatTableObject::GetFirstRowPos( long* pl_pos )
 {
 	if( !pl_pos )	return E_POINTER;
 	
-	*pl_pos = (TPOS)m_list_row.head();
+	*pl_pos = m_list_row.head();
 
 	return S_OK;
 }
 
 //////////////////////////////////////////////////////////////////////
-HRESULT CStatTableObject::GetNextRow(TPOS* pl_pos, stat_row** pprow)
+HRESULT CStatTableObject::GetNextRow( long* pl_pos, stat_row** pprow )
 {
 	if( !pl_pos || !pprow )	return E_POINTER;
 
-	*pprow = m_list_row.get(*pl_pos);
-	*pl_pos = m_list_row.next(*pl_pos);
+	*pprow = m_list_row.get( *pl_pos );
+	*pl_pos = m_list_row.next( *pl_pos );	
 	
 	return S_OK;
 }
@@ -408,14 +408,14 @@ HRESULT CStatTableObject::GetRowCount( long* pl_count )
 }
 
 //////////////////////////////////////////////////////////////////////
-HRESULT CStatTableObject::AddRow(TPOS lpos_insert_after, stat_row* prow, TPOS* pl_pos_new)
+HRESULT CStatTableObject::AddRow( long lpos_insert_after, stat_row* prow, long* pl_pos_new )
 {
 	if( !prow )	return E_POINTER;
 
 	stat_row_ex* pnew_row = new stat_row_ex;
 	copy_stat_row( prow, pnew_row );
 
-	TPOS lpos_new = 0;
+	long lpos_new = 0;
 
 	if( lpos_insert_after )
 		lpos_new = m_list_row.insert_after( pnew_row, lpos_insert_after );
@@ -423,34 +423,33 @@ HRESULT CStatTableObject::AddRow(TPOS lpos_insert_after, stat_row* prow, TPOS* p
 		lpos_new = m_list_row.add_tail( pnew_row );
 
 	if( pl_pos_new )
-		LPOS lpos_new = 0;
-	*pl_pos_new = lpos_new;
+		*pl_pos_new = lpos_new;
 
 	return S_OK;
 }
 
 //////////////////////////////////////////////////////////////////////
-HRESULT CStatTableObject::DeleteRow( TPOS lpos_row )
+HRESULT CStatTableObject::DeleteRow( long lpos_row )
 {
 	if( !lpos_row )	return E_INVALIDARG;
 
-	m_list_row.remove(lpos_row);
+	m_list_row.remove( lpos_row );
 	return S_OK;
 }
 
 //value by param
 //////////////////////////////////////////////////////////////////////
-HRESULT CStatTableObject::GetValue(TPOS lpos_row, TPOS lpos_param, stat_value** ppvalue)
+HRESULT CStatTableObject::GetValue( long lpos_row, long lpos_param, stat_value** ppvalue )
 {
 	if( !lpos_row || !lpos_param || !ppvalue )	return E_INVALIDARG;
 
 	//get row
-	stat_row_ex* prow = m_list_row.get(lpos_row );	
+	stat_row_ex* prow = m_list_row.get( lpos_row );	
 
 	//get param
-	stat_param_ex* pparam = m_list_params.get(lpos_param);
+	stat_param_ex* pparam = m_list_params.get( lpos_param );
 
-	TPOS lpos_value = prow->m_map_value.find(pparam->lkey);
+	long lpos_value = prow->m_map_value.find( pparam->lkey );
 	if( !lpos_value )
 		return S_FALSE;
 
@@ -474,20 +473,20 @@ HRESULT CStatTableObject::GetValue(TPOS lpos_row, TPOS lpos_param, stat_value** 
 }
 
 //////////////////////////////////////////////////////////////////////
-HRESULT CStatTableObject::SetValue(TPOS lpos_row, TPOS lpos_param, stat_value* pvalue)
+HRESULT CStatTableObject::SetValue( long lpos_row, long lpos_param, stat_value* pvalue )
 {
 	if( !lpos_row || !lpos_param )	return E_INVALIDARG;
 	
 	//get row
-	stat_row_ex* prow = m_list_row.get(lpos_row);
+	stat_row_ex* prow = m_list_row.get( lpos_row );	
 
 	//get param
-	stat_param_ex* pparam = m_list_params.get(lpos_param);
+	stat_param_ex* pparam = m_list_params.get( lpos_param );
 
 	//set value
 	{
 		stat_value_ex* pvi_map = 0;
-		TPOS lpos_value = prow->m_map_value.find(pparam->lkey);
+		long lpos_value = prow->m_map_value.find( pparam->lkey );
 
 		if( pvalue )//add/edit new value
 		{
@@ -515,17 +514,17 @@ HRESULT CStatTableObject::SetValue(TPOS lpos_row, TPOS lpos_param, stat_value* p
 
 //value by key
 //////////////////////////////////////////////////////////////////////
-HRESULT CStatTableObject::GetValueByKey(TPOS lpos_row, long lkey, stat_value** ppvalue)
+HRESULT CStatTableObject::GetValueByKey( long lpos_row, long lkey, stat_value** ppvalue )
 {
-	TPOS lpos_param = 0;
+	long lpos_param = 0;
 	get_param_by_key( lkey, &lpos_param );
 	return GetValue( lpos_row, lpos_param, ppvalue );
 }
 
 //////////////////////////////////////////////////////////////////////
-HRESULT CStatTableObject::SetValueByKey(TPOS lpos_row, long lkey, stat_value* pvalue)
+HRESULT CStatTableObject::SetValueByKey( long lpos_row, long lkey, stat_value* pvalue )
 {
-	TPOS lpos_param = 0;
+	long lpos_param = 0;
 	get_param_by_key( lkey, &lpos_param );
 	return SetValue( lpos_row, lpos_param, pvalue );
 }
@@ -538,12 +537,12 @@ HRESULT CStatTableObject::ClearCache( )
 
 //helper func
 //////////////////////////////////////////////////////////////////////
-stat_param_ex* CStatTableObject::get_param_by_key(long lkey, TPOS* pl_pos)
+stat_param_ex* CStatTableObject::get_param_by_key( long lkey, long* pl_pos )
 {
-	TPOS lpos_map = m_map_params.find(lkey);
+	long lpos_map = m_map_params.find( lkey );
 	if( !lpos_map )	return 0;
 
-	TPOS lpos_param = m_map_params.get(lpos_map);
+	long lpos_param = m_map_params.get( lpos_map );
 	stat_param_ex* pparam = m_list_params.get( lpos_param );
 	if( pl_pos )
 		*pl_pos = lpos_param;
@@ -631,7 +630,7 @@ HRESULT CStatTableObject::LoadData( IStream *pStream, long lparam )
 		for( idx=0; idx<count; idx++ )
 		{
 			stat_param_ex* pparam = new stat_param_ex;
-			TPOS lnew_pos = m_list_params.add_tail(pparam);
+			long lnew_pos = m_list_params.add_tail( pparam );
 			//load param key
 			pStream->Read( &pparam->lkey, sizeof(long), &nRead );
 			pparam->lkey=mapPrivateKeys.replace(pparam->lkey);
@@ -850,7 +849,7 @@ HRESULT CStatTableObject::StoreData( IStream *pStream, long lparam )
 	pStream->Write( &nVersion, sizeof(long), &nWritten );
 
 	//store params
-	TPOS lpos = 0;
+	long lpos = 0;
 	long count = m_list_params.count();
 	{
 		//TIME_TEST( "CStatTableObject::StoreData->StoreParams" );
@@ -929,7 +928,7 @@ HRESULT CStatTableObject::StoreData( IStream *pStream, long lparam )
 			//store stat_values
 			long value_count = prow->m_map_value.count();
 			pStream->Write( &value_count, sizeof(long), &nWritten );
-			for (TPOS lpos_value = prow->m_map_value.head(); lpos_value; lpos_value = prow->m_map_value.next(lpos_value))
+			for( long lpos_value=prow->m_map_value.head(); lpos_value; lpos_value=prow->m_map_value.next(lpos_value) )
 			{
 				stat_value_ex* pvalue = prow->m_map_value.get( lpos_value );
 				//save value was defined
@@ -1039,9 +1038,9 @@ HRESULT CStatTableObject::getFirstParamPos (
 {
 	if( !pv_pos )		return E_POINTER;
 
-	TPOS lpos = 0;
+	long lpos = 0;
 	GetFirstParamPos( &lpos );
-	_variant_t var	= (LONG_PTR)lpos;
+	_variant_t var	= lpos;
 	*pv_pos	= var.Detach();
 
 	return S_OK;
@@ -1049,15 +1048,15 @@ HRESULT CStatTableObject::getFirstParamPos (
 
 //////////////////////////////////////////////////////////////////////
 HRESULT CStatTableObject::getNextParamPos (
-	/*[in]*/ LONG_PTR lpos,
-    /*[out,retval]*/ VARIANT * pv_pos )
+        /*[in]*/ long lpos,
+        /*[out,retval]*/ VARIANT * pv_pos )
 {
 	if( !pv_pos || !lpos )		return E_POINTER;
 
-	TPOS lpos_param = (TPOS)lpos;
+	long lpos_param = lpos;
 	stat_param* pparam = 0;
 	GetNextParam( &lpos_param, &pparam );
-	_variant_t var = (LONG_PTR)lpos_param;
+	_variant_t var	= lpos_param;
 	*pv_pos	= var.Detach();
 
 	return S_OK;
@@ -1065,12 +1064,12 @@ HRESULT CStatTableObject::getNextParamPos (
 
 //////////////////////////////////////////////////////////////////////
 HRESULT CStatTableObject::getParamKey (
-	/*[in]*/ LONG_PTR lpos,
-  /*[out,retval]*/ VARIANT * pv_key )
+        /*[in]*/ long lpos,
+        /*[out,retval]*/ VARIANT * pv_key )
 {
 	if( !pv_key || !lpos )		return E_POINTER;
 
-	TPOS lpos_param = (TPOS)lpos;
+	long lpos_param = lpos;
 	stat_param* pparam = 0;
 	GetNextParam( &lpos_param, &pparam );
 	_variant_t var	= pparam->lkey;
@@ -1085,8 +1084,8 @@ HRESULT CStatTableObject::getFirstRowPos (
 {
 	if( !pv_pos )		return E_POINTER;
 
-	LONG_PTR lpos = 0;
-	GetFirstRowPos( (TPOS*)&lpos );
+	long lpos = 0;
+	GetFirstRowPos( &lpos );
 	_variant_t var	= lpos;
 	*pv_pos	= var.Detach();
 
@@ -1095,14 +1094,14 @@ HRESULT CStatTableObject::getFirstRowPos (
     
 //////////////////////////////////////////////////////////////////////
 HRESULT CStatTableObject::getNextRowPos (
-        /*[in]*/ LONG_PTR lpos,
+        /*[in]*/ long lpos,
         /*[out,retval]*/ VARIANT * pv_pos )
 {
 	if( !pv_pos || !lpos )		return E_POINTER;
 
-	LONG_PTR lpos_row = lpos;
+	long lpos_row = lpos;
 	stat_row* prow = 0;
-	GetNextRow( (TPOS*)&lpos_row, &prow );
+	GetNextRow( &lpos_row, &prow );
 	_variant_t var	= lpos_row;
 	*pv_pos	= var.Detach();
 
@@ -1124,14 +1123,14 @@ HRESULT CStatTableObject::getRowCount (
 
 //////////////////////////////////////////////////////////////////////
 HRESULT CStatTableObject::getRowGroup (
-	/*[in]*/ LONG_PTR lpos,
+        /*[in]*/ long lpos,
         /*[out,retval]*/ VARIANT * pv_group )
 {
 	if( !pv_group || !lpos )		return E_POINTER;
 
-	LONG_PTR lpos_row = lpos;
+	long lpos_row = lpos;
 	stat_row* prow = 0;
-	GetNextRow( (TPOS*)&lpos_row, &prow );	
+	GetNextRow( &lpos_row, &prow );	
 
 	BSTR bstr = 0;
 	StringFromCLSID( prow->guid_group, &bstr );
@@ -1146,16 +1145,16 @@ HRESULT CStatTableObject::getRowGroup (
 
 //////////////////////////////////////////////////////////////////////
 HRESULT CStatTableObject::getRowClass (
-	/*[in]*/ LONG_PTR lpos,
-  /*[in]*/ BSTR class_file,
-  /*[out,retval]*/ VARIANT * pv_class )
+        /*[in]*/ long lpos,
+        /*[in]*/ BSTR class_file,
+        /*[out,retval]*/ VARIANT * pv_class )
 {
 	if( !lpos || !class_file || !pv_class )	return E_POINTER;
 
 	long lclass = -1;
 
 	bstr_t bstr_classes_file = class_file;
-	TPOS lpos_calc = (TPOS)lpos;
+	long lpos_calc = lpos;
 
 	IUnknown* punk_child = 0;
 	GetNextChild( &lpos_calc, &punk_child );
@@ -1176,16 +1175,19 @@ HRESULT CStatTableObject::getRowClass (
     
 //////////////////////////////////////////////////////////////////////
 HRESULT CStatTableObject::deleteRow (
-	/*[in]*/ LONG_PTR lpos)
+        /*[in]*/ long lpos )
 {
+	
 	if( !lpos )	return E_POINTER;
-	DeleteRow( (TPOS)lpos );
+
+	DeleteRow( lpos );
+
 	return S_OK;
 }
 
 //////////////////////////////////////////////////////////////////////
 HRESULT CStatTableObject::getValueByKey (
-	/*[in]*/ LONG_PTR lpos,
+        /*[in]*/ long lpos,
         /*[in]*/ long lkey,
         /*[out,retval]*/ VARIANT * pv_value )
 {
@@ -1193,7 +1195,7 @@ HRESULT CStatTableObject::getValueByKey (
 
 	double fvalue = 0;
 	stat_value* psv = 0;
-	GetValueByKey( (TPOS)lpos, lkey, &psv );
+	GetValueByKey( lpos, lkey, &psv );
 	if( psv )
 		fvalue = psv->fvalue;
 
@@ -1222,7 +1224,7 @@ static double GetCoeffToUnit(long lKey)
 		IMeasParamGroupPtr ptr_group = punk;
 		if( ptr_group==0 ) continue;
 
-		LONG_PTR lparam_pos = 0;
+		long lparam_pos = 0;
 		ptr_group->GetFirstPos( &lparam_pos );
 		while( lparam_pos )
 		{
@@ -1238,7 +1240,7 @@ static double GetCoeffToUnit(long lKey)
 
 //////////////////////////////////////////////////////////////////////
 HRESULT CStatTableObject::getValueByKeyInUnit (
-	/*[in]*/ LONG_PTR lpos,
+        /*[in]*/ long lpos,
         /*[in]*/ long lkey,
         /*[out,retval]*/ VARIANT * pv_value )
 {
@@ -1246,7 +1248,7 @@ HRESULT CStatTableObject::getValueByKeyInUnit (
 
 	double fvalue = 0;
 	stat_value* psv = 0;
-	GetValueByKey( (TPOS)lpos, lkey, &psv );
+	GetValueByKey( lpos, lkey, &psv );
 	if( psv )
 		fvalue = psv->fvalue;
 	fvalue *= GetCoeffToUnit(lkey);
@@ -1259,15 +1261,15 @@ HRESULT CStatTableObject::getValueByKeyInUnit (
 
 //////////////////////////////////////////////////////////////////////
 HRESULT CStatTableObject::getValueByParamPos (
-	/*[in]*/ LONG_PTR lpos,
-	/*[in]*/ LONG_PTR lparam_pos,
-  /*[out,retval]*/ VARIANT * pv_value )
+        /*[in]*/ long lpos,
+        /*[in]*/ long lparam_pos,
+        /*[out,retval]*/ VARIANT * pv_value )
 {
 	if( !pv_value )	return E_POINTER;
 
 	double fvalue = 0;
 	stat_value* psv = 0;
-	GetValue((TPOS)lpos, (TPOS)lparam_pos, &psv);
+	GetValue( lpos, lparam_pos, &psv );
 	if( psv )
 		fvalue = psv->fvalue;
 

@@ -4,14 +4,15 @@
 // produce the type library (PrintFieldAX.tlb) that will become a resource in
 // PrintFieldAX.ocx.
 
+#include <olectl.h>
+#include <idispids.h>
+
 [ uuid(E72BB405-D5B6-4CA6-9071-56ABC5E1DB40), version(1.0),
   helpfile("PrintFieldAX.hlp"),
   helpstring("PrintFieldAX ActiveX Control module"),
   control ]
 library PRINTFIELDAXLib
 {
-#include <olectl.h>
-#include <idispids.h>
 	importlib(STDOLE_TLB);
 	importlib(STDTYPE_TLB);
 

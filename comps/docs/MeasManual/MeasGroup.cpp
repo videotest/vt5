@@ -40,7 +40,7 @@ bool CManualMeasGroup::CalcValues( IUnknown *punkCalcObject, IUnknown *punkSourc
 	if( ptrParent == 0 )
 		return false;
 
-	POSITION lPos = 0;
+	long lPos = 0;
 
 	ptrParent->GetFirstChildPosition( &lPos );
 	while( lPos )
@@ -123,12 +123,12 @@ bool CManualMeasGroup::ReloadState()
 	_bstr_t			bstrObjectList( szTypeObjectList );
 
 
-	LONG_PTR	lPosTemplate = 0;		
+	long	lPosTemplate = 0;		
 	ptrApp->GetFirstDocTemplPosition( &lPosTemplate );
 	
 	while( lPosTemplate )
 	{
-		LONG_PTR	lPosDoc = 0;
+		long	lPosDoc = 0;
 
 		ptrApp->GetFirstDocPosition( lPosTemplate, &lPosDoc );
 
@@ -145,7 +145,7 @@ bool CManualMeasGroup::ReloadState()
 
 			if( ptrDC == 0 )	continue;
 
-			LONG_PTR lObjListPos = 0;
+			long lObjListPos = 0;
 			ptrDC->GetFirstObjectPos( bstrObjectList, &lObjListPos );
 			while( lObjListPos )
 			{
@@ -160,7 +160,7 @@ bool CManualMeasGroup::ReloadState()
 				if( ptrContainer == 0 )	continue;
 
 				
-				LONG_PTR lParamPos = 0;
+				long lParamPos = 0;
 				ptrContainer->GetFirstParameterPos( &lParamPos );
 				while( lParamPos )
 				{

@@ -379,7 +379,7 @@ HRESULT CActionHelper::XDispatch::Invoke( DISPID dispIdMember, REFIID riid, LCID
 		long	nInCount, nOutCount;
 		nInCount = nOutCount = 0;
 
-		POSITION	lArgumentPosition = 0;
+		long	lArgumentPosition = 0;
 		ptrFilterAction->GetFirstArgumentPosition( &lArgumentPosition );
 
 		// 13. Пошли по всем data-аргументам акции
@@ -489,7 +489,7 @@ HRESULT CActionHelper::XDispatch::Invoke( DISPID dispIdMember, REFIID riid, LCID
 
 			// если данный аргумент был в списке входных параметров фильтра - проставим там m_bstr_given_name
 			{
-				TPOS	lpos = name2pargInfo.find(bstrName);
+				long	lpos = name2pargInfo.find(bstrName);
 				if(lpos)
 				{
 					ArgInfo* pargInfo = name2pargInfo.get(lpos);
@@ -546,7 +546,7 @@ HRESULT CActionHelper::XDispatch::Invoke( DISPID dispIdMember, REFIID riid, LCID
 
 			// если данный аргумент был в списке входных параметров фильтра - проставим там m_bstr_given_name
 			{
-				TPOS	lpos = name2pargInfo.find(bstrName);
+				long	lpos = name2pargInfo.find(bstrName);
 				if(lpos)
 				{
 					ArgInfo* pargInfo = name2pargInfo.get(lpos);
@@ -1400,7 +1400,7 @@ void CActionHelper::AttachActivesObjectFromContext( bool bAttach )
 
 			if (nCount)
 			{
-				TPOS lPos = 0;
+				long lPos = 0;
 				ptrSrc->GetFirstChildPos(bstrType, 0, &lPos);
 				while (lPos)
 				{
@@ -1439,7 +1439,7 @@ void CActionHelper::AttachActivesObjectFromContext( bool bAttach )
 
 		for( nType = 0; nType < nTypesCount; nType++ )
 		{
-			LONG_PTR lpos = 0;
+			long lpos = 0;
 			ptr->GetObjectFirstPosition( nType, &lpos );
 
 			while( lpos )

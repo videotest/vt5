@@ -20,24 +20,24 @@ IMPLEMENT_UNKNOWN(CFilterBase, Filter);
 
 
 
-HRESULT CFilterBase::XFilter::GetFirstArgumentPosition(POSITION *pnPos)
+HRESULT CFilterBase::XFilter::GetFirstArgumentPosition( long *pnPos )
 {
 	_try_nested_base( CFilterBase, Filter, GetFirstArgumentPosition )
 	{
 		
-		*pnPos = pThis->m_arguments.GetHeadPosition();
+		*pnPos = (long)pThis->m_arguments.GetHeadPosition();
 		return S_OK;
 	}
 	_catch_nested;
 }
 
-HRESULT CFilterBase::XFilter::GetNextArgument(IUnknown **ppunkDataObject, POSITION *pnPosNext)
+HRESULT CFilterBase::XFilter::GetNextArgument( IUnknown **ppunkDataObject, long *pnPosNext )
 {
 	_try_nested_base( CFilterBase, Filter, GetFirstArgumentPosition )
 	{
 		POSITION	pos = (POSITION)*pnPosNext;
 		CFilterArgument	*parg = pThis->m_arguments.GetNext( pos );
-		*pnPosNext = pos;
+		*pnPosNext = (long)pos;
 
 		if( ppunkDataObject )
 		{
@@ -51,7 +51,7 @@ HRESULT CFilterBase::XFilter::GetNextArgument(IUnknown **ppunkDataObject, POSITI
 	_catch_nested;
 }
 
-HRESULT CFilterBase::XFilter::SetArgument(POSITION lPos, IUnknown *punkDataObject, BOOL bDataChanged)
+HRESULT CFilterBase::XFilter::SetArgument( long lPos, IUnknown *punkDataObject, BOOL bDataChanged )
 {
 	_try_nested_base( CFilterBase, Filter, SetArgument)
 	{
@@ -113,7 +113,7 @@ HRESULT CFilterBase::XFilter::NeedActivateResult( IUnknown *punk, BOOL *pbCan )
 	_catch_nested;
 }
 
-HRESULT CFilterBase::XFilter::GetArgumentInfo(POSITION lPos, BSTR *pbstrArgType, BSTR *pbstrArgName, BOOL *pbOut)
+HRESULT CFilterBase::XFilter::GetArgumentInfo( long lPos, BSTR *pbstrArgType, BSTR *pbstrArgName, BOOL *pbOut )
 {
 	_try_nested_base( CFilterBase, Filter, GetArgumentInfo)
 	{
@@ -251,7 +251,7 @@ void CFilterBase::ContextNotification(long lCod)
 	if (sptrDS == 0)
 		return;
 
-	TPOS lPos = 0;
+	long lPos = 0;
 	sptrDS->GetFirstViewPosition(&lPos);
 	while (lPos)
 	{
@@ -641,7 +641,7 @@ IUnknown *CFilterBase::GetObjectArgument( const char *szType, int nCurrentPos, I
 		return 0;
 
 	//punkContext->GetTotalObject( bstrType, nCurrentPos, &punkDataObject );
-	LONG_PTR	lPosSelected = 0;
+	long	lPosSelected = 0;
 	ptrC->GetFirstSelectedPos( bstrType, &lPosSelected );
 	while( lPosSelected )
 	{

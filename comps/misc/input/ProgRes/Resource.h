@@ -52,7 +52,6 @@
 #define IDC_CHECK_FLIP_HORZ             1066
 #define IDC_CHECK_GRAYSCALE             1067
 #define IDC_COMBO_CAPTURE               1069
-#define IDC_COMBO_PREVIEW               1070
 #define IDC_CHECK_FOCUS                 1073
 #define IDC_STATIC_FOCUS_CURRENT        1074
 #define IDC_WB_BUILD                    1077
@@ -77,7 +76,6 @@
 #define IDC_SLIDER_ENH_CONTRAST         2008
 #define IDD_ENHANCEMENT                 2008
 #define IDC_EDIT_ENH_GAMMA              2009
-#define IDD_COLOR_BALANCE1              2009
 #define IDC_SPIN_ENH_GAMMA              2010
 #define IDC_SLIDER_ENH_GAMMA            2011
 #define IDC_GRAY                        2068

@@ -44,7 +44,7 @@ IUnknownPtr _GetObjectByName( IUnknown *punkFrom, const BSTR bstrObject, const B
 			continue;
 
 		IUnknown	*punkObj = 0;
-		LONG_PTR	dwPos = 0;
+		long	dwPos = 0;
 
 		ptrDataType->GetObjectFirstPosition( nType, &dwPos );
 
@@ -63,7 +63,7 @@ IUnknownPtr _GetObjectByName( IUnknown *punkFrom, const BSTR bstrObject, const B
 			INamedDataObject2Ptr	ptrN( punkObj );
 			punkObj->Release();
 
-			POSITION	lpos = 0;
+			long	lpos = 0;
 			ptrN->GetFirstChildPosition( &lpos );
 
 			while( lpos )
@@ -112,7 +112,7 @@ IUnknownPtr _GetObjectByIID(IUnknown *punkFrom, REFIID iid, const char *pszDescr
 	for( long nType = 0; nType < nTypesCounter; nType ++ )
 	{
 		IUnknown	*punkObj = 0;
-		LONG_PTR	dwPos = 0;
+		long	dwPos = 0;
 		ptrDataType->GetObjectFirstPosition( nType, &dwPos );
 		while( dwPos )
 		{
@@ -130,7 +130,7 @@ IUnknownPtr _GetObjectByIID(IUnknown *punkFrom, REFIID iid, const char *pszDescr
 
 			INamedDataObject2Ptr	ptrN( punkObj );
 			punkObj->Release();
-			POSITION	lpos = 0;
+			long	lpos = 0;
 			ptrN->GetFirstChildPosition( &lpos );
 			while( lpos )
 			{
@@ -169,7 +169,7 @@ void _SearchObjectLists(IUnknownPtr &ObjLst1, IUnknownPtr &ObjLst2, _bstr_t &bst
 	bool bList1Found = false;
 	_bstr_t bstrTypeObjectsList(szTypeObjectList);
 	IApplicationPtr sptrApp(::GetAppUnknown());
-	LONG_PTR lPosTempl, lPosDoc;
+	long lPosTempl,lPosDoc;
 	sptrApp->GetFirstDocTemplPosition(&lPosTempl);
 	while(lPosTempl)
 	{
@@ -324,18 +324,18 @@ HRESULT CActionCompare::DoInvoke()
 			throw new CMessageException("Different sizes of objects");
 		_ptr_t2<int> anErroneous(lObjects1);
 		int nErrors = 0;
-		POSITION pos1 = 0, pos2 = 0;
+		long pos1 = 0, pos2 = 0;
 		int iObj = 0;
-		sptrN1->GetFirstChildPosition(&pos1);
-		sptrN2->GetFirstChildPosition(&pos2);
+		sptrN1->GetFirstChildPosition((long*)&pos1);
+		sptrN2->GetFirstChildPosition((long*)&pos2);
 		fprintf(file.f, "Errors:");
 		while (pos1 && pos2)
 		{
 			IUnknownPtr sptr1,sptr2;
 			ICalcObjectPtr sptrObj1,sptrObj2;
-			POSITION pos1s = pos1, pos2s = pos2;
-			sptrN1->GetNextChild(&pos1, &sptr1);
-			sptrN2->GetNextChild(&pos2, &sptr2);
+			long pos1s = pos1, pos2s = pos2;
+			sptrN1->GetNextChild((long*)&pos1, &sptr1);
+			sptrN2->GetNextChild((long*)&pos2, &sptr2);
 			sptrObj1 = sptr1;
 			sptrObj2 = sptr2;
 			bool bOk1 = sptrObj1;

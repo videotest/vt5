@@ -213,17 +213,17 @@ void CIdioDBView::OnNotify( const char *pszEvent, IUnknown *punkHit, IUnknown *p
 ////////////////////////////////////////////////////////////////////////////
 IUnknown *CIdioDBView::GetObjectByPoint( CPoint point )
 {
-	TPOS lPosLine = m_storage.GetFirst();
+	long lPosLine = m_storage.GetFirst();
 	while( lPosLine )
 	{
 		CGalleryIdioLine *pLine = m_storage.Get( lPosLine );
 
-		TPOS lPosCell = pLine->GetFirst();
+		long lPosCell = pLine->GetFirst();
 		while( lPosCell )
 		{
 			CGalleryIdioCell *pCell = pLine->Get( lPosCell );
 
-			TPOS lPos = pCell->GetFirst();
+			long lPos = pCell->GetFirst();
 			while( lPos )
 			{
 				CGalleryIdioItem *pItem = pCell->Get( lPos );
@@ -390,7 +390,7 @@ LRESULT CIdioDBView::WindowProc(UINT message, WPARAM wParam, LPARAM lParam )
 		else
 			rc2 = pItemActive->GetRect();
 
-		TPOS lPosLine = m_storage.GetFirst();
+		long lPosLine = m_storage.GetFirst();
 		while( lPosLine )
 		{
 
@@ -400,7 +400,7 @@ LRESULT CIdioDBView::WindowProc(UINT message, WPARAM wParam, LPARAM lParam )
 
 			if( rcLine.IntersectRect( rcLine, rc ) )
 			{
-				TPOS lPosCell = pLine->GetFirst();
+				long lPosCell = pLine->GetFirst();
 				while( lPosCell )
 				{
 					CGalleryIdioCell *pCell = pLine->Get( lPosCell );
@@ -415,7 +415,7 @@ LRESULT CIdioDBView::WindowProc(UINT message, WPARAM wParam, LPARAM lParam )
 							{
 								if( pCell->GetCount() > 1 )
 								{
-									TPOS lPos = pCell->GetFirst();
+									long lPos = pCell->GetFirst();
 
 									while( lPos )
 									{
@@ -469,7 +469,7 @@ LRESULT CIdioDBView::WindowProc(UINT message, WPARAM wParam, LPARAM lParam )
 
 
 		
-		TPOS lPosLine = m_storage.GetFirst();
+		long lPosLine = m_storage.GetFirst();
 		long lLine = 0;
 		while( lPosLine )
 		{
@@ -479,7 +479,7 @@ LRESULT CIdioDBView::WindowProc(UINT message, WPARAM wParam, LPARAM lParam )
 
 			if( rcLine.IntersectRect( rcLine, rcDrag ) )
 			{
-				TPOS lPosCell = pLine->GetFirst();
+				long lPosCell = pLine->GetFirst();
 				long lCell = 0;
 				while( lPosCell )
 				{
@@ -489,7 +489,7 @@ LRESULT CIdioDBView::WindowProc(UINT message, WPARAM wParam, LPARAM lParam )
 
 					if( CRect().IntersectRect( rcCell, rcDrag ) )
 					{
-						TPOS lPos = pCell->GetFirst();
+						long lPos = pCell->GetFirst();
 						long lItem = 0;
 
 						IUnknownPtr ptrUnk;
@@ -625,17 +625,17 @@ LRESULT CIdioDBView::WindowProc(UINT message, WPARAM wParam, LPARAM lParam )
 
 			if( sptrSelected )
 			{
-				TPOS lPosLine = m_storage.GetFirst();
+				long lPosLine = m_storage.GetFirst();
 				while( lPosLine )
 				{
 					CGalleryIdioLine *pLine = m_storage.Get( lPosLine );
 
-					TPOS lPosCell = pLine->GetFirst();
+					long lPosCell = pLine->GetFirst();
 					while( lPosCell )
 					{
 						CGalleryIdioCell *pCell = pLine->Get( lPosCell );
 
-						TPOS lPos = pCell->GetFirst();
+						long lPos = pCell->GetFirst();
 						while( lPos )
 						{
 							CGalleryIdioItem *pItem = pCell->Get( lPos );
@@ -695,17 +695,17 @@ LRESULT CIdioDBView::WindowProc(UINT message, WPARAM wParam, LPARAM lParam )
 		{
 			m_strTextSearch += char( (UINT)wParam );
 
-			TPOS lPosLine = m_storage.GetFirst();
+			long lPosLine = m_storage.GetFirst();
 			while( lPosLine )
 			{
 				CGalleryIdioLine *pLine = m_storage.Get( lPosLine );
 
-				TPOS lPosCell = pLine->GetFirst();
+				long lPosCell = pLine->GetFirst();
 				while( lPosCell )
 				{
 					CGalleryIdioCell *pCell = pLine->Get( lPosCell );
 
-					TPOS lPos = pCell->GetFirst();
+					long lPos = pCell->GetFirst();
 					while( lPos )
 					{
 						CGalleryIdioItem *pItem = pCell->Get( lPos );
@@ -758,7 +758,7 @@ void CIdioDBView::attach_data( bool bHasChange, IUnknown *punkObjectToRemove  )
 			
 			if( ptrObject )
 			{
-				POSITION lPos = 0;
+				long lPos = 0;
 				ptrObject->GetFirstChildPosition( &lPos );
 				while( lPos ) 
 				{
@@ -767,18 +767,18 @@ void CIdioDBView::attach_data( bool bHasChange, IUnknown *punkObjectToRemove  )
 					if( punkI )
 					{
 						bool bExit = false;
-						TPOS lPosLine = m_storage.GetFirst();
+						long lPosLine = m_storage.GetFirst();
 						
 						while( lPosLine )
 						{
 							CGalleryIdioLine *pLine = m_storage.Get( lPosLine );
 
-							TPOS lPosCell = pLine->GetFirst();
+							long lPosCell = pLine->GetFirst();
 							while( lPosCell )
 							{
 								CGalleryIdioCell *pCell = pLine->Get( lPosCell );
 
-								TPOS lPosO = pCell->GetFirst();
+								long lPosO = pCell->GetFirst();
 								while( lPosO )
 								{
 									CGalleryIdioItem *pItem = pCell->Get( lPosO );
@@ -816,12 +816,12 @@ void CIdioDBView::attach_data( bool bHasChange, IUnknown *punkObjectToRemove  )
 
 								CString strName = get_class_name( lClass );
 
-								TPOS lPosLine = m_storage.GetFirst();
+								long lPosLine = m_storage.GetFirst();
 								while( lPosLine )
 								{
 									CGalleryIdioLine *pLine = m_storage.Get( lPosLine );
 
-									TPOS lPosCell = pLine->GetFirst();
+									long lPosCell = pLine->GetFirst();
 									while( lPosCell )
 									{
 										CGalleryIdioCell *pCell = pLine->Get( lPosCell );
@@ -857,7 +857,7 @@ void CIdioDBView::attach_data( bool bHasChange, IUnknown *punkObjectToRemove  )
 									pItem->SetObject( punkI );
 									pItem->SetObjectKey( ::GetObjectKey( punkI ) );
 
-									TPOS lPosLine = m_storage.GetFirst(); long nLine = 0;
+									long lPosLine = m_storage.GetFirst(), nLine = 0;
 									int nLines = GetValueInt( m_sptrContext, KARIO_IDIODB_PREVIEW_LINES, "LineCount", ::GetValueInt( ::GetAppUnknown(), KARIO_IDIODB_PREVIEW_LINES, "LineCount", 1 ) );
 
 									bool bOK = false;
@@ -902,17 +902,17 @@ void CIdioDBView::attach_data( bool bHasChange, IUnknown *punkObjectToRemove  )
 					}
 				}
 //////////////////////////////////////////////////////////////////////////////////////////////////
-				TPOS lPosLine = m_storage.GetFirst();
+				long lPosLine = m_storage.GetFirst();
 				while( lPosLine )
 				{
 					CGalleryIdioLine *pLine = m_storage.Get( lPosLine );
 
-					TPOS lPosCell = pLine->GetFirst();
+					long lPosCell = pLine->GetFirst();
 					while( lPosCell )
 					{
 						CGalleryIdioCell *pCell = pLine->Get( lPosCell );
 
-						TPOS lPos = pCell->GetFirst();
+						long lPos = pCell->GetFirst();
 						while( lPos )
 						{
 							CGalleryIdioItem *pItem = pCell->Get( lPos );
@@ -946,12 +946,12 @@ void CIdioDBView::attach_data( bool bHasChange, IUnknown *punkObjectToRemove  )
 			{
 				CGalleryIdioLine *TmpLine = new CGalleryIdioLine;
 
-				TPOS lPosLine = m_storage.GetFirst();
+				long lPosLine = m_storage.GetFirst();
 				while( lPosLine )
 				{
 					CGalleryIdioLine *pLine = m_storage.Get( lPosLine );
 
-					TPOS lPosCell = pLine->GetFirst();
+					long lPosCell = pLine->GetFirst();
 					while( lPosCell )
 					{
 						CGalleryIdioCell *pCell = pLine->Get( lPosCell );
@@ -969,8 +969,8 @@ void CIdioDBView::attach_data( bool bHasChange, IUnknown *punkObjectToRemove  )
 
 				while( TmpLine->GetCount() )
 				{
-					TPOS lPosCell = TmpLine->GetFirst(), lMinPos = 0;
-					long lMin = 1000000;
+					long lPosCell = TmpLine->GetFirst();
+					long lMin = 1000000, lMinPos = 0;
 					while( lPosCell )
 					{
 						CGalleryIdioCell *pCell = TmpLine->Get( lPosCell );
@@ -991,7 +991,7 @@ void CIdioDBView::attach_data( bool bHasChange, IUnknown *punkObjectToRemove  )
 					}
 				}
 
-				TPOS lPosCell = _TmpLine->GetFirst();
+				long lPosCell = _TmpLine->GetFirst();
 				while( lPosCell )
 				{
 					CGalleryIdioCell *pCell = _TmpLine->Get( lPosCell );
@@ -1028,7 +1028,7 @@ void CIdioDBView::attach_data( bool bHasChange, IUnknown *punkObjectToRemove  )
 					
 					int n = 0;
 
-					TPOS lPosCell = TmpLine->GetFirst();
+					long lPosCell = TmpLine->GetFirst();
 					while( lPosCell )
 					{
 						if( n >= nCells )
@@ -1075,7 +1075,7 @@ void CIdioDBView::attach_data( bool bHasChange, IUnknown *punkObjectToRemove  )
 
 				if( ptrObject )
 				{
-					POSITION lPos = 0;
+					long lPos = 0;
 					ptrObject->GetFirstChildPosition( &lPos );
 					while( lPos ) 
 					{
@@ -1153,17 +1153,17 @@ void CIdioDBView::attach_data( bool bHasChange, IUnknown *punkObjectToRemove  )
 			}
 			else
 			{
-				TPOS lPosLine = m_storage.GetFirst();
+				long lPosLine = m_storage.GetFirst();
 				while( lPosLine )
 				{
 					CGalleryIdioLine *pLine = m_storage.Get( lPosLine );
 
-					TPOS lPosCell = pLine->GetFirst();
+					long lPosCell = pLine->GetFirst();
 					while( lPosCell )
 					{
 						CGalleryIdioCell *pCell = pLine->Get( lPosCell );
 
-						TPOS lPos = pCell->GetFirst();
+						long lPos = pCell->GetFirst();
 						while( lPos )
 						{
 							CGalleryIdioItem *pItem = pCell->Get( lPos );
@@ -1201,17 +1201,17 @@ void CIdioDBView::set_layout()
 
 	double fMaxLen = 0;
 
-	TPOS lPosLine = m_storage.GetFirst();
+	long lPosLine = m_storage.GetFirst();
 	while( lPosLine )
 	{
 		CGalleryIdioLine *pLine = m_storage.Get( lPosLine );
 
-		TPOS lPosCell = pLine->GetFirst();
+		long lPosCell = pLine->GetFirst();
 		while( lPosCell )
 		{
 			CGalleryIdioCell *pCell = pLine->Get( lPosCell );
 
-			TPOS lPos = pCell->GetFirst();
+			long lPos = pCell->GetFirst();
 			while( lPos )
 			{
 				CGalleryIdioItem *pItem = pCell->Get( lPos );
@@ -1244,12 +1244,12 @@ void CIdioDBView::set_layout()
 	{
 		CGalleryIdioLine *pLine = m_storage.Get( lPosLine );
 
-		TPOS lPosCell = pLine->GetFirst();
+		long lPosCell = pLine->GetFirst();
 		while( lPosCell )
 		{
 			CGalleryIdioCell *pCell = pLine->Get( lPosCell );
 
-			TPOS lPos = pCell->GetFirst();
+			long lPos = pCell->GetFirst();
 			while( lPos )
 			{
 				CGalleryIdioItem *pItem = pCell->Get( lPos );
@@ -1289,12 +1289,12 @@ void CIdioDBView::set_layout()
 	{
 		CGalleryIdioLine *pLine = m_storage.Get( lPosLine );
 
-		TPOS lPosCell = pLine->GetFirst();
+		long lPosCell = pLine->GetFirst();
 		while( lPosCell )
 		{
 			CGalleryIdioCell *pCell = pLine->Get( lPosCell );
 
-			TPOS lPos = pCell->GetFirst();
+			long lPos = pCell->GetFirst();
 			while( lPos )
 			{
 				CGalleryIdioItem *pItem = pCell->Get( lPos );
@@ -1423,17 +1423,17 @@ void CIdioDBView::OnEditCtrlChange( CString str )
 	
 	if( sptrSelected )
 	{
-		TPOS lPosLine = m_storage.GetFirst();
+		long lPosLine = m_storage.GetFirst();
 		while( lPosLine )
 		{
 			CGalleryIdioLine *pLine = m_storage.Get( lPosLine );
 
-			TPOS lPosCell = pLine->GetFirst();
+			long lPosCell = pLine->GetFirst();
 			while( lPosCell )
 			{
 				CGalleryIdioCell *pCell = pLine->Get( lPosCell );
 
-				TPOS lPos = pCell->GetFirst();
+				long lPos = pCell->GetFirst();
 				while( lPos )
 				{
 					CGalleryIdioItem *pItem = pCell->Get( lPos );
@@ -1467,7 +1467,7 @@ IUnknown *CIdioDBView::_get_object_by_key( IUnknownPtr punkDB, GuidKey key )
 
 	if( ptrObject )
 	{
-		POSITION lPos = 0;
+		long lPos = 0;
 		ptrObject->GetFirstChildPosition( &lPos );
 		while( lPos ) 
 		{
@@ -1495,17 +1495,17 @@ CGalleryIdioItem *CIdioDBView::_get_object( IUnknownPtr sptrO )
 {
 	GuidKey key = ::GetObjectKey( sptrO );
 
-	TPOS lPosLine = m_storage.GetFirst();
+	long lPosLine = m_storage.GetFirst();
 	while( lPosLine )
 	{
 		CGalleryIdioLine *pLine = m_storage.Get( lPosLine );
 
-		TPOS lPosCell = pLine->GetFirst();
+		long lPosCell = pLine->GetFirst();
 		while( lPosCell )
 		{
 			CGalleryIdioCell *pCell = pLine->Get( lPosCell );
 
-			TPOS lPos = pCell->GetFirst();
+			long lPos = pCell->GetFirst();
 			while( lPos )
 			{
 				CGalleryIdioItem *pItem = pCell->Get( lPos );
@@ -1547,7 +1547,7 @@ HRESULT CIdioDBView::XView::EnableWindowMessages( BOOL *pbEnable )
 		return S_FALSE;
 
 	METHOD_PROLOGUE_EX( CIdioDBView, View );
-	bool b = ((CMouseImpl *)pThis)->Enable( (bool)*pbEnable );
+	bool b = ((CMouseImpl *)pThis)->Enable( bool(*pbEnable) );
 	*pbEnable = b;	
 	return S_OK;
 }
@@ -1576,17 +1576,17 @@ HRESULT CIdioDBView::XView::SelectByText( BSTR bstr )
 
  	for( int i = 0; i < 2;i++ )
 	{
-		TPOS lPosLine = pThis->m_storage.GetFirst();
+		long lPosLine = pThis->m_storage.GetFirst();
 		while( lPosLine )
 		{
 			CGalleryIdioLine *pLine = pThis->m_storage.Get( lPosLine );
 
-			TPOS lPosCell = pLine->GetFirst();
+			long lPosCell = pLine->GetFirst();
 			while( lPosCell )
 			{
 				CGalleryIdioCell *pCell = pLine->Get( lPosCell );
 
-				TPOS lPos = pCell->GetFirst();
+				long lPos = pCell->GetFirst();
 				while( lPos )
 				{
 					CGalleryIdioItem *pItem = pCell->Get( lPos );

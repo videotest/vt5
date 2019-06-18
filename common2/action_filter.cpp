@@ -24,13 +24,13 @@ IUnknown *CFilter::DoGetInterface( const IID &iid )
 	else return CAction::DoGetInterface( iid );
 }
 
-HRESULT CFilter::GetFirstArgumentPosition( TPOS *pnPos )
+HRESULT CFilter::GetFirstArgumentPosition( long *pnPos )
 {
 	*pnPos = m_arguments.head();
 	return S_OK;
 }
 
-HRESULT CFilter::GetNextArgument( IUnknown **ppunkDataObject, TPOS *pnPosNext )
+HRESULT CFilter::GetNextArgument( IUnknown **ppunkDataObject, long *pnPosNext )
 {
 	CFilterArgument	*parg = m_arguments.next( *pnPosNext );
 	if( ppunkDataObject )
@@ -43,10 +43,10 @@ HRESULT CFilter::GetNextArgument( IUnknown **ppunkDataObject, TPOS *pnPosNext )
 	return S_OK;
 }
 
-HRESULT CFilter::SetArgument( TPOS lPos, IUnknown *punkDataObject, BOOL bDataChanged )
+HRESULT CFilter::SetArgument( long lPos, IUnknown *punkDataObject, BOOL bDataChanged )
 {
 	{//!!! защита от кривых lPos - был прецедент...
-		TPOS lPos1=m_arguments.head();
+		long lPos1=m_arguments.head();
 		bool bHere=false;
 		while(lPos1)
 		{
@@ -76,7 +76,7 @@ HRESULT CFilter::SetArgument( TPOS lPos, IUnknown *punkDataObject, BOOL bDataCha
 HRESULT CFilter::CanDeleteArgument( IUnknown *punk, BOOL *pbCan )
 {
 	*pbCan = false;
-	TPOS pos = m_arguments.head();
+	long pos = m_arguments.head();
 	while( pos )
 	{
 		CFilterArgument	*pa = m_arguments.next( pos );
@@ -92,7 +92,7 @@ HRESULT CFilter::CanDeleteArgument( IUnknown *punk, BOOL *pbCan )
 HRESULT CFilter::NeedActivateResult( IUnknown *punk, BOOL *pbCan )
 {
 	*pbCan = true;
-	TPOS pos = m_arguments.head();
+	long pos = m_arguments.head();
 	while( pos )
 	{
 		CFilterArgument	*pa = m_arguments.next( pos );
@@ -105,7 +105,7 @@ HRESULT CFilter::NeedActivateResult( IUnknown *punk, BOOL *pbCan )
 	return S_OK;
 }
 
-HRESULT CFilter::GetArgumentInfo( TPOS lPos, BSTR *pbstrArgType, BSTR *pbstrArgName, BOOL *pbOut )
+HRESULT CFilter::GetArgumentInfo( long lPos, BSTR *pbstrArgType, BSTR *pbstrArgName, BOOL *pbOut )
 {
 	CFilterArgument	*parg = m_arguments.next( lPos );
 	if( pbstrArgType )
@@ -213,7 +213,7 @@ HRESULT CFilter::GetActionState( DWORD *pdwState )
 
 bool CFilter::_Init1()
 {
-	TPOS pos = m_arguments.head();
+	long pos = m_arguments.head();
 	while (pos)
 	{
 		CFilterArgument	* parg = m_arguments.next( pos );
@@ -238,7 +238,7 @@ void CFilter::ContextNotification(long lCod)
 	if (sptrDS == 0)
 		return;
 
-	TPOS lPos = 0;
+	long lPos = 0;
 	sptrDS->GetFirstViewPosition(&lPos);
 	while (lPos)
 	{
@@ -292,7 +292,7 @@ HRESULT CFilter::DoInvoke()
 		// find base key
 		_bstr_t strBaseParamName = GetBaseKeyParamName();
 		CFilterArgument	* pa = 0;
-		TPOS pos = m_arguments.head();
+		long pos = m_arguments.head();
 
 		while (pos)
 		{
@@ -345,7 +345,7 @@ HRESULT CFilter::DoInvoke()
 		{
 			//find new base objects
 			CFilterArgument	* pa = 0;
-			TPOS POS = m_arguments.head();
+			long pos = m_arguments.head();
 			
 			while (pos)
 			{
@@ -428,7 +428,7 @@ IUnknown *CFilter::GetDataArgument( const char *szArgName )
 {
 	bool bReturnFirst = szArgName == 0;
 
-	TPOS	pos = m_arguments.head();
+	long	pos = m_arguments.head();
 
 	CFilterArgument	*pa = 0, *pargRes = 0;
 
@@ -461,7 +461,7 @@ IUnknown *CFilter::GetDataResult( const char *szArgName )
 {
 	bool bReturnFirst = szArgName == 0;
 
-	TPOS	pos = m_arguments.head();
+	long	pos = m_arguments.head();
 
 	CFilterArgument	*pa = 0, *pargRes = 0;
 
@@ -515,7 +515,7 @@ bool CFilter::StartNotification( int nCYCount, int nStageCount, int nNotifyFreq 
 
 	//now every arguments and results chould be created, but no data was changed
 	//detach the virtual arguments now
-	TPOS	pos = m_arguments.head();
+	long	pos = m_arguments.head();
 
 	while( pos )
 	{
@@ -556,7 +556,7 @@ bool CFilter::CanDeleteArgument( CFilterArgument *pa )
 
 bool CFilter::NeedActivateResult( CFilterArgument *pa )
 {
-	return GetValueInt( GetAppUnknown(), "General", "ActivateFilterResult", 1 )!=0;
+	return GetValueInt( GetAppUnknown(), "General", "ActivateFilterResult", 1 );
 }
 
 IUnknown *CFilter::GetObjectArgument( const char *szType, int nCurrentPos, IDataContext2 *punkContext )
@@ -579,7 +579,7 @@ IUnknown *CFilter::GetObjectArgument( const char *szType, int nCurrentPos, IData
 		return 0;
 
 	//punkContext->GetTotalObject( bstrType, nCurrentPos, &punkDataObject );
-	LONG_PTR	lPosSelected = 0;
+	long	lPosSelected = 0;
 	ptrC->GetFirstSelectedPos( bstrType, &lPosSelected );
 	while( lPosSelected )
 	{
@@ -743,7 +743,7 @@ bool CFilter::_Init()
 
 bool CFilter::_DeInit()
 {
-	TPOS	lpos = m_arguments.head();
+	long	lpos = m_arguments.head();
 	while( lpos )
 	{
 		CFilterArgument*	p = m_arguments.next( lpos );
@@ -764,7 +764,7 @@ bool CFilter::_PlaceArguments( bool bDirection, bool bRemoveOnly )
 
 	//ASSERT( m_ptrTarget );
 
-	TPOS	pos = m_arguments.head();
+	long	pos = m_arguments.head();
 
 	while( pos )
 	{
@@ -833,7 +833,7 @@ bool CFilter::_PlaceArguments( bool bDirection, bool bRemoveOnly )
 
 				if( !punk )	//may be we remove it from data - find it in arguuments
 				{
-					TPOS	pos1 = pos;
+					long	pos1 = pos;
 					while( pos1 )
 					{
 						CFilterArgument *pa1 = m_arguments.next( pos1 );
@@ -941,7 +941,7 @@ void CFilter::_SetArgumentName( CFilterArgument *parg )
 		_bstr_t		strSingleArgName;
 		strArgName = parg->m_bstrArgName;
 		
-		TPOS pos = m_arguments.head();
+		long pos = m_arguments.head();
 		while( pos )
 		{
 			CFilterArgument *pa = m_arguments.next( pos );
@@ -1004,7 +1004,7 @@ bool CFilter::FinishNotification()
 		return CLongOperationImpl::FinishNotification();
 
 	
-	TPOS	pos = m_arguments.head();
+	long	pos = m_arguments.head();
 
 	while( pos )
 	{
@@ -1086,7 +1086,7 @@ bool CFilter::DoResetData()
 	if( m_bLockChangeData )
 		return true;
 
-	TPOS	pos = m_arguments.head();
+	long	pos = m_arguments.head();
 
 	while( pos )
 	{

@@ -3,13 +3,13 @@
 // This file will be processed by the MIDL compiler to produce the
 // type library (AppMan.tlb).
 
+#include <olectl.h> // Yep, we're pretending to be a control
+#include <idispids.h> 
+
 [ uuid(53665021-669E-11d3-A64B-0090275995FE), version(1.0) ]
 
 library AppMan
 {
-#include <olectl.h> // Yep, we're pretending to be a control
-#include <idispids.h> 
-
 	importlib("stdole32.tlb");
 	importlib("stdole2.tlb");
 

@@ -12,7 +12,7 @@ class CSettingsPage : public CPropertyPage
 	DECLARE_DYNCREATE(CSettingsPage);
 public:
 	CSettingsPage(int nPage = 0) : CPropertyPage(nPage) {m_pSheet = NULL;};
-	CSettingsSheet *GetSettingsParentSheet();
+	CSettingsSheet *GetParentSheet();
 
 	CSettingsSheet *m_pSheet;
 

@@ -17,7 +17,7 @@ IUnknown *FindDocTemplate(LPCTSTR lpTemplateName)
 {
 	sptrIApplication sptrA(GetAppUnknown());
 	CString s2(lpTemplateName);
-	LONG_PTR lPosTemplate,lPosTemplFnd = 0;
+	long lPosTemplate,lPosTemplFnd = 0;
 	HRESULT hr = sptrA->GetFirstDocTemplPosition(&lPosTemplate);
 	while (SUCCEEDED(hr) && lPosTemplate)
 	{
@@ -41,13 +41,13 @@ void __EnlistAllDocs(CArray<GUID, GUID&>&uiaFoundDocs, LPCTSTR lpTemplateName)
 	IUnknown *punkImageDoc = NULL;
 	CString s2(lpTemplateName);
 //	CString s2(_T("Image"));
-	LONG_PTR lPosTemplate,lPosTemplFnd = 0;
+	long lPosTemplate,lPosTemplFnd = 0;
 	HRESULT hr = sptrA->GetFirstDocTemplPosition(&lPosTemplate);
 	while (SUCCEEDED(hr) && lPosTemplate)
 	{
 		IUnknown *punkTemplate;
 		BSTR bstrName;
-		LONG_PTR lPrevTempl = lPosTemplate;
+		long lPrevTempl = lPosTemplate;
 		hr = sptrA->GetNextDocTempl(&lPosTemplate, &bstrName, &punkTemplate);
 		CString s(bstrName);
 		::SysFreeString(bstrName);
@@ -61,7 +61,7 @@ void __EnlistAllDocs(CArray<GUID, GUID&>&uiaFoundDocs, LPCTSTR lpTemplateName)
 	}
 	if (lPosTemplFnd)
 	{
-		LONG_PTR lPosDoc;
+		long lPosDoc;
 		hr = sptrA->GetFirstDocPosition(lPosTemplFnd, &lPosDoc);
 		while (SUCCEEDED(hr) && lPosDoc)
 		{
@@ -96,13 +96,13 @@ IUnknown *__FindNewDocs(CArray<GUID, GUID&>&uiaFoundDocs, GuidKey &lDocKey, LPCT
 	IUnknown *punkImageDoc = NULL;
 	CString s2(lpTemplateName);
 //	CString s2(_T("Image"));
-	LONG_PTR lPosTemplate,lPosTemplFnd = 0;
+	long lPosTemplate,lPosTemplFnd = 0;
 	HRESULT hr = sptrA->GetFirstDocTemplPosition(&lPosTemplate);
 	while (SUCCEEDED(hr) && lPosTemplate)
 	{
 		IUnknown *punkTemplate;
 		BSTR bstrName;
-		LONG_PTR lPrevTempl = lPosTemplate;
+		long lPrevTempl = lPosTemplate;
 		hr = sptrA->GetNextDocTempl(&lPosTemplate, &bstrName, &punkTemplate);
 		CString s(bstrName);
 		::SysFreeString(bstrName);
@@ -116,7 +116,7 @@ IUnknown *__FindNewDocs(CArray<GUID, GUID&>&uiaFoundDocs, GuidKey &lDocKey, LPCT
 	}
 	if (lPosTemplFnd)
 	{
-		LONG_PTR lPosDoc;
+		long lPosDoc;
 		hr = sptrA->GetFirstDocPosition(lPosTemplFnd, &lPosDoc);
 		while (SUCCEEDED(hr) && lPosDoc)
 		{
@@ -146,13 +146,13 @@ IUnknown *__FindDocByKey(GuidKey lDocKey, LPCTSTR lpTemplateName)
 	IUnknown *punkImageDoc = NULL;
 	CString s2(lpTemplateName);
 //	CString s2(_T("Image"));
-	LONG_PTR lPosTemplate,lPosTemplFnd = 0;
+	long lPosTemplate,lPosTemplFnd = 0;
 	HRESULT hr = sptrA->GetFirstDocTemplPosition(&lPosTemplate);
 	while (SUCCEEDED(hr) && lPosTemplate)
 	{
 		IUnknown *punkTemplate;
 		BSTR bstrName;
-		LONG_PTR lPrevTempl = lPosTemplate;
+		long lPrevTempl = lPosTemplate;
 		hr = sptrA->GetNextDocTempl(&lPosTemplate, &bstrName, &punkTemplate);
 		CString s(bstrName);
 		::SysFreeString(bstrName);
@@ -166,7 +166,7 @@ IUnknown *__FindDocByKey(GuidKey lDocKey, LPCTSTR lpTemplateName)
 	}
 	if (lPosTemplFnd)
 	{
-		LONG_PTR lPosDoc;
+		long lPosDoc;
 		hr = sptrA->GetFirstDocPosition(lPosTemplFnd, &lPosDoc);
 		while (SUCCEEDED(hr) && lPosDoc)
 		{
@@ -192,13 +192,13 @@ IUnknown *__FindDocByName(LPCTSTR pDocName, LPCTSTR lpTemplateName)
 	sptrIApplication sptrA(GetAppUnknown());
 	IUnknown *punkImageDoc = NULL;
 	CString s2(lpTemplateName);
-	LONG_PTR lPosTemplate,lPosTemplFnd = 0;
+	long lPosTemplate,lPosTemplFnd = 0;
 	HRESULT hr = sptrA->GetFirstDocTemplPosition(&lPosTemplate);
 	while (SUCCEEDED(hr) && lPosTemplate)
 	{
 		IUnknown *punkTemplate;
 		BSTR bstrName;
-		LONG_PTR lPrevTempl = lPosTemplate;
+		long lPrevTempl = lPosTemplate;
 		hr = sptrA->GetNextDocTempl(&lPosTemplate, &bstrName, &punkTemplate);
 		CString s(bstrName);
 		::SysFreeString(bstrName);
@@ -212,7 +212,7 @@ IUnknown *__FindDocByName(LPCTSTR pDocName, LPCTSTR lpTemplateName)
 	}
 	if (lPosTemplFnd)
 	{
-		LONG_PTR lPosDoc;
+		long lPosDoc;
 		hr = sptrA->GetFirstDocPosition(lPosTemplFnd, &lPosDoc);
 		while (SUCCEEDED(hr) && lPosDoc)
 		{

@@ -291,7 +291,7 @@ BOOL CVTListPropPageCol::BuildColumnList( )
 	m_listCtrl.GetClientRect( &rc );
 	
 	if(m_bUpdNameCol!=1)
-	m_listCtrl.InsertColumn( 0, _T("Column"), LVCFMT_CENTER, rc.Width( ) );
+		m_listCtrl.InsertColumn( 0, _T("Column"), LVCFMT_CENTER, rc.Width( ) );
 	if(m_bUpdNameCol==1)
 	{
 		if(m_bUseExtHeaderCol)
@@ -500,7 +500,7 @@ void CVTListPropPageCol::OnEndlabeleditList(NMHDR* pNMHDR, LRESULT* pResult)
 	
 	m_listCtrl.SetItemText( pDispInfo->item.iItem, 0, pDispInfo->item.pszText );
 
-	INT_PTR num=m_HeaderAction.GetCount();
+	int num=m_HeaderAction.GetCount();
 	m_HeaderAction.InsertAt(num,1);
 	m_bUpdNameHeader=1;
 }
@@ -619,8 +619,8 @@ void CVTListPropPageCol::OnButtonAdd()
 	m_listCtrl.InsertItem( nColCount-1, strCaption );
 
 	UpdatePageAndScrollToNewItem( nColCount-1 );
-	
-	INT_PTR num=m_HeaderAction.GetCount();
+
+	int num=m_HeaderAction.GetCount();
 	m_HeaderAction.InsertAt(num,2);
 	m_bUpdNameHeader=2;
 }
@@ -655,7 +655,7 @@ void CVTListPropPageCol::OnButtonDelete()
 		UpdatePageAndScrollToNewItem( index );
 
 	m_bUpdNameHeader=3+index;
-	INT_PTR num=m_HeaderAction.GetCount();
+	int num=m_HeaderAction.GetCount();
 	m_HeaderAction.InsertAt(num,m_bUpdNameHeader);
 }
 
@@ -2094,7 +2094,7 @@ void CVTListPropPageHeader::OnBnClickedUseHeader()
 	bool bEnable = true;
 	if( !m_btnUseHeader.GetCheck() )
 		bEnable = false;
-
+	
 	m_bUseExtHeaderCol=bEnable;
 
 	EnableWindow( IDC_STATIC_LEV, bEnable ); 
@@ -2184,8 +2184,8 @@ void CVTListPropPageHeader::OnDeltaposLevels(NMHDR *pNMHDR, LRESULT *pResult)
 void CVTListPropPageHeader::_update_column_info()
 {
 	m_lstCollumn.DeleteAllItems();
-	int i = 0;
-	for (TPOS lPos = listHeaders.head(); lPos; lPos = listHeaders.next(lPos), i++)
+
+	for( long lPos = listHeaders.head(), i = 0; lPos; lPos = listHeaders.next( lPos ), i++ )
 	{
 		if( i ==  m_nCurrent && i < m_nLevels )
 		{
@@ -2193,8 +2193,7 @@ void CVTListPropPageHeader::_update_column_info()
 
 			if( pLevelData )
 			{
-				int q = 0;
-				for (TPOS lPos2 = pLevelData->listData.head(); lPos2; lPos2 = pLevelData->listData.next(lPos2), q++)
+				for( long lPos2 = pLevelData->listData.head(), q = 0; lPos2; lPos2 = pLevelData->listData.next( lPos2 ), q++ )
 				{
 					XLevelData::XData *pdata = pLevelData->listData.get( lPos2 );
 
@@ -2227,8 +2226,7 @@ void CVTListPropPageHeader::OnDeltaposcurLevel(NMHDR *pNMHDR, LRESULT *pResult)
 
 void CVTListPropPageHeader::OnBnClickedButtonAddHeader()
 {
-	int i = 0;
-	for( TPOS lPos = listHeaders.head(); lPos; lPos = listHeaders.next( lPos ), i++ )
+	for( long lPos = listHeaders.head(), i = 0; lPos; lPos = listHeaders.next( lPos ), i++ )
 	{
 		if( i == m_nCurrent && i < m_nLevels  )
 		{
@@ -2266,8 +2264,7 @@ void CVTListPropPageHeader::OnBnClickedButtonDeleteHeader()
 	short nIndex = m_lstCollumn.GetNextItem( -1, LVNI_SELECTED );	
 	if(nIndex < 0) return;	
 
-	int i = 0;
-	for( TPOS lPos = listHeaders.head(); lPos; lPos = listHeaders.next( lPos ), i++ )
+	for( long lPos = listHeaders.head(), i = 0; lPos; lPos = listHeaders.next( lPos ), i++ )
 	{
 		if( i == m_nCurrent && i < m_nLevels  )
 		{
@@ -2275,8 +2272,7 @@ void CVTListPropPageHeader::OnBnClickedButtonDeleteHeader()
 
 			if( pLevelData )
 			{
-				int q = 0;
-				for( TPOS lPos2 = pLevelData->listData.head(); lPos2; lPos2 = pLevelData->listData.next( lPos2 ), q++ )
+				for( long lPos2 = pLevelData->listData.head(), q = 0; lPos2; lPos2 = pLevelData->listData.next( lPos2 ), q++ )
 				{
 					if( q == nIndex )
 					{
@@ -2319,8 +2315,7 @@ void CVTListPropPageHeader::OnLvnEndlabeleditListRow(NMHDR *pNMHDR, LRESULT *pRe
 
 CVTListPropPageHeader::XLevelData::XData *CVTListPropPageHeader::_get_item( int nIndex )
 {
-	int i = 0;
-	for( TPOS lPos = listHeaders.head(); lPos; lPos = listHeaders.next( lPos ), i++ )
+	for( long lPos = listHeaders.head(), i = 0; lPos; lPos = listHeaders.next( lPos ), i++ )
 	{
 		if( i == m_nCurrent && i < m_nLevels  )
 		{
@@ -2328,8 +2323,7 @@ CVTListPropPageHeader::XLevelData::XData *CVTListPropPageHeader::_get_item( int 
 
 			if( pLevelData )
 			{
-				int q = 0;
-				for( TPOS lPos2 = pLevelData->listData.head(); lPos2; lPos2 = pLevelData->listData.next( lPos2 ), q++ )
+				for( long lPos2 = pLevelData->listData.head(), q = 0; lPos2; lPos2 = pLevelData->listData.next( lPos2 ), q++ )
 				{
 					if( q == nIndex )
 					{
@@ -2393,15 +2387,14 @@ void CVTListPropPageHeader::_update_ctrl()
 
 	if( !_exec_set( GetDispatch(), ((OLECHAR*)(L"SetUseExtHeader")), m_btnUseHeader.GetCheck()  ) )		
 		return;
-	int i = 0;
-	for( TPOS lPos = listHeaders.head(); i < m_nLevels && lPos; lPos = listHeaders.next( lPos ), i++ )
+
+	for( long lPos = listHeaders.head(), i = 0; i < m_nLevels && lPos; lPos = listHeaders.next( lPos ), i++ )
 	{
 		XLevelData *pLevelData = listHeaders.get( lPos );
 
 		if( pLevelData )
 		{
-			int q = 0;
-			for( TPOS lPos2 = pLevelData->listData.head(); lPos2; lPos2 = pLevelData->listData.next( lPos2 ), q++ )
+			for( long lPos2 = pLevelData->listData.head(), q = 0; lPos2; lPos2 = pLevelData->listData.next( lPos2 ), q++ )
 			{
 				XLevelData::XData *pdata = pLevelData->listData.get( lPos2 );
 
@@ -2410,7 +2403,7 @@ void CVTListPropPageHeader::_update_ctrl()
 				if( !_exec_set_data( GetDispatch(), ((OLECHAR*)(L"SetExtHeaderData")), i, q,  pdata->strName, pdata->nAssign, pdata->nWidth, m_nDelCol ) )		
 				{
 					return;
-			}
+				}
 				else
 				{
 					m_FirstColumn=false;
@@ -2443,38 +2436,37 @@ void CVTListPropPageHeader::_fill_data_from_ctrl()
 		XLevelData *pLevel = new XLevelData;
 		listHeaders.add_tail( pLevel );
 	}
-	{
-	int i = 0;
-	for (TPOS lPos = listHeaders.head(); i < m_nLevels && lPos; lPos = listHeaders.next(lPos), i++)
-	{
-		XLevelData *pLevelData = listHeaders.get(lPos);
 
-		if (pLevelData)
+	for( long lPos = listHeaders.head(), i = 0; i < m_nLevels && lPos; lPos = listHeaders.next( lPos ), i++ )
+	{
+		XLevelData *pLevelData = listHeaders.get( lPos );
+
+		if( pLevelData )
 		{
 			int nCol2 = 0;
 
-			if (!_exec_get2(GetDispatch(), ((OLECHAR*)(L"GetExtHeadersColumnSize")), i, nCol2))
+			if( !_exec_get2( GetDispatch(), ((OLECHAR*)(L"GetExtHeadersColumnSize")), i, nCol2 ) )		
 				return;
 
-			for (int t = 0; t < nCol2; t++)
+			for(int t = 0; t < nCol2; t++ )
 			{
 				XLevelData::XData *pLevel = new XLevelData::XData;
-				pLevelData->listData.add_tail(pLevel);
+				pLevelData->listData.add_tail( pLevel );
 			}
-			int q = 0;
-			for (TPOS lPos2 = pLevelData->listData.head(); lPos2; lPos2 = pLevelData->listData.next(lPos2), q++)
-			{
-				XLevelData::XData *pdata = pLevelData->listData.get(lPos2);
 
-				if (!_exec_get_data(GetDispatch(), ((OLECHAR*)(L"GetExtHeaderName")), i, q, pdata->strName))
+			for( long lPos2 = pLevelData->listData.head(), q = 0; lPos2; lPos2 = pLevelData->listData.next( lPos2 ), q++ )
+			{
+				XLevelData::XData *pdata = pLevelData->listData.get( lPos2 );
+
+				if( !_exec_get_data( GetDispatch(), ((OLECHAR*)(L"GetExtHeaderName")), i, q,  pdata->strName ) )
 					return;
-				if (!_exec_get_data(GetDispatch(), ((OLECHAR*)(L"GetExtHeaderAssignment")), i, q, pdata->nAssign))
+				if( !_exec_get_data( GetDispatch(), ((OLECHAR*)(L"GetExtHeaderAssignment")), i, q,  pdata->nAssign  ) )
 					return;
-				if (!_exec_get_data(GetDispatch(), ((OLECHAR*)(L"GetExtHeaderWidth")), i, q, pdata->nWidth))
+				if( !_exec_get_data( GetDispatch(), ((OLECHAR*)(L"GetExtHeaderWidth")), i, q,  pdata->nWidth  ) )
 					return;
 			}
 		}
-	}}
+	}
 	
 	_update_column_info();
 	OnBnClickedUseHeader();
@@ -2971,8 +2963,8 @@ void CVTListPropPageHeader::OnPaint()
 			int valueAction=m_HeaderAction.GetAt(j);
 			if(valueAction>=1)
 			{
-				int i=0;
-				for( TPOS lPos = listHeaders.head(); i < m_nLevels && lPos; lPos = listHeaders.next( lPos ), i++ )
+				int i;
+				for( long lPos = listHeaders.head(), i = 0; i < m_nLevels && lPos; lPos = listHeaders.next( lPos ), i++ )
 				{
 					XLevelData *pLevelData = listHeaders.get( lPos );
 					if( pLevelData )
@@ -2982,8 +2974,7 @@ void CVTListPropPageHeader::OnPaint()
 							XLevelData::XData *pLevel = new XLevelData::XData;
 							pLevelData->listData.add_tail( pLevel );
 						}
-						int q = 0;
-						for( TPOS lPos2 = pLevelData->listData.head(); lPos2; lPos2 = pLevelData->listData.next( lPos2 ), q++ )
+						for( long lPos2 = pLevelData->listData.head(), q = 0; lPos2; lPos2 = pLevelData->listData.next( lPos2 ), q++ )
 						{
 							XLevelData::XData *pdata = pLevelData->listData.get( lPos2 );
 							if( !_exec_get_data( GetDispatch(), ((OLECHAR*)(L"GetExtHeaderName")), i, q,  pdata->strName ) )
@@ -2995,8 +2986,7 @@ void CVTListPropPageHeader::OnPaint()
 						}
 						if(valueAction>=3 && m_lstCollumn.GetItemCount()>0)
 						{
-							int q = 0;
-							for( TPOS lPos2 = pLevelData->listData.head(); lPos2; lPos2 = pLevelData->listData.next( lPos2 ), q++ )
+							for( long lPos2 = pLevelData->listData.head(), q = 0; lPos2; lPos2 = pLevelData->listData.next( lPos2 ), q++ )
 							{
 								if( q == valueAction-3 )
 								{

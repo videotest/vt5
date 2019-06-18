@@ -245,7 +245,7 @@ void CContentDlg::_FillDataBrunch( INamedData *pIData, HTREEITEM hti, const char
 
 
 	if( hti )
-		m_treeData.SetItemData( hti, (DWORD_PTR)pitem_data );
+		m_treeData.SetItemData( hti, (DWORD)pitem_data );
 
 
 	if( var.vt == VT_UNKNOWN||var.vt == VT_DISPATCH )

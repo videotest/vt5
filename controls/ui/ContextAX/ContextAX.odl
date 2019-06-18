@@ -4,6 +4,8 @@
 // produce the type library (ContextAX.tlb) that will become a resource in
 // ContextAX.ocx.
 
+#include <olectl.h>
+#include <idispids.h>
 
 [ uuid(CEABC196-CD93-49CC-A07E-CDF17A7D816D), version(1.0),
   helpfile("ContextAX.hlp"),
@@ -11,8 +13,6 @@
   control ]
 library CONTEXTAXLib
 {
-#include <olectl.h>
-#include <idispids.h>
 	importlib(STDOLE_TLB);
 	importlib(STDTYPE_TLB);
 

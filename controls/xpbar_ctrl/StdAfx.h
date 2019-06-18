@@ -11,7 +11,6 @@
 #endif // _MSC_VER > 1000
 
 #include <windows.h>
-#include <atlcoll.h>
 #include <gdiplus.h>
 
 using namespace Gdiplus;

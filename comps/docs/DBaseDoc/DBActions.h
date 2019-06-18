@@ -20,7 +20,7 @@
 	if( spDocSite == NULL )						\
 		return false;								  \
 														\
-	sptrIDBaseDocument spDBDoc( spDocSite );			\
+	sptrIDBaseDocument2 spDBDoc( spDocSite );			\
 	if( spDBDoc == NULL )\
 		return false;\
 	IUnknown* pUnkQuery = NULL;\
@@ -397,6 +397,28 @@ class CActionDBaseBackUp : public CActionBase, public CLongOperationImpl
 public:
 	CActionDBaseBackUp();
 	virtual ~CActionDBaseBackUp();
+
+public:
+	virtual bool Invoke();
+//update interface
+	virtual bool IsAvaible();
+	virtual bool IsChecked();
+};
+
+class CActionDBBackupToOpticalDrive : public CActionBase, public CLongOperationImpl
+{
+	BYTE* m_pBufRaw;
+	BYTE* m_pBufPack;
+	
+	ENABLE_MULTYINTERFACE();
+	DECLARE_INTERFACE_MAP();
+
+	DECLARE_DYNCREATE(CActionDBBackupToOpticalDrive)
+	GUARD_DECLARE_OLECREATE(CActionDBBackupToOpticalDrive)
+
+public:
+	CActionDBBackupToOpticalDrive();
+	virtual ~CActionDBBackupToOpticalDrive();
 
 public:
 	virtual bool Invoke();
@@ -857,5 +879,17 @@ public:
 	CObjectListUndoRecord	m_changes;
 };
 
+class CActionCompactDB : public CActionBase
+{
+	DECLARE_DYNCREATE(CActionCompactDB)
+	GUARD_DECLARE_OLECREATE(CActionCompactDB)
 
+public:	
+	virtual bool	Invoke();
+	/*IUnknownPtr		get_active_db_object();*/
+};
+
+long GetJetEngineType( LPCTSTR src );
+HRESULT CompactDatabase(LPCTSTR src, LPCTSTR dest);
+bool CompactDB(LPCTSTR src);
 #endif //__dbactions_h__

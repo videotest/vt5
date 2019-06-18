@@ -4,6 +4,8 @@
 // produce the type library (DBControls.tlb) that will become a resource in
 // DBControls.ocx.
 
+#include <olectl.h>
+#include <idispids.h>
 
 [ uuid(59213681-18D6-46B4-AF62-E737D72410BF), version(1.0),
   helpfile("DBControls.hlp"),
@@ -11,8 +13,6 @@
   control ]
 library DBCONTROLSLib
 {
-#include <olectl.h>
-#include <idispids.h>
 	importlib(STDOLE_TLB);
 	importlib(STDTYPE_TLB);
 

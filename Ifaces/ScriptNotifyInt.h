@@ -8,8 +8,8 @@ interface IScriptSite : public IUnknown
 	com_call UnregisterAll() = 0;
 	com_call Invoke( BSTR bstrFuncName, VARIANT* pargs, int nArgsCount, VARIANT* pvarResult, DWORD dwFlags  ) = 0;
 
-	com_call GetFirstPos(TPOS *dwPos) = 0;
-	com_call GetNextPos(TPOS *dwPos, IUnknown **punk, DWORD *dwFlags) = 0;
+	com_call GetFirstPos( long *dwPos ) = 0;
+	com_call GetNextPos(  long *dwPos, IUnknown **punk, DWORD *dwFlags ) = 0;
 };
 
 interface IScriptNotifyListner : public IUnknown

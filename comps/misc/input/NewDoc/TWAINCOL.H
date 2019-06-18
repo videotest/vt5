@@ -1,7 +1,7 @@
 #if !defined(__TwainCol_H__)
 #define __TwainCol_H__
 
-#include "twain.h"
+#include <twain.h>
 
 class CTwainNotImplException : public CException
 {

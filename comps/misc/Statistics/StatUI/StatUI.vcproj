@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="windows-1251"?>
 <VisualStudioProject
 	ProjectType="Visual C++"
-	Version="9.00"
+	Version="9,00"
 	Name="StatUI"
 	ProjectGUID="{C3D78587-1A88-4610-8460-B3541C9171B9}"
 	RootNamespace="StatUI"
@@ -21,8 +21,10 @@
 	<Configurations>
 		<Configuration
 			Name="Debug|Win32"
+			OutputDirectory="Debug"
+			IntermediateDirectory="Debug"
 			ConfigurationType="2"
-			InheritedPropertySheets="$(SolutionDir)props\common2env.vsprops"
+			InheritedPropertySheets="$(VCInstallDir)VCProjectDefaults\UpgradeFromVC71.vsprops"
 			UseOfMFC="0"
 			CharacterSet="2"
 			>
@@ -46,7 +48,7 @@
 			<Tool
 				Name="VCCLCompilerTool"
 				Optimization="0"
-				AdditionalIncludeDirectories="&quot;$(SolutionDir)AWIN&quot;;&quot;$(SolutionDir)comps\misc\fft\cwlib&quot;;d:\WTL9\include"
+				AdditionalIncludeDirectories="\vt5\ifaces;\vt5\common2;\vt5\common;\vt5\AWIN;\vt5\comps\misc\fft\cwlib;\vt5\WTL\include"
 				PreprocessorDefinitions="WIN32;_WINDOWS;_DEBUG;_USRDLL;STATUI_EXPORTS;_CRT_SECURE_NO_DEPRECATE"
 				MinimalRebuild="false"
 				BasicRuntimeChecks="0"
@@ -76,15 +78,19 @@
 			<Tool
 				Name="VCLinkerTool"
 				AdditionalDependencies="gdiplus.lib"
+				OutputFile="/vt5/vt5/debug/comps/StatUI.dll"
 				LinkIncremental="2"
-				AdditionalLibraryDirectories=" "
+				AdditionalLibraryDirectories="\vt5\common\,\vt5\common\debug\"
 				IgnoreDefaultLibraryNames="libcd.lib,libcmt.lib"
+				ModuleDefinitionFile=".\StatUI.def"
 				GenerateDebugInformation="true"
+				ProgramDatabaseFile="/VT5/vt5/debug/pdb/StatUI.pdb"
 				GenerateMapFile="false"
 				MapFileName=""
 				SubSystem="2"
 				RandomizedBaseAddress="1"
 				DataExecutionPrevention="0"
+				ImportLibrary="$(OutDir)/StatUI.lib"
 				TargetMachine="1"
 			/>
 			<Tool
@@ -111,8 +117,10 @@
 		</Configuration>
 		<Configuration
 			Name="Debug|x64"
+			OutputDirectory="$(PlatformName)\$(ConfigurationName)"
+			IntermediateDirectory="$(PlatformName)\$(ConfigurationName)"
 			ConfigurationType="2"
-			InheritedPropertySheets="$(SolutionDir)props\common2env.vsprops"
+			InheritedPropertySheets="$(VCInstallDir)VCProjectDefaults\UpgradeFromVC71.vsprops"
 			UseOfMFC="0"
 			CharacterSet="2"
 			>
@@ -137,7 +145,7 @@
 			<Tool
 				Name="VCCLCompilerTool"
 				Optimization="0"
-				AdditionalIncludeDirectories="&quot;$(SolutionDir)AWIN&quot;;&quot;$(SolutionDir)comps\misc\fft\cwlib&quot;;d:\WTL9\include"
+				AdditionalIncludeDirectories="\vt5\ifaces;\vt5\common2;\vt5\common;\vt5\AWIN;\vt5\comps\misc\fft\cwlib;\vt5\WTL\include"
 				PreprocessorDefinitions="_WINDOWS;_DEBUG;_USRDLL;STATUI_EXPORTS;_WIN64;_M_X64;_CRT_SECURE_NO_DEPRECATE"
 				MinimalRebuild="false"
 				BasicRuntimeChecks="0"
@@ -166,13 +174,17 @@
 			<Tool
 				Name="VCLinkerTool"
 				AdditionalDependencies="gdiplus.lib"
+				OutputFile="\vt5\vt5\$(OutDir)\comps\$(ProjectName).dll"
 				LinkIncremental="2"
-				AdditionalLibraryDirectories=" "
+				AdditionalLibraryDirectories="\vt5\common"
 				IgnoreDefaultLibraryNames="libcd.lib,libcmt.lib"
+				ModuleDefinitionFile=".\StatUI.def"
 				GenerateDebugInformation="true"
+				ProgramDatabaseFile="/VT5/vt5/debug/pdb/StatUI.pdb"
 				SubSystem="2"
 				RandomizedBaseAddress="1"
 				DataExecutionPrevention="0"
+				ImportLibrary="$(OutDir)/StatUI.lib"
 				TargetMachine="17"
 			/>
 			<Tool
@@ -199,8 +211,10 @@
 		</Configuration>
 		<Configuration
 			Name="Release|Win32"
+			OutputDirectory="Release"
+			IntermediateDirectory="Release"
 			ConfigurationType="2"
-			InheritedPropertySheets="$(SolutionDir)props\common2env.vsprops"
+			InheritedPropertySheets="$(VCInstallDir)VCProjectDefaults\UpgradeFromVC71.vsprops"
 			UseOfMFC="0"
 			CharacterSet="2"
 			>
@@ -226,7 +240,7 @@
 				Optimization="2"
 				InlineFunctionExpansion="1"
 				OmitFramePointers="false"
-				AdditionalIncludeDirectories="&quot;$(SolutionDir)AWIN&quot;;&quot;$(SolutionDir)comps\misc\fft\cwlib&quot;;d:\WTL9\include"
+				AdditionalIncludeDirectories="\vt5\ifaces;\vt5\common2;\vt5\common;\vt5\AWIN;\vt5\comps\misc\fft\cwlib;\vt5\WTL\include"
 				PreprocessorDefinitions="WIN32;_WINDOWS;NDEBUG;_USRDLL;STATUI_EXPORTS;_CRT_SECURE_NO_DEPRECATE"
 				StringPooling="true"
 				RuntimeLibrary="2"
@@ -255,16 +269,20 @@
 			<Tool
 				Name="VCLinkerTool"
 				AdditionalDependencies="gdiplus.lib"
+				OutputFile="\vt5/vt5/release/comps/StatUI.dll"
 				LinkIncremental="1"
 				SuppressStartupBanner="true"
-				AdditionalLibraryDirectories=" "
+				AdditionalLibraryDirectories="\vt5\common\"
 				IgnoreDefaultLibraryNames="libc.lib"
+				ModuleDefinitionFile=".\StatUI.def"
 				GenerateDebugInformation="true"
+				ProgramDatabaseFile="\vt5\vt5\release\pdb\$(ProjectName).pdb"
 				SubSystem="2"
 				OptimizeReferences="0"
 				EnableCOMDATFolding="0"
 				RandomizedBaseAddress="1"
 				DataExecutionPrevention="0"
+				ImportLibrary="$(OutDir)/StatUI.lib"
 				TargetMachine="0"
 			/>
 			<Tool
@@ -291,8 +309,10 @@
 		</Configuration>
 		<Configuration
 			Name="Release|x64"
+			OutputDirectory="$(PlatformName)\$(ConfigurationName)"
+			IntermediateDirectory="$(PlatformName)\$(ConfigurationName)"
 			ConfigurationType="2"
-			InheritedPropertySheets="$(SolutionDir)props\common2env.vsprops"
+			InheritedPropertySheets="$(VCInstallDir)VCProjectDefaults\UpgradeFromVC71.vsprops"
 			UseOfMFC="0"
 			CharacterSet="2"
 			>
@@ -319,7 +339,7 @@
 				Optimization="2"
 				InlineFunctionExpansion="1"
 				OmitFramePointers="false"
-				AdditionalIncludeDirectories="&quot;$(SolutionDir)AWIN&quot;;&quot;$(SolutionDir)comps\misc\fft\cwlib&quot;;d:\WTL9\include"
+				AdditionalIncludeDirectories="\vt5\ifaces;\vt5\common2;\vt5\common;\vt5\AWIN;\vt5\comps\misc\fft\cwlib;\vt5\WTL\include"
 				PreprocessorDefinitions="_WIN64;_M_X64;_CRT_SECURE_NO_DEPRECATE;_WINDOWS;NDEBUG;_USRDLL;STATUI_EXPORTS"
 				StringPooling="true"
 				RuntimeLibrary="2"
@@ -348,16 +368,20 @@
 			<Tool
 				Name="VCLinkerTool"
 				AdditionalDependencies="gdiplus.lib"
+				OutputFile="\vt5\vt5\$(OutDir)\comps\$(ProjectName).dll"
 				LinkIncremental="1"
 				SuppressStartupBanner="true"
-				AdditionalLibraryDirectories=" "
+				AdditionalLibraryDirectories="\vt5\common"
 				IgnoreDefaultLibraryNames="libc.lib"
+				ModuleDefinitionFile=".\StatUI.def"
 				GenerateDebugInformation="true"
+				ProgramDatabaseFile="\vt5\vt5\release\pdb\$(ProjectName).pdb"
 				SubSystem="2"
 				OptimizeReferences="0"
 				EnableCOMDATFolding="0"
 				RandomizedBaseAddress="1"
 				DataExecutionPrevention="0"
+				ImportLibrary="$(OutDir)/StatUI.lib"
 				TargetMachine="17"
 			/>
 			<Tool
@@ -643,10 +667,6 @@
 		</Filter>
 	</Files>
 	<Globals>
-		<Global
-			Name="DevPartner_IsInstrumented"
-			Value="0"
-		/>
 		<Global
 			Name="RESOURCE_FILE"
 			Value="StatUI.rc"

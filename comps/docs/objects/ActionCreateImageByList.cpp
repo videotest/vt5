@@ -106,7 +106,7 @@ bool CActionCreateImageByList::InvokeFilter()
 	Notify( nCount++ );
 
 				    
-	TPOS lPos = 0;
+	long lPos = 0;
 	ptrListObject->GetFirstChildPosition( &lPos );
 
 	while( lPos )
@@ -258,7 +258,7 @@ bool CActionCreateImageByList::_create_image_copy(IUnknown *punkResult, IUnknown
 		return false;
 
 
-	TPOS lPos = 0;
+	long lPos = 0;
 	ptrListObject->GetFirstChildPosition( &lPos );
 
 	int cx = 0, cy = 0;

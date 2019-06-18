@@ -20,10 +20,10 @@ namespace ViewSpace
 		class CShowStatObjectView : public CActionShowView,
 								public _dyncreate_t<CShowStatObjectView>
 		{
-			public:
-				route_unknown();	
-			public:
-				virtual _bstr_t GetViewProgID() { return _bstr_t( szStatObjectViewProgID ); }
+		public:
+			route_unknown();	
+		public:
+			virtual _bstr_t GetViewProgID() { return _bstr_t( szStatObjectViewProgID ); }
 		protected:
 			HRESULT __stdcall DoInvoke();
 		};

@@ -188,11 +188,6 @@ private:
 };
 
 
-static inline int iround5(double x)
-{
-	return int(floor(x + 0.5));
-}
-
 bool CSegmSerial3::InvokeFilter()
 {
 	IImage4Ptr	ptrSrc( GetDataArgument("Img") );
@@ -242,7 +237,7 @@ bool CSegmSerial3::InvokeFilter()
 				color* p=0;
 				ptrDst->GetRow(y, nPane, &p );
 				for( int x = 0; x < cx; x++ )
-					p[x] = iround5( min(65535.0, log(1+marcher1.m_pDist[y*cx+x]) * scale) );
+					p[x] = round( min(65535.0, log(1+marcher1.m_pDist[y*cx+x]) * scale) );
 			}
 			Notify(y);
 		}

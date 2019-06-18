@@ -148,7 +148,7 @@ public:
 		}
 
 		// Dword-align and return
-		return (DLGITEMTEMPLATE*)(((DWORD_PTR)pw + 3) & ~3);
+		return (DLGITEMTEMPLATE*)(((DWORD)pw + 3) & ~3);
 	}
 
 	// Given the current dialog item and whether this is an extended dialog
@@ -177,7 +177,7 @@ public:
 		WORD cbExtra = *pw++;		// Skip extra data
 
 		// Dword-align and return
-		return (DLGITEMTEMPLATE*)(((DWORD_PTR)pw + cbExtra + 3) & ~3);
+		return (DLGITEMTEMPLATE*)(((DWORD)pw + cbExtra + 3) & ~3);
 	}
 
 	// Find the initialization data (Stream) for the control specified by the ID
@@ -241,14 +241,14 @@ public:
 		 //= bstrWindowClass;
 		wchar_t	lpstrAxWndClassNameW[128];
 		//MultiByteToWideChar( 1, 0, szAxContainerWinClassName, strlen( szAxContainerWinClassName )+1, lpstrAxWndClassNameW, 128 );
-		MultiByteToWideChar( 1, 0, szAxContainerWinClassName, (int)strlen( szAxContainerWinClassName )+1, lpstrAxWndClassNameW, 128 );
+		MultiByteToWideChar( 1, 0, szAxContainerWinClassName, strlen( szAxContainerWinClassName )+1, lpstrAxWndClassNameW, 128 );
 
 		 _bstr_t	bstrTest=  lpstrAxWndClassNameW;
 
 		// Calculate the size of the DLGTEMPLATE for allocating the new one
 		DLGITEMTEMPLATE* pFirstItem = FindFirstDlgItem(pTemplate);
-		ULONGLONG cbHeader = (BYTE*)pFirstItem - (BYTE*)pTemplate;
-		ULONGLONG cbNewTemplate = cbHeader;
+		ULONG cbHeader = (BYTE*)pFirstItem - (BYTE*)pTemplate;
+		ULONG cbNewTemplate = cbHeader;
 
 		BOOL bDialogEx = IsDialogEx(pTemplate);
 
@@ -416,7 +416,7 @@ public:
 			else
 			{
 				// Item is not an OLE control: copy it to the new template.
-				size_t cbItem = (BYTE*)pNextItem - (BYTE*)pItem;
+				ULONG cbItem = (BYTE*)pNextItem - (BYTE*)pItem;
 				dbg_assert(cbItem >= (size_t)(bDialogEx ?
 					sizeof(DLGITEMTEMPLATEEX) :
 					sizeof(DLGITEMTEMPLATE)));
@@ -437,7 +437,7 @@ public:
 	static bool CreateAXControls( DLGTEMPLATE* pTemplate, BYTE* pInitData, HWND hwndDialog )
 	{
 		DLGITEMTEMPLATE* pFirstItem = FindFirstDlgItem(pTemplate);
-		size_t cbHeader = (BYTE*)pFirstItem - (BYTE*)pTemplate;
+		ULONG cbHeader = (BYTE*)pFirstItem - (BYTE*)pTemplate;
 
 		BOOL bDialogEx = IsDialogEx(pTemplate);
 
@@ -676,7 +676,7 @@ void CDialogImpl::FreeTemplate()
 	m_pDialogTemplateSrc = 0;
 }
 
-INT_PTR CDialogImpl::DoModal()
+int CDialogImpl::DoModal()
 {
 	if(!LoadTemplate())
 		return -1;

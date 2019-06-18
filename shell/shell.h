@@ -163,12 +163,12 @@ public:
 		com_call GetCommandManager( IUnknown **punk );
 		com_call GetActiveScript( IUnknown **punk );
 		com_call GetTargetManager( IUnknown **punk );
-		com_call GetFirstDocTemplPosition( LONG_PTR *plPos );
-		com_call GetNextDocTempl( LONG_PTR *plPos, BSTR *pbstrName, IUnknown **punk );
+		com_call GetFirstDocTemplPosition( long *plPos );
+		com_call GetNextDocTempl( long *plPos, BSTR *pbstrName, IUnknown **punk );
 				//temporely IUnknow doesn/t used
 
-		com_call GetFirstDocPosition( LONG_PTR lPosTemplate, LONG_PTR *plPosDoc );
-		com_call GetNextDoc( LONG_PTR lPosTemplate, LONG_PTR *plPosDoc, IUnknown **punkDoc );
+		com_call GetFirstDocPosition( long lPosTemplate, long *plPosDoc );
+		com_call GetNextDoc( long lPosTemplate, long *plPosDoc, IUnknown **punkDoc );
 
 		com_call GetActiveDocument( IUnknown **plDoc );
 		com_call ProcessMessage();
@@ -228,8 +228,8 @@ public:
 		com_call UnregisterAll();
 		com_call Invoke( BSTR bstrFuncName, VARIANT* pargs, int nArgsCount, VARIANT* pvarResult, DWORD dwFlags   );
 
-		com_call GetFirstPos(TPOS *dwPos);
-		com_call GetNextPos(TPOS *dwPos, IUnknown **punk, DWORD *dwFlags);
+		com_call GetFirstPos( long *dwPos );
+		com_call GetNextPos(  long *dwPos, IUnknown **punk, DWORD *dwFlags );
 	END_INTERFACE_PART( ScriptSite )
 
 public:

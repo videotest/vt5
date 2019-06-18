@@ -35,15 +35,15 @@ static void ReadImportedParams(_CArray<CImportedParameter,10,10> &ImpParams)
 	sptrNDApp->GetEntriesCount(&lCount);
 	for (long i = 0; i < lCount; i++)
 	{
-		_bstr_t bstrName;
-		sptrNDApp->GetEntryName(i, bstrName.GetAddress());
+		BSTR bstrName;
+		sptrNDApp->GetEntryName(i, &bstrName);
 		VARIANT var;
 		sptrNDApp->GetValue(bstrName, &var);
 		if (var.vt == VT_BSTR)
 		{
 			BSTR bstrValue = var.bstrVal;
 			wchar_t *pwcColon = bstrValue?wcschr(bstrValue, L':'):0;
-			if (bstrName.length() != 0 && iswdigit(bstrName.GetBSTR()[0]) && bstrValue != 0 && iswdigit(bstrValue[0]) )
+			if (bstrName != 0 && iswdigit(bstrName[0]) && bstrValue != 0 && iswdigit(bstrValue[0]) )
 			{
 				long lParamKey = _wtol(bstrName);
 				int  nObject = _wtoi(bstrValue);
@@ -78,7 +78,7 @@ static ParameterDescriptor *FindBaseParameter(long lKey)
 		ptrManager->GetComponentUnknownByIdx(nGroup, &ptrG);
 		IMeasParamGroupPtr	ptrGroup(ptrG);
 		if (ptrGroup == 0) continue;
-		LONG_PTR lPos = 0;
+		long lPos = 0;
 		ptrGroup->GetPosByKey(lKey, &lPos);
 		if (lPos)
 		{
@@ -159,7 +159,7 @@ void CMetallParams::DefineParameter(long lKey, BSTR bstrName, BSTR bstrDefFmt,
 		pdescr->BorderParam = *pImp;
 	else
 		pdescr->BorderParam.lKey = -1;
-	pdescr->pos = (LONG_PTR)m_Params.add_tail(pdescr);
+	pdescr->pos = m_Params.add_tail(pdescr);
 	if (bstrName != 0)
 	{
 		_bstr_t sMainSection("\\measurement\\parameters\\");
@@ -175,7 +175,7 @@ void CMetallParams::DefineVolatileParams()
 	_CArray<CImportedParameter,10,10> arrImportedParams;
 	ReadImportedParams(arrImportedParams);
 	// Mark all borders parameter as deleted - existing will be unmarked
-	for (TPOS lpos = m_Params.head(); lpos != 0; lpos = m_Params.next(lpos))
+	for (long lpos = m_Params.head(); lpos != 0; lpos = m_Params.next(lpos))
 	{
 		ParameterDescriptorEx *p = m_Params.get(lpos);
 		if (p->BorderParam.lKey >= 0)
@@ -186,8 +186,8 @@ void CMetallParams::DefineVolatileParams()
 	}
 	for (int i = 0; i < arrImportedParams.GetSize(); i++)
 	{
-		TPOS lpos;
-		GetPosByKey(arrImportedParams.GetPtrAt(i).lKey, (LPOS*)&lpos);
+		long lpos;
+		GetPosByKey(arrImportedParams.GetPtrAt(i).lKey, &lpos);
 		if (lpos) // already exist - mark as not deleted
 		{
 			ParameterDescriptorEx *pFound = m_Params.get(lpos);
@@ -216,7 +216,7 @@ void CMetallParams::ReadParameterSettings(ParameterDescriptorEx *pdescr)
 	strSection += pdescr->bstrName;
 	if (pdescr->BorderParam.lKey >= 0)
 	{
-		_SetBSTR(pdescr->bstrUnit, GetValueString(GetAppUnknown(), szCountUnits, szUnitName, szDefCountUnits) );
+		pdescr->bstrUnit = GetValueString(GetAppUnknown(), szCountUnits, szUnitName, szDefCountUnits).copy();
 		pdescr->fCoeffToUnits = 1.;
 		pdescr->lEnabled = 0;
 	}
@@ -225,12 +225,12 @@ void CMetallParams::ReadParameterSettings(ParameterDescriptorEx *pdescr)
 		if (pdescr->lKey == KEY_PARAM_STRINGER_LENGHT || pdescr->lKey == KEY_PARAM_STRINGER_SUM_LENGHT ||
 			pdescr->lKey == KEY_PARAM_STRINGER_WIDTH || pdescr->lKey == KEY_PARAM_STRINGER_WIDTH_ASTM45)
 		{
-			_SetBSTR(pdescr->bstrUnit, GetValueString(GetAppUnknown(), szLinearUnits, szUnitName, szDefLinearUnits) );
+			pdescr->bstrUnit = GetValueString(GetAppUnknown(), szLinearUnits, szUnitName, szDefLinearUnits).copy();
 			pdescr->fCoeffToUnits = GetValueDouble( GetAppUnknown(), szLinearUnits, szUnitCoeff, 1 );
 		}
 		else if (pdescr->lKey == KEY_PARAM_STRINGER_OBJECTS)
 		{
-			_SetBSTR(pdescr->bstrUnit, GetValueString(GetAppUnknown(), szCountUnits, szUnitName, szDefCountUnits) );
+			pdescr->bstrUnit = GetValueString(GetAppUnknown(), szCountUnits, szUnitName, szDefCountUnits).copy();
 			pdescr->fCoeffToUnits = 1.;
 		}
 		else
@@ -239,8 +239,10 @@ void CMetallParams::ReadParameterSettings(ParameterDescriptorEx *pdescr)
 	}
 	_bstr_t	strUserName = pdescr->bstrUserName;
 	_bstr_t	strDefFormat = pdescr->bstrDefFormat;
-	_SetBSTR( pdescr->bstrUserName,  ::GetValueString(GetAppUnknown(), strSection, "UserName", strUserName) );
-	_SetBSTR( pdescr->bstrDefFormat, ::GetValueString(GetAppUnknown(), strSection, "Format", strDefFormat) );
+	::SysFreeString(pdescr->bstrUserName);
+	::SysFreeString(pdescr->bstrDefFormat);
+	pdescr->bstrUserName = ::GetValueString(GetAppUnknown(), strSection, "UserName", strUserName).copy();
+	pdescr->bstrDefFormat = ::GetValueString(GetAppUnknown(), strSection, "Format", strDefFormat).copy();
 	pdescr->lTableOrder = ::GetValueInt( GetAppUnknown(), strSection, "TableOrder", pdescr->lTableOrder );
 }
 
@@ -267,7 +269,7 @@ bool CMetallParams::ReinitParameter(ParameterDescriptorEx *pd)
 
 void CMetallParams::ReloadState(bool bNonVolatile, bool bObjNums, bool bBaseParams)
 {
-	for (TPOS lpos = m_Params.head(); lpos != 0; lpos = m_Params.next(lpos))
+	for (long lpos = m_Params.head(); lpos != 0; lpos = m_Params.next(lpos))
 	{
 		ParameterDescriptorEx *pdescr = m_Params.get(lpos);
 		if (pdescr->bZombie) continue;
@@ -326,28 +328,28 @@ HRESULT CMetallParams::GetParamsCount(long *plCount)
 	return S_OK;
 }
 
-HRESULT CMetallParams::GetFirstPos(LPOS *plPos)
+HRESULT CMetallParams::GetFirstPos(long *plPos)
 {
-	*plPos = (LPOS)m_Params.head();
+	*plPos = m_Params.head();
 	return S_OK;
 }
 
-HRESULT CMetallParams::GetNextParam(LPOS *plPos, struct ParameterDescriptor **ppDescriptior)
+HRESULT CMetallParams::GetNextParam(long *plPos, struct ParameterDescriptor **ppDescriptior )
 {
-	if (ppDescriptior) *ppDescriptior = m_Params.get((TPOS)*plPos);
-	*plPos = (LPOS)m_Params.next((TPOS)*plPos);
+	if (ppDescriptior) *ppDescriptior = m_Params.get(*plPos);
+	*plPos = m_Params.next(*plPos);
 	return S_OK;
 }
 
-HRESULT CMetallParams::GetPosByKey(long lKey, LPOS *plPos)
+HRESULT CMetallParams::GetPosByKey(long lKey, long *plPos)
 {
 	*plPos = 0;
-	for (TPOS lpos = m_Params.head(); lpos != 0; lpos = m_Params.next(lpos))
+	for (long lpos = m_Params.head(); lpos != 0; lpos = m_Params.next(lpos))
 	{
 		ParameterDescriptorEx *pdescr = m_Params.get(lpos);
 		if (pdescr->lKey == lKey)
 		{
-			*plPos = (LPOS)lpos;
+			*plPos = lpos;
 			break;
 		}
 	}
@@ -357,7 +359,7 @@ HRESULT CMetallParams::GetPosByKey(long lKey, LPOS *plPos)
 HRESULT CMetallParams::InitializeCalculation(IUnknown *punkContainer)
 {
 	m_ptrContainer = punkContainer;
-	for (TPOS lpos = m_Params.head(); lpos != 0; lpos = m_Params.next(lpos))
+	for (long lpos = m_Params.head(); lpos != 0; lpos = m_Params.next(lpos))
 	{
 		ParameterDescriptorEx *pdescr = m_Params.get(lpos);
 		if (pdescr->bZombie) continue;
@@ -377,11 +379,7 @@ HRESULT CMetallParams::FinalizeCalculation()
 HRESULT CMetallParams::GetUnit(long lType, BSTR *pbstr, double *pfCoeffToUnits)
 {
 	_bstr_t bstrType = GetValueString(GetAppUnknown(), "\\Units\\StringerType", "Units", "Unit");
-	if (pbstr)
-	{
-		_FreeString(*pbstr);
-		*pbstr = bstrType.copy();
-	}
+	if (pbstr) *pbstr = bstrType.copy();
 	if (pfCoeffToUnits) *pfCoeffToUnits = 1.;
 	return S_OK;
 }
@@ -403,13 +401,13 @@ HRESULT CMetallParams::GetPriority(long *plPriority)
 	return S_OK;
 }
 
-HRESULT CMetallParams::GetFirstPosEx(TPOS *plPos)
+HRESULT CMetallParams::GetFirstPosEx(long *plPos)
 {
 	*plPos = m_Params.head();
 	return S_OK;
 }
 
-HRESULT CMetallParams::GetNextParamEx(TPOS *plPos, ParameterDescriptorEx **ppDescriptior)
+HRESULT CMetallParams::GetNextParamEx(long *plPos, ParameterDescriptorEx **ppDescriptior)
 {
 	if (ppDescriptior) *ppDescriptior = m_Params.get(*plPos);
 	*plPos = m_Params.next(*plPos);
@@ -422,14 +420,14 @@ HRESULT CMetallParams::DefineBorderParameters(IUnknown *punkContainer, bool bCal
 	if (bCalcMeasResult)
 	{
 		INamedDataObject2Ptr sptrCont(punkContainer);
-		POSITION lChildPos;
+		long lChildPos;
 		sptrCont->GetFirstChildPosition(&lChildPos);
 		IUnknownPtr punkObject;
 		if (lChildPos) sptrCont->GetNextChild(&lChildPos, &punkObject);
 		sptrCO = punkObject;
 	}
 	ICalcObjectContainerPtr sptrCont(punkContainer);
-	for (TPOS lpos = m_Params.head(); lpos != 0; lpos = m_Params.next(lpos))
+	for (long lpos = m_Params.head(); lpos != 0; lpos = m_Params.next(lpos))
 	{
 		ParameterDescriptorEx *pd = m_Params.get(lpos);
 		if (pd->bZombie) continue;
@@ -439,7 +437,7 @@ HRESULT CMetallParams::DefineBorderParameters(IUnknown *punkContainer, bool bCal
 			{
 				if (sptrCO != 0)
 				{
-					LPOS lpos = 0;
+					long lpos = 0;
 					sptrCO->GetValuePos(pd->lKey, &lpos);
 					if (lpos == 0)
 						continue;

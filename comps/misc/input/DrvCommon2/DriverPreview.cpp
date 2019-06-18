@@ -1,4 +1,5 @@
 #include "StdAfx.h"
+#include "DrvPreview.h"
 #include "VT5Profile.h"
 #include <vfw.h>
 #include "ddib.h"
@@ -8,10 +9,9 @@
 #include "core5.h"
 #if !defined(COMMON1)
 #include <ComDef.h>
-#include "misc_utils.h"
 #include "com_main.h"
+#include "misc_utils.h"
 #endif
-#include "DrvPreview.h"
 #include "debug.h"
 
 const int DummyDX = 1280;
@@ -1099,8 +1099,8 @@ HRESULT CDriverPreview::SetValueInt(int nCurDev, BSTR bstrSec, BSTR bstrEntry, i
 			p->SetValueInt(nValue);
 		else
 		{
-		CStdProfileManager::m_pMgr->WriteProfileInt(_bstr_t(bstrSec), _bstr_t(bstrEntry), nValue);
-		ReadSettings();
+			CStdProfileManager::m_pMgr->WriteProfileInt(_bstr_t(bstrSec), _bstr_t(bstrEntry), nValue);
+			ReadSettings();
 		}
 		m_bSizeChanged = false;
 		OnSetValueInt(_bstr_t(bstrSec), _bstr_t(bstrEntry), nValue);
@@ -1117,8 +1117,8 @@ HRESULT CDriverPreview::GetValueInt(int nCurDev, BSTR bstrSec, BSTR bstrEntry, i
 	if (p)
 		*pnValue = p->GetValueInt();
 	else
-	*pnValue = CStdProfileManager::m_pMgr->_GetProfileInt(_bstr_t(bstrSec), _bstr_t(bstrEntry),
-		*pnValue);
+		*pnValue = CStdProfileManager::m_pMgr->_GetProfileInt(_bstr_t(bstrSec), _bstr_t(bstrEntry),
+			*pnValue);
 	return S_OK;
 }
 

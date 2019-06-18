@@ -226,7 +226,7 @@ long	CParser::GetNecessaryParamsNames( BSTR *pbstrParamsNames, int iParamType, i
 	
 	BSTR *pbstr = pbstrParamsNames;
 
-	for (TPOS lPos = m_Params.head(); lPos; lPos = m_Params.next(lPos))
+	for( long lPos = m_Params.head( ); lPos; lPos = m_Params.next( lPos ) )
 	{
 		ExprParam *pparam = m_Params.get( lPos );
 		if( ( iMode == OM_CALCULATE && pparam->bNecessaryToValidate ) || iMode == OM_PAINT )
@@ -261,7 +261,7 @@ long	CParser::GetNecessaryParamsNamesEx( DrawParamInfo *pParamsInfos, int iParam
 	
 	DrawParamInfo *pinfos = pParamsInfos;
 
-	for (TPOS lPos = m_Params.head(); lPos; lPos = m_Params.next(lPos))
+	for( long lPos = m_Params.head( ); lPos; lPos = m_Params.next( lPos ) )
 	{
 		ExprParam *pparam = m_Params.get( lPos );
 		if( ( iMode == OM_CALCULATE && pparam->bNecessaryToValidate ) || iMode == OM_PAINT )
@@ -284,7 +284,7 @@ BOOL	CParser::SetParamsValues( double *pfValues, long	lSize )
 	if( ( lSize != get_necessary_params_count( PT_SIMPLE ) ) || !pfValues )
 		return FALSE;
 
-	TPOS lPos = 0;
+	long lPos = 0;
 	double *pdouble = pfValues;
 
 	for( lPos = m_Params.head( ); lPos; lPos = m_Params.next( lPos ) )
@@ -308,7 +308,7 @@ BOOL	CParser::SetParamsVArrayalues( ArrayParamValues *pstValues, long	lSize )
 	if( ( lSize != get_necessary_params_count( PT_ARRAY ) ) || !pstValues )
 		return FALSE;
 
-	TPOS lPos = 0;
+	long lPos = 0;
 	ArrayParamValues *pstArrayParams = pstValues;
 
 	for( lPos = m_Params.head( ); lPos; lPos = m_Params.next( lPos ) )
@@ -334,7 +334,7 @@ BOOL	CParser::SetParamsExInfo( ParamExInfo *pExInfo, long	lSize )
 
 	ParamExInfo *pCurrExInfo =	pExInfo;
 
-	for (TPOS lPos = m_Params.head(); lPos; lPos = m_Params.next(lPos))
+	for( long lPos = m_Params.head( ); lPos; lPos = m_Params.next( lPos ) )
 	{
 		ExprParam *pParam = 0;
 		pParam = m_Params.get( lPos );
@@ -737,7 +737,7 @@ void	CParser::eval_expr1_5( _ptr_t<XExprEntry*> *pelems )
 		temp_elems.free( );
 		// сохранение позиции в массиве параметров
 		m_lCountUnNecessaryParams = m_Params.count( );
-		for (TPOS lPos = m_Params.head(); lPos; lPos = m_Params.next(lPos))
+		for( long lPos = m_Params.head( ); lPos; lPos = m_Params.next( lPos ) )
 			m_Params.get( lPos )->bNecessaryToValidate = false;
 		
 		get_token( );
@@ -1426,7 +1426,7 @@ long	CParser::get_necessary_params_count( int iParamType )
 {
 	long lcount = 0;
 
-	for (TPOS lpos = m_Params.head(); lpos; lpos = m_Params.next(lpos))
+	for( long lpos = m_Params.head(); lpos; lpos = m_Params.next( lpos ) )
 	{
 		ExprParam *pparam = 0;
 		pparam = m_Params.get( lpos );

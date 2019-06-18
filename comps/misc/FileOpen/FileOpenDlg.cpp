@@ -10,7 +10,7 @@
 #include <afxmt.h>
 #include "shlguid.h"
 #include "resource.h"
-//#include "BCGCB.h"
+#include "BCGCB.h"
 
 #ifdef _DEBUG
 #define new DEBUG_NEW
@@ -74,22 +74,9 @@ GUARD_IMPLEMENT_OLECREATE(CFileOpenDlg, "FileOpen.FileOpenDlg", 0xb1890499, 0x71
 
 IMPLEMENT_DYNCREATE(CFileOpenDlg, CFileDialog)
 
-//explicit CFileDialog(
-//BOOL bOpenFileDialog,
-//LPCTSTR lpszDefExt = NULL,
-//LPCTSTR lpszFileName = NULL,
-//DWORD dwFlags = OFN_HIDEREADONLY | OFN_OVERWRITEPROMPT,
-//LPCTSTR lpszFilter = NULL,
-//CWnd* pParentWnd = NULL,
-//DWORD dwSize = 0,
-//BOOL bVistaStyle = TRUE
-//);
-
-CFileOpenDlg::CFileOpenDlg() : CFileDialog(TRUE, 0, 0, OFN_HIDEREADONLY | OFN_OVERWRITEPROMPT , 0, 0, 0, FALSE), 
-	m_pscrollHorz(0),
-	m_pscrollVert(0)
-
+CFileOpenDlg::CFileOpenDlg() : CFileDialog(TRUE, 0, 0, OFN_HIDEREADONLY | OFN_OVERWRITEPROMPT , 0, 0, 0/*OPENFILENAME_SIZE_VERSION_400*/ )
 {
+	Release();
 	//no templates
 	m_ofn.Flags |= OFN_ENABLETEMPLATE | OFN_EXPLORER;
 	m_ofn.Flags ^= OFN_ENABLETEMPLATE;
@@ -751,7 +738,7 @@ int  CFileOpenDlg::Execute(DWORD dwFlags)
 		m_ofn.lpstrInitialDir = dlg->m_strLastPath;
 	}
 	
-	dlg = NULL;
+	//dlg = NULL;
 
 	//paul 30.01.2003 бред какой-то, причем тут CustomizeMode
 	//CBCGToolBar::SetCustomizeMode();
@@ -923,11 +910,9 @@ void CFileOpenDlg::DoRecalcLayout()
 		CWnd wndControl;
 		int nWidth, nHeight;
 		CWnd* pParent = ((CFileDialog*)dlg)->GetParent();
+		//pParent->GetClientRect(&rcClient);
 	
-		if (!pParent)
-			return;
-		pParent->GetClientRect(&rcClient);
-		if (rcClient == CRect(0, 0, 0, 0))
+		if (!pParent || (pParent->GetClientRect(&rcClient), rcClient == CRect(0,0,0,0)))
 			return;
 	
 		const int bottomBorder = 20;
@@ -1441,7 +1426,7 @@ void _SelectObjectIfNoActive(IUnknown *punkView, LPCSTR lpstrType)
 	IDataContext2Ptr ptrContext(punkView);
 	if (ptrContext == 0) return;
 	_bstr_t bstrType(lpstrType);
-	LONG_PTR lPos = 0;
+	long lPos = 0;
 	ptrContext->GetFirstSelectedPos(bstrType, &lPos);
 	if (lPos != 0)
 		return; // Any object already selected

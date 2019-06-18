@@ -901,7 +901,7 @@ void CVTKeyButton::OnDraw(
 
 	RECT	rectText;
 	ZeroMemory( &rectText, sizeof( rectText ) );
-	::DrawText( hdc, m_szText, (int)strlen( m_szText ), &rectText, DT_CALCRECT );
+	::DrawText( hdc, m_szText, strlen( m_szText ), &rectText, DT_CALCRECT );
 	int	nTextWidth = rectText.right-rectText.left;
 
 	int	cx = 0, cy = 0;
@@ -943,7 +943,7 @@ void CVTKeyButton::OnDraw(
 		rect.top = cy-(rectText.bottom-rectText.top)/2 + m_textDeltaY;
 		rect.bottom = rect.top+(rectText.bottom-rectText.top) + m_textDeltaY;		
 
-		::DrawText( hdc, m_szText, (int)strlen( m_szText ), &rect, DT_CENTER|DT_VCENTER );
+		::DrawText( hdc, m_szText, strlen( m_szText ), &rect, DT_CENTER|DT_VCENTER );
 	}
 
 	m_rcAvailable = CRect( pointTopSide[2].x, pointTopSide[1].y,

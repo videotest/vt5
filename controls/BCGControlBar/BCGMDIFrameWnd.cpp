@@ -338,7 +338,7 @@ BOOL CBCGMDIFrameWnd::ShowPopupMenu (CBCGPopupMenu* pMenuPopup)
 		//-----------------------------------------------------------
 		// Check the popup menu for the "Windows..." menu maching...:
 		//-----------------------------------------------------------
-		HMENU hMenuPop = pMenuPopup->GetMenuBCG ();
+		HMENU hMenuPop = pMenuPopup->GetMenuBCG();
 		BOOL bIsWindowMenu = FALSE;
 
 		int iItemMax = ::GetMenuItemCount (hMenuPop);

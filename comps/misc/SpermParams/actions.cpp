@@ -14,7 +14,7 @@ void CopyParams( ICalcObjectContainerPtr in, ICalcObjectContainerPtr out )
 	if( in == 0 || out == 0)
 		return;
 
-	LONG_PTR lParamPos = 0;
+	long lParamPos = 0;
 	in->GetFirstParameterPos( &lParamPos );
 	while( lParamPos )
 	{
@@ -89,7 +89,7 @@ IUnknown *CActionCalcPartResult::GetContextObject(_bstr_t cName, _bstr_t cType)
 		return punkImage;
 	}
 
-	LONG_PTR lPos = 0;
+	long lPos = 0;
 	ptrC->GetFirstObjectPos( bstrType, &lPos );
 	
 	while( lPos )
@@ -177,7 +177,7 @@ bool CActionCalcPartResult::Invoke()
 	if(0)
 	{
 		//remove from container
-		LONG_PTR	lposParam = 0;
+		long	lposParam = 0;
 		ICalcObjectContainerPtr	ptrContainer( m_listObjects );
 		ptrContainer->GetFirstParameterPos( &lposParam );
 		ptrContainer->SetCurentPosition( 0 );
@@ -185,7 +185,7 @@ bool CActionCalcPartResult::Invoke()
 		while( lposParam )
 		{
 			ParameterContainer *pContainer = 0;
-			LPOS lPosRemove = lposParam;
+			long	lPosRemove = lposParam;
 			ptrContainer->GetNextParameter( &lposParam, &pContainer );
 
 			if( pContainer->pDescr->pos == 0 )
@@ -201,7 +201,7 @@ bool CActionCalcPartResult::Invoke()
 		IMeasParamGroupPtr	ptrGroup( ptrG );
 		if( ptrGroup == 0 )continue;
 
-		LONG_PTR lParamPos;
+		long lParamPos;
 		ptrGroup->GetPosByKey ( lBaseParamKey, &lParamPos );
 		if( lExcludeKeys && lParamPos ) continue;
 		if( (!lExcludeKeys) && (!lParamPos) ) continue;

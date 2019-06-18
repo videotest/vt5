@@ -224,7 +224,7 @@ bool CActionFitDoc2Screen::Invoke()
 	double fMaxZoom = GetArgumentDouble( _T("MaxZoom") );
 
 	//set zooms
-	TPOS lPos = 0;
+	long lPos = 0;
 	sptrDoc->GetFirstViewPosition(&lPos);
 	while(lPos)
 	{
@@ -246,7 +246,7 @@ bool CActionFitDoc2Screen::Invoke()
 
 		CSize sizeClient(0, 0);
 		sptrSite->GetClientSize(&sizeClient);
-		
+
 		double fZoom = 1;
 		double fZoomX = rcClient.Width()/((double)sizeClient.cx+5);
 		double fZoomY = rcClient.Height()/((double)sizeClient.cy+5);
@@ -664,5 +664,5 @@ bool CActionViewZoomFit::IsChecked()
 	BOOL bChecked = FALSE;
 	if( sptrSite2 ) sptrSite2->GetFitDoc(&bChecked);
 
-	return (bool)bChecked;
+	return bChecked;
 }

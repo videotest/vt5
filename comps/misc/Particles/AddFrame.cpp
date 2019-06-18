@@ -69,7 +69,7 @@ IUnknown *CParticlesAddFrame::GetContextObject(_bstr_t cName, _bstr_t cType)
 		return punkImage;
 	}
 
-	LONG_PTR lPos = 0;
+	long lPos = 0;
 	ptrC->GetFirstObjectPos( bstrType, &lPos );
 	
 	while( lPos )
@@ -98,7 +98,7 @@ static void CopyParams( ICalcObjectContainerPtr in, ICalcObjectContainerPtr out 
 	if( in == 0 || out == 0)
 		return;
 	
-	LONG_PTR lParamPos = 0;
+	long lParamPos = 0;
 	in->GetFirstParameterPos( &lParamPos );
 	while( lParamPos )
 	{
@@ -180,7 +180,7 @@ HRESULT CParticlesAddFrame::DoInvoke()
 
 	//ссылки на объекты - в массив
 	smart_alloc(objCurrent,IMeasureObjectPtr,nCurrent); //объекты
-	TPOS lPosCurrent=0; //позиция объекта в листе
+	long lPosCurrent=0; //позиция объекта в листе
 	ptrCurrent->GetFirstChildPosition(&lPosCurrent);
 	for(int current=0; current<nCurrent; current++)
 	{
@@ -197,7 +197,7 @@ HRESULT CParticlesAddFrame::DoInvoke()
 	smart_alloc(objTotal,IMeasureObjectPtr,nTotal+nCurrent); //объекты
 	smart_alloc(pTrajectoryDataTotal,PCTrajectoryData,nTotal+nCurrent); //данные траекторий
 	smart_pTrajectoryDataTotal.zero();
-	TPOS lPosTotal=0; //позиция объекта в листе
+	long lPosTotal=0; //позиция объекта в листе
 	ptrTotal->GetFirstChildPosition(&lPosTotal);
 	for(int total=0; total<nTotal; total++)
 	{
@@ -213,7 +213,7 @@ HRESULT CParticlesAddFrame::DoInvoke()
 		INamedDataObject2Ptr ptrNDO(ptrO);
 		if(ptrNDO!=0)
 		{
-			TPOS lPos;
+			long lPos;
 			ptrNDO->GetFirstChildPosition(&lPos);
 			if(lPos!=0)
 			{
@@ -436,7 +436,7 @@ HRESULT CParticlesAddFrame::DoInvoke()
 		_ptr_t2<long> keys(nkeys);	
 
 		long nkeys2=0; //исключим ключи KEY_PARTICLES_xxx
-		LONG_PTR lPos; ptrC->GetFirstParameterPos(&lPos);
+		long lPos; ptrC->GetFirstParameterPos(&lPos);
 		for (int i = 0; i < nkeys; i++)
 		{
 			ParameterContainer	*pc = 0;

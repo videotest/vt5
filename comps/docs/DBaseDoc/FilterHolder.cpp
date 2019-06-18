@@ -712,7 +712,7 @@ bool CDBaseDocument::GetFilterChooserHwndArray( CArray<HWND, HWND>& arComboHwnd 
 	if( sptrUI == NULL )
 		return false;
 
-	POSITION	lPos = 0;
+	long	lPos =0;
 	sptrUI->GetFirstComboButton( &lPos );	
 
 	while( lPos )

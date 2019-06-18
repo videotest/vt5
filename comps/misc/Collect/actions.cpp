@@ -1663,9 +1663,7 @@ POINT CSignature::Find(CSignature& s, int dx, int dy)
 }
 POINT CSignature::FindQuad(CSignature& s, int dx, int dy)
 {
-#ifdef _M_X86
 	_mm_empty(); 
-#endif
 	time_test t("finding quadrants");
 	int CX = m_cx; 
 	int CY = m_cy;

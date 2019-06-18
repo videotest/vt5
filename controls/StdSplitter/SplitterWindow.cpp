@@ -740,10 +740,10 @@ void CSplitterStandard::_ValidatePane( XSplitterEntry *pe )
 	}
 	else
 	{
-	pe->m_pwnd2->EnableWindow( GetColsCount() > 1 && (pe->m_wEnableMask&2) == 2 );
-	pe->m_pwnd4->EnableWindow( GetRowsCount() > 1 && (pe->m_wEnableMask&8) == 8 );
-	pe->m_pwnd1->EnableWindow( GetColsCount() == 1 && (pe->m_wEnableMask&1) == 1 );
-	pe->m_pwnd3->EnableWindow( GetRowsCount() == 1 && (pe->m_wEnableMask&4) == 4 );
+		pe->m_pwnd2->EnableWindow( GetColsCount() > 1 && (pe->m_wEnableMask&2) == 2 );
+		pe->m_pwnd4->EnableWindow( GetRowsCount() > 1 && (pe->m_wEnableMask&8) == 8 );
+		pe->m_pwnd1->EnableWindow( GetColsCount() == 1 && (pe->m_wEnableMask&1) == 1 );
+		pe->m_pwnd3->EnableWindow( GetRowsCount() == 1 && (pe->m_wEnableMask&4) == 4 );
 	}
 
 }
@@ -1493,5 +1493,5 @@ void CSplitterStandard::AfterRecalcLayout()
 	// Redraw during splitter drag, but doesn't redraw during windows switching,
 	// see also SBT1680
 	if( m_dragMode != dmNone )
-	UpdateWindow();
+		UpdateWindow();
 }

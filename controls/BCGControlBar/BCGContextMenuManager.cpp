@@ -149,6 +149,7 @@ CBCGPopupMenu* CBCGContextMenuManager::ShowPopupMenu (HMENU hmenuPopup, int x, i
 											CWnd* pWndOwner, BOOL bOwnMessage)
 {
 	ASSERT (hmenuPopup != NULL);
+
 	if (!bOwnMessage)
 	{
 		while (pWndOwner != NULL && pWndOwner->GetStyle() & WS_CHILD)

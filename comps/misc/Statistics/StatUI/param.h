@@ -14,7 +14,6 @@ namespace ObjectSpace
 	class CStatisticObject;
 
 	namespace ParamSpace{
-
 		class CStatParamBase;
 		struct XObjectInfo;
 
@@ -70,7 +69,7 @@ namespace ObjectSpace
 		~CClass(){delete m_pObjList;}
 		ClassID m_lClass;
 //		operator const long*(){return &m_lClass;}
-		size_type N()const{return m_pObjList->size();}
+		const long N(){return m_pObjList->size();}
 		ParamSpace::_OBJECT_LIST* m_pObjList;
 		void ChooseObjects();
 	private:
@@ -107,8 +106,8 @@ namespace ObjectSpace
 	typedef set<ClassPtr,classless> ListClass;
 
 
-namespace ParamSpace{
-
+namespace ParamSpace
+{
 	struct XObjectInfo
 	{
 		NumImg iImage;
@@ -248,7 +247,7 @@ public:
 	friend CStatisticObject;
 	CStatisticObject* m_pStat;
 	CClass& m_Class;
-	ULONG_PTR N(){return m_Class.m_pObjList->size();}
+	const long N(){return m_Class.m_pObjList->size();}
 	CStatParamBase(CClass& cls);
 	virtual ~CStatParamBase() {}
 public:

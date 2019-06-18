@@ -80,7 +80,7 @@ library StatObjectLib
 	{
 		[propget, id(1), helpstring("property Statuses")] HRESULT Statuses([out, retval] VARIANT* pVal);
 		[propput, id(1), helpstring("property Statuses")] HRESULT Statuses([in] VARIANT newVal);
-		[id(2), helpstring("method Compare")] HRESULT Compare([out,retval] LONG* rc);
+		[id(2), helpstring("method Compare")] HRESULT Compare(void);
 		[id(3), helpstring("method GetPrivateNamedData")] HRESULT GetPrivateNamedData([out,retval] IDispatch **ppDisp );
 	};
 

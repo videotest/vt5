@@ -35,8 +35,8 @@ struct ParameterDescriptorEx : public ParameterDescriptor
 
 interface IBorderParameters : public IUnknown
 {
-	com_call GetFirstPosEx(TPOS *plPos) = 0;
-	com_call GetNextParamEx(TPOS *plPos, ParameterDescriptorEx **ppdescr) = 0;
+	com_call GetFirstPosEx(long *plPos) = 0;
+	com_call GetNextParamEx(long *plPos, ParameterDescriptorEx **ppdescr) = 0;
 	com_call DefineBorderParameters(IUnknown *punkContainer, bool bCalcMeasResult) = 0;
 };
 
@@ -71,9 +71,9 @@ public:
 	// For IMeasParamGroup
  	com_call CalcValues(IUnknown *punkCalcObject, IUnknown *punkSource );
 	com_call GetParamsCount(long *plCount);
-	com_call GetFirstPos(LPOS *plPos);
-	com_call GetNextParam(LPOS *plPos, struct ParameterDescriptor **ppDescriptior);
-	com_call GetPosByKey(long lKey, LPOS *plPos);
+	com_call GetFirstPos(long *plPos);
+	com_call GetNextParam(long *plPos, struct ParameterDescriptor **ppDescriptior );
+	com_call GetPosByKey(long lKey, long *plPos);
 	com_call InitializeCalculation( IUnknown *punkContainer );
 	com_call FinalizeCalculation();
 	com_call GetUnit(long lType, BSTR *pbstr, double *pfCoeffToUnits);
@@ -82,8 +82,8 @@ public:
 	// IPriority
 	com_call GetPriority(long *plPriority);
 	// IBorderParameters
-	com_call GetFirstPosEx(TPOS *plPos);
-	com_call GetNextParamEx(TPOS *plPos, ParameterDescriptorEx **ppdescr);
+	com_call GetFirstPosEx(long *plPos);
+	com_call GetNextParamEx(long *plPos, ParameterDescriptorEx **ppdescr);
 	com_call DefineBorderParameters(IUnknown *punkContainer, bool bCalcMeasResult);
 };
 

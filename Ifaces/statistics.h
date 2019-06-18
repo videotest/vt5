@@ -72,34 +72,34 @@ struct stat_group
 interface IStatTable : public IUnknown
 {
 	//parameter info
-	com_call GetFirstParamPos( TPOS* plpos ) = 0;
-	com_call GetNextParam( TPOS* plpos, stat_param** ppparam ) = 0;
+	com_call GetFirstParamPos( long* plpos ) = 0;
+	com_call GetNextParam( long* plpos, stat_param** ppparam ) = 0;
 	com_call GetParamsCount( long* pl_count ) = 0;
-	com_call AddParam( TPOS lpos_insert_after, stat_param* pparam, TPOS* pl_pos_new ) = 0;
-	com_call DeleteParam( TPOS lpos ) = 0;	
-	com_call GetParamPosByKey( long lkey, TPOS* pl_pos ) = 0;
+	com_call AddParam( long lpos_insert_after, stat_param* pparam, long* pl_pos_new ) = 0;
+	com_call DeleteParam( long lpos ) = 0;	
+	com_call GetParamPosByKey( long lkey, long* pl_pos ) = 0;
 
 	//group
-	com_call GetFirstGroupPos(TPOS* plpos) = 0;
-	com_call GetNextGroup(TPOS* plpos, stat_group** ppgroup) = 0;
-	com_call AddGroup(TPOS lpos_insert_after, stat_group* pgroup, TPOS* pl_pos_new) = 0;
-	com_call DeleteGroup(TPOS lpos, BOOL bsync_rows) = 0;
+	com_call GetFirstGroupPos( long* plpos ) = 0;
+	com_call GetNextGroup( long* plpos, stat_group** ppgroup ) = 0;
+	com_call AddGroup( long lpos_insert_after, stat_group* pgroup, long* pl_pos_new ) = 0;
+	com_call DeleteGroup( long lpos, BOOL bsync_rows ) = 0;	
 	com_call GetGroupCount( long* pl_count ) = 0;
 
 	//row info
-	com_call GetFirstRowPos(TPOS* pl_pos ) = 0;
-	com_call GetNextRow(TPOS* pl_pos, stat_row** pprow) = 0;
+	com_call GetFirstRowPos( long* pl_pos ) = 0;
+	com_call GetNextRow( long* pl_pos, stat_row** pprow ) = 0;	
 	com_call GetRowCount( long* pl_count ) = 0;	
-	com_call AddRow(TPOS lpos_insert_after, stat_row* prow, TPOS* pl_pos_new) = 0;
-	com_call DeleteRow(TPOS lpos_row) = 0;
+	com_call AddRow( long lpos_insert_after, stat_row* prow, long* pl_pos_new ) = 0;
+	com_call DeleteRow( long lpos_row ) = 0;
 
 	//value by param
-	com_call GetValue(TPOS lpos_row, TPOS lpos_param, stat_value** ppvalue) = 0;
-	com_call SetValue(TPOS lpos_row, TPOS lpos_param, stat_value* pvalue) = 0;
+	com_call GetValue( long lpos_row, long lpos_param, stat_value** ppvalue ) = 0;
+	com_call SetValue( long lpos_row, long lpos_param, stat_value* pvalue ) = 0;
 	
 	//value by key
-	com_call GetValueByKey(TPOS lpos_row, long lkey, stat_value** ppvalue) = 0;
-	com_call SetValueByKey(TPOS lpos_row, long lkey, stat_value* pvalue) = 0;
+	com_call GetValueByKey( long lpos_row, long lkey, stat_value** ppvalue ) = 0;
+	com_call SetValueByKey( long lpos_row, long lkey, stat_value* pvalue ) = 0;
 
 	com_call ClearCache( ) = 0;
 };

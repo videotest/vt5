@@ -362,7 +362,7 @@ BOOL CActionState::FireNotify( LPCTSTR lpctNotifyDesc, long dwFlagLevel, VARIANT
 		}
 		else
 		{
-			LONG_PTR lTemplPos = 0;
+			long lTemplPos = 0;
 			ptrApp->GetFirstDocTemplPosition( &lTemplPos );
 			BOOL bOK = false;
 
@@ -370,7 +370,7 @@ BOOL CActionState::FireNotify( LPCTSTR lpctNotifyDesc, long dwFlagLevel, VARIANT
 			{
 				ptrApp->GetNextDocTempl( &lTemplPos, 0, 0 );
 
-				LONG_PTR lPos = 0;
+				long lPos = 0;
 				ptrApp->GetFirstDocPosition( lTemplPos, &lPos );
 				while( lPos )
 				{

@@ -20,8 +20,10 @@
 	<Configurations>
 		<Configuration
 			Name="Debug|Win32"
+			OutputDirectory=".\Debug"
+			IntermediateDirectory=".\Debug"
 			ConfigurationType="2"
-			InheritedPropertySheets="..\..\..\props\common2env.vsprops"
+			InheritedPropertySheets="$(VCInstallDir)VCProjectDefaults\UpgradeFromVC71.vsprops"
 			UseOfMFC="0"
 			ATLMinimizesCRunTimeLibraryUsage="false"
 			CharacterSet="2"
@@ -49,7 +51,7 @@
 			<Tool
 				Name="VCCLCompilerTool"
 				Optimization="0"
-				AdditionalIncludeDirectories="&quot;$(SolutionDir)thirdparty\libtiff&quot;;&quot;$(SolutionDir)thirdparty\jpeg&quot;"
+				AdditionalIncludeDirectories="\vt5\common2,\vt5\ifaces,\vt5\common,\vt5\comps\misc\filefilters2\libs\h"
 				PreprocessorDefinitions="WIN32;_DEBUG;_WINDOWS;_USRDLL;_CRT_SECURE_NO_DEPRECATE;FILEFILTERS2_EXPORTS;_CRT_SECURE_NO_WARNINGS"
 				BasicRuntimeChecks="0"
 				RuntimeLibrary="3"
@@ -60,6 +62,7 @@
 				PrecompiledHeaderThrough="stdafx.h"
 				BrowseInformation="1"
 				WarningLevel="3"
+				SuppressStartupBanner="true"
 				DebugInformationFormat="4"
 				CompileAs="0"
 			/>
@@ -77,12 +80,18 @@
 			<Tool
 				Name="VCLinkerTool"
 				AdditionalOptions="/MACHINE:I386 /FORCE:UNRESOLVED"
-				AdditionalDependencies="jpeg.lib libtiff.lib"
-				AdditionalLibraryDirectories=""
+				AdditionalDependencies="odbc32.lib odbccp32.lib LIBTIFF.LIB JPEG.LIB atlsd.lib"
+				OutputFile="\vt5\vt5\debug\comps\FileFilters2.dll"
+				LinkIncremental="2"
+				SuppressStartupBanner="true"
+				AdditionalLibraryDirectories="\vt5\common2\debug;\vt5\common;\vt5\common\debug;Libs"
 				IgnoreDefaultLibraryNames="libc,libcd"
+				ModuleDefinitionFile=".\FileFilters2.def"
 				GenerateDebugInformation="true"
+				ProgramDatabaseFile="\vt5\vt5\debug\pdb\FileFilters2.pdb"
 				RandomizedBaseAddress="1"
 				DataExecutionPrevention="0"
+				ImportLibrary=".\Debug/FileFilters2.lib"
 			/>
 			<Tool
 				Name="VCALinkTool"
@@ -108,8 +117,10 @@
 		</Configuration>
 		<Configuration
 			Name="Debug|x64"
+			OutputDirectory="$(PlatformName)\$(ConfigurationName)"
+			IntermediateDirectory="$(PlatformName)\$(ConfigurationName)"
 			ConfigurationType="2"
-			InheritedPropertySheets="..\..\..\props\common2env.vsprops"
+			InheritedPropertySheets="$(VCInstallDir)VCProjectDefaults\UpgradeFromVC71.vsprops"
 			UseOfMFC="0"
 			ATLMinimizesCRunTimeLibraryUsage="false"
 			CharacterSet="2"
@@ -137,7 +148,7 @@
 			<Tool
 				Name="VCCLCompilerTool"
 				Optimization="0"
-				AdditionalIncludeDirectories="&quot;$(SolutionDir)thirdparty\libtiff&quot;;&quot;$(SolutionDir)thirdparty\jpeg&quot;"
+				AdditionalIncludeDirectories="\vt5\common2,\vt5\ifaces,\vt5\common,\vt5\comps\misc\filefilters2\libs\h"
 				PreprocessorDefinitions="_DEBUG;_WINDOWS;_USRDLL;FILEFILTERS2_EXPORTS;_WIN64;_M_X64;_CRT_SECURE_NO_DEPRECATE"
 				BasicRuntimeChecks="0"
 				RuntimeLibrary="3"
@@ -148,6 +159,7 @@
 				PrecompiledHeaderThrough="stdafx.h"
 				BrowseInformation="1"
 				WarningLevel="3"
+				SuppressStartupBanner="true"
 				DebugInformationFormat="3"
 				CompileAs="0"
 			/>
@@ -164,12 +176,19 @@
 			/>
 			<Tool
 				Name="VCLinkerTool"
-				AdditionalDependencies="jpeg.lib libtiff.lib"
-				AdditionalLibraryDirectories="&quot;$(SolutionDir)lib/$(PlatformName)/Release&quot;"
-				IgnoreDefaultLibraryNames=""
+				AdditionalOptions="/MACHINE:I386 /FORCE:UNRESOLVED"
+				AdditionalDependencies="odbc32.lib odbccp32.lib DLIBTIFF.LIB JPEG.LIB atlsd.lib"
+				OutputFile="\vt5\vt5\$(OutDir)\comps\$(ProjectName).dll"
+				LinkIncremental="2"
+				SuppressStartupBanner="true"
+				AdditionalLibraryDirectories="\vt5\common2\$(OutDir);\vt5\common;Libs\$(OutDir)"
+				IgnoreDefaultLibraryNames="libc,libcd"
+				ModuleDefinitionFile=".\FileFilters2.def"
 				GenerateDebugInformation="true"
+				ProgramDatabaseFile="\vt5\vt5\debug\pdb\FileFilters2.pdb"
 				RandomizedBaseAddress="1"
 				DataExecutionPrevention="0"
+				ImportLibrary="$(OutDir)\$(ProjectName).lib"
 				TargetMachine="17"
 			/>
 			<Tool
@@ -196,8 +215,10 @@
 		</Configuration>
 		<Configuration
 			Name="Release|Win32"
+			OutputDirectory=".\Release"
+			IntermediateDirectory=".\Release"
 			ConfigurationType="2"
-			InheritedPropertySheets="..\..\..\props\common2env.vsprops"
+			InheritedPropertySheets="$(VCInstallDir)VCProjectDefaults\UpgradeFromVC71.vsprops"
 			UseOfMFC="0"
 			ATLMinimizesCRunTimeLibraryUsage="false"
 			CharacterSet="2"
@@ -226,7 +247,7 @@
 				Name="VCCLCompilerTool"
 				Optimization="2"
 				InlineFunctionExpansion="1"
-				AdditionalIncludeDirectories="&quot;$(SolutionDir)thirdparty\libtiff&quot;;&quot;$(SolutionDir)thirdparty\jpeg&quot;"
+				AdditionalIncludeDirectories="\vt5\common2,\vt5\ifaces,\vt5\common,\vt5\comps\misc\filefilters2\libs\h"
 				PreprocessorDefinitions="WIN32;NDEBUG;_WINDOWS;_USRDLL;FILEFILTERS2_EXPORTS;_CRT_SECURE_NO_WARNINGS"
 				StringPooling="false"
 				RuntimeLibrary="2"
@@ -237,6 +258,7 @@
 				UsePrecompiledHeader="2"
 				PrecompiledHeaderThrough="stdafx.h"
 				WarningLevel="3"
+				SuppressStartupBanner="true"
 				DebugInformationFormat="3"
 				CompileAs="0"
 			/>
@@ -255,13 +277,19 @@
 				Name="VCLinkerTool"
 				UseLibraryDependencyInputs="true"
 				AdditionalOptions="/MACHINE:I386 /FORCE:UNRESOLVED"
-				AdditionalDependencies="jpeg.lib libtiff.lib"
-				AdditionalLibraryDirectories="&quot;Libs\jpeg-9a\$(Platform)\Release&quot;"
+				AdditionalDependencies="odbc32.lib odbccp32.lib LIBTIFF.LIB JPEG.LIB"
+				OutputFile="\vt5\vt5\Release\comps\FileFilters2.dll"
+				LinkIncremental="1"
+				SuppressStartupBanner="true"
+				AdditionalLibraryDirectories="\vt5\common2\release;\vt5\common;Libs\release"
 				IgnoreDefaultLibraryNames="libc,libcd"
+				ModuleDefinitionFile=".\FileFilters2.def"
 				GenerateDebugInformation="true"
+				ProgramDatabaseFile="\vt5\vt5\release\pdb\FileFilters2.pdb"
 				GenerateMapFile="false"
 				RandomizedBaseAddress="1"
 				DataExecutionPrevention="0"
+				ImportLibrary=".\Release/FileFilters2.lib"
 			/>
 			<Tool
 				Name="VCALinkTool"
@@ -287,8 +315,10 @@
 		</Configuration>
 		<Configuration
 			Name="Release|x64"
+			OutputDirectory="$(PlatformName)\$(ConfigurationName)"
+			IntermediateDirectory="$(PlatformName)\$(ConfigurationName)"
 			ConfigurationType="2"
-			InheritedPropertySheets="..\..\..\props\common2env.vsprops"
+			InheritedPropertySheets="$(VCInstallDir)VCProjectDefaults\UpgradeFromVC71.vsprops"
 			UseOfMFC="0"
 			ATLMinimizesCRunTimeLibraryUsage="false"
 			CharacterSet="2"
@@ -317,7 +347,7 @@
 				Name="VCCLCompilerTool"
 				Optimization="2"
 				InlineFunctionExpansion="1"
-				AdditionalIncludeDirectories="&quot;$(SolutionDir)thirdparty\libtiff&quot;;&quot;$(SolutionDir)thirdparty\jpeg&quot;"
+				AdditionalIncludeDirectories="\vt5\common2,\vt5\ifaces,\vt5\common,\vt5\comps\misc\filefilters2\libs\h"
 				PreprocessorDefinitions="_WIN64;_M_X64;_CRT_SECURE_NO_DEPRECATE;NDEBUG;_WINDOWS;_USRDLL;FILEFILTERS2_EXPORTS"
 				StringPooling="false"
 				RuntimeLibrary="2"
@@ -328,6 +358,7 @@
 				UsePrecompiledHeader="2"
 				PrecompiledHeaderThrough="stdafx.h"
 				WarningLevel="3"
+				SuppressStartupBanner="true"
 				DebugInformationFormat="3"
 				CompileAs="0"
 			/>
@@ -346,13 +377,19 @@
 				Name="VCLinkerTool"
 				UseLibraryDependencyInputs="true"
 				AdditionalOptions="/MACHINE:I386 /FORCE:UNRESOLVED"
-				AdditionalDependencies="jpeg.lib libtiff.lib"
-				AdditionalLibraryDirectories="&quot;Libs\jpeg-9a\$(PlatformName)\Release&quot;"
+				AdditionalDependencies="odbc32.lib odbccp32.lib LIBTIFF.LIB JPEG.LIB"
+				OutputFile="\vt5\vt5\$(OutDir)\comps\$(ProjectName).dll"
+				LinkIncremental="1"
+				SuppressStartupBanner="true"
+				AdditionalLibraryDirectories="\vt5\common2\$(OutDir);\vt5\common;Libs\$(OutDir)"
 				IgnoreDefaultLibraryNames="libc,libcd"
+				ModuleDefinitionFile=".\FileFilters2.def"
 				GenerateDebugInformation="true"
+				ProgramDatabaseFile="\vt5\vt5\release\pdb\FileFilters2.pdb"
 				GenerateMapFile="false"
 				RandomizedBaseAddress="1"
 				DataExecutionPrevention="0"
+				ImportLibrary="$(OutDir)\$(ProjectName).lib"
 				TargetMachine="17"
 			/>
 			<Tool
@@ -375,6 +412,205 @@
 			/>
 			<Tool
 				Name="VCPostBuildEventTool"
+			/>
+		</Configuration>
+		<Configuration
+			Name="DEMOVERSION|Win32"
+			OutputDirectory="DEMOVERSION"
+			IntermediateDirectory="DEMOVERSION"
+			ConfigurationType="2"
+			InheritedPropertySheets="$(VCInstallDir)VCProjectDefaults\UpgradeFromVC71.vsprops"
+			UseOfMFC="0"
+			ATLMinimizesCRunTimeLibraryUsage="false"
+			CharacterSet="2"
+			>
+			<Tool
+				Name="VCPreBuildEventTool"
+			/>
+			<Tool
+				Name="VCCustomBuildTool"
+			/>
+			<Tool
+				Name="VCXMLDataGeneratorTool"
+			/>
+			<Tool
+				Name="VCWebServiceProxyGeneratorTool"
+			/>
+			<Tool
+				Name="VCMIDLTool"
+				PreprocessorDefinitions="NDEBUG"
+				MkTypLibCompatible="true"
+				SuppressStartupBanner="true"
+				TargetEnvironment="1"
+				TypeLibraryName=".\Release_demo/FileFilters2.tlb"
+			/>
+			<Tool
+				Name="VCCLCompilerTool"
+				Optimization="0"
+				InlineFunctionExpansion="1"
+				AdditionalIncludeDirectories="\vt5\common2,\vt5\ifaces,\vt5\common,\vt5\comps\misc\filefilters2\libs\h"
+				PreprocessorDefinitions="WIN32;NDEBUG;_WINDOWS;_USRDLL;FILEFILTERS2_EXPORTS;DEMOVERSION"
+				StringPooling="true"
+				RuntimeLibrary="2"
+				EnableFunctionLevelLinking="false"
+				TreatWChar_tAsBuiltInType="false"
+				ForceConformanceInForLoopScope="false"
+				RuntimeTypeInfo="true"
+				UsePrecompiledHeader="2"
+				PrecompiledHeaderThrough="stdafx.h"
+				WarningLevel="3"
+				SuppressStartupBanner="true"
+				DebugInformationFormat="3"
+				CompileAs="0"
+			/>
+			<Tool
+				Name="VCManagedResourceCompilerTool"
+			/>
+			<Tool
+				Name="VCResourceCompilerTool"
+				PreprocessorDefinitions="NDEBUG"
+				Culture="1049"
+			/>
+			<Tool
+				Name="VCPreLinkEventTool"
+			/>
+			<Tool
+				Name="VCLinkerTool"
+				AdditionalOptions="/MACHINE:I386 /FORCE:UNRESOLVED"
+				AdditionalDependencies="odbc32.lib odbccp32.lib LIBTIFF.LIB JPEG.LIB atlsd.lib"
+				OutputFile="\vt5\vt5\Release\comps_demo\FileFilters2.dll"
+				LinkIncremental="1"
+				SuppressStartupBanner="true"
+				AdditionalLibraryDirectories="\vt5\common2\release_demo,\vt5\common,\vt5\common\release_demo,Libs\release,Libs\Debug"
+				IgnoreDefaultLibraryNames="libc,libcd"
+				ModuleDefinitionFile=".\FileFilters2.def"
+				GenerateDebugInformation="true"
+				ProgramDatabaseFile="\vt5\vt5\release\pdb_demo\FileFilters2.pdb"
+				RandomizedBaseAddress="1"
+				DataExecutionPrevention="0"
+				ImportLibrary=".\Release_demo/FileFilters2.lib"
+			/>
+			<Tool
+				Name="VCALinkTool"
+			/>
+			<Tool
+				Name="VCManifestTool"
+			/>
+			<Tool
+				Name="VCXDCMakeTool"
+			/>
+			<Tool
+				Name="VCBscMakeTool"
+			/>
+			<Tool
+				Name="VCFxCopTool"
+			/>
+			<Tool
+				Name="VCAppVerifierTool"
+			/>
+			<Tool
+				Name="VCPostBuildEventTool"
+				CommandLine="\vt5\vt5\release\signature.exe $(TargetPath)"
+			/>
+		</Configuration>
+		<Configuration
+			Name="DEMOVERSION|x64"
+			OutputDirectory="$(PlatformName)\$(ConfigurationName)"
+			IntermediateDirectory="$(PlatformName)\$(ConfigurationName)"
+			ConfigurationType="2"
+			InheritedPropertySheets="$(VCInstallDir)VCProjectDefaults\UpgradeFromVC71.vsprops"
+			UseOfMFC="0"
+			ATLMinimizesCRunTimeLibraryUsage="false"
+			CharacterSet="2"
+			>
+			<Tool
+				Name="VCPreBuildEventTool"
+			/>
+			<Tool
+				Name="VCCustomBuildTool"
+			/>
+			<Tool
+				Name="VCXMLDataGeneratorTool"
+			/>
+			<Tool
+				Name="VCWebServiceProxyGeneratorTool"
+			/>
+			<Tool
+				Name="VCMIDLTool"
+				PreprocessorDefinitions="NDEBUG"
+				MkTypLibCompatible="true"
+				SuppressStartupBanner="true"
+				TargetEnvironment="3"
+				TypeLibraryName=".\Release_demo/FileFilters2.tlb"
+			/>
+			<Tool
+				Name="VCCLCompilerTool"
+				Optimization="0"
+				InlineFunctionExpansion="1"
+				AdditionalIncludeDirectories="\vt5\common2,\vt5\ifaces,\vt5\common,\vt5\comps\misc\filefilters2\libs\h"
+				PreprocessorDefinitions="WIN32;NDEBUG;_WINDOWS;_USRDLL;FILEFILTERS2_EXPORTS;DEMOVERSION"
+				StringPooling="true"
+				RuntimeLibrary="2"
+				EnableFunctionLevelLinking="true"
+				TreatWChar_tAsBuiltInType="false"
+				ForceConformanceInForLoopScope="false"
+				RuntimeTypeInfo="true"
+				UsePrecompiledHeader="2"
+				PrecompiledHeaderThrough="stdafx.h"
+				WarningLevel="3"
+				SuppressStartupBanner="true"
+				DebugInformationFormat="3"
+				CompileAs="0"
+			/>
+			<Tool
+				Name="VCManagedResourceCompilerTool"
+			/>
+			<Tool
+				Name="VCResourceCompilerTool"
+				PreprocessorDefinitions="NDEBUG"
+				Culture="1049"
+			/>
+			<Tool
+				Name="VCPreLinkEventTool"
+			/>
+			<Tool
+				Name="VCLinkerTool"
+				AdditionalOptions="/MACHINE:I386 /FORCE:UNRESOLVED"
+				AdditionalDependencies="odbc32.lib odbccp32.lib DLIBTIFF.LIB JPEG.LIB"
+				OutputFile="\vt5\vt5\$(OutDir)\comps\$(ProjectName).dll"
+				LinkIncremental="1"
+				SuppressStartupBanner="true"
+				AdditionalLibraryDirectories="\vt5\common2\$(OutDir);\vt5\common;Libs\$(OutDir)"
+				IgnoreDefaultLibraryNames="libc,libcd"
+				ModuleDefinitionFile=".\FileFilters2.def"
+				GenerateDebugInformation="true"
+				ProgramDatabaseFile="\vt5\vt5\release\pdb_demo\FileFilters2.pdb"
+				RandomizedBaseAddress="1"
+				DataExecutionPrevention="0"
+				ImportLibrary="$(OutDir)\$(ProjectName).lib"
+				TargetMachine="17"
+			/>
+			<Tool
+				Name="VCALinkTool"
+			/>
+			<Tool
+				Name="VCManifestTool"
+			/>
+			<Tool
+				Name="VCXDCMakeTool"
+			/>
+			<Tool
+				Name="VCBscMakeTool"
+			/>
+			<Tool
+				Name="VCFxCopTool"
+			/>
+			<Tool
+				Name="VCAppVerifierTool"
+			/>
+			<Tool
+				Name="VCPostBuildEventTool"
+				CommandLine="\vt5\vt5\release\signature.exe $(TargetPath)"
 			/>
 		</Configuration>
 	</Configurations>
@@ -448,6 +684,22 @@
 						UsePrecompiledHeader="1"
 					/>
 				</FileConfiguration>
+				<FileConfiguration
+					Name="DEMOVERSION|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						UsePrecompiledHeader="1"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="DEMOVERSION|x64"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						UsePrecompiledHeader="1"
+					/>
+				</FileConfiguration>
 			</File>
 			<File
 				RelativePath=".\TIFFilter.cpp"
@@ -499,6 +751,14 @@
 		<Filter
 			Name="libs"
 			>
+			<File
+				RelativePath=".\Libs\JPEG.LIB"
+				>
+			</File>
+			<File
+				RelativePath=".\Libs\LIBTIFF.LIB"
+				>
+			</File>
 			<Filter
 				Name="headers"
 				>
@@ -606,9 +866,5 @@
 		</File>
 	</Files>
 	<Globals>
-		<Global
-			Name="DevPartner_IsInstrumented"
-			Value="0"
-		/>
 	</Globals>
 </VisualStudioProject>

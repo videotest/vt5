@@ -1,6 +1,5 @@
 #include "stdafx.h"
 #include "resource.h"
-#include "RegisterDlg.h"
 
 HWND	g_hwndProgress;
 HWND	g_hwndG, g_hwndT;
@@ -68,7 +67,7 @@ void RegDeleteKeyEx( HKEY	hGlobalKey, const char *pszRegKey )
 	::RegDeleteKey( hGlobalKey, pszRegKey );
 }
 
-//* Is file in ./ or in ./comps directory
+
 bool CheckFile( const char *pszFileName )
 {
 	if( !strlen( pszFileName ) )
@@ -85,7 +84,7 @@ bool CheckFile( const char *pszFileName )
 		if( *p >= 'A' && *p <= 'Z' )
 			*p = *p-'A'+'a';
 
-	size_t nSz = strlen( pszFileName ) - strlen( psz ) - 1;
+	int nSz = strlen( pszFileName ) - strlen( psz ) - 1;
 	
 	if( nSz <= 0 )
 		return false;
@@ -123,11 +122,11 @@ bool CheckFile( const char *pszFileName )
 }
 
 
-bool ScanRegistry( char* szDir)
+bool ScanRegistry( )
 {
-	strcpy (g_strDir,szDir);
-	strcpy (g_strDir1,szDir);
-	
+	::GetCurrentDirectory( MAX_PATH, g_strDir );
+	::GetCurrentDirectory( MAX_PATH, g_strDir1 );
+
 	strcat( g_strDir1, "\\comps" );
 
 	for( char *p = g_strDir; *p; p++ )
@@ -192,8 +191,8 @@ bool ScanRegistry( char* szDir)
 		{
 			dwSize = 255;
 			dwType = REG_SZ;
-			::RegQueryValueEx( hKeyProgID, 0, 0, &dwType, (BYTE*)pe->szKeyNameProgID, &dwSize );
-			::RegCloseKey( hKeyProgID );
+			::RegQueryValueEx( hKeyServer, 0, 0, &dwType, (BYTE*)pe->szKeyNameProgID, &dwSize );
+			::RegCloseKey( hKeyServer );
 		}
 
 
@@ -249,233 +248,53 @@ void ScanFile( const char *pszDirToScan, const char *pszExt )
 
 void RemoveFromRegistry()
 {
-	while( g_pRegEntries )
+	RegEntry	*pe = g_pRegEntries;
+
+	while( pe )
 	{
-		RegEntry	*pe = g_pRegEntries;
-		if(0!=*pe->szKeyNameCLSID){
-			RegDeleteKeyEx( HKEY_CLASSES_ROOT, pe->szKeyNameCLSID);
-				WriteLogLine( "   delete CLSID entry %s", pe->szKeyNameCLSID );
-		}
-		if(0!=*pe->szKeyNameProgID)
-		{
-			RegDeleteKeyEx( HKEY_CLASSES_ROOT, pe->szKeyNameProgID);
-				WriteLogLine( "   delete ProgID entry %s", pe->szKeyNameProgID );
-		}
-		g_pRegEntries = pe->pnext;
-		delete pe;
+		WriteLogLine( "   delete CLSID entry %s", pe->szKeyNameCLSID );
+		WriteLogLine( "   delete ProgID entry %s", pe->szKeyNameProgID );
+		::RegDeleteKeyEx( HKEY_CLASSES_ROOT, pe->szKeyNameCLSID );
+		::RegDeleteKeyEx( HKEY_CLASSES_ROOT, pe->szKeyNameProgID );
+		pe = pe->pnext;
 	}
 }
 
-void CRegisterDlg::RegClean(char* szDir)
+void RegClean()
 {
-	WriteLogLine( "Clearing registry..." );
-	g_hwndProgress = ::CreateDialog( AfxGetApp()->m_hInstance, MAKEINTRESOURCE(IDD_PROGRESS), 0, 0 );
+	HINSTANCE hInstance = AfxGetApp()->m_hInstance;
+	g_hwndProgress = ::CreateDialog( hInstance, MAKEINTRESOURCE(IDD_PROGRESS), 0, 0 );
 	::UpdateWindow( g_hwndProgress );
 
 	g_hwndT = ::GetDlgItem( g_hwndProgress, IDC_TEXT );
 	g_hwndG= ::GetDlgItem( g_hwndProgress, IDC_PROGRESS );
 	::SendMessage( g_hwndG, PBM_SETRANGE, 0, MAKELPARAM( 0, 100 ) );
 
-	char *psz = ::strrchr( szDir, '\\' );
+ 	char	szDir[255];
+
+	::GetModuleFileName( hInstance, szDir, 255 );
+	::GetLongPathName( szDir, szDir, 255 ) ;
+	char	*psz = ::strrchr( szDir, '\\' );
 	*psz = 0;
 
-	::SetWindowText( g_hwndT, "Scaning files..." );
+	SetWindowText( g_hwndT, "Scaning files..." );
 	WriteLogLine( "Scaning files..." );
 
 	::ScanFile( szDir, "shell.exe" );
 	::ScanFile( szDir, "comps\\*.ocx" );
 	::ScanFile( szDir, "comps\\*.dll" );
 
-	::SetWindowText( g_hwndT, "Scaning registry..." );
+	SetWindowText( g_hwndT, "Scaning registry..." );
 	WriteLogLine( "Scaning registry..." );
 	
-	::ScanRegistry(szDir);
+	::ScanRegistry();
 
-	::SetWindowText( g_hwndT, "Removing from registry..." );
+	SetWindowText( g_hwndT, "Removing from registry..." );
 	WriteLogLine( "Removing from registry..." );
 
 	::RemoveFromRegistry();
 
-	::SetWindowText( g_hwndT, "OK" );
+	SetWindowText( g_hwndT, "OK" );
 
 	::EndDialog( g_hwndProgress, 1 );
-	WriteLogLine( "Clearing done" );
-}
-
-bool ServerContains(char* server, const CString& szDir, RegEntry	*pe)
-{
-	HKEY	hKeyServer = 0;
-	char	szServer[255];
-
-	DWORD	dwType;
-
-	strcpy(szServer,pe->szKeyNameCLSID);
-	strcat(szServer,server);
-	if(ERROR_SUCCESS == ::RegOpenKey(HKEY_CLASSES_ROOT, szServer, &hKeyServer))
-	{
-		DWORD dwSize = 255;
-		dwType = REG_SZ;
-		::RegQueryValueEx( hKeyServer, 0, 0, &dwType, (BYTE*)pe->szFileName, &dwSize );
-		::RegCloseKey( hKeyServer );
-
-		strcpy( szServer, pe->szKeyNameCLSID );
-		strcat( szServer, "\\InprocServer32" );
-		return !_strnicmp( &pe->szFileName[0],szDir,szDir.GetLength() );
-	}
-	return false;
-}
-
-bool recursSearch(CString keyPath, const CString& szDir, RegEntry *pe)
-{
-	bool bFound=false;
-	HKEY	hKey = 0;
-
-	if(ERROR_SUCCESS==::RegOpenKey( HKEY_CLASSES_ROOT, keyPath, &hKey))
-	{
-		DWORD nSubKeysCount=0;
-		{
-			TCHAR szKeyName[255];
-			bool bFoundAny=false;
-			int nFound=0;
-			CString keyFound;
-			::RegQueryInfoKey( hKey, 0, 0, 0, &nSubKeysCount, 0, 0, 0, 0, 0, 0, 0 );
-			int	idx = 0;
-			for( ;ERROR_SUCCESS == RegEnumKey( hKey, idx, szKeyName, 255 ); ++idx)
-			{
-				bFoundAny = recursSearch(keyPath+"\\"+szKeyName,szDir,pe);
-				if(bFoundAny)
-					++nFound;
-			}
-			if(nFound>0 && idx==nFound)
-			{
-				pe->bDelete=true;
-			}
-		}
-		{
-			DWORD dwSize = 255;	
-			BYTE szValue[255];
-			DWORD	dwType = REG_SZ;
-
-			if(ERROR_SUCCESS==::RegQueryValueEx( hKey, 0, 0, &dwType, szValue, &dwSize ))
-			{
-				if(REG_SZ==dwType)
-				{
-					bFound = !_strnicmp( (LPTSTR)szValue,szDir,szDir.GetLength() );
-					if(bFound){
-						strcpy(pe->szKeyNameCLSID,keyPath);
-					}
-				}
-			}
-		}
-		::RegCloseKey( hKey );
-	}
-	return bFound;
-}
-
-bool DirScanRegistry(const CString& szDir)
-{
-	size_t lDir=strlen(szDir);
-
-	HKEY	hKeyClasses = 0;
-	if( ::RegOpenKey( HKEY_CLASSES_ROOT, "CLSID", &hKeyClasses ) != 0 )
-		return false;
-
-	char	szKeyName[255];
-	DWORD	dwSize = 255;
-	DWORD	nSubKeysCount = 0;
-	RegQueryInfoKey( hKeyClasses, 0, 0, 0, &nSubKeysCount, 0, 0, 0, 0, 0, 0, 0 );
-	for(int	idx = 0; ERROR_SUCCESS == RegEnumKey( hKeyClasses, idx, szKeyName, dwSize ); ++idx)
-	{
-		RegEntry re;
-
-		if(!strnicmp(szKeyName,"{511ED0B9-BAB5-47A3-A497-3D3789E6CFE0}",3))
-		{
-			"{511ED0B9-BAB5-47A3-A497-3D3789E6CFE0}";	
-			strcpy( re.szKeyNameCLSID, "CLSID\\" );
-		}
-		strcpy( re.szKeyNameCLSID, "CLSID\\" );
-		strcat( re.szKeyNameCLSID, szKeyName );
-		re.szKeyNameProgID[0] = 0;
-		re.szFileName[0] = 0;
-		re.bDelete = false;
-		if( ServerContains("\\InprocServer32", szDir, &re )
-				|| ServerContains("\\LocalServer32", szDir, &re))
-		{
-			HKEY	hKeyProgID = 0;
-			char	szProgID[255];
-			DWORD	dwType = REG_SZ;
-			RegEntry *pe = new RegEntry;
-
-			*pe=re;
-			strcpy( szProgID, pe->szKeyNameCLSID );
-			strcat( szProgID, "\\ProgID" );
-
-			if( ::RegOpenKey( HKEY_CLASSES_ROOT, szProgID, &hKeyProgID ) == 0 )
-			{
-				dwSize = 255;
-				::RegQueryValueEx( hKeyProgID, 0, 0, &dwType, (BYTE*)pe->szKeyNameProgID, &dwSize );
-				::RegCloseKey( hKeyProgID );
-			}
-			pe->pnext = g_pRegEntries;
-			g_pRegEntries = pe;
-		}
-		if( (idx % 100) == 0 )
-		{
-			::SendMessage( g_hwndG, PBM_SETPOS, 100*idx/nSubKeysCount, 0 );
-		}
-	}
-	::RegCloseKey( hKeyClasses );
-
-	{
-		TCHAR szLibUid[255];
-		CString keyPath ="TypeLib";
-		if( ::RegOpenKey( HKEY_CLASSES_ROOT, "TypeLib", &hKeyClasses ) != 0 )
-			return false;
-		RegQueryInfoKey( hKeyClasses, 0, 0, 0, &nSubKeysCount, 0, 0, 0, 0, 0, 0, 0 );
-		for(int	idx = 0; ERROR_SUCCESS == RegEnumKey( hKeyClasses, idx, szLibUid, sizeof(szLibUid) ); ++idx)
-		{
-			RegEntry re={""};
-			CString sLibUid = keyPath + CString("\\") + szLibUid;
-			recursSearch(sLibUid,szDir,&re);
-			if(re.szKeyNameCLSID[0])
-			{
-				RegEntry* pe=new RegEntry(re);
-				if(re.bDelete)
-				{
-					strcpy(pe->szKeyNameCLSID,sLibUid);
-				}
-				pe->pnext = g_pRegEntries;
-				g_pRegEntries = pe;
-			}
-		}	
-	}
-
-	return true;
-}
-
-// Clean Registry in CLSID where refence to location dir
-void CRegisterDlg::RegCleanLoc(const char* szLocDir)
-{
-	WriteLogLine( "Clearing registry..." );
-	g_hwndProgress = ::CreateDialog( AfxGetApp()->m_hInstance, MAKEINTRESOURCE(IDD_PROGRESS), 0, 0 );
-	::UpdateWindow( g_hwndProgress );
-
-	g_hwndT = ::GetDlgItem( g_hwndProgress, IDC_TEXT );
-	g_hwndG= ::GetDlgItem( g_hwndProgress, IDC_PROGRESS );
-	::SendMessage( g_hwndG, PBM_SETRANGE, 0, MAKELPARAM( 0, 100 ) );
-
-	::SetWindowText( g_hwndT, "Scaning registry..." );
-	WriteLogLine( "Scaning registry..." );
-
-	::DirScanRegistry(szLocDir);
-
-	::SetWindowText( g_hwndT, "Removing from registry..." );
-	WriteLogLine( "Removing from registry..." );
-
-	::RemoveFromRegistry();
-
-	::SetWindowText( g_hwndT, "OK" );
-
-	::EndDialog( g_hwndProgress, 1 );
-	WriteLogLine( "Clearing done" );
 }

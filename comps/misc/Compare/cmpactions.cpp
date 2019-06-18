@@ -72,15 +72,15 @@ CFilterArgImpl::~CFilterArgImpl()
 	while( pos )delete (Arg*)m_args.GetNext( pos );
 }
 
-HRESULT CFilterArgImpl::XFilter::GetFirstArgumentPosition(POSITION *pnPos)
+HRESULT CFilterArgImpl::XFilter::GetFirstArgumentPosition( long *pnPos )
 {
 	METHOD_PROLOGUE_BASE(CFilterArgImpl, Filter);
-	*pnPos = pThis->m_args.GetHeadPosition();
+	*pnPos = (long)pThis->m_args.GetHeadPosition();
 
 	return S_OK;
 }
 
-HRESULT CFilterArgImpl::XFilter::GetNextArgument(IUnknown **ppunkDataObject, POSITION *pnPosNext)
+HRESULT CFilterArgImpl::XFilter::GetNextArgument( IUnknown **ppunkDataObject, long *pnPosNext )
 {
 	METHOD_PROLOGUE_BASE(CFilterArgImpl, Filter);
 
@@ -91,17 +91,17 @@ HRESULT CFilterArgImpl::XFilter::GetNextArgument(IUnknown **ppunkDataObject, POS
 	return S_OK;
 }
 
-HRESULT CFilterArgImpl::XFilter::GetArgumentInfo(POSITION lPos, BSTR *pbstrArgType, BSTR *pbstrArgName, BOOL *pbOut)
+HRESULT CFilterArgImpl::XFilter::GetArgumentInfo( long lPos, BSTR *pbstrArgType, BSTR *pbstrArgName, BOOL *pbOut )
 {
 	METHOD_PROLOGUE_BASE(CFilterArgImpl, Filter);
-	CFilterArgImpl::Arg* p = (CFilterArgImpl::Arg*)pThis->m_args.GetAt(lPos );
+	CFilterArgImpl::Arg* p = (CFilterArgImpl::Arg*)pThis->m_args.GetAt( (POSITION)lPos );
 	if( pbstrArgType )*pbstrArgType = CString( szTypeImage ).AllocSysString();
 	if( pbstrArgName )*pbstrArgName = CString( "Arg" ).AllocSysString();
 	if( pbOut )*pbOut = p->bOut;
 	return S_OK;
 }
 
-HRESULT CFilterArgImpl::XFilter::SetArgument(POSITION lPos, IUnknown *punkDataObject, BOOL bDataChanged)
+HRESULT CFilterArgImpl::XFilter::SetArgument( long lPos, IUnknown *punkDataObject, BOOL bDataChanged )
 {
 	METHOD_PROLOGUE_BASE(CFilterArgImpl, Filter);
 	return S_OK;
@@ -1201,7 +1201,7 @@ bool CActionCompareImage::Initialize()
 
 
 	_bstr_t	bstr( szTypeImage );
-	LONG_PTR	pos = 0;
+	long	pos = 0;
 
 	IDataContext3Ptr	ptrC( m_punkTarget );
 	ptrC->GetFirstSelectedPos( bstr, &pos );
@@ -2039,7 +2039,7 @@ BOOL CActionCompareImage::OnWndMsg(UINT message, WPARAM wParam, LPARAM lParam, L
 		dc.SetROP2( R2_COPYPEN );
 		dc.SetBoundsRect( rectAll, DCB_ENABLE );
 		//dc.Rectangle( ConvertToWindow( m_punkTarget, m_rectDIB ) );
-		for (TPOS lpos = m_contours.head(); lpos; lpos = m_contours.next(lpos))
+		for( long lpos = m_contours.head(); lpos; lpos = m_contours.next( lpos ) )
 			::ContourDraw( dc, m_contours.get( lpos ), m_punkTarget, 0 );
 		m_frame.Draw( dc );
 
@@ -2666,7 +2666,7 @@ void CActionAphineByPoints::DrawPoints( HDC hdc, IUnknown *punkTarget, bool bOth
 		::MoveToEx( hdc, point.x-delta, point.y+delta, 0 );
 		::LineTo( hdc, point.x+delta, point.y-delta );
 
-		::TextOut( hdc, point.x+delta, point.y, sz, (int)strlen( sz ) );
+		::TextOut( hdc, point.x+delta, point.y, sz, strlen( sz ) );
 	}
 
 	::SelectObject( hdc, hOldPen );

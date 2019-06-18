@@ -66,7 +66,11 @@ void CCompRegistrator::SetSectionName( const char *szNewSection )
 
 		if (!punkAppUnknown)
 		{
+		#ifdef _DEBUG
+			HINSTANCE hDll_Common = GetModuleHandle("common_d.dll");
+		#else
 			HINSTANCE hDll_Common = GetModuleHandle("common.dll");
+		#endif
 			if (hDll_Common)
 			{
 				PGET_APP_UNKNOWN pGetAppUnknown = (PGET_APP_UNKNOWN)GetProcAddress(hDll_Common, "GetAppUnknown"); 
@@ -815,29 +819,13 @@ bool CVTRegKey::CreateSubKey(LPCTSTR szKey)
 
 	HKEY hKey = 0;
 	DWORD dwDisp = 0;
-	LONG res = RegCreateKeyEx(m_hKey, strSubKey, 0, 0, 0, KEY_ALL_ACCESS, NULL, &hKey, &dwDisp);
-	if (ERROR_SUCCESS != res)
+
+	if (ERROR_SUCCESS == RegCreateKeyEx(m_hKey, strSubKey, 0, 0, 0 , KEY_ALL_ACCESS, NULL, &hKey, &dwDisp))
 	{
-			//DWORD WINAPI FormatMessage(
-			//_In_      DWORD dwFlags,
-			//_In_opt_  LPCVOID lpSource,
-			//_In_      DWORD dwMessageId,
-			//_In_      DWORD dwLanguageId,
-			//_Out_     LPTSTR lpBuffer,
-			//_In_      DWORD nSize,
-			//_In_opt_  va_list *Arguments
-			//);		return false;
-		char buffer[80];
-		FormatMessage(FORMAT_MESSAGE_FROM_SYSTEM, 0, res, 0, buffer, sizeof buffer, 0);
-		//void WINAPI FatalAppExit(
-		//	_In_  UINT uAction,
-		//	_In_  LPCTSTR lpMessageText
-		//	);
-		FatalAppExit(0, buffer);
-		return false;
+		RegCloseKey(hKey);
+		return true;
 	}
-	RegCloseKey(hKey);
-	return true;
+	return false;
 }
 
 

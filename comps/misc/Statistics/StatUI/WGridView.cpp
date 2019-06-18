@@ -336,8 +336,8 @@ namespace ViewSpace{
 		}else if(nPos<si.nMin){
 			nPos=si.nMin;
 		}
-			RECT rc;
-			GetItemRect(si.nPos+si.nPage-1,&rc,LVIR_BOUNDS);
+		RECT rc;
+		GetItemRect(si.nPos+si.nPage-1,&rc,LVIR_BOUNDS);
 		if(si.nPos!=nPos){
 			int h=rc.bottom-rc.top;
 			InvalidateRect(&rc,FALSE);
@@ -789,10 +789,10 @@ FewWinWidth:
 			BOOL b=GetScrollInfo(SB_VERT, &si);
 			int nPos=si.nPos-1+(int)si.nPage;
 			b3=GetItemRect(nPos, &rc, LVIR_BOUNDS );
-		RECT rcBottom;
-		b3=GetClientRect(&rcBottom);
-		rcBottom.top=rc.bottom;
-		ir=::FillRect( dc, &rcBottom, br );
+			RECT rcBottom;
+			b3=GetClientRect(&rcBottom);
+			rcBottom.top=rc.bottom;
+			ir=::FillRect( dc, &rcBottom, br );
 			rcBottom.top=rc.bottom;
 		}
 

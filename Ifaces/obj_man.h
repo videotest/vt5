@@ -9,16 +9,16 @@
 interface IObjectManager : public IUnknown
 {
 	//enum types
-	com_call GetFirstObjectTypePos( TPOS *plPos ) = 0;
-	com_call GetNextObjectType( TPOS *plPos, BSTR* pbstrTypeName ) = 0;	
+	com_call GetFirstObjectTypePos( long* plPos ) = 0;
+	com_call GetNextObjectType( long* plPos, BSTR* pbstrTypeName ) = 0;	
 
 	//enum names
-	com_call GetFirstObjectNamePos( BSTR bstrType, LONG_PTR* plPos ) = 0;
-	com_call GetNextObjectByName( BSTR bstrType, LONG_PTR* plPos, BSTR* pbstrName ) = 0;
+	com_call GetFirstObjectNamePos( BSTR bstrType, long* plPos ) = 0;
+	com_call GetNextObjectByName( BSTR bstrType, long* plPos, BSTR* pbstrName ) = 0;
 
 	//enum unknown
-	com_call GetFirstObjectPos( BSTR bstrType, LONG_PTR* plPos ) = 0;
-	com_call GetNextObject( BSTR bstrType, LONG_PTR* plPos, IUnknown** ppunkObj ) = 0;
+	com_call GetFirstObjectPos( BSTR bstrType, long* plPos ) = 0;
+	com_call GetNextObject( BSTR bstrType, long* plPos, IUnknown** ppunkObj ) = 0;
 
 	//by name activation
 	com_call GetActiveObjectName( BSTR bstrType, BSTR* pbstrName ) = 0;

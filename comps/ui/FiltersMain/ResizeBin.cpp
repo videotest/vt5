@@ -34,7 +34,7 @@ CResizeBin::CResizeBin()
 {
 }
 
-static inline int iround(double x)
+static inline int round(double x)
 {
 	return int(floor(x+0.5));
 }
@@ -253,7 +253,7 @@ bool CResizeBin::InvokeFilter()
 	//			x_shift[j] = - s * dy;
 	//			y_shift[j] = s * dx;
 
-	//			int x1 = iround(double(pt.x)*cx1/cx), y1 = iround(double(pt.y)*cy1/cy);
+	//			int x1 = round(double(pt.x)*cx1/cx), y1 = round(double(pt.y)*cy1/cy);
 	//			byte *pdst=0;
 	//			ptrBinDst->GetRow(&pdst,y1,FALSE);
 	//			pdst[x1]=j;

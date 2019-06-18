@@ -253,11 +253,11 @@ namespace ObjectSpace
 			ptrDocSite->GetPathName( &bstrActiveDocFile );
 		}
 		double x=0., x2=0.; int N=0;
-		LONG_PTR lPosTemplate = 0;
+		long lPosTemplate = 0;
 		sptrA->GetFirstDocTemplPosition( &lPosTemplate );
 		for(; lPosTemplate;	sptrA->GetNextDocTempl(&lPosTemplate,0,0))
 		{
-			LONG_PTR lPosDoc=0;
+			long lPosDoc=0;
 			HRESULT hr = sptrA->GetFirstDocPosition(lPosTemplate,&lPosDoc);
 			IUnknownPtr punkDoc; 
 			for (;lPosDoc && SUCCEEDED(hr=sptrA->GetNextDoc(lPosTemplate,&lPosDoc,&punkDoc));)
@@ -266,121 +266,105 @@ namespace ObjectSpace
 					CComBSTR bstrDocType;
 					ptrDocSite->GetDocType(&bstrDocType);
 					if(bstrDocType==CComBSTR("Image")){
-					CComBSTR bstrFileName;
-					ptrDocSite->GetPathName( &bstrFileName );
-					if(IDataContext2Ptr ptrDC2=ptrDocSite){						
-						GuidKey guidDocKey = ::GetKey(ptrDC2);
-						if(IDataTypeManagerPtr pDataType=ptrDocSite){
-							long nCount=0;
-							pDataType->GetTypesCount(&nCount);
-							long lType=0;
-							for( ;lType<nCount; ++lType){
-								CComBSTR bsType;
-								pDataType->GetType(lType,&bsType);
-								if(bsType==szTypeStatTable){
-									LONG_PTR lPos=0;
-									pDataType->GetObjectFirstPosition(lType,&lPos);
+						CComBSTR bstrFileName;
+						ptrDocSite->GetPathName( &bstrFileName );
+						if(IDataContext2Ptr ptrDC2=ptrDocSite){						
+							GuidKey guidDocKey = ::GetKey(ptrDC2);
+							if(IDataTypeManagerPtr pDataType=ptrDocSite){
+								long nCount=0;
+								pDataType->GetTypesCount(&nCount);
+								long lType=0;
+								for( ;lType<nCount; ++lType){
+									CComBSTR bsType;
+									pDataType->GetType(lType,&bsType);
+									if(bsType==szTypeStatTable){
+										long lPos=0;
+										pDataType->GetObjectFirstPosition(lType,&lPos);
 
-									// take any first table in document - 
-									if(lPos)
-									{
-										IUnknownPtr punkObj;
-										pDataType->GetNextObject(lType,&lPos,&punkObj);
-										TableStatus status=noTable|noStatParam|noClassMatch|noClassifyParam;
-										if(IStatTablePtr pTable=punkObj)
+										// take any first table in document - 
+										if(lPos)
 										{
-											status &= ~noTable;
-											TPOS lposKey=0;
+											IUnknownPtr punkObj;
+											pDataType->GetNextObject(lType,&lPos,&punkObj);
+											TableStatus status=noTable|noStatParam|noClassMatch|noClassifyParam;
+											if(IStatTablePtr pTable=punkObj)
+											{
+												status &= ~noTable;
+												long lposKey=0;
 
-											// test: There is statistic parameter in table
-												if(S_OK==pTable->GetParamPosByKey(keyStatistic,&lposKey))
+												// test: There is statistic parameter in table
+												if(SUCCEEDED(pTable->GetParamPosByKey(keyStatistic,&lposKey)))
 													if(lposKey) 
-												status &= ~noStatParam;
+														status &= ~noStatParam;
 
-											// test: There are all classifier's parameters in table
-											for(unsigned i=keysClassifier.size();i>0;)
+												// test: There are all classifier's parameters in table
+												for(unsigned i=keysClassifier.size();i>0;)
 												{
-													if((S_OK==pTable->GetParamPosByKey(keysClassifier[--i],&lposKey)) && lposKey){
+													if(SUCCEEDED(pTable->GetParamPosByKey(keysClassifier[--i],&lposKey)) && lposKey){
 														;
 													}else{
-													goto NoClassifierParam;
+														goto NoClassifierParam;
+													}
 												}
-												}
-											status &= ~noClassifyParam;
+												status &= ~noClassifyParam;
 NoClassifierParam: ;
 
-											// test classes match. Classes match if all classes in table also available in classifier,
-											// else no match;
-											if(INamedDataObject2Ptr sptrDNO=pTable)
-											{
-												TPOS posRow = 0;
-												stat_row* pRow=0;
-												set<long> Classes;
-														double xx=0., xx2=0.; int NN=0;
-
-												for(HRESULT hr=pTable->GetFirstRowPos(&posRow);
-													posRow;
-													pTable->GetNextRow(&posRow, &pRow),posRow)
-												{
-													IUnknownPtr punkO;
+													// test classes match. Classes match if all classes in table also available in classifier,
+													// else no match;
+													if(INamedDataObject2Ptr sptrDNO=pTable)
 													{
-														TPOS lP = posRow;
-														sptrDNO->GetNextChild( &lP, &punkO );
-													}
-													if(ICalcObjectPtr sptrCalc = punkO)
-													{
-														Classes.insert(get_object_class(sptrCalc));
-														double value;
-																if(S_OK==sptrCalc->GetValue(keyStatistic,&value))
+														long posRow=0;
+														stat_row* pRow=0;
+														set<long> Classes;
+														for(HRESULT hr=pTable->GetFirstRowPos(&posRow);
+															posRow;
+															pTable->GetNextRow(&posRow, &pRow),posRow)
 														{
-															if(!_bMinMaxTrue){
-																_valMin=value;
-																_valMax=value;
-																_bMinMaxTrue=true;
-															}else{
-																_valMin=__min(_valMin,value);
-																_valMax=__max(_valMax,value);
+															IUnknownPtr punkO;
+															{
+																long lP = posRow;
+																sptrDNO->GetNextChild( &lP, &punkO );
 															}
-
-																	xx += value;
-																	xx2 += value*value;
-																	++NN;
-																}else{
-																	status |= noStatParam;
-																}
-																// test: There are all classifier's parameters in object
-																for(unsigned i=keysClassifier.size();i>0;)
+															if(ICalcObjectPtr sptrCalc = punkO)
+															{
+																Classes.insert(get_object_class(sptrCalc));
+																double value;
+																if(SUCCEEDED(sptrCalc->GetValue(keyStatistic,&value)))
 																{
-																	double value;
-																	if(S_OK==sptrCalc->GetValue(keysClassifier[--i],&value)){
-																		;
+																	if(!_bMinMaxTrue){
+																		_valMin=value;
+																		_valMax=value;
+																		_bMinMaxTrue=true;
 																	}else{
-																		status |= noClassifyParam;
+																		_valMin=__min(_valMin,value);
+																		_valMax=__max(_valMax,value);
 																	}
-														}
-													}
-												}
-												if(INamedDataPtr pND=pTable)
-												{
-													std::map<int,CColorsNames::ColorName> mapDscrClass;
-													ObjectSpace::LoadColorsNames(mapDscrClass,pND);
 
-													//	for each(long cls in Classes)
-													for(set<long>::const_iterator itCls=Classes.begin();
-														itCls!=Classes.end(); ++itCls)
-													{
-														if(!testClass(*itCls)){
-															goto NoClassMatch;
+																	x += value;
+																	x2 += value*value;
+																	++N;
+																}
+															}
+														}
+														if(INamedDataPtr pND=pTable)
+														{
+															std::map<int,CColorsNames::ColorName> mapDscrClass;
+															ObjectSpace::LoadColorsNames(mapDscrClass,pND);
+
+															//	for each(long cls in Classes)
+															for(set<long>::const_iterator itCls=Classes.begin();
+																itCls!=Classes.end(); ++itCls)
+															{
+																if(!testClass(*itCls)){
+																	goto NoClassMatch;
+																}
+															}
+															status &= ~noClassMatch;
+NoClassMatch: ;
 														}
 													}
-													status &= ~noClassMatch;
-NoClassMatch: ;
-												}
-											StatTable  statTable(pTable,status,FALSE);
-											_statTables[bstrFileName]=statTable;
-														x += xx;
-														x2 += xx2;
-													}
+													StatTable  statTable(pTable,status,FALSE);
+													_statTables[bstrFileName]=statTable;
 											}
 										}
 									}
@@ -435,7 +419,7 @@ NoClassMatch: ;
 						{
 							StatTable& rStatTable=it->second;
 							rStatTable._clrCmpStat=saElement[1].ulVal;
-							rStatTable._bCompare=(VT_BOOL==saElement[2].vt && -1==saElement[2].iVal);
+							rStatTable._bCompare=(0!=saElement[2].iVal);
 							rStatTable._iHatch=saElement[3].iVal;
 						}
 					}
@@ -486,10 +470,8 @@ NoClassMatch: ;
 		}
 	}
 
-
-	STDMETHODIMP CCmpStatObject::Compare(LONG* rc)
+	STDMETHODIMP CCmpStatObject::Compare(/*USHORT DiagType, USHORT colorHatch*/)
 	{
-		*rc=S_FALSE;
 		int iCheckMem=_CrtCheckMemory();
 		INamedDataPtr pND=Unknown();
 		BOOL b=CopyObjectNamedData( ::GetAppUnknown(), Unknown(), _T(SECT_STATUI_ROOT), false );
@@ -499,40 +481,37 @@ NoClassMatch: ;
 		try
 		{
 			{
-			_statObjects.clear();
-			long lStat=0;
+				_statObjects.clear();
+				long lStat=0;
 				vector<IStatTable*> tablesNew;
-				{
-			for(StatTables::iterator it=_statTables.begin(); 
-				it!=_statTables.end(); ++it,++lStat)
-			{
-				StatTables::value_type valType=*it;
-				const TableStatus& status=valType.second._status;
-						if(valType.second._bCompare)
+				try{
+					for(StatTables::iterator it=_statTables.begin(); 
+						it!=_statTables.end(); ++it,++lStat)
+					{
+						StatTables::value_type valType=*it;
+						const TableStatus& status=valType.second._status;
+						if(valType.second._bCompare && comparable==status)
 						{
-							if(comparable==status || noClassMatch==status)
-				{
-					IStatTablePtr pStatTable=valType.second._pTable;
+							IStatTablePtr pStatTable=valType.second._pTable;
 							IStatTable* pStatTableNew=CreateCompatibleTable(pStatTable);
-					tablesNew.push_back(pStatTableNew);
-					valType.second._pTable=pStatTableNew;
-					_statObjects.push_back(valType);
-				}
-							else
-							{
-								_statObjects.clear();
-								return status;
-							}
+							tablesNew.push_back(pStatTableNew);
+							valType.second._pTable=pStatTableNew;
+							_statObjects.push_back(valType);
 						}
-			}
+					}
 
-			// should be reclassify if classifier has classifying parameters
-					HRESULT hrClassify=ClassifyTables(tablesNew);
-					if(S_OK!=hrClassify){
-						_statObjects.clear();
-						return hrClassify;
+					// should be reclassify if classifier has classifying parameters
+					ClassifyTables(tablesNew);
+				}catch(...){
+					_ASSERTE(!"Very bad comparison");
 				}
-			}
+				int ir=0;
+				for(vector<IStatTable*>::iterator ist=tablesNew.begin(); 
+					ist!=tablesNew.end(); ++ist)
+				{
+					ir=0;
+					ir+=1;
+				}
 			}
 
 			for(StatObjects::iterator it=_statObjects.begin(); 
@@ -626,13 +605,12 @@ NoClassMatch: ;
 				}
 			}
 
-			*rc=S_OK;
 			return S_OK;
 		}catch(_com_error& err){
-			*rc=err.Error();
-			return S_FALSE;
+			return err.Error();
 		}
-	}
+	iCheckMem=_CrtCheckMemory();
+}
 
 	STDMETHODIMP CCmpStatObject::GetPrivateNamedData( /*[out,retval]*/ IDispatch **ppDisp )
 	{
@@ -755,16 +733,16 @@ namespace
 		return "";
 	}
 
-	static int GetGroupNoByObjectPos(IUnknown *punkTD, LONG_PTR lpos)
+	static int GetGroupNoByObjectPos(IUnknown *punkTD, long lpos)
 	{
 		IStatTablePtr sptrTD(punkTD);
 		if (sptrTD == 0) return -1;
 		stat_row *prow;
-		sptrTD->GetNextRow((TPOS*)&lpos, &prow);
+		sptrTD->GetNextRow(&lpos, &prow);
 		dbg_assert(prow != NULL);
 		GuidKey guildGroup = prow->guid_group;
 		int nGroup = 0;
-		TPOS lposGroup;
+		long lposGroup;
 		sptrTD->GetFirstGroupPos(&lposGroup);
 		while (lposGroup)
 		{
@@ -825,9 +803,9 @@ namespace
 				return false;
 			return m_abMask[n];
 		}
-		bool CheckObjectByPos(IUnknown *punkTD, TPOS lPosPrev)
+		bool CheckObjectByPos(IUnknown *punkTD, long lPosPrev)
 		{
-			int nGroup = GetGroupNoByObjectPos(punkTD, (LONG_PTR)lPosPrev);
+			int nGroup = GetGroupNoByObjectPos(punkTD, lPosPrev);
 			if (nGroup > -1 && !Check(nGroup))
 				return false;
 			else
@@ -885,12 +863,25 @@ namespace
 namespace ObjectSpace
 {
 
+//	HRESULT CCmpStatObject::ClassifyTable(const CString& ClassFile, IStatTable* pStatTable)
 	HRESULT CCmpStatObject::ClassifyTables(const vector<IStatTable*>& tablesNew)
 	{
 		_bstr_t bstrClassFile = ::GetValueString( ::GetAppUnknown(), "\\Classes", "ClassFile", "" );
 		_bstr_t bstrPrevClassFile;// = (char*)GetArgString( "PrevClassFile" );
 		_bstr_t bstrPrevClasses;// = GetArgString( "PrevClasses" );
 		BOOL bOverwriteManual = false;
+
+		//{
+		//	CString tmp = short_filename( (char *)bstrClassFile );
+		//	CString strClassFile = full_classifiername( tmp.GetBuffer( tmp.GetLength() ) );
+		//	tmp.ReleaseBuffer();
+
+		//	CString strPrevClassFile = full_classifiername( tmp.GetBuffer( tmp.GetLength() ) );
+		//	tmp.ReleaseBuffer();
+
+		//	bstrClassFile = strClassFile;
+		//	bstrPrevClassFile = strPrevClassFile;
+		//}
 
 		CString strProgID = _get_value_string( (char*)bstrClassFile, ID_SECT_GENERAL, ID_ENTR_CLASSIFY_PROGID );
 
@@ -927,7 +918,7 @@ namespace ObjectSpace
 			IUnknown *punkObjList = *it;
 
 			if( !punkObjList )
-				return noTable;
+				return S_FALSE;
 
 			INamedDataObject2Ptr ptrList = punkObjList;
 
@@ -935,7 +926,7 @@ namespace ObjectSpace
 				punkObjList->Release(); punkObjList = 0;
 
 			if( ptrList == 0 )
-				return noTable;
+				return S_FALSE;
 
 			// Проверить набор параметров, заодно сделаем себе массив с ними на будущее
 			_ptr_t<long> params(100); // запомним себе массив параметров
@@ -963,7 +954,7 @@ namespace ObjectSpace
 							if(n_params >= params.size()) params.alloc(params.size()*2);
 							params.ptr()[n_params] = n; n_params++;
 							struct ParameterContainer *pContainer=0;
-							TPOS param_pos=0;
+							long param_pos=0;
 							if(ptrContainer!=0) ptrContainer->ParamDefByKey(n,&pContainer);
 							if(ptrTable!=0) ptrTable->GetParamPosByKey(n,&param_pos);
 							if(0==pContainer && 0==param_pos)
@@ -975,18 +966,19 @@ namespace ObjectSpace
 						}
 						n=0; len=0;
 					}
-				}while(c);
+				}
+				while(c);
 
 				if(strBadKeys!="")
 				{
-					return noClassifyParam;
+					_ASSERTE(!"WarningNoParams");
 				}
 			}
 
 			bool bStatTable = CheckInterface(ptrList, IID_IStatTable);
 			CGroupsMask GroupsMask(bStatTable);
 
-			TPOS lPos = 0;
+			long lPos = 0;
 			CSupportComposite sc(ptrList);
 			INamedDataObject2Ptr ptrSaveList(ptrList);
 			if(sc.IsComposite())
@@ -1076,8 +1068,7 @@ namespace ObjectSpace
 				}
 				if(strBadKeys!="")
 				{
-					return noClassifyParam;
-//					_ASSERTE(!"WarningNotCalculatedParams");
+					_ASSERTE(!"WarningNotCalculatedParams");
 				}
 			}
 		}
@@ -1090,7 +1081,7 @@ namespace ObjectSpace
 		OutputDebugString( sz_output );
 
 		if( !m_nCount && !m_nSkipped )
-			return noTable;
+			return S_FALSE;
 
 		_bstr_t m_bstrClassFile;
 		m_bstrClassFile = bstrClassFile;
@@ -1110,7 +1101,7 @@ namespace ObjectSpace
 		for(vector<IStatTable*>::const_iterator it=tablesNew.begin(); it!=tablesNew.end(); ++it)
 		{
 			INamedDataObject2Ptr ptrList = *it;
-			TPOS lPos=0;
+			long lPos=0;
 			ptrList->GetFirstChildPosition( &lPos );
 			long lId = 0;
 			while( lPos )
@@ -1127,7 +1118,7 @@ namespace ObjectSpace
 
 				m_ptrObject_[lId] = sptrObject;
 				if( m_ptrObject_[lId] == 0 )
-					return noClassifyParam;
+					return S_FALSE;
 				m_bUndoManualFlags.ptr()[lId] = is_object_class_manual(m_ptrObject_[lId], m_bstrClassFile);
 				m_bManualFlags.ptr()[lId] = m_bUndoManualFlags.ptr()[lId];
 				if (!bSkip)

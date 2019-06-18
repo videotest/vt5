@@ -251,19 +251,19 @@ BOOL CVTShapePropPage::OnInitDialog()
 	              // EXCEPTION: OCX Property Pages should return FALSE
 }
 
-LRESULT CVTShapePropPage::OnColorChange(WPARAM lParam, LPARAM wParam)
+LONG CVTShapePropPage::OnColorChange(UINT lParam, LONG wParam)
 {
 	SetModifiedFlag( TRUE );		
 	return 1;
 }
 
-LRESULT CVTShapePropPage::OnLineChange(WPARAM lParam, LPARAM wParam)
+LONG CVTShapePropPage::OnLineChange(UINT lParam, LONG wParam)
 {
 	SetModifiedFlag( TRUE );		
 	return 1;
 }
 
-LRESULT CVTShapePropPage::OnArrowChange(WPARAM lParam, LPARAM wParam)
+LONG CVTShapePropPage::OnArrowChange(UINT lParam, LONG wParam)
 {
 	SetModifiedFlag( TRUE );		
 	return 1;

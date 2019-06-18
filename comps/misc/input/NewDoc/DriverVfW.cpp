@@ -87,7 +87,7 @@ void CDriverVfW::RebuildArray()
 
 int CDriverVfW::OnGetDevicesCount()
 {
-	return (int)m_arrDevices.GetSize();
+	return m_arrDevices.GetSize();
 }
 
 void CDriverVfW::OnGetDeviceNames(int nDev, CString &sShortName, CString &sLongName, CString &sCat)

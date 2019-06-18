@@ -195,7 +195,7 @@ inline long hlink_list::on_killfocus( HWND hwndOld )
 inline void hlink_list::set_keywords( keyword *p )		
 {
 	m_pkeywords = p;
-	for( LPOS lpos = head(); lpos; lpos = next( lpos ) )
+	for( long lpos = head(); lpos; lpos = next( lpos ) )
 		get( lpos )->set_keywords( p );
 }
 

@@ -128,7 +128,7 @@ protected:
 	// A.M. BT 4652. There is a problem when image and it parent in arguments list
 	// of single filter. This function creates sorted array of filter aruments when
 	// parent objects are inserted before its children.
-	void _MakeFilterArgumentsArray(IFilterAction2Ptr sptrF, CArray<TPOS, TPOS&> &arrArgs);
+	void _MakeFilterArgumentsArray(IFilterAction2Ptr sptrF, CArray<long,long&> &arrArgs);
 
 
 	bool NeedActivateObject(CContextObject * pObject, bool bActive = false, int nActiveMode = 1);
@@ -184,10 +184,10 @@ protected:
 	afx_msg LPDISPATCH GetActiveObject(LPCTSTR szType);
 	afx_msg BOOL SetActiveObject(LPDISPATCH lpdispObj);
 	afx_msg long GetObjectCount(LPCTSTR szType);
-	afx_msg LONG_PTR GetFirstObjectPos(LPCTSTR szType);
-	afx_msg LPDISPATCH GetNextObject(LPCTSTR szType, LONG_PTR * plPos);
+	afx_msg long GetFirstObjectPos(LPCTSTR szType);
+	afx_msg LPDISPATCH GetNextObject(LPCTSTR szType, long * plPos);
 	afx_msg long GetLastObjectPos(LPCTSTR szType);
-	afx_msg LPDISPATCH GetPrevObject(LPCTSTR szType, LONG_PTR * plPos);
+	afx_msg LPDISPATCH GetPrevObject(LPCTSTR szType, long * plPos);
 	//}}AFX_DISPATCH
 
 	BEGIN_INTERFACE_PART(Context, IDataContext3)
@@ -196,7 +196,7 @@ protected:
 		com_call SetActiveObject(BSTR bstrType, IUnknown * punkObj, DWORD dwFlags );
 		com_call GetData(IUnknown ** ppunk);
 		com_call AttachData(IUnknown * punkNamedData);
-		com_call Notify(long cod, IUnknown * punkNew, IUnknown * punkOld, GUID* dwData);
+		com_call Notify(long cod, IUnknown * punkNew, IUnknown * punkOld, DWORD dwData);
 	// lock Update	
 		com_call LockUpdate(BOOL bLock, BOOL bUpdate);
 		com_call GetLockUpdate(BOOL * pbLock);
@@ -204,7 +204,7 @@ protected:
 // IDataContext2
 	// object types
 		com_call GetObjectTypeCount(long * plCount);
-		com_call GetObjectTypeName(LONG_PTR lPos, BSTR * pbstrType);
+		com_call GetObjectTypeName(long lPos, BSTR * pbstrType);
 
 	// type enables
 		com_call GetTypeEnable(BSTR bstrType, BOOL * pbEnable);
@@ -213,31 +213,31 @@ protected:
 
 	// objects 
 		com_call GetObjectCount(BSTR bstrType, long * pnCount);
-		com_call GetFirstObjectPos(BSTR bstrType, LONG_PTR * plPos);
-		com_call GetNextObject(BSTR bstrType, LONG_PTR * plPos, IUnknown ** ppunkObject);
-		com_call GetLastObjectPos(BSTR bstrType, LONG_PTR * plPos);
-		com_call GetPrevObject(BSTR bstrType, LONG_PTR * plPos, IUnknown ** ppunkObject);
+		com_call GetFirstObjectPos(BSTR bstrType, long * plPos);
+		com_call GetNextObject(BSTR bstrType, long * plPos, IUnknown ** ppunkObject);
+		com_call GetLastObjectPos(BSTR bstrType, long * plPos);
+		com_call GetPrevObject(BSTR bstrType, long * plPos, IUnknown ** ppunkObject);
 
-		com_call GetObjectPos(BSTR bstrType, IUnknown * punkObject, LONG_PTR * plPos);
+		com_call GetObjectPos(BSTR bstrType, IUnknown * punkObject, long * plPos);
 		com_call GetObjectEnable(IUnknown * punkObject, BOOL * pbFlag);
 
 	// child objects
 		com_call GetChildrenCount(BSTR bstrType, IUnknown * punkParent, long * pnCount);
-		com_call GetFirstChildPos(BSTR bstrType, IUnknown * punkParent, TPOS *plPos);
-		com_call GetNextChild(BSTR bstrType, IUnknown * punkParent, TPOS *plPos, IUnknown ** ppunkChild);
-		com_call GetLastChildPos(BSTR bstrType, IUnknown * punkParent, TPOS *plPos);
-		com_call GetPrevChild(BSTR bstrType, IUnknown * punkParent, TPOS *plPos, IUnknown ** ppunkChild);
-		com_call GetChildPos(BSTR bstrType, IUnknown * punkParent, IUnknown * punkChild, TPOS *plPos);
+		com_call GetFirstChildPos(BSTR bstrType, IUnknown * punkParent, long * plPos);
+		com_call GetNextChild(BSTR bstrType, IUnknown * punkParent, long * plPos, IUnknown ** ppunkChild);
+		com_call GetLastChildPos(BSTR bstrType, IUnknown * punkParent, long * plPos);
+		com_call GetPrevChild(BSTR bstrType, IUnknown * punkParent, long * plPos, IUnknown ** ppunkChild);
+		com_call GetChildPos(BSTR bstrType, IUnknown * punkParent, IUnknown * punkChild, long * plPos);
 
 	// selected objects
 		com_call GetObjectSelect(IUnknown * punkObject, BOOL * pbFlag);
 		com_call SetObjectSelect(IUnknown * punkObject, BOOL bFlag);
 
 		com_call GetSelectedCount(BSTR bstrType, long * plCount);
-		com_call GetFirstSelectedPos(BSTR bstrType, LONG_PTR * plPos);
-		com_call GetNextSelected(BSTR bstrType, LONG_PTR * plPos, IUnknown ** ppunkObject);
-		com_call GetLastSelectedPos(BSTR bstrType, LONG_PTR * plPos);
-		com_call GetPrevSelected(BSTR bstrType, LONG_PTR * plPos, IUnknown ** ppunkObject);
+		com_call GetFirstSelectedPos(BSTR bstrType, long * plPos);
+		com_call GetNextSelected(BSTR bstrType, long * plPos, IUnknown ** ppunkObject);
+		com_call GetLastSelectedPos(BSTR bstrType, long * plPos);
+		com_call GetPrevSelected(BSTR bstrType, long * plPos, IUnknown ** ppunkObject);
 		com_call GetSelectedObjectNumber(BSTR bstrType, IUnknown * punkObject, long * plNumber);
 
 		com_call UnselectAll(BSTR bstrType);

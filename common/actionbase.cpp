@@ -15,7 +15,7 @@
 BOOL CALLBACK EnumResNameProc(  HANDLE hModule,   // module handle
 				  LPCTSTR lpszType, // pointer to resource type
 				  LPTSTR lpszName,  // pointer to resource name
-				  LONG_PTR lParam )
+				  LONG lParam )
 {
 	CDWordArray	*pa = (CDWordArray	*)lParam;
 	pa->Add( (DWORD)lpszName );
@@ -360,8 +360,7 @@ CString CActionBase::GetTextParams()
 		::SysFreeString( bstrDefVal );
 		::SysFreeString( bstrKind );
 
-		_variant_t var( GetArgument(strName), false );
-		strValue = var; 
+		strValue = GetArgument(strName);
 		//VariantChangeType(
 		//if(strName.GetLength() > 0)
 		//{
@@ -586,7 +585,7 @@ HRESULT CActionInfoBase::XInfo::GetHotKey( DWORD *pdwKey, BYTE *pbVirt )
 		*pbVirt = 0;
 
 		CDWordArray	dwa;
-		::EnumResourceNames( AfxGetApp()->m_hInstance, RT_ACCELERATOR, (ENUMRESNAMEPROC)EnumResNameProc, (LONG_PTR)&dwa );
+		::EnumResourceNames( AfxGetApp()->m_hInstance, RT_ACCELERATOR, (ENUMRESNAMEPROC)EnumResNameProc, (LONG)&dwa );
 
 		for( int i = 0; i < dwa.GetSize(); i++ )
 		{
@@ -1224,7 +1223,7 @@ void CBitmapProvider::EnsureInstanceWasLooked( HINSTANCE hInstance )
 	};
 
 	CDWordArray	dwa;
-	::EnumResourceNames( hInstance, RT_TOOLBAR, (ENUMRESNAMEPROC)EnumResNameProc, (LONG_PTR)&dwa );
+	::EnumResourceNames( hInstance, RT_TOOLBAR, (ENUMRESNAMEPROC)EnumResNameProc, (LONG)&dwa );
 
 	for( i = 0; i < dwa.GetSize(); i++ )
 	{

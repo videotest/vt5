@@ -20,6 +20,12 @@
  typedef unsigned long  DWORD;
 #endif
 
+#ifdef  WINAPI
+ #define NVSK_API        _cdecl
+#else
+ #define NVSK_API        _cdecl
+#endif
+
 
 /*- Demo codes ----------------------------------------------------------*/
 #define ns_DEMONVK 0x519175b7Lu  /* Demo public code                     */
@@ -167,53 +173,53 @@ extern "C" {
 #endif
 
 /*- Set Stealth search mode -----------------------------------*/
-void nskSetMode( DWORD dwFlags, BYTE bProg, DWORD dwID,\
+void NVSK_API nskSetMode( DWORD dwFlags, BYTE bProg, DWORD dwID,\
         WORD wSN, BYTE bVer, WORD wMask, WORD wType );
 
 /*- Find first specifed key -----------------------------------*/
-int nskFindFirst( DWORD dwPublic, DWORD *pdwID );
+int NVSK_API nskFindFirst( DWORD dwPublic, DWORD *pdwID );
 
 /*- Find next specifed key ------------------------------------*/
-int nskFindNext ( DWORD *pdwID );
+int NVSK_API nskFindNext ( DWORD *pdwID );
 
 /*- Search key with specifed private read code ----------------*/
-int nskCheck( DWORD dwPrivateRD );
+int NVSK_API nskCheck( DWORD dwPrivateRD );
 
 /*- Search key with specifed private read code & dec it GP ----*/
-int nskDecGP( DWORD dwPrivateWR );
+int NVSK_API nskDecGP( DWORD dwPrivateWR );
 
 /*- Conformation data -----------------------------------------*/
-int nskTransform( DWORD dwPrivateRD, BYTE bAlgoNum,\
+int NVSK_API nskTransform( DWORD dwPrivateRD, BYTE bAlgoNum,\
         BYTE bLng, void *pData );
 
 /*- Read data from Guardant dongle ----------------------------*/
-int nskRead( DWORD dwPrivateRD, BYTE bAddr,\
+int NVSK_API nskRead( DWORD dwPrivateRD, BYTE bAddr,\
         BYTE bLng, void *pData );
 
 /*- Write data to Guardant dongle -----------------------------*/
-int nskWrite( DWORD dwPrivateWR, BYTE bAddr,\
+int NVSK_API nskWrite( DWORD dwPrivateWR, BYTE bAddr,\
         BYTE bLng, void *pData );
 
 /*- Reset to 0 protected fields & algoritm number -------------*/
-int nskInit( DWORD dwPrivateMST );
+int NVSK_API nskInit( DWORD dwPrivateMST );
 
 /*- Initialise Stealth with specifed private master -----------*/
-int nskProtect( DWORD dwPrivateMST, BYTE bWrProt,\
+int NVSK_API nskProtect( DWORD dwPrivateMST, BYTE bWrProt,\
         BYTE bRdProt, BYTE bNumFunc );
 
 /*- Calculate CRC ---------------------------------------------*/
-DWORD nskCRC( void *pData, DWORD dwLng, DWORD dwPrevCRC );
+DWORD NVSK_API nskCRC( void *pData, DWORD dwLng, DWORD dwPrevCRC );
 
 /*- Init Encrypt ----------------------------------------------*/
-int nskCodeInit( DWORD dwPrivateRD, WORD wCnvType,\
+int NVSK_API nskCodeInit( DWORD dwPrivateRD, WORD wCnvType,\
         BYTE bAddr, void *pKey );
 
 /*- EnCode ----------------------------------------------------*/
-int nskEnCode( WORD wCnvType, void  *pKeyBuf,\
+int NVSK_API nskEnCode( WORD wCnvType, void  *pKeyBuf,\
         void *pData, DWORD dwLng );
 
 /*- DeCode ----------------------------------------------------*/
-int nskDeCode( WORD wCnvType, void  *pKeyBuf,\
+int NVSK_API nskDeCode( WORD wCnvType, void  *pKeyBuf,\
         void *pData, DWORD dwLng );
 
 /*-------------------------------------------------------------*/
@@ -221,60 +227,60 @@ int nskDeCode( WORD wCnvType, void  *pKeyBuf,\
 /*-------------------------------------------------------------*/
 
 /*- Set Stealth search mode -----------------------------------*/
-void nnkSetMode( DWORD dwFlags, BYTE bProg, DWORD dwID,\
+void NVSK_API nnkSetMode( DWORD dwFlags, BYTE bProg, DWORD dwID,\
         WORD wSN, BYTE bVer, WORD wMask, WORD wType );
 
 /*- Search key with specifed private read code ----------------*/
-int nnkCheck( DWORD dwPrivateRD );
+int NVSK_API nnkCheck( DWORD dwPrivateRD );
 
 /*- Search key with specifed private read code & dec it GP ----*/
-int nnkDecGP( DWORD dwPrivateWR );
+int NVSK_API nnkDecGP( DWORD dwPrivateWR );
 
 /*- Conformation data -----------------------------------------*/
-int nnkTransform( DWORD dwPrivateRD, BYTE bAlgoNum,\
+int NVSK_API nnkTransform( DWORD dwPrivateRD, BYTE bAlgoNum,\
         BYTE bLng, void *pData );
 
 /*- Read data from Guardant dongle ----------------------------*/
-int nnkRead( DWORD dwPrivateRD, BYTE bAddr,\
+int NVSK_API nnkRead( DWORD dwPrivateRD, BYTE bAddr,\
         BYTE bLng, void *pData );
 
 /*- Write data to Guardant dongle -----------------------------*/
-int nnkWrite( DWORD dwPrivateWR, BYTE bAddr,\
+int NVSK_API nnkWrite( DWORD dwPrivateWR, BYTE bAddr,\
         BYTE bLng, void *pData );
 
 /*- Reset to 0 protected fields & algoritm number -------------*/
-int nnkInit( DWORD dwPrivateMST );
+int NVSK_API nnkInit( DWORD dwPrivateMST );
 
 /*- Initialise Stealth with specifed private master -----------*/
-int nnkProtect( DWORD dwPrivateMST, BYTE bWrProt,\
+int NVSK_API nnkProtect( DWORD dwPrivateMST, BYTE bWrProt,\
         BYTE bRdProt, BYTE bNumFunc );
 
 /*- Calculate CRC ---------------------------------------------*/
-DWORD nnkCRC( void *pData, DWORD dwLng, DWORD dwPrevCRC );
+DWORD NVSK_API nnkCRC( void *pData, DWORD dwLng, DWORD dwPrevCRC );
 
 /*- Init Encrypt ----------------------------------------------*/
-int nnkCodeInit( DWORD dwPrivateRD, WORD wCnvType,\
+int NVSK_API nnkCodeInit( DWORD dwPrivateRD, WORD wCnvType,\
         BYTE bAddr, void *pKey );
 
 /*- EnCode ----------------------------------------------------*/
-int nnkEnCode( WORD wCnvType, void  *pKeyBuf,\
+int NVSK_API nnkEnCode( WORD wCnvType, void  *pKeyBuf,\
         void *pData, DWORD dwLng );
 
 /*- DeCode ----------------------------------------------------*/
-int nnkDeCode( WORD wCnvType, void  *pKeyBuf,\
+int NVSK_API nnkDeCode( WORD wCnvType, void  *pKeyBuf,\
         void *pData, DWORD dwLng );
 
 /*- Login -----------------------------------------------------*/
-int nnkLogin( DWORD dwPrivateRD );
+int NVSK_API nnkLogin( DWORD dwPrivateRD );
 
 /*- Logout ----------------------------------------------------*/
-int nnkLogout( DWORD dwPrivateRD );
+int NVSK_API nnkLogout( DWORD dwPrivateRD );
 
 /*- Lock Beg --------------------------------------------------*/
-int nnkLockBeg( DWORD dwPrivateRD );
+int NVSK_API nnkLockBeg( DWORD dwPrivateRD );
 
 /*- Lock End --------------------------------------------------*/
-int nnkLockEnd( DWORD dwPrivateRD );
+int NVSK_API nnkLockEnd( DWORD dwPrivateRD );
 
 /*-------------------------------------------------------------*/
 

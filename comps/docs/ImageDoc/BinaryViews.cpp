@@ -7,6 +7,12 @@
 #include "math.h"
 #include "menuconst.h"
 
+#ifdef _DEBUG
+#define new DEBUG_NEW
+#undef THIS_FILE
+static char THIS_FILE[] = __FILE__;
+#endif
+
 
 IMPLEMENT_DYNCREATE(CBinaryForeView, CCmdTarget)
 IMPLEMENT_DYNCREATE(CBinaryBackView, CCmdTarget)
@@ -167,7 +173,7 @@ void CBinaryViewBase::_AttachObjects( IUnknown *punkContextFrom )
 	IDataContext2Ptr sptrContext(punkContextFrom);
 	if(sptrContext != 0)
 	{
-		LONG_PTR nPos = 0;
+		long nPos = 0;
 		sptrContext->GetFirstSelectedPos(_bstr_t(szTypeBinaryImage), &nPos);
 
 		bool bFirstPass = true;

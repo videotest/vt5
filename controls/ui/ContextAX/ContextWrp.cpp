@@ -144,7 +144,7 @@ void CContextWrpObject::UpdateSelections()
 
 		int nCount = 1;
 		// get first position of selected objects
-		LONG_PTR nPos = 0;
+		long nPos = 0;
 		if (FAILED(sptrC->GetFirstSelectedPos(bstrType, &nPos)) || !nPos)
 			continue;
 
@@ -227,7 +227,7 @@ HCONTEXTITEM CContextWrpObject::AddBaseObject(GuidKey Key, bool bSort)
 	if (sptrBase == 0)
 	{
 		// try to get first object in group (oldest)
-		TPOS lPos = 0;
+		long lPos = 0;
 		if (FAILED(sptrData->GetBaseGroupObjectFirstPos(&Key, &lPos)) || !lPos)
 			return 0;
 
@@ -377,7 +377,7 @@ bool CContextWrpObject::AddAllObjects()
 		if (!nObjCount)
 			continue;
 	
-		TPOS lObjPos = 0;
+		long lObjPos = 0;
 		m_sptrContext->GetFirstChildPos(bstrT, 0, &lObjPos);
 		while (lObjPos)
 		{
@@ -467,7 +467,7 @@ bool CContextWrpObject::AddObject(HCONTEXTITEM hParent, IUnknown * punkObject, b
 	m_sptrContext->GetChildrenCount(bstrType, punkObject, &nCount);
 	if (nCount)
 	{
-		TPOS lChildPos = 0;
+		long lChildPos = 0;
 		m_sptrContext->GetFirstChildPos(bstrType, punkObject, &lChildPos);
 		while (lChildPos)
 		{
@@ -800,7 +800,7 @@ void CContextWrpObject::SetNumeric()
 
 	_try (CContextWrpObject, SetNumeric)
 	{
-		TPOS lPos = 0;
+		long lPos = 0;
 		sptrData->GetBaseGroupObjectFirstPos(&BaseKey, &lPos);
 		while (lPos)
 		{
@@ -1695,7 +1695,7 @@ bool CContextWrpType::AddAllObjects(HCONTEXTITEM hParent, BSTR bstrType, bool bE
 
 	if (nCount)
 	{
-		TPOS lChildPos = 0;
+		long lChildPos = 0;
 		m_sptrContext->GetFirstChildPos(bstrType, 0, &lChildPos);
 		while (lChildPos)
 		{
@@ -1766,7 +1766,7 @@ bool CContextWrpType::AddObject(HCONTEXTITEM hParent, IUnknown* punkObject, bool
 	if (nCount)
 	{
 		// for all children 
-		TPOS lChildPos = 0;
+		long lChildPos = 0;
 		m_sptrContext->GetFirstChildPos(bstrType, punkObject, &lChildPos);
 		while (lChildPos)
 		{
@@ -2344,7 +2344,7 @@ void CContextWrpType::UpdateSelections()
 
 		int nCount = 1;
 		// get first position of selected objects
-		LONG_PTR nPos = 0;
+		long nPos = 0;
 		if (FAILED(sptrC->GetFirstSelectedPos(bstrType, &nPos)) || !nPos)
 			continue;
 
@@ -2405,7 +2405,7 @@ void CContextWrpType::UpdateSelections(LPCTSTR szType)
 //		int nNumber = 1;
 		int nCount = 1;
 		// get first position of selected objects
-		LONG_PTR nPos = 0;
+		long nPos = 0;
 		if (FAILED(sptrC->GetFirstSelectedPos(bstrType, &nPos)) || !nPos)
 			continue;
 
@@ -2438,7 +2438,7 @@ void CContextWrpType::UpdateActive()
 	if (sptrC == 0 || sptrView == 0)
 		return;
 
-	TPOS lPos = 0;
+	long lPos = 0;
 	sptrView->GetFirstVisibleObjectPosition(&lPos);
 
 	while (lPos)
@@ -2505,7 +2505,7 @@ void CContextWrpType::SetNumeric()
 		if (nCount)
 		{
 			// for all objects
-			LONG_PTR lPos = 0;
+			long lPos = 0;
 			sptrC->GetFirstObjectPos(bstrType, &lPos);
 			while (lPos)
 			{
@@ -2560,7 +2560,7 @@ void CContextWrpType::RemoveNumeric()
 
 		if (nCount > 1)
 		{
-			LONG_PTR nPos = 0;
+			long nPos = 0;
 
 			IUnknown * punkObject = 0;
 			// first selected object is active object

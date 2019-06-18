@@ -147,7 +147,7 @@ protected:
 	//Safe state	
 	bool m_bRecordNDataOK;
 	bool m_bDocNDataOK;
-
+	bool m_bReadDeleteOnly;
 	bool IsValidNameData(){ return m_bRecordNDataOK && m_bDocNDataOK;}
 
 	//Get object 	
@@ -188,31 +188,31 @@ protected:
 		com_call NameExists( BSTR bstrName, long* Exists );
 		com_call GetObject( BSTR bstrName, BSTR bstrType, IUnknown **punk );
 
-		com_call NotifyContexts( DWORD dwNotifyCode, IUnknown *punkNew, IUnknown *punkOld, GUID* dwData);
+		com_call NotifyContexts( DWORD dwNotifyCode, IUnknown *punkNew, IUnknown *punkOld, DWORD dwData);
 		com_call EnableBinaryStore( BOOL bBinary );
 		
 		com_call GetCurrentSection( BSTR* pbstrSection );
 
 		com_call GetBaseGroupCount(int * pnCount);
-		com_call GetBaseGroupFirstPos(TPOS *plPos);
-		com_call GetNextBaseGroup(GUID * pKey, TPOS *plPos);
+		com_call GetBaseGroupFirstPos(long * plPos);
+		com_call GetNextBaseGroup(GUID * pKey, long * plPos);
 		com_call GetIsBaseGroup(GUID * pKey, BOOL * pbBase);
 		com_call GetBaseGroupBaseObject(GUID * pKey, IUnknown ** ppunkObject);
 
 		com_call GetBaseGroupObjectsCount(GUID * pKey, int * pnCount);
-		com_call GetBaseGroupObjectFirstPos(GUID * pKey, TPOS *plPos);
-		com_call GetBaseGroupNextObject(GUID * pKey, TPOS *plPos, IUnknown ** ppunkObject);
+		com_call GetBaseGroupObjectFirstPos(GUID * pKey, long * plPos);
+		com_call GetBaseGroupNextObject(GUID * pKey, long * plPos, IUnknown ** ppunkObject);
 		com_call SetEmptySection( BSTR* bstrSectionName );
 	END_INTERFACE_PART(Data);
 
 	BEGIN_INTERFACE_PART(Types, IDataTypeManager)
 		com_call GetTypesCount( long *pnCount );
 		com_call GetType( long index, BSTR *pbstrType );
-		com_call GetObjectFirstPosition( long nType, LONG_PTR *plpos );
-		com_call GetNextObject( long nType, LONG_PTR *plpos, IUnknown **ppunkObj );
+		com_call GetObjectFirstPosition( long nType, long *plpos );
+		com_call GetNextObject( long nType, long *plpos, IUnknown **ppunkObj );
 	END_INTERFACE_PART(Types);
 
-	BEGIN_INTERFACE_PART(DBaseDocument, IDBaseDocument)
+	BEGIN_INTERFACE_PART(DBaseDocument, IDBaseDocument2)
 		com_call InitNamedData();
 		com_call GetPrivateNamedData(IUnknown** ppunkNamedData);
 
@@ -231,12 +231,20 @@ protected:
 		//Active image
 		com_call SetActiveImage( BSTR bstrName );
 		com_call GetActiveImage( BSTR* pbstrName );
-		
+
 		//is read only?
 		com_call IsReadOnly( BOOL* pbReadOnly );
+
+
+
+		com_call IsReadDeleteOnly( BOOL* pbReadOnly );
+		com_call SetReadDeleteOnly( BOOL pbReadOnly );
 	END_INTERFACE_PART(DBaseDocument);
 
-
+	BEGIN_INTERFACE_PART(LockInfo, IDBLockInfo)
+		com_call GetLockInfoPtr(void** li);
+		com_call SetLockInfo(void* li);
+	END_INTERFACE_PART(LockInfo);
 
 	BEGIN_INTERFACE_PART(DBConnection, IDBConnection)
 		com_call LoadAccessDBase( BSTR bstrMDBFilePath);	

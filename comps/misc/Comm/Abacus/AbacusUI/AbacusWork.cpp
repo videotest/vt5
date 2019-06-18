@@ -94,21 +94,21 @@ bool _AbacusGetInit(ABACUSINIT **ppAbacusInit)
 	else return s_AbacusGetInit(ppAbacusInit);
 }
 
-bool _AbacusGetFirstRecordPosition(TPOS *plPos)
+bool _AbacusGetFirstRecordPosition(long *plPos)
 {
 	if (s_hLib == NULL)
 		return false;
 	else return s_AbacusGetFirstRecord(plPos);
 }
 
-bool _AbacusGetNextRecord(TPOS *plPos, ABACUSRECORD **ppRecords)
+bool _AbacusGetNextRecord(long *plPos, ABACUSRECORD **ppRecords)
 {
 	if (s_hLib == NULL)
 		return false;
 	else return s_AbacusGetNextRecord(plPos, ppRecords);
 }
 
-void _AbacusRemoveRecord(TPOS lPos)
+void _AbacusRemoveRecord(long lPos)
 {
 	if (s_hLib != NULL)
 		return s_AbacusRemoveRecord(lPos);

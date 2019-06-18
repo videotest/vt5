@@ -58,7 +58,7 @@ bool CMergeObjects::InvokeFilter()
 
 	{	// заполним массив объектов
 		int nObject=0;
-		POSITION posObject = 0; ptrObjects->GetFirstChildPosition(&posObject);
+		long posObject=0; ptrObjects->GetFirstChildPosition(&posObject);
 		while( posObject && nObject<nObjects ) //по всем объектам
 		{
 			IUnknownPtr sptr;
@@ -77,7 +77,7 @@ bool CMergeObjects::InvokeFilter()
 
 	{	// заполним массив границ
 		int nBorder=0;
-		POSITION posBorder = 0; ptrBorders->GetFirstChildPosition(&posBorder);
+		long posBorder=0; ptrBorders->GetFirstChildPosition(&posBorder);
 		while( posBorder && nBorder<nBorders ) //по всем границам
 		{
 			IUnknownPtr sptr;

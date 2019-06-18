@@ -180,7 +180,7 @@ CInPlaceList::CInPlaceList(CWnd* pParent, CRect& rect, DWORD dwStyle, UINT nID,
 	SetHorizontalExtent(0); // no horz scrolling
 
 	// Set the initial text to m_sInitText
-	if (SelectString(-1, m_sInitText) == CB_ERR) 
+    if (::IsWindow(m_hWnd) && SelectString(-1, m_sInitText) == CB_ERR) 
 		SetWindowText(m_sInitText);		// No text selected, so restore what was there before
 
     ShowDropDown();
@@ -209,7 +209,6 @@ CInPlaceList::CInPlaceList(CWnd* pParent, CRect& rect, DWORD dwStyle, UINT nID,
     }
     else
  	    SetFocus();
-
 }
 
 CInPlaceList::~CInPlaceList()
@@ -219,7 +218,8 @@ CInPlaceList::~CInPlaceList()
 void CInPlaceList::EndEdit()
 {
     CString str;
-    GetWindowText(str);
+    if (::IsWindow(m_hWnd))
+        GetWindowText(str);
  
     // Send Notification to parent
     GV_DISPINFO dispinfo;
@@ -239,7 +239,8 @@ void CInPlaceList::EndEdit()
         pOwner->SendMessage(WM_NOTIFY, GetDlgCtrlID(), (LPARAM)&dispinfo );
  
     // Close this window (PostNcDestroy will delete this)
-    PostMessage(WM_CLOSE, 0, 0);
+    if (::IsWindow(m_hWnd))
+        PostMessage(WM_CLOSE, 0, 0);
 }
 
 int CInPlaceList::GetCorrectDropWidth()
@@ -274,6 +275,23 @@ int CInPlaceList::GetCorrectDropWidth()
     //SetDroppedWidth(nWidth);
 }
 
+/*
+// Fix by Ray (raybie@Exabyte.COM)
+void CInPlaceList::OnSelendOK() 
+{
+    int iIndex = GetCurSel(); 
+    if( iIndex != CB_ERR) 
+    { 
+        CString strLbText; 
+        GetLBText( iIndex, strLbText); 
+ 
+        if (!((GetStyle() & CBS_DROPDOWNLIST) == CBS_DROPDOWNLIST)) 
+           m_edit.SetWindowText( strLbText); 
+    } 
+ 
+    GetParent()->SetFocus(); 	
+}
+*/
 
 void CInPlaceList::PostNcDestroy() 
 {
@@ -291,6 +309,7 @@ BEGIN_MESSAGE_MAP(CInPlaceList, CComboBox)
 	ON_WM_GETDLGCODE()
 	ON_WM_CTLCOLOR_REFLECT()
 	//}}AFX_MSG_MAP
+	//ON_CONTROL_REFLECT(CBN_SELENDOK, OnSelendOK)
 END_MESSAGE_MAP()
 
 

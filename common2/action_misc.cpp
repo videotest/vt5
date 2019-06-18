@@ -84,12 +84,12 @@ HRESULT CActionShowView::DoInvoke()
 
 	//ask view m.b. it have attached object?
 	
-	TPOS lpos_view;
+	long lpos_view;
 	for( lpos_view=arViewTypes.head();lpos_view;lpos_view=arViewTypes.next(lpos_view) )
 	{
 
 		_bstr_t bstrType = arViewTypes.get( lpos_view );
-		LONG_PTR lPos = 0;
+		long lPos = 0;
 		ptrContext->GetFirstSelectedPos( bstrType, &lPos );
 		
 		while( lPos )
@@ -123,7 +123,7 @@ HRESULT CActionShowView::DoInvoke()
 	{
 		_bstr_t bstrType = arViewTypes.get( lpos_view );		
 		IUnknown* punk = 0;
-		LONG_PTR lPos = 0;
+		long lPos = 0;
 		ptrContext->GetFirstObjectPos( bstrType, &lPos );
 
 		while( lPos )

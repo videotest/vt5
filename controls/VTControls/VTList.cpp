@@ -52,7 +52,7 @@ inline CString _change_chars( CString str, CString strA, CString strB )
 	CString strRet;
 
 	long lPrev = 0;
-	long lPos = (long)str.Find( strA, lPrev );
+	long lPos = str.Find( strA, lPrev );
 
 	while( lPos != -1 )
 	{
@@ -480,7 +480,7 @@ void CVTList::OnDraw(CDC* pdc, const CRect& rcBounds, const CRect& rcInvalid)
 			pHeader->RedrawWindow( NULL, NULL, 
 				RDW_FRAME|RDW_INVALIDATE|RDW_INTERNALPAINT );	
 
-		for( LPOS lPos = m_lstExtHeaderCtls.head(); lPos; lPos = m_lstExtHeaderCtls.next( lPos ) )
+		for( long lPos = m_lstExtHeaderCtls.head(); lPos; lPos = m_lstExtHeaderCtls.next( lPos ) )
 		{
 			CListHeaderCtrl *pCtrl = m_lstExtHeaderCtls.get( lPos );
 			
@@ -598,7 +598,7 @@ void CVTList::Serialize(CArchive& ar)
 			ar << m_bUseExtHeader;
 			ar << m_listHeaders.count();
 
-			for( TPOS lPos = m_listHeaders.head(), q = 0; lPos; lPos = m_listHeaders.next( lPos ), q++ )
+			for( long lPos = m_listHeaders.head(), q = 0; lPos; lPos = m_listHeaders.next( lPos ), q++ )
 			{
 				typeHD *pLevel = m_listHeaders.get( lPos );
 
@@ -606,7 +606,7 @@ void CVTList::Serialize(CArchive& ar)
 				{
 					ar << pLevel->count();
 
-					for (TPOS lPos = pLevel->head(), q = 0; lPos; lPos = pLevel->next(lPos), q++)
+					for( long lPos = pLevel->head(), q = 0; lPos; lPos = pLevel->next( lPos ), q++ )
 					{
 						XHeaderData *pData = pLevel->get( lPos );
 
@@ -667,7 +667,7 @@ void CVTList::Serialize(CArchive& ar)
 					m_listHeaders.add_tail( item );
 				}
 
-				for (TPOS lPos = m_listHeaders.head(); lPos; lPos = m_listHeaders.next(lPos))
+				for( long lPos = m_listHeaders.head(); lPos; lPos = m_listHeaders.next( lPos ) )
 				{
 					typeHD *pLevel = m_listHeaders.get( lPos );
 
@@ -682,7 +682,7 @@ void CVTList::Serialize(CArchive& ar)
 							pLevel->add_tail( pData );
 						}
 
-						for (TPOS lPos = pLevel->head(); lPos; lPos = pLevel->next(lPos))
+						for( long lPos = pLevel->head(); lPos; lPos = pLevel->next( lPos ) )
 						{
 							XHeaderData *pData = pLevel->get( lPos );
 
@@ -820,7 +820,7 @@ void CVTList::OnSize(UINT nType, int cx, int cy)
 	/*if( m_bUseExtHeader )
 	{
 
-		for( LPOS lPos = m_lstExtHeaderCtls.head(); lPos; lPos = m_lstExtHeaderCtls.next( lPos ) )
+		for( long lPos = m_lstExtHeaderCtls.head(); lPos; lPos = m_lstExtHeaderCtls.next( lPos ) )
 	{
 			CListHeaderCtrl *pCtrl = m_lstExtHeaderCtls.get( lPos );
 			int i=0;
@@ -831,7 +831,7 @@ void CVTList::OnSize(UINT nType, int cx, int cy)
 		m_listCtrl.GetHeaderCtrl()->GetClientRect( &rcHeader );
 
  		lTop = ( m_lstExtHeaderCtls.count() - 1 ) * ( rcHeader.bottom - rcHeader.top );
- 		for( LPOS lPos = m_lstExtHeaderCtls.head(); lPos; lPos = m_lstExtHeaderCtls.next( lPos ) )
+ 		for( long lPos = m_lstExtHeaderCtls.head(); lPos; lPos = m_lstExtHeaderCtls.next( lPos ) )
 		{
 			CListHeaderCtrl *pCtrl = m_lstExtHeaderCtls.get( lPos );
 
@@ -1064,7 +1064,7 @@ void CVTList::SetColumnCaption(short nColumn, LPCTSTR pstrCaption)
 			m_sNameColumn.SetAt(nColumn,str);
 			m_listCtrl.SetColumnCaption( nColumn, str );
 		}
-		for (TPOS lPos = m_listHeaders.head(), q = 0; lPos; lPos = m_listHeaders.next(lPos), q++)
+			for( long lPos = m_listHeaders.head(), q = 0; lPos; lPos = m_listHeaders.next( lPos ), q++ )
 			{
 				if( q == 0 )
 				{
@@ -1078,8 +1078,7 @@ void CVTList::SetColumnCaption(short nColumn, LPCTSTR pstrCaption)
 							pLevel->add_tail( pData );
 						}
 		
-						short w = 0;
-						for (TPOS lPos2 = pLevel->head(); lPos2; lPos2 = pLevel->next(lPos2), w++)
+						for( long lPos2 = pLevel->head(), w = 0; lPos2; lPos2 = pLevel->next( lPos2 ), w++ )
 						{
 							if( w == nColumn )
 							{
@@ -2045,7 +2044,7 @@ void CVTList::SetDisabled(BOOL bNewValue)
 	if( pHeader )
 		pHeader->EnableWindow( !bNewValue );
 
-	for (TPOS lPos = m_lstExtHeaderCtls.head(); lPos; lPos = m_lstExtHeaderCtls.next(lPos))
+	for( long lPos = m_lstExtHeaderCtls.head(); lPos; lPos = m_lstExtHeaderCtls.next( lPos ) )
 	{
 		CListHeaderCtrl *pCtrl = m_lstExtHeaderCtls.get( lPos );
 		pCtrl->EnableWindow( !bNewValue );	
@@ -2365,8 +2364,8 @@ void CVTList::SetExtHeaderData( short nLev, short nItem, LPCTSTR pbstrName, shor
 		typeHD *item = new typeHD;
 		m_listHeaders.add_tail( item );
 	}
-	short q = 0;
-	for (TPOS lPos = m_listHeaders.head(); lPos; lPos = m_listHeaders.next(lPos), q++)
+
+	for( long lPos = m_listHeaders.head(), q = 0; lPos; lPos = m_listHeaders.next( lPos ), q++ )
 	{
 		if( q == nLev )
 		{
@@ -2379,8 +2378,8 @@ void CVTList::SetExtHeaderData( short nLev, short nItem, LPCTSTR pbstrName, shor
 					XHeaderData *pData = new XHeaderData;
 					pLevel->add_tail( pData );
 				}
-				short w = 0;
-				for (TPOS lPos2 = pLevel->head(); lPos2; lPos2 = pLevel->next(lPos2), w++)
+
+				for( long lPos2 = pLevel->head(), w = 0; lPos2; lPos2 = pLevel->next( lPos2 ), w++ )
 				{
 					if( w == nItem )
 					{
@@ -2403,8 +2402,7 @@ void CVTList::SetExtHeaderData( short nLev, short nItem, LPCTSTR pbstrName, shor
 
 BSTR CVTList::GetExtHeaderName( short nLev, short nItem )
 {
-	short q = 0;
-	for (TPOS lPos = m_listHeaders.head(); lPos; lPos = m_listHeaders.next(lPos), q++)
+	for( long lPos = m_listHeaders.head(), q = 0; lPos; lPos = m_listHeaders.next( lPos ), q++ )
 	{
 		if( q == nLev )
 		{
@@ -2412,8 +2410,7 @@ BSTR CVTList::GetExtHeaderName( short nLev, short nItem )
 
 			if( pLevel )
 			{
-				short w = 0;
-				for (TPOS lPos2 = pLevel->head(); lPos2; lPos2 = pLevel->next(lPos2), w++)
+				for( long lPos2 = pLevel->head(), w = 0; lPos2; lPos2 = pLevel->next( lPos2 ), w++ )
 				{
 					if( w == nItem )
 					{
@@ -2430,8 +2427,7 @@ BSTR CVTList::GetExtHeaderName( short nLev, short nItem )
 
 long CVTList::GetExtHeaderAssignment( short nLev, short nItem )
 {
-	short q = 0;
-	for (TPOS lPos = m_listHeaders.head(); lPos; lPos = m_listHeaders.next(lPos), q++)
+	for( long lPos = m_listHeaders.head(), q = 0; lPos; lPos = m_listHeaders.next( lPos ), q++ )
 	{
 		if( q == nLev )
 		{
@@ -2439,8 +2435,7 @@ long CVTList::GetExtHeaderAssignment( short nLev, short nItem )
 
 			if( pLevel )
 			{
-				short w = 0;
-				for (TPOS lPos2 = pLevel->head(); lPos2; lPos2 = pLevel->next(lPos2), w++)
+				for( long lPos2 = pLevel->head(), w = 0; lPos2; lPos2 = pLevel->next( lPos2 ), w++ )
 				{
 					if( w == nItem )
 					{
@@ -2457,8 +2452,7 @@ long CVTList::GetExtHeaderAssignment( short nLev, short nItem )
 
 long  CVTList::GetExtHeadersColumnSize( short nLev )
 {
-	short q = 0;
-	for (TPOS lPos = m_listHeaders.head(); lPos; lPos = m_listHeaders.next(lPos), q++)
+	for( long lPos = m_listHeaders.head(), q = 0; lPos; lPos = m_listHeaders.next( lPos ), q++ )
 	{
 		if( q == nLev )
 		{
@@ -2473,8 +2467,7 @@ long  CVTList::GetExtHeadersColumnSize( short nLev )
 
 long CVTList::GetExtHeaderWidth( short nLev, short nItem )
 {
-	short q = 0;
-	for( TPOS lPos = m_listHeaders.head(); lPos; lPos = m_listHeaders.next( lPos ), q++ )
+	for( long lPos = m_listHeaders.head(), q = 0; lPos; lPos = m_listHeaders.next( lPos ), q++ )
 	{
 		if( q == nLev )
 		{
@@ -2482,8 +2475,7 @@ long CVTList::GetExtHeaderWidth( short nLev, short nItem )
 
 			if( pLevel )
 			{
-				short w = 0;
-				for (TPOS lPos2 = pLevel->head(); lPos2; lPos2 = pLevel->next(lPos2), w++)
+				for( long lPos2 = pLevel->head(), w = 0; lPos2; lPos2 = pLevel->next( lPos2 ), w++ )
 				{
 					if( w == nItem )
 					{
@@ -2512,7 +2504,7 @@ void CVTList::_create_header_ctrls()
 		return;
 	}
 
-	/*for( LPOS lPos = m_listHeaders.head(); lPos; lPos = m_listHeaders.next( lPos ) )
+	/*for( long lPos = m_listHeaders.head(); lPos; lPos = m_listHeaders.next( lPos ) )
 	{
 		typeHD *pLevel = m_listHeaders.get( lPos );
 
@@ -2530,7 +2522,7 @@ void CVTList::_create_header_ctrls()
 
 			m_Man.AddItem( pCtrl );
 
-			for( LPOS lPos2 = pLevel->head(), q = 0; lPos2; lPos2 = pLevel->next( lPos2 ), q++ )
+			for( long lPos2 = pLevel->head(), q = 0; lPos2; lPos2 = pLevel->next( lPos2 ), q++ )
 			{
 				XHeaderData *pData = pLevel->get( lPos2 );
 
@@ -2556,14 +2548,14 @@ void CVTList::_create_assignment_map()
 {
 	/*CHeaderCtrl *pCtrl = m_listCtrl.GetHeaderCtrl();
 
-	for( LPOS lPos = m_listHeaders.head(), lPosM = m_lstExtHeaderCtls.head(); lPos; lPos = m_listHeaders.next( lPos ), lPosM = m_lstExtHeaderCtls.next( lPosM ) )
+	for( long lPos = m_listHeaders.head(), lPosM = m_lstExtHeaderCtls.head(); lPos; lPos = m_listHeaders.next( lPos ), lPosM = m_lstExtHeaderCtls.next( lPosM ) )
 	{
 		typeHD *pLevel = m_listHeaders.get( lPos );
 
 		if( pLevel )
 		{
 			int nCounter = 0;
-			for( LPOS lPos2 = pLevel->head(); lPos2; lPos2 = pLevel->next( lPos2 ) )
+			for( long lPos2 = pLevel->head(); lPos2; lPos2 = pLevel->next( lPos2 ) )
 			{
 				XHeaderData *pData = pLevel->get( lPos2 );
 
@@ -2576,12 +2568,12 @@ void CVTList::_create_assignment_map()
 		pCtrl = m_lstExtHeaderCtls.get( lPosM );
 	}
 
- 	for( LPOS lPos = m_listHeaders.head(), lPosM = m_lstExtHeaderCtls.head(); lPos; lPos = m_listHeaders.next( lPos ), lPosM = m_lstExtHeaderCtls.next( lPosM ) )
+ 	for( long lPos = m_listHeaders.head(), lPosM = m_lstExtHeaderCtls.head(); lPos; lPos = m_listHeaders.next( lPos ), lPosM = m_lstExtHeaderCtls.next( lPosM ) )
 	{
 		typeHD *pLevel = m_listHeaders.get( lPos );
 		if( pLevel )
 		{
- 			for( LPOS lPos2 = pLevel->head(), q = 0; lPos2; lPos2 = pLevel->next( lPos2 ), q++ )
+ 			for( long lPos2 = pLevel->head(), q = 0; lPos2; lPos2 = pLevel->next( lPos2 ), q++ )
 			{
 				XHeaderData *pData = pLevel->get( lPos2 );
 
@@ -2657,7 +2649,7 @@ int CVTList::_calc_header_groups( CHeaderCtrl *pCtr, int nitem, int nIndex, int 
 
 	if( pCtr == pCtrlMain )
 	{
- 		for( LPOS lPos2 = m_listHeadersMain.head(), q = 0; lPos2; lPos2 = m_listHeadersMain.next( lPos2 ), q++ )
+ 		for( long lPos2 = m_listHeadersMain.head(), q = 0; lPos2; lPos2 = m_listHeadersMain.next( lPos2 ), q++ )
 		{
 			if( nitem == -1 || q == nitem )
 			{
@@ -2678,7 +2670,7 @@ int CVTList::_calc_header_groups( CHeaderCtrl *pCtr, int nitem, int nIndex, int 
 		return 0;
 	}
 
-	for( LPOS lPos = m_listHeaders.tail(), lPosM = m_lstExtHeaderCtls.tail(); lPos; lPos = m_listHeaders.prev( lPos ), lPosM = m_lstExtHeaderCtls.prev( lPosM ) )
+	for( long lPos = m_listHeaders.tail(), lPosM = m_lstExtHeaderCtls.tail(); lPos; lPos = m_listHeaders.prev( lPos ), lPosM = m_lstExtHeaderCtls.prev( lPosM ) )
 	{
 		CHeaderCtrl *pCtrlCur = m_lstExtHeaderCtls.get( lPosM );
 
@@ -2687,7 +2679,7 @@ int CVTList::_calc_header_groups( CHeaderCtrl *pCtr, int nitem, int nIndex, int 
 			typeHD *pLevel = m_listHeaders.get( lPos );
 			if( pLevel )
 			{
- 				for( LPOS lPos2 = pLevel->head(), q = 0; lPos2; lPos2 = pLevel->next( lPos2 ), q++ )
+ 				for( long lPos2 = pLevel->head(), q = 0; lPos2; lPos2 = pLevel->next( lPos2 ), q++ )
 				{
 					if( nitem == -1 || q == nitem )
 					{
@@ -2751,7 +2743,7 @@ void CVTList::_apply_header_resize( CHeaderCtrl *pCtrl, int iItem, int nWidth, b
 			typeHD *pLevel = m_listHeaders.get( m_listHeaders.head() );
 			if( pLevel )
 			{
-				for( LPOS lPos2 = pLevel->head(), z = 0; lPos2; lPos2 = pLevel->next( lPos2 ), z++ )
+				for( long lPos2 = pLevel->head(), z = 0; lPos2; lPos2 = pLevel->next( lPos2 ), z++ )
 				{
  					XHeaderData *pData = pLevel->get( lPos2 );
 					if( iItem >= pData->nFrom && iItem < ( pData->nFrom + pData->nAssignment ) )
@@ -2780,7 +2772,7 @@ void CVTList::_apply_header_resize( CHeaderCtrl *pCtrl, int iItem, int nWidth, b
 		return;
 	}
 
-	for( LPOS lPos = m_listHeaders.head(), lPosM = m_lstExtHeaderCtls.head(); lPos; lPos = m_listHeaders.next( lPos ), lPosM = m_lstExtHeaderCtls.next( lPosM ) )
+	for( long lPos = m_listHeaders.head(), lPosM = m_lstExtHeaderCtls.head(); lPos; lPos = m_listHeaders.next( lPos ), lPosM = m_lstExtHeaderCtls.next( lPosM ) )
 	{
 		CHeaderCtrl  *pCtrlH = m_lstExtHeaderCtls.get( lPosM );
 
@@ -2791,7 +2783,7 @@ void CVTList::_apply_header_resize( CHeaderCtrl *pCtrl, int iItem, int nWidth, b
 			{
 				if( !InternalCall || lPos == m_listHeaders.tail() )
 				{
-					for( LPOS lPos2 = pLevel->head(), q = 0; lPos2; lPos2 = pLevel->next( lPos2 ), q++ )
+					for( long lPos2 = pLevel->head(), q = 0; lPos2; lPos2 = pLevel->next( lPos2 ), q++ )
 					{
 						if( q == iItem )
 						{
@@ -2837,7 +2829,7 @@ void CVTList::_apply_header_resize( CHeaderCtrl *pCtrl, int iItem, int nWidth, b
 					typeHD *pLevelUp = m_listHeaders.get( m_listHeaders.next( lPos ) );
 					if( pLevelUp )
 					{
-						for( LPOS lPos2 = pLevelUp->head(), q = 0; lPos2; lPos2 = pLevelUp->next( lPos2 ), q++ )
+						for( long lPos2 = pLevelUp->head(), q = 0; lPos2; lPos2 = pLevelUp->next( lPos2 ), q++ )
 						{
  							XHeaderData *pData = pLevelUp->get( lPos2 );
 
@@ -2846,7 +2838,7 @@ void CVTList::_apply_header_resize( CHeaderCtrl *pCtrl, int iItem, int nWidth, b
 								if( MainCall ) 
 									_apply_header_resize( pCtrl, iItem, nWidth, bAsgnHeader, InreaseChW, false, false );
 
-								for( LPOS lPos2 = pLevel->head(), b = 0; lPos2; lPos2 = pLevel->next( lPos2 ), b++ )
+								for( long lPos2 = pLevel->head(), b = 0; lPos2; lPos2 = pLevel->next( lPos2 ), b++ )
 								{
 									if( b == iItem )
 									{
@@ -2895,7 +2887,7 @@ BOOL CVTList::_can_be_resizable( CHeaderCtrl *pCtrl, int iItem, int nDir )
 
  	if( pCtrlM != pCtrl )
 	{
-		for( LPOS lPos = m_listHeaders.head(), lPosM = m_lstExtHeaderCtls.head(); lPos; lPos = m_listHeaders.next( lPos ), lPosM = m_lstExtHeaderCtls.next( lPosM ) )
+		for( long lPos = m_listHeaders.head(), lPosM = m_lstExtHeaderCtls.head(); lPos; lPos = m_listHeaders.next( lPos ), lPosM = m_lstExtHeaderCtls.next( lPosM ) )
 		{
 			CHeaderCtrl  *pCtrlH = m_lstExtHeaderCtls.get( lPosM );
 
@@ -2904,7 +2896,7 @@ BOOL CVTList::_can_be_resizable( CHeaderCtrl *pCtrl, int iItem, int nDir )
 				typeHD *pLevel = m_listHeaders.get( lPos );
 				if( pLevel )
 				{
-					for( LPOS lPos2 = pLevel->head(), q = 0; lPos2; lPos2 = pLevel->next( lPos2 ), q++ )
+					for( long lPos2 = pLevel->head(), q = 0; lPos2; lPos2 = pLevel->next( lPos2 ), q++ )
 					{
 						if( q == iItem )
 						{
@@ -2968,8 +2960,7 @@ LRESULT CVTList::WindowProc(UINT message, WPARAM wParam, LPARAM lParam)
 
 		if( pCtrlM == m_listCtrl.GetHeaderCtrl() )
 		{
-			short q = 0;
-			for (TPOS lPos2 = m_listHeadersMain.head(); lPos2; lPos2 = m_listHeadersMain.next(lPos2), q++)
+			for( long lPos2 = m_listHeadersMain.head(), q = 0; lPos2; lPos2 = m_listHeadersMain.next( lPos2 ), q++ )
 			{
 				XHeaderData *pData = m_listHeadersMain.get( lPos2 );
 
@@ -2983,15 +2974,14 @@ LRESULT CVTList::WindowProc(UINT message, WPARAM wParam, LPARAM lParam)
 			}
 		}
 
-		for (TPOS lPos = m_listHeaders.tail(), lPosM = m_lstExtHeaderCtls.tail(); lPos; lPos = m_listHeaders.prev(lPos), lPosM = m_lstExtHeaderCtls.prev(lPosM))
+		for( long lPos = m_listHeaders.tail(), lPosM = m_lstExtHeaderCtls.tail(); lPos; lPos = m_listHeaders.prev( lPos ), lPosM = m_lstExtHeaderCtls.prev( lPosM ) )
 		{
 			if( pCtrlM == m_lstExtHeaderCtls.get( lPosM ) )
 			{
 				typeHD *pLevel = m_listHeaders.get( lPos );
 				if( pLevel )
 				{
-					short q = 0;
-					for (TPOS lPos2 = pLevel->head(); lPos2; lPos2 = pLevel->next(lPos2), q++)
+					for( long lPos2 = pLevel->head(), q = 0; lPos2; lPos2 = pLevel->next( lPos2 ), q++ )
 					{
 						XHeaderData *pData = pLevel->get( lPos2 );
 
@@ -3011,7 +3001,7 @@ LRESULT CVTList::WindowProc(UINT message, WPARAM wParam, LPARAM lParam)
 	{
 		if( m_listCtrl.GetSafeHwnd() )
 		{
-			for( LPOS lPos = m_lstExtHeaderCtls.head(); lPos; lPos = m_lstExtHeaderCtls.next( lPos ) )
+			for( long lPos = m_lstExtHeaderCtls.head(); lPos; lPos = m_lstExtHeaderCtls.next( lPos ) )
 			{
 				CListHeaderCtrl *pCtrl = m_lstExtHeaderCtls.get( lPos );
 				CDC *hdc = pCtrl->GetWindowDC();
@@ -3294,7 +3284,7 @@ void HeaderEx_SetTit(HDC dc, RECT **r, char** out, LPHEADEREXSHOWDATA* l, int po
 			if(!a) 
 				{ a=(*out)+lstrlen(*out); break; }
 		}
-		int alen=int(a-(*out));
+		int alen=a-(*out);
 		if(*a=='|' /*&& !strncmp((*out),(*l)->szName,alen)*/)
 		{
 			int rl=(*r)->left;
@@ -3304,7 +3294,7 @@ void HeaderEx_SetTit(HDC dc, RECT **r, char** out, LPHEADEREXSHOWDATA* l, int po
 				a=strchr(a+1,'|');
 				if(!a) { a=(*out)+lstrlen(*out); break; }
 			}
-			int aa = int(strchr(a+1,'|')-a);
+			int aa = strchr(a+1,'|')-a;
 			//if(aa+1!=lstrlen(*out))
 				while(!strncmp(b,(*out),alen)) 
 					HeaderEx_SetTit(dc, r, out, l, pos+1, maxstr);
@@ -3673,7 +3663,7 @@ BOOL APIENTRY AddTool(HWND hTip, HWND hWnd, RECT* pr, UINT nIDTool, LPCTSTR szTe
         }
         memcpy(&ti.rect, pr, sizeof(RECT));
     }
-    BOOL res = (BOOL)SendMessage(hTip, TTM_ADDTOOL, 0, (LPARAM)&ti);
+    BOOL res = SendMessage(hTip, TTM_ADDTOOL, 0, (LPARAM)&ti);
     return res;
 }
 

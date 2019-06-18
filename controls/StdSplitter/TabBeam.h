@@ -88,7 +88,7 @@ protected:
 private:
 	bool	GetTabFromPoint(CPoint p, short& tab1, short& tab2);
 	// [vanek] - 07.04.2004
-	bool	GetTabFromPos(LPOS lpos, short& ntab1, short& ntab2);
+	bool	GetTabFromPos(long lpos, short& ntab1, short& ntab2);
 };
 
 /////////////////////////////////////////////////////////////////////////////

@@ -104,7 +104,7 @@ static bool _RectByObject(IUnknown *punkObject, CRect &rc)
 	INamedDataObject2Ptr sptrNDO2Obj(punkObject);
 	if (sptrNDO2Obj == 0)
 		return false;
-	TPOS	lpos = 0;
+	long	lpos = 0;
 	sptrNDO2Obj->GetFirstChildPosition(&lpos);
 	while (lpos)
 	{

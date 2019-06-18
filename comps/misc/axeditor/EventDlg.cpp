@@ -66,7 +66,7 @@ BOOL CEventDlg::OnInitDialog()
 	
 	m_listEvents.SetExtendedStyle(LVS_EX_CHECKBOXES);
 
-	int nSize = (int)m_arrEvents.GetSize();
+	int nSize = m_arrEvents.GetSize();
 	for(int i = 0; i < nSize; i++)
 	{
 		CString strEvent = m_arrEvents[i];

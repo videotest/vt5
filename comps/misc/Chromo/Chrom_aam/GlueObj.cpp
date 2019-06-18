@@ -217,8 +217,8 @@ void CGlueObjFilter::GlueTouch(_point pt)
 	m_List = punkObj;
 	if(punkObj)     punkObj->Release();
 	
-	long cnt = 0; POSITION pos = 0;
-	m_List->GetChildsCount(&cnt);
+	long pos = 0;
+	m_List->GetChildsCount(&pos);//
 	m_List->GetFirstChildPosition(&pos);
 	_point pt_best1, pt_best2;
 

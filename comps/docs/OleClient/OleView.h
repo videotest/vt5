@@ -60,8 +60,8 @@ public:
 	com_call GetClassID(CLSID *pClassID ); 
 
 
-	com_call GetFirstVisibleObjectPosition(TPOS *plpos);
-	com_call GetNextVisibleObject(IUnknown ** ppunkObject, TPOS *plPos);
+	com_call GetFirstVisibleObjectPosition( long *plpos );
+	com_call GetNextVisibleObject( IUnknown ** ppunkObject, long *plPos );
 
 	void ShowPropPage( bool bShow );
 	

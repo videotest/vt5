@@ -352,19 +352,6 @@ HRESULT CContextAXCtrl::XContextView::GetReadOnlyMode(BOOL * pbMode)
 
 BOOL CContextAXCtrl::CContextAXCtrlFactory::UpdateRegistry(BOOL bRegister)
 {
-#if defined(NOGUARD)
-	if (bRegister)
-	{
-		return AfxOleRegisterControlClass(AfxGetInstanceHandle()
-			, m_clsid, m_lpszProgID, IDS_CONTEXTAX, IDB_CONTEXTAX
-			, afxRegInsertable | afxRegApartmentThreading, _dwContextAXOleMisc
-			, _tlid, _wVerMajor, _wVerMinor);
-	}
-	else
-	{
-		return AfxOleUnregisterClass(m_clsid, m_lpszProgID);
-	}
-#else
 	// TODO: Verify that your control follows apartment-model threading rules.
 	// Refer to MFC TechNote 64 for more information.
 	// If your control does not conform to the apartment-model rules, then
@@ -373,7 +360,6 @@ BOOL CContextAXCtrl::CContextAXCtrlFactory::UpdateRegistry(BOOL bRegister)
 	return UpdateRegistryCtrl(bRegister, AfxGetInstanceHandle(), IDS_CONTEXTAX, IDB_CONTEXTAX,
 							  afxRegInsertable | afxRegApartmentThreading, _dwContextAXOleMisc,
 							  _tlid, _wVerMajor, _wVerMinor);
-#endif
 }
 
 
@@ -1722,8 +1708,8 @@ bool SaveBMPFile(UINT idRes, LPCTSTR szFile)
 //	 structures.)
  	if (cClrBits != 24)
 	{
-		pbmi = (PBITMAPINFO)new BYTE [sizeof(BITMAPINFOHEADER) + sizeof(RGBQUAD) * (UINT)(1<<cClrBits)];
-		memset(pbmi, 0, sizeof(BITMAPINFOHEADER) + sizeof(RGBQUAD) * (UINT)(1<<cClrBits));
+		pbmi = (PBITMAPINFO)new BYTE [sizeof(BITMAPINFOHEADER) + sizeof(RGBQUAD) * (1<<cClrBits)];
+		memset(pbmi, 0, sizeof(BITMAPINFOHEADER) + sizeof(RGBQUAD) * (1<<cClrBits));
 	}
 	else
 	{
@@ -2228,7 +2214,7 @@ BOOL CContextAXCtrl::PreTranslateMessage(MSG* pMsg)
 {
 	if (pMsg->message == WM_KEYDOWN)
 	{
-		WPARAM nKey = pMsg->wParam;
+		int nKey = (int)pMsg->wParam;
 		if (nKey == VK_RETURN)
 			return ::SendMessage(pMsg->hwnd, pMsg->message, pMsg->wParam, pMsg->lParam);
 

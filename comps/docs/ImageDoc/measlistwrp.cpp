@@ -2,6 +2,12 @@
 #include "measlistwrp.h"
 #include "\vt5\common2\class_utils.h"
 
+#ifdef _DEBUG
+#define new DEBUG_NEW
+#undef THIS_FILE
+static char THIS_FILE[] = __FILE__;
+#endif
+
 
 CMeasObjectWrp::~CMeasObjectWrp()
 {
@@ -40,7 +46,7 @@ void CMeasObjectWrp::Attach( IUnknown *punkObject )
 
 	m_rectImage = NORECT;
 	if( m_image != 0 )m_rectImage = m_image.GetRect();
-	POSITION	lpos = 0;
+	long	lpos = 0;
 	if( m_ptrObject )m_ptrObject->GetFirstChildPosition( &lpos );
 	m_bHasManualMeasurement = lpos != 0;
 }
@@ -66,7 +72,7 @@ CRect CMeasObjectWrp::GetTotalRect(IUnknown * punkView)
 		return m_rectImage;
 	if( m_bHasManualMeasurement )
 	{
-		TPOS	lpos;
+		long	lpos;
 		bool	bFirst = true;
 		m_ptrObject->GetFirstChildPosition( &lpos );
 
@@ -117,6 +123,8 @@ void CMeasObjListWrp::Attach( IUnknown *punk )
 		_Cache( punk );
 		punk->Release();
 	}
+
+
 }
 
 void CMeasObjListWrp::DeInit()
@@ -153,7 +161,7 @@ void CMeasObjListWrp::_sort_list()
 	return;
 	m_sorted_list.RemoveAll();
 
-	TPOS	lpos = 0;
+	long	lpos = 0;
 	m_ptrObjectList->GetFirstChildPosition( &lpos );
 
 	POSITION pos = GetHeadPosition();
@@ -163,7 +171,7 @@ void CMeasObjListWrp::_sort_list()
 
 		CMeasObjectWrp	*pnew = (CMeasObjectWrp	*)GetNext( pos );
 
-		TPOS _long_min_pos = lpos;
+		long _long_min_pos = lpos;
 
 		int nMinOrder = pnew->m_nZOrder;
 		if( pnew )
@@ -174,7 +182,7 @@ void CMeasObjListWrp::_sort_list()
 				POSITION _p = pos2;
 				CMeasObjectWrp	*pnew2 = (CMeasObjectWrp	*)GetNext( pos2 );
 
-				TPOS	_lpos = lpos;
+				long	_lpos = lpos;
 
 				{
 					IUnknown	*punk = 0;
@@ -223,7 +231,7 @@ POSITION	CMeasObjListWrp::GetCurPosition()
 {
 	if( m_ptrObjectList == 0 )return 0;
 
-	POSITION	lpos;
+	long	lpos;
 	m_ptrObjectList->GetActiveChild( &lpos );
 	return (POSITION)lpos;
 }
@@ -231,7 +239,7 @@ POSITION	CMeasObjListWrp::GetCurPosition()
 POSITION	CMeasObjListWrp::GetFirstObjectPosition()
 {
 	if( m_ptrObjectList == 0 )return 0;
-	POSITION	lpos = 0;
+	long	lpos = 0;
 	m_ptrObjectList->GetFirstChildPosition( &lpos );
 	return (POSITION)lpos;
 //	return (POSITION)m_sorted_list.GetHeadPosition();
@@ -240,12 +248,12 @@ POSITION	CMeasObjListWrp::GetFirstObjectPosition()
 IUnknown	*CMeasObjListWrp::GetNextObject( POSITION &rPos )
 {
 	if( m_ptrObjectList == 0 )return 0;
-	POSITION	lpos = rPos;
+	long	lpos = (long)rPos;
 	IUnknown	*punk = 0;
 	m_ptrObjectList->GetNextChild( &lpos, &punk );
-	rPos = lpos;
+	rPos = (POSITION)lpos;
 
-//	LPOS lpos = m_sorted_list.GetNext( rPos );
+//	long	lpos = m_sorted_list.GetNext( rPos );
 //	IUnknown	*punk = 0;
 //	m_ptrObjectList->GetNextChild( &lpos, &punk );
 

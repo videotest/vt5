@@ -650,7 +650,7 @@ BSTR CUserParamsComboBoxCtrl::GetParamSection(LONG nIdx)
 
 	if( ( nIdx >= 0 ) && ( nIdx < GetItemCount( ) ) )
 	{
-		TPOS lPos = m_KeyList[nIdx];
+		long lPos = m_KeyList[ nIdx ];
 		if( lPos )
 			m_mapKeyToSection.Lookup( m_KeyList.get( lPos ), strResult );
 	}

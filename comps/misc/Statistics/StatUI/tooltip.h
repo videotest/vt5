@@ -101,7 +101,7 @@ public:
 	LRESULT OnWindowFromPoint(WPARAM, LPARAM);
 	void OnEnable(BOOL bEnable);
 
-	LRESULT	handle_message(UINT m, WPARAM w, LPARAM l)
+	long	handle_message( UINT m, WPARAM w, LPARAM l )
 	{
 		if( m == WM_DISABLEMODAL )
 			return OnDisableModal( w, l );

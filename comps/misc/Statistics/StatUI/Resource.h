@@ -114,7 +114,6 @@
 #define IDS_STUDENTS_TEST               207
 #define IDS_FILES                       208
 #define IDS_CMP_VIEW_NAME               209
-#define NO_SELECTED_VIEWS               210
 #define IDS_SHOW_STAT_OBJECT_VIEW       501
 #define IDS_SHOW_STAT_CMP_VIEW          502
 #define IDR_ACTIONS                     1000

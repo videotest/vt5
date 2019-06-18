@@ -140,7 +140,7 @@ HRESULT idio::draw( HDC hdc, SIZE size, RECT *total, int centromere_pos, unsigne
 	fpoints[counter].y = p_length-nn*delta;
 	counter++;
 
-	for( TPOS	lpos = bands.head(); lpos; bands.next( lpos ) )
+	for( long	lpos = bands.head(); lpos; bands.next( lpos ) )
 	//centromere
 	{
 		band	*pband = bands.get( lpos );
@@ -150,7 +150,7 @@ HRESULT idio::draw( HDC hdc, SIZE size, RECT *total, int centromere_pos, unsigne
 			bool bDownTo = true;
 
 			{
-				TPOS _lpos = bands.head();
+				long _lpos = bands.head();
 
 				if( _lpos )
 				{
@@ -575,7 +575,7 @@ total->left - int( 2 * fZoom ), total->top - int( 2 * fZoom ),
 				bShort = true;
 
 			{
-				TPOS _pos = lpos;
+				long _pos = lpos;
 				bands.next( _pos );
 
 				if( _pos )
@@ -640,7 +640,7 @@ total->left - int( 2 * fZoom ), total->top - int( 2 * fZoom ),
 //						if( pband->pos1 > _fPrev )
 //							fPrev2 = pband->pos2;
 
-					TPOS _pos = lpos;
+					long _pos = lpos;
 					bands.next( _pos );
 
 					if( _pos )
@@ -711,7 +711,7 @@ total->left - int( 2 * fZoom ), total->top - int( 2 * fZoom ),
 //						if( pband->pos1 > _fPrev )
 //							fPrev2 = pband->pos2;
 
-					TPOS _pos = lpos;
+					long _pos = lpos;
 					bands.next( _pos );
 
 					if( _pos )
@@ -792,7 +792,7 @@ total->left - int( 2 * fZoom ), total->top - int( 2 * fZoom ),
 //						if( pband->pos1 > _fPrev )
 //							fPrev2 = pband->pos2;
 
-						TPOS _pos = lpos;
+						long _pos = lpos;
 						bands.next( _pos );
 
 						if( _pos )
@@ -1086,7 +1086,7 @@ HRESULT idio::store_text( BSTR filename )
 	fprintf( pfile, "BandsCount=%d\n", bands.Count() );
 
 
-	for (TPOS lpos = bands.head(); lpos; bands.next(lpos))
+	for( long lpos=bands.head(); lpos; bands.next( lpos ) )
 	{
 		band	*pband = bands.get( lpos );
 		//0.0.1=[0.01 0.02], 0, 255
@@ -1102,7 +1102,7 @@ HRESULT idio::Add( double pos1, double pos2, int color, BSTR sz_number, int flag
 {
 	band	*pnew = new band();
 	
-	TPOS lPos = bands.tail();
+	long lPos = bands.tail();
 	bands.insert( pnew, lPos );
 	lPos = bands.tail();
 
@@ -1111,7 +1111,7 @@ HRESULT idio::Add( double pos1, double pos2, int color, BSTR sz_number, int flag
 
 HRESULT idio::AddAfter( int nID, double pos1, double pos2, int color, BSTR sz_number, int flags )
 {
-	TPOS lPos = _get_pos_by_id(nID);
+	long lPos = _get_pos_by_id( nID );
 
 	band	*pnew = new band();
 	bands.insert( pnew, lPos );
@@ -1123,61 +1123,61 @@ HRESULT idio::AddAfter( int nID, double pos1, double pos2, int color, BSTR sz_nu
 
 HRESULT idio::SetBendParams( int nID, double pos1, double pos2, int color, BSTR sz_number, int flags )
 {
-	TPOS lPos = _get_pos_by_id(nID);
+	long lPos = _get_pos_by_id( nID );
 	return _set_bend_params( lPos, &pos1, &pos2, &color, &sz_number, &flags );
 }
 
 HRESULT idio::GetBendParams( int nID, double *pos1, double *pos2, int *color, BSTR *sz_number, int *flags )
 {
-	TPOS lPos = _get_pos_by_id(nID);
+	long lPos = _get_pos_by_id( nID );
 	return _get_bend_params( lPos, pos1, pos2, color, sz_number, flags );
 }
 
 HRESULT idio::SetBendFillStyle( int nID, int color )
 {
-	TPOS lPos = _get_pos_by_id(nID);
+	long lPos = _get_pos_by_id( nID );
 	return _set_bend_params( lPos, 0, 0, &color );
 }
 
 HRESULT idio::GetBendFillStyle( int nID, int *color )
 {
-	TPOS lPos = _get_pos_by_id(nID);
+	long lPos = _get_pos_by_id( nID );
 	return _get_bend_params( lPos, 0, 0, color );
 }
 
 HRESULT idio::SetBendRange( int nID, double pos1, double pos2 )
 {
-	TPOS lPos = _get_pos_by_id(nID);
+	long lPos = _get_pos_by_id( nID );
 	return _set_bend_params( lPos, &pos1, &pos2 );
 }
 
 HRESULT idio::GetBendRange( int nID, double *pos1, double *pos2 )
 {
-	TPOS lPos = _get_pos_by_id(nID);
+	long lPos = _get_pos_by_id( nID );
 	return _get_bend_params( lPos, pos1, pos2 );
 }
 
 HRESULT idio::SetBendNumber( int nID, BSTR sz_number )
 {
-	TPOS lPos = _get_pos_by_id(nID);
+	long lPos = _get_pos_by_id( nID );
 	return _set_bend_params( lPos, 0, 0, 0, &sz_number );
 }
 
 HRESULT idio::GetBendNumber( int nID, BSTR *sz_number )
 {
-	TPOS lPos = _get_pos_by_id(nID);
+	long lPos = _get_pos_by_id( nID );
 	return _get_bend_params( lPos, 0, 0, 0, sz_number );
 }
 
 HRESULT idio::SetBendFlag( int nID, int flag )
 {
-	TPOS lPos = _get_pos_by_id(nID);
+	long lPos = _get_pos_by_id( nID );
 	return _set_bend_params( lPos, 0, 0, 0, 0, &flag );
 }
 
 HRESULT idio::GetBendFlag( int nID, int *flag )
 {
-	TPOS lPos = _get_pos_by_id(nID);
+	long lPos = _get_pos_by_id( nID );
 	return _get_bend_params( lPos, 0, 0, 0, 0, flag );
 }
 
@@ -1190,10 +1190,9 @@ HRESULT idio::GetBengsCount( long *lSz )
 	return S_OK;
 }
 
-TPOS idio::_get_pos_by_id(int nID)
+long idio::_get_pos_by_id( int nID )
 {
-	int i = 0;
-	for (TPOS lpos = bands.head(); lpos; bands.next(lpos), i++)
+	for( long lpos = bands.head(), i = 0; lpos; bands.next( lpos ), i++ )
 	{
 		if( i == nID )
 			return lpos;
@@ -1201,7 +1200,7 @@ TPOS idio::_get_pos_by_id(int nID)
 	return 0;
 }
 
-HRESULT idio::_set_bend_params( TPOS lPos, const double *pos1, const double *pos2, const int *color, const BSTR *sz_number, const int *flags )
+HRESULT idio::_set_bend_params( long lPos, const double *pos1, const double *pos2, const int *color, const BSTR *sz_number, const int *flags )
 {
 	if( !lPos )
 		return S_FALSE; 
@@ -1296,7 +1295,7 @@ HRESULT idio::_set_bend_params( TPOS lPos, const double *pos1, const double *pos
 
 }
 
-HRESULT idio::_get_bend_params(TPOS lPos, double *pos1, double *pos2, int *color, BSTR *sz_number, int *flags)
+HRESULT idio::_get_bend_params( long lPos, double *pos1, double *pos2, int *color, BSTR *sz_number, int *flags )
 {
 	if( !lPos )
 		return S_FALSE; 
@@ -1382,12 +1381,12 @@ HRESULT idio::Remove( int nID )
 {
 	if( nID != -1 )
 	{
-		TPOS lPos = _get_pos_by_id(nID);
+		long lPos = _get_pos_by_id( nID );
 		bands.remove( lPos );
 	}
 	else
 	{
-		TPOS lPos = bands.head();
+		long lPos = bands.head();
 		while( lPos )
 		{
 			bands.remove( lPos );
@@ -1451,7 +1450,7 @@ HRESULT idio::Store( IStream *pStream, SerializeParams *pparams )
 	pStream->Write( &c, sizeof( c ), &cb );
 
 
-	for (TPOS lpos = bands.head(); lpos; bands.next(lpos))
+	for( long lpos=bands.head(); lpos; bands.next( lpos ) )
 	{
 		band	*pband = bands.get( lpos );
 

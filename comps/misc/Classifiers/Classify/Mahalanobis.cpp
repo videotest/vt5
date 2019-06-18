@@ -252,7 +252,7 @@ void _DoClassify(IUnknown *punkObjectsList, IUnknown *punkDoc, _ptr_t2<int> &arr
 	// Data block for Piper's code
 	_ptr_t2<classcont> clcontents(class_count());  // Information about class i
 	_ptr_t2<chromcl> chrcl(lObjects+1); // Information about object i
-	_ptr_t2<POSITION> positions(lObjects + 1);
+	_ptr_t2<long> positions(lObjects+1);
 	// Prepare for statistic output
 	static int nCallCount = 0;
 	_StatFile Stat("classify.txt", -1, nCallCount++==0?"wt":"at");
@@ -277,14 +277,14 @@ void _DoClassify(IUnknown *punkObjectsList, IUnknown *punkDoc, _ptr_t2<int> &arr
 	_ptr_t2<double> svec(mh.nsfv); // Values of the features of the object will be saved here
 	if (Stat.f) fprintf(Stat.f, "Primary classification\n");
 	int iObj = 0, iObjOk = 0;
-	POSITION pos = 0;
-	sptrN->GetFirstChildPosition(&pos);
+	long pos = 0;
+	sptrN->GetFirstChildPosition((long*)&pos);
 	while (pos)
 	{
 		IUnknownPtr sptr;
 		ICalcObjectPtr sptrObj;
-		POSITION pos1 = pos;
-		sptrN->GetNextChild(&pos, &sptr);
+		long pos1 = pos;
+		sptrN->GetNextChild((long*)&pos, &sptr);
 		sptrObj = sptr;
 		bool bOk = sptrObj;
 		if (bOk)
@@ -364,7 +364,7 @@ void DoReClassifyDenver(IUnknown *punkObjectsList, IUnknown *punkDoc, bool bRear
 	// Data block for Piper's code
 	_ptr_t2<classcont> clcontents(class_count());  // Information about class i
 	_ptr_t2<chromcl> chrcl(lObjects+1); // Information about object i
-	_ptr_t2<POSITION> positions(lObjects + 1);
+	_ptr_t2<long> positions(lObjects+1);
 	// Prepare for statistic output
 	_StatFile Stat("classify.txt", -1, "at");
 	// Initialize classifier data.
@@ -377,14 +377,14 @@ void DoReClassifyDenver(IUnknown *punkObjectsList, IUnknown *punkDoc, bool bRear
 	_ptr_t2<double> svec(mh.nsfv); // Values of the features of the object will be saved here
 	if (Stat.f) fprintf(Stat.f, "Reclassification for Denver class %c\n", nDenverClass+'A');
 	int iObj = 0, iObjOk = 0;
-	POSITION pos = 0;
-	sptrN->GetFirstChildPosition(&pos);
+	long pos = 0;
+	sptrN->GetFirstChildPosition((long*)&pos);
 	while (pos)
 	{
 		IUnknownPtr sptr;
 		ICalcObjectPtr sptrObj;
-		POSITION pos1 = pos;
-		sptrN->GetNextChild(&pos, &sptr);
+		long pos1 = pos;
+		sptrN->GetNextChild((long*)&pos, &sptr);
 		sptrObj = sptr;
 		bool bOk = sptrObj;
 		if (bOk && Denv.DenverClass(get_object_class(sptrObj)) == nDenverClass)
@@ -473,13 +473,13 @@ void SetClasses(IUnknown *punkObjectsList, _ptr_t2<int> &arrClasses)
 	// Exchange classes
 	sptrINamedDataObject2 sptrN(punkObjectsList); // Object list
 	int i = 0;
-	TPOS pos = 0;
-	sptrN->GetFirstChildPosition(&pos);
+	long pos = 0;
+	sptrN->GetFirstChildPosition((long*)&pos);
 	while (pos)
 	{
 		IUnknownPtr sptr;
 		ICalcObjectPtr sptrObj;
-		sptrN->GetNextChild(&pos, &sptr);
+		sptrN->GetNextChild((long*)&pos, &sptr);
 		sptrObj = sptr;
 		bool bOk = sptrObj;
 		if (bOk)

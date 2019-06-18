@@ -10,7 +10,6 @@
 #define IDC_SPIN1_EXPOSURE              1001
 #define IDD_DIALOG_SETTING_NAME         1001
 #define IDC_COMBO_PREVIEW_MODE          1001
-#define IDS_SAME_AS_PREVIEW             1001
 #define IDC_SLIDER1_EXPOSURE            1002
 #define IDC_COMBO2                      1002
 #define IDC_COMBO_CAPTURE_MODE          1002

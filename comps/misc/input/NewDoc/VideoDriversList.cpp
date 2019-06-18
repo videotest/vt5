@@ -86,7 +86,7 @@ BOOL CVideDriversList::OnInitDialog()
 				if (dwFlags & FG_SUPPORTSVIDEO)
 				{
 					if (sDrvName == sShort)
-						iCur = (int)m_saShortNames.GetSize();
+						iCur = m_saShortNames.GetSize();
 					m_saShortNames.Add(sShort);
 					m_saLongNames.Add(sLong);
 				}

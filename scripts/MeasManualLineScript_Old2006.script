@@ -1,6 +1,0 @@
-'state:function=StateMeasManualLineScript
-
-MethodMan_BeforeInteractiveMethodStep "MeasManualLineScript", "group"
-ActionState.RunInteractive "MeasManualLine"
-MethodMan.StoreStepAs Docs.LoadString ("Manual Measurements")
-MethodMan.CancelStepStoring

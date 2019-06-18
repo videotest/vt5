@@ -121,41 +121,41 @@ inline void release_parameter_descriptor( ParameterDescriptor* ppdescr )
 }
 
 //////////////////////////////////////////////////////////////////////
-inline bool CreateParamDescrCache(map_meas_params& map_meas_params)
+inline bool CreateParamDescrCache( map_meas_params& map_meas_params )
 {
 	map_meas_params.clear();
 
-	IUnknown* punk_man = ::_GetOtherComponent(::GetAppUnknown(), IID_IMeasureManager);
-	if (!punk_man)			return false;
+	IUnknown* punk_man = ::_GetOtherComponent( ::GetAppUnknown(), IID_IMeasureManager );
+	if( !punk_man )			return false;
 
 	ICompManagerPtr ptr_meas_man = punk_man;
 	punk_man->Release();
 
-	if (ptr_meas_man == 0)	return false;
+	if( ptr_meas_man == 0 )	return false;
 
 	int ncount = 0;
-	ptr_meas_man->GetCount(&ncount);
-	for (int i = 0; i < ncount; i++)
+	ptr_meas_man->GetCount( &ncount );
+	for( int i=0;i<ncount;i++ )
 	{
 		IUnknownPtr punk;
-		ptr_meas_man->GetComponentUnknownByIdx(i, &punk);
+		ptr_meas_man->GetComponentUnknownByIdx( i, &punk );
 
-		if (IMeasParamGroupPtr ptr_group = punk){
-			LONG_PTR lparam_pos = 0;
-			ptr_group->GetFirstPos(&lparam_pos);
-			while (lparam_pos)
-			{
-				ParameterDescriptor* pdescr = 0;
-				ptr_group->GetNextParam(&lparam_pos, &pdescr);
+		if(IMeasParamGroupPtr ptr_group = punk){
+		long lparam_pos = 0;
+		ptr_group->GetFirstPos( &lparam_pos );
+		while( lparam_pos )
+		{
+			ParameterDescriptor* pdescr = 0;
+			ptr_group->GetNextParam( &lparam_pos, &pdescr );
 
-				ParameterDescriptor_ex* pnew_param = new ParameterDescriptor_ex;
-				copy_parameter_descriptor(pdescr, pnew_param);
-				map_meas_params[pdescr->lKey] = pnew_param;
-			}
+			ParameterDescriptor_ex* pnew_param = new ParameterDescriptor_ex;
+			copy_parameter_descriptor( pdescr, pnew_param );
+				map_meas_params[pdescr->lKey]=pnew_param;
 		}
+	}
 		//if(ICalcObjectContainerPtr ptr_cntr = punk)
 		//{
-		//	LONG_PTR lparam_pos = 0;
+		//	long lparam_pos = 0;
 		//	ptr_cntr->GetFirstParameterPos( &lparam_pos );
 		//	while( lparam_pos )
 		//	{

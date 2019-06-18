@@ -51,7 +51,7 @@ HRESULT CLastFileMenu::XMenu::AppendMenuItems( HMENU hMenu, UINT nCommandBase )
 		CString	str;
 		char	szCurDir[255];
 		::GetCurrentDirectory( 255, szCurDir );
-		plist->GetDisplayName( str, n, szCurDir, (int)strlen( szCurDir ) );
+		plist->GetDisplayName( str, n, szCurDir, strlen( szCurDir ) );
 
 
 		if( !str.IsEmpty() )
@@ -395,7 +395,7 @@ bool CActionFileOpen::ExecuteSettings( CWnd *pwndParent )
 	ASSERT_KINDOF(CShellDocManager, theApp.m_pDocManager);
 	CShellDocManager	*pman = theApp.GetDocManager();
 	CString	strPathName = GetArgumentString( "FileName" );
-
+	 
 	try
 	{//Kir - enshure file can be accessed
 		if(!EnshureCanAccess(strPathName))
@@ -480,13 +480,13 @@ bool CActionFileOpen::Invoke()
 	IApplicationPtr ptr_app( GetAppUnknown() );
 	if( ptr_app )
 	{
-		LONG_PTR	lposTempl = 0;
+		long	lposTempl = 0;
 
 		ptr_app->GetFirstDocTemplPosition( &lposTempl );
 
 		while( lposTempl )
 		{
-			LONG_PTR	lposDoc = 0;
+			long	lposDoc = 0;
 			ptr_app->GetFirstDocPosition( lposTempl, &lposDoc );
 
 
@@ -703,7 +703,7 @@ bool CActionFileSave::IsNeedPrompt()
 	long lTypesCount = 0;
 	ptrContext->GetObjectTypeCount( &lTypesCount );
 
-	for( LPOS lPos=0; lPos<lTypesCount; lPos++ )
+	for( long lPos=0; lPos<lTypesCount; lPos++ )
 	{
 		BSTR bstrType = 0;
 		ptrContext->GetObjectTypeName( lPos, &bstrType );
@@ -880,7 +880,7 @@ bool CActionFileSendEMail::IsAvaible()
 		_bstr_t	bstrTypeName;
 		sptrM->GetType(nType, bstrTypeName.GetAddress());
 		IUnknownPtr punkObj;
-		LONG_PTR	lpos = 0;
+		long	lpos = 0;
 		sptrM->GetObjectFirstPosition(nType, &lpos);
 		while( lpos )
 		{
@@ -1008,7 +1008,7 @@ bool CActionFileSaveView::save_to_file( const char *psz_filename )
 bool CActionFileSaveView::IsAvaible()
 {
 	IViewPtr	ptrV( m_punkTarget );
-	TPOS	lpos = 0;
+	long	lpos = 0;
 	ptrV->GetFirstVisibleObjectPosition( &lpos );
 	if (lpos == 0) return false;
 	if (!CheckInterface(m_punkTarget, IID_IPrintView))
@@ -1216,7 +1216,7 @@ bool CActionDumpMem::Invoke()
 		
 		a.psz_fname = p->psz_fname;
 		a.line = p->line;
-		TPOS lpos = allocations.find(&a);
+		long lpos = allocations.find( &a );
 
 		if( !lpos )
 		{
@@ -1231,17 +1231,17 @@ bool CActionDumpMem::Invoke()
 		palloc->count++;
 	}
 
-	INT_PTR	count = 0;
+	int	count = 0;
 	int	size = 0;
 
-	INT_PTR	alloc_count = allocations.count();
+	int	alloc_count = allocations.count();
 
 	mem_alloc	**pall = (mem_alloc**)malloc( sizeof(mem_alloc*)*alloc_count );
-	INT_PTR	idx = 0;
+	int	idx = 0;
 
 	_trace_file( sz_heap_log, "----all CRT heap" );
 
-	for (TPOS lpos = allocations.head(); lpos; lpos = allocations.next(lpos))
+	for( long lpos = allocations.head(); lpos; lpos = allocations.next( lpos ) )
 	{
 		palloc = allocations.get( lpos );
 		pall[idx] = palloc;idx++;

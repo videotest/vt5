@@ -80,7 +80,7 @@ END_MESSAGE_MAP()
 /////////////////////////////////////////////////////////////////////////////
 // CColourPicker message handlers
 
-LRESULT CColourPicker::OnSelEndOK(WPARAM lParam, LPARAM /*wParam*/)
+LONG CColourPicker::OnSelEndOK(UINT lParam, LONG /*wParam*/)
 {
     COLORREF crNewColour = (COLORREF) lParam;
     m_bActive = FALSE;
@@ -98,7 +98,7 @@ LRESULT CColourPicker::OnSelEndOK(WPARAM lParam, LPARAM /*wParam*/)
     return TRUE;
 }
 
-LRESULT CColourPicker::OnSelEndCancel(WPARAM lParam, LPARAM /*wParam*/)
+LONG CColourPicker::OnSelEndCancel(UINT lParam, LONG /*wParam*/)
 {
     m_bActive = FALSE;
     SetColour((COLORREF) lParam);
@@ -112,7 +112,7 @@ LRESULT CColourPicker::OnSelEndCancel(WPARAM lParam, LPARAM /*wParam*/)
     return TRUE;
 }
 
-LRESULT CColourPicker::OnSelChange(WPARAM lParam, LPARAM /*wParam*/)
+LONG CColourPicker::OnSelChange(UINT lParam, LONG /*wParam*/)
 {
     if (m_bTrackSelection) SetColour((COLORREF) lParam);
 

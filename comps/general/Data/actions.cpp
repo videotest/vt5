@@ -122,7 +122,7 @@ bool CorrectFileName( char *szFileName )
 static void __RedrawAllViews(IUnknown *punkTarget)
 {
 	sptrIDocumentSite	sptrS(punkTarget);
-	TPOS lViewPos;
+	long lViewPos;
 	sptrS->GetFirstViewPosition(&lViewPos);
 	while (lViewPos)
 	{
@@ -522,7 +522,7 @@ IUnknown * GetContextViewer(bool bAddRef)
 		return 0;
 
 	//find the context_view window between dockbars
-	POSITION lPos = 0;
+	long lPos = 0;
 	sptrM->GetFirstDockWndPosition(&lPos);
 	IUnknownPtr	sptrDockBar;
 
@@ -765,7 +765,7 @@ bool CActionObjectDrop::Invoke()
 	//get base object
 	INamedDataObject2Ptr sptrNDOBase;
 	BOOL bBase = FALSE;
-	TPOS POS = 0;
+	long POS = 0;
 	sptrV->GetFirstVisibleObjectPosition(&POS);
 	while(POS)
 	{
@@ -1009,7 +1009,7 @@ bool CActionObjectDrop::Invoke()
 					/*
 					if( !punkParent )
 					{
-						TPOS	lpos = 0;
+						long	lpos = 0;
 
 						sptrV->GetFirstVisibleObjectPosition( &lpos );
 						
@@ -1047,7 +1047,7 @@ bool CActionObjectDrop::Invoke()
 
 										if( !strcmp( strT, strContainer ) )
 										{
-											LPOS lpos_o;
+											long	lpos_o;
 											ptrTM->GetObjectFirstPosition( type, &lpos_o );
 
 											if( lpos_o )
@@ -2541,7 +2541,7 @@ IUnknown *GetSingleObjectFromDocument( IUnknown *punkDoc )
 
 	IUnknown	*punkFound = 0;
 
-	TPOS lpos = 0;
+	long lpos = 0; 
 	ptrV->GetFirstVisibleObjectPosition(&lpos);
 
 	bool	bContinue = true;
@@ -3404,7 +3404,7 @@ bool CActionObjectDelete::Invoke()
 			BSTR	bstrType;
 			ptrContext->GetObjectTypeName( nType, &bstrType );
 
-			LONG_PTR	lpos= 0;
+			long	lpos= 0;
 			ptrContext->GetFirstSelectedPos( bstrType, &lpos );
 
 			while( lpos )
@@ -3823,7 +3823,7 @@ bool PromptFileName(CString& fileName, UINT nIDSTitle, DWORD lFlags, BOOL bOpenF
 		punk->Release();
 
 	// do for all doc template
-	LONG_PTR nPos = 0;
+	long nPos = 0;
 	sptrApp->GetFirstDocTemplPosition(&nPos);
 
 	while (nPos)
@@ -4060,7 +4060,7 @@ bool PromtSaveFileName( const char *pszType, const char *pszObjectName, CString 
 {
 	IApplicationPtr	ptrApp( GetAppUnknown() );
 
-	LONG_PTR	lPosTempl = 0;
+	long	lPosTempl = 0;
     
 	CMapStringToPtr	filters;
 

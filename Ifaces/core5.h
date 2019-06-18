@@ -21,12 +21,12 @@ interface IApplication : public IUnknown
 
 	com_call GetMatchDocTemplate( BSTR bstrFileName, IUnknown **punk ) = 0;
 
-	com_call GetFirstDocTemplPosition( LONG_PTR *plPos ) = 0;
-	com_call GetNextDocTempl( LONG_PTR *plPos, BSTR *pbstrName, IUnknown **punk ) = 0;
+	com_call GetFirstDocTemplPosition( long *plPos ) = 0;
+	com_call GetNextDocTempl( long *plPos, BSTR *pbstrName, IUnknown **punk ) = 0;
 			//temporely IUnknow doesn/t used
 
-	com_call GetFirstDocPosition( LONG_PTR lPosTemplate, LONG_PTR *plPosDoc ) = 0;
-	com_call GetNextDoc( LONG_PTR lPosTemplate, LONG_PTR *plPosDoc, IUnknown **punkDoc ) = 0;
+	com_call GetFirstDocPosition( long lPosTemplate, long *plPosDoc ) = 0;
+	com_call GetNextDoc( long lPosTemplate, long *plPosDoc, IUnknown **punkDoc ) = 0;
 
 	com_call GetActiveDocument( IUnknown **plDoc ) = 0;
 	com_call ProcessMessage() = 0;

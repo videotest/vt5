@@ -23,7 +23,7 @@ protected:
 	virtual IUnknown *DoGetInterface( const IID &iid );
 	IUnknownPtr GetFoundObject();
 	virtual bool CheckTracking() {return false;}
-	bool _DoLButtonDownOnObject( _point point, TPOS &posObj, INamedDataObject2 *pNDO2, bool bSetActive, int iObjNo);
+	bool _DoLButtonDownOnObject( _point point, long &posObj, INamedDataObject2 *pNDO2, bool bSetActive, int iObjNo);
 public:
 	com_call DoInvoke();
 	virtual bool DoLButtonDown( _point point );

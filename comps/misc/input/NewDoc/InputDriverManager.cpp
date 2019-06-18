@@ -356,7 +356,7 @@ void CInputDriverManager::RebuildDevices()
 int CInputDriverManager::OnGetDevicesCount()
 {
 	if (!m_bInited) RebuildDevices();
-	return (int)m_Devices.GetSize();
+	return m_Devices.GetSize();
 }
 
 void CInputDriverManager::OnGetDeviceInfo(int nDev, CString &sShortName, CString &sLongName, CString &sCategory,

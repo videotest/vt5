@@ -1,9 +1,6 @@
 // ImageFileFilterBase.h: interface for the CImageFileFilterBase class.
 //
 //////////////////////////////////////////////////////////////////////
-extern "C"
-void FillVTImageRow(Image *image, unsigned int _y, unsigned short** pPane, unsigned short numPanes),
-	FillMagickImageRow(Image *image, unsigned int _y, unsigned short** pPane, unsigned short numPanes);
 
 class CImageFileFilterBase : public CFileFilterBase  
 {

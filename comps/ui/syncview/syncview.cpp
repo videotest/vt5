@@ -15,7 +15,7 @@ double GetViewCalibration( IUnknown *punkV )
 	::GetDefaultCalibration( &fCalibr, 0 );
 	IViewPtr	ptrView( punkV );
 	if( ptrView == 0 )return fCalibr;
-	TPOS	lpos;
+	long	lpos;
 
 	ptrView->GetFirstVisibleObjectPosition( &lpos );
 
@@ -159,12 +159,12 @@ HRESULT CSyncManager::XSync::SetSyncMode( BOOL bEnterSyncMode, BOOL bRelative, B
 	if( bEnterSyncMode && !bRelative )
 	{
 		IApplicationPtr	ptrApp( GetAppUnknown() );
-		LONG_PTR	lposT = 0;
+		long	lposT = 0;
 
 		ptrApp->GetFirstDocTemplPosition( &lposT );
 		while( lposT )
 		{
-			LONG_PTR	lposD = 0;
+			long	lposD = 0;
 			ptrApp->GetFirstDocPosition( lposT, &lposD );
 			while( lposD )
 			{
@@ -277,15 +277,15 @@ void CSyncManager::OnNotify( const char *pszEvent, IUnknown *punkHit, IUnknown *
 
 void CSyncManager::_AttachToView( IUnknown *punkView )
 {
-	//if( GetObjectKey( punkView  )== GetObjectKey( m_ptrActiveView ) )
-	//	return;
+	if( GetObjectKey( punkView  )== GetObjectKey( m_ptrActiveView ) )
+		return;
 
-	//if( m_ptrActiveView != 0 )
+	if( m_ptrActiveView != 0 )
 	{
 		UnRegister( m_ptrActiveView );
 		m_ptrActiveView = 0;
 	}
-	//if( punkView != 0 )
+	if( punkView != 0 )
 	{
 		m_ptrActiveView = punkView;
 		Register( m_ptrActiveView );

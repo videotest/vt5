@@ -1,7 +1,7 @@
 ; Collect.def : Declares the module parameters for the DLL.
 
 LIBRARY      "Collect"
-; DESCRIPTION  'Collect Windows Dynamic Link Library'
+DESCRIPTION  'Collect Windows Dynamic Link Library'
 
 EXPORTS
 	DllCanUnloadNow PRIVATE

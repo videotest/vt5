@@ -303,7 +303,7 @@ _bstr_t	GenerateNameForArgument( const BSTR bstrArgName, IUnknown *punkDocData )
 
 	for( lType = 0; lType < lTypesCount; lType++ )
 	{
-		LONG_PTR	lpos  = 0;
+		long	lpos  = 0;
 		punkDataTypeManager->GetObjectFirstPosition( lType, &lpos  );
 
 		while( lpos  )
@@ -414,7 +414,7 @@ IUnknown *GetObjectByKey( IUnknown *punkFrom, const GUID &guid )
 	for( long nType = 0; nType < nTypesCounter; nType ++ )
 	{
 		IUnknown	*punkObj = 0;
-		LONG_PTR	lpos = 0;
+		long	lpos = 0;
 
 		ptrDataType->GetObjectFirstPosition( nType, &lpos );
 
@@ -452,7 +452,7 @@ IUnknown *GetObjectByName( IUnknown *punkFrom, const BSTR bstrObject, const BSTR
 			continue;
 
 		IUnknown	*punkObj = 0;
-		LONG_PTR	lpos = 0;
+		long	lpos = 0;
 
 		ptrDataType->GetObjectFirstPosition( nType, &lpos );
 
@@ -469,7 +469,7 @@ IUnknown *GetObjectByName( IUnknown *punkFrom, const BSTR bstrObject, const BSTR
 
 			//paul 14.01.2003
 			/*
-			LPOS lpos = 0;
+			long	lpos = 0;
 			ptrN->GetFirstChildPosition( &lpos );
 
 			while( lpos )
@@ -878,7 +878,7 @@ IUnknown* GetObjectByKeyEx(IUnknown* punkData, GuidKey lKey)
 	// for all types
 	for (long nType = 0; nType < nTypesCounter; nType++)
 	{
-		LONG_PTR lpos = 0;
+		long lpos = 0;
 
 		ptrDataType->GetObjectFirstPosition(nType, &lpos);
 
@@ -934,14 +934,14 @@ IUnknown* GetChildObjectByKey(IUnknown* punkParent, GuidKey lKey)
 		return 0;
 
 	// for all children
-	LONG_PTR lPos = 0;
-	if (FAILED(sptr->GetFirstChildPosition((POSITION*)&lPos)))
+	long lPos = 0;
+	if (FAILED(sptr->GetFirstChildPosition(&lPos)))
 		return 0; 
 
 	while (lPos)
 	{
 		IUnknown * punkObj = 0;
-		sptr->GetNextChild((POSITION*)&lPos, &punkObj);
+		sptr->GetNextChild(&lPos, &punkObj);
 		if (!punkObj)
 			continue;
 	
@@ -1027,7 +1027,7 @@ IPropertySheet *FindPropertySheet()
 	if( !punkMainWnd )return 0;
 	punkMainWnd->Release();
 
-	POSITION	lpos = 0;
+	long	lpos = 0;
 	ptrMainWnd->GetFirstDockWndPosition( &lpos );
 	while( lpos )
 	{
@@ -1301,7 +1301,7 @@ class CScriptRuntimeList : public _list_t2< ScriptRuntimeInfo* >
 public:
 	~CScriptRuntimeList()
 	{
-		TPOS pos = head();
+		long pos = head();
 		while( pos ) 
 		{
 			ScriptRuntimeInfo *p = next( pos );

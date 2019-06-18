@@ -607,31 +607,31 @@ LPDISPATCH CObjectsDisp::GetObjectByName(LPCTSTR szName)
 	{
 		if (GetValueInt(GetAppUnknown(), "ObjectDisp", "GetObjectByNameWorksInAllDocs", 1))
 		{
-		//check all docs in app
-		LONG_PTR lPosTemplate = 0;
-		sptrApp->GetFirstDocTemplPosition(&lPosTemplate);
-		while(lPosTemplate)
-		{
-			LONG_PTR lPosDoc = 0;
-			sptrApp->GetFirstDocPosition(lPosTemplate, &lPosDoc);
-			while(lPosDoc)
+			//check all docs in app
+			long lPosTemplate = 0;
+			sptrApp->GetFirstDocTemplPosition(&lPosTemplate);
+			while(lPosTemplate)
 			{
-				sptrApp->GetNextDoc(lPosTemplate, &lPosDoc, &punkDoc);
-				if(punkDoc)
+				long lPosDoc = 0;
+				sptrApp->GetFirstDocPosition(lPosTemplate, &lPosDoc);
+				while(lPosDoc)
 				{
-					punkObj = ::GetObjectByName(punkDoc, szName);
-					punkDoc->Release();
-					if(punkObj)
+					sptrApp->GetNextDoc(lPosTemplate, &lPosDoc, &punkDoc);
+					if(punkDoc)
 					{
-						IDispatch* pdisp = 0;
-						punkObj->QueryInterface(IID_IDispatch, (void**)&pdisp);
-						punkObj->Release();
-						return pdisp;
+						punkObj = ::GetObjectByName(punkDoc, szName);
+						punkDoc->Release();
+						if(punkObj)
+						{
+							IDispatch* pdisp = 0;
+							punkObj->QueryInterface(IID_IDispatch, (void**)&pdisp);
+							punkObj->Release();
+							return pdisp;
+						}
 					}
 				}
-			}
 
-			sptrApp->GetNextDocTempl(&lPosTemplate, 0, 0);
+				sptrApp->GetNextDocTempl(&lPosTemplate, 0, 0);
 
 			}
 		}
@@ -648,7 +648,7 @@ LPDISPATCH CObjectsDisp::GetObjectByName(LPCTSTR szName)
 	return NULL;
 }
 
-LONG_PTR CObjectsDisp::GetFirstObjectPos(LPCTSTR szType) 
+long CObjectsDisp::GetFirstObjectPos(LPCTSTR szType) 
 {
 	// TODO: Add your dispatch handler code here
 	if(!CheckType(szType))
@@ -661,13 +661,13 @@ LONG_PTR CObjectsDisp::GetFirstObjectPos(LPCTSTR szType)
 	if (sptrContext == 0)
 		return 0;
 	
-	TPOS lPos = 0;
+	long lPos = 0;
 	sptrContext->GetFirstChildPos(_bstr_t(szType), 0, &lPos);
 
-	return (LONG_PTR)lPos;
+	return lPos;
 }
 
-LPOS CObjectsDisp::GetNextObjectPos(LPCTSTR szType, LPOS lPos) 
+long CObjectsDisp::GetNextObjectPos(LPCTSTR szType, long lPos) 
 {
 	// TODO: Add your dispatch handler code here
 	if(!CheckType(szType))
@@ -687,12 +687,12 @@ LPOS CObjectsDisp::GetNextObjectPos(LPCTSTR szType, LPOS lPos)
 		return 0;
 	
 	IUnknownPtr sptrObj;
-	sptrContext->GetNextChild(_bstr_t(szType), 0, (TPOS*)&lPos, &sptrObj);
+	sptrContext->GetNextChild(_bstr_t(szType), 0, &lPos, &sptrObj);
 
 	return lPos;
 }
 
-LPOS CObjectsDisp::GetLastObjectPos(LPCTSTR szType) 
+long CObjectsDisp::GetLastObjectPos(LPCTSTR szType) 
 {
 	// TODO: Add your dispatch handler code here
 	if(!CheckType(szType))
@@ -705,14 +705,14 @@ LPOS CObjectsDisp::GetLastObjectPos(LPCTSTR szType)
 	if (sptrContext == 0)
 		return 0;
 	
-	LPOS lPos = 0;
+	long lPos = 0;
 	IUnknownPtr sptrObj;
-	sptrContext->GetLastChildPos(_bstr_t(szType), 0, (TPOS*)&lPos);
+	sptrContext->GetLastChildPos(_bstr_t(szType), 0, &lPos);
 
 	return lPos;
 }
 
-LPOS CObjectsDisp::GetPrevObjectPos(LPCTSTR szType, LPOS lPos) 
+long CObjectsDisp::GetPrevObjectPos(LPCTSTR szType, long lPos) 
 {
 	if(!CheckType(szType))
 	{
@@ -731,12 +731,12 @@ LPOS CObjectsDisp::GetPrevObjectPos(LPCTSTR szType, LPOS lPos)
 		return 0;
 
 	IUnknownPtr sptrObj;
-	sptrContext->GetPrevChild(_bstr_t(szType), 0, (TPOS*)&lPos, &sptrObj);
+	sptrContext->GetPrevChild(_bstr_t(szType), 0, &lPos, &sptrObj);
 
 	return lPos;
 }
 
-LPDISPATCH CObjectsDisp::GetObject(LPCTSTR szType, LPOS lPos) 
+LPDISPATCH CObjectsDisp::GetObject(LPCTSTR szType, long lPos) 
 {
 	if(!CheckType(szType))
 	{
@@ -755,7 +755,7 @@ LPDISPATCH CObjectsDisp::GetObject(LPCTSTR szType, LPOS lPos)
 		return 0;
 	
 	IUnknownPtr sptrObj;
-	sptrContext->GetNextChild(_bstr_t(szType), 0, (TPOS*)&lPos, &sptrObj);
+	sptrContext->GetNextChild(_bstr_t(szType), 0, &lPos, &sptrObj);
 
 	IDispatch* pdisp = 0;
 
@@ -789,7 +789,7 @@ void CObjectsDisp::GetFirstSelectedObjectPos(LPCTSTR szType, VARIANT FAR* pvarPo
 	if (sptrContext == 0)
 		return;
 		
-	LONG_PTR nPos = 0;
+	long nPos = 0;
 	sptrContext->GetFirstSelectedPos(_bstr_t(szType), &nPos );	
 
 	*pvarPos = _variant_t( (long)nPos );	
@@ -818,10 +818,10 @@ void CObjectsDisp::GetLastSelectedObjectPos(LPCTSTR szType, VARIANT FAR* pvarPos
 	if (sptrContext == 0)
 		return;
 	
-	LONG_PTR lPos = 0;	
+	long lPos = 0;	
 	sptrContext->GetLastSelectedPos(_bstr_t(szType), &lPos );	
 
-	*pvarPos = _variant_t( lPos );	
+	*pvarPos = _variant_t( (long)lPos );	
 	
 }
 
@@ -845,7 +845,7 @@ LPDISPATCH CObjectsDisp::GetNextSelectedObject(LPCTSTR szType, VARIANT FAR* pvar
 	if (sptrContext == 0)
 		return 0;
 	
-	LONG_PTR nPos = pvarPos->lVal;
+	long nPos = pvarPos->lVal;
 	IUnknown* punk = NULL;	
 	sptrContext->GetNextSelected( _bstr_t(szType), &nPos, &punk );
 
@@ -881,7 +881,7 @@ LPDISPATCH CObjectsDisp::GetPrevSelectedObject(LPCTSTR szType, VARIANT FAR* pvar
 	if (sptrContext == 0)
 		return 0;	
 
-	LONG_PTR lPos = pvarPos->lVal;
+	long lPos = pvarPos->lVal;
 	
 	IUnknown* punk = NULL;	
 	sptrContext->GetPrevSelected( _bstr_t(szType), &lPos, &punk );
@@ -893,7 +893,7 @@ LPDISPATCH CObjectsDisp::GetPrevSelectedObject(LPCTSTR szType, VARIANT FAR* pvar
 		punk->Release();
 	}		
 
-	*pvarPos = _variant_t( lPos );	
+	*pvarPos = _variant_t( (long)lPos );	
 
 	return pdisp;
 }
@@ -940,7 +940,7 @@ void CObjectsDisp::SelectObject(LPDISPATCH pObject, BOOL bSelect)
 	sptrContext->SetObjectSelect(sptrNDO, bSelect);
 }
 
-LPDISPATCH CObjectsDisp::GetSelectedObject(LPCTSTR szType, LONG_PTR lPos) 
+LPDISPATCH CObjectsDisp::GetSelectedObject(LPCTSTR szType, long lPos) 
 {
 	if(!CheckType(szType))
 	{
@@ -979,7 +979,7 @@ LPDISPATCH CObjectsDisp::GetSelectedByIndex(LPCTSTR szType, long nIndex)
 	if (nIndex >= nCount)
 		return 0;
 
-	LONG_PTR nPos = 0;
+	long nPos = 0;
 	IDispatchPtr disp;
 	sptrContext->GetFirstSelectedPos(_bstr_t(szType), &nPos);
 	while (nPos)
@@ -1052,7 +1052,7 @@ BSTR CObjectsDisp::GenerateNewKey()
 	return _guid_to_bstr( &guid );
 }
 
-BSTR CObjectsDisp::GetBaseObjectKey( LPCTSTR szType, LPOS lPos )
+BSTR CObjectsDisp::GetBaseObjectKey( LPCTSTR szType, long lPos )
 {
 	if(!CheckType(szType))
 	{
@@ -1071,7 +1071,7 @@ BSTR CObjectsDisp::GetBaseObjectKey( LPCTSTR szType, LPOS lPos )
 		return 0;
 	
 	IUnknownPtr sptrObj;
-	sptrContext->GetNextChild(_bstr_t(szType), 0, (TPOS*)&lPos, &sptrObj);
+	sptrContext->GetNextChild(_bstr_t(szType), 0, &lPos, &sptrObj);
 
 	if( sptrObj == 0 )
 		return 0;
@@ -1105,7 +1105,7 @@ BSTR CObjectsDisp::_guid_to_bstr( LPGUID lpGuid )
 	return bstrGuid.copy();
 }
 
-BOOL CObjectsDisp::SetBaseObjectKey( LPCTSTR szType, LPOS lPos, LPCTSTR lpctVal )
+BOOL CObjectsDisp::SetBaseObjectKey( LPCTSTR szType, long lPos, LPCTSTR lpctVal )
 {
 	if(!CheckType(szType))
 	{
@@ -1124,7 +1124,7 @@ BOOL CObjectsDisp::SetBaseObjectKey( LPCTSTR szType, LPOS lPos, LPCTSTR lpctVal 
 		return false;
 	
 	IUnknownPtr sptrObj;
-	sptrContext->GetNextChild(_bstr_t(szType), 0, (TPOS*)&lPos, &sptrObj);
+	sptrContext->GetNextChild(_bstr_t(szType), 0, &lPos, &sptrObj);
 
 	if( sptrObj == 0 )
 		return false;
@@ -1148,7 +1148,7 @@ BOOL CObjectsDisp::SetBaseObjectKey( LPCTSTR szType, LPOS lPos, LPCTSTR lpctVal 
 
 }
 
-BOOL CObjectsDisp::IsBaseObject( LPCTSTR szType, LPOS lPos )
+BOOL CObjectsDisp::IsBaseObject( LPCTSTR szType, long lPos )
 {
 	if(!CheckType(szType))
 	{
@@ -1167,7 +1167,7 @@ BOOL CObjectsDisp::IsBaseObject( LPCTSTR szType, LPOS lPos )
 		return false;
 	
 	IUnknownPtr sptrObj;
-	sptrContext->GetNextChild(_bstr_t(szType), 0, (TPOS*)&lPos, &sptrObj);
+	sptrContext->GetNextChild(_bstr_t(szType), 0, &lPos, &sptrObj);
 
 	if( sptrObj == 0 )
 		return false;
@@ -1192,7 +1192,7 @@ void CObjectsDisp::_bstr_to_guid( LPCTSTR lpctVal, LPGUID lpGuid )
 	::CLSIDFromString( _bstr_t(lpctVal), lpGuid );
 }
 
-BSTR CObjectsDisp::GetObjectKey( LPCTSTR szType, LPOS lPos )
+BSTR CObjectsDisp::GetObjectKey( LPCTSTR szType, long lPos )
 {
 	if(!CheckType(szType))
 	{
@@ -1211,7 +1211,7 @@ BSTR CObjectsDisp::GetObjectKey( LPCTSTR szType, LPOS lPos )
 		return 0;
 	
 	IUnknownPtr sptrObj;
-	sptrContext->GetNextChild(_bstr_t(szType), 0, (TPOS*)&lPos, &sptrObj);
+	sptrContext->GetNextChild(_bstr_t(szType), 0, &lPos, &sptrObj);
 
 	if( sptrObj == 0 )
 		return 0;

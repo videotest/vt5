@@ -115,7 +115,7 @@ bool CAverClassMeasGroup::CalcValues( IUnknown *punkCalcObject, IUnknown *punkOt
 	double fDev = 0;
 
 
-	LONG_PTR lpos = 0;
+	long lpos = 0;
 	if (FAILED(sptrTypeMan->GetObjectFirstPosition(lType, &lpos)))
 		return false;
 

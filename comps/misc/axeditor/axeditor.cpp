@@ -12,7 +12,12 @@
 static char THIS_FILE[] = __FILE__;
 #endif
 
+#ifdef _DEBUG
+#pragma comment( lib, "EditorView_d.lib" )
+#else
 #pragma comment( lib, "EditorView.lib" )
+#endif//
+
 
 BEGIN_MESSAGE_MAP(CAxeditorApp, CWinApp)
 	//{{AFX_MSG_MAP(CAxeditorApp)

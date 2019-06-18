@@ -84,7 +84,7 @@ BOOL CThumbnailDlg::OnInitDialog()
 	// for all types in documentA
 	for (long nType = 0; nType < nTypesCounter; nType++)
 	{
-		LONG_PTR	lpos = 0;
+		long	lpos = 0;
 		// for all objects in type
 		sptrM->GetObjectFirstPosition(nType, &lpos);
 

@@ -4,20 +4,20 @@ class CMethodStep;
 
 interface IMethodData : public IUnknown
 {
-	com_call GetFirstStepPos(TPOS *plPos) = 0;
-	com_call GetNextStep(TPOS *plPos, CMethodStep *pStep) = 0; // если plPos==0 - возвращает в plPos первый
-	com_call GetNextStepPtr(TPOS *plPos, CMethodStep **ppStep) = 0; // если plPos==0 - возвращает в plPos первый
-	com_call GetPrevStep(TPOS *plPos, CMethodStep *pStep) = 0;
+	com_call GetFirstStepPos( long *plPos ) = 0;
+	com_call GetNextStep( long *plPos, CMethodStep *pStep ) = 0; // если plPos==0 - возвращает в plPos первый
+	com_call GetNextStepPtr( long *plPos, CMethodStep **ppStep ) = 0; // если plPos==0 - возвращает в plPos первый
+	com_call GetPrevStep( long *plPos, CMethodStep *pStep ) = 0;
 	com_call GetStepCount( long *plCount ) = 0;
-	com_call AddStep(CMethodStep *pStep, TPOS lInsertBefore, TPOS *plNewPos = 0) = 0;
-	com_call SetStep(TPOS *plPos, CMethodStep *pStep, bool bDontClearCache = false) = 0;
-	com_call DeleteStep(TPOS lPos) = 0;
-	com_call SetActiveStepPos(TPOS lPos, BOOL bLoadCache = TRUE) = 0;
-	com_call GetActiveStepPos(TPOS *plPos) = 0;
+    com_call AddStep( CMethodStep *pStep, long lInsertBefore, long *plNewPos=0 ) = 0;
+	com_call SetStep( long *plPos, CMethodStep *pStep, bool bDontClearCache=false ) = 0;
+	com_call DeleteStep( long lPos ) = 0;
+	com_call SetActiveStepPos( long lPos, BOOL bLoadCache=TRUE ) = 0;
+	com_call GetActiveStepPos( long *plPos ) = 0;
 	com_call GetModifiedFlag( BOOL *pbFlag ) = 0;
 	com_call SetModifiedFlag( BOOL bFlag ) = 0;
-	com_call GetStepIndexByPos(TPOS lPos, long *plIndex) = 0;
-	com_call GetStepPosByIndex(long lIndex, TPOS *plPos) = 0;
+	com_call GetStepIndexByPos( long lPos, long *plIndex ) = 0;
+	com_call GetStepPosByIndex( long lIndex, long *plPos ) = 0;
 	com_call UpdateMethod() = 0; // обновляет shell.data методики
 	com_call UpdateActiveStep() = 0; // обновляет состояние вьюх (\\StateAfterAction) активного шага
 };
@@ -98,21 +98,21 @@ interface IMethodMan : public IUnknown
 	com_call Record() = 0;
 	com_call IsRunning(BOOL *pbVal) = 0;
 	com_call IsRecording(BOOL *pbVal) = 0;
-	com_call AddMethod(IUnknown* punkMethod, TPOS lInsertBefore, TPOS *plNewPos = 0) = 0;
-	com_call DeleteMethod(TPOS lPos) = 0;
-	com_call SetActiveMethodPos(TPOS lPos) = 0;
-	com_call GetActiveMethodPos(TPOS *plPos) = 0;
-	com_call GetFirstMethodPos(TPOS *plPos) = 0;
-	com_call GetNextMethod(TPOS *plPos, IUnknown **pMethod) = 0;  // если plPos==0 - возвращает в plPos первый
+	com_call AddMethod(IUnknown* punkMethod, long lInsertBefore, long *plNewPos = 0 ) = 0;
+	com_call DeleteMethod(long lPos) = 0;
+	com_call SetActiveMethodPos( long lPos ) = 0;
+	com_call GetActiveMethodPos( long *plPos ) = 0;
+	com_call GetFirstMethodPos( long *plPos ) = 0;
+	com_call GetNextMethod( long *plPos, IUnknown **pMethod ) = 0;  // если plPos==0 - возвращает в plPos первый
 	com_call Reload( ) = 0;
 
-	com_call StoreCache(IUnknown *punkMethod, TPOS lStepPos) = 0;
-	com_call LoadCache(IUnknown *punkMethod, TPOS lStepPos, DWORD dwFlags = lcfLoadAll) = 0;
-	com_call DropCache(IUnknown *punkMethod, TPOS lStepPos) = 0;
-	com_call IsCached(IUnknown *punkMethod, TPOS lStepPos, BOOL *pbCached) = 0;
+	com_call StoreCache( IUnknown *punkMethod, long lStepPos ) = 0;
+	com_call LoadCache( IUnknown *punkMethod, long lStepPos, DWORD dwFlags=lcfLoadAll ) = 0;
+	com_call DropCache( IUnknown *punkMethod, long lStepPos ) = 0;
+	com_call IsCached( IUnknown *punkMethod, long lStepPos, BOOL *pbCached ) = 0;
 
 	// переместить или скопировать кэш с одной позиции на другую (поддержка для MethodDoer::Undo())
-	com_call MoveCache(IUnknown *punkMethod, TPOS lOldStepPos, TPOS lNewStepPos, BOOL bCopy = FALSE) = 0;
+	com_call MoveCache( IUnknown *punkMethod, long lOldStepPos, long lNewStepPos, BOOL bCopy=FALSE ) = 0;
 };
 declare_interface( IMethodMan,	"F9202E72-E816-4574-B609-46725B8555AD" )
 

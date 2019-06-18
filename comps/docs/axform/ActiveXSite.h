@@ -308,7 +308,7 @@ protected:
 
 	CActionHelper2		m_helper2;
 
-	UINT_PTR			m_nEdgeType;// 0 - вогнутая; 1 - выпуклая; 2 - никакая
+	UINT				m_nEdgeType;// 0 - вогнутая; 1 - выпуклая; 2 - никакая
 	bool				m_bHelpDisplayed;
 	bool				m_bNeedCallInitialize;
 public:

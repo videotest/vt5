@@ -570,7 +570,7 @@ bool CActionAviPlay::Finalize()
 	CInteractiveAction::Finalize();
 
 	Deinit( true );
-	
+
 	/*{
 		IScrollZoomSitePtr ptrZ( m_ptrTarget );
 		if( ptrZ )

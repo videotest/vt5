@@ -119,15 +119,15 @@ interface IMainWindow: public IUnknown
 	com_call EnterSettingsMode(HWND* hwndSettings, LONG nHeight) = 0;
 	com_call LeaveSettingsMode() = 0;
 	
-	com_call GetFirstDockWndPosition( POSITION *plPosition ) = 0;
-	com_call GetNextDockWnd(IUnknown **ppunkDock, POSITION *plPosition) = 0;
+	com_call GetFirstDockWndPosition( long *plPosition ) = 0;
+	com_call GetNextDockWnd( IUnknown **ppunkDock, long *plPosition ) = 0;
 	com_call CreateDockBar(IUnknown* punk, UINT nID, HWND* pHWND) = 0;
 	com_call KillDockBar(BSTR bstrName) = 0;
 
 	com_call GetMDIClientWnd(HWND* pHwnd) = 0;
 
-	com_call GetFirstToolbarPosition(POSITION *plPosition) = 0;
-	com_call GetNextToolbar(HWND *phwnd, POSITION *plPosition) = 0;
+	com_call GetFirstToolbarPosition( long *plPosition ) = 0;
+	com_call GetNextToolbar( HWND *phwnd, long *plPosition ) = 0;
 	com_call ShowControlBar( HWND hwnd, long bShow ) = 0;
 	com_call CreateDockBarEx(IUnknown* punk, UINT nID, HWND* pHWND, DWORD dwFlags/*1 - not float now*/) = 0;
 	com_call IsHelpMode( BOOL *pbool ) = 0;
@@ -185,8 +185,8 @@ interface ISyncManager : public IUnknown
 
 interface IUserInterface : public IUnknown
 {
-	com_call GetFirstComboButton(POSITION *plPosition) = 0;
-	com_call GetNextComboButton(HWND* phWnd, IUnknown** ppunkInfo, POSITION *plPosition) = 0;
+	com_call GetFirstComboButton( long *plPosition ) = 0;
+	com_call GetNextComboButton( HWND* phWnd, IUnknown** ppunkInfo, long *plPosition ) = 0;	
 };
 
 

@@ -25,7 +25,7 @@ _ainfo_base::arg        CResegmentCellsInfo::s_pargs[] =
 	{0, 0, 0, false, false },
 };
 
-static inline int iround(double x)
+static inline int round(double x)
 {
 	return int(floor(x+0.5));
 }
@@ -47,12 +47,12 @@ bool CResegmentCells::InvokeFilter()
 	sptrSrc->GetChildsCount(&lObjects);
 	StartNotification(lObjects,2);
 
-	POSITION pos = 0; long i = 0;
-	sptrSrc->GetFirstChildPosition(&pos);
+	long pos = 0, i = 0;
+	sptrSrc->GetFirstChildPosition((long*)&pos);
 	while (pos)
 	{
 		IUnknownPtr ptr;
-		sptrSrc->GetNextChild(&pos, &ptr);
+		sptrSrc->GetNextChild((long*)&pos, &ptr);
 
 		IClonableObjectPtr sptrClone(ptr);
 		if(sptrClone == 0) continue;
@@ -117,113 +117,113 @@ bool CResegmentCells::InvokeFilter()
 
 		if(fThreshold>=0.0)
 		{	// --------------- Пересегментация ядер -------------
-		// найдем пороги для сегментации
-		double c0=0, c1=0;
-		double s0=0, s1=0;
-		double color0=0, color1=65535;
+			// найдем пороги для сегментации
+			double c0=0, c1=0;
+			double s0=0, s1=0;
+			double color0=0, color1=65535;
 
-		for(int pass=0; pass<4; pass++)
-		{
-			for(int y=0; y<cy; y++)
+			for(int pass=0; pass<4; pass++)
 			{
-				for(int x=0; x<cx; x++)
+				for(int y=0; y<cy; y++)
 				{
-					double w;
-					switch(ppm[y][x])
+					for(int x=0; x<cx; x++)
 					{
-					case 255: // цитоплазма
-						w = ppc[y][x]-color0;
-						w = exp(w/(256*20));
-						w = max(0,w);
-						s1 += ppc[y][x]*w;
-						c1 += w;
-					case 254: // ядро
-						w = color1-ppc[y][x];
-						w = exp(w/(256*20));
-						w = max(0,w);
-						s0 += ppc[y][x]*w;
-						c0 += w;
+						double w;
+						switch(ppm[y][x])
+						{
+						case 255: // цитоплазма
+							w = ppc[y][x]-color0;
+							w = exp(w/(256*20));
+							w = max(0,w);
+							s1 += ppc[y][x]*w;
+							c1 += w;
+						case 254: // ядро
+							w = color1-ppc[y][x];
+							w = exp(w/(256*20));
+							w = max(0,w);
+							s0 += ppc[y][x]*w;
+							c0 += w;
+						}
 					}
 				}
+
+				if(c0) color0 = s0/c0;
+				if(c1) color1 = s1/c1;
+			}
+			// нашли color0 и color1 - примерный диапазон цветов клетки
+
+			{
+				int th0 = int(color0 + (color1-color0)*fSeedThreshold);
+				int th1 = int(color0 + (color1-color0)*fThreshold);
+
+				// сегментация зародышей
+				for(int y=0; y<cy; y++)
+				{
+					for(int x=0; x<cx; x++)
+					{
+						ppDist[y][x]=1e30;
+						if(ppm[y][x]>=254) // цитоплазма или ядро
+						{
+							if(ppc[y][x]>th0)
+							{
+								ppm[y][x]=255; // цитоплазма
+							}
+							else
+							{
+								ppm[y][x]=254; // ядро
+								ppDist[y][x]=0;
+							}
+						}
+					}
+				}
+
+				for(int pass=0; pass<2; pass++)
+				{
+					for(int y=1; y<cy-1; y++)
+					{
+						for(int x=1; x<cx-1; x++)
+						{
+							ppDist[y][x+1] = min(ppDist[y][x+1],ppDist[y][x]+1);
+							ppDist[y+1][x] = min(ppDist[y+1][x],ppDist[y][x]+1);
+							if(ppm[y][x]==254) // ядро
+							{
+								double th = th1 + (th0-th1)*ppDist[y][x]/fMaxDilate;
+								if(ppc[y][x+1]<=th) ppm[y][x+1]=254;
+								if(ppc[y+1][x]<=th) ppm[y+1][x]=254;
+							}
+						}
+					}
+					for(int y=cy-2; y>0; y--)
+					{
+						for(int x=cx-2; x>0; x--)
+						{
+							ppDist[y][x-1] = min(ppDist[y][x-1],ppDist[y][x]+1);
+							ppDist[y-1][x] = min(ppDist[y-1][x],ppDist[y][x]+1);
+							if(ppm[y][x]==254) // ядро
+							{
+								double th = th1 + (th0-th1)*ppDist[y][x]/fMaxDilate;
+								if(ppc[y][x-1]<=th) ppm[y][x-1]=254;
+								if(ppc[y-1][x]<=th) ppm[y-1][x]=254;
+							}
+						}
+					}
+				}
+
 			}
 
-			if(c0) color0 = s0/c0;
-			if(c1) color1 = s1/c1;
-		}
-		// нашли color0 и color1 - примерный диапазон цветов клетки
+			// морфология, как в FindCells - чтобы границы были поаккуратнее
+			int nNucleiCloseSize=GetValueInt(GetAppUnknown(),"\\FindCells", "NucleiCloseSize",5);
+			if(nNucleiCloseSize%2 == 0) nNucleiCloseSize = nNucleiCloseSize-1;
+			nNucleiCloseSize = max(1,nNucleiCloseSize);
+			SetValue(GetAppUnknown(),"\\FindCells", "NucleiCloseSize",long(nNucleiCloseSize));
 
-		{
-			int th0 = int(color0 + (color1-color0)*fSeedThreshold);
-			int th1 = int(color0 + (color1-color0)*fThreshold);
+			DilateColor(ppm, cx, cy, nNucleiCloseSize, 254,254,255); // дилатация ядра на фоне цитоплазмы
+			DilateColor(ppm, cx, cy, 3, 0,255,254); // эрозия ядра - только те части, что примыкают к краю цитоплазмы
+			DilateColor(ppm, cx, cy, nNucleiCloseSize, 255,255,254); // эрозия ядра
+			DilateColor(ppm, cx, cy, nNucleiCloseSize, 255,255,254); // эрозия ядра
+			DilateColor(ppm, cx, cy, nNucleiCloseSize, 254,254,255); // дилатация ядра
 
-			// сегментация зародышей
-			for(int y=0; y<cy; y++)
-			{
-				for(int x=0; x<cx; x++)
-				{
-					ppDist[y][x]=1e30;
-					if(ppm[y][x]>=254) // цитоплазма или ядро
-					{
-						if(ppc[y][x]>th0)
-						{
-							ppm[y][x]=255; // цитоплазма
-						}
-						else
-						{
-							ppm[y][x]=254; // ядро
-							ppDist[y][x]=0;
-						}
-					}
-				}
-			}
-
-			for(int pass=0; pass<2; pass++)
-			{
-				for(int y=1; y<cy-1; y++)
-				{
-					for(int x=1; x<cx-1; x++)
-					{
-						ppDist[y][x+1] = min(ppDist[y][x+1],ppDist[y][x]+1);
-						ppDist[y+1][x] = min(ppDist[y+1][x],ppDist[y][x]+1);
-						if(ppm[y][x]==254) // ядро
-						{
-							double th = th1 + (th0-th1)*ppDist[y][x]/fMaxDilate;
-							if(ppc[y][x+1]<=th) ppm[y][x+1]=254;
-							if(ppc[y+1][x]<=th) ppm[y+1][x]=254;
-						}
-					}
-				}
-				for(int y=cy-2; y>0; y--)
-				{
-					for(int x=cx-2; x>0; x--)
-					{
-						ppDist[y][x-1] = min(ppDist[y][x-1],ppDist[y][x]+1);
-						ppDist[y-1][x] = min(ppDist[y-1][x],ppDist[y][x]+1);
-						if(ppm[y][x]==254) // ядро
-						{
-							double th = th1 + (th0-th1)*ppDist[y][x]/fMaxDilate;
-							if(ppc[y][x-1]<=th) ppm[y][x-1]=254;
-							if(ppc[y-1][x]<=th) ppm[y-1][x]=254;
-						}
-					}
-				}
-			}
-
-		}
-
-		// морфология, как в FindCells - чтобы границы были поаккуратнее
-		int nNucleiCloseSize=GetValueInt(GetAppUnknown(),"\\FindCells", "NucleiCloseSize",5);
-		if(nNucleiCloseSize%2 == 0) nNucleiCloseSize = nNucleiCloseSize-1;
-		nNucleiCloseSize = max(1,nNucleiCloseSize);
-		SetValue(GetAppUnknown(),"\\FindCells", "NucleiCloseSize",long(nNucleiCloseSize));
-
-		DilateColor(ppm, cx, cy, nNucleiCloseSize, 254,254,255); // дилатация ядра на фоне цитоплазмы
-		DilateColor(ppm, cx, cy, 3, 0,255,254); // эрозия ядра - только те части, что примыкают к краю цитоплазмы
-		DilateColor(ppm, cx, cy, nNucleiCloseSize, 255,255,254); // эрозия ядра
-		DilateColor(ppm, cx, cy, nNucleiCloseSize, 255,255,254); // эрозия ядра
-		DilateColor(ppm, cx, cy, nNucleiCloseSize, 254,254,255); // дилатация ядра
-
-		DeleteSmallSegments(ppm, cx, cy, 12, 254);
+			DeleteSmallSegments(ppm, cx, cy, 12, 254);
 		}	// --------------- Пересегментация ядер end -------------
 		else if ( -1.0 == fThreshold )
 		{	// --------------- Пересегментация цитоплазмы - "бублик" (слой вокруг ядра) -------------
@@ -283,7 +283,7 @@ bool CResegmentCells::InvokeFilter()
 				for(int i=0; i<256; i++)
 				{
 					ss += hist[i]/s;
-					int j1 = iround(ss*255);
+					int j1 = round(ss*255);
 					ii[i] = j1;
 					//while(j<=j1) ii[j++] = i;
 				}

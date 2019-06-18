@@ -152,13 +152,13 @@ bool CorrectPos(ISewImageList *pFragList, ISewFragment *pFragTest, POINT ptOrig,
 	pFragTest->GetSize(&szTest);
 	CRect rcOvr(ptOrig,szTest);
 	int nMaxPercent = 0;
-	TPOS lposMax = 0;
-	TPOS lpos;
+	long lposMax = 0;
+	long lpos;
 	ISewFragmentPtr sptrFrag;
 	pFragList->GetFirstFragmentPos(&lpos);
 	while (lpos)
 	{
-		TPOS lposPrev = lpos;
+		long lposPrev = lpos;
 		pFragList->GetNextFragment(&lpos, &sptrFrag);
 		if ((ISewFragment *)sptrFrag == pFragTest)
 			continue;
@@ -225,40 +225,6 @@ bool CorrectPos(ISewImageList *pFragList, ISewFragment *pFragTest, POINT ptOrig,
 #if defined(_TEST_TIME)
 		int nDist = (int)sqrt(double((pptRes->x-ptOrig.x)*(pptRes->x-ptOrig.x)+(pptRes->y-ptOrig.y)*(pptRes->y-ptOrig.y)));
 		trace("Corect pos, (%d,%d)->(%d,%d), diff %d, dist %d, time %d ms\n", ptOrig.x, ptOrig.y,
-			pptRes->x, pptRes->y, nOptDiff, nDist, GetTickCount()-dwStart);
-#endif
-		return true;
-	}
-	return false;
-}
-
-bool CorrectPos(ISewFragment *pFragBase, IImage3 *pimage, POINT ptOrig, POINT *pptRes)
-{
-#if defined(_TEST_TIME)	
-	DWORD dwStart = GetTickCount();
-#endif
-	int nZoom = 1;
-	IUnknownPtr punkBase;
-	pFragBase->GetImage(&nZoom,&punkBase);
-	IImage3Ptr imgBase(punkBase);
-	if (imgBase == 0)
-		return false;
-	int nMinOvrPerc = GetValueInt(GetAppUnknown(), "\\Sew Large Image\\Correction", "MinOverlapPercent", 10);
-	CPoint ptOffsB;
-	pFragBase->GetOffset(&ptOffsB);
-	CPoint ptImgOffs(ptOrig.x-ptOffsB.x,ptOrig.y-ptOffsB.y);
-	CPoint ptImgOffsR;
-	int nOptDiff;
-	if (GradientDecent(imgBase,pimage,ptImgOffs,&ptImgOffsR,nMinOvrPerc,&nOptDiff))
-	{
-		if (ptImgOffs.x != ptImgOffsR.x)
-			pptRes->x = ptOffsB.x+ptImgOffsR.x;
-		if (ptImgOffs.y != ptImgOffsR.y)
-			pptRes->y = ptOffsB.y+ptImgOffsR.y;
-		s_nFoundDiff = abs(nOptDiff);
-#if defined(_TEST_TIME)
-		int nDist = (int)sqrt(double((pptRes->x-ptOrig.x)*(pptRes->x-ptOrig.x)+(pptRes->y-ptOrig.y)*(pptRes->y-ptOrig.y)));
-		trace("Corect pos img, (%d,%d)->(%d,%d), diff %d, dist %d, time %d ms\n", ptOrig.x, ptOrig.y,
 			pptRes->x, pptRes->y, nOptDiff, nDist, GetTickCount()-dwStart);
 #endif
 		return true;
@@ -874,10 +840,6 @@ bool DoFindOptimalPos(CSewImage &siBase, CSewImage &siSew, int nMinPosX,
 	bool	bFirstTime = true;
 //	int		cyMin = min( p1->cy, p2->cy );
 //	int	nCheckStep = 4;
-	static DWORD dwIterLim = 0;
-	if (dwIterLim == 0)
-		dwIterLim = GetValueInt(GetAppUnknown(), "\\Sew Large Image\\FindOptimalPosition",
-			"IterationLimitMs", 10000);
 
 	DWORD dwStart = GetTickCount();
 	while( nCheckStep != 0 )
@@ -891,8 +853,8 @@ bool DoFindOptimalPos(CSewImage &siBase, CSewImage &siSew, int nMinPosX,
 			ys = max(0, yTest);
 			ye = min(siBase.m_cy, yTest+siSew.m_cy);
 
-//			if ((xe-xs)*(ye-ys)*100/(siBase.m_cx*siBase.m_cy) < nMinOvrPerc)
-//				continue;
+			if ((xe-xs)*(ye-ys)*100/(siBase.m_cx*siBase.m_cy) < nMinOvrPerc)
+				continue;
 
 			int	x, y;
 			int	nDiff = 0, t;
@@ -916,7 +878,7 @@ bool DoFindOptimalPos(CSewImage &siBase, CSewImage &siSew, int nMinPosX,
 				}
 			}
 
-			if (GetTickCount()-dwStart > dwIterLim)
+			if (GetTickCount()-dwStart > 10000)
 				return false;
 
 			double	fRelDiff = (double)nDiff/((double)nCount);
@@ -1127,14 +1089,14 @@ public:
 		nMaxY = nMaxY1;
 		nCheckStep = 1;
 	}
-	/*void InitScopeByPoint(SIZE szCur, POINT *pptPos)
+	void InitScopeByPoint(SIZE szCur, POINT *pptPos)
 	{
 		CPoint ptOrg;
 		ptOrg.x = pptPos->x-(szCur.cx-szCur.cx*(pptPos->x-ptPosPrev.x)/szPrev.cx);
 		ptOrg.y = pptPos->y-(szCur.cy-szCur.cy*(pptPos->y-ptPosPrev.y)/szPrev.cy);
 		bGlobalSearch = false;
 		InitScopeDynamic(&ptOrg);
-	}*/
+	}
 	void InitScopeByPoint(ISewFragment *pFragCur, POINT *pptPos)
 	{
 		SIZE szCur;
@@ -1143,7 +1105,7 @@ public:
 		ptOrg.x = pptPos->x-(szCur.cx-szCur.cx*(pptPos->x-ptPosPrev.x)/szPrev.cx);
 		ptOrg.y = pptPos->y-(szCur.cy-szCur.cy*(pptPos->y-ptPosPrev.y)/szPrev.cy);
 		bGlobalSearch = false;
-		InitScope(&ptOrg);
+		InitScopeDynamic(&ptOrg);
 	}
 	bool ProcessSearch(POINT *pptPos)
 	{
@@ -1153,14 +1115,14 @@ public:
 		if (nMinX < nMaxX && nMinY < nMaxY)
 			bFound = DoFindOptimalPos(siBase,siSew,nMinX,nMaxX,nMinY,nMaxY,lStep,
 				nMinOvrPerc,nCheckStep,&ptRes,&dMinDiff);
-		DWORD dwNow = GetTickCount();
-		dwTime = dwNow-dwStart;
 		// Save position
 		if (bFound)
 		{
 			s_nFoundDiff = abs((int)dMinDiff);
 			pptPos->x = ptPosPrev.x+ptRes.x*iZoom;
 			pptPos->y = ptPosPrev.y+ptRes.y*iZoom;
+			DWORD dwNow = GetTickCount();
+			dwTime = dwNow-dwStart;
 #if defined(_TEST_TIME)
 			message<mc_DebugText>("FindOptimalPosition ->(%d,%d), diff %g, time %d ms\n",
 				pptPos->x, pptPos->y, dMinDiff, dwTime);
@@ -1183,7 +1145,7 @@ bool FindOptimalPosition1(ISewImageList *pFragList, ISewFragment *pFragPrev,
 		imgSewZ = pimgTest;
 	else
 		imgSewZ = BuildZoomedImage(pimgTest, _fop.iZoom);
-	if (_fop.imgPrev == 0 || imgSewZ == 0)
+	if (_fop.imgPrev == 0 || _fop.imgTest == 0)
 		return false;
 	_fop.siBase.SetImage(_fop.imgPrev,_fop.bContrast);
 	_fop.siSew.SetImage(imgSewZ,_fop.bContrast);
@@ -1223,12 +1185,17 @@ bool FindOptimalPositionCorrect(ISewImageList *pFragList, ISewFragment *pFragPre
 	return _fop.ProcessSearch(pptPos);
 }
 
-static int s_nLiveZoom = 1;
+static int s_nCXLive = 640;
 static bool PrepareFOPLive(ISewImageList *pFragList, ISewFragment *pFragPrev,
 	LPBITMAPINFOHEADER lpbiLV, SIZE szLV, POINT *pptPos, _CFindOptimalPos &_fop)
 {
 	_fop.ReadSettings();
-	CSize szLVReq(lpbiLV->biWidth/s_nLiveZoom,lpbiLV->biHeight/s_nLiveZoom);
+	CSize szLVReq(lpbiLV->biWidth,lpbiLV->biHeight);
+	if (szLVReq.cx > s_nCXLive)
+	{
+		szLVReq.cx = s_nCXLive;
+		szLVReq.cy = lpbiLV->biHeight*s_nCXLive/lpbiLV->biWidth;
+	}
 	_fop.PreparePrevFragmentZoom(pFragList,pFragPrev,max(double(szLV.cx)/double(szLVReq.cx),
 		double(szLV.cy)/double(szLVReq.cy)));
 	if (_fop.imgPrev == 0)
@@ -1248,11 +1215,11 @@ static bool FOPProcessSearch(_CFindOptimalPos &_fop, POINT *pptPos)
 	static DWORD s_dwReduceTime = 0;
 	if (_fop.dwTime > 1000)
 	{
-		s_nLiveZoom *= 2;
+		s_nCXLive /= 2;
 		s_dwReduceTime = GetTickCount();
 	}
-	else if (_fop.dwTime < 20 && GetTickCount() - s_dwReduceTime >= 10000 && s_nLiveZoom >= 2)
-		s_nLiveZoom /= 2;
+	else if (_fop.dwTime < 20 && GetTickCount() - s_dwReduceTime >= 10000)
+		s_nCXLive *= 2;
 	return b;
 }
 

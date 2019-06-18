@@ -38,7 +38,7 @@ namespace ViewSpace
 
 		RECT m_rcPrev;
 
-		CRect m_rcChartView, m_rcLegendView, m_rcTableView;
+		WTL::CRect m_rcChartView, m_rcLegendView, m_rcTableView;
 
 		RECT m_rcVertSplitter;
 		RECT m_rcHorzSplitter;
@@ -61,7 +61,6 @@ namespace ViewSpace
 		CSplitterLtdWindow m_wndVertSplitter;
 		CHorSplitterLtdWindow m_wndHorzSplitter;
 		DWORD m_dwViews;
-		DWORD m_dwViewsAX;
 
 		CStatObjectView();
 		virtual ~CStatObjectView();
@@ -112,8 +111,8 @@ namespace ViewSpace
 		//Persist Impl
 		com_call			GetClassID(CLSID *pClassID ); 
 
-		com_call			GetFirstVisibleObjectPosition(TPOS *plpos);
-		com_call			GetNextVisibleObject(IUnknown ** ppunkObject, TPOS *plPos);
+		com_call			GetFirstVisibleObjectPosition( long *plpos );
+		com_call			GetNextVisibleObject( IUnknown ** ppunkObject, long *plPos );
 
 		const RECT _calc_min_view_size();
 
@@ -135,7 +134,7 @@ namespace ViewSpace
 		bool _check_for_error( IUnknownPtr sptrData );
 		bool _check_for_error()
 		{
-			for (TPOS lpos_lst = m_list_attached.head(); lpos_lst; lpos_lst = m_list_attached.next(lpos_lst))
+			for( long lpos_lst = m_list_attached.head(); lpos_lst; lpos_lst = m_list_attached.next( lpos_lst ) )
 			{
 				IUnknownPtr ptr_object = m_list_attached.get( lpos_lst );
 				if( ptr_object )

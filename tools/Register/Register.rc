@@ -13,11 +13,13 @@
 #undef APSTUDIO_READONLY_SYMBOLS
 
 /////////////////////////////////////////////////////////////////////////////
-// Russian (Russia) resources
+// Russian resources
 
 #if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_RUS)
+#ifdef _WIN32
 LANGUAGE LANG_RUSSIAN, SUBLANG_DEFAULT
 #pragma code_page(1251)
+#endif //_WIN32
 
 #ifdef APSTUDIO_INVOKED
 /////////////////////////////////////////////////////////////////////////////
@@ -62,29 +64,33 @@ END
 // Dialog
 //
 
-IDD_ABOUTBOX DIALOG 0, 0, 235, 55
+IDD_ABOUTBOX DIALOG  0, 0, 235, 55
 STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
 CAPTION "О регистрации"
 FONT 8, "MS Sans Serif"
 BEGIN
     ICON            IDR_MAINFRAME,IDC_STATIC,11,14,20,20
-    LTEXT           "Регистрация, Версия 1.0",IDC_STATIC,40,10,119,8,SS_NOPREFIX
+    LTEXT           "Регистрация, Версия 1.0",IDC_STATIC,40,10,119,8,
+                    SS_NOPREFIX
     LTEXT           "Copyright (C) 2000",IDC_STATIC,40,25,119,8
     DEFPUSHBUTTON   "OK",IDOK,178,7,50,14,WS_GROUP
 END
 
-IDD_PROGRESS DIALOG 0, 0, 205, 55
-STYLE DS_SETFONT | DS_MODALFRAME | DS_CENTER | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+IDD_PROGRESS DIALOG  0, 0, 205, 55
+STYLE DS_SETFONT | DS_MODALFRAME | DS_CENTER | WS_POPUP | WS_VISIBLE | 
+    WS_CAPTION | WS_SYSMENU
 CAPTION "Очистить реестр"
 FONT 8, "MS Sans Serif"
 BEGIN
     LTEXT           "",IDC_TEXT,7,19,191,8
-    CONTROL         "Progress1",IDC_PROGRESS,"msctls_progress32",WS_BORDER,7,34,191,14
+    CONTROL         "Progress1",IDC_PROGRESS,"msctls_progress32",WS_BORDER,7,
+                    34,191,14
     LTEXT           "Текущее состояние:",IDC_STATIC,7,7,72,8
 END
 
 IDD_REGISTER_DIALOG DIALOGEX 0, 0, 285, 210
-STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | 
+    WS_SYSMENU
 EXSTYLE WS_EX_APPWINDOW
 CAPTION "Регистрация ВидеоТесТ 5"
 FONT 8, "MS Sans Serif", 0, 0, 0x1
@@ -96,19 +102,22 @@ BEGIN
     LTEXT           "Исходная &директория",IDC_STATIC,6,25,80,15
     EDITTEXT        IDC_PATH,90,25,165,12,ES_AUTOHSCROLL
     PUSHBUTTON      "...",IDC_BROWSE,263,25,15,12
-    GROUPBOX        "Предварительно загруженные &файлы",IDC_STATIC,13,40,265,60
-    LISTBOX         IDC_FILES,15,55,205,35,LBS_NOINTEGRALHEIGHT | WS_VSCROLL | WS_TABSTOP
+    GROUPBOX        "Предварительно загруженные &файлы",IDC_STATIC,13,40,265,
+                    60
+    LISTBOX         IDC_FILES,15,55,205,35,LBS_NOINTEGRALHEIGHT | WS_VSCROLL | 
+                    WS_TABSTOP
     PUSHBUTTON      "&Добавить",IDC_ADD,231,55,38,15
     PUSHBUTTON      "&Удалить",IDC_REMOVE,231,75,38,15
     PUSHBUTTON      "&Регистрировать",IDC_REGISTER,5,110,59,15
-    LISTBOX         IDC_OUTPUT,13,130,265,75,LBS_NOINTEGRALHEIGHT | WS_VSCROLL | WS_TABSTOP
+    LISTBOX         IDC_OUTPUT,13,130,265,75,LBS_NOINTEGRALHEIGHT | 
+                    WS_VSCROLL | WS_TABSTOP
     PUSHBUTTON      "&Выход",IDC_EXIT,228,110,50,15
-    PUSHBUTTON      "&Не регистрировать",IDC_UNREGISTER,68,110,72,15
-    PUSHBUTTON      "&Clean",IDC_CLEAN,143,110,50,14
+    PUSHBUTTON      "&Не регистрировать",IDC_UNREGISTER,89,110,72,15
 END
 
 IDD_REGISTER_LITE DIALOGEX 0, 0, 307, 138
-STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | 
+    WS_SYSMENU
 EXSTYLE WS_EX_APPWINDOW
 CAPTION "Регистрация  ВидеоТесТ 5"
 FONT 8, "MS Sans Serif", 0, 0, 0x1
@@ -120,12 +129,15 @@ BEGIN
     LTEXT           "Исходная &директория",IDC_STATIC,37,25,75,11
     EDITTEXT        IDC_PATH,134,25,158,12,ES_AUTOHSCROLL | ES_READONLY
     PUSHBUTTON      "...",IDC_BROWSE,259,25,15,12,NOT WS_VISIBLE
-    GROUPBOX        "Preloaded &files",IDC_STATIC,13,40,278,60,NOT WS_VISIBLE
-    LISTBOX         IDC_FILES,22,55,205,35,LBS_NOINTEGRALHEIGHT | NOT WS_VISIBLE | WS_VSCROLL | WS_TABSTOP
+    GROUPBOX        "Preloaded &files",IDC_STATIC,13,40,278,60,NOT 
+                    WS_VISIBLE
+    LISTBOX         IDC_FILES,22,55,205,35,LBS_NOINTEGRALHEIGHT | NOT 
+                    WS_VISIBLE | WS_VSCROLL | WS_TABSTOP
     PUSHBUTTON      "&Добавить",IDC_ADD,239,55,39,15,NOT WS_VISIBLE
     PUSHBUTTON      "&Удалить",IDC_REMOVE,239,75,39,15,NOT WS_VISIBLE
     PUSHBUTTON      "&Регистрация",IDC_REGISTER,12,110,50,15,NOT WS_VISIBLE
-    LISTBOX         IDC_OUTPUT,10,41,281,88,LBS_NOINTEGRALHEIGHT | WS_VSCROLL | WS_TABSTOP
+    LISTBOX         IDC_OUTPUT,10,41,281,88,LBS_NOINTEGRALHEIGHT | 
+                    WS_VSCROLL | WS_TABSTOP
     PUSHBUTTON      "E&xit",IDC_EXIT,227,110,50,15,NOT WS_VISIBLE
     PUSHBUTTON      "&Unregister",IDC_UNREGISTER,67,110,50,15,NOT WS_VISIBLE
     ICON            IDR_MAINFRAME,IDC_STATIC,12,11,21,20
@@ -138,7 +150,7 @@ END
 //
 
 #ifdef APSTUDIO_INVOKED
-GUIDELINES DESIGNINFO
+GUIDELINES DESIGNINFO 
 BEGIN
     IDD_ABOUTBOX, DIALOG
     BEGIN
@@ -180,7 +192,7 @@ END
 // String Table
 //
 
-STRINGTABLE
+STRINGTABLE 
 BEGIN
     IDS_ABOUTBOX            "&О регистрации..."
     IDP_OLE_INIT_FAILED     "Ошибка инициализации OLE2. Проверьте наличие правильной версии DLL OLE2."
@@ -188,45 +200,51 @@ BEGIN
                             "Нет одного из необходимых компонентов.\n Убедитесь, что программа установлена корректно и переустановите ее, если это необходимо."
 END
 
-#endif    // Russian (Russia) resources
+#endif    // Russian resources
 /////////////////////////////////////////////////////////////////////////////
 
 
 /////////////////////////////////////////////////////////////////////////////
-// English (United States) resources
+// English (U.S.) resources
 
 #if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
 LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
 #pragma code_page(1252)
+#endif //_WIN32
 
 /////////////////////////////////////////////////////////////////////////////
 //
 // Dialog
 //
 
-IDD_PROGRESS DIALOG 0, 0, 205, 55
-STYLE DS_SETFONT | DS_MODALFRAME | DS_CENTER | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+IDD_PROGRESS DIALOG  0, 0, 205, 55
+STYLE DS_SETFONT | DS_MODALFRAME | DS_CENTER | WS_POPUP | WS_VISIBLE | 
+    WS_CAPTION | WS_SYSMENU
 CAPTION "Reg Clean"
 FONT 8, "MS Sans Serif"
 BEGIN
     LTEXT           "",IDC_TEXT,7,19,191,8
-    CONTROL         "Progress1",IDC_PROGRESS,"msctls_progress32",WS_BORDER,7,34,191,14
+    CONTROL         "Progress1",IDC_PROGRESS,"msctls_progress32",WS_BORDER,7,
+                    34,191,14
     LTEXT           "Current State:",IDC_STATIC,7,7,67,8
 END
 
-IDD_ABOUTBOX DIALOG 0, 0, 235, 55
+IDD_ABOUTBOX DIALOG  0, 0, 235, 55
 STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
 CAPTION "About Register"
 FONT 8, "MS Sans Serif"
 BEGIN
     ICON            IDR_MAINFRAME,IDC_STATIC,11,14,21,20
-    LTEXT           "Register Version 1.0",IDC_STATIC,40,10,119,8,SS_NOPREFIX
+    LTEXT           "Register Version 1.0",IDC_STATIC,40,10,119,8,
+                    SS_NOPREFIX
     LTEXT           "Copyright (C) 2000",IDC_STATIC,40,25,119,8
     DEFPUSHBUTTON   "OK",IDOK,178,7,50,14,WS_GROUP
 END
 
 IDD_REGISTER_DIALOG DIALOGEX 0, 0, 277, 210
-STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | 
+    WS_SYSMENU
 EXSTYLE WS_EX_APPWINDOW
 CAPTION "Register VideoTesT 5"
 FONT 8, "MS Sans Serif", 0, 0, 0x1
@@ -239,18 +257,20 @@ BEGIN
     EDITTEXT        IDC_PATH,90,25,165,12,ES_AUTOHSCROLL
     PUSHBUTTON      "...",IDC_BROWSE,255,25,15,12
     GROUPBOX        "Preloaded &files",IDC_STATIC,5,40,265,60
-    LISTBOX         IDC_FILES,15,55,205,35,LBS_NOINTEGRALHEIGHT | WS_VSCROLL | WS_TABSTOP
+    LISTBOX         IDC_FILES,15,55,205,35,LBS_NOINTEGRALHEIGHT | WS_VSCROLL | 
+                    WS_TABSTOP
     PUSHBUTTON      "&Add",IDC_ADD,225,55,35,15
     PUSHBUTTON      "&Remove",IDC_REMOVE,225,75,35,15
     PUSHBUTTON      "Re&gister",IDC_REGISTER,5,110,50,15
-    LISTBOX         IDC_OUTPUT,5,130,265,75,LBS_NOINTEGRALHEIGHT | WS_VSCROLL | WS_TABSTOP
+    LISTBOX         IDC_OUTPUT,5,130,265,75,LBS_NOINTEGRALHEIGHT | 
+                    WS_VSCROLL | WS_TABSTOP
     PUSHBUTTON      "E&xit",IDC_EXIT,220,110,50,15
     PUSHBUTTON      "&Unregister",IDC_UNREGISTER,60,110,50,15
-    PUSHBUTTON      "&Clean",IDC_CLEAN,115,111,50,14
 END
 
 IDD_REGISTER_LITE DIALOGEX 0, 0, 285, 138
-STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | 
+    WS_SYSMENU
 EXSTYLE WS_EX_APPWINDOW
 CAPTION "Register VideoTesT 5"
 FONT 8, "MS Sans Serif", 0, 0, 0x1
@@ -262,12 +282,15 @@ BEGIN
     LTEXT           "Source &directory",IDC_STATIC,37,25,58,11
     EDITTEXT        IDC_PATH,117,25,158,12,ES_AUTOHSCROLL | ES_READONLY
     PUSHBUTTON      "...",IDC_BROWSE,259,25,15,12,NOT WS_VISIBLE
-    GROUPBOX        "Preloaded &files",IDC_STATIC,13,40,265,60,NOT WS_VISIBLE
-    LISTBOX         IDC_FILES,22,55,205,35,LBS_NOINTEGRALHEIGHT | NOT WS_VISIBLE | WS_VSCROLL | WS_TABSTOP
+    GROUPBOX        "Preloaded &files",IDC_STATIC,13,40,265,60,NOT 
+                    WS_VISIBLE
+    LISTBOX         IDC_FILES,22,55,205,35,LBS_NOINTEGRALHEIGHT | NOT 
+                    WS_VISIBLE | WS_VSCROLL | WS_TABSTOP
     PUSHBUTTON      "&Add",IDC_ADD,232,55,35,15,NOT WS_VISIBLE
     PUSHBUTTON      "&Remove",IDC_REMOVE,232,75,35,15,NOT WS_VISIBLE
     PUSHBUTTON      "Re&gister",IDC_REGISTER,12,110,50,15,NOT WS_VISIBLE
-    LISTBOX         IDC_OUTPUT,10,41,265,88,LBS_NOINTEGRALHEIGHT | WS_VSCROLL | WS_TABSTOP
+    LISTBOX         IDC_OUTPUT,10,41,265,88,LBS_NOINTEGRALHEIGHT | 
+                    WS_VSCROLL | WS_TABSTOP
     PUSHBUTTON      "E&xit",IDC_EXIT,227,110,50,15,NOT WS_VISIBLE
     PUSHBUTTON      "&Unregister",IDC_UNREGISTER,67,110,50,15,NOT WS_VISIBLE
     ICON            IDR_MAINFRAME,IDC_STATIC,12,11,21,20
@@ -280,7 +303,7 @@ END
 //
 
 #ifdef APSTUDIO_INVOKED
-GUIDELINES DESIGNINFO
+GUIDELINES DESIGNINFO 
 BEGIN
     IDD_PROGRESS, DIALOG
     BEGIN
@@ -331,7 +354,7 @@ IDR_MAINFRAME           ICON                    "res\\Register.ico"
 // String Table
 //
 
-STRINGTABLE
+STRINGTABLE 
 BEGIN
     IDS_ABOUTBOX            "&About Register..."
     IDP_OLE_INIT_FAILED     "OLE initialization failed.  Make sure that the OLE libraries are the correct version."
@@ -339,7 +362,7 @@ BEGIN
                             "One of required components does not exist\n Make sure that the program is installed properly and reinstall if necessary"
 END
 
-#endif    // English (United States) resources
+#endif    // English (U.S.) resources
 /////////////////////////////////////////////////////////////////////////////
 
 

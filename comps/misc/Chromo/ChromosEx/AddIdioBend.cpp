@@ -345,7 +345,7 @@ bool CActionAddIdioBend2::Invoke()
 	if( sptrList == 0 )
 		return false;
 
-	POSITION lPos = 0;
+	long lPos = 0;
 
 	bool bSingle = !( GetArgumentInt( "ForAll" ) != 0 );
 
@@ -382,7 +382,7 @@ bool CActionAddIdioBend2::Invoke()
 		else if( ptrNDO == 0 && bSingle  )
 			return false;
 
-		POSITION lPosCromo = 0;
+		long lPosCromo = 0;
 		
 		IIdiogramPtr sptrEditable;
 		IChromosomePtr sptrChromo;
@@ -1864,7 +1864,7 @@ public:
 	}
 	CString _get_str() { return m_strNum; }
 
-	virtual LRESULT on_initdialog()
+	virtual long on_initdialog()
 	{
 		::SendMessage( ::GetDlgItem( handle(), IDC_SPIN1 ), UDM_SETRANGE, 0, MAKELPARAM( 4, 1 ) );
 		::SendMessage( ::GetDlgItem( handle(), IDC_SPIN2 ), UDM_SETRANGE, 0, MAKELPARAM( 99, 1) );
@@ -1898,7 +1898,7 @@ public:
 			
 			if( token.GetLength() - 1 > 0 )
 			{
-				CString str = CString( token ).Right( (int)strlen( token ) - 1 );
+				CString str = CString( token ).Right( strlen( token ) - 1 );
 				::SetWindowText( ::GetDlgItem( handle(), IDC_EDIT2 ),  str );
 				::SendMessage(   ::GetDlgItem( handle(), IDC_CHECK_N2 ), BM_SETCHECK, 1, 0);
 
@@ -1981,7 +1981,7 @@ public:
 		return __super::on_initdialog();
 	}
 
-	LRESULT	handle_message(UINT m, WPARAM w, LPARAM l)
+	long	handle_message( UINT m, WPARAM w, LPARAM l )
 	{
 		if( m == WM_COMMAND && LOWORD( w ) == IDC_CHECK_N2 && HIWORD( w ) == BN_CLICKED )
 		{

@@ -173,27 +173,27 @@ void slider_wnd::init()
 }
 
 //////////////////////////////////////////////////////////////////////
-LRESULT slider_wnd::on_initdialog()
+long slider_wnd::on_initdialog()
 {
-	LRESULT lres = dlg_impl::on_initdialog();
+	long lres = dlg_impl::on_initdialog();
 	return lres;
 }
 
 
 //////////////////////////////////////////////////////////////////////
-LRESULT slider_wnd::on_killfocus(HWND hwndOld)
+long slider_wnd::on_killfocus( HWND hwndOld )
 {
-	LRESULT lres = dlg_impl::on_killfocus( hwndOld );
+	long lres = dlg_impl::on_killfocus( hwndOld );
 	return lres;
 }
 
 //////////////////////////////////////////////////////////////////////
-LRESULT slider_wnd::handle_message( UINT m, WPARAM w, LPARAM l )
+long slider_wnd::handle_message( UINT m, WPARAM w, LPARAM l )
 {
 	if( m == WM_NCACTIVATE && w == FALSE )
 	{
 		// vanek - 18.09.2003
-		LRESULT lres = dlg_impl::handle_message(m, w, l);
+		long lres = dlg_impl::handle_message( m, w, l );
 		kill_slider();       		
 		return lres;
 	}
@@ -213,7 +213,7 @@ LRESULT slider_wnd::handle_message( UINT m, WPARAM w, LPARAM l )
 }
 
 //////////////////////////////////////////////////////////////////////
-LRESULT slider_wnd::on_notify(uint idc, NMHDR *pnmhdr)
+long slider_wnd::on_notify( uint idc, NMHDR *pnmhdr )
 {
 	if( idc == IDC_SLIDER && pnmhdr->code == NM_RELEASEDCAPTURE )
 	{
@@ -224,19 +224,19 @@ LRESULT slider_wnd::on_notify(uint idc, NMHDR *pnmhdr)
 }
 
 //////////////////////////////////////////////////////////////////////
-LRESULT slider_wnd::on_hscroll(unsigned code, unsigned pos, HWND hwndScroll)
+long slider_wnd::on_hscroll( unsigned code, unsigned pos, HWND hwndScroll )
 {
 	HWND hwnd_slider = ::GetDlgItem( handle(), IDC_SLIDER );
 	if( hwnd_slider )
 	{
-		LRESULT npos = ::SendMessage( hwnd_slider, TBM_GETPOS, 0, 0 );
+		int npos = ::SendMessage( hwnd_slider, TBM_GETPOS, 0, 0 );
 		double fzoom = CZoomNavigatorPage::ConvertFromTickToDouble( (int)npos );
 		IScrollZoomSite2Ptr ptr_szs( get_active_view() );
 		if( ptr_szs )
 		{
 			ptr_szs->SetFitDoc(FALSE);
 			ptr_szs->SetZoom( fzoom );
-	}
+		}
 	}
 	
 	return dlg_impl::on_hscroll( code, pos, hwndScroll );
@@ -320,7 +320,7 @@ void zoom_wnd::handle_init()
 }
 
 //////////////////////////////////////////////////////////////////////
-LRESULT zoom_wnd::on_destroy()
+long zoom_wnd::on_destroy()
 {
 	for( int i=0;i<g_ar_ctrls.GetSize();i++ )
 	{
@@ -364,7 +364,7 @@ void _Draw3dRect( HDC hdc, int x, int y, int cx, int cy,
 #define IsLButtonDown() ( (GetKeyState(VK_LBUTTON) & (1 << (sizeof(SHORT)*8-1))) != 0   )
 
 //////////////////////////////////////////////////////////////////////
-LRESULT zoom_wnd::on_paint()
+long zoom_wnd::on_paint()
 {
 	PAINTSTRUCT	ps;
 	HDC hdc = BeginPaint( handle(), &ps );
@@ -470,13 +470,13 @@ LRESULT zoom_wnd::on_paint()
 }
 
 //////////////////////////////////////////////////////////////////////
-LRESULT zoom_wnd::on_erasebkgnd(HDC)
+long zoom_wnd::on_erasebkgnd( HDC )
 {
 	return 0;
 }
 
 //////////////////////////////////////////////////////////////////////
-LRESULT zoom_wnd::handle_message(UINT m, WPARAM w, LPARAM l)
+long zoom_wnd::handle_message( UINT m, WPARAM w, LPARAM l )
 {
 
 	if( m == WM_MOUSELEAVE )
@@ -566,7 +566,7 @@ bool zoom_wnd::_fixx( char *pStr, int len )
 }
 
 //////////////////////////////////////////////////////////////////////
-LRESULT zoom_wnd::on_mousemove(const _point &point)
+long zoom_wnd::on_mousemove( const _point &point )
 {
 	_rect rc_btn = get_button_rect();
 	_rect rc_ico = get_icon_rect();
@@ -596,7 +596,7 @@ LRESULT zoom_wnd::on_mousemove(const _point &point)
 }
 
 //////////////////////////////////////////////////////////////////////
-LRESULT zoom_wnd::on_lbuttondown(const _point &point)
+long zoom_wnd::on_lbuttondown( const _point &point )
 {
 	_rect rc_btn = get_button_rect();
 	_rect rc_ico = get_icon_rect();
@@ -615,7 +615,7 @@ LRESULT zoom_wnd::on_lbuttondown(const _point &point)
 }
 
 //////////////////////////////////////////////////////////////////////
-LRESULT zoom_wnd::on_lbuttonup(const _point &point)
+long zoom_wnd::on_lbuttonup( const _point &point )
 {
 	_rect rc_btn = get_button_rect();
 	_rect rc_ico = get_icon_rect();
@@ -642,9 +642,9 @@ LRESULT zoom_wnd::on_lbuttonup(const _point &point)
 }
 
 //////////////////////////////////////////////////////////////////////
-LRESULT zoom_wnd::on_size(short cx, short cy, ulong fSizeType)
+long zoom_wnd::on_size( short cx, short cy, ulong fSizeType )
 {
-	LRESULT lres = win_impl::on_size( cx, cy, fSizeType );
+	long lres = win_impl::on_size( cx, cy, fSizeType );
 	recalc_layout( cx, cy );
 
 	return lres;
@@ -841,7 +841,7 @@ HRESULT zoom_wnd::IsInNotify( long *pbFlag )
 	return S_OK;
 
 }
-LRESULT win_impl_with_tooltip::handle_message( UINT m, WPARAM w, LPARAM l )
+long win_impl_with_tooltip::handle_message( UINT m, WPARAM w, LPARAM l )
 {
 	switch( m )
 	{

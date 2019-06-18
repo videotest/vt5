@@ -306,7 +306,7 @@ bool CTabBeam::GetTabFromPoint(CPoint p, short& tab1, short& tab2)
 		return false;
 }
 
-bool CTabBeam::GetTabFromPos(LPOS lpos, short& ntab1, short& ntab2)
+bool CTabBeam::GetTabFromPos(long lpos, short& ntab1, short& ntab2)
 {
 	ntab1 = ntab2 = -1;
 	CTab* pTab = 0;

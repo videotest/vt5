@@ -115,7 +115,7 @@ HRESULT CAutomaticClassifier::Finish()
 	}
 
 	long lObjCount = 0;
-	for (TPOS lPos = m_arObjectList.head(); lPos; lPos = m_arObjectList.next(lPos))
+	for( long lPos = m_arObjectList.head(); lPos; lPos = m_arObjectList.next( lPos ) )
 	{
 		lObjCount++;
 		XObjectItem* pitem = m_arObjectList.get( lPos );
@@ -212,7 +212,7 @@ HRESULT CAutomaticClassifier::Finish()
 	}
 
 	bool bLimitsSaved = false;
-	for( TPOS lPos = m_arObjectList.head(); lPos; lPos = m_arObjectList.next( lPos ))
+	for( long lPos = m_arObjectList.head(), zzz = 0; lPos; lPos = m_arObjectList.next( lPos ), zzz++ )
 	{
 		XObjectItem* pitem = m_arObjectList.get( lPos );
 		ICalcObjectPtr sptrObject = pitem->sptrObject;

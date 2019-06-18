@@ -177,7 +177,7 @@ public:
 	bool EnableContextNotification( bool bEnable = true );
 	bool EnableChildsNotification( bool bEnable = true );
 	//notify contexts, if enabled
-	void NotifyContexts(NotifyCodes nc, IUnknown * punkNew = 0, IUnknown * punkOld = 0, GUID* lParam = 0);
+	void NotifyContexts(NotifyCodes nc, IUnknown * punkNew = 0, IUnknown * punkOld = 0, LPARAM lParam = 0);
 	// set active context and sync namedData's context with it
 	bool SetActiveContext(IUnknown *punk);
 
@@ -219,7 +219,7 @@ protected:
 	afx_msg BOOL DispReadFile(LPCTSTR fullPath);
 	afx_msg BOOL ExportEntry(LPCTSTR pszEntry, LPCTSTR pszFileName, long dwFlags);
 	afx_msg BOOL ImportEntry(LPCTSTR pszEntry, LPCTSTR pszFileName, long dwFlags);
-	afx_msg LONG_PTR GetFirstObjectPos(long ltype);
+	afx_msg long GetFirstObjectPos(long ltype);
 	afx_msg LPDISPATCH GetNextObject(long ltype, VARIANT FAR* var_pos);
 	afx_msg BOOL CopyNamedData(LPDISPATCH pDispSrc, LPCTSTR pszSrcEntry, LPCTSTR pszTargetEntry, long dwFlags);
 	afx_msg void SetEmptySection( BSTR* bstrSectionName);
@@ -243,19 +243,19 @@ public:
 		com_call RemoveContext( IUnknown *punk ); 
 		com_call NameExists( BSTR bstrName, long* Exists );
 		com_call GetObject(	BSTR bstrName, BSTR bstrType, IUnknown **punk );
-		com_call NotifyContexts( DWORD dwNotifyCode, IUnknown *punkNew, IUnknown *punkOld, GUID* dwData);
+		com_call NotifyContexts( DWORD dwNotifyCode, IUnknown *punkNew, IUnknown *punkOld, DWORD dwData);
 		com_call EnableBinaryStore( BOOL bBinary );
 		com_call GetCurrentSection( BSTR* pbstrSection );
 // base objects
 		com_call GetBaseGroupCount(int * pnCount);
-		com_call GetBaseGroupFirstPos(TPOS *plPos);
-		com_call GetNextBaseGroup(GUID * pKey, TPOS *plPos);
+		com_call GetBaseGroupFirstPos(long * plPos);
+		com_call GetNextBaseGroup(GUID * pKey, long * plPos);
 		com_call GetIsBaseGroup(GUID * pKey, BOOL * pbBase);
 		com_call GetBaseGroupBaseObject(GUID * pKey, IUnknown ** ppunkObject);
 
 		com_call GetBaseGroupObjectsCount(GUID * pKey, int * pnCount);
-		com_call GetBaseGroupObjectFirstPos(GUID * pKey, TPOS *plPos);
-		com_call GetBaseGroupNextObject(GUID * pKey, TPOS *plPos, IUnknown ** ppunkObject);
+		com_call GetBaseGroupObjectFirstPos(GUID * pKey, long * plPos);
+		com_call GetBaseGroupNextObject(GUID * pKey, long * plPos, IUnknown ** ppunkObject);
 		com_call SetEmptySection( BSTR* bstrSectionName );
 	END_INTERFACE_PART(Data);
 	BEGIN_INTERFACE_PART(DataLogger, INamedDataLogger)
@@ -266,8 +266,8 @@ public:
 	BEGIN_INTERFACE_PART(Types, IDataTypeManager)
 		com_call GetTypesCount( long *pnCount );
 		com_call GetType( long index, BSTR *pbstrType );
-		com_call GetObjectFirstPosition( long nType, LONG_PTR *plpos );
-		com_call GetNextObject( long nType, LONG_PTR *plpos, IUnknown **ppunkObj );
+		com_call GetObjectFirstPosition( long nType, long *plpos );
+		com_call GetNextObject( long nType, long *plpos, IUnknown **ppunkObj );
 	END_INTERFACE_PART(Types);
 	BEGIN_INTERFACE_PART(DocP, IDocForNamedData)
 		com_call AttachExternalDocument( IUnknown *punkND );

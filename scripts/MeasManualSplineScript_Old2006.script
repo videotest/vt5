@@ -1,6 +1,0 @@
-'state:function=StateMeasManualSplineScript
-
-MethodMan_BeforeInteractiveMethodStep "MeasManualSplineScript", "group"
-ActionState.RunInteractive "MeasManualSpline"
-MethodMan.StoreStepAs Docs.LoadString ("Manual Measurements")
-MethodMan.CancelStepStoring

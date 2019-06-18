@@ -54,7 +54,7 @@ void CViewState::Push(IDataContext3Ptr sptrDC)
 			if (FAILED(sptrDC->GetObjectTypeName(nType, bstrType.GetAddress())) || !bstrType)
 				continue;
 
-			LONG_PTR lPos = 0;
+			long lPos = 0;
 			sptrDC->GetFirstSelectedPos( bstrType, &lPos );
 			while( lPos )
 			{
@@ -105,7 +105,7 @@ void CDocumentState::GetFrom(INamedDataPtr sptrND, IDataContext3Ptr sptrDC)
 	if(sptrUndoList!=0) sptrUndoList->GetLastUndoAction( &m_ptrUndoPos );
 
 	// Сохраним состояние вьюх
-	TPOS pos = 0;
+	long pos=0;
 	IDocumentSitePtr sptrDoc(sptrND);
 	if(sptrDoc!=0)
 	{
@@ -150,7 +150,7 @@ void CDocumentState::PutTo(INamedDataPtr sptrND, IDataContext3Ptr sptrDC, bool b
 	if(sptrDoc!=0)
 	{
 		//m_ViewState.Pop(sptrDC);
-		TPOS pos = 0;
+		long pos=0;
 		sptrDoc->GetFirstViewPosition(&pos);
 		list<CViewState>::iterator pViewState = m_ViewsStates.begin();
 		while(pos)
@@ -245,7 +245,7 @@ bool CActionHelper2::Invalidate(int index)
 void CActionHelper2::LockAllViews()
 { // залочить все вьюхи - чтобы до следующего полного Update не моргало
 	if(m_sptrDoc==0) return; // не проиничен
-	TPOS pos = 0;
+	long pos=0;
 	m_sptrDoc->GetFirstViewPosition(&pos);
 	while(pos)
 	{

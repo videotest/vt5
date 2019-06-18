@@ -6,7 +6,6 @@
 #include "PropBagImpl.h"
 #define SIMPLE_TYPES_DEFINED
 #include "\vt5\awin\misc_list.h"
-#include "MethodDataUtil.h"
 
 //#include "MethodDoer.h"
 class CMethodDoer; // предварительное объ€вление класса - понадобитс€ в CMethod::m_xMethodChanges
@@ -16,7 +15,7 @@ bool TestMethod(); // тестирование объектов данных. вызвать и посмотреть, что бу
 struct tagMethodStepNotification
 {
 	long lHint;
-	TPOS lPos;
+	long lPos;
 };
 
 enum MethodStepFlags

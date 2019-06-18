@@ -26,17 +26,11 @@ com_call QueryInterface( const IID &iid, void **pret )	{return E_NOINTERFACE;}
 
 
 
-
-//struct __POSITION {};
-typedef __POSITION* POSITION;
-typedef POSITION TPOS;
-typedef LONG_PTR LPOS;
-
 #pragma pack(push, guard_component_info, 1)
 struct __GuardComponentInfo
 {
 	int		nSize;
-	TPOS lpos;
+	long	lpos;
 	BSTR	bstrName;
 	GUID	guid;
 	bool	bIsAction;

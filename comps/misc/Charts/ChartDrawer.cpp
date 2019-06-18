@@ -678,7 +678,7 @@ HRESULT CChartDrawer::_draw_axis( DWORD hDC, RECT *rcDraw, const RECT& rc )
 							for( long i = 0; i < Chart.m_lAxisLabelsCountX; i++ )
 							{
 								double j = Chart.m_pfXAxisLabels[i];
-								if(lfMinX <= j && j <= lfMaxX )
+								if( j - lfMinX >= 0 )
 									g.DrawLine( &pnAxis, INT( xOffs + ScaleX*( j - lfMinX ) ), INT( rc.bottom - nXPos - ( m_nScaleDirectionX <= 1 ? m_nScaleHalfSize : 0 )*Chart.nAxisThick ), 
 									INT( xOffs + ScaleX*( j - lfMinX ) ), INT( rc.bottom - nXPos + ( m_nScaleDirectionX >= 1 ? m_nScaleHalfSize : 0 )*Chart.nAxisThick ) );
 							}
@@ -719,7 +719,7 @@ HRESULT CChartDrawer::_draw_axis( DWORD hDC, RECT *rcDraw, const RECT& rc )
 								{
 									value=_variant_t(j);
 								}
-								if(0 <= j && j <= lfMaxX)
+								if(j < lfMaxX)
 								{
 									PointF pt( REAL( xOffs + ScaleX*( j - lfMinX ) ), REAL( rc.bottom - nXPos + m_nDigitOffsetX ) );
 									RectF rcText;
@@ -801,7 +801,7 @@ HRESULT CChartDrawer::_draw_axis( DWORD hDC, RECT *rcDraw, const RECT& rc )
 							for( long i = 0; i < Chart.m_lAxisLabelsCountY; i++ )
 							{
 								double j = Chart.m_pfYAxisLabels[i];
-								if( lfMinY<=j && j<=lfMaxY )
+								if( j - lfMinY >= 0 )
 									g.DrawLine( &pnAxis, INT( rc.left + nYPos - ( m_nScaleDirectionY <= 1 ? m_nScaleHalfSize : 0 )*Chart.nAxisThick ), INT( yOffs - ScaleY*( j - lfMinY ) ), 
 									INT( rc.left + nYPos + ( m_nScaleDirectionY >= 1 ? m_nScaleHalfSize : 0 )*Chart.nAxisThick ), INT( yOffs - ScaleY*( j - lfMinY ) ) );
 							}
@@ -845,7 +845,7 @@ HRESULT CChartDrawer::_draw_axis( DWORD hDC, RECT *rcDraw, const RECT& rc )
 								}
 								PointF pt( REAL( rc.left + nYPos - m_nDigitOffsetY ), REAL( yOffs - ScaleY*( j - lfMinY ) ) );
 
-								if(0 <= j && j <= lfMaxY)
+								if(j <= lfMaxY)
 								{
 									RectF rcText;
 									g.MeasureString(  value, -1, font.get(), pt, &formatY, &rcText );
@@ -977,7 +977,6 @@ HRESULT CChartDrawer::_draw_axis( DWORD hDC, RECT *rcDraw, const RECT& rc )
 						for( long i = 0; i < m_Charts[0].m_lAxisLabelsCountX; i++ )
 						{
 							double j = m_Charts[0].m_pfXAxisLabels[i];
-							if(0 <= j && j <= lfMaxX)
 							g.DrawLine( &pnAxis, INT( rc.left + ScaleX*( j - lfMinX ) ), INT( rc.bottom + ScaleY * lfMinY - ( m_nScaleDirectionX <= 1 ? m_nScaleHalfSize : 0 )*nAxisThick ), 
 								INT( rc.left + ScaleX*( j - lfMinX ) ), INT( rc.bottom + ScaleY * lfMinY + ( m_nScaleDirectionX >= 1 ? m_nScaleHalfSize : 0 )*nAxisThick ) );
 						}

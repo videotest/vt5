@@ -142,7 +142,7 @@ namespace GallerySpace
 			pINamedData->SetupSection( _bstr_t( strSection ) );
 			pINamedData->SetValue( _bstr_t( GELLERY_COUNT ), _variant_t( m_pDataArray.count() ) );
 
-			for( TPOS lPos = m_pDataArray.head(), i = 0; lPos; lPos = m_pDataArray.next( lPos ),i++ )
+			for( long lPos = m_pDataArray.head(), i = 0; lPos; lPos = m_pDataArray.next( lPos ),i++ )
 			{
 				TType *pObj = m_pDataArray.get( lPos );
 
@@ -179,7 +179,7 @@ namespace GallerySpace
 		{
 			m_rcCell = NORECT;
 
-			for( TPOS lPos = m_pDataArray.head(); lPos; lPos = m_pDataArray.next( lPos ) )
+			for( long lPos = m_pDataArray.head(); lPos; lPos = m_pDataArray.next( lPos ) )
 			{
 				TType *pObj = m_pDataArray.get( lPos );
 				
@@ -193,16 +193,16 @@ namespace GallerySpace
 		void AddItem( TType *pObj ) { m_pDataArray.add_tail( pObj ); }
 		void RemoveAll( bool bDelete = true ) { _clear_data( bDelete ); }
 		long GetCount( ) { return m_pDataArray.count(); }
-		TPOS Remove(TPOS lPos)
+		long Remove( long lPos ) 
 		{
-			TPOS lNext = m_pDataArray.next( lPos );
+			long lNext = m_pDataArray.next( lPos );
 			m_pDataArray.remove( lPos );
 			return lNext;
 		}
 
-		TPOS GetFirst() { return m_pDataArray.head(); }
-		TPOS GetNext(TPOS lPos) { return m_pDataArray.next(lPos); }
-		TType *Get(TPOS lPos) { return m_pDataArray.get(lPos); }
+		long GetFirst() { return m_pDataArray.head(); }
+		long GetNext( long lPos ) { return m_pDataArray.next( lPos ); }
+		TType *Get( long lPos ) { return m_pDataArray.get( lPos ); }
 	protected:
 		_list_t<TType *>	m_pDataArray;
 		~CGalleryCellBase()
@@ -212,9 +212,9 @@ namespace GallerySpace
 	private:
 		void _clear_data( bool bDelete = true )
 		{
-			for (TPOS pos = m_pDataArray.head(); pos; pos = m_pDataArray.next(pos))
+			for( long lPos = m_pDataArray.head(); lPos; lPos = m_pDataArray.next( lPos ) )
 			{
-				TType *pObj = m_pDataArray.get(pos);
+				TType *pObj = m_pDataArray.get( lPos );
 				if( bDelete )
 					delete pObj;
 			}
@@ -240,7 +240,7 @@ namespace GallerySpace
 			pINamedData->SetupSection( _bstr_t( strSection ) );
 			pINamedData->SetValue( _bstr_t( GELLERY_COUNT ), _variant_t( m_pDataArray.count() ) );
 
-			for( TPOS lPos = m_pDataArray.head(), i = 0; lPos; lPos = m_pDataArray.next( lPos ),i++ )
+			for( long lPos = m_pDataArray.head(), i = 0; lPos; lPos = m_pDataArray.next( lPos ),i++ )
 			{
 				TType *pObj = m_pDataArray.get( lPos );
 
@@ -276,7 +276,7 @@ namespace GallerySpace
 		void CalcRect()
 		{
 			m_rcLine = NORECT;
-			for (TPOS lPos = m_pDataArray.head(); lPos; lPos = m_pDataArray.next(lPos))
+			for( long lPos = m_pDataArray.head(); lPos; lPos = m_pDataArray.next( lPos ) )
 			{
 				TType *pObj = m_pDataArray.get( lPos );
 				
@@ -290,16 +290,16 @@ namespace GallerySpace
 		void AddItem( TType *pObj ) { m_pDataArray.add_tail( pObj ); }
 		void RemoveAll( bool bDelete = true ) { _clear_data( bDelete ); }
 		long GetCount( ) { return m_pDataArray.count(); }
-		TPOS Remove(TPOS lPos)
+		long Remove( long lPos ) 
 		{
-			TPOS lNext = m_pDataArray.next(lPos);
+			long lNext = m_pDataArray.next( lPos );
 			m_pDataArray.remove( lPos );
 			return lNext;
 		}
 
-		TPOS GetFirst() { return m_pDataArray.head(); }
-		TPOS GetNext(TPOS lPos) { return m_pDataArray.next(lPos); }
-		TType *Get(TPOS lPos) { return m_pDataArray.get(lPos); }
+		long GetFirst() { return m_pDataArray.head(); }
+		long GetNext( long lPos ) { return m_pDataArray.next( lPos ); }
+		TType *Get( long lPos ) { return m_pDataArray.get( lPos ); }
 	protected:
 		_list_t< TType *>m_pDataArray;
 		~CGalleryLineBase()
@@ -309,7 +309,7 @@ namespace GallerySpace
 	private:
 		void _clear_data( bool bDelete = true )
 		{
-			for( TPOS lPos = m_pDataArray.head(); lPos; lPos = m_pDataArray.next( lPos ) )
+			for( long lPos = m_pDataArray.head(); lPos; lPos = m_pDataArray.next( lPos ) )
 			{
 				TType *pObj = m_pDataArray.get( lPos );
 				if( bDelete )
@@ -343,7 +343,7 @@ namespace GallerySpace
 			pINamedData->SetupSection( _bstr_t( strSection ) );
 			pINamedData->SetValue( _bstr_t( GELLERY_COUNT ), _variant_t( m_pDataArray.count() ) );
 
-			for (TPOS lPos = m_pDataArray.head(), i = 0; lPos; lPos = m_pDataArray.next(lPos), i++)
+			for( long lPos = m_pDataArray.head(), i = 0; lPos; lPos = m_pDataArray.next( lPos ),i++ )
 			{
 				TType *pObj = m_pDataArray.get( lPos );
 
@@ -387,7 +387,7 @@ namespace GallerySpace
 		void CalcRect()
 		{
 			m_rcFull = NORECT;
-			for (TPOS lPos = m_pDataArray.head(); lPos; lPos = m_pDataArray.next(lPos))
+			for( long lPos = m_pDataArray.head(); lPos; lPos = m_pDataArray.next( lPos ) )
 			{
 				TType *pObj = m_pDataArray.get( lPos );
 				
@@ -401,16 +401,16 @@ namespace GallerySpace
 		void AddItem( TType *pObj ) { m_pDataArray.add_tail( pObj ); }
 		void RemoveAll( bool bDelete = true ) { _clear_data( bDelete ); }
 		long GetCount( ) { return m_pDataArray.count(); }
-		TPOS Remove(TPOS lPos)
+		long Remove( long lPos ) 
 		{
-			TPOS lNext = m_pDataArray.next(lPos);
+			long lNext = m_pDataArray.next( lPos );
 			m_pDataArray.remove( lPos );
 			return lNext;
 		}
 
-		TPOS GetFirst() { return m_pDataArray.head(); }
-		TPOS GetNext(TPOS lPos) { return m_pDataArray.next(lPos); }
-		TType *Get(TPOS lPos) { return m_pDataArray.get(lPos); }
+		long GetFirst() { return m_pDataArray.head(); }
+		long GetNext( long lPos ) { return m_pDataArray.next( lPos ); }
+		TType *Get( long lPos ) { return m_pDataArray.get( lPos ); }
 
 	protected:
 		_list_t< TType *> m_pDataArray;
@@ -421,7 +421,7 @@ namespace GallerySpace
 	private:
 		void _clear_data( bool bDelete = true )
 		{
-			for (TPOS lPos = m_pDataArray.head(); lPos; lPos = m_pDataArray.next(lPos))
+			for( long lPos = m_pDataArray.head(); lPos; lPos = m_pDataArray.next( lPos ) )
 			{
 				TType *pObj = m_pDataArray.get( lPos );
 				if( bDelete )

@@ -1,7 +1,7 @@
 #include "stdafx.h"
-#include "misc_utils.h"
 #include "action_interactive.h"
 #include "core5.h"
+#include "misc_utils.h"
 #include "com_main.h"
 #include "nameconsts.h"
 #include "ScriptNotifyInt.h"
@@ -46,11 +46,6 @@ HRESULT CInteractiveAction::TerminateInteractive()
 	{
 		if( !Finalize() )
 			return E_INVALIDARG;
-		if( m_bTracking ) // A.M. SBT2285. All interactive actions.
-		{
-			::ReleaseCapture();
-			m_bTracking = false;
-		}
 	}
 
 	m_state = Terminated;

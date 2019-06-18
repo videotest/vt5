@@ -57,7 +57,7 @@ IUnknown *CCutFrame::GetContextObject(_bstr_t bstrName, _bstr_t bstrType)
 		return punkImage;
 	}
 
-	LONG_PTR lPos = 0;
+	long lPos = 0;
 	ptrC->GetFirstObjectPos( bstrType, &lPos );
 	
 	while( lPos )
@@ -120,7 +120,7 @@ HRESULT CCutFrame::DoInvoke()
 
 	_list_t<IMeasureObjectPtr> objects;
 
-	POSITION pos; ptrObjectList->GetFirstChildPosition(&pos);
+	long pos; ptrObjectList->GetFirstChildPosition(&pos);
 	while( pos ) //по всем объектам
 	{
 		IUnknownPtr sptr;
@@ -129,7 +129,7 @@ HRESULT CCutFrame::DoInvoke()
 		objects.add_tail(object);
 	}
 
-	for (TPOS pos = objects.head(); pos != 0; pos = objects.next(pos))
+	for(long pos=objects.head(); pos!=0; pos=objects.next(pos))
 	{
 		IMeasureObjectPtr object=objects.get(pos);
 

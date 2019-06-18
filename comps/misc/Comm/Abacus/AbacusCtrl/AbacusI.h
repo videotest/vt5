@@ -131,8 +131,8 @@ extern "C" ABACUSCTRL_API bool AbacusGetInit(ABACUSINIT **ppAbacusInit);
 typedef ABACUSCTRL_API bool (*ABACUSGETINIT)(ABACUSINIT **ppAbacusInit);
 // ѕолучить позицию первой записи с информацией об анализе из внутреннего
 // буфера. ¬озвращает false, если в буфере нет ни одной такой записи.
-extern "C" ABACUSCTRL_API bool AbacusGetFirstRecordPosition(POSITION *plPos);
-typedef ABACUSCTRL_API bool(*ABACUSGETFIRSTRECORDPOSITION)(POSITION *plPos);
+extern "C" ABACUSCTRL_API bool AbacusGetFirstRecordPosition(long *plPos);
+typedef ABACUSCTRL_API bool (*ABACUSGETFIRSTRECORDPOSITION)(long *plPos);
 // ѕолучить позицию следующей записи с информацией об анализе из внутреннего
 // буфера, а по текущей позиции - информацию об анализе.
 // ѕараметр plPos содержит указатель на позицию записи, по которой надо получить
@@ -141,11 +141,11 @@ typedef ABACUSCTRL_API bool(*ABACUSGETFIRSTRECORDPOSITION)(POSITION *plPos);
 // заноситс€ указатель на структуру с данными об анализе. Ёта структура
 // только дл€ чтени€, ее нельз€ модифицировать.
 // ¬сегда возвращаетс€ true.
-extern "C" ABACUSCTRL_API bool AbacusGetNextRecord(POSITION *plPos, ABACUSRECORD **ppRecords);
-typedef ABACUSCTRL_API bool(*ABACUSGETNEXTRECORD)(POSITION *plPos, ABACUSRECORD **ppRecords);
+extern "C" ABACUSCTRL_API bool AbacusGetNextRecord(long *plPos, ABACUSRECORD **ppRecords);
+typedef ABACUSCTRL_API bool (*ABACUSGETNEXTRECORD)(long *plPos, ABACUSRECORD **ppRecords);
 // ”далить запись по позиции.
-extern "C" ABACUSCTRL_API void AbacusRemoveRecord(POSITION lPos);
-typedef ABACUSCTRL_API void(*ABACUSREMOVERECORD)(POSITION lPos);
+extern "C" ABACUSCTRL_API void AbacusRemoveRecord(long lPos);
+typedef ABACUSCTRL_API void (*ABACUSREMOVERECORD)(long lPos);
 // ѕолучить текущие настройки дл€ работы AbacusCtrl.dll
 extern "C" ABACUSCTRL_API void AbacusGetSetup(ABACUSCONTROLSETUP *pSetup);
 typedef ABACUSCTRL_API void (*ABACUSGETSETUP)(ABACUSCONTROLSETUP *pSetup);

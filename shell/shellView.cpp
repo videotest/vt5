@@ -122,7 +122,7 @@ HRESULT CShellView::XSite::UpdateObjectInfo()
 	{
 		pThis->m_strViewObjects.Empty();
 
-		TPOS	lpos = 0;
+		long	lpos = 0;
 		IViewPtr	ptrV( pThis->GetControllingUnknown() );
 		ptrV->GetFirstVisibleObjectPosition( &lpos );
 

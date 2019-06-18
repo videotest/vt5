@@ -1,7 +1,6 @@
 #ifndef __commain_h__
 #define __commain_h__
 
-#include "GuardInt.h"
 #include "com_defs.h"
 #include "com_unknown.h"
 #include "misc_templ.h"
@@ -95,6 +94,7 @@ public:
 
 
 
+#include "GuardInt.h"
 
 class ClassFactory : public ComObjectBase, 
 					public _dyncreate_t<ClassFactory>,

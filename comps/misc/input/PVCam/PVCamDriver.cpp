@@ -2,7 +2,6 @@
 #include "resource.h"
 #include "PVCamApp.h"
 #include "PVCamDriver.h"
-#include "com_main.h"
 #include "VT5Profile.h"
 #include "PreviewPixDlg.h"
 #include "CamValues.h"
@@ -20,12 +19,6 @@ CCamIntComboValue2  g_PreviewMode(_T("Preview"), _T("Mode"), 0, 0, IDC_COMBO_PRE
 	CCamValue::WriteToReg);
 CCamIntComboValue2  g_CaptureMode(_T("Capture"), _T("Mode"), 0, 0, IDC_COMBO_CAPTURE_MODE,
 	CCamValue::WriteToReg);
-
-static int _GetCaptureMode()
-{
-	int n = g_CaptureMode;
-	return n==0?(int)g_PreviewMode:n;
-}
 
 CCamBoolValue g_IFPreview(_T("InputFrame"), _T("Preview"), false, 0, IDC_CHECK_PREVIEW_INPUT_FRAME,
 	CCamValue::WriteToReg|CCamValue::IgnoreMethodic);
@@ -196,9 +189,6 @@ bool CPVCamDriver::InitCamera()
 	pl_set_param(m_hCam, PARAM_GAIN_INDEX, &nGain);
 	pl_get_param(m_hCam, PARAM_BIT_DEPTH, ATTR_CURRENT, (void *)&m_nBitDepth);
 
-//	CString s;
-//	s.LoadString(app::instance()->m_hInstance, IDS_SAME_AS_PREVIEW);
-	g_CaptureMode.Add(0, NULL, IDS_SAME_AS_PREVIEW);
 	for (int i = 1; i <= 4; i++)
 	{
 		CString s;
@@ -353,7 +343,7 @@ bool CPVCamDriver::GetFormat(bool bCapture, LPBITMAPINFOHEADER lpbi)
 	int nbin;
 	if (bCapture)
 	{
-		nbin = _GetCaptureMode();
+		nbin = (int)g_CaptureMode;
 		bFrame = (bool)g_IFCapture;
 	}
 	else
@@ -385,7 +375,7 @@ void CPVCamDriver::ThreadRoutine()
 				pl_exp_check_status(m_hCam, &status, &bytes_xferd);
 			}
 			if (!m_lStopFlag)
-			GrayReady16((LPWORD)m_buff.ptr);
+				GrayReady16((LPWORD)m_buff.ptr);
 		}
 	}
 	else
@@ -422,10 +412,10 @@ void CPVCamDriver::ProcessCapture()
 	rgn_type region;
 	region.s1   = (unsigned short)rc.left;
 	region.s2   = (unsigned short)(rc.right - 1);
-	region.sbin = _GetCaptureMode();
+	region.sbin = (int)g_CaptureMode;
 	region.p1	= (unsigned short)rc.top;
 	region.p2   = (unsigned short)(rc.bottom - 1);
-	region.pbin = _GetCaptureMode();
+	region.pbin = (int)g_CaptureMode;
 	pl_exp_init_seq();
 	pl_exp_setup_seq(m_hCam, 1,	1, &region,	TIMED_MODE, (int)g_Exposure, &stream_size);
 	pl_exp_start_seq(m_hCam, m_buff.ptr);
@@ -485,7 +475,7 @@ void CPVCamDriver::ProcessAutoexposure(HWND hwndDlg)
 	::UpdateWindow(hwndPrg);
 	int nExp1 = 0,nExp2 = 1000;
 	int nStep = 0;
-	int nSteps = (int)(ceil(log(double(nExp2))));
+	int nSteps = (int)(ceil(log(nExp2)));
 	::SendMessage(hwndPrg, PBM_SETRANGE, 0, MAKELONG(0,nSteps));
 	::SendMessage(hwndPrg, PBM_SETPOS, 0, 0);
 	ProcessMessages();
@@ -521,13 +511,13 @@ int CPVCamDriver::GetPreviewZoom()
 
 bool CPVCamDriver::CanCaptureDuringPreview()
 {
-	return (int)g_PreviewMode==_GetCaptureMode() &&
+	return (int)g_PreviewMode==(int)g_CaptureMode &&
 		(bool)g_IFPreview==(bool)g_IFCapture;
 }
 
 bool CPVCamDriver::CanCaptureFromSettings()
 {
-	return (int)g_PreviewMode==_GetCaptureMode() &&
+	return (int)g_PreviewMode==(int)g_CaptureMode &&
 		(bool)g_IFPreview==(bool)g_IFCapture;
 }
 

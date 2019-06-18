@@ -1,7 +1,0 @@
-'resource:Measurement Parameters...#Measurement#Measurement parameters selection#Measurement Parameters
-
-If isMaster Then
-	FormManager.ExecuteModal "MeasParametersMaster"
-Else
-	FormManager.ExecuteModal "MeasParameters" 
-End If

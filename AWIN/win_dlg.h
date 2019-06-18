@@ -51,7 +51,7 @@ inline void add_debug_symbols( HWND hwnd )
 
 
 inline 
-LRESULT __stdcall subclass_dlg_proc(HWND hwnd, UINT m, WPARAM w, LPARAM l )
+int __stdcall subclass_dlg_proc(HWND hwnd, UINT m, WPARAM w, LPARAM l )
 {
 	if( m == WM_INITDIALOG )
 	{
@@ -68,17 +68,17 @@ class dlg_impl : public win_impl
 public:
 	dlg_impl( uint id );
 public:
-	INT_PTR do_modal( HWND hwndParent );
+	int do_modal( HWND hwndParent );
 	int do_modeless( HWND hwndParent );
 public:
-	virtual LRESULT on_initdialog();
+	virtual long on_initdialog();
 	virtual void on_ok()				{end_dialog( IDOK );}
 	virtual void on_cancel()			{end_dialog( IDCANCEL );}
 	virtual void end_dialog( int idc )	{m_result = idc; EndDialog( handle(), idc );}
 	virtual long translate( MSG *pmsg )	{return ::IsDialogMessage( handle(), pmsg );}
 protected:
-	virtual LRESULT on_paint()		{ return call_default(); };
-	virtual LRESULT on_command(uint cmd);
+	virtual long on_paint()		{return call_default();};
+	virtual long on_command( uint cmd );
 	virtual long handle_translate( MSG *pmsg )	{return IsDialogMessage( handle(), pmsg );};
 protected:
 	uint	m_idTemplate;
@@ -87,7 +87,7 @@ protected:
 
 inline 	dlg_impl::dlg_impl( uint id )
 {		m_result = -2; m_idTemplate = id;		m_proc_def = (WNDPROC)DefDlgProc;	}
-inline 	INT_PTR dlg_impl::do_modal( HWND hwndParent )
+inline 	int dlg_impl::do_modal( HWND hwndParent )
 {
 	return ::DialogBoxParam( module::hrc(), MAKEINTRESOURCE(m_idTemplate), hwndParent, (DLGPROC)&subclass_dlg_proc, (long)this );
 }
@@ -97,7 +97,7 @@ inline 	int dlg_impl::do_modeless( HWND hwndParent )
 	return CreateDialogParam( hInstance, MAKEINTRESOURCE(m_idTemplate), hwndParent, (DLGPROC)&subclass_dlg_proc, (long)this )!=0;
 }
 
-inline 	LRESULT dlg_impl::on_command( uint cmd )
+inline 	long dlg_impl::on_command( uint cmd )
 {
 	switch( cmd )
 	{
@@ -107,9 +107,9 @@ inline 	LRESULT dlg_impl::on_command( uint cmd )
 	return false;
 }
 
-inline LRESULT dlg_impl::on_initdialog()
+inline long dlg_impl::on_initdialog()
 {
-	LRESULT	lres = win_impl::on_initdialog();
+	long	lres = win_impl::on_initdialog();
 
 	//load from RT_INITDLG resource
 	HRSRC hrc = ::FindResource( module::hrc(), MAKEINTRESOURCE(m_idTemplate), RT_DLGINIT );

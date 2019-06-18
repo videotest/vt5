@@ -184,7 +184,7 @@ control_export_class CGridCtrl : public CWnd
 
 // Construction
 public:
-	CGridCtrl(int nRows = 0, int nCols = 0, int nFixedRows = 0, int nFixedCols = 0);
+    CGridCtrl(int nRows = 0, int nCols = 0, int nFixedRows = 0, int nFixedCols = 0);
 
     BOOL Create(const RECT& rect, CWnd* parent, UINT nID,
                 DWORD dwStyle = WS_CHILD | WS_BORDER | WS_TABSTOP | WS_VISIBLE);

@@ -241,7 +241,7 @@ HRESULT CCalcObjectImpl::XCalcObj::ClearValues()
 //	_catch_nested;
 }
 
-HRESULT CCalcObjectImpl::XCalcObj::GetFirstValuePos(LPOS * plPos)
+HRESULT CCalcObjectImpl::XCalcObj::GetFirstValuePos(long * plPos)
 {
 	METHOD_PROLOGUE_BASE(CCalcObjectImpl, CalcObj)
 //	_try_nested_base(CCalcObjectImpl, CalcObj, GetFirstValuePos)
@@ -253,7 +253,7 @@ HRESULT CCalcObjectImpl::XCalcObj::GetFirstValuePos(LPOS * plPos)
 //	_catch_nested;
 }
 
-HRESULT CCalcObjectImpl::XCalcObj::GetNextValue(LPOS * plPos, long * plKey, double * pfValue)
+HRESULT CCalcObjectImpl::XCalcObj::GetNextValue(long * plPos, long * plKey, double * pfValue)
 {
 	METHOD_PROLOGUE_BASE(CCalcObjectImpl, CalcObj)
 //	_try_nested_base(CCalcObjectImpl, CalcObj, GetNextValue)
@@ -265,7 +265,7 @@ HRESULT CCalcObjectImpl::XCalcObj::GetNextValue(LPOS * plPos, long * plKey, doub
 //	_catch_nested;
 }
 
-HRESULT CCalcObjectImpl::XCalcObj::GetValuePos(long lKey, LPOS *plPos)
+HRESULT CCalcObjectImpl::XCalcObj::GetValuePos(long lKey, long *plPos)
 {
 	METHOD_PROLOGUE_BASE(CCalcObjectImpl, CalcObj)
 //	_try_nested_base(CCalcObjectImpl, CalcObj, GetValuePos)
@@ -277,7 +277,7 @@ HRESULT CCalcObjectImpl::XCalcObj::GetValuePos(long lKey, LPOS *plPos)
 //	_catch_nested;
 }
 
-HRESULT CCalcObjectImpl::XCalcObj::RemoveValueByPos(LPOS lPos)
+HRESULT CCalcObjectImpl::XCalcObj::RemoveValueByPos(long lPos)
 {
 	METHOD_PROLOGUE_BASE(CCalcObjectImpl, CalcObj)
 //	_try_nested_base(CCalcObjectImpl, CalcObj, RemoveValueByPos)
@@ -346,7 +346,7 @@ HRESULT CCalcObjectImpl::XCalcObj::SetObjectClass(GUID lClassKey)
 
 // inner function implementation
 
-bool CCalcObjectImpl::GetValuePos(long lKey, LPOS * plPos)
+bool CCalcObjectImpl::GetValuePos(long lKey, long * plPos)
 {
 	if (lKey == -1 || !plPos)
 		return false;
@@ -362,14 +362,14 @@ bool CCalcObjectImpl::GetValuePos(long lKey, LPOS * plPos)
 		CCalcObjValue & value = m_ValueList.GetNext(pos);
 		if (value.GetKey() == lKey)
 		{
-			*plPos = (LPOS)PrevPos;
+			*plPos = (long)PrevPos;
 			return true;
 		}
 	}
 	return false;
 }
 
-bool CCalcObjectImpl::RemoveValueByPos(LPOS lPos)
+bool CCalcObjectImpl::RemoveValueByPos(long lPos)
 {
 	if (m_ValueList.IsEmpty())
 		return false;
@@ -409,7 +409,7 @@ bool CCalcObjectImpl::RemoveValue(long lParamKey)
 }
 
 
-bool CCalcObjectImpl::GetNextValue(LPOS * plPos, long * plKey, double * pfValue)
+bool CCalcObjectImpl::GetNextValue(long * plPos, long * plKey, double * pfValue)
 {
 	if (!plPos)
 		return false;
@@ -436,7 +436,7 @@ bool CCalcObjectImpl::GetNextValue(LPOS * plPos, long * plKey, double * pfValue)
 	return true;	
 }
 
-bool CCalcObjectImpl::GetFirstValuePos(LPOS * plPos)
+bool CCalcObjectImpl::GetFirstValuePos(long * plPos)
 {	
 	if (!plPos)
 		return false;
@@ -446,7 +446,7 @@ bool CCalcObjectImpl::GetFirstValuePos(LPOS * plPos)
 		return true;
 
 	POSITION pos = m_ValueList.GetHeadPosition();
-	*plPos = (LPOS)pos;
+	*plPos = (long)pos;	
 	
 	return true;	
 }
@@ -670,7 +670,7 @@ void CMeasParamGroupImpl::DefineParameter( long lKey, const char *pszName, const
 	pdescr->bstrDefFormat = _bstr_t(pszDefFormat).copy();
 	pdescr->lKey = lKey;
 	pdescr->lEnabled = 0;
-	pdescr->pos = (LONG_PTR)m_listParamDescr.AddTail( pdescr );
+	pdescr->pos = (long)m_listParamDescr.AddTail( pdescr );
 	m_mapKeyToPosition[lKey] = (POSITION)pdescr->pos;
 	CString	sMainSection = "\\measurement\\parameters\\";
 	CString sParamsSection = sMainSection+pszName;
@@ -696,23 +696,23 @@ HRESULT CMeasParamGroupImpl::XGroup::GetParamsCount ( long * plCount )
 	*plCount = pThis->m_listParamDescr.GetCount();
 	return S_OK;
 }
-HRESULT CMeasParamGroupImpl::XGroup::GetFirstPos ( LONG_PTR *plpos )
+HRESULT CMeasParamGroupImpl::XGroup::GetFirstPos ( long * plpos )
 {
 	METHOD_PROLOGUE_BASE(CMeasParamGroupImpl, Group);
-	*plpos = (LONG_PTR)pThis->m_listParamDescr.GetHeadPosition();
+	*plpos = (long)pThis->m_listParamDescr.GetHeadPosition();
 	return S_OK;
 }
-HRESULT CMeasParamGroupImpl::XGroup::GetNextParam(LONG_PTR *plPos, ParameterDescriptor **ppDescriptior )
+HRESULT CMeasParamGroupImpl::XGroup::GetNextParam(long *plPos, ParameterDescriptor **ppDescriptior )
 {
 	METHOD_PROLOGUE_BASE(CMeasParamGroupImpl, Group);
 	ParameterDescriptor*	pdescr = (ParameterDescriptor*)pThis->m_listParamDescr.GetNext( (POSITION&)*plPos );
 	if( ppDescriptior )*ppDescriptior = pdescr;
 	return S_OK;
 }
-HRESULT CMeasParamGroupImpl::XGroup::GetPosByKey ( long lKey, LONG_PTR *plpos )
+HRESULT CMeasParamGroupImpl::XGroup::GetPosByKey ( long lKey, long * plpos )
 {
 	METHOD_PROLOGUE_BASE(CMeasParamGroupImpl, Group);
-	*plpos = (LONG_PTR)pThis->_find(lKey);
+	*plpos = (long)pThis->_find( lKey );
 	return S_OK;
 }
 
@@ -725,7 +725,7 @@ HRESULT CMeasParamGroupImpl::XGroup::InitializeCalculation ( IUnknown * punkCont
 
 	pThis->OnInitCalculation();
 
-	LONG_PTR	lposP = 0;
+	long	lposP = 0;
 	GetFirstPos( &lposP );
 
 	while( lposP )

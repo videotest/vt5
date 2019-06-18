@@ -95,7 +95,7 @@ int CBaumerBxApp::ExitInstance()
 	return CWinApp::ExitInstance();
 }
 
-void CBaumerBxApp::WinHelpInternal(DWORD_PTR dwData, UINT nCmd) 
+void CBaumerBxApp::WinHelpInternal(DWORD dwData, UINT nCmd) 
 {
 	if (CStdProfileManager::m_pMgr->GetProfileInt(_T("Settings"), _T("DisableHelp"), 1))
 		return;

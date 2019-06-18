@@ -257,16 +257,16 @@ protected:
 		com_call SetViewProgID( BSTR bstrProgID );
 
 		//object list
-		com_call GetFirstObjectPosition(LONG_PTR* plPos);
+		com_call GetFirstObjectPosition( long* plPos );
 		com_call GetNextObject( BSTR* pbstrObjectName, BOOL* pbActiveObject, 
-			BSTR* bstrObjectType, LONG_PTR *plPos);
-		com_call InsertAfter(LONG_PTR lPos,
+								BSTR* bstrObjectType, long *plPos );
+		com_call InsertAfter( long lPos,  
 								BSTR bstrObjectName, BOOL bActiveObject, 
 								BSTR bstrObjectType );
-		com_call EditAt(LONG_PTR lPos,
+		com_call EditAt( long lPos,  
 								BSTR bstrObjectName, BOOL bActiveObject, 
 								BSTR bstrObjectType );
-		com_call RemoveAt(LONG_PTR lPos);
+		com_call RemoveAt( long lPos );
 		com_call DestroyView();
 	END_INTERFACE_PART(ViewCtrl)
 		
@@ -290,11 +290,6 @@ protected:
 		com_call SetDoc( IUnknown *punkDoc );
 		com_call SetApp( IUnknown *punkVtApp );
 	END_INTERFACE_PART(VtActiveXCtrl2)
-
-	BEGIN_INTERFACE_PART(ViewSubType, IViewSubType)
-		com_call GetViewSubType( unsigned long* pViewSubType );
-		com_call SetViewSubType( unsigned long ViewSubType );
-	END_INTERFACE_PART(ViewSubType)
 
 
 		/*
@@ -327,7 +322,7 @@ public:
 	CString	get_object_name();
 	CStringArray	m_ar_objects;
 private:
-	long m_ViewSubType;
+	unsigned long m_ViewSubType;
 };
 
 

@@ -38,15 +38,7 @@ GUARD_IMPLEMENT_OLECREATE_CTRL(CColorManAXPropPage, "COLORMANAX.ColorManAXPropPa
 
 BOOL CColorManAXPropPage::CColorManAXPropPageFactory::UpdateRegistry(BOOL bRegister)
 {
-#if defined(NOGUARD)
-	if (bRegister)
-		return AfxOleRegisterPropertyPageClass(AfxGetInstanceHandle(),
-			m_clsid, IDS_COLORMANAX_PPG);
-	else
-		return AfxOleUnregisterClass(m_clsid, NULL);
-#else
 	return UpdateRegistryPage(bRegister, AfxGetInstanceHandle(), IDS_COLORMANAX_PPG);
-#endif
 }
 
 

@@ -137,7 +137,7 @@ BOOL CAddField::OnInitDialog()
 			if(SUCCEEDED(hr)){
 				if(ftVTObject==fieldType)
 				{
-					pcbFieldName->AddString(ATL::CW2CT(fieldName));
+					pcbFieldName->AddString(CW2CT(fieldName));
 				}
 			}
 		}

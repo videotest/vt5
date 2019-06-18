@@ -92,7 +92,7 @@ HRESULT CFFTDrawController::XFftDraw::Init( IUnknown *punkDoc )
 
 	IDocumentSitePtr	ptrDoc( punkDoc);
 
-	TPOS	lPos = 0;
+	long	lPos = 0;
 	ptrDoc->GetFirstViewPosition( &lPos );
 
 	while( lPos )

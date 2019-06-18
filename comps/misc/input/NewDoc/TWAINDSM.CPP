@@ -36,7 +36,7 @@ void CTwainDataSrcMgr::TwainCheckStatus(int rc)
 
 void CTwainDataSrcMgr::ClearDataSources()
 {
-	int nSize = (int)m_DataSources.GetSize() - 1;
+	int nSize = m_DataSources.GetSize() - 1;
 	for (; nSize >= 0; nSize--)
 	{
 		CTwainDataSource *p = m_DataSources.GetAt(nSize);

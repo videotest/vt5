@@ -517,13 +517,13 @@ IDBaseDocumentPtr CAlbomDB::GetDBaseDoc( bool bReportError /* = false */ )
 	sptrIApplication sptrA( GetAppUnknown( ) );
 	if( sptrA != NULL )
 	{			
-		LONG_PTR	lPosTemplate = 0;
+		long	lPosTemplate = 0;
 		
 		sptrA->GetFirstDocTemplPosition( &lPosTemplate );
 		
 		while( lPosTemplate )
 		{
-			LONG_PTR	lPosDoc = 0;
+			long	lPosDoc = 0;
 
 			sptrA->GetFirstDocPosition( lPosTemplate, &lPosDoc );
 

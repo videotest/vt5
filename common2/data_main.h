@@ -19,7 +19,7 @@ class CObjectBase : public ComObjectBase,
 protected:
 	IUnknown *m_punkParent; // Without AddRef
 	_list_t2<IUnknown*,FreeObject>	m_listChilds;
-	TPOS FindChildPos(IUnknown *punk);
+	long FindChildPos(IUnknown *punk);
 public:
 	CObjectBase();
 	virtual ~CObjectBase();
@@ -44,25 +44,25 @@ public:
 	com_call AddChild( IUnknown *punkChild );
 
 	com_call GetChildsCount( long *plCount );
-	com_call GetFirstChildPosition(TPOS *plPos);
-	com_call GetNextChild(TPOS *plPos, IUnknown **ppunkChild);
-	com_call GetLastChildPosition(TPOS *plPos);
-	com_call GetPrevChild(TPOS *plPos, IUnknown **ppunkChild);
+	com_call GetFirstChildPosition( long *plPos );
+	com_call GetNextChild( long *plPos, IUnknown **ppunkChild );
+	com_call GetLastChildPosition(long *plPos);
+	com_call GetPrevChild(long *plPos, IUnknown **ppunkChild);
 
 	com_call AttachData( IUnknown *punkNamedData );	//called from NamedData
 	com_call GetObjectFlags( DWORD *pdwObjectFlags );
 
-	com_call SetActiveChild(TPOS lPos);
-	com_call GetActiveChild(TPOS *plPos);
+	com_call SetActiveChild( long lPos );
+	com_call GetActiveChild( long *plPos );
 	com_call SetUsedFlag( BOOL bSet );				//set flag object used as part of another object, doesn't 
 														//require to store object in NamedData
 	com_call SetHostedFlag( BOOL bSet );			//set flag if object controlled by host
 	com_call GetData(IUnknown **ppunkNamedData );
 
-	com_call GetObjectPosInParent(TPOS *plPos); // return object position in parent's object child list
-	com_call SetObjectPosInParent(TPOS lPos);
+	com_call GetObjectPosInParent( long *plPos ); // return object position in parent's object child list
+	com_call SetObjectPosInParent( long lPos ); 
 
-	com_call GetChildPos(IUnknown *punkChild, TPOS *plPos);
+	com_call GetChildPos(IUnknown *punkChild, long *plPos);
 	com_call InitAttachedData();
 // base and source key functionality
 	com_call GetBaseKey(GUID * pBaseKey);
@@ -148,12 +148,12 @@ protected:
 		return S_OK;
 	}
 
-	com_call GetObjectPosInParent( TPOS *plPos )
+	com_call GetObjectPosInParent( long *plPos )
 	{	
 		*plPos = m_pos_parent;
 		return S_OK;
 	}
-	com_call SetObjectPosInParent( TPOS lPos )
+	com_call SetObjectPosInParent( long lPos )
 	{	
 		m_pos_parent = lPos;
 		return S_OK;	
@@ -167,7 +167,7 @@ protected:
 
 protected:
 	INamedDataObject2	*m_pndoParent;
-	TPOS				m_pos_parent;
+	long				m_pos_parent;
 };
 
 

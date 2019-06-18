@@ -228,7 +228,7 @@ void CShellDocManager::SetDispatchImpl( CShellDocManagerDisp	* pimpl )
 //size of DocumentTemplate list
 long CShellDocManager::GetDocTemplateCount()
 {
-	return (long)m_templateList.GetCount();
+	return m_templateList.GetCount();
 }
 
 //return Document template by position
@@ -566,10 +566,7 @@ BOOL CShellDocManager::DoPromptFileName(CString& fileName, UINT nIDSTitle,
 	ofn.lpstrFile = fileName.GetBuffer(_MAX_PATH);
 	ofn.nMaxFile = _MAX_PATH;
 	ofn.nFilterIndex = FindFilterIndex(ofn.lpstrFilter, strE);
-	CString fileTitle;
-	ofn.lpstrFileTitle = fileTitle.GetBuffer(_MAX_PATH);;
-	ofn.nMaxFileTitle = _MAX_PATH;
-
+	
 	BOOL res;
 
 	res = ExecuteFileDialog(bOpenFileDialog, ofn, 0 );
@@ -1452,7 +1449,7 @@ void CShellDocTemplate::AppendFilterSuffix( CString &strFilter, OPENFILENAME *po
 //return count of documents
 long CShellDocTemplate::GetDocumentCount()
 {
-	return (long)m_docList.GetCount();
+	return m_docList.GetCount();
 }
 
 //return document by no
@@ -1856,7 +1853,7 @@ BSTR CShellDocManagerDisp::LoadStringEx(LPCTSTR sz_id, LPCTSTR sz_sect)
 		if(0==*pbuffer)
 		{
 			strcpy(pbuffer, sz_id);
-        ::WritePrivateProfileString( sz_sect, sz_id, pbuffer, sz_string_file );
+			::WritePrivateProfileString( sz_sect, sz_id, pbuffer, sz_string_file );
 		}
 
 		char	*pout = pbuffer;

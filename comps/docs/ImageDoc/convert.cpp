@@ -5,6 +5,11 @@
 #include <math.h>
 
 
+#ifdef _DEBUG
+#define new DEBUG_NEW
+#undef THIS_FILE
+static char THIS_FILE[] = __FILE__;
+#endif
 
 
 //dyncreate
@@ -153,7 +158,7 @@ IUnknown *CActionConvertImage::GetObjectArgument( const char *szType, int nCurre
 
 	if( ptrC == NULL ) return NULL;
 
-	LONG_PTR	lPosSelected = 0;
+	long	lPosSelected = 0;
 	ptrC->GetFirstSelectedPos( bstrType, &lPosSelected );
 	if( !lPosSelected )return 0;
 	ptrC->GetNextSelected( bstrType, &lPosSelected, &punkDataObject );

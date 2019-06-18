@@ -679,7 +679,7 @@ void CAviGallery::SetClientSize( SIZE size )
 }
 
 //////////////////////////////////////////////////////////////////////
-HRESULT CAviGallery::OnActivateView( BOOL bActivate, IUnknown *punkOtherView )
+LRESULT CAviGallery::OnActivateView( BOOL bActivate, IUnknown *punkOtherView )
 {
 	ShowPropPage( bActivate == TRUE );
 	
@@ -808,25 +808,25 @@ HRESULT CAviGallery::GetClassID(CLSID *pClassID )
 }
 
 //////////////////////////////////////////////////////////////////////
-HRESULT CAviGallery::GetFirstVisibleObjectPosition(TPOS *plpos)
+HRESULT CAviGallery::GetFirstVisibleObjectPosition( long *plpos )
 {
 	*plpos = 0;
 
 	if( m_ptrAvi != 0 )
-		*plpos = (TPOS)1;
+		*plpos = 1;
 	
 	return S_OK;
 }
 
 //////////////////////////////////////////////////////////////////////
-HRESULT CAviGallery::GetNextVisibleObject( IUnknown ** ppunkObject, TPOS *plPos )
+HRESULT CAviGallery::GetNextVisibleObject( IUnknown ** ppunkObject, long *plPos )
 {	
-	TPOS lPos		= *plPos;
+	long lPos		= *plPos;
 	*ppunkObject	= 0;
 
 	*plPos			= 0;
 
-	if( lPos == (TPOS)1 )
+	if( lPos == 1 )
 	{
 		if( m_ptrAvi )
 		{

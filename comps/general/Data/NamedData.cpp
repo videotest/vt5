@@ -379,7 +379,7 @@ bool CNamedData::XEntry::Serialize( CStreamEx &ar )
 
 int CNamedData::XEntry::GetEntriesCount()
 {
-	return (int)m_arrChildEntries.GetSize();
+	return m_arrChildEntries.GetSize();
 }
 
 CNamedData::XEntry *
@@ -396,7 +396,7 @@ CNamedData::XEntry *
 {
 	//PROFILE_TEST( "CNamedData::XEntry::Find" );
 
-	TPOS lpos_find = m_map.find( pszEntryName );
+	long lpos_find = m_map.find( pszEntryName );
 	if( lpos_find )
 		return m_map.get( lpos_find );
 
@@ -650,7 +650,7 @@ void CNamedData::XType::UnRegisterObject( IUnknown *punk )
 //returns count of objects give type in given named data
 long CNamedData::XType::GetObjectsCount()
 {
-	return (long)m_objects.GetCount();
+	return m_objects.GetCount();
 }
 
 //returns first object position
@@ -1027,7 +1027,7 @@ BSTR CNamedData::GetEntryName(long index)
 
 long CNamedData::GetTypesCount() 
 {
-	return (long)m_ptrsTypes.GetSize();
+	return m_ptrsTypes.GetSize();
 }
 
 	//get type by index
@@ -1183,7 +1183,7 @@ HRESULT CNamedData::XData::DeleteEntry( BSTR bstrName )
 			pEntry = pEntry->m_pparent;
 		}
 
-		for( int i=(int)arEntry.GetSize()-1;i>=0;i-- )
+		for( int i=arEntry.GetSize()-1;i>=0;i-- )
 		{
 			if( arEntry[i].IsEmpty() )
 				continue;
@@ -1232,7 +1232,7 @@ HRESULT CNamedData::XData::DeleteEntry( BSTR bstrName )
 		{
 			//paul 11.11.2003. remove from map
 			XEntry* pchild_entry = (XEntry*)peParent->m_arrChildEntries[pos];
-			TPOS lpos_map = peParent->m_map.find(pchild_entry->m_strEntry);
+			long lpos_map = peParent->m_map.find( pchild_entry->m_strEntry );
 			ASSERT( lpos_map ); 
 			if( lpos_map )
 				peParent->m_map.remove( lpos_map );			
@@ -1352,7 +1352,7 @@ HRESULT CNamedData::XData::GetObject( BSTR bstrName, BSTR bstrType, IUnknown **p
 	}
 }
 
-HRESULT CNamedData::XData::NotifyContexts( DWORD dwNotifyCode, IUnknown *punkNew, IUnknown *punkOld, GUID* dwData)
+HRESULT CNamedData::XData::NotifyContexts( DWORD dwNotifyCode, IUnknown *punkNew, IUnknown *punkOld, DWORD dwData)
 {
 	METHOD_PROLOGUE_EX(CNamedData, Data)
 	{
@@ -1392,24 +1392,24 @@ HRESULT CNamedData::XData::GetBaseGroupCount(int * pnCount)
 		if (!pnCount)
 			return E_INVALIDARG;
 
-		*pnCount = (int)pThis->m_mapBase.GetCount();
+		*pnCount = pThis->m_mapBase.GetCount();
 		return S_OK;
 	}
 }
 
-HRESULT CNamedData::XData::GetBaseGroupFirstPos(TPOS *plPos)
+HRESULT CNamedData::XData::GetBaseGroupFirstPos(long * plPos)
 {
 	METHOD_PROLOGUE_EX(CNamedData, Data)
 	{
 		if (!plPos)
 			return E_INVALIDARG;
 
-		*plPos = pThis->m_mapBase.GetStartPosition();
+		*plPos = (long)pThis->m_mapBase.GetStartPosition();
 		return S_OK;
 	}
 }
 
-HRESULT CNamedData::XData::GetNextBaseGroup(GUID * pKey, TPOS *plPos)
+HRESULT CNamedData::XData::GetNextBaseGroup(GUID * pKey, long * plPos)
 {
 	METHOD_PROLOGUE_EX(CNamedData, Data)
 	{
@@ -1424,7 +1424,7 @@ HRESULT CNamedData::XData::GetNextBaseGroup(GUID * pKey, TPOS *plPos)
 
 		CBaseGroup * pData = 0;
 		pThis->m_mapBase.GetNextAssoc(pos, *pKey, pData);
-		*plPos = pos;
+		*plPos = (long)pos;
 		return S_OK;
 	}
 }
@@ -1465,7 +1465,7 @@ HRESULT CNamedData::XData::GetBaseGroupBaseObject(GUID * pKey, IUnknown ** ppunk
 	}
 }
 
-HRESULT CNamedData::XData::GetBaseGroupObjectFirstPos(GUID * pKey, TPOS *plPos)
+HRESULT CNamedData::XData::GetBaseGroupObjectFirstPos(GUID * pKey, long * plPos)
 {
 	METHOD_PROLOGUE_EX(CNamedData, Data)
 	{
@@ -1478,13 +1478,13 @@ HRESULT CNamedData::XData::GetBaseGroupObjectFirstPos(GUID * pKey, TPOS *plPos)
 			return E_INVALIDARG;
 
 		if (pData && pData->list.GetCount())
-			*plPos = (pData->list.GetHeadPosition());
+			*plPos = (long)(pData->list.GetHeadPosition());
 
 		return S_OK;
 	}
 }
 
-HRESULT CNamedData::XData::GetBaseGroupNextObject(GUID * pKey, TPOS *plPos, IUnknown ** ppunkObject)
+HRESULT CNamedData::XData::GetBaseGroupNextObject(GUID * pKey, long * plPos, IUnknown ** ppunkObject)
 {
 	METHOD_PROLOGUE_EX(CNamedData, Data)
 	{
@@ -1498,7 +1498,7 @@ HRESULT CNamedData::XData::GetBaseGroupNextObject(GUID * pKey, TPOS *plPos, IUnk
 
 		POSITION pos = (POSITION)*plPos;
 		*ppunkObject = (IUnknown*)pData->list.GetNext(pos);
-		*plPos = pos;
+		*plPos = (long)pos;
 
 		if (*ppunkObject)
 			(*ppunkObject)->AddRef();
@@ -1520,7 +1520,7 @@ HRESULT CNamedData::XData::GetBaseGroupObjectsCount(GUID * pKey, int * pnCount)
 			return E_INVALIDARG;
 
 		if (pData)
-			*pnCount = (int)pData->list.GetCount();
+			*pnCount = pData->list.GetCount();
 
 		return S_OK;
 	}
@@ -1605,7 +1605,7 @@ IUnknown* GetObjectByNameAndType(IUnknown * pNamedData, LPCTSTR szObjName, LPCTS
 			::SysFreeString(bstrType);
 
 			// else try to find object
-			LPOS lpos = 0;
+			long lpos = 0;
 			sptrMgr->GetObjectFirstPosition(index, &lpos);
 			// looking for object with requested name
 			while (lpos)
@@ -1742,16 +1742,16 @@ HRESULT CNamedData::XTypes::GetType( long index, BSTR *pbstrType )
 	return S_OK;
 }
 
-HRESULT CNamedData::XTypes::GetObjectFirstPosition( long nType, LONG_PTR *plpos )
+HRESULT CNamedData::XTypes::GetObjectFirstPosition( long nType, long *plpos )
 {
 	METHOD_PROLOGUE_EX(CNamedData, Types)
 
 	XType	*pT = pThis->GetType( nType );
-	(*plpos) = (LONG_PTR)pT->GetFirstObjectPosition();
+	(*plpos) = (long)pT->GetFirstObjectPosition();
 	return S_OK;
 }
 
-HRESULT CNamedData::XTypes::GetNextObject( long nType, LONG_PTR *plpos, IUnknown **ppunkObj )
+HRESULT CNamedData::XTypes::GetNextObject( long nType, long *plpos, IUnknown **ppunkObj )
 {
 	METHOD_PROLOGUE_EX(CNamedData, Types)
 
@@ -2036,7 +2036,7 @@ bool CNamedData::DoReadFile( const char *pszFileName, bool bSilent )
 			{
 				sptrC->AttachData(GetDocument());
 
-				LONG_PTR lPos = 0;
+				long lPos = 0;
 				sptrC->GetFirstObjectPos( _bstr_t( szTypeImage ), &lPos );
 				if( lPos )
 				{
@@ -2058,7 +2058,7 @@ bool CNamedData::DoReadFile( const char *pszFileName, bool bSilent )
 						sptrC->GetObjectTypeName( 0, bstr.GetAddress() );
 						if( bstr.length() != 0 )
 						{
-							LONG_PTR lPos = 0;
+							long lPos = 0;
 							sptrC->GetFirstObjectPos( bstr, &lPos );
 							if( lPos )
 							{
@@ -2299,7 +2299,7 @@ void StoreEntryToText( CNamedData *pdata, CNamedData::XEntry *pe, CStringArrayEx
 		{
 			str.Format( "%s:%s=\n%s\n%s", (const char *)pe->m_strEntry, (const char *)strType, (const char *)strValue, (const char *)END_OF_MLS );
 			str.Remove('\r'); // удалим все CR - хватит и LF
-			if( !sa[(int)sa.GetSize()-1].IsEmpty() )
+			if( !sa[sa.GetSize()-1].IsEmpty() )
 				sa.Add( "" );
 			sa.Add( str );
 			sa.Add( "" );
@@ -2362,7 +2362,7 @@ void StoreEntryToText( CNamedData *pdata, CNamedData::XEntry *pe, CStringArrayEx
 					GetHGlobalFromStream( ptrStream, &h );
 					if( h )
 					{
-						long dwLen = (long)GlobalSize( h );
+						DWORD  dwLen = GlobalSize( h );
 
 						sa.Add( METHOD_BINARY );
 
@@ -2786,7 +2786,7 @@ POSITION CBaseGroup::FindBase(GuidKey & key)
 }
 
 //notify contexts, if enabled
-void CNamedData::NotifyContexts(NotifyCodes nc, IUnknown * punkNew, IUnknown * punkOld, GUID* lParam)
+void CNamedData::NotifyContexts(NotifyCodes nc, IUnknown * punkNew, IUnknown * punkOld, LPARAM lParam)
 {
 	INamedDataObject2Ptr sptrNew = punkNew;
 	INamedDataObject2Ptr sptrOld = punkOld;
@@ -3117,7 +3117,7 @@ void CNamedData::_DeleteChilds( IUnknown *punk )
 		return;
 	sptrINamedDataObject2	sptrN( punk );
 
-	TPOS	lPos;
+	long	lPos;
 
 	//bool ret = GetDataDump("e:\\vt5\\vt5\\nd.log", GetControllingUnknown());
 
@@ -3146,7 +3146,7 @@ void CNamedData::_InsertChilds( IUnknown *punk )
 		return;
 	sptrINamedDataObject2	sptrN( punk );
 
-	TPOS	lPos;
+	long	lPos;
 
 	sptrN->GetFirstChildPosition( &lPos );
 
@@ -3508,9 +3508,9 @@ BOOL CNamedData::ImportEntry(LPCTSTR pszEntry, LPCTSTR pszFileName, long dwFlags
 	return true;
 }
 
-LONG_PTR CNamedData::GetFirstObjectPos(long ltype) 
+long CNamedData::GetFirstObjectPos(long ltype) 
 {
-	LONG_PTR lpos = 0;
+	long lpos = 0;
 	m_xTypes.GetObjectFirstPosition( ltype, &lpos );
 
 	return lpos;
@@ -3522,7 +3522,7 @@ LPDISPATCH CNamedData::GetNextObject(long ltype, VARIANT FAR* var_pos)
 		return 0;
 
 	IUnknown* punk = 0;
-	m_xTypes.GetNextObject( ltype, (LONG_PTR*)&var_pos->pintVal, &punk );
+	m_xTypes.GetNextObject( ltype, &var_pos->lVal, &punk );
 	if( !punk )	return 0;
 
 	IDispatchPtr ptr_disp = punk;

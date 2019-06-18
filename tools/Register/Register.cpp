@@ -44,6 +44,8 @@ void WriteLogLine( const char *lpszFormat, ... )
 	va_end(args);
 }
 
+
+void RegClean();
 UINT WM_FIND_APP = RegisterWindowMessage("SHELL_FIND_APP");
 
 
@@ -82,7 +84,6 @@ END_MESSAGE_MAP()
 
 CRegisterApp::CRegisterApp()
 {
-	_CrtSetDbgFlag(0);
 	m_strSuffix = szSuffix;
 	m_innerclsid = guidData;
 	m_dwImito = dwImito;
@@ -731,10 +732,10 @@ Task:<filename>\t-Specify the file with list of dlls to register" );
 		char	*p = strrchr( szIniFileName, '\\' );
 		strcpy( p, "\\shell.data" );
 
-		char	sz[10] = "ru";
+		char	sz[10] = "en";
 		::GetPrivateProfileString( "General", "Language:String", sz, sz, 10, szIniFileName );		
 		
-		if( ::GetPrivateProfileInt( "General", "UseLanguage:Long", 2, szIniFileName ) )
+		if( ::GetPrivateProfileInt( "General", "UseLanguage:Long", 1, szIniFileName ) )
 		{		
 			if( !stricmp( sz, "ru" ) )langid = MAKELANGID(LANG_RUSSIAN, SUBLANG_DEFAULT);
 			else if( !stricmp( sz, "en" ) )langid = MAKELANGID(LANG_ENGLISH, SUBLANG_ENGLISH_US);
@@ -762,10 +763,18 @@ Task:<filename>\t-Specify the file with list of dlls to register" );
 	WriteLogLine( "  bShowInterface=%d", bShowInterface );
 
 
-//	InitLanguageSupport( langid );
+	InitLanguageSupport( langid );
 	
 	
 
+	if( bClearReg )
+	{
+		WriteLogLine( "Clearing registry..." );
+		RegClean();
+		WriteLogLine( "Clearing done" );
+	}
+	if( !bRegister )
+		return false;
 
 	// Standard initialization
 	// If you are not using these features and wish to reduce the size
@@ -876,71 +885,60 @@ Task:<filename>\t-Specify the file with list of dlls to register" );
 	m_pTable->SetKey(GuidKey(m_innerclsid), 0);
 	m_pTable->Load(strFilePath);
 
-
 	// set our functions instead standard
 
-	bool bCreateInstance = false;//InstallCreateInstance((LPVOID)&CoCreateInstanceShell);
+	bool bCreateInstance = InstallCreateInstance((LPVOID)&CoCreateInstanceShell);
 
-	bool bGetClassObject = false;//InstallGetClassObject((LPVOID)&CoGetClassObjectShell);
+	bool bGetClassObject = InstallGetClassObject((LPVOID)&CoGetClassObjectShell);
 
-	bool bCLSIDFromProgID = false;//InstallCLSIDFromProgID((LPVOID)&CLSIDFromProgIDShell);
+	bool bCLSIDFromProgID = InstallCLSIDFromProgID((LPVOID)&CLSIDFromProgIDShell);
 
-	bool bProgIDFromCLSID = false;//InstallProgIDFromCLSID((LPVOID)&ProgIDFromCLSIDShell);
+	bool bProgIDFromCLSID = InstallProgIDFromCLSID((LPVOID)&ProgIDFromCLSIDShell);
 
 
 #if (_WIN32_WINNT >= 0x0400 ) || defined(_WIN32_DCOM) // DCOM
-	bool bCreateInstanceEx = false;//InstallCreateInstanceEx((LPVOID)&CoCreateInstanceExShell);
+	bool bCreateInstanceEx = InstallCreateInstanceEx((LPVOID)&CoCreateInstanceExShell);
 
 #endif // DCOM
 
 	// and set table to dlg
 
+	if( bShowInterface )
 	{
 		CRegisterDlg dlg(&m_regData);
 		m_pMainWnd = &dlg;
-		if( bClearReg )
-		{
-			char	szDir[255];
-
-			::GetModuleFileName( m_hInstance, szDir, 255 );
-			::GetLongPathName( szDir, szDir, 255 ) ;
-			WriteLogLine( "Clearing registry..." );
-			dlg.RegClean(szDir);
-			WriteLogLine( "Clearing done" );
-		}
-		if( !bRegister )
-			return false;
-		if( bShowInterface )
-		{
-			int nResponse = dlg.DoModal();
-		}
-		else
-		{
-			WriteLogLine( "Registering components..." );
-
-			{
-				AFX_MANAGE_STATE(AfxGetModuleState());
-			}
-			if( bClearReg )
-			dlg.Create( IDD_REGISTER_LITE, 0 );
-			dlg.UpdateWindow();
-			dlg.OnRegister();		
-
-			dlg.EndDialog( IDOK );
-
-			//try{
-			//if( ::IsWindow( pdlg->m_hWnd ) )
-			//	pdlg->DestroyWindow( );
-			//}
-			//catch(...){}
-
-			WriteLogLine( "Registering done" );
-
-			AFX_MANAGE_STATE(AfxGetModuleState());
-
-			//m_pMainWnd = 0;
-		}
+		int nResponse = dlg.DoModal();
 	}
+	else
+	{
+		WriteLogLine( "Registering components..." );
+
+		{
+			AFX_MANAGE_STATE(AfxGetModuleState());
+		}
+		CRegisterDlg* pdlg = new CRegisterDlg( &m_regData );
+		m_pMainWnd = pdlg;
+		pdlg->Create( IDD_REGISTER_LITE, 0 );
+		pdlg->UpdateWindow();
+		pdlg->OnRegister();		
+
+		pdlg->EndDialog( IDOK );
+
+		//try{
+		//if( ::IsWindow( pdlg->m_hWnd ) )
+		//	pdlg->DestroyWindow( );
+		//}
+		//catch(...){}
+
+		WriteLogLine( "Registering done" );
+		
+		AFX_MANAGE_STATE(AfxGetModuleState());
+
+		delete pdlg;
+
+		//m_pMainWnd = 0;
+	}
+
 
 	WriteLogLine( "Saving configuration..." );
 
@@ -964,8 +962,7 @@ Task:<filename>\t-Specify the file with list of dlls to register" );
 	}
 	SaveRegisterData(m_regData);
 	// save table
-	//VERIFY(m_pTable->Save(strFilePath));
-	VERIFY(m_pTable->SaveText("shell.grd.txt"));
+	VERIFY(m_pTable->Save(strFilePath));
 
 	// remove table 
 	delete m_pTable, m_pTable = 0;
@@ -1026,9 +1023,9 @@ HRESULT CRegisterApp::XGuard::GetData(DWORD * pKeyGUID, BYTE ** pTable, BSTR * p
 		
 		if (pbstrSuffix)
 		{
-			//CString str_suffix = "_";
-			//str_suffix += pThis->m_strGuardAppName;
-			*pbstrSuffix =  pThis->m_strSuffix.AllocSysString();/*m_strSuffix*/
+			CString str_suffix = "_";
+			str_suffix += pThis->m_strGuardAppName;
+			*pbstrSuffix = str_suffix.AllocSysString();/*m_strSuffix*/
 		}
 
 		if (pdwImito)
@@ -1350,7 +1347,7 @@ bool CRegisterApp::ReadGuardInfo(LPCTSTR szFile)
 		{
 		case CFileException::tooManyOpenFiles:
 
-		case CFileException::genericException:
+		case CFileException::generic:
 		case CFileException::hardIO:
 			GuardSetErrorCode(guardInvalidGuardFile);
 			break;

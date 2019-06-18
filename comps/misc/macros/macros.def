@@ -1,7 +1,7 @@
 ; macros.def : Declares the module parameters for the DLL.
 
 LIBRARY      "macros"
-;DESCRIPTION  'macros Windows Dynamic Link Library'
+DESCRIPTION  'macros Windows Dynamic Link Library'
 
 EXPORTS
     ; Explicit exports can go here

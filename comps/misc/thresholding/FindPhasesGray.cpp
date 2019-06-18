@@ -142,7 +142,7 @@ bool CFindPhasesGray::InvokeFilter()
 			if(hist2[peaks[j]]>peak_max) peak_max = hist2[peaks[j]];
 
 		// удалим лишние (слишком мелкие) впадины и пики
-		double fThreshold = ::GetValueDouble( GetAppUnknown( ), "\\FindPhasesGray", "Threshold", 0.8 ); 
+		double fThreshold = ::GetValueDouble( GetAppUnknown( ), "\\FindPhasesGray", "Threshold", 0.8 );
 		int nMaxPhases = ::GetValueInt( GetAppUnknown( ), "\\FindPhasesGray", "MaxPhases", 10 );
 		while(1)
 		{

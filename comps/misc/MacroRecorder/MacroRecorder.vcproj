@@ -21,8 +21,10 @@
 	<Configurations>
 		<Configuration
 			Name="Debug|Win32"
+			OutputDirectory="Debug"
+			IntermediateDirectory="Debug"
 			ConfigurationType="2"
-			InheritedPropertySheets="..\..\..\props\common2env.vsprops"
+			InheritedPropertySheets="$(VCInstallDir)VCProjectDefaults\UpgradeFromVC71.vsprops"
 			CharacterSet="2"
 			>
 			<Tool
@@ -43,15 +45,17 @@
 			<Tool
 				Name="VCCLCompilerTool"
 				Optimization="0"
-				AdditionalIncludeDirectories="&quot;$(Inherit)&quot;;&quot;$(SolutionDir)AWIN&quot;"
+				AdditionalIncludeDirectories="\vt5\ifaces,\vt5\common2,\vt5\common;\vt5\AWIN"
 				PreprocessorDefinitions="WIN32;_DEBUG;_WINDOWS;_USRDLL;MACRORECORDER_EXPORTS;_CRT_SECURE_NO_WARNINGS"
 				MinimalRebuild="true"
 				BasicRuntimeChecks="0"
 				RuntimeLibrary="3"
 				TreatWChar_tAsBuiltInType="false"
 				ForceConformanceInForLoopScope="false"
+				UsePrecompiledHeader="2"
 				BrowseInformation="1"
-				Detect64BitPortabilityProblems="true"
+				WarningLevel="3"
+				Detect64BitPortabilityProblems="false"
 				DebugInformationFormat="4"
 			/>
 			<Tool
@@ -65,14 +69,17 @@
 			/>
 			<Tool
 				Name="VCLinkerTool"
+				OutputFile="\vt5\vt5\Debug\comps\MacroRecorder.dll"
 				LinkIncremental="2"
-				AdditionalLibraryDirectories="$(Inherit)"
+				AdditionalLibraryDirectories="\vt5\common2\debug,\vt5\common2"
 				IgnoreDefaultLibraryNames=""
-				ModuleDefinitionFile="$(SolutionDir)common2\com_export.def"
+				ModuleDefinitionFile="\vt5\common2\com_export.def"
 				GenerateDebugInformation="true"
+				ProgramDatabaseFile="\vt5\vt5\debug\pdb\MacroRecorder.pdb"
 				SubSystem="2"
 				RandomizedBaseAddress="1"
 				DataExecutionPrevention="0"
+				ImportLibrary="$(OutDir)/MacroRecorder.lib"
 				TargetMachine="1"
 			/>
 			<Tool
@@ -99,9 +106,10 @@
 		</Configuration>
 		<Configuration
 			Name="Debug|x64"
+			OutputDirectory="$(PlatformName)\$(ConfigurationName)"
+			IntermediateDirectory="$(PlatformName)\$(ConfigurationName)"
 			ConfigurationType="2"
-			InheritedPropertySheets="..\..\..\props\common2env.vsprops"
-			UseOfMFC="0"
+			InheritedPropertySheets="$(VCInstallDir)VCProjectDefaults\UpgradeFromVC71.vsprops"
 			CharacterSet="2"
 			>
 			<Tool
@@ -123,7 +131,7 @@
 			<Tool
 				Name="VCCLCompilerTool"
 				Optimization="0"
-				AdditionalIncludeDirectories="&quot;$(Inherit)&quot;;&quot;$(SolutionDir)AWIN&quot;"
+				AdditionalIncludeDirectories="\vt5\ifaces,\vt5\common2,\vt5\common;\vt5\AWIN"
 				PreprocessorDefinitions="_WIN64;_M_X64;_CRT_SECURE_NO_DEPRECATE;_DEBUG;_WINDOWS;_USRDLL;MACRORECORDER_EXPORTS"
 				MinimalRebuild="true"
 				BasicRuntimeChecks="0"
@@ -132,7 +140,8 @@
 				ForceConformanceInForLoopScope="false"
 				UsePrecompiledHeader="2"
 				BrowseInformation="1"
-				Detect64BitPortabilityProblems="true"
+				WarningLevel="3"
+				Detect64BitPortabilityProblems="false"
 				DebugInformationFormat="3"
 			/>
 			<Tool
@@ -140,21 +149,23 @@
 			/>
 			<Tool
 				Name="VCResourceCompilerTool"
-				ResourceOutputFileName=""
 			/>
 			<Tool
 				Name="VCPreLinkEventTool"
 			/>
 			<Tool
 				Name="VCLinkerTool"
+				OutputFile="\vt5\vt5\$(OutDir)\comps\$(ProjectName).dll"
 				LinkIncremental="2"
-				AdditionalLibraryDirectories=""
+				AdditionalLibraryDirectories="\vt5\common2\$(OutDir),\vt5\common2"
 				IgnoreDefaultLibraryNames=""
-				ModuleDefinitionFile="$(SolutionDir)common2\com_export.def"
+				ModuleDefinitionFile="\vt5\common2\com_export.def"
 				GenerateDebugInformation="true"
+				ProgramDatabaseFile="\vt5\vt5\debug\pdb\MacroRecorder.pdb"
 				SubSystem="2"
 				RandomizedBaseAddress="1"
 				DataExecutionPrevention="0"
+				ImportLibrary="$(OutDir)/MacroRecorder.lib"
 				TargetMachine="17"
 			/>
 			<Tool
@@ -181,8 +192,10 @@
 		</Configuration>
 		<Configuration
 			Name="Release|Win32"
+			OutputDirectory="Release"
+			IntermediateDirectory="Release"
 			ConfigurationType="2"
-			InheritedPropertySheets="..\..\..\props\common2env.vsprops"
+			InheritedPropertySheets="$(VCInstallDir)VCProjectDefaults\UpgradeFromVC71.vsprops"
 			CharacterSet="2"
 			>
 			<Tool
@@ -205,7 +218,7 @@
 				Optimization="2"
 				InlineFunctionExpansion="1"
 				OmitFramePointers="false"
-				AdditionalIncludeDirectories="&quot;$(Inherit)&quot;;&quot;$(SolutionDir)AWIN&quot;"
+				AdditionalIncludeDirectories="\vt5\ifaces,\vt5\common2,\vt5\common;\vt5\AWIN"
 				PreprocessorDefinitions="WIN32;NDEBUG;_WINDOWS;_USRDLL;MACRORECORDER_EXPORTS;_CRT_SECURE_NO_WARNINGS"
 				StringPooling="true"
 				RuntimeLibrary="2"
@@ -213,7 +226,8 @@
 				TreatWChar_tAsBuiltInType="false"
 				ForceConformanceInForLoopScope="false"
 				UsePrecompiledHeader="2"
-				Detect64BitPortabilityProblems="true"
+				WarningLevel="3"
+				Detect64BitPortabilityProblems="false"
 				DebugInformationFormat="3"
 			/>
 			<Tool
@@ -227,15 +241,18 @@
 			/>
 			<Tool
 				Name="VCLinkerTool"
+				OutputFile="\vt5\vt5\Release\comps\MacroRecorder.dll"
 				LinkIncremental="1"
-				AdditionalLibraryDirectories="$(Inherit)"
-				ModuleDefinitionFile="$(SolutionDir)common2\com_export.def"
+				AdditionalLibraryDirectories="\vt5\common2\Release,\vt5\common2"
+				ModuleDefinitionFile="\vt5\common2\com_export.def"
 				GenerateDebugInformation="true"
+				ProgramDatabaseFile="\vt5\vt5\release\pdb\MacroRecorder.pdb"
 				SubSystem="2"
 				OptimizeReferences="2"
 				EnableCOMDATFolding="2"
 				RandomizedBaseAddress="1"
 				DataExecutionPrevention="0"
+				ImportLibrary="$(OutDir)/MacroRecorder.lib"
 				TargetMachine="1"
 			/>
 			<Tool
@@ -262,8 +279,10 @@
 		</Configuration>
 		<Configuration
 			Name="Release|x64"
+			OutputDirectory="$(PlatformName)\$(ConfigurationName)"
+			IntermediateDirectory="$(PlatformName)\$(ConfigurationName)"
 			ConfigurationType="2"
-			InheritedPropertySheets="..\..\..\props\common2env.vsprops"
+			InheritedPropertySheets="$(VCInstallDir)VCProjectDefaults\UpgradeFromVC71.vsprops"
 			CharacterSet="2"
 			>
 			<Tool
@@ -287,7 +306,7 @@
 				Optimization="2"
 				InlineFunctionExpansion="1"
 				OmitFramePointers="false"
-				AdditionalIncludeDirectories="&quot;$(Inherit)&quot;;&quot;$(SolutionDir)AWIN&quot;"
+				AdditionalIncludeDirectories="\vt5\ifaces,\vt5\common2,\vt5\common;\vt5\AWIN"
 				PreprocessorDefinitions="_WIN64;_M_X64;_CRT_SECURE_NO_DEPRECATE;NDEBUG;_WINDOWS;_USRDLL;MACRORECORDER_EXPORTS"
 				StringPooling="true"
 				RuntimeLibrary="2"
@@ -295,7 +314,8 @@
 				TreatWChar_tAsBuiltInType="false"
 				ForceConformanceInForLoopScope="false"
 				UsePrecompiledHeader="2"
-				Detect64BitPortabilityProblems="true"
+				WarningLevel="3"
+				Detect64BitPortabilityProblems="false"
 				DebugInformationFormat="3"
 			/>
 			<Tool
@@ -309,15 +329,18 @@
 			/>
 			<Tool
 				Name="VCLinkerTool"
+				OutputFile="\vt5\vt5\$(OutDir)\comps\$(ProjectName).dll"
 				LinkIncremental="1"
-				AdditionalLibraryDirectories="$(Inherit)"
-				ModuleDefinitionFile="$(SolutionDir)common2\com_export.def"
+				AdditionalLibraryDirectories="\vt5\common2\$(OutDir),\vt5\common2"
+				ModuleDefinitionFile="\vt5\common2\com_export.def"
 				GenerateDebugInformation="true"
+				ProgramDatabaseFile="\vt5\vt5\release\pdb\MacroRecorder.pdb"
 				SubSystem="2"
 				OptimizeReferences="2"
 				EnableCOMDATFolding="2"
 				RandomizedBaseAddress="1"
 				DataExecutionPrevention="0"
+				ImportLibrary="$(OutDir)/MacroRecorder.lib"
 				TargetMachine="17"
 			/>
 			<Tool
@@ -459,9 +482,5 @@
 		</File>
 	</Files>
 	<Globals>
-		<Global
-			Name="DevPartner_IsInstrumented"
-			Value="0"
-		/>
 	</Globals>
 </VisualStudioProject>

@@ -1610,7 +1610,7 @@ BEGIN
     IDS_BCGBARRES_NO_MENUBAR "Настройка меню невозможна!"
     IDP_BCGBARRES_INTERLAL_ERROR 
                             "Возникла ошибка при инициализации инструментальных панелей.\n Обратитесь к разработчику этого приложения."
-    IDP_BCGBARRES_UNASSIGNED "[Несвязан]"
+    IDP_BCGBARRES_UNASSIGNED "[Не связан]"
     IDP_BCGBARRES_CANT_COPY_BITMAP 
                             "Невозможно копировать картинку в буфер обмена!"
     IDS_BCGBARRES_HIDE_BAR  "Скрыть окно"

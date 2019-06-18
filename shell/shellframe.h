@@ -114,7 +114,7 @@ protected:
 protected:
 	FrameType	m_frameType;
 	CMainFrame* GetMainFrame();
-	
+
 	BOOL m_bLockedViews; // Views can not be destroyed
 	
 //							MDI/PDI/DDI		support. END point				  |

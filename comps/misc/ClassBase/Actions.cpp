@@ -75,7 +75,7 @@ HRESULT CObjectSetClass::GetActionState( DWORD *pdwState )
 	if (punkOL == 0) return S_OK;
 	INamedDataObject2Ptr ptrList(punkOL);
 	if (ptrList == 0) return S_OK;
-	TPOS lPos = 0;
+	long lPos = 0;
 	ptrList->GetActiveChild(&lPos);
 	*pdwState = lPos==0?0:afEnabled;
 	return S_OK;
@@ -95,7 +95,7 @@ HRESULT CObjectSetClass::DoInvoke()
 	if(punkObj) punkObj->Release();
 	if(m_ptrList==0) return E_FAIL;
 
-	TPOS lPos=0;
+	long lPos=0;
 	m_ptrList->GetActiveChild(&lPos);
 	if(0==lPos) return E_FAIL;
 
@@ -145,7 +145,7 @@ HRESULT CObjectSetClass::DoInvoke()
 				
 			}
 			
-			POSITION p;
+			long p;
 			INamedDataObject2Ptr(m_ptrObject)->GetObjectPosInParent(&p);
 			m_ptrList->SetActiveChild(p);
 			
@@ -295,7 +295,7 @@ HRESULT CActionGetObjectDescription::DoInvoke()
 
 		// active object from objectlist
 		IUnknownPtr sptrObject;
-		POSITION lPosObj = 0;
+		long lPosObj = 0;
 		ptrList->GetActiveChild( &lPosObj );
 		if( !lPosObj )
 			return S_FALSE;
@@ -375,7 +375,7 @@ HRESULT CActionGetObjectDescription::GetActionState( DWORD *pdwState )
 	if( ptrList == 0 )
 		return S_OK;
 	// active object from objectlist
-	TPOS lPosObj = 0;
+	long lPosObj = 0;
 	ptrList->GetActiveChild( &lPosObj );
 	*pdwState = lPosObj==0?0:afEnabled;
 	return S_OK;
@@ -418,7 +418,7 @@ IUnknown* SetPhaseClass(IUnknown* olist, IUnknown* object, CString& classifier, 
 
 	if(nClass==-1) return 0;
 
-	POSITION pos =0;
+	long pos =0;
 	ndo->GetFirstChildPosition(&pos);
 	IUnknown* pUnk =0;
 	while(pos)

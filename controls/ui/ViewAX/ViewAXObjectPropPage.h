@@ -60,7 +60,7 @@ protected:
 
 	sptrIViewCtrl GetViewAXControl();
 
-	LONG_PTR GetPositionByIndex(int nIndex);
+	long GetPositionByIndex( int nIndex );
 	void SetComboBox( int nRow, int nColumn );
 };
 

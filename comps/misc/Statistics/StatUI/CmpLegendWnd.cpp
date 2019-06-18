@@ -87,7 +87,7 @@ namespace ViewSpace
 	}
 
 
-	LRESULT CCmpLegendWnd::on_paint()
+	long CCmpLegendWnd::on_paint()
 	{
 		RECT rcPaint = { 0, 0, 0, 0 };
 		::GetUpdateRect( handle(), &rcPaint, false );
@@ -152,7 +152,7 @@ namespace ViewSpace
 		else
 			clBackColor = RGB( 255, 255, 255 );
 		SolidBrush blackBrush(Color(255, 0, 0, 0));
-
+	
 		HDC hdcDispl = ::CreateDC( _T( "DISPLAY" ), 0, 0, 0 );
 
 
@@ -217,8 +217,8 @@ namespace ViewSpace
 
 					//if(lid==m_iHighlightedStat)
 					//	g.FillRectangle(&brushHighlighted,rc2);
-
-  				if( m_lpParams[i].m_pparam_values[lid].m_bIncorrect )
+					
+					if( m_lpParams[i].m_pparam_values[lid].m_bIncorrect )
 						m_lfFont.DrawString( g, CStringW(m_lpParams[i].m_pparam_values[lid].m_szParamValue), &rc2, DT_RIGHT | DT_VCENTER | DT_SINGLELINE |( bPrint ? DT_NOCLIP : 0 ), m_clIncorrectColor ); 
 					else
 						m_lfFont.DrawString( g, CStringW(m_lpParams[i].m_pparam_values[lid].m_szParamValue), &rc2, DT_RIGHT | DT_VCENTER | DT_SINGLELINE |( bPrint ? DT_NOCLIP : 0 ) ); 
@@ -229,17 +229,17 @@ namespace ViewSpace
 						RECT rc_data = ScaleRect(m_lst_rect_hot_data[lid], fZoom);
 						CString str_data = m_lst_text_hot_data[lid];
 
-								long dx = rc_data.right - rc_data.left;
-								
-								rc_data.right = rc2.right; 
-								rc_data.left = (long)(rc_data.right - dx*0.8);
+						long dx = rc_data.right - rc_data.left;
+						
+						rc_data.right = rc2.right; 
+						rc_data.left = (long)(rc_data.right - dx*0.8);
 
 						rc_data.top			= long( rc_data.top);
 						rc_data.bottom	= long( rc_data.bottom);
 
-								m_lfFont.DrawString( g, CStringW(str_data),  &rc_data, DT_CENTER | DT_VCENTER | DT_END_ELLIPSIS );
-							}
-						}
+						m_lfFont.DrawString( g, CStringW(str_data),  &rc_data, DT_CENTER | DT_VCENTER | DT_END_ELLIPSIS );
+					}
+				}
 
 				RECT _rc = rcPaint;
 				_rc.left += 5;
@@ -554,7 +554,7 @@ namespace ViewSpace
 			::SetValue( sptrND, SECT_STATUI_STAT_LEGEND_USERDATA, strOrder, (long)m_lpParams[ii].lOrder );
 		}
 
-		::SetValue( sptrND, SECT_STATUI_STAT_LEGEND, CHART_TITLE , _change_chars( m_strTitle, "\r\n", "\\n" ) );
+		::SetValue(sptrND, SECT_STATUI_STAT_LEGEND, CHART_TITLE , _change_chars( m_strTitle, "\r\n", "\\n" ) );
 		::SetValue(sptrND, SECT_STATCMP_STAT_LEGEND, FISHER_PROBABILITY, m_fFisherProbability );
 
 		::SetValue( sptrND, SECT_STATUI_LEGEND_TITLE_FONT_ROOT, FONT_NAME , m_lfFontTitle.lfFaceName );
@@ -571,7 +571,7 @@ namespace ViewSpace
 	{ 
 		const CCmpStatObject::StatObjects& statObjects=_rStatCmpView.m_pCmpStatObject->_statObjects;
 		size_t nStats=statObjects.size();
-			{
+		{
 			m_lst_value_width.resize(nStats,0);
 			m_lst_max_comma_width.resize(nStats,0);
 			m_lst_rect_hot_data.resize(nStats, NORECT);
@@ -641,22 +641,22 @@ namespace ViewSpace
 		}
 
 		double fDisp0 = 0., fCount0 = 0., fMx0=-1.;
-			IStatObjectDispPtr sptrStatObject0=statObjects[0].second._pStat;
-			HRESULT hr = sptrStatObject0->GetValueGlobalInUnit2( PARAM_COUNT, &fCount0 );
-			hr = sptrStatObject0->GetValueGlobalInUnit2( PARAM_DISP, &fDisp0 );
+		IStatObjectDispPtr sptrStatObject0=statObjects[0].second._pStat;
+		HRESULT hr = sptrStatObject0->GetValueGlobalInUnit2( PARAM_COUNT, &fCount0 );
+		hr = sptrStatObject0->GetValueGlobalInUnit2( PARAM_DISP, &fDisp0 );
 		hr = sptrStatObject0->GetValueGlobalInUnit2( PARAM_MX, &fMx0 );
 
 		int iLast=m_lParamCount+m_lCustomDataCount0+1;
 		for(lid=0; lid<nStats; ++lid)
-			{
+		{
 			int i=iLast;
 			IStatObjectDispPtr sptrStatObject=statObjects[lid].second._pStat;
-				double fDisp = 0., fCount = 0.;
-				hr = sptrStatObject->GetValueGlobalInUnit2( PARAM_COUNT, &fCount );
-				hr = sptrStatObject->GetValueGlobalInUnit2( PARAM_DISP, &fDisp );
+			double fDisp = 0., fCount = 0.;
+			hr = sptrStatObject->GetValueGlobalInUnit2( PARAM_COUNT, &fCount );
+			hr = sptrStatObject->GetValueGlobalInUnit2( PARAM_DISP, &fDisp );
 			bool bDxEq=false;
-				if( hr == S_OK )
-				{
+			if( hr == S_OK )
+			{
 				if(!lid )
 				{
 					strcat( m_lpParams[i].m_szParamName, CString((LPCSTR)IDS_DX_EQ));
@@ -684,8 +684,8 @@ namespace ViewSpace
 			hr = sptrStatObject->GetValueGlobalInUnit2( PARAM_MX, &fMx );
 			if( hr == S_OK )
 			{
-					if(!lid )
-					{
+				if(!lid )
+				{
 					strcat( m_lpParams[i].m_szParamName, CString((LPCSTR)IDS_MX_EQ));
 //					strcpy(m_lpParams[i].m_pparam_values[lid].m_szParamValue, CString((LPCSTR)IDS_STUDENTS_TEST));
 				}
@@ -723,9 +723,9 @@ namespace ViewSpace
 							strcpy(m_lpParams[i].m_pparam_values[lid].m_szParamValue, CString((LPCSTR)IDS_NOT_EQUAL));
 						}
 					}
-					}
-					m_lpParams[i].m_pparam_values[lid].m_bIncorrect = false;
 				}
+				m_lpParams[i].m_pparam_values[lid].m_bIncorrect = false;
+			}
 		}
 	}
 
@@ -734,158 +734,158 @@ namespace ViewSpace
 		if( !m_bMinSizeCalc )
 		{
 			if(_rStatCmpView.m_pCmpStatObject){
-			const CCmpStatObject::StatObjects& statObjects=_rStatCmpView.m_pCmpStatObject->_statObjects;
+				const CCmpStatObject::StatObjects& statObjects=_rStatCmpView.m_pCmpStatObject->_statObjects;
 				size_t nStats=statObjects.size();
- 			m_rcMinRect.right = 0;
+				m_rcMinRect.right = 0;
 
- 			HDC hDC =::GetDC( 0 );
-			Gdiplus::Graphics g(hDC); g.SetPageUnit(UnitPixel);
+				HDC hDC =::GetDC( 0 );
+				Gdiplus::Graphics g(hDC); g.SetPageUnit(UnitPixel);
 
- 			m_lfFont.SetHeight(-MulDiv( m_lfFont.lfHeight, GetDeviceCaps( hDC, LOGPIXELSY), 72));
+				m_lfFont.SetHeight(-MulDiv( m_lfFont.lfHeight, GetDeviceCaps( hDC, LOGPIXELSY), 72));
 
-			int w  = 0;
-			int w2 = 0;
-			m_nLineHeight = 0;
+				int w  = 0;
+				int w2 = 0;
+				m_nLineHeight = 0;
 
-			int nLen = 0, nID = -1;
+				int nLen = 0, nID = -1;
 
-			long labs_max_comma_width = 0;
-			for( int i = 0; i < m_NStr; i++ )
-			{
-				RECT rc = {0}, rc2 = {0};
-				m_lfFont.MeasureString( g, CStringW(m_lpParams[i].m_szParamName), &rc, DT_LEFT | DT_TOP | DT_SINGLELINE );
-
-				w = __max( rc.right, w );
-
-				size_t lid;
-				for(lid=0; lid<nStats; ++lid)
+				long labs_max_comma_width = 0;
+				for( int i = 0; i < m_NStr; i++ )
 				{
-					RECT rc3 = {0};
-					m_lfFont.MeasureString( g, CStringW(m_lpParams[i].m_pparam_values[lid].m_szParamValue), &rc3, DT_LEFT | DT_TOP | DT_SINGLELINE );
+					RECT rc = {0}, rc2 = {0};
+					m_lfFont.MeasureString( g, CStringW(m_lpParams[i].m_szParamName), &rc, DT_LEFT | DT_TOP | DT_SINGLELINE );
 
-					rc2.top = rc3.top;
-					rc2.bottom = rc3.bottom;
+					w = __max( rc.right, w );
 
-					rc2.left = rc3.left;
-					rc2.right += rc3.right + NCOLUMN_OFFSET;
+					size_t lid;
+					for(lid=0; lid<nStats; ++lid)
+					{
+						RECT rc3 = {0};
+						m_lfFont.MeasureString( g, CStringW(m_lpParams[i].m_pparam_values[lid].m_szParamValue), &rc3, DT_LEFT | DT_TOP | DT_SINGLELINE );
+
+						rc2.top = rc3.top;
+						rc2.bottom = rc3.bottom;
+
+						rc2.left = rc3.left;
+						rc2.right += rc3.right + NCOLUMN_OFFSET;
 
 						m_lst_value_width[lid]=__max( m_lst_value_width[lid], rc3.right + NCOLUMN_OFFSET );
-				}
+					}
 
 //					w2 = __max( rc2.right, w2 );
 
-				m_nLineHeight = __max( rc.bottom - rc.top, m_nLineHeight );
-				m_nLineHeight = __max( rc2.bottom - rc2.top, m_nLineHeight );
+					m_nLineHeight = __max( rc.bottom - rc.top, m_nLineHeight );
+					m_nLineHeight = __max( rc2.bottom - rc2.top, m_nLineHeight );
 
 
 					if(2<=i && i<=(m_NStr-2) )
-				for(lid=0; lid<nStats; ++lid)
-				{
-					CString str = m_lpParams[i].m_pparam_values[lid].m_szParamValue;
-					
-					int nIndex = -1;
-					nIndex = str.Find( "." );
-
-					if( nIndex == -1 )
-						nIndex = str.Find( "," );
-
-					if( nIndex == -1 )
-						nIndex = str.Find( "E" );
-
-					if( nIndex == -1 )
-						nIndex = str.Find( "e" );
-
-					if( nIndex != -1 )
-					{
-						if( nLen < str.GetLength() - nIndex - 1 )
+						for(lid=0; lid<nStats; ++lid)
 						{
-							nLen = __max( nLen, str.GetLength() - nIndex - 1 );
-							nID = i;
-						}
-						str = str.Right( str.GetLength() - nIndex );
+							CString str = m_lpParams[i].m_pparam_values[lid].m_szParamValue;
 
-						if( !str.IsEmpty() )
-						{
-							RECT rc3 = {0};
-							m_lfFont.MeasureString( g, CStringW(str), &rc3, DT_LEFT | DT_TOP | DT_SINGLELINE );
+							int nIndex = -1;
+							nIndex = str.Find( "." );
 
-							RECT rc4 = {0};
-							m_lfFont.MeasureString( g, CStringW("aa"), &rc4, DT_LEFT | DT_TOP | DT_SINGLELINE );
+							if( nIndex == -1 )
+								nIndex = str.Find( "," );
 
-							m_lpParams[i].m_pparam_values[lid].lCommaPart = rc3.right - rc3.left - rc4.right;
-						}
-					}
- 					if( nID != -1 )
-					{
+							if( nIndex == -1 )
+								nIndex = str.Find( "E" );
+
+							if( nIndex == -1 )
+								nIndex = str.Find( "e" );
+
+							if( nIndex != -1 )
+							{
+								if( nLen < str.GetLength() - nIndex - 1 )
+								{
+									nLen = __max( nLen, str.GetLength() - nIndex - 1 );
+									nID = i;
+								}
+								str = str.Right( str.GetLength() - nIndex );
+
+								if( !str.IsEmpty() )
+								{
+									RECT rc3 = {0};
+									m_lfFont.MeasureString( g, CStringW(str), &rc3, DT_LEFT | DT_TOP | DT_SINGLELINE );
+
+									RECT rc4 = {0};
+									m_lfFont.MeasureString( g, CStringW("aa"), &rc4, DT_LEFT | DT_TOP | DT_SINGLELINE );
+
+									m_lpParams[i].m_pparam_values[lid].lCommaPart = rc3.right - rc3.left - rc4.right;
+								}
+							}
+							if( nID != -1 )
+							{
 								m_lst_max_comma_width[lid]=__max( m_lst_max_comma_width[lid], m_lpParams[nID].m_pparam_values[lid].lCommaPart );
-					}
+							}
+						}
 				}
-			}
 
-  			labs_max_comma_width = 0;
+				labs_max_comma_width = 0;
 				labs_max_comma_width = m_lst_max_comma_width.sum();				
 				labs_max_comma_width *= m_lst_max_comma_width.size() + 1; 
 
 
-			m_sum_value_width = w;
+				m_sum_value_width = w;
 
 				w2 = m_lst_value_width.sum();
 
 				m_rcMinRect.right = w + w2 + 15 + 15 + 4 /* nStats*NCOLUMN_OFFSET + labs_max_comma_width*/;
 
-			m_nDescrWidth = w;
+				m_nDescrWidth = w;
 
 				//			m_rcMinRect.right -= m_rcMinRect.right / 2 - m_nDescrWidth;
 
-			m_lhot_data_height = 0;
-			{
-				RECT rc_hot = {0};
-				m_lfFont.MeasureString( g, CStringW("QQ"), &rc_hot, DT_TOP | DT_LEFT );
-				InflateRect( &rc_hot, 2, 0 );
-				m_lhot_data_height = __max( rc_hot.bottom, m_lhot_data_height );
-			}
-
-			CString strTitle = m_strCompareTitle;
-
-			::DrawText( hDC, strTitle , strTitle .GetLength(), &m_rcTitle, DT_CALCRECT | DT_TOP | DT_LEFT );
-			InflateRect( &m_rcTitle , 2, 0 );
-			::OffsetRect( &m_rcTitle, -m_rcTitle.left, -m_rcTitle.top );
-
-
-			{
-				LOGFONT lf = m_lfFontTitle;
- 				lf.lfHeight = long(-MulDiv( lf.lfHeight, GetDeviceCaps( hDC, LOGPIXELSY), 72) );
-
-				HFONT hFontTitle = ::CreateFontIndirect( &lf );
-
-				HFONT hFontOld = (HFONT)::SelectObject( hDC, hFontTitle );
-
-				::ZeroMemory( &m_rcTitle, sizeof( m_rcTitle ) );
-
- 				if( !strTitle .IsEmpty() )
+				m_lhot_data_height = 0;
 				{
- 					::DrawText( hDC, strTitle , strTitle .GetLength(), &m_rcTitle, DT_CALCRECT | DT_TOP | DT_LEFT );
-					InflateRect( &m_rcTitle , 2, 0 );
-					::OffsetRect( &m_rcTitle, -m_rcTitle.left, -m_rcTitle.top );
+					RECT rc_hot = {0};
+					m_lfFont.MeasureString( g, CStringW("QQ"), &rc_hot, DT_TOP | DT_LEFT );
+					InflateRect( &rc_hot, 2, 0 );
+					m_lhot_data_height = __max( rc_hot.bottom, m_lhot_data_height );
 				}
 
-				m_rcMinRect.right = __max( m_rcMinRect.right, m_rcTitle.right );
+				CString strTitle = m_strCompareTitle;
 
-				::SelectObject( hDC, hFontOld );
-				::DeleteObject( hFontTitle );
-			}
+				::DrawText( hDC, strTitle , strTitle .GetLength(), &m_rcTitle, DT_CALCRECT | DT_TOP | DT_LEFT );
+				InflateRect( &m_rcTitle , 2, 0 );
+				::OffsetRect( &m_rcTitle, -m_rcTitle.left, -m_rcTitle.top );
 
-			::ReleaseDC( 0, hDC );
 
- 			m_rcMinRect.bottom = m_rcTitle.bottom + m_NStr*m_nLineHeight + 20 + 15 + m_lhot_data_height;
- 			m_bMinSizeCalc = true;
-			{
-				RECT rc;
-				::GetClientRect( m_hwnd, &rc );
-				_resize_child( rc );
+				{
+					LOGFONT lf = m_lfFontTitle;
+					lf.lfHeight = long(-MulDiv( lf.lfHeight, GetDeviceCaps( hDC, LOGPIXELSY), 72) );
+
+					HFONT hFontTitle = ::CreateFontIndirect( &lf );
+
+					HFONT hFontOld = (HFONT)::SelectObject( hDC, hFontTitle );
+
+					::ZeroMemory( &m_rcTitle, sizeof( m_rcTitle ) );
+
+					if( !strTitle .IsEmpty() )
+					{
+						::DrawText( hDC, strTitle , strTitle .GetLength(), &m_rcTitle, DT_CALCRECT | DT_TOP | DT_LEFT );
+						InflateRect( &m_rcTitle , 2, 0 );
+						::OffsetRect( &m_rcTitle, -m_rcTitle.left, -m_rcTitle.top );
+					}
+
+					m_rcMinRect.right = __max( m_rcMinRect.right, m_rcTitle.right );
+
+					::SelectObject( hDC, hFontOld );
+					::DeleteObject( hFontTitle );
+				}
+
+				::ReleaseDC( 0, hDC );
+
+				m_rcMinRect.bottom = m_rcTitle.bottom + m_NStr*m_nLineHeight + 20 + 15 + m_lhot_data_height;
+				m_bMinSizeCalc = true;
+				{
+					RECT rc;
+					::GetClientRect( m_hwnd, &rc );
+					_resize_child( rc );
+				}
 			}
 		}
-	}
 	}
 
 	bool CCmpLegendWnd::create( DWORD style, const RECT &rect, const _char *pszTitle, HWND parent, HMENU hmenu, const _char *pszClass )
@@ -955,13 +955,13 @@ namespace ViewSpace
 				m_lpParams[i].m_pparam_values[lid].m_rectParamValue.right = m_lpParams[i].m_pparam_values[lid].m_rectParamValue.left + nValueWidth;
 				m_lpParams[i].m_pparam_values[lid].m_rectParamValue.bottom = m_lhot_data_height + rcText.top + (i + 1) * m_nLineHeight;
 				llast_x = m_lpParams[i].m_pparam_values[lid].m_rectParamValue.right;
-						RECT rc_hot_data = { m_lpParams[i].m_pparam_values[lid].m_rectParamValue.left, rcText.top, m_lpParams[i].m_pparam_values[lid].m_rectParamValue.right, rcText.top + m_lhot_data_height };
+				RECT rc_hot_data = { m_lpParams[i].m_pparam_values[lid].m_rectParamValue.left, rcText.top, m_lpParams[i].m_pparam_values[lid].m_rectParamValue.right, rcText.top + m_lhot_data_height };
 				m_lst_rect_hot_data[lid] = rc_hot_data;
-					}
-				}
 			}
+		}
+	}
 
-	LRESULT CCmpLegendWnd::on_size(short cx, short cy, ulong fSizeType)
+	long CCmpLegendWnd::on_size( short cx, short cy, ulong fSizeType )
 	{
 		RECT rc;
 		::GetClientRect( m_hwnd, &rc );
@@ -972,7 +972,7 @@ namespace ViewSpace
 		return __super::on_size( cx, cy, fSizeType );
 	}
 
-	LRESULT CCmpLegendWnd::on_mousemove(const _point &point)
+	long CCmpLegendWnd::on_mousemove( const _point &point )
 	{
 		for( unsigned lp_rect =0;  lp_rect<m_lst_rect_hot_data.size(); ++lp_rect )
 		{
@@ -990,7 +990,7 @@ namespace ViewSpace
 		return __super::on_mousemove( point );
 	}
 
-	LRESULT CCmpLegendWnd::on_lbuttondown(const _point &point)
+	long CCmpLegendWnd::on_lbuttondown( const _point &point )
 	{
 		for( unsigned lid =0;  lid<m_lst_rect_hot_data.size(); ++lid )
 		{
@@ -1006,7 +1006,7 @@ namespace ViewSpace
 		return __super::on_lbuttondown( point );
 	}
 
-	LRESULT CCmpLegendWnd::handle_message(UINT m, WPARAM w, LPARAM l)
+	long CCmpLegendWnd::handle_message( UINT m, WPARAM w, LPARAM l )
 	{
 		switch( m )
 		{

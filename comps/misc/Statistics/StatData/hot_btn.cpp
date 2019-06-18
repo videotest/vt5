@@ -49,7 +49,7 @@ void hot_btn::set_index( long lindex  )
 
 }
 
-LRESULT hot_btn::on_lbuttondown(const _point &point)
+long hot_btn::on_lbuttondown( const _point &point )
 {
 	char szScript[200];
 	strcpy( szScript, m_szscript_text );
@@ -58,7 +58,7 @@ LRESULT hot_btn::on_lbuttondown(const _point &point)
 	return 1L;
 }
 
-LRESULT hot_btn::on_setcursor(unsigned code, unsigned hit)
+long hot_btn::on_setcursor( unsigned code, unsigned hit )
 {														   
 	::SetCursor( m_hcursor );
 	return 0L;

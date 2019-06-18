@@ -11,7 +11,7 @@
 #include "Generate.h"
 
 
-
+//#include "imapi.h"
 
 #include "Thumbnail.h"
 #include "dbmacros.h"
@@ -52,6 +52,7 @@ BEGIN_INTERFACE_MAP(CDBaseDocument, CDocBase)
 	INTERFACE_PART(CDBaseDocument, IID_INamedData, Data)	
 	INTERFACE_PART(CDBaseDocument, IID_IDataTypeManager, Types)		
 	INTERFACE_PART(CDBaseDocument, IID_IDBaseDocument, DBaseDocument)
+	INTERFACE_PART(CDBaseDocument, IID_IDBaseDocument2, DBaseDocument)
 	INTERFACE_PART(CDBaseDocument, IID_IFileDataObject, File)
 	INTERFACE_PART(CDBaseDocument, IID_IFileDataObject2, File)
 	INTERFACE_PART(CDBaseDocument, IID_ISerializableObject, Serialize )
@@ -63,6 +64,7 @@ BEGIN_INTERFACE_MAP(CDBaseDocument, CDocBase)
 	INTERFACE_PART(CDBaseDocument, IID_IThumbnailSurface, ThumbnailSurface)	
 	INTERFACE_PART(CDBaseDocument, IID_INotifyPlace, NotifyPlace)	
 	INTERFACE_PART(CDBaseDocument, IID_IUserNameProvider, UserNameProvider)	
+	INTERFACE_PART(CDBaseDocument, IID_IDBLockInfo, LockInfo)
 END_INTERFACE_MAP()
 
 IMPLEMENT_UNKNOWN(CDBaseDocument, Data);
@@ -75,6 +77,7 @@ IMPLEMENT_UNKNOWN(CDBaseDocument, DBaseFilterHolder);
 IMPLEMENT_UNKNOWN(CDBaseDocument, ThumbnailSurface);
 IMPLEMENT_UNKNOWN(CDBaseDocument, NotifyPlace);
 IMPLEMENT_UNKNOWN(CDBaseDocument, UserNameProvider);
+IMPLEMENT_UNKNOWN(CDBaseDocument, LockInfo);
 
 
 /////////////////////////////////////////////////////////////////////////////////////////
@@ -114,6 +117,7 @@ CDBaseDocument::CDBaseDocument(): m_dbEngine(this)
 
 	m_bReadOnly						= false;
 	m_str_dbd_open_file_name		= "";
+	m_bReadDeleteOnly = false;
 
 }
 
@@ -520,7 +524,7 @@ bool CDBaseDocument::ReadFile( const char *pszFileName )
 			long nCount = 0;
 			_bstr_t _bstrQueryType = szTypeQueryObject;
 			ptrDC2->GetObjectCount( _bstrQueryType, &nCount );
-			LONG_PTR lPos = 0;
+			long lPos = 0;
 			ptrDC2->GetFirstObjectPos( _bstrQueryType, &lPos );
 			while( lPos )
 			{
@@ -983,6 +987,21 @@ void CDBaseDocument::OnNotify( const char *pszEvent, IUnknown *punkHit, IUnknown
 	
 	if( !strcmp( pszEvent, szActivateView ) )
 	{
+		if(this->m_dbEngine.m_pdbLocks)
+		this->m_dbEngine.m_pdbLocks->UpdateRecordStatus(TRUE);
+		/*IDocumentSitePtr ptrDS( GetControllingUnknown() );
+		if( ptrDS )
+		{
+			IUnknown* punkView = 0;
+			ptrDS->GetActiveView( &punkView );
+			if( punkView )
+			{
+				IWindow2Ptr wnd(punkView);
+				HANDLE hWnd;
+				wnd->GetHandle(&hWnd);
+				punkView->Release();
+			}
+		}*/
 		//OnActivateObject( punkFrom, punkHit );
 
 		/*
@@ -1052,11 +1071,11 @@ bool CDBaseDocument::IsOtherDBaseDocExist()
 		return false;
 	
 
-	LONG_PTR	lPosTemplate = 0;	
+	long	lPosTemplate = 0;	
 	sptrA->GetFirstDocTemplPosition( &lPosTemplate );	
 	while( lPosTemplate )
 	{
-		LONG_PTR	lPosDoc = 0;
+		long	lPosDoc = 0;
 		sptrA->GetFirstDocPosition( lPosTemplate, &lPosDoc );
 		while( lPosDoc )
 		{
@@ -1107,7 +1126,7 @@ static void RestoreSelectedObjects(IUnknown *punkDoc, IUnknown *punkView)
 	{
 		_bstr_t bstrTypeName;
 		sptrCtx->GetObjectTypeName(l, bstrTypeName.GetAddress());
-		LONG_PTR lPos;
+		long lPos;
 		sptrCtx->GetFirstSelectedPos(bstrTypeName, &lPos);
 		while (lPos)
 		{
@@ -1124,7 +1143,7 @@ static void RestoreSelectedObjects(IUnknown *punkDoc, IUnknown *punkView)
 		{
 			_bstr_t bstrTypeName;
 			sptrCtx->GetObjectTypeName(l, bstrTypeName.GetAddress());
-			LONG_PTR lPos;
+			long lPos;
 			sptrCtx->GetFirstObjectPos(bstrTypeName, &lPos);
 			while (lPos)
 			{
@@ -1150,7 +1169,7 @@ void CDBaseDocument::OnDBaseNotify( const char *pszEvent, IUnknown *punkObject, 
 	if (!strcmp(pszEvent, szDBaseEventAfterNavigation))
 	{
 		IDocumentSitePtr sptrDS(GetControllingUnknown());
-		TPOS lPos;
+		long lPos;
 		sptrDS->GetFirstViewPosition(&lPos);
 		while (lPos)
 		{

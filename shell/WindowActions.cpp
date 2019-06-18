@@ -51,7 +51,7 @@ void CWindowMenu::Init()
 		pwnd->GetWindowText( strTitle );
 
 		if( pwnd == pwndMDIActive )
-			m_nSelected = (int)m_strsWindows.GetSize();
+			m_nSelected = m_strsWindows.GetSize();
 		m_strsWindows.Add( strTitle );
 	}
 }

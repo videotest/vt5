@@ -1,5 +1,4 @@
 #pragma once
-#include <vector>
 #include "win_view.h"
 #include "impl_help.h"
 #include "PropBagImpl.h"
@@ -15,7 +14,7 @@
 namespace STAT_DEPENDENCE
 {
 
-class stat_dependence_view : public CWinViewBase, 
+	class stat_dependence_view : public CWinViewBase, 
 				public IPrintView,
 				public IPersist,
 				public CNamedObjectImpl,
@@ -83,8 +82,6 @@ class stat_dependence_view : public CWinViewBase,
 			};
 
 			_list_t<x_legend_layout> m_lst_legend_layout;
-			std::vector<x_legend_layout> m_lst_legend_layout1;
-
 
 			int chart_w;
 			int chart_h;
@@ -435,8 +432,8 @@ protected:
 	//Persist Impl
 	com_call			GetClassID(CLSID *pClassID ); 
 
-	com_call			GetFirstVisibleObjectPosition(TPOS *plpos);
-	com_call			GetNextVisibleObject(IUnknown ** ppunkObject, TPOS *plPos);
+	com_call			GetFirstVisibleObjectPosition( long *plpos );
+	com_call			GetNextVisibleObject( IUnknown ** ppunkObject, long *plPos );
 	/////////////////////////////////////////////////////////////////////////////////////////
 protected:
 		void _load_from_ndata(  INamedDataPtr sptr_nd );

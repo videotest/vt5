@@ -160,7 +160,7 @@ BOOL CDBObjectPropertyPage::OnInitDialog()
 				if (bFull)
 					pComo->InsertString(0, CString( bstrName ) );
 				else
-				pComo->AddString( CString( bstrName ) );
+					pComo->AddString( CString( bstrName ) );
 
 				if( bstrName )
 					::SysFreeString( bstrName );	bstrName = 0;

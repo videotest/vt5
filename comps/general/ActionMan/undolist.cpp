@@ -63,10 +63,10 @@ HRESULT CUndoList::XUndoList::DoUndo()
 		pThis->m_ptrActionManager->TerminateInteractiveAction();
 	}
 	
-	TPOS	lpos = pThis->m_listUndoActions.head();
+	long	lpos = pThis->m_listUndoActions.head();
 	undo_info	*pinfo = pThis->m_listUndoActions.get( lpos );
 
-	for (TPOS lpos_a = pinfo->actions.tail(); lpos_a; lpos_a = pinfo->actions.prev(lpos_a))
+	for( long lpos_a = pinfo->actions.tail(); lpos_a; lpos_a = pinfo->actions.prev( lpos_a ) )
 	{
 		IUndoneableActionPtr	ptrUA = pinfo->actions.get( lpos_a );
 		IActionPtr		ptrA = ptrUA;
@@ -103,11 +103,11 @@ HRESULT CUndoList::XUndoList::DoRedo()
 		pThis->m_ptrActionManager->TerminateInteractiveAction();
 	}
 	
-	TPOS	lpos = pThis->m_listRedoActions.head();
+	long	lpos = pThis->m_listRedoActions.head();
 	undo_info	*pinfo = pThis->m_listRedoActions.get( lpos );
 
 
-	for (TPOS lpos_a = pinfo->actions.head(); lpos_a; lpos_a = pinfo->actions.next(lpos_a))
+	for( long lpos_a = pinfo->actions.head(); lpos_a; lpos_a = pinfo->actions.next( lpos_a ) )
 	{
 		IUndoneableActionPtr	ptrUA = pinfo->actions.get( lpos_a );
 		IActionPtr		ptrA = ptrUA;
@@ -175,7 +175,7 @@ HRESULT CUndoList::XUndoList::AddAction( IUnknown *punkAction )
 	//if( pThis->m_listUndoActions.count() > nUndoListMaxSize )
 	while( pThis->m_listUndoActions.count() > nUndoListMaxSize )
 	{
-		LONG_PTR	lpos_last = pThis->m_listUndoActions.tail();
+		long	lpos_last = pThis->m_listUndoActions.tail();
 		undo_info	*plast = pThis->m_listUndoActions.get( lpos_last );
 		pThis->m_listUndoActions.remove( lpos_last );
 
@@ -189,7 +189,7 @@ HRESULT CUndoList::XUndoList::RemoveAction( IUnknown *punkAction )
 {
 	METHOD_PROLOGUE_EX(CUndoList, UndoList);
 
-	TPOS	lpos, lpos_next, lpos_a, lpos_a_next;
+	long	lpos, lpos_next, lpos_a, lpos_a_next;
 
 	for( lpos = pThis->m_listUndoActions.head(); lpos; lpos = lpos_next )
 	{
@@ -245,7 +245,7 @@ HRESULT CUndoList::XUndoList::GetLastUndoAction( IUnknown **ppunkAction )
 	*ppunkAction = 0;
 
 	undo_info	*pinfo = 0;
-	TPOS	lpos = pThis->m_listUndoActions.head();
+	long	lpos = pThis->m_listUndoActions.head();
 	if( lpos )pinfo = pThis->m_listUndoActions.get( lpos );
 
 	if( !pinfo )
@@ -372,7 +372,7 @@ void CUndoList::CheckUndoCount()
 	//if( pThis->m_listUndoActions.count() > nUndoListMaxSize )
 	while( m_listUndoActions.count() > nUndoListMaxSize )
 	{
-		TPOS	lpos_last = m_listUndoActions.tail();
+		long	lpos_last = m_listUndoActions.tail();
 		undo_info	*plast = m_listUndoActions.get( lpos_last );
 		m_listUndoActions.remove( lpos_last );
 
@@ -383,16 +383,16 @@ void CUndoList::CheckUndoCount()
 
 void CUndoList::Check()
 {
-	for (TPOS lpos = m_listUndoActions.head(); lpos; lpos = m_listUndoActions.next(lpos))
+	for( long lpos = m_listUndoActions.head(); lpos; lpos = m_listUndoActions.next( lpos ) )
 	{
 		undo_info *p = m_listUndoActions.get( lpos );
-		for (TPOS lpos = p->actions.head(); lpos; lpos = p->actions.next(lpos))
+		for( long lpos = p->actions.head(); lpos; lpos = p->actions.next( lpos ) )
 		{
 			IUnknown *punk = p->actions.get( lpos );
 			IFilterActionPtr sptrFA(punk);
 			if (sptrFA == 0) continue;
 			{
-				TPOS lpos = 0;
+				long lpos = 0;
 				sptrFA->GetFirstArgumentPosition(&lpos);
 				while (lpos)
 				{
@@ -409,7 +409,7 @@ void CUndoList::Check()
 
 void CUndoList::ClearUndoList()		//clear the undo list
 {
-	for (TPOS lpos = m_listUndoActions.head(); lpos; lpos = m_listUndoActions.next(lpos))
+	for( long lpos = m_listUndoActions.head(); lpos; lpos = m_listUndoActions.next( lpos ) )
 		free_undo_info( m_listUndoActions.get( lpos ) );
 	m_listUndoActions.clear();
 
@@ -419,7 +419,7 @@ void CUndoList::ClearUndoList()		//clear the undo list
 
 void CUndoList::ClearRedoList()		//clear the redo list
 {
-	for (TPOS lpos = m_listRedoActions.head(); lpos; lpos = m_listRedoActions.next(lpos))
+	for( long lpos = m_listRedoActions.head(); lpos; lpos = m_listRedoActions.next( lpos ) )
 		free_undo_info( m_listRedoActions.get( lpos ) );
 	m_listRedoActions.clear();
 
@@ -438,12 +438,12 @@ HRESULT CUndoList::XUndoList::BeginGroup2( BSTR bstr, long lStepsBack )
 
 	for( int i=0; i<lStepsBack; i++ )
 	{
-		TPOS	lpos = pThis->m_listUndoActions.head();
+		long	lpos = pThis->m_listUndoActions.head();
 		if(!lpos) break;
 		undo_info	*pinfo = pThis->m_listUndoActions.get( lpos );
 		if(!pinfo) break;
 		
-		TPOS lActionPos = pinfo->actions.tail();
+		long lActionPos = pinfo->actions.tail();
 		while(lActionPos)
 		{
 			IUnknown* punkAction = pinfo->actions.get(lActionPos);

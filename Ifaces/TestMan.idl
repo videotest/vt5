@@ -1,7 +1,6 @@
 import "oaidl.idl";
 import "ocidl.idl";
 
-typedef LONG_PTR LPOS;
 
 [
 	object,
@@ -11,10 +10,10 @@ typedef LONG_PTR LPOS;
 ]
 interface ITestManagerDisp : IDispatch
 {
-	[id(0), helpstring("method GetFirstTestPos")] HRESULT GetFirstTestPos([in] LPOS ParentPos, [out, retval] LPOS *plPos);
-	[id(1), helpstring("method GetNextTest")] HRESULT GetNextTest([in] LPOS lParentPos, [out] LPOS *plPos, [out, retval] IDispatch **ppunk);
-	[id(2), helpstring("method AddTest")] HRESULT AddTest([in] LPOS lParent, [in] IDispatch *punk,  /*[out,retval]*/ LPOS *plpos);
-	[id(3), helpstring("method DeleteTest")] HRESULT DeleteTest([in] LPOS lPos);
+	[id(0), helpstring("method GetFirstTestPos")] HRESULT GetFirstTestPos( [in] long lParentPos, [out, retval] long *plPos );
+	[id(1), helpstring("method GetNextTest")] HRESULT GetNextTest( [in] long lParentPos, [out] VARIANT *plPos, [out, retval] IDispatch **ppunk );
+	[id(2), helpstring("method AddTest")] HRESULT AddTest( [in] long lParent, [in] IDispatch *punk,  /*[out,retval]*/ long *plpos );
+	[id(3), helpstring("method DeleteTest")] HRESULT DeleteTest( [in] long lPos );
 
 	[id(4), helpstring("method RunTestCompare")] HRESULT RunTestCompare();
 	[id(5), helpstring("method RunTestSave")] HRESULT RunTestSave();
@@ -33,10 +32,10 @@ interface ITestItemDisp: IDispatch
 {
 	[id(0), helpstring("method SetPath")] HRESULT SetPath( [in] BSTR bstrPath );
 	[id(1), helpstring("method GetPath")] HRESULT GetPath( [out, retval] BSTR *pbstrPath );
-	[id(2), helpstring("method GetFirstCondPos")] HRESULT GetFirstCondPos( [out, retval] LPOS *lpPos );
+	[id(2), helpstring("method GetFirstCondPos")] HRESULT GetFirstCondPos( [out, retval] long *lpPos );
 	[id(3), helpstring("method GetNextCond")] HRESULT GetNextCond( [out] VARIANT *plPos, [out, retval] BSTR *pbstr );
 	[id(4), helpstring("method AddCond")] HRESULT AddCond( [in] BSTR bstrCond );
-	[id(5), helpstring("method DeleteCond")] HRESULT DeleteCond( [in] LPOS lPos );
+	[id(5), helpstring("method DeleteCond")] HRESULT DeleteCond( [in] long lPos );
 	[id(6), helpstring("method DeleteAllCond")] HRESULT DeleteAllCond();
 	[id(7), helpstring("method SetScript")] HRESULT SetScript( [in] BSTR bstrScript );
 	[id(8), helpstring("method GetScript")] HRESULT GetScript( [out, retval] BSTR *pbstrScript );
@@ -52,10 +51,10 @@ interface ITestItemDisp: IDispatch
 
 	[id(16), helpstring("method ParseCond")] HRESULT ParseCond();
  
-	[id(17), helpstring("method GetFirstSingleCond")] HRESULT GetFirstSingleCond( [out,retval] LPOS *lpPos );
+	[id(17), helpstring("method GetFirstSingleCond")] HRESULT GetFirstSingleCond( [out,retval] long *lpPos );
 	[id(18), helpstring("method NextSingleCond")] HRESULT NextSingleCond( [out] VARIANT *lpPos, [out] VARIANT *pVarName, [out] VARIANT *pVarPath, [out] VARIANT *pVarParams );
 
-	[id(19), helpstring("method GetFirstMultyCond")] HRESULT GetFirstMultyCond( [out,retval] LPOS *lpPos );
+	[id(19), helpstring("method GetFirstMultyCond")] HRESULT GetFirstMultyCond( [out,retval] long *lpPos );
 	[id(20), helpstring("method NextMultyCond")] HRESULT NextMultyCond( [out] VARIANT *lpPos, [out] VARIANT *pVarName, [out] VARIANT *pVarPath, [out] VARIANT **pVarParams,[out] VARIANT *pVarFlag, [out] long *plCount, VARIANT *pVarNameMain, [out] VARIANT **pVarParamsMain, [out, retval] long *plCountMain );
 
 	[id(21), helpstring("method SetTestSavedState")] HRESULT SetTestSavedState( [in] long bSet );

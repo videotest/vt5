@@ -151,7 +151,7 @@ namespace ViewSpace
 		void SetClassFile( LPCTSTR pStr ) { strcpy( m_strClassFile, pStr ); }
 		LPCTSTR GetClassFile( ) { return m_strClassFile; }
 
-		LRESULT on_destroy() { m_sptrView = 0; return __super::on_destroy(); }
+		long on_destroy() { m_sptrView = 0; return __super::on_destroy(); }
 		void set_view_unkn( IUnknownPtr view ) { m_sptrView = view; }
 		RECT m_rcFull; // Всё окно
 		POINT m_ptOffset;
@@ -160,8 +160,8 @@ namespace ViewSpace
 		~CCmpLegendWnd(void);
 
 		void deinit();
-		LRESULT on_paint();
-		LRESULT on_erasebkgnd(HDC hDC) { return 1L; }
+		long on_paint();
+		long on_erasebkgnd( HDC hDC ) { return 1L; }
 
 		void load_from_ndata(  INamedDataPtr sptrND );
 		void store_to_ndata( INamedDataPtr sptrND );
@@ -171,14 +171,14 @@ namespace ViewSpace
 
 		const CRect& get_min_rect();
 
-		virtual LRESULT on_size(short cx, short cy, ulong fSizeType);
+		virtual long on_size( short cx, short cy, ulong fSizeType );
 		virtual bool create( DWORD style, const RECT &rect, const _char *pszTitle = 0, HWND parent = 0, HMENU hmenu = 0, const _char *pszClass = 0 );
 		void DoDraw( HDC hDC, RECT rcPaint,double fZoom = 1, bool bPrint = false );
 		void calc_min_rect( bool bPrintMode );
 		
-		LRESULT on_mousemove(const _point &point);
-		LRESULT on_lbuttondown(const _point &point);
-		LRESULT on_setcursor(unsigned code, unsigned hit) { return 0L; };
+		long on_mousemove( const _point &point );
+		long on_lbuttondown( const _point &point );
+		long on_setcursor( unsigned code, unsigned hit ) { return 0L; };
 		
 		void clear_attached() 
 		{ 
@@ -188,7 +188,7 @@ namespace ViewSpace
 			m_lst_color_hot_data.resize(0);
 			m_lst_text_hot_data.resize(0);
 		}
-		LRESULT handle_message(UINT m, WPARAM w, LPARAM l);
+		long handle_message(UINT m, WPARAM w, LPARAM l);
 		void _resize_child( RECT rect );
 		int Print(CDCHandle& pDC, CRect rectTarget, CRect RectDraw);
 	protected:

@@ -48,7 +48,7 @@ static IUnknown *GetObjectByBaseKey( IUnknown *punkData, GuidKey lKey )
 	for( long nType = 0; nType < nTypesCounter; nType ++ )
 	{
 		IUnknown	*punkObj = 0;
-		LONG_PTR	lpos = 0;
+		long	lpos = 0;
 
 		sptrM->GetObjectFirstPosition( nType, &lpos );
 
@@ -71,7 +71,7 @@ static IUnknown *FindObjectByBaseKey( GuidKey lKey )
 
 	sptrIApplication	sptrApp( ::GetAppUnknown() );
 
-	LONG_PTR	lPosTempl, lPosDoc;
+	long	lPosTempl, lPosDoc;
 
 	sptrApp->GetFirstDocTemplPosition( &lPosTempl );
 
@@ -420,7 +420,7 @@ void CopyCalcVals(ICalcObjectPtr sptrIn, ICalcObjectPtr sptrOut)
 	if(sptrIn == 0 || sptrOut == 0)
 		return;
 
-	LPOS nPos = 0;
+	long nPos = 0;
 	sptrIn->GetFirstValuePos(&nPos);
 	while(nPos)
 	{
@@ -566,7 +566,7 @@ bool CMeasureObjectList::SerializeObject( CStreamEx &ar, SerializeParams *pparam
 			m_ci.Serialize(ar);
 		}
 		
-		long lCount = m_params.GetCount(); int idx = 0;
+		long lCount = m_params.GetCount();
 		ar << lCount;
 		
 		POSITION	pos = m_params.GetHeadPosition();
@@ -575,7 +575,7 @@ bool CMeasureObjectList::SerializeObject( CStreamEx &ar, SerializeParams *pparam
 			ParameterContainer	*pParCont = m_params.GetNext( pos );
 
 			ar << pParCont->cbSize;
-			ar << idx++; // pParCont->lpos; // write any 4 bytes;
+			ar << pParCont->lpos;
 			CLSID clsidGroup = INVALID_KEY;
 			if( pParCont->pGroup )
 			{
@@ -655,8 +655,7 @@ bool CMeasureObjectList::SerializeObject( CStreamEx &ar, SerializeParams *pparam
 			::ZeroMemory( pParCont, sizeof(ParameterContainer) );
 
 			ar >> pParCont->cbSize;
-			ar >> (long&)pParCont->lpos;
-			pParCont->lpos=i;
+			ar >> pParCont->lpos;
 
 			CLSID clsidGroup = INVALID_KEY;
 			ar.Read( &clsidGroup, sizeof(CLSID) );
@@ -691,7 +690,7 @@ bool CMeasureObjectList::SerializeObject( CStreamEx &ar, SerializeParams *pparam
 			}
 			else
 			{
-				long	lKey; LONG_PTR lpos = 0;
+				long	lKey, lpos = 0;
 				ar >> lKey;
 				if( pParCont->pGroup )
 				{
@@ -720,7 +719,7 @@ bool CMeasureObjectList::SerializeObject( CStreamEx &ar, SerializeParams *pparam
 				ICompositeMeasureGroupPtr cmg(pParCont->pGroup);
 				if(cmg) 
 					cmg->UpdateClassName(pParCont);
-				pParCont->lpos = (LONG_PTR)m_params.AddTail( pParCont );
+				pParCont->lpos = (long)m_params.AddTail( pParCont );
 			}
 			else
 			{
@@ -870,7 +869,7 @@ HRESULT CMeasureObjectList::XComposite::BuildTree(	LONG binaryCount)
 		}
 	}
 	else pThis->m_ci.Init(pThis->m_binaryCount);
-	TPOS pos;
+	long pos;
 	ndo->GetFirstChildPosition( &pos );
 	long cnt;
 	ndo->GetChildsCount( &cnt );
@@ -1037,7 +1036,7 @@ static void NotifyObject(IUnknown *punk, int nCode, IUnknown *punkHint)
 {
 	INamedDataObject2Ptr sptrObj(punk);
 	if (sptrObj == 0) return;
-	TPOS lPos;
+	long lPos;
 	if (FAILED(sptrObj->GetFirstChildPosition(&lPos)))
 		return;
 	while (lPos)
@@ -1066,7 +1065,7 @@ void CMeasureObjectList::OnAddChild(IUnknown *punkNewChild, POSITION pos)
 			INamedDataObject2Ptr ndo(punkNewChild);
 			if(ndo)
 			{
-				ndo->SetObjectPosInParent( pos );
+				ndo->SetObjectPosInParent( (long) pos );
 			}
 			if( !(f&1))
 			{
@@ -1176,7 +1175,7 @@ bool CMeasureObjectList::DoSetActiveChild(POSITION pos)
 			IUnknown* punkChild;
 			POSITION pSave = pos;
 			INamedDataObject2Ptr ndo(this);
-			ndo->GetNextChild((TPOS*) &pSave, &punkChild );
+			ndo->GetNextChild((long*) &pSave, &punkChild );
 			if(punkChild && m_lObjects.GetLevelsCount()!=0)
 			{
 				CTreeNode* tn = m_lObjects.Find(punkChild);
@@ -1193,14 +1192,14 @@ bool CMeasureObjectList::DoSetActiveChild(POSITION pos)
 						else break;
 					}
 					INamedDataObject2Ptr nd(tn->GetData());
-					nd->GetObjectPosInParent( &pos );
+					nd->GetObjectPosInParent( (long*)&pos );
 					m_posActive = pos;
 					CTreeLevel* tl = m_lObjects.GetBaseLevel();
 					if(tl)
 					{
 						POSITION p = tl->Find(tn);
 						
-						tl->SetActiveChild(p,0);
+						tl->SetActiveChild((long)p,0);
 					}
 				}
 				punkChild->Release();
@@ -2273,7 +2272,7 @@ POSITION CCalcObjectContainerImpl::AddParameter(ParameterContainer *pcNew)
 }
 
 
-HRESULT CCalcObjectContainerImpl::XCalcCntr::GetCurentPosition(LONG_PTR *plpos, long *plKey)
+HRESULT CCalcObjectContainerImpl::XCalcCntr::GetCurentPosition( long *plpos, long *plKey )
 {
 	METHOD_PROLOGUE_BASE(CCalcObjectContainerImpl, CalcCntr);
 	if( plpos )
@@ -2290,7 +2289,7 @@ HRESULT CCalcObjectContainerImpl::XCalcCntr::GetCurentPosition(LONG_PTR *plpos, 
 	}
 	return S_OK;
 }
-HRESULT CCalcObjectContainerImpl::XCalcCntr::SetCurentPosition(LONG_PTR lpos)
+HRESULT CCalcObjectContainerImpl::XCalcCntr::SetCurentPosition( long lpos )
 {
 	METHOD_PROLOGUE_BASE(CCalcObjectContainerImpl, CalcCntr);
 
@@ -2319,21 +2318,21 @@ HRESULT CCalcObjectContainerImpl::XCalcCntr::Move( long lDirection )
 	return S_OK;
 }
 
-HRESULT CCalcObjectContainerImpl::XCalcCntr::GetFirstParameterPos(LONG_PTR *plpos)
+HRESULT CCalcObjectContainerImpl::XCalcCntr::GetFirstParameterPos( long *plpos )
 {
 	METHOD_PROLOGUE_BASE(CCalcObjectContainerImpl, CalcCntr);
-	*plpos = (LONG_PTR)pThis->m_params.GetHeadPosition();
+	*plpos = (long)pThis->m_params.GetHeadPosition();
 	return S_OK;
 }
 
-HRESULT CCalcObjectContainerImpl::XCalcCntr::GetLastParameterPos(LONG_PTR *plpos)
+HRESULT CCalcObjectContainerImpl::XCalcCntr::GetLastParameterPos( long *plpos )
 {
 	METHOD_PROLOGUE_BASE(CCalcObjectContainerImpl, CalcCntr);
-	*plpos = (LONG_PTR)pThis->m_params.GetTailPosition();
+	*plpos = (long)pThis->m_params.GetTailPosition();
 	return S_OK;
 }
 
-HRESULT CCalcObjectContainerImpl::XCalcCntr::GetNextParameter(LONG_PTR *plpos, struct ParameterContainer **ppContainer)
+HRESULT CCalcObjectContainerImpl::XCalcCntr::GetNextParameter( long *plpos, struct ParameterContainer **ppContainer )
 {
 	METHOD_PROLOGUE_BASE(CCalcObjectContainerImpl, CalcCntr);
 	ParameterContainer *pi = (ParameterContainer*)pThis->m_params.GetNext( (POSITION&)*plpos );
@@ -2341,7 +2340,7 @@ HRESULT CCalcObjectContainerImpl::XCalcCntr::GetNextParameter(LONG_PTR *plpos, s
 	return S_OK;
 }
 
-HRESULT CCalcObjectContainerImpl::XCalcCntr::GetPrevParameter(LONG_PTR *plpos, struct ParameterContainer **ppContainer)
+HRESULT CCalcObjectContainerImpl::XCalcCntr::GetPrevParameter( long *plpos, struct ParameterContainer **ppContainer )
 {
 	METHOD_PROLOGUE_BASE(CCalcObjectContainerImpl, CalcCntr);
 	ParameterContainer *pi = (ParameterContainer*)pThis->m_params.GetPrev( (POSITION&)*plpos );
@@ -2349,17 +2348,17 @@ HRESULT CCalcObjectContainerImpl::XCalcCntr::GetPrevParameter(LONG_PTR *plpos, s
 	return S_OK;
 }
 
-HRESULT CCalcObjectContainerImpl::XCalcCntr::MoveParameterAfter(LONG_PTR lpos, struct ParameterContainer *p)
+HRESULT CCalcObjectContainerImpl::XCalcCntr::MoveParameterAfter( long lpos, struct ParameterContainer *p )
 {
 	METHOD_PROLOGUE_BASE(CCalcObjectContainerImpl, CalcCntr);
 	pThis->m_params.RemoveAt( (POSITION)p->lpos );
-	if( lpos == 0 )p->lpos = (LONG_PTR)pThis->m_params.AddHead( p );
-	else p->lpos = (LONG_PTR)pThis->m_params.InsertAfter((POSITION)lpos, p);
+	if( lpos == 0 )p->lpos = (long)pThis->m_params.AddHead( p );
+	else p->lpos = (long)pThis->m_params.InsertAfter( (POSITION)lpos, p );
 	pThis->container_notify( cncMoveParameter, p->pDescr->lKey );
 	return S_OK;
 }
 
-HRESULT CCalcObjectContainerImpl::XCalcCntr::DefineParameter(long lKey, enum ParamType type, IMeasParamGroup *pGroup, LONG_PTR *plpos)
+HRESULT CCalcObjectContainerImpl::XCalcCntr::DefineParameter( long lKey, enum ParamType type, IMeasParamGroup *pGroup, long *plpos )
 {
 	METHOD_PROLOGUE_BASE(CCalcObjectContainerImpl, CalcCntr);
 
@@ -2398,7 +2397,7 @@ HRESULT CCalcObjectContainerImpl::XCalcCntr::DefineParameter(long lKey, enum Par
 	if( pi->pGroup )
 	{
 		pi->pGroup->AddRef();
-		LONG_PTR	lposG = 0;
+		long	lposG = 0;
 		pGroup->GetPosByKey( lKey, &lposG );
 		if( !lposG )
 		{
@@ -2434,8 +2433,8 @@ HRESULT CCalcObjectContainerImpl::XCalcCntr::DefineParameter(long lKey, enum Par
 		}
 	}
 	
-	pi->lpos = (LONG_PTR)pThis->AddParameter(pi);
-//	pi->lpos = (LONG_PTR)pThis->m_params.AddTail( pi );
+	pi->lpos = (long)pThis->AddParameter(pi);
+//	pi->lpos = (long)pThis->m_params.AddTail( pi );
 
 	pThis->container_notify( cncAddParameter, lKey );
 
@@ -2449,7 +2448,7 @@ HRESULT CCalcObjectContainerImpl::XCalcCntr::DefineParameter(long lKey, enum Par
 	return S_OK;
 }
 
-HRESULT CCalcObjectContainerImpl::XCalcCntr::DefineParameterFull( struct ParameterContainer *ps, LONG_PTR *plpos )
+HRESULT CCalcObjectContainerImpl::XCalcCntr::DefineParameterFull( struct ParameterContainer *ps, long *plpos )
 {
 	METHOD_PROLOGUE_BASE(CCalcObjectContainerImpl, CalcCntr);
 	ParameterContainer *p = pThis->find( ps->pDescr->lKey );
@@ -2483,8 +2482,8 @@ HRESULT CCalcObjectContainerImpl::XCalcCntr::DefineParameterFull( struct Paramet
 	}
 	else
 		p->pDescr = ps->pDescr;
-	p->lpos = (LONG_PTR)pThis->AddParameter(p);
-//	p->lpos = (LONG_PTR)pThis->m_params.AddTail( p );
+	p->lpos = (long)pThis->AddParameter(p);
+//	p->lpos = (long)pThis->m_params.AddTail( p );
 	pThis->container_notify( cncAddParameter, p->pDescr->lKey );
 
 	if( plpos )*plpos = p->lpos;
@@ -2501,7 +2500,7 @@ HRESULT CCalcObjectContainerImpl::XCalcCntr::RemoveParameter( long lKey )
 	return RemoveParameterAt( p->lpos );
 }
 
-HRESULT CCalcObjectContainerImpl::XCalcCntr::RemoveParameterAt( LONG_PTR lpos )
+HRESULT CCalcObjectContainerImpl::XCalcCntr::RemoveParameterAt( long lpos )
 {
 	METHOD_PROLOGUE_BASE(CCalcObjectContainerImpl, CalcCntr);
 
@@ -2594,15 +2593,15 @@ long CMeasureObjectList::GetParametersCount()
 	return n;
 }
 
-LONG_PTR CMeasureObjectList::GetFirstParameterPosition() 
+long CMeasureObjectList::GetFirstParameterPosition() 
 {
-	LONG_PTR	lpos = 0;
+	long	lpos = 0;
 	ICalcObjectContainerPtr	ptrC( GetControllingUnknown() );
 	ptrC->GetFirstParameterPos( &lpos );
 	return lpos;
 }
 
-LONG_PTR CMeasureObjectList::GetNextParameter( LONG_PTR lpos, VARIANT FAR* refName, VARIANT FAR* refUnits, VARIANT FAR* refKey, VARIANT FAR* refCalibr) 
+long CMeasureObjectList::GetNextParameter( long lpos, VARIANT FAR* refName, VARIANT FAR* refUnits, VARIANT FAR* refKey, VARIANT FAR* refCalibr) 
 {
 	ICalcObjectContainerPtr	ptrC( GetControllingUnknown() );
 	ParameterContainer	*p = 0;
@@ -2747,7 +2746,7 @@ bool CMeasureObjectList::store_child(IUnknown* unk, int level, CTreeNode* parent
 ///////////////////////////////////
 
 	ndo->SetParent(this->GetControllingUnknown(),0);
-	TPOS pos;
+	long pos;
 	ndo->GetFirstChildPosition( &pos );
 	while(pos)
 	{
@@ -2781,7 +2780,7 @@ void CMeasureObjectList::restore_tree_from_archive(void)
 	else m_ci.Init(m_binaryCount);
 	
 	//populate tree levels
-	TPOS pos;
+	long pos;
 	list->GetFirstChildPosition( &pos );
 	while(pos)
 	{
@@ -2940,7 +2939,7 @@ void CTreeNotion::root_out_branch(CTreeNode* root, bool bAddToDelay, bool bRecur
 	{
 		POSITION pNext = p;
 		tl->GetNext(pNext);
-		tl->SetActiveChild(pNext);
+		tl->SetActiveChild((long)pNext);
 	}
 	tl->RemoveAt(p);
 	if(!bAddToDelay) delete root;
@@ -3209,7 +3208,7 @@ CTreeNode* CTreeLevel::find_parent_for(CTreeNode* node, double coverFactor)
 void CTreeLevel::adopt_children(CTreeNode* object, CTreeNotion* tn, IUnknown* o_list)
 {
 	INamedDataObject2Ptr ndo2(object->GetData());
-	TPOS l_pos;
+	long l_pos;
 	ndo2->GetFirstChildPosition(&l_pos);
 	IUnknown* unk;
 	while(l_pos)
@@ -3334,7 +3333,7 @@ HRESULT CTreeLevel::AddChild( IUnknown *punkChild )
 			find_children_in_parent(object,cf);
 			//}-+-
 
-			TPOS pinp =0;
+			long pinp =0;
 			CTreeLevel* baseLevel =this;
 			ICompositeSupportPtr comS(punkChild);
 			if(comS) 
@@ -3387,7 +3386,7 @@ HRESULT CTreeLevel::AddChild( IUnknown *punkChild )
 				else baseLevel=this;
 
 				CTreeNode* bn = tn->Find(baseObject,0);
-				pinp = bn->position_in_parent();
+				pinp = (long)bn->position_in_parent();
 
 				if(sync & 2) //объект уже был добавлен в реальный лист 
 				{
@@ -3529,20 +3528,20 @@ HRESULT CTreeLevel::GetChildsCount( long *plCount )
 	*plCount = this->GetCount();
 	return S_OK;
 }
-HRESULT CTreeLevel::GetFirstChildPosition(TPOS *plPos)
+HRESULT CTreeLevel::GetFirstChildPosition( long *plPos )
 {
-	*plPos = GetHeadPosition();
+	*plPos = (long)GetHeadPosition();
 	return S_OK;
 }
-HRESULT CTreeLevel::GetNextChild(TPOS *plPos, IUnknown **ppunkChild)
+HRESULT CTreeLevel::GetNextChild( long *plPos, IUnknown **ppunkChild )
 { 
-	CTreeNode* tn = GetNext((TPOS&)*plPos);
+	CTreeNode* tn = GetNext((POSITION&)*plPos);
 	*ppunkChild  = tn->GetData();
 	if(*ppunkChild)(*ppunkChild)->AddRef();
 	return S_OK;
 }
-HRESULT CTreeLevel::GetLastChildPosition(TPOS *plPos){ ASSERT(false); return E_NOTIMPL; }
-HRESULT CTreeLevel::GetPrevChild(TPOS *plPos, IUnknown **ppunkChild){ ASSERT(false); return E_NOTIMPL; }
+HRESULT CTreeLevel::GetLastChildPosition(long *plPos){ ASSERT(false); return E_NOTIMPL; }
+HRESULT CTreeLevel::GetPrevChild(long *plPos, IUnknown **ppunkChild){ ASSERT(false); return E_NOTIMPL; }
 
 HRESULT CTreeLevel::AttachData( IUnknown *punkNamedData )
 { 
@@ -3554,7 +3553,7 @@ HRESULT CTreeLevel::AttachData( IUnknown *punkNamedData )
 }	//called from NamedData
 HRESULT CTreeLevel::GetObjectFlags( DWORD *pdwObjectFlags ){ ASSERT(false); return E_NOTIMPL; }
 
-HRESULT CTreeLevel::SetActiveChild( TPOS lPos )
+HRESULT CTreeLevel::SetActiveChild( long lPos )
 {
 	m_lActive = lPos;
 	CTreeNode* tn;
@@ -3576,7 +3575,7 @@ HRESULT CTreeLevel::SetActiveChild( TPOS lPos )
 
 	return S_OK; 
 }
-HRESULT CTreeLevel::GetActiveChild( TPOS *plPos )
+HRESULT CTreeLevel::GetActiveChild( long *plPos )
 {
 	*plPos = m_lActive;
 	return S_OK; 
@@ -3594,10 +3593,10 @@ HRESULT CTreeLevel::GetData(IUnknown **ppunkNamedData )
 	return E_FAIL; 
 }
 
-HRESULT CTreeLevel::GetObjectPosInParent(TPOS *plPos){ ASSERT(false); return E_NOTIMPL; }// return object position in parent's object child list
-HRESULT CTreeLevel::SetObjectPosInParent(TPOS lPos){ ASSERT(false); return E_NOTIMPL; }
+HRESULT CTreeLevel::GetObjectPosInParent( long *plPos ){ ASSERT(false); return E_NOTIMPL; }// return object position in parent's object child list
+HRESULT CTreeLevel::SetObjectPosInParent( long lPos ){ ASSERT(false); return E_NOTIMPL; } 
 
-HRESULT CTreeLevel::GetChildPos(IUnknown *punkChild, TPOS *plPos)
+HRESULT CTreeLevel::GetChildPos(IUnknown *punkChild, long *plPos)
 {
 	POSITION pos, posOld;
 	*plPos =0;
@@ -3609,7 +3608,7 @@ HRESULT CTreeLevel::GetChildPos(IUnknown *punkChild, TPOS *plPos)
 		ICalcObjectPtr co(tn->data);
 		if(co == punkChild) 
 		{
-			*plPos = posOld;
+			*plPos = (long)posOld;
 			return S_OK;
 		}
 	}
@@ -3657,15 +3656,15 @@ HRESULT CTreeLevel::SetTypeInfo( INamedDataInfo *pinfo ){ ASSERT(false); return 
 
 
 
-void CTreeLevel::SetActiveChild( TPOS pos, CTreeNode* childToSet=0 )
+void CTreeLevel::SetActiveChild( long pos, CTreeNode* childToSet=0 )
 {
 	if(childToSet!=0)
 	{
-		m_lActive = Find(childToSet);
+		m_lActive = (long)Find(childToSet);
 	}
 	else  m_lActive = pos;
 }
-// восстанавливает структуру дерева после сериализации
+// восстанавливает сируктуру дерева после сериализации
 
 
 
@@ -3687,7 +3686,7 @@ LPDISPATCH CMeasureObjectList::GetSimilarObject(LPDISPATCH pdispObject)
 
 	ICalcObjectContainerPtr	ptrC( GetControllingUnknown() );
 
-	LONG_PTR lpos = 0;
+	long lpos = 0;
 	ptrC->GetFirstParameterPos( &lpos );
 	char szBuf[100];
 	for(int i=0; i<nParams; i++)

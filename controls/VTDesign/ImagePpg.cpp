@@ -144,7 +144,7 @@ void CVTImagePropPage::UpdateDataWithOutUpdateAX()
 	m_bLockUpdateControl = FALSE;
 }
 
-LRESULT CVTImagePropPage::OnColorChange(WPARAM lParam, LPARAM wParam)
+LONG CVTImagePropPage::OnColorChange(UINT lParam, LONG wParam)
 {
 	SetModifiedFlag( TRUE );		
 	return 1;

@@ -312,14 +312,14 @@ protected:
 	static void free_sz( char *p )
 	{::free( p );}
 
-	_map_t<COLORREF, long, cmp<long> >			m_class_colors;  
-	_map_t<char *, long, cmp<long>, free_sz>		m_class_names;
+	_map_t<COLORREF, long, cmp_long>			m_class_colors;  
+	_map_t<char *, long, cmp_long, free_sz>		m_class_names;  
 	
-	_map_t<COLORREF, long, cmp >			m_class_colors2;
+	_map_t<COLORREF, long, cmp_long>			m_class_colors2;  
 	_map_t<char *, long, cmp_long, free_sz>		m_class_names2;
 
-	_list_map_t<CRect, IUnknown*, cmp<IUnknown*> >			m_object_coords;
-	_list_map_t<CRect, IUnknown*, cmp<IUnknown*> >			m_object_coords_num;
+	_list_map_t<CRect, long, cmp_long>			m_object_coords;
+	_list_map_t<CRect, long, cmp_long>			m_object_coords_num;
 
 	COLORREF m_clWhite;
 	BOOL m_bAsClassColor;

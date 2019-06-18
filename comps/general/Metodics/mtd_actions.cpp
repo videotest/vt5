@@ -135,17 +135,17 @@ HRESULT CMtdChooser::XCombo::OnInitList( HWND hWnd )
 		if( sptrMan )
 		{
 			// get active method
-			TPOS lpos_active_mtd = 0;
+			long lpos_active_mtd = 0;
 			sptrMan->GetActiveMethodPos( &lpos_active_mtd );
 
-			_list_map_t<TPOS, CString, cmp_cstring> method_map;
+			_list_map_t<long, CString, cmp_cstring> method_map;
 
-			TPOS lPos = 0;
+			long lPos = 0;
 			sptrMan->GetFirstMethodPos( &lPos );
 
 			while( lPos )
 			{
-				TPOS lPos0 = lPos;
+				long lPos0 = lPos;
 
 				IUnknownPtr ptrMethod = 0;
 				sptrMan->GetNextMethod( &lPos, &ptrMethod );
@@ -173,13 +173,13 @@ HRESULT CMtdChooser::XCombo::OnInitList( HWND hWnd )
 				method_map.set(lPos0, strNameForSort);
 			}
 
-			TPOS lMapPos = method_map.tail();
+			long lMapPos = method_map.tail();
 
 			int n = pThis->m_bVirtualFreeMode ? 1 : 0;
 			pThis->m_lCurSel = 0;
 			while( lMapPos )
 			{
-				TPOS lPos = method_map.get(lMapPos);
+				long lPos = method_map.get(lMapPos);
 				lMapPos = method_map.prev(lMapPos);
 
 				if(lPos==lpos_active_mtd) pThis->m_lCurSel = n;
@@ -270,13 +270,13 @@ HRESULT CMtdChooser::XCombo::OnSelChange()
 
 		if( sptrMan )
 		{
-			TPOS lPos = 0;
+			long lPos = 0;
 			sptrMan->GetFirstMethodPos( &lPos );
 
 			while( lPos )
 			{
 				IUnknown *punkMethod = 0;
-				TPOS lPos1 = lPos;
+				long lPos1=lPos;
 				sptrMan->GetNextMethod( &lPos, &punkMethod );
 
 				IMethodPtr sptrMtd = punkMethod;
@@ -336,7 +336,7 @@ void CMtdChooser::OnNotify( const char *pszEvent, IUnknown *punkHit, IUnknown *p
 		if(sptr_mtd_man!=0 && lHint != cncDeactivate/*SBT1436*/)
 		{
 			// get active method
-			TPOS lpos_active_mtd = 0;
+			long lpos_active_mtd = 0;
 			sptr_mtd_man->GetActiveMethodPos( &lpos_active_mtd );
 
 			IUnknownPtr ptr_active_mtd = 0;
@@ -391,8 +391,8 @@ void CMtdChooser::OnNotify( const char *pszEvent, IUnknown *punkHit, IUnknown *p
 				
 				_variant_t var = strText;
 				sptr_site->Invoke( bstr_event, &var, 1, 0, fwAppScript | fwFormScript );
-	}
-}
+			}
+		}
 
 	}
 }
@@ -454,7 +454,7 @@ bool CActionMtdRunStop::IsAvaible()
 	if( bOK )
 		return false;
 
-	TPOS lPos = 0;
+	long lPos = 0;
 	sptrMan->GetActiveMethodPos( &lPos );
 
 	if( !lPos )
@@ -552,7 +552,7 @@ bool CActionMtdExportMethod::Invoke()
 
 	if( str_mtd_name.IsEmpty() )
 	{
-		LPOS lpos_active_mtd = 0;
+		long lpos_active_mtd = 0;
 		if( S_OK != sptr_mtd_man->GetActiveMethodPos( &lpos_active_mtd ) )
 			return false;			
 
@@ -566,7 +566,7 @@ bool CActionMtdExportMethod::Invoke()
 	}
 	else
 	{	
-        LPOS lpos_mtd = 0;
+        long lpos_mtd = 0;
 		sptr_mtd_man->GetFirstMethodPos( &lpos_mtd );
 		while( lpos_mtd )
 		{
@@ -892,7 +892,7 @@ bool CActionMtdCreateMethod::Invoke()
 		return false;
 	
 	// add new method
-	TPOS lpos_new_mtd = 0;
+	long lpos_new_mtd = 0;
 	if( S_OK != sptr_mtd_man->AddMethod( sptr_new_mtd, 0, &lpos_new_mtd) )
 		return false;
 
@@ -1073,7 +1073,7 @@ bool CActionMtdCopyMethod ::IsAvaible()
 	if( bworking )
 		return false;
 
-	TPOS lpos_active_mtd = 0;
+	long lpos_active_mtd = 0;
 	if( S_OK != sptr_mtd_man->GetActiveMethodPos( &lpos_active_mtd ) )
 		return false;			
 	
@@ -1081,7 +1081,7 @@ bool CActionMtdCopyMethod ::IsAvaible()
 		return false;
 
 	IUnknown *punk_mtd = 0;
-	TPOS lpos = lpos_active_mtd;
+	long lpos = lpos_active_mtd;
 	if( S_OK != sptr_mtd_man->GetNextMethod( &lpos, &punk_mtd ) )
 		return false;
 
@@ -1120,7 +1120,7 @@ bool CActionMtdCopyMethod::Invoke()
 		return false;
 
 	// get active method
-	TPOS lpos_active_mtd = 0;
+	long lpos_active_mtd = 0;
 	if( S_OK != sptr_mtd_man->GetActiveMethodPos( &lpos_active_mtd ) )
 		return false;			
 
@@ -1230,7 +1230,7 @@ bool CActionMtdCopyMethod::Invoke()
 		return false;
 
 	// add new method
-	TPOS lpos_new_mtd = 0;
+	long lpos_new_mtd = 0;
     if( S_OK != sptr_mtd_man->AddMethod( sptr_new_mtd, 0, &lpos_new_mtd ) )
 		return false;
 
@@ -1333,7 +1333,7 @@ bool CActionMtdDeleteMethod::Invoke()
 
 	// search method by name
 	IUnknown *punk_mtd = 0;
-	TPOS lpos_mtd_del = 0;
+	long lpos_mtd_del = 0;
     if( !get_method_by_name( _bstr_t(str_name), sptr_mtd_man, &punk_mtd, &lpos_mtd_del) )
 			return false;		
 
@@ -1434,7 +1434,7 @@ bool CActionMtdUndo::IsAvaible()
 	if(sptrM==0)
 		return false;
 
-	TPOS lMethodPos = 0;
+	long lMethodPos=0;
 	sptrM->GetActiveMethodPos(&lMethodPos);
 	if(!lMethodPos) return false;
 
@@ -1455,7 +1455,7 @@ bool CActionMtdUndo::Invoke()
 	IMethodManPtr sptrM(ptr_mtd_man);
 	if(sptrM==0) return false;
 
-	TPOS lMethodPos = 0;
+	long lMethodPos=0;
 	sptrM->GetActiveMethodPos(&lMethodPos);
 	if(!lMethodPos) return false;
 
@@ -1490,7 +1490,7 @@ bool CActionMtdRedo::IsAvaible()
 	IMethodManPtr sptrM(ptr_mtd_man);
 	if(sptrM==0) return false;
 
-	TPOS lMethodPos = 0;
+	long lMethodPos=0;
 	sptrM->GetActiveMethodPos(&lMethodPos);
 	if(!lMethodPos) return false;
 
@@ -1511,7 +1511,7 @@ bool CActionMtdRedo::Invoke()
 	IMethodManPtr sptrM(ptr_mtd_man);
 	if(sptrM==0) return false;
 
-	TPOS lMethodPos = 0;
+	long lMethodPos=0;
 	sptrM->GetActiveMethodPos(&lMethodPos);
 	if(!lMethodPos) return false;
 
@@ -1550,7 +1550,7 @@ bool CActionMtdExportScript::IsAvaible()
 	if( sptr_mtd_man == 0 )
 		return false;
 
-	TPOS lpos_active_mtd = 0;
+	long lpos_active_mtd = 0;
 	if( S_OK != sptr_mtd_man->GetActiveMethodPos( &lpos_active_mtd ) )
 		return false;			
 	
@@ -1571,7 +1571,7 @@ bool CActionMtdExportScript::Invoke()
 	if( str_name.IsEmpty() ) return false;
 
 	// get active method
-	TPOS lpos_active_mtd = 0;
+	long lpos_active_mtd = 0;
 	if( S_OK != sptr_mtd_man->GetActiveMethodPos( &lpos_active_mtd ) )
 		return false;			
 
@@ -1708,7 +1708,7 @@ bool CActionMtdInsertMsgStep::Invoke()
 	if( brunning )
 		return false;
 
-	TPOS lpos_active_mtd = 0;
+	long lpos_active_mtd = 0;
 	if( S_OK != sptr_mtd_man->GetActiveMethodPos( &lpos_active_mtd ) )
 		return false;	
 
@@ -1794,7 +1794,7 @@ bool CActionMtdInsertMsgStep::Invoke()
 		step_data.m_dwFlags |= msfStateless;
 
 		// add new step after active
-		TPOS lpos_step = 0;
+		long lpos_step = 0;
 		sptr_active_mtd_data->GetActiveStepPos( &lpos_step );    
 		
 		// [vanek] : поддержка undo/redo методики - 28.10.2004
@@ -1862,7 +1862,7 @@ bool CActionMtdClearMethod::IsAvaible()
 	if( !str_mtd_name.IsEmpty() )
 		return true;
 	    
-	TPOS lpos_active_mtd = 0;
+	long lpos_active_mtd = 0;
 	if( S_OK != sptr_mtd_man->GetActiveMethodPos( &lpos_active_mtd ) )
 		return false;	
 
@@ -1890,14 +1890,14 @@ bool CActionMtdClearMethod::IsAvaible()
 	if( sptr_mtd_data == 0 )
 		return false;
 
-	long	lstep_count = 0;
-	TPOS lstep_pos = 0;
+	long	lstep_count = 0, 
+			lstep_pos = 0;
     sptr_mtd_data->GetFirstStepPos( &lstep_pos );
 	while( lstep_pos )
 	{
 		CMethodStep step_data;
 		step_data.m_bSkipData = TRUE;
-		TPOS lcurr_step_pos = lstep_pos;
+		long lcurr_step_pos = lstep_pos;
 		sptr_mtd_data->GetNextStep( &lstep_pos, &step_data );
 		if( !(step_data.m_dwFlags & msfUndead) )
 			lstep_count ++;
@@ -1930,7 +1930,7 @@ bool CActionMtdClearMethod::Invoke()
 	IMethodDataPtr sptr_mtd_data;
 	if( str_mtd_name .IsEmpty() )
 	{	// get active method
-		TPOS lpos_active_mtd = 0;
+		long lpos_active_mtd = 0;
 		if( S_OK != sptr_mtd_man->GetActiveMethodPos( &lpos_active_mtd ) )
 			return false;			
 
@@ -1985,13 +1985,13 @@ bool CActionMtdClearMethod::Invoke()
 	// начинаем группу undo
 	sptr_mtd_changes->BeginGroupUndo( );
 
-	TPOS lstep_pos = 0;
+    long lstep_pos = 0;
     sptr_mtd_data->GetFirstStepPos( &lstep_pos );
 	while( lstep_pos )
 	{
 		CMethodStep step_data;
 		step_data.m_bSkipData = TRUE;
-		TPOS lcurr_step_pos = lstep_pos;
+		long lcurr_step_pos = lstep_pos;
 		sptr_mtd_data->GetNextStep( &lstep_pos, &step_data );
 		if( !(step_data.m_dwFlags & msfUndead) )
 		{

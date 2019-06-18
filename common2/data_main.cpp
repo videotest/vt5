@@ -122,10 +122,10 @@ HRESULT CObjectBase::SetParent( IUnknown *punkParent, DWORD dwFlags /*AttachPare
 HRESULT CObjectBase::StoreData( DWORD dwDirection )
 {	return E_NOTIMPL;	}
 
-TPOS CObjectBase::FindChildPos(IUnknown *punkFind)
+long CObjectBase::FindChildPos(IUnknown *punkFind)
 {
 	GuidKey keyFind = ::GetKey(punkFind);
-	TPOS pos = m_listChilds.head();
+	long pos = m_listChilds.head();
 	while (pos)
 	{
 		IUnknown *punkChild = m_listChilds.next(pos);
@@ -139,7 +139,7 @@ TPOS CObjectBase::FindChildPos(IUnknown *punkFind)
 //for internal usage - it is called only from framework
 HRESULT CObjectBase::RemoveChild( IUnknown *punkChild )
 {
-	TPOS pos = FindChildPos(punkChild);
+	long pos = FindChildPos(punkChild);
 	if (pos != 0)
 		m_listChilds.remove(pos);
 	return S_OK;
@@ -147,7 +147,7 @@ HRESULT CObjectBase::RemoveChild( IUnknown *punkChild )
 
 HRESULT CObjectBase::AddChild( IUnknown *punkChild )
 {
-	TPOS pos = FindChildPos(punkChild);
+	long pos = FindChildPos(punkChild);
 	if (pos == 0)
 	{
 		punkChild->AddRef();
@@ -162,13 +162,13 @@ HRESULT CObjectBase::GetChildsCount( long *plCount )
 	return S_OK;	
 }
 
-HRESULT CObjectBase::GetFirstChildPosition(TPOS *plPos)
+HRESULT CObjectBase::GetFirstChildPosition( long *plPos )
 {	
 	*plPos = m_listChilds.head();
 	return S_OK;
 }
 
-HRESULT CObjectBase::GetNextChild(TPOS *plPos, IUnknown **ppunkChild)
+HRESULT CObjectBase::GetNextChild( long *plPos, IUnknown **ppunkChild )
 {	
 	if( ppunkChild && plPos )
 	{
@@ -180,13 +180,13 @@ HRESULT CObjectBase::GetNextChild(TPOS *plPos, IUnknown **ppunkChild)
 	return S_OK;
 }
 
-HRESULT CObjectBase::GetLastChildPosition(TPOS *plPos)
+HRESULT CObjectBase::GetLastChildPosition(long *plPos)
 {	
 	*plPos = m_listChilds.tail();
 	return S_OK;
 }
 
-HRESULT CObjectBase::GetPrevChild(TPOS *plPos, IUnknown **ppunkChild)
+HRESULT CObjectBase::GetPrevChild(long *plPos, IUnknown **ppunkChild)
 {	
 	if( ppunkChild && plPos)
 	{
@@ -210,9 +210,9 @@ HRESULT CObjectBase::GetObjectFlags( DWORD *pdwObjectFlags )
 	return S_OK;	
 }
 
-HRESULT CObjectBase::SetActiveChild(TPOS lPos)
+HRESULT CObjectBase::SetActiveChild( long lPos )
 {	return E_NOTIMPL;	}
-HRESULT CObjectBase::GetActiveChild(TPOS *plPos)
+HRESULT CObjectBase::GetActiveChild( long *plPos )
 {	
 	*plPos = 0;
 	return S_OK;	
@@ -243,17 +243,17 @@ HRESULT CObjectBase::GetData(IUnknown **ppunkNamedData )
 	return S_OK;	
 }
 
-HRESULT CObjectBase::GetObjectPosInParent(TPOS *plPos)
+HRESULT CObjectBase::GetObjectPosInParent( long *plPos )
 {	
 	*plPos = 0;
 	return S_OK;
 }
-HRESULT CObjectBase::SetObjectPosInParent(TPOS lPos)
+HRESULT CObjectBase::SetObjectPosInParent( long lPos )
 {	
 	return E_NOTIMPL;	
 }
 
-HRESULT CObjectBase::GetChildPos(IUnknown *punkChild, TPOS *plPos)
+HRESULT CObjectBase::GetChildPos(IUnknown *punkChild, long *plPos)
 {	
 	*plPos = 0;
 	return E_NOTIMPL;	
@@ -292,7 +292,7 @@ HRESULT CObjectBase::SetBaseKey(GUID * pBaseKey)
 	{
 		INamedDataPtr ptrData( m_punkNamedData );
 		if( ptrData )
-			ptrData->NotifyContexts( ncChangeBase, Unknown(), 0, &prevKey );
+			ptrData->NotifyContexts( ncChangeBase, Unknown(), 0, (LPARAM)&prevKey );
 	}
 
 
@@ -375,8 +375,8 @@ HRESULT CObjectBase::Load( IStream *pStream, SerializeParams *pparams )
 		INamedDataPtr ptrData( m_punkNamedData );
 		if( ptrData )
 		{
-			ptrData->NotifyContexts( ncChangeKey, Unknown(), 0, &guidPrev );
-			ptrData->NotifyContexts( ncChangeBase, Unknown(), 0, &guidPrevBase );
+			ptrData->NotifyContexts( ncChangeKey, Unknown(), 0, (LPARAM)&guidPrev );
+			ptrData->NotifyContexts( ncChangeBase, Unknown(), 0, (LPARAM)&guidPrevBase );
 		}
 	}
 	

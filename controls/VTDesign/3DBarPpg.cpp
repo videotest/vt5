@@ -108,7 +108,7 @@ void CVT3DBarPropPage::DoDataExchange(CDataExchange* pDX)
 
 /////////////////////////////////////////////////////////////////////////////
 // CVT3DBarPropPage message handlers
-LRESULT CVT3DBarPropPage::OnColorChange(WPARAM lParam, LPARAM wParam)
+LONG CVT3DBarPropPage::OnColorChange(UINT lParam, LONG wParam)
 {
 	SetModifiedFlag( TRUE );		
 	return 1;

@@ -41,7 +41,7 @@ public:
 	{
 		free();
 
-		if( len < 0 )len= (int)_tcslen( psz )+1;
+		if( len < 0 )len= _tcslen( psz )+1;
 		alloc( len, 50 );
 		_tcsncpy( ptr(), psz, len-1 );
 		ptr()[len-1]=0;
@@ -51,7 +51,7 @@ public:
 	const _char *concat( const _char *psz )
 	{
 		long	cur_len = length();
-		long	len = (long)_tcslen( psz )+cur_len+1;
+		long	len = _tcslen( psz )+cur_len+1;
 		alloc( len, 50 );
 		m_size = len;
 		return _tcscpy( ptr()+cur_len, psz );
@@ -59,7 +59,7 @@ public:
 	long length()
 	{
 		if( !ptr() )return 0;
-		return (long)_tcslen( ptr() );
+		return _tcslen( ptr() );
 	}
 
 

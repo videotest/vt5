@@ -126,9 +126,9 @@ bool CFuncMethodListCtrl::subclass( HWND hwnd, bool f_nccreate /*= false*/ )
 }
 
 ///////////////////////////////////////////////////////////////////////
-LRESULT	CFuncMethodListCtrl::handle_message(UINT m, WPARAM w, LPARAM l)
+long	CFuncMethodListCtrl::handle_message( UINT m, WPARAM w, LPARAM l )
 {
-	LRESULT lret = __super::handle_message(m, w, l);
+	long lret = __super::handle_message( m, w, l );
 
 	if( m == WM_WINDOWPOSCHANGED )
 	{
@@ -153,20 +153,20 @@ LRESULT	CFuncMethodListCtrl::handle_message(UINT m, WPARAM w, LPARAM l)
 }
 
 ///////////////////////////////////////////////////////////////////////
-int		CFuncMethodListCtrl::find_step(TPOS lpos_step, int nstart_from /*= -1*/)
+int		CFuncMethodListCtrl::find_step( long lpos_step, int nstart_from /*= -1*/ )
 {
 	if( !handle() )
 		return -1;
 	
 	LVFINDINFO st_find = {0};
 	st_find.flags = LVFI_PARAM;
-	st_find.lParam = (LPARAM)lpos_step;
+	st_find.lParam = lpos_step;
 
 	return ListView_FindItem( handle(), nstart_from, &st_find );
 }
 
 ///////////////////////////////////////////////////////////////////////
-int		CFuncMethodListCtrl::insert_step(TPOS lpos_step, int nitem)
+int		CFuncMethodListCtrl::insert_step( long lpos_step, int nitem )
 {
 	if( !handle() || m_block_items_operation )
 		return -1;
@@ -179,7 +179,7 @@ int		CFuncMethodListCtrl::insert_step(TPOS lpos_step, int nitem)
 	LVITEM st_item = {0};
 	st_item.mask = LVIF_PARAM | LVIF_IMAGE;
 	st_item.iItem = nitem;
-	st_item.lParam = (LPARAM)lpos_step; // store step's position to lParam
+	st_item.lParam = lpos_step; // store step's position to lParam
 	st_item.iImage = I_IMAGECALLBACK;
 
 	nitem = insert_item( &st_item );    
@@ -189,7 +189,7 @@ int		CFuncMethodListCtrl::insert_step(TPOS lpos_step, int nitem)
 }
 
 ///////////////////////////////////////////////////////////////////////
-int		CFuncMethodListCtrl::insert_after_step(TPOS lpos_target, TPOS lpos_step)
+int		CFuncMethodListCtrl::insert_after_step( long lpos_target, long lpos_step )
 {
 	if( !handle() || m_block_items_operation )
 		return -1;
@@ -206,7 +206,7 @@ int		CFuncMethodListCtrl::insert_after_step(TPOS lpos_target, TPOS lpos_step)
 }
 
 ///////////////////////////////////////////////////////////////////////
-int		CFuncMethodListCtrl::insert_before_step(TPOS lpos_target, TPOS lpos_step)
+int		CFuncMethodListCtrl::insert_before_step( long lpos_target, long lpos_step )
 {
 	if( !handle() || m_block_items_operation )
 		return -1;
@@ -223,7 +223,7 @@ int		CFuncMethodListCtrl::insert_before_step(TPOS lpos_target, TPOS lpos_step)
 }
 
 ///////////////////////////////////////////////////////////////////////
-BOOL	CFuncMethodListCtrl::delete_step(TPOS lpos_step)
+BOOL	CFuncMethodListCtrl::delete_step( long lpos_step )
 {
 	if( !handle() || !lpos_step || m_block_items_operation )
 		return FALSE;
@@ -259,7 +259,7 @@ void	CFuncMethodListCtrl::fill( )
 	if( m_sptr_active_mtd == 0 )
 		return;
 
-	TPOS	lpos_step = 0,
+	long	lpos_step = 0,
 		lpos_prev_step = 0;
 
 	// adding steps
@@ -282,7 +282,7 @@ void	CFuncMethodListCtrl::update_check_states( )
 }
 
 ///////////////////////////////////////////////////////////////////////
-void	CFuncMethodListCtrl::update_check_state(TPOS lpos_step)
+void	CFuncMethodListCtrl::update_check_state( long lpos_step )
 {
 	update_check_state( find_step( lpos_step, -1 ) );
 }
@@ -313,7 +313,7 @@ void	CFuncMethodListCtrl::update_check_state( int nitem )
 }
 
 ///////////////////////////////////////////////////////////////////////
-TPOS	CFuncMethodListCtrl::update_active_step(void)
+long	CFuncMethodListCtrl::update_active_step(void)
 {
 	if( !handle() )
 		return 0;
@@ -321,7 +321,7 @@ TPOS	CFuncMethodListCtrl::update_active_step(void)
 	if( m_sptr_active_mtd == 0 )    
 		return 0;
 
-	TPOS lpos_active_step = 0;
+	long lpos_active_step = 0;
 	m_sptr_active_mtd->GetActiveStepPos( &lpos_active_step );
 	
 	int nitem = 0;
@@ -336,7 +336,7 @@ TPOS	CFuncMethodListCtrl::update_active_step(void)
 }
 
 ///////////////////////////////////////////////////////////////////////
-void	CFuncMethodListCtrl::set_active_step(TPOS lpos_step)
+void	CFuncMethodListCtrl::set_active_step( long lpos_step )
 {
 	if( !handle() )    
 		return;
@@ -360,7 +360,7 @@ void	CFuncMethodListCtrl::set_active_step(TPOS lpos_step)
 }
 
 ///////////////////////////////////////////////////////////////////////
-void	CFuncMethodListCtrl::set_active_step_item(TPOS lpos_step)
+void	CFuncMethodListCtrl::set_active_step_item( long lpos_step )
 {
 	if( !handle() )
 		return;
@@ -375,14 +375,14 @@ BOOL	CFuncMethodListCtrl::is_cached( int nitem_step )
 	if( !m_lpos_active_mtd || m_sptr_mtd_man == 0 )
 		return FALSE;
 
-	TPOS lpos_step = 0;
-	lpos_step = (TPOS)get_item_data( nitem_step );
+	long lpos_step = 0;
+	lpos_step = get_item_data( nitem_step );
 	if( !lpos_step )
 		return FALSE;
 
 	BOOL bcached = FALSE;
 	IUnknownPtr ptrMethod;
-	TPOS lMethodPos2 = m_lpos_active_mtd;
+	long lMethodPos2=m_lpos_active_mtd;
 	if( S_OK != m_sptr_mtd_man->GetNextMethod(&lMethodPos2, &ptrMethod) )
 		return FALSE;
 	if( S_OK != m_sptr_mtd_man->IsCached( ptrMethod, lpos_step, &bcached ) )
@@ -420,7 +420,7 @@ BOOL	CFuncMethodListCtrl::get_mtd( IUnknown **ppunk_mtd )
 }
 
 ///////////////////////////////////////////////////////////////////////
-void	CFuncMethodListCtrl::redraw_step(TPOS lpos_step)
+void	CFuncMethodListCtrl::redraw_step( long lpos_step )
 {
 	if( !handle() )
 		return;
@@ -443,7 +443,7 @@ BOOL	CFuncMethodListCtrl::refresh_data( )
 	if( m_sptr_mtd_man == 0)
 		return FALSE;
 
-	TPOS lpos_mtd = 0;
+	long lpos_mtd = 0;
 	if( S_OK != m_sptr_mtd_man->GetActiveMethodPos( &lpos_mtd ) )
 		return FALSE;
 
@@ -451,7 +451,7 @@ BOOL	CFuncMethodListCtrl::refresh_data( )
 		return FALSE;
 
 	IUnknown *punk_active_mtd = 0;
-	TPOS lpos_mtd_saved = lpos_mtd;
+	long lpos_mtd_saved = lpos_mtd;
 	if( S_OK != m_sptr_mtd_man->GetNextMethod( &lpos_mtd, &punk_active_mtd ) )
 		return FALSE;
 
@@ -481,7 +481,7 @@ void	CFuncMethodListCtrl::reset_active_mtd(void)
 }
 
 ///////////////////////////////////////////////////////////////////////
-BOOL	CFuncMethodListCtrl::get_step_data( CMethodStep *pstep_data, TPOS lpos_step )
+BOOL	CFuncMethodListCtrl::get_step_data( CMethodStep *pstep_data, long lpos_step )
 {
 	if( !pstep_data || m_sptr_active_mtd == 0 )
 		return FALSE;
@@ -490,13 +490,13 @@ BOOL	CFuncMethodListCtrl::get_step_data( CMethodStep *pstep_data, TPOS lpos_step
 }
 
 ///////////////////////////////////////////////////////////////////////
-BOOL	CFuncMethodListCtrl::get_step_data(CMethodStep *pstep_data, int nitem_step, TPOS *plpos_step /*= 0*/)
+BOOL	CFuncMethodListCtrl::get_step_data( CMethodStep *pstep_data, int nitem_step, long *plpos_step /*= 0*/ )
 {
 	if( !pstep_data || m_sptr_active_mtd == 0 )
 		return FALSE;
 
-	TPOS lpos_step = 0;
-	lpos_step = (TPOS)get_item_data( nitem_step );
+	long lpos_step = 0;
+	lpos_step = get_item_data( nitem_step );
 	if( !lpos_step )
 		return FALSE;
 
@@ -527,7 +527,7 @@ BOOL	CFuncMethodListCtrl::set_step_data( CMethodStep *pstep_data, int nitem_step
 }
 
 ///////////////////////////////////////////////////////////////////////
-int		CFuncMethodListCtrl::get_icon_step(TPOS lpos_step)
+int		CFuncMethodListCtrl::get_icon_step( long lpos_step )
 {
 	if( m_sptr_active_mtd == 0 )
 		return -1;
@@ -547,17 +547,17 @@ int		CFuncMethodListCtrl::get_icon_step(TPOS lpos_step)
 }
 
 ///////////////////////////////////////////////////////////////////////
-DWORD		CFuncMethodListCtrl::get_step_state(TPOS lpos_step)
+DWORD		CFuncMethodListCtrl::get_step_state( long lpos_step )
 {
 	if( !lpos_step || m_sptr_active_mtd == 0 )	
 		return 0;
 
-	TPOS lcurr_step_pos = lpos_step;
+	long lcurr_step_pos = lpos_step;
 	CMethodStep step_data;
 	step_data.m_bSkipData = true;
 	do
 	{
-		TPOS lsaved_pos = lcurr_step_pos;
+		long lsaved_pos = lcurr_step_pos;	
 		m_sptr_active_mtd->GetNextStep( &lcurr_step_pos, &step_data );
 		
 		if( _bstr_t( step_data.m_bstrActionName ) == _bstr_t( szBeginMethodLoop ) )
@@ -586,7 +586,7 @@ BOOL	CFuncMethodListCtrl::calc_loop_rect( RECT *ploop_rect )
 	for( long litem_idx = 0; (litem_idx < litem_count) & ( !bfirst_found || !blast_found); litem_idx++ )
 	{  
 		DWORD dwstate = 0;
-		dwstate = get_step_state( (TPOS)get_item_data( (int)(litem_idx) ) );
+		dwstate = get_step_state( get_item_data( (int)(litem_idx) ) );
 		if( !dwstate  || (dwstate & essNotInLoop) )
 			continue;
 
@@ -651,7 +651,7 @@ void	CFuncMethodListCtrl::OnDispInfo( NMLVDISPINFO *plvdispinfo, long *plProcess
 {
 	if( plvdispinfo->item.mask & LVIF_IMAGE && plvdispinfo->item.lParam )    
 	{
-		plvdispinfo->item.iImage = get_icon_step( (TPOS)plvdispinfo->item.lParam );        
+		plvdispinfo->item.iImage = get_icon_step( plvdispinfo->item.lParam );        
 		*plProcessed = 1;			
 	}
 }
@@ -688,8 +688,8 @@ void	CFuncMethodListCtrl::OnItemChanged( NMLISTVIEW *pnmlv, long *plProcessed )
 			
 			if( !m_block_steps_operation && m_sptr_active_mtd != 0 && pnmlv->iItem >= 0 )
 			{
-				TPOS lpos_step = 0;
-				lpos_step = (TPOS)get_item_data( pnmlv->iItem );
+                long lpos_step = 0;
+				lpos_step = get_item_data( pnmlv->iItem );
                 if( lpos_step )
 					m_sptr_active_mtd->SetActiveStepPos( lpos_step );
 			}
@@ -791,7 +791,7 @@ long	CFuncMethodListCtrl::OnPrePaintCell( NMLVCUSTOMDRAW *pnmCustomDraw, long *p
 		::DeleteObject( m_hrgn_old ); m_hrgn_old = 0;
 
 	DWORD dwstate_item = 0;
-	dwstate_item = get_step_state((TPOS)pnmCustomDraw->nmcd.lItemlParam);
+	dwstate_item = get_step_state( pnmCustomDraw->nmcd.lItemlParam );
 
 	if( ListView_GetItemState( handle(), pnmCustomDraw->nmcd.dwItemSpec, LVIS_SELECTED ) )
 	{
@@ -856,7 +856,7 @@ long	CFuncMethodListCtrl::OnPostPaintCell( NMLVCUSTOMDRAW *pnmCustomDraw, long *
 
 	UINT uiselected = 0;
 	uiselected = ListView_GetItemState( handle(), pnmCustomDraw->nmcd.dwItemSpec, LVIS_SELECTED ) && 
-		!is_bound_loop( (int)pnmCustomDraw->nmcd.dwItemSpec );
+		!is_bound_loop( pnmCustomDraw->nmcd.dwItemSpec );
 
 	HRGN	hrgn_curr = 0,
 		hrgn_adding = 0;
@@ -920,7 +920,7 @@ long	CFuncMethodListCtrl::OnPostPaintCell( NMLVCUSTOMDRAW *pnmCustomDraw, long *
 			int nold_bkmode = 0;
 			nold_bkmode = ::SetBkMode( pnmCustomDraw->nmcd.hdc, TRANSPARENT );
 
-			if( !is_cached( (int)pnmCustomDraw->nmcd.dwItemSpec ) )
+			if( !is_cached( pnmCustomDraw->nmcd.dwItemSpec ) )
 			{
 				COLORREF crOldTextColor = 0;
 				//crOldTextColor  = ::SetTextColor( pnmCustomDraw->nmcd.hdc, ::GetSysColor( COLOR_GRAYTEXT ) );
@@ -1000,7 +1000,7 @@ long	CFuncMethodListCtrl::OnPostPaint( NMLVCUSTOMDRAW *pnmCustomDraw, long *plPr
 }
 
 //////////////////////////////////////////////////////////////////////
-LRESULT CFuncMethodListCtrl::on_rbuttondown(const _point &point)
+long CFuncMethodListCtrl::on_rbuttondown( const _point &point )
 {
 	if(m_block_ui) return 0; // все юзерские действия запрещены
 
@@ -1017,7 +1017,7 @@ LRESULT CFuncMethodListCtrl::on_rbuttondown(const _point &point)
 }
 
 ///////////////////////////////////////////////////////////////////////
-LRESULT CFuncMethodListCtrl::on_lbuttondown(const _point &point)
+long CFuncMethodListCtrl::on_lbuttondown( const _point &point )
 {
 	if(m_block_ui) return 0; // все юзерские действия запрещены
 
@@ -1063,7 +1063,7 @@ LRESULT CFuncMethodListCtrl::on_lbuttondown(const _point &point)
 }
 
 ///////////////////////////////////////////////////////////////////////
-LRESULT CFuncMethodListCtrl::on_lbuttonup(const _point &point)
+long CFuncMethodListCtrl::on_lbuttonup( const _point &point )
 {
 	if(m_block_ui) return 0; // все юзерские действия запрещены
 
@@ -1072,7 +1072,7 @@ LRESULT CFuncMethodListCtrl::on_lbuttonup(const _point &point)
 }
 
 ///////////////////////////////////////////////////////////////////////
-LRESULT CFuncMethodListCtrl::on_lbuttondblclk(const _point &point)
+long CFuncMethodListCtrl::on_lbuttondblclk( const _point &point )
 {
 	if(m_block_ui) return 0; // все юзерские действия запрещены
 
@@ -1089,7 +1089,7 @@ LRESULT CFuncMethodListCtrl::on_lbuttondblclk(const _point &point)
 }
 
 ///////////////////////////////////////////////////////////////////////
-LRESULT CFuncMethodListCtrl::on_rbuttondblclk(const _point &point)
+long CFuncMethodListCtrl::on_rbuttondblclk( const _point &point )
 {
 	if(m_block_ui) return 0; // все юзерские действия запрещены
 
@@ -1171,7 +1171,7 @@ BOOL	CFuncMethodListCtrl::set_next_active_step( long lvkey )
 		return FALSE;
 
 	
-	TPOS lnext_pos = (TPOS)get_item_data(nitem_sel);
+	long lnext_pos = get_item_data( nitem_sel );
 	CMethodStep step_data;
     step_data.m_bSkipData = true;
     if( lvkey == VK_DOWN )
@@ -1179,7 +1179,7 @@ BOOL	CFuncMethodListCtrl::set_next_active_step( long lvkey )
 		if( S_OK != m_sptr_active_mtd->GetNextStep( &lnext_pos, 0 ) )
 			return FALSE;
 		
-		TPOS lpos = lnext_pos;
+		long lpos = lnext_pos;
 		do
 		{
 			lnext_pos = lpos;
@@ -1194,7 +1194,7 @@ BOOL	CFuncMethodListCtrl::set_next_active_step( long lvkey )
         if( S_OK != m_sptr_active_mtd->GetPrevStep( &lnext_pos, 0 ) )
 			return FALSE;
 		
-				TPOS lpos = lnext_pos;
+		long lpos = lnext_pos;
 		do
 		{
 			lnext_pos = lpos;
@@ -1298,7 +1298,7 @@ BOOL	CFuncMethodListCtrl::synch_lparams( int nitem_from, int nitem_to )
 	long lstep_count = 0;
 	m_sptr_active_mtd->GetStepCount( &lstep_count );
 	nitem_to = min( int(lstep_count), nitem_to );
-	TPOS lpos_step = 0;
+	long lpos_step = 0;
 	int nitem_step = 0;
 	for( nitem_step = 0, m_sptr_active_mtd->GetFirstStepPos( &lpos_step ) ; lpos_step && (nitem_step <= nitem_to); 
 		m_sptr_active_mtd->GetNextStep( &lpos_step, 0), nitem_step ++ )
@@ -1307,7 +1307,7 @@ BOOL	CFuncMethodListCtrl::synch_lparams( int nitem_from, int nitem_to )
 		{
 			LV_ITEM	i = {0};
 			i.iItem = nitem_step;
-			i.lParam = (LPARAM)lpos_step;	
+			i.lParam = lpos_step;	
 			i.mask = LVIF_PARAM;
 			ListView_SetItem( handle(), &i );            
 		}
@@ -1373,7 +1373,7 @@ void	CFuncMethodListCtrl::update_loop( )
 }
 
 ///////////////////////////////////////////////////////////////////////
-LRESULT CFuncMethodListCtrl::on_mousemove(const _point &point)
+long CFuncMethodListCtrl::on_mousemove( const _point &point )
 {
 	
 	{
@@ -1404,7 +1404,7 @@ LRESULT CFuncMethodListCtrl::on_mousemove(const _point &point)
 			{
 				int ndrop_to = st_lvhittest.iItem;		
 				int ndrag_item_old = m_ndrag_item;
-				LPOS lpos_drag = 0;
+				long lpos_drag = 0;
 				CMethodStep step_data_drag,
 					step_data_dropto;
 
@@ -1444,13 +1444,13 @@ LRESULT CFuncMethodListCtrl::on_mousemove(const _point &point)
 }
 
 ///////////////////////////////////////////////////////////////////////
-LRESULT CFuncMethodListCtrl::on_destroy()
+long CFuncMethodListCtrl::on_destroy()
 {
 	return __super::on_destroy();
 }
 
 ///////////////////////////////////////////////////////////////////////
-LRESULT CFuncMethodListCtrl::on_keydown(long nVirtKey)
+long CFuncMethodListCtrl::on_keydown( long nVirtKey )
 {
 	if(m_block_ui) return 0; // все юзерские действия запрещены
 
@@ -1467,7 +1467,7 @@ LRESULT CFuncMethodListCtrl::on_keydown(long nVirtKey)
 }
 
 ///////////////////////////////////////////////////////////////////////
-LRESULT CFuncMethodListCtrl::on_killfocus(HWND hwndOld)
+long CFuncMethodListCtrl::on_killfocus(HWND hwndOld)
 {
 	// [vanek] SBT:1132 - 16.09.2004
 	if( m_bdragging )

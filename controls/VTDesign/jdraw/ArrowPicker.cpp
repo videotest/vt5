@@ -57,7 +57,7 @@ END_MESSAGE_MAP()
 /////////////////////////////////////////////////////////////////////////////
 // CArrowPicker message handlers
 
-LRESULT CArrowPicker::OnSelEndOK(WPARAM lParam, LPARAM /*wParam*/)
+LONG CArrowPicker::OnSelEndOK(UINT lParam, LONG /*wParam*/)
 {
     int arrowType = (int) lParam;
     m_bActive = FALSE;
@@ -75,7 +75,7 @@ LRESULT CArrowPicker::OnSelEndOK(WPARAM lParam, LPARAM /*wParam*/)
     return TRUE;
 }
 
-LRESULT CArrowPicker::OnSelEndCancel(WPARAM lParam, LPARAM /*wParam*/)
+LONG CArrowPicker::OnSelEndCancel(UINT lParam, LONG /*wParam*/)
 {
     m_bActive = FALSE;
     SetArrow((int) lParam);
@@ -89,7 +89,7 @@ LRESULT CArrowPicker::OnSelEndCancel(WPARAM lParam, LPARAM /*wParam*/)
     return TRUE;
 }
 
-LRESULT CArrowPicker::OnSelChange(WPARAM lParam, LPARAM /*wParam*/)
+LONG CArrowPicker::OnSelChange(UINT lParam, LONG /*wParam*/)
 {
     if (m_bTrackSelection) SetArrow((int) lParam);
 

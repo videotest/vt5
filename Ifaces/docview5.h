@@ -45,8 +45,8 @@ interface IDocument : public IUnknown
 interface IDocumentSite : public IUnknown
 {
 	com_call GetDocumentTemplate( IUnknown **punk ) = 0;
-	com_call GetFirstViewPosition( TPOS *plPos ) = 0;
-	com_call GetNextView(IUnknown **ppunkView, TPOS *plPos) = 0;
+	com_call GetFirstViewPosition( long *plPos ) = 0;
+	com_call GetNextView( IUnknown **ppunkView, long *plPos ) = 0;
 	com_call GetActiveView( IUnknown **ppunkView ) = 0;
 	com_call GetPathName( BSTR *pbstrPathName ) = 0;
 	com_call SetActiveView( IUnknown *punkView ) = 0;
@@ -100,8 +100,8 @@ interface IView : public IUnknown
 	com_call GetDroppedDataObject(IUnknown** punkDO) = 0;
 	com_call OnActivateView( BOOL bActivate, IUnknown *punkOtherView ) = 0;
 
-	com_call GetFirstVisibleObjectPosition(TPOS *plpos) = 0;
-	com_call GetNextVisibleObject(IUnknown ** ppunkObject, TPOS *plPos) = 0;
+	com_call GetFirstVisibleObjectPosition( long *plpos ) = 0;
+	com_call GetNextVisibleObject( IUnknown ** ppunkObject, long *plPos ) = 0;
 };
 
 

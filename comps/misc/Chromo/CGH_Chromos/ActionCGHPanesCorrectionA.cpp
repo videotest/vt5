@@ -446,9 +446,9 @@ void CActionPanesCorrectionM::DoDraw(CDC &dc)
 	CSize	size_cur = CSize( rcImage.Width(), rcImage.Height() );
 
 	CRect	rectImage;
-	rectImage.left   = int( ceil(double(- pointScroll.x )));
+	rectImage.left   = int( ceil(double(- pointScroll.x) ) );
 	rectImage.right  = int( floor( ( size_cur.cx ) * fZoom - pointScroll.x + .5) );
-	rectImage.top    = int( ceil(double(- pointScroll.y )));
+	rectImage.top    = int( ceil( double(- pointScroll.y) ) );
 	rectImage.bottom = int( floor( ( size_cur.cy ) * fZoom - pointScroll.y + .5) );
 
 	CRect	rectPaint = ::ConvertToWindow( m_punkTarget, rc );

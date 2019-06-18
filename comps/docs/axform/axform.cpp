@@ -10,7 +10,12 @@ GUID	IID_ITypeLibID =
 { 0xbbc08690, 0xfe5a, 0x46c4, { 0xb8, 0x2d, 0xe4, 0xec, 0xda, 0x7b, 0xd5, 0x7f } };
 
 
+
+#ifdef _DEBUG
+#pragma comment( lib, "EditorView_d.lib" )
+#else
 #pragma comment( lib, "EditorView.lib" )
+#endif//
 
 
 BEGIN_MESSAGE_MAP(CAxformApp, CWinApp)

@@ -20,13 +20,13 @@ public:
 	//ISubMenu
 	com_call SetStartItemID( UINT uiItemID );
 	com_call SetSingleObjectName( BSTR bstrObjectName );
-	com_call GetFirstItemPos(TPOS* plPos);
+	com_call GetFirstItemPos( long* plPos );
 	com_call GetNextItem(	
 		UINT* puiFlags, 
 		UINT* puiItemID, 
 		BSTR* pbstrText,				
 		UINT* puiParentID,
-		TPOS* plPos);
+		long* plPos );
 	com_call OnCommand( UINT uiCmd );	
 
 	virtual IUnknown *DoGetInterface( const IID &iid )

@@ -855,7 +855,7 @@ bool CActionCarioBuild::IsAvaible()
 		return false;
 
 	bool bFound = false;
-	POSITION lPosChild = 0;
+	long lPosChild = 0;
 
 	ptrNDO2->GetFirstChildPosition( &lPosChild );
 	while( lPosChild ) 
@@ -870,7 +870,7 @@ bool CActionCarioBuild::IsAvaible()
 		if( ptrNDOCromoParent == 0 )
 			continue;
 
-		POSITION lPosCromo = 0;
+		long lPosCromo = 0;
 		ptrNDOCromoParent->GetFirstChildPosition( &lPosCromo );
 		while( lPosCromo )
 		{
@@ -1703,7 +1703,7 @@ bool CActionSetChromoAngle::DoStartTracking( CPoint pt )
 	m_pointCenter = rect.CenterPoint();
 
 	m_fNewAngle = get_chromo_angle();
-	m_fAngleStart = ::atan2( double(pt.y-m_pointCenter.y), double(pt.x-m_pointCenter.x) )-m_fNewAngle;
+	m_fAngleStart = ::atan2( double(pt.y-m_pointCenter.y), double(pt.x-m_pointCenter.x))-m_fNewAngle;
 	_fill_undo_redo();
 
 	return true;
@@ -2499,7 +2499,7 @@ bool CActionAddToAnalize::Invoke()
 	if( ptrData == 0 )
 		return false;
 
-	POSITION lPos = 0;
+	long lPos = 0;
 	ptrList->GetActiveChild( &lPos );
 
 	IUnknown *punkChild = 0;
@@ -2689,7 +2689,7 @@ bool CActionAddToAnalize::IsAvaible()
 	if( ptrList == 0 )
 		return 0;
 
-	POSITION lPos = 0;
+	long lPos = 0;
 	ptrList->GetActiveChild( &lPos );
 
 	if( !lPos )
@@ -2746,7 +2746,7 @@ bool CActionAddToAnalize::IsAvaible()
 		IDocumentSitePtr sptrDoc = punkDoc;
 		punkDoc->Release();
 
-		TPOS lPos = 0;
+		long lPos = 0;
 		sptrDoc->GetFirstViewPosition( &lPos );
 		while( lPos )
 		{
@@ -2845,7 +2845,7 @@ bool CActionAddToAnalize2::Invoke()
 	if( ptrData == 0 )
 		return false;
 
-	POSITION lPos = 0;
+	long lPos = 0;
 	ptrList->GetActiveChild( &lPos );
 
 	IUnknown *punkChild = 0;
@@ -3002,7 +3002,7 @@ bool CActionAddToAnalize2::IsAvaible()
 	if( ptrList == 0 )
 		return 0;
 
-	POSITION lPos = 0;
+	long lPos = 0;
 	ptrList->GetActiveChild( &lPos );
 
 	if( !lPos )
@@ -3059,7 +3059,7 @@ bool CActionAddToAnalize2::IsAvaible()
 		IDocumentSitePtr sptrDoc = punkDoc;
 		punkDoc->Release();
 
-		TPOS lPos = 0;
+		long lPos = 0;
 		sptrDoc->GetFirstViewPosition( &lPos );
 		while( lPos )
 		{
@@ -3305,7 +3305,7 @@ void CActionSetChromoClass::_swap_section( CString strFrom, CString strTo, int n
 	}
 
 	IUnknownPtr ptrObj;
-	POSITION	lpos = 0;
+	long	lpos = 0;
 	ptrList->GetFirstChildPosition( &lpos );
 	while( lpos )
 	{

@@ -4,10 +4,6 @@
 void FreeEmpty( void *ptr );
 void FreeReleaseUnknown( void *ptr );
 
-//struct __POSITION {};
-//typedef __POSITION* POSITION;
-typedef POSITION TPOS;
-
 template <class DATA>
 class _list_item_t
 {
@@ -29,17 +25,17 @@ public:
 public:
 	void deinit();
 
-	TPOS	head()	{return (TPOS)m_phead;}
-	TPOS	tail()	{return (TPOS)m_ptail;}
+	long	head()	{return (long)m_phead;}
+	long	tail()	{return (long)m_ptail;}
 	long			Count()	{return m_nCounter;}
 
-	DATA	next( TPOS &lpos );
-	DATA	prev( TPOS &lpos );
-	DATA	get( TPOS lpos );
+	DATA	next( long &lpos );
+	DATA	prev( long &lpos );
+	DATA	get( long lpos );
 
-	TPOS	insert_before( DATA data, TPOS lpos = 0 );
-	TPOS	insert( DATA data, TPOS lpos = 0 );
-	void	remove( TPOS lpos );
+	long	insert_before( DATA data, long lpos = 0 );
+	long	insert( DATA data, long lpos = 0 );
+	void	remove( long lpos );
 protected:
 	virtual void _free( Item *p ){pfuncFree( p->m_data );delete p;}
 protected:

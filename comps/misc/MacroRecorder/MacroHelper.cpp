@@ -586,7 +586,7 @@ bool _same(RECT r1, RECT r2)
 
 HRESULT CMacroHelper::FindEditedRectangle(CEditedRectangleInfo *pInfo)
 {
-	TPOS lPos = m_edited_rectangles.head();
+	long lPos = m_edited_rectangles.head();
 	while (lPos != 0)
 	{
 		CEditedRectangleInfo *p = (CEditedRectangleInfo *)m_edited_rectangles.get(lPos);
@@ -823,7 +823,7 @@ void CMacroHelper::synth_events( bool bin_protected_mode /*= false*/ )
 		if( m_bkill_all_events )
 			m_list_pevents.clear();
 
-		TPOS lhead_pos = 0;
+		long lhead_pos = 0;
 		lhead_pos = m_list_pevents.head( );
 		if( !lhead_pos )
 			break;	
@@ -1014,7 +1014,7 @@ void	CMacroHelper::stop_synth(void)
 
 // override
 ///////////////////////////////////////////////////////////////////////////////////////////////
-LRESULT CMacroHelper::handle_message(UINT m, WPARAM w, LPARAM l)
+long CMacroHelper::handle_message( UINT m, WPARAM w, LPARAM l )
 {
 	if( WAIT_OBJECT_0 == ::WaitForSingleObject( m_hprotect_mode, 0 ) )
 	{	// "защищенный" режим

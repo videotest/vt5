@@ -4,6 +4,8 @@
 // produce the type library (Palette.tlb) that will become a resource in
 // Palette.ocx.
 
+#include <olectl.h>
+#include <idispids.h>
 
 [ uuid(57C4CB45-9E87-11D3-A537-0000B493A187), version(1.0),
   helpfile("Palette.hlp"),
@@ -11,8 +13,6 @@
   control ]
 library PALETTELib
 {
-#include <olectl.h>
-#include <idispids.h>
 	importlib(STDOLE_TLB);
 	importlib(STDTYPE_TLB);
 

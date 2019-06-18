@@ -639,7 +639,7 @@ LRESULT COptionsDlg::OnOutbarNotify(WPARAM wParam, LPARAM lParam)
 		{
 			if(lParam != m_nActiveItem)
 			{
-				m_nActiveItem = (int)lParam;
+				m_nActiveItem = lParam;
 				m_strActiveCategory = m_pOutBarCtrl->GetItemText(m_nActiveItem);
 				_SetSheetByCategory(m_strActiveCategory);
 			}
@@ -739,7 +739,13 @@ bool COptionsDlg::StoreOptionsConfig(CString strFileName)
 {
 	INamedDataPtr sptrND = 0;
 	sptrIFileDataObject	sptrF = 0;
-	//const char *szNamedDataProgID = "Data.NamedData";
+	/*
+#ifdef _DEBUG
+const char *szNamedDataProgID = "Data.NamedDataD";
+#else
+const char *szNamedDataProgID = "Data.NamedData";
+#endif
+	 */
 	if(!strFileName.IsEmpty())
 	{
 		//create
@@ -850,7 +856,13 @@ bool COptionsDlg::LoadOptionsConfig(CString strFileName)
 		ResetControls();
 		INamedDataPtr sptrND = 0;
 		sptrIFileDataObject	sptrF = 0;
-//		const char *szNamedDataProgID = "Data.NamedData";
+		/*
+#ifdef _DEBUG
+const char *szNamedDataProgID = "Data.NamedDataD";
+#else
+const char *szNamedDataProgID = "Data.NamedData";
+#endif
+*/
 		if(!strFileName.IsEmpty())
 		{
 			//create

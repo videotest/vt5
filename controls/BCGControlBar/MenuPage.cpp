@@ -129,7 +129,7 @@ BOOL CBCGMenuPage::OnInitDialog()
 		//---------------------------
 		// Save MenuBar current menu:
 		//---------------------------
-		m_hmenuCurr = m_pMenuBar->GetMenuBCG ();
+		m_hmenuCurr = m_pMenuBar->GetMenuBCG();
 
 		m_pMenuBar->OnChangeHot (-1);
 		g_menuHash.SaveMenuBar (m_hmenuCurr, m_pMenuBar);

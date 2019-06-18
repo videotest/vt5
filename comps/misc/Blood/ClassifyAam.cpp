@@ -163,13 +163,13 @@ static void DoClassify(IUnknownPtr punkObjList, char *sz_ini)
 	double GarbageThreshold=GetValueDouble
 		(GetAppUnknown(), "\\CellClassify", "GarbageThreshold", 5.0 );
 
-	POSITION pos;
-	sptrN->GetFirstChildPosition(&pos);
+	long pos;
+	sptrN->GetFirstChildPosition((long*)&pos);
 	while (pos)
 	{
-		POSITION pos1 = pos;
+		long pos1 = pos;
 		IUnknownPtr sptr;
-		sptrN->GetNextChild(&pos, &sptr);
+		sptrN->GetNextChild((long*)&pos, &sptr);
 		ICalcObjectPtr sptrObj = ICalcObjectPtr(sptr);
 		if(sptrObj!=0) //ну мало ли объекты какие-нибудь не такие...
 		{
@@ -213,7 +213,7 @@ static void DoLearn(IUnknownPtr punkObjList, char *sz_ini)
 	_ptr_t2<double> avg(nclass*nkeys);
 	_ptr_t2<double> disp(nclass*nkeys);
 
-	LONG_PTR lPos; sptrC->GetFirstParameterPos(&lPos);
+	long lPos; sptrC->GetFirstParameterPos(&lPos);
 	for (int i = 0; i < nkeys; i++)
 	{
 		ParameterContainer	*pc = 0;
@@ -229,13 +229,13 @@ static void DoLearn(IUnknownPtr punkObjList, char *sz_ini)
 
 	AvgToSum(sz_ini, nclass, nkeys, keys, count, avg, disp);
 
-	POSITION pos;
-	sptrN->GetFirstChildPosition(&pos);
+	long pos;
+	sptrN->GetFirstChildPosition((long*)&pos);
 	while (pos)
 	{
-		POSITION pos1 = pos;
+		long pos1 = pos;
 		IUnknownPtr sptr;
-		sptrN->GetNextChild(&pos, &sptr);
+		sptrN->GetNextChild((long*)&pos, &sptr);
 		ICalcObjectPtr sptrObj = ICalcObjectPtr(sptr);
 		if(sptrObj!=0) //ну мало ли объекты какие-нибудь не такие...
 		{

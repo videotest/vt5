@@ -579,7 +579,7 @@ void CalcMaxAspectRatio(_CObjArray &arrObjs, double dDeltaAngle, POINT ptCen)
 
 void MakeObjectsArray(_CObjArray &arrObjs, INamedDataObject2 *pObjList, int nObjects)
 {
-	POSITION lPos;
+	long lPos;
 	pObjList->GetFirstChildPosition(&lPos);
 	while (lPos)
 	{
@@ -2030,7 +2030,7 @@ public:
 				if (!m_bAnyStringerAdded)
 					break;
 			}*/
-			}
+		}
 		for (int k = 0; k < 10; k++)
 		{
 			m_bAnyStringerAdded = false;
@@ -2155,8 +2155,8 @@ public:
 		if (nNotSmall) dRealAvrWidth /= nNotSmall;
 		ptOffset.x = rc.left;
 		ptOffset.y = rc.top;
-		cx = rc.right-rc.left;
-		cy = rc.bottom-rc.top;
+		cx = rc.right-rc.left+1;
+		cy = rc.bottom-rc.top+1;
 		// Make new image and map data to it
 		IUnknownPtr punkImage(CreateTypedObject(_bstr_t(szArgumentTypeImage)), false);
 		IImage4Ptr sptrImage(punkImage);
@@ -2357,7 +2357,7 @@ public:
 			CObjInfo*p = arrObj.GetAt(i);
 			int nWidthClass = m_WidthClasses.Classify(nType, p->m_dPartWidth*dCalibr*1000000.);
 			if (nWidthClass >= 0)
-			adAreas[nWidthClass] += p->m_dPartArea;
+				adAreas[nWidthClass] += p->m_dPartArea;
 			dSumArea += p->m_dPartArea;
 		}
 		double dBiggestArea = 0.;
@@ -3127,7 +3127,7 @@ public:
 				int iObj = Params.arrObjectsInStringer.GetAt(j);
 				CObjInfo &ObjInfo(Params.arrObjects.GetPtrAt(iObj));
 				if (ObjInfo.m_dPartWidth < 0.3*Params.dBiggestWidth)
-			return false;
+					return false;
 			}
 		}
 
@@ -3167,7 +3167,7 @@ public:
 			if ((ObjInfo.m_dPartWidth+ObjInfo.m_dPartLength)/2 < m_dMinGlobForSMcm/1000000./dCalibr)
 				nType = -1;
 			else
-			nType = 5; // S
+				nType = 5; // S
 		}
 		else if (nPhase == 0 && ObjInfo.m_dPartLength <= m_dOSMaxSizeMcm*1000000./dCalibr) // oxide
 			nType = 1; //OT
@@ -3235,7 +3235,7 @@ static void CopyParams(ICalcObjectContainerPtr in, ICalcObjectContainerPtr out)
 {
 	if( in == 0 || out == 0)
 		return;
-	LONG_PTR lParamPos = 0;
+	long lParamPos = 0;
 	in->GetFirstParameterPos( &lParamPos );
 	while( lParamPos )
 	{

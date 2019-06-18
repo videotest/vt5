@@ -71,7 +71,7 @@ bool CAXFileFilter::ReadFile( const char *pszFileName )
 
 	char	szSign[20];
 	DWORD	dwRead = 0;
-	::ReadFile( hFile, &szSign, (DWORD)strlen( c_szAX ), &dwRead, 0 ); 
+	::ReadFile( hFile, &szSign, strlen( c_szAX ), &dwRead, 0 ); 
 	
 	bool	bReadText = false;
 	if( !strncmp( szSign, c_szAX, strlen( c_szAX ) ) )
@@ -257,7 +257,7 @@ bool CAXFileFilter::ReadFile( const char *pszFileName )
 				punkScript->Release();
 
 				int	c = 0;
-				for (int i = (int)strs._GetStartPos() + 1; i < strs._GetEndPos(); i++)
+				for( int i = strs._GetStartPos()+1; i < strs._GetEndPos(); i++ )
 				{
 					_bstr_t	bstrLine( strs[i] );
 
@@ -375,7 +375,7 @@ bool CAXFileFilter::WriteFile( const char *pszFileName )
 			strs.Add( c_szControls );
 
 			INamedDataObject2Ptr	ptrList( ptrObject );
-			POSITION	lpos = 0;
+			long	lpos = 0;
 
 			ptrList->GetFirstChildPosition( &lpos );
 
@@ -429,7 +429,7 @@ bool CAXFileFilter::WriteFile( const char *pszFileName )
 				char	*psz = new char[20+dwDataSize*3];
 				sprintf( psz, "Data=%d", dwDataSize );
 				char	*p = psz+strlen( psz );
-				for( DWORD n = 0; n < dwDataSize; n++, p+=3 )
+				for( int n = 0; n < dwDataSize; n++, p+=3 )
 					::sprintf( p, " %02x", pdata[n] );
 				strs.Add( psz );
 				delete pdata;

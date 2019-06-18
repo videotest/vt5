@@ -43,8 +43,8 @@ public:
 		com_call GetParamLimits(long lParamKey, double* pfLo, double* pfHi);
 		com_call RemoveParamLimits(long lParamKey); 
 		com_call EmptyAllParamsLimits(); 
-		com_call GetFirstParamLimitsPos(LONG_PTR* plPos);
-		com_call GetNextParamLimits(LONG_PTR* plPos, long* plParamKey, double* pfLo, double* pfHi);
+		com_call GetFirstParamLimitsPos(long* plPos);
+		com_call GetNextParamLimits(long* plPos, long* plParamKey, double* pfLo, double* pfHi);
 	END_INTERFACE_PART(ClassObj)
 
 //overrided virtuals
@@ -65,8 +65,8 @@ public:
 	void _GetParamLimits(long lParamKey, double* pfLo, double* pfHi);
 	void _RemoveParamLimits(long lParamKey); 
 	void _EmptyAllParamsLimits(); 
-	TPOS _GetFirstParamLimitsPos();
-	void _GetNextParamLimits(TPOS* plPos, long* plParamKey, double* pfLo, double* pfHi);
+	long _GetFirstParamLimitsPos();
+	void _GetNextParamLimits(long* plPos, long* plParamKey, double* pfLo, double* pfHi);
 
 
 // Overrides

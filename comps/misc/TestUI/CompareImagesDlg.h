@@ -58,11 +58,11 @@ public:
 	{
 		return E_NOTIMPL;
 	}
-	com_call GetFirstViewPosition( TPOS *plPos )
+	com_call GetFirstViewPosition( long *plPos )
 	{
 		return E_NOTIMPL;
 	}
-	com_call GetNextView(IUnknown **ppunkView, TPOS *plPos)
+	com_call GetNextView( IUnknown **ppunkView, long *plPos )
 	{
 		return E_NOTIMPL;
 	}
@@ -140,11 +140,11 @@ public:
 		return E_NOTIMPL;
 	}
 
-	com_call GetFirstVisibleObjectPosition(TPOS *plpos)
+	com_call GetFirstVisibleObjectPosition( long *plpos )
 	{
 		return E_NOTIMPL;
 	}
-	com_call GetNextVisibleObject(IUnknown ** ppunkObject, TPOS *plPos)
+	com_call GetNextVisibleObject( IUnknown ** ppunkObject, long *plPos )
 	{
 		return E_NOTIMPL;
 	}
@@ -688,9 +688,9 @@ public:
 	IMPLEMENT_RESIZE( handle() );
 
 
-	virtual LRESULT on_initdialog();
+	virtual long on_initdialog();
 	
-	LRESULT on_hscroll( unsigned code, unsigned pos, HWND hwndScroll )
+	long on_hscroll( unsigned code, unsigned pos, HWND hwndScroll )
 	{
 		RECT	rcClient = {0};
  		::GetClientRect( get_dlg_item( IDC_VIEW_HERE ), &rcClient );
@@ -739,12 +739,12 @@ public:
 
 		UpdateWindow( m_pframe->handle() );
 		UpdateWindow( m_pframe2->handle() );
-		
+
 		
 		return 0L;
 	}
 
-	LRESULT on_vscroll( unsigned code, unsigned pos, HWND hwndScroll )
+	long on_vscroll( unsigned code, unsigned pos, HWND hwndScroll )
 	{
 		RECT	rcClient = {0};
  		::GetClientRect( get_dlg_item( IDC_VIEW_HERE ), &rcClient );
@@ -817,9 +817,9 @@ public:
 	void _execute_script( IUnknown *punk, BSTR bstrScript );
 	void _redraw_images();
 	void _check_sizes( );  // [vanek] - 20.08.2004
-	LRESULT on_destroy();
+	long on_destroy();
 
-	LRESULT	handle_message( UINT m, WPARAM w, LPARAM l )
+	long	handle_message( UINT m, WPARAM w, LPARAM l )
 	{
 		if( m == WM_COMMAND && LOWORD( w ) == IDC_BUTTON1 && HIWORD( w ) == BN_CLICKED )
 		{

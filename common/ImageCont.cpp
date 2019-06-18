@@ -63,7 +63,7 @@ bool	CImageContainer::GetIcon( SIZE size_icon, LPCTSTR lpicon_name, HICON *phico
 	if( !lpicon_name || !phicon )
 		return false;
 
-	for (TPOS lpos = m_lstitems.head(); lpos; lpos = m_lstitems.next(lpos))
+	for( long lpos = m_lstitems.head(); lpos; lpos = m_lstitems.next( lpos ) )
 	{
 		XContainerItem *pgallary = 0;
 		pgallary = m_lstitems.get( lpos );
@@ -86,7 +86,7 @@ bool	CImageContainer::GetIcon( SIZE size_icon, LPCTSTR lpicon_name, HICON *phico
 long	CImageContainer::GetImageCount()
 {
 	long limg_count = 0;
-	for (TPOS lpos = m_lstitems.head(); lpos; lpos = m_lstitems.next(lpos))
+	for( long lpos = m_lstitems.head(); lpos; lpos = m_lstitems.next( lpos ) )
 	{
         XContainerItem* pitem = 0;
 		pitem = m_lstitems.get( lpos );
@@ -105,7 +105,7 @@ void	CImageContainer::GetMaxSize( SIZE *psize )
 
 	psize->cx = psize->cy = 0;
 
-	for (TPOS lpos = m_lstitems.head(); lpos; lpos = m_lstitems.next(lpos))
+    for( long lpos = m_lstitems.head(); lpos; lpos = m_lstitems.next( lpos ) )
 	{
 		XContainerItem* pitem = 0;
 		pitem = m_lstitems.get( lpos );
@@ -123,7 +123,7 @@ void	CImageContainer::GetMaxSize( SIZE *psize )
 bool	CImageContainer::GetImageInfoByIdx( long lidx, CString *pstr_name, SIZE *psize )
 {
 	long lcount_sum = 0;
-	for (TPOS lpos = m_lstitems.head(); lpos; lpos = m_lstitems.next(lpos))
+    for( long lpos = m_lstitems.head(); lpos; lpos = m_lstitems.next( lpos ) )
 	{
         XContainerItem* pitem = 0;
 		pitem = m_lstitems.get( lpos );
@@ -158,7 +158,7 @@ bool	CImageContainer::GetIconByIdx( long lidx, HICON *phicon )
 		return false;
 
 	long lcount_sum = 0;
-	for (TPOS lpos = m_lstitems.head(); lpos; lpos = m_lstitems.next(lpos))
+    for( long lpos = m_lstitems.head(); lpos; lpos = m_lstitems.next( lpos ) )
 	{
         XContainerItem* pitem = 0;
 		pitem = m_lstitems.get( lpos );
@@ -307,7 +307,7 @@ bool	CImageContainer::XContainerItem::GetIcon( LPCTSTR lpicon_name, HICON *phico
 	if( !lpicon_name || !phicon || !m_himglst )
 		return false;
 
-	TPOS lpos = 0;
+	long lpos = 0;
 	lpos = m_mapname2idx.find( CString(lpicon_name) );
 	if( !lpos )
 		return false;
@@ -324,7 +324,7 @@ bool	CImageContainer::XContainerItem::GetByIdx( long lidx, CString *pstr_name, H
     if( (!pstr_name && !phicon) || lidx >= m_mapname2idx.count() )
 		return false;
 
-		long lcurr_idx = 0; for (TPOS lpos = m_mapname2idx.head(); lpos; lpos = m_mapname2idx.next(lpos), lcurr_idx++)
+	for( long lpos = m_mapname2idx.head(), lcurr_idx = 0; lpos; lpos = m_mapname2idx.next( lpos ), lcurr_idx ++ )
 	{
         if( lcurr_idx == lidx )
 		{

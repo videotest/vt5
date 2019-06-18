@@ -435,7 +435,7 @@ void CAction::init( IActionInfo2 *pAI )
 
 arg* CAction::find( BSTR bstrArgName )
 {
-	TPOS	lpos = m_args.head();
+	long	lpos = m_args.head();
 	_bstr_t	bstr = bstrArgName;
 
 	while( lpos )

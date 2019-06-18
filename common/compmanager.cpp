@@ -76,14 +76,14 @@ bool CCompManager::Init()
 		sa.Add( strSection );
 	}
 
-	for( int j = 0; j < sa.GetSize(); j++ )
+	for( int i = 0; i < sa.GetSize(); i++ )
 	{
-		CCompRegistrator	registrator( sa[j] );
+		CCompRegistrator	registrator( sa[i] );
 
 		DWORD	dwSize = 255;
 		char	sz[255];
 
-		for( int k = 0; ::RegEnumValue( registrator.m_hKey, k, sz, &dwSize, 0, 0, 0, 0 )==0; k++ )
+		for( int i = 0; ::RegEnumValue( registrator.m_hKey, i, sz, &dwSize, 0, 0, 0, 0 )==0; i++ )
 		{	
 			dwSize = 255;
 			CString	s = sz;
@@ -99,14 +99,10 @@ bool CCompManager::Init()
 			::SysFreeString( bstr );
 
 
-			HRESULT hresult = ::CoCreateInstance( clsid, m_punkOuterUnknown
-				, CLSCTX_INPROC_HANDLER|CLSCTX_INPROC_SERVER/*|CLSCTX_FROM_DEFAULT_CONTEXT*/, IID_IUnknown, (void **)&punk );
-			if (FAILED(hresult))
-			{
-				GetLogFile() << sz;
-				TraceIfFailed(hresult);                                                                                                                                                                                                                                      
+			HRESULT hresult = ::CoCreateInstance( clsid, m_punkOuterUnknown, CLSCTX_INPROC_SERVER, IID_IUnknown, (void **)&punk );
+			
+			if( !TraceIfFailed( hresult ) )
 				continue;
-			}
 
 	//		punk->AddRef();
 			ASSERT( punk );
@@ -150,8 +146,8 @@ void CCompManager::FreeComponents()
 	{
 		IUnknown	*punk = (IUnknown	*)m_ptrs[i];
 
-		TRACE( "%s ", GetObjectName( punk ) );
-		_ReportCounter( punk );
+//		TRACE( "%s ", GetObjectName( punk ) );
+//		_ReportCounter( punk );
 		punk->Release();
 	}
 	m_ptrs.RemoveAll();

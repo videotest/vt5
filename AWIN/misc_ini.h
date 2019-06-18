@@ -95,7 +95,7 @@ inline void CreatePrivateProfileSection( const _char *psz_section, const _char *
 	::DeletePrivateProfileSection( psz_section, psz_ini );
 
 	::GetPrivateProfileSection( psz_parent, buffer, sizeof(buffer), psz_ini );
-	_char	*pend = buffer; for(; *pend; pend = pend+_tcslen( pend )+1 );
+	for( _char	*pend = buffer; *pend; pend = pend+_tcslen( pend )+1 );
 
 	::_sprintf( pend, _T("[%s]"), psz_section );
 	*(pend+_tcslen( pend )+1)=0;

@@ -104,10 +104,10 @@ protected:
 	// Generated OLE dispatch map functions
 	//{{AFX_DISPATCH(CShellDoc)
 	afx_msg long GetViewsCount();
-	afx_msg LPDISPATCH GetView(POSITION nPos);
+	afx_msg LPDISPATCH GetView(long nPos);
 	afx_msg LPDISPATCH _GetActiveView();
 	afx_msg long GetFramesCount();
-	afx_msg LPDISPATCH GetFrame(POSITION nPos);
+	afx_msg LPDISPATCH GetFrame(long nPos);
 	afx_msg LPDISPATCH GetData();
 	afx_msg LPDISPATCH GetActiveDataContext();
 	afx_msg BSTR GetDocPathName();
@@ -122,8 +122,8 @@ protected:
 
 	BEGIN_INTERFACE_PART(Site, IDocumentSite2)
 		com_call GetDocumentTemplate( IUnknown **punk );
-		com_call GetFirstViewPosition(TPOS *plPos);
-		com_call GetNextView(IUnknown **ppunkView, TPOS *plPos);
+		com_call GetFirstViewPosition( long *plPos );
+		com_call GetNextView( IUnknown **ppunkView, long *plPos );
 		com_call GetActiveView( IUnknown **ppunkView );
 		com_call GetPathName( BSTR *pbstrPathName );
 		com_call SetActiveView( IUnknown *punkView );

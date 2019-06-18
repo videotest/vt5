@@ -124,7 +124,7 @@ class  CSewLIBase : public CObjectBase,
 	_bstr_t m_bstrFragmentDir;
 	_bstr_t m_bstrFragmentFmt;
 	CFragList m_listTerm;
-	TPOS m_lPosActive;
+	long m_lPosActive;
 	CRect m_rcTotal;
 	int m_nOvrPerc;
 	bool m_bSaving;
@@ -146,7 +146,7 @@ protected:
 	IUnknownPtr MakeFragment(IUnknown *punkImage, int nRange, POINT ptOffs, SIZE szImage);
 	void RecalcTotalRect();
 	void RecalcOvrPercent(bool bFireEvent);
-	int CalcOverPercentByRect(CRect rc, TPOS lPosSkip);
+	int CalcOverPercentByRect(CRect rc, long lPosSkip);
 	void ClearUndo();
 //	bool PromptForDir();
 //	bool CheckFragmentDirValid(bool *pbChanged);
@@ -171,21 +171,21 @@ public:
 
 	com_call OnActivateObject();
 	com_call GetObjectFlags(DWORD *pdwObjectFlags);
-	com_call GetFirstFragmentPos(TPOS *plPos);
-	com_call GetNextFragment(TPOS *plPos, ISewFragment **ppFragment);
-	com_call GetPrevFragment(TPOS *plPos, ISewFragment **ppFragment);
+	com_call GetFirstFragmentPos(long *plPos);
+	com_call GetNextFragment(long *plPos, ISewFragment **ppFragment);
+	com_call GetPrevFragment(long *plPos, ISewFragment **ppFragment);
 	com_call GetFragmentsCount(long *plCount);
 	com_call GetOrigin(POINT *pOrg);
 	com_call GetSize(SIZE *pSize);
 	com_call GetPath(BSTR *pbstrPath, BOOL bSaving);
 	com_call GetRangeCoef(int *pnRangeCoef);
 	com_call AddImage(IUnknown *punkImage, POINT ptOffs, DWORD dwFlags);
-	com_call GetActiveFragmentPosition(TPOS *plPos);
-	com_call SetActiveFragmentPosition(TPOS lPos);
-	com_call GetLastFragmentPosition(TPOS *plPos);
+	com_call GetActiveFragmentPosition(long *plPos);
+	com_call SetActiveFragmentPosition(long lPos);
+	com_call GetLastFragmentPosition(long *plPos);
 	com_call AddFragment(ISewFragment *pFragment);
 	com_call MoveFragment(ISewFragment *pFragment, POINT ptNewPos,DWORD dwFlags);
-	com_call DeleteFragment(TPOS lPosFrag);
+	com_call DeleteFragment(long lPosFrag);
 	com_call GetOverlapPercent(int *pnOvrPerc);
 	com_call CheckOverlapPercent();
 	com_call CalcOrigFragOffset(ISewFragment **ppPrev, POINT *pptOffs);

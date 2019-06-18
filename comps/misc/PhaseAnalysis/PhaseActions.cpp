@@ -313,7 +313,7 @@ HRESULT CNewPhase::DoInvoke()
 	if (m_ptrTarget == 0) return E_FAIL;
 	IDataContext2Ptr dc(m_ptrTarget);
 	if (dc == 0) return E_FAIL;
-	LONG_PTR pos;
+	long pos;
 	bool bFirst = true;
 	int cxNew,cyNew;
 	IUnknownPtr punkNew(::CreateTypedObject(_bstr_t(szArgumentTypeBinaryImage)), false);

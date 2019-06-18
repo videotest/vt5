@@ -33,6 +33,6 @@
 #include "\vt5\awin\misc_utils.h"
 #endif//_AGNITUM_
 
-//#include "detours.h"
+#include "detours.h"
 
 // TODO: reference additional headers your program requires here

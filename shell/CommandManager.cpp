@@ -55,7 +55,7 @@ long CCommandManager::ToolBarData::GetSize()
 	ASSERT( m_arrIDs.GetSize() == m_arrPicts.GetSize() );
 	ASSERT( m_arrIDs.GetSize() == m_arrBmps.GetSize() );
 
-	return (long)m_arrIDs.GetSize();
+	return m_arrIDs.GetSize();
 }
 
 
@@ -589,7 +589,7 @@ void CCommandManager::Init()
 			pdata->hMenu = hMenu;
 			pdata->bPopupMenu = false;
 			pdata->strMenuName = strMenuTitle;
-			pdata->idx = (int)m_ptrsMenuInfo.GetSize();
+			pdata->idx = m_ptrsMenuInfo.GetSize();
 
 			m_ptrsMenuInfo.Add( pdata );
 
@@ -628,7 +628,7 @@ void CCommandManager::Init()
 					pdata->bDocumentMenu = false;
 					pdata->hMenu = menu.Detach();
 					pdata->strMenuName = (LPCSTR)pbstrUserNames[i];
-					pdata->idx = (int)m_ptrsMenuInfo.GetSize();
+					pdata->idx = m_ptrsMenuInfo.GetSize();
 					pdata->bPopupMenu = true;
 
 					m_ptrsMenuInfo.Add( pdata );
@@ -660,9 +660,8 @@ void CCommandManager::Init()
 
 			if( pActionInfo->Init() )
 				AddActionInfo( pActionInfo );			
-			else{
+			else
 				delete pActionInfo;
-			}
 
 			punk->Release();
 		}
@@ -689,7 +688,7 @@ void CCommandManager::Init()
 		
 
 		//construct accelerator table
-		int	nAccelSize = (int)m_ptrsAccel.GetSize();
+		int	nAccelSize = m_ptrsAccel.GetSize();
 
 		if( nAccelSize != 0 )
 		{
@@ -928,7 +927,7 @@ void CCommandManager::AddMenuData( CActionInfoWrp *pinfo )
 				pdata->bDocumentMenu = false;
 				pdata->hMenu = menu.Detach();
 				pdata->strMenuName = sMenuName;
-				pdata->idx = (int)m_ptrsMenuInfo.GetSize();
+				pdata->idx = m_ptrsMenuInfo.GetSize();
 				pdata->bPopupMenu = bPopup;
 
 				m_ptrsMenuInfo.Add( pdata );
@@ -944,7 +943,7 @@ void CCommandManager::AddMenuData( CActionInfoWrp *pinfo )
 			menu.Attach( hMenu );
 			hMenu = 0;
 
-			UINT nCurrentCmd = (UINT)ID_CMDMAN_BASE+m_ptrsInfo.GetSize()-1;
+			UINT nCurrentCmd = ID_CMDMAN_BASE+m_ptrsInfo.GetSize()-1;
 			CString	s;
 
 			int idx = 0;
@@ -1045,7 +1044,7 @@ int CCommandManager::GetBitmapNo( CActionInfoWrp *pinfo )
 
 int	CCommandManager::GetMenuCount()
 {
-	return (int)m_ptrsMenuInfo.GetSize();
+	return m_ptrsMenuInfo.GetSize();
 }
 
 CCommandManager::MenuData *
@@ -1257,12 +1256,12 @@ void CCommandManager::OnUpdateCommandPopupMenu( CCmdUI *pCmdUI )
 
 int CCommandManager::GetToolBarCount()
 {
-	return (int)m_ptrsToolBarInfo.GetSize();
+	return m_ptrsToolBarInfo.GetSize();
 }
 
 int CCommandManager::GetBitmapCount()
 {
-	return (int)m_ptrsBitmapInfo.GetSize();	
+	return m_ptrsBitmapInfo.GetSize();	
 }
 
 CActionInfoWrp *CCommandManager::GetActionInfo( const GUID guid )
@@ -1313,7 +1312,7 @@ int CCommandManager::GetActionCommand( const char *szActionName )
 
 int CCommandManager::GetActionInfoCount()
 {
-	return (int)m_ptrsInfo.GetSize();
+	return m_ptrsInfo.GetSize();
 }
 
 bool CCommandManager::GetMessageString(UINT nID, CString& rMessage)
@@ -1404,7 +1403,7 @@ bool CCommandManager::CheckIdx( int	idx )
 //disp impl
 long CCommandManager::GetBarsCount() 
 {
-	return (int)gAllToolbars.GetCount();
+	return gAllToolbars.GetCount();
 }
 
 BSTR CCommandManager::GetBarName(long BarNo) 
@@ -1988,7 +1987,7 @@ void _make_controlbar_string( CControlBarInfo *pCBInfo, CStringArrayEx &strings 
 #ifdef _AFX_BYTESWAP
 			if (!ar.IsByteSwapping())
 #endif
-			ar.Write(&pCBInfo->m_arrBarID.ElementAt(0),	(UINT)pCBInfo->m_arrBarID.GetSize()*sizeof(DWORD));
+			ar.Write(&pCBInfo->m_arrBarID.ElementAt(0),	pCBInfo->m_arrBarID.GetSize()*sizeof(DWORD));
 #ifdef _AFX_BYTESWAP
 			else
 			{
@@ -2071,7 +2070,7 @@ CControlBarInfo *_create_control_from_string( CStringArray &strings, int &ipos  
 		pCBInfo->m_arrBarID.SetSize(w);
 		if (w != 0)
 		{
-			ar.Read(&pCBInfo->m_arrBarID.ElementAt(0), (UINT)pCBInfo->m_arrBarID.GetSize()*sizeof(DWORD));
+			ar.Read(&pCBInfo->m_arrBarID.ElementAt(0), pCBInfo->m_arrBarID.GetSize()*sizeof(DWORD));
 #ifdef _AFX_BYTESWAP
 			if (ar.IsByteSwapping())
 			{
@@ -2211,7 +2210,7 @@ bool CCommandManager::_load_state(LPCTSTR FileName)
 		
 		g_mapUserImages.RemoveAll();
 
-		idx = (int)strings.Find( szUserImageMapping );
+		idx = strings.Find( szUserImageMapping );
 		if( idx != -1 )
 		{
 			while( idx  <strings.GetSize() )
@@ -2237,7 +2236,7 @@ bool CCommandManager::_load_state(LPCTSTR FileName)
 		}
 //goto toolbars section
 		BOOL bEnableTBVert = GetValueInt(::GetAppUnknown(), "\\MainFrame", "EnableDockToolbarsVertically", TRUE);
-		idx = (int)strings.Find( szToolbars );
+		idx = strings.Find( szToolbars );
 
 		if( idx != -1 )
 		{
@@ -2374,7 +2373,7 @@ bool CCommandManager::_load_state(LPCTSTR FileName)
 			}
 		}
 
-		idx = (int)strings.Find( szOutlookToolbars );
+		idx = strings.Find( szOutlookToolbars );
 
 		if( idx != -1 )
 		{
@@ -2427,7 +2426,7 @@ bool CCommandManager::_load_state(LPCTSTR FileName)
 		}
 
 
-		idx = (int)strings.Find( szMenus );
+		idx = strings.Find( szMenus );
 
 		idx++;
 
@@ -2518,7 +2517,7 @@ bool CCommandManager::_load_state(LPCTSTR FileName)
 //////////////////////////////////////////////////
 //restore controlbars settings
 //////////////////////////////////////////////////
-		idx = (int)strings.Find( szControlBarsNew );
+		idx = strings.Find( szControlBarsNew );
 
 		// [vanek] : забиваем на всех, кто был до этого виден - 18.10.2004
 		pmain->GetDockSite( AFX_IDW_DOCKBAR_LEFT )->ResetLastVisibleDockBars( );
@@ -2822,7 +2821,7 @@ bool CCommandManager::_load_state(LPCTSTR FileName)
 
 
 //restore accelerators
-		idx = (int)strings.Find( szKeyboard );
+		idx = strings.Find( szKeyboard );
 		idx++;
 
 		ACCEL	*paccel;
@@ -2859,7 +2858,7 @@ bool CCommandManager::_load_state(LPCTSTR FileName)
 			idx++;
 		}
 		//construct accelerator table
-		int	nAccelSize = (int)ptrsAccel.GetSize();
+		int	nAccelSize = ptrsAccel.GetSize();
 
 		if( nAccelSize != 0 )
 		{
@@ -2901,7 +2900,7 @@ bool CCommandManager::_load_state(LPCTSTR FileName)
 				CTemplateInfo* pi = (CTemplateInfo*)m_ptrTemplateInfoList.GetNext( pos );				
 				CString strSection;
 				strSection.Format( "%s Template:%s", szFrameToolBar, pi->m_strDocTemplate );
-				idx = (int)strings.Find( strSection );
+				idx = strings.Find( strSection );
 				if( idx != -1 )
 				{
 					idx++;
@@ -3428,7 +3427,7 @@ bool	CCommandManager::_save_state( LPCSTR lpFileName, bool bsave_as /*= false*/ 
 #endif //_DEBUG
 
 
-	g_menuHash.SaveMenuBar((HMENU)*pmain->m_wndMenuBar.GetMenu(), &pmain->m_wndMenuBar);
+	g_menuHash.SaveMenuBar( pmain->m_wndMenuBar.GetMenuBCG(), &pmain->m_wndMenuBar );
 	strings.Add( szMenus );
 	for( int idx = 0; idx < GetMenuCount(); idx++ )
 	{
@@ -3914,9 +3913,8 @@ CActionInfoWrp::CActionInfoWrp( IUnknown *punk )
 }
 CActionInfoWrp::~CActionInfoWrp()
 {
-	//ASSERT( m_pActionInfo );
-	if(m_pActionInfo)
-		m_pActionInfo->Release();
+	ASSERT( m_pActionInfo );
+	m_pActionInfo->Release();
 }
 
 	//load information from action
@@ -4046,7 +4044,7 @@ void CCommandManager::CreateTemplateInfoList()
 	if( ptrApp == NULL )
 		return;
 
-	LONG_PTR lPos = 0;
+	long lPos = 0;
 	ptrApp->GetFirstDocTemplPosition( &lPos );
 	while( lPos )
 	{

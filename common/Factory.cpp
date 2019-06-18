@@ -15,6 +15,14 @@ bool _UnregisterObject(REFCLSID clsid, LPCTSTR szProgID);
 bool _RegisterObject(REFCLSID clsid, LPCTSTR szProgID);
 
 
+IMPLEMENT_DYNAMIC(CNoGuardFactory, COleObjectFactory);
+
+CNoGuardFactory::CNoGuardFactory(REFCLSID clsid, CRuntimeClass* pRuntimeClass, BOOL bMultiInstance, LPCTSTR lpszProgID)
+: CRuntimeInfoPatch( pRuntimeClass ), COleObjectFactory(clsid, pRuntimeClass, bMultiInstance, lpszProgID) 
+{
+}
+
+
 IMPLEMENT_DYNAMIC(CVTFactory, COleObjectFactory);
 CVTFactory::CVTFactory(REFCLSID clsid, CRuntimeClass* pRuntimeClass, BOOL bMultiInstance, LPCTSTR lpszProgID)
 : CRuntimeInfoPatch( pRuntimeClass ), COleObjectFactory(clsid, pRuntimeClass, bMultiInstance, lpszProgID) 
@@ -38,7 +46,7 @@ CString CVTFactory::GetProgID()
 	return CString(m_lpszProgID);
 }
 
-DWORD_PTR CVTFactory::creation_func(DWORD_PTR dwParam)
+DWORD CVTFactory::creation_func(DWORD dwParam)
 {
 	DWORD dwRet = 0;
 	CVTFactory * pFac = (CVTFactory*)dwParam;
@@ -57,12 +65,12 @@ DWORD_PTR CVTFactory::creation_func(DWORD_PTR dwParam)
 	ASSERT_VALID(pTarget);
 
 	// return the new CCmdTarget object
-	return (DWORD_PTR)pTarget;
+	return (DWORD)pTarget;
 }
 
 CCmdTarget* CVTFactory::OnCreateObject()
 {
-	return (CCmdTarget*)creation_func((DWORD_PTR)this);
+	return (CCmdTarget*)creation_func((DWORD)this);
 }
 
 
@@ -135,7 +143,7 @@ STDMETHODIMP CVTFactory::XVTClass::VTCreateObject(LPUNKNOWN pUnkOuter, LPUNKNOWN
 	TRY
 	{
 		// attempt to create the object
-		pTarget = (CCmdTarget*)CVTFactory::creation_func((DWORD_PTR)pThis);
+		pTarget = (CCmdTarget*)CVTFactory::creation_func((DWORD)pThis);
 		if (pTarget != NULL)
 		{
 			// check for aggregation on object not supporting it
@@ -236,11 +244,11 @@ IClassFactory объекта.
 который вызывает методы нашего интерфейса, при этом
 IClassFactory->CreateInstance & IClassFactory->CreateInstanceLic
 через посредство переписанной виртуальной функции OnCreateObject
-вызывают статическую функцию DWORD CVTFactory::creation_func(DWORD_PTR dwParam), 
+вызывают статическую функцию DWORD CVTFactory::creation_func(DWORD dwParam), 
 которая выполняет ту же работу, что и методы интерфейса IVTClass.
 Разумеется, они могут создаваться и через методы интерфейса IVTClass.
 
-DWORD_PTR creation_func(DWORD_PTR dwParam)
+DWORD creation_func(DWORD dwParam)
 {
 	DWORD dwRet = 0;
 	CVTFactory * pFac = (CVTFactory*)dwParam;
@@ -355,7 +363,9 @@ BOOL CVTFactory::RegisterThis()
 			sptrApp->RemoveEntry((DWORD*)&m_guidExtern, _bstr_t(m_lpszProgID));
 		else
 		{
-			m_guidExtern = m_clsid;
+			// and create new CLSID if it's needed
+			if (FAILED(::CoCreateGuid(&m_guidExtern)) || m_guidExtern == INVALID_KEY)
+				return false;
 		}
 	}
 
@@ -499,7 +509,10 @@ BOOL CVTFactory::UpdateRegistryCtrl(BOOL bRegister, HINSTANCE nInstance, UINT id
 			// second : we need remove old entry from table
 			sptrApp->RemoveEntry((DWORD*)&m_guidExtern, _bstr_t(m_lpszProgID));
 		}
-		m_guidExtern = m_clsid;
+
+		// and create new CLSID
+		if (FAILED(::CoCreateGuid(&m_guidExtern)))
+			return false;
 	}
 
 	if (m_guidExtern == INVALID_KEY)
@@ -589,7 +602,10 @@ BOOL CVTFactory::UpdateRegistryPage(BOOL bRegister, HINSTANCE nInstance, UINT id
 			// second : we need remove old entry from table
 			sptrApp->RemoveEntry((DWORD*)&m_guidExtern, _bstr_t(m_lpszProgID));
 		}
-		m_guidExtern = m_clsid;
+
+		// and create new CLSID
+		if (FAILED(::CoCreateGuid(&m_guidExtern)))
+			return false;
 	}
 
 	if (m_guidExtern == INVALID_KEY)
