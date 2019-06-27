@@ -83,24 +83,8 @@ CMethodMan::CMethodMan(void)
 
 	m_punkNotifyCtrl	= 0;
 
-	//Create NotifyController
-	CLSID clsid;
-	if( ::CLSIDFromProgID( _bstr_t(szNotifyCtrlProgID), &clsid ) != S_OK)
-	{
-		ASSERT( false );
-	}
-
-	HRESULT hr = CoCreateInstance(	clsid, GetControllingUnknown(), 
-							CLSCTX_INPROC_SERVER, IID_IUnknown, (LPVOID*)&m_punkNotifyCtrl );	
-	if(hr != S_OK)
-	{
-		m_punkNotifyCtrl = NULL;
-		ASSERT( false );
-	}
-
 	EnableAutomation();
 	SetName( _T("MethodMan") );
-	Register(); // Register as event listener
 }
 
 CMethodMan::~CMethodMan(void)
@@ -108,14 +92,39 @@ CMethodMan::~CMethodMan(void)
 	m_nLockNotificationCounter++;
 
 	m_xMethodMan.SetActiveMethodPos(0);
+	
+	m_nLockNotificationCounter--;
+}
 
+BOOL CMethodMan::OnCreateAggregates()
+{
+	//Create NotifyController
+	CLSID clsid;
+	if( ::CLSIDFromProgID( _bstr_t(szNotifyCtrlProgID), &clsid ) != S_OK)
+	{
+		ASSERT( false );
+	}
+	HRESULT hr = CoCreateInstance(	clsid, GetControllingUnknown(), 
+							CLSCTX_INPROC_SERVER, IID_IUnknown, (LPVOID*)&m_punkNotifyCtrl );	
+	if(hr != S_OK)
+	{
+		m_punkNotifyCtrl = NULL;
+		return FALSE;
+	}
+
+	Register(); // Register as event listener
+	return CCmdTarget::OnCreateAggregates();
+}
+
+void CMethodMan::OnFinalRelease()
+{
+	UnRegister();
 	if (m_punkNotifyCtrl != 0)
 	{
 		m_punkNotifyCtrl->Release();
 		m_punkNotifyCtrl = 0;
 	}
-
-	m_nLockNotificationCounter--;
+	delete this;
 }
 
 void CMethodMan::Run()

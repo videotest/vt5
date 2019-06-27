@@ -52,7 +52,7 @@ library Shell
 
 
 
-	//  Primary dispatch interface for CommandManager
+	//  Primary dispatch interface for CCommandManager
 	
 	[ uuid(F49AE623-0446-11D3-A5A3-0000B493FF1B) ]
 	dispinterface ICommandManager
@@ -60,13 +60,13 @@ library Shell
 		properties:
 			// NOTE - ClassWizard will maintain property information here.
 			//    Use extreme caution when editing this section.
-			//{{AFX_ODL_PROP(CommandManager)
+			//{{AFX_ODL_PROP(CCommandManager)
 			//}}AFX_ODL_PROP
 			
 		methods:
 			// NOTE - ClassWizard will maintain method information here.
 			//    Use extreme caution when editing this section.
-			//{{AFX_ODL_METHOD(CommandManager)
+			//{{AFX_ODL_METHOD(CCommandManager)
 			[id(1)] long GetBarsCount();
 			[id(2)] BSTR GetBarName(long BarNo);
 			[id(3)] long CreateNewBar(BSTR BarName);
@@ -97,7 +97,7 @@ library Shell
 
 	};
 
-	//  Class information for CommandManager
+	//  Class information for CCommandManager
 
 	[ uuid(F49AE625-0446-11D3-A5A3-0000B493FF1B) ]
 	coclass CommandManager

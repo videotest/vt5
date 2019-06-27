@@ -1,7 +1,7 @@
 #pragma once
+#include "defs.h"
 #include "\vt5\awin\misc_list.h"
 #include "\vt5\awin\misc_map.h"
-#include "defs.h"
 #include <atlstr.h>
 #include <commctrl.h>
 #pragma comment (lib, "comctl32.lib")

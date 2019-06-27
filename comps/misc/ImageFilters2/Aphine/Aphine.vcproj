@@ -21,7 +21,7 @@
 		<Configuration
 			Name="Debug|Win32"
 			ConfigurationType="4"
-			InheritedPropertySheets="$(SolutionDir)props\common2env.vsprops;$(SolutionDir)Props\libs.vsprops"
+			InheritedPropertySheets="$(SolutionDir)Props\libs.vsprops"
 			UseOfMFC="0"
 			ATLMinimizesCRunTimeLibraryUsage="false"
 			CharacterSet="2"
@@ -71,7 +71,6 @@
 			/>
 			<Tool
 				Name="VCLibrarianTool"
-				SuppressStartupBanner="true"
 			/>
 			<Tool
 				Name="VCALinkTool"
@@ -92,7 +91,7 @@
 		<Configuration
 			Name="Debug|x64"
 			ConfigurationType="4"
-			InheritedPropertySheets="$(SolutionDir)props\common2env.vsprops;$(SolutionDir)Props\libs.vsprops"
+			InheritedPropertySheets="$(SolutionDir)Props\libs.vsprops"
 			UseOfMFC="0"
 			ATLMinimizesCRunTimeLibraryUsage="false"
 			CharacterSet="2"
@@ -161,7 +160,7 @@
 		<Configuration
 			Name="Release|Win32"
 			ConfigurationType="4"
-			InheritedPropertySheets="$(SolutionDir)props\common2env.vsprops;$(SolutionDir)Props\libs.vsprops"
+			InheritedPropertySheets="$(SolutionDir)Props\libs.vsprops"
 			UseOfMFC="0"
 			ATLMinimizesCRunTimeLibraryUsage="false"
 			CharacterSet="2"
@@ -233,7 +232,7 @@
 		<Configuration
 			Name="Release|x64"
 			ConfigurationType="4"
-			InheritedPropertySheets="$(SolutionDir)props\common2env.vsprops;$(SolutionDir)Props\libs.vsprops"
+			InheritedPropertySheets="$(SolutionDir)Props\libs.vsprops"
 			UseOfMFC="0"
 			ATLMinimizesCRunTimeLibraryUsage="false"
 			CharacterSet="2"

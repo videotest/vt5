@@ -3428,7 +3428,7 @@ bool	CCommandManager::_save_state( LPCSTR lpFileName, bool bsave_as /*= false*/ 
 #endif //_DEBUG
 
 
-	g_menuHash.SaveMenuBar((HMENU)*pmain->m_wndMenuBar.GetMenu(), &pmain->m_wndMenuBar);
+	g_menuHash.SaveMenuBar( pmain->m_wndMenuBar.GetMenuBCG(), &pmain->m_wndMenuBar );
 	strings.Add( szMenus );
 	for( int idx = 0; idx < GetMenuCount(); idx++ )
 	{
@@ -3914,8 +3914,7 @@ CActionInfoWrp::CActionInfoWrp( IUnknown *punk )
 }
 CActionInfoWrp::~CActionInfoWrp()
 {
-	//ASSERT( m_pActionInfo );
-	if(m_pActionInfo)
+	ASSERT( m_pActionInfo );
 		m_pActionInfo->Release();
 }
 

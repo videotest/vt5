@@ -79,11 +79,11 @@ CContextViewer::~CContextViewer()
 		punkOldDoc->Release();
 	}
 
-	UnRegister(0);
-	
 	_OleUnlockApp( this );
 	m_lLastViewKey = INVALID_KEY;
 	m_lLastDocKey = INVALID_KEY;
+	AddRef();
+	UnRegister(0);
 }
 
 BOOL CContextViewer::Create(DWORD dwStyle, const RECT& rect, CWnd* pParentWnd, UINT nID) 

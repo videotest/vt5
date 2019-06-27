@@ -28,6 +28,9 @@ class CMethodMan :
 public:
 	CMethodMan(void);
 	~CMethodMan(void);
+	
+	virtual BOOL OnCreateAggregates(void);
+	virtual void OnFinalRelease(void);
 
 	DECLARE_INTERFACE_MAP()
 	BEGIN_INTERFACE_PART(MethodMan, IMethodMan2)

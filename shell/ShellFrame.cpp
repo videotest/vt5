@@ -521,7 +521,7 @@ HRESULT CShellFrame::XFrm::DestroyView( IUnknown *punkView )
 			{
 				ULONG ul=punk->Release(); 
 				pview->DestroyWindow();
-				//pview->Release();
+
 				return S_OK;
 			}
 			else

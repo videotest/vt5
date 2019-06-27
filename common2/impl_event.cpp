@@ -17,6 +17,7 @@ void CEventListenerImpl::Register( IUnknown *punkNC, bool bRegister, char *pszRe
 {
 	INotifyControllerPtr	ptrNC( punkNC );
 	_bstr_t	bstr( pszReserved );
+	if(ptrNC)
 	if( bRegister )
 		ptrNC->RegisterEventListener( bstr, this );
 	else

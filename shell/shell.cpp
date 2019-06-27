@@ -1708,12 +1708,12 @@ BOOL CShellApp::InitInstance()
 		::ExecuteScript( _bstr_t( _T("MainWnd.RestoreState(\"\")") ), "CShellApp::InitInstance" );
 
 		CString	strLastState = ::GetValueString( ::GetAppUnknown(), "\\General", "CurrentState", "default.state" );
-		//if( !strLastState.IsEmpty() )
-		//	::ExecuteAction( "ToolsLoadState", CString( "\"" )+strLastState+CString( "\"" ), aefNoShowInterfaceAnyway );
+		if( !strLastState.IsEmpty() )
+			::ExecuteAction( "ToolsLoadState", CString( "\"" )+strLastState+CString( "\"" ), aefNoShowInterfaceAnyway );
 	}
 
 	//Execute AutoExec script	
-	//g_script.ExecuteAppScript( ENTRY_AUTOEXEC );
+	g_script.ExecuteAppScript( ENTRY_AUTOEXEC );
 	
 //	if( ::GetValueInt( ::GetAppUnknown(), "\\MainFrame", "EnableDragDropOpen", 1 ) != 0 )
 		m_pMainWnd->DragAcceptFiles();
@@ -2690,6 +2690,8 @@ void CShellApp::FreeComponents()
 //remove all entries
 	DeleteEntry( GetAppUnknown(), 0 );
 	
+	g_CmdManager.DeInit();
+	g_script.DeInit();
 //delete plug-in windows
 	CMainFrame	*pmain = (CMainFrame*)m_pMainWnd;
 
@@ -2709,12 +2711,10 @@ void CShellApp::FreeComponents()
 	g_script.DeInit();
 
 //deinit application component manager
-	CCompManager::DeInit();
+	CCompManagerImpl::DeInit();
 
 	m_aggrs.DeInit();
 	
-
-	CCmdTargetEx::Dump();
 }
 
 	
@@ -2782,7 +2782,8 @@ BOOL CShellApp::PreTranslateMessage(MSG* pMsg)
 			((CMainFrame*)m_pMainWnd)->KillActivePopup();
 		}
 	}
-	if( pMsg->message == WM_KEYDOWN && pMsg->wParam == 'D' && 
+	if( pMsg->message == WM_KEYDOWN && ( pMsg->wParam == 'D' ||
+		pMsg->wParam == 'B' || pMsg->wParam == 'U' ) && 
 		( (GetKeyState(VK_SHIFT) & (1 << (sizeof(SHORT)*8-1))) != 0 ) && 
 		( (GetKeyState(VK_CONTROL) & (1 << (sizeof(SHORT)*8-1))) != 0 )
 		)
@@ -2791,9 +2792,24 @@ BOOL CShellApp::PreTranslateMessage(MSG* pMsg)
 		if( hmod )
 		{
 			typedef  void (*PF_DUMP_OPTIONS)( HWND hwnd_main );
+			if (pMsg->wParam == 'D')
+			{
 			PF_DUMP_OPTIONS pfunc = (PF_DUMP_OPTIONS)GetProcAddress( hmod, "hook_options"); 
 			if (pfunc)
 				pfunc( 0 );
+		}
+			else if (pMsg->wParam == 'B' || pMsg->wParam == 'U')
+			{
+				typedef long (*PF_SET_LOCK_MEM_HOOK)( long block );
+				PF_SET_LOCK_MEM_HOOK pfunc = (PF_SET_LOCK_MEM_HOOK)GetProcAddress( hmod, "set_lock_mem_hook");
+				if (pfunc)
+				{
+					if (pMsg->wParam == 'B')
+						pfunc(1);
+					else
+						pfunc(0);
+				}
+			}
 		}
 
 	}
@@ -3033,7 +3049,7 @@ BOOL CShellApp::OnIdle(LONG lCount)
 	m_last_idle_count	= lCount;
 
 	//FireScriptEvent( "Application_OnIdle" );
-	//::FireEvent( GetControllingUnknown(), szEventAppOnIdle);
+	::FireEvent( GetControllingUnknown(), szEventAppOnIdle);
 
 	return CWinApp::OnIdle(lCount);
 

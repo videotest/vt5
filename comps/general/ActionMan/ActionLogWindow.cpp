@@ -38,11 +38,11 @@ void CActionLogWindow::OnFinalRelease()
 	if( m_bInitialized )
 	{
 		IUnknown *punkCtrl = GetOtherComponent( IID_INotifyController );
-		ASSERT(punkCtrl);
-
-		UnRegister( punkCtrl );
-
-		punkCtrl->Release();
+		if(punkCtrl)
+		{
+			UnRegister( punkCtrl );
+			punkCtrl->Release();
+		}
 	}
 
 	m_dwRef = 0;

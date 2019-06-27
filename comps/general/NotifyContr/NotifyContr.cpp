@@ -54,6 +54,24 @@ CNotifyController::CNotifyController()
 CNotifyController::~CNotifyController()
 {
 	m_listSrc.RemoveAll();
+		if(0x1d==m_list.GetCount())
+		for(POSITION pos=m_list.GetHeadPosition(); !!pos; )
+		{
+			IUnknown* punk=(IUnknown*)m_list.GetNext(pos);
+			TRACE( "~CNotifyController pListener %p %p\n", punk, *punk );
+		}
+	for(POSITION pos=m_list.GetHeadPosition(); !!pos;)
+	{
+		IUnknown* punk=(IUnknown*)m_list.GetNext(pos);
+		try{
+			if(punk)
+				punk->Release();
+		}
+		catch(...)
+		{
+			ASSERT(!"Access Violation");
+		}
+	}
 	_OleUnlockApp( this );
 }
 
@@ -97,11 +115,12 @@ HRESULT CNotifyController::XContr::FireEvent( BSTR szEventDesc, IUnknown *pHint,
 			POSITION	posOld = pos;
 			IUnknown *punk = (IUnknown*)pThis->m_list.GetNext( pos );
 
-			if( !punk && s_lCallLevel == 1 )
-			{
-				pThis->m_list.RemoveAt( posOld );
-				continue;
-			}
+			//if( !punk && s_lCallLevel == 1 )
+			//{
+			//	pThis->m_list.RemoveAt( posOld );
+			//	punk->Release();
+			//	continue;
+			//}
 
 			// skip listener if it's in listSrc
 			if (pThis->m_listSrc.Find(punk))
@@ -126,6 +145,8 @@ HRESULT CNotifyController::XContr::RegisterEventListener( BSTR szEventDesc, IUnk
 {
 	_try_nested(CNotifyController, Contr, RegisterEventListener)
 	{
+		static int g_i=0;
+		++g_i;
 		if( !CheckInterface( pListener, IID_IEventListener ) )
 		{
 			ASSERT( FALSE );
@@ -141,6 +162,15 @@ HRESULT CNotifyController::XContr::RegisterEventListener( BSTR szEventDesc, IUnk
 		pThis->m_list.AddTail( pListener );
 		pListener->AddRef();
 
+		TRACE( "Add pListener %p pThis %p \n", pListener, pThis );
+	int i=1;
+		if(0x1d==pThis->m_list.GetCount())
+		for(POSITION pos=pThis->m_list.GetHeadPosition(); !!pos; ++i)
+		{
+			IUnknown* punk=(IUnknown*)pThis->m_list.GetNext(pos);
+			TRACE( "Add pListener %p %p\n", punk, *punk );
+		}
+
 		return S_OK;
 	}
 	_catch_nested;
@@ -150,15 +180,24 @@ HRESULT CNotifyController::XContr::UnRegisterEventListener( BSTR szEventDesc, IU
 {
 	_try_nested(CNotifyController, Contr, UnRegisterEventListener)
 	{
+		if(0x1d==pThis->m_list.GetCount())
+		for(POSITION pos=pThis->m_list.GetHeadPosition(); !!pos;)
+		{
+			IUnknown* punk=(IUnknown*)pThis->m_list.GetNext(pos);
+			TRACE( "Remove pListener %p %p\n", punk, *punk );
+		}
 		POSITION pos = pThis->m_list.Find( pListener );
-		ASSERT( pos );
-
-		pThis->m_list.RemoveAt( pos );
-		pListener->Release();
-
-		//pThis->m_list.SetAt( pos, 0 );
-
-		ASSERT(!pThis->m_list.Find( pListener ));
+		if(0!=pos)
+		{
+			TRACE( "Remove pListener %p pThis %p \n", pListener, pThis );
+			pThis->m_list.RemoveAt( pos );
+			pListener->Release();
+		}
+		else
+		{
+			TRACE( "Remove Not found pListener %p pThis %p \n", pListener, pThis );
+			ASSERT(!"Remove Not found pListener");
+		}
 
 		return S_OK;
 	}

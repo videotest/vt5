@@ -362,6 +362,13 @@ void CEventListenerImpl::Register( IUnknown *punkCtrl, const char *pszEvString )
 
 void CEventListenerImpl::UnRegister( IUnknown *punkCtrl, const char *pszEvString )
 {
+	if( !punkCtrl )
+		punkCtrl = GetAppUnknown(false);
+
+	INotifyControllerPtr	sp(punkCtrl);
+	if(sp != 0)
+		sp->UnRegisterEventListener( 0, Unknown() );
+
 	if( !m_arrRegistredCtrls.Find( punkCtrl ) )
 		return;
 
@@ -371,13 +378,6 @@ void CEventListenerImpl::UnRegister( IUnknown *punkCtrl, const char *pszEvString
 	m_nRegCounter--;
 
 	pszEvString;	//not used
-
-	if( !punkCtrl )
-		punkCtrl = GetAppUnknown(false);
-
-	INotifyControllerPtr	sp(punkCtrl);
-	if(sp != 0)
-		sp->UnRegisterEventListener( 0, Unknown() );
 }
 
 bool CEventListenerImpl::IsRegistered(IUnknown * punkCtrl, const char * pszEvString)

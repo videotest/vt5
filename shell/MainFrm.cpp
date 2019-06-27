@@ -1405,13 +1405,13 @@ int CMainFrame::OnCreate(LPCREATESTRUCT lpCreateStruct)
 
 	_init_script_notify( );
 
-	if( GetStealthKeysNumber() && StealthIndexIsAvailable( 30 ) )
+	/*if( GetStealthKeysNumber() && StealthIndexIsAvailable( 30 ) )
 	{
 		
 		RECT rc = { 0, 0, 300, 50 };
 		m_DistrWnd.create( WS_BORDER | WS_POPUP | WS_VISIBLE, rc, 0, GetSafeHwnd() );
 		m_DistrWnd.m_strDecr = ::LanguageLoadCString( IDS_STR_DISTR_VER );
-	}
+	}*/
 
 	return 0;
 }
@@ -1682,38 +1682,7 @@ void CMainFrame::OnClose()
 //	AfxOleSetUserCtrl( FALSE );
 	m_DistrWnd.m_bRecreateOnDistr = false;
 
-	//CBCGMDIFrameWnd::OnClose();
-	{
-		AFX_MODULE_STATE* pModuleState = AfxGetModuleState();
-		int incOleLock = 0;
-
-		// m_nObjectCount is telling how many mdi windows 
-		// that are open (I guess)
-
-		// This is called to make the objectCount go as low as possible.
-		AfxGetApp()->CloseAllDocuments(FALSE);
-		while (pModuleState->m_nObjectCount > 0)
-		{
-			// If we end up here then and object "hangs"
-
-			// This is called BEFORE OnClose to make the OnClose destroy the window
-			AfxOleUnlockApp();
-
-			// This tells us to remember to increment the object count
-			// AFTER the window is destroyed
-			incOleLock++;
-		}
-		__super::OnClose();
-		while (incOleLock)
-		{
-			// incerement ObjectCount to let the hanging object close
-			// down itself.
-			AfxOleLockApp();
-
-			incOleLock--;
-		}
-	}
-//	DestroyWindow();
+	DestroyWindow();
 
 }	
 
@@ -3696,7 +3665,7 @@ bool CMainFrame::ProcessHelpMessage( MSG *pmsg, IUnknown **ppunkHelpInfo )
 				ReleaseCapture();
 				// the message we peeked changes into a non-client because
 				// of the release capture.
-				GetMessage(pmsg, NULL, WM_NCLBUTTONDOWN, WM_NCLBUTTONDOWN);
+				BOOL b=GetMessage(pmsg, NULL, WM_NCLBUTTONDOWN, WM_NCLBUTTONDOWN);
 				DispatchMessage(pmsg);
 				GetCursorPos(&point);
 				SetHelpCapture(point, NULL);
@@ -3798,7 +3767,7 @@ bool CMainFrame::ProcessHelpMessage( MSG *pmsg, IUnknown **ppunkHelpInfo )
 		}
 		if (PeekMessage(pmsg, NULL, pmsg->message, pmsg->message, PM_NOREMOVE))
 		{
-			GetMessage(pmsg, NULL, pmsg->message, pmsg->message);
+			BOOL b=GetMessage(pmsg, NULL, pmsg->message, pmsg->message);
 			if (!PreTranslateMessage(pmsg))
 			{
 				TranslateMessage(pmsg);
@@ -5807,12 +5776,4 @@ void CMainFrame::ShowProgress(LPCTSTR text, LONG percent)
 	m_wndStatusBar.SetWindowText(text);
 	m_wndShellProgress.SetPercent(percent);
 	m_wndShellProgress.LockUpdateText( true );
-}
-
-
-void CMainFrame::OnNcDestroy()
-{
-	__super::OnNcDestroy();
-
-	// TODO: Add your message handler code here
 }

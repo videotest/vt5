@@ -9,9 +9,9 @@
 #elif  _MFC_VER == 0x0900
 #define MFCXXD_DLL _T("mfc90d.dll")
 // GetInterface@CCmdTarget
-#define GetInterface_CCmdTarget_Ordinal 4072
+#define GetInterface_CCmdTarget_Ordinal 4299
 // void __cdecl COleDispatchDriver::InvokeHelperV(long,unsigned short,unsigned short,void *,unsigned char const *,char *)
-#define InvokeHelperV_COleDispatchDriver_Ordinal 5555
+#define InvokeHelperV_COleDispatchDriver_Ordinal 5861
 #elif  _MFC_VER == 0x0A00
 #define MFCXXD_DLL _T("mfc100d.dll")
 #if defined(_WIN64)

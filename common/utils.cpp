@@ -5984,12 +5984,16 @@ std_dll bool SetAppropriateView(IUnknown* punkTarget, DWORD dwType)
 }
 
 
-CPtrList	g_listLock;
+struct OlePtrList : CPtrList{
+	~OlePtrList(){CCmdTargetEx::Dump();}
+} g_listLock;
+int g_cnt=0;
 struct	PtrLockInfo
 {
 	std::string	strFile;
 	int			nLine;
 	CCmdTarget	*pcmdTarget;
+	int cnt;
 };
 
 POSITION	_OleFindLockInfoDbg( CCmdTarget *ptarget )
@@ -6015,7 +6019,7 @@ std_dll void _OleLockAppDbg( CCmdTarget *ptarget, int nLine, const char *pszFile
 	p->nLine = nLine;
 	p->strFile = pszFile;
 	p->pcmdTarget = ptarget;
-
+	p->cnt = ++g_cnt;
 	g_listLock.AddTail( p );
 }
 
@@ -6038,7 +6042,8 @@ std_dll void _OleTraceLeaks()
 	{
 		PtrLockInfo	*pinfo = (PtrLockInfo	*)g_listLock.GetNext( pos );
 		char	sz[255];
-		sprintf( sz, "Ole object found file %s{%d}\n", pinfo->strFile.c_str(), pinfo->nLine );
+		sprintf( sz, "%s(%d) cnt%d addr %x Leak Ole object found file \n"
+			, pinfo->strFile.c_str(), pinfo->nLine, pinfo->cnt, pinfo->pcmdTarget );
 		OutputDebugString( sz );
 	}
 }
