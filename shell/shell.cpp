@@ -2711,7 +2711,7 @@ void CShellApp::FreeComponents()
 	g_script.DeInit();
 
 //deinit application component manager
-	CCompManagerImpl::DeInit();
+	CCompManager::DeInit();
 
 	m_aggrs.DeInit();
 	

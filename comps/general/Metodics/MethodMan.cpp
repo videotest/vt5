@@ -113,7 +113,7 @@ BOOL CMethodMan::OnCreateAggregates()
 	}
 
 	Register(); // Register as event listener
-	return CCmdTarget::OnCreateAggregates();
+	return TRUE;
 }
 
 void CMethodMan::OnFinalRelease()

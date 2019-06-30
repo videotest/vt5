@@ -54,12 +54,6 @@ CNotifyController::CNotifyController()
 CNotifyController::~CNotifyController()
 {
 	m_listSrc.RemoveAll();
-		if(0x1d==m_list.GetCount())
-		for(POSITION pos=m_list.GetHeadPosition(); !!pos; )
-		{
-			IUnknown* punk=(IUnknown*)m_list.GetNext(pos);
-			TRACE( "~CNotifyController pListener %p %p\n", punk, *punk );
-		}
 	for(POSITION pos=m_list.GetHeadPosition(); !!pos;)
 	{
 		IUnknown* punk=(IUnknown*)m_list.GetNext(pos);
@@ -83,23 +77,6 @@ BEGIN_INTERFACE_MAP(CNotifyController, CCmdTargetEx)
 END_INTERFACE_MAP()
 
 IMPLEMENT_UNKNOWN(CNotifyController, Contr);
-
-/*STDMETHODIMP_(ULONG) CNotifyController::XContr::AddRef()
-{
-	METHOD_PROLOGUE_EX(CNotifyController, Contr)
-	return (ULONG)pThis->ExternalAddRef();
-}
-STDMETHODIMP_(ULONG) CNotifyController::XContr::Release()
-{
-	METHOD_PROLOGUE_EX(CNotifyController, Contr)
-	return (ULONG)pThis->ExternalRelease();	  
-}
-STDMETHODIMP CNotifyController::XContr::QueryInterface(
-	REFIID iid, LPVOID* ppvObj)
-{								
-	METHOD_PROLOGUE_EX(CNotifyController, Contr)
-	return (HRESULT)pThis->ExternalQueryInterface(&iid, ppvObj);
-}*/
 
 HRESULT CNotifyController::XContr::FireEvent( BSTR szEventDesc, IUnknown *pHint, IUnknown *pFrom, void *pdata, long cbSize  )
 {
@@ -162,15 +139,6 @@ HRESULT CNotifyController::XContr::RegisterEventListener( BSTR szEventDesc, IUnk
 		pThis->m_list.AddTail( pListener );
 		pListener->AddRef();
 
-		TRACE( "Add pListener %p pThis %p \n", pListener, pThis );
-	int i=1;
-		if(0x1d==pThis->m_list.GetCount())
-		for(POSITION pos=pThis->m_list.GetHeadPosition(); !!pos; ++i)
-		{
-			IUnknown* punk=(IUnknown*)pThis->m_list.GetNext(pos);
-			TRACE( "Add pListener %p %p\n", punk, *punk );
-		}
-
 		return S_OK;
 	}
 	_catch_nested;
@@ -180,12 +148,6 @@ HRESULT CNotifyController::XContr::UnRegisterEventListener( BSTR szEventDesc, IU
 {
 	_try_nested(CNotifyController, Contr, UnRegisterEventListener)
 	{
-		if(0x1d==pThis->m_list.GetCount())
-		for(POSITION pos=pThis->m_list.GetHeadPosition(); !!pos;)
-		{
-			IUnknown* punk=(IUnknown*)pThis->m_list.GetNext(pos);
-			TRACE( "Remove pListener %p %p\n", punk, *punk );
-		}
 		POSITION pos = pThis->m_list.Find( pListener );
 		if(0!=pos)
 		{

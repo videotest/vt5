@@ -6042,8 +6042,9 @@ std_dll void _OleTraceLeaks()
 	{
 		PtrLockInfo	*pinfo = (PtrLockInfo	*)g_listLock.GetNext( pos );
 		char	sz[255];
-		sprintf( sz, "%s(%d) cnt%d addr %x Leak Ole object found file \n"
-			, pinfo->strFile.c_str(), pinfo->nLine, pinfo->cnt, pinfo->pcmdTarget );
+		pinfo->pcmdTarget->ExternalAddRef();
+		sprintf( sz, "%s(%d) Ole object Leak found cnt%d addr %x refCount= %d \n"
+			, pinfo->strFile.c_str(), pinfo->nLine, pinfo->cnt, pinfo->pcmdTarget, pinfo->pcmdTarget->ExternalRelease() );
 		OutputDebugString( sz );
 	}
 }

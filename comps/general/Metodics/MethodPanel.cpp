@@ -46,21 +46,25 @@ CMethodPanel::CMethodPanel(void)
 
 	EnableAutomation();
 
+}
+
+BOOL CMethodPanel::OnCreateAggregates(void)
+{
 	// register 
 	IUnknown *punk_mtd_man = 0;
 	m_list_func_ctrl.get_mtd_man( &punk_mtd_man );
-	if( punk_mtd_man )
-	{
-		Register( punk_mtd_man );
-		punk_mtd_man->Release();
-		punk_mtd_man = 0;
-	}
+
+	Register( punk_mtd_man );
+	punk_mtd_man->Release();
+	punk_mtd_man = 0;
+	return TRUE;
 }
 
 //////////////////////////////////////////////////////////////////
 CMethodPanel::~CMethodPanel(void)
 {
 	// unregister 
+	AddRef();
 	IUnknown *punk_mtd_man = 0;
 	m_list_func_ctrl.get_mtd_man( &punk_mtd_man );
 	if( punk_mtd_man )
@@ -69,8 +73,12 @@ CMethodPanel::~CMethodPanel(void)
 		punk_mtd_man->Release();
 		punk_mtd_man = 0;
 	}
-	
 	_OleUnlockApp( this );
+}
+
+void CMethodPanel::OnFinalRelease(void)
+{
+	CWnd::OnFinalRelease();
 }
 
 BEGIN_MESSAGE_MAP(CMethodPanel, CWnd)
@@ -423,7 +431,7 @@ BOOL CMethodPanel::OnListenMessage( MSG * pmsg, LRESULT *plResult )
 /////////////////////////////////////////////////////////////////////////////
 void CMethodPanel::PostNcDestroy()
 {
-	//delete this;
+	delete this;	
 }
 
 /////////////////////////////////////////////////////////////////////////////

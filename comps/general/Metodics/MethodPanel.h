@@ -102,6 +102,7 @@ public:
 
 protected:
 	virtual LRESULT WindowProc(UINT message, WPARAM wParam, LPARAM lParam);
+	void OnFinalRelease(void);
 	virtual void PostNcDestroy();
 	virtual BOOL OnCommand(WPARAM wParam, LPARAM lParam);
 
@@ -135,4 +136,5 @@ protected:
 
 	void	update_btns_states( bool bupdate_actions_btns = false );
 
+	virtual BOOL OnCreateAggregates(void);
 };
