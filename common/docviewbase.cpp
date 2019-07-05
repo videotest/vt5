@@ -833,19 +833,10 @@ CViewBase::CViewBase()
 
 CViewBase::~CViewBase()
 {
-	if(m_bEventRegistered)
-	{
-		IUnknown* punkDoc = GetDocument();
-		UnRegister( punkDoc );
-		if (punkDoc)
-			punkDoc->Release();
-	}
-
 	if( m_pframeDrag )
 		delete m_pframeDrag;
 	if( m_pframe )
 		delete m_pframe;
-	
 }
 
 void CViewBase::OnActivateObject( IUnknown *punkDataObject )
@@ -945,7 +936,7 @@ IMPLEMENT_UNKNOWN(CViewBase, ViewDispatch)
 
 BEGIN_MESSAGE_MAP(CViewBase, CWnd)
 	//{{AFX_MSG_MAP(CViewBase)
-	ON_WM_CREATE()
+	ON_WM_DESTROY()
 	ON_WM_ERASEBKGND()
 	ON_WM_TIMER()
 	ON_WM_SETCURSOR()
@@ -991,6 +982,16 @@ int CViewBase::OnCreate(LPCREATESTRUCT lpCreateStruct)
 	return 0;
 }
 
+void CViewBase::OnDestroy()
+{
+	if(m_bEventRegistered)
+	{
+		IUnknown* punkDoc = GetDocument();
+		UnRegister( punkDoc );
+		if (punkDoc)
+			punkDoc->Release();
+	}
+}
 
 BOOL CViewBase::PreTranslateMessage(MSG* pMsg) 
 {

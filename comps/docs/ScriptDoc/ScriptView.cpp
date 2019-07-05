@@ -105,6 +105,10 @@ int CScriptView::OnCreate(LPCREATESTRUCT lpCreateStruct)
 	return 0;
 }
 
+void CScriptView::OnDestroy()
+{
+	UnRegister();
+}
 
 void CScriptView::OnInitialUpdate()
 {
@@ -154,7 +158,7 @@ CCrystalTextBuffer *CScriptView::LocateTextBuffer()
 
 void CScriptView::OnFinalRelease() 
 {
-	UnRegister();
+	//UnRegister();
 	if( GetSafeHwnd() )
 		DestroyWindow();
 //	else

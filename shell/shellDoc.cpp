@@ -875,7 +875,7 @@ void CShellDoc::OnCloseDocument()
 	for (POSITION pos = m_viewList.GetHeadPosition(); 0!=pos;)
 	{
 		POSITION  posNext=pos;
-		CView* pview = (CView*)m_viewList.GetNext(posNext);
+		CView* pview = (CView*)m_viewList.GetNext(pos);
 		ASSERT_VALID(pview);
 		CFrameWnd* pFrame = pview->GetParentFrame(); 
 
@@ -893,9 +893,8 @@ void CShellDoc::OnCloseDocument()
 			if(::IsWindow(pFrame->m_hWnd))
 				pFrame->DestroyWindow();
 		}
-		m_viewList.RemoveAt(pos);
-		pos = posNext;
 	}
+	m_viewList.RemoveAll();
 
 	if( m_viewList.GetHeadPosition() )
 	{

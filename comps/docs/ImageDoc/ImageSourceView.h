@@ -131,6 +131,7 @@ protected:
 	afx_msg void OnKeyUp(UINT nChar, UINT nRepCnt, UINT nFlags);
 	afx_msg void OnContextMenu(CWnd* pWnd, CPoint point);
 	afx_msg void OnDestroy();
+	afx_msg void OnNcDestroy();
 	//}}AFX_MSG
 	DECLARE_MESSAGE_MAP()
 	GUARD_DECLARE_OLECREATE(CImageSourceView)

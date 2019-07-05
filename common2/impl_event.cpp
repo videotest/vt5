@@ -18,10 +18,13 @@ void CEventListenerImpl::Register( IUnknown *punkNC, bool bRegister, char *pszRe
 	INotifyControllerPtr	ptrNC( punkNC );
 	_bstr_t	bstr( pszReserved );
 	if(ptrNC)
-	if( bRegister )
-		ptrNC->RegisterEventListener( bstr, this );
-	else
-		ptrNC->UnRegisterEventListener( bstr, this );
+	{
+		IUnknownPtr punk(this);
+		if( bRegister )
+			ptrNC->RegisterEventListener( bstr, punk );
+		else
+			ptrNC->UnRegisterEventListener( bstr, punk );
+	}
 
 	m_nRegisterCount += bRegister?+1:-1;
 }

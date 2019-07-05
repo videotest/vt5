@@ -840,6 +840,7 @@ const char* CMasksView::GetViewMenuName()
 //CImageView implementation
 CImageView::CImageView()
 {
+	EnableAggregation();
 	m_dwShowFlags = isfContours;
 	m_sName = c_szCImageView;
 	m_sUserName.LoadString(IDS_IMAGEVIEW_NAME);

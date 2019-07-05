@@ -374,8 +374,6 @@ void CImageSourceView::OnFinalRelease()
 	// OnFinalRelease is called.  The base class will automatically
 	// deletes the object.  Add additional cleanup required for your
 	// object before calling the base class.
-	if( GetSafeHwnd() )
-		DestroyWindow();
 
 	delete this;
 }
@@ -437,7 +435,7 @@ BEGIN_MESSAGE_MAP(CImageSourceView, CViewBase)
 	ON_WM_CTLCOLOR()
 	ON_WM_MOUSEMOVE()
 	ON_WM_KEYDOWN()
-	ON_WM_KEYUP()
+	ON_WM_NCDESTROY()
 	ON_WM_CONTEXTMENU()
 	ON_WM_ERASEBKGND()
 	ON_WM_LBUTTONDBLCLK()
@@ -4671,12 +4669,14 @@ void CImageSourceView::OnDestroy()
 	INotifyControllerPtr ptr_nc(GetControllingUnknown());//GetAppUnknown();
 	if( ptr_nc )
 		ptr_nc->UnRegisterEventListener( 0, GetControllingUnknown() );
-	
-	CViewBase::OnDestroy();
-	
-	// TODO: Add your message handler code here	
+	__super::OnDestroy();
 }
 
+void CImageSourceView::OnNcDestroy() 
+{
+	__super::OnNcDestroy();
+	//OnFinalRelease();
+}
 
 
 ////////////////////////////////////////////////////////////////

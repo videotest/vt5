@@ -150,6 +150,7 @@ HRESULT CShellView::XSite::UpdateObjectInfo()
 CShellView::CShellView( BSTR bstrViewProgID )
 {
 //	m_benable_map	= false;
+	_OleLockApp( this );
 
 	InitIntelliSettings();
 
@@ -209,6 +210,7 @@ CShellView::~CShellView()
 
 	if( m_pDocument )
 		GetDocument()->EnsureViewRemoved( this );
+	_OleUnlockApp( this );
 }
 
 
@@ -672,12 +674,12 @@ IUnknown *CShellView::GetViewUnknown()
 	return punk;
 }
 
-void CShellView::PostNcDestroy() 
-{
-//	_ReportCounter( GetControllingUnknown() );
-	m_benable_map	= false;
-	GetControllingUnknown()->Release();
-}
+//void CShellView::PostNcDestroy() 
+//{
+////	_ReportCounter( GetControllingUnknown() );
+//	m_benable_map	= false;
+//	CView::PostNcDestroy();
+//}
 
 void CShellView::OnDestroy() 
 {
@@ -693,11 +695,9 @@ void CShellView::OnDestroy()
 		sptrDC->AttachData( 0 );
 	}
 
-	CView::OnDestroy();
+	//CView::OnDestroy();
 
-	//m_aggrs.DeInit();
-	
-	
+
 	if( m_pFrame->GetActiveView() == this )
 		m_pFrame->SetActiveView( 0 );
 	
@@ -753,7 +753,7 @@ void CShellView::OnVScroll(UINT nSBCode, UINT nPos, CScrollBar* pScrollBar)
 
 void CShellView::OnFinalRelease() 
 {
-	m_aggrs.DeInit();
+	//m_aggrs.DeInit();
 	delete this;
 }
 

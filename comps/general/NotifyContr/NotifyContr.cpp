@@ -32,8 +32,8 @@ protected:
 		com_call RemoveSource(IUnknown * punkSrc);
 	END_INTERFACE_PART(Contr)
 
-	CPtrList	m_list;
-	CPtrList	m_listSrc;
+	CTypedPtrList<CPtrList,IEventListener*>	m_list;
+	CTypedPtrList<CPtrList,IEventListener*>	m_listSrc;
 };
 
 IMPLEMENT_DYNCREATE(CNotifyController, CCmdTargetEx);
@@ -56,10 +56,9 @@ CNotifyController::~CNotifyController()
 	m_listSrc.RemoveAll();
 	for(POSITION pos=m_list.GetHeadPosition(); !!pos;)
 	{
-		IUnknown* punk=(IUnknown*)m_list.GetNext(pos);
 		try{
-			if(punk)
-				punk->Release();
+			IEventListener* pEL=m_list.GetNext(pos);
+			pEL->Release();
 		}
 		catch(...)
 		{
@@ -90,7 +89,7 @@ HRESULT CNotifyController::XContr::FireEvent( BSTR szEventDesc, IUnknown *pHint,
 		while( pos )
 		{
 			POSITION	posOld = pos;
-			IUnknown *punk = (IUnknown*)pThis->m_list.GetNext( pos );
+			IEventListener*	sp=pThis->m_list.GetNext(pos);
 
 			//if( !punk && s_lCallLevel == 1 )
 			//{
@@ -100,12 +99,11 @@ HRESULT CNotifyController::XContr::FireEvent( BSTR szEventDesc, IUnknown *pHint,
 			//}
 
 			// skip listener if it's in listSrc
-			if (pThis->m_listSrc.Find(punk))
+			if (pThis->m_listSrc.Find(sp));
 			{
 				continue;
 			}
 
-			IEventListenerPtr	sp( punk );
 			if( sp )sp->Notify( szEventDesc, pHint, pFrom, pdata, cbSize );
 
 		}
@@ -118,42 +116,47 @@ HRESULT CNotifyController::XContr::FireEvent( BSTR szEventDesc, IUnknown *pHint,
 	s_lCallLevel--;
 }
 
-HRESULT CNotifyController::XContr::RegisterEventListener( BSTR szEventDesc, IUnknown *pListener )
+void testUnkListener(IUnknown* pUnkListener)
+{
+		IEventListenerPtr pListener(pUnkListener);
+		IUnknownPtr pUnk(pListener);
+		ASSERT(pUnkListener==(IUnknown*)pUnk);
+}
+HRESULT CNotifyController::XContr::RegisterEventListener( BSTR szEventDesc, IUnknown *pUnkListener )
 {
 	_try_nested(CNotifyController, Contr, RegisterEventListener)
 	{
-		static int g_i=0;
-		++g_i;
-		if( !CheckInterface( pListener, IID_IEventListener ) )
+		testUnkListener(pUnkListener);
+		IEventListenerPtr pListener(pUnkListener);
+		if( !pListener )
 		{
 			ASSERT( FALSE );
 			return E_INVALIDARG;
 		}
 
-		ASSERT(pListener != (IUnknown*)0xCDCDCDCDCDCDCDCD);
-		ASSERT( !pThis->m_list.Find( pListener ));
-
-		if (pThis->m_list.Find( pListener ))
+		if (pThis->m_list.Find( (IEventListener*)pListener ))
 			return S_OK;
 		
 		pThis->m_list.AddTail( pListener );
-		pListener->AddRef();
+		pUnkListener->AddRef();
 
 		return S_OK;
 	}
 	_catch_nested;
 }
 
-HRESULT CNotifyController::XContr::UnRegisterEventListener( BSTR szEventDesc, IUnknown *pListener )
+HRESULT CNotifyController::XContr::UnRegisterEventListener( BSTR szEventDesc, IUnknown *pUnkListener )
 {
 	_try_nested(CNotifyController, Contr, UnRegisterEventListener)
 	{
-		POSITION pos = pThis->m_list.Find( pListener );
+		testUnkListener(pUnkListener);
+		IEventListenerPtr pListener(pUnkListener);
+		POSITION pos = pThis->m_list.Find((IEventListener*)pListener);
 		if(0!=pos)
 		{
 			TRACE( "Remove pListener %p pThis %p \n", pListener, pThis );
 			pThis->m_list.RemoveAt( pos );
-			pListener->Release();
+			pUnkListener->Release();
 		}
 		else
 		{
@@ -166,31 +169,36 @@ HRESULT CNotifyController::XContr::UnRegisterEventListener( BSTR szEventDesc, IU
 	_catch_nested;
 }
 
-HRESULT CNotifyController::XContr::IsRegisteredEventListener( BSTR szEventDesc, IUnknown *pListener, long * pbFlag)
+HRESULT CNotifyController::XContr::IsRegisteredEventListener( BSTR szEventDesc, IUnknown *pUnkListener, long * pbFlag)
 {
 	_try_nested(CNotifyController, Contr, IsRegisteredEventListener)
 	{
-		if (!pbFlag || !pListener)
+		if (!pbFlag || !pUnkListener)
 			return E_INVALIDARG;
 
-		*pbFlag = pThis->m_list.Find( pListener ) != NULL;
+		testUnkListener(pUnkListener);
+
+		IEventListenerPtr pListener(pUnkListener);
+		*pbFlag = pThis->m_list.Find((IEventListener*)pListener) != NULL;
 		return S_OK;
 	}
 	_catch_nested;
 }
 
-HRESULT CNotifyController::XContr::AddSource(IUnknown * punkSrc)
+HRESULT CNotifyController::XContr::AddSource(IUnknown* pUnkSrcListener)
 {
 	_try_nested(CNotifyController, Contr, AddSource)
 	{
-		if (!CheckInterface(punkSrc, IID_IEventListener))
+		testUnkListener(pUnkSrcListener);
+		IEventListenerPtr pSrc(pUnkSrcListener);
+		if (!pSrc)
 			return S_OK; // nothing
 		
-		POSITION pos = pThis->m_listSrc.Find(punkSrc);
+		POSITION pos = pThis->m_listSrc.Find((IEventListener*)pSrc);
 		if (pos)
 			return S_OK; // already in list 
 
-		pos = pThis->m_listSrc.AddTail(punkSrc);
+		pos = pThis->m_listSrc.AddTail(pSrc);
 		return pos ? S_OK : E_FAIL;
 	}
 	_catch_nested;
@@ -200,7 +208,9 @@ HRESULT CNotifyController::XContr::RemoveSource(IUnknown * punkSrc)
 {
 	METHOD_PROLOGUE_EX(CNotifyController, Contr)
 	{
-		POSITION pos = pThis->m_listSrc.Find(punkSrc);
+		testUnkListener(punkSrc);
+		IEventListenerPtr pSrc(punkSrc);
+		POSITION pos = pThis->m_listSrc.Find((IEventListener*)pSrc);
 		if (!pos)
 			return E_INVALIDARG;
 

@@ -1130,7 +1130,7 @@ HRESULT CRegisterApp::XGuard::GetEntry(DWORD dwMode, DWORD * pSrcGUID, DWORD * p
 
 		else if (dwMode == 1)
 		{
-			GuidKey guidExtern = pTable->GetExtern(*((GUID*)pSrcGUID));
+			GuidKey guidExtern = *(GUID*)pSrcGUID;
 			pEntry =  pTable->GetEntry(guidExtern);
 		}
 

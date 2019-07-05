@@ -127,7 +127,7 @@ public:
 	virtual void OnBeginPrinting(CDC* pDC, CPrintInfo* pInfo);
 	virtual void OnEndPrinting(CDC* pDC, CPrintInfo* pInfo);
 	virtual void OnActivateView(BOOL bActivate, CView* pActivateView, CView* pDeactiveView);	
-	virtual void PostNcDestroy();
+//	virtual void PostNcDestroy();
 	//}}AFX_VIRTUAL
 	
 

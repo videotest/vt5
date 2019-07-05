@@ -99,6 +99,7 @@ CMetodicsTab::CMetodicsTab( )
 
 CMetodicsTab::~CMetodicsTab()
 {
+	AddRef();
 	UnRegister(0);
 	
 	_OleUnlockApp( this );
