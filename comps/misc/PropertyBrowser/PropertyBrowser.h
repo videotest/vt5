@@ -4,7 +4,7 @@
 
 
  /* File created by MIDL compiler version 7.00.0500 */
-/* at Wed Jun 12 22:53:52 2019
+/* at Mon Aug 19 10:00:00 2019
  */
 /* Compiler settings for .\PropertyBrowser.idl:
     Oicf, W1, Zp8, env=Win32 (32b run)

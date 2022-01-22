@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="windows-1251"?>
 <VisualStudioProject
 	ProjectType="Visual C++"
-	Version="9,00"
+	Version="9.00"
 	Name="Palette"
 	ProjectGUID="{779FD46D-C4B3-4E6F-9FB7-99CA6FA584AD}"
 	RootNamespace="Palette"
@@ -144,7 +144,6 @@
 				ForceConformanceInForLoopScope="false"
 				RuntimeTypeInfo="true"
 				UsePrecompiledHeader="2"
-				PrecompiledHeaderThrough=" "
 				BrowseInformation="1"
 				DebugInformationFormat="3"
 				CompileAs="0"
