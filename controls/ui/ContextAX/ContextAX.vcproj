@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="windows-1251"?>
 <VisualStudioProject
 	ProjectType="Visual C++"
-	Version="9,00"
+	Version="9.00"
 	Name="ContextAX"
 	ProjectGUID="{946B2B18-4A27-4E1C-BF01-B115235F2F70}"
 	RootNamespace="ContextAX"
@@ -21,6 +21,7 @@
 	<Configurations>
 		<Configuration
 			Name="Debug|Win32"
+			OutputDirectory="$(SolutionDir)vt5\$(PlatformName)\$(ConfigurationName)\"
 			ConfigurationType="2"
 			InheritedPropertySheets="$(SolutionDir)props\CommonEnv.vsprops"
 			UseOfMFC="2"
@@ -112,6 +113,7 @@
 		</Configuration>
 		<Configuration
 			Name="Debug|x64"
+			OutputDirectory="$(SolutionDir)vt5\$(PlatformName)\$(ConfigurationName)\"
 			ConfigurationType="2"
 			InheritedPropertySheets="$(SolutionDir)props\CommonEnv.vsprops"
 			UseOfMFC="2"
@@ -202,6 +204,7 @@
 		</Configuration>
 		<Configuration
 			Name="Release|Win32"
+			OutputDirectory="$(SolutionDir)vt5\$(PlatformName)\$(ConfigurationName)\"
 			ConfigurationType="2"
 			InheritedPropertySheets="$(SolutionDir)props\CommonEnv.vsprops"
 			UseOfMFC="2"
@@ -293,6 +296,7 @@
 		</Configuration>
 		<Configuration
 			Name="Release|x64"
+			OutputDirectory="$(SolutionDir)vt5\$(PlatformName)\$(ConfigurationName)\"
 			ConfigurationType="2"
 			InheritedPropertySheets="$(SolutionDir)props\CommonEnv.vsprops"
 			UseOfMFC="2"

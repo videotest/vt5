@@ -64,78 +64,7 @@
 			/>
 			<Tool
 				Name="VCLinkerTool"
-				AdditionalDependencies="libtiff.lib jpeg.lib zlib.lib"
-				OutputFile="$(SolutionDir)vt5\$(PlatformName)\$(ConfigurationName)\$(ProjectName).dll"
-				ModuleDefinitionFile=""
-			/>
-			<Tool
-				Name="VCALinkTool"
-			/>
-			<Tool
-				Name="VCManifestTool"
-			/>
-			<Tool
-				Name="VCXDCMakeTool"
-			/>
-			<Tool
-				Name="VCBscMakeTool"
-			/>
-			<Tool
-				Name="VCFxCopTool"
-			/>
-			<Tool
-				Name="VCAppVerifierTool"
-			/>
-			<Tool
-				Name="VCPostBuildEventTool"
-			/>
-		</Configuration>
-		<Configuration
-			Name="Release|Win32"
-			OutputDirectory="$(SolutionDir)vt5\$(PlatformName)\$(ConfigurationName)"
-			ConfigurationType="2"
-			InheritedPropertySheets="$(SolutionDir)Props\CommonEnv.vsprops"
-			CharacterSet="2"
-			WholeProgramOptimization="1"
-			>
-			<Tool
-				Name="VCPreBuildEventTool"
-			/>
-			<Tool
-				Name="VCCustomBuildTool"
-			/>
-			<Tool
-				Name="VCXMLDataGeneratorTool"
-			/>
-			<Tool
-				Name="VCWebServiceProxyGeneratorTool"
-			/>
-			<Tool
-				Name="VCMIDLTool"
-			/>
-			<Tool
-				Name="VCCLCompilerTool"
-				Optimization="2"
-				EnableIntrinsicFunctions="true"
-				AdditionalIncludeDirectories="&quot;$(SolutionDir)thirdparty\jpeg&quot;;&quot;$(SolutionDir)thirdparty\libtiff&quot;;&quot;$(SolutionDir)thirdparty\zlib-1.2.8&quot;"
-				PreprocessorDefinitions="WIN32;_LIB;_VISUALC_;_CRT_SECURE_NO_WARNINGS;NDEBUG"
-				RuntimeLibrary="2"
-				EnableFunctionLevelLinking="true"
-				UsePrecompiledHeader="0"
-				WarningLevel="3"
-				DebugInformationFormat="3"
-			/>
-			<Tool
-				Name="VCManagedResourceCompilerTool"
-			/>
-			<Tool
-				Name="VCResourceCompilerTool"
-			/>
-			<Tool
-				Name="VCPreLinkEventTool"
-			/>
-			<Tool
-				Name="VCLinkerTool"
+				AdditionalOptions="/SAFESEH:NO"
 				AdditionalDependencies="libtiff.lib jpeg.lib zlib.lib"
 				OutputFile="$(SolutionDir)vt5\$(PlatformName)\$(ConfigurationName)\$(ProjectName).dll"
 				ModuleDefinitionFile=""
@@ -208,8 +137,83 @@
 			/>
 			<Tool
 				Name="VCLinkerTool"
+				AdditionalOptions="/SAFESEH:NO"
 				AdditionalDependencies="libtiff.lib jpeg.lib zlib.lib"
 				OutputFile="$(SolutionDir)vt5\$(PlatformName)\$(ConfigurationName)\$(ProjectName).dll"
+				ModuleDefinitionFile=""
+			/>
+			<Tool
+				Name="VCALinkTool"
+			/>
+			<Tool
+				Name="VCManifestTool"
+			/>
+			<Tool
+				Name="VCXDCMakeTool"
+			/>
+			<Tool
+				Name="VCBscMakeTool"
+			/>
+			<Tool
+				Name="VCFxCopTool"
+			/>
+			<Tool
+				Name="VCAppVerifierTool"
+			/>
+			<Tool
+				Name="VCPostBuildEventTool"
+			/>
+		</Configuration>
+		<Configuration
+			Name="Release|Win32"
+			OutputDirectory="$(SolutionDir)vt5\$(PlatformName)\$(ConfigurationName)"
+			ConfigurationType="2"
+			InheritedPropertySheets="$(SolutionDir)Props\CommonEnv.vsprops"
+			CharacterSet="2"
+			WholeProgramOptimization="1"
+			>
+			<Tool
+				Name="VCPreBuildEventTool"
+			/>
+			<Tool
+				Name="VCCustomBuildTool"
+			/>
+			<Tool
+				Name="VCXMLDataGeneratorTool"
+			/>
+			<Tool
+				Name="VCWebServiceProxyGeneratorTool"
+			/>
+			<Tool
+				Name="VCMIDLTool"
+			/>
+			<Tool
+				Name="VCCLCompilerTool"
+				Optimization="2"
+				EnableIntrinsicFunctions="true"
+				AdditionalIncludeDirectories="&quot;$(SolutionDir)thirdparty\jpeg&quot;;&quot;$(SolutionDir)thirdparty\libtiff&quot;;&quot;$(SolutionDir)thirdparty\zlib-1.2.8&quot;"
+				PreprocessorDefinitions="WIN32;_LIB;_VISUALC_;_CRT_SECURE_NO_WARNINGS;NDEBUG"
+				RuntimeLibrary="2"
+				EnableFunctionLevelLinking="true"
+				UsePrecompiledHeader="0"
+				WarningLevel="3"
+				DebugInformationFormat="3"
+			/>
+			<Tool
+				Name="VCManagedResourceCompilerTool"
+			/>
+			<Tool
+				Name="VCResourceCompilerTool"
+			/>
+			<Tool
+				Name="VCPreLinkEventTool"
+			/>
+			<Tool
+				Name="VCLinkerTool"
+				AdditionalOptions="/SAFESEH:NO"
+				AdditionalDependencies="libtiff.lib jpeg.lib zlib.lib"
+				OutputFile="$(SolutionDir)vt5\$(PlatformName)\$(ConfigurationName)\$(ProjectName).dll"
+				AdditionalLibraryDirectories=""
 				ModuleDefinitionFile=""
 			/>
 			<Tool
@@ -281,8 +285,10 @@
 			/>
 			<Tool
 				Name="VCLinkerTool"
+				AdditionalOptions="/SAFESEH:NO"
 				AdditionalDependencies="libtiff.lib jpeg.lib zlib.lib"
 				OutputFile="$(SolutionDir)vt5\$(PlatformName)\$(ConfigurationName)\$(ProjectName).dll"
+				AdditionalLibraryDirectories=""
 				ModuleDefinitionFile=""
 			/>
 			<Tool

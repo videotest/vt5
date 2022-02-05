@@ -2,15 +2,15 @@
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
     <Filter Include="Source Files">
-      <UniqueIdentifier>{ab9836c5-1d4a-4f54-95c9-b1b718a70a9e}</UniqueIdentifier>
+      <UniqueIdentifier>{1a79e3e4-b0df-4227-bc02-4cd1fcd995b8}</UniqueIdentifier>
       <Extensions>cpp;c;cxx;rc;def;r;odl;idl;hpj;bat</Extensions>
     </Filter>
     <Filter Include="Header Files">
-      <UniqueIdentifier>{4cbd0656-2256-4d90-a5de-e511f6bccbf0}</UniqueIdentifier>
+      <UniqueIdentifier>{c8baaaf9-f24b-44b5-b5f2-81e254b30d08}</UniqueIdentifier>
       <Extensions>h;hpp;hxx;hm;inl</Extensions>
     </Filter>
     <Filter Include="Resource Files">
-      <UniqueIdentifier>{0646d4cc-f8dc-4b29-8c38-c5994970b2ec}</UniqueIdentifier>
+      <UniqueIdentifier>{93bf7430-cfc6-4d86-8cea-2e3334c243c5}</UniqueIdentifier>
       <Extensions>ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe</Extensions>
     </Filter>
   </ItemGroup>
@@ -32,7 +32,6 @@
     <None Include="res\CCManager.rc2">
       <Filter>Resource Files</Filter>
     </None>
-    <None Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
     <Midl Include="CCManager.odl">
@@ -57,5 +56,8 @@
     <ClInclude Include="StdAfx.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="ReadMe.txt" />
   </ItemGroup>
 </Project>

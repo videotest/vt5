@@ -2,15 +2,15 @@
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
     <Filter Include="Source Files">
-      <UniqueIdentifier>{dafbba92-563b-40d8-89c2-f34f873ef812}</UniqueIdentifier>
+      <UniqueIdentifier>{394a1f3c-b4c9-43ae-9f13-7fa784e480a1}</UniqueIdentifier>
       <Extensions>cpp;c;cxx;rc;def;r;odl;idl;hpj;bat</Extensions>
     </Filter>
     <Filter Include="Header Files">
-      <UniqueIdentifier>{67537df9-fcf3-4470-b19a-c24683415a2e}</UniqueIdentifier>
+      <UniqueIdentifier>{0fe38712-8fe7-43a7-adb2-7dafd29569a3}</UniqueIdentifier>
       <Extensions>h;hpp;hxx;hm;inl</Extensions>
     </Filter>
     <Filter Include="Resource Files">
-      <UniqueIdentifier>{8a7b539d-ace6-4f49-8afc-31fada6af41a}</UniqueIdentifier>
+      <UniqueIdentifier>{1c822e5d-7c9a-4536-9e30-ccdb20ee76c1}</UniqueIdentifier>
       <Extensions>ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe</Extensions>
     </Filter>
   </ItemGroup>
@@ -21,10 +21,6 @@
     <None Include="res\sew.rc2">
       <Filter>Resource Files</Filter>
     </None>
-    <None Include="toolbar1.bmp">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="sew.cpp">
@@ -67,5 +63,13 @@
     <ClInclude Include="StdAfx.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="toolbar1.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="ReadMe.txt" />
   </ItemGroup>
 </Project>

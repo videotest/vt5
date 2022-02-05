@@ -2,15 +2,15 @@
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
     <Filter Include="Source Files">
-      <UniqueIdentifier>{a73f3003-ef79-4404-8569-950075c80b65}</UniqueIdentifier>
+      <UniqueIdentifier>{012fe577-886d-4762-81f1-b8408e159d2b}</UniqueIdentifier>
       <Extensions>cpp;c;cxx;rc;def;r;odl;idl;hpj;bat</Extensions>
     </Filter>
     <Filter Include="Header Files">
-      <UniqueIdentifier>{36ebfe6f-6c59-488d-8cc3-726a005c839b}</UniqueIdentifier>
+      <UniqueIdentifier>{3ad51de9-7346-40e5-b39c-1ab6aca365f1}</UniqueIdentifier>
       <Extensions>h;hpp;hxx;hm;inl</Extensions>
     </Filter>
     <Filter Include="Resource Files">
-      <UniqueIdentifier>{22ca5c1c-873c-4fbe-8c12-df808adc55e1}</UniqueIdentifier>
+      <UniqueIdentifier>{fb3fd142-0491-4c74-8e59-0b99ccc01199}</UniqueIdentifier>
       <Extensions>ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe</Extensions>
     </Filter>
   </ItemGroup>
@@ -294,65 +294,63 @@
     <ClInclude Include="XPBarMgr.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="MfcOleFix.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <None Include="res\actions.bmp">
+    <Image Include="res\actions.bmp">
       <Filter>Resource Files</Filter>
-    </None>
-    <None Include="res\bitmap1.bmp">
+    </Image>
+    <Image Include="res\bitmap1.bmp">
       <Filter>Resource Files</Filter>
-    </None>
-    <None Include="res\bitmap2.bmp">
+    </Image>
+    <Image Include="res\bitmap2.bmp">
       <Filter>Resource Files</Filter>
-    </None>
-    <None Include="res\capion_buttons.bmp">
+    </Image>
+    <Image Include="res\capion_buttons.bmp">
       <Filter>Resource Files</Filter>
-    </None>
-    <None Include="res\clisntsize.ico">
+    </Image>
+    <Image Include="res\clisntsize.ico">
       <Filter>Resource Files</Filter>
-    </None>
-    <None Include="res\daemon_hid.bmp">
+    </Image>
+    <Image Include="res\daemon_hid.bmp">
       <Filter>Resource Files</Filter>
-    </None>
+    </Image>
+    <Image Include="res\mousepos.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\pattern.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\shell.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\shellDoc.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\slide.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\Toolbar.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\toolbar1.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+  </ItemGroup>
+  <ItemGroup>
     <None Include="res\dragging.cur">
       <Filter>Resource Files</Filter>
     </None>
     <None Include="res\icr_hand.cur">
       <Filter>Resource Files</Filter>
     </None>
-    <None Include="res\mousepos.ico">
-      <Filter>Resource Files</Filter>
-    </None>
     <None Include="res\nodraggi.cur">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="res\pattern.bmp">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="res\shell.ico">
       <Filter>Resource Files</Filter>
     </None>
     <None Include="res\shell.rc2">
       <Filter>Resource Files</Filter>
     </None>
-    <None Include="res\shellDoc.ico">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="res\slide.bmp">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="res\Toolbar.bmp">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="res\toolbar1.bmp">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="shell.reg" />
   </ItemGroup>
   <ItemGroup>
-    <CustomBuildStep Include="elevate.manifest" />
+    <CustomBuild Include="shell.reg" />
   </ItemGroup>
 </Project>

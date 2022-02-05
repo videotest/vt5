@@ -2,15 +2,15 @@
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
     <Filter Include="Source Files">
-      <UniqueIdentifier>{4dc92c1c-668c-42bf-8724-242fee731638}</UniqueIdentifier>
+      <UniqueIdentifier>{86a64b09-78f9-4297-a383-d6d056102248}</UniqueIdentifier>
       <Extensions>cpp;c;cxx;rc;def;r;odl;idl;hpj;bat</Extensions>
     </Filter>
     <Filter Include="Header Files">
-      <UniqueIdentifier>{b9f935cf-3bb6-4b2d-ba8f-5a18fd957ca1}</UniqueIdentifier>
+      <UniqueIdentifier>{e4a73117-d76a-40e1-80fb-0e28ab74d635}</UniqueIdentifier>
       <Extensions>h;hpp;hxx;hm;inl</Extensions>
     </Filter>
     <Filter Include="Resource Files">
-      <UniqueIdentifier>{b610776d-1114-444e-a279-6eeb9f40036e}</UniqueIdentifier>
+      <UniqueIdentifier>{f5bf643c-ce12-40ef-956e-2fb2f4346c16}</UniqueIdentifier>
       <Extensions>ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe</Extensions>
     </Filter>
   </ItemGroup>
@@ -77,37 +77,9 @@
     <None Include="resource.hm">
       <Filter>Header Files</Filter>
     </None>
-    <None Include="res\bitmap1.bmp">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="res\bmp00001.bmp">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="res\ico00001.ico">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="icon.ico">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="res\icon1.ico">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="res\icon2.ico">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="res\Pattern.bmp">
-      <Filter>Resource Files</Filter>
-    </None>
     <None Include="res\Print.rc2">
       <Filter>Resource Files</Filter>
     </None>
-    <None Include="res\printer.bmp">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="res\toolbar1.bmp">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
     <Midl Include="Print.odl">
@@ -180,5 +152,37 @@
     <ClInclude Include="types.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="res\bitmap1.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\bmp00001.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\ico00001.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="icon.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\icon1.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\icon2.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\Pattern.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\printer.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\toolbar1.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="ReadMe.txt" />
   </ItemGroup>
 </Project>

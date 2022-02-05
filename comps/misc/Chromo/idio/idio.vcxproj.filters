@@ -2,15 +2,15 @@
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
     <Filter Include="Source Files">
-      <UniqueIdentifier>{b98562da-7364-433c-8abc-d70dfaf14c41}</UniqueIdentifier>
+      <UniqueIdentifier>{0a5a65e7-7fd8-431a-9366-86cf943a589b}</UniqueIdentifier>
       <Extensions>cpp;c;cxx;rc;def;r;odl;idl;hpj;bat</Extensions>
     </Filter>
     <Filter Include="Header Files">
-      <UniqueIdentifier>{834b6364-2df9-4e09-a4b0-e0a307cdbc16}</UniqueIdentifier>
+      <UniqueIdentifier>{54f097ec-5438-4c1b-ba42-a29548268ff0}</UniqueIdentifier>
       <Extensions>h;hpp;hxx;hm;inl</Extensions>
     </Filter>
     <Filter Include="Resource Files">
-      <UniqueIdentifier>{8399243e-9c0d-4ddc-9ea9-1c840da85005}</UniqueIdentifier>
+      <UniqueIdentifier>{fd5eb0ca-3dcb-4eb6-9938-fb9407aa07d9}</UniqueIdentifier>
       <Extensions>ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe</Extensions>
     </Filter>
   </ItemGroup>
@@ -32,16 +32,9 @@
     <None Include="idio.def">
       <Filter>Source Files</Filter>
     </None>
-    <None Include="icon1.ico">
-      <Filter>Resource Files</Filter>
-    </None>
     <None Include="res\idio.rc2">
       <Filter>Resource Files</Filter>
     </None>
-    <None Include="toolbar1.bmp">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="idio.rc">
@@ -61,5 +54,16 @@
     <ClInclude Include="StdAfx.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="icon1.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="toolbar1.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="ReadMe.txt" />
   </ItemGroup>
 </Project>

@@ -101,115 +101,7 @@
     <None Include="VTControls.def">
       <Filter>Source Files</Filter>
     </None>
-    <None Include="bitmap1.bmp">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="bmp00001.bmp">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="checked.bmp">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="down.ico">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="ico00001.ico">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="ico00002.ico">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="ico00003.ico">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="icon.ico">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="icon1.ico">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="icon10.ico">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="icon11.ico">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="icon12.ico">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="icon13.ico">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="icon14.ico">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="icon15.ico">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="icon2.ico">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="icon3.ico">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="icon4.ico">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="icon5.ico">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="icon6.ico">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="icon7.ico">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="icon8.ico">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="icon9.ico">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="PushButtonCtl.bmp">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="shift.ico">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="test.bmp">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="up.ico">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="up1.ico">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="up2.ico">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="VTCheckBoxCtl.bmp">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="VTControls.ico">
-      <Filter>Resource Files</Filter>
-    </None>
     <None Include="res\Vtcontrols.rc2">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="VTEditor.bmp">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="VTKeyButton.bmp">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="VTList.bmp">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="VTSlider.bmp">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="VTStaticText.bmp">
       <Filter>Resource Files</Filter>
     </None>
   </ItemGroup>
@@ -311,5 +203,115 @@
     <ClInclude Include="VTStaticTextPpg.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="bitmap1.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="bmp00001.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="checked.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="down.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="ico00001.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="ico00002.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="ico00003.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="icon.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="icon1.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="icon10.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="icon11.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="icon12.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="icon13.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="icon14.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="icon15.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="icon2.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="icon3.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="icon4.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="icon5.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="icon6.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="icon7.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="icon8.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="icon9.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="PushButtonCtl.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="shift.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="test.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="up.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="up1.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="up2.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="VTCheckBoxCtl.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="VTControls.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="VTEditor.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="VTKeyButton.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="VTList.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="VTSlider.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="VTStaticText.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
   </ItemGroup>
 </Project>

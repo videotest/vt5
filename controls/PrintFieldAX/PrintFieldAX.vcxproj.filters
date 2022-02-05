@@ -2,15 +2,15 @@
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
     <Filter Include="Source Files">
-      <UniqueIdentifier>{c1ed25b5-558e-4b70-addc-be3be7773154}</UniqueIdentifier>
+      <UniqueIdentifier>{96363725-cd26-4dff-98b4-294272cf334a}</UniqueIdentifier>
       <Extensions>cpp;c;cxx;rc;def;r;odl;idl;hpj;bat</Extensions>
     </Filter>
     <Filter Include="Header Files">
-      <UniqueIdentifier>{6a4e4307-8c1d-4536-b320-4b57fa102f58}</UniqueIdentifier>
+      <UniqueIdentifier>{d4896fd6-81f8-4c6b-bc2c-a096a70166b2}</UniqueIdentifier>
       <Extensions>h;hpp;hxx;hm;inl</Extensions>
     </Filter>
     <Filter Include="Resource Files">
-      <UniqueIdentifier>{b8b61d97-967a-4d7b-b47e-5c6a6ac5b140}</UniqueIdentifier>
+      <UniqueIdentifier>{eff10da9-fae9-428f-ba1c-103469033c8a}</UniqueIdentifier>
       <Extensions>ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe</Extensions>
     </Filter>
   </ItemGroup>
@@ -59,13 +59,6 @@
     <None Include="res\PrintFieldAX.rc2">
       <Filter>Resource Files</Filter>
     </None>
-    <None Include="PrintFieldAXCtl.bmp">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="ViewLoader.bmp">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
     <Midl Include="PrintFieldAX.odl">
@@ -117,5 +110,16 @@
     <ClInclude Include="ViewLoaderPropPage.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="PrintFieldAXCtl.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="ViewLoader.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="ReadMe.txt" />
   </ItemGroup>
 </Project>

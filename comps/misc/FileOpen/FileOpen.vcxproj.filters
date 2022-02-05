@@ -2,15 +2,15 @@
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
     <Filter Include="Source Files">
-      <UniqueIdentifier>{2f6522c3-bd96-417c-85b3-3977d21b0b7d}</UniqueIdentifier>
+      <UniqueIdentifier>{fbf32274-8cc7-4e03-bfd0-b339714c3a3f}</UniqueIdentifier>
       <Extensions>cpp;c;cxx;rc;def;r;odl;idl;hpj;bat</Extensions>
     </Filter>
     <Filter Include="Header Files">
-      <UniqueIdentifier>{07ce88bf-08ce-437e-91f3-99e48fe77d0f}</UniqueIdentifier>
+      <UniqueIdentifier>{368bbb4d-feee-4926-bde0-559113854e6f}</UniqueIdentifier>
       <Extensions>h;hpp;hxx;hm;inl</Extensions>
     </Filter>
     <Filter Include="Resource Files">
-      <UniqueIdentifier>{a1121543-ef78-4c6e-9058-487630decc0b}</UniqueIdentifier>
+      <UniqueIdentifier>{ba9d0d24-a71b-4356-9d1f-e1861278b8ae}</UniqueIdentifier>
       <Extensions>ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe</Extensions>
     </Filter>
   </ItemGroup>
@@ -32,25 +32,9 @@
     <None Include="FileOpen.def">
       <Filter>Source Files</Filter>
     </None>
-    <None Include="bitmap1.bmp">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="bmp00001.bmp">
-      <Filter>Resource Files</Filter>
-    </None>
     <None Include="res\FileOpen.rc2">
       <Filter>Resource Files</Filter>
     </None>
-    <None Include="icon_pre.ico">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="toolbar1.bmp">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="toolbar_.bmp">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
     <Midl Include="FileOpen.odl">
@@ -78,5 +62,25 @@
     <ClInclude Include="WndSizer.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="bitmap1.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="bmp00001.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="icon_pre.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="toolbar1.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="toolbar_.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="ReadMe.txt" />
   </ItemGroup>
 </Project>

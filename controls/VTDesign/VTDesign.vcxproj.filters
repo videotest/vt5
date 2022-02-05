@@ -2,15 +2,15 @@
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
     <Filter Include="Source Files">
-      <UniqueIdentifier>{3e324793-68e4-4a87-af8f-8b8beb371862}</UniqueIdentifier>
+      <UniqueIdentifier>{01b2b02d-7a82-4ee8-adef-ec0df6aa3c06}</UniqueIdentifier>
       <Extensions>cpp;c;cxx;rc;def;r;odl;idl;hpj;bat</Extensions>
     </Filter>
     <Filter Include="Header Files">
-      <UniqueIdentifier>{17281e09-e075-4cf0-ac62-20fb993935d3}</UniqueIdentifier>
+      <UniqueIdentifier>{edcc7b0a-562a-49b0-a07b-eb2f978de19d}</UniqueIdentifier>
       <Extensions>h;hpp;hxx;hm;inl</Extensions>
     </Filter>
     <Filter Include="Resource Files">
-      <UniqueIdentifier>{f72273dc-d944-4988-bb0e-871f7e1a3212}</UniqueIdentifier>
+      <UniqueIdentifier>{b1e445eb-e59f-4c0f-be1d-120d0cc020c8}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -96,42 +96,6 @@
   <ItemGroup>
     <None Include="VTDesign.def">
       <Filter>Source Files</Filter>
-    </None>
-    <None Include="3DBar.bmp">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="res\bitmap1.bmp">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="Ellipse.bmp">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="ico00002.ico">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="icon.ico">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="Image.bmp">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="Line.bmp">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="ReadMe.txt">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="Rectangle.bmp">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="System.bmp">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="Text.bmp">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="VTDesign.ico">
-      <Filter>Resource Files</Filter>
     </None>
     <None Include="res\VTDesign.rc2">
       <Filter>Resource Files</Filter>
@@ -235,5 +199,45 @@
     <ClInclude Include="VTDesign.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="3DBar.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\bitmap1.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Ellipse.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="ico00002.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="icon.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Image.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Line.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Rectangle.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="System.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Text.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="VTDesign.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="ReadMe.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
   </ItemGroup>
 </Project>

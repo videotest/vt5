@@ -2,15 +2,15 @@
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
     <Filter Include="Source Files">
-      <UniqueIdentifier>{6a05889f-83a8-4501-aa5f-e7da63680398}</UniqueIdentifier>
+      <UniqueIdentifier>{6a4541db-ed66-4a4f-9e1a-96a69d3cd19a}</UniqueIdentifier>
       <Extensions>cpp;c;cxx;rc;def;r;odl;idl;hpj;bat</Extensions>
     </Filter>
     <Filter Include="Header Files">
-      <UniqueIdentifier>{dd40a135-3e4f-49ee-ad80-cb0973e3faa6}</UniqueIdentifier>
+      <UniqueIdentifier>{6b3d7927-ee89-4b16-af1b-10ab1e18bdb1}</UniqueIdentifier>
       <Extensions>h;hpp;hxx;hm;inl</Extensions>
     </Filter>
     <Filter Include="Resource Files">
-      <UniqueIdentifier>{b52eff6e-6a96-49df-a1bd-740ef89739f5}</UniqueIdentifier>
+      <UniqueIdentifier>{72c3a56e-78f8-4dd0-9b19-0c557fc27779}</UniqueIdentifier>
       <Extensions>ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe</Extensions>
     </Filter>
   </ItemGroup>
@@ -47,16 +47,7 @@
     <None Include="MeasManual.def">
       <Filter>Source Files</Filter>
     </None>
-    <None Include="bitmap1.bmp">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="res\bmp00001.bmp">
-      <Filter>Resource Files</Filter>
-    </None>
     <None Include="res\freeline.cur">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="res\icon1.ico">
       <Filter>Resource Files</Filter>
     </None>
     <None Include="res\IDC_BRIG.cur">
@@ -107,7 +98,6 @@
     <None Include="res\target.cur">
       <Filter>Resource Files</Filter>
     </None>
-    <None Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
     <Midl Include="MeasManual.odl">
@@ -150,5 +140,19 @@
     <ClInclude Include="StdAfx.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="bitmap1.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\bmp00001.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\icon1.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="ReadMe.txt" />
   </ItemGroup>
 </Project>

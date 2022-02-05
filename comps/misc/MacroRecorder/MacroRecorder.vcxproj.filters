@@ -2,15 +2,15 @@
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
     <Filter Include="Source Files">
-      <UniqueIdentifier>{a076a29a-d25e-4b22-839f-751c7bd06e4e}</UniqueIdentifier>
+      <UniqueIdentifier>{f072acf8-9042-465a-9535-5ae7e307896c}</UniqueIdentifier>
       <Extensions>cpp;c;cxx;def;odl;idl;hpj;bat;asm</Extensions>
     </Filter>
     <Filter Include="Header Files">
-      <UniqueIdentifier>{fdfd3c00-3bfe-458d-9ca4-9f915a96a900}</UniqueIdentifier>
+      <UniqueIdentifier>{931778b3-a5ab-41b9-89da-c577b47c9453}</UniqueIdentifier>
       <Extensions>h;hpp;hxx;hm;inl;inc</Extensions>
     </Filter>
     <Filter Include="Resource Files">
-      <UniqueIdentifier>{8aea7fc7-9788-41a0-b94d-8f8f7c23a4c4}</UniqueIdentifier>
+      <UniqueIdentifier>{59822ffd-5fa6-4d68-b1c4-76d6df12a936}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe</Extensions>
     </Filter>
   </ItemGroup>
@@ -61,11 +61,13 @@
     <None Include="res\MacroRecorder.rc2">
       <Filter>Header Files</Filter>
     </None>
-    <None Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="MacroRecorder.rc">
       <Filter>Resource Files</Filter>
     </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="ReadMe.txt" />
   </ItemGroup>
 </Project>

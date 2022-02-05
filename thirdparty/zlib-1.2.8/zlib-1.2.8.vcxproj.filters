@@ -98,6 +98,8 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="win32\Makefile.msc" />
-    <None Include="readme.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="readme.txt" />
   </ItemGroup>
 </Project>

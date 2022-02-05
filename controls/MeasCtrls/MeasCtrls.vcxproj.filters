@@ -2,15 +2,15 @@
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
     <Filter Include="Source Files">
-      <UniqueIdentifier>{42fad791-f7e8-47d0-bc8c-ffb4262a037b}</UniqueIdentifier>
+      <UniqueIdentifier>{79eda011-b6bf-46f5-af98-2a2a8e03c9b3}</UniqueIdentifier>
       <Extensions>cpp;c;cxx;def;odl;idl;hpj;bat;asm</Extensions>
     </Filter>
     <Filter Include="Header Files">
-      <UniqueIdentifier>{921248a8-a7f1-4f78-b6ea-73fd3d27940f}</UniqueIdentifier>
+      <UniqueIdentifier>{d9ffbfc7-c57a-49fc-947c-1ebd7b17a581}</UniqueIdentifier>
       <Extensions>h;hpp;hxx;hm;inl;inc</Extensions>
     </Filter>
     <Filter Include="Resource Files">
-      <UniqueIdentifier>{5acf024c-bfd0-4072-b4c8-e1074a7d124a}</UniqueIdentifier>
+      <UniqueIdentifier>{5c8b2dc9-b15a-46f3-b086-8af998e48c95}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe</Extensions>
     </Filter>
   </ItemGroup>
@@ -50,22 +50,9 @@
     <None Include="MeasCtrls.def">
       <Filter>Source Files</Filter>
     </None>
-    <None Include="ChoiceGreekSymbolCtrl.bmp">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="DisplUserParamCtrl.bmp">
-      <Filter>Resource Files</Filter>
-    </None>
     <None Include="res\MeasCtrls.rc2">
       <Filter>Resource Files</Filter>
     </None>
-    <None Include="UserParamsComboBoxCtrl.bmp">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="UserParamsListBoxCtrl.bmp">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
     <Midl Include="MeasCtrls.idl">
@@ -114,8 +101,25 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
+    <Image Include="ChoiceGreekSymbolCtrl.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="DisplUserParamCtrl.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="UserParamsComboBoxCtrl.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="UserParamsListBoxCtrl.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+  </ItemGroup>
+  <ItemGroup>
     <ResourceCompile Include="MeasCtrls.rc">
       <Filter>Resource Files</Filter>
     </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="ReadMe.txt" />
   </ItemGroup>
 </Project>

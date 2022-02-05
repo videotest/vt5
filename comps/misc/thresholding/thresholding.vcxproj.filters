@@ -2,15 +2,15 @@
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
     <Filter Include="Source Files">
-      <UniqueIdentifier>{f7210ba9-b17c-4656-82cc-3c31bc2229c7}</UniqueIdentifier>
+      <UniqueIdentifier>{52141fe5-51c6-4a19-9f7b-41c0d8ba87dc}</UniqueIdentifier>
       <Extensions>cpp;c;cxx;rc;def;r;odl;idl;hpj;bat</Extensions>
     </Filter>
     <Filter Include="Header Files">
-      <UniqueIdentifier>{dbd372e8-a924-4909-8ce0-5217e7eb94a2}</UniqueIdentifier>
+      <UniqueIdentifier>{9b822c51-5841-4834-9677-f990cabbba8f}</UniqueIdentifier>
       <Extensions>h;hpp;hxx;hm;inl</Extensions>
     </Filter>
     <Filter Include="Resource Files">
-      <UniqueIdentifier>{1e5994ad-51e5-4276-87d4-e5b7d434c01c}</UniqueIdentifier>
+      <UniqueIdentifier>{c7f0e67d-6b94-4a2e-8647-5cc006fee31e}</UniqueIdentifier>
       <Extensions>ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe</Extensions>
     </Filter>
   </ItemGroup>
@@ -133,9 +133,6 @@
     <None Include="res\thresholding.rc2">
       <Filter>Resource Files</Filter>
     </None>
-    <None Include="toolbar1.bmp">
-      <Filter>Resource Files</Filter>
-    </None>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="BinaryMinimum.h">
@@ -249,5 +246,10 @@
     <ClInclude Include="TransformColor1.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="toolbar1.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
   </ItemGroup>
 </Project>

@@ -2,15 +2,15 @@
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
     <Filter Include="Source Files">
-      <UniqueIdentifier>{883807ad-2b35-44c8-a319-493b0defc611}</UniqueIdentifier>
+      <UniqueIdentifier>{753e9c77-1594-4d22-9894-ea935af7d998}</UniqueIdentifier>
       <Extensions>cpp;c;cxx;rc;def;r;odl;idl;hpj;bat</Extensions>
     </Filter>
     <Filter Include="Header Files">
-      <UniqueIdentifier>{fe3ea59e-b108-4e0c-bb7a-8917c83e3a24}</UniqueIdentifier>
+      <UniqueIdentifier>{ea665991-f0ee-4517-b42f-b875838e39d0}</UniqueIdentifier>
       <Extensions>h;hpp;hxx;hm;inl</Extensions>
     </Filter>
     <Filter Include="Resource Files">
-      <UniqueIdentifier>{90b3749c-890f-4bd1-a5d1-41b79889063f}</UniqueIdentifier>
+      <UniqueIdentifier>{7cda9e77-7b4c-4807-89c8-a7adefff0a22}</UniqueIdentifier>
       <Extensions>ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe</Extensions>
     </Filter>
   </ItemGroup>
@@ -56,74 +56,12 @@
     <None Include="ContextAX.def">
       <Filter>Source Files</Filter>
     </None>
-    <None Include="res\arrowdow.bmp">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="res\arrowup.bmp">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="res\bitmap1.bmp">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="res\bmp00001.bmp">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="res\bmp00002.bmp">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="res\bmp00003.bmp">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="res\bmp00004.bmp">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="res\bmp00005.bmp">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="res\bmp00006.bmp">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="res\bmp00007.bmp">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="res\bmp00008.bmp">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="res\button_a.bmp">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="res\button_c.bmp">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="res\button_e.bmp">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="res\button_n.bmp">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="res\button_o.bmp">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="res\button_t.bmp">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="ContextAX.ico">
-      <Filter>Resource Files</Filter>
-    </None>
     <None Include="res\ContextAX.rc2">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="ContextAXCtl.bmp">
       <Filter>Resource Files</Filter>
     </None>
     <None Include="res\cursor_n.cur">
       <Filter>Resource Files</Filter>
     </None>
-    <None Include="res\icon1.ico">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="ClassDiagram1.cd" />
-    <None Include="ClassDiagram2.cd" />
   </ItemGroup>
   <ItemGroup>
     <Midl Include="ContextAX.odl">
@@ -175,5 +113,67 @@
     <ClInclude Include="TitleTip.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="res\arrowdow.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\arrowup.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\bitmap1.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\bmp00001.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\bmp00002.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\bmp00003.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\bmp00004.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\bmp00005.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\bmp00006.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\bmp00007.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\bmp00008.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\button_a.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\button_c.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\button_e.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\button_n.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\button_o.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\button_t.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="ContextAX.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="ContextAXCtl.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\icon1.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
   </ItemGroup>
 </Project>

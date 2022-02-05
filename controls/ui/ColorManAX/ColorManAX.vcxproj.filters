@@ -2,15 +2,15 @@
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
     <Filter Include="Source Files">
-      <UniqueIdentifier>{c3a3c132-0749-46d0-861d-2f41b872075a}</UniqueIdentifier>
+      <UniqueIdentifier>{873528ff-d42f-4847-95f4-1ec829792b5d}</UniqueIdentifier>
       <Extensions>cpp;c;cxx;rc;def;r;odl;idl;hpj;bat</Extensions>
     </Filter>
     <Filter Include="Header Files">
-      <UniqueIdentifier>{8aa8843f-3303-4940-9c2d-58ea3c34d9b1}</UniqueIdentifier>
+      <UniqueIdentifier>{f9e5a349-41f5-4d97-9d0b-1d6ac5e5793e}</UniqueIdentifier>
       <Extensions>h;hpp;hxx;hm;inl</Extensions>
     </Filter>
     <Filter Include="Resource Files">
-      <UniqueIdentifier>{07e588a8-4998-409f-9008-ada943ea561a}</UniqueIdentifier>
+      <UniqueIdentifier>{c073ffa8-08d3-413a-92d3-c0d75d4cc5d3}</UniqueIdentifier>
       <Extensions>ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe</Extensions>
     </Filter>
   </ItemGroup>
@@ -38,10 +38,6 @@
     <None Include="res\ColorManAX.rc2">
       <Filter>Resource Files</Filter>
     </None>
-    <None Include="ColorManAXCtl.bmp">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
     <Midl Include="ColorManAX.odl">
@@ -72,5 +68,13 @@
     <ClInclude Include="StdAfx.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="ColorManAXCtl.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="ReadMe.txt" />
   </ItemGroup>
 </Project>

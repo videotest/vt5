@@ -2,15 +2,15 @@
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
     <Filter Include="Source Files">
-      <UniqueIdentifier>{b7faeb8e-2d65-40f3-9006-729bf3b5d58e}</UniqueIdentifier>
+      <UniqueIdentifier>{62e5cac7-150b-457e-b16f-c8e6ddae55d6}</UniqueIdentifier>
       <Extensions>cpp;c;cxx;rc;def;r;odl;idl;hpj;bat</Extensions>
     </Filter>
     <Filter Include="Header Files">
-      <UniqueIdentifier>{7465459d-f473-4d7b-98e0-6dd93170d9ca}</UniqueIdentifier>
+      <UniqueIdentifier>{ff74f562-4a73-4b48-9992-e400c5817467}</UniqueIdentifier>
       <Extensions>h;hpp;hxx;hm;inl</Extensions>
     </Filter>
     <Filter Include="Resource Files">
-      <UniqueIdentifier>{1b5cf1c5-e7f1-4505-b969-a6acb5d2ae6f}</UniqueIdentifier>
+      <UniqueIdentifier>{91f4e8d0-3a73-4cd5-bde5-420dd9587338}</UniqueIdentifier>
       <Extensions>ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe</Extensions>
     </Filter>
   </ItemGroup>
@@ -36,9 +36,6 @@
       <Filter>Source Files</Filter>
     </None>
     <None Include="res\LookupHelperAX.rc2">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="LookupHelperAXCtl.bmp">
       <Filter>Resource Files</Filter>
     </None>
   </ItemGroup>
@@ -71,5 +68,10 @@
     <ClInclude Include="StdAfx.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="LookupHelperAXCtl.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
   </ItemGroup>
 </Project>

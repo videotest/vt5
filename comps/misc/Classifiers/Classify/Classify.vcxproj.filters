@@ -2,15 +2,15 @@
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
     <Filter Include="Source Files">
-      <UniqueIdentifier>{c05f34a5-9383-4f19-88d6-ff7d799cf4ca}</UniqueIdentifier>
+      <UniqueIdentifier>{33f1b31d-68e6-44b2-b482-2eaf175cc78f}</UniqueIdentifier>
       <Extensions>cpp;c;cxx;rc;def;r;odl;idl;hpj;bat</Extensions>
     </Filter>
     <Filter Include="Header Files">
-      <UniqueIdentifier>{85307fb3-7a99-422d-b936-0dd366c91055}</UniqueIdentifier>
+      <UniqueIdentifier>{19a72474-e2e3-4b8d-9995-52299b899453}</UniqueIdentifier>
       <Extensions>h;hpp;hxx;hm;inl</Extensions>
     </Filter>
     <Filter Include="Resource Files">
-      <UniqueIdentifier>{3f358ddd-51a2-4267-be9b-b97da229ecfa}</UniqueIdentifier>
+      <UniqueIdentifier>{fbcac3a1-44a0-44e3-a643-545fe301463b}</UniqueIdentifier>
       <Extensions>ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe</Extensions>
     </Filter>
   </ItemGroup>
@@ -77,9 +77,6 @@
     <None Include="AddLearn.cur">
       <Filter>Resource Files</Filter>
     </None>
-    <None Include="allres.bmp">
-      <Filter>Resource Files</Filter>
-    </None>
     <None Include="res\Classify.rc2">
       <Filter>Resource Files</Filter>
     </None>
@@ -92,7 +89,6 @@
     <None Include="unequali.cur">
       <Filter>Resource Files</Filter>
     </None>
-    <None Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="Classify.rc">
@@ -166,5 +162,13 @@
     <ClInclude Include="Ver30.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="allres.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="ReadMe.txt" />
   </ItemGroup>
 </Project>

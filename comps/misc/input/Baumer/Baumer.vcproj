@@ -45,7 +45,6 @@
 				MkTypLibCompatible="true"
 				SuppressStartupBanner="true"
 				TargetEnvironment="1"
-				TypeLibraryName=".\Release/Baumer.tlb"
 			/>
 			<Tool
 				Name="VCCLCompilerTool"
@@ -131,7 +130,6 @@
 				MkTypLibCompatible="true"
 				SuppressStartupBanner="true"
 				TargetEnvironment="3"
-				TypeLibraryName=".\Release/Baumer.tlb"
 			/>
 			<Tool
 				Name="VCCLCompilerTool"
@@ -218,7 +216,6 @@
 				MkTypLibCompatible="true"
 				SuppressStartupBanner="true"
 				TargetEnvironment="1"
-				TypeLibraryName=".\Debug/Baumer.tlb"
 			/>
 			<Tool
 				Name="VCCLCompilerTool"
@@ -304,7 +301,6 @@
 				MkTypLibCompatible="true"
 				SuppressStartupBanner="true"
 				TargetEnvironment="3"
-				TypeLibraryName=".\Debug/Baumer.tlb"
 			/>
 			<Tool
 				Name="VCCLCompilerTool"

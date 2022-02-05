@@ -2,15 +2,15 @@
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
     <Filter Include="Header Files">
-      <UniqueIdentifier>{7a3f2d6c-7bf1-43ca-b621-cd4028d744fb}</UniqueIdentifier>
+      <UniqueIdentifier>{167a6331-92b3-4f56-b632-afa2e3741593}</UniqueIdentifier>
       <Extensions>h;hpp;hxx;hm;inl</Extensions>
     </Filter>
     <Filter Include="Resource Files">
-      <UniqueIdentifier>{7603f1fc-9d03-4994-bbb9-e8b92f054dd8}</UniqueIdentifier>
+      <UniqueIdentifier>{4c427f2a-5f1f-45f6-9d2c-9d9cfb06beb2}</UniqueIdentifier>
       <Extensions>ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe</Extensions>
     </Filter>
     <Filter Include="Source Files">
-      <UniqueIdentifier>{272089ef-f222-4cf0-9394-cf136351dd21}</UniqueIdentifier>
+      <UniqueIdentifier>{957c7d47-0370-4983-9f73-38cbb626ac12}</UniqueIdentifier>
       <Extensions>cpp;c;cxx;rc;def;r;odl;idl;hpj;bat</Extensions>
     </Filter>
   </ItemGroup>
@@ -197,30 +197,6 @@
     <None Include="resource.hm">
       <Filter>Header Files</Filter>
     </None>
-    <None Include="res\bitmap1.bmp">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="res\bitmap2.bmp">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="res\bitmap3.bmp">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="res\bitmap4.bmp">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="bmp00001.bmp">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="res\bmp00001.bmp">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="res\check1.bmp">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="res\check2.bmp">
-      <Filter>Resource Files</Filter>
-    </None>
     <None Include="res\CurColSplit.cur">
       <Filter>Resource Files</Filter>
     </None>
@@ -239,63 +215,89 @@
     <None Include="res\CurWidth.cur">
       <Filter>Resource Files</Filter>
     </None>
-    <None Include="res\dbase_ob.ico">
-      <Filter>Resource Files</Filter>
-    </None>
     <None Include="res\DBaseDoc.rc2">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="DBDateTimeCtl.bmp">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="DBNumberCtl.bmp">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="DBTextCtl.bmp">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="res\error.ico">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="res\ico00001.ico">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="res\ico00002.ico">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="res\ico00003.ico">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="res\ico00004.ico">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="icon.ico">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="res\icon1.ico">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="res\icon2.ico">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="res\icon_can.ico">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="res\icon_sel.ico">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="res\Pattern.bmp">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="res\qury_ico.ico">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="toolbar1.bmp">
       <Filter>Resource Files</Filter>
     </None>
     <None Include="DBaseDoc.def">
       <Filter>Source Files</Filter>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="res\bitmap1.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\bitmap2.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\bitmap3.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\bitmap4.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\bmp00001.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="bmp00001.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\check1.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\check2.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\dbase_ob.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="DBDateTimeCtl.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="DBNumberCtl.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="DBTextCtl.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\error.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\ico00001.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\ico00002.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\ico00003.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\ico00004.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="icon.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\icon1.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\icon2.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\icon_can.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\icon_sel.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\Pattern.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\qury_ico.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="toolbar1.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Albom.cpp">

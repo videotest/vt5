@@ -2,15 +2,15 @@
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
     <Filter Include="Source Files">
-      <UniqueIdentifier>{0c0ebc3c-3a46-4d24-8d26-b4bae46ec14b}</UniqueIdentifier>
+      <UniqueIdentifier>{09650afa-66d8-4ed0-a4e2-0be06fe5637f}</UniqueIdentifier>
       <Extensions>cpp;c;cxx;def;odl;idl;hpj;bat;asm</Extensions>
     </Filter>
     <Filter Include="Header Files">
-      <UniqueIdentifier>{4daecddb-b0b2-4b3a-b5d2-6ac51063982e}</UniqueIdentifier>
+      <UniqueIdentifier>{b7e56017-415b-433b-bc20-fa23d74c6df8}</UniqueIdentifier>
       <Extensions>h;hpp;hxx;hm;inl;inc</Extensions>
     </Filter>
     <Filter Include="Resource Files">
-      <UniqueIdentifier>{5c9325bc-2d35-4662-901e-5889bf75922f}</UniqueIdentifier>
+      <UniqueIdentifier>{840a513b-dd1b-4b2f-9c92-b9b196f13e87}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe</Extensions>
     </Filter>
   </ItemGroup>
@@ -56,7 +56,6 @@
     <None Include="res\Shape.rc2">
       <Filter>Resource Files</Filter>
     </None>
-    <None Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
     <Midl Include="Shape.idl">
@@ -105,5 +104,8 @@
     <ResourceCompile Include="Shape.rc">
       <Filter>Resource Files</Filter>
     </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="ReadMe.txt" />
   </ItemGroup>
 </Project>

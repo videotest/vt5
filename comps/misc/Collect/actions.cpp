@@ -16,8 +16,9 @@
 
 #pragma warning( disable : 4244)
 #pragma warning( disable : 4018)
-template <class T>
-int MaskZone<T>::m_count =0;
+
+template <>
+int MaskZone<DWORD>::m_count = 0;
 
 template <class T>
 CompareFn MaskZone<T>::m_pFnCompare =0;
@@ -326,11 +327,11 @@ bool CActionCollectByMasks::InvokeFilter()
 
 	StartNotification(long(nCX/nArea) + 1, 3);
 
-	MaskZone<DWORD>* mz =0;
+	MaskZone<DWORD>* mz = 0;
 	int* ppix =0;
 	if(bAlignedSerie)
 	{
-		mz = new MaskZone<DWORD>[(hcx+1)*(hcy+1)];
+		//mz = new MaskZone<DWORD>;// [(hcx + 1) * (hcy + 1)] ;
 		mz[0].Init(compareDWORD, nSrcImages); 
 	}
 	else  
@@ -1980,7 +1981,6 @@ static color get_owner_color(int x, int y, color c, CImageWrp* images , RECT*  r
 	}
 	return 1;
 }
-
 
 
 template<class T>

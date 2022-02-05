@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="windows-1251"?>
 <VisualStudioProject
 	ProjectType="Visual C++"
-	Version="9,00"
+	Version="9.00"
 	Name="Register"
 	ProjectGUID="{F993CFEE-D9BB-4DAE-B2BD-CCDB5ED696AA}"
 	RootNamespace="Register"
@@ -21,6 +21,7 @@
 	<Configurations>
 		<Configuration
 			Name="Release|Win32"
+			OutputDirectory="$(SolutionDir)build\$(PlatformName)\$(ConfigurationName)\"
 			ConfigurationType="1"
 			InheritedPropertySheets="..\..\props\CommonEnv.vsprops"
 			UseOfMFC="2"
@@ -83,6 +84,7 @@
 				OutputFile="$(SolutionDir)vt5\$(PlatformName)\$(ConfigurationName)\$(ProjectName).exe"
 				LinkIncremental="1"
 				AdditionalLibraryDirectories=""
+				UACExecutionLevel="2"
 				ModuleDefinitionFile=" "
 				GenerateDebugInformation="true"
 				SubSystem="2"
@@ -94,7 +96,7 @@
 			/>
 			<Tool
 				Name="VCManifestTool"
-				AdditionalManifestFiles="$(InputDir)\elevate.manifest"
+				EmbedManifest="false"
 			/>
 			<Tool
 				Name="VCXDCMakeTool"
@@ -114,6 +116,7 @@
 		</Configuration>
 		<Configuration
 			Name="Release|x64"
+			OutputDirectory="$(SolutionDir)build\$(PlatformName)\$(ConfigurationName)\"
 			ConfigurationType="1"
 			InheritedPropertySheets="..\..\props\CommonEnv.vsprops"
 			UseOfMFC="2"
@@ -206,6 +209,7 @@
 		</Configuration>
 		<Configuration
 			Name="Debug|Win32"
+			OutputDirectory="$(SolutionDir)build\$(PlatformName)\$(ConfigurationName)\"
 			ConfigurationType="1"
 			InheritedPropertySheets="..\..\props\CommonEnv.vsprops"
 			UseOfMFC="2"
@@ -245,7 +249,6 @@
 				UsePrecompiledHeader="2"
 				AssemblerListingLocation=".\Debug/"
 				BrowseInformation="1"
-				DebugInformationFormat="3"
 				CompileAs="0"
 			/>
 			<Tool
@@ -299,7 +302,7 @@
 		</Configuration>
 		<Configuration
 			Name="Debug|x64"
-			OutputDirectory="$(SolutionDir)vt5\$(PlatformName)\$(ConfigurationName)"
+			OutputDirectory="$(SolutionDir)build\$(PlatformName)\$(ConfigurationName)\"
 			ConfigurationType="1"
 			InheritedPropertySheets="..\..\props\CommonEnv.vsprops"
 			UseOfMFC="2"
@@ -338,7 +341,7 @@
 				RuntimeTypeInfo="true"
 				UsePrecompiledHeader="2"
 				BrowseInformation="1"
-				DebugInformationFormat="4"
+				DebugInformationFormat="3"
 				CompileAs="0"
 			/>
 			<Tool

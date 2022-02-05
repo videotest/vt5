@@ -2,15 +2,15 @@
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
     <Filter Include="Source Files">
-      <UniqueIdentifier>{0690a05e-f818-4bed-823f-8b200d6fda59}</UniqueIdentifier>
+      <UniqueIdentifier>{91fe02d0-06a9-4947-ae3d-eebaf9b8ff0e}</UniqueIdentifier>
       <Extensions>cpp;c;cxx;rc;def;r;odl;idl;hpj;bat</Extensions>
     </Filter>
     <Filter Include="Header Files">
-      <UniqueIdentifier>{7aea8078-cf1e-4291-b701-f95bf9bb1bc0}</UniqueIdentifier>
+      <UniqueIdentifier>{7d49e3a1-abda-461b-a22e-f9d431d3c62b}</UniqueIdentifier>
       <Extensions>h;hpp;hxx;hm;inl</Extensions>
     </Filter>
     <Filter Include="Resource Files">
-      <UniqueIdentifier>{5e42e0f7-dcae-46a9-9ecf-1f990dc42107}</UniqueIdentifier>
+      <UniqueIdentifier>{1a95f46f-ffe8-4a96-b3e1-023a679e1319}</UniqueIdentifier>
       <Extensions>ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe</Extensions>
     </Filter>
   </ItemGroup>
@@ -38,46 +38,9 @@
     <None Include="fft.def">
       <Filter>Source Files</Filter>
     </None>
-    <None Include="res\bitmap1.bmp">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="res\bitmap3.bmp">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="res\bitmap4.bmp">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="res\circle.bmp">
-      <Filter>Resource Files</Filter>
-    </None>
     <None Include="res\fft.rc2">
       <Filter>Resource Files</Filter>
     </None>
-    <None Include="res\free.bmp">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="res\icon_com.ico">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="res\inside.bmp">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="res\outside.bmp">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="res\rect.bmp">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="res\to_fft.bmp">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="res\to_image.bmp">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="res\toolbar1.bmp">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
     <Midl Include="fft.odl">
@@ -111,5 +74,46 @@
     <ClInclude Include="StdAfx.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="res\bitmap1.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\bitmap3.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\bitmap4.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\circle.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\free.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\icon_com.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\inside.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\outside.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\rect.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\to_fft.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\to_image.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\toolbar1.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="ReadMe.txt" />
   </ItemGroup>
 </Project>

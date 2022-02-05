@@ -2,15 +2,15 @@
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
     <Filter Include="Source Files">
-      <UniqueIdentifier>{5c37724b-b63c-4438-b803-623ac10ff6ca}</UniqueIdentifier>
+      <UniqueIdentifier>{9beda76f-a733-41c3-be2d-b3eddef9a933}</UniqueIdentifier>
       <Extensions>cpp;c;cxx;rc;def;r;odl;idl;hpj;bat</Extensions>
     </Filter>
     <Filter Include="Header Files">
-      <UniqueIdentifier>{a0abb3db-8e79-4e5a-8751-2aa2cb948ffa}</UniqueIdentifier>
+      <UniqueIdentifier>{9bf03bd4-5aed-41a8-a7e2-965473e0846e}</UniqueIdentifier>
       <Extensions>h;hpp;hxx;hm;inl</Extensions>
     </Filter>
     <Filter Include="Resource Files">
-      <UniqueIdentifier>{4e37c22c-e088-4263-ac38-db049c4d4741}</UniqueIdentifier>
+      <UniqueIdentifier>{8cfc16af-dbb7-422f-8b67-e34450623d94}</UniqueIdentifier>
       <Extensions>ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe</Extensions>
     </Filter>
   </ItemGroup>
@@ -38,16 +38,9 @@
     <None Include="Palette.def">
       <Filter>Source Files</Filter>
     </None>
-    <None Include="Palette.ico">
-      <Filter>Resource Files</Filter>
-    </None>
     <None Include="res\Palette.rc2">
       <Filter>Resource Files</Filter>
     </None>
-    <None Include="PaletteCtl.bmp">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
     <Midl Include="Palette.odl">
@@ -81,5 +74,16 @@
     <ClInclude Include="StdAfx.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="Palette.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="PaletteCtl.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="ReadMe.txt" />
   </ItemGroup>
 </Project>

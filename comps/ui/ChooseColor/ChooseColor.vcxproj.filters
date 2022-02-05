@@ -2,15 +2,15 @@
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
     <Filter Include="Source Files">
-      <UniqueIdentifier>{c9872b21-b2de-4423-9a90-fe9ece71f537}</UniqueIdentifier>
+      <UniqueIdentifier>{2645a0f1-9d90-48ed-888b-5ed3d625339e}</UniqueIdentifier>
       <Extensions>cpp;c;cxx;rc;def;r;odl;idl;hpj;bat</Extensions>
     </Filter>
     <Filter Include="Header Files">
-      <UniqueIdentifier>{ae1b31ba-a158-48a8-90b9-5def775260ff}</UniqueIdentifier>
+      <UniqueIdentifier>{f6cb2ee6-a4c0-4b4c-b870-0d65647ebfc7}</UniqueIdentifier>
       <Extensions>h;hpp;hxx;hm;inl</Extensions>
     </Filter>
     <Filter Include="Resource Files">
-      <UniqueIdentifier>{bc9a9c41-887a-4039-bdce-3c89caa4d742}</UniqueIdentifier>
+      <UniqueIdentifier>{c7ee1418-7cc7-4739-9044-54096f1b98d6}</UniqueIdentifier>
       <Extensions>ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe</Extensions>
     </Filter>
   </ItemGroup>
@@ -35,16 +35,9 @@
     <None Include="ChooseColor.def">
       <Filter>Source Files</Filter>
     </None>
-    <None Include="bitmap1.bmp">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="bitmap2.bmp">
-      <Filter>Resource Files</Filter>
-    </None>
     <None Include="res\ChooseColor.rc2">
       <Filter>Resource Files</Filter>
     </None>
-    <None Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
     <Midl Include="ChooseColor.odl">
@@ -75,5 +68,16 @@
     <ClInclude Include="StdAfx.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="bitmap1.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="bitmap2.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="ReadMe.txt" />
   </ItemGroup>
 </Project>

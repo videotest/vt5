@@ -58,7 +58,6 @@
 				UsePrecompiledHeader="2"
 				PrecompiledHeaderThrough="stdafx.h"
 				BrowseInformation="1"
-				WarningLevel="3"
 				DebugInformationFormat="4"
 				CompileAs="0"
 			/>
@@ -69,7 +68,7 @@
 				Name="VCResourceCompilerTool"
 				PreprocessorDefinitions="_AFXDLL;_DEBUG"
 				Culture="1049"
-				AdditionalIncludeDirectories="\vt5\common,\vt5\ifaces"
+				AdditionalIncludeDirectories=""
 			/>
 			<Tool
 				Name="VCPreLinkEventTool"
@@ -77,7 +76,6 @@
 			<Tool
 				Name="VCLinkerTool"
 				AdditionalOptions="/MACHINE:I386"
-				LinkIncremental="2"
 				AdditionalLibraryDirectories=""
 				ModuleDefinitionFile=".\Fish.def"
 				GenerateDebugInformation="true"
@@ -164,7 +162,6 @@
 			/>
 			<Tool
 				Name="VCLinkerTool"
-				LinkIncremental="2"
 				AdditionalLibraryDirectories=""
 				ModuleDefinitionFile=".\Fish.def"
 				GenerateDebugInformation="true"
@@ -234,7 +231,6 @@
 				ForceConformanceInForLoopScope="false"
 				UsePrecompiledHeader="2"
 				PrecompiledHeaderThrough="stdafx.h"
-				WarningLevel="3"
 				DebugInformationFormat="3"
 			/>
 			<Tool
@@ -244,7 +240,7 @@
 				Name="VCResourceCompilerTool"
 				PreprocessorDefinitions="_AFXDLL;NDEBUG"
 				Culture="1049"
-				AdditionalIncludeDirectories="\vt5\common,\vt5\ifaces"
+				AdditionalIncludeDirectories=""
 			/>
 			<Tool
 				Name="VCPreLinkEventTool"
@@ -252,7 +248,6 @@
 			<Tool
 				Name="VCLinkerTool"
 				AdditionalOptions="/MACHINE:I386"
-				LinkIncremental="1"
 				AdditionalLibraryDirectories=""
 				ModuleDefinitionFile=".\Fish.def"
 				GenerateDebugInformation="true"
@@ -322,7 +317,6 @@
 				ForceConformanceInForLoopScope="false"
 				UsePrecompiledHeader="2"
 				PrecompiledHeaderThrough="stdafx.h"
-				WarningLevel="3"
 				DebugInformationFormat="3"
 			/>
 			<Tool
@@ -332,13 +326,13 @@
 				Name="VCResourceCompilerTool"
 				PreprocessorDefinitions="_AFXDLL;NDEBUG"
 				Culture="1049"
+				AdditionalIncludeDirectories=""
 			/>
 			<Tool
 				Name="VCPreLinkEventTool"
 			/>
 			<Tool
 				Name="VCLinkerTool"
-				LinkIncremental="1"
 				AdditionalLibraryDirectories=""
 				ModuleDefinitionFile=".\Fish.def"
 				GenerateDebugInformation="true"

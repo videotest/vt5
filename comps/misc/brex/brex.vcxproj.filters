@@ -2,15 +2,15 @@
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
     <Filter Include="Source Files">
-      <UniqueIdentifier>{09708766-6301-41d7-b7c4-eb9e845a4a1a}</UniqueIdentifier>
+      <UniqueIdentifier>{96a1718c-8c46-4f9d-b17a-e7267dd2ff74}</UniqueIdentifier>
       <Extensions>cpp;c;cxx;def;odl;idl;hpj;bat;asm</Extensions>
     </Filter>
     <Filter Include="Header Files">
-      <UniqueIdentifier>{2fefe9f4-1d3b-4995-b1be-a65555431d59}</UniqueIdentifier>
+      <UniqueIdentifier>{948bc0f3-8806-4ed0-b2a6-337f222024a5}</UniqueIdentifier>
       <Extensions>h;hpp;hxx;hm;inl;inc</Extensions>
     </Filter>
     <Filter Include="Resource Files">
-      <UniqueIdentifier>{53041881-c15b-479a-9ce9-033defcf42e8}</UniqueIdentifier>
+      <UniqueIdentifier>{2a118ede-cff6-4212-83fc-45c8ab1e7258}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe</Extensions>
     </Filter>
   </ItemGroup>
@@ -32,7 +32,6 @@
     <None Include="brex.def">
       <Filter>Source Files</Filter>
     </None>
-    <None Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="actions.h">
@@ -55,5 +54,8 @@
     <ResourceCompile Include="brex.rc">
       <Filter>Resource Files</Filter>
     </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="ReadMe.txt" />
   </ItemGroup>
 </Project>

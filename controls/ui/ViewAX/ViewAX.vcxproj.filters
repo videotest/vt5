@@ -2,15 +2,15 @@
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
     <Filter Include="Source Files">
-      <UniqueIdentifier>{650b2d1d-5046-480a-8992-008e8e6c20a0}</UniqueIdentifier>
+      <UniqueIdentifier>{427f909c-2e12-4d4e-b19e-81886c1bcd88}</UniqueIdentifier>
       <Extensions>cpp;c;cxx;rc;def;r;odl;idl;hpj;bat</Extensions>
     </Filter>
     <Filter Include="Header Files">
-      <UniqueIdentifier>{a4380d07-5694-455a-b96f-b79d410f1c9c}</UniqueIdentifier>
+      <UniqueIdentifier>{c1823a2c-5823-4807-9a60-c8c0ed5546cf}</UniqueIdentifier>
       <Extensions>h;hpp;hxx;hm;inl</Extensions>
     </Filter>
     <Filter Include="Resource Files">
-      <UniqueIdentifier>{8bb10c1e-41f8-4182-8053-bc6c475d2032}</UniqueIdentifier>
+      <UniqueIdentifier>{9f1a42ca-f7d2-49be-9a60-b8de5a3c3f61}</UniqueIdentifier>
       <Extensions>ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe</Extensions>
     </Filter>
   </ItemGroup>
@@ -50,10 +50,6 @@
     <None Include="res\ViewAX.rc2">
       <Filter>Resource Files</Filter>
     </None>
-    <None Include="ViewAXCtl.bmp">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
     <Midl Include="ViewAX.odl">
@@ -96,5 +92,13 @@
     <ClInclude Include="ViewAXStatUIPropPage.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="ViewAXCtl.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="ReadMe.txt" />
   </ItemGroup>
 </Project>

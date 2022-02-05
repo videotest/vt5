@@ -874,7 +874,6 @@ void CShellDoc::OnCloseDocument()
 
 	for (POSITION pos = m_viewList.GetHeadPosition(); 0!=pos;)
 	{
-		POSITION  posNext=pos;
 		CView* pview = (CView*)m_viewList.GetNext(pos);
 		ASSERT_VALID(pview);
 		CFrameWnd* pFrame = pview->GetParentFrame(); 

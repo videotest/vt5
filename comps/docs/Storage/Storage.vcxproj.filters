@@ -2,15 +2,15 @@
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
     <Filter Include="Source Files">
-      <UniqueIdentifier>{649ee574-fcb7-43b1-8cc7-0df2017a5e62}</UniqueIdentifier>
+      <UniqueIdentifier>{3a58099a-964f-41d6-b0b2-b5d0cd6eaa1c}</UniqueIdentifier>
       <Extensions>cpp;c;cxx;def;odl;idl;hpj;bat;asm</Extensions>
     </Filter>
     <Filter Include="Header Files">
-      <UniqueIdentifier>{e95a13d5-8e3b-492f-89c9-0c4b5ccd6aa3}</UniqueIdentifier>
+      <UniqueIdentifier>{92fd1874-7afe-44b8-a396-5be5b790e675}</UniqueIdentifier>
       <Extensions>h;hpp;hxx;hm;inl;inc</Extensions>
     </Filter>
     <Filter Include="Resource Files">
-      <UniqueIdentifier>{565d535d-7ea5-4e9c-872f-5cca7cc418ef}</UniqueIdentifier>
+      <UniqueIdentifier>{20b7fad2-63d7-47eb-a289-3a92c8137801}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe</Extensions>
     </Filter>
   </ItemGroup>
@@ -49,17 +49,21 @@
     <None Include="res\storage.rc2">
       <Filter>Header Files</Filter>
     </None>
-    <None Include="res\storage.ico">
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="res\storage.ico">
       <Filter>Resource Files</Filter>
-    </None>
-    <None Include="res\toolbar1.bmp">
+    </Image>
+    <Image Include="res\toolbar1.bmp">
       <Filter>Resource Files</Filter>
-    </None>
-    <None Include="ReadMe.txt" />
+    </Image>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="Storage.rc">
       <Filter>Resource Files</Filter>
     </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="ReadMe.txt" />
   </ItemGroup>
 </Project>

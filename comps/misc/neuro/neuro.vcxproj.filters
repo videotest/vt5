@@ -2,15 +2,15 @@
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
     <Filter Include="Source Files">
-      <UniqueIdentifier>{95aeca11-febf-4f0a-851d-a4127be20fe2}</UniqueIdentifier>
+      <UniqueIdentifier>{663ce411-56d2-4e9f-b517-b892f67b42a5}</UniqueIdentifier>
       <Extensions>cpp;c;cxx;def;odl;idl;hpj;bat;asm</Extensions>
     </Filter>
     <Filter Include="Header Files">
-      <UniqueIdentifier>{4ec932bd-d451-42df-8869-3c1ba29c83fe}</UniqueIdentifier>
+      <UniqueIdentifier>{fe550b05-7bed-42e7-b69c-f2d9bbb80deb}</UniqueIdentifier>
       <Extensions>h;hpp;hxx;hm;inl;inc</Extensions>
     </Filter>
     <Filter Include="Resource Files">
-      <UniqueIdentifier>{a4303c06-a9a1-43d1-b115-cc79c7d233e6}</UniqueIdentifier>
+      <UniqueIdentifier>{f0332d2f-b54c-4b4b-b6b8-a8c036d20efd}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe</Extensions>
     </Filter>
   </ItemGroup>
@@ -47,10 +47,6 @@
     <None Include="res\neuro.rc2">
       <Filter>Resource Files</Filter>
     </None>
-    <None Include="toolbar1.bmp">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AdjustParams.h">
@@ -85,5 +81,13 @@
     <ResourceCompile Include="neuro.rc">
       <Filter>Resource Files</Filter>
     </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="toolbar1.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="ReadMe.txt" />
   </ItemGroup>
 </Project>

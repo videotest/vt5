@@ -2,15 +2,15 @@
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
     <Filter Include="Source Files">
-      <UniqueIdentifier>{d702275a-c839-417e-b6a2-3bbe7a7cd81f}</UniqueIdentifier>
+      <UniqueIdentifier>{fbdd4e42-9b70-4e82-b18c-3d8e21d00b14}</UniqueIdentifier>
       <Extensions>cpp;c;cxx;rc;def;r;odl;idl;hpj;bat</Extensions>
     </Filter>
     <Filter Include="Header Files">
-      <UniqueIdentifier>{0637d834-f2c6-4893-b56d-c8512533b8f2}</UniqueIdentifier>
+      <UniqueIdentifier>{a376e17c-9810-4a34-a8e6-c5a2f3226459}</UniqueIdentifier>
       <Extensions>h;hpp;hxx;hm;inl</Extensions>
     </Filter>
     <Filter Include="Resource Files">
-      <UniqueIdentifier>{fc105db9-0657-4675-84dc-ad9894f30a39}</UniqueIdentifier>
+      <UniqueIdentifier>{b0cdfbda-d99e-47c4-8dea-2b1731b8e66b}</UniqueIdentifier>
       <Extensions>ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe</Extensions>
     </Filter>
   </ItemGroup>
@@ -65,7 +65,6 @@
     <None Include="res\Pixera.rc2">
       <Filter>Resource Files</Filter>
     </None>
-    <None Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="Pixera.rc">
@@ -121,5 +120,8 @@
   </ItemGroup>
   <ItemGroup>
     <Library Include="PixSDK.lib" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="ReadMe.txt" />
   </ItemGroup>
 </Project>

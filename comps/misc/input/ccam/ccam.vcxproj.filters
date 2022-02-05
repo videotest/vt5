@@ -2,15 +2,15 @@
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
     <Filter Include="Source Files">
-      <UniqueIdentifier>{2161cbc2-bb2c-4fc2-b7c5-b1000a57c819}</UniqueIdentifier>
+      <UniqueIdentifier>{203aaa8d-4ba9-42ca-bd3b-b735af28c181}</UniqueIdentifier>
       <Extensions>cpp;c;cxx;rc;def;r;odl;idl;hpj;bat</Extensions>
     </Filter>
     <Filter Include="Header Files">
-      <UniqueIdentifier>{5aaf5c10-e1c1-46c6-beff-eef19b68fc00}</UniqueIdentifier>
+      <UniqueIdentifier>{8cd957f7-5078-4522-80a4-f7fa3d905a16}</UniqueIdentifier>
       <Extensions>h;hpp;hxx;hm;inl</Extensions>
     </Filter>
     <Filter Include="Resource Files">
-      <UniqueIdentifier>{087ced2a-4e9a-4eb7-ad58-166a855bfd0d}</UniqueIdentifier>
+      <UniqueIdentifier>{1eefbaaf-cd39-42fa-9631-8ccdecad5c72}</UniqueIdentifier>
       <Extensions>ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe</Extensions>
     </Filter>
   </ItemGroup>
@@ -50,7 +50,6 @@
     <None Include="CCam.def">
       <Filter>Source Files</Filter>
     </None>
-    <None Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="CCam.rc">
@@ -104,5 +103,8 @@
   <ItemGroup>
     <Library Include="ccapi.lib" />
     <Library Include="ccutil.lib" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="ReadMe.txt" />
   </ItemGroup>
 </Project>

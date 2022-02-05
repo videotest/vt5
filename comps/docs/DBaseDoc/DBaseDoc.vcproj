@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="windows-1251"?>
 <VisualStudioProject
 	ProjectType="Visual C++"
-	Version="9,00"
+	Version="9.00"
 	Name="DBaseDoc"
 	ProjectGUID="{CDE17349-1783-4398-B86E-0C9A505D3230}"
 	RootNamespace="DBaseDoc"
@@ -79,10 +79,8 @@
 			/>
 			<Tool
 				Name="VCLinkerTool"
-				AdditionalOptions="/MACHINE:I386"
+				AdditionalOptions="/SAFESEH:NO"
 				AdditionalDependencies="zlib.lib"
-				OutputFile="\vt5\vt5\Release\comps\DBaseDoc.dll"
-				LinkIncremental="1"
 				SuppressStartupBanner="true"
 				AdditionalLibraryDirectories=""
 				ModuleDefinitionFile=".\DBaseDoc.def"
@@ -173,9 +171,8 @@
 			/>
 			<Tool
 				Name="VCLinkerTool"
+				AdditionalOptions="/SAFESEH:NO"
 				AdditionalDependencies="zlib.lib"
-				OutputFile="\vt5\vt5\$(OutDir)\comps\$(ProjectName).dll"
-				LinkIncremental="1"
 				SuppressStartupBanner="true"
 				AdditionalLibraryDirectories=""
 				ModuleDefinitionFile=".\DBaseDoc.def"
@@ -262,7 +259,7 @@
 			/>
 			<Tool
 				Name="VCLinkerTool"
-				AdditionalOptions="/MACHINE:I386"
+				AdditionalOptions="/SAFESEH:NO"
 				AdditionalDependencies="zlib.lib"
 				AdditionalLibraryDirectories=""
 				GenerateDebugInformation="true"
@@ -349,6 +346,7 @@
 			/>
 			<Tool
 				Name="VCLinkerTool"
+				AdditionalOptions="/SAFESEH:NO"
 				AdditionalDependencies="zlib.lib"
 				AdditionalLibraryDirectories=""
 				GenerateDebugInformation="true"

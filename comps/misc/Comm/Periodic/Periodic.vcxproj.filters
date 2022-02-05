@@ -2,15 +2,15 @@
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
     <Filter Include="Source Files">
-      <UniqueIdentifier>{0967cd26-65ff-4860-aa2f-10cf598df084}</UniqueIdentifier>
+      <UniqueIdentifier>{d420305b-7d3e-497d-8841-2b687981a64f}</UniqueIdentifier>
       <Extensions>cpp;c;cxx;rc;def;r;odl;idl;hpj;bat</Extensions>
     </Filter>
     <Filter Include="Header Files">
-      <UniqueIdentifier>{8611cc3b-fdcc-4c3c-84f2-4b7a09dbd760}</UniqueIdentifier>
+      <UniqueIdentifier>{f8771702-06f0-4559-be04-ea6209cc3b55}</UniqueIdentifier>
       <Extensions>h;hpp;hxx;hm;inl</Extensions>
     </Filter>
     <Filter Include="Resource Files">
-      <UniqueIdentifier>{6bb41ab5-0886-4dd5-8383-d7c2c6ed018f}</UniqueIdentifier>
+      <UniqueIdentifier>{2b765104-7d85-43b6-b850-668531f80163}</UniqueIdentifier>
       <Extensions>ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe</Extensions>
     </Filter>
   </ItemGroup>
@@ -38,7 +38,6 @@
     <None Include="res\Periodic.rc2">
       <Filter>Resource Files</Filter>
     </None>
-    <None Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="Periodic.rc">
@@ -64,5 +63,8 @@
     <ClInclude Include="StdAfx.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="ReadMe.txt" />
   </ItemGroup>
 </Project>

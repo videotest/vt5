@@ -2,15 +2,15 @@
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
     <Filter Include="Source Files">
-      <UniqueIdentifier>{5ee970d3-6e20-40b9-8d71-2ca64ca3b109}</UniqueIdentifier>
+      <UniqueIdentifier>{a8672bea-a1fa-416e-a1bc-a7e87ff5e756}</UniqueIdentifier>
       <Extensions>cpp;c;cxx;rc;def;r;odl;idl;hpj;bat</Extensions>
     </Filter>
     <Filter Include="Header Files">
-      <UniqueIdentifier>{5467985a-e2df-4417-bfdb-549f7926f895}</UniqueIdentifier>
+      <UniqueIdentifier>{2f893247-622f-42ee-a289-13360dba8ce5}</UniqueIdentifier>
       <Extensions>h;hpp;hxx;hm;inl</Extensions>
     </Filter>
     <Filter Include="Resource Files">
-      <UniqueIdentifier>{ab51e8bb-c942-49a0-bd55-d197d762fb7c}</UniqueIdentifier>
+      <UniqueIdentifier>{1f15a3f1-b796-45ab-8bad-6a024be3b8cf}</UniqueIdentifier>
       <Extensions>ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe</Extensions>
     </Filter>
   </ItemGroup>
@@ -164,19 +164,10 @@
     <None Include="common.def">
       <Filter>Source Files</Filter>
     </None>
-    <None Include="Commond.def">
-      <Filter>Source Files</Filter>
-    </None>
     <None Include="PropBagImpl.inl">
       <Filter>Header Files</Filter>
     </None>
     <None Include="res\common.rc2">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="res\icon1.ico">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="res\Pattern.bmp">
       <Filter>Resource Files</Filter>
     </None>
     <None Include="res\rotate.cur">
@@ -187,7 +178,6 @@
     </None>
     <None Include="msado15.tlh" />
     <None Include="msado15.tli" />
-    <None Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="common.rc">
@@ -432,5 +422,16 @@
     <ClInclude Include="wndmisc5.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="res\icon1.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\Pattern.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="ReadMe.txt" />
   </ItemGroup>
 </Project>

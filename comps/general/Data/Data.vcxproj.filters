@@ -2,15 +2,15 @@
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
     <Filter Include="Source Files">
-      <UniqueIdentifier>{01ed7425-29b0-4892-8d45-d3285c9f5b72}</UniqueIdentifier>
+      <UniqueIdentifier>{4044503b-df05-47e0-96d0-9667639a5b94}</UniqueIdentifier>
       <Extensions>cpp;c;cxx;rc;def;r;odl;idl;hpj;bat</Extensions>
     </Filter>
     <Filter Include="Resource Files">
-      <UniqueIdentifier>{9b1ff058-9cb5-40eb-987c-9924265820c3}</UniqueIdentifier>
+      <UniqueIdentifier>{90821766-bba1-43e5-817f-b0bf47458134}</UniqueIdentifier>
       <Extensions>ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe</Extensions>
     </Filter>
     <Filter Include="Header Files">
-      <UniqueIdentifier>{cfd46535-262f-4c03-b70b-1a79066261b2}</UniqueIdentifier>
+      <UniqueIdentifier>{eccb9284-0f41-47fe-9a2a-9e6b3937b6c2}</UniqueIdentifier>
       <Extensions>h;hpp;hxx;hm;inl</Extensions>
     </Filter>
   </ItemGroup>
@@ -101,73 +101,10 @@
     <None Include="Data.def">
       <Filter>Source Files</Filter>
     </None>
-    <None Include="res\arrowdow.bmp">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="res\arrowup.bmp">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="res\bmp00001.bmp">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="res\bmp00002.bmp">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="res\bmp00003.bmp">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="res\bmp00004.bmp">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="res\bmp00005.bmp">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="res\bmp00006.bmp">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="res\bmp00007.bmp">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="res\bmp00008.bmp">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="res\button_a.bmp">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="res\button_c.bmp">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="res\button_e.bmp">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="res\button_n.bmp">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="res\button_o.bmp">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="res\button_t.bmp">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="content.bmp">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="res\Context.bmp">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="res\ContextSM.bmp">
-      <Filter>Resource Files</Filter>
-    </None>
     <None Include="res\cursor_n.cur">
       <Filter>Resource Files</Filter>
     </None>
     <None Include="res\Data.rc2">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="res\dbase_ob.bmp">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="toolbar1.bmp">
       <Filter>Resource Files</Filter>
     </None>
   </ItemGroup>
@@ -180,6 +117,71 @@
     <ResourceCompile Include="Data.rc">
       <Filter>Source Files</Filter>
     </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="res\arrowdow.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\arrowup.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\bmp00001.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\bmp00002.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\bmp00003.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\bmp00004.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\bmp00005.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\bmp00006.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\bmp00007.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\bmp00008.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\button_a.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\button_c.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\button_e.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\button_n.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\button_o.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\button_t.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="content.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\Context.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\ContextSM.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\dbase_ob.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="toolbar1.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="actions.h">

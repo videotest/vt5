@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="windows-1251"?>
 <VisualStudioProject
 	ProjectType="Visual C++"
-	Version="9,00"
+	Version="9.00"
 	Name="FileFilters"
 	ProjectGUID="{BDB52B1B-D3DF-47DB-A142-72FFEE02CA65}"
 	RootNamespace="FileFilters"
@@ -54,9 +54,7 @@
 				RuntimeLibrary="3"
 				TreatWChar_tAsBuiltInType="false"
 				ForceConformanceInForLoopScope="false"
-				UsePrecompiledHeader="1"
-				PrecompiledHeaderThrough="stdafx.h"
-				PrecompiledHeaderFile="\vt5\comps\misc\FileFilters\Debug/FileFilters.pch"
+				UsePrecompiledHeader="2"
 				AssemblerListingLocation="\vt5\comps\misc\FileFilters\Debug/"
 				ObjectFile="\vt5\comps\misc\FileFilters\Debug/"
 				ProgramDataBaseFileName="\vt5\comps\misc\FileFilters\Debug/"
@@ -141,7 +139,7 @@
 				Name="VCCLCompilerTool"
 				Optimization="0"
 				AdditionalIncludeDirectories="&quot;$(SolutionDir)thirdparty\ImageMagick-4.2.9&quot;"
-				PreprocessorDefinitions="_DEBUG;_WINDOWS;_USRDLL;_WIN64;_M_X64;_LIB;_AFX_SECURE_NO_DEPRECATE;_CRT_SECURE_NO_DEPRECATE"
+				PreprocessorDefinitions="WIN32;_DEBUG;_WINDOWS;_USRDLL;_WIN64;_M_X64;_LIB;_AFX_SECURE_NO_DEPRECATE;_CRT_SECURE_NO_DEPRECATE"
 				BasicRuntimeChecks="3"
 				RuntimeLibrary="3"
 				TreatWChar_tAsBuiltInType="false"
@@ -319,7 +317,7 @@
 				Name="VCCLCompilerTool"
 				InlineFunctionExpansion="1"
 				AdditionalIncludeDirectories="&quot;$(SolutionDir)thirdparty\ImageMagick-4.2.9&quot;"
-				PreprocessorDefinitions="_WIN64;_M_X64;_AFX_SECURE_NO_DEPRECATE;_CRT_SECURE_NO_DEPRECATE;NDEBUG;_WINDOWS;_USRDLL"
+				PreprocessorDefinitions="WIN32;_WIN64;_M_X64;_AFX_SECURE_NO_DEPRECATE;_CRT_SECURE_NO_DEPRECATE;NDEBUG;_WINDOWS;_USRDLL"
 				StringPooling="true"
 				RuntimeLibrary="2"
 				EnableFunctionLevelLinking="true"
@@ -389,6 +387,14 @@
 			<File
 				RelativePath=".\FileFilters.cpp"
 				>
+				<FileConfiguration
+					Name="Debug|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						UsePrecompiledHeader="2"
+					/>
+				</FileConfiguration>
 			</File>
 			<File
 				RelativePath=".\FileFilters.def"
@@ -518,18 +524,50 @@
 			<File
 				RelativePath=".\GIFfile.cpp"
 				>
+				<FileConfiguration
+					Name="Debug|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						UsePrecompiledHeader="2"
+					/>
+				</FileConfiguration>
 			</File>
 			<File
 				RelativePath=".\ImageFileFilterBase.cpp"
 				>
+				<FileConfiguration
+					Name="Debug|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						UsePrecompiledHeader="2"
+					/>
+				</FileConfiguration>
 			</File>
 			<File
 				RelativePath=".\JPGfile.cpp"
 				>
+				<FileConfiguration
+					Name="Debug|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						UsePrecompiledHeader="2"
+					/>
+				</FileConfiguration>
 			</File>
 			<File
 				RelativePath=".\PCXfile.cpp"
 				>
+				<FileConfiguration
+					Name="Debug|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						UsePrecompiledHeader="2"
+					/>
+				</FileConfiguration>
 			</File>
 			<File
 				RelativePath=".\StdAfx.cpp"
@@ -572,6 +610,14 @@
 			<File
 				RelativePath=".\TIFfile.cpp"
 				>
+				<FileConfiguration
+					Name="Debug|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						UsePrecompiledHeader="2"
+					/>
+				</FileConfiguration>
 			</File>
 		</Filter>
 		<Filter

@@ -2,18 +2,18 @@
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
     <Filter Include="Source Files">
-      <UniqueIdentifier>{938654ab-ff9c-4337-ae26-1c5b5fb12794}</UniqueIdentifier>
+      <UniqueIdentifier>{839b79a6-08ee-4ab8-ab50-723e043d7467}</UniqueIdentifier>
       <Extensions>cpp;c;cxx;def;odl;idl;hpj;bat;asm</Extensions>
     </Filter>
     <Filter Include="Header Files">
-      <UniqueIdentifier>{f4faeed6-0911-49ad-9d33-81e6da9c5dc2}</UniqueIdentifier>
+      <UniqueIdentifier>{9d1f4eca-763f-4946-9f63-fd65760056c3}</UniqueIdentifier>
       <Extensions>h;hpp;hxx;hm;inl;inc</Extensions>
     </Filter>
     <Filter Include="Header Files\inc">
-      <UniqueIdentifier>{0fc3424c-c53a-423d-9983-a8be5d5138d8}</UniqueIdentifier>
+      <UniqueIdentifier>{5557b5a1-832e-4c55-9efa-37c4ffb5944c}</UniqueIdentifier>
     </Filter>
     <Filter Include="Resource Files">
-      <UniqueIdentifier>{af899b48-3e6a-4c98-a34e-4d60249cf64e}</UniqueIdentifier>
+      <UniqueIdentifier>{f76c7faa-235a-46ed-a164-490b006b3301}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe</Extensions>
     </Filter>
   </ItemGroup>
@@ -35,7 +35,6 @@
     <None Include="res\Hamamatsu.rc2">
       <Filter>Resource Files</Filter>
     </None>
-    <None Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Hamamatsu.h">
@@ -133,5 +132,8 @@
   </ItemGroup>
   <ItemGroup>
     <Library Include="lib\dcamapi.lib" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="ReadMe.txt" />
   </ItemGroup>
 </Project>

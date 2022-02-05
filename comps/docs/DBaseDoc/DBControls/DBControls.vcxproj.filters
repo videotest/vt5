@@ -2,15 +2,15 @@
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
     <Filter Include="Source Files">
-      <UniqueIdentifier>{a644c288-0cbc-410e-8f65-d3e8c194cbcb}</UniqueIdentifier>
+      <UniqueIdentifier>{4d9308d7-a419-469a-be84-141abb972a69}</UniqueIdentifier>
       <Extensions>cpp;c;cxx;rc;def;r;odl;idl;hpj;bat</Extensions>
     </Filter>
     <Filter Include="Header Files">
-      <UniqueIdentifier>{04dab424-388d-483f-aa39-a82c980179a0}</UniqueIdentifier>
+      <UniqueIdentifier>{d025b0cc-76c6-4bf2-8341-d0f4709c08f4}</UniqueIdentifier>
       <Extensions>h;hpp;hxx;hm;inl</Extensions>
     </Filter>
     <Filter Include="Resource Files">
-      <UniqueIdentifier>{80090bd9-b56e-4d7c-a540-f6053bf001d2}</UniqueIdentifier>
+      <UniqueIdentifier>{2a770dff-e3ef-465e-8267-b6065fda6341}</UniqueIdentifier>
       <Extensions>ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe</Extensions>
     </Filter>
   </ItemGroup>
@@ -68,28 +68,9 @@
     <None Include="DBControls.def">
       <Filter>Source Files</Filter>
     </None>
-    <None Include="DBControls.ico">
-      <Filter>Resource Files</Filter>
-    </None>
     <None Include="res\DBControls.rc2">
       <Filter>Resource Files</Filter>
     </None>
-    <None Include="DBControlsCtl.bmp">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="dbdateti.bmp">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="DBDateTimeCtl.bmp">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="DBNumberCtl.bmp">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="DBTextCtl.bmp">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
     <Midl Include="DBControls.odl">
@@ -153,5 +134,28 @@
     <ClInclude Include="StdAfx.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="DBControls.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="DBControlsCtl.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="dbdateti.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="DBDateTimeCtl.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="DBNumberCtl.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="DBTextCtl.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="ReadMe.txt" />
   </ItemGroup>
 </Project>

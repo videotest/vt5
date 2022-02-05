@@ -2,15 +2,15 @@
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
     <Filter Include="Source Files">
-      <UniqueIdentifier>{e46b1bba-54f1-4832-b4a2-23970eda7b98}</UniqueIdentifier>
+      <UniqueIdentifier>{a2840385-c815-4c84-836a-783bc5b81cf0}</UniqueIdentifier>
       <Extensions>cpp;c;cxx;rc;def;r;odl;idl;hpj;bat</Extensions>
     </Filter>
     <Filter Include="Header Files">
-      <UniqueIdentifier>{32915064-d192-4325-9b2d-6e0d20265085}</UniqueIdentifier>
+      <UniqueIdentifier>{b22dc5ee-2b3e-49ff-b983-6d821cb18bbb}</UniqueIdentifier>
       <Extensions>h;hpp;hxx;hm;inl</Extensions>
     </Filter>
     <Filter Include="Resource Files">
-      <UniqueIdentifier>{0ee93c41-f2f6-4002-95b0-821a4090e993}</UniqueIdentifier>
+      <UniqueIdentifier>{78e4be34-0c4b-4ae0-9dfc-da831a5f435d}</UniqueIdentifier>
       <Extensions>ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe</Extensions>
     </Filter>
   </ItemGroup>
@@ -71,7 +71,6 @@
     <None Include="res\Baumer.rc2">
       <Filter>Resource Files</Filter>
     </None>
-    <None Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
     <Midl Include="Baumer.odl">
@@ -155,6 +154,9 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <Library Include="cxlib2.lib" />
+    <Text Include="ReadMe.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="cxlib2.lib" />
   </ItemGroup>
 </Project>

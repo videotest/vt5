@@ -2,19 +2,19 @@
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
     <Filter Include="Source Files">
-      <UniqueIdentifier>{bd7d49c8-2ce4-40e6-b1ab-f8431105bbc1}</UniqueIdentifier>
+      <UniqueIdentifier>{c925e567-8f55-4d21-9d46-63b6f62818a1}</UniqueIdentifier>
       <Extensions>cpp;c;cxx;def;odl;idl;hpj;bat;asm</Extensions>
     </Filter>
     <Filter Include="Header Files">
-      <UniqueIdentifier>{5abc315d-922f-4900-9cb8-da57b36aa199}</UniqueIdentifier>
+      <UniqueIdentifier>{4e632aa0-78bf-471b-959a-518d272f234f}</UniqueIdentifier>
       <Extensions>h;hpp;hxx;hm;inl;inc</Extensions>
     </Filter>
     <Filter Include="Resource Files">
-      <UniqueIdentifier>{86a5b646-1a32-442c-9a7b-1bdd7decfb96}</UniqueIdentifier>
+      <UniqueIdentifier>{f5fc0709-de9d-4dbd-a019-c9f2e11ddb64}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe</Extensions>
     </Filter>
     <Filter Include="Generated Files">
-      <UniqueIdentifier>{aa23945e-f840-43b1-b870-748810234ca9}</UniqueIdentifier>
+      <UniqueIdentifier>{1ddddd18-e1a3-431a-a958-d7179326ced0}</UniqueIdentifier>
       <SourceControlFiles>False</SourceControlFiles>
     </Filter>
   </ItemGroup>

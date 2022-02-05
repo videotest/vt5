@@ -2,15 +2,15 @@
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
     <Filter Include="Source Files">
-      <UniqueIdentifier>{94893638-7c37-4353-8c61-19bcf76ae433}</UniqueIdentifier>
+      <UniqueIdentifier>{49786b29-a025-470c-8660-a8275cf525a8}</UniqueIdentifier>
       <Extensions>cpp;c;cxx;def;odl;idl;hpj;bat;asm</Extensions>
     </Filter>
     <Filter Include="Header Files">
-      <UniqueIdentifier>{ef8b8b1d-ff2d-46ad-ab5d-86d36af3d598}</UniqueIdentifier>
+      <UniqueIdentifier>{f6c62af5-5c58-4936-b48b-20535ed87507}</UniqueIdentifier>
       <Extensions>h;hpp;hxx;hm;inl;inc</Extensions>
     </Filter>
     <Filter Include="Resource Files">
-      <UniqueIdentifier>{4649f92d-9e7b-4cd4-a31d-b83d34e9212b}</UniqueIdentifier>
+      <UniqueIdentifier>{728920b5-034b-47e9-b5de-38e0a31d90ff}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe</Extensions>
     </Filter>
   </ItemGroup>
@@ -38,10 +38,6 @@
     <None Include="res\SpermParams.rc2">
       <Filter>Resource Files</Filter>
     </None>
-    <None Include="toolbar1.bmp">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="actions.h">
@@ -67,5 +63,13 @@
     <ResourceCompile Include="SpermParams.rc">
       <Filter>Resource Files</Filter>
     </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="toolbar1.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="ReadMe.txt" />
   </ItemGroup>
 </Project>

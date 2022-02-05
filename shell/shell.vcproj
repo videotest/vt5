@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="windows-1251"?>
 <VisualStudioProject
 	ProjectType="Visual C++"
-	Version="9,00"
+	Version="9.00"
 	Name="shell"
 	ProjectGUID="{F6428C6C-8CDE-4A7C-8CE6-90CDCBF98768}"
 	RootNamespace="shell"
@@ -63,8 +63,6 @@
 				UsePrecompiledHeader="2"
 				PrecompiledHeaderThrough="stdafx.h"
 				BrowseInformation="1"
-				WarningLevel="3"
-				SuppressStartupBanner="true"
 				Detect64BitPortabilityProblems="false"
 				DebugInformationFormat="4"
 				CompileAs="0"
@@ -87,11 +85,10 @@
 				OutputFile="$(SolutionDir)vt5\$(PlatformName)\$(ConfigurationName)\$(ProjectName).exe"
 				LinkIncremental="2"
 				SuppressStartupBanner="true"
-				AdditionalLibraryDirectories="\vt5\common\debug,\vt5\common\"
+				AdditionalLibraryDirectories=""
 				UACExecutionLevel="2"
 				ModuleDefinitionFile=" "
 				GenerateDebugInformation="true"
-				ProgramDatabaseFile="\vt5\vt5\debug\pdb\shell.pdb"
 				GenerateMapFile="false"
 				SubSystem="2"
 				RandomizedBaseAddress="1"
@@ -102,6 +99,7 @@
 			/>
 			<Tool
 				Name="VCManifestTool"
+				AdditionalManifestFiles=" "
 				EmbedManifest="false"
 			/>
 			<Tool
@@ -162,7 +160,6 @@
 				UsePrecompiledHeader="2"
 				PrecompiledHeaderThrough="stdafx.h"
 				BrowseInformation="1"
-				WarningLevel="3"
 				Detect64BitPortabilityProblems="false"
 				DebugInformationFormat="3"
 				CompileAs="0"
@@ -183,11 +180,11 @@
 				AdditionalDependencies="Version.lib comsuppd.lib gost.lib controls.lib"
 				OutputFile="$(SolutionDir)vt5\$(PlatformName)\$(ConfigurationName)\$(ProjectName).exe"
 				LinkIncremental="2"
-				AdditionalLibraryDirectories=" "
+				AdditionalLibraryDirectories=""
 				UACExecutionLevel="2"
 				ModuleDefinitionFile=" "
 				GenerateDebugInformation="true"
-				GenerateMapFile="false"
+				GenerateMapFile="true"
 				SubSystem="2"
 				RandomizedBaseAddress="1"
 				DataExecutionPrevention="0"
@@ -198,6 +195,7 @@
 			/>
 			<Tool
 				Name="VCManifestTool"
+				AdditionalManifestFiles=" "
 				EmbedManifest="false"
 			/>
 			<Tool
@@ -260,8 +258,6 @@
 				UsePrecompiledHeader="2"
 				PrecompiledHeaderThrough="stdafx.h"
 				BrowseInformation="1"
-				WarningLevel="3"
-				SuppressStartupBanner="true"
 				DebugInformationFormat="3"
 				CompileAs="0"
 			/>
@@ -279,14 +275,12 @@
 			<Tool
 				Name="VCLinkerTool"
 				AdditionalOptions="/MACHINE:I386"
-				AdditionalDependencies="Version.lib comsupp.lib xgost32s.lib"
+				AdditionalDependencies="Version.lib comsupp.lib gost.lib"
 				OutputFile="$(SolutionDir)vt5\$(PlatformName)\$(ConfigurationName)\$(ProjectName).exe"
-				LinkIncremental="1"
-				SuppressStartupBanner="true"
-				AdditionalLibraryDirectories="\vt5\common\release,\vt5\common"
+				AdditionalLibraryDirectories=""
+				UACExecutionLevel="2"
 				ModuleDefinitionFile=" "
 				GenerateDebugInformation="true"
-				ProgramDatabaseFile="\vt5\vt5\release\pdb\shell.pdb"
 				GenerateMapFile="true"
 				MapFileName="\vt5\shell\Release/shell.map"
 				SubSystem="2"
@@ -298,7 +292,7 @@
 			/>
 			<Tool
 				Name="VCManifestTool"
-				AdditionalManifestFiles="elevate.manifest"
+				AdditionalManifestFiles=" "
 			/>
 			<Tool
 				Name="VCXDCMakeTool"
@@ -347,20 +341,19 @@
 			<Tool
 				Name="VCCLCompilerTool"
 				AdditionalOptions=""
-				Optimization="2"
-				InlineFunctionExpansion="1"
+				Optimization="0"
 				AdditionalIncludeDirectories="&quot;$(SolutionDir)controls\BCGControlBar&quot;"
 				PreprocessorDefinitions="_WIN64;_M_X64;NDEBUG;_WINDOWS;_AFX_SECURE_NO_DEPRECATE;_CRT_SECURE_NO_DEPRECATE"
-				StringPooling="true"
+				StringPooling="false"
+				MinimalRebuild="true"
+				BasicRuntimeChecks="3"
 				RuntimeLibrary="2"
-				EnableFunctionLevelLinking="true"
 				TreatWChar_tAsBuiltInType="false"
 				ForceConformanceInForLoopScope="false"
 				RuntimeTypeInfo="true"
 				UsePrecompiledHeader="2"
 				PrecompiledHeaderThrough="stdafx.h"
 				BrowseInformation="1"
-				WarningLevel="3"
 				DebugInformationFormat="3"
 				CompileAs="0"
 			/>
@@ -380,11 +373,10 @@
 				AdditionalDependencies="Version.lib comsuppd.lib gost.lib"
 				OutputFile="$(SolutionDir)vt5\$(PlatformName)\$(ConfigurationName)\$(ProjectName).exe"
 				LinkIncremental="1"
-				AdditionalLibraryDirectories=" "
+				AdditionalLibraryDirectories=""
+				UACExecutionLevel="2"
 				ModuleDefinitionFile=" "
 				GenerateDebugInformation="true"
-				GenerateMapFile="true"
-				MapFileName="\vt5\shell\Release/shell.map"
 				SubSystem="2"
 				RandomizedBaseAddress="1"
 				DataExecutionPrevention="0"
@@ -395,6 +387,7 @@
 			/>
 			<Tool
 				Name="VCManifestTool"
+				AdditionalManifestFiles=" "
 			/>
 			<Tool
 				Name="VCXDCMakeTool"
@@ -439,6 +432,14 @@
 			<File
 				RelativePath=".\AppDisp.cpp"
 				>
+				<FileConfiguration
+					Name="Debug|x64"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						GeneratePreprocessedFile="0"
+					/>
+				</FileConfiguration>
 			</File>
 			<File
 				RelativePath=".\BitmapProviderAdv.cpp"
@@ -1005,18 +1006,10 @@
 			</File>
 		</Filter>
 		<File
-			RelativePath=".\elevate.manifest"
+			RelativePath=".\shell.reg"
 			>
 			<FileConfiguration
 				Name="Debug|Win32"
-				ExcludedFromBuild="true"
-				>
-				<Tool
-					Name="VCCustomBuildTool"
-				/>
-			</FileConfiguration>
-			<FileConfiguration
-				Name="Debug|x64"
 				ExcludedFromBuild="true"
 				>
 				<Tool
@@ -1031,18 +1024,6 @@
 					Name="VCCustomBuildTool"
 				/>
 			</FileConfiguration>
-			<FileConfiguration
-				Name="Release|x64"
-				ExcludedFromBuild="true"
-				>
-				<Tool
-					Name="VCCustomBuildTool"
-				/>
-			</FileConfiguration>
-		</File>
-		<File
-			RelativePath=".\shell.reg"
-			>
 		</File>
 	</Files>
 	<Globals>

@@ -2,15 +2,15 @@
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
     <Filter Include="Source Files">
-      <UniqueIdentifier>{e270dfd4-9a4f-48e7-a7fc-30af6d20f245}</UniqueIdentifier>
+      <UniqueIdentifier>{1faa8b96-1f8c-4f5d-ae20-572529fe1495}</UniqueIdentifier>
       <Extensions>cpp;c;cxx;rc;def;r;odl;idl;hpj;bat</Extensions>
     </Filter>
     <Filter Include="Header Files">
-      <UniqueIdentifier>{eb21277b-6345-46dc-98e4-9b6b9044c781}</UniqueIdentifier>
+      <UniqueIdentifier>{886f9c43-7623-41c7-8593-a53775b7336d}</UniqueIdentifier>
       <Extensions>h;hpp;hxx;hm;inl</Extensions>
     </Filter>
     <Filter Include="Resource Files">
-      <UniqueIdentifier>{f126adc6-eb65-473e-a112-c65e6d518477}</UniqueIdentifier>
+      <UniqueIdentifier>{6662daca-3e9f-4b97-95fa-ec7de561dc39}</UniqueIdentifier>
       <Extensions>ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe</Extensions>
     </Filter>
   </ItemGroup>
@@ -98,108 +98,6 @@
     <None Include="Editor.def">
       <Filter>Source Files</Filter>
     </None>
-    <None Include="res\all.bmp">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="res\arrow.ico">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="bitmap1.bmp">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="bitmap10.bmp">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="bitmap11.bmp">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="bitmap12.bmp">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="bitmap13.bmp">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="bitmap14.bmp">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="bitmap15.bmp">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="bitmap16.bmp">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="bitmap17.bmp">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="bitmap18.bmp">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="bitmap19.bmp">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="bitmap2.bmp">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="bitmap20.bmp">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="bitmap21.bmp">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="bitmap22.bmp">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="bitmap23.bmp">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="res\bitmap24.bmp">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="res\bitmap25.bmp">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="res\bitmap26.bmp">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="res\bitmap27.bmp">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="res\bitmap28.bmp">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="res\bitmap29.bmp">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="bitmap3.bmp">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="res\bitmap30.bmp">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="res\bitmap31.bmp">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="res\bitmap32.bmp">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="bitmap4.bmp">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="bitmap5.bmp">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="bitmap6.bmp">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="bitmap7.bmp">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="bitmap8.bmp">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="bitmap9.bmp">
-      <Filter>Resource Files</Filter>
-    </None>
     <None Include="res\cur00001.cur">
       <Filter>Resource Files</Filter>
     </None>
@@ -207,9 +105,6 @@
       <Filter>Resource Files</Filter>
     </None>
     <None Include="cursor1.cur">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="res\drawobje.ico">
       <Filter>Resource Files</Filter>
     </None>
     <None Include="res\ed_edit_.cur">
@@ -251,28 +146,9 @@
     <None Include="res\Editor.rc2">
       <Filter>Resource Files</Filter>
     </None>
-    <None Include="res\ico00001.ico">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="res\icon1.ico">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="res\icon2.ico">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="res\icon3.ico">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="res\marker.ico">
-      <Filter>Resource Files</Filter>
-    </None>
     <None Include="res\target.cur">
       <Filter>Resource Files</Filter>
     </None>
-    <None Include="res\toolbar1.bmp">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
     <Midl Include="Editor.odl">
@@ -366,5 +242,133 @@
     <ClInclude Include="vtwidth.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="res\all.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\arrow.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="bitmap1.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="bitmap10.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="bitmap11.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="bitmap12.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="bitmap13.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="bitmap14.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="bitmap15.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="bitmap16.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="bitmap17.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="bitmap18.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="bitmap19.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="bitmap2.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="bitmap20.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="bitmap21.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="bitmap22.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="bitmap23.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\bitmap24.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\bitmap25.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\bitmap26.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\bitmap27.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\bitmap28.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\bitmap29.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="bitmap3.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\bitmap30.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\bitmap31.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\bitmap32.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="bitmap4.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="bitmap5.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="bitmap6.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="bitmap7.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="bitmap8.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="bitmap9.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\drawobje.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\ico00001.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\icon1.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\icon2.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\icon3.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\marker.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\toolbar1.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="ReadMe.txt" />
   </ItemGroup>
 </Project>

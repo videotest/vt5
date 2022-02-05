@@ -2,15 +2,15 @@
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
     <Filter Include="Source Files">
-      <UniqueIdentifier>{767b31c6-99d9-41f3-99d3-7f3c14bec2c2}</UniqueIdentifier>
+      <UniqueIdentifier>{2cdf0c8b-5e0c-4ce8-9508-73fb923261df}</UniqueIdentifier>
       <Extensions>cpp;c;cxx;def;odl;idl;hpj;bat;asm</Extensions>
     </Filter>
     <Filter Include="Header Files">
-      <UniqueIdentifier>{e9c7ac28-a817-4772-8349-159763b22884}</UniqueIdentifier>
+      <UniqueIdentifier>{5e347297-8d95-4316-affe-ee8194cca57b}</UniqueIdentifier>
       <Extensions>h;hpp;hxx;hm;inl;inc</Extensions>
     </Filter>
     <Filter Include="Resource Files">
-      <UniqueIdentifier>{80c7a7ed-6dbd-4e60-a12d-66ac03454564}</UniqueIdentifier>
+      <UniqueIdentifier>{5f24fc62-cd51-4a66-874b-7c2dd12274f3}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe</Extensions>
     </Filter>
   </ItemGroup>
@@ -26,9 +26,6 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="toolbar1.bmp">
-      <Filter>Resource Files</Filter>
-    </None>
     <None Include="Freeze.def">
       <Filter>Source Files</Filter>
     </None>
@@ -48,5 +45,10 @@
     <ResourceCompile Include="TestFreeze.rc">
       <Filter>Resource Files</Filter>
     </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="toolbar1.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
   </ItemGroup>
 </Project>

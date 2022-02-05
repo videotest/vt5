@@ -2,15 +2,15 @@
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
     <Filter Include="Source Files">
-      <UniqueIdentifier>{46798623-e630-4bc7-a4d0-2fa124b8b5f1}</UniqueIdentifier>
+      <UniqueIdentifier>{723c0e43-152b-4948-81ed-b0b7aff3aec9}</UniqueIdentifier>
       <Extensions>cpp;c;cxx;rc;def;r;odl;idl;hpj;bat</Extensions>
     </Filter>
     <Filter Include="Header Files">
-      <UniqueIdentifier>{e3a05ee0-0e5e-4e93-be84-f5f051d1c624}</UniqueIdentifier>
+      <UniqueIdentifier>{0b69fd6b-0840-4bfe-b470-b9a62c8c482e}</UniqueIdentifier>
       <Extensions>h;hpp;hxx;hm;inl</Extensions>
     </Filter>
     <Filter Include="Resource Files">
-      <UniqueIdentifier>{9fd77bb3-46b6-4f97-8e42-a84587daa36a}</UniqueIdentifier>
+      <UniqueIdentifier>{c9c5aeeb-87c6-4d7f-8486-acec5752f781}</UniqueIdentifier>
       <Extensions>ico;cur;bmp;dlg;rc2;rct;bin;cnt;rtf;gif;jpg;jpeg;jpe</Extensions>
     </Filter>
   </ItemGroup>
@@ -486,9 +486,38 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <None Include="res\arrows.bmp">
+    <Image Include="res\arrows.bmp">
       <Filter>Resource Files</Filter>
-    </None>
+    </Image>
+    <Image Include="res\delete.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\down.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\help.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\menuimg.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\new.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\palette.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\PrintPreview.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\tool.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\up.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+  </ItemGroup>
+  <ItemGroup>
     <None Include="res\BCGControlBar.rc2">
       <Filter>Resource Files</Filter>
     </None>
@@ -498,13 +527,7 @@
     <None Include="res\copy.cur">
       <Filter>Resource Files</Filter>
     </None>
-    <None Include="res\delete.bmp">
-      <Filter>Resource Files</Filter>
-    </None>
     <None Include="res\delete.cur">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="res\down.bmp">
       <Filter>Resource Files</Filter>
     </None>
     <None Include="res\ellipse.cur">
@@ -516,39 +539,20 @@
     <None Include="res\hand.cur">
       <Filter>Resource Files</Filter>
     </None>
-    <None Include="res\help.bmp">
-      <Filter>Resource Files</Filter>
-    </None>
     <None Include="res\line.cur">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="res\menuimg.bmp">
       <Filter>Resource Files</Filter>
     </None>
     <None Include="res\move.cur">
       <Filter>Resource Files</Filter>
     </None>
-    <None Include="res\new.bmp">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="res\palette.bmp">
-      <Filter>Resource Files</Filter>
-    </None>
     <None Include="res\pen.cur">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="res\PrintPreview.bmp">
       <Filter>Resource Files</Filter>
     </None>
     <None Include="res\rect.cur">
       <Filter>Resource Files</Filter>
     </None>
-    <None Include="res\tool.ico">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="res\up.bmp">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="ReadMe.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="ReadMe.txt" />
   </ItemGroup>
 </Project>

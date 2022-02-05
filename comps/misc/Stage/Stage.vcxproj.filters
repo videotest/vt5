@@ -2,15 +2,15 @@
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
     <Filter Include="Source Files">
-      <UniqueIdentifier>{3ce3ff46-caa2-4b16-8d71-162416ed00c3}</UniqueIdentifier>
+      <UniqueIdentifier>{d861ea81-f07c-4b85-8c77-32154e8cbc36}</UniqueIdentifier>
       <Extensions>cpp;c;cxx;def;odl;idl;hpj;bat;asm</Extensions>
     </Filter>
     <Filter Include="Header Files">
-      <UniqueIdentifier>{5b88e2c4-41a3-4494-a976-2682b856c29e}</UniqueIdentifier>
+      <UniqueIdentifier>{c0bb9453-9c4a-45c3-8e98-ffbf112a1c28}</UniqueIdentifier>
       <Extensions>h;hpp;hxx;hm;inl;inc</Extensions>
     </Filter>
     <Filter Include="Resource Files">
-      <UniqueIdentifier>{366fcbf1-5a65-4bb8-93cb-3261ad0a1342}</UniqueIdentifier>
+      <UniqueIdentifier>{95365084-61f8-4662-93fa-44515bd473f8}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe</Extensions>
     </Filter>
   </ItemGroup>
@@ -44,16 +44,9 @@
     <None Include="Stage.def">
       <Filter>Source Files</Filter>
     </None>
-    <None Include="allres.bmp">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="center.ico">
-      <Filter>Resource Files</Filter>
-    </None>
     <None Include="Res\Stage.rc2">
       <Filter>Resource Files</Filter>
     </None>
-    <None Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Comm.h">
@@ -103,8 +96,19 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
+    <Image Include="allres.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="center.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+  </ItemGroup>
+  <ItemGroup>
     <ResourceCompile Include="Stage.rc">
       <Filter>Resource Files</Filter>
     </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="ReadMe.txt" />
   </ItemGroup>
 </Project>

@@ -2,15 +2,15 @@
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
     <Filter Include="Source Files">
-      <UniqueIdentifier>{44ee3200-20be-40ff-8b9c-9a810485a61c}</UniqueIdentifier>
+      <UniqueIdentifier>{a14fd512-e65e-4188-bd6e-c008fea3a599}</UniqueIdentifier>
       <Extensions>cpp;c;cxx;rc;def;r;odl;idl;hpj;bat</Extensions>
     </Filter>
     <Filter Include="Header Files">
-      <UniqueIdentifier>{71db3107-aacb-4a0a-bbd5-f5dc3e599244}</UniqueIdentifier>
+      <UniqueIdentifier>{091d5ff6-7675-446b-94b9-c8a665662663}</UniqueIdentifier>
       <Extensions>h;hpp;hxx;hm;inl</Extensions>
     </Filter>
     <Filter Include="Resource Files">
-      <UniqueIdentifier>{80cb6d87-ecea-486c-9016-584949acf64a}</UniqueIdentifier>
+      <UniqueIdentifier>{68c37aa8-a30f-4f6e-8e16-c1e664237897}</UniqueIdentifier>
       <Extensions>ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe</Extensions>
     </Filter>
   </ItemGroup>
@@ -89,13 +89,6 @@
     <None Include="res\Cromos.rc2">
       <Filter>Resource Files</Filter>
     </None>
-    <None Include="res\icon3.ico">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="res\toolbar1.bmp">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
     <Midl Include="Cromos.odl">
@@ -159,5 +152,16 @@
     <ClInclude Include="..\common\woolz.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="res\icon3.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\toolbar1.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="ReadMe.txt" />
   </ItemGroup>
 </Project>

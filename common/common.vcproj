@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="windows-1251"?>
 <VisualStudioProject
 	ProjectType="Visual C++"
-	Version="9,00"
+	Version="9.00"
 	Name="common"
 	ProjectGUID="{468FD704-0081-44F3-AE42-FE6AD043A5F6}"
 	RootNamespace="common"
@@ -62,8 +62,6 @@
 				ForceConformanceInForLoopScope="false"
 				RuntimeTypeInfo="true"
 				UsePrecompiledHeader="2"
-				PrecompiledHeaderThrough="stdafx.h"
-				PrecompiledHeaderFile="\vt5\common\Release/common.pch"
 				AssemblerListingLocation="\vt5\common\Release/"
 				ObjectFile="\vt5\common\Release/"
 				ProgramDataBaseFileName="\vt5\common\Release/"
@@ -150,6 +148,7 @@
 				RuntimeLibrary="2"
 				TreatWChar_tAsBuiltInType="false"
 				ForceConformanceInForLoopScope="false"
+				UsePrecompiledHeader="2"
 			/>
 			<Tool
 				Name="VCManagedResourceCompilerTool"
@@ -233,8 +232,6 @@
 				ForceConformanceInForLoopScope="false"
 				RuntimeTypeInfo="true"
 				UsePrecompiledHeader="2"
-				PrecompiledHeaderThrough="stdafx.h"
-				PrecompiledHeaderFile=".\Debug/common.pch"
 				AssemblerListingLocation=".\Debug/"
 				ObjectFile=".\Debug/"
 				ProgramDataBaseFileName=".\Debug/"
@@ -317,6 +314,7 @@
 				RuntimeLibrary="3"
 				TreatWChar_tAsBuiltInType="false"
 				ForceConformanceInForLoopScope="false"
+				UsePrecompiledHeader="2"
 				Detect64BitPortabilityProblems="false"
 				DebugInformationFormat="3"
 			/>
@@ -496,6 +494,22 @@
 			<File
 				RelativePath="..\common2\misc_calibr.cpp"
 				>
+				<FileConfiguration
+					Name="Release|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						ShowIncludes="true"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Release|x64"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						ShowIncludes="true"
+					/>
+				</FileConfiguration>
 				<FileConfiguration
 					Name="Debug|x64"
 					>

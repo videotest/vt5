@@ -2,15 +2,15 @@
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
     <Filter Include="Source Files">
-      <UniqueIdentifier>{fe58cdd5-a917-437f-8bcc-eebad08f594b}</UniqueIdentifier>
+      <UniqueIdentifier>{010227e1-4014-46e3-a9a0-74e19479136f}</UniqueIdentifier>
       <Extensions>cpp;c;cxx;def;odl;idl;hpj;bat;asm</Extensions>
     </Filter>
     <Filter Include="Header Files">
-      <UniqueIdentifier>{33f7a9e5-b437-4aba-9f2f-74b448f050cf}</UniqueIdentifier>
+      <UniqueIdentifier>{0200fd94-0587-4b9a-aaa7-d24f84a95fd5}</UniqueIdentifier>
       <Extensions>h;hpp;hxx;hm;inl;inc</Extensions>
     </Filter>
     <Filter Include="Resource Files">
-      <UniqueIdentifier>{34d8196a-3aa6-49bd-aeea-c49653a0a987}</UniqueIdentifier>
+      <UniqueIdentifier>{cdfab1c8-93c4-44e7-89de-5187596fd210}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe</Extensions>
     </Filter>
   </ItemGroup>
@@ -18,16 +18,9 @@
     <None Include="..\..\..\common2\com_export.def">
       <Filter>Source Files</Filter>
     </None>
-    <None Include="sewLI.ico">
-      <Filter>Resource Files</Filter>
-    </None>
     <None Include="res\sewLI.rc2">
       <Filter>Resource Files</Filter>
     </None>
-    <None Include="toolbar1.bmp">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="DistMap.cpp">
@@ -97,8 +90,19 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
+    <Image Include="sewLI.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="toolbar1.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+  </ItemGroup>
+  <ItemGroup>
     <ResourceCompile Include="sewLI.rc">
       <Filter>Resource Files</Filter>
     </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="ReadMe.txt" />
   </ItemGroup>
 </Project>

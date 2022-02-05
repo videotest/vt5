@@ -2,15 +2,15 @@
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
     <Filter Include="Source Files">
-      <UniqueIdentifier>{97d90694-b649-456b-b2a3-135b19335806}</UniqueIdentifier>
+      <UniqueIdentifier>{f7fe2919-8734-46be-8993-9a59cc54b38f}</UniqueIdentifier>
       <Extensions>cpp;c;cxx;def;odl;idl;hpj;bat;asm</Extensions>
     </Filter>
     <Filter Include="Header Files">
-      <UniqueIdentifier>{0cfd043b-15b1-4ef8-82ec-32e54ba2460a}</UniqueIdentifier>
+      <UniqueIdentifier>{2f7cac43-135b-42e8-a023-b75b2fbf320b}</UniqueIdentifier>
       <Extensions>h;hpp;hxx;hm;inl;inc</Extensions>
     </Filter>
     <Filter Include="Resource Files">
-      <UniqueIdentifier>{5acfc83b-7c52-42e5-80e9-64d5bb56d5f5}</UniqueIdentifier>
+      <UniqueIdentifier>{3c746d77-5c48-4b14-ae4d-03fbef73c999}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe</Extensions>
     </Filter>
   </ItemGroup>
@@ -35,7 +35,6 @@
     <None Include="res\composite.rc2">
       <Filter>Resource Files</Filter>
     </None>
-    <None Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
     <Midl Include="composite.idl">
@@ -63,5 +62,8 @@
     <ResourceCompile Include="composite.rc">
       <Filter>Resource Files</Filter>
     </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="ReadMe.txt" />
   </ItemGroup>
 </Project>

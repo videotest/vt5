@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="windows-1251"?>
 <VisualStudioProject
 	ProjectType="Visual C++"
-	Version="9,00"
+	Version="9.00"
 	Name="Aphine"
 	ProjectGUID="{46CD720E-C322-41A9-83A6-39EE8406D764}"
 	RootNamespace="Aphine"
@@ -20,8 +20,9 @@
 	<Configurations>
 		<Configuration
 			Name="Debug|Win32"
+			OutputDirectory="$(SolutionDir)lib\$(PlatformName)\$(ConfigurationName)\"
 			ConfigurationType="4"
-			InheritedPropertySheets="$(SolutionDir)Props\libs.vsprops"
+			InheritedPropertySheets="$(SolutionDir)props\common2env.vsprops;..\..\..\..\props\librarian.vsprops"
 			UseOfMFC="0"
 			ATLMinimizesCRunTimeLibraryUsage="false"
 			CharacterSet="2"
@@ -90,8 +91,9 @@
 		</Configuration>
 		<Configuration
 			Name="Debug|x64"
+			OutputDirectory="$(SolutionDir)lib\$(PlatformName)\$(ConfigurationName)\"
 			ConfigurationType="4"
-			InheritedPropertySheets="$(SolutionDir)Props\libs.vsprops"
+			InheritedPropertySheets="$(SolutionDir)props\common2env.vsprops;..\..\..\..\props\librarian.vsprops"
 			UseOfMFC="0"
 			ATLMinimizesCRunTimeLibraryUsage="false"
 			CharacterSet="2"
@@ -159,8 +161,9 @@
 		</Configuration>
 		<Configuration
 			Name="Release|Win32"
+			OutputDirectory="$(SolutionDir)lib\$(PlatformName)\$(ConfigurationName)\"
 			ConfigurationType="4"
-			InheritedPropertySheets="$(SolutionDir)Props\libs.vsprops"
+			InheritedPropertySheets="$(SolutionDir)props\common2env.vsprops;..\..\..\..\props\librarian.vsprops"
 			UseOfMFC="0"
 			ATLMinimizesCRunTimeLibraryUsage="false"
 			CharacterSet="2"
@@ -211,7 +214,6 @@
 			/>
 			<Tool
 				Name="VCLibrarianTool"
-				SuppressStartupBanner="true"
 			/>
 			<Tool
 				Name="VCALinkTool"
@@ -231,8 +233,9 @@
 		</Configuration>
 		<Configuration
 			Name="Release|x64"
+			OutputDirectory="$(SolutionDir)lib\$(PlatformName)\$(ConfigurationName)\"
 			ConfigurationType="4"
-			InheritedPropertySheets="$(SolutionDir)Props\libs.vsprops"
+			InheritedPropertySheets="$(SolutionDir)props\common2env.vsprops;..\..\..\..\props\librarian.vsprops"
 			UseOfMFC="0"
 			ATLMinimizesCRunTimeLibraryUsage="false"
 			CharacterSet="2"

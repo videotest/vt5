@@ -138,7 +138,7 @@ static color get_owner_color(int x, int y, color c, CImageWrp* images , RECT*  r
 
 typedef int(*CompareFn)(void*,void*); 
 
-template<class T>
+template<typename T>
 class MaskZone
 {
 	struct MZ

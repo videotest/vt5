@@ -2,15 +2,15 @@
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
     <Filter Include="Source Files">
-      <UniqueIdentifier>{4db87443-479c-442c-a15f-ecf61fb39264}</UniqueIdentifier>
+      <UniqueIdentifier>{2790743a-9f88-4bf9-8bd2-902e9f3a35d9}</UniqueIdentifier>
       <Extensions>cpp;c;cxx;rc;def;r;odl;idl;hpj;bat</Extensions>
     </Filter>
     <Filter Include="Header Files">
-      <UniqueIdentifier>{8a457bd3-fb8c-417a-9098-25247b3c2e1c}</UniqueIdentifier>
+      <UniqueIdentifier>{18092643-2547-43a8-95ff-37fe4ac6448e}</UniqueIdentifier>
       <Extensions>h;hpp;hxx;hm;inl</Extensions>
     </Filter>
     <Filter Include="Resource Files">
-      <UniqueIdentifier>{9c03a2d4-ec9f-4f90-b67c-89892ba97dc4}</UniqueIdentifier>
+      <UniqueIdentifier>{2c5fafe8-bc1c-4512-bb68-03eb4a650fec}</UniqueIdentifier>
       <Extensions>ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe</Extensions>
     </Filter>
   </ItemGroup>
@@ -53,12 +53,6 @@
     <None Include="arrowcop.cur">
       <Filter>Resource Files</Filter>
     </None>
-    <None Include="cario.ico">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="chromos_ex_tb.bmp">
-      <Filter>Resource Files</Filter>
-    </None>
     <None Include="res\ChromosEx.rc2">
       <Filter>Resource Files</Filter>
     </None>
@@ -83,7 +77,6 @@
     <None Include="move_cro.cur">
       <Filter>Resource Files</Filter>
     </None>
-    <None Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
     <Midl Include="ChromosEx.odl">
@@ -138,5 +131,16 @@
     <ClInclude Include="StdAfx.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="cario.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="chromos_ex_tb.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="ReadMe.txt" />
   </ItemGroup>
 </Project>

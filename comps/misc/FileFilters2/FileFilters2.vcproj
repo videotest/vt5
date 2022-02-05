@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="windows-1251"?>
 <VisualStudioProject
 	ProjectType="Visual C++"
-	Version="9,00"
+	Version="9.00"
 	Name="FileFilters2"
 	ProjectGUID="{46528E83-4564-46AA-98DF-C492EB0012A1}"
 	RootNamespace="FileFilters2"
@@ -345,7 +345,6 @@
 			<Tool
 				Name="VCLinkerTool"
 				UseLibraryDependencyInputs="true"
-				AdditionalOptions="/MACHINE:I386 /FORCE:UNRESOLVED"
 				AdditionalDependencies="jpeg.lib libtiff.lib"
 				AdditionalLibraryDirectories="&quot;Libs\jpeg-9a\$(PlatformName)\Release&quot;"
 				IgnoreDefaultLibraryNames="libc,libcd"

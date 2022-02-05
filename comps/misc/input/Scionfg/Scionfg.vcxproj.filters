@@ -2,15 +2,15 @@
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
     <Filter Include="Source Files">
-      <UniqueIdentifier>{8348175d-ab05-4052-bfe1-c3604966a9c3}</UniqueIdentifier>
+      <UniqueIdentifier>{f6daef61-1e59-4e26-999e-6487de8638dc}</UniqueIdentifier>
       <Extensions>cpp;c;cxx;def;odl;idl;hpj;bat;asm</Extensions>
     </Filter>
     <Filter Include="Header Files">
-      <UniqueIdentifier>{74ddf3fb-bade-4508-be1c-1ebfc807d16e}</UniqueIdentifier>
+      <UniqueIdentifier>{741fe75f-1af6-4836-a550-7894cccc248d}</UniqueIdentifier>
       <Extensions>h;hpp;hxx;hm;inl;inc</Extensions>
     </Filter>
     <Filter Include="Resource Files">
-      <UniqueIdentifier>{39eccc07-d94e-4b7e-be04-afafd9d5c72b}</UniqueIdentifier>
+      <UniqueIdentifier>{3c9188dc-c501-44d5-90ef-b8508318c740}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe</Extensions>
     </Filter>
   </ItemGroup>
@@ -41,16 +41,6 @@
     <None Include="resource.hm">
       <Filter>Header Files</Filter>
     </None>
-    <None Include="cyan-red.bmp">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="magenta-green.bmp">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="yellow-blue.bmp">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="BaseDialog.h">
@@ -76,8 +66,22 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
+    <Image Include="cyan-red.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="magenta-green.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="yellow-blue.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+  </ItemGroup>
+  <ItemGroup>
     <ResourceCompile Include="Scionfg.rc">
       <Filter>Resource Files</Filter>
     </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="ReadMe.txt" />
   </ItemGroup>
 </Project>

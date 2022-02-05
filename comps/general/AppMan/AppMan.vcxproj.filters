@@ -2,15 +2,15 @@
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
     <Filter Include="Source Files">
-      <UniqueIdentifier>{b23a1945-d688-40d4-b903-23a88a1ab55c}</UniqueIdentifier>
+      <UniqueIdentifier>{3ae86040-c370-484d-8da6-b14b7332a234}</UniqueIdentifier>
       <Extensions>cpp;c;cxx;rc;def;r;odl;idl;hpj;bat</Extensions>
     </Filter>
     <Filter Include="Header Files">
-      <UniqueIdentifier>{b137a50b-0028-4b48-ad62-72ce90c8825f}</UniqueIdentifier>
+      <UniqueIdentifier>{3140b080-524b-410a-86fe-c05ed7cea912}</UniqueIdentifier>
       <Extensions>h;hpp;hxx;hm;inl</Extensions>
     </Filter>
     <Filter Include="Resource Files">
-      <UniqueIdentifier>{74705191-5024-4e17-9f10-9fde3a915c04}</UniqueIdentifier>
+      <UniqueIdentifier>{07b6d4c9-b6eb-4c6f-a075-7661d1dfc81b}</UniqueIdentifier>
       <Extensions>ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe</Extensions>
     </Filter>
   </ItemGroup>
@@ -50,16 +50,7 @@
     <None Include="res\icr_hand.cur">
       <Filter>Resource Files</Filter>
     </None>
-    <None Include="res\imageList.bmp">
-      <Filter>Resource Files</Filter>
-    </None>
     <None Include="res\nodraggi.cur">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="res\Toolbar.bmp">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="res\treeImageList.bmp">
       <Filter>Resource Files</Filter>
     </None>
   </ItemGroup>
@@ -98,5 +89,16 @@
     <ClInclude Include="StdAfx.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="res\imageList.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\Toolbar.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\treeImageList.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
   </ItemGroup>
 </Project>

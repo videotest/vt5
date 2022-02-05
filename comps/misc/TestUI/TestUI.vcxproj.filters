@@ -2,15 +2,15 @@
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
     <Filter Include="Source Files">
-      <UniqueIdentifier>{310811b7-fd03-4256-aa5c-a4a5c4838357}</UniqueIdentifier>
+      <UniqueIdentifier>{883e100c-8dc0-4cd7-9892-627f994679cc}</UniqueIdentifier>
       <Extensions>cpp;c;cxx;def;odl;idl;hpj;bat;asm</Extensions>
     </Filter>
     <Filter Include="Header Files">
-      <UniqueIdentifier>{9e6edb5a-27c8-462c-81e7-305d8cb9897c}</UniqueIdentifier>
+      <UniqueIdentifier>{0865f2d4-533b-42ed-b090-79ad4850f92a}</UniqueIdentifier>
       <Extensions>h;hpp;hxx;hm;inl;inc</Extensions>
     </Filter>
     <Filter Include="Resource Files">
-      <UniqueIdentifier>{56f8b7db-178a-45b1-9be7-6d5c449c14ed}</UniqueIdentifier>
+      <UniqueIdentifier>{1a6cf010-abbd-4d4a-a148-100129e0001a}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe</Extensions>
     </Filter>
   </ItemGroup>
@@ -59,82 +59,9 @@
     <None Include="TestUI.def">
       <Filter>Source Files</Filter>
     </None>
-    <None Include="bitmap1.bmp">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="bitmap2.bmp">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="bitmap_s.bmp">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="bitmap_v.bmp">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="bmp00001.bmp">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="bmp00002.bmp">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="bmp00003.bmp">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="bmp00004.bmp">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="bmp00005.bmp">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="bmp00006.bmp">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="bmp00007.bmp">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="bmp00008.bmp">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="bmp_rename.bmp">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="compare_.bmp">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="e_test_seq.bmp">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="export.bmp">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="fld_rtd.bmp">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="folders1.bmp">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="run.bmp">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="stoprec.bmp">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="test_seq.bmp">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="tests.bmp">
-      <Filter>Resource Files</Filter>
-    </None>
     <None Include="res\TestUI.rc2">
       <Filter>Resource Files</Filter>
     </None>
-    <None Include="toolbar1.bmp">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="variant_.bmp">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ActionEditTestDB.h">
@@ -181,8 +108,85 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
+    <Image Include="bitmap1.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="bitmap2.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="bitmap_s.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="bitmap_v.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="bmp00001.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="bmp00002.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="bmp00003.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="bmp00004.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="bmp00005.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="bmp00006.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="bmp00007.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="bmp00008.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="bmp_rename.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="compare_.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="e_test_seq.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="export.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="fld_rtd.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="folders1.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="run.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="stoprec.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="test_seq.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="tests.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="toolbar1.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="variant_.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+  </ItemGroup>
+  <ItemGroup>
     <ResourceCompile Include="TestUI.rc">
       <Filter>Resource Files</Filter>
     </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="ReadMe.txt" />
   </ItemGroup>
 </Project>

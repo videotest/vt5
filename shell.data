@@ -13,8 +13,8 @@ ActiveApp:Long=-1
 BackupStates:Long=1
 ButtonStyle:2=0
 ContextShowMode:Long=0
-CurMtdTabContent:String=c:\vt5\Methods\master.smtd
-CurrentState:String=c:\vt5\States\Master.state
+CurMtdTabContent:String=J:\vt5\Methods\master.smtd
+CurrentState:String=J:\vt5\States\Master.state
 DefaultTitle:String=ВидеоТесТ - Мастер 5.0
 DeleteFilterArgs:2=0
 DontCloseInScript:Long=0
@@ -65,20 +65,20 @@ IndicatorX:Long=0
 IndicatorY:Long=40
 
 [Paths]
-AppPath:String=c:\vt5\Apps\
-Classes:String=c:\vt5\Classes\
+AppPath:String=J:\vt5\Apps\
+Classes:String=J:\vt5\Classes\
 CurrentPath:String=F:\Program Files\Видеотест\Master\
-DBaseConfig:String=c:\vt5\DBaseConfig\
-FavoritesPath:String=c:\vt5\Favorites\
-FormPath:String=c:\vt5\Forms\
-HelpPath:String=c:\vt5\help\
-MethodCache:String=c:\vt5\MethodCache\
-Methods:String=c:\vt5\Methods\
-OverloadedIcons:String=c:\vt5\Icons\
-Scripts:String=c:\vt5\Scripts\
-Stat:String=c:\vt5\Stat\
-States:String=c:\vt5\States\
-TemplatesPath:String=c:\vt5\Templates\
+DBaseConfig:String=J:\vt5\DBaseConfig\
+FavoritesPath:String=J:\vt5\Favorites\
+FormPath:String=J:\vt5\Forms\
+HelpPath:String=J:\vt5\help\
+MethodCache:String=J:\vt5\MethodCache\
+Methods:String=J:\vt5\Methods\
+OverloadedIcons:String=J:\vt5\Icons\
+Scripts:String=J:\vt5\Scripts\
+Stat:String=J:\vt5\Stat\
+States:String=J:\vt5\States\
+TemplatesPath:String=J:\vt5\Templates\
 TestDBPath:String=
 
 [OverloadedIcons]
@@ -835,11 +835,11 @@ EnableObjectProperties:Long=1
 Flags:Long=0
 FrameType:String=MDI
 FrameTypeSupportedToolbars:String=MDI
-LastFile:String=c:\vt5\newdb.dbd
+LastFile:String=J:\vt5\newdb.dbd
 NavigatePeriod:Long=500
 NotifyPutToDataSameType:Long=1
 ShowUserNameInContext:Long=1
-SimplePageTemplate:String=c:\vt5\Apps\createfld.dat
+SimplePageTemplate:String=J:\vt5\Apps\createfld.dat
 Splitter:String=StdSplitter.SplitterWindow
 UserCount:Long=0
 UseServerSideCursor:Long=1
@@ -959,11 +959,11 @@ Show buttons:Long=0
 [ActiveScript]
 
 AppStart:MultiLineString=
-MainWnd.RestoreState( "c:\vt5\window.pos" )
+MainWnd.RestoreState( "J:\vt5\window.pos" )
 MainWnd.Title="ВидеоТесТ - Мастер 5.0"
 MainWnd.Label="ВидеоТесТ - Мастер 5.0"
 Init_Master
-MainWnd.RestoreState( "c:\vt5\window.pos" )
+MainWnd.RestoreState( "J:\vt5\window.pos" )
 MainWnd.GetDesktopSize DesktopX, DesktopY
 If DesktopX < 800 Then
 	MsgBox "Установлено слишком маленькое разрешение экрана!" & Chr(13) & _
@@ -974,7 +974,7 @@ MethodOpen "\General\Pane0", 1
 /end of string
 
 AppTerminate:MultiLineString=
-MainWnd.SaveState( "c:\vt5\window.pos" )
+MainWnd.SaveState( "J:\vt5\window.pos" )
 'frmStatCfg.btnSave_Click()
 /end of string
 
@@ -1208,7 +1208,7 @@ Class0Pane2_Lo:Long=32768
 [FileOpen]
 Width:Long=910
 Height:Long=581
-LastPath:String=c:\vt5\Изображения\
+LastPath:String=J:\vt5\Изображения\
 LastExt:String=.image;*.bmp;*.vti;*.avi;*.tif;*.tiff;*.jpg;*.jpeg;*.jpe
 CurrentMode:Long=3
 ShowHelp:Long=0
@@ -1218,12 +1218,12 @@ LastName:String=Video
 [FileOpenObject]
 Width:Long=600
 Height:Long=400
-LastPath:String=c:\vt5\Изображения\
+LastPath:String=J:\vt5\Изображения\
 LastExt:String=.bmp;*.vti;*.avi;*.tif;*.tiff;*.jpg;*.jpeg;*.jpe
 CurrentMode:Long=3
 LoadedObjectName:String=Image2
 LoadedObjectType:String=Image
-LoadedObjectPath:String=c:\vt5\Изображения\Image2.JPG
+LoadedObjectPath:String=J:\vt5\Изображения\Image2.JPG
 
 [DockBars]
 TB_FiltersName:String=(Рамки)
@@ -1718,7 +1718,7 @@ SaveFormat:Long=0
 UseOverlay:Long=1
 
 [Input\DirectShow\VideoDlg]
-FileName:String=C:\qqq.avi
+FileName:String=J:\qqq.avi
 FPS:Long=25
 Time:Long=1
 RateScale:Long=0
@@ -1733,7 +1733,7 @@ FileSizeMB:Long=256
 AccumulateImagesNum:Long=1
 
 [Input\VideoForWindows\VideoDlg]
-FileName:String=C:\qq.avi
+FileName:String=J:\qq.avi
 FPS:Long=25
 Time:Long=1
 RateScale:Long=0
@@ -2115,7 +2115,7 @@ TiffBinaryPalette16:Long=1
 EnableMenuButton:Long=1
 
 [AutoSave]
-Folder:String=C:\WUTemp
+Folder:String=J:\WUTemp
 Ok:2=0
 Name:String=test
 Num:Long=1
@@ -2127,7 +2127,7 @@ ActiveViewProgID:String=ImageDoc.BinaryFore
 DebugStepMode:Long=0
 ActivateObjectsOnExec:Long=1
 SwitchViewOnExec:Long=1
-MethodTemplate:String=c:\vt5\Methods\vt5.method_t
+MethodTemplate:String=J:\vt5\Methods\vt5.method_t
 EnableDragDrop:Long=0
 ShowContextMenu:Long=0
 UseShellDataCache:Long=0
@@ -2688,7 +2688,7 @@ Script21:String=MeasureBin
 Script22:MultiLineString=
 ToolBars.ShowBar 0,1
 Data.Setvalue "\MainFrame\ShowPopupMenu" ,1
-Toolbars.LoadState "c:\vt5\States\Master.state"
+Toolbars.LoadState "J:\vt5\States\Master.state"
 /end of string
 
 Script23:String=ShowContext
@@ -2696,7 +2696,7 @@ Script23:String=ShowContext
 Script24:MultiLineString=
 ToolBars.ShowBar 0,1
 Data.Setvalue "\MainFrame\ShowPopupMenu" ,1
-Toolbars.LoadState "c:\vt5\States\Master.state"
+Toolbars.LoadState "J:\vt5\States\Master.state"
 /end of string
 
 Script25:String=Freeze 0
@@ -2924,8 +2924,8 @@ DBars9:String=Message
 DBarsV9:11=0
 
 [DatabaseConvertor]
-SourcePath:String=c:\vt5\GOST.mdb
-TargetPath:String=c:\vt5\GOST_exp5.mdb
+SourcePath:String=J:\vt5\GOST.mdb
+TargetPath:String=J:\vt5\GOST_exp5.mdb
 RunBuildKaryo:Long=1
 RunCalcMeasResult:Long=1
 
@@ -3075,7 +3075,7 @@ FileNameField:String=Заключение
 
 [Settings]
 [Settings\DB]
-Database:String=c:\vt5\morphology.dbd
+Database:String=J:\vt5\morphology.dbd
 ActivateDatabase:2=1
 SendToNewDBRecord:2=1
 
@@ -3289,7 +3289,7 @@ Threshold2:Long=57
 
 
 [StatUI]
-ClassFile:String=c:\vt5\Classes\FromDoc.class
+ClassFile:String=J:\vt5\Classes\FromDoc.class
 CalcForAllClasses:String=
 CalcForRelativeClasses:String=
 SplitterType:2=2
@@ -4382,7 +4382,7 @@ Graphics:String=Коэфф.вар.(log)
 ShowInfoCtrl:2=0
 Mode:String=ifclass
 ClassType:String=auto
-tmp:String=c:\vt5\Classes\4.class
+tmp:String=J:\vt5\Classes\4.class
 tmpkey:Long=0
 AxisXAuto:Long=1
 GridY:Long=2
@@ -4423,7 +4423,7 @@ CalcForGroups:String=
 [Classes]
 UnkClassColor:String=(255, 0, 0)
 UnkClassName:String=Unknown
-ClassFile:String=c:\vt5\Classes\FromDoc.class
+ClassFile:String=J:\vt5\Classes\FromDoc.class
 ResetManualClass:Long=1
 
 [ODensity]
