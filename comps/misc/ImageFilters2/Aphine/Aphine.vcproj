@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="windows-1251"?>
 <VisualStudioProject
 	ProjectType="Visual C++"
-	Version="9,00"
+	Version="9.00"
 	Name="Aphine"
 	ProjectGUID="{46CD720E-C322-41A9-83A6-39EE8406D764}"
 	RootNamespace="Aphine"
@@ -21,7 +21,7 @@
 		<Configuration
 			Name="Debug|Win32"
 			ConfigurationType="4"
-			InheritedPropertySheets="$(SolutionDir)props\common2env.vsprops;$(SolutionDir)Props\libs.vsprops"
+			InheritedPropertySheets="$(SolutionDir)props\common2env.vsprops;..\..\..\..\props\librarian.vsprops"
 			UseOfMFC="0"
 			ATLMinimizesCRunTimeLibraryUsage="false"
 			CharacterSet="2"
@@ -71,7 +71,6 @@
 			/>
 			<Tool
 				Name="VCLibrarianTool"
-				SuppressStartupBanner="true"
 			/>
 			<Tool
 				Name="VCALinkTool"
@@ -92,7 +91,7 @@
 		<Configuration
 			Name="Debug|x64"
 			ConfigurationType="4"
-			InheritedPropertySheets="$(SolutionDir)props\common2env.vsprops;$(SolutionDir)Props\libs.vsprops"
+			InheritedPropertySheets="$(SolutionDir)props\common2env.vsprops;..\..\..\..\props\librarian.vsprops"
 			UseOfMFC="0"
 			ATLMinimizesCRunTimeLibraryUsage="false"
 			CharacterSet="2"
@@ -161,7 +160,7 @@
 		<Configuration
 			Name="Release|Win32"
 			ConfigurationType="4"
-			InheritedPropertySheets="$(SolutionDir)props\common2env.vsprops;$(SolutionDir)Props\libs.vsprops"
+			InheritedPropertySheets="$(SolutionDir)props\common2env.vsprops;..\..\..\..\props\librarian.vsprops"
 			UseOfMFC="0"
 			ATLMinimizesCRunTimeLibraryUsage="false"
 			CharacterSet="2"
@@ -212,7 +211,6 @@
 			/>
 			<Tool
 				Name="VCLibrarianTool"
-				SuppressStartupBanner="true"
 			/>
 			<Tool
 				Name="VCALinkTool"
@@ -233,7 +231,7 @@
 		<Configuration
 			Name="Release|x64"
 			ConfigurationType="4"
-			InheritedPropertySheets="$(SolutionDir)props\common2env.vsprops;$(SolutionDir)Props\libs.vsprops"
+			InheritedPropertySheets="$(SolutionDir)props\common2env.vsprops;..\..\..\..\props\librarian.vsprops"
 			UseOfMFC="0"
 			ATLMinimizesCRunTimeLibraryUsage="false"
 			CharacterSet="2"

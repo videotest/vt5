@@ -43,7 +43,7 @@
 			<Tool
 				Name="VCCLCompilerTool"
 				Optimization="0"
-				AdditionalIncludeDirectories="&quot;$(SolutionDir)comps\docs\DBaseDoc&quot;;d:\WTL9\Include;&quot;$(CommonProgramFiles)\System\ado&quot;;&quot;$(SolutionDir)AWIN&quot;"
+				AdditionalIncludeDirectories="&quot;$(SolutionDir)comps\docs\DBaseDoc&quot;;\WTL9\Include;&quot;$(CommonProgramFiles)\System\ado&quot;;&quot;$(SolutionDir)AWIN&quot;"
 				PreprocessorDefinitions="WIN32;_DEBUG;_WINDOWS;_USRDLL;STATDATA_EXPORTS;_CRT_SECURE_NO_DEPRECATE"
 				IgnoreStandardIncludePath="false"
 				MinimalRebuild="false"
@@ -105,6 +105,91 @@
 			/>
 		</Configuration>
 		<Configuration
+			Name="Debug|x64"
+			ConfigurationType="2"
+			InheritedPropertySheets="$(SolutionDir)props\common2env.vsprops"
+			CharacterSet="2"
+			>
+			<Tool
+				Name="VCPreBuildEventTool"
+			/>
+			<Tool
+				Name="VCCustomBuildTool"
+			/>
+			<Tool
+				Name="VCXMLDataGeneratorTool"
+			/>
+			<Tool
+				Name="VCWebServiceProxyGeneratorTool"
+			/>
+			<Tool
+				Name="VCMIDLTool"
+				TargetEnvironment="3"
+			/>
+			<Tool
+				Name="VCCLCompilerTool"
+				Optimization="0"
+				AdditionalIncludeDirectories="&quot;$(SolutionDir)comps\docs\DBaseDoc&quot;;\WTL9\Include;&quot;$(CommonProgramFiles)\System\ado&quot;;&quot;$(SolutionDir)AWIN&quot;"
+				PreprocessorDefinitions="_DEBUG;_WINDOWS;_USRDLL;STATDATA_EXPORTS;_WIN64;_M_X64;_AFX_SECURE_NO_DEPRECATE;_CRT_SECURE_NO_DEPRECATE"
+				IgnoreStandardIncludePath="false"
+				MinimalRebuild="false"
+				ExceptionHandling="1"
+				BasicRuntimeChecks="0"
+				RuntimeLibrary="3"
+				EnableFunctionLevelLinking="true"
+				TreatWChar_tAsBuiltInType="false"
+				ForceConformanceInForLoopScope="false"
+				UsePrecompiledHeader="2"
+				BrowseInformation="1"
+				WarningLevel="3"
+				Detect64BitPortabilityProblems="false"
+				DebugInformationFormat="3"
+			/>
+			<Tool
+				Name="VCManagedResourceCompilerTool"
+			/>
+			<Tool
+				Name="VCResourceCompilerTool"
+			/>
+			<Tool
+				Name="VCPreLinkEventTool"
+			/>
+			<Tool
+				Name="VCLinkerTool"
+				AdditionalDependencies=" "
+				LinkIncremental="2"
+				AdditionalLibraryDirectories=" "
+				IgnoreDefaultLibraryNames="libcd.lib,libcmt.lib"
+				ModuleDefinitionFile=".\com_export.def"
+				GenerateDebugInformation="true"
+				SubSystem="2"
+				RandomizedBaseAddress="1"
+				DataExecutionPrevention="0"
+				TargetMachine="17"
+			/>
+			<Tool
+				Name="VCALinkTool"
+			/>
+			<Tool
+				Name="VCManifestTool"
+			/>
+			<Tool
+				Name="VCXDCMakeTool"
+			/>
+			<Tool
+				Name="VCBscMakeTool"
+			/>
+			<Tool
+				Name="VCFxCopTool"
+			/>
+			<Tool
+				Name="VCAppVerifierTool"
+			/>
+			<Tool
+				Name="VCPostBuildEventTool"
+			/>
+		</Configuration>
+		<Configuration
 			Name="Release|Win32"
 			ConfigurationType="2"
 			InheritedPropertySheets="$(SolutionDir)props\common2env.vsprops"
@@ -130,7 +215,7 @@
 				Optimization="2"
 				InlineFunctionExpansion="1"
 				OmitFramePointers="false"
-				AdditionalIncludeDirectories="&quot;$(SolutionDir)comps\docs\DBaseDoc&quot;;d:\WTL9\Include;&quot;$(CommonProgramFiles)\System\ado&quot;;&quot;$(SolutionDir)AWIN&quot;"
+				AdditionalIncludeDirectories="&quot;$(SolutionDir)comps\docs\DBaseDoc&quot;;\WTL9\Include;&quot;$(CommonProgramFiles)\System\ado&quot;;&quot;$(SolutionDir)AWIN&quot;"
 				PreprocessorDefinitions="WIN32;NDEBUG;_WINDOWS;_USRDLL;STATDATA_EXPORTS;_CRT_SECURE_NO_DEPRECATE"
 				StringPooling="true"
 				RuntimeLibrary="2"
@@ -193,91 +278,6 @@
 			/>
 		</Configuration>
 		<Configuration
-			Name="Debug|x64"
-			ConfigurationType="2"
-			InheritedPropertySheets="$(SolutionDir)props\common2env.vsprops"
-			CharacterSet="2"
-			>
-			<Tool
-				Name="VCPreBuildEventTool"
-			/>
-			<Tool
-				Name="VCCustomBuildTool"
-			/>
-			<Tool
-				Name="VCXMLDataGeneratorTool"
-			/>
-			<Tool
-				Name="VCWebServiceProxyGeneratorTool"
-			/>
-			<Tool
-				Name="VCMIDLTool"
-				TargetEnvironment="3"
-			/>
-			<Tool
-				Name="VCCLCompilerTool"
-				Optimization="0"
-				AdditionalIncludeDirectories="&quot;$(SolutionDir)comps\docs\DBaseDoc&quot;;d:\WTL9\Include;&quot;$(CommonProgramFiles)\System\ado&quot;;&quot;$(SolutionDir)AWIN&quot;"
-				PreprocessorDefinitions="_DEBUG;_WINDOWS;_USRDLL;STATDATA_EXPORTS;_WIN64;_M_X64;_AFX_SECURE_NO_DEPRECATE;_CRT_SECURE_NO_DEPRECATE"
-				IgnoreStandardIncludePath="false"
-				MinimalRebuild="false"
-				ExceptionHandling="1"
-				BasicRuntimeChecks="0"
-				RuntimeLibrary="3"
-				EnableFunctionLevelLinking="true"
-				TreatWChar_tAsBuiltInType="false"
-				ForceConformanceInForLoopScope="false"
-				UsePrecompiledHeader="2"
-				BrowseInformation="1"
-				WarningLevel="3"
-				Detect64BitPortabilityProblems="false"
-				DebugInformationFormat="3"
-			/>
-			<Tool
-				Name="VCManagedResourceCompilerTool"
-			/>
-			<Tool
-				Name="VCResourceCompilerTool"
-			/>
-			<Tool
-				Name="VCPreLinkEventTool"
-			/>
-			<Tool
-				Name="VCLinkerTool"
-				AdditionalDependencies=" "
-				LinkIncremental="2"
-				AdditionalLibraryDirectories=" "
-				IgnoreDefaultLibraryNames="libcd.lib,libcmt.lib"
-				ModuleDefinitionFile=".\com_export.def"
-				GenerateDebugInformation="true"
-				SubSystem="2"
-				RandomizedBaseAddress="1"
-				DataExecutionPrevention="0"
-				TargetMachine="17"
-			/>
-			<Tool
-				Name="VCALinkTool"
-			/>
-			<Tool
-				Name="VCManifestTool"
-			/>
-			<Tool
-				Name="VCXDCMakeTool"
-			/>
-			<Tool
-				Name="VCBscMakeTool"
-			/>
-			<Tool
-				Name="VCFxCopTool"
-			/>
-			<Tool
-				Name="VCAppVerifierTool"
-			/>
-			<Tool
-				Name="VCPostBuildEventTool"
-			/>
-		</Configuration>
-		<Configuration
 			Name="Release|x64"
 			ConfigurationType="2"
 			InheritedPropertySheets="$(SolutionDir)props\common2env.vsprops"
@@ -304,7 +304,7 @@
 				Optimization="2"
 				InlineFunctionExpansion="1"
 				OmitFramePointers="false"
-				AdditionalIncludeDirectories="&quot;$(SolutionDir)comps\docs\DBaseDoc&quot;;d:\WTL9\Include;&quot;$(CommonProgramFiles)\System\ado&quot;;&quot;$(SolutionDir)AWIN&quot;"
+				AdditionalIncludeDirectories="&quot;$(SolutionDir)comps\docs\DBaseDoc&quot;;\WTL9\Include;&quot;$(CommonProgramFiles)\System\ado&quot;;&quot;$(SolutionDir)AWIN&quot;"
 				PreprocessorDefinitions="_WIN64;_M_X64;_CRT_SECURE_NO_DEPRECATE;NDEBUG;_WINDOWS;_USRDLL;STATDATA_EXPORTS"
 				StringPooling="true"
 				RuntimeLibrary="2"
@@ -443,7 +443,7 @@
 					/>
 				</FileConfiguration>
 				<FileConfiguration
-					Name="Release|Win32"
+					Name="Debug|x64"
 					>
 					<Tool
 						Name="VCCLCompilerTool"
@@ -451,7 +451,7 @@
 					/>
 				</FileConfiguration>
 				<FileConfiguration
-					Name="Debug|x64"
+					Name="Release|Win32"
 					>
 					<Tool
 						Name="VCCLCompilerTool"
