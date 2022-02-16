@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="windows-1251"?>
 <VisualStudioProject
 	ProjectType="Visual C++"
-	Version="9,00"
+	Version="9.00"
 	Name="FileFilters"
 	ProjectGUID="{BDB52B1B-D3DF-47DB-A142-72FFEE02CA65}"
 	RootNamespace="FileFilters"
@@ -141,7 +141,7 @@
 				Name="VCCLCompilerTool"
 				Optimization="0"
 				AdditionalIncludeDirectories="&quot;$(SolutionDir)thirdparty\ImageMagick-4.2.9&quot;"
-				PreprocessorDefinitions="_DEBUG;_WINDOWS;_USRDLL;_WIN64;_M_X64;_LIB;_AFX_SECURE_NO_DEPRECATE;_CRT_SECURE_NO_DEPRECATE"
+				PreprocessorDefinitions="WIN32;_DEBUG;_WINDOWS;_USRDLL;_WIN64;_M_X64;_LIB;_AFX_SECURE_NO_DEPRECATE;_CRT_SECURE_NO_DEPRECATE"
 				BasicRuntimeChecks="3"
 				RuntimeLibrary="3"
 				TreatWChar_tAsBuiltInType="false"
@@ -319,7 +319,7 @@
 				Name="VCCLCompilerTool"
 				InlineFunctionExpansion="1"
 				AdditionalIncludeDirectories="&quot;$(SolutionDir)thirdparty\ImageMagick-4.2.9&quot;"
-				PreprocessorDefinitions="_WIN64;_M_X64;_AFX_SECURE_NO_DEPRECATE;_CRT_SECURE_NO_DEPRECATE;NDEBUG;_WINDOWS;_USRDLL"
+				PreprocessorDefinitions="WIN32;_WIN64;_M_X64;_AFX_SECURE_NO_DEPRECATE;_CRT_SECURE_NO_DEPRECATE;NDEBUG;_WINDOWS;_USRDLL"
 				StringPooling="true"
 				RuntimeLibrary="2"
 				EnableFunctionLevelLinking="true"

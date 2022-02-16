@@ -78,99 +78,8 @@
 				AdditionalOptions="/MACHINE:I386"
 				AdditionalDependencies="odbc32.lib odbccp32.lib atlsd.lib"
 				ShowProgress="0"
-				LinkIncremental="2"
 				AdditionalLibraryDirectories=""
 				IgnoreDefaultLibraryNames="libcmt.dll"
-				ModuleDefinitionFile="..\..\..\common2\com_export.def"
-				GenerateDebugInformation="true"
-				RandomizedBaseAddress="1"
-				DataExecutionPrevention="0"
-			/>
-			<Tool
-				Name="VCALinkTool"
-			/>
-			<Tool
-				Name="VCManifestTool"
-			/>
-			<Tool
-				Name="VCXDCMakeTool"
-			/>
-			<Tool
-				Name="VCBscMakeTool"
-			/>
-			<Tool
-				Name="VCFxCopTool"
-			/>
-			<Tool
-				Name="VCAppVerifierTool"
-			/>
-			<Tool
-				Name="VCPostBuildEventTool"
-			/>
-		</Configuration>
-		<Configuration
-			Name="Release|Win32"
-			ConfigurationType="2"
-			InheritedPropertySheets="..\..\..\props\common2env.vsprops"
-			UseOfMFC="0"
-			ATLMinimizesCRunTimeLibraryUsage="false"
-			CharacterSet="2"
-			>
-			<Tool
-				Name="VCPreBuildEventTool"
-			/>
-			<Tool
-				Name="VCCustomBuildTool"
-			/>
-			<Tool
-				Name="VCXMLDataGeneratorTool"
-			/>
-			<Tool
-				Name="VCWebServiceProxyGeneratorTool"
-			/>
-			<Tool
-				Name="VCMIDLTool"
-				PreprocessorDefinitions="NDEBUG"
-				MkTypLibCompatible="true"
-				SuppressStartupBanner="true"
-				TargetEnvironment="1"
-				TypeLibraryName=".\Release/aliase.tlb"
-			/>
-			<Tool
-				Name="VCCLCompilerTool"
-				InlineFunctionExpansion="1"
-				AdditionalIncludeDirectories="&quot;$(SolutionDir)comps\misc\filefilters2\libs\H&quot;"
-				PreprocessorDefinitions="WIN32;NDEBUG;_WINDOWS;_USRDLL;ALIASE_EXPORTS"
-				StringPooling="true"
-				RuntimeLibrary="2"
-				EnableFunctionLevelLinking="true"
-				TreatWChar_tAsBuiltInType="false"
-				ForceConformanceInForLoopScope="false"
-				RuntimeTypeInfo="true"
-				UsePrecompiledHeader="2"
-				PrecompiledHeaderThrough="stdafx.h"
-				DebugInformationFormat="3"
-				CompileAs="0"
-			/>
-			<Tool
-				Name="VCManagedResourceCompilerTool"
-			/>
-			<Tool
-				Name="VCResourceCompilerTool"
-				PreprocessorDefinitions="NDEBUG"
-				Culture="1049"
-			/>
-			<Tool
-				Name="VCPreLinkEventTool"
-			/>
-			<Tool
-				Name="VCLinkerTool"
-				AdditionalOptions="/MACHINE:I386"
-				AdditionalDependencies="odbc32.lib odbccp32.lib atls.lib"
-				ShowProgress="0"
-				OutputFile="\vt5\vt5\release\comps\aliase.dll"
-				LinkIncremental="1"
-				AdditionalLibraryDirectories="\vt5\common"
 				ModuleDefinitionFile="..\..\..\common2\com_export.def"
 				GenerateDebugInformation="true"
 				RandomizedBaseAddress="1"
@@ -255,7 +164,6 @@
 			/>
 			<Tool
 				Name="VCLinkerTool"
-				LinkIncremental="2"
 				AdditionalLibraryDirectories=""
 				IgnoreDefaultLibraryNames="libcmt.dll"
 				ModuleDefinitionFile="..\..\..\common2\com_export.def"
@@ -263,6 +171,94 @@
 				RandomizedBaseAddress="1"
 				DataExecutionPrevention="0"
 				TargetMachine="17"
+			/>
+			<Tool
+				Name="VCALinkTool"
+			/>
+			<Tool
+				Name="VCManifestTool"
+			/>
+			<Tool
+				Name="VCXDCMakeTool"
+			/>
+			<Tool
+				Name="VCBscMakeTool"
+			/>
+			<Tool
+				Name="VCFxCopTool"
+			/>
+			<Tool
+				Name="VCAppVerifierTool"
+			/>
+			<Tool
+				Name="VCPostBuildEventTool"
+			/>
+		</Configuration>
+		<Configuration
+			Name="Release|Win32"
+			ConfigurationType="2"
+			InheritedPropertySheets="..\..\..\props\common2env.vsprops"
+			UseOfMFC="0"
+			ATLMinimizesCRunTimeLibraryUsage="false"
+			CharacterSet="2"
+			>
+			<Tool
+				Name="VCPreBuildEventTool"
+			/>
+			<Tool
+				Name="VCCustomBuildTool"
+			/>
+			<Tool
+				Name="VCXMLDataGeneratorTool"
+			/>
+			<Tool
+				Name="VCWebServiceProxyGeneratorTool"
+			/>
+			<Tool
+				Name="VCMIDLTool"
+				PreprocessorDefinitions="NDEBUG"
+				MkTypLibCompatible="true"
+				SuppressStartupBanner="true"
+				TargetEnvironment="1"
+				TypeLibraryName=".\Release/aliase.tlb"
+			/>
+			<Tool
+				Name="VCCLCompilerTool"
+				InlineFunctionExpansion="1"
+				AdditionalIncludeDirectories="&quot;$(SolutionDir)comps\misc\filefilters2\libs\H&quot;"
+				PreprocessorDefinitions="WIN32;NDEBUG;_WINDOWS;_USRDLL;ALIASE_EXPORTS"
+				StringPooling="true"
+				RuntimeLibrary="2"
+				EnableFunctionLevelLinking="true"
+				TreatWChar_tAsBuiltInType="false"
+				ForceConformanceInForLoopScope="false"
+				RuntimeTypeInfo="true"
+				UsePrecompiledHeader="2"
+				PrecompiledHeaderThrough="stdafx.h"
+				DebugInformationFormat="3"
+				CompileAs="0"
+			/>
+			<Tool
+				Name="VCManagedResourceCompilerTool"
+			/>
+			<Tool
+				Name="VCResourceCompilerTool"
+				PreprocessorDefinitions="NDEBUG"
+				Culture="1049"
+			/>
+			<Tool
+				Name="VCPreLinkEventTool"
+			/>
+			<Tool
+				Name="VCLinkerTool"
+				AdditionalOptions="/MACHINE:I386"
+				AdditionalDependencies="odbc32.lib odbccp32.lib atls.lib"
+				ShowProgress="0"
+				AdditionalLibraryDirectories="\vt5\common"
+				ModuleDefinitionFile="..\..\..\common2\com_export.def"
+				GenerateDebugInformation="true"
+				RandomizedBaseAddress="1"
+				DataExecutionPrevention="0"
 			/>
 			<Tool
 				Name="VCALinkTool"
@@ -345,8 +341,6 @@
 				Name="VCLinkerTool"
 				AdditionalDependencies="odbc32.lib odbccp32.lib atls.lib"
 				ShowProgress="0"
-				OutputFile="\vt5\vt5\$(OutDir)\comps\$(ProjectName).dll"
-				LinkIncremental="1"
 				AdditionalLibraryDirectories="\vt5\common"
 				ModuleDefinitionFile="..\..\..\common2\com_export.def"
 				GenerateDebugInformation="true"
@@ -414,7 +408,7 @@
 					/>
 				</FileConfiguration>
 				<FileConfiguration
-					Name="Release|Win32"
+					Name="Debug|x64"
 					>
 					<Tool
 						Name="VCCLCompilerTool"
@@ -422,7 +416,7 @@
 					/>
 				</FileConfiguration>
 				<FileConfiguration
-					Name="Debug|x64"
+					Name="Release|Win32"
 					>
 					<Tool
 						Name="VCCLCompilerTool"

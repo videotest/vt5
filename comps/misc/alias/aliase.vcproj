@@ -2,10 +2,9 @@
 <VisualStudioProject
 	ProjectType="Visual C++"
 	Version="9.00"
-	Name="ChooseColor"
-	ProjectGUID="{3DD957D4-1E01-4518-B17E-D0C5E56ED7C7}"
-	RootNamespace="ChooseColor"
-	Keyword="MFCProj"
+	Name="aliase"
+	ProjectGUID="{F297B2AF-2ADD-43D1-B1A2-471DBB0E2144}"
+	RootNamespace="aliase"
 	TargetFrameworkVersion="131072"
 	>
 	<Platforms>
@@ -20,187 +19,10 @@
 	</ToolFiles>
 	<Configurations>
 		<Configuration
-			Name="Release|Win32"
-			ConfigurationType="2"
-			InheritedPropertySheets="$(SolutionDir)props\CommonEnv.vsprops"
-			UseOfMFC="2"
-			ATLMinimizesCRunTimeLibraryUsage="false"
-			CharacterSet="2"
-			>
-			<Tool
-				Name="VCPreBuildEventTool"
-			/>
-			<Tool
-				Name="VCCustomBuildTool"
-			/>
-			<Tool
-				Name="VCXMLDataGeneratorTool"
-			/>
-			<Tool
-				Name="VCWebServiceProxyGeneratorTool"
-				Output=""
-			/>
-			<Tool
-				Name="VCMIDLTool"
-				PreprocessorDefinitions="NDEBUG"
-				MkTypLibCompatible="true"
-				SuppressStartupBanner="true"
-				TargetEnvironment="1"
-			/>
-			<Tool
-				Name="VCCLCompilerTool"
-				InlineFunctionExpansion="1"
-				AdditionalIncludeDirectories="&quot;$(SolutionDir)controls\menueditor&quot;"
-				PreprocessorDefinitions="WIN32;_AFX_SECURE_NO_DEPRECATE;_CRT_SECURE_NO_DEPRECATE;NDEBUG;_WINDOWS;_USRDLL"
-				StringPooling="true"
-				RuntimeLibrary="2"
-				EnableFunctionLevelLinking="true"
-				ForceConformanceInForLoopScope="false"
-				RuntimeTypeInfo="true"
-				UsePrecompiledHeader="2"
-				PrecompiledHeaderThrough="stdafx.h"
-				WarningLevel="3"
-				DebugInformationFormat="3"
-				CompileAs="0"
-			/>
-			<Tool
-				Name="VCManagedResourceCompilerTool"
-			/>
-			<Tool
-				Name="VCResourceCompilerTool"
-				PreprocessorDefinitions="_AFXDLL;NDEBUG"
-				Culture="1049"
-			/>
-			<Tool
-				Name="VCPreLinkEventTool"
-			/>
-			<Tool
-				Name="VCLinkerTool"
-				AdditionalOptions="/MACHINE:I386"
-				AdditionalDependencies="gdiplus.lib"
-				LinkIncremental="1"
-				AdditionalLibraryDirectories=""
-				GenerateDebugInformation="true"
-				SubSystem="2"
-				RandomizedBaseAddress="1"
-				DataExecutionPrevention="0"
-			/>
-			<Tool
-				Name="VCALinkTool"
-			/>
-			<Tool
-				Name="VCManifestTool"
-			/>
-			<Tool
-				Name="VCXDCMakeTool"
-			/>
-			<Tool
-				Name="VCBscMakeTool"
-			/>
-			<Tool
-				Name="VCFxCopTool"
-			/>
-			<Tool
-				Name="VCAppVerifierTool"
-			/>
-			<Tool
-				Name="VCPostBuildEventTool"
-			/>
-		</Configuration>
-		<Configuration
-			Name="Release|x64"
-			ConfigurationType="2"
-			InheritedPropertySheets="$(SolutionDir)props\CommonEnv.vsprops"
-			UseOfMFC="2"
-			ATLMinimizesCRunTimeLibraryUsage="false"
-			CharacterSet="2"
-			>
-			<Tool
-				Name="VCPreBuildEventTool"
-			/>
-			<Tool
-				Name="VCCustomBuildTool"
-			/>
-			<Tool
-				Name="VCXMLDataGeneratorTool"
-			/>
-			<Tool
-				Name="VCWebServiceProxyGeneratorTool"
-				Output=""
-			/>
-			<Tool
-				Name="VCMIDLTool"
-				PreprocessorDefinitions="NDEBUG"
-				MkTypLibCompatible="true"
-				SuppressStartupBanner="true"
-				TargetEnvironment="3"
-			/>
-			<Tool
-				Name="VCCLCompilerTool"
-				InlineFunctionExpansion="1"
-				AdditionalIncludeDirectories="&quot;$(SolutionDir)controls\menueditor&quot;"
-				PreprocessorDefinitions="_WIN64;_M_X64;_AFX_SECURE_NO_DEPRECATE;_CRT_SECURE_NO_DEPRECATE;NDEBUG;_WINDOWS;_USRDLL"
-				StringPooling="true"
-				RuntimeLibrary="2"
-				EnableFunctionLevelLinking="true"
-				TreatWChar_tAsBuiltInType="false"
-				ForceConformanceInForLoopScope="false"
-				RuntimeTypeInfo="true"
-				UsePrecompiledHeader="2"
-				PrecompiledHeaderThrough="stdafx.h"
-				WarningLevel="3"
-				DebugInformationFormat="3"
-				CompileAs="0"
-			/>
-			<Tool
-				Name="VCManagedResourceCompilerTool"
-			/>
-			<Tool
-				Name="VCResourceCompilerTool"
-				PreprocessorDefinitions="_AFXDLL;NDEBUG"
-				Culture="1049"
-			/>
-			<Tool
-				Name="VCPreLinkEventTool"
-			/>
-			<Tool
-				Name="VCLinkerTool"
-				AdditionalDependencies="gdiplus.lib"
-				LinkIncremental="1"
-				AdditionalLibraryDirectories=""
-				GenerateDebugInformation="true"
-				SubSystem="2"
-				RandomizedBaseAddress="1"
-				DataExecutionPrevention="0"
-				TargetMachine="17"
-			/>
-			<Tool
-				Name="VCALinkTool"
-			/>
-			<Tool
-				Name="VCManifestTool"
-			/>
-			<Tool
-				Name="VCXDCMakeTool"
-			/>
-			<Tool
-				Name="VCBscMakeTool"
-			/>
-			<Tool
-				Name="VCFxCopTool"
-			/>
-			<Tool
-				Name="VCAppVerifierTool"
-			/>
-			<Tool
-				Name="VCPostBuildEventTool"
-			/>
-		</Configuration>
-		<Configuration
 			Name="Debug|Win32"
 			ConfigurationType="2"
-			InheritedPropertySheets="$(SolutionDir)props\CommonEnv.vsprops"
-			UseOfMFC="2"
+			InheritedPropertySheets="..\..\..\props\common2env.vsprops"
+			UseOfMFC="0"
 			ATLMinimizesCRunTimeLibraryUsage="false"
 			CharacterSet="2"
 			>
@@ -215,7 +37,6 @@
 			/>
 			<Tool
 				Name="VCWebServiceProxyGeneratorTool"
-				Output=""
 			/>
 			<Tool
 				Name="VCMIDLTool"
@@ -223,20 +44,20 @@
 				MkTypLibCompatible="true"
 				SuppressStartupBanner="true"
 				TargetEnvironment="1"
+				TypeLibraryName=".\Debug/aliase.tlb"
 			/>
 			<Tool
 				Name="VCCLCompilerTool"
 				Optimization="0"
-				AdditionalIncludeDirectories="&quot;$(SolutionDir)controls\menueditor&quot;"
-				PreprocessorDefinitions="WIN32;_AFX_SECURE_NO_DEPRECATE;_CRT_SECURE_NO_DEPRECATE;_DEBUG;_WINDOWS;_USRDLL"
+				AdditionalIncludeDirectories="&quot;$(SolutionDir)comps\misc\filefilters2\libs\H&quot;"
+				PreprocessorDefinitions="WIN32;_DEBUG;_WINDOWS;_USRDLL;ALIASE_EXPORTS;_CRT_SECURE_NO_DEPRECATE"
 				BasicRuntimeChecks="0"
 				RuntimeLibrary="3"
+				TreatWChar_tAsBuiltInType="false"
 				ForceConformanceInForLoopScope="false"
 				RuntimeTypeInfo="true"
 				UsePrecompiledHeader="2"
-				PrecompiledHeaderThrough="stdafx.h"
 				BrowseInformation="1"
-				WarningLevel="3"
 				DebugInformationFormat="4"
 				CompileAs="0"
 			/>
@@ -245,7 +66,7 @@
 			/>
 			<Tool
 				Name="VCResourceCompilerTool"
-				PreprocessorDefinitions="_AFXDLL;_DEBUG"
+				PreprocessorDefinitions="_DEBUG"
 				Culture="1049"
 			/>
 			<Tool
@@ -254,11 +75,12 @@
 			<Tool
 				Name="VCLinkerTool"
 				AdditionalOptions="/MACHINE:I386"
-				AdditionalDependencies="gdiplus.lib"
-				LinkIncremental="2"
+				AdditionalDependencies="odbc32.lib odbccp32.lib atlsd.lib"
+				ShowProgress="0"
 				AdditionalLibraryDirectories=""
+				IgnoreDefaultLibraryNames="libcmt.dll"
+				ModuleDefinitionFile="..\..\..\common2\com_export.def"
 				GenerateDebugInformation="true"
-				SubSystem="2"
 				RandomizedBaseAddress="1"
 				DataExecutionPrevention="0"
 			/>
@@ -287,8 +109,8 @@
 		<Configuration
 			Name="Debug|x64"
 			ConfigurationType="2"
-			InheritedPropertySheets="$(SolutionDir)props\CommonEnv.vsprops"
-			UseOfMFC="2"
+			InheritedPropertySheets="..\..\..\props\common2env.vsprops"
+			UseOfMFC="0"
 			ATLMinimizesCRunTimeLibraryUsage="false"
 			CharacterSet="2"
 			>
@@ -303,7 +125,6 @@
 			/>
 			<Tool
 				Name="VCWebServiceProxyGeneratorTool"
-				Output=""
 			/>
 			<Tool
 				Name="VCMIDLTool"
@@ -311,21 +132,20 @@
 				MkTypLibCompatible="true"
 				SuppressStartupBanner="true"
 				TargetEnvironment="3"
+				TypeLibraryName=".\Debug/aliase.tlb"
 			/>
 			<Tool
 				Name="VCCLCompilerTool"
 				Optimization="0"
-				AdditionalIncludeDirectories="&quot;$(SolutionDir)controls\menueditor&quot;"
-				PreprocessorDefinitions="_DEBUG;_WINDOWS;_USRDLL;_WIN64;_M_X64;_AFX_SECURE_NO_DEPRECATE;_CRT_SECURE_NO_DEPRECATE"
+				AdditionalIncludeDirectories="&quot;$(SolutionDir)comps\misc\filefilters2\libs\H&quot;"
+				PreprocessorDefinitions="_DEBUG;_WINDOWS;_USRDLL;ALIASE_EXPORTS;_WIN64;_M_X64;_CRT_SECURE_NO_DEPRECATE"
 				BasicRuntimeChecks="0"
 				RuntimeLibrary="3"
 				TreatWChar_tAsBuiltInType="false"
 				ForceConformanceInForLoopScope="false"
 				RuntimeTypeInfo="true"
 				UsePrecompiledHeader="2"
-				PrecompiledHeaderThrough="stdafx.h"
 				BrowseInformation="1"
-				WarningLevel="3"
 				DebugInformationFormat="3"
 				CompileAs="0"
 			/>
@@ -334,7 +154,7 @@
 			/>
 			<Tool
 				Name="VCResourceCompilerTool"
-				PreprocessorDefinitions="_AFXDLL;_DEBUG"
+				PreprocessorDefinitions="_DEBUG"
 				Culture="1049"
 			/>
 			<Tool
@@ -342,11 +162,186 @@
 			/>
 			<Tool
 				Name="VCLinkerTool"
-				AdditionalDependencies="gdiplus.lib"
-				LinkIncremental="2"
 				AdditionalLibraryDirectories=""
+				IgnoreDefaultLibraryNames="libcmt.dll"
+				ModuleDefinitionFile="..\..\..\common2\com_export.def"
 				GenerateDebugInformation="true"
-				SubSystem="2"
+				RandomizedBaseAddress="1"
+				DataExecutionPrevention="0"
+				TargetMachine="17"
+			/>
+			<Tool
+				Name="VCALinkTool"
+			/>
+			<Tool
+				Name="VCManifestTool"
+			/>
+			<Tool
+				Name="VCXDCMakeTool"
+			/>
+			<Tool
+				Name="VCBscMakeTool"
+			/>
+			<Tool
+				Name="VCFxCopTool"
+			/>
+			<Tool
+				Name="VCAppVerifierTool"
+			/>
+			<Tool
+				Name="VCPostBuildEventTool"
+			/>
+		</Configuration>
+		<Configuration
+			Name="Release|Win32"
+			ConfigurationType="2"
+			InheritedPropertySheets="..\..\..\props\common2env.vsprops"
+			UseOfMFC="0"
+			ATLMinimizesCRunTimeLibraryUsage="false"
+			CharacterSet="2"
+			>
+			<Tool
+				Name="VCPreBuildEventTool"
+			/>
+			<Tool
+				Name="VCCustomBuildTool"
+			/>
+			<Tool
+				Name="VCXMLDataGeneratorTool"
+			/>
+			<Tool
+				Name="VCWebServiceProxyGeneratorTool"
+			/>
+			<Tool
+				Name="VCMIDLTool"
+				PreprocessorDefinitions="NDEBUG"
+				MkTypLibCompatible="true"
+				SuppressStartupBanner="true"
+				TargetEnvironment="1"
+				TypeLibraryName=".\Release/aliase.tlb"
+			/>
+			<Tool
+				Name="VCCLCompilerTool"
+				InlineFunctionExpansion="1"
+				AdditionalIncludeDirectories="&quot;$(SolutionDir)comps\misc\filefilters2\libs\H&quot;"
+				PreprocessorDefinitions="WIN32;NDEBUG;_WINDOWS;_USRDLL;ALIASE_EXPORTS"
+				StringPooling="true"
+				RuntimeLibrary="2"
+				EnableFunctionLevelLinking="true"
+				TreatWChar_tAsBuiltInType="false"
+				ForceConformanceInForLoopScope="false"
+				RuntimeTypeInfo="true"
+				UsePrecompiledHeader="2"
+				DebugInformationFormat="3"
+				CompileAs="0"
+			/>
+			<Tool
+				Name="VCManagedResourceCompilerTool"
+			/>
+			<Tool
+				Name="VCResourceCompilerTool"
+				PreprocessorDefinitions="NDEBUG"
+				Culture="1049"
+			/>
+			<Tool
+				Name="VCPreLinkEventTool"
+			/>
+			<Tool
+				Name="VCLinkerTool"
+				AdditionalOptions="/MACHINE:I386"
+				AdditionalDependencies="odbc32.lib odbccp32.lib atls.lib"
+				ShowProgress="0"
+				OutputFile="\vt5\vt5\release\comps\aliase.dll"
+				AdditionalLibraryDirectories="\vt5\common"
+				ModuleDefinitionFile="..\..\..\common2\com_export.def"
+				GenerateDebugInformation="true"
+				RandomizedBaseAddress="1"
+				DataExecutionPrevention="0"
+			/>
+			<Tool
+				Name="VCALinkTool"
+			/>
+			<Tool
+				Name="VCManifestTool"
+			/>
+			<Tool
+				Name="VCXDCMakeTool"
+			/>
+			<Tool
+				Name="VCBscMakeTool"
+			/>
+			<Tool
+				Name="VCFxCopTool"
+			/>
+			<Tool
+				Name="VCAppVerifierTool"
+			/>
+			<Tool
+				Name="VCPostBuildEventTool"
+			/>
+		</Configuration>
+		<Configuration
+			Name="Release|x64"
+			ConfigurationType="2"
+			InheritedPropertySheets="..\..\..\props\common2env.vsprops"
+			UseOfMFC="0"
+			ATLMinimizesCRunTimeLibraryUsage="false"
+			CharacterSet="2"
+			>
+			<Tool
+				Name="VCPreBuildEventTool"
+			/>
+			<Tool
+				Name="VCCustomBuildTool"
+			/>
+			<Tool
+				Name="VCXMLDataGeneratorTool"
+			/>
+			<Tool
+				Name="VCWebServiceProxyGeneratorTool"
+			/>
+			<Tool
+				Name="VCMIDLTool"
+				PreprocessorDefinitions="NDEBUG"
+				MkTypLibCompatible="true"
+				SuppressStartupBanner="true"
+				TargetEnvironment="3"
+				TypeLibraryName=".\Release/aliase.tlb"
+			/>
+			<Tool
+				Name="VCCLCompilerTool"
+				InlineFunctionExpansion="1"
+				AdditionalIncludeDirectories="&quot;$(SolutionDir)comps\misc\filefilters2\libs\H&quot;"
+				PreprocessorDefinitions="_WIN64;_M_X64;_CRT_SECURE_NO_DEPRECATE;NDEBUG;_WINDOWS;_USRDLL;ALIASE_EXPORTS"
+				StringPooling="true"
+				RuntimeLibrary="2"
+				EnableFunctionLevelLinking="true"
+				TreatWChar_tAsBuiltInType="false"
+				ForceConformanceInForLoopScope="false"
+				RuntimeTypeInfo="true"
+				UsePrecompiledHeader="2"
+				DebugInformationFormat="3"
+				CompileAs="0"
+			/>
+			<Tool
+				Name="VCManagedResourceCompilerTool"
+			/>
+			<Tool
+				Name="VCResourceCompilerTool"
+				PreprocessorDefinitions="NDEBUG"
+				Culture="1049"
+			/>
+			<Tool
+				Name="VCPreLinkEventTool"
+			/>
+			<Tool
+				Name="VCLinkerTool"
+				AdditionalDependencies="odbc32.lib odbccp32.lib atls.lib"
+				ShowProgress="0"
+				OutputFile="\vt5\vt5\$(OutDir)\comps\$(ProjectName).dll"
+				AdditionalLibraryDirectories="\vt5\common"
+				ModuleDefinitionFile="..\..\..\common2\com_export.def"
+				GenerateDebugInformation="true"
 				RandomizedBaseAddress="1"
 				DataExecutionPrevention="0"
 				TargetMachine="17"
@@ -382,121 +377,21 @@
 			Filter="cpp;c;cxx;rc;def;r;odl;idl;hpj;bat"
 			>
 			<File
-				RelativePath=".\acivecolorsview.cpp"
+				RelativePath=".\aliase.cpp"
 				>
 			</File>
 			<File
-				RelativePath=".\ChooseColor.cpp"
+				RelativePath="aliase.rc"
 				>
 			</File>
 			<File
-				RelativePath=".\ChooseColor.def"
-				>
-			</File>
-			<File
-				RelativePath=".\ChooseColor.odl"
-				>
-				<FileConfiguration
-					Name="Release|Win32"
-					>
-					<Tool
-						Name="VCMIDLTool"
-						TargetEnvironment="1"
-						HeaderFileName="ChooseColor_h.h"
-					/>
-				</FileConfiguration>
-				<FileConfiguration
-					Name="Release|x64"
-					>
-					<Tool
-						Name="VCMIDLTool"
-						TargetEnvironment="1"
-						HeaderFileName="ChooseColor_h.h"
-					/>
-				</FileConfiguration>
-				<FileConfiguration
-					Name="Debug|Win32"
-					>
-					<Tool
-						Name="VCMIDLTool"
-						TargetEnvironment="1"
-						HeaderFileName="ChooseColor_h.h"
-					/>
-				</FileConfiguration>
-				<FileConfiguration
-					Name="Debug|x64"
-					>
-					<Tool
-						Name="VCMIDLTool"
-						TargetEnvironment="1"
-						HeaderFileName="ChooseColor_h.h"
-					/>
-				</FileConfiguration>
-			</File>
-			<File
-				RelativePath=".\ChooseColor.rc"
-				>
-				<FileConfiguration
-					Name="Release|Win32"
-					>
-					<Tool
-						Name="VCResourceCompilerTool"
-						AdditionalIncludeDirectories="$(OUTDIR);$(NoInherit)"
-					/>
-				</FileConfiguration>
-				<FileConfiguration
-					Name="Release|x64"
-					>
-					<Tool
-						Name="VCResourceCompilerTool"
-						AdditionalIncludeDirectories="$(OUTDIR);$(NoInherit)"
-					/>
-				</FileConfiguration>
-				<FileConfiguration
-					Name="Debug|Win32"
-					>
-					<Tool
-						Name="VCResourceCompilerTool"
-						AdditionalIncludeDirectories="$(OUTDIR);$(NoInherit)"
-					/>
-				</FileConfiguration>
-				<FileConfiguration
-					Name="Debug|x64"
-					>
-					<Tool
-						Name="VCResourceCompilerTool"
-						AdditionalIncludeDirectories="$(OUTDIR);$(NoInherit)"
-					/>
-				</FileConfiguration>
-			</File>
-			<File
-				RelativePath=".\ColorChooseDlg.cpp"
-				>
-			</File>
-			<File
-				RelativePath=".\palette.cpp"
+				RelativePath="..\..\..\common2\com_export.def"
 				>
 			</File>
 			<File
 				RelativePath=".\StdAfx.cpp"
 				>
 				<FileConfiguration
-					Name="Release|Win32"
-					>
-					<Tool
-						Name="VCCLCompilerTool"
-						UsePrecompiledHeader="1"
-					/>
-				</FileConfiguration>
-				<FileConfiguration
-					Name="Release|x64"
-					>
-					<Tool
-						Name="VCCLCompilerTool"
-						UsePrecompiledHeader="1"
-					/>
-				</FileConfiguration>
-				<FileConfiguration
 					Name="Debug|Win32"
 					>
 					<Tool
@@ -506,6 +401,22 @@
 				</FileConfiguration>
 				<FileConfiguration
 					Name="Debug|x64"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						UsePrecompiledHeader="1"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Release|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						UsePrecompiledHeader="1"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Release|x64"
 					>
 					<Tool
 						Name="VCCLCompilerTool"
@@ -519,23 +430,7 @@
 			Filter="h;hpp;hxx;hm;inl"
 			>
 			<File
-				RelativePath=".\acivecolorsview.h"
-				>
-			</File>
-			<File
-				RelativePath=".\ChooseColor.h"
-				>
-			</File>
-			<File
-				RelativePath=".\ColorChooseDlg.h"
-				>
-			</File>
-			<File
-				RelativePath=".\palette.h"
-				>
-			</File>
-			<File
-				RelativePath=".\Resource.h"
+				RelativePath="resource.h"
 				>
 			</File>
 			<File
@@ -548,15 +443,7 @@
 			Filter="ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe"
 			>
 			<File
-				RelativePath=".\bitmap1.bmp"
-				>
-			</File>
-			<File
-				RelativePath=".\bitmap2.bmp"
-				>
-			</File>
-			<File
-				RelativePath=".\res\ChooseColor.rc2"
+				RelativePath="res\aliase.rc2"
 				>
 			</File>
 		</Filter>

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="windows-1251"?>
 <VisualStudioProject
 	ProjectType="Visual C++"
-	Version="9,00"
+	Version="9.00"
 	Name="xpbar_ctrl"
 	ProjectGUID="{F269DFB6-9C39-4D3C-B5E1-88F23504C97F}"
 	RootNamespace="xpbar_ctrl"
@@ -20,7 +20,7 @@
 	<Configurations>
 		<Configuration
 			Name="Release|Win32"
-			OutputDirectory="$(SolutionDir)vt5\$(PlatformName)\$(ConfigurationName)"
+			OutputDirectory="$(SolutionDir)vt5\$(PlatformName)\$(ConfigurationName)\"
 			ConfigurationType="2"
 			InheritedPropertySheets="$(SolutionDir)props\common2env.vsprops"
 			UseOfMFC="0"
@@ -107,7 +107,7 @@
 		</Configuration>
 		<Configuration
 			Name="Release|x64"
-			OutputDirectory="$(SolutionDir)vt5\$(PlatformName)\$(ConfigurationName)"
+			OutputDirectory="$(SolutionDir)vt5\$(PlatformName)\$(ConfigurationName)\"
 			ConfigurationType="2"
 			InheritedPropertySheets="$(SolutionDir)props\common2env.vsprops"
 			UseOfMFC="0"
@@ -194,7 +194,7 @@
 		</Configuration>
 		<Configuration
 			Name="Debug|Win32"
-			OutputDirectory="$(SolutionDir)vt5\$(PlatformName)\$(ConfigurationName)"
+			OutputDirectory="$(SolutionDir)vt5\$(PlatformName)\$(ConfigurationName)\"
 			ConfigurationType="2"
 			InheritedPropertySheets="$(SolutionDir)props\common2env.vsprops"
 			UseOfMFC="0"
@@ -282,7 +282,7 @@
 		</Configuration>
 		<Configuration
 			Name="Debug|x64"
-			OutputDirectory="$(SolutionDir)vt5\$(PlatformName)\$(ConfigurationName)"
+			OutputDirectory="$(SolutionDir)vt5\$(PlatformName)\$(ConfigurationName)\"
 			ConfigurationType="4"
 			InheritedPropertySheets="$(SolutionDir)props\libs.vsprops"
 			UseOfMFC="0"

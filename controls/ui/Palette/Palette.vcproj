@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="windows-1251"?>
 <VisualStudioProject
 	ProjectType="Visual C++"
-	Version="9,00"
+	Version="9.00"
 	Name="Palette"
 	ProjectGUID="{779FD46D-C4B3-4E6F-9FB7-99CA6FA584AD}"
 	RootNamespace="Palette"
@@ -76,7 +76,6 @@
 			<Tool
 				Name="VCLinkerTool"
 				AdditionalOptions="/MACHINE:I386"
-				LinkIncremental="2"
 				AdditionalLibraryDirectories=""
 				GenerateDebugInformation="true"
 				SubSystem="2"
@@ -144,7 +143,6 @@
 				ForceConformanceInForLoopScope="false"
 				RuntimeTypeInfo="true"
 				UsePrecompiledHeader="2"
-				PrecompiledHeaderThrough=" "
 				BrowseInformation="1"
 				DebugInformationFormat="3"
 				CompileAs="0"
@@ -162,7 +160,6 @@
 			/>
 			<Tool
 				Name="VCLinkerTool"
-				LinkIncremental="2"
 				AdditionalLibraryDirectories=""
 				GenerateDebugInformation="true"
 				SubSystem="2"
@@ -232,7 +229,6 @@
 				ForceConformanceInForLoopScope="false"
 				RuntimeTypeInfo="true"
 				UsePrecompiledHeader="2"
-				PrecompiledHeaderThrough=" "
 				DebugInformationFormat="3"
 				CompileAs="0"
 			/>
@@ -250,7 +246,6 @@
 			<Tool
 				Name="VCLinkerTool"
 				AdditionalOptions="/MACHINE:I386"
-				LinkIncremental="1"
 				AdditionalLibraryDirectories=""
 				GenerateDebugInformation="true"
 				SubSystem="2"
@@ -320,7 +315,6 @@
 				ForceConformanceInForLoopScope="false"
 				RuntimeTypeInfo="true"
 				UsePrecompiledHeader="2"
-				PrecompiledHeaderThrough=" "
 				DebugInformationFormat="3"
 				CompileAs="0"
 			/>
@@ -337,7 +331,6 @@
 			/>
 			<Tool
 				Name="VCLinkerTool"
-				LinkIncremental="1"
 				AdditionalLibraryDirectories=""
 				GenerateDebugInformation="true"
 				SubSystem="2"

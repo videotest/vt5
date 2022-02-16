@@ -74,7 +74,7 @@
 			/>
 			<Tool
 				Name="VCLinkerTool"
-				AdditionalOptions="/MACHINE:I386"
+				AdditionalOptions=" &#x0D;&#x0A;"
 				AdditionalDependencies="common2.lib"
 				AdditionalLibraryDirectories=""
 				IgnoreDefaultLibraryNames=""
@@ -160,6 +160,7 @@
 			/>
 			<Tool
 				Name="VCLinkerTool"
+				AdditionalOptions=" &#x0D;&#x0A;"
 				AdditionalDependencies="common2.lib"
 				LinkIncremental="2"
 				AdditionalLibraryDirectories=""
@@ -247,7 +248,7 @@
 			/>
 			<Tool
 				Name="VCLinkerTool"
-				AdditionalOptions="/MACHINE:I386"
+				AdditionalOptions=" &#x0D;&#x0A;"
 				AdditionalDependencies="common2.lib"
 				LinkIncremental="1"
 				AdditionalLibraryDirectories=""
@@ -334,7 +335,6 @@
 			/>
 			<Tool
 				Name="VCLinkerTool"
-				AdditionalOptions="/MACHINE:I386"
 				AdditionalDependencies="common2.lib"
 				LinkIncremental="1"
 				AdditionalLibraryDirectories=""

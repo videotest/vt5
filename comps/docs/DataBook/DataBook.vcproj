@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="windows-1251"?>
 <VisualStudioProject
 	ProjectType="Visual C++"
-	Version="9,00"
+	Version="9.00"
 	Name="DataBook"
 	ProjectGUID="{1B2CAACA-E3C8-422B-8CFC-957C454D4814}"
 	RootNamespace="DataBook"
@@ -60,7 +60,6 @@
 				AssemblerListingLocation=".\Release/"
 				ObjectFile=".\Release/"
 				ProgramDataBaseFileName=".\Release/"
-				WarningLevel="3"
 				CompileAs="0"
 			/>
 			<Tool
@@ -77,8 +76,7 @@
 			<Tool
 				Name="VCLinkerTool"
 				AdditionalOptions="/MACHINE:I386"
-				AdditionalDependencies="odbc32.lib odbccp32.lib atls.lib"
-				LinkIncremental="1"
+				AdditionalDependencies=" "
 				AdditionalLibraryDirectories=""
 				IgnoreDefaultLibraryNames="LIBCMT.lib"
 				RandomizedBaseAddress="1"
@@ -145,7 +143,6 @@
 				TreatWChar_tAsBuiltInType="false"
 				ForceConformanceInForLoopScope="false"
 				UsePrecompiledHeader="2"
-				WarningLevel="3"
 				CompileAs="0"
 			/>
 			<Tool
@@ -161,10 +158,9 @@
 			/>
 			<Tool
 				Name="VCLinkerTool"
-				AdditionalDependencies="odbc32.lib odbccp32.lib atls.lib"
-				LinkIncremental="1"
+				AdditionalDependencies=" "
 				AdditionalLibraryDirectories=""
-				IgnoreDefaultLibraryNames="LIBCMT.lib"
+				IgnoreDefaultLibraryNames=" "
 				RandomizedBaseAddress="1"
 				DataExecutionPrevention="0"
 				TargetMachine="17"
@@ -233,7 +229,6 @@
 				ObjectFile=".\Debug/"
 				ProgramDataBaseFileName=".\Debug/"
 				BrowseInformation="1"
-				WarningLevel="3"
 				DebugInformationFormat="4"
 				CompileAs="0"
 			/>
@@ -251,11 +246,9 @@
 			<Tool
 				Name="VCLinkerTool"
 				AdditionalOptions="/MACHINE:I386"
-				AdditionalDependencies="odbc32.lib odbccp32.lib atlsd.lib"
-				LinkIncremental="2"
+				AdditionalDependencies=" "
 				AdditionalLibraryDirectories=""
 				IgnoreDefaultLibraryNames="LIBCMTD.lib"
-				ModuleDefinitionFile="export.def"
 				GenerateDebugInformation="true"
 				RandomizedBaseAddress="1"
 				DataExecutionPrevention="0"
@@ -320,7 +313,6 @@
 				TreatWChar_tAsBuiltInType="false"
 				ForceConformanceInForLoopScope="false"
 				BrowseInformation="1"
-				WarningLevel="3"
 				DebugInformationFormat="3"
 				CompileAs="0"
 			/>
@@ -337,10 +329,9 @@
 			/>
 			<Tool
 				Name="VCLinkerTool"
-				AdditionalDependencies="odbc32.lib odbccp32.lib atlsd.lib"
+				AdditionalDependencies=" "
 				AdditionalLibraryDirectories=""
-				IgnoreDefaultLibraryNames="LIBCMTD.lib"
-				ModuleDefinitionFile="export.def"
+				IgnoreDefaultLibraryNames=" "
 				GenerateDebugInformation="true"
 				RandomizedBaseAddress="1"
 				DataExecutionPrevention="0"
@@ -378,6 +369,10 @@
 			>
 			<File
 				RelativePath=".\DataBook.cpp"
+				>
+			</File>
+			<File
+				RelativePath=".\DataBook.def"
 				>
 			</File>
 			<File

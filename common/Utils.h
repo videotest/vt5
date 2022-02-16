@@ -15,19 +15,8 @@ enum AjustViewFlags
 
 class CStreamEx;
 
-inline CArchive &operator<<(CArchive& ar, GuidKey &g)
-{	
-	long	*pl = (long*)&g;
-	ar<<pl[0]<<pl[1]<<pl[2]<<pl[3];
-	return ar;
-}
-inline CArchive &operator>>(CArchive& ar, GuidKey &g)
-{	
-	long	*pl = (long*)&g;
-	ar>>pl[0]>>pl[1]>>pl[2]>>pl[3];
-	return ar;
-}
-
+//CArchive &operator<<(CArchive& ar, GuidKey &g);
+//CArchive &operator>>(CArchive& ar, GuidKey &g);
 
 inline int Bright ( int b, int g, int r )	//функция для получения яркости
 {

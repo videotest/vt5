@@ -21,8 +21,6 @@
 	<Configurations>
 		<Configuration
 			Name="Release|Win32"
-			OutputDirectory=".\Release"
-			IntermediateDirectory=".\Release"
 			ConfigurationType="2"
 			InheritedPropertySheets="..\..\..\props\common2env.vsprops"
 			UseOfMFC="0"
@@ -78,9 +76,8 @@
 			<Tool
 				Name="VCLinkerTool"
 				AdditionalOptions="/MACHINE:I386"
-				AdditionalDependencies="odbc32.lib odbccp32.lib"
-				LinkIncremental="1"
-				AdditionalLibraryDirectories="\vt5\common2\release,\vt5\common2"
+				AdditionalDependencies=" "
+				AdditionalLibraryDirectories=" "
 				GenerateDebugInformation="true"
 				RandomizedBaseAddress="1"
 				DataExecutionPrevention="0"
@@ -109,8 +106,6 @@
 		</Configuration>
 		<Configuration
 			Name="Release|x64"
-			OutputDirectory="$(PlatformName)\$(ConfigurationName)"
-			IntermediateDirectory="$(PlatformName)\$(ConfigurationName)"
 			ConfigurationType="2"
 			InheritedPropertySheets="..\..\..\props\common2env.vsprops"
 			UseOfMFC="0"
@@ -164,9 +159,8 @@
 			/>
 			<Tool
 				Name="VCLinkerTool"
-				AdditionalDependencies="odbc32.lib odbccp32.lib"
-				LinkIncremental="1"
-				AdditionalLibraryDirectories="\vt5\common2\$(OutDir),\vt5\common2"
+				AdditionalDependencies=" "
+				AdditionalLibraryDirectories=" "
 				GenerateDebugInformation="true"
 				RandomizedBaseAddress="1"
 				DataExecutionPrevention="0"
@@ -196,8 +190,6 @@
 		</Configuration>
 		<Configuration
 			Name="Debug|Win32"
-			OutputDirectory=".\Debug"
-			IntermediateDirectory=".\Debug"
 			ConfigurationType="2"
 			InheritedPropertySheets="..\..\..\props\common2env.vsprops"
 			UseOfMFC="0"
@@ -254,9 +246,8 @@
 			<Tool
 				Name="VCLinkerTool"
 				AdditionalOptions="/MACHINE:I386"
-				AdditionalDependencies="odbc32.lib odbccp32.lib"
-				LinkIncremental="2"
-				AdditionalLibraryDirectories="\vt5\common2\debug,\vt5\common2"
+				AdditionalDependencies=" "
+				AdditionalLibraryDirectories=" "
 				GenerateDebugInformation="true"
 				RandomizedBaseAddress="1"
 				DataExecutionPrevention="0"
@@ -340,9 +331,8 @@
 			/>
 			<Tool
 				Name="VCLinkerTool"
-				AdditionalDependencies="common2.lib odbc32.lib odbccp32.lib"
-				LinkIncremental="2"
-				AdditionalLibraryDirectories=""
+				AdditionalDependencies=" "
+				AdditionalLibraryDirectories=" "
 				GenerateDebugInformation="true"
 				RandomizedBaseAddress="1"
 				DataExecutionPrevention="0"
@@ -481,10 +471,6 @@
 				>
 			</File>
 		</Filter>
-		<File
-			RelativePath="Model.mdx"
-			>
-		</File>
 	</Files>
 	<Globals>
 		<Global

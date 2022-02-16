@@ -68,95 +68,10 @@
 			<Tool
 				Name="VCLinkerTool"
 				AdditionalDependencies="vfw32.lib winmm.lib DrvCommon.lib"
-				LinkIncremental="2"
 				AdditionalLibraryDirectories=""
 				ModuleDefinitionFile=".\scionfg.def"
 				GenerateDebugInformation="true"
 				SubSystem="2"
-				RandomizedBaseAddress="1"
-				DataExecutionPrevention="0"
-				TargetMachine="1"
-			/>
-			<Tool
-				Name="VCALinkTool"
-			/>
-			<Tool
-				Name="VCManifestTool"
-			/>
-			<Tool
-				Name="VCXDCMakeTool"
-			/>
-			<Tool
-				Name="VCBscMakeTool"
-			/>
-			<Tool
-				Name="VCFxCopTool"
-			/>
-			<Tool
-				Name="VCAppVerifierTool"
-			/>
-			<Tool
-				Name="VCPostBuildEventTool"
-			/>
-		</Configuration>
-		<Configuration
-			Name="Release|Win32"
-			ConfigurationType="2"
-			InheritedPropertySheets="..\..\..\..\props\CommonEnv.vsprops"
-			UseOfMFC="2"
-			CharacterSet="2"
-			>
-			<Tool
-				Name="VCPreBuildEventTool"
-			/>
-			<Tool
-				Name="VCCustomBuildTool"
-			/>
-			<Tool
-				Name="VCXMLDataGeneratorTool"
-			/>
-			<Tool
-				Name="VCWebServiceProxyGeneratorTool"
-			/>
-			<Tool
-				Name="VCMIDLTool"
-			/>
-			<Tool
-				Name="VCCLCompilerTool"
-				Optimization="2"
-				InlineFunctionExpansion="1"
-				OmitFramePointers="true"
-				AdditionalIncludeDirectories="..\DrvCommon2;&quot;$(SolutionDir)common2&quot;"
-				PreprocessorDefinitions="WIN32;NDEBUG;_WINDOWS;_USRDLL;SCIONFG_EXPORTS"
-				StringPooling="true"
-				RuntimeLibrary="2"
-				EnableFunctionLevelLinking="true"
-				TreatWChar_tAsBuiltInType="false"
-				ForceConformanceInForLoopScope="false"
-				UsePrecompiledHeader="2"
-				WarningLevel="3"
-				Detect64BitPortabilityProblems="true"
-				DebugInformationFormat="3"
-			/>
-			<Tool
-				Name="VCManagedResourceCompilerTool"
-			/>
-			<Tool
-				Name="VCResourceCompilerTool"
-			/>
-			<Tool
-				Name="VCPreLinkEventTool"
-			/>
-			<Tool
-				Name="VCLinkerTool"
-				AdditionalDependencies="vfw32.lib winmm.lib DrvCommon.lib"
-				LinkIncremental="1"
-				AdditionalLibraryDirectories=""
-				ModuleDefinitionFile=".\scionfg.def"
-				GenerateDebugInformation="true"
-				SubSystem="2"
-				OptimizeReferences="2"
-				EnableCOMDATFolding="2"
 				RandomizedBaseAddress="1"
 				DataExecutionPrevention="0"
 				TargetMachine="1"
@@ -233,7 +148,6 @@
 			<Tool
 				Name="VCLinkerTool"
 				AdditionalDependencies="vfw32.lib winmm.lib DrvCommon.lib"
-				LinkIncremental="2"
 				AdditionalLibraryDirectories=""
 				ModuleDefinitionFile=".\scionfg.def"
 				GenerateDebugInformation="true"
@@ -241,6 +155,89 @@
 				RandomizedBaseAddress="1"
 				DataExecutionPrevention="0"
 				TargetMachine="17"
+			/>
+			<Tool
+				Name="VCALinkTool"
+			/>
+			<Tool
+				Name="VCManifestTool"
+			/>
+			<Tool
+				Name="VCXDCMakeTool"
+			/>
+			<Tool
+				Name="VCBscMakeTool"
+			/>
+			<Tool
+				Name="VCFxCopTool"
+			/>
+			<Tool
+				Name="VCAppVerifierTool"
+			/>
+			<Tool
+				Name="VCPostBuildEventTool"
+			/>
+		</Configuration>
+		<Configuration
+			Name="Release|Win32"
+			ConfigurationType="2"
+			InheritedPropertySheets="..\..\..\..\props\CommonEnv.vsprops"
+			UseOfMFC="2"
+			CharacterSet="2"
+			>
+			<Tool
+				Name="VCPreBuildEventTool"
+			/>
+			<Tool
+				Name="VCCustomBuildTool"
+			/>
+			<Tool
+				Name="VCXMLDataGeneratorTool"
+			/>
+			<Tool
+				Name="VCWebServiceProxyGeneratorTool"
+			/>
+			<Tool
+				Name="VCMIDLTool"
+			/>
+			<Tool
+				Name="VCCLCompilerTool"
+				Optimization="2"
+				InlineFunctionExpansion="1"
+				OmitFramePointers="true"
+				AdditionalIncludeDirectories="..\DrvCommon2;&quot;$(SolutionDir)common2&quot;"
+				PreprocessorDefinitions="WIN32;NDEBUG;_WINDOWS;_USRDLL;SCIONFG_EXPORTS"
+				StringPooling="true"
+				RuntimeLibrary="2"
+				EnableFunctionLevelLinking="true"
+				TreatWChar_tAsBuiltInType="false"
+				ForceConformanceInForLoopScope="false"
+				UsePrecompiledHeader="2"
+				WarningLevel="3"
+				Detect64BitPortabilityProblems="true"
+				DebugInformationFormat="3"
+			/>
+			<Tool
+				Name="VCManagedResourceCompilerTool"
+			/>
+			<Tool
+				Name="VCResourceCompilerTool"
+			/>
+			<Tool
+				Name="VCPreLinkEventTool"
+			/>
+			<Tool
+				Name="VCLinkerTool"
+				AdditionalDependencies="vfw32.lib winmm.lib DrvCommon.lib"
+				AdditionalLibraryDirectories=""
+				ModuleDefinitionFile=".\scionfg.def"
+				GenerateDebugInformation="true"
+				SubSystem="2"
+				OptimizeReferences="2"
+				EnableCOMDATFolding="2"
+				RandomizedBaseAddress="1"
+				DataExecutionPrevention="0"
+				TargetMachine="1"
 			/>
 			<Tool
 				Name="VCALinkTool"
@@ -316,7 +313,6 @@
 			<Tool
 				Name="VCLinkerTool"
 				AdditionalDependencies="vfw32.lib winmm.lib DrvCommon.lib"
-				LinkIncremental="1"
 				AdditionalLibraryDirectories=""
 				ModuleDefinitionFile=".\scionfg.def"
 				GenerateDebugInformation="true"
@@ -393,7 +389,7 @@
 					/>
 				</FileConfiguration>
 				<FileConfiguration
-					Name="Release|Win32"
+					Name="Debug|x64"
 					>
 					<Tool
 						Name="VCCLCompilerTool"
@@ -401,7 +397,7 @@
 					/>
 				</FileConfiguration>
 				<FileConfiguration
-					Name="Debug|x64"
+					Name="Release|Win32"
 					>
 					<Tool
 						Name="VCCLCompilerTool"

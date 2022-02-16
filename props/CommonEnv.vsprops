@@ -19,15 +19,14 @@
 	/>
 	<Tool
 		Name="VCLinkerTool"
-		OutputFile="$(SolutionDir)vt5\$(PlatformName)\$(ConfigurationName)\comps\$(ProjectName).dll"
+		OutputFile="$(OutDir)\$(ProjectName).dll"
 		AdditionalLibraryDirectories="$(SolutionDir)lib\$(PlatformName)\$(ConfigurationName)"
 		ModuleDefinitionFile="$(ProjectName).def"
-		ProgramDatabaseFile="$(TargetDir)..\pdb\$(TargetName).pdb"
+		ProgramDatabaseFile="$(TargetDir)\pdb\$(TargetName).pdb"
 		ImportLibrary="$(SolutionDir)lib\$(PlatformName)\$(ConfigurationName)\$(ProjectName).lib"
 	/>
 	<Tool
 		Name="VCMIDLTool"
-		TypeLibraryName="$(OutDir)/$(ProjectName).tlb"
-		OutputDirectory="$(IntDir)"
+		TypeLibraryName="$(SolutionDir)vt5\$(PlatformName)\$(ConfigurationName)\$(InputName).tlb"
 	/>
 </VisualStudioPropertySheet>

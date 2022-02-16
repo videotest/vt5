@@ -23,6 +23,19 @@
 
 #import "msado15.dll" rename_namespace("ADO") rename("EOF", "ADOEOF")
 
+CArchive &operator<<(CArchive& ar, GuidKey &g)
+{	
+	long	*pl = (long*)&g;
+	ar<<pl[0]<<pl[1]<<pl[2]<<pl[3];
+	return ar;
+}
+CArchive &operator>>(CArchive& ar, GuidKey &g)
+{	
+	long	*pl = (long*)&g;
+	ar>>pl[0]>>pl[1]>>pl[2]>>pl[3];
+	return ar;
+}
+
 class time_test2
 {
 public:

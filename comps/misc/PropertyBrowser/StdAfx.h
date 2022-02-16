@@ -15,10 +15,13 @@
 #endif
 #define _ATL_APARTMENT_THREADED
 
-//#include <afxwin.h>
-//#include <afxdisp.h>
+
+#include <afxwin.h>
 
 #include <atlbase.h>
+#ifdef _ATL_STATIC_REGISTRY
+#include <statreg.h>
+#endif
 //You may derive a class from CComModule and use it if you want to override
 //something, but do not change the name of _Module
 extern CComModule _Module;

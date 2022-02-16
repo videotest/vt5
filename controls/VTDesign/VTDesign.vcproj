@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="windows-1251"?>
 <VisualStudioProject
 	ProjectType="Visual C++"
-	Version="9,00"
+	Version="9.00"
 	Name="VTDesign"
 	ProjectGUID="{C10AAE1D-51F1-4F6D-9B17-F693E12F46DF}"
 	RootNamespace="VTDesign"
@@ -21,6 +21,7 @@
 	<Configurations>
 		<Configuration
 			Name="Debug|Win32"
+			OutputDirectory="$(SolutionDir)vt5\$(PlatformName)\$(ConfigurationName)\"
 			ConfigurationType="2"
 			InheritedPropertySheets="..\..\props\CommonEnv.vsprops"
 			UseOfMFC="2"
@@ -46,6 +47,7 @@
 				PreprocessorDefinitions="_DEBUG"
 				AdditionalIncludeDirectories=" "
 				MkTypLibCompatible="true"
+				TypeLibraryName="$(OutDir)\$(InputName).tlb"
 			/>
 			<Tool
 				Name="VCCLCompilerTool"
@@ -115,6 +117,7 @@
 		</Configuration>
 		<Configuration
 			Name="Debug|x64"
+			OutputDirectory="$(SolutionDir)vt5\$(PlatformName)\$(ConfigurationName)\"
 			ConfigurationType="2"
 			InheritedPropertySheets="..\..\props\CommonEnv.vsprops"
 			UseOfMFC="2"
@@ -140,6 +143,7 @@
 				AdditionalIncludeDirectories=" "
 				MkTypLibCompatible="true"
 				TargetEnvironment="3"
+				TypeLibraryName="$(OutDir)\$(InputName).tlb"
 			/>
 			<Tool
 				Name="VCCLCompilerTool"
@@ -201,6 +205,7 @@
 		</Configuration>
 		<Configuration
 			Name="Release|Win32"
+			OutputDirectory="$(SolutionDir)vt5\$(PlatformName)\$(ConfigurationName)\"
 			ConfigurationType="2"
 			InheritedPropertySheets="..\..\props\CommonEnv.vsprops"
 			UseOfMFC="2"
@@ -228,6 +233,7 @@
 				MkTypLibCompatible="true"
 				SuppressStartupBanner="true"
 				TargetEnvironment="1"
+				TypeLibraryName="$(OutDir)\$(InputName).tlb"
 			/>
 			<Tool
 				Name="VCCLCompilerTool"
@@ -298,6 +304,7 @@
 		</Configuration>
 		<Configuration
 			Name="Release|x64"
+			OutputDirectory="$(SolutionDir)vt5\$(PlatformName)\$(ConfigurationName)\"
 			ConfigurationType="2"
 			InheritedPropertySheets="..\..\props\CommonEnv.vsprops"
 			UseOfMFC="2"
@@ -320,27 +327,21 @@
 			/>
 			<Tool
 				Name="VCMIDLTool"
-				PreprocessorDefinitions="NDEBUG"
 				AdditionalIncludeDirectories=" "
 				MkTypLibCompatible="true"
-				SuppressStartupBanner="true"
 				TargetEnvironment="3"
+				TypeLibraryName="$(OutDir)\$(InputName).tlb"
 			/>
 			<Tool
 				Name="VCCLCompilerTool"
-				InlineFunctionExpansion="1"
+				Optimization="2"
 				AdditionalIncludeDirectories=""
 				PreprocessorDefinitions="_WIN64;_M_X64;_AFX_SECURE_NO_DEPRECATE;_CRT_SECURE_NO_DEPRECATE;NDEBUG;_WINDOWS;_USRDLL"
-				StringPooling="true"
+				BasicRuntimeChecks="0"
 				RuntimeLibrary="2"
-				EnableFunctionLevelLinking="true"
-				TreatWChar_tAsBuiltInType="false"
-				ForceConformanceInForLoopScope="false"
-				RuntimeTypeInfo="true"
 				UsePrecompiledHeader="2"
-				PrecompiledHeaderThrough="stdafx.h"
+				BrowseInformation="0"
 				WarningLevel="3"
-				SuppressStartupBanner="true"
 				DebugInformationFormat="3"
 				CompileAs="0"
 			/>
@@ -350,7 +351,7 @@
 			<Tool
 				Name="VCResourceCompilerTool"
 				PreprocessorDefinitions="_AFXDLL;NDEBUG"
-				Culture="1049"
+				Culture="1033"
 				AdditionalIncludeDirectories="$(OutDir)"
 			/>
 			<Tool
@@ -360,8 +361,7 @@
 				Name="VCLinkerTool"
 				AdditionalDependencies="vfw32.lib gdiplus.lib"
 				AdditionalLibraryDirectories=""
-				ModuleDefinitionFile=".\VTDesign.def"
-				GenerateDebugInformation="true"
+				ProgramDatabaseFile=" "
 				SubSystem="2"
 				RandomizedBaseAddress="1"
 				DataExecutionPrevention="2"
@@ -594,7 +594,6 @@
 					<Tool
 						Name="VCMIDLTool"
 						TargetEnvironment="1"
-						TypeLibraryName="\vt5\vt5\Release\comps\VTDesign.tlb"
 						HeaderFileName="VTDesign_h.h"
 					/>
 				</FileConfiguration>
@@ -604,8 +603,6 @@
 					<Tool
 						Name="VCMIDLTool"
 						TargetEnvironment="1"
-						TypeLibraryName="\vt5\vt5\Release\comps\VTDesign.tlb"
-						HeaderFileName="VTDesign_h.h"
 					/>
 				</FileConfiguration>
 			</File>
