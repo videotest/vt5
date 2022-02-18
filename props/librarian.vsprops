@@ -3,7 +3,7 @@
 	ProjectType="Visual C++"
 	Version="8.00"
 	Name="librarian"
-	OutputDirectory="$(SolutionDir)lib\$(PlatformName)\$(ConfigurationName)\$(ProjectName).lib"
+	OutputDirectory="$(SolutionDir)lib\$(PlatformName)\$(ConfigurationName)\"
 	>
 	<Tool
 		Name="VCLibrarianTool"

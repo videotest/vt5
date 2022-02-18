@@ -63,7 +63,7 @@
 			<Tool
 				Name="VCResourceCompilerTool"
 				Culture="1033"
-				AdditionalIncludeDirectories="&quot;$(SolutionDir)vt5\$(PlatformName)\$(ConfigurationName)\comps&quot;"
+				AdditionalIncludeDirectories=""
 			/>
 			<Tool
 				Name="VCPreLinkEventTool"
@@ -144,7 +144,7 @@
 			<Tool
 				Name="VCResourceCompilerTool"
 				Culture="1033"
-				AdditionalIncludeDirectories="&quot;$(SolutionDir)vt5\$(PlatformName)\$(ConfigurationName)\comps&quot;"
+				AdditionalIncludeDirectories=""
 			/>
 			<Tool
 				Name="VCPreLinkEventTool"
@@ -228,7 +228,7 @@
 			<Tool
 				Name="VCResourceCompilerTool"
 				Culture="1033"
-				AdditionalIncludeDirectories="&quot;$(SolutionDir)vt5\$(PlatformName)\$(ConfigurationName)\comps&quot;"
+				AdditionalIncludeDirectories=""
 			/>
 			<Tool
 				Name="VCPreLinkEventTool"
@@ -315,7 +315,7 @@
 			<Tool
 				Name="VCResourceCompilerTool"
 				Culture="1033"
-				AdditionalIncludeDirectories="&quot;$(SolutionDir)vt5\$(PlatformName)\$(ConfigurationName)\comps&quot;"
+				AdditionalIncludeDirectories=""
 			/>
 			<Tool
 				Name="VCPreLinkEventTool"

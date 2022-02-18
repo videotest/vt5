@@ -45,7 +45,6 @@
 				MkTypLibCompatible="true"
 				SuppressStartupBanner="true"
 				TargetEnvironment="1"
-				TypeLibraryName="\vt5\comps\misc\forensic\Debug/forensic.tlb"
 			/>
 			<Tool
 				Name="VCCLCompilerTool"
@@ -58,9 +57,6 @@
 				RuntimeTypeInfo="true"
 				UsePrecompiledHeader="2"
 				PrecompiledHeaderThrough="stdafx.h"
-				AssemblerListingLocation="\vt5\comps\misc\forensic\Debug/"
-				ObjectFile="\vt5\comps\misc\forensic\Debug/"
-				ProgramDataBaseFileName="\vt5\comps\misc\forensic\Debug/"
 				BrowseInformation="1"
 				DebugInformationFormat="4"
 				CompileAs="0"
@@ -134,7 +130,6 @@
 				MkTypLibCompatible="true"
 				SuppressStartupBanner="true"
 				TargetEnvironment="3"
-				TypeLibraryName="\vt5\comps\misc\forensic\Debug/forensic.tlb"
 			/>
 			<Tool
 				Name="VCCLCompilerTool"
@@ -221,7 +216,6 @@
 				MkTypLibCompatible="true"
 				SuppressStartupBanner="true"
 				TargetEnvironment="1"
-				TypeLibraryName="\vt5\comps\misc\forensic\release/forensic.tlb"
 			/>
 			<Tool
 				Name="VCCLCompilerTool"
@@ -235,9 +229,6 @@
 				RuntimeTypeInfo="true"
 				UsePrecompiledHeader="2"
 				PrecompiledHeaderThrough="stdafx.h"
-				AssemblerListingLocation="\vt5\comps\misc\forensic\release/"
-				ObjectFile="\vt5\comps\misc\forensic\release/"
-				ProgramDataBaseFileName="\vt5\comps\misc\forensic\release/"
 				DebugInformationFormat="3"
 				CompileAs="0"
 			/>
@@ -310,7 +301,6 @@
 				MkTypLibCompatible="true"
 				SuppressStartupBanner="true"
 				TargetEnvironment="3"
-				TypeLibraryName="\vt5\comps\misc\forensic\release/forensic.tlb"
 			/>
 			<Tool
 				Name="VCCLCompilerTool"

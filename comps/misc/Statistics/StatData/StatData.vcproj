@@ -241,8 +241,6 @@
 			<Tool
 				Name="VCLinkerTool"
 				AdditionalDependencies=" "
-				LinkIncremental="1"
-				SuppressStartupBanner="true"
 				AdditionalLibraryDirectories=" "
 				IgnoreAllDefaultLibraries="false"
 				IgnoreDefaultLibraryNames="libc.lib"

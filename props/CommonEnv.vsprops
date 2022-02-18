@@ -27,6 +27,11 @@
 	/>
 	<Tool
 		Name="VCMIDLTool"
-		TypeLibraryName="$(SolutionDir)vt5\$(PlatformName)\$(ConfigurationName)\$(InputName).tlb"
+		TypeLibraryName="$(SolutionDir)vt5\$(PlatformName)\$(ConfigurationName)\$(ProjectName).tlb"
+		OutputDirectory=""
+	/>
+	<Tool
+		Name="VCResourceCompilerTool"
+		AdditionalIncludeDirectories="$(SolutionDir)vt5\$(PlatformName)\$(ConfigurationName)"
 	/>
 </VisualStudioPropertySheet>
