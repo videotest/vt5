@@ -2,15 +2,15 @@
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
     <Filter Include="Source Files">
-      <UniqueIdentifier>{6b8d2de8-1e71-4bd2-b289-9c2f8bf519f4}</UniqueIdentifier>
+      <UniqueIdentifier>{9b304cf1-5f1e-48aa-93a6-93d24e924e91}</UniqueIdentifier>
       <Extensions>cpp;c;cxx;def;odl;idl;hpj;bat;asm</Extensions>
     </Filter>
     <Filter Include="Header Files">
-      <UniqueIdentifier>{b61112ab-c588-4700-8312-562a82bee6d3}</UniqueIdentifier>
+      <UniqueIdentifier>{38aa6eb8-24cd-4781-b2a4-9293baa6d030}</UniqueIdentifier>
       <Extensions>h;hpp;hxx;hm;inl;inc</Extensions>
     </Filter>
     <Filter Include="Resource Files">
-      <UniqueIdentifier>{f501f612-51d7-43ba-b4ab-8ce46c9c079a}</UniqueIdentifier>
+      <UniqueIdentifier>{b28eadfd-788e-49cf-9ab8-cc300bf15830}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe</Extensions>
     </Filter>
   </ItemGroup>
@@ -38,7 +38,6 @@
     <None Include="res\ProgRes.rc2">
       <Filter>Resource Files</Filter>
     </None>
-    <None Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="FWDownload.h">
@@ -73,5 +72,8 @@
   </ItemGroup>
   <ItemGroup>
     <Library Include="CxxPlus.lib" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="ReadMe.txt" />
   </ItemGroup>
 </Project>

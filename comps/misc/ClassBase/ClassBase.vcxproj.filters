@@ -2,15 +2,15 @@
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
     <Filter Include="Source Files">
-      <UniqueIdentifier>{a455b16a-3b1f-4dcd-a165-442c066a1116}</UniqueIdentifier>
+      <UniqueIdentifier>{7d0d156c-bdc0-4b93-9096-4222abc47648}</UniqueIdentifier>
       <Extensions>cpp;c;cxx;def;odl;idl;hpj;bat;asm</Extensions>
     </Filter>
     <Filter Include="Header Files">
-      <UniqueIdentifier>{9bbe551c-38ab-4497-920b-db61982a65e5}</UniqueIdentifier>
+      <UniqueIdentifier>{2ff5dbc9-055c-460d-be49-65b70f944f9b}</UniqueIdentifier>
       <Extensions>h;hpp;hxx;hm;inl;inc</Extensions>
     </Filter>
     <Filter Include="Resource Files">
-      <UniqueIdentifier>{c505c652-2127-4c85-aca5-df04fee37f44}</UniqueIdentifier>
+      <UniqueIdentifier>{c09bcabb-e6ac-426c-9f21-2b86f83d0e68}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe</Extensions>
     </Filter>
   </ItemGroup>
@@ -50,10 +50,6 @@
     <None Include="res\ClassBase.rc2">
       <Filter>Resource Files</Filter>
     </None>
-    <None Include="toolbar1.bmp">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="Model.mdx" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Actions.h">
@@ -91,5 +87,10 @@
     <ResourceCompile Include="ClassBase.rc">
       <Filter>Resource Files</Filter>
     </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="toolbar1.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
   </ItemGroup>
 </Project>

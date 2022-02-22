@@ -2,15 +2,15 @@
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
     <Filter Include="Source Files">
-      <UniqueIdentifier>{c7198d8e-c095-4b89-91d9-1d030cd70c86}</UniqueIdentifier>
+      <UniqueIdentifier>{694b41b1-b6aa-4060-9cf9-7bc059e41bf3}</UniqueIdentifier>
       <Extensions>cpp;c;cxx;rc;def;r;odl;idl;hpj;bat</Extensions>
     </Filter>
     <Filter Include="Header Files">
-      <UniqueIdentifier>{65475bed-a06f-43f2-886f-a5caafd3779c}</UniqueIdentifier>
+      <UniqueIdentifier>{53ac66fb-f952-49f4-97fd-205ca8725d33}</UniqueIdentifier>
       <Extensions>h;hpp;hxx;hm;inl</Extensions>
     </Filter>
     <Filter Include="Resource Files">
-      <UniqueIdentifier>{195a5919-6ccd-4183-98b0-7b93e060837c}</UniqueIdentifier>
+      <UniqueIdentifier>{c5787f7d-28ab-424c-88d9-3d8baa794afe}</UniqueIdentifier>
       <Extensions>ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe</Extensions>
     </Filter>
   </ItemGroup>
@@ -77,9 +77,6 @@
     <None Include="RES\CurWidth.cur">
       <Filter>Resource Files</Filter>
     </None>
-    <None Include="DataView.bmp">
-      <Filter>Resource Files</Filter>
-    </None>
     <None Include="res\DataView.rc2">
       <Filter>Resource Files</Filter>
     </None>
@@ -143,5 +140,13 @@
     <ClInclude Include="VTGridCtrl.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="DataView.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="ReadMe.txt" />
   </ItemGroup>
 </Project>

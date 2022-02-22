@@ -1,5 +1,5 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
     <ProjectConfiguration Include="Debug|Win32">
       <Configuration>Debug</Configuration>
@@ -19,27 +19,32 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
+    <VCProjectVersion>17.0</VCProjectVersion>
     <ProjectGuid>{E7B9A26E-C25F-4BCC-A064-7D1C26558F3E}</ProjectGuid>
     <RootNamespace>common2</RootNamespace>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
     <ConfigurationType>StaticLibrary</ConfigurationType>
+    <PlatformToolset>v143</PlatformToolset>
     <UseOfMfc>false</UseOfMfc>
     <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
     <ConfigurationType>StaticLibrary</ConfigurationType>
+    <PlatformToolset>v143</PlatformToolset>
     <UseOfMfc>false</UseOfMfc>
     <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
     <ConfigurationType>StaticLibrary</ConfigurationType>
+    <PlatformToolset>v143</PlatformToolset>
     <UseOfMfc>false</UseOfMfc>
     <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
     <ConfigurationType>StaticLibrary</ConfigurationType>
+    <PlatformToolset>v143</PlatformToolset>
     <UseOfMfc>false</UseOfMfc>
     <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>
@@ -60,27 +65,23 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup>
-    <_ProjectFileVersion>10.0.30319.1</_ProjectFileVersion>
-    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(SolutionDir)lib/$(Platform)/$(Configuration)\</OutDir>
-    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(SolutionDir)build/$(Platform)/$(Configuration)/$(ProjectName)\</IntDir>
-    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(SolutionDir)lib/$(Platform)/$(Configuration)\</OutDir>
-    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(SolutionDir)build/$(Platform)/$(Configuration)/$(ProjectName)\</IntDir>
-    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(SolutionDir)lib/$(Platform)/$(Configuration)\</OutDir>
-    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(SolutionDir)build/$(Platform)/$(Configuration)/$(ProjectName)\</IntDir>
-    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(SolutionDir)lib/$(Platform)/$(Configuration)\</OutDir>
-    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(SolutionDir)build/$(Platform)/$(Configuration)/$(ProjectName)\</IntDir>
-    <CodeAnalysisRuleSet Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">AllRules.ruleset</CodeAnalysisRuleSet>
-    <CodeAnalysisRules Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" />
-    <CodeAnalysisRuleAssemblies Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" />
-    <CodeAnalysisRuleSet Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">AllRules.ruleset</CodeAnalysisRuleSet>
-    <CodeAnalysisRules Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" />
-    <CodeAnalysisRuleAssemblies Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" />
-    <CodeAnalysisRuleSet Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">AllRules.ruleset</CodeAnalysisRuleSet>
-    <CodeAnalysisRules Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" />
-    <CodeAnalysisRuleAssemblies Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" />
-    <CodeAnalysisRuleSet Condition="'$(Configuration)|$(Platform)'=='Release|x64'">AllRules.ruleset</CodeAnalysisRuleSet>
-    <CodeAnalysisRules Condition="'$(Configuration)|$(Platform)'=='Release|x64'" />
-    <CodeAnalysisRuleAssemblies Condition="'$(Configuration)|$(Platform)'=='Release|x64'" />
+    <_ProjectFileVersion>17.0.32203.90</_ProjectFileVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <OutDir>$(SolutionDir)lib/$(Platform)/$(Configuration)\</OutDir>
+    <IntDir>$(SolutionDir)build/$(Platform)/$(Configuration)/$(ProjectName)\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <OutDir>$(SolutionDir)lib/$(Platform)/$(Configuration)\</OutDir>
+    <IntDir>$(SolutionDir)build/$(Platform)/$(Configuration)/$(ProjectName)\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <OutDir>$(SolutionDir)lib/$(Platform)/$(Configuration)\</OutDir>
+    <IntDir>$(SolutionDir)build/$(Platform)/$(Configuration)/$(ProjectName)\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <OutDir>$(SolutionDir)lib/$(Platform)/$(Configuration)\</OutDir>
+    <IntDir>$(SolutionDir)build/$(Platform)/$(Configuration)/$(ProjectName)\</IntDir>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
@@ -189,6 +190,9 @@
     </Lib>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="..\common\HelpDlgImpl.cpp" />
+    <ClCompile Include="..\common\ImagePane.cpp" />
+    <ClCompile Include="..\common\MenuRegistrator.cpp" />
     <ClCompile Include="action_filter.cpp" />
     <ClCompile Include="action_interactive.cpp" />
     <ClCompile Include="action_main.cpp" />
@@ -201,9 +205,7 @@
     <ClCompile Include="com_unknown.cpp" />
     <ClCompile Include="data_main.cpp" />
     <ClCompile Include="file_main.cpp" />
-    <ClCompile Include="..\common\HelpDlgImpl.cpp" />
     <ClCompile Include="helper.cpp" />
-    <ClCompile Include="..\common\ImagePane.cpp" />
     <ClCompile Include="impl_draw.cpp" />
     <ClCompile Include="impl_event.cpp" />
     <ClCompile Include="impl_help.cpp" />
@@ -212,7 +214,6 @@
     <ClCompile Include="impl_misc.cpp" />
     <ClCompile Include="impl_mouse.cpp" />
     <ClCompile Include="ini_values.cpp" />
-    <ClCompile Include="..\common\MenuRegistrator.cpp" />
     <ClCompile Include="misc_calibr.cpp" />
     <ClCompile Include="misc_utils.cpp" />
     <ClCompile Include="msic_list.cpp" />
@@ -234,6 +235,9 @@
     <None Include="misc_list.inl" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\common\HelpDlgImpl.h" />
+    <ClInclude Include="..\common\ImagePane.h" />
+    <ClInclude Include="..\common\MenuRegistrator.h" />
     <ClInclude Include="action_filter.h" />
     <ClInclude Include="action_interactive.h" />
     <ClInclude Include="action_main.h" />
@@ -250,10 +254,8 @@
     <ClInclude Include="com_unknown.h" />
     <ClInclude Include="data_main.h" />
     <ClInclude Include="file_main.h" />
-    <ClInclude Include="..\common\HelpDlgImpl.h" />
     <ClInclude Include="helper.h" />
     <ClInclude Include="IDispatchImpl.h" />
-    <ClInclude Include="..\common\ImagePane.h" />
     <ClInclude Include="impl_draw.h" />
     <ClInclude Include="impl_event.h" />
     <ClInclude Include="impl_help.h" />
@@ -261,7 +263,6 @@
     <ClInclude Include="impl_misc.h" />
     <ClInclude Include="impl_mouse.h" />
     <ClInclude Include="ini_values.h" />
-    <ClInclude Include="..\common\MenuRegistrator.h" />
     <ClInclude Include="misc_calibr.h" />
     <ClInclude Include="misc_classes.h" />
     <ClInclude Include="misc_const.h" />
@@ -283,7 +284,7 @@
   </ImportGroup>
   <ProjectExtensions>
     <VisualStudio>
-      <UserProperties DevPartner_IsInstrumented="1" />
+      <UserProperties DevPartner_IsInstrumented="0" />
     </VisualStudio>
   </ProjectExtensions>
 </Project>

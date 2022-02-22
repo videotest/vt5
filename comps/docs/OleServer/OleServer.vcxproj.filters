@@ -2,15 +2,15 @@
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
     <Filter Include="Source Files">
-      <UniqueIdentifier>{9b6fb07a-512b-4a1d-8eb3-f3a782dba411}</UniqueIdentifier>
+      <UniqueIdentifier>{8da7282f-1cf1-42a5-aee3-14114c7a8584}</UniqueIdentifier>
       <Extensions>cpp;c;cxx;rc;def;r;odl;idl;hpj;bat</Extensions>
     </Filter>
     <Filter Include="Header Files">
-      <UniqueIdentifier>{9e5c414f-a6f9-43c8-a75a-e056d49acf99}</UniqueIdentifier>
+      <UniqueIdentifier>{0492014f-dbb2-4fe9-a774-f880d63edf08}</UniqueIdentifier>
       <Extensions>h;hpp;hxx;hm;inl</Extensions>
     </Filter>
     <Filter Include="Resource Files">
-      <UniqueIdentifier>{98555d76-f459-4a2d-a8f8-6c9da13f99c5}</UniqueIdentifier>
+      <UniqueIdentifier>{8132bc23-6ad9-4135-a602-9d32ce54d964}</UniqueIdentifier>
       <Extensions>ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe</Extensions>
     </Filter>
   </ItemGroup>
@@ -21,7 +21,6 @@
     <None Include="res\OleServer.rc2">
       <Filter>Resource Files</Filter>
     </None>
-    <None Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="FactoryManager.cpp">
@@ -58,5 +57,8 @@
     <ClInclude Include="StdAfx.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="ReadMe.txt" />
   </ItemGroup>
 </Project>

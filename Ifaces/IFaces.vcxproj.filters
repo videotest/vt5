@@ -2,14 +2,14 @@
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
     <Filter Include="Idl">
-      <UniqueIdentifier>{486908dc-7654-4569-b095-2dff70981f7c}</UniqueIdentifier>
+      <UniqueIdentifier>{29545862-fb69-4224-ada1-c6dc807e6343}</UniqueIdentifier>
     </Filter>
     <Filter Include="Header">
-      <UniqueIdentifier>{f55899ba-8e6d-4e8a-a670-cfc9f93b4d95}</UniqueIdentifier>
+      <UniqueIdentifier>{ab2e6350-ed2c-4fa8-ab76-07c4cd81bf28}</UniqueIdentifier>
       <Extensions>*.h</Extensions>
     </Filter>
     <Filter Include="Idl Headers">
-      <UniqueIdentifier>{998d25d1-f275-4707-8d7c-cdc43e3002a8}</UniqueIdentifier>
+      <UniqueIdentifier>{341f40ad-af07-409f-b8fb-eb73ff4dc78e}</UniqueIdentifier>
       <Extensions>*.h</Extensions>
     </Filter>
   </ItemGroup>

@@ -2,15 +2,15 @@
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
     <Filter Include="Source Files">
-      <UniqueIdentifier>{cd785d2c-2437-4e45-8a97-b79e27aae89e}</UniqueIdentifier>
+      <UniqueIdentifier>{2b415621-242c-4dfe-a7da-76781a2f6e0a}</UniqueIdentifier>
       <Extensions>cpp;c;cxx;def;odl;idl;hpj;bat;asm</Extensions>
     </Filter>
     <Filter Include="Header Files">
-      <UniqueIdentifier>{ce2bc4a9-cc89-4e5c-8523-0c22d7b195b5}</UniqueIdentifier>
+      <UniqueIdentifier>{9828b953-321a-404a-bd49-c344875ba085}</UniqueIdentifier>
       <Extensions>h;hpp;hxx;hm;inl;inc</Extensions>
     </Filter>
     <Filter Include="Resource Files">
-      <UniqueIdentifier>{f26f1743-d383-4203-88a6-d241670f9b5b}</UniqueIdentifier>
+      <UniqueIdentifier>{85649904-6eb8-4310-a635-2770bf675205}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe</Extensions>
     </Filter>
   </ItemGroup>
@@ -80,19 +80,7 @@
     <None Include="StatUI.def">
       <Filter>Source Files</Filter>
     </None>
-    <None Include="res\bitmap1.bmp">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="res\stat_obj.ico">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="res\stat_table.ico">
-      <Filter>Resource Files</Filter>
-    </None>
     <None Include="res\StatUI.rc2">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="res\toolbar1.bmp">
       <Filter>Resource Files</Filter>
     </None>
   </ItemGroup>
@@ -169,6 +157,20 @@
     <ClInclude Include="WGridView.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="res\bitmap1.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\stat_obj.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\stat_table.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\toolbar1.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="StatUI.rc">

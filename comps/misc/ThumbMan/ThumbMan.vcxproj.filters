@@ -2,15 +2,15 @@
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
     <Filter Include="Source Files">
-      <UniqueIdentifier>{64904ce9-9c8a-46bf-8e50-adf879464333}</UniqueIdentifier>
+      <UniqueIdentifier>{e55e6599-2638-4e2d-86af-56f4efbb8251}</UniqueIdentifier>
       <Extensions>cpp;c;cxx;rc;def;r;odl;idl;hpj;bat</Extensions>
     </Filter>
     <Filter Include="Header Files">
-      <UniqueIdentifier>{95b370b8-6887-4b26-94bc-ac43fcaf506e}</UniqueIdentifier>
+      <UniqueIdentifier>{1b89d9cf-6e07-42bc-baa4-2392b0a4b7ea}</UniqueIdentifier>
       <Extensions>h;hpp;hxx;hm;inl</Extensions>
     </Filter>
     <Filter Include="Resource Files">
-      <UniqueIdentifier>{c59de2ba-fcef-41b6-8b09-9d686af72ce8}</UniqueIdentifier>
+      <UniqueIdentifier>{b8723e6a-2209-4e97-af9d-b102780fb6e1}</UniqueIdentifier>
       <Extensions>ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe</Extensions>
     </Filter>
   </ItemGroup>
@@ -35,18 +35,6 @@
     <None Include="ThumbMan.def">
       <Filter>Source Files</Filter>
     </None>
-    <None Include="avi_add.ico">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="ico00001.ico">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="icon1.ico">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="icon2.ico">
-      <Filter>Resource Files</Filter>
-    </None>
     <None Include="res\ThumbMan.rc2">
       <Filter>Resource Files</Filter>
     </None>
@@ -56,7 +44,6 @@
     <None Include="wmfNoImageAdv.bin">
       <Filter>Resource Files</Filter>
     </None>
-    <None Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
     <Midl Include="ThumbMan.odl">
@@ -90,5 +77,22 @@
     <ClInclude Include="Wmf.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="avi_add.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="ico00001.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="icon1.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="icon2.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="ReadMe.txt" />
   </ItemGroup>
 </Project>

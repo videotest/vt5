@@ -2,15 +2,15 @@
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
     <Filter Include="Source Files">
-      <UniqueIdentifier>{c9d75b87-9049-4334-82b8-34632413ac5d}</UniqueIdentifier>
+      <UniqueIdentifier>{fe361275-7347-4b4e-a498-14d0a0f2e2fa}</UniqueIdentifier>
       <Extensions>cpp;c;cxx;rc;def;r;odl;idl;hpj;bat</Extensions>
     </Filter>
     <Filter Include="Header Files">
-      <UniqueIdentifier>{cf6b9b1f-b5d2-4bfe-9811-5934e6a38c96}</UniqueIdentifier>
+      <UniqueIdentifier>{f23c54aa-76c1-434f-a927-b697cc08ad68}</UniqueIdentifier>
       <Extensions>h;hpp;hxx;hm;inl</Extensions>
     </Filter>
     <Filter Include="Resource Files">
-      <UniqueIdentifier>{e6f3e6f8-56e4-4a0b-b004-690d1784cf15}</UniqueIdentifier>
+      <UniqueIdentifier>{d11b3fd4-6700-48a8-ae82-e585a8c9d9b8}</UniqueIdentifier>
       <Extensions>ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe</Extensions>
     </Filter>
   </ItemGroup>
@@ -98,40 +98,9 @@
     <None Include="vtcontrols2.def">
       <Filter>Source Files</Filter>
     </None>
-    <None Include="bitmaph.bmp">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="bmp00001.bmp">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="col_slider.ico">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="ColorRangeCtrl.bmp">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="VTColorPickerCtl.bmp">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="vtcombob.bmp">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="VTComboBoxCtl.bmp">
-      <Filter>Resource Files</Filter>
-    </None>
     <None Include="res\Vtcontrols2.rc2">
       <Filter>Resource Files</Filter>
     </None>
-    <None Include="VTProgressBarCtrl.bmp">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="VTRadioBtnCtrl.bmp">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="VTWidthCtl.bmp">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
     <Midl Include="vtcontrols2.odl">
@@ -225,5 +194,40 @@
     <ClInclude Include="WidthDlg.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="bitmaph.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="bmp00001.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="col_slider.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="ColorRangeCtrl.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="VTColorPickerCtl.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="vtcombob.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="VTComboBoxCtl.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="VTProgressBarCtrl.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="VTRadioBtnCtrl.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="VTWidthCtl.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="ReadMe.txt" />
   </ItemGroup>
 </Project>

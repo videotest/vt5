@@ -2,15 +2,15 @@
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
     <Filter Include="Source Files">
-      <UniqueIdentifier>{a6dd285a-3fff-4766-9269-030fd52e6847}</UniqueIdentifier>
+      <UniqueIdentifier>{5cff16d5-6a16-463f-8a47-4af1686d9a8e}</UniqueIdentifier>
       <Extensions>cpp;c;cxx;rc;def;r;odl;idl;hpj;bat</Extensions>
     </Filter>
     <Filter Include="Header Files">
-      <UniqueIdentifier>{24c4f7a8-9a55-4db2-8d27-3a91aafd194a}</UniqueIdentifier>
+      <UniqueIdentifier>{e0dad210-c22a-44c1-87af-45738d141cc7}</UniqueIdentifier>
       <Extensions>h;hpp;hxx;hm;inl</Extensions>
     </Filter>
     <Filter Include="Resource Files">
-      <UniqueIdentifier>{9bfc07db-240f-48bd-8b69-e48d5328a659}</UniqueIdentifier>
+      <UniqueIdentifier>{ac080309-9042-4b6c-bd3a-603a255a89e2}</UniqueIdentifier>
       <Extensions>ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe</Extensions>
     </Filter>
   </ItemGroup>
@@ -32,7 +32,6 @@
     <None Include="res\Collect.rc2">
       <Filter>Resource Files</Filter>
     </None>
-    <None Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="Collect.rc">
@@ -52,5 +51,8 @@
     <ClInclude Include="StdAfx.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="ReadMe.txt" />
   </ItemGroup>
 </Project>

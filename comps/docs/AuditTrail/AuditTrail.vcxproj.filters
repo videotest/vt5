@@ -2,15 +2,15 @@
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
     <Filter Include="Source Files">
-      <UniqueIdentifier>{30bde3b1-2f31-4c70-ab21-1cb6292ef977}</UniqueIdentifier>
+      <UniqueIdentifier>{5f0e1bfc-903e-4bb6-824d-02c17e1e1fbc}</UniqueIdentifier>
       <Extensions>cpp;c;cxx;rc;def;r;odl;idl;hpj;bat</Extensions>
     </Filter>
     <Filter Include="Header Files">
-      <UniqueIdentifier>{b66144d3-70a2-445d-8a2b-ba7c4d682c04}</UniqueIdentifier>
+      <UniqueIdentifier>{cad467f6-a2ce-42d7-a291-b5f350e15ad2}</UniqueIdentifier>
       <Extensions>h;hpp;hxx;hm;inl</Extensions>
     </Filter>
     <Filter Include="Resource Files">
-      <UniqueIdentifier>{e7090283-c0af-4b6a-bb2c-144e14d12b93}</UniqueIdentifier>
+      <UniqueIdentifier>{33953250-efa6-4464-915a-6533bf75c3ce}</UniqueIdentifier>
       <Extensions>ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe</Extensions>
     </Filter>
   </ItemGroup>
@@ -77,13 +77,6 @@
     <None Include="res\CurWidth.cur">
       <Filter>Resource Files</Filter>
     </None>
-    <None Include="icon1.ico">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="toolbar1.bmp">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="AuditTrail.rc">
@@ -127,5 +120,16 @@
     <ClInclude Include="StdAfx.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="icon1.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="toolbar1.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="ReadMe.txt" />
   </ItemGroup>
 </Project>

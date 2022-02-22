@@ -2,15 +2,15 @@
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
     <Filter Include="Source Files">
-      <UniqueIdentifier>{805105fe-cd67-4d29-98b2-9a71f28f537e}</UniqueIdentifier>
+      <UniqueIdentifier>{cef0e2ca-6f49-46f6-acfc-cc2a6f9ccb67}</UniqueIdentifier>
       <Extensions>cpp;c;cxx;rc;def;r;odl;idl;hpj;bat</Extensions>
     </Filter>
     <Filter Include="Header Files">
-      <UniqueIdentifier>{bd6a606b-d664-4108-9faf-4b02dd25b1d6}</UniqueIdentifier>
+      <UniqueIdentifier>{4cc39bc7-6530-49eb-9a01-a50728504027}</UniqueIdentifier>
       <Extensions>h;hpp;hxx;hm;inl</Extensions>
     </Filter>
     <Filter Include="Resource Files">
-      <UniqueIdentifier>{613ea9f7-8bef-4926-9d11-25b5efc37022}</UniqueIdentifier>
+      <UniqueIdentifier>{3c6853a7-8ba5-4064-8b4f-d602f43c0ee3}</UniqueIdentifier>
       <Extensions>ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe</Extensions>
     </Filter>
   </ItemGroup>
@@ -41,7 +41,6 @@
     <None Include="res\PropertySheet.rc2">
       <Filter>Resource Files</Filter>
     </None>
-    <None Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
     <Midl Include="PropertySheet.odl">
@@ -75,5 +74,8 @@
     <ClInclude Include="StdAfx.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="ReadMe.txt" />
   </ItemGroup>
 </Project>

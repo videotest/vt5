@@ -2,15 +2,15 @@
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
     <Filter Include="Source Files">
-      <UniqueIdentifier>{e2cf70f2-47d5-4568-b2d7-824728f2ae79}</UniqueIdentifier>
+      <UniqueIdentifier>{3a72cbc6-dbd0-41c0-9906-d9bb221b293d}</UniqueIdentifier>
       <Extensions>cpp;c;cxx;def;odl;idl;hpj;bat;asm</Extensions>
     </Filter>
     <Filter Include="Header Files">
-      <UniqueIdentifier>{a01cb717-74ef-494a-aa19-7aa72f042633}</UniqueIdentifier>
+      <UniqueIdentifier>{fd2777f8-adda-4811-884b-8024f421aeae}</UniqueIdentifier>
       <Extensions>h;hpp;hxx;hm;inl;inc</Extensions>
     </Filter>
     <Filter Include="Resource Files">
-      <UniqueIdentifier>{aebe1617-3e00-4881-bd95-2d11db1c3826}</UniqueIdentifier>
+      <UniqueIdentifier>{c6008721-68b0-4a3a-b0b1-8efed091980f}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe</Extensions>
     </Filter>
   </ItemGroup>
@@ -35,10 +35,6 @@
     <None Include="res\AbacusUI.rc2">
       <Filter>Resource Files</Filter>
     </None>
-    <None Include="toolbar1.bmp">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AbacusUI.h">
@@ -61,5 +57,13 @@
     <ResourceCompile Include="AbacusUI.rc">
       <Filter>Resource Files</Filter>
     </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="toolbar1.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="ReadMe.txt" />
   </ItemGroup>
 </Project>

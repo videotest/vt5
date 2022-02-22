@@ -2,15 +2,15 @@
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
     <Filter Include="Source Files">
-      <UniqueIdentifier>{45b6b512-111f-48a0-8628-07bdc22ad2c7}</UniqueIdentifier>
+      <UniqueIdentifier>{5642c4a9-efca-4e29-80ce-1b2b8c35b758}</UniqueIdentifier>
       <Extensions>cpp;c;cxx;rc;def;r;odl;idl;hpj;bat</Extensions>
     </Filter>
     <Filter Include="Header Files">
-      <UniqueIdentifier>{4e48a365-6780-4763-a337-e637d24c3cea}</UniqueIdentifier>
+      <UniqueIdentifier>{273d7e55-bd5d-43ff-897a-a88b2d41c287}</UniqueIdentifier>
       <Extensions>h;hpp;hxx;hm;inl</Extensions>
     </Filter>
     <Filter Include="Resource Files">
-      <UniqueIdentifier>{5fb91bc9-b8fd-4886-a153-6e4900870cd0}</UniqueIdentifier>
+      <UniqueIdentifier>{29ba8b6c-c510-47da-b502-c8de43cf0173}</UniqueIdentifier>
       <Extensions>ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe</Extensions>
     </Filter>
   </ItemGroup>
@@ -77,7 +77,6 @@
     <None Include="res\VtiFile.rc2">
       <Filter>Resource Files</Filter>
     </None>
-    <None Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="VtiFile.rc">
@@ -157,5 +156,8 @@
     <ClInclude Include="VtiFilter.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="ReadMe.txt" />
   </ItemGroup>
 </Project>

@@ -2,15 +2,15 @@
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
     <Filter Include="Source Files">
-      <UniqueIdentifier>{56036cad-4a58-41c5-ba85-e82ae9de7e9d}</UniqueIdentifier>
+      <UniqueIdentifier>{07bcf12e-2344-47d0-b250-760ed2130527}</UniqueIdentifier>
       <Extensions>cpp;c;cxx;def;odl;idl;hpj;bat;asm</Extensions>
     </Filter>
     <Filter Include="Header Files">
-      <UniqueIdentifier>{0faa6345-6f71-4447-a89f-c133d4ed9feb}</UniqueIdentifier>
+      <UniqueIdentifier>{52288677-bdf6-4b69-b2f9-aaec0d22e1d3}</UniqueIdentifier>
       <Extensions>h;hpp;hxx;hm;inl;inc</Extensions>
     </Filter>
     <Filter Include="Resource Files">
-      <UniqueIdentifier>{0a40aefe-eff9-4386-a70b-b2052b5179db}</UniqueIdentifier>
+      <UniqueIdentifier>{74f275e1-731a-492d-bfd8-dbde2f84039f}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe</Extensions>
     </Filter>
   </ItemGroup>
@@ -29,7 +29,6 @@
     <None Include="res\sewLoad.rc2">
       <Filter>Resource Files</Filter>
     </None>
-    <None Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Resource.h">
@@ -46,5 +45,8 @@
     <ResourceCompile Include="sewLoad.rc">
       <Filter>Resource Files</Filter>
     </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="ReadMe.txt" />
   </ItemGroup>
 </Project>

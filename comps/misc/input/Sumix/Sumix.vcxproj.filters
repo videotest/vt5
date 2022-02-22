@@ -2,15 +2,15 @@
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
     <Filter Include="Source Files">
-      <UniqueIdentifier>{f6ad6829-296a-4ccc-a607-d0680e92c7b2}</UniqueIdentifier>
+      <UniqueIdentifier>{c4ced65e-79a7-4ced-b909-2a332978d58d}</UniqueIdentifier>
       <Extensions>cpp;c;cxx;def;odl;idl;hpj;bat;asm</Extensions>
     </Filter>
     <Filter Include="Header Files">
-      <UniqueIdentifier>{38657cc9-9537-4a9b-9d58-b8051ddebf27}</UniqueIdentifier>
+      <UniqueIdentifier>{3b438c17-d2f6-40af-abe5-0dc71e22542d}</UniqueIdentifier>
       <Extensions>h;hpp;hxx;hm;inl;inc</Extensions>
     </Filter>
     <Filter Include="Resource Files">
-      <UniqueIdentifier>{17a4f978-57b3-4c3a-9e7e-37e318eeb2f8}</UniqueIdentifier>
+      <UniqueIdentifier>{c9ed9513-a4da-4ac8-9807-a1c2330baaf4}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe</Extensions>
     </Filter>
   </ItemGroup>
@@ -38,7 +38,6 @@
     <None Include="res\Sumix.rc2">
       <Filter>Resource Files</Filter>
     </None>
-    <None Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Resource.h">
@@ -61,5 +60,8 @@
     <ResourceCompile Include="Sumix.rc">
       <Filter>Resource Files</Filter>
     </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="ReadMe.txt" />
   </ItemGroup>
 </Project>

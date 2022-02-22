@@ -2,15 +2,15 @@
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
     <Filter Include="Source Files">
-      <UniqueIdentifier>{3d7ffce2-7f56-4643-af0d-101d6b349976}</UniqueIdentifier>
+      <UniqueIdentifier>{7e3dc742-a832-49f9-ac34-7eb6d4db3e45}</UniqueIdentifier>
       <Extensions>cpp;c;cxx;rc;def;r;odl;idl;hpj;bat</Extensions>
     </Filter>
     <Filter Include="Header Files">
-      <UniqueIdentifier>{fabbf3ba-540b-4141-bfcc-acdf03183cc9}</UniqueIdentifier>
+      <UniqueIdentifier>{ba92d909-00a5-4bb5-a31b-9c411101e205}</UniqueIdentifier>
       <Extensions>h;hpp;hxx;hm;inl</Extensions>
     </Filter>
     <Filter Include="Resource Files">
-      <UniqueIdentifier>{b7baec98-97d6-4fad-92ec-ddbf394839a8}</UniqueIdentifier>
+      <UniqueIdentifier>{3d912199-2048-402f-a5d3-f525dab08103}</UniqueIdentifier>
       <Extensions>ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe</Extensions>
     </Filter>
   </ItemGroup>
@@ -39,18 +39,20 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <None Include="res\bitmap1.bmp">
+    <Image Include="res\bitmap1.bmp">
       <Filter>Resource Files</Filter>
-    </None>
-    <None Include="res\button.ico">
+    </Image>
+    <Image Include="res\button.ico">
       <Filter>Resource Files</Filter>
-    </None>
-    <None Include="res\scroll.bmp">
+    </Image>
+    <Image Include="res\scroll.bmp">
       <Filter>Resource Files</Filter>
-    </None>
-    <None Include="res\scroll1.bmp">
+    </Image>
+    <Image Include="res\scroll1.bmp">
       <Filter>Resource Files</Filter>
-    </None>
+    </Image>
+  </ItemGroup>
+  <ItemGroup>
     <None Include="res\xpbar_ctrl.rc2">
       <Filter>Resource Files</Filter>
     </None>

@@ -64,6 +64,7 @@
 			/>
 			<Tool
 				Name="VCLinkerTool"
+				AdditionalOptions="/SAFESEH:NO"
 				AdditionalDependencies="libtiff.lib jpeg.lib zlib.lib"
 				OutputFile="$(SolutionDir)vt5\$(PlatformName)\$(ConfigurationName)\$(ProjectName).dll"
 				ModuleDefinitionFile=""
@@ -136,6 +137,7 @@
 			/>
 			<Tool
 				Name="VCLinkerTool"
+				AdditionalOptions="/SAFESEH:NO"
 				AdditionalDependencies="libtiff.lib jpeg.lib zlib.lib"
 				OutputFile="$(SolutionDir)vt5\$(PlatformName)\$(ConfigurationName)\$(ProjectName).dll"
 				ModuleDefinitionFile=""
@@ -208,6 +210,7 @@
 			/>
 			<Tool
 				Name="VCLinkerTool"
+				AdditionalOptions="/SAFESEH:NO"
 				AdditionalDependencies="libtiff.lib jpeg.lib zlib.lib"
 				OutputFile="$(SolutionDir)vt5\$(PlatformName)\$(ConfigurationName)\$(ProjectName).dll"
 				AdditionalLibraryDirectories=""
@@ -282,6 +285,7 @@
 			/>
 			<Tool
 				Name="VCLinkerTool"
+				AdditionalOptions="/SAFESEH:NO"
 				AdditionalDependencies="libtiff.lib jpeg.lib zlib.lib"
 				OutputFile="$(SolutionDir)vt5\$(PlatformName)\$(ConfigurationName)\$(ProjectName).dll"
 				AdditionalLibraryDirectories=""

@@ -77,7 +77,6 @@
 			<Tool
 				Name="VCLinkerTool"
 				AdditionalOptions="/MACHINE:I386"
-				AdditionalDependencies="odbc32.lib odbccp32.lib atlsd.lib"
 				LinkIncremental="0"
 				AdditionalLibraryDirectories=""
 				IgnoreDefaultLibraryNames="libcd.lib,libcmtd.lib"
@@ -165,7 +164,6 @@
 			/>
 			<Tool
 				Name="VCLinkerTool"
-				AdditionalDependencies="odbc32.lib odbccp32.lib atlsd.lib"
 				LinkIncremental="0"
 				AdditionalLibraryDirectories=""
 				IgnoreDefaultLibraryNames="libcd.lib,libcmtd.lib"
@@ -256,7 +254,6 @@
 			<Tool
 				Name="VCLinkerTool"
 				AdditionalOptions="/MACHINE:I386"
-				AdditionalDependencies="odbc32.lib odbccp32.lib atls.lib"
 				LinkIncremental="0"
 				AdditionalLibraryDirectories=""
 				IgnoreDefaultLibraryNames="libcd.lib,libcmt.lib"
@@ -344,7 +341,6 @@
 			/>
 			<Tool
 				Name="VCLinkerTool"
-				AdditionalDependencies="odbc32.lib odbccp32.lib atls.lib"
 				LinkIncremental="0"
 				AdditionalLibraryDirectories=""
 				IgnoreDefaultLibraryNames="libcd.lib,libcmt.lib"

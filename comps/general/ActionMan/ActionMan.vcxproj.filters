@@ -2,15 +2,15 @@
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
     <Filter Include="Source Files">
-      <UniqueIdentifier>{8090f948-10c5-4bcf-980e-ac41d1b988f0}</UniqueIdentifier>
+      <UniqueIdentifier>{990d93aa-1456-4e0c-b89b-17038d0ebe7b}</UniqueIdentifier>
       <Extensions>cpp;c;cxx;rc;def;r;odl;idl;hpj;bat</Extensions>
     </Filter>
     <Filter Include="Header Files">
-      <UniqueIdentifier>{1e624692-55df-410c-a9e3-68b9665a2c7a}</UniqueIdentifier>
+      <UniqueIdentifier>{8b39049b-1723-4565-a811-340f8478f385}</UniqueIdentifier>
       <Extensions>h;hpp;hxx;hm;inl</Extensions>
     </Filter>
     <Filter Include="Resource Files">
-      <UniqueIdentifier>{dd562a53-12f1-4b5c-a3e3-8f2facc6f0ab}</UniqueIdentifier>
+      <UniqueIdentifier>{d688dda9-4249-4844-b415-0dc21c1dc6bf}</UniqueIdentifier>
       <Extensions>ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe</Extensions>
     </Filter>
   </ItemGroup>
@@ -54,9 +54,6 @@
       <Filter>Source Files</Filter>
     </None>
     <None Include="res\ActionMan.rc2">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="toolbar1.bmp">
       <Filter>Resource Files</Filter>
     </None>
   </ItemGroup>
@@ -107,5 +104,10 @@
     <ClInclude Include="undolist.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="toolbar1.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
   </ItemGroup>
 </Project>

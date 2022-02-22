@@ -2,15 +2,15 @@
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
     <Filter Include="Source Files">
-      <UniqueIdentifier>{638cbdc3-a5da-4178-b0f1-2476b7469a0b}</UniqueIdentifier>
+      <UniqueIdentifier>{6edd2701-b420-42c2-a3b9-7f0028313ee4}</UniqueIdentifier>
       <Extensions>cpp;c;cxx;rc;def;r;odl;idl;hpj;bat</Extensions>
     </Filter>
     <Filter Include="Header Files">
-      <UniqueIdentifier>{f0c27d2b-0f92-49d9-8b60-24bef73727e5}</UniqueIdentifier>
+      <UniqueIdentifier>{f7de6fe8-55ac-47ea-89f7-4ed8113ed239}</UniqueIdentifier>
       <Extensions>h;hpp;hxx;hm;inl</Extensions>
     </Filter>
     <Filter Include="Resource Files">
-      <UniqueIdentifier>{2ebe6a8f-1589-42ce-990b-c4b7ea481875}</UniqueIdentifier>
+      <UniqueIdentifier>{96cff163-d1c1-45cd-9f98-68772cdd7967}</UniqueIdentifier>
       <Extensions>ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe</Extensions>
     </Filter>
   </ItemGroup>
@@ -38,10 +38,6 @@
     <None Include="res\DataUI.rc2">
       <Filter>Resource Files</Filter>
     </None>
-    <None Include="res\imagebar.bmp">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
     <Midl Include="DataUI.odl">
@@ -78,5 +74,13 @@
     <ClInclude Include="StdAfx.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="res\imagebar.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="ReadMe.txt" />
   </ItemGroup>
 </Project>

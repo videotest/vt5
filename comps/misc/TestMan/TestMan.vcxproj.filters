@@ -2,15 +2,15 @@
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
     <Filter Include="Source Files">
-      <UniqueIdentifier>{86689f77-1e27-4bdb-a74a-0a9847878c1b}</UniqueIdentifier>
+      <UniqueIdentifier>{84f3707b-fe20-4012-ac91-166f327d2861}</UniqueIdentifier>
       <Extensions>cpp;c;cxx;def;odl;idl;hpj;bat;asm</Extensions>
     </Filter>
     <Filter Include="Header Files">
-      <UniqueIdentifier>{f8cb1cc5-636b-41c5-8b1c-b6357505f0ff}</UniqueIdentifier>
+      <UniqueIdentifier>{c4307315-c4d3-4833-be90-3a1a5cac68db}</UniqueIdentifier>
       <Extensions>h;hpp;hxx;hm;inl;inc</Extensions>
     </Filter>
     <Filter Include="Resource Files">
-      <UniqueIdentifier>{e931d35f-13ee-406a-8355-32cb58feb38f}</UniqueIdentifier>
+      <UniqueIdentifier>{f7289e2d-1791-40a2-98ef-268f54b714d9}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe</Extensions>
     </Filter>
   </ItemGroup>
@@ -47,37 +47,15 @@
     <None Include="TestMan.def">
       <Filter>Source Files</Filter>
     </None>
-    <None Include="bitmap1.bmp">
-      <Filter>Resource Files</Filter>
-    </None>
     <None Include="cursor1.cur">
       <Filter>Resource Files</Filter>
     </None>
     <None Include="finder.cur">
       <Filter>Resource Files</Filter>
     </None>
-    <None Include="findere.bmp">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="finderf.bmp">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="finderfd.bmp">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="icon1.ico">
-      <Filter>Resource Files</Filter>
-    </None>
     <None Include="res\TestMan.rc2">
       <Filter>Resource Files</Filter>
     </None>
-    <None Include="toolbar1.bmp">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="toolbar2.bmp">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="FileStorageHelper.h">
@@ -112,8 +90,34 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
+    <Image Include="bitmap1.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="findere.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="finderf.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="finderfd.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="icon1.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="toolbar1.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="toolbar2.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+  </ItemGroup>
+  <ItemGroup>
     <ResourceCompile Include="TestMan.rc">
       <Filter>Resource Files</Filter>
     </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="ReadMe.txt" />
   </ItemGroup>
 </Project>

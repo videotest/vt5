@@ -2,15 +2,15 @@
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
     <Filter Include="Source Files">
-      <UniqueIdentifier>{088f135f-914a-4983-bb41-a49a4dca5c79}</UniqueIdentifier>
+      <UniqueIdentifier>{8386755d-4b94-4e29-b859-affc24d70965}</UniqueIdentifier>
       <Extensions>cpp;c;cxx;def;odl;idl;hpj;bat;asm</Extensions>
     </Filter>
     <Filter Include="Header Files">
-      <UniqueIdentifier>{a6358e6b-22a6-40b7-b282-a406e28bdf95}</UniqueIdentifier>
+      <UniqueIdentifier>{a04ebaf5-1472-4b84-9b63-a1f83e010713}</UniqueIdentifier>
       <Extensions>h;hpp;hxx;hm;inl;inc</Extensions>
     </Filter>
     <Filter Include="Resource Files">
-      <UniqueIdentifier>{fb3b26f1-3302-427f-9921-bbe2f952bd76}</UniqueIdentifier>
+      <UniqueIdentifier>{004ce6a6-33d3-49bb-9f0d-f80bb2e6931a}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe</Extensions>
     </Filter>
   </ItemGroup>
@@ -50,19 +50,9 @@
     <None Include="IdioDBase.def">
       <Filter>Source Files</Filter>
     </None>
-    <None Include="icon2.ico">
-      <Filter>Resource Files</Filter>
-    </None>
     <None Include="res\IdioDBase.rc2">
       <Filter>Resource Files</Filter>
     </None>
-    <None Include="thumbnai.ico">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="toolbar1.bmp">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="actions.h">
@@ -103,8 +93,22 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
+    <Image Include="icon2.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="thumbnai.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="toolbar1.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+  </ItemGroup>
+  <ItemGroup>
     <ResourceCompile Include="IdioDBase.rc">
       <Filter>Resource Files</Filter>
     </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="ReadMe.txt" />
   </ItemGroup>
 </Project>

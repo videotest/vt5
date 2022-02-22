@@ -2,15 +2,15 @@
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
     <Filter Include="Source Files">
-      <UniqueIdentifier>{f196fd90-db6a-4bcc-a077-579441f301e4}</UniqueIdentifier>
+      <UniqueIdentifier>{a1a5b325-7c04-48c0-b355-f63fb181a655}</UniqueIdentifier>
       <Extensions>cpp;c;cxx;rc;def;r;odl;idl;hpj;bat</Extensions>
     </Filter>
     <Filter Include="Header Files">
-      <UniqueIdentifier>{f82fa07f-8bc0-47ed-b673-4aeb721edcfa}</UniqueIdentifier>
+      <UniqueIdentifier>{82fd8ba6-d2a6-4bbb-ae79-a445a8ff3771}</UniqueIdentifier>
       <Extensions>h;hpp;hxx;hm;inl</Extensions>
     </Filter>
     <Filter Include="Resource Files">
-      <UniqueIdentifier>{93172a9b-8f66-4e55-868f-040621f8c41a}</UniqueIdentifier>
+      <UniqueIdentifier>{ee33504f-91cf-473f-a795-bb8b2d203196}</UniqueIdentifier>
       <Extensions>ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe</Extensions>
     </Filter>
   </ItemGroup>
@@ -86,28 +86,10 @@
     <None Include="res\dragging.cur">
       <Filter>Resource Files</Filter>
     </None>
-    <None Include="res\ico00001.ico">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="res\ico00002.ico">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="res\icon1.ico">
-      <Filter>Resource Files</Filter>
-    </None>
     <None Include="res\icr_hand.cur">
       <Filter>Resource Files</Filter>
     </None>
-    <None Include="res\imageList.bmp">
-      <Filter>Resource Files</Filter>
-    </None>
     <None Include="res\nodraggi.cur">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="res\Toolbar.bmp">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="res\treeImageList.bmp">
       <Filter>Resource Files</Filter>
     </None>
   </ItemGroup>
@@ -182,5 +164,25 @@
     <ClInclude Include="WizButton.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="res\ico00001.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\ico00002.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\icon1.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\imageList.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\Toolbar.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\treeImageList.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
   </ItemGroup>
 </Project>

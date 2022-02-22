@@ -103,8 +103,8 @@
 #define COleControlSite_GetExStyle_Ordinal 6450
 #define CWnd_GetExStyle_Ordinal 6451
 #else
-#define GetInterface_CCmdTarget_Ordinal 
-#define InvokeHelperV_COleDispatchDriver_Ordinal
+#define GetInterface_CCmdTarget_Ordinal 6954
+#define InvokeHelperV_COleDispatchDriver_Ordinal 9689
 #define CWnd_InitControlContainer_Ordinal
 #define COleControlSite_InvokeHelperV_Ordinal
 #define COleControlSite_SetPropertyV_Ordinal 

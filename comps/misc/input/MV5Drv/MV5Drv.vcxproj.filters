@@ -2,15 +2,15 @@
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
     <Filter Include="Source Files">
-      <UniqueIdentifier>{84a27195-2c09-4b7c-bccf-04d898e31a72}</UniqueIdentifier>
+      <UniqueIdentifier>{85f73092-c850-42fb-a35c-71ff0e250069}</UniqueIdentifier>
       <Extensions>cpp;c;cxx;rc;def;r;odl;idl;hpj;bat</Extensions>
     </Filter>
     <Filter Include="Header Files">
-      <UniqueIdentifier>{d7365442-ffa2-4a77-92fc-64538255a994}</UniqueIdentifier>
+      <UniqueIdentifier>{951f8b20-7cca-4fcc-92ed-acd0a254390b}</UniqueIdentifier>
       <Extensions>h;hpp;hxx;hm;inl</Extensions>
     </Filter>
     <Filter Include="Resource Files">
-      <UniqueIdentifier>{c49a2155-7baa-4212-b134-a8d5c3dbd2a8}</UniqueIdentifier>
+      <UniqueIdentifier>{4d6c8c38-cc6b-4cd6-9d52-667a98af4418}</UniqueIdentifier>
       <Extensions>ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe</Extensions>
     </Filter>
   </ItemGroup>
@@ -63,7 +63,6 @@
       <Filter>Resource Files</Filter>
     </None>
     <None Include="MV5Drv.clw" />
-    <None Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="MV5Drv.rc">
@@ -112,7 +111,10 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <CustomBuildStep Include="..\..\..\..\..\Mv-500\lib\mv5app95.lib" />
-    <CustomBuildStep Include="..\..\..\..\..\MV-500\Lib\Mv5appnt.lib" />
+    <Text Include="ReadMe.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="C:\Mv-500\lib\mv5app95.lib" />
+    <CustomBuild Include="C:\MV-500\Lib\Mv5appnt.lib" />
   </ItemGroup>
 </Project>

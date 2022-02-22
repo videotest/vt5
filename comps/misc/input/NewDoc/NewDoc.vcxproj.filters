@@ -2,15 +2,15 @@
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
     <Filter Include="Source Files">
-      <UniqueIdentifier>{af80d800-628d-4171-b553-0585044ff20d}</UniqueIdentifier>
+      <UniqueIdentifier>{475a5df8-5a00-45a0-9c10-2db3bbc4c0bb}</UniqueIdentifier>
       <Extensions>cpp;c;cxx;rc;def;r;odl;idl;hpj;bat</Extensions>
     </Filter>
     <Filter Include="Header Files">
-      <UniqueIdentifier>{fca9cf7b-5c94-4842-8a61-82b78730596a}</UniqueIdentifier>
+      <UniqueIdentifier>{1b377752-7214-4042-8fb4-f8af6fd1814c}</UniqueIdentifier>
       <Extensions>h;hpp;hxx;hm;inl</Extensions>
     </Filter>
     <Filter Include="Resource Files">
-      <UniqueIdentifier>{45772a3e-7367-487f-a936-ab7e14efa445}</UniqueIdentifier>
+      <UniqueIdentifier>{fd81b713-b803-424a-9a07-99864d0bfc7c}</UniqueIdentifier>
       <Extensions>ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe</Extensions>
     </Filter>
   </ItemGroup>
@@ -134,10 +134,6 @@
     <None Include="res\NewDoc.rc2">
       <Filter>Resource Files</Filter>
     </None>
-    <None Include="toolbar1.bmp">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
     <Midl Include="NewDoc.odl">
@@ -270,5 +266,13 @@
     <ClInclude Include="VideoDriversList.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="toolbar1.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="ReadMe.txt" />
   </ItemGroup>
 </Project>

@@ -2,15 +2,15 @@
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
     <Filter Include="Source Files">
-      <UniqueIdentifier>{53a18a42-c284-408e-a384-1c2fb8fbc31b}</UniqueIdentifier>
+      <UniqueIdentifier>{7e14ed3d-8976-46fb-a1e2-a14e956e3e05}</UniqueIdentifier>
       <Extensions>cpp;c;cxx;rc;def;r;odl;idl;hpj;bat</Extensions>
     </Filter>
     <Filter Include="Header Files">
-      <UniqueIdentifier>{f150b146-1c3b-4918-ac19-379a5bf80ef1}</UniqueIdentifier>
+      <UniqueIdentifier>{888ace8c-2310-4781-9776-6901e5df96a3}</UniqueIdentifier>
       <Extensions>h;hpp;hxx;hm;inl</Extensions>
     </Filter>
     <Filter Include="Resource Files">
-      <UniqueIdentifier>{42f2c179-711f-40c3-a1de-00647188e76c}</UniqueIdentifier>
+      <UniqueIdentifier>{a5c40587-8e1a-47da-9377-4b28680b7d57}</UniqueIdentifier>
       <Extensions>ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe</Extensions>
     </Filter>
   </ItemGroup>
@@ -74,10 +74,6 @@
     <None Include="res\freeline.cur">
       <Filter>Resource Files</Filter>
     </None>
-    <None Include="toolbar1.bmp">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
     <Midl Include="FiltersMain.odl">
@@ -135,5 +131,13 @@
     <ClInclude Include="thactions.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="toolbar1.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="ReadMe.txt" />
   </ItemGroup>
 </Project>

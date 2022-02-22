@@ -2,15 +2,15 @@
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
     <Filter Include="Source Files">
-      <UniqueIdentifier>{747649f8-932c-4372-b868-05cf653a5bc8}</UniqueIdentifier>
+      <UniqueIdentifier>{b04d854d-a46a-4e77-802a-bdc6631f8f96}</UniqueIdentifier>
       <Extensions>cpp;c;cxx;def;odl;idl;hpj;bat;asm</Extensions>
     </Filter>
     <Filter Include="Header Files">
-      <UniqueIdentifier>{10acd61e-3842-4350-b46d-5081761669ea}</UniqueIdentifier>
+      <UniqueIdentifier>{c566d8f0-673d-4f64-ac95-e26b47955066}</UniqueIdentifier>
       <Extensions>h;hpp;hxx;hm;inl;inc</Extensions>
     </Filter>
     <Filter Include="Resource Files">
-      <UniqueIdentifier>{8e48df53-0a84-4a2f-8193-3212bea25a37}</UniqueIdentifier>
+      <UniqueIdentifier>{b2cc8b8f-adc8-48a8-bdc0-4f8941774a46}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe</Extensions>
     </Filter>
   </ItemGroup>
@@ -107,10 +107,6 @@
     <None Include="Strip.cur">
       <Filter>Resource Files</Filter>
     </None>
-    <None Include="toolbar1.bmp">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="aam_utils.h">
@@ -187,5 +183,13 @@
     <ResourceCompile Include="Metall.rc">
       <Filter>Resource Files</Filter>
     </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="toolbar1.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="ReadMe.txt" />
   </ItemGroup>
 </Project>

@@ -2,15 +2,15 @@
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
     <Filter Include="Source Files">
-      <UniqueIdentifier>{60708baf-f6d9-44a4-977c-8ac7a24dcf9a}</UniqueIdentifier>
+      <UniqueIdentifier>{6131dcf8-9ff9-4733-9768-8e0b290f98f0}</UniqueIdentifier>
       <Extensions>cpp;c;cxx;rc;def;r;odl;idl;hpj;bat</Extensions>
     </Filter>
     <Filter Include="Header Files">
-      <UniqueIdentifier>{be80bb14-3482-4784-b791-03720cbfefc4}</UniqueIdentifier>
+      <UniqueIdentifier>{9901dc45-a4dd-4d9b-9687-3236cc67af56}</UniqueIdentifier>
       <Extensions>h;hpp;hxx;hm;inl</Extensions>
     </Filter>
     <Filter Include="Resource Files">
-      <UniqueIdentifier>{38e73cb1-617d-4e2b-9011-6b687206cf92}</UniqueIdentifier>
+      <UniqueIdentifier>{0757aa88-6fc7-4a8e-9ce3-3e9b9035583b}</UniqueIdentifier>
       <Extensions>ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe</Extensions>
     </Filter>
   </ItemGroup>
@@ -47,27 +47,6 @@
     <None Include="StdSplitter.def">
       <Filter>Source Files</Filter>
     </None>
-    <None Include="bitmap1.bmp">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="bmp00001.bmp">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="bmp00002.bmp">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="bmp00003.bmp">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="bmp00004.bmp">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="bmp00005.bmp">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="bmp00006.bmp">
-      <Filter>Resource Files</Filter>
-    </None>
     <None Include="cursor1.cur">
       <Filter>Resource Files</Filter>
     </None>
@@ -75,30 +54,6 @@
       <Filter>Resource Files</Filter>
     </None>
     <None Include="cursor3.cur">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="menu1.bmp">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="mergeh2.bmp">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="mergeh3.bmp">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="mergev.bmp">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="mergev2.bmp">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="mergev3.bmp">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="splith1.bmp">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="splitv1.bmp">
       <Filter>Resource Files</Filter>
     </None>
     <None Include="res\StdSplitter.rc2">
@@ -146,5 +101,52 @@
     <ClInclude Include="TabEditor.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="bitmap1.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="bmp00001.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="bmp00002.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="bmp00003.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="bmp00004.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="bmp00005.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="bmp00006.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="menu1.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="mergeh2.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="mergeh3.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="mergev.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="mergev2.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="mergev3.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="splith1.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="splitv1.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
   </ItemGroup>
 </Project>

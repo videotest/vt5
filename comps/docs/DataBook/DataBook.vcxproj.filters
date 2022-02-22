@@ -2,15 +2,15 @@
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
     <Filter Include="Source Files">
-      <UniqueIdentifier>{43e5785c-c550-4982-b3d0-9aa4e4385dec}</UniqueIdentifier>
+      <UniqueIdentifier>{649c945b-02e2-4ac8-bd4b-e22bbe0fe56a}</UniqueIdentifier>
       <Extensions>cpp;c;cxx;rc;def;r;odl;idl;hpj;bat</Extensions>
     </Filter>
     <Filter Include="Header Files">
-      <UniqueIdentifier>{a1176aa7-fb74-429c-aae9-ee5a7b41bc56}</UniqueIdentifier>
+      <UniqueIdentifier>{1ae66322-dc72-4ef8-8784-fa52803a3c44}</UniqueIdentifier>
       <Extensions>h;hpp;hxx;hm;inl</Extensions>
     </Filter>
     <Filter Include="Resource Files">
-      <UniqueIdentifier>{933c444e-5483-40fa-8e08-158e1f0adc0b}</UniqueIdentifier>
+      <UniqueIdentifier>{69c5b963-ac00-483b-8fdb-26daac1fdb82}</UniqueIdentifier>
       <Extensions>ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe</Extensions>
     </Filter>
   </ItemGroup>
@@ -24,6 +24,14 @@
     <ClCompile Include="StdAfx.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="DataBook.def">
+      <Filter>Source Files</Filter>
+    </None>
+    <None Include="res\databook.rc2">
+      <Filter>Resource Files</Filter>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="DataBook.rc">
@@ -45,11 +53,8 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <None Include="res\databook.rc2">
+    <Image Include="icon1.ico">
       <Filter>Resource Files</Filter>
-    </None>
-    <None Include="icon1.ico">
-      <Filter>Resource Files</Filter>
-    </None>
+    </Image>
   </ItemGroup>
 </Project>

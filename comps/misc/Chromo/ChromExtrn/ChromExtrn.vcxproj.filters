@@ -2,15 +2,15 @@
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
     <Filter Include="Source Files">
-      <UniqueIdentifier>{ed333d07-519c-441b-aa5e-a6460ceee77a}</UniqueIdentifier>
+      <UniqueIdentifier>{8fcd5bbe-6d2d-4098-9d56-b98825e4f759}</UniqueIdentifier>
       <Extensions>cpp;c;cxx;rc;def;r;odl;idl;hpj;bat</Extensions>
     </Filter>
     <Filter Include="Header Files">
-      <UniqueIdentifier>{6308d87b-23c1-43ae-a462-c9943828f6dc}</UniqueIdentifier>
+      <UniqueIdentifier>{10f75366-9509-4733-a16d-3fd3e69aad8d}</UniqueIdentifier>
       <Extensions>h;hpp;hxx;hm;inl</Extensions>
     </Filter>
     <Filter Include="Resource Files">
-      <UniqueIdentifier>{5934089e-9710-4158-b20c-0ffec4fd13af}</UniqueIdentifier>
+      <UniqueIdentifier>{0cb562ae-b027-4ba2-ba5e-0aa16f75d0a3}</UniqueIdentifier>
       <Extensions>ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe</Extensions>
     </Filter>
   </ItemGroup>
@@ -47,19 +47,9 @@
     <None Include="ChromExtrn.def">
       <Filter>Source Files</Filter>
     </None>
-    <None Include="allres.bmp">
-      <Filter>Resource Files</Filter>
-    </None>
     <None Include="res\ChromExtrn.rc2">
       <Filter>Resource Files</Filter>
     </None>
-    <None Include="pclass.ico">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="pipercla.ico">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="ChromExtrn.rc">
@@ -112,5 +102,19 @@
     <ClInclude Include="WoolzObject.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="allres.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="pclass.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="pipercla.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="ReadMe.txt" />
   </ItemGroup>
 </Project>

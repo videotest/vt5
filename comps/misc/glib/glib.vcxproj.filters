@@ -2,15 +2,15 @@
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
     <Filter Include="Source Files">
-      <UniqueIdentifier>{20776c8b-dff1-4940-b07e-cd27f4689760}</UniqueIdentifier>
+      <UniqueIdentifier>{dbffa985-68f6-43a4-87fe-a7cb21dd208e}</UniqueIdentifier>
       <Extensions>cpp;c;cxx;def;odl;idl;hpj;bat;asm</Extensions>
     </Filter>
     <Filter Include="Header Files">
-      <UniqueIdentifier>{f5d68d2e-9b14-45a1-b941-c34b22d49e34}</UniqueIdentifier>
+      <UniqueIdentifier>{2f666e99-429c-4821-8de8-3d91eb659660}</UniqueIdentifier>
       <Extensions>h;hpp;hxx;hm;inl;inc</Extensions>
     </Filter>
     <Filter Include="Resource Files">
-      <UniqueIdentifier>{befc81b0-cec1-43f7-b11c-a1734aac4d41}</UniqueIdentifier>
+      <UniqueIdentifier>{1de615b2-3dde-41c4-8690-bb6e4fec88d9}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe</Extensions>
     </Filter>
   </ItemGroup>
@@ -43,6 +43,6 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <None Include="ReadMe.txt" />
+    <Text Include="ReadMe.txt" />
   </ItemGroup>
 </Project>

@@ -2,15 +2,15 @@
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
     <Filter Include="Source Files">
-      <UniqueIdentifier>{f3aec9ca-caa4-4830-b197-5bb0bf35a933}</UniqueIdentifier>
+      <UniqueIdentifier>{fd0b7aac-ff17-4b4f-a4d1-7df701b31464}</UniqueIdentifier>
       <Extensions>cpp;c;cxx;def;odl;idl;hpj;bat;asm</Extensions>
     </Filter>
     <Filter Include="Header Files">
-      <UniqueIdentifier>{32435eff-3120-47f1-9fce-0a98e762a556}</UniqueIdentifier>
+      <UniqueIdentifier>{25bcb8a8-ce10-4ae2-8707-ec41df3cef94}</UniqueIdentifier>
       <Extensions>h;hpp;hxx;hm;inl;inc</Extensions>
     </Filter>
     <Filter Include="Resource Files">
-      <UniqueIdentifier>{4e346167-2fc8-42f6-a6c4-b344c513c5dc}</UniqueIdentifier>
+      <UniqueIdentifier>{c70f107f-9adf-4251-8734-8454a0ea77b1}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe</Extensions>
     </Filter>
   </ItemGroup>
@@ -24,7 +24,6 @@
     <None Include="res\PVCam.rc2">
       <Filter>Resource Files</Filter>
     </None>
-    <None Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="PVCamApp.cpp">
@@ -67,5 +66,8 @@
   </ItemGroup>
   <ItemGroup>
     <Library Include="Pvcam32.lib" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="ReadMe.txt" />
   </ItemGroup>
 </Project>

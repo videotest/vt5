@@ -2,15 +2,15 @@
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
     <Filter Include="Source Files">
-      <UniqueIdentifier>{e4dd9f7e-0953-40f4-bfe4-76b2c17e18c5}</UniqueIdentifier>
+      <UniqueIdentifier>{bcfb03de-6213-4ac3-934b-b080a1540a44}</UniqueIdentifier>
       <Extensions>cpp;c;cxx;rc;def;r;odl;idl;hpj;bat</Extensions>
     </Filter>
     <Filter Include="Header Files">
-      <UniqueIdentifier>{fe2f7c1e-4f1f-4b29-aad3-9b444ea13f13}</UniqueIdentifier>
+      <UniqueIdentifier>{c4a24b87-b0b2-42bd-95ee-4cc2dc867e3a}</UniqueIdentifier>
       <Extensions>h;hpp;hxx;hm;inl</Extensions>
     </Filter>
     <Filter Include="Resource Files">
-      <UniqueIdentifier>{921b9d35-7220-4f02-97a9-095e077b2b23}</UniqueIdentifier>
+      <UniqueIdentifier>{2a496272-3cbf-44e4-81a0-be53f7dc7f10}</UniqueIdentifier>
       <Extensions>ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe</Extensions>
     </Filter>
   </ItemGroup>
@@ -32,7 +32,6 @@
     <None Include="res\Even.rc2">
       <Filter>Resource Files</Filter>
     </None>
-    <None Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="Even.rc">
@@ -52,5 +51,8 @@
     <ClInclude Include="StdAfx.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="ReadMe.txt" />
   </ItemGroup>
 </Project>

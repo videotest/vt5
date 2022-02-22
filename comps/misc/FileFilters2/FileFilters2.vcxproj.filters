@@ -2,22 +2,22 @@
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
     <Filter Include="Source Files">
-      <UniqueIdentifier>{27940363-6b19-44c4-a461-69fcff3ec2eb}</UniqueIdentifier>
+      <UniqueIdentifier>{a8226bb8-c682-46a1-b720-87b27dcaecbe}</UniqueIdentifier>
       <Extensions>cpp;c;cxx;rc;def;r;odl;idl;hpj;bat</Extensions>
     </Filter>
     <Filter Include="Header Files">
-      <UniqueIdentifier>{94486300-88d3-4931-bcd8-99dea1c9efe9}</UniqueIdentifier>
+      <UniqueIdentifier>{b72b3f63-4d6d-4d4b-92ea-6c33a3a0a57d}</UniqueIdentifier>
       <Extensions>h;hpp;hxx;hm;inl</Extensions>
     </Filter>
     <Filter Include="Resource Files">
-      <UniqueIdentifier>{b4322a7a-f2f6-492f-b0e4-62426c318772}</UniqueIdentifier>
+      <UniqueIdentifier>{78e940ec-cbad-42f4-ae2e-6dc377c1ac22}</UniqueIdentifier>
       <Extensions>ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe</Extensions>
     </Filter>
     <Filter Include="libs">
-      <UniqueIdentifier>{30f55c39-6147-4c7d-b7ff-f49c27ef4420}</UniqueIdentifier>
+      <UniqueIdentifier>{c4a078cb-de85-4e77-af5f-e3479fe524e1}</UniqueIdentifier>
     </Filter>
     <Filter Include="libs\headers">
-      <UniqueIdentifier>{61b2e3f1-9365-4c40-8d20-439b4a2bdb1f}</UniqueIdentifier>
+      <UniqueIdentifier>{d7fa799e-38a3-4ec8-aa3d-4ae536b89c5a}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -53,7 +53,6 @@
     <None Include="res\FileFilters.rc2">
       <Filter>Resource Files</Filter>
     </None>
-    <None Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="FileFilters2.rc">
@@ -151,5 +150,8 @@
     <ClInclude Include="Libs\H\VERSION.H">
       <Filter>libs\headers</Filter>
     </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="ReadMe.txt" />
   </ItemGroup>
 </Project>

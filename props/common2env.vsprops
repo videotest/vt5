@@ -9,6 +9,8 @@
 	<Tool
 		Name="VCCLCompilerTool"
 		AdditionalIncludeDirectories="&quot;$(SolutionDir)IFaces&quot;;&quot;$(SolutionDir)vt5/$(PlatformName)/$(ConfigurationName)/comps&quot;;&quot;$(SolutionDir)common2&quot;;&quot;$(SolutionDir)common&quot;;&quot;$(SolutionDir)&quot;;$(NOINHERIT)"
+		PreprocessorDefinitions="_CRT_SECURE_NO_WARNINGS"
+		TreatWChar_tAsBuiltInType="false"
 		UsePrecompiledHeader="2"
 		PrecompiledHeaderThrough="StdAfx.h"
 		PrecompiledHeaderFile="$(IntDir)\$(TargetName).pch"
@@ -29,5 +31,9 @@
 	<Tool
 		Name="VCMIDLTool"
 		TypeLibraryName="$(SolutionDir)vt5\$(PlatformName)\$(ConfigurationName)\$(ProjectName).tlb"
+	/>
+	<Tool
+		Name="VCResourceCompilerTool"
+		AdditionalIncludeDirectories="$(SolutionDir)vt5\$(PlatformName)\$(ConfigurationName)\"
 	/>
 </VisualStudioPropertySheet>

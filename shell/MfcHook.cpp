@@ -11,8 +11,7 @@
 #define GetInterfacePtr(pTarget, pEntry) \
 	((LPUNKNOWN)((BYTE*)pTarget + pEntry->nOffset))
 
-HOOK_METHOD(MFCXXD_DLL,GetInterface_CCmdTarget_Ordinal,LPUNKNOWN,CCmdTarget,GetInterface,
-	(const void* iid))
+HOOK_METHOD(MFCXXD_DLL,GetInterface_CCmdTarget_Ordinal,LPUNKNOWN,CCmdTarget,GetInterface,(const void* iid))
 {
 	// allow general hook first chance
 	LPUNKNOWN lpUnk;

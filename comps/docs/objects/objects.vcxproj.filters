@@ -2,15 +2,15 @@
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
     <Filter Include="Source Files">
-      <UniqueIdentifier>{b2c5e51f-5a3e-46c1-8f00-e44559555a47}</UniqueIdentifier>
+      <UniqueIdentifier>{92ea4afc-f02c-45a7-b004-c31e44c4e6d4}</UniqueIdentifier>
       <Extensions>cpp;c;cxx;rc;def;r;odl;idl;hpj;bat</Extensions>
     </Filter>
     <Filter Include="Header Files">
-      <UniqueIdentifier>{ff999bf5-1f03-4758-a7ab-bfe956d27aca}</UniqueIdentifier>
+      <UniqueIdentifier>{b725ce3a-8984-4150-aa97-127d39154191}</UniqueIdentifier>
       <Extensions>h;hpp;hxx;hm;inl</Extensions>
     </Filter>
     <Filter Include="Resource Files">
-      <UniqueIdentifier>{cb18e1d9-df31-4ab1-8844-3e9d88be2d69}</UniqueIdentifier>
+      <UniqueIdentifier>{ebcc6581-e521-41af-a85e-9b266ec721e8}</UniqueIdentifier>
       <Extensions>ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe</Extensions>
     </Filter>
   </ItemGroup>
@@ -167,9 +167,6 @@
     <None Include="res\ellipse.cur">
       <Filter>Resource Files</Filter>
     </None>
-    <None Include="res\ellipse_fix.bmp">
-      <Filter>Resource Files</Filter>
-    </None>
     <None Include="res\ellipseb.cur">
       <Filter>Resource Files</Filter>
     </None>
@@ -179,31 +176,10 @@
     <None Include="res\freeline.cur">
       <Filter>Resource Files</Filter>
     </None>
-    <None Include="res\icon3.ico">
-      <Filter>Resource Files</Filter>
-    </None>
     <None Include="res\ids_acti.cur">
       <Filter>Resource Files</Filter>
     </None>
     <None Include="res\magick_o.cur">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="res\mode_add.bmp">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="res\mode_click.bmp">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="res\mode_dblclick.bmp">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="res\mode_sep.bmp">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="res\mode_sub.bmp">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="res\mouse.bmp">
       <Filter>Resource Files</Filter>
     </None>
     <None Include="res\multylin.cur">
@@ -212,16 +188,7 @@
     <None Include="res\objects.rc2">
       <Filter>Resource Files</Filter>
     </None>
-    <None Include="res\oellipse.ico">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="res\orect.ico">
-      <Filter>Resource Files</Filter>
-    </None>
     <None Include="res\rect.cur">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="res\rect_fix.bmp">
       <Filter>Resource Files</Filter>
     </None>
     <None Include="res\rect_obj.cur">
@@ -236,22 +203,12 @@
     <None Include="res\scissors.cur">
       <Filter>Resource Files</Filter>
     </None>
-    <None Include="res\sep.bmp">
-      <Filter>Resource Files</Filter>
-    </None>
     <None Include="res\spline.cur">
       <Filter>Resource Files</Filter>
     </None>
     <None Include="res\target.cur">
       <Filter>Resource Files</Filter>
     </None>
-    <None Include="toolbar1.bmp">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="res\toolbar1.bmp">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
     <Midl Include="objects.odl">
@@ -351,5 +308,52 @@
     <ClInclude Include="vtwidth.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="res\ellipse_fix.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\icon3.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\mode_add.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\mode_click.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\mode_dblclick.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\mode_sep.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\mode_sub.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\mouse.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\oellipse.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\orect.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\rect_fix.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\sep.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="toolbar1.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\toolbar1.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="ReadMe.txt" />
   </ItemGroup>
 </Project>

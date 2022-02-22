@@ -2,15 +2,15 @@
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
     <Filter Include="Source Files">
-      <UniqueIdentifier>{612926c0-055b-491b-929d-6d059f9d97fd}</UniqueIdentifier>
+      <UniqueIdentifier>{6c3e5bb1-4e28-41d8-9726-922e34356177}</UniqueIdentifier>
       <Extensions>cpp;c;cxx;rc;def;r;odl;idl;hpj;bat</Extensions>
     </Filter>
     <Filter Include="Header Files">
-      <UniqueIdentifier>{7f3502fa-c269-48fe-974f-e41210c87620}</UniqueIdentifier>
+      <UniqueIdentifier>{3a60a01f-2735-4b7a-8e19-392d7b20e3d8}</UniqueIdentifier>
       <Extensions>h;hpp;hxx;hm;inl</Extensions>
     </Filter>
     <Filter Include="Resource Files">
-      <UniqueIdentifier>{5c097929-0f32-4b60-b5d7-af1a82d8b286}</UniqueIdentifier>
+      <UniqueIdentifier>{1f681f6e-2fba-4452-ac7c-d08825542cbd}</UniqueIdentifier>
       <Extensions>ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe</Extensions>
     </Filter>
   </ItemGroup>
@@ -119,13 +119,7 @@
     <None Include="dilate.inl">
       <Filter>Header Files</Filter>
     </None>
-    <None Include="ReadMe.txt">
-      <Filter>Header Files</Filter>
-    </None>
     <None Include="res\ImageFilters2.rc2">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="toolbar1.bmp">
       <Filter>Resource Files</Filter>
     </None>
   </ItemGroup>
@@ -240,5 +234,15 @@
     <ClInclude Include="WatermarkFilter.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="ReadMe.txt">
+      <Filter>Header Files</Filter>
+    </Text>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="toolbar1.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
   </ItemGroup>
 </Project>

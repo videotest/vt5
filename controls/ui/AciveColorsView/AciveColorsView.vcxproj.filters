@@ -2,15 +2,15 @@
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
     <Filter Include="Source Files">
-      <UniqueIdentifier>{c6e3abad-438f-4b8a-8376-99e160362c1d}</UniqueIdentifier>
+      <UniqueIdentifier>{30c064e1-93a7-4ddb-be53-fcef27956cff}</UniqueIdentifier>
       <Extensions>cpp;c;cxx;rc;def;r;odl;idl;hpj;bat</Extensions>
     </Filter>
     <Filter Include="Header Files">
-      <UniqueIdentifier>{cc233fc3-48e3-4479-ae29-cf4e4db9dc2b}</UniqueIdentifier>
+      <UniqueIdentifier>{dc2a152a-7a07-4ddc-aefe-e3da0b8222a9}</UniqueIdentifier>
       <Extensions>h;hpp;hxx;hm;inl</Extensions>
     </Filter>
     <Filter Include="Resource Files">
-      <UniqueIdentifier>{fcd2e631-4028-4990-9711-b744c36337f1}</UniqueIdentifier>
+      <UniqueIdentifier>{880e6647-2514-4ff7-9fae-b7c69c394272}</UniqueIdentifier>
       <Extensions>ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe</Extensions>
     </Filter>
   </ItemGroup>
@@ -35,22 +35,9 @@
     <None Include="AciveColorsView.def">
       <Filter>Source Files</Filter>
     </None>
-    <None Include="AciveColorsView.ico">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="AciveColorsViewCtl.bmp">
-      <Filter>Resource Files</Filter>
-    </None>
     <None Include="res\ActiveColorsView.rc2">
       <Filter>Resource Files</Filter>
     </None>
-    <None Include="bitmap1.bmp">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="icon1.ico">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
     <Midl Include="AciveColorsView.odl">
@@ -81,5 +68,22 @@
     <ClInclude Include="StdAfx.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="AciveColorsView.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="AciveColorsViewCtl.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="bitmap1.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="icon1.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="ReadMe.txt" />
   </ItemGroup>
 </Project>

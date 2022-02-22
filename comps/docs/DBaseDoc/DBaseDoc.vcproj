@@ -79,7 +79,7 @@
 			/>
 			<Tool
 				Name="VCLinkerTool"
-				AdditionalOptions="/MACHINE:I386"
+				AdditionalOptions="/SAFESEH:NO"
 				AdditionalDependencies="zlib.lib"
 				SuppressStartupBanner="true"
 				AdditionalLibraryDirectories=""
@@ -171,6 +171,7 @@
 			/>
 			<Tool
 				Name="VCLinkerTool"
+				AdditionalOptions="/SAFESEH:NO"
 				AdditionalDependencies="zlib.lib"
 				SuppressStartupBanner="true"
 				AdditionalLibraryDirectories=""
@@ -258,7 +259,7 @@
 			/>
 			<Tool
 				Name="VCLinkerTool"
-				AdditionalOptions="/MACHINE:I386"
+				AdditionalOptions="/SAFESEH:NO"
 				AdditionalDependencies="zlib.lib"
 				AdditionalLibraryDirectories=""
 				GenerateDebugInformation="true"
@@ -345,6 +346,7 @@
 			/>
 			<Tool
 				Name="VCLinkerTool"
+				AdditionalOptions="/SAFESEH:NO"
 				AdditionalDependencies="zlib.lib"
 				AdditionalLibraryDirectories=""
 				GenerateDebugInformation="true"
@@ -642,11 +644,11 @@
 				>
 			</File>
 			<File
-				RelativePath=".\bmp00001.bmp"
+				RelativePath=".\res\bmp00001.bmp"
 				>
 			</File>
 			<File
-				RelativePath=".\res\bmp00001.bmp"
+				RelativePath=".\bmp00001.bmp"
 				>
 			</File>
 			<File
