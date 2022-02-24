@@ -207,6 +207,7 @@
 			ConfigurationType="2"
 			InheritedPropertySheets="..\..\..\props\common2env.vsprops"
 			UseOfMFC="0"
+			UseOfATL="2"
 			ATLMinimizesCRunTimeLibraryUsage="false"
 			CharacterSet="2"
 			>
@@ -235,7 +236,7 @@
 			<Tool
 				Name="VCCLCompilerTool"
 				InlineFunctionExpansion="1"
-				AdditionalIncludeDirectories="\vt5\common,\vt5\ifaces"
+				AdditionalIncludeDirectories=""
 				PreprocessorDefinitions="WIN32;NDEBUG;_WINDOWS;_AFXDLL;_USRDLL"
 				StringPooling="true"
 				RuntimeLibrary="2"
@@ -243,9 +244,6 @@
 				ForceConformanceInForLoopScope="false"
 				RuntimeTypeInfo="true"
 				UsePrecompiledHeader="2"
-				PrecompiledHeaderThrough="stdafx.h"
-				WarningLevel="3"
-				SuppressStartupBanner="true"
 				DebugInformationFormat="3"
 				CompileAs="0"
 			/>
@@ -403,6 +401,14 @@
 			<File
 				RelativePath=".\PropertyBrowser.cpp"
 				>
+				<FileConfiguration
+					Name="Release|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						GeneratePreprocessedFile="1"
+					/>
+				</FileConfiguration>
 			</File>
 			<File
 				RelativePath=".\PropertyBrowser.def"
@@ -547,6 +553,10 @@
 			</File>
 			<File
 				RelativePath=".\PBDib.h"
+				>
+			</File>
+			<File
+				RelativePath=".\PropertyBrowser.h"
 				>
 			</File>
 			<File

@@ -34,44 +34,6 @@
 BCGCONTROLBARDLLEXPORT void BCGControlBarDllInitialize ();	// By Guy Hachlili
 #endif // _BCGCB_IN_OTHER_DLL
 
-#ifdef _AFXDLL
-	#ifdef _DEBUG
-		#ifdef _UNICODE
-			#pragma comment(lib,"BCGCB464UD.lib") 
-			#pragma message("Automatically linking with BCGCB464UD.dll")
-		#else
-			#pragma comment(lib,"BCGCB464d.lib") 
-			#pragma message("Automatically linking with BCGCB464d.dll")
-		#endif
-	#else
-		#ifdef _UNICODE
-			#pragma comment(lib,"BCGCB464U.lib") 
-			#pragma message("Automatically linking with BCGCB464U.dll") 
-		#else
-			#pragma comment(lib,"BCGCB464.lib") 
-			#pragma message("Automatically linking with BCGCB464.dll") 
-		#endif
-	#endif
-#else
-	#ifdef _DEBUG
-		#ifdef _UNICODE
-			#pragma comment(lib,"BCGCB464Staticud.lib") 
-			#pragma message("Automatically linking with BCGCB464Staticud.lib") 
-		#else
-			#pragma comment(lib,"BCGCB464Staticd.lib") 
-			#pragma message("Automatically linking with BCGCB464Staticd.lib") 
-		#endif
-	#else
-		#ifdef _UNICODE
-			#pragma comment(lib,"BCGCB464StaticU.lib") 
-			#pragma message("Automatically linking with BCGCB464StaticU.lib") 
-		#else
-			#pragma comment(lib,"BCGCB464Static.lib") 
-			#pragma message("Automatically linking with BCGCB464Static.lib") 
-		#endif
-	#endif
-#endif
-
 //------------------
 // BCG control bars:
 //------------------

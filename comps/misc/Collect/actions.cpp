@@ -16,9 +16,8 @@
 
 #pragma warning( disable : 4244)
 #pragma warning( disable : 4018)
-
-template <>
-int MaskZone<DWORD>::m_count = 0;
+template <> 
+int MaskZone<DWORD>::m_count =0;
 
 template <class T>
 CompareFn MaskZone<T>::m_pFnCompare =0;

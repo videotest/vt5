@@ -41,7 +41,7 @@
 #endif
 #define _MVCNOAUTOLIB
 #define __SECCOMPRESS_FILE_H__
-#include "gxall.h"			// Objective Grid headers
+//#include "gxall.h"			// Objective Grid headers
 
 
 //{{AFX_INSERT_LOCATION}}

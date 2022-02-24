@@ -36,92 +36,6 @@ CColorIniValue g_clrCombi(FISH_ROOT, _T("UnknownCombi"), RGB(0,0,0));
 #define ScaleColorToDouble(clr) ((double)(((clr)/65535.0)-0.5))
 #define ScaleByteToDouble(clr) ((double)(((clr)/255.0)-0.5))
 
-// потом перенести в общую часть - к INamedPropBag
-static inline void GetProp1(_variant_t &var, char *szName, INamedPropBag *pBag1, VARTYPE vt=VT_I4)
-{	// получить свойство из pBag1
-	if(var.vt==VT_EMPTY && pBag1)
-	{
-		pBag1->GetProperty( _bstr_t( szName ), &var );
-		if(var.vt!=VT_EMPTY && var.vt!=vt)
-		{
-			var.ChangeType(vt);
-			pBag1->SetProperty( _bstr_t( szName ), var );
-		}
-	}
-}
-
-template<class Type>
-static inline bool GetLongProp(Type* pval, char *szName, INamedPropBag *pBag1)
-{
-	_variant_t	var;
-	GetProp1(var, szName, pBag1);
-	if(var.vt!=VT_EMPTY)
-	{
-		*pval = var.lVal;
-		return true;
-	}
-	return false;
-}
-
-template<class Type>
-static inline bool GetLongProp(Type* pval, char *szName, INamedPropBag *pBag1, INamedPropBag *pBag2)
-{
-	_variant_t	var;
-	GetProp1(var, szName, pBag1);
-	GetProp1(var, szName, pBag2);
-	if(var.vt!=VT_EMPTY)
-	{
-		*pval = var.lVal;
-		return true;
-	}
-	return false;
-}
-
-template<class Type>
-static inline bool GetLongProp(Type* pval, char *szName, INamedPropBag *pBag1, INamedPropBag *pBag2, INamedPropBag *pBag3)
-{
-	_variant_t	var;
-	GetProp1(var, szName, pBag1);
-	GetProp1(var, szName, pBag2);
-	GetProp1(var, szName, pBag3);
-	if(var.vt!=VT_EMPTY)
-	{
-		*pval = (Type)var.lVal;
-		return true;
-	}
-	return false;
-}
-
-/*
-template<class Type>
-static inline bool GetLongProp(Type* pval, char *szName, INamedPropBag *pBag1, INamedPropBag *pBag2)
-{	// получить свойство из pBag1; если не удастся - из pBag2; если и тут не удастся - вернуть false
-	// имеет смысл сделать аналогичные функции и для общения с PropBag + shell.data
-	// возможно - есть смысл сделать template для разных типов
-	_variant_t	var;
-	if(pBag1)
-	{
-		pBag1->GetProperty( _bstr_t( szName ), &var );
-		if( var.vt != VT_EMPTY )
-		{
-			*pval = var.lVal;
-			return true;
-		}
-	}
-	if(pBag2)
-	{
-		pBag2->GetProperty( _bstr_t( szName ), &var );
-		if( var.vt != VT_EMPTY )
-		{
-			*pval = var.lVal;
-			return true;
-		}
-	}
-	return false;
-}
-*/
-
-
 CFishProps::CFishProps(IUnknown *punkImage, IUnknown *punkParams)
 {
 	m_sptrBag1 = punkParams;
@@ -141,12 +55,6 @@ CFishProps::CFishProps(IUnknown *punkImage, IUnknown *punkParams)
 
 CFishProps::~CFishProps()
 {
-}
-
-template<class Type>
-inline bool CFishProps::GetLongProp(Type* pval, char *szName)
-{
-	return ::GetLongProp(pval, szName, m_sptrBag1, m_sptrBag2, m_sptrBag3);
 }
 
 

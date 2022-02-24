@@ -13,21 +13,25 @@
 	<Tool
 		Name="VCCLCompilerTool"
 		AdditionalIncludeDirectories="&quot;$(SolutionDir)common&quot;;&quot;$(SolutionDir)vt5\$(PlatformName)\$(ConfigurationName)\comps&quot;;&quot;$(SolutionDir)IFaces&quot;"
-		PreprocessorDefinitions="_WINDOWS;_AFX_SECURE_NO_DEPRECATE;_CRT_SECURE_NO_DEPRECATE"
+		PreprocessorDefinitions="_ATL_NO_AUTOMATIC_NAMESPACE;_WINDOWS;_AFX_SECURE_NO_DEPRECATE;_CRT_SECURE_NO_DEPRECATE"
 		WarningLevel="3"
 		CompileAs="0"
 	/>
 	<Tool
 		Name="VCLinkerTool"
-		OutputFile="$(SolutionDir)vt5\$(PlatformName)\$(ConfigurationName)\comps\$(ProjectName).dll"
+		OutputFile="$(OutDir)\$(ProjectName).dll"
 		AdditionalLibraryDirectories="$(SolutionDir)lib\$(PlatformName)\$(ConfigurationName)"
 		ModuleDefinitionFile="$(ProjectName).def"
-		ProgramDatabaseFile="$(TargetDir)..\pdb\$(TargetName).pdb"
+		ProgramDatabaseFile="$(TargetDir)\pdb\$(TargetName).pdb"
 		ImportLibrary="$(SolutionDir)lib\$(PlatformName)\$(ConfigurationName)\$(ProjectName).lib"
 	/>
 	<Tool
 		Name="VCMIDLTool"
-		TypeLibraryName="$(OutDir)/$(ProjectName).tlb"
-		OutputDirectory="$(IntDir)"
+		TypeLibraryName="$(SolutionDir)vt5\$(PlatformName)\$(ConfigurationName)\$(ProjectName).tlb"
+		OutputDirectory=""
+	/>
+	<Tool
+		Name="VCResourceCompilerTool"
+		AdditionalIncludeDirectories="$(SolutionDir)vt5\$(PlatformName)\$(ConfigurationName)"
 	/>
 </VisualStudioPropertySheet>

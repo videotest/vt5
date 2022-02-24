@@ -1,6 +1,5 @@
 // DBaseDoc.cpp : Defines the initialization routines for the DLL.
 //
-
 #include "stdafx.h"
 #include "DBaseDoc.h"
 #include "Constant.h"
@@ -16,7 +15,9 @@
 #pragma comment( lib, "EditorView.lib" )
 #pragma comment( lib, "Controls.lib" )
 #pragma comment( lib, "zlib.lib" )
-
+#if _MSC_VER >= 1900
+#pragma comment(lib, "legacy_stdio_definitions.lib")
+#endif
 
 // {5DF7A4E0-7BCB-4c10-B899-31978165482C}
 

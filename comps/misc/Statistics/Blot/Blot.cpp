@@ -2,7 +2,6 @@
 
 #include "stdafx.h"
 #include "resource.h"
-#include "\vt5\awin\misc_module.h"
 #include <com_main.h>
 #include "Blot_h.h"
 
@@ -19,24 +18,8 @@ CBlotModule _AtlModule;
 extern "C" BOOL WINAPI DllMain(HINSTANCE hInstance, DWORD dwReason, LPVOID lpReserved)
 {
 	hInstance;
-
-	if( dwReason == DLL_PROCESS_ATTACH )
-	{
-		static module	_module( 0 );
-		_module.init( hInstance );
-
-		new App;
-		App::instance()->Init( hInstance );
-	}
-	else if( dwReason == DLL_PROCESS_DETACH )
-	{
-		App::instance()->Deinit();
-		App::instance()->Release();
-	}
-
-	return _AtlModule.DllMain(dwReason, lpReserved); 
+	return _AtlModule.DllMain(dwReason, lpReserved);
 }
-
 
 // Used to determine whether the DLL can be unloaded by OLE
 STDAPI DllCanUnloadNow(void)

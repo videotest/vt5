@@ -8,11 +8,7 @@
 #include "action5.h"
 #include "data5.h"
 
-//#ifdef _DEBUG
-//#pragma comment (lib, "\\vt5\\common2\\debug\\common2.lib")
-//#else
-//#pragma comment (lib, "\\vt5\\common2\\release\\common2.lib")
-//#endif //_DEBUG#if 
+#pragma comment (lib, "common2.lib")
 
 
 //using namespace std;

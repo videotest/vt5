@@ -122,6 +122,10 @@ public:
 			double fZoomX, double fZoomY, 
 			double fRotateAngle );
 };
+//typedef _com_IIID<IImage4, &__uuidof(IImage4)>	iiid_IImage4;
+// //_com_ptr_t<iiid_##_interface>	sptr##_interface;					
+//
+//typedef _com_ptr_t<IImage4, iiid_IImage4> ptrIImage4;
 
 class std_dll	CImageWrp : public sptrIImage4
 {

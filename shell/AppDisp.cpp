@@ -1,14 +1,12 @@
 // AppDisp.cpp : implementation file
 //
-
 #include "stdafx.h"
 #include "shell.h"
-#include "AppDisp.h"
 #include "docs.h"
 #include "ActiveScript.h"
 #include "\vt5\common2\misc_calibr.h"
 #include "\vt5\com_base\perf_counters.h"
-#include "\vt5\common\measure_misc.h"
+#include "AppDisp.h"
 
 
 #ifdef _DEBUG
@@ -47,9 +45,12 @@ inline CString _change_chars( CString str, CString strA, CString strB )
 
 /////////////////////////////////////////////////////////////////////////////
 // CAppDisp
+#ifdef _AFXDLL
+#else
+#error NO _AFXDLL
+#endif
 
 IMPLEMENT_DYNCREATE(CAppDisp, CCmdTarget)
-
 CAppDisp::CAppDisp()
 {
 	EnableAutomation();
